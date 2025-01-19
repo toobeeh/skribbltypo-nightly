@@ -1,0 +1,57 @@
+{
+  "name": "skribbltypo",
+  "description": "",
+  "version": "27.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icons/16Fit.png",
+    "32": "icons/32CircleFit.png",
+    "128": "icons/128MaxFit.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/128MaxFit.png"
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/content.ts-loader-nRUbgDLv.js",
+        "assets/css-urls.ts-loader-KBvH31eV.js"
+      ],
+      "matches": [
+        "https://skribbl.io/*"
+      ],
+      "run_at": "document_start",
+      "css": [
+        "assets/content-Dc48VfwX.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://skribbl.io/*"
+      ],
+      "resources": [
+        "icons/16Fit.png",
+        "icons/32CircleFit.png",
+        "icons/128MaxFit.png",
+        "img/**",
+        "**/*.js.map",
+        "gamePatch.js",
+        "assets/chunk-ClpJhotG.js",
+        "assets/chunk-CCoeBh_Q.js",
+        "assets/chunk-BmJAs87i.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "version_name": "27.0.0 beta-crx eb76ff41963abbeaa844f113774ae5f8fd06d3de\""
+}
