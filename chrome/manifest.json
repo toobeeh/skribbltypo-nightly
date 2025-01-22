@@ -19,7 +19,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/content.ts-loader-35evxVQt.js",
+        "assets/content.ts-loader-D5Luv6z0.js",
         "assets/css-urls.ts-loader-D58cX2KD.js"
       ],
       "matches": [
@@ -44,7 +44,7 @@
         "**/*.js.map",
         "gamePatch.js",
         "assets/chunk-Dk5ocdJ7.js",
-        "assets/chunk-ZS10wNcc.js",
+        "assets/chunk-T_Tp3Uam.js",
         "assets/chunk-DKsbisHr.js"
       ],
       "use_dynamic_url": false
@@ -53,5 +53,5 @@
   "permissions": [
     "storage"
   ],
-  "version_name": "27.0.0 beta-crx be6c582"
+  "version_name": "27.0.0 beta-crx c8b174b"
 }
