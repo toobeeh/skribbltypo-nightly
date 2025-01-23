@@ -126,6 +126,14 @@
           Kt(Zt(e.detail));
           // IDENTIFY: x(y(e.detail)): bounds: AND Math.floor(Math.ceil -> PERFOUTER, PERFINNER
         });
+        document.addEventListener("collapseUndoActions", (e) => {
+          const shrinkCount = e.detail;
+          const firstCollapsedIndex = mt.length - shrinkCount + 1;
+          const collapsed = mt.slice(0, firstCollapsedIndex);
+          const lastCollapsedIndex = collapsed.length === 0 ? 0 : collapsed.length - 1
+          collapsed[lastCollapsedIndex] = mt[mt.length - 1];
+          mt = collapsed;
+        });
         document.addEventListener("addTypoTooltips", () => {
           [...document.querySelectorAll("[data-typo-tooltip]")].forEach(elem => {
             elem.setAttribute("data-tooltip", elem.getAttribute("data-typo-tooltip"));
@@ -1248,12 +1256,14 @@
   var S, sn = 0,
     cn = 0,
     dn = (setInterval(function() {
-      var e, t, n;
-      S && L.id == Z && M == x && 0 < (e = v.length - ut) && (t = ut + 8, n = v.slice(ut, t), S.emit("data", {
-        id: Ia,
-        data: n
-      }), ut = Math.min(t, v.length), console.log(`Sent ${n.length} commands. ${e} remaining.`))
-    }, 5), setInterval(function() {
+        var e, t, n;
+        S && L.id == Z && M == x && 0 < (e = v.length - ut) && (t = ut + 8, n = v.slice(ut, t), S.emit("data", {
+          id: Ia,
+          data: n
+        }), ut = Math.min(t, v.length),
+        false &&console.log(`Sent ${n.length} commands. ${e} remaining.`))
+      },
+      document.body.dataset.bypassCommandRate === 'true' ? 0 :50), setInterval(function() {
       S && L.id == Z && M != x && ht < v.length && (Kt(Zt(v[ht]), v[ht]), ht++)
     }, 1), c.querySelector("#game-canvas .overlay")),
     un = c.querySelector("#game-canvas .overlay-content"),
