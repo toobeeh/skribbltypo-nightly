@@ -12,6 +12,8 @@ console.log("pre-execution-block.ts");const scriptObserver=new MutationObserver(
         ➜ Join the community: https://discord.com/invite/pAapmUmWAM
         ➜ Find more infos at: https://www.typo.rip/
         ➜ Support development: https://patreon.com/skribbltypo
+        
+        [ ${chrome.runtime.getManifest().version_name} ]
                                                                     
                                                     `,"color: lightblue","color:#2596be; font-family:'Arial'; font-weight:bold; font-style:italic; letter-spacing:2em","color: lightblue","color:#2596be; font-family:'Arial'; font-weight:bold; font-style:italic; letter-spacing:2em","color:#f39656");
-//# sourceMappingURL=chunk-CzNXP6TR.js.map
+//# sourceMappingURL=chunk-Bcl9Ebsd.js.map
