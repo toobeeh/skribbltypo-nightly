@@ -1,4 +1,4 @@
-console.log(`%c
+console.log("pre-execution-block.ts");const scriptObserver=new MutationObserver(mutations=>{mutations.forEach(mutation=>{if(mutation.type==="childList"){const target=[...mutation.addedNodes].find(n=>n.nodeName==="SCRIPT"&&n.src.includes("game.js"));if(target){const script=target;script.type="javascript/blocked",script.addEventListener("beforescriptexecute",e=>e.preventDefault(),{once:!0}),script.remove(),scriptObserver.disconnect()}}})});scriptObserver.observe(document,{childList:!0,subtree:!0});console.log(`%c
         _             _   _       _       _   _                           
        | |           (_) | |     | |     | | | |     %cskribbl modded with%c
   ___  | | __  _ __   _  | |__   | |__   | | | |_   _   _   _ __     ___  
@@ -13,5 +13,5 @@ console.log(`%c
         ➜ Find more infos at: https://www.typo.rip/
         ➜ Support development: https://patreon.com/skribbltypo
                                                                     
-                                                    `,"color: lightblue","color:#2596be; font-family:'Arial'; font-weight:bold; font-style:italic; letter-spacing:2em","color: lightblue","color:#2596be; font-family:'Arial'; font-weight:bold; font-style:italic; letter-spacing:2em","color:#f39656");const scriptObserver=new MutationObserver(mutations=>{mutations.forEach(mutation=>{if(mutation.type==="childList"){const target=[...mutation.addedNodes].find(n=>n.nodeName==="SCRIPT"&&n.src.includes("game.js"));if(target){const script=target;script.type="javascript/blocked",script.addEventListener("beforescriptexecute",e=>e.preventDefault(),{once:!0}),script.remove(),scriptObserver.disconnect()}}})});scriptObserver.observe(document.body,{childList:!0,subtree:!0});
-//# sourceMappingURL=chunk-Dtnt38f2.js.map
+                                                    `,"color: lightblue","color:#2596be; font-family:'Arial'; font-weight:bold; font-style:italic; letter-spacing:2em","color: lightblue","color:#2596be; font-family:'Arial'; font-weight:bold; font-style:italic; letter-spacing:2em","color:#f39656");
+//# sourceMappingURL=chunk-CzNXP6TR.js.map
