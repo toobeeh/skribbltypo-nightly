@@ -1,1 +1,1 @@
-import './assets/chunk-_QDc3ER6.js';
+import './assets/background.ts.js';

@@ -19,16 +19,17 @@
   "content_scripts": [
     {
       "js": [
-        "assets/content.ts-loader-DtsrbHwx.js",
-        "assets/pre-execution-block.ts-loader-CQlZbQza.js",
-        "assets/css-urls.ts-loader-D58cX2KD.js"
+        "assets/loader.ts-loader.js",
+        "assets/content.ts-loader.js",
+        "assets/css-urls.ts-loader.js"
       ],
       "matches": [
         "https://skribbl.io/*"
       ],
       "run_at": "document_start",
       "css": [
-        "assets/content-Dbrjo6Ys.css"
+        "assets/loader.css",
+        "assets/content.css"
       ]
     }
   ],
@@ -44,10 +45,11 @@
         "img/**",
         "**/*.js.map",
         "gamePatch.js",
-        "assets/chunk-Bztt3a1m.js",
-        "assets/chunk-DzuygB0e.js",
-        "assets/chunk-Bcl9Ebsd.js",
-        "assets/chunk-DKsbisHr.js"
+        "assets/requiredQuerySelector.js",
+        "assets/loader.ts.js",
+        "assets/index.js",
+        "assets/content.ts.js",
+        "assets/css-urls.ts.js"
       ],
       "use_dynamic_url": false
     }
@@ -55,5 +57,5 @@
   "permissions": [
     "storage"
   ],
-  "version_name": "27.0.0 beta-crx a2f7462"
+  "version_name": "27.0.0 beta-crx 4f185bb"
 }
