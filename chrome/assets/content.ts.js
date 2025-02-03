@@ -147,7 +147,7 @@ If the auto-focus setting is enabled, the chat input will be focused automatical
 
         ${stringHasContent(theme.images.urlLogo)?`
           div.logo-big a {display: flex; justify-content: center }
-          div.logo-big img {max-height:20vh; content: url(${theme.images.urlLogo}) }
+          div.logo-big img, div#game-logo img {max-height:20vh; content: url(${theme.images.urlLogo}) }
         `:""}
 
         ${Object.entries(theme.hooks?theme.hooks:{}).filter(entry=>entry[1]!=="").map(entry=>`${selectorHooks[entry[0]].join(",")}{${entry[1]}}`).join(`
