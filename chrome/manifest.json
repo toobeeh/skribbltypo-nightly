@@ -55,7 +55,8 @@
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "activeTab"
   ],
-  "version_name": "27.0.0 beta-crx 3be3b2f"
+  "version_name": "27.0.0 beta-crx 9622511"
 }
