@@ -31,6 +31,14 @@
         "assets/loader.css",
         "assets/content.css"
       ]
+    },
+    {
+      "js": [
+        "assets/gif-renderer.worker.ts-loader.js"
+      ],
+      "matches": [
+        "https://skribbl.io/never"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -43,11 +51,14 @@
         "icons/32CircleFit.png",
         "icons/128MaxFit.png",
         "img/**",
+        "assets/*.worker.ts.js",
         "**/*.js.map",
         "gamePatch.js",
         "assets/requiredQuerySelector.js",
         "assets/loader.ts.js",
         "assets/index.js",
+        "assets/gif-renderer.worker.js",
+        "assets/gif-renderer.worker.ts.js",
         "assets/content.ts.js",
         "assets/css-urls.ts.js"
       ],
@@ -58,5 +69,5 @@
     "storage",
     "activeTab"
   ],
-  "version_name": "27.0.0 beta-crx 11a76e4"
+  "version_name": "27.0.0 beta-crx 3991fd1"
 }
