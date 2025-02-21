@@ -57,10 +57,10 @@
         "assets/requiredQuerySelector.js",
         "assets/loader.ts.js",
         "assets/index.js",
-        "assets/gif-renderer.worker.js",
-        "assets/gif-renderer.worker.ts.js",
+        "assets/typed-worker.js",
         "assets/content.ts.js",
-        "assets/css-urls.ts.js"
+        "assets/css-urls.ts.js",
+        "assets/gif-renderer.worker.ts.js"
       ],
       "use_dynamic_url": false
     }
@@ -69,5 +69,5 @@
     "storage",
     "activeTab"
   ],
-  "version_name": "27.0.0 beta-crx cf86690"
+  "version_name": "27.0.0 beta-crx d66ffdc"
 }
