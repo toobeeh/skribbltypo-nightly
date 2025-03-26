@@ -1,2 +1,25 @@
-console.log("background is running");chrome.runtime.onMessage.addListener((request,sender,sendResponse)=>{if(request.type==="get token")return(async()=>{const token=(await chrome.storage.local.get("token")).token??null;sendResponse(token)})(),!0;if(request.type==="set token")chrome.storage.local.set({token:request.token});else{if(request.type==="get setting")return(async()=>{let item=(await chrome.storage.local.get(request.key))[request.key]??null;item==="_undefined_"&&(item=void 0),sendResponse(item)})(),!0;request.type==="set setting"&&(request.value===void 0&&(request.value="_undefined_"),chrome.storage.local.set({[request.key]:request.value}))}});
+console.log("background is running");
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.type === "get token") {
+    (async () => {
+      const data = await chrome.storage.local.get("token");
+      const token = data["token"] ?? null;
+      sendResponse(token);
+    })();
+    return true;
+  } else if (request.type === "set token") {
+    chrome.storage.local.set({ token: request.token });
+  } else if (request.type === "get setting") {
+    (async () => {
+      const data = await chrome.storage.local.get(request.key);
+      let item = data[request.key] ?? null;
+      if (item === "_undefined_") item = void 0;
+      sendResponse(item);
+    })();
+    return true;
+  } else if (request.type === "set setting") {
+    if (request.value === void 0) request.value = "_undefined_";
+    chrome.storage.local.set({ [request.key]: request.value });
+  }
+});
 //# sourceMappingURL=background.ts.js.map
