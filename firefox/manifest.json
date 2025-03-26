@@ -1,0 +1,62 @@
+{
+  "name": "skribbltypo",
+  "description": "The toolbox for everything you need on skribbl.io",
+  "version": "27.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icons/16Fit.png",
+    "32": "icons/32CircleFit.png",
+    "128": "icons/128MaxFit.png"
+  },
+  "action": {
+    "default_popup": "src/runtime/extension/popup/popup.html",
+    "default_icon": "icons/128MaxFit.png"
+  },
+  "background": {
+    "scripts": [
+      "service-worker-loader.js"
+    ],
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/loader.ts-loader.js",
+        "assets/app.ts-loader.js"
+      ],
+      "matches": [
+        "https://skribbl.io/*"
+      ],
+      "run_at": "document_start",
+      "css": [
+        "assets/loader.css",
+        "assets/app.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://skribbl.io/*"
+      ],
+      "resources": [
+        "icons/16Fit.png",
+        "icons/32CircleFit.png",
+        "icons/128MaxFit.png",
+        "img/**",
+        "assets/*.worker.ts.js",
+        "**/*.js.map",
+        "gamePatch.js",
+        "assets/requiredQuerySelector.js",
+        "assets/loader.ts.js",
+        "assets/index.js",
+        "assets/app.ts.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "version_name": "27.0.0 beta-ffx 25b4e91"
+}

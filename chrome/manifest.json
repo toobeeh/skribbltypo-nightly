@@ -1,6 +1,6 @@
 {
   "name": "skribbltypo",
-  "description": "",
+  "description": "The toolbox for everything you need on skribbl.io",
   "version": "27.0.0",
   "manifest_version": 3,
   "icons": {
@@ -9,7 +9,7 @@
     "128": "icons/128MaxFit.png"
   },
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "src/runtime/extension/popup/popup.html",
     "default_icon": "icons/128MaxFit.png"
   },
   "background": {
@@ -20,8 +20,7 @@
     {
       "js": [
         "assets/loader.ts-loader.js",
-        "assets/content.ts-loader.js",
-        "assets/css-urls.ts-loader.js"
+        "assets/app.ts-loader.js"
       ],
       "matches": [
         "https://skribbl.io/*"
@@ -29,15 +28,7 @@
       "run_at": "document_start",
       "css": [
         "assets/loader.css",
-        "assets/content.css"
-      ]
-    },
-    {
-      "js": [
-        "assets/gif-renderer.worker.ts-loader.js"
-      ],
-      "matches": [
-        "https://skribbl.io/never"
+        "assets/app.css"
       ]
     }
   ],
@@ -57,10 +48,7 @@
         "assets/requiredQuerySelector.js",
         "assets/loader.ts.js",
         "assets/index.js",
-        "assets/typed-worker.js",
-        "assets/content.ts.js",
-        "assets/css-urls.ts.js",
-        "assets/gif-renderer.worker.ts.js"
+        "assets/app.ts.js"
       ],
       "use_dynamic_url": false
     }
@@ -69,5 +57,5 @@
     "storage",
     "activeTab"
   ],
-  "version_name": "27.0.0 beta-crx e867945"
+  "version_name": "27.0.0 beta-crx 25b4e91"
 }
