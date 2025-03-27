@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.0 beta-usc 44f4367
+// @version      27.0.0 beta-usc c672a32
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc 44f4367", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc c672a32", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -29940,6 +29940,52 @@
   };
   __name(_PressureMod, "PressureMod");
   let PressureMod = _PressureMod;
+  const _TypoDrawTool = class _TypoDrawTool extends ConstantDrawMod {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "cursorCanvas", document.createElement("canvas"));
+    }
+    noCommands() {
+      return [];
+    }
+    /**
+     * Create a cursor based on the current brush style that looks like the skribbl cursor
+     * @param brushStyle
+     * @protected
+     */
+    createSkribblLikeCursor(brushStyle) {
+      const color = Color.fromSkribblCode(brushStyle.color).rgbArray;
+      color[3] = 0.8;
+      const canvasSize = brushStyle.size + 2;
+      const cursorSize = brushStyle.size;
+      const canvas = this.cursorCanvas;
+      canvas.width = canvasSize;
+      canvas.height = canvasSize;
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("Could not get 2d context");
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.fillStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${color[3]})`;
+      context.beginPath();
+      context.arc(canvasSize / 2, canvasSize / 2, cursorSize / 2 - 1, 0, 2 * Math.PI);
+      context.fill();
+      context.strokeStyle = "#FFF";
+      context.beginPath();
+      context.arc(canvasSize / 2, canvasSize / 2, cursorSize / 2 - 1, 0, 2 * Math.PI);
+      context.stroke();
+      context.strokeStyle = "#000";
+      context.beginPath();
+      context.arc(canvasSize / 2, canvasSize / 2, cursorSize / 2, 0, 2 * Math.PI);
+      context.stroke();
+      const cursorCenter = canvasSize / 2;
+      return {
+        source: `url(${canvas.toDataURL()})`,
+        x: cursorCenter,
+        y: cursorCenter
+      };
+    }
+  };
+  __name(_TypoDrawTool, "TypoDrawTool");
+  let TypoDrawTool = _TypoDrawTool;
   const _ExtensionContainer = class _ExtensionContainer {
     constructor(_interceptor) {
       /**
@@ -30105,52 +30151,6 @@
   };
   __name(_CoordinateListener, "CoordinateListener");
   let CoordinateListener = _CoordinateListener;
-  const _TypoDrawTool = class _TypoDrawTool extends ConstantDrawMod {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "cursorCanvas", document.createElement("canvas"));
-    }
-    noCommands() {
-      return [];
-    }
-    /**
-     * Create a cursor based on the current brush style that looks like the skribbl cursor
-     * @param brushStyle
-     * @protected
-     */
-    createSkribblLikeCursor(brushStyle) {
-      const color = Color.fromSkribblCode(brushStyle.color).rgbArray;
-      color[3] = 0.8;
-      const canvasSize = brushStyle.size + 2;
-      const cursorSize = brushStyle.size;
-      const canvas = this.cursorCanvas;
-      canvas.width = canvasSize;
-      canvas.height = canvasSize;
-      const context = canvas.getContext("2d");
-      if (!context) throw new Error("Could not get 2d context");
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      context.fillStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${color[3]})`;
-      context.beginPath();
-      context.arc(canvasSize / 2, canvasSize / 2, cursorSize / 2 - 1, 0, 2 * Math.PI);
-      context.fill();
-      context.strokeStyle = "#FFF";
-      context.beginPath();
-      context.arc(canvasSize / 2, canvasSize / 2, cursorSize / 2 - 1, 0, 2 * Math.PI);
-      context.stroke();
-      context.strokeStyle = "#000";
-      context.beginPath();
-      context.arc(canvasSize / 2, canvasSize / 2, cursorSize / 2, 0, 2 * Math.PI);
-      context.stroke();
-      const cursorCenter = canvasSize / 2;
-      return {
-        source: `url(${canvas.toDataURL()})`,
-        x: cursorCenter,
-        y: cursorCenter
-      };
-    }
-  };
-  __name(_TypoDrawTool, "TypoDrawTool");
-  let TypoDrawTool = _TypoDrawTool;
   var __defProp$L = Object.defineProperty;
   var __getOwnPropDesc$6 = Object.getOwnPropertyDescriptor;
   var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
@@ -30377,21 +30377,21 @@
   function create_fragment$P(ctx) {
     let div;
     let p0;
-    let t4;
-    let br3;
     let t5;
+    let br5;
+    let t6;
     let b0;
-    let t7;
+    let t8;
     let p1;
-    let t9;
-    let br4;
     let t10;
-    let b1;
-    let t12;
-    let p2;
-    let t15;
     let br6;
+    let t11;
+    let b1;
+    let t13;
+    let p2;
     let t16;
+    let br8;
+    let t17;
     let canvas_1;
     return {
       c() {
@@ -30400,27 +30400,28 @@
         p0.innerHTML = `Typo modifies pressure so that you can use the full brush size range without switching brush sizes in skribbl.<br/>
     Additionally, you can customize the sensitivity of the pen pressure.<br/>
     By default, a performance mode is activated. This mode is recommended for devices with lower performance.<br/>
-    To use pressure in combination with the typo brush laboratory, disable performance mode.`;
-        t4 = space();
-        br3 = element("br");
+    The performance mode uses a simplified pressure function and does not work with the Brush Lab.<br/>
+    To use pressure in combination with the typo brush laboratory, disable performance mode or enable the &quot;Disable performance in Lab&quot; to automatically disable performance mode whenever you&#39;re using the lab.<br/>`;
         t5 = space();
+        br5 = element("br");
+        t6 = space();
         b0 = element("b");
         b0.textContent = "Attention!";
-        t7 = space();
+        t8 = space();
         p1 = element("p");
         p1.textContent = 'The performance mode needs "Pressure Sensitivity" enabled in the skribbl settings.';
-        t9 = space();
-        br4 = element("br");
         t10 = space();
+        br6 = element("br");
+        t11 = space();
         b1 = element("b");
         b1.textContent = "Current sensitivity curve:";
-        t12 = space();
+        t13 = space();
         p2 = element("p");
         p2.innerHTML = `The sensitivity curve shows how the brush size changes depending on pen pressure.<br/>
     The x-axis represents the pressure (from light to hard), and the y-axis represents the brush size (small to big).`;
-        t15 = space();
-        br6 = element("br");
         t16 = space();
+        br8 = element("br");
+        t17 = space();
         canvas_1 = element("canvas");
         attr(canvas_1, "width", "100");
         attr(canvas_1, "height", "100");
@@ -30429,21 +30430,21 @@
       m(target, anchor) {
         insert(target, div, anchor);
         append(div, p0);
-        append(div, t4);
-        append(div, br3);
         append(div, t5);
+        append(div, br5);
+        append(div, t6);
         append(div, b0);
-        append(div, t7);
+        append(div, t8);
         append(div, p1);
-        append(div, t9);
-        append(div, br4);
         append(div, t10);
-        append(div, b1);
-        append(div, t12);
-        append(div, p2);
-        append(div, t15);
         append(div, br6);
+        append(div, t11);
+        append(div, b1);
+        append(div, t13);
+        append(div, p2);
         append(div, t16);
+        append(div, br8);
+        append(div, t17);
         append(div, canvas_1);
         ctx[6](canvas_1);
       },
@@ -30549,16 +30550,23 @@
       __publicField(this, "_pressureParamBalanceSetting", this.useSetting(
         new NumericExtensionSetting("pressure_balance", 0.5, this).withName("Pressure Balance").withDescription("The balance of pressure increase. A higher value moves the size range to a higher pressure range.").withBounds(0, 1).withSlider(1 / 20)
       ));
+      __publicField(this, "_disablePerformanceInBrushlabSetting", this.useSetting(
+        new BooleanExtensionSetting("pressure_disable_performance_brushlab", false, this).withName("Disable Performance in Lab").withDescription("Automatically disables the performance mode (if active) when using the Brush Lab. This might cause lags on less performant devices.")
+      ));
       __publicField(this, "_pressureMod");
     }
     get featureInfoComponent() {
       return { componentType: Drawing_pressure_info, props: { feature: this } };
     }
     async onActivate() {
+      const overridePerformance$ = this._disablePerformanceInBrushlabSetting.changes$.pipe(
+        combineLatestWith(this._toolsService.activeMods$, this._toolsService.activeTool$),
+        map(([disable, mods, tool]) => disable && (tool instanceof TypoDrawTool || mods.filter((m) => !(m instanceof PressureMod)).length > 0))
+      );
       this._performanceEnabledSubscription = this._performanceEnabledSetting.changes$.pipe(
-        combineLatestWith(this._pressureParamSensitivitySetting.changes$, this._pressureParamBalanceSetting.changes$)
-      ).subscribe(async ([performanceMode, sensitivity, balance]) => {
-        if (performanceMode) {
+        combineLatestWith(this._pressureParamSensitivitySetting.changes$, this._pressureParamBalanceSetting.changes$, overridePerformance$)
+      ).subscribe(async ([performanceMode, sensitivity, balance, overridePerformance]) => {
+        if (performanceMode && !overridePerformance) {
           if (this._pressureMod) {
             this._toolsService.removeMod(this._pressureMod);
             this._pressureMod = void 0;
