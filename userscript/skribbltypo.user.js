@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.0 beta-usc 914c5db
+// @version      27.0.0 beta-usc 6a509b6
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc 914c5db", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc 6a509b6", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -37671,42 +37671,23 @@
   function create_fragment$F(ctx) {
     let h3;
     let t1;
-    let p0;
-    let t5;
-    let h40;
-    let t7;
-    let div0;
-    let t27;
-    let h41;
-    let t29;
-    let div1;
+    let div;
     return {
       c() {
         h3 = element("h3");
         h3.textContent = "Introducing the new typo";
         t1 = space();
-        p0 = element("p");
-        p0.innerHTML = `Starting with April 2025, typo is receiving the biggest update so far.<br class="svelte-115f3km"/>
-  Typo still has the same features, but makes them much more user-friendly, accessible and customizable.<br class="svelte-115f3km"/>
-  So far, typo provided the tools, but now it&#39;s the whole workshop!`;
-        t5 = space();
-        h40 = element("h4");
-        h40.textContent = "A quick-start guide";
-        t7 = space();
-        div0 = element("div");
-        div0.innerHTML = `<p class="svelte-115f3km">All typo features can now be customized, so you don&#39;t have anything that messes with your optimal skribbl experience.<br class="svelte-115f3km"/>
-    To customize typo, click the wrench icon at the top left (unless customized to somewhere else ;).<br class="svelte-115f3km"/>
-    There, you can:</p> <ul class="svelte-115f3km"><li class="svelte-115f3km">Enable or disable every feature</li> <li class="svelte-115f3km">Adjust feature settings to your likes</li> <li class="svelte-115f3km">Customize hotkeys and chat commands of features</li> <li class="svelte-115f3km">View some extra info &amp; hints about features</li></ul> <p class="svelte-115f3km">To get started, you can browse through the feature list and view their details.<br class="svelte-115f3km"/>
+        div = element("div");
+        div.innerHTML = `<p class="svelte-115f3km">Starting with April 2025, typo is receiving the biggest update so far.<br class="svelte-115f3km"/>
+    Typo still has the same features, but makes them much more user-friendly, accessible and customizable.<br class="svelte-115f3km"/>
+    So far, typo provided the tools, but now it&#39;s the whole workshop!</p> <h4 class="svelte-115f3km">A quick-start guide</h4> <p class="svelte-115f3km">All typo features can now be customized, so you don&#39;t have anything that messes with your optimal skribbl experience.<br class="svelte-115f3km"/>
+    To set up typo to your preferences, click the wrench icon at the top left (unless customized to somewhere else ;).<br class="svelte-115f3km"/>
+    There, you can:</p> <ul class="svelte-115f3km"><li class="svelte-115f3km">Enable or disable every feature</li> <li class="svelte-115f3km">Adjust feature settings to your likes</li> <li class="svelte-115f3km">Change and toggle hotkeys and chat commands of features</li> <li class="svelte-115f3km">View some extra info &amp; hints about features</li></ul> <p class="svelte-115f3km">To get started, you can browse through the feature list and view their details.<br class="svelte-115f3km"/>
     Features are also categorized by tags so you can easily find what you are looking for.<br class="svelte-115f3km"/>
-    Most of the features did not change much, but you might discover some new ones or notice features that you didn&#39;t know of!<br class="svelte-115f3km"/>
-    To change general typo settings or reset typo, choose the &quot;Typo Settings&quot; feature in the settings.<br class="svelte-115f3km"/>
-    If you have any questions or feedback, join the community on <a href="https://discord.com/invite/pAapmUmWAM" class="svelte-115f3km">Discord</a>!</p>`;
-        t27 = space();
-        h41 = element("h4");
-        h41.textContent = "The most important changes";
-        t29 = space();
-        div1 = element("div");
-        div1.innerHTML = `<p class="svelte-115f3km"><b class="svelte-115f3km">➜ Typo Settings</b><br class="svelte-115f3km"/>
+    While you might see many features that you already know of, you could discover some that were newly added or features that you didn&#39;t notice yet!<br class="svelte-115f3km"/>
+    To change general typo settings, choose the &quot;Typo Settings&quot; feature in the Typo Features view.<br class="svelte-115f3km"/>
+    You can reset all data or switch between profiles in the &quot;Typo Profiles&quot; feature.<br class="svelte-115f3km"/>
+    If you have any questions or feedback, join the community on <a href="https://discord.com/invite/pAapmUmWAM" class="svelte-115f3km">Discord</a>!</p> <br/> <h4 class="svelte-115f3km">The most important changes</h4> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Typo Settings</b><br class="svelte-115f3km"/>
     Typo settings are now located directly on skribbl (read the quick-start-guide ;) instead of the extension popup menu.<br class="svelte-115f3km"/>
     You can customize everything that you&#39;re used to from the popup menu, but now found in the respective feature dialog.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Lobby Privacy</b><br class="svelte-115f3km"/>
     Instead of the lock icon at the very left side, a connection icon is displayed at the top-right corner of the chat.<br class="svelte-115f3km"/>
@@ -37718,9 +37699,9 @@
     To start using commands, type a &quot;/&quot; in the chat box. <br class="svelte-115f3km"/>
     A popout with available commands will open; you can continue typing the command and arguments and submit the command with &quot;Enter&quot;.<br class="svelte-115f3km"/>
     You can also customize the &quot;/&quot; prefix to another character in the settings of the &quot;Chat Commands&quot; feature.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ QuickReact and Hotkeys</b><br class="svelte-115f3km"/>
-    Hotkeys are now individually customizable for every feature.<br class="svelte-115f3km"/>
-    As an example, QuickReact uses now exclusively the right Ctrl key.<br class="svelte-115f3km"/>
-    To change hotkeys for any feature, open its feature settings.<br class="svelte-115f3km"/>
+    Hotkeys are now individually customizable for every feature and have changed here and there.<br class="svelte-115f3km"/>
+    As an example, QuickReact now uses the right-hand side Ctrl key, exclusively.<br class="svelte-115f3km"/>
+    To change hotkeys for any feature or check the current configuration, open its feature settings.<br class="svelte-115f3km"/>
     Hotkeys can also consist of combinations.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Zoom Drawing</b><br class="svelte-115f3km"/>
     Zooming still uses the Ctrl hotkey, but starts now immediately at the last cursor position without clicking on the canvas.<br class="svelte-115f3km"/>
     To exit zoom, click Ctrl again.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Custom Colors</b><br class="svelte-115f3km"/>
@@ -37728,22 +37709,11 @@
     It is still recommended that you use custom colors only in lobbies with typo players, because fill behavior might appear differently for non-typo-users.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Practice Lobby</b><br class="svelte-115f3km"/>
     Instead of clicking your avatar on the home screen, you can enter the offline free draw mode using the palette icon next to your avatar.<br class="svelte-115f3km"/></p>`;
         attr(h3, "class", "svelte-115f3km");
-        attr(p0, "class", "svelte-115f3km");
-        attr(h40, "class", "svelte-115f3km");
-        attr(h41, "class", "svelte-115f3km");
       },
       m(target, anchor) {
         insert(target, h3, anchor);
         insert(target, t1, anchor);
-        insert(target, p0, anchor);
-        insert(target, t5, anchor);
-        insert(target, h40, anchor);
-        insert(target, t7, anchor);
-        insert(target, div0, anchor);
-        insert(target, t27, anchor);
-        insert(target, h41, anchor);
-        insert(target, t29, anchor);
-        insert(target, div1, anchor);
+        insert(target, div, anchor);
       },
       p: noop,
       i: noop,
@@ -37752,15 +37722,7 @@
         if (detaching) {
           detach(h3);
           detach(t1);
-          detach(p0);
-          detach(t5);
-          detach(h40);
-          detach(t7);
-          detach(div0);
-          detach(t27);
-          detach(h41);
-          detach(t29);
-          detach(div1);
+          detach(div);
         }
       }
     };
@@ -42424,7 +42386,7 @@
       __publicField(this, "_onboardingTask", this.useOnboardingTask({
         key: "feature_opened",
         name: "Open settings of a feature",
-        description: "Click the wrench icon and open the settings of a typo feature to adjust it to your likes.",
+        description: "Click the wrench icon and open the settings of a typo feature to adjust it to your liking.",
         start: /* @__PURE__ */ __name(() => this.openSettingsPopup(), "start"),
         priority: 2
       }));
