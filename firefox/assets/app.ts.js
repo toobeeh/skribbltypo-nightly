@@ -21753,7 +21753,7 @@ function create_fragment$W(ctx) {
       t6 = space();
       div5 = element$1("div");
       if (switch_instance) create_component(switch_instance.$$.fragment);
-      attr(div0, "class", "backdrop svelte-1bnbmou");
+      attr(div0, "class", "backdrop svelte-1rg8obs");
       attr(div0, "role", "presentation");
       toggle_class(
         div0,
@@ -21761,7 +21761,7 @@ function create_fragment$W(ctx) {
         /*closing*/
         ctx[2]
       );
-      attr(div1, "class", "content-top svelte-1bnbmou");
+      attr(div1, "class", "content-top svelte-1rg8obs");
       attr(div1, "role", "presentation");
       toggle_class(
         div1,
@@ -21769,19 +21769,19 @@ function create_fragment$W(ctx) {
         /*closing*/
         ctx[2]
       );
-      attr(div2, "class", "svelte-1bnbmou");
+      attr(div2, "class", "svelte-1rg8obs");
       attr(div3, "role", "button");
       attr(div3, "tabindex", "0");
-      attr(div3, "class", "svelte-1bnbmou");
+      attr(div3, "class", "svelte-1rg8obs");
       toggle_class(
         div3,
         "closing",
         /*closing*/
         ctx[2]
       );
-      attr(div4, "class", "content-title svelte-1bnbmou");
-      attr(div5, "class", "content-wrapper color-scrollbar svelte-1bnbmou");
-      attr(div6, "class", "content typo-modal svelte-1bnbmou");
+      attr(div4, "class", "content-title svelte-1rg8obs");
+      attr(div5, "class", "content-wrapper color-scrollbar svelte-1rg8obs");
+      attr(div6, "class", "content typo-modal svelte-1rg8obs");
       toggle_class(
         div6,
         "closing",
@@ -22034,26 +22034,26 @@ function create_fragment$V(ctx) {
       t4 = space();
       div3 = element$1("div");
       if (switch_instance) create_component(switch_instance.$$.fragment);
-      attr(div0, "class", "svelte-174jki7");
+      attr(div0, "class", "svelte-1prt0rp");
       attr(div1, "role", "button");
       attr(div1, "tabindex", "0");
-      attr(div1, "class", "svelte-174jki7");
+      attr(div1, "class", "svelte-1prt0rp");
       toggle_class(
         div1,
         "closing",
         /*closing*/
         ctx[2]
       );
-      attr(div2, "class", "content-title svelte-174jki7");
-      attr(div3, "class", "content-wrapper color-scrollbar svelte-174jki7");
-      attr(div4, "class", "content typo-modal svelte-174jki7");
+      attr(div2, "class", "content-title svelte-1prt0rp");
+      attr(div3, "class", "content-wrapper color-scrollbar svelte-1prt0rp");
+      attr(div4, "class", "content typo-modal svelte-1prt0rp");
       toggle_class(
         div4,
         "closing",
         /*closing*/
         ctx[2]
       );
-      attr(div5, "class", "backdrop svelte-174jki7");
+      attr(div5, "class", "backdrop svelte-1prt0rp");
       attr(div5, "role", "presentation");
       toggle_class(
         div5,
