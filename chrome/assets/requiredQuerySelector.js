@@ -24,6 +24,24 @@ const _ExtensionRuntime = class _ExtensionRuntime {
   getPatchUrl() {
     return chrome.runtime.getURL("gamePatch.js");
   }
+  async createAndSwitchToProfile(profile) {
+    await chrome.runtime.sendMessage({ type: "create profile", profile });
+  }
+  async currentProfile() {
+    return await chrome.runtime.sendMessage({ type: "get profile" });
+  }
+  async deleteProfile(profile) {
+    await chrome.runtime.sendMessage({ type: "delete profile", profile });
+  }
+  async getProfiles() {
+    return await chrome.runtime.sendMessage({ type: "get profiles" });
+  }
+  async switchToProfile(profile) {
+    await chrome.runtime.sendMessage({ type: "switch profile", profile });
+  }
+  async resetTypo() {
+    await chrome.runtime.sendMessage({ type: "reset" });
+  }
 };
 __name(_ExtensionRuntime, "ExtensionRuntime");
 let ExtensionRuntime = _ExtensionRuntime;

@@ -2973,7 +2973,7 @@ function create_if_block$F(ctx) {
   };
 }
 __name(create_if_block$F, "create_if_block$F");
-function create_fragment$1h(ctx) {
+function create_fragment$1i(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -3092,8 +3092,8 @@ function create_fragment$1h(ctx) {
     }
   };
 }
-__name(create_fragment$1h, "create_fragment$1h");
-function instance$18($$self, $$props, $$invalidate) {
+__name(create_fragment$1i, "create_fragment$1i");
+function instance$19($$self, $$props, $$invalidate) {
   let { checked = false } = $$props;
   let { disabled = false } = $$props;
   let { description = "" } = $$props;
@@ -3125,11 +3125,11 @@ function instance$18($$self, $$props, $$invalidate) {
     keypress_handler
   ];
 }
-__name(instance$18, "instance$18");
+__name(instance$19, "instance$19");
 const _Checkbox = class _Checkbox extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$18, create_fragment$1h, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
+    init(this, options, instance$19, create_fragment$1i, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
   }
 };
 __name(_Checkbox, "Checkbox");
@@ -3217,7 +3217,7 @@ function create_if_block$E(ctx) {
   };
 }
 __name(create_if_block$E, "create_if_block$E");
-function create_fragment$1g(ctx) {
+function create_fragment$1h(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
@@ -3276,8 +3276,8 @@ function create_fragment$1g(ctx) {
     }
   };
 }
-__name(create_fragment$1g, "create_fragment$1g");
-function instance$17($$self, $$props, $$invalidate) {
+__name(create_fragment$1h, "create_fragment$1h");
+function instance$18($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3300,11 +3300,11 @@ function instance$17($$self, $$props, $$invalidate) {
   };
   return [setting, settingStore, $settingStore, checkbox_checked_binding];
 }
-__name(instance$17, "instance$17");
+__name(instance$18, "instance$18");
 const _Boolean_setting_input = class _Boolean_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$17, create_fragment$1g, safe_not_equal, { setting: 0 });
+    init(this, options, instance$18, create_fragment$1h, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Boolean_setting_input, "Boolean_setting_input");
@@ -3525,7 +3525,7 @@ function create_if_block_1$k(ctx) {
   };
 }
 __name(create_if_block_1$k, "create_if_block_1$k");
-function create_fragment$1f(ctx) {
+function create_fragment$1g(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
@@ -3567,8 +3567,8 @@ function create_fragment$1f(ctx) {
     }
   };
 }
-__name(create_fragment$1f, "create_fragment$1f");
-function instance$16($$self, $$props, $$invalidate) {
+__name(create_fragment$1g, "create_fragment$1g");
+function instance$17($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3608,11 +3608,11 @@ function instance$16($$self, $$props, $$invalidate) {
     input_change_input_handler
   ];
 }
-__name(instance$16, "instance$16");
+__name(instance$17, "instance$17");
 const _Numeric_setting_input = class _Numeric_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$16, create_fragment$1f, safe_not_equal, {
+    init(this, options, instance$17, create_fragment$1g, safe_not_equal, {
       setting: 0,
       bounds: 1,
       withSliderAndSteps: 2
@@ -3621,13 +3621,13 @@ const _Numeric_setting_input = class _Numeric_setting_input extends SvelteCompon
 };
 __name(_Numeric_setting_input, "Numeric_setting_input");
 let Numeric_setting_input = _Numeric_setting_input;
-function get_each_context$x(ctx, list, i) {
+function get_each_context$y(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i].choice;
   child_ctx[6] = list[i].name;
   return child_ctx;
 }
-__name(get_each_context$x, "get_each_context$x");
+__name(get_each_context$y, "get_each_context$y");
 function create_if_block$C(ctx) {
   let div1;
   let b;
@@ -3653,7 +3653,7 @@ function create_if_block$C(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$x(get_each_context$x(ctx, each_value, i));
+    each_blocks[i] = create_each_block$y(get_each_context$y(ctx, each_value, i));
   }
   return {
     c() {
@@ -3720,11 +3720,11 @@ function create_if_block$C(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$x(ctx2, each_value, i);
+          const child_ctx = get_each_context$y(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$x(child_ctx);
+            each_blocks[i] = create_each_block$y(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(select, null);
           }
@@ -3757,7 +3757,7 @@ function create_if_block$C(ctx) {
   };
 }
 __name(create_if_block$C, "create_if_block$C");
-function create_each_block$x(ctx) {
+function create_each_block$y(ctx) {
   let option;
   let t_value = (
     /*name*/
@@ -3795,8 +3795,8 @@ function create_each_block$x(ctx) {
     }
   };
 }
-__name(create_each_block$x, "create_each_block$x");
-function create_fragment$1e(ctx) {
+__name(create_each_block$y, "create_each_block$y");
+function create_fragment$1f(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
@@ -3838,8 +3838,8 @@ function create_fragment$1e(ctx) {
     }
   };
 }
-__name(create_fragment$1e, "create_fragment$1e");
-function instance$15($$self, $$props, $$invalidate) {
+__name(create_fragment$1f, "create_fragment$1f");
+function instance$16($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(3, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3865,11 +3865,11 @@ function instance$15($$self, $$props, $$invalidate) {
   };
   return [setting, choices, settingStore, $settingStore, select_change_handler];
 }
-__name(instance$15, "instance$15");
+__name(instance$16, "instance$16");
 const _Choice_setting_input = class _Choice_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$15, create_fragment$1e, safe_not_equal, { setting: 0, choices: 1 });
+    init(this, options, instance$16, create_fragment$1f, safe_not_equal, { setting: 0, choices: 1 });
   }
 };
 __name(_Choice_setting_input, "Choice_setting_input");
@@ -3959,7 +3959,7 @@ function create_if_block$B(ctx) {
   };
 }
 __name(create_if_block$B, "create_if_block$B");
-function create_fragment$1d(ctx) {
+function create_fragment$1e(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
@@ -4001,8 +4001,8 @@ function create_fragment$1d(ctx) {
     }
   };
 }
-__name(create_fragment$1d, "create_fragment$1d");
-function instance$14($$self, $$props, $$invalidate) {
+__name(create_fragment$1e, "create_fragment$1e");
+function instance$15($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -4025,11 +4025,11 @@ function instance$14($$self, $$props, $$invalidate) {
   };
   return [setting, settingStore, $settingStore, input_input_handler];
 }
-__name(instance$14, "instance$14");
+__name(instance$15, "instance$15");
 const _Text_setting_input = class _Text_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$14, create_fragment$1d, safe_not_equal, { setting: 0 });
+    init(this, options, instance$15, create_fragment$1e, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Text_setting_input, "Text_setting_input");
@@ -4377,7 +4377,7 @@ function create_if_block$A(ctx) {
   };
 }
 __name(create_if_block$A, "create_if_block$A");
-function create_fragment$1c(ctx) {
+function create_fragment$1d(ctx) {
   let div5;
   let div0;
   let t2;
@@ -4613,8 +4613,8 @@ function create_fragment$1c(ctx) {
     }
   };
 }
-__name(create_fragment$1c, "create_fragment$1c");
-function instance$13($$self, $$props, $$invalidate) {
+__name(create_fragment$1d, "create_fragment$1d");
+function instance$14($$self, $$props, $$invalidate) {
   let { color = Color.fromHex("#45588d") } = $$props;
   let { allowAlpha = false } = $$props;
   let { description = "" } = $$props;
@@ -4705,11 +4705,11 @@ function instance$13($$self, $$props, $$invalidate) {
     change_handler
   ];
 }
-__name(instance$13, "instance$13");
+__name(instance$14, "instance$14");
 const _Color_picker = class _Color_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$13, create_fragment$1c, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
+    init(this, options, instance$14, create_fragment$1d, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
   }
 };
 __name(_Color_picker, "Color_picker");
@@ -4886,7 +4886,7 @@ function create_if_block$z(ctx) {
   };
 }
 __name(create_if_block$z, "create_if_block$z");
-function create_fragment$1b(ctx) {
+function create_fragment$1c(ctx) {
   let div1;
   let div0;
   let t;
@@ -5025,9 +5025,9 @@ function create_fragment$1b(ctx) {
     }
   };
 }
-__name(create_fragment$1b, "create_fragment$1b");
+__name(create_fragment$1c, "create_fragment$1c");
 const click_handler = /* @__PURE__ */ __name((e) => e.stopImmediatePropagation(), "click_handler");
-function instance$12($$self, $$props, $$invalidate) {
+function instance$13($$self, $$props, $$invalidate) {
   let { color = Color.fromHex("#45588d") } = $$props;
   let { allowAlpha = false } = $$props;
   let { useBackground = true } = $$props;
@@ -5104,11 +5104,11 @@ function instance$12($$self, $$props, $$invalidate) {
     colorpicker_color_binding
   ];
 }
-__name(instance$12, "instance$12");
+__name(instance$13, "instance$13");
 const _Color_picker_button = class _Color_picker_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$12, create_fragment$1b, safe_not_equal, {
+    init(this, options, instance$13, create_fragment$1c, safe_not_equal, {
       color: 0,
       allowAlpha: 1,
       useBackground: 2,
@@ -5216,7 +5216,7 @@ function create_if_block$y(ctx) {
   };
 }
 __name(create_if_block$y, "create_if_block$y");
-function create_fragment$1a(ctx) {
+function create_fragment$1b(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
@@ -5275,8 +5275,8 @@ function create_fragment$1a(ctx) {
     }
   };
 }
-__name(create_fragment$1a, "create_fragment$1a");
-function instance$11($$self, $$props, $$invalidate) {
+__name(create_fragment$1b, "create_fragment$1b");
+function instance$12($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -5311,11 +5311,11 @@ function instance$11($$self, $$props, $$invalidate) {
   };
   return [setting, color, settingStore, colorpickerbutton_color_binding];
 }
-__name(instance$11, "instance$11");
+__name(instance$12, "instance$12");
 const _Color_hex_setting_input = class _Color_hex_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$11, create_fragment$1a, safe_not_equal, { setting: 0 });
+    init(this, options, instance$12, create_fragment$1b, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Color_hex_setting_input, "Color_hex_setting_input");
@@ -8365,17 +8365,17 @@ function propertyEventDecorator(eventKey, errorMessage) {
 }
 __name(propertyEventDecorator, "propertyEventDecorator");
 var postConstruct = propertyEventDecorator(POST_CONSTRUCT, MULTIPLE_POST_CONSTRUCT_METHODS);
-var __defProp$1Y = Object.defineProperty;
+var __defProp$1Z = Object.defineProperty;
 var __getOwnPropDesc$Z = Object.getOwnPropertyDescriptor;
-var __defNormalProp2 = /* @__PURE__ */ __name((obj, key, value) => key in obj ? __defProp$1Y(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value, "__defNormalProp");
-var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defNormalProp2 = /* @__PURE__ */ __name((obj, key, value) => key in obj ? __defProp$1Z(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value, "__defNormalProp");
+var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Z(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1Y(target, key, result);
+  if (kind && result) __defProp$1Z(target, key, result);
   return result;
-}, "__decorateClass$1Y");
+}, "__decorateClass$1Z");
 var __publicField2 = /* @__PURE__ */ __name((obj, key, value) => __defNormalProp2(obj, typeof key !== "symbol" ? key + "" : key, value), "__publicField");
 let LoggingService = (_a = class {
   constructor() {
@@ -8448,7 +8448,7 @@ __publicField2(LoggingService, "styles", {
   error: "color: red; font-weight: bold;",
   date: "color: darkGrey; font-weight: light;"
 });
-LoggingService = __decorateClass$1Y([
+LoggingService = __decorateClass$1Z([
   injectable()
 ], LoggingService);
 const _ApplicationEvent = class _ApplicationEvent {
@@ -8456,16 +8456,16 @@ const _ApplicationEvent = class _ApplicationEvent {
 __name(_ApplicationEvent, "ApplicationEvent");
 let ApplicationEvent = _ApplicationEvent;
 const loggerFactory = Symbol("loggerFactory");
-var __defProp$1X = Object.defineProperty;
+var __defProp$1Y = Object.defineProperty;
 var __getOwnPropDesc$Y = Object.getOwnPropertyDescriptor;
-var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Y(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1X(target, key, result);
+  if (kind && result) __defProp$1Y(target, key, result);
   return result;
-}, "__decorateClass$1X");
+}, "__decorateClass$1Y");
 var __decorateParam$u = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$u");
 let EventsService = (_b = class {
   constructor(loggerFactory2) {
@@ -8491,20 +8491,20 @@ let EventsService = (_b = class {
     this._events$.next(event);
   }
 }, __name(_b, "EventsService"), _b);
-EventsService = __decorateClass$1X([
+EventsService = __decorateClass$1Y([
   injectable(),
   __decorateParam$u(0, inject(loggerFactory))
 ], EventsService);
-var __defProp$1W = Object.defineProperty;
+var __defProp$1X = Object.defineProperty;
 var __getOwnPropDesc$X = Object.getOwnPropertyDescriptor;
-var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$X(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1W(target, key, result);
+  if (kind && result) __defProp$1X(target, key, result);
   return result;
-}, "__decorateClass$1W");
+}, "__decorateClass$1X");
 var __decorateParam$t = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$t");
 let EventProcessor = (_c = class {
   constructor(loggerFactory2, _eventsService) {
@@ -8534,24 +8534,24 @@ let EventProcessor = (_c = class {
     return event instanceof this.eventType;
   }
 }, __name(_c, "EventProcessor"), _c);
-__decorateClass$1W([
+__decorateClass$1X([
   postConstruct()
 ], EventProcessor.prototype, "start", 1);
-EventProcessor = __decorateClass$1W([
+EventProcessor = __decorateClass$1X([
   injectable(),
   __decorateParam$t(0, inject(loggerFactory)),
   __decorateParam$t(1, inject(EventsService))
 ], EventProcessor);
-var __defProp$1V = Object.defineProperty;
+var __defProp$1W = Object.defineProperty;
 var __getOwnPropDesc$W = Object.getOwnPropertyDescriptor;
-var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$W(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1V(target, key, result);
+  if (kind && result) __defProp$1W(target, key, result);
   return result;
-}, "__decorateClass$1V");
+}, "__decorateClass$1W");
 var __decorateParam$s = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$s");
 let EventListener = (_d = class {
   constructor(_eventsService, loggerFactory2) {
@@ -8574,21 +8574,21 @@ let EventListener = (_d = class {
     return this._events$;
   }
 }, __name(_d, "EventListener"), _d);
-EventListener = __decorateClass$1V([
+EventListener = __decorateClass$1W([
   injectable(),
   __decorateParam$s(0, inject(EventsService)),
   __decorateParam$s(1, inject(loggerFactory))
 ], EventListener);
-var __defProp$1U = Object.defineProperty;
+var __defProp$1V = Object.defineProperty;
 var __getOwnPropDesc$V = Object.getOwnPropertyDescriptor;
-var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$V(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1U(target, key, result);
+  if (kind && result) __defProp$1V(target, key, result);
   return result;
-}, "__decorateClass$1U");
+}, "__decorateClass$1V");
 const _CanvasClearedEvent = class _CanvasClearedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -8611,7 +8611,7 @@ let CanvasClearedEventProcessor = (_e = class extends EventProcessor {
     return events;
   }
 }, __name(_e, "CanvasClearedEventProcessor"), _e);
-CanvasClearedEventProcessor = __decorateClass$1U([
+CanvasClearedEventProcessor = __decorateClass$1V([
   injectable()
 ], CanvasClearedEventProcessor);
 let CanvasClearedEventListener = (_f = class extends EventListener {
@@ -8620,10 +8620,10 @@ let CanvasClearedEventListener = (_f = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_f, "CanvasClearedEventListener"), _f);
-__decorateClass$1U([
+__decorateClass$1V([
   inject(CanvasClearedEventProcessor)
 ], CanvasClearedEventListener.prototype, "_processor", 2);
-CanvasClearedEventListener = __decorateClass$1U([
+CanvasClearedEventListener = __decorateClass$1V([
   injectable()
 ], CanvasClearedEventListener);
 const canvasClearedEventRegistration = {
@@ -8876,16 +8876,16 @@ const _ExtensionCommand = class _ExtensionCommand {
 };
 __name(_ExtensionCommand, "ExtensionCommand");
 let ExtensionCommand = _ExtensionCommand;
-var __defProp$1T = Object.defineProperty;
+var __defProp$1U = Object.defineProperty;
 var __getOwnPropDesc$U = Object.getOwnPropertyDescriptor;
-var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$U(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1T(target, key, result);
+  if (kind && result) __defProp$1U(target, key, result);
   return result;
-}, "__decorateClass$1T");
+}, "__decorateClass$1U");
 var __decorateParam$r = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$r");
 let CommandsService = (_g = class {
   constructor(loggerFactory2) {
@@ -8972,20 +8972,20 @@ let CommandsService = (_g = class {
     } else return result.result;
   }
 }, __name(_g, "CommandsService"), _g);
-CommandsService = __decorateClass$1T([
+CommandsService = __decorateClass$1U([
   injectable(),
   __decorateParam$r(0, inject(loggerFactory))
 ], CommandsService);
-var __defProp$1S = Object.defineProperty;
+var __defProp$1T = Object.defineProperty;
 var __getOwnPropDesc$T = Object.getOwnPropertyDescriptor;
-var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$T(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1S(target, key, result);
+  if (kind && result) __defProp$1T(target, key, result);
   return result;
-}, "__decorateClass$1S");
+}, "__decorateClass$1T");
 var __decorateParam$q = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$q");
 let HotkeysService = (_h = class {
   constructor(loggerFactory2) {
@@ -9057,20 +9057,20 @@ let HotkeysService = (_h = class {
     return [...hotkey.defaultCombo ?? []];
   }
 }, __name(_h, "HotkeysService"), _h);
-HotkeysService = __decorateClass$1S([
+HotkeysService = __decorateClass$1T([
   injectable(),
   __decorateParam$q(0, inject(loggerFactory))
 ], HotkeysService);
-var __defProp$1R = Object.defineProperty;
+var __defProp$1S = Object.defineProperty;
 var __getOwnPropDesc$S = Object.getOwnPropertyDescriptor;
-var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$S(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1R(target, key, result);
+  if (kind && result) __defProp$1S(target, key, result);
   return result;
-}, "__decorateClass$1R");
+}, "__decorateClass$1S");
 var __decorateParam$p = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$p");
 let TooltipsService = (_i = class {
   constructor(loggerFactory2) {
@@ -9151,20 +9151,20 @@ let TooltipsService = (_i = class {
     return tooltips;
   }
 }, __name(_i, "TooltipsService"), _i);
-TooltipsService = __decorateClass$1R([
+TooltipsService = __decorateClass$1S([
   injectable(),
   __decorateParam$p(0, inject(loggerFactory))
 ], TooltipsService);
-var __defProp$1Q = Object.defineProperty;
+var __defProp$1R = Object.defineProperty;
 var __getOwnPropDesc$R = Object.getOwnPropertyDescriptor;
-var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$R(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1Q(target, key, result);
+  if (kind && result) __defProp$1R(target, key, result);
   return result;
-}, "__decorateClass$1Q");
+}, "__decorateClass$1R");
 var __decorateParam$o = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$o");
 let OnboardingService = (_j = class {
   constructor(loggerFactory2) {
@@ -9223,20 +9223,20 @@ let OnboardingService = (_j = class {
     return this._taskCompleted$.asObservable();
   }
 }, __name(_j, "OnboardingService"), _j);
-OnboardingService = __decorateClass$1Q([
+OnboardingService = __decorateClass$1R([
   injectable(),
   __decorateParam$o(0, inject(loggerFactory))
 ], OnboardingService);
-var __defProp$1P = Object.defineProperty;
+var __defProp$1Q = Object.defineProperty;
 var __getOwnPropDesc$Q = Object.getOwnPropertyDescriptor;
-var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Q(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1P(target, key, result);
+  if (kind && result) __defProp$1Q(target, key, result);
   return result;
-}, "__decorateClass$1P");
+}, "__decorateClass$1Q");
 var __decorateParam$n = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$n");
 let TypoFeature = (_k = class {
   constructor(loggerFactory2, _hotkeysService, _tooltipsService, _commandsService, _onboardingService) {
@@ -9425,10 +9425,10 @@ let TypoFeature = (_k = class {
     };
   }
 }, __name(_k, "TypoFeature"), _k);
-__decorateClass$1P([
+__decorateClass$1Q([
   postConstruct()
 ], TypoFeature.prototype, "init", 1);
-TypoFeature = __decorateClass$1P([
+TypoFeature = __decorateClass$1Q([
   injectable(),
   __decorateParam$n(0, inject(loggerFactory)),
   __decorateParam$n(1, inject(HotkeysService)),
@@ -9436,16 +9436,16 @@ TypoFeature = __decorateClass$1P([
   __decorateParam$n(3, inject(CommandsService)),
   __decorateParam$n(4, inject(OnboardingService))
 ], TypoFeature);
-var __defProp$1O = Object.defineProperty;
+var __defProp$1P = Object.defineProperty;
 var __getOwnPropDesc$P = Object.getOwnPropertyDescriptor;
-var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$P(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1O(target, key, result);
+  if (kind && result) __defProp$1P(target, key, result);
   return result;
-}, "__decorateClass$1O");
+}, "__decorateClass$1P");
 let LoggerService = (_l = class {
   constructor() {
     __publicField(this, "_level", "debug");
@@ -9539,19 +9539,19 @@ let LoggerService = (_l = class {
     });
   }
 }, __name(_l, "LoggerService"), _l);
-LoggerService = __decorateClass$1O([
+LoggerService = __decorateClass$1P([
   injectable()
 ], LoggerService);
-var __defProp$1N = Object.defineProperty;
+var __defProp$1O = Object.defineProperty;
 var __getOwnPropDesc$O = Object.getOwnPropertyDescriptor;
-var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$O(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1N(target, key, result);
+  if (kind && result) __defProp$1O(target, key, result);
   return result;
-}, "__decorateClass$1N");
+}, "__decorateClass$1O");
 var __decorateParam$m = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$m");
 let Setup = (_m = class {
   constructor(loggerFactory2) {
@@ -9570,7 +9570,7 @@ let Setup = (_m = class {
     return this._setupPromise;
   }
 }, __name(_m, "Setup"), _m);
-Setup = __decorateClass$1N([
+Setup = __decorateClass$1O([
   injectable(),
   __decorateParam$m(0, inject(loggerFactory))
 ], Setup);
@@ -9585,16 +9585,16 @@ function isEarlySetup(target) {
   return Reflect.getMetadata(decoratorSymbol, target);
 }
 __name(isEarlySetup, "isEarlySetup");
-var __defProp$1M = Object.defineProperty;
+var __defProp$1N = Object.defineProperty;
 var __getOwnPropDesc$N = Object.getOwnPropertyDescriptor;
-var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$N(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1M(target, key, result);
+  if (kind && result) __defProp$1N(target, key, result);
   return result;
-}, "__decorateClass$1M");
+}, "__decorateClass$1N");
 let GamePatchReadySetup = (_n = class extends Setup {
   constructor() {
     super(...arguments);
@@ -9604,21 +9604,21 @@ let GamePatchReadySetup = (_n = class extends Setup {
     return firstValueFrom(this._interceptor.patchLoaded$);
   }
 }, __name(_n, "GamePatchReadySetup"), _n);
-__decorateClass$1M([
+__decorateClass$1N([
   inject(Interceptor)
 ], GamePatchReadySetup.prototype, "_interceptor", 2);
-GamePatchReadySetup = __decorateClass$1M([
+GamePatchReadySetup = __decorateClass$1N([
   earlySetup()
 ], GamePatchReadySetup);
-var __defProp$1L = Object.defineProperty;
-var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1M = Object.defineProperty;
+var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$1L(target, key, result);
+  if (result) __defProp$1M(target, key, result);
   return result;
-}, "__decorateClass$1L");
+}, "__decorateClass$1M");
 const _ChatControlsSetup = class _ChatControlsSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -9635,7 +9635,7 @@ const _ChatControlsSetup = class _ChatControlsSetup extends Setup {
 };
 __name(_ChatControlsSetup, "ChatControlsSetup");
 let ChatControlsSetup = _ChatControlsSetup;
-__decorateClass$1L([
+__decorateClass$1M([
   inject(GamePatchReadySetup)
 ], ChatControlsSetup.prototype, "_gameReadySetup");
 const _HotkeyAction = class _HotkeyAction {
@@ -9733,16 +9733,16 @@ const _HotkeyAction = class _HotkeyAction {
 };
 __name(_HotkeyAction, "HotkeyAction");
 let HotkeyAction = _HotkeyAction;
-var __defProp$1K = Object.defineProperty;
+var __defProp$1L = Object.defineProperty;
 var __getOwnPropDesc$M = Object.getOwnPropertyDescriptor;
-var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$M(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1K(target, key, result);
+  if (kind && result) __defProp$1L(target, key, result);
   return result;
-}, "__decorateClass$1K");
+}, "__decorateClass$1L");
 var __decorateParam$l = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$l");
 let GlobalSettingsService = (_o = class {
   constructor(loggerFactory2) {
@@ -9789,11 +9789,11 @@ let GlobalSettingsService = (_o = class {
     return Object.values(this._settings);
   }
 }, __name(_o, "GlobalSettingsService"), _o);
-GlobalSettingsService = __decorateClass$1K([
+GlobalSettingsService = __decorateClass$1L([
   injectable(),
   __decorateParam$l(0, inject(loggerFactory))
 ], GlobalSettingsService);
-function create_fragment$19(ctx) {
+function create_fragment$1a(ctx) {
   let div;
   let div_class_value;
   return {
@@ -9825,8 +9825,8 @@ function create_fragment$19(ctx) {
     }
   };
 }
-__name(create_fragment$19, "create_fragment$19");
-function instance$10($$self, $$props, $$invalidate) {
+__name(create_fragment$1a, "create_fragment$1a");
+function instance$11($$self, $$props, $$invalidate) {
   let $position;
   let $direction;
   let elem;
@@ -9863,11 +9863,11 @@ function instance$10($$self, $$props, $$invalidate) {
     div_binding
   ];
 }
-__name(instance$10, "instance$10");
+__name(instance$11, "instance$11");
 const _Controls = class _Controls extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$10, create_fragment$19, safe_not_equal, { globalSettings: 5, element: 6 });
+    init(this, options, instance$11, create_fragment$1a, safe_not_equal, { globalSettings: 5, element: 6 });
   }
   get element() {
     return this.$$.ctx[6];
@@ -9875,15 +9875,15 @@ const _Controls = class _Controls extends SvelteComponent {
 };
 __name(_Controls, "Controls");
 let Controls = _Controls;
-var __defProp$1J = Object.defineProperty;
-var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1K = Object.defineProperty;
+var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$1J(target, key, result);
+  if (result) __defProp$1K(target, key, result);
   return result;
-}, "__decorateClass$1J");
+}, "__decorateClass$1K");
 const _ControlsSetup = class _ControlsSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -9903,13 +9903,13 @@ const _ControlsSetup = class _ControlsSetup extends Setup {
 };
 __name(_ControlsSetup, "ControlsSetup");
 let ControlsSetup = _ControlsSetup;
-__decorateClass$1J([
+__decorateClass$1K([
   inject(GamePatchReadySetup)
 ], ControlsSetup.prototype, "_gameReadySetup");
-__decorateClass$1J([
+__decorateClass$1K([
   inject(GlobalSettingsService)
 ], ControlsSetup.prototype, "_settingsService");
-function create_fragment$18(ctx) {
+function create_fragment$19(ctx) {
   let div;
   return {
     c() {
@@ -9931,8 +9931,8 @@ function create_fragment$18(ctx) {
     }
   };
 }
-__name(create_fragment$18, "create_fragment$18");
-function instance$$($$self, $$props, $$invalidate) {
+__name(create_fragment$19, "create_fragment$19");
+function instance$10($$self, $$props, $$invalidate) {
   let elem;
   let resolve2;
   const element2 = new Promise((res) => {
@@ -9950,11 +9950,11 @@ function instance$$($$self, $$props, $$invalidate) {
   __name(div_binding, "div_binding");
   return [elem, element2, div_binding];
 }
-__name(instance$$, "instance$$");
+__name(instance$10, "instance$10");
 const _Customizer_actions = class _Customizer_actions extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$$, create_fragment$18, safe_not_equal, { element: 1 });
+    init(this, options, instance$10, create_fragment$19, safe_not_equal, { element: 1 });
   }
   get element() {
     return this.$$.ctx[1];
@@ -9972,16 +9972,16 @@ const _CustomizerActionsSetup = class _CustomizerActionsSetup extends Setup {
 };
 __name(_CustomizerActionsSetup, "CustomizerActionsSetup");
 let CustomizerActionsSetup = _CustomizerActionsSetup;
-var __defProp$1I = Object.defineProperty;
+var __defProp$1J = Object.defineProperty;
 var __getOwnPropDesc$L = Object.getOwnPropertyDescriptor;
-var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$L(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1I(target, key, result);
+  if (kind && result) __defProp$1J(target, key, result);
   return result;
-}, "__decorateClass$1I");
+}, "__decorateClass$1J");
 let SkribblInitializedSetup = (_p = class extends Setup {
   async runSetup() {
     return new Promise((resolve2) => {
@@ -9990,7 +9990,7 @@ let SkribblInitializedSetup = (_p = class extends Setup {
     });
   }
 }, __name(_p, "SkribblInitializedSetup"), _p);
-SkribblInitializedSetup = __decorateClass$1I([
+SkribblInitializedSetup = __decorateClass$1J([
   earlySetup()
 ], SkribblInitializedSetup);
 const _Toast_container = class _Toast_container extends SvelteComponent {
@@ -10001,15 +10001,15 @@ const _Toast_container = class _Toast_container extends SvelteComponent {
 };
 __name(_Toast_container, "Toast_container");
 let Toast_container = _Toast_container;
-var __defProp$1H = Object.defineProperty;
-var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1I = Object.defineProperty;
+var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$1H(target, key, result);
+  if (result) __defProp$1I(target, key, result);
   return result;
-}, "__decorateClass$1H");
+}, "__decorateClass$1I");
 const _ToastSetup = class _ToastSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -10026,15 +10026,15 @@ const _ToastSetup = class _ToastSetup extends Setup {
 };
 __name(_ToastSetup, "ToastSetup");
 let ToastSetup = _ToastSetup;
-__decorateClass$1H([
+__decorateClass$1I([
   inject(GamePatchReadySetup)
 ], ToastSetup.prototype, "_gameReadySetup");
-function get_each_context$w(ctx, list, i) {
+function get_each_context$x(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[4] = list[i];
   return child_ctx;
 }
-__name(get_each_context$w, "get_each_context$w");
+__name(get_each_context$x, "get_each_context$x");
 function get_each_context_1$c(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[4] = list[i];
@@ -10122,7 +10122,7 @@ function create_each_block_1$c(ctx) {
   };
 }
 __name(create_each_block_1$c, "create_each_block_1$c");
-function create_each_block$w(ctx) {
+function create_each_block$x(ctx) {
   let div;
   let div_class_value;
   let div_hidden_value;
@@ -10158,8 +10158,8 @@ function create_each_block$w(ctx) {
     }
   };
 }
-__name(create_each_block$w, "create_each_block$w");
-function create_fragment$17(ctx) {
+__name(create_each_block$x, "create_each_block$x");
+function create_fragment$18(ctx) {
   let div;
   let t;
   let each1_anchor;
@@ -10177,7 +10177,7 @@ function create_fragment$17(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$w(get_each_context$w(ctx, each_value, i));
+    each_blocks[i] = create_each_block$x(get_each_context$x(ctx, each_value, i));
   }
   return {
     c() {
@@ -10238,11 +10238,11 @@ function create_fragment$17(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$w(ctx2, each_value, i);
+          const child_ctx = get_each_context$x(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$w(child_ctx);
+            each_blocks[i] = create_each_block$x(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each1_anchor.parentNode, each1_anchor);
           }
@@ -10266,8 +10266,8 @@ function create_fragment$17(ctx) {
     }
   };
 }
-__name(create_fragment$17, "create_fragment$17");
-function instance$_($$self, $$props, $$invalidate) {
+__name(create_fragment$18, "create_fragment$18");
+function instance$$($$self, $$props, $$invalidate) {
   let { tabs = [] } = $$props;
   let activeTab = tabs[0];
   const keydown_handler = /* @__PURE__ */ __name((tab) => $$invalidate(1, activeTab = tab), "keydown_handler");
@@ -10277,24 +10277,24 @@ function instance$_($$self, $$props, $$invalidate) {
   };
   return [tabs, activeTab, keydown_handler, click_handler2];
 }
-__name(instance$_, "instance$_");
+__name(instance$$, "instance$$");
 const _Panel_tabs = class _Panel_tabs extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$_, create_fragment$17, safe_not_equal, { tabs: 0 });
+    init(this, options, instance$$, create_fragment$18, safe_not_equal, { tabs: 0 });
   }
 };
 __name(_Panel_tabs, "Panel_tabs");
 let Panel_tabs = _Panel_tabs;
-var __defProp$1G = Object.defineProperty;
-var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1H = Object.defineProperty;
+var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$1G(target, key, result);
+  if (result) __defProp$1H(target, key, result);
   return result;
-}, "__decorateClass$1G");
+}, "__decorateClass$1H");
 const _PanelSetup = class _PanelSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -10323,7 +10323,7 @@ const _PanelSetup = class _PanelSetup extends Setup {
 };
 __name(_PanelSetup, "PanelSetup");
 let PanelSetup = _PanelSetup;
-__decorateClass$1G([
+__decorateClass$1H([
   inject(GamePatchReadySetup)
 ], PanelSetup.prototype, "_gameReadySetup");
 const _Toolbar = class _Toolbar extends SvelteComponent {
@@ -10334,15 +10334,15 @@ const _Toolbar = class _Toolbar extends SvelteComponent {
 };
 __name(_Toolbar, "Toolbar");
 let Toolbar = _Toolbar;
-var __defProp$1F = Object.defineProperty;
-var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1G = Object.defineProperty;
+var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$1F(target, key, result);
+  if (result) __defProp$1G(target, key, result);
   return result;
-}, "__decorateClass$1F");
+}, "__decorateClass$1G");
 const _ToolbarSetup = class _ToolbarSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -10359,18 +10359,18 @@ const _ToolbarSetup = class _ToolbarSetup extends Setup {
 };
 __name(_ToolbarSetup, "ToolbarSetup");
 let ToolbarSetup = _ToolbarSetup;
-__decorateClass$1F([
+__decorateClass$1G([
   inject(GamePatchReadySetup)
 ], ToolbarSetup.prototype, "_gameReadySetup");
-var __defProp$1E = Object.defineProperty;
-var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1F = Object.defineProperty;
+var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$1E(target, key, result);
+  if (result) __defProp$1F(target, key, result);
   return result;
-}, "__decorateClass$1E");
+}, "__decorateClass$1F");
 function getElements$1(panels, toolbar, controls, toastContainer, chatControls, customizerActions) {
   return {
     panelContainer: requireElement(".panels"),
@@ -10443,37 +10443,37 @@ const _ElementsSetup = class _ElementsSetup extends Setup {
 };
 __name(_ElementsSetup, "ElementsSetup");
 let ElementsSetup = _ElementsSetup;
-__decorateClass$1E([
+__decorateClass$1F([
   inject(PanelSetup)
 ], ElementsSetup.prototype, "_panelSetup");
-__decorateClass$1E([
+__decorateClass$1F([
   inject(ToolbarSetup)
 ], ElementsSetup.prototype, "_toolbarSetup");
-__decorateClass$1E([
+__decorateClass$1F([
   inject(ControlsSetup)
 ], ElementsSetup.prototype, "_controlsSetup");
-__decorateClass$1E([
+__decorateClass$1F([
   inject(ChatControlsSetup)
 ], ElementsSetup.prototype, "_chatControlsSetup");
-__decorateClass$1E([
+__decorateClass$1F([
   inject(ToastSetup)
 ], ElementsSetup.prototype, "_toastSetup");
-__decorateClass$1E([
+__decorateClass$1F([
   inject(SkribblInitializedSetup)
 ], ElementsSetup.prototype, "_gameReadySetup");
-__decorateClass$1E([
+__decorateClass$1F([
   inject(CustomizerActionsSetup)
 ], ElementsSetup.prototype, "_customizerIconsSetup");
-var __defProp$1D = Object.defineProperty;
+var __defProp$1E = Object.defineProperty;
 var __getOwnPropDesc$K = Object.getOwnPropertyDescriptor;
-var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$K(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1D(target, key, result);
+  if (kind && result) __defProp$1E(target, key, result);
   return result;
-}, "__decorateClass$1D");
+}, "__decorateClass$1E");
 const _ChatTypedEvent = class _ChatTypedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10504,10 +10504,10 @@ let ChatTypedEventProcessor = (_q = class extends EventProcessor {
     );
   }
 }, __name(_q, "ChatTypedEventProcessor"), _q);
-__decorateClass$1D([
+__decorateClass$1E([
   inject(ElementsSetup)
 ], ChatTypedEventProcessor.prototype, "_elementsSetup", 2);
-ChatTypedEventProcessor = __decorateClass$1D([
+ChatTypedEventProcessor = __decorateClass$1E([
   injectable()
 ], ChatTypedEventProcessor);
 let ChatTypedEventListener = (_r = class extends EventListener {
@@ -10516,26 +10516,26 @@ let ChatTypedEventListener = (_r = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_r, "ChatTypedEventListener"), _r);
-__decorateClass$1D([
+__decorateClass$1E([
   inject(ChatTypedEventProcessor)
 ], ChatTypedEventListener.prototype, "_processor", 2);
-ChatTypedEventListener = __decorateClass$1D([
+ChatTypedEventListener = __decorateClass$1E([
   injectable()
 ], ChatTypedEventListener);
 const chatTypedEventRegistration = {
   listenerType: ChatTypedEventListener,
   processorType: ChatTypedEventProcessor
 };
-var __defProp$1C = Object.defineProperty;
+var __defProp$1D = Object.defineProperty;
 var __getOwnPropDesc$J = Object.getOwnPropertyDescriptor;
-var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$J(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1C(target, key, result);
+  if (kind && result) __defProp$1D(target, key, result);
   return result;
-}, "__decorateClass$1C");
+}, "__decorateClass$1D");
 const _ColorChangedEvent = class _ColorChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10560,7 +10560,7 @@ let ColorChangedEventProcessor = (_s = class extends EventProcessor {
     return events;
   }
 }, __name(_s, "ColorChangedEventProcessor"), _s);
-ColorChangedEventProcessor = __decorateClass$1C([
+ColorChangedEventProcessor = __decorateClass$1D([
   injectable()
 ], ColorChangedEventProcessor);
 let ColorChangedEventListener = (_t = class extends EventListener {
@@ -10569,26 +10569,26 @@ let ColorChangedEventListener = (_t = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_t, "ColorChangedEventListener"), _t);
-__decorateClass$1C([
+__decorateClass$1D([
   inject(ColorChangedEventProcessor)
 ], ColorChangedEventListener.prototype, "_processor", 2);
-ColorChangedEventListener = __decorateClass$1C([
+ColorChangedEventListener = __decorateClass$1D([
   injectable()
 ], ColorChangedEventListener);
 const colorChangedEventRegistration = {
   listenerType: ColorChangedEventListener,
   processorType: ColorChangedEventProcessor
 };
-var __defProp$1B = Object.defineProperty;
+var __defProp$1C = Object.defineProperty;
 var __getOwnPropDesc$I = Object.getOwnPropertyDescriptor;
-var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$I(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1B(target, key, result);
+  if (kind && result) __defProp$1C(target, key, result);
   return result;
-}, "__decorateClass$1B");
+}, "__decorateClass$1C");
 let SkribblEmitRelaySetup = (_u = class extends Setup {
   // eslint-disable-line @typescript-eslint/no-explicit-any
   async runSetup() {
@@ -10607,19 +10607,19 @@ let SkribblEmitRelaySetup = (_u = class extends Setup {
     });
   }
 }, __name(_u, "SkribblEmitRelaySetup"), _u);
-SkribblEmitRelaySetup = __decorateClass$1B([
+SkribblEmitRelaySetup = __decorateClass$1C([
   earlySetup()
 ], SkribblEmitRelaySetup);
-var __defProp$1A = Object.defineProperty;
+var __defProp$1B = Object.defineProperty;
 var __getOwnPropDesc$H = Object.getOwnPropertyDescriptor;
-var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$H(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1A(target, key, result);
+  if (kind && result) __defProp$1B(target, key, result);
   return result;
-}, "__decorateClass$1A");
+}, "__decorateClass$1B");
 let SkribblMessageRelaySetup = (_v = class extends Setup {
   async runSetup() {
     return new Promise((resolve2) => {
@@ -10647,19 +10647,19 @@ let SkribblMessageRelaySetup = (_v = class extends Setup {
     });
   }
 }, __name(_v, "SkribblMessageRelaySetup"), _v);
-SkribblMessageRelaySetup = __decorateClass$1A([
+SkribblMessageRelaySetup = __decorateClass$1B([
   earlySetup()
 ], SkribblMessageRelaySetup);
-var __defProp$1z = Object.defineProperty;
+var __defProp$1A = Object.defineProperty;
 var __getOwnPropDesc$G = Object.getOwnPropertyDescriptor;
-var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$G(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1z(target, key, result);
+  if (kind && result) __defProp$1A(target, key, result);
   return result;
-}, "__decorateClass$1z");
+}, "__decorateClass$1A");
 const _DrawEvent = class _DrawEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10708,13 +10708,13 @@ let DrawEventProcessor = (_w = class extends EventProcessor {
     return events;
   }
 }, __name(_w, "DrawEventProcessor"), _w);
-__decorateClass$1z([
+__decorateClass$1A([
   inject(SkribblMessageRelaySetup)
 ], DrawEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-__decorateClass$1z([
+__decorateClass$1A([
   inject(SkribblEmitRelaySetup)
 ], DrawEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-DrawEventProcessor = __decorateClass$1z([
+DrawEventProcessor = __decorateClass$1A([
   injectable()
 ], DrawEventProcessor);
 let DrawEventListener = (_x = class extends EventListener {
@@ -10723,26 +10723,26 @@ let DrawEventListener = (_x = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_x, "DrawEventListener"), _x);
-__decorateClass$1z([
+__decorateClass$1A([
   inject(DrawEventProcessor)
 ], DrawEventListener.prototype, "_processor", 2);
-DrawEventListener = __decorateClass$1z([
+DrawEventListener = __decorateClass$1A([
   injectable()
 ], DrawEventListener);
 const drawEventRegistration = {
   listenerType: DrawEventListener,
   processorType: DrawEventProcessor
 };
-var __defProp$1y = Object.defineProperty;
+var __defProp$1z = Object.defineProperty;
 var __getOwnPropDesc$F = Object.getOwnPropertyDescriptor;
-var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$F(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1y(target, key, result);
+  if (kind && result) __defProp$1z(target, key, result);
   return result;
-}, "__decorateClass$1y");
+}, "__decorateClass$1z");
 const _HintsAddedEvent = class _HintsAddedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10774,10 +10774,10 @@ let HintsAddedEventProcessor = (_y = class extends EventProcessor {
     return events;
   }
 }, __name(_y, "HintsAddedEventProcessor"), _y);
-__decorateClass$1y([
+__decorateClass$1z([
   inject(SkribblMessageRelaySetup)
 ], HintsAddedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-HintsAddedEventProcessor = __decorateClass$1y([
+HintsAddedEventProcessor = __decorateClass$1z([
   injectable()
 ], HintsAddedEventProcessor);
 let HintsAddedEventListener = (_z = class extends EventListener {
@@ -10786,26 +10786,26 @@ let HintsAddedEventListener = (_z = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_z, "HintsAddedEventListener"), _z);
-__decorateClass$1y([
+__decorateClass$1z([
   inject(HintsAddedEventProcessor)
 ], HintsAddedEventListener.prototype, "_processor", 2);
-HintsAddedEventListener = __decorateClass$1y([
+HintsAddedEventListener = __decorateClass$1z([
   injectable()
 ], HintsAddedEventListener);
 const hintsAddedEventRegistration = {
   listenerType: HintsAddedEventListener,
   processorType: HintsAddedEventProcessor
 };
-var __defProp$1x = Object.defineProperty;
+var __defProp$1y = Object.defineProperty;
 var __getOwnPropDesc$E = Object.getOwnPropertyDescriptor;
-var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$E(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1x(target, key, result);
+  if (kind && result) __defProp$1y(target, key, result);
   return result;
-}, "__decorateClass$1x");
+}, "__decorateClass$1y");
 const _ImageResetEvent = class _ImageResetEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10844,13 +10844,13 @@ let ImageResetEventProcessor = (_A = class extends EventProcessor {
     return events;
   }
 }, __name(_A, "ImageResetEventProcessor"), _A);
-__decorateClass$1x([
+__decorateClass$1y([
   inject(SkribblMessageRelaySetup)
 ], ImageResetEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-__decorateClass$1x([
+__decorateClass$1y([
   inject(SkribblEmitRelaySetup)
 ], ImageResetEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-ImageResetEventProcessor = __decorateClass$1x([
+ImageResetEventProcessor = __decorateClass$1y([
   injectable()
 ], ImageResetEventProcessor);
 let ImageResetEventListener = (_B = class extends EventListener {
@@ -10859,10 +10859,10 @@ let ImageResetEventListener = (_B = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_B, "ImageResetEventListener"), _B);
-__decorateClass$1x([
+__decorateClass$1y([
   inject(ImageResetEventProcessor)
 ], ImageResetEventListener.prototype, "_processor", 2);
-ImageResetEventListener = __decorateClass$1x([
+ImageResetEventListener = __decorateClass$1y([
   injectable()
 ], ImageResetEventListener);
 const imageResetEventRegistration = {
@@ -10893,16 +10893,16 @@ const parseSkribblLobbyInteractedEvent = /* @__PURE__ */ __name((data) => {
       };
   }
 }, "parseSkribblLobbyInteractedEvent");
-var __defProp$1w = Object.defineProperty;
+var __defProp$1x = Object.defineProperty;
 var __getOwnPropDesc$D = Object.getOwnPropertyDescriptor;
-var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$D(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1w(target, key, result);
+  if (kind && result) __defProp$1x(target, key, result);
   return result;
-}, "__decorateClass$1w");
+}, "__decorateClass$1x");
 const _LobbyInteractedEvent = class _LobbyInteractedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10927,10 +10927,10 @@ let LobbyInteractedEventProcessor = (_C = class extends EventProcessor {
     );
   }
 }, __name(_C, "LobbyInteractedEventProcessor"), _C);
-__decorateClass$1w([
+__decorateClass$1x([
   inject(SkribblMessageRelaySetup)
 ], LobbyInteractedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyInteractedEventProcessor = __decorateClass$1w([
+LobbyInteractedEventProcessor = __decorateClass$1x([
   injectable()
 ], LobbyInteractedEventProcessor);
 let LobbyInteractedEventListener = (_D = class extends EventListener {
@@ -10939,10 +10939,10 @@ let LobbyInteractedEventListener = (_D = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_D, "LobbyInteractedEventListener"), _D);
-__decorateClass$1w([
+__decorateClass$1x([
   inject(LobbyInteractedEventProcessor)
 ], LobbyInteractedEventListener.prototype, "_processor", 2);
-LobbyInteractedEventListener = __decorateClass$1w([
+LobbyInteractedEventListener = __decorateClass$1x([
   injectable()
 ], LobbyInteractedEventListener);
 const lobbyInteractedEventRegistration = {
@@ -10962,16 +10962,16 @@ const _GameSettingsSetup = class _GameSettingsSetup extends Setup {
 };
 __name(_GameSettingsSetup, "GameSettingsSetup");
 let GameSettingsSetup = _GameSettingsSetup;
-var __defProp$1v = Object.defineProperty;
+var __defProp$1w = Object.defineProperty;
 var __getOwnPropDesc$C = Object.getOwnPropertyDescriptor;
-var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$C(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1v(target, key, result);
+  if (kind && result) __defProp$1w(target, key, result);
   return result;
-}, "__decorateClass$1v");
+}, "__decorateClass$1w");
 const _LobbyJoinFailedEvent = class _LobbyJoinFailedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10995,13 +10995,13 @@ let LobbyJoinFailedEventProcessor = (_E = class extends EventProcessor {
     return events;
   }
 }, __name(_E, "LobbyJoinFailedEventProcessor"), _E);
-__decorateClass$1v([
+__decorateClass$1w([
   inject(GameSettingsSetup)
 ], LobbyJoinFailedEventProcessor.prototype, "_gameSettingsSetup", 2);
-__decorateClass$1v([
+__decorateClass$1w([
   inject(SkribblMessageRelaySetup)
 ], LobbyJoinFailedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyJoinFailedEventProcessor = __decorateClass$1v([
+LobbyJoinFailedEventProcessor = __decorateClass$1w([
   injectable()
 ], LobbyJoinFailedEventProcessor);
 let LobbyJoinFailedListener = (_F = class extends EventListener {
@@ -11010,26 +11010,26 @@ let LobbyJoinFailedListener = (_F = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_F, "LobbyJoinFailedListener"), _F);
-__decorateClass$1v([
+__decorateClass$1w([
   inject(LobbyJoinFailedEventProcessor)
 ], LobbyJoinFailedListener.prototype, "_processor", 2);
-LobbyJoinFailedListener = __decorateClass$1v([
+LobbyJoinFailedListener = __decorateClass$1w([
   injectable()
 ], LobbyJoinFailedListener);
 const lobbyJoinFailedEventRegistration = {
   listenerType: LobbyJoinFailedListener,
   processorType: LobbyJoinFailedEventProcessor
 };
-var __defProp$1u = Object.defineProperty;
+var __defProp$1v = Object.defineProperty;
 var __getOwnPropDesc$B = Object.getOwnPropertyDescriptor;
-var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$B(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1u(target, key, result);
+  if (kind && result) __defProp$1v(target, key, result);
   return result;
-}, "__decorateClass$1u");
+}, "__decorateClass$1v");
 const _LobbyPlayerChangedEvent = class _LobbyPlayerChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11068,10 +11068,10 @@ let LobbyPlayerChangedEventProcessor = (_G = class extends EventProcessor {
     return events;
   }
 }, __name(_G, "LobbyPlayerChangedEventProcessor"), _G);
-__decorateClass$1u([
+__decorateClass$1v([
   inject(SkribblMessageRelaySetup)
 ], LobbyPlayerChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyPlayerChangedEventProcessor = __decorateClass$1u([
+LobbyPlayerChangedEventProcessor = __decorateClass$1v([
   injectable()
 ], LobbyPlayerChangedEventProcessor);
 let LobbyPlayerChangedEventListener = (_H = class extends EventListener {
@@ -11080,10 +11080,10 @@ let LobbyPlayerChangedEventListener = (_H = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_H, "LobbyPlayerChangedEventListener"), _H);
-__decorateClass$1u([
+__decorateClass$1v([
   inject(LobbyPlayerChangedEventProcessor)
 ], LobbyPlayerChangedEventListener.prototype, "_processor", 2);
-LobbyPlayerChangedEventListener = __decorateClass$1u([
+LobbyPlayerChangedEventListener = __decorateClass$1v([
   injectable()
 ], LobbyPlayerChangedEventListener);
 const lobbyPlayerChangedEventRegistration = {
@@ -11151,16 +11151,16 @@ const parseLobbyStateUpdate = /* @__PURE__ */ __name((data) => {
     }
   }
 }, "parseLobbyStateUpdate");
-var __defProp$1t = Object.defineProperty;
+var __defProp$1u = Object.defineProperty;
 var __getOwnPropDesc$A = Object.getOwnPropertyDescriptor;
-var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$A(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1t(target, key, result);
+  if (kind && result) __defProp$1u(target, key, result);
   return result;
-}, "__decorateClass$1t");
+}, "__decorateClass$1u");
 const _LobbyStateChangedEvent = class _LobbyStateChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11206,13 +11206,13 @@ let LobbyStateChangedEventProcessor = (_I = class extends EventProcessor {
     return events;
   }
 }, __name(_I, "LobbyStateChangedEventProcessor"), _I);
-__decorateClass$1t([
+__decorateClass$1u([
   inject(GameSettingsSetup)
 ], LobbyStateChangedEventProcessor.prototype, "_gameSettingsSetup", 2);
-__decorateClass$1t([
+__decorateClass$1u([
   inject(SkribblMessageRelaySetup)
 ], LobbyStateChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyStateChangedEventProcessor = __decorateClass$1t([
+LobbyStateChangedEventProcessor = __decorateClass$1u([
   injectable()
 ], LobbyStateChangedEventProcessor);
 let LobbyStateChangedEventListener = (_J = class extends EventListener {
@@ -11221,26 +11221,26 @@ let LobbyStateChangedEventListener = (_J = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_J, "LobbyStateChangedEventListener"), _J);
-__decorateClass$1t([
+__decorateClass$1u([
   inject(LobbyStateChangedEventProcessor)
 ], LobbyStateChangedEventListener.prototype, "_processor", 2);
-LobbyStateChangedEventListener = __decorateClass$1t([
+LobbyStateChangedEventListener = __decorateClass$1u([
   injectable()
 ], LobbyStateChangedEventListener);
 const lobbyStateChangedEventRegistration = {
   listenerType: LobbyStateChangedEventListener,
   processorType: LobbyStateChangedEventProcessor
 };
-var __defProp$1s = Object.defineProperty;
+var __defProp$1t = Object.defineProperty;
 var __getOwnPropDesc$z = Object.getOwnPropertyDescriptor;
-var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$z(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1s(target, key, result);
+  if (kind && result) __defProp$1t(target, key, result);
   return result;
-}, "__decorateClass$1s");
+}, "__decorateClass$1t");
 const _MessageReceivedEvent = class _MessageReceivedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11264,10 +11264,10 @@ let MessageReceivedEventProcessor = (_K = class extends EventProcessor {
     );
   }
 }, __name(_K, "MessageReceivedEventProcessor"), _K);
-__decorateClass$1s([
+__decorateClass$1t([
   inject(SkribblMessageRelaySetup)
 ], MessageReceivedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-MessageReceivedEventProcessor = __decorateClass$1s([
+MessageReceivedEventProcessor = __decorateClass$1t([
   injectable()
 ], MessageReceivedEventProcessor);
 let MessageReceivedEventListener = (_L = class extends EventListener {
@@ -11276,26 +11276,26 @@ let MessageReceivedEventListener = (_L = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_L, "MessageReceivedEventListener"), _L);
-__decorateClass$1s([
+__decorateClass$1t([
   inject(MessageReceivedEventProcessor)
 ], MessageReceivedEventListener.prototype, "_processor", 2);
-MessageReceivedEventListener = __decorateClass$1s([
+MessageReceivedEventListener = __decorateClass$1t([
   injectable()
 ], MessageReceivedEventListener);
 const messageReceivedEventRegistration = {
   listenerType: MessageReceivedEventListener,
   processorType: MessageReceivedEventProcessor
 };
-var __defProp$1r = Object.defineProperty;
+var __defProp$1s = Object.defineProperty;
 var __getOwnPropDesc$y = Object.getOwnPropertyDescriptor;
-var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$y(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1r(target, key, result);
+  if (kind && result) __defProp$1s(target, key, result);
   return result;
-}, "__decorateClass$1r");
+}, "__decorateClass$1s");
 const _MessageSentEvent = class _MessageSentEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11318,10 +11318,10 @@ let MessageSentEventProcessor = (_M = class extends EventProcessor {
     );
   }
 }, __name(_M, "MessageSentEventProcessor"), _M);
-__decorateClass$1r([
+__decorateClass$1s([
   inject(SkribblEmitRelaySetup)
 ], MessageSentEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-MessageSentEventProcessor = __decorateClass$1r([
+MessageSentEventProcessor = __decorateClass$1s([
   injectable()
 ], MessageSentEventProcessor);
 let MessageSentEventListener = (_N = class extends EventListener {
@@ -11330,26 +11330,26 @@ let MessageSentEventListener = (_N = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_N, "MessageSentEventListener"), _N);
-__decorateClass$1r([
+__decorateClass$1s([
   inject(MessageSentEventProcessor)
 ], MessageSentEventListener.prototype, "_processor", 2);
-MessageSentEventListener = __decorateClass$1r([
+MessageSentEventListener = __decorateClass$1s([
   injectable()
 ], MessageSentEventListener);
 const messageSentEventRegistration = {
   listenerType: MessageSentEventListener,
   processorType: MessageSentEventProcessor
 };
-var __defProp$1q = Object.defineProperty;
+var __defProp$1r = Object.defineProperty;
 var __getOwnPropDesc$x = Object.getOwnPropertyDescriptor;
-var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$x(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1q(target, key, result);
+  if (kind && result) __defProp$1r(target, key, result);
   return result;
-}, "__decorateClass$1q");
+}, "__decorateClass$1r");
 const _PlayerPopupVisibilityChangedEvent = class _PlayerPopupVisibilityChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11379,10 +11379,10 @@ let PlayerPopupVisibilityChangedEventProcessor = (_O = class extends EventProces
     );
   }
 }, __name(_O, "PlayerPopupVisibilityChangedEventProcessor"), _O);
-__decorateClass$1q([
+__decorateClass$1r([
   inject(ElementsSetup)
 ], PlayerPopupVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1q([
+PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1r([
   injectable()
 ], PlayerPopupVisibilityChangedEventProcessor);
 let PlayerPopupVisibilityChangedEventListener = (_P = class extends EventListener {
@@ -11391,26 +11391,26 @@ let PlayerPopupVisibilityChangedEventListener = (_P = class extends EventListene
     __publicField(this, "_processor");
   }
 }, __name(_P, "PlayerPopupVisibilityChangedEventListener"), _P);
-__decorateClass$1q([
+__decorateClass$1r([
   inject(PlayerPopupVisibilityChangedEventProcessor)
 ], PlayerPopupVisibilityChangedEventListener.prototype, "_processor", 2);
-PlayerPopupVisibilityChangedEventListener = __decorateClass$1q([
+PlayerPopupVisibilityChangedEventListener = __decorateClass$1r([
   injectable()
 ], PlayerPopupVisibilityChangedEventListener);
 const playerPopupVisibilityChangedEventRegistration = {
   listenerType: PlayerPopupVisibilityChangedEventListener,
   processorType: PlayerPopupVisibilityChangedEventProcessor
 };
-var __defProp$1p = Object.defineProperty;
+var __defProp$1q = Object.defineProperty;
 var __getOwnPropDesc$w = Object.getOwnPropertyDescriptor;
-var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$w(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1p(target, key, result);
+  if (kind && result) __defProp$1q(target, key, result);
   return result;
-}, "__decorateClass$1p");
+}, "__decorateClass$1q");
 const _RoundStartedEvent = class _RoundStartedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11438,10 +11438,10 @@ let RoundStartedEventProcessor = (_Q = class extends EventProcessor {
     return events;
   }
 }, __name(_Q, "RoundStartedEventProcessor"), _Q);
-__decorateClass$1p([
+__decorateClass$1q([
   inject(SkribblMessageRelaySetup)
 ], RoundStartedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-RoundStartedEventProcessor = __decorateClass$1p([
+RoundStartedEventProcessor = __decorateClass$1q([
   injectable()
 ], RoundStartedEventProcessor);
 let RoundStartedEventListener = (_R = class extends EventListener {
@@ -11450,26 +11450,26 @@ let RoundStartedEventListener = (_R = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_R, "RoundStartedEventListener"), _R);
-__decorateClass$1p([
+__decorateClass$1q([
   inject(RoundStartedEventProcessor)
 ], RoundStartedEventListener.prototype, "_processor", 2);
-RoundStartedEventListener = __decorateClass$1p([
+RoundStartedEventListener = __decorateClass$1q([
   injectable()
 ], RoundStartedEventListener);
 const roundStartedEventRegistration = {
   listenerType: RoundStartedEventListener,
   processorType: RoundStartedEventProcessor
 };
-var __defProp$1o = Object.defineProperty;
+var __defProp$1p = Object.defineProperty;
 var __getOwnPropDesc$v = Object.getOwnPropertyDescriptor;
-var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$v(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1o(target, key, result);
+  if (kind && result) __defProp$1p(target, key, result);
   return result;
-}, "__decorateClass$1o");
+}, "__decorateClass$1p");
 const _ScoreboardVisibilityChangedEvent = class _ScoreboardVisibilityChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11498,10 +11498,10 @@ let ScoreboardVisibilityChangedEventProcessor = (_S = class extends EventProcess
     );
   }
 }, __name(_S, "ScoreboardVisibilityChangedEventProcessor"), _S);
-__decorateClass$1o([
+__decorateClass$1p([
   inject(ElementsSetup)
 ], ScoreboardVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-ScoreboardVisibilityChangedEventProcessor = __decorateClass$1o([
+ScoreboardVisibilityChangedEventProcessor = __decorateClass$1p([
   injectable()
 ], ScoreboardVisibilityChangedEventProcessor);
 let ScoreboardVisibilityChangedEventListener = (_T = class extends EventListener {
@@ -11510,26 +11510,26 @@ let ScoreboardVisibilityChangedEventListener = (_T = class extends EventListener
     __publicField(this, "_processor");
   }
 }, __name(_T, "ScoreboardVisibilityChangedEventListener"), _T);
-__decorateClass$1o([
+__decorateClass$1p([
   inject(ScoreboardVisibilityChangedEventProcessor)
 ], ScoreboardVisibilityChangedEventListener.prototype, "_processor", 2);
-ScoreboardVisibilityChangedEventListener = __decorateClass$1o([
+ScoreboardVisibilityChangedEventListener = __decorateClass$1p([
   injectable()
 ], ScoreboardVisibilityChangedEventListener);
 const scoreboardVisibilityChangedEventRegistration = {
   listenerType: ScoreboardVisibilityChangedEventListener,
   processorType: ScoreboardVisibilityChangedEventProcessor
 };
-var __defProp$1n = Object.defineProperty;
+var __defProp$1o = Object.defineProperty;
 var __getOwnPropDesc$u = Object.getOwnPropertyDescriptor;
-var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$u(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1n(target, key, result);
+  if (kind && result) __defProp$1o(target, key, result);
   return result;
-}, "__decorateClass$1n");
+}, "__decorateClass$1o");
 const _SizeChangedEvent = class _SizeChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11553,7 +11553,7 @@ let SizeChangedEventProcessor = (_U = class extends EventProcessor {
     return events;
   }
 }, __name(_U, "SizeChangedEventProcessor"), _U);
-SizeChangedEventProcessor = __decorateClass$1n([
+SizeChangedEventProcessor = __decorateClass$1o([
   injectable()
 ], SizeChangedEventProcessor);
 let SizeChangedEventListener = (_V = class extends EventListener {
@@ -11562,26 +11562,26 @@ let SizeChangedEventListener = (_V = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_V, "SizeChangedEventListener"), _V);
-__decorateClass$1n([
+__decorateClass$1o([
   inject(SizeChangedEventProcessor)
 ], SizeChangedEventListener.prototype, "_processor", 2);
-SizeChangedEventListener = __decorateClass$1n([
+SizeChangedEventListener = __decorateClass$1o([
   injectable()
 ], SizeChangedEventListener);
 const sizeChangedEventRegistration = {
   listenerType: SizeChangedEventListener,
   processorType: SizeChangedEventProcessor
 };
-var __defProp$1m = Object.defineProperty;
+var __defProp$1n = Object.defineProperty;
 var __getOwnPropDesc$t = Object.getOwnPropertyDescriptor;
-var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$t(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1m(target, key, result);
+  if (kind && result) __defProp$1n(target, key, result);
   return result;
-}, "__decorateClass$1m");
+}, "__decorateClass$1n");
 const _TextOverlayVisibilityChangedEvent = class _TextOverlayVisibilityChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11611,10 +11611,10 @@ let TextOverlayVisibilityChangedEventProcessor = (_W = class extends EventProces
     );
   }
 }, __name(_W, "TextOverlayVisibilityChangedEventProcessor"), _W);
-__decorateClass$1m([
+__decorateClass$1n([
   inject(ElementsSetup)
 ], TextOverlayVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-TextOverlayVisibilityChangedEventProcessor = __decorateClass$1m([
+TextOverlayVisibilityChangedEventProcessor = __decorateClass$1n([
   injectable()
 ], TextOverlayVisibilityChangedEventProcessor);
 let TextOverlayVisibilityChangedEventListener = (_X = class extends EventListener {
@@ -11623,26 +11623,26 @@ let TextOverlayVisibilityChangedEventListener = (_X = class extends EventListene
     __publicField(this, "_processor");
   }
 }, __name(_X, "TextOverlayVisibilityChangedEventListener"), _X);
-__decorateClass$1m([
+__decorateClass$1n([
   inject(TextOverlayVisibilityChangedEventProcessor)
 ], TextOverlayVisibilityChangedEventListener.prototype, "_processor", 2);
-TextOverlayVisibilityChangedEventListener = __decorateClass$1m([
+TextOverlayVisibilityChangedEventListener = __decorateClass$1n([
   injectable()
 ], TextOverlayVisibilityChangedEventListener);
 const textOverlayVisibilityChangedEventRegistration = {
   listenerType: TextOverlayVisibilityChangedEventListener,
   processorType: TextOverlayVisibilityChangedEventProcessor
 };
-var __defProp$1l = Object.defineProperty;
+var __defProp$1m = Object.defineProperty;
 var __getOwnPropDesc$s = Object.getOwnPropertyDescriptor;
-var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$s(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1l(target, key, result);
+  if (kind && result) __defProp$1m(target, key, result);
   return result;
-}, "__decorateClass$1l");
+}, "__decorateClass$1m");
 var skribblTool = /* @__PURE__ */ ((skribblTool2) => {
   skribblTool2[skribblTool2["brush"] = 0] = "brush";
   skribblTool2[skribblTool2["fill"] = 1] = "fill";
@@ -11674,7 +11674,7 @@ let ToolChangedEventProcessor = (_Y = class extends EventProcessor {
     return events;
   }
 }, __name(_Y, "ToolChangedEventProcessor"), _Y);
-ToolChangedEventProcessor = __decorateClass$1l([
+ToolChangedEventProcessor = __decorateClass$1m([
   injectable()
 ], ToolChangedEventProcessor);
 let ToolChangedEventListener = (_Z = class extends EventListener {
@@ -11683,26 +11683,26 @@ let ToolChangedEventListener = (_Z = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_Z, "ToolChangedEventListener"), _Z);
-__decorateClass$1l([
+__decorateClass$1m([
   inject(ToolChangedEventProcessor)
 ], ToolChangedEventListener.prototype, "_processor", 2);
-ToolChangedEventListener = __decorateClass$1l([
+ToolChangedEventListener = __decorateClass$1m([
   injectable()
 ], ToolChangedEventListener);
 const toolChangedEventRegistration = {
   listenerType: ToolChangedEventListener,
   processorType: ToolChangedEventProcessor
 };
-var __defProp$1k = Object.defineProperty;
+var __defProp$1l = Object.defineProperty;
 var __getOwnPropDesc$r = Object.getOwnPropertyDescriptor;
-var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$r(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1k(target, key, result);
+  if (kind && result) __defProp$1l(target, key, result);
   return result;
-}, "__decorateClass$1k");
+}, "__decorateClass$1l");
 const _WordGuessedEvent = class _WordGuessedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11733,10 +11733,10 @@ let WordGuessedEventProcessor = (__ = class extends EventProcessor {
     return events;
   }
 }, __name(__, "WordGuessedEventProcessor"), __);
-__decorateClass$1k([
+__decorateClass$1l([
   inject(SkribblMessageRelaySetup)
 ], WordGuessedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-WordGuessedEventProcessor = __decorateClass$1k([
+WordGuessedEventProcessor = __decorateClass$1l([
   injectable()
 ], WordGuessedEventProcessor);
 let WordGuessedEventListener = (_$ = class extends EventListener {
@@ -11745,10 +11745,10 @@ let WordGuessedEventListener = (_$ = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_$, "WordGuessedEventListener"), _$);
-__decorateClass$1k([
+__decorateClass$1l([
   inject(WordGuessedEventProcessor)
 ], WordGuessedEventListener.prototype, "_processor", 2);
-WordGuessedEventListener = __decorateClass$1k([
+WordGuessedEventListener = __decorateClass$1l([
   injectable()
 ], WordGuessedEventListener);
 const wordGuessedEventRegistration = {
@@ -11774,15 +11774,15 @@ const _Canvas_rate_icons = class _Canvas_rate_icons extends SvelteComponent {
 };
 __name(_Canvas_rate_icons, "Canvas_rate_icons");
 let Canvas_rate_icons = _Canvas_rate_icons;
-var __defProp$1j = Object.defineProperty;
-var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1k = Object.defineProperty;
+var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$1j(target, key, result);
+  if (result) __defProp$1k(target, key, result);
   return result;
-}, "__decorateClass$1j");
+}, "__decorateClass$1k");
 const _CanvasRateIconsFeature = class _CanvasRateIconsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -11812,19 +11812,19 @@ const _CanvasRateIconsFeature = class _CanvasRateIconsFeature extends TypoFeatur
 };
 __name(_CanvasRateIconsFeature, "CanvasRateIconsFeature");
 let CanvasRateIconsFeature = _CanvasRateIconsFeature;
-__decorateClass$1j([
+__decorateClass$1k([
   inject(ElementsSetup)
 ], CanvasRateIconsFeature.prototype, "_elementsSetup");
-var __defProp$1i = Object.defineProperty;
+var __defProp$1j = Object.defineProperty;
 var __getOwnPropDesc$q = Object.getOwnPropertyDescriptor;
-var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$q(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1i(target, key, result);
+  if (kind && result) __defProp$1j(target, key, result);
   return result;
-}, "__decorateClass$1i");
+}, "__decorateClass$1j");
 const _LobbyLeftEvent = class _LobbyLeftEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11847,7 +11847,7 @@ let LobbyLeftEventProcessor = (_aa = class extends EventProcessor {
     return events;
   }
 }, __name(_aa, "LobbyLeftEventProcessor"), _aa);
-LobbyLeftEventProcessor = __decorateClass$1i([
+LobbyLeftEventProcessor = __decorateClass$1j([
   injectable()
 ], LobbyLeftEventProcessor);
 let LobbyLeftEventListener = (_ba = class extends EventListener {
@@ -11856,10 +11856,10 @@ let LobbyLeftEventListener = (_ba = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_ba, "LobbyLeftEventListener"), _ba);
-__decorateClass$1i([
+__decorateClass$1j([
   inject(LobbyLeftEventProcessor)
 ], LobbyLeftEventListener.prototype, "_processor", 2);
-LobbyLeftEventListener = __decorateClass$1i([
+LobbyLeftEventListener = __decorateClass$1j([
   injectable()
 ], LobbyLeftEventListener);
 const lobbyLeftEventRegistration = {
@@ -11883,16 +11883,16 @@ const parseSkribblLobbyDataEvent = /* @__PURE__ */ __name((data, languages) => {
     players: data.users
   };
 }, "parseSkribblLobbyDataEvent");
-var __defProp$1h = Object.defineProperty;
+var __defProp$1i = Object.defineProperty;
 var __getOwnPropDesc$p = Object.getOwnPropertyDescriptor;
-var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$p(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1h(target, key, result);
+  if (kind && result) __defProp$1i(target, key, result);
   return result;
-}, "__decorateClass$1h");
+}, "__decorateClass$1i");
 const _LobbyJoinedEvent = class _LobbyJoinedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11931,13 +11931,13 @@ let LobbyJoinedEventProcessor = (_ca = class extends EventProcessor {
     return events;
   }
 }, __name(_ca, "LobbyJoinedEventProcessor"), _ca);
-__decorateClass$1h([
+__decorateClass$1i([
   inject(GameSettingsSetup)
 ], LobbyJoinedEventProcessor.prototype, "_gameSettingsSetup", 2);
-__decorateClass$1h([
+__decorateClass$1i([
   inject(SkribblMessageRelaySetup)
 ], LobbyJoinedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyJoinedEventProcessor = __decorateClass$1h([
+LobbyJoinedEventProcessor = __decorateClass$1i([
   injectable()
 ], LobbyJoinedEventProcessor);
 let LobbyJoinedEventListener = (_da = class extends EventListener {
@@ -11946,26 +11946,26 @@ let LobbyJoinedEventListener = (_da = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_da, "LobbyJoinedEventListener"), _da);
-__decorateClass$1h([
+__decorateClass$1i([
   inject(LobbyJoinedEventProcessor)
 ], LobbyJoinedEventListener.prototype, "_processor", 2);
-LobbyJoinedEventListener = __decorateClass$1h([
+LobbyJoinedEventListener = __decorateClass$1i([
   injectable()
 ], LobbyJoinedEventListener);
 const lobbyJoinedEventRegistration = {
   listenerType: LobbyJoinedEventListener,
   processorType: LobbyJoinedEventProcessor
 };
-var __defProp$1g = Object.defineProperty;
+var __defProp$1h = Object.defineProperty;
 var __getOwnPropDesc$o = Object.getOwnPropertyDescriptor;
-var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$o(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1g(target, key, result);
+  if (kind && result) __defProp$1h(target, key, result);
   return result;
-}, "__decorateClass$1g");
+}, "__decorateClass$1h");
 var __decorateParam$k = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$k");
 let LobbyService = (_ea = class {
   constructor(loggerFactory2, lobbyJoined, lobbyLeft, lobbyPlayerChanged, lobbyStateChanged, roundStarted, wordGuessed, elementsSetup, lobbyJoinFailedListener) {
@@ -12080,7 +12080,7 @@ let LobbyService = (_ea = class {
     );
   }
 }, __name(_ea, "LobbyService"), _ea);
-LobbyService = __decorateClass$1g([
+LobbyService = __decorateClass$1h([
   injectable(),
   __decorateParam$k(0, inject(loggerFactory)),
   __decorateParam$k(1, inject(LobbyJoinedEventListener)),
@@ -12092,7 +12092,7 @@ LobbyService = __decorateClass$1g([
   __decorateParam$k(7, inject(ElementsSetup)),
   __decorateParam$k(8, inject(LobbyJoinFailedListener))
 ], LobbyService);
-function create_fragment$16(ctx) {
+function create_fragment$17(ctx) {
   let div1;
   let div0;
   let t0;
@@ -12136,24 +12136,24 @@ function create_fragment$16(ctx) {
     }
   };
 }
-__name(create_fragment$16, "create_fragment$16");
-function instance$Z($$self, $$props, $$invalidate) {
+__name(create_fragment$17, "create_fragment$17");
+function instance$_($$self, $$props, $$invalidate) {
   let { content = "Loading..." } = $$props;
   $$self.$$set = ($$props2) => {
     if ("content" in $$props2) $$invalidate(0, content = $$props2.content);
   };
   return [content];
 }
-__name(instance$Z, "instance$Z");
+__name(instance$_, "instance$_");
 const _Bounceload = class _Bounceload extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$Z, create_fragment$16, safe_not_equal, { content: 0 });
+    init(this, options, instance$_, create_fragment$17, safe_not_equal, { content: 0 });
   }
 };
 __name(_Bounceload, "Bounceload");
 let Bounceload = _Bounceload;
-function create_fragment$15(ctx) {
+function create_fragment$16(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -12344,8 +12344,8 @@ function create_fragment$15(ctx) {
     }
   };
 }
-__name(create_fragment$15, "create_fragment$15");
-function instance$Y($$self, $$props, $$invalidate) {
+__name(create_fragment$16, "create_fragment$16");
+function instance$Z($$self, $$props, $$invalidate) {
   let { disabled = false } = $$props;
   let { icon } = $$props;
   let { name } = $$props;
@@ -12392,11 +12392,11 @@ function instance$Y($$self, $$props, $$invalidate) {
     keypress_handler
   ];
 }
-__name(instance$Y, "instance$Y");
+__name(instance$Z, "instance$Z");
 const _Icon_button = class _Icon_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$Y, create_fragment$15, safe_not_equal, {
+    init(this, options, instance$Z, create_fragment$16, safe_not_equal, {
       disabled: 0,
       icon: 1,
       name: 2,
@@ -12704,6 +12704,7 @@ function create_if_block_2$d(ctx) {
       attr(input0, "type", "submit");
       input0.hidden = true;
       attr(input0, "class", "svelte-12e6hb5");
+      input1.autofocus = true;
       attr(input1, "type", "text");
       attr(
         input1,
@@ -12723,6 +12724,7 @@ function create_if_block_2$d(ctx) {
         /*promptContent*/
         ctx[9]
       );
+      input1.focus();
       if (!mounted) {
         dispose = [
           listen(
@@ -12886,7 +12888,7 @@ function create_if_block_1$i(ctx) {
   };
 }
 __name(create_if_block_1$i, "create_if_block_1$i");
-function create_fragment$14(ctx) {
+function create_fragment$15(ctx) {
   let div;
   let t;
   let current_block_type_index;
@@ -13008,8 +13010,8 @@ function create_fragment$14(ctx) {
     }
   };
 }
-__name(create_fragment$14, "create_fragment$14");
-function instance$X($$self, $$props, $$invalidate) {
+__name(create_fragment$15, "create_fragment$15");
+function instance$Y($$self, $$props, $$invalidate) {
   let { content } = $$props;
   let { title } = $$props;
   let { closeHandler } = $$props;
@@ -13068,11 +13070,11 @@ function instance$X($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$X, "instance$X");
+__name(instance$Y, "instance$Y");
 const _Toast = class _Toast extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$X, create_fragment$14, safe_not_equal, {
+    init(this, options, instance$Y, create_fragment$15, safe_not_equal, {
       content: 0,
       title: 1,
       closeHandler: 11,
@@ -13091,16 +13093,16 @@ const _Toast = class _Toast extends SvelteComponent {
 };
 __name(_Toast, "Toast");
 let Toast = _Toast;
-var __defProp$1f = Object.defineProperty;
+var __defProp$1g = Object.defineProperty;
 var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
-var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1f(target, key, result);
+  if (kind && result) __defProp$1g(target, key, result);
   return result;
-}, "__decorateClass$1f");
+}, "__decorateClass$1g");
 var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$j");
 let ToastService = (_fa = class {
   constructor(loggerFactory2, _elementsSetup) {
@@ -13259,21 +13261,21 @@ let ToastService = (_fa = class {
     };
   }
 }, __name(_fa, "ToastService"), _fa);
-ToastService = __decorateClass$1f([
+ToastService = __decorateClass$1g([
   injectable(),
   __decorateParam$j(0, inject(loggerFactory)),
   __decorateParam$j(1, inject(ElementsSetup))
 ], ToastService);
-var __defProp$1e = Object.defineProperty;
+var __defProp$1f = Object.defineProperty;
 var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
-var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1e(target, key, result);
+  if (kind && result) __defProp$1f(target, key, result);
   return result;
-}, "__decorateClass$1e");
+}, "__decorateClass$1f");
 let PrioritizedCanvasEventsSetup = (_ga = class extends Setup {
   constructor() {
     super(...arguments);
@@ -13283,13 +13285,13 @@ let PrioritizedCanvasEventsSetup = (_ga = class extends Setup {
     return this._interceptor.canvasPrioritizedEventsReady;
   }
 }, __name(_ga, "PrioritizedCanvasEventsSetup"), _ga);
-__decorateClass$1e([
+__decorateClass$1f([
   inject(Interceptor)
 ], PrioritizedCanvasEventsSetup.prototype, "_interceptor", 2);
-PrioritizedCanvasEventsSetup = __decorateClass$1e([
+PrioritizedCanvasEventsSetup = __decorateClass$1f([
   earlySetup()
 ], PrioritizedCanvasEventsSetup);
-function create_fragment$13(ctx) {
+function create_fragment$14(ctx) {
   let t0;
   let br0;
   let t1;
@@ -13348,24 +13350,24 @@ function create_fragment$13(ctx) {
     }
   };
 }
-__name(create_fragment$13, "create_fragment$13");
+__name(create_fragment$14, "create_fragment$14");
 const _Canvas_zoom_info = class _Canvas_zoom_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$13, safe_not_equal, {});
+    init(this, options, null, create_fragment$14, safe_not_equal, {});
   }
 };
 __name(_Canvas_zoom_info, "Canvas_zoom_info");
 let Canvas_zoom_info = _Canvas_zoom_info;
-var __defProp$1d = Object.defineProperty;
-var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1e = Object.defineProperty;
+var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$1d(target, key, result);
+  if (result) __defProp$1e(target, key, result);
   return result;
-}, "__decorateClass$1d");
+}, "__decorateClass$1e");
 const _CanvasZoomFeature = class _CanvasZoomFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -13524,22 +13526,22 @@ const _CanvasZoomFeature = class _CanvasZoomFeature extends TypoFeature {
 };
 __name(_CanvasZoomFeature, "CanvasZoomFeature");
 let CanvasZoomFeature = _CanvasZoomFeature;
-__decorateClass$1d([
+__decorateClass$1e([
   inject(ToastService)
 ], CanvasZoomFeature.prototype, "_toastService");
-__decorateClass$1d([
+__decorateClass$1e([
   inject(PrioritizedCanvasEventsSetup)
 ], CanvasZoomFeature.prototype, "_prioritizedCanvasEventsSetup");
-__decorateClass$1d([
+__decorateClass$1e([
   inject(LobbyStateChangedEventListener)
 ], CanvasZoomFeature.prototype, "_lobbyStateChangedEventListener");
-__decorateClass$1d([
+__decorateClass$1e([
   inject(LobbyLeftEventListener)
 ], CanvasZoomFeature.prototype, "_lobbyLeftEventListener");
-__decorateClass$1d([
+__decorateClass$1e([
   inject(ImageResetEventListener)
 ], CanvasZoomFeature.prototype, "_imageResetEventListener");
-__decorateClass$1d([
+__decorateClass$1e([
   inject(LobbyService)
 ], CanvasZoomFeature.prototype, "_lobbyService");
 const replaceOrAddCssRule = /* @__PURE__ */ __name((styleSheet, cssText, index) => {
@@ -16378,16 +16380,16 @@ const _ThemesApi = class _ThemesApi extends BaseAPI {
 };
 __name(_ThemesApi, "ThemesApi");
 let ThemesApi = _ThemesApi;
-var __defProp$1c = Object.defineProperty;
+var __defProp$1d = Object.defineProperty;
 var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
-var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1c(target, key, result);
+  if (kind && result) __defProp$1d(target, key, result);
   return result;
-}, "__decorateClass$1c");
+}, "__decorateClass$1d");
 var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$i");
 let TokenService = (_ha = class {
   constructor(loggerFactory2) {
@@ -16412,20 +16414,20 @@ let TokenService = (_ha = class {
     this._token.next(null);
   }
 }, __name(_ha, "TokenService"), _ha);
-TokenService = __decorateClass$1c([
+TokenService = __decorateClass$1d([
   injectable(),
   __decorateParam$i(0, inject(loggerFactory))
 ], TokenService);
-var __defProp$1b = Object.defineProperty;
+var __defProp$1c = Object.defineProperty;
 var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
-var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1b(target, key, result);
+  if (kind && result) __defProp$1c(target, key, result);
   return result;
-}, "__decorateClass$1b");
+}, "__decorateClass$1c");
 var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$h");
 let ApiService = (_ia = class {
   constructor(loggerFactory2, tokenService) {
@@ -16467,21 +16469,21 @@ let ApiService = (_ia = class {
     this._baseUrl = url;
   }
 }, __name(_ia, "ApiService"), _ia);
-ApiService = __decorateClass$1b([
+ApiService = __decorateClass$1c([
   injectable(),
   __decorateParam$h(0, inject(loggerFactory)),
   __decorateParam$h(1, inject(TokenService))
 ], ApiService);
-var __defProp$1a = Object.defineProperty;
+var __defProp$1b = Object.defineProperty;
 var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
-var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1a(target, key, result);
+  if (kind && result) __defProp$1b(target, key, result);
   return result;
-}, "__decorateClass$1a");
+}, "__decorateClass$1b");
 var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$g");
 let MemberService = (_ja = class {
   constructor(loggerFactory2, _apiService, _tokenService, _onboardingService) {
@@ -16586,7 +16588,7 @@ let MemberService = (_ja = class {
     return this.loadMember();
   }
 }, __name(_ja, "MemberService"), _ja);
-MemberService = __decorateClass$1a([
+MemberService = __decorateClass$1b([
   injectable(),
   __decorateParam$g(0, inject(loggerFactory)),
   __decorateParam$g(1, inject(ApiService)),
@@ -16801,15 +16803,15 @@ const _SkribblScoreboardRegularPlayer = class _SkribblScoreboardRegularPlayer {
 };
 __name(_SkribblScoreboardRegularPlayer, "SkribblScoreboardRegularPlayer");
 let SkribblScoreboardRegularPlayer = _SkribblScoreboardRegularPlayer;
-var __defProp$19 = Object.defineProperty;
-var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$1a = Object.defineProperty;
+var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$19(target, key, result);
+  if (result) __defProp$1a(target, key, result);
   return result;
-}, "__decorateClass$19");
+}, "__decorateClass$1a");
 const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -16830,13 +16832,13 @@ const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
 };
 __name(_LandingPlayerSetup, "LandingPlayerSetup");
 let LandingPlayerSetup = _LandingPlayerSetup;
-__decorateClass$19([
+__decorateClass$1a([
   inject(ElementsSetup)
 ], LandingPlayerSetup.prototype, "_elementsSetup");
-__decorateClass$19([
+__decorateClass$1a([
   inject(GlobalSettingsService)
 ], LandingPlayerSetup.prototype, "_globalSettingsService");
-__decorateClass$19([
+__decorateClass$1a([
   inject(MemberService)
 ], LandingPlayerSetup.prototype, "_memberService");
 const calculateLobbyKey = /* @__PURE__ */ __name((key) => {
@@ -16845,16 +16847,16 @@ const calculateLobbyKey = /* @__PURE__ */ __name((key) => {
   const newKey = hashed.join("");
   return newKey;
 }, "calculateLobbyKey");
-var __defProp$18 = Object.defineProperty;
+var __defProp$19 = Object.defineProperty;
 var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
-var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$18(target, key, result);
+  if (kind && result) __defProp$19(target, key, result);
   return result;
-}, "__decorateClass$18");
+}, "__decorateClass$19");
 var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$f");
 let PlayersService = (_ka = class {
   constructor(loggerFactory2) {
@@ -17080,47 +17082,47 @@ let PlayersService = (_ka = class {
     return this._players$.asObservable();
   }
 }, __name(_ka, "PlayersService"), _ka);
-__decorateClass$18([
+__decorateClass$19([
   inject(ElementsSetup)
 ], PlayersService.prototype, "_elementsSetup", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(LobbyJoinedEventListener)
 ], PlayersService.prototype, "_lobbyJoinedEvent", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(LobbyLeftEventListener)
 ], PlayersService.prototype, "_lobbyLeftEvent", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(LobbyStateChangedEventListener)
 ], PlayersService.prototype, "_lobbyStateChangedEvent", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(LobbyPlayerChangedEventListener)
 ], PlayersService.prototype, "_playerChangedEvent", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(ScoreboardVisibilityChangedEventListener)
 ], PlayersService.prototype, "_scoreboardVisibleEvent", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(TextOverlayVisibilityChangedEventListener)
 ], PlayersService.prototype, "_textOverlayVisibleEvent", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(PlayerPopupVisibilityChangedEventListener)
 ], PlayersService.prototype, "_popupVisibleEvent", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(MemberService)
 ], PlayersService.prototype, "_memberService", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(LobbyService)
 ], PlayersService.prototype, "_lobbyService", 2);
-__decorateClass$18([
+__decorateClass$19([
   inject(LandingPlayerSetup)
 ], PlayersService.prototype, "_landingPlayerSetup", 2);
-__decorateClass$18([
+__decorateClass$19([
   postConstruct()
 ], PlayersService.prototype, "postConstruct", 1);
-PlayersService = __decorateClass$18([
+PlayersService = __decorateClass$19([
   injectable(),
   __decorateParam$f(0, inject(loggerFactory))
 ], PlayersService);
-function create_fragment$12(ctx) {
+function create_fragment$13(ctx) {
   let p;
   let b;
   let t0;
@@ -17193,8 +17195,8 @@ function create_fragment$12(ctx) {
     }
   };
 }
-__name(create_fragment$12, "create_fragment$12");
-function instance$W($$self, $$props, $$invalidate) {
+__name(create_fragment$13, "create_fragment$13");
+function instance$X($$self, $$props, $$invalidate) {
   let { content = "" } = $$props;
   let { title = "" } = $$props;
   let { style = "normal" } = $$props;
@@ -17251,11 +17253,11 @@ function instance$W($$self, $$props, $$invalidate) {
     p_binding
   ];
 }
-__name(instance$W, "instance$W");
+__name(instance$X, "instance$X");
 const _Message = class _Message extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$W, create_fragment$12, safe_not_equal, {
+    init(this, options, instance$X, create_fragment$13, safe_not_equal, {
       content: 0,
       title: 1,
       style: 2,
@@ -17268,16 +17270,16 @@ const _Message = class _Message extends SvelteComponent {
 };
 __name(_Message, "Message");
 let Message = _Message;
-var __defProp$17 = Object.defineProperty;
+var __defProp$18 = Object.defineProperty;
 var __getOwnPropDesc$h = Object.getOwnPropertyDescriptor;
-var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$h(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$17(target, key, result);
+  if (kind && result) __defProp$18(target, key, result);
   return result;
-}, "__decorateClass$17");
+}, "__decorateClass$18");
 var __decorateParam$e = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$e");
 let ChatService = (_la = class {
   constructor(loggerFactory2) {
@@ -17404,34 +17406,34 @@ let ChatService = (_la = class {
     return message;
   }
 }, __name(_la, "ChatService"), _la);
-__decorateClass$17([
+__decorateClass$18([
   inject(ElementsSetup)
 ], ChatService.prototype, "_elementsSetup", 2);
-__decorateClass$17([
+__decorateClass$18([
   inject(PlayersService)
 ], ChatService.prototype, "_lobbyPlayersService", 2);
-__decorateClass$17([
+__decorateClass$18([
   inject(MessageReceivedEventListener)
 ], ChatService.prototype, "_messageReceivedEventListener", 2);
-__decorateClass$17([
+__decorateClass$18([
   inject(SkribblMessageRelaySetup)
 ], ChatService.prototype, "_messageRelaySetup", 2);
-__decorateClass$17([
+__decorateClass$18([
   postConstruct()
 ], ChatService.prototype, "postConstruct", 1);
-ChatService = __decorateClass$17([
+ChatService = __decorateClass$18([
   injectable(),
   __decorateParam$e(0, inject(loggerFactory))
 ], ChatService);
-var __defProp$16 = Object.defineProperty;
-var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$17 = Object.defineProperty;
+var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$16(target, key, result);
+  if (result) __defProp$17(target, key, result);
   return result;
-}, "__decorateClass$16");
+}, "__decorateClass$17");
 const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -17487,10 +17489,10 @@ const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
 };
 __name(_ChatClearFeature, "ChatClearFeature");
 let ChatClearFeature = _ChatClearFeature;
-__decorateClass$16([
+__decorateClass$17([
   inject(LobbyJoinedEventListener)
 ], ChatClearFeature.prototype, "_lobbyJoinedEventListener");
-__decorateClass$16([
+__decorateClass$17([
   inject(ChatService)
 ], ChatClearFeature.prototype, "_chatService");
 const _InterpretableEmptyRemainder = class _InterpretableEmptyRemainder extends InterpretableError {
@@ -17704,7 +17706,7 @@ function create_if_block$w(ctx) {
   };
 }
 __name(create_if_block$w, "create_if_block$w");
-function create_fragment$11(ctx) {
+function create_fragment$12(ctx) {
   let div1;
   let t0;
   let div0;
@@ -17936,8 +17938,8 @@ function create_fragment$11(ctx) {
     }
   };
 }
-__name(create_fragment$11, "create_fragment$11");
-function instance$V($$self, $$props, $$invalidate) {
+__name(create_fragment$12, "create_fragment$12");
+function instance$W($$self, $$props, $$invalidate) {
   let { closeStrategy = "implicit" } = $$props;
   let { alignment = "bottom" } = $$props;
   let { marginY = ".5em" } = $$props;
@@ -18021,11 +18023,11 @@ function instance$V($$self, $$props, $$invalidate) {
     div1_binding
   ];
 }
-__name(instance$V, "instance$V");
+__name(instance$W, "instance$W");
 const _Area_flyout = class _Area_flyout extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$V, create_fragment$11, safe_not_equal, {
+    init(this, options, instance$W, create_fragment$12, safe_not_equal, {
       closeStrategy: 0,
       alignment: 1,
       marginY: 2,
@@ -18049,12 +18051,12 @@ const _Area_flyout = class _Area_flyout extends SvelteComponent {
 };
 __name(_Area_flyout, "Area_flyout");
 let Area_flyout = _Area_flyout;
-function get_each_context$v(ctx, list, i) {
+function get_each_context$w(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i];
   return child_ctx;
 }
-__name(get_each_context$v, "get_each_context$v");
+__name(get_each_context$w, "get_each_context$w");
 function get_each_context_1$b(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i];
@@ -18632,7 +18634,7 @@ function create_if_block$v(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$v(get_each_context$v(ctx, each_value, i));
+    each_blocks[i] = create_each_block$w(get_each_context$w(ctx, each_value, i));
   }
   return {
     c() {
@@ -18663,11 +18665,11 @@ function create_if_block$v(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$v(ctx2, each_value, i);
+          const child_ctx = get_each_context$w(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$v(child_ctx);
+            each_blocks[i] = create_each_block$w(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -18689,11 +18691,11 @@ function create_if_block$v(ctx) {
   };
 }
 __name(create_if_block$v, "create_if_block$v");
-function create_catch_block$4(ctx) {
+function create_catch_block$5(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
-__name(create_catch_block$4, "create_catch_block$4");
-function create_then_block$4(ctx) {
+__name(create_catch_block$5, "create_catch_block$5");
+function create_then_block$5(ctx) {
   let t_value = (
     /*res*/
     ctx[8] + ""
@@ -18718,12 +18720,12 @@ function create_then_block$4(ctx) {
     }
   };
 }
-__name(create_then_block$4, "create_then_block$4");
-function create_pending_block$4(ctx) {
+__name(create_then_block$5, "create_then_block$5");
+function create_pending_block$5(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
-__name(create_pending_block$4, "create_pending_block$4");
-function create_each_block$v(ctx) {
+__name(create_pending_block$5, "create_pending_block$5");
+function create_each_block$w(ctx) {
   let b;
   let t0;
   let promise;
@@ -18733,9 +18735,9 @@ function create_each_block$v(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$4,
-    then: create_then_block$4,
-    catch: create_catch_block$4,
+    pending: create_pending_block$5,
+    then: create_then_block$5,
+    catch: create_catch_block$5,
     value: 8
   };
   handle_promise(promise = firstValueFrom(
@@ -18779,8 +18781,8 @@ function create_each_block$v(ctx) {
     }
   };
 }
-__name(create_each_block$v, "create_each_block$v");
-function create_fragment$10(ctx) {
+__name(create_each_block$w, "create_each_block$w");
+function create_fragment$11(ctx) {
   let div;
   let t;
   let show_if = (
@@ -18866,9 +18868,9 @@ function create_fragment$10(ctx) {
     }
   };
 }
-__name(create_fragment$10, "create_fragment$10");
+__name(create_fragment$11, "create_fragment$11");
 const func$4 = /* @__PURE__ */ __name((result) => result.result === null, "func$4");
-function instance$U($$self, $$props, $$invalidate) {
+function instance$V($$self, $$props, $$invalidate) {
   let $currentCommands;
   let $combo;
   let { feature } = $$props;
@@ -18881,16 +18883,16 @@ function instance$U($$self, $$props, $$invalidate) {
   };
   return [feature, $currentCommands, $combo, currentCommands, combo];
 }
-__name(instance$U, "instance$U");
+__name(instance$V, "instance$V");
 const _Command_preview = class _Command_preview extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$U, create_fragment$10, safe_not_equal, { feature: 0 });
+    init(this, options, instance$V, create_fragment$11, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Command_preview, "Command_preview");
 let Command_preview = _Command_preview;
-function create_fragment$$(ctx) {
+function create_fragment$10(ctx) {
   let input;
   let mounted;
   let dispose;
@@ -18931,12 +18933,12 @@ function create_fragment$$(ctx) {
     }
   };
 }
-__name(create_fragment$$, "create_fragment$$");
+__name(create_fragment$10, "create_fragment$10");
 const submit_handler = /* @__PURE__ */ __name((e) => {
   e.preventDefault();
   e.stopImmediatePropagation();
 }, "submit_handler");
-function instance$T($$self, $$props, $$invalidate) {
+function instance$U($$self, $$props, $$invalidate) {
   let { onInput } = $$props;
   const input_handler = /* @__PURE__ */ __name((e) => {
     onInput(e.currentTarget.value);
@@ -18946,24 +18948,24 @@ function instance$T($$self, $$props, $$invalidate) {
   };
   return [onInput, input_handler];
 }
-__name(instance$T, "instance$T");
+__name(instance$U, "instance$U");
 const _Command_input = class _Command_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$T, create_fragment$$, safe_not_equal, { onInput: 0 });
+    init(this, options, instance$U, create_fragment$10, safe_not_equal, { onInput: 0 });
   }
 };
 __name(_Command_input, "Command_input");
 let Command_input = _Command_input;
-var __defProp$15 = Object.defineProperty;
-var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$16 = Object.defineProperty;
+var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$15(target, key, result);
+  if (result) __defProp$16(target, key, result);
   return result;
-}, "__decorateClass$15");
+}, "__decorateClass$16");
 const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -19213,21 +19215,21 @@ const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
 };
 __name(_ChatCommandsFeature, "ChatCommandsFeature");
 let ChatCommandsFeature = _ChatCommandsFeature;
-__decorateClass$15([
+__decorateClass$16([
   inject(ElementsSetup)
 ], ChatCommandsFeature.prototype, "_elements");
-__decorateClass$15([
+__decorateClass$16([
   inject(ToastService)
 ], ChatCommandsFeature.prototype, "_toastService");
-var __defProp$14 = Object.defineProperty;
-var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$15 = Object.defineProperty;
+var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$14(target, key, result);
+  if (result) __defProp$15(target, key, result);
   return result;
-}, "__decorateClass$14");
+}, "__decorateClass$15");
 const _ChatCopyFormattedFeature = class _ChatCopyFormattedFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -19349,10 +19351,10 @@ const _ChatCopyFormattedFeature = class _ChatCopyFormattedFeature extends TypoFe
 };
 __name(_ChatCopyFormattedFeature, "ChatCopyFormattedFeature");
 let ChatCopyFormattedFeature = _ChatCopyFormattedFeature;
-__decorateClass$14([
+__decorateClass$15([
   inject(ElementsSetup)
 ], ChatCopyFormattedFeature.prototype, "_elementsSetup");
-__decorateClass$14([
+__decorateClass$15([
   inject(ToastService)
 ], ChatCopyFormattedFeature.prototype, "_toastService");
 function promiseAllObject(obj) {
@@ -19361,15 +19363,15 @@ function promiseAllObject(obj) {
   ).then(Object.fromEntries);
 }
 __name(promiseAllObject, "promiseAllObject");
-var __defProp$13 = Object.defineProperty;
-var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$14 = Object.defineProperty;
+var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$13(target, key, result);
+  if (result) __defProp$14(target, key, result);
   return result;
-}, "__decorateClass$13");
+}, "__decorateClass$14");
 function getData(spritesApi, scenesApi, eventsApi, emojisApi, announcementsApi, themesApi, awardsApi) {
   return {
     sprites: spritesApi.getAllSprites(),
@@ -19409,16 +19411,16 @@ const _ApiDataSetup = class _ApiDataSetup extends Setup {
 };
 __name(_ApiDataSetup, "ApiDataSetup");
 let ApiDataSetup = _ApiDataSetup;
-__decorateClass$13([
+__decorateClass$14([
   inject(ApiService)
 ], ApiDataSetup.prototype, "_apiService");
-__decorateClass$13([
+__decorateClass$14([
   inject(ToastService)
 ], ApiDataSetup.prototype, "_toastService");
-__decorateClass$13([
+__decorateClass$14([
   inject(loggerFactory)
 ], ApiDataSetup.prototype, "_loggerFactory");
-function create_fragment$_(ctx) {
+function create_fragment$$(ctx) {
   let div;
   return {
     c() {
@@ -19438,25 +19440,25 @@ function create_fragment$_(ctx) {
     }
   };
 }
-__name(create_fragment$_, "create_fragment$_");
-function instance$S($$self) {
+__name(create_fragment$$, "create_fragment$$");
+function instance$T($$self) {
   return [];
 }
-__name(instance$S, "instance$S");
+__name(instance$T, "instance$T");
 const _Chat_emojis = class _Chat_emojis extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$S, create_fragment$_, safe_not_equal, {});
+    init(this, options, instance$T, create_fragment$$, safe_not_equal, {});
   }
 };
 __name(_Chat_emojis, "Chat_emojis");
 let Chat_emojis = _Chat_emojis;
-function get_each_context$u(ctx, list, i) {
+function get_each_context$v(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[8] = list[i];
   return child_ctx;
 }
-__name(get_each_context$u, "get_each_context$u");
+__name(get_each_context$v, "get_each_context$v");
 function create_else_block$e(ctx) {
   let t;
   return {
@@ -19535,7 +19537,7 @@ function create_if_block$u(ctx) {
   };
 }
 __name(create_if_block$u, "create_if_block$u");
-function create_each_block$u(ctx) {
+function create_each_block$v(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -19602,8 +19604,8 @@ function create_each_block$u(ctx) {
     }
   };
 }
-__name(create_each_block$u, "create_each_block$u");
-function create_fragment$Z(ctx) {
+__name(create_each_block$v, "create_each_block$v");
+function create_fragment$_(ctx) {
   let div0;
   let t;
   let div1;
@@ -19629,7 +19631,7 @@ function create_fragment$Z(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$u(get_each_context$u(ctx, each_value, i));
+    each_blocks[i] = create_each_block$v(get_each_context$v(ctx, each_value, i));
   }
   return {
     c() {
@@ -19682,11 +19684,11 @@ function create_fragment$Z(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$u(ctx2, each_value, i);
+          const child_ctx = get_each_context$v(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$u(child_ctx);
+            each_blocks[i] = create_each_block$v(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div1, null);
           }
@@ -19712,8 +19714,8 @@ function create_fragment$Z(ctx) {
     }
   };
 }
-__name(create_fragment$Z, "create_fragment$Z");
-function instance$R($$self, $$props, $$invalidate) {
+__name(create_fragment$_, "create_fragment$_");
+function instance$S($$self, $$props, $$invalidate) {
   let $emojiCandidates;
   let { feature } = $$props;
   let { onSelected = void 0 } = $$props;
@@ -19738,24 +19740,24 @@ function instance$R($$self, $$props, $$invalidate) {
     mouseleave_handler
   ];
 }
-__name(instance$R, "instance$R");
+__name(instance$S, "instance$S");
 const _Emoji_picker = class _Emoji_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$R, create_fragment$Z, safe_not_equal, { feature: 4, onSelected: 0 });
+    init(this, options, instance$S, create_fragment$_, safe_not_equal, { feature: 4, onSelected: 0 });
   }
 };
 __name(_Emoji_picker, "Emoji_picker");
 let Emoji_picker = _Emoji_picker;
-var __defProp$12 = Object.defineProperty;
-var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$13 = Object.defineProperty;
+var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$12(target, key, result);
+  if (result) __defProp$13(target, key, result);
   return result;
-}, "__decorateClass$12");
+}, "__decorateClass$13");
 const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -19903,16 +19905,16 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
 };
 __name(_ChatEmojisFeature, "ChatEmojisFeature");
 let ChatEmojisFeature = _ChatEmojisFeature;
-__decorateClass$12([
+__decorateClass$13([
   inject(ElementsSetup)
 ], ChatEmojisFeature.prototype, "_elements");
-__decorateClass$12([
+__decorateClass$13([
   inject(ApiDataSetup)
 ], ChatEmojisFeature.prototype, "_apiDataSetup");
-__decorateClass$12([
+__decorateClass$13([
   inject(ChatService)
 ], ChatEmojisFeature.prototype, "_chatService");
-function create_fragment$Y(ctx) {
+function create_fragment$Z(ctx) {
   let t0;
   let br0;
   let t1;
@@ -19943,24 +19945,24 @@ function create_fragment$Y(ctx) {
     }
   };
 }
-__name(create_fragment$Y, "create_fragment$Y");
+__name(create_fragment$Z, "create_fragment$Z");
 const _Chat_focus_info = class _Chat_focus_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$Y, safe_not_equal, {});
+    init(this, options, null, create_fragment$Z, safe_not_equal, {});
   }
 };
 __name(_Chat_focus_info, "Chat_focus_info");
 let Chat_focus_info = _Chat_focus_info;
-var __defProp$11 = Object.defineProperty;
-var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$12 = Object.defineProperty;
+var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$11(target, key, result);
+  if (result) __defProp$12(target, key, result);
   return result;
-}, "__decorateClass$11");
+}, "__decorateClass$12");
 const _ChatFocusFeature = class _ChatFocusFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -20009,10 +20011,10 @@ const _ChatFocusFeature = class _ChatFocusFeature extends TypoFeature {
 };
 __name(_ChatFocusFeature, "ChatFocusFeature");
 let ChatFocusFeature = _ChatFocusFeature;
-__decorateClass$11([
+__decorateClass$12([
   inject(ElementsSetup)
 ], ChatFocusFeature.prototype, "elementsSetup");
-__decorateClass$11([
+__decorateClass$12([
   inject(LobbyStateChangedEventListener)
 ], ChatFocusFeature.prototype, "_lobbyStateChangedEventListener");
 const _Chat_message_splits = class _Chat_message_splits extends SvelteComponent {
@@ -20023,15 +20025,15 @@ const _Chat_message_splits = class _Chat_message_splits extends SvelteComponent 
 };
 __name(_Chat_message_splits, "Chat_message_splits");
 let Chat_message_splits = _Chat_message_splits;
-var __defProp$10 = Object.defineProperty;
-var __decorateClass$10 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$11 = Object.defineProperty;
+var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$10(target, key, result);
+  if (result) __defProp$11(target, key, result);
   return result;
-}, "__decorateClass$10");
+}, "__decorateClass$11");
 const _ChatMessageSplitsFeature = class _ChatMessageSplitsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -20064,7 +20066,7 @@ const _ChatMessageSplitsFeature = class _ChatMessageSplitsFeature extends TypoFe
 };
 __name(_ChatMessageSplitsFeature, "ChatMessageSplitsFeature");
 let ChatMessageSplitsFeature = _ChatMessageSplitsFeature;
-__decorateClass$10([
+__decorateClass$11([
   inject(ElementsSetup)
 ], ChatMessageSplitsFeature.prototype, "_elementsSetup");
 const _Chat_profile_link = class _Chat_profile_link extends SvelteComponent {
@@ -20075,15 +20077,15 @@ const _Chat_profile_link = class _Chat_profile_link extends SvelteComponent {
 };
 __name(_Chat_profile_link, "Chat_profile_link");
 let Chat_profile_link = _Chat_profile_link;
-var __defProp$$ = Object.defineProperty;
-var __decorateClass$$ = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$10 = Object.defineProperty;
+var __decorateClass$10 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$$(target, key, result);
+  if (result) __defProp$10(target, key, result);
   return result;
-}, "__decorateClass$$");
+}, "__decorateClass$10");
 const _ChatProfileLinkFeature = class _ChatProfileLinkFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -20133,13 +20135,13 @@ const _ChatProfileLinkFeature = class _ChatProfileLinkFeature extends TypoFeatur
 };
 __name(_ChatProfileLinkFeature, "ChatProfileLinkFeature");
 let ChatProfileLinkFeature = _ChatProfileLinkFeature;
-__decorateClass$$([
+__decorateClass$10([
   inject(ChatService)
 ], ChatProfileLinkFeature.prototype, "_chatService");
-__decorateClass$$([
+__decorateClass$10([
   inject(ToastService)
 ], ChatProfileLinkFeature.prototype, "_toastService");
-__decorateClass$$([
+__decorateClass$10([
   inject(ElementsSetup)
 ], ChatProfileLinkFeature.prototype, "_elementsSetup");
 const _NumericOptionalCommandParameter = class _NumericOptionalCommandParameter extends ExtensionCommandParameter {
@@ -20197,16 +20199,16 @@ const _StringOptionalCommandParameter = class _StringOptionalCommandParameter ex
 };
 __name(_StringOptionalCommandParameter, "StringOptionalCommandParameter");
 let StringOptionalCommandParameter = _StringOptionalCommandParameter;
-var __defProp$_ = Object.defineProperty;
+var __defProp$$ = Object.defineProperty;
 var __getOwnPropDesc$g = Object.getOwnPropertyDescriptor;
-var __decorateClass$_ = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$$ = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$g(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$_(target, key, result);
+  if (kind && result) __defProp$$(target, key, result);
   return result;
-}, "__decorateClass$_");
+}, "__decorateClass$$");
 var __decorateParam$d = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$d");
 let LobbyInteractionsService = (_ma = class {
   constructor(loggerFactory2) {
@@ -20284,26 +20286,26 @@ let LobbyInteractionsService = (_ma = class {
     relay.insertMessage({ data: id2, id: 5 });
   }
 }, __name(_ma, "LobbyInteractionsService"), _ma);
-__decorateClass$_([
+__decorateClass$$([
   inject(LobbyService)
 ], LobbyInteractionsService.prototype, "_lobbyService", 2);
-__decorateClass$_([
+__decorateClass$$([
   inject(LobbyInteractedEventListener)
 ], LobbyInteractionsService.prototype, "_lobbyInteractedEvent", 2);
-__decorateClass$_([
+__decorateClass$$([
   inject(LobbyStateChangedEventListener)
 ], LobbyInteractionsService.prototype, "_lobbyStateChangedEvent", 2);
-__decorateClass$_([
+__decorateClass$$([
   inject(SkribblMessageRelaySetup)
 ], LobbyInteractionsService.prototype, "_skribblMessageRelaySetup", 2);
-__decorateClass$_([
+__decorateClass$$([
   postConstruct()
 ], LobbyInteractionsService.prototype, "postConstruct", 1);
-LobbyInteractionsService = __decorateClass$_([
+LobbyInteractionsService = __decorateClass$$([
   injectable(),
   __decorateParam$d(0, inject(loggerFactory))
 ], LobbyInteractionsService);
-function create_fragment$X(ctx) {
+function create_fragment$Y(ctx) {
   let button;
   let span;
   let t;
@@ -20383,8 +20385,8 @@ function create_fragment$X(ctx) {
     }
   };
 }
-__name(create_fragment$X, "create_fragment$X");
-function instance$Q($$self, $$props, $$invalidate) {
+__name(create_fragment$Y, "create_fragment$Y");
+function instance$R($$self, $$props, $$invalidate) {
   let { content } = $$props;
   let { color } = $$props;
   let { disabled = false } = $$props;
@@ -20402,11 +20404,11 @@ function instance$Q($$self, $$props, $$invalidate) {
   };
   return [content, color, disabled, click, click$, click_handler2, click_handler_1];
 }
-__name(instance$Q, "instance$Q");
+__name(instance$R, "instance$R");
 const _Flat_button = class _Flat_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$Q, create_fragment$X, safe_not_equal, {
+    init(this, options, instance$R, create_fragment$Y, safe_not_equal, {
       content: 0,
       color: 1,
       disabled: 2,
@@ -20580,7 +20582,7 @@ function create_if_block$t(ctx) {
   };
 }
 __name(create_if_block$t, "create_if_block$t");
-function create_fragment$W(ctx) {
+function create_fragment$X(ctx) {
   let div;
   let current_block_type_index;
   let if_block;
@@ -20664,8 +20666,8 @@ function create_fragment$W(ctx) {
     }
   };
 }
-__name(create_fragment$W, "create_fragment$W");
-function instance$P($$self, $$props, $$invalidate) {
+__name(create_fragment$X, "create_fragment$X");
+function instance$Q($$self, $$props, $$invalidate) {
   let $availableInteractions;
   let { feature } = $$props;
   let wrapper;
@@ -20722,24 +20724,24 @@ function instance$P($$self, $$props, $$invalidate) {
     keydown_handler
   ];
 }
-__name(instance$P, "instance$P");
+__name(instance$Q, "instance$Q");
 const _Quick_react = class _Quick_react extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$P, create_fragment$W, safe_not_equal, { feature: 0 });
+    init(this, options, instance$Q, create_fragment$X, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Quick_react, "Quick_react");
 let Quick_react = _Quick_react;
-var __defProp$Z = Object.defineProperty;
-var __decorateClass$Z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$_ = Object.defineProperty;
+var __decorateClass$_ = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$Z(target, key, result);
+  if (result) __defProp$_(target, key, result);
   return result;
-}, "__decorateClass$Z");
+}, "__decorateClass$_");
 const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -20971,27 +20973,27 @@ const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature 
 };
 __name(_ChatQuickReactFeature, "ChatQuickReactFeature");
 let ChatQuickReactFeature = _ChatQuickReactFeature;
-__decorateClass$Z([
+__decorateClass$_([
   inject(ElementsSetup)
 ], ChatQuickReactFeature.prototype, "_elements");
-__decorateClass$Z([
+__decorateClass$_([
   inject(LobbyInteractionsService)
 ], ChatQuickReactFeature.prototype, "_lobbyInteractionsService");
-__decorateClass$Z([
+__decorateClass$_([
   inject(ToastService)
 ], ChatQuickReactFeature.prototype, "_toastService");
-__decorateClass$Z([
+__decorateClass$_([
   inject(LobbyService)
 ], ChatQuickReactFeature.prototype, "_lobbyService");
-var __defProp$Y = Object.defineProperty;
-var __decorateClass$Y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$Z = Object.defineProperty;
+var __decorateClass$Z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$Y(target, key, result);
+  if (result) __defProp$Z(target, key, result);
   return result;
-}, "__decorateClass$Y");
+}, "__decorateClass$Z");
 const _ChatRecallFeature = class _ChatRecallFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -21049,10 +21051,10 @@ const _ChatRecallFeature = class _ChatRecallFeature extends TypoFeature {
 };
 __name(_ChatRecallFeature, "ChatRecallFeature");
 let ChatRecallFeature = _ChatRecallFeature;
-__decorateClass$Y([
+__decorateClass$Z([
   inject(ElementsSetup)
 ], ChatRecallFeature.prototype, "_elements");
-__decorateClass$Y([
+__decorateClass$Z([
   inject(MessageSentEventListener)
 ], ChatRecallFeature.prototype, "_messageSent");
 const _ImageData = class _ImageData {
@@ -21094,16 +21096,16 @@ const _ImageData = class _ImageData {
 };
 __name(_ImageData, "ImageData");
 let ImageData = _ImageData;
-var __defProp$X = Object.defineProperty;
+var __defProp$Y = Object.defineProperty;
 var __getOwnPropDesc$f = Object.getOwnPropertyDescriptor;
-var __decorateClass$X = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$Y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$f(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$X(target, key, result);
+  if (kind && result) __defProp$Y(target, key, result);
   return result;
-}, "__decorateClass$X");
+}, "__decorateClass$Y");
 var __decorateParam$c = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$c");
 let DrawingService = (_na = class {
   /* [commands, scheduled] -> scheduled false when cancel/schedule skipped */
@@ -21393,7 +21395,7 @@ let DrawingService = (_na = class {
     return [origin, target];
   }
 }, __name(_na, "DrawingService"), _na);
-DrawingService = __decorateClass$X([
+DrawingService = __decorateClass$Y([
   injectable(),
   __decorateParam$c(0, inject(loggerFactory)),
   __decorateParam$c(1, inject(LobbyLeftEventListener)),
@@ -21405,16 +21407,16 @@ DrawingService = __decorateClass$X([
   __decorateParam$c(7, inject(ElementsSetup)),
   __decorateParam$c(8, inject(SkribblMessageRelaySetup))
 ], DrawingService);
-var __defProp$W = Object.defineProperty;
+var __defProp$X = Object.defineProperty;
 var __getOwnPropDesc$e = Object.getOwnPropertyDescriptor;
-var __decorateClass$W = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$X = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$e(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$W(target, key, result);
+  if (kind && result) __defProp$X(target, key, result);
   return result;
-}, "__decorateClass$W");
+}, "__decorateClass$X");
 var __decorateParam$b = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$b");
 let ImageFinishedService = (_oa = class {
   constructor(loggerFactory2, _drawingService, _lobbyService) {
@@ -21489,22 +21491,22 @@ let ImageFinishedService = (_oa = class {
     );
   }
 }, __name(_oa, "ImageFinishedService"), _oa);
-ImageFinishedService = __decorateClass$W([
+ImageFinishedService = __decorateClass$X([
   injectable(),
   __decorateParam$b(0, inject(loggerFactory)),
   __decorateParam$b(1, inject(DrawingService)),
   __decorateParam$b(2, inject(LobbyService))
 ], ImageFinishedService);
-var __defProp$V = Object.defineProperty;
+var __defProp$W = Object.defineProperty;
 var __getOwnPropDesc$d = Object.getOwnPropertyDescriptor;
-var __decorateClass$V = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$W = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$d(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$V(target, key, result);
+  if (kind && result) __defProp$W(target, key, result);
   return result;
-}, "__decorateClass$V");
+}, "__decorateClass$W");
 var __decorateParam$a = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$a");
 let CloudService = (_pa = class {
   constructor(loggerFactory2) {
@@ -21546,10 +21548,10 @@ let CloudService = (_pa = class {
     this._pendingAwardInventoryIds.clear();
   }
 }, __name(_pa, "CloudService"), _pa);
-__decorateClass$V([
+__decorateClass$W([
   inject(ApiService)
 ], CloudService.prototype, "_apiService", 2);
-CloudService = __decorateClass$V([
+CloudService = __decorateClass$W([
   injectable(),
   __decorateParam$a(0, inject(loggerFactory))
 ], CloudService);
@@ -21570,16 +21572,16 @@ const convertOldSkd = /* @__PURE__ */ __name((oldSkd) => {
   });
   return commands;
 }, "convertOldSkd");
-var __defProp$U = Object.defineProperty;
+var __defProp$V = Object.defineProperty;
 var __getOwnPropDesc$c = Object.getOwnPropertyDescriptor;
-var __decorateClass$U = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$V = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$c(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$U(target, key, result);
+  if (kind && result) __defProp$V(target, key, result);
   return result;
-}, "__decorateClass$U");
+}, "__decorateClass$V");
 var __decorateParam$9 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$9");
 let ImagelabService = (_qa = class {
   constructor(loggerFactory2) {
@@ -21622,20 +21624,20 @@ let ImagelabService = (_qa = class {
     this._savedDrawCommands$.next(this._savedDrawCommands$.value.filter((item, i) => i !== index));
   }
 }, __name(_qa, "ImagelabService"), _qa);
-ImagelabService = __decorateClass$U([
+ImagelabService = __decorateClass$V([
   injectable(),
   __decorateParam$9(0, inject(loggerFactory))
 ], ImagelabService);
-var __defProp$T = Object.defineProperty;
+var __defProp$U = Object.defineProperty;
 var __getOwnPropDesc$b = Object.getOwnPropertyDescriptor;
-var __decorateClass$T = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$U = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$b(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$T(target, key, result);
+  if (kind && result) __defProp$U(target, key, result);
   return result;
-}, "__decorateClass$T");
+}, "__decorateClass$U");
 var __decorateParam$8 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$8");
 let ImagePostService = (_ra = class {
   constructor(loggerFactory2, _imageFinishedService) {
@@ -21680,12 +21682,12 @@ let ImagePostService = (_ra = class {
     this._history$.next([...this._history$.value, image]);
   }
 }, __name(_ra, "ImagePostService"), _ra);
-ImagePostService = __decorateClass$T([
+ImagePostService = __decorateClass$U([
   injectable(),
   __decorateParam$8(0, inject(loggerFactory)),
   __decorateParam$8(1, inject(ImageFinishedService))
 ], ImagePostService);
-function create_fragment$V(ctx) {
+function create_fragment$W(ctx) {
   let div0;
   let t0;
   let div1;
@@ -21928,8 +21930,8 @@ function create_fragment$V(ctx) {
     }
   };
 }
-__name(create_fragment$V, "create_fragment$V");
-function instance$O($$self, $$props, $$invalidate) {
+__name(create_fragment$W, "create_fragment$W");
+function instance$P($$self, $$props, $$invalidate) {
   let { componentData } = $$props;
   let { closeHandler } = $$props;
   let { title } = $$props;
@@ -21959,11 +21961,11 @@ function instance$O($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$O, "instance$O");
+__name(instance$P, "instance$P");
 const _Modal_document = class _Modal_document extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$O, create_fragment$V, safe_not_equal, {
+    init(this, options, instance$P, create_fragment$W, safe_not_equal, {
       componentData: 0,
       closeHandler: 4,
       title: 1
@@ -21972,7 +21974,7 @@ const _Modal_document = class _Modal_document extends SvelteComponent {
 };
 __name(_Modal_document, "Modal_document");
 let Modal_document = _Modal_document;
-function create_fragment$U(ctx) {
+function create_fragment$V(ctx) {
   let div5;
   let div4;
   let div2;
@@ -22179,8 +22181,8 @@ function create_fragment$U(ctx) {
     }
   };
 }
-__name(create_fragment$U, "create_fragment$U");
-function instance$N($$self, $$props, $$invalidate) {
+__name(create_fragment$V, "create_fragment$V");
+function instance$O($$self, $$props, $$invalidate) {
   let { componentData } = $$props;
   let { closeHandler } = $$props;
   let { title } = $$props;
@@ -22210,11 +22212,11 @@ function instance$N($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$N, "instance$N");
+__name(instance$O, "instance$O");
 const _Modal_card = class _Modal_card extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$N, create_fragment$U, safe_not_equal, {
+    init(this, options, instance$O, create_fragment$V, safe_not_equal, {
       componentData: 0,
       closeHandler: 4,
       title: 1
@@ -22223,16 +22225,16 @@ const _Modal_card = class _Modal_card extends SvelteComponent {
 };
 __name(_Modal_card, "Modal_card");
 let Modal_card = _Modal_card;
-var __defProp$S = Object.defineProperty;
+var __defProp$T = Object.defineProperty;
 var __getOwnPropDesc$a = Object.getOwnPropertyDescriptor;
-var __decorateClass$S = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$T = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$a(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$S(target, key, result);
+  if (kind && result) __defProp$T(target, key, result);
   return result;
-}, "__decorateClass$S");
+}, "__decorateClass$T");
 var __decorateParam$7 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$7");
 let ModalService = (_sa = class {
   constructor(loggerFactory2, _globalSettingsService) {
@@ -22321,7 +22323,7 @@ let ModalService = (_sa = class {
     return result;
   }
 }, __name(_sa, "ModalService"), _sa);
-ModalService = __decorateClass$S([
+ModalService = __decorateClass$T([
   injectable(),
   __decorateParam$7(0, inject(loggerFactory)),
   __decorateParam$7(1, inject(GlobalSettingsService))
@@ -22370,12 +22372,12 @@ const _TypedWorkerExecutor = class _TypedWorkerExecutor {
 __name(_TypedWorkerExecutor, "TypedWorkerExecutor");
 let TypedWorkerExecutor = _TypedWorkerExecutor;
 const gifRendererWorkerBase64 = "InVzZSBzdHJpY3QiOwooKCkgPT4gewogIHZhciBfX2NyZWF0ZSA9IE9iamVjdC5jcmVhdGU7CiAgdmFyIF9fZGVmUHJvcCA9IE9iamVjdC5kZWZpbmVQcm9wZXJ0eTsKICB2YXIgX19nZXRPd25Qcm9wRGVzYyA9IE9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3I7CiAgdmFyIF9fZ2V0T3duUHJvcE5hbWVzID0gT2JqZWN0LmdldE93blByb3BlcnR5TmFtZXM7CiAgdmFyIF9fZ2V0UHJvdG9PZiA9IE9iamVjdC5nZXRQcm90b3R5cGVPZjsKICB2YXIgX19oYXNPd25Qcm9wID0gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eTsKICB2YXIgX19jb21tb25KUyA9IChjYiwgbW9kKSA9PiBmdW5jdGlvbiBfX3JlcXVpcmUoKSB7CiAgICByZXR1cm4gbW9kIHx8ICgwLCBjYltfX2dldE93blByb3BOYW1lcyhjYilbMF1dKSgobW9kID0geyBleHBvcnRzOiB7fSB9KS5leHBvcnRzLCBtb2QpLCBtb2QuZXhwb3J0czsKICB9OwogIHZhciBfX2NvcHlQcm9wcyA9ICh0bywgZnJvbSwgZXhjZXB0LCBkZXNjKSA9PiB7CiAgICBpZiAoZnJvbSAmJiB0eXBlb2YgZnJvbSA9PT0gIm9iamVjdCIgfHwgdHlwZW9mIGZyb20gPT09ICJmdW5jdGlvbiIpIHsKICAgICAgZm9yIChsZXQga2V5IG9mIF9fZ2V0T3duUHJvcE5hbWVzKGZyb20pKQogICAgICAgIGlmICghX19oYXNPd25Qcm9wLmNhbGwodG8sIGtleSkgJiYga2V5ICE9PSBleGNlcHQpCiAgICAgICAgICBfX2RlZlByb3AodG8sIGtleSwgeyBnZXQ6ICgpID0+IGZyb21ba2V5XSwgZW51bWVyYWJsZTogIShkZXNjID0gX19nZXRPd25Qcm9wRGVzYyhmcm9tLCBrZXkpKSB8fCBkZXNjLmVudW1lcmFibGUgfSk7CiAgICB9CiAgICByZXR1cm4gdG87CiAgfTsKICB2YXIgX190b0VTTSA9IChtb2QsIGlzTm9kZU1vZGUsIHRhcmdldCkgPT4gKHRhcmdldCA9IG1vZCAhPSBudWxsID8gX19jcmVhdGUoX19nZXRQcm90b09mKG1vZCkpIDoge30sIF9fY29weVByb3BzKAogICAgLy8gSWYgdGhlIGltcG9ydGVyIGlzIGluIG5vZGUgY29tcGF0aWJpbGl0eSBtb2RlIG9yIHRoaXMgaXMgbm90IGFuIEVTTQogICAgLy8gZmlsZSB0aGF0IGhhcyBiZWVuIGNvbnZlcnRlZCB0byBhIENvbW1vbkpTIGZpbGUgdXNpbmcgYSBCYWJlbC0KICAgIC8vIGNvbXBhdGlibGUgdHJhbnNmb3JtIChpLmUuICJfX2VzTW9kdWxlIiBoYXMgbm90IGJlZW4gc2V0KSwgdGhlbiBzZXQKICAgIC8vICJkZWZhdWx0IiB0byB0aGUgQ29tbW9uSlMgIm1vZHVsZS5leHBvcnRzIiBmb3Igbm9kZSBjb21wYXRpYmlsaXR5LgogICAgaXNOb2RlTW9kZSB8fCAhbW9kIHx8ICFtb2QuX19lc01vZHVsZSA/IF9fZGVmUHJvcCh0YXJnZXQsICJkZWZhdWx0IiwgeyB2YWx1ZTogbW9kLCBlbnVtZXJhYmxlOiB0cnVlIH0pIDogdGFyZ2V0LAogICAgbW9kCiAgKSk7CgogIC8vIG5vZGVfbW9kdWxlcy9vbWdnaWYvb21nZ2lmLmpzCiAgdmFyIHJlcXVpcmVfb21nZ2lmID0gX19jb21tb25KUyh7CiAgICAibm9kZV9tb2R1bGVzL29tZ2dpZi9vbWdnaWYuanMiKGV4cG9ydHMpIHsKICAgICAgInVzZSBzdHJpY3QiOwogICAgICBmdW5jdGlvbiBHaWZXcml0ZXIyKGJ1Ziwgd2lkdGgsIGhlaWdodCwgZ29wdHMpIHsKICAgICAgICB2YXIgcCA9IDA7CiAgICAgICAgdmFyIGdvcHRzID0gZ29wdHMgPT09IHZvaWQgMCA/IHt9IDogZ29wdHM7CiAgICAgICAgdmFyIGxvb3BfY291bnQgPSBnb3B0cy5sb29wID09PSB2b2lkIDAgPyBudWxsIDogZ29wdHMubG9vcDsKICAgICAgICB2YXIgZ2xvYmFsX3BhbGV0dGUgPSBnb3B0cy5wYWxldHRlID09PSB2b2lkIDAgPyBudWxsIDogZ29wdHMucGFsZXR0ZTsKICAgICAgICBpZiAod2lkdGggPD0gMCB8fCBoZWlnaHQgPD0gMCB8fCB3aWR0aCA+IDY1NTM1IHx8IGhlaWdodCA+IDY1NTM1KQogICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJXaWR0aC9IZWlnaHQgaW52YWxpZC4iKTsKICAgICAgICBmdW5jdGlvbiBjaGVja19wYWxldHRlX2FuZF9udW1fY29sb3JzKHBhbGV0dGUpIHsKICAgICAgICAgIHZhciBudW1fY29sb3JzID0gcGFsZXR0ZS5sZW5ndGg7CiAgICAgICAgICBpZiAobnVtX2NvbG9ycyA8IDIgfHwgbnVtX2NvbG9ycyA+IDI1NiB8fCBudW1fY29sb3JzICYgbnVtX2NvbG9ycyAtIDEpIHsKICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKAogICAgICAgICAgICAgICJJbnZhbGlkIGNvZGUvY29sb3IgbGVuZ3RoLCBtdXN0IGJlIHBvd2VyIG9mIDIgYW5kIDIgLi4gMjU2LiIKICAgICAgICAgICAgKTsKICAgICAgICAgIH0KICAgICAgICAgIHJldHVybiBudW1fY29sb3JzOwogICAgICAgIH0KICAgICAgICBidWZbcCsrXSA9IDcxOwogICAgICAgIGJ1ZltwKytdID0gNzM7CiAgICAgICAgYnVmW3ArK10gPSA3MDsKICAgICAgICBidWZbcCsrXSA9IDU2OwogICAgICAgIGJ1ZltwKytdID0gNTc7CiAgICAgICAgYnVmW3ArK10gPSA5NzsKICAgICAgICB2YXIgZ3BfbnVtX2NvbG9yc19wb3cyID0gMDsKICAgICAgICB2YXIgYmFja2dyb3VuZCA9IDA7CiAgICAgICAgaWYgKGdsb2JhbF9wYWxldHRlICE9PSBudWxsKSB7CiAgICAgICAgICB2YXIgZ3BfbnVtX2NvbG9ycyA9IGNoZWNrX3BhbGV0dGVfYW5kX251bV9jb2xvcnMoZ2xvYmFsX3BhbGV0dGUpOwogICAgICAgICAgd2hpbGUgKGdwX251bV9jb2xvcnMgPj49IDEpICsrZ3BfbnVtX2NvbG9yc19wb3cyOwogICAgICAgICAgZ3BfbnVtX2NvbG9ycyA9IDEgPDwgZ3BfbnVtX2NvbG9yc19wb3cyOwogICAgICAgICAgLS1ncF9udW1fY29sb3JzX3BvdzI7CiAgICAgICAgICBpZiAoZ29wdHMuYmFja2dyb3VuZCAhPT0gdm9pZCAwKSB7CiAgICAgICAgICAgIGJhY2tncm91bmQgPSBnb3B0cy5iYWNrZ3JvdW5kOwogICAgICAgICAgICBpZiAoYmFja2dyb3VuZCA+PSBncF9udW1fY29sb3JzKQogICAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiQmFja2dyb3VuZCBpbmRleCBvdXQgb2YgcmFuZ2UuIik7CiAgICAgICAgICAgIGlmIChiYWNrZ3JvdW5kID09PSAwKQogICAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiQmFja2dyb3VuZCBpbmRleCBleHBsaWNpdGx5IHBhc3NlZCBhcyAwLiIpOwogICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBidWZbcCsrXSA9IHdpZHRoICYgMjU1OwogICAgICAgIGJ1ZltwKytdID0gd2lkdGggPj4gOCAmIDI1NTsKICAgICAgICBidWZbcCsrXSA9IGhlaWdodCAmIDI1NTsKICAgICAgICBidWZbcCsrXSA9IGhlaWdodCA+PiA4ICYgMjU1OwogICAgICAgIGJ1ZltwKytdID0gKGdsb2JhbF9wYWxldHRlICE9PSBudWxsID8gMTI4IDogMCkgfCAvLyBHbG9iYWwgQ29sb3IgVGFibGUgRmxhZy4KICAgICAgICBncF9udW1fY29sb3JzX3BvdzI7CiAgICAgICAgYnVmW3ArK10gPSBiYWNrZ3JvdW5kOwogICAgICAgIGJ1ZltwKytdID0gMDsKICAgICAgICBpZiAoZ2xvYmFsX3BhbGV0dGUgIT09IG51bGwpIHsKICAgICAgICAgIGZvciAodmFyIGkgPSAwLCBpbCA9IGdsb2JhbF9wYWxldHRlLmxlbmd0aDsgaSA8IGlsOyArK2kpIHsKICAgICAgICAgICAgdmFyIHJnYiA9IGdsb2JhbF9wYWxldHRlW2ldOwogICAgICAgICAgICBidWZbcCsrXSA9IHJnYiA+PiAxNiAmIDI1NTsKICAgICAgICAgICAgYnVmW3ArK10gPSByZ2IgPj4gOCAmIDI1NTsKICAgICAgICAgICAgYnVmW3ArK10gPSByZ2IgJiAyNTU7CiAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIGlmIChsb29wX2NvdW50ICE9PSBudWxsKSB7CiAgICAgICAgICBpZiAobG9vcF9jb3VudCA8IDAgfHwgbG9vcF9jb3VudCA+IDY1NTM1KQogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIkxvb3AgY291bnQgaW52YWxpZC4iKTsKICAgICAgICAgIGJ1ZltwKytdID0gMzM7CiAgICAgICAgICBidWZbcCsrXSA9IDI1NTsKICAgICAgICAgIGJ1ZltwKytdID0gMTE7CiAgICAgICAgICBidWZbcCsrXSA9IDc4OwogICAgICAgICAgYnVmW3ArK10gPSA2OTsKICAgICAgICAgIGJ1ZltwKytdID0gODQ7CiAgICAgICAgICBidWZbcCsrXSA9IDgzOwogICAgICAgICAgYnVmW3ArK10gPSA2NzsKICAgICAgICAgIGJ1ZltwKytdID0gNjU7CiAgICAgICAgICBidWZbcCsrXSA9IDgwOwogICAgICAgICAgYnVmW3ArK10gPSA2OTsKICAgICAgICAgIGJ1ZltwKytdID0gNTA7CiAgICAgICAgICBidWZbcCsrXSA9IDQ2OwogICAgICAgICAgYnVmW3ArK10gPSA0ODsKICAgICAgICAgIGJ1ZltwKytdID0gMzsKICAgICAgICAgIGJ1ZltwKytdID0gMTsKICAgICAgICAgIGJ1ZltwKytdID0gbG9vcF9jb3VudCAmIDI1NTsKICAgICAgICAgIGJ1ZltwKytdID0gbG9vcF9jb3VudCA+PiA4ICYgMjU1OwogICAgICAgICAgYnVmW3ArK10gPSAwOwogICAgICAgIH0KICAgICAgICB2YXIgZW5kZWQgPSBmYWxzZTsKICAgICAgICB0aGlzLmFkZEZyYW1lID0gZnVuY3Rpb24oeCwgeSwgdywgaCwgaW5kZXhlZF9waXhlbHMsIG9wdHMpIHsKICAgICAgICAgIGlmIChlbmRlZCA9PT0gdHJ1ZSkgewogICAgICAgICAgICAtLXA7CiAgICAgICAgICAgIGVuZGVkID0gZmFsc2U7CiAgICAgICAgICB9CiAgICAgICAgICBvcHRzID0gb3B0cyA9PT0gdm9pZCAwID8ge30gOiBvcHRzOwogICAgICAgICAgaWYgKHggPCAwIHx8IHkgPCAwIHx8IHggPiA2NTUzNSB8fCB5ID4gNjU1MzUpCiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigieC95IGludmFsaWQuIik7CiAgICAgICAgICBpZiAodyA8PSAwIHx8IGggPD0gMCB8fCB3ID4gNjU1MzUgfHwgaCA+IDY1NTM1KQogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIldpZHRoL0hlaWdodCBpbnZhbGlkLiIpOwogICAgICAgICAgaWYgKGluZGV4ZWRfcGl4ZWxzLmxlbmd0aCA8IHcgKiBoKQogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIk5vdCBlbm91Z2ggcGl4ZWxzIGZvciB0aGUgZnJhbWUgc2l6ZS4iKTsKICAgICAgICAgIHZhciB1c2luZ19sb2NhbF9wYWxldHRlID0gdHJ1ZTsKICAgICAgICAgIHZhciBwYWxldHRlID0gb3B0cy5wYWxldHRlOwogICAgICAgICAgaWYgKHBhbGV0dGUgPT09IHZvaWQgMCB8fCBwYWxldHRlID09PSBudWxsKSB7CiAgICAgICAgICAgIHVzaW5nX2xvY2FsX3BhbGV0dGUgPSBmYWxzZTsKICAgICAgICAgICAgcGFsZXR0ZSA9IGdsb2JhbF9wYWxldHRlOwogICAgICAgICAgfQogICAgICAgICAgaWYgKHBhbGV0dGUgPT09IHZvaWQgMCB8fCBwYWxldHRlID09PSBudWxsKQogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIk11c3Qgc3VwcGx5IGVpdGhlciBhIGxvY2FsIG9yIGdsb2JhbCBwYWxldHRlLiIpOwogICAgICAgICAgdmFyIG51bV9jb2xvcnMgPSBjaGVja19wYWxldHRlX2FuZF9udW1fY29sb3JzKHBhbGV0dGUpOwogICAgICAgICAgdmFyIG1pbl9jb2RlX3NpemUgPSAwOwogICAgICAgICAgd2hpbGUgKG51bV9jb2xvcnMgPj49IDEpICsrbWluX2NvZGVfc2l6ZTsKICAgICAgICAgIG51bV9jb2xvcnMgPSAxIDw8IG1pbl9jb2RlX3NpemU7CiAgICAgICAgICB2YXIgZGVsYXkgPSBvcHRzLmRlbGF5ID09PSB2b2lkIDAgPyAwIDogb3B0cy5kZWxheTsKICAgICAgICAgIHZhciBkaXNwb3NhbCA9IG9wdHMuZGlzcG9zYWwgPT09IHZvaWQgMCA/IDAgOiBvcHRzLmRpc3Bvc2FsOwogICAgICAgICAgaWYgKGRpc3Bvc2FsIDwgMCB8fCBkaXNwb3NhbCA+IDMpCiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiRGlzcG9zYWwgb3V0IG9mIHJhbmdlLiIpOwogICAgICAgICAgdmFyIHVzZV90cmFuc3BhcmVuY3kgPSBmYWxzZTsKICAgICAgICAgIHZhciB0cmFuc3BhcmVudF9pbmRleCA9IDA7CiAgICAgICAgICBpZiAob3B0cy50cmFuc3BhcmVudCAhPT0gdm9pZCAwICYmIG9wdHMudHJhbnNwYXJlbnQgIT09IG51bGwpIHsKICAgICAgICAgICAgdXNlX3RyYW5zcGFyZW5jeSA9IHRydWU7CiAgICAgICAgICAgIHRyYW5zcGFyZW50X2luZGV4ID0gb3B0cy50cmFuc3BhcmVudDsKICAgICAgICAgICAgaWYgKHRyYW5zcGFyZW50X2luZGV4IDwgMCB8fCB0cmFuc3BhcmVudF9pbmRleCA+PSBudW1fY29sb3JzKQogICAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiVHJhbnNwYXJlbnQgY29sb3IgaW5kZXguIik7CiAgICAgICAgICB9CiAgICAgICAgICBpZiAoZGlzcG9zYWwgIT09IDAgfHwgdXNlX3RyYW5zcGFyZW5jeSB8fCBkZWxheSAhPT0gMCkgewogICAgICAgICAgICBidWZbcCsrXSA9IDMzOwogICAgICAgICAgICBidWZbcCsrXSA9IDI0OTsKICAgICAgICAgICAgYnVmW3ArK10gPSA0OwogICAgICAgICAgICBidWZbcCsrXSA9IGRpc3Bvc2FsIDw8IDIgfCAodXNlX3RyYW5zcGFyZW5jeSA9PT0gdHJ1ZSA/IDEgOiAwKTsKICAgICAgICAgICAgYnVmW3ArK10gPSBkZWxheSAmIDI1NTsKICAgICAgICAgICAgYnVmW3ArK10gPSBkZWxheSA+PiA4ICYgMjU1OwogICAgICAgICAgICBidWZbcCsrXSA9IHRyYW5zcGFyZW50X2luZGV4OwogICAgICAgICAgICBidWZbcCsrXSA9IDA7CiAgICAgICAgICB9CiAgICAgICAgICBidWZbcCsrXSA9IDQ0OwogICAgICAgICAgYnVmW3ArK10gPSB4ICYgMjU1OwogICAgICAgICAgYnVmW3ArK10gPSB4ID4+IDggJiAyNTU7CiAgICAgICAgICBidWZbcCsrXSA9IHkgJiAyNTU7CiAgICAgICAgICBidWZbcCsrXSA9IHkgPj4gOCAmIDI1NTsKICAgICAgICAgIGJ1ZltwKytdID0gdyAmIDI1NTsKICAgICAgICAgIGJ1ZltwKytdID0gdyA+PiA4ICYgMjU1OwogICAgICAgICAgYnVmW3ArK10gPSBoICYgMjU1OwogICAgICAgICAgYnVmW3ArK10gPSBoID4+IDggJiAyNTU7CiAgICAgICAgICBidWZbcCsrXSA9IHVzaW5nX2xvY2FsX3BhbGV0dGUgPT09IHRydWUgPyAxMjggfCBtaW5fY29kZV9zaXplIC0gMSA6IDA7CiAgICAgICAgICBpZiAodXNpbmdfbG9jYWxfcGFsZXR0ZSA9PT0gdHJ1ZSkgewogICAgICAgICAgICBmb3IgKHZhciBpMiA9IDAsIGlsMiA9IHBhbGV0dGUubGVuZ3RoOyBpMiA8IGlsMjsgKytpMikgewogICAgICAgICAgICAgIHZhciByZ2IyID0gcGFsZXR0ZVtpMl07CiAgICAgICAgICAgICAgYnVmW3ArK10gPSByZ2IyID4+IDE2ICYgMjU1OwogICAgICAgICAgICAgIGJ1ZltwKytdID0gcmdiMiA+PiA4ICYgMjU1OwogICAgICAgICAgICAgIGJ1ZltwKytdID0gcmdiMiAmIDI1NTsKICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgICAgcCA9IEdpZldyaXRlck91dHB1dExaV0NvZGVTdHJlYW0oCiAgICAgICAgICAgIGJ1ZiwKICAgICAgICAgICAgcCwKICAgICAgICAgICAgbWluX2NvZGVfc2l6ZSA8IDIgPyAyIDogbWluX2NvZGVfc2l6ZSwKICAgICAgICAgICAgaW5kZXhlZF9waXhlbHMKICAgICAgICAgICk7CiAgICAgICAgICByZXR1cm4gcDsKICAgICAgICB9OwogICAgICAgIHRoaXMuZW5kID0gZnVuY3Rpb24oKSB7CiAgICAgICAgICBpZiAoZW5kZWQgPT09IGZhbHNlKSB7CiAgICAgICAgICAgIGJ1ZltwKytdID0gNTk7CiAgICAgICAgICAgIGVuZGVkID0gdHJ1ZTsKICAgICAgICAgIH0KICAgICAgICAgIHJldHVybiBwOwogICAgICAgIH07CiAgICAgICAgdGhpcy5nZXRPdXRwdXRCdWZmZXIgPSBmdW5jdGlvbigpIHsKICAgICAgICAgIHJldHVybiBidWY7CiAgICAgICAgfTsKICAgICAgICB0aGlzLnNldE91dHB1dEJ1ZmZlciA9IGZ1bmN0aW9uKHYpIHsKICAgICAgICAgIGJ1ZiA9IHY7CiAgICAgICAgfTsKICAgICAgICB0aGlzLmdldE91dHB1dEJ1ZmZlclBvc2l0aW9uID0gZnVuY3Rpb24oKSB7CiAgICAgICAgICByZXR1cm4gcDsKICAgICAgICB9OwogICAgICAgIHRoaXMuc2V0T3V0cHV0QnVmZmVyUG9zaXRpb24gPSBmdW5jdGlvbih2KSB7CiAgICAgICAgICBwID0gdjsKICAgICAgICB9OwogICAgICB9CiAgICAgIGZ1bmN0aW9uIEdpZldyaXRlck91dHB1dExaV0NvZGVTdHJlYW0oYnVmLCBwLCBtaW5fY29kZV9zaXplLCBpbmRleF9zdHJlYW0pIHsKICAgICAgICBidWZbcCsrXSA9IG1pbl9jb2RlX3NpemU7CiAgICAgICAgdmFyIGN1cl9zdWJibG9jayA9IHArKzsKICAgICAgICB2YXIgY2xlYXJfY29kZSA9IDEgPDwgbWluX2NvZGVfc2l6ZTsKICAgICAgICB2YXIgY29kZV9tYXNrID0gY2xlYXJfY29kZSAtIDE7CiAgICAgICAgdmFyIGVvaV9jb2RlID0gY2xlYXJfY29kZSArIDE7CiAgICAgICAgdmFyIG5leHRfY29kZSA9IGVvaV9jb2RlICsgMTsKICAgICAgICB2YXIgY3VyX2NvZGVfc2l6ZSA9IG1pbl9jb2RlX3NpemUgKyAxOwogICAgICAgIHZhciBjdXJfc2hpZnQgPSAwOwogICAgICAgIHZhciBjdXIgPSAwOwogICAgICAgIGZ1bmN0aW9uIGVtaXRfYnl0ZXNfdG9fYnVmZmVyKGJpdF9ibG9ja19zaXplKSB7CiAgICAgICAgICB3aGlsZSAoY3VyX3NoaWZ0ID49IGJpdF9ibG9ja19zaXplKSB7CiAgICAgICAgICAgIGJ1ZltwKytdID0gY3VyICYgMjU1OwogICAgICAgICAgICBjdXIgPj49IDg7CiAgICAgICAgICAgIGN1cl9zaGlmdCAtPSA4OwogICAgICAgICAgICBpZiAocCA9PT0gY3VyX3N1YmJsb2NrICsgMjU2KSB7CiAgICAgICAgICAgICAgYnVmW2N1cl9zdWJibG9ja10gPSAyNTU7CiAgICAgICAgICAgICAgY3VyX3N1YmJsb2NrID0gcCsrOwogICAgICAgICAgICB9CiAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIGZ1bmN0aW9uIGVtaXRfY29kZShjKSB7CiAgICAgICAgICBjdXIgfD0gYyA8PCBjdXJfc2hpZnQ7CiAgICAgICAgICBjdXJfc2hpZnQgKz0gY3VyX2NvZGVfc2l6ZTsKICAgICAgICAgIGVtaXRfYnl0ZXNfdG9fYnVmZmVyKDgpOwogICAgICAgIH0KICAgICAgICB2YXIgaWJfY29kZSA9IGluZGV4X3N0cmVhbVswXSAmIGNvZGVfbWFzazsKICAgICAgICB2YXIgY29kZV90YWJsZSA9IHt9OwogICAgICAgIGVtaXRfY29kZShjbGVhcl9jb2RlKTsKICAgICAgICBmb3IgKHZhciBpID0gMSwgaWwgPSBpbmRleF9zdHJlYW0ubGVuZ3RoOyBpIDwgaWw7ICsraSkgewogICAgICAgICAgdmFyIGsgPSBpbmRleF9zdHJlYW1baV0gJiBjb2RlX21hc2s7CiAgICAgICAgICB2YXIgY3VyX2tleSA9IGliX2NvZGUgPDwgOCB8IGs7CiAgICAgICAgICB2YXIgY3VyX2NvZGUgPSBjb2RlX3RhYmxlW2N1cl9rZXldOwogICAgICAgICAgaWYgKGN1cl9jb2RlID09PSB2b2lkIDApIHsKICAgICAgICAgICAgY3VyIHw9IGliX2NvZGUgPDwgY3VyX3NoaWZ0OwogICAgICAgICAgICBjdXJfc2hpZnQgKz0gY3VyX2NvZGVfc2l6ZTsKICAgICAgICAgICAgd2hpbGUgKGN1cl9zaGlmdCA+PSA4KSB7CiAgICAgICAgICAgICAgYnVmW3ArK10gPSBjdXIgJiAyNTU7CiAgICAgICAgICAgICAgY3VyID4+PSA4OwogICAgICAgICAgICAgIGN1cl9zaGlmdCAtPSA4OwogICAgICAgICAgICAgIGlmIChwID09PSBjdXJfc3ViYmxvY2sgKyAyNTYpIHsKICAgICAgICAgICAgICAgIGJ1ZltjdXJfc3ViYmxvY2tdID0gMjU1OwogICAgICAgICAgICAgICAgY3VyX3N1YmJsb2NrID0gcCsrOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAobmV4dF9jb2RlID09PSA0MDk2KSB7CiAgICAgICAgICAgICAgZW1pdF9jb2RlKGNsZWFyX2NvZGUpOwogICAgICAgICAgICAgIG5leHRfY29kZSA9IGVvaV9jb2RlICsgMTsKICAgICAgICAgICAgICBjdXJfY29kZV9zaXplID0gbWluX2NvZGVfc2l6ZSArIDE7CiAgICAgICAgICAgICAgY29kZV90YWJsZSA9IHt9OwogICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgIGlmIChuZXh0X2NvZGUgPj0gMSA8PCBjdXJfY29kZV9zaXplKSArK2N1cl9jb2RlX3NpemU7CiAgICAgICAgICAgICAgY29kZV90YWJsZVtjdXJfa2V5XSA9IG5leHRfY29kZSsrOwogICAgICAgICAgICB9CiAgICAgICAgICAgIGliX2NvZGUgPSBrOwogICAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgaWJfY29kZSA9IGN1cl9jb2RlOwogICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBlbWl0X2NvZGUoaWJfY29kZSk7CiAgICAgICAgZW1pdF9jb2RlKGVvaV9jb2RlKTsKICAgICAgICBlbWl0X2J5dGVzX3RvX2J1ZmZlcigxKTsKICAgICAgICBpZiAoY3VyX3N1YmJsb2NrICsgMSA9PT0gcCkgewogICAgICAgICAgYnVmW2N1cl9zdWJibG9ja10gPSAwOwogICAgICAgIH0gZWxzZSB7CiAgICAgICAgICBidWZbY3VyX3N1YmJsb2NrXSA9IHAgLSBjdXJfc3ViYmxvY2sgLSAxOwogICAgICAgICAgYnVmW3ArK10gPSAwOwogICAgICAgIH0KICAgICAgICByZXR1cm4gcDsKICAgICAgfQogICAgICBmdW5jdGlvbiBHaWZSZWFkZXIoYnVmKSB7CiAgICAgICAgdmFyIHAgPSAwOwogICAgICAgIGlmIChidWZbcCsrXSAhPT0gNzEgfHwgYnVmW3ArK10gIT09IDczIHx8IGJ1ZltwKytdICE9PSA3MCB8fCBidWZbcCsrXSAhPT0gNTYgfHwgKGJ1ZltwKytdICsgMSAmIDI1MykgIT09IDU2IHx8IGJ1ZltwKytdICE9PSA5NykgewogICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJJbnZhbGlkIEdJRiA4N2EvODlhIGhlYWRlci4iKTsKICAgICAgICB9CiAgICAgICAgdmFyIHdpZHRoID0gYnVmW3ArK10gfCBidWZbcCsrXSA8PCA4OwogICAgICAgIHZhciBoZWlnaHQgPSBidWZbcCsrXSB8IGJ1ZltwKytdIDw8IDg7CiAgICAgICAgdmFyIHBmMCA9IGJ1ZltwKytdOwogICAgICAgIHZhciBnbG9iYWxfcGFsZXR0ZV9mbGFnID0gcGYwID4+IDc7CiAgICAgICAgdmFyIG51bV9nbG9iYWxfY29sb3JzX3BvdzIgPSBwZjAgJiA3OwogICAgICAgIHZhciBudW1fZ2xvYmFsX2NvbG9ycyA9IDEgPDwgbnVtX2dsb2JhbF9jb2xvcnNfcG93MiArIDE7CiAgICAgICAgdmFyIGJhY2tncm91bmQgPSBidWZbcCsrXTsKICAgICAgICBidWZbcCsrXTsKICAgICAgICB2YXIgZ2xvYmFsX3BhbGV0dGVfb2Zmc2V0ID0gbnVsbDsKICAgICAgICB2YXIgZ2xvYmFsX3BhbGV0dGVfc2l6ZSA9IG51bGw7CiAgICAgICAgaWYgKGdsb2JhbF9wYWxldHRlX2ZsYWcpIHsKICAgICAgICAgIGdsb2JhbF9wYWxldHRlX29mZnNldCA9IHA7CiAgICAgICAgICBnbG9iYWxfcGFsZXR0ZV9zaXplID0gbnVtX2dsb2JhbF9jb2xvcnM7CiAgICAgICAgICBwICs9IG51bV9nbG9iYWxfY29sb3JzICogMzsKICAgICAgICB9CiAgICAgICAgdmFyIG5vX2VvZiA9IHRydWU7CiAgICAgICAgdmFyIGZyYW1lcyA9IFtdOwogICAgICAgIHZhciBkZWxheSA9IDA7CiAgICAgICAgdmFyIHRyYW5zcGFyZW50X2luZGV4ID0gbnVsbDsKICAgICAgICB2YXIgZGlzcG9zYWwgPSAwOwogICAgICAgIHZhciBsb29wX2NvdW50ID0gbnVsbDsKICAgICAgICB0aGlzLndpZHRoID0gd2lkdGg7CiAgICAgICAgdGhpcy5oZWlnaHQgPSBoZWlnaHQ7CiAgICAgICAgd2hpbGUgKG5vX2VvZiAmJiBwIDwgYnVmLmxlbmd0aCkgewogICAgICAgICAgc3dpdGNoIChidWZbcCsrXSkgewogICAgICAgICAgICBjYXNlIDMzOgogICAgICAgICAgICAgIHN3aXRjaCAoYnVmW3ArK10pIHsKICAgICAgICAgICAgICAgIGNhc2UgMjU1OgogICAgICAgICAgICAgICAgICBpZiAoYnVmW3BdICE9PSAxMSB8fCAvLyAyMSBGRiBhbHJlYWR5IHJlYWQsIGNoZWNrIGJsb2NrIHNpemUuCiAgICAgICAgICAgICAgICAgIC8vIE5FVFNDQVBFMi4wCiAgICAgICAgICAgICAgICAgIGJ1ZltwICsgMV0gPT0gNzggJiYgYnVmW3AgKyAyXSA9PSA2OSAmJiBidWZbcCArIDNdID09IDg0ICYmIGJ1ZltwICsgNF0gPT0gODMgJiYgYnVmW3AgKyA1XSA9PSA2NyAmJiBidWZbcCArIDZdID09IDY1ICYmIGJ1ZltwICsgN10gPT0gODAgJiYgYnVmW3AgKyA4XSA9PSA2OSAmJiBidWZbcCArIDldID09IDUwICYmIGJ1ZltwICsgMTBdID09IDQ2ICYmIGJ1ZltwICsgMTFdID09IDQ4ICYmIC8vIFN1Yi1ibG9jawogICAgICAgICAgICAgICAgICBidWZbcCArIDEyXSA9PSAzICYmIGJ1ZltwICsgMTNdID09IDEgJiYgYnVmW3AgKyAxNl0gPT0gMCkgewogICAgICAgICAgICAgICAgICAgIHAgKz0gMTQ7CiAgICAgICAgICAgICAgICAgICAgbG9vcF9jb3VudCA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICAgICAgICBwKys7CiAgICAgICAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgICAgICAgcCArPSAxMjsKICAgICAgICAgICAgICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICAgICAgICAgICAgdmFyIGJsb2NrX3NpemUgPSBidWZbcCsrXTsKICAgICAgICAgICAgICAgICAgICAgIGlmICghKGJsb2NrX3NpemUgPj0gMCkpIHRocm93IEVycm9yKCJJbnZhbGlkIGJsb2NrIHNpemUiKTsKICAgICAgICAgICAgICAgICAgICAgIGlmIChibG9ja19zaXplID09PSAwKSBicmVhazsKICAgICAgICAgICAgICAgICAgICAgIHAgKz0gYmxvY2tfc2l6ZTsKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgICAgICBjYXNlIDI0OToKICAgICAgICAgICAgICAgICAgaWYgKGJ1ZltwKytdICE9PSA0IHx8IGJ1ZltwICsgNF0gIT09IDApCiAgICAgICAgICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJJbnZhbGlkIGdyYXBoaWNzIGV4dGVuc2lvbiBibG9jay4iKTsKICAgICAgICAgICAgICAgICAgdmFyIHBmMSA9IGJ1ZltwKytdOwogICAgICAgICAgICAgICAgICBkZWxheSA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICAgICAgdHJhbnNwYXJlbnRfaW5kZXggPSBidWZbcCsrXTsKICAgICAgICAgICAgICAgICAgaWYgKChwZjEgJiAxKSA9PT0gMCkgdHJhbnNwYXJlbnRfaW5kZXggPSBudWxsOwogICAgICAgICAgICAgICAgICBkaXNwb3NhbCA9IHBmMSA+PiAyICYgNzsKICAgICAgICAgICAgICAgICAgcCsrOwogICAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgICAgIGNhc2UgMjU0OgogICAgICAgICAgICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICAgICAgICAgIHZhciBibG9ja19zaXplID0gYnVmW3ArK107CiAgICAgICAgICAgICAgICAgICAgaWYgKCEoYmxvY2tfc2l6ZSA+PSAwKSkgdGhyb3cgRXJyb3IoIkludmFsaWQgYmxvY2sgc2l6ZSIpOwogICAgICAgICAgICAgICAgICAgIGlmIChibG9ja19zaXplID09PSAwKSBicmVhazsKICAgICAgICAgICAgICAgICAgICBwICs9IGJsb2NrX3NpemU7CiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgICAgICBkZWZhdWx0OgogICAgICAgICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoCiAgICAgICAgICAgICAgICAgICAgIlVua25vd24gZ3JhcGhpYyBjb250cm9sIGxhYmVsOiAweCIgKyBidWZbcCAtIDFdLnRvU3RyaW5nKDE2KQogICAgICAgICAgICAgICAgICApOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgY2FzZSA0NDoKICAgICAgICAgICAgICB2YXIgeCA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICB2YXIgeSA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICB2YXIgdyA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICB2YXIgaCA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICB2YXIgcGYyID0gYnVmW3ArK107CiAgICAgICAgICAgICAgdmFyIGxvY2FsX3BhbGV0dGVfZmxhZyA9IHBmMiA+PiA3OwogICAgICAgICAgICAgIHZhciBpbnRlcmxhY2VfZmxhZyA9IHBmMiA+PiA2ICYgMTsKICAgICAgICAgICAgICB2YXIgbnVtX2xvY2FsX2NvbG9yc19wb3cyID0gcGYyICYgNzsKICAgICAgICAgICAgICB2YXIgbnVtX2xvY2FsX2NvbG9ycyA9IDEgPDwgbnVtX2xvY2FsX2NvbG9yc19wb3cyICsgMTsKICAgICAgICAgICAgICB2YXIgcGFsZXR0ZV9vZmZzZXQgPSBnbG9iYWxfcGFsZXR0ZV9vZmZzZXQ7CiAgICAgICAgICAgICAgdmFyIHBhbGV0dGVfc2l6ZSA9IGdsb2JhbF9wYWxldHRlX3NpemU7CiAgICAgICAgICAgICAgdmFyIGhhc19sb2NhbF9wYWxldHRlID0gZmFsc2U7CiAgICAgICAgICAgICAgaWYgKGxvY2FsX3BhbGV0dGVfZmxhZykgewogICAgICAgICAgICAgICAgdmFyIGhhc19sb2NhbF9wYWxldHRlID0gdHJ1ZTsKICAgICAgICAgICAgICAgIHBhbGV0dGVfb2Zmc2V0ID0gcDsKICAgICAgICAgICAgICAgIHBhbGV0dGVfc2l6ZSA9IG51bV9sb2NhbF9jb2xvcnM7CiAgICAgICAgICAgICAgICBwICs9IG51bV9sb2NhbF9jb2xvcnMgKiAzOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgICB2YXIgZGF0YV9vZmZzZXQgPSBwOwogICAgICAgICAgICAgIHArKzsKICAgICAgICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICAgICAgdmFyIGJsb2NrX3NpemUgPSBidWZbcCsrXTsKICAgICAgICAgICAgICAgIGlmICghKGJsb2NrX3NpemUgPj0gMCkpIHRocm93IEVycm9yKCJJbnZhbGlkIGJsb2NrIHNpemUiKTsKICAgICAgICAgICAgICAgIGlmIChibG9ja19zaXplID09PSAwKSBicmVhazsKICAgICAgICAgICAgICAgIHAgKz0gYmxvY2tfc2l6ZTsKICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgZnJhbWVzLnB1c2goewogICAgICAgICAgICAgICAgeCwKICAgICAgICAgICAgICAgIHksCiAgICAgICAgICAgICAgICB3aWR0aDogdywKICAgICAgICAgICAgICAgIGhlaWdodDogaCwKICAgICAgICAgICAgICAgIGhhc19sb2NhbF9wYWxldHRlLAogICAgICAgICAgICAgICAgcGFsZXR0ZV9vZmZzZXQsCiAgICAgICAgICAgICAgICBwYWxldHRlX3NpemUsCiAgICAgICAgICAgICAgICBkYXRhX29mZnNldCwKICAgICAgICAgICAgICAgIGRhdGFfbGVuZ3RoOiBwIC0gZGF0YV9vZmZzZXQsCiAgICAgICAgICAgICAgICB0cmFuc3BhcmVudF9pbmRleCwKICAgICAgICAgICAgICAgIGludGVybGFjZWQ6ICEhaW50ZXJsYWNlX2ZsYWcsCiAgICAgICAgICAgICAgICBkZWxheSwKICAgICAgICAgICAgICAgIGRpc3Bvc2FsCiAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgIGNhc2UgNTk6CiAgICAgICAgICAgICAgbm9fZW9mID0gZmFsc2U7CiAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgIGRlZmF1bHQ6CiAgICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJVbmtub3duIGdpZiBibG9jazogMHgiICsgYnVmW3AgLSAxXS50b1N0cmluZygxNikpOwogICAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgfQogICAgICAgIH0KICAgICAgICB0aGlzLm51bUZyYW1lcyA9IGZ1bmN0aW9uKCkgewogICAgICAgICAgcmV0dXJuIGZyYW1lcy5sZW5ndGg7CiAgICAgICAgfTsKICAgICAgICB0aGlzLmxvb3BDb3VudCA9IGZ1bmN0aW9uKCkgewogICAgICAgICAgcmV0dXJuIGxvb3BfY291bnQ7CiAgICAgICAgfTsKICAgICAgICB0aGlzLmZyYW1lSW5mbyA9IGZ1bmN0aW9uKGZyYW1lX251bSkgewogICAgICAgICAgaWYgKGZyYW1lX251bSA8IDAgfHwgZnJhbWVfbnVtID49IGZyYW1lcy5sZW5ndGgpCiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiRnJhbWUgaW5kZXggb3V0IG9mIHJhbmdlLiIpOwogICAgICAgICAgcmV0dXJuIGZyYW1lc1tmcmFtZV9udW1dOwogICAgICAgIH07CiAgICAgICAgdGhpcy5kZWNvZGVBbmRCbGl0RnJhbWVCR1JBID0gZnVuY3Rpb24oZnJhbWVfbnVtLCBwaXhlbHMpIHsKICAgICAgICAgIHZhciBmcmFtZSA9IHRoaXMuZnJhbWVJbmZvKGZyYW1lX251bSk7CiAgICAgICAgICB2YXIgbnVtX3BpeGVscyA9IGZyYW1lLndpZHRoICogZnJhbWUuaGVpZ2h0OwogICAgICAgICAgdmFyIGluZGV4X3N0cmVhbSA9IG5ldyBVaW50OEFycmF5KG51bV9waXhlbHMpOwogICAgICAgICAgR2lmUmVhZGVyTFpXT3V0cHV0SW5kZXhTdHJlYW0oCiAgICAgICAgICAgIGJ1ZiwKICAgICAgICAgICAgZnJhbWUuZGF0YV9vZmZzZXQsCiAgICAgICAgICAgIGluZGV4X3N0cmVhbSwKICAgICAgICAgICAgbnVtX3BpeGVscwogICAgICAgICAgKTsKICAgICAgICAgIHZhciBwYWxldHRlX29mZnNldDIgPSBmcmFtZS5wYWxldHRlX29mZnNldDsKICAgICAgICAgIHZhciB0cmFucyA9IGZyYW1lLnRyYW5zcGFyZW50X2luZGV4OwogICAgICAgICAgaWYgKHRyYW5zID09PSBudWxsKSB0cmFucyA9IDI1NjsKICAgICAgICAgIHZhciBmcmFtZXdpZHRoID0gZnJhbWUud2lkdGg7CiAgICAgICAgICB2YXIgZnJhbWVzdHJpZGUgPSB3aWR0aCAtIGZyYW1ld2lkdGg7CiAgICAgICAgICB2YXIgeGxlZnQgPSBmcmFtZXdpZHRoOwogICAgICAgICAgdmFyIG9wYmVnID0gKGZyYW1lLnkgKiB3aWR0aCArIGZyYW1lLngpICogNDsKICAgICAgICAgIHZhciBvcGVuZCA9ICgoZnJhbWUueSArIGZyYW1lLmhlaWdodCkgKiB3aWR0aCArIGZyYW1lLngpICogNDsKICAgICAgICAgIHZhciBvcCA9IG9wYmVnOwogICAgICAgICAgdmFyIHNjYW5zdHJpZGUgPSBmcmFtZXN0cmlkZSAqIDQ7CiAgICAgICAgICBpZiAoZnJhbWUuaW50ZXJsYWNlZCA9PT0gdHJ1ZSkgewogICAgICAgICAgICBzY2Fuc3RyaWRlICs9IHdpZHRoICogNCAqIDc7CiAgICAgICAgICB9CiAgICAgICAgICB2YXIgaW50ZXJsYWNlc2tpcCA9IDg7CiAgICAgICAgICBmb3IgKHZhciBpID0gMCwgaWwgPSBpbmRleF9zdHJlYW0ubGVuZ3RoOyBpIDwgaWw7ICsraSkgewogICAgICAgICAgICB2YXIgaW5kZXggPSBpbmRleF9zdHJlYW1baV07CiAgICAgICAgICAgIGlmICh4bGVmdCA9PT0gMCkgewogICAgICAgICAgICAgIG9wICs9IHNjYW5zdHJpZGU7CiAgICAgICAgICAgICAgeGxlZnQgPSBmcmFtZXdpZHRoOwogICAgICAgICAgICAgIGlmIChvcCA+PSBvcGVuZCkgewogICAgICAgICAgICAgICAgc2NhbnN0cmlkZSA9IGZyYW1lc3RyaWRlICogNCArIHdpZHRoICogNCAqIChpbnRlcmxhY2Vza2lwIC0gMSk7CiAgICAgICAgICAgICAgICBvcCA9IG9wYmVnICsgKGZyYW1ld2lkdGggKyBmcmFtZXN0cmlkZSkgKiAoaW50ZXJsYWNlc2tpcCA8PCAxKTsKICAgICAgICAgICAgICAgIGludGVybGFjZXNraXAgPj49IDE7CiAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIGlmIChpbmRleCA9PT0gdHJhbnMpIHsKICAgICAgICAgICAgICBvcCArPSA0OwogICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgIHZhciByID0gYnVmW3BhbGV0dGVfb2Zmc2V0MiArIGluZGV4ICogM107CiAgICAgICAgICAgICAgdmFyIGcgPSBidWZbcGFsZXR0ZV9vZmZzZXQyICsgaW5kZXggKiAzICsgMV07CiAgICAgICAgICAgICAgdmFyIGIgPSBidWZbcGFsZXR0ZV9vZmZzZXQyICsgaW5kZXggKiAzICsgMl07CiAgICAgICAgICAgICAgcGl4ZWxzW29wKytdID0gYjsKICAgICAgICAgICAgICBwaXhlbHNbb3ArK10gPSBnOwogICAgICAgICAgICAgIHBpeGVsc1tvcCsrXSA9IHI7CiAgICAgICAgICAgICAgcGl4ZWxzW29wKytdID0gMjU1OwogICAgICAgICAgICB9CiAgICAgICAgICAgIC0teGxlZnQ7CiAgICAgICAgICB9CiAgICAgICAgfTsKICAgICAgICB0aGlzLmRlY29kZUFuZEJsaXRGcmFtZVJHQkEgPSBmdW5jdGlvbihmcmFtZV9udW0sIHBpeGVscykgewogICAgICAgICAgdmFyIGZyYW1lID0gdGhpcy5mcmFtZUluZm8oZnJhbWVfbnVtKTsKICAgICAgICAgIHZhciBudW1fcGl4ZWxzID0gZnJhbWUud2lkdGggKiBmcmFtZS5oZWlnaHQ7CiAgICAgICAgICB2YXIgaW5kZXhfc3RyZWFtID0gbmV3IFVpbnQ4QXJyYXkobnVtX3BpeGVscyk7CiAgICAgICAgICBHaWZSZWFkZXJMWldPdXRwdXRJbmRleFN0cmVhbSgKICAgICAgICAgICAgYnVmLAogICAgICAgICAgICBmcmFtZS5kYXRhX29mZnNldCwKICAgICAgICAgICAgaW5kZXhfc3RyZWFtLAogICAgICAgICAgICBudW1fcGl4ZWxzCiAgICAgICAgICApOwogICAgICAgICAgdmFyIHBhbGV0dGVfb2Zmc2V0MiA9IGZyYW1lLnBhbGV0dGVfb2Zmc2V0OwogICAgICAgICAgdmFyIHRyYW5zID0gZnJhbWUudHJhbnNwYXJlbnRfaW5kZXg7CiAgICAgICAgICBpZiAodHJhbnMgPT09IG51bGwpIHRyYW5zID0gMjU2OwogICAgICAgICAgdmFyIGZyYW1ld2lkdGggPSBmcmFtZS53aWR0aDsKICAgICAgICAgIHZhciBmcmFtZXN0cmlkZSA9IHdpZHRoIC0gZnJhbWV3aWR0aDsKICAgICAgICAgIHZhciB4bGVmdCA9IGZyYW1ld2lkdGg7CiAgICAgICAgICB2YXIgb3BiZWcgPSAoZnJhbWUueSAqIHdpZHRoICsgZnJhbWUueCkgKiA0OwogICAgICAgICAgdmFyIG9wZW5kID0gKChmcmFtZS55ICsgZnJhbWUuaGVpZ2h0KSAqIHdpZHRoICsgZnJhbWUueCkgKiA0OwogICAgICAgICAgdmFyIG9wID0gb3BiZWc7CiAgICAgICAgICB2YXIgc2NhbnN0cmlkZSA9IGZyYW1lc3RyaWRlICogNDsKICAgICAgICAgIGlmIChmcmFtZS5pbnRlcmxhY2VkID09PSB0cnVlKSB7CiAgICAgICAgICAgIHNjYW5zdHJpZGUgKz0gd2lkdGggKiA0ICogNzsKICAgICAgICAgIH0KICAgICAgICAgIHZhciBpbnRlcmxhY2Vza2lwID0gODsKICAgICAgICAgIGZvciAodmFyIGkgPSAwLCBpbCA9IGluZGV4X3N0cmVhbS5sZW5ndGg7IGkgPCBpbDsgKytpKSB7CiAgICAgICAgICAgIHZhciBpbmRleCA9IGluZGV4X3N0cmVhbVtpXTsKICAgICAgICAgICAgaWYgKHhsZWZ0ID09PSAwKSB7CiAgICAgICAgICAgICAgb3AgKz0gc2NhbnN0cmlkZTsKICAgICAgICAgICAgICB4bGVmdCA9IGZyYW1ld2lkdGg7CiAgICAgICAgICAgICAgaWYgKG9wID49IG9wZW5kKSB7CiAgICAgICAgICAgICAgICBzY2Fuc3RyaWRlID0gZnJhbWVzdHJpZGUgKiA0ICsgd2lkdGggKiA0ICogKGludGVybGFjZXNraXAgLSAxKTsKICAgICAgICAgICAgICAgIG9wID0gb3BiZWcgKyAoZnJhbWV3aWR0aCArIGZyYW1lc3RyaWRlKSAqIChpbnRlcmxhY2Vza2lwIDw8IDEpOwogICAgICAgICAgICAgICAgaW50ZXJsYWNlc2tpcCA+Pj0gMTsKICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKGluZGV4ID09PSB0cmFucykgewogICAgICAgICAgICAgIG9wICs9IDQ7CiAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgdmFyIHIgPSBidWZbcGFsZXR0ZV9vZmZzZXQyICsgaW5kZXggKiAzXTsKICAgICAgICAgICAgICB2YXIgZyA9IGJ1ZltwYWxldHRlX29mZnNldDIgKyBpbmRleCAqIDMgKyAxXTsKICAgICAgICAgICAgICB2YXIgYiA9IGJ1ZltwYWxldHRlX29mZnNldDIgKyBpbmRleCAqIDMgKyAyXTsKICAgICAgICAgICAgICBwaXhlbHNbb3ArK10gPSByOwogICAgICAgICAgICAgIHBpeGVsc1tvcCsrXSA9IGc7CiAgICAgICAgICAgICAgcGl4ZWxzW29wKytdID0gYjsKICAgICAgICAgICAgICBwaXhlbHNbb3ArK10gPSAyNTU7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgLS14bGVmdDsKICAgICAgICAgIH0KICAgICAgICB9OwogICAgICB9CiAgICAgIGZ1bmN0aW9uIEdpZlJlYWRlckxaV091dHB1dEluZGV4U3RyZWFtKGNvZGVfc3RyZWFtLCBwLCBvdXRwdXQsIG91dHB1dF9sZW5ndGgpIHsKICAgICAgICB2YXIgbWluX2NvZGVfc2l6ZSA9IGNvZGVfc3RyZWFtW3ArK107CiAgICAgICAgdmFyIGNsZWFyX2NvZGUgPSAxIDw8IG1pbl9jb2RlX3NpemU7CiAgICAgICAgdmFyIGVvaV9jb2RlID0gY2xlYXJfY29kZSArIDE7CiAgICAgICAgdmFyIG5leHRfY29kZSA9IGVvaV9jb2RlICsgMTsKICAgICAgICB2YXIgY3VyX2NvZGVfc2l6ZSA9IG1pbl9jb2RlX3NpemUgKyAxOwogICAgICAgIHZhciBjb2RlX21hc2sgPSAoMSA8PCBjdXJfY29kZV9zaXplKSAtIDE7CiAgICAgICAgdmFyIGN1cl9zaGlmdCA9IDA7CiAgICAgICAgdmFyIGN1ciA9IDA7CiAgICAgICAgdmFyIG9wID0gMDsKICAgICAgICB2YXIgc3ViYmxvY2tfc2l6ZSA9IGNvZGVfc3RyZWFtW3ArK107CiAgICAgICAgdmFyIGNvZGVfdGFibGUgPSBuZXcgSW50MzJBcnJheSg0MDk2KTsKICAgICAgICB2YXIgcHJldl9jb2RlID0gbnVsbDsKICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgd2hpbGUgKGN1cl9zaGlmdCA8IDE2KSB7CiAgICAgICAgICAgIGlmIChzdWJibG9ja19zaXplID09PSAwKSBicmVhazsKICAgICAgICAgICAgY3VyIHw9IGNvZGVfc3RyZWFtW3ArK10gPDwgY3VyX3NoaWZ0OwogICAgICAgICAgICBjdXJfc2hpZnQgKz0gODsKICAgICAgICAgICAgaWYgKHN1YmJsb2NrX3NpemUgPT09IDEpIHsKICAgICAgICAgICAgICBzdWJibG9ja19zaXplID0gY29kZV9zdHJlYW1bcCsrXTsKICAgICAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgICAtLXN1YmJsb2NrX3NpemU7CiAgICAgICAgICAgIH0KICAgICAgICAgIH0KICAgICAgICAgIGlmIChjdXJfc2hpZnQgPCBjdXJfY29kZV9zaXplKQogICAgICAgICAgICBicmVhazsKICAgICAgICAgIHZhciBjb2RlID0gY3VyICYgY29kZV9tYXNrOwogICAgICAgICAgY3VyID4+PSBjdXJfY29kZV9zaXplOwogICAgICAgICAgY3VyX3NoaWZ0IC09IGN1cl9jb2RlX3NpemU7CiAgICAgICAgICBpZiAoY29kZSA9PT0gY2xlYXJfY29kZSkgewogICAgICAgICAgICBuZXh0X2NvZGUgPSBlb2lfY29kZSArIDE7CiAgICAgICAgICAgIGN1cl9jb2RlX3NpemUgPSBtaW5fY29kZV9zaXplICsgMTsKICAgICAgICAgICAgY29kZV9tYXNrID0gKDEgPDwgY3VyX2NvZGVfc2l6ZSkgLSAxOwogICAgICAgICAgICBwcmV2X2NvZGUgPSBudWxsOwogICAgICAgICAgICBjb250aW51ZTsKICAgICAgICAgIH0gZWxzZSBpZiAoY29kZSA9PT0gZW9pX2NvZGUpIHsKICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICB9CiAgICAgICAgICB2YXIgY2hhc2VfY29kZSA9IGNvZGUgPCBuZXh0X2NvZGUgPyBjb2RlIDogcHJldl9jb2RlOwogICAgICAgICAgdmFyIGNoYXNlX2xlbmd0aCA9IDA7CiAgICAgICAgICB2YXIgY2hhc2UgPSBjaGFzZV9jb2RlOwogICAgICAgICAgd2hpbGUgKGNoYXNlID4gY2xlYXJfY29kZSkgewogICAgICAgICAgICBjaGFzZSA9IGNvZGVfdGFibGVbY2hhc2VdID4+IDg7CiAgICAgICAgICAgICsrY2hhc2VfbGVuZ3RoOwogICAgICAgICAgfQogICAgICAgICAgdmFyIGsgPSBjaGFzZTsKICAgICAgICAgIHZhciBvcF9lbmQgPSBvcCArIGNoYXNlX2xlbmd0aCArIChjaGFzZV9jb2RlICE9PSBjb2RlID8gMSA6IDApOwogICAgICAgICAgaWYgKG9wX2VuZCA+IG91dHB1dF9sZW5ndGgpIHsKICAgICAgICAgICAgY29uc29sZS5sb2coIldhcm5pbmcsIGdpZiBzdHJlYW0gbG9uZ2VyIHRoYW4gZXhwZWN0ZWQuIik7CiAgICAgICAgICAgIHJldHVybjsKICAgICAgICAgIH0KICAgICAgICAgIG91dHB1dFtvcCsrXSA9IGs7CiAgICAgICAgICBvcCArPSBjaGFzZV9sZW5ndGg7CiAgICAgICAgICB2YXIgYiA9IG9wOwogICAgICAgICAgaWYgKGNoYXNlX2NvZGUgIT09IGNvZGUpCiAgICAgICAgICAgIG91dHB1dFtvcCsrXSA9IGs7CiAgICAgICAgICBjaGFzZSA9IGNoYXNlX2NvZGU7CiAgICAgICAgICB3aGlsZSAoY2hhc2VfbGVuZ3RoLS0pIHsKICAgICAgICAgICAgY2hhc2UgPSBjb2RlX3RhYmxlW2NoYXNlXTsKICAgICAgICAgICAgb3V0cHV0Wy0tYl0gPSBjaGFzZSAmIDI1NTsKICAgICAgICAgICAgY2hhc2UgPj49IDg7CiAgICAgICAgICB9CiAgICAgICAgICBpZiAocHJldl9jb2RlICE9PSBudWxsICYmIG5leHRfY29kZSA8IDQwOTYpIHsKICAgICAgICAgICAgY29kZV90YWJsZVtuZXh0X2NvZGUrK10gPSBwcmV2X2NvZGUgPDwgOCB8IGs7CiAgICAgICAgICAgIGlmIChuZXh0X2NvZGUgPj0gY29kZV9tYXNrICsgMSAmJiBjdXJfY29kZV9zaXplIDwgMTIpIHsKICAgICAgICAgICAgICArK2N1cl9jb2RlX3NpemU7CiAgICAgICAgICAgICAgY29kZV9tYXNrID0gY29kZV9tYXNrIDw8IDEgfCAxOwogICAgICAgICAgICB9CiAgICAgICAgICB9CiAgICAgICAgICBwcmV2X2NvZGUgPSBjb2RlOwogICAgICAgIH0KICAgICAgICBpZiAob3AgIT09IG91dHB1dF9sZW5ndGgpIHsKICAgICAgICAgIGNvbnNvbGUubG9nKCJXYXJuaW5nLCBnaWYgc3RyZWFtIHNob3J0ZXIgdGhhbiBleHBlY3RlZC4iKTsKICAgICAgICB9CiAgICAgICAgcmV0dXJuIG91dHB1dDsKICAgICAgfQogICAgICB0cnkgewogICAgICAgIGV4cG9ydHMuR2lmV3JpdGVyID0gR2lmV3JpdGVyMjsKICAgICAgICBleHBvcnRzLkdpZlJlYWRlciA9IEdpZlJlYWRlcjsKICAgICAgfSBjYXRjaCAoZSkgewogICAgICB9CiAgICB9CiAgfSk7CgogIC8vIHNyYy91dGlsL2NvbG9yLnRzCiAgdmFyIENvbG9yID0gY2xhc3MgX0NvbG9yIHsKICAgIGNvbnN0cnVjdG9yKF9yLCBfZywgX2IsIF9hKSB7CiAgICAgIHRoaXMuX3IgPSBfcjsKICAgICAgdGhpcy5fZyA9IF9nOwogICAgICB0aGlzLl9iID0gX2I7CiAgICAgIHRoaXMuX2EgPSBfYTsKICAgIH0KICAgIHN0YXRpYyBza3JpYmJsQ29sb3JzID0gWwogICAgICBbMjU1LCAyNTUsIDI1NV0sCiAgICAgIFswLCAwLCAwXSwKICAgICAgWzE5MywgMTkzLCAxOTNdLAogICAgICBbODAsIDgwLCA4MF0sCiAgICAgIFsyMzksIDE5LCAxMV0sCiAgICAgIFsxMTYsIDExLCA3XSwKICAgICAgWzI1NSwgMTEzLCAwXSwKICAgICAgWzE5NCwgNTYsIDBdLAogICAgICBbMjU1LCAyMjgsIDBdLAogICAgICBbMjMyLCAxNjIsIDBdLAogICAgICBbMCwgMjA0LCAwXSwKICAgICAgWzAsIDcwLCAyNV0sCiAgICAgIFswLCAyNTUsIDE0NV0sCiAgICAgIFswLCAxMjAsIDkzXSwKICAgICAgWzAsIDE3OCwgMjU1XSwKICAgICAgWzAsIDg2LCAxNThdLAogICAgICBbMzUsIDMxLCAyMTFdLAogICAgICBbMTQsIDgsIDEwMV0sCiAgICAgIFsxNjMsIDAsIDE4Nl0sCiAgICAgIFs4NSwgMCwgMTA1XSwKICAgICAgWzIyMywgMTA1LCAxNjddLAogICAgICBbMTM1LCA1MywgODRdLAogICAgICBbMjU1LCAxNzIsIDE0Ml0sCiAgICAgIFsyMDQsIDExOSwgNzddLAogICAgICBbMTYwLCA4MiwgNDVdLAogICAgICBbOTksIDQ4LCAxM10KICAgIF07CiAgICBnZXQgcigpIHsKICAgICAgcmV0dXJuIHRoaXMuX3I7CiAgICB9CiAgICBnZXQgZygpIHsKICAgICAgcmV0dXJuIHRoaXMuX2c7CiAgICB9CiAgICBnZXQgYigpIHsKICAgICAgcmV0dXJuIHRoaXMuX2I7CiAgICB9CiAgICAvLyBnZXQgdGhlIHJnYiBzdHJpbmcgb2YgdGhlIGNvbG9yCiAgICBnZXQgcmdiU3RyaW5nKCkgewogICAgICByZXR1cm4gInJnYigiICsgW3RoaXMuX3IsIHRoaXMuX2csIHRoaXMuX2IsIHRoaXMuX2FdLmZpbHRlcigodikgPT4gdiAhPT0gdm9pZCAwKS5qb2luKCIsIikgKyAiKSI7CiAgICB9CiAgICBnZXQgcmdiQXJyYXkoKSB7CiAgICAgIHJldHVybiB0aGlzLl9hID8gW3RoaXMuX3IsIHRoaXMuX2csIHRoaXMuX2IsIHRoaXMuX2FdIDogW3RoaXMuX3IsIHRoaXMuX2csIHRoaXMuX2JdOwogICAgfQogICAgLy8gZ2V0IHRoZSByZ2IgdmFsdWVzIG9mIHRoZSBjb2xvcgogICAgZ2V0IHJnYigpIHsKICAgICAgcmV0dXJuIHsKICAgICAgICByOiB0aGlzLl9yLAogICAgICAgIGc6IHRoaXMuX2csCiAgICAgICAgYjogdGhpcy5fYiwKICAgICAgICBhOiB0aGlzLl9hCiAgICAgIH07CiAgICB9CiAgICAvLyBnZXQgdGhlIGhleCBzdHJpbmcgb2YgdGhlIGNvbG9yCiAgICBnZXQgaGV4KCkgewogICAgICByZXR1cm4gIiMiICsgdGhpcy5fci50b1N0cmluZygxNikucGFkU3RhcnQoMiwgIjAiKSArIHRoaXMuX2cudG9TdHJpbmcoMTYpLnBhZFN0YXJ0KDIsICIwIikgKyB0aGlzLl9iLnRvU3RyaW5nKDE2KS5wYWRTdGFydCgyLCAiMCIpICsgKHRoaXMuX2EgPyBNYXRoLmZsb29yKDI1NSAqIHRoaXMuX2EpLnRvU3RyaW5nKDE2KS5wYWRTdGFydCgyLCAiMCIpIDogIiIpOwogICAgfQogICAgc2V0IGhleChoZXgpIHsKICAgICAgY29uc3QgY29sb3IgPSBfQ29sb3IuZnJvbUhleChoZXgpOwogICAgICB0aGlzLl9yID0gY29sb3IuX3I7CiAgICAgIHRoaXMuX2cgPSBjb2xvci5fZzsKICAgICAgdGhpcy5fYiA9IGNvbG9yLl9iOwogICAgICB0aGlzLl9hID0gY29sb3IuX2E7CiAgICB9CiAgICAvKioKICAgICAqIFRoZSBhdHR0ZW1wdGVkIHNrcmliYmwgY29sb3IgY29kZQogICAgICogSWYgbm90IGZvdW5kLCByZXR1cm4gdHlvcG8gY29kZSBpbnN0ZWFkIChoZXggdmFsICsgMTAwMDApCiAgICAgKi8KICAgIGdldCBza3JpYmJsQ29kZSgpIHsKICAgICAgY29uc3Qgc2tyaWJibEluZGV4ID0gX0NvbG9yLnNrcmliYmxDb2xvcnMuZmluZEluZGV4KChjKSA9PiBjWzBdID09PSB0aGlzLl9yICYmIGNbMV0gPT09IHRoaXMuX2cgJiYgY1syXSA9PT0gdGhpcy5fYik7CiAgICAgIGlmIChza3JpYmJsSW5kZXggIT09IC0xKSByZXR1cm4gc2tyaWJibEluZGV4OwogICAgICByZXR1cm4gdGhpcy50eXBvQ29kZTsKICAgIH0KICAgIC8qKgogICAgICogVGhlIGNvbG9yIGNvZGUgZm9yIHRoZSB0eXBvIGNvbG9yIChoZXggdmFsICsgMTAwMDApCiAgICAgKi8KICAgIGdldCB0eXBvQ29kZSgpIHsKICAgICAgY29uc3QgaGV4U3RyaW5nID0gKHRoaXMuX3IgPDwgMTYgfCB0aGlzLl9nIDw8IDggfCB0aGlzLl9iKS50b1N0cmluZygxNikudG9VcHBlckNhc2UoKTsKICAgICAgcmV0dXJuIHBhcnNlSW50KGhleFN0cmluZywgMTYpICsgMWU0OwogICAgfQogICAgLy9zb3VyY2U6IGh0dHBzOi8vZ2lzdC5naXRodWIuY29tL21qYWNrc29uLzUzMTEyNTYKICAgIGdldCBoc2woKSB7CiAgICAgIGNvbnN0IHIgPSB0aGlzLnIgLyAyNTUsIGcgPSB0aGlzLmcgLyAyNTUsIGIgPSB0aGlzLmIgLyAyNTU7CiAgICAgIGNvbnN0IG1heCA9IE1hdGgubWF4KHIsIGcsIGIpLCBtaW4gPSBNYXRoLm1pbihyLCBnLCBiKTsKICAgICAgbGV0IGggPSAwLCBzID0gMDsKICAgICAgY29uc3QgbCA9IChtYXggKyBtaW4pIC8gMjsKICAgICAgaWYgKG1heCA9PSBtaW4pIHsKICAgICAgICBoID0gcyA9IDA7CiAgICAgIH0gZWxzZSB7CiAgICAgICAgY29uc3QgZCA9IG1heCAtIG1pbjsKICAgICAgICBzID0gbCA+IDAuNSA/IGQgLyAoMiAtIG1heCAtIG1pbikgOiBkIC8gKG1heCArIG1pbik7CiAgICAgICAgc3dpdGNoIChtYXgpIHsKICAgICAgICAgIGNhc2UgcjoKICAgICAgICAgICAgaCA9IChnIC0gYikgLyBkICsgKGcgPCBiID8gNiA6IDApOwogICAgICAgICAgICBicmVhazsKICAgICAgICAgIGNhc2UgZzoKICAgICAgICAgICAgaCA9IChiIC0gcikgLyBkICsgMjsKICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICBjYXNlIGI6CiAgICAgICAgICAgIGggPSAociAtIGcpIC8gZCArIDQ7CiAgICAgICAgICAgIGJyZWFrOwogICAgICAgIH0KICAgICAgICBoIC89IDY7CiAgICAgIH0KICAgICAgcmV0dXJuIHRoaXMuX2EgIT09IHZvaWQgMCA/IFtoICogMzYwLCBzICogMTAwLCBsICogMTAwLCB0aGlzLl9hXSA6IFtoICogMzYwLCBzICogMTAwLCBsICogMTAwXTsKICAgIH0KICAgIC8vIENvbnZlcnQgdG8gSFNWCiAgICBnZXQgaHN2KCkgewogICAgICBjb25zdCByID0gdGhpcy5yIC8gMjU1LCBnID0gdGhpcy5nIC8gMjU1LCBiID0gdGhpcy5iIC8gMjU1OwogICAgICBjb25zdCBtYXggPSBNYXRoLm1heChyLCBnLCBiKSwgbWluID0gTWF0aC5taW4ociwgZywgYik7CiAgICAgIGNvbnN0IGRlbHRhID0gbWF4IC0gbWluOwogICAgICBsZXQgaCA9IDAsIHMgPSAwOwogICAgICBjb25zdCB2ID0gbWF4OwogICAgICBpZiAobWF4ICE9PSAwKSB7CiAgICAgICAgcyA9IGRlbHRhIC8gbWF4OwogICAgICB9IGVsc2UgewogICAgICAgIGggPSAwOwogICAgICAgIHMgPSAwOwogICAgICB9CiAgICAgIGlmIChtYXggIT09IG1pbikgewogICAgICAgIHN3aXRjaCAobWF4KSB7CiAgICAgICAgICBjYXNlIHI6CiAgICAgICAgICAgIGggPSAoZyAtIGIpIC8gZGVsdGEgKyAoZyA8IGIgPyA2IDogMCk7CiAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgY2FzZSBnOgogICAgICAgICAgICBoID0gKGIgLSByKSAvIGRlbHRhICsgMjsKICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICBjYXNlIGI6CiAgICAgICAgICAgIGggPSAociAtIGcpIC8gZGVsdGEgKyA0OwogICAgICAgICAgICBicmVhazsKICAgICAgICB9CiAgICAgICAgaCAvPSA2OwogICAgICB9CiAgICAgIHJldHVybiBbaCAqIDM2MCwgcyAqIDEwMCwgdiAqIDEwMCwgdGhpcy5fYV07CiAgICB9CiAgICBzdGF0aWMgZnJvbVJnYihyLCBnLCBiLCBhKSB7CiAgICAgIHJldHVybiBuZXcgX0NvbG9yKE1hdGgucm91bmQociksIE1hdGgucm91bmQoZyksIE1hdGgucm91bmQoYiksIGEgPyBNYXRoLnJvdW5kKGEgKiAxMDApIC8gMTAwIDogdm9pZCAwKTsKICAgIH0KICAgIHN0YXRpYyBmcm9tSGV4KGhleCkgewogICAgICBpZiAoaGV4WzBdID09ICIjIikgaGV4ID0gaGV4LnN1YnN0cmluZygxKTsKICAgICAgY29uc3QgciA9IE1hdGgucm91bmQocGFyc2VJbnQoIjB4IiArIGhleC5zdWJzdHJpbmcoMCwgMikpKTsKICAgICAgY29uc3QgZyA9IE1hdGgucm91bmQocGFyc2VJbnQoIjB4IiArIGhleC5zdWJzdHJpbmcoMiwgNCkpKTsKICAgICAgY29uc3QgYiA9IE1hdGgucm91bmQocGFyc2VJbnQoIjB4IiArIGhleC5zdWJzdHJpbmcoNCwgNikpKTsKICAgICAgY29uc3QgYSA9IGhleC5sZW5ndGggPiA2ID8gTWF0aC5yb3VuZChwYXJzZUludCgiMHgiICsgaGV4LnN1YnN0cmluZyg2LCA4KSkpIDogdm9pZCAwOwogICAgICByZXR1cm4gbmV3IF9Db2xvcihyLCBnLCBiLCBhKTsKICAgIH0KICAgIHN0YXRpYyBmcm9tUmdiU3RyaW5nKHJnYikgewogICAgICBjb25zdCByZ2JzID0gcmdiLnRyaW0oKS5yZXBsYWNlKCIgIiwgIiIpLnNwbGl0KCIsIik7CiAgICAgIGNvbnN0IHIgPSBwYXJzZUludChyZ2JzWzBdLnJlcGxhY2UoL1teXGRdL2csICIiKSwgMTApOwogICAgICBjb25zdCBnID0gcGFyc2VJbnQocmdic1sxXS5yZXBsYWNlKC9bXlxkXS9nLCAiIiksIDEwKTsKICAgICAgY29uc3QgYiA9IHBhcnNlSW50KHJnYnNbMl0ucmVwbGFjZSgvW15cZF0vZywgIiIpLCAxMCk7CiAgICAgIGNvbnN0IGEgPSByZ2JzLmxlbmd0aCA+IDMgPyBwYXJzZUludChyZ2JzWzRdLnJlcGxhY2UoL1teXGRdL2csICIiKSwgMTApIDogdm9pZCAwOwogICAgICByZXR1cm4gbmV3IF9Db2xvcihyLCBnLCBiLCBhKTsKICAgIH0KICAgIHN0YXRpYyBmcm9tU2tyaWJibENvZGUoY29kZSkgewogICAgICBpZiAoY29kZSA8IDFlNCkgewogICAgICAgIGNvbnN0IHJnYiA9IF9Db2xvci5za3JpYmJsQ29sb3JzW2NvZGVdOwogICAgICAgIHJldHVybiBfQ29sb3IuZnJvbVJnYihyZ2JbMF0sIHJnYlsxXSwgcmdiWzJdKTsKICAgICAgfQogICAgICBjb25zdCBoZXggPSAoY29kZSAtIDFlNCkudG9TdHJpbmcoMTYpLnBhZFN0YXJ0KDYsICIwIik7CiAgICAgIHJldHVybiBfQ29sb3IuZnJvbUhleChoZXgpOwogICAgfQogICAgLy8gc291cmNlOiBodHRwczovL3N0YWNrb3ZlcmZsb3cuY29tL3F1ZXN0aW9ucy8zNjcyMTgzMC9jb252ZXJ0LWhzbC10by1yZ2ItYW5kLWhleAogICAgc3RhdGljIGZyb21Ic2woaCwgcywgbCwgYWxwaGEpIHsKICAgICAgcyAvPSAxMDA7CiAgICAgIGwgLz0gMTAwOwogICAgICBjb25zdCBrID0gKG4pID0+IChuICsgaCAvIDMwKSAlIDEyOwogICAgICBjb25zdCBhID0gcyAqIE1hdGgubWluKGwsIDEgLSBsKTsKICAgICAgY29uc3QgZiA9IChuKSA9PiBsIC0gYSAqIE1hdGgubWF4KC0xLCBNYXRoLm1pbihrKG4pIC0gMywgTWF0aC5taW4oOSAtIGsobiksIDEpKSk7CiAgICAgIGNvbnN0IHIgPSBNYXRoLnJvdW5kKGYoMCkgKiAyNTUpOwogICAgICBjb25zdCBnID0gTWF0aC5yb3VuZChmKDgpICogMjU1KTsKICAgICAgY29uc3QgYiA9IE1hdGgucm91bmQoZig0KSAqIDI1NSk7CiAgICAgIHJldHVybiBuZXcgX0NvbG9yKHIsIGcsIGIsIGFscGhhKTsKICAgIH0KICAgIC8vIFN0YXRpYyBmYWN0b3J5IG1ldGhvZCBmb3IgSFNWIHRvIFJHQiBjb252ZXJzaW9uCiAgICBzdGF0aWMgZnJvbUhzdihoLCBzLCB2LCBhKSB7CiAgICAgIHMgLz0gMTAwOwogICAgICB2IC89IDEwMDsKICAgICAgY29uc3QgYyA9IHYgKiBzOwogICAgICBjb25zdCB4ID0gYyAqICgxIC0gTWF0aC5hYnMoaCAvIDYwICUgMiAtIDEpKTsKICAgICAgY29uc3QgbSA9IHYgLSBjOwogICAgICBsZXQgciA9IDAsIGcgPSAwLCBiID0gMDsKICAgICAgaWYgKDAgPD0gaCAmJiBoIDwgNjApIHsKICAgICAgICByID0gYzsKICAgICAgICBnID0geDsKICAgICAgICBiID0gMDsKICAgICAgfSBlbHNlIGlmICg2MCA8PSBoICYmIGggPCAxMjApIHsKICAgICAgICByID0geDsKICAgICAgICBnID0gYzsKICAgICAgICBiID0gMDsKICAgICAgfSBlbHNlIGlmICgxMjAgPD0gaCAmJiBoIDwgMTgwKSB7CiAgICAgICAgciA9IDA7CiAgICAgICAgZyA9IGM7CiAgICAgICAgYiA9IHg7CiAgICAgIH0gZWxzZSBpZiAoMTgwIDw9IGggJiYgaCA8IDI0MCkgewogICAgICAgIHIgPSAwOwogICAgICAgIGcgPSB4OwogICAgICAgIGIgPSBjOwogICAgICB9IGVsc2UgaWYgKDI0MCA8PSBoICYmIGggPCAzMDApIHsKICAgICAgICByID0geDsKICAgICAgICBnID0gMDsKICAgICAgICBiID0gYzsKICAgICAgfSBlbHNlIGlmICgzMDAgPD0gaCAmJiBoIDwgMzYwKSB7CiAgICAgICAgciA9IGM7CiAgICAgICAgZyA9IDA7CiAgICAgICAgYiA9IHg7CiAgICAgIH0KICAgICAgciA9IE1hdGgucm91bmQoKHIgKyBtKSAqIDI1NSk7CiAgICAgIGcgPSBNYXRoLnJvdW5kKChnICsgbSkgKiAyNTUpOwogICAgICBiID0gTWF0aC5yb3VuZCgoYiArIG0pICogMjU1KTsKICAgICAgcmV0dXJuIG5ldyBfQ29sb3IociwgZywgYiwgYSk7CiAgICB9CiAgICBjb3B5KCkgewogICAgICByZXR1cm4gbmV3IF9Db2xvcih0aGlzLl9yLCB0aGlzLl9nLCB0aGlzLl9iLCB0aGlzLl9hKTsKICAgIH0KICAgIHdpdGhBbHBoYShhKSB7CiAgICAgIHRoaXMuX2EgPSBhOwogICAgICByZXR1cm4gdGhpczsKICAgIH0KICB9OwoKICAvLyBzcmMvdXRpbC9naWYvY2FudmFzQ29tbWFuZFByb2Nlc3Nvci50cwogIHZhciBDYW52YXNDb21tYW5kUHJvY2Vzc29yID0gY2xhc3MgewogICAgY29uc3RydWN0b3IoX2NhbnZhc0NvbnRleHQpIHsKICAgICAgdGhpcy5fY2FudmFzQ29udGV4dCA9IF9jYW52YXNDb250ZXh0OwogICAgICB0aGlzLl93aWR0aCA9IF9jYW52YXNDb250ZXh0LmNhbnZhcy53aWR0aDsKICAgICAgdGhpcy5faGVpZ2h0ID0gX2NhbnZhc0NvbnRleHQuY2FudmFzLmhlaWdodDsKICAgICAgdGhpcy5fY2FudmFzQ29udGV4dC5maWxsU3R5bGUgPSAid2hpdGUiOwogICAgICB0aGlzLl9jYW52YXNDb250ZXh0LmZpbGxSZWN0KDAsIDAsIHRoaXMuX3dpZHRoLCB0aGlzLl9oZWlnaHQpOwogICAgfQogICAgX3dpZHRoOwogICAgX2hlaWdodDsKICAgIF90aGlja25lc3NNaW4gPSA0OwogICAgX3RoaWNrbmVzc01heCA9IDQwOwogICAgLyoqCiAgICAgKiBTa3JpYmJsIGNvbWFtbmQgaW50ZXJmYWNlCiAgICAgKiBAcGFyYW0gY29tbWFuZAogICAgICogYnJ1c2g6IFswLCBjb2xvckNvZGUsIHNpemUsIHgxLCB5MSwgeDIsIHkyXQogICAgICogZmlsbDogWzEsIGNvbG9yQ29kZSwgeCwgeV0KICAgICAqCiAgICAgKi8KICAgIHByb2Nlc3NEcmF3Q29tbWFuZChjb21tYW5kKSB7CiAgICAgIGlmIChjb21tYW5kLmxlbmd0aCA8IDIpIHsKICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIkludmFsaWQgY29tbWFuZCBsZW5ndGggc21hbGxlciB0aGFuIDIiKTsKICAgICAgfQogICAgICBzd2l0Y2ggKGNvbW1hbmRbMF0pIHsKICAgICAgICBjYXNlIDA6CiAgICAgICAgICBpZiAoY29tbWFuZC5sZW5ndGggPCA3KSB7CiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiSW52YWxpZCBicnVzaCBjb21tYW5kIGxlbmd0aCBzbWFsbGVyIHRoYW4gNyIpOwogICAgICAgICAgfQogICAgICAgICAgdGhpcy5kcmF3TGluZShjb21tYW5kWzNdLCBjb21tYW5kWzRdLCBjb21tYW5kWzVdLCBjb21tYW5kWzZdLCBjb21tYW5kWzFdLCBjb21tYW5kWzJdKTsKICAgICAgICAgIGJyZWFrOwogICAgICAgIGNhc2UgMToKICAgICAgICAgIGlmIChjb21tYW5kLmxlbmd0aCA8IDQpIHsKICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJJbnZhbGlkIGZpbGwgY29tbWFuZCBsZW5ndGggc21hbGxlciB0aGFuIDQiKTsKICAgICAgICAgIH0KICAgICAgICAgIHRoaXMuZmxvb2RGaWxsKGNvbW1hbmRbMl0sIGNvbW1hbmRbM10sIGNvbW1hbmRbMV0pOwogICAgICAgICAgYnJlYWs7CiAgICAgIH0KICAgIH0KICAgIGNsZWFyKCkgewogICAgICB0aGlzLl9jYW52YXNDb250ZXh0LmNsZWFyUmVjdCgwLCAwLCB0aGlzLl93aWR0aCwgdGhpcy5faGVpZ2h0KTsKICAgIH0KICAgIC8qKgogICAgICogRXhwb3J0cyBjdXJyZW50IGltYWdlIGFzIHVpbnQ4Y2xhbXBlZGFycmF5CiAgICAgKi8KICAgIGV4cG9ydEltYWdlKCkgewogICAgICByZXR1cm4gdGhpcy5fY2FudmFzQ29udGV4dC5nZXRJbWFnZURhdGEoMCwgMCwgdGhpcy5fd2lkdGgsIHRoaXMuX2hlaWdodCkuZGF0YTsKICAgIH0KICAgIGRyYXdMaW5lKHgxLCB5MSwgeDIsIHkyLCBjb2xvciwgc2l6ZSkgewogICAgICBzaXplID0gc2l6ZSA8IHRoaXMuX3RoaWNrbmVzc01pbiA/IHRoaXMuX3RoaWNrbmVzc01pbiA6IHNpemUgPiB0aGlzLl90aGlja25lc3NNYXggPyB0aGlzLl90aGlja25lc3NNYXggOiBNYXRoLmZsb29yKHNpemUpOwogICAgICBjb25zdCByZ2IgPSBDb2xvci5mcm9tU2tyaWJibENvZGUoY29sb3IpLnJnYjsKICAgICAgY29uc3QgcmFkaXVzID0gTWF0aC5jZWlsKHNpemUgLyAyKTsKICAgICAgY29uc3QgcmFkaXVzU3F1YXJlZCA9IHJhZGl1cyAqIHJhZGl1czsKICAgICAgbGV0IHN0YXJ0WCA9IHRoaXMuY2xhbXAoTWF0aC5mbG9vcih4MSksIC1yYWRpdXMsIHRoaXMuX3dpZHRoICsgcmFkaXVzKTsKICAgICAgbGV0IHN0YXJ0WSA9IHRoaXMuY2xhbXAoTWF0aC5mbG9vcih5MSksIC1yYWRpdXMsIHRoaXMuX2hlaWdodCArIHJhZGl1cyk7CiAgICAgIGxldCBlbmRYID0gdGhpcy5jbGFtcChNYXRoLmZsb29yKHgyKSwgLXJhZGl1cywgdGhpcy5fd2lkdGggKyByYWRpdXMpOwogICAgICBsZXQgZW5kWSA9IHRoaXMuY2xhbXAoTWF0aC5mbG9vcih5MiksIC1yYWRpdXMsIHRoaXMuX2hlaWdodCArIHJhZGl1cyk7CiAgICAgIGNvbnN0IG1pblggPSBNYXRoLm1pbihzdGFydFgsIGVuZFgpIC0gcmFkaXVzOwogICAgICBjb25zdCBtaW5ZID0gTWF0aC5taW4oc3RhcnRZLCBlbmRZKSAtIHJhZGl1czsKICAgICAgY29uc3QgbWF4WCA9IE1hdGgubWF4KHN0YXJ0WCwgZW5kWCkgKyByYWRpdXM7CiAgICAgIGNvbnN0IG1heFkgPSBNYXRoLm1heChzdGFydFksIGVuZFkpICsgcmFkaXVzOwogICAgICBzdGFydFggLT0gbWluWDsKICAgICAgc3RhcnRZIC09IG1pblk7CiAgICAgIGVuZFggLT0gbWluWDsKICAgICAgZW5kWSAtPSBtaW5ZOwogICAgICBjb25zdCBpbWFnZURhdGEgPSB0aGlzLl9jYW52YXNDb250ZXh0LmdldEltYWdlRGF0YShtaW5YLCBtaW5ZLCBtYXhYIC0gbWluWCwgbWF4WSAtIG1pblkpOwogICAgICBjb25zdCBhcHBseUJydXNoID0gKHgsIHkpID0+IHsKICAgICAgICBmb3IgKGxldCBvZmZzZXRYID0gLXJhZGl1czsgb2Zmc2V0WCA8PSByYWRpdXM7IG9mZnNldFgrKykgewogICAgICAgICAgZm9yIChsZXQgb2Zmc2V0WSA9IC1yYWRpdXM7IG9mZnNldFkgPD0gcmFkaXVzOyBvZmZzZXRZKyspIHsKICAgICAgICAgICAgaWYgKG9mZnNldFggKiBvZmZzZXRYICsgb2Zmc2V0WSAqIG9mZnNldFkgPCByYWRpdXNTcXVhcmVkKSB7CiAgICAgICAgICAgICAgY29uc3QgcGl4ZWxJbmRleCA9IDQgKiAoKHkgKyBvZmZzZXRZKSAqIGltYWdlRGF0YS53aWR0aCArIHggKyBvZmZzZXRYKTsKICAgICAgICAgICAgICB0aGlzLnNldFBpeGVsKGltYWdlRGF0YSwgcGl4ZWxJbmRleCwgcmdiLnIsIHJnYi5nLCByZ2IuYik7CiAgICAgICAgICAgIH0KICAgICAgICAgIH0KICAgICAgICB9CiAgICAgIH07CiAgICAgIGlmIChzdGFydFggPT09IGVuZFggJiYgc3RhcnRZID09PSBlbmRZKSB7CiAgICAgICAgYXBwbHlCcnVzaChzdGFydFgsIHN0YXJ0WSk7CiAgICAgIH0gZWxzZSB7CiAgICAgICAgYXBwbHlCcnVzaChzdGFydFgsIHN0YXJ0WSk7CiAgICAgICAgYXBwbHlCcnVzaChlbmRYLCBlbmRZKTsKICAgICAgICBjb25zdCBkZWx0YVggPSBNYXRoLmFicyhlbmRYIC0gc3RhcnRYKTsKICAgICAgICBjb25zdCBkZWx0YVkgPSBNYXRoLmFicyhlbmRZIC0gc3RhcnRZKTsKICAgICAgICBjb25zdCBzdGVwWCA9IHN0YXJ0WCA8IGVuZFggPyAxIDogLTE7CiAgICAgICAgY29uc3Qgc3RlcFkgPSBzdGFydFkgPCBlbmRZID8gMSA6IC0xOwogICAgICAgIGxldCBlcnJvciA9IGRlbHRhWCAtIGRlbHRhWTsKICAgICAgICB3aGlsZSAoc3RhcnRYICE9PSBlbmRYIHx8IHN0YXJ0WSAhPT0gZW5kWSkgewogICAgICAgICAgY29uc3QgZG91YmxlRXJyb3IgPSBlcnJvciAqIDI7CiAgICAgICAgICBpZiAoZG91YmxlRXJyb3IgPiAtZGVsdGFZKSB7CiAgICAgICAgICAgIGVycm9yIC09IGRlbHRhWTsKICAgICAgICAgICAgc3RhcnRYICs9IHN0ZXBYOwogICAgICAgICAgfQogICAgICAgICAgaWYgKGRvdWJsZUVycm9yIDwgZGVsdGFYKSB7CiAgICAgICAgICAgIGVycm9yICs9IGRlbHRhWDsKICAgICAgICAgICAgc3RhcnRZICs9IHN0ZXBZOwogICAgICAgICAgfQogICAgICAgICAgYXBwbHlCcnVzaChzdGFydFgsIHN0YXJ0WSk7CiAgICAgICAgfQogICAgICB9CiAgICAgIHRoaXMuX2NhbnZhc0NvbnRleHQucHV0SW1hZ2VEYXRhKGltYWdlRGF0YSwgbWluWCwgbWluWSk7CiAgICB9CiAgICBmbG9vZEZpbGwoeCwgeSwgY29sb3IpIHsKICAgICAgY29uc3QgaW1hZ2VEYXRhID0gdGhpcy5fY2FudmFzQ29udGV4dC5nZXRJbWFnZURhdGEoMCwgMCwgdGhpcy5fd2lkdGgsIHRoaXMuX2hlaWdodCk7CiAgICAgIHggPSB0aGlzLmNsYW1wKE1hdGguZmxvb3IoeCksIDAsIHRoaXMuX3dpZHRoKTsKICAgICAgeSA9IHRoaXMuY2xhbXAoTWF0aC5mbG9vcih5KSwgMCwgdGhpcy5faGVpZ2h0KTsKICAgICAgY29uc3QgZmlsbCA9IENvbG9yLmZyb21Ta3JpYmJsQ29kZShjb2xvcikucmdiOwogICAgICBjb25zdCBwaXhlbFN0YWNrID0gW1t4LCB5XV07CiAgICAgIGNvbnN0IHRhcmdldENvbG9yID0gdGhpcy5nZXRQaXhlbChpbWFnZURhdGEsIHgsIHkpOwogICAgICBpZiAoZmlsbC5yICE9PSB0YXJnZXRDb2xvclswXSB8fCBmaWxsLmcgIT09IHRhcmdldENvbG9yWzFdIHx8IGZpbGwuYiAhPT0gdGFyZ2V0Q29sb3JbMl0pIHsKICAgICAgICBjb25zdCBpc01hdGNoaW5nQ29sb3IgPSAocGl4ZWxJbmRleCkgPT4gewogICAgICAgICAgY29uc3QgciA9IGltYWdlRGF0YS5kYXRhW3BpeGVsSW5kZXhdOwogICAgICAgICAgY29uc3QgZyA9IGltYWdlRGF0YS5kYXRhW3BpeGVsSW5kZXggKyAxXTsKICAgICAgICAgIGNvbnN0IGIgPSBpbWFnZURhdGEuZGF0YVtwaXhlbEluZGV4ICsgMl07CiAgICAgICAgICByZXR1cm4gciA9PT0gdGFyZ2V0Q29sb3JbMF0gJiYgZyA9PT0gdGFyZ2V0Q29sb3JbMV0gJiYgYiA9PT0gdGFyZ2V0Q29sb3JbMl07CiAgICAgICAgfTsKICAgICAgICBjb25zdCB3aWR0aCA9IGltYWdlRGF0YS53aWR0aDsKICAgICAgICBjb25zdCBoZWlnaHQgPSBpbWFnZURhdGEuaGVpZ2h0OwogICAgICAgIHdoaWxlIChwaXhlbFN0YWNrLmxlbmd0aCA+IDApIHsKICAgICAgICAgIGxldCBbeDIsIHkyXSA9IHBpeGVsU3RhY2sucG9wKCkgPz8gWy0xLCAtMV07CiAgICAgICAgICBsZXQgcGl4ZWxJbmRleCA9IDQgKiAoeTIgKiB3aWR0aCArIHgyKTsKICAgICAgICAgIHdoaWxlICh5MiA+PSAwICYmIGlzTWF0Y2hpbmdDb2xvcihwaXhlbEluZGV4KSkgewogICAgICAgICAgICBwaXhlbEluZGV4IC09IDQgKiB3aWR0aDsKICAgICAgICAgICAgeTItLTsKICAgICAgICAgIH0KICAgICAgICAgIHBpeGVsSW5kZXggKz0gNCAqIHdpZHRoOwogICAgICAgICAgeTIrKzsKICAgICAgICAgIGxldCBsZWZ0U2lkZUZpbGxlZCA9IGZhbHNlOwogICAgICAgICAgbGV0IHJpZ2h0U2lkZUZpbGxlZCA9IGZhbHNlOwogICAgICAgICAgd2hpbGUgKHkyIDwgaGVpZ2h0ICYmIGlzTWF0Y2hpbmdDb2xvcihwaXhlbEluZGV4KSkgewogICAgICAgICAgICB0aGlzLnNldFBpeGVsKGltYWdlRGF0YSwgcGl4ZWxJbmRleCwgZmlsbC5yLCBmaWxsLmcsIGZpbGwuYik7CiAgICAgICAgICAgIGlmICh4MiA+IDAgJiYgaXNNYXRjaGluZ0NvbG9yKHBpeGVsSW5kZXggLSA0KSkgewogICAgICAgICAgICAgIGlmICghbGVmdFNpZGVGaWxsZWQpIHsKICAgICAgICAgICAgICAgIHBpeGVsU3RhY2sucHVzaChbeDIgLSAxLCB5Ml0pOwogICAgICAgICAgICAgICAgbGVmdFNpZGVGaWxsZWQgPSB0cnVlOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSBlbHNlIGlmIChsZWZ0U2lkZUZpbGxlZCkgewogICAgICAgICAgICAgIGxlZnRTaWRlRmlsbGVkID0gZmFsc2U7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKHgyIDwgd2lkdGggLSAxICYmIGlzTWF0Y2hpbmdDb2xvcihwaXhlbEluZGV4ICsgNCkpIHsKICAgICAgICAgICAgICBpZiAoIXJpZ2h0U2lkZUZpbGxlZCkgewogICAgICAgICAgICAgICAgcGl4ZWxTdGFjay5wdXNoKFt4MiArIDEsIHkyXSk7CiAgICAgICAgICAgICAgICByaWdodFNpZGVGaWxsZWQgPSB0cnVlOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSBlbHNlIGlmIChyaWdodFNpZGVGaWxsZWQpIHsKICAgICAgICAgICAgICByaWdodFNpZGVGaWxsZWQgPSBmYWxzZTsKICAgICAgICAgICAgfQogICAgICAgICAgICBwaXhlbEluZGV4ICs9IDQgKiB3aWR0aDsKICAgICAgICAgICAgeTIrKzsKICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgdGhpcy5fY2FudmFzQ29udGV4dC5wdXRJbWFnZURhdGEoaW1hZ2VEYXRhLCAwLCAwKTsKICAgICAgfQogICAgfQogICAgZ2V0UGl4ZWwoaW1hZ2VEYXRhLCB4LCB5KSB7CiAgICAgIGNvbnN0IHBpeGVsSW5kZXggPSA0ICogKHkgKiBpbWFnZURhdGEud2lkdGggKyB4KTsKICAgICAgaWYgKHBpeGVsSW5kZXggPCAwIHx8IHBpeGVsSW5kZXggPj0gaW1hZ2VEYXRhLmRhdGEubGVuZ3RoKSB7CiAgICAgICAgcmV0dXJuIFswLCAwLCAwXTsKICAgICAgfQogICAgICByZXR1cm4gW2ltYWdlRGF0YS5kYXRhW3BpeGVsSW5kZXhdLCBpbWFnZURhdGEuZGF0YVtwaXhlbEluZGV4ICsgMV0sIGltYWdlRGF0YS5kYXRhW3BpeGVsSW5kZXggKyAyXV07CiAgICB9CiAgICBzZXRQaXhlbChpbWFnZURhdGEsIGluZGV4LCByLCBnLCBiKSB7CiAgICAgIGlmIChpbmRleCA8IDAgfHwgaW5kZXggPj0gaW1hZ2VEYXRhLmRhdGEubGVuZ3RoKSByZXR1cm47CiAgICAgIGltYWdlRGF0YS5kYXRhW2luZGV4XSA9IHI7CiAgICAgIGltYWdlRGF0YS5kYXRhW2luZGV4ICsgMV0gPSBnOwogICAgICBpbWFnZURhdGEuZGF0YVtpbmRleCArIDJdID0gYjsKICAgICAgaW1hZ2VEYXRhLmRhdGFbaW5kZXggKyAzXSA9IDI1NTsKICAgIH0KICAgIGNsYW1wKHZhbHVlLCBtaW4sIG1heCkgewogICAgICByZXR1cm4gTWF0aC5taW4oTWF0aC5tYXgodmFsdWUsIG1pbiksIG1heCk7CiAgICB9CiAgfTsKCiAgLy8gc3JjL3V0aWwvZ2lmL2dpZkVuY29kZXIudHMKICB2YXIgaW1wb3J0X29tZ2dpZiA9IF9fdG9FU00ocmVxdWlyZV9vbWdnaWYoKSwgMSk7CiAgdmFyIEdpZkVuY29kZXIgPSBjbGFzcyB7CiAgICB3aWR0aCA9IDgwMDsKICAgIGhlaWdodCA9IDYwMDsKICAgIGJ1ZmZlcjsKICAgIGdpZldyaXRlcjsKICAgIGZyYW1lQ291bnQgPSAwOwogICAgY29sb3JzOwogICAgY29uc3RydWN0b3IoY29sb3JTZXQsIGZyYW1lQ291bnQpIHsKICAgICAgdGhpcy5idWZmZXIgPSBuZXcgVWludDhBcnJheSh0aGlzLndpZHRoICogdGhpcy5oZWlnaHQgKiA1ICogZnJhbWVDb3VudCk7CiAgICAgIHRoaXMuZ2lmV3JpdGVyID0gbmV3IGltcG9ydF9vbWdnaWYuR2lmV3JpdGVyKHRoaXMuYnVmZmVyLCB0aGlzLndpZHRoLCB0aGlzLmhlaWdodCwgeyBsb29wOiAxIH0pOwogICAgICBjb25zdCBjb2xvclRvS2V5ID0gKGNvbG9yKSA9PiBjb2xvci5yZ2JBcnJheS5zbGljZSgwLCAzKS5qb2luKCIsIik7CiAgICAgIGNvbnN0IHdoaXRlID0gQ29sb3IuZnJvbVJnYigyNTUsIDI1NSwgMjU1KTsKICAgICAgdGhpcy5jb2xvcnMgPSBuZXcgTWFwKAogICAgICAgIGNvbG9yU2V0LnZhbHVlcygpLm1hcCgoY29sb3IsIGluZGV4KSA9PiBbY29sb3IucmdiQXJyYXkuc2xpY2UoMCwgMykudG9TdHJpbmcoKSwgeyBjb2xvciwgaW5kZXggfV0pCiAgICAgICk7CiAgICAgIGlmICghdGhpcy5jb2xvcnMuaGFzKGNvbG9yVG9LZXkod2hpdGUpKSkgewogICAgICAgIHRoaXMuY29sb3JzLnNldChjb2xvclRvS2V5KHdoaXRlKSwgeyBjb2xvcjogd2hpdGUsIGluZGV4OiB0aGlzLmNvbG9ycy5zaXplIH0pOwogICAgICB9CiAgICAgIGNvbnN0IG5leHRQb3dlck9mVHdvID0gKG4pID0+IE1hdGgucG93KDIsIE1hdGguY2VpbChNYXRoLmxvZzIobikpKTsKICAgICAgY29uc3QgcmVxdWlyZWRTaXplID0gbmV4dFBvd2VyT2ZUd28odGhpcy5jb2xvcnMuc2l6ZSk7CiAgICAgIGlmICh0aGlzLmNvbG9ycy5zaXplIDwgcmVxdWlyZWRTaXplKSB7CiAgICAgICAgY29uc3QgZmlsbCA9IG5ldyBBcnJheShyZXF1aXJlZFNpemUgLSB0aGlzLmNvbG9ycy5zaXplKS5maWxsKHdoaXRlKTsKICAgICAgICBmaWxsLmZvckVhY2goKGNvbG9yLCBpbmRleCkgPT4gewogICAgICAgICAgdGhpcy5jb2xvcnMuc2V0KGBmaWxsLSR7aW5kZXh9YCwgeyBjb2xvciwgaW5kZXg6IHRoaXMuY29sb3JzLnNpemUgfSk7CiAgICAgICAgfSk7CiAgICAgIH0KICAgIH0KICAgIGdldCBwYWxldHRlKCkgewogICAgICByZXR1cm4gWy4uLnRoaXMuY29sb3JzLnZhbHVlcygpXS5tYXAoKGMpID0+IHsKICAgICAgICBjb25zdCByZ2IgPSBjLmNvbG9yLnJnYkFycmF5OwogICAgICAgIHJldHVybiByZ2JbMl0gfCByZ2JbMV0gPDwgOCB8IHJnYlswXSA8PCAxNjsKICAgICAgfSk7CiAgICB9CiAgICBtYXBUb1BhbGV0dGVJbmRleChjb2xvcikgewogICAgICByZXR1cm4gdGhpcy5jb2xvcnMuZ2V0KGNvbG9yLnRvU3RyaW5nKCkpPy5pbmRleCA/PyAwOwogICAgfQogICAgYWRkRnJhbWUoaW1hZ2VEYXRhLCBkZWxheU1zKSB7CiAgICAgIGNvbnN0IHBhbGV0dGUgPSB0aGlzLnBhbGV0dGU7CiAgICAgIGNvbnN0IGluZGV4ZWRQaXhlbHMgPSBbXTsKICAgICAgZm9yIChsZXQgaSA9IDA7IGkgPCBpbWFnZURhdGEubGVuZ3RoOyBpICs9IDQpIHsKICAgICAgICBjb25zdCBjb2xvciA9IFtpbWFnZURhdGFbaV0sIGltYWdlRGF0YVtpICsgMV0sIGltYWdlRGF0YVtpICsgMl1dOwogICAgICAgIGluZGV4ZWRQaXhlbHMucHVzaCh0aGlzLm1hcFRvUGFsZXR0ZUluZGV4KGNvbG9yKSk7CiAgICAgIH0KICAgICAgdGhpcy5naWZXcml0ZXIuYWRkRnJhbWUoMCwgMCwgdGhpcy53aWR0aCwgdGhpcy5oZWlnaHQsIGluZGV4ZWRQaXhlbHMsIHsKICAgICAgICBkZWxheTogZGVsYXlNcyAvIDEwLAogICAgICAgIHBhbGV0dGUsCiAgICAgICAgZGlzcG9zYWw6IDIKICAgICAgfSk7CiAgICAgIHRoaXMuZnJhbWVDb3VudCsrOwogICAgfQogICAgZmluYWxpemUoKSB7CiAgICAgIGlmICh0aGlzLmZyYW1lQ291bnQgPT09IDApIHRocm93IG5ldyBFcnJvcigiTm8gZnJhbWVzIGFkZGVkIHRvIHRoZSBHSUYuIik7CiAgICAgIGNvbnN0IGdpZkRhdGEgPSB0aGlzLmJ1ZmZlci5zdWJhcnJheSgwLCB0aGlzLmdpZldyaXRlci5lbmQoKSk7CiAgICAgIHJldHVybiBuZXcgQmxvYihbZ2lmRGF0YV0sIHsgdHlwZTogImltYWdlL2dpZiIgfSk7CiAgICB9CiAgfTsKCiAgLy8gc3JjL3V0aWwvZ2lmL2NyZWF0ZUdpZi50cwogIGZ1bmN0aW9uIGNyZWF0ZUdpZihwcm9jZXNzb3IsIGNvbW1hbmRzLCBjb21tYW5kUmVzb2x1dGlvbiwgZnJhbWVEZWxheSwgZnJhbWVDb3VudCwgb25GcmFtZVJlbmRlcmVkKSB7CiAgICBjb25zdCBza3JpYmJsQ29sb3JDb2RlcyA9IG5ldyBTZXQoY29tbWFuZHMubWFwKChjKSA9PiBjWzFdKSk7CiAgICBpZiAoc2tyaWJibENvbG9yQ29kZXMuc2l6ZSA+IDI1NikgewogICAgICB0aHJvdyBuZXcgRXJyb3IoIlRvbyBtYW55IGNvbG9ycyBpbiB0aGUgc2tyaWJibCBjb21tYW5kcyB0byByZW5kZXIgZ2lmIik7CiAgICB9CiAgICBjb25zdCBjb2xvclNldCA9IG5ldyBTZXQoc2tyaWJibENvbG9yQ29kZXMudmFsdWVzKCkubWFwKChjKSA9PiBDb2xvci5mcm9tU2tyaWJibENvZGUoYykpKTsKICAgIGNvbnN0IGdpZkVuY29kZXIgPSBuZXcgR2lmRW5jb2Rlcihjb2xvclNldCwgZnJhbWVDb3VudCk7CiAgICBmb3IgKGxldCBpID0gMDsgaSA8IGNvbW1hbmRzLmxlbmd0aDsgaSsrKSB7CiAgICAgIHByb2Nlc3Nvci5wcm9jZXNzRHJhd0NvbW1hbmQoY29tbWFuZHNbaV0pOwogICAgICBpZiAoaSAlIGNvbW1hbmRSZXNvbHV0aW9uID09PSAwKSB7CiAgICAgICAgY29uc3QgaW1hZ2UgPSBwcm9jZXNzb3IuZXhwb3J0SW1hZ2UoKTsKICAgICAgICBnaWZFbmNvZGVyLmFkZEZyYW1lKGltYWdlLCBmcmFtZURlbGF5KTsKICAgICAgICBvbkZyYW1lUmVuZGVyZWQ/LihpLCBjb21tYW5kcy5sZW5ndGgpOwogICAgICB9CiAgICB9CiAgICBnaWZFbmNvZGVyLmFkZEZyYW1lKHByb2Nlc3Nvci5leHBvcnRJbWFnZSgpLCAyZTMpOwogICAgcmV0dXJuIGdpZkVuY29kZXIuZmluYWxpemUoKTsKICB9CgogIC8vIHNyYy93b3JrZXIvdHlwZWQtd29ya2VyLnRzCiAgdmFyIFR5cGVkV29ya2VyID0gY2xhc3MgewogICAgY29uc3RydWN0b3Iod29ya2VyKSB7CiAgICAgIHRoaXMud29ya2VyID0gd29ya2VyOwogICAgICBhZGRFdmVudExpc3RlbmVyKCJtZXNzYWdlIiwgYXN5bmMgKGV2ZW50KSA9PiB7CiAgICAgICAgY29uc3QgeyBtZXRob2ROYW1lLCBhcmdzLCBtZXNzYWdlSWQgfSA9IGV2ZW50LmRhdGE7CiAgICAgICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgdGhpcy53b3JrZXJbbWV0aG9kTmFtZV0oLi4uYXJncyk7CiAgICAgICAgcG9zdE1lc3NhZ2UoeyB0eXBlOiAicmVzdWx0IiwgbWVzc2FnZUlkLCByZXN1bHQgfSk7CiAgICAgIH0pOwogICAgfQogICAgc2VuZChtZXRob2ROYW1lLCAuLi5hcmdzKSB7CiAgICAgIHBvc3RNZXNzYWdlKHsgdHlwZTogIm5vdGlmaWNhdGlvbiIsIG1ldGhvZE5hbWUsIGFyZ3MgfSk7CiAgICB9CiAgfTsKCiAgLy8gc3JjL3dvcmtlci9naWYtcmVuZGVyZXIvZ2lmLXJlbmRlcmVyLndvcmtlci50cwogIHZhciBnaWZSZW5kZXJlcldvcmtlciA9IHsKICAgIHJlbmRlckdpZihjb21tYW5kcywgZHVyYXRpb24pIHsKICAgICAgY29uc3Qgb2Zmc2NyZWVuQ2FudmFzID0gbmV3IE9mZnNjcmVlbkNhbnZhcyg4MDAsIDYwMCk7CiAgICAgIGNvbnN0IGNvbnRleHQgPSBvZmZzY3JlZW5DYW52YXMuZ2V0Q29udGV4dCgiMmQiLCB7IHdpbGxSZWFkRnJlcXVlbnRseTogdHJ1ZSB9KTsKICAgICAgaWYgKCFjb250ZXh0KSB0aHJvdyBuZXcgRXJyb3IoIkZhaWxlZCB0byBnZXQgMmQgY29udGV4dCIpOwogICAgICBjb25zdCBwcm9jZXNzb3IgPSBuZXcgQ2FudmFzQ29tbWFuZFByb2Nlc3Nvcihjb250ZXh0KTsKICAgICAgY29uc3QgZnJhbWVEZWxheSA9IDUwOwogICAgICBjb25zdCBmcmFtZUNvdW50ID0gTWF0aC5jZWlsKGR1cmF0aW9uIC8gZnJhbWVEZWxheSk7CiAgICAgIGNvbnN0IGNvbW1hbmRSZXNvbHV0aW9uID0gTWF0aC5tYXgoMSwgTWF0aC5mbG9vcihjb21tYW5kcy5sZW5ndGggLyBmcmFtZUNvdW50KSk7CiAgICAgIGNvbnN0IGdpZiA9IGNyZWF0ZUdpZihwcm9jZXNzb3IsIGNvbW1hbmRzLCBjb21tYW5kUmVzb2x1dGlvbiwgZnJhbWVEZWxheSwgZnJhbWVDb3VudCwgKGZyYW1lSW5kZXgsIHRvdGFsRnJhbWVzKSA9PiBwYXJlbnQuc2VuZCgiZnJhbWVSZW5kZXJlZCIsIGZyYW1lSW5kZXgsIHRvdGFsRnJhbWVzKSk7CiAgICAgIHJldHVybiBnaWY7CiAgICB9CiAgfTsKICB2YXIgcGFyZW50ID0gbmV3IFR5cGVkV29ya2VyKGdpZlJlbmRlcmVyV29ya2VyKTsKfSkoKTsK";
-function get_each_context$t(ctx, list, i) {
+function get_each_context$u(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[33] = list[i];
   return child_ctx;
 }
-__name(get_each_context$t, "get_each_context$t");
+__name(get_each_context$u, "get_each_context$u");
 function create_if_block_2$a(ctx) {
   let flatbutton;
   let current;
@@ -22420,9 +22422,9 @@ function create_if_block_1$e(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$3,
-    then: create_then_block$3,
-    catch: create_catch_block$3,
+    pending: create_pending_block$4,
+    then: create_then_block$4,
+    catch: create_catch_block$4,
     value: 11,
     blocks: [, , ,]
   };
@@ -22473,7 +22475,7 @@ function create_if_block_1$e(ctx) {
   };
 }
 __name(create_if_block_1$e, "create_if_block_1$e");
-function create_catch_block$3(ctx) {
+function create_catch_block$4(ctx) {
   return {
     c: noop$1,
     m: noop$1,
@@ -22483,8 +22485,8 @@ function create_catch_block$3(ctx) {
     d: noop$1
   };
 }
-__name(create_catch_block$3, "create_catch_block$3");
-function create_then_block$3(ctx) {
+__name(create_catch_block$4, "create_catch_block$4");
+function create_then_block$4(ctx) {
   let each_1_anchor;
   let each_value = ensure_array_like(
     /*images*/
@@ -22492,7 +22494,7 @@ function create_then_block$3(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$t(get_each_context$t(ctx, each_value, i));
+    each_blocks[i] = create_each_block$u(get_each_context$u(ctx, each_value, i));
   }
   return {
     c() {
@@ -22518,11 +22520,11 @@ function create_then_block$3(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$t(ctx2, each_value, i);
+          const child_ctx = get_each_context$u(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$t(child_ctx);
+            each_blocks[i] = create_each_block$u(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -22543,8 +22545,8 @@ function create_then_block$3(ctx) {
     }
   };
 }
-__name(create_then_block$3, "create_then_block$3");
-function create_each_block$t(ctx) {
+__name(create_then_block$4, "create_then_block$4");
+function create_each_block$u(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -22619,8 +22621,8 @@ function create_each_block$t(ctx) {
     }
   };
 }
-__name(create_each_block$t, "create_each_block$t");
-function create_pending_block$3(ctx) {
+__name(create_each_block$u, "create_each_block$u");
+function create_pending_block$4(ctx) {
   let div;
   let bounceload;
   let current;
@@ -22654,7 +22656,7 @@ function create_pending_block$3(ctx) {
     }
   };
 }
-__name(create_pending_block$3, "create_pending_block$3");
+__name(create_pending_block$4, "create_pending_block$4");
 function create_if_block$s(ctx) {
   let div0;
   let img;
@@ -22945,7 +22947,7 @@ function create_if_block$s(ctx) {
   };
 }
 __name(create_if_block$s, "create_if_block$s");
-function create_fragment$T(ctx) {
+function create_fragment$U(ctx) {
   let div3;
   let div1;
   let h3;
@@ -23426,10 +23428,10 @@ function create_fragment$T(ctx) {
     }
   };
 }
-__name(create_fragment$T, "create_fragment$T");
+__name(create_fragment$U, "create_fragment$U");
 const pageSize = 200;
 const click_handler_5 = /* @__PURE__ */ __name((e) => e.stopImmediatePropagation(), "click_handler_5");
-function instance$M($$self, $$props, $$invalidate) {
+function instance$N($$self, $$props, $$invalidate) {
   let $member;
   let { feature } = $$props;
   const member = feature.memberStore;
@@ -23571,24 +23573,24 @@ function instance$M($$self, $$props, $$invalidate) {
     click_handler_13
   ];
 }
-__name(instance$M, "instance$M");
+__name(instance$N, "instance$N");
 const _Controls_cloud = class _Controls_cloud extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$M, create_fragment$T, safe_not_equal, { feature: 0 }, null, [-1, -1]);
+    init(this, options, instance$N, create_fragment$U, safe_not_equal, { feature: 0 }, null, [-1, -1]);
   }
 };
 __name(_Controls_cloud, "Controls_cloud");
 let Controls_cloud = _Controls_cloud;
-var __defProp$R = Object.defineProperty;
-var __decorateClass$R = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$S = Object.defineProperty;
+var __decorateClass$S = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$R(target, key, result);
+  if (result) __defProp$S(target, key, result);
   return result;
-}, "__decorateClass$R");
+}, "__decorateClass$S");
 const _ControlsCloudFeature = class _ControlsCloudFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -23761,43 +23763,43 @@ const _ControlsCloudFeature = class _ControlsCloudFeature extends TypoFeature {
 };
 __name(_ControlsCloudFeature, "ControlsCloudFeature");
 let ControlsCloudFeature = _ControlsCloudFeature;
-__decorateClass$R([
+__decorateClass$S([
   inject(ElementsSetup)
 ], ControlsCloudFeature.prototype, "_elementsSetup");
-__decorateClass$R([
+__decorateClass$S([
   inject(ModalService)
 ], ControlsCloudFeature.prototype, "_modalService");
-__decorateClass$R([
+__decorateClass$S([
   inject(MemberService)
 ], ControlsCloudFeature.prototype, "_memberService");
-__decorateClass$R([
+__decorateClass$S([
   inject(CloudService)
 ], ControlsCloudFeature.prototype, "_cloudService");
-__decorateClass$R([
+__decorateClass$S([
   inject(ImagePostService)
 ], ControlsCloudFeature.prototype, "_imagePostService");
-__decorateClass$R([
+__decorateClass$S([
   inject(ImagelabService)
 ], ControlsCloudFeature.prototype, "_imageLabService");
-__decorateClass$R([
+__decorateClass$S([
   inject(ToastService)
 ], ControlsCloudFeature.prototype, "_toastService");
-__decorateClass$R([
+__decorateClass$S([
   inject(ApiService)
 ], ControlsCloudFeature.prototype, "_apiService");
-__decorateClass$R([
+__decorateClass$S([
   inject(ImageFinishedService)
 ], ControlsCloudFeature.prototype, "_imageFinishedService");
-var __defProp$Q = Object.defineProperty;
+var __defProp$R = Object.defineProperty;
 var __getOwnPropDesc$9 = Object.getOwnPropertyDescriptor;
-var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$R = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$9(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$Q(target, key, result);
+  if (kind && result) __defProp$R(target, key, result);
   return result;
-}, "__decorateClass$Q");
+}, "__decorateClass$R");
 var __decorateParam$6 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$6");
 let FeaturesService = (_ta = class {
   constructor(loggerFactory2) {
@@ -23818,19 +23820,19 @@ let FeaturesService = (_ta = class {
     return [...this._features];
   }
 }, __name(_ta, "FeaturesService"), _ta);
-FeaturesService = __decorateClass$Q([
+FeaturesService = __decorateClass$R([
   injectable(),
   __decorateParam$6(0, inject(loggerFactory))
 ], FeaturesService);
-var __defProp$P = Object.defineProperty;
-var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$Q = Object.defineProperty;
+var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$P(target, key, result);
+  if (result) __defProp$Q(target, key, result);
   return result;
-}, "__decorateClass$P");
+}, "__decorateClass$Q");
 const _CustomizerOutfitToggleFeature = class _CustomizerOutfitToggleFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -23889,24 +23891,24 @@ const _CustomizerOutfitToggleFeature = class _CustomizerOutfitToggleFeature exte
 };
 __name(_CustomizerOutfitToggleFeature, "CustomizerOutfitToggleFeature");
 let CustomizerOutfitToggleFeature = _CustomizerOutfitToggleFeature;
-__decorateClass$P([
+__decorateClass$Q([
   inject(ElementsSetup)
 ], CustomizerOutfitToggleFeature.prototype, "_elementsSetup");
-__decorateClass$P([
+__decorateClass$Q([
   inject(GlobalSettingsService)
 ], CustomizerOutfitToggleFeature.prototype, "_globalSettingsService");
-__decorateClass$P([
+__decorateClass$Q([
   inject(MemberService)
 ], CustomizerOutfitToggleFeature.prototype, "_memberService");
-var __defProp$O = Object.defineProperty;
-var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$P = Object.defineProperty;
+var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$O(target, key, result);
+  if (result) __defProp$P(target, key, result);
   return result;
-}, "__decorateClass$O");
+}, "__decorateClass$P");
 const _CustomizerPracticeJoinFeature = class _CustomizerPracticeJoinFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -23956,7 +23958,7 @@ const _CustomizerPracticeJoinFeature = class _CustomizerPracticeJoinFeature exte
 };
 __name(_CustomizerPracticeJoinFeature, "CustomizerPracticeJoinFeature");
 let CustomizerPracticeJoinFeature = _CustomizerPracticeJoinFeature;
-__decorateClass$O([
+__decorateClass$P([
   inject(ElementsSetup)
 ], CustomizerPracticeJoinFeature.prototype, "_elementsSetup");
 const defaultPalettes = {
@@ -24109,16 +24111,16 @@ const defaultPalettes = {
     ]
   }
 };
-var __defProp$N = Object.defineProperty;
+var __defProp$O = Object.defineProperty;
 var __getOwnPropDesc$8 = Object.getOwnPropertyDescriptor;
-var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$8(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$N(target, key, result);
+  if (kind && result) __defProp$O(target, key, result);
   return result;
-}, "__decorateClass$N");
+}, "__decorateClass$O");
 var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$5");
 let ColorsService = (_ua = class {
   constructor(loggerFactory2) {
@@ -24197,11 +24199,11 @@ let ColorsService = (_ua = class {
     return this._colorSelector$.value === void 0;
   }
 }, __name(_ua, "ColorsService"), _ua);
-ColorsService = __decorateClass$N([
+ColorsService = __decorateClass$O([
   injectable(),
   __decorateParam$5(0, inject(loggerFactory))
 ], ColorsService);
-function create_fragment$S(ctx) {
+function create_fragment$T(ctx) {
   let t0;
   let br0;
   let t1;
@@ -24262,24 +24264,24 @@ function create_fragment$S(ctx) {
     }
   };
 }
-__name(create_fragment$S, "create_fragment$S");
+__name(create_fragment$T, "create_fragment$T");
 const _Drawing_color_palettes_info = class _Drawing_color_palettes_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$S, safe_not_equal, {});
+    init(this, options, null, create_fragment$T, safe_not_equal, {});
   }
 };
 __name(_Drawing_color_palettes_info, "Drawing_color_palettes_info");
 let Drawing_color_palettes_info = _Drawing_color_palettes_info;
-function get_each_context$s(ctx, list, i) {
+function get_each_context$t(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[16] = list[i];
   child_ctx[17] = list;
   child_ctx[18] = i;
   return child_ctx;
 }
-__name(get_each_context$s, "get_each_context$s");
-function create_each_block$s(ctx) {
+__name(get_each_context$t, "get_each_context$t");
+function create_each_block$t(ctx) {
   let div;
   let colorpickerbutton;
   let updating_color;
@@ -24349,7 +24351,7 @@ function create_each_block$s(ctx) {
     }
   };
 }
-__name(create_each_block$s, "create_each_block$s");
+__name(create_each_block$t, "create_each_block$t");
 function create_if_block_4$6(ctx) {
   let flatbutton;
   let current;
@@ -24531,7 +24533,7 @@ function create_if_block$r(ctx) {
   };
 }
 __name(create_if_block$r, "create_if_block$r");
-function create_fragment$R(ctx) {
+function create_fragment$S(ctx) {
   let div3;
   let div1;
   let b0;
@@ -24564,7 +24566,7 @@ function create_fragment$R(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$s(get_each_context$s(ctx, each_value, i));
+    each_blocks[i] = create_each_block$t(get_each_context$t(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -24747,12 +24749,12 @@ function create_fragment$R(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$s(ctx2, each_value, i);
+          const child_ctx = get_each_context$t(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$s(child_ctx);
+            each_blocks[i] = create_each_block$t(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div0, null);
@@ -24939,8 +24941,8 @@ function create_fragment$R(ctx) {
     }
   };
 }
-__name(create_fragment$R, "create_fragment$R");
-function instance$L($$self, $$props, $$invalidate) {
+__name(create_fragment$S, "create_fragment$S");
+function instance$M($$self, $$props, $$invalidate) {
   let name = "new-palette";
   let colors = [];
   let columns = 10;
@@ -25010,11 +25012,11 @@ function instance$L($$self, $$props, $$invalidate) {
     click_handler_4
   ];
 }
-__name(instance$L, "instance$L");
+__name(instance$M, "instance$M");
 const _Color_palette_builder = class _Color_palette_builder extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$L, create_fragment$R, safe_not_equal, {
+    init(this, options, instance$M, create_fragment$S, safe_not_equal, {
       onPaletteSave: 0,
       onPaletteExport: 1,
       onPaletteDelete: 2,
@@ -25024,12 +25026,12 @@ const _Color_palette_builder = class _Color_palette_builder extends SvelteCompon
 };
 __name(_Color_palette_builder, "Color_palette_builder");
 let Color_palette_builder = _Color_palette_builder;
-function get_each_context$r(ctx, list, i) {
+function get_each_context$s(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context$r, "get_each_context$r");
+__name(get_each_context$s, "get_each_context$s");
 function get_each_context_1$a(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
@@ -25273,7 +25275,7 @@ function create_each_block_1$a(ctx) {
   };
 }
 __name(create_each_block_1$a, "create_each_block_1$a");
-function create_each_block$r(ctx) {
+function create_each_block$s(ctx) {
   let colorpalettebuilder;
   let current;
   function func_3() {
@@ -25324,8 +25326,8 @@ function create_each_block$r(ctx) {
     }
   };
 }
-__name(create_each_block$r, "create_each_block$r");
-function create_fragment$Q(ctx) {
+__name(create_each_block$s, "create_each_block$s");
+function create_fragment$R(ctx) {
   let h30;
   let t1;
   let br0;
@@ -25431,7 +25433,7 @@ function create_fragment$Q(ctx) {
   ));
   let each_blocks = [];
   for (let i2 = 0; i2 < each_value.length; i2 += 1) {
-    each_blocks[i2] = create_each_block$r(get_each_context$r(ctx, each_value, i2));
+    each_blocks[i2] = create_each_block$s(get_each_context$s(ctx, each_value, i2));
   }
   const out_1 = /* @__PURE__ */ __name((i2) => transition_out(each_blocks[i2], 1, 1, () => {
     each_blocks[i2] = null;
@@ -25732,12 +25734,12 @@ function create_fragment$Q(ctx) {
         ));
         let i2;
         for (i2 = 0; i2 < each_value.length; i2 += 1) {
-          const child_ctx = get_each_context$r(ctx2, each_value, i2);
+          const child_ctx = get_each_context$s(ctx2, each_value, i2);
           if (each_blocks[i2]) {
             each_blocks[i2].p(child_ctx, dirty);
             transition_in(each_blocks[i2], 1);
           } else {
-            each_blocks[i2] = create_each_block$r(child_ctx);
+            each_blocks[i2] = create_each_block$s(child_ctx);
             each_blocks[i2].c();
             transition_in(each_blocks[i2], 1);
             each_blocks[i2].m(div, null);
@@ -25852,8 +25854,8 @@ function create_fragment$Q(ctx) {
     }
   };
 }
-__name(create_fragment$Q, "create_fragment$Q");
-function instance$K($$self, $$props, $$invalidate) {
+__name(create_fragment$R, "create_fragment$R");
+function instance$L($$self, $$props, $$invalidate) {
   let $activePalette;
   let $palettes;
   let { feature } = $$props;
@@ -25905,22 +25907,22 @@ function instance$K($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$K, "instance$K");
+__name(instance$L, "instance$L");
 const _Drawing_color_palettes_manage = class _Drawing_color_palettes_manage extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$K, create_fragment$Q, safe_not_equal, { feature: 0 });
+    init(this, options, instance$L, create_fragment$R, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Drawing_color_palettes_manage, "Drawing_color_palettes_manage");
 let Drawing_color_palettes_manage = _Drawing_color_palettes_manage;
-function get_each_context$q(ctx, list, i) {
+function get_each_context$r(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[3] = list[i];
   return child_ctx;
 }
-__name(get_each_context$q, "get_each_context$q");
-function create_each_block$q(ctx) {
+__name(get_each_context$r, "get_each_context$r");
+function create_each_block$r(ctx) {
   let div;
   let mounted;
   let dispose;
@@ -25992,8 +25994,8 @@ function create_each_block$q(ctx) {
     }
   };
 }
-__name(create_each_block$q, "create_each_block$q");
-function create_fragment$P(ctx) {
+__name(create_each_block$r, "create_each_block$r");
+function create_fragment$Q(ctx) {
   let div1;
   let div0;
   let mounted;
@@ -26004,7 +26006,7 @@ function create_fragment$P(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$q(get_each_context$q(ctx, each_value, i));
+    each_blocks[i] = create_each_block$r(get_each_context$r(ctx, each_value, i));
   }
   return {
     c() {
@@ -26046,11 +26048,11 @@ function create_fragment$P(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$q(ctx2, each_value, i);
+          const child_ctx = get_each_context$r(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$q(child_ctx);
+            each_blocks[i] = create_each_block$r(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div0, null);
           }
@@ -26078,8 +26080,8 @@ function create_fragment$P(ctx) {
     }
   };
 }
-__name(create_fragment$P, "create_fragment$P");
-function instance$J($$self, $$props, $$invalidate) {
+__name(create_fragment$Q, "create_fragment$Q");
+function instance$K($$self, $$props, $$invalidate) {
   let { colors } = $$props;
   let { feature } = $$props;
   const pointerdown_handler = /* @__PURE__ */ __name((color) => feature.setColor(color), "pointerdown_handler");
@@ -26089,24 +26091,24 @@ function instance$J($$self, $$props, $$invalidate) {
   };
   return [colors, feature, pointerdown_handler];
 }
-__name(instance$J, "instance$J");
+__name(instance$K, "instance$K");
 const _Color_palette_picker = class _Color_palette_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$J, create_fragment$P, safe_not_equal, { colors: 0, feature: 1 });
+    init(this, options, instance$K, create_fragment$Q, safe_not_equal, { colors: 0, feature: 1 });
   }
 };
 __name(_Color_palette_picker, "Color_palette_picker");
 let Color_palette_picker = _Color_palette_picker;
-var __defProp$M = Object.defineProperty;
-var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$N = Object.defineProperty;
+var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$M(target, key, result);
+  if (result) __defProp$N(target, key, result);
   return result;
-}, "__decorateClass$M");
+}, "__decorateClass$N");
 const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -26324,28 +26326,28 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
 };
 __name(_DrawingColorPalettesFeature, "DrawingColorPalettesFeature");
 let DrawingColorPalettesFeature = _DrawingColorPalettesFeature;
-__decorateClass$M([
+__decorateClass$N([
   inject(ElementsSetup)
 ], DrawingColorPalettesFeature.prototype, "_elementsSetup");
-__decorateClass$M([
+__decorateClass$N([
   inject(ToastService)
 ], DrawingColorPalettesFeature.prototype, "_toastService");
-__decorateClass$M([
+__decorateClass$N([
   inject(DrawingService)
 ], DrawingColorPalettesFeature.prototype, "_drawingService");
-__decorateClass$M([
+__decorateClass$N([
   inject(ColorsService)
 ], DrawingColorPalettesFeature.prototype, "_colorsService");
-var __defProp$L = Object.defineProperty;
+var __defProp$M = Object.defineProperty;
 var __getOwnPropDesc$7 = Object.getOwnPropertyDescriptor;
-var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$7(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$L(target, key, result);
+  if (kind && result) __defProp$M(target, key, result);
   return result;
-}, "__decorateClass$L");
+}, "__decorateClass$M");
 let TypoDrawMod = (_va = class {
   constructor() {
     /**
@@ -26358,7 +26360,7 @@ let TypoDrawMod = (_va = class {
     return { lines: [line], style: brushStyle };
   }
 }, __name(_va, "TypoDrawMod"), _va);
-TypoDrawMod = __decorateClass$L([
+TypoDrawMod = __decorateClass$M([
   injectable()
 ], TypoDrawMod);
 const _ConstantDrawMod = class _ConstantDrawMod extends TypoDrawMod {
@@ -26644,16 +26646,16 @@ const _TypoDrawTool = class _TypoDrawTool extends ConstantDrawMod {
 };
 __name(_TypoDrawTool, "TypoDrawTool");
 let TypoDrawTool = _TypoDrawTool;
-var __defProp$K = Object.defineProperty;
+var __defProp$L = Object.defineProperty;
 var __getOwnPropDesc$6 = Object.getOwnPropertyDescriptor;
-var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$6(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$K(target, key, result);
+  if (kind && result) __defProp$L(target, key, result);
   return result;
-}, "__decorateClass$K");
+}, "__decorateClass$L");
 var __decorateParam$4 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$4");
 let ToolsService = (_wa = class {
   constructor(loggerFactory2) {
@@ -26836,38 +26838,38 @@ let ToolsService = (_wa = class {
     return this._extensionContainer.resolveService(tool);
   }
 }, __name(_wa, "ToolsService"), _wa);
-__decorateClass$K([
+__decorateClass$L([
   inject(PrioritizedCanvasEventsSetup)
 ], ToolsService.prototype, "_prioritizedCanvasEventsSetup", 2);
-__decorateClass$K([
+__decorateClass$L([
   inject(DrawingService)
 ], ToolsService.prototype, "_drawingService", 2);
-__decorateClass$K([
+__decorateClass$L([
   inject(ToolChangedEventListener)
 ], ToolsService.prototype, "_toolChangedListener", 2);
-__decorateClass$K([
+__decorateClass$L([
   inject(ExtensionContainer)
 ], ToolsService.prototype, "_extensionContainer", 2);
-__decorateClass$K([
+__decorateClass$L([
   inject(LobbyService)
 ], ToolsService.prototype, "_lobbyService", 2);
-__decorateClass$K([
+__decorateClass$L([
   inject(SizeChangedEventListener)
 ], ToolsService.prototype, "_sizeChangedListener", 2);
-__decorateClass$K([
+__decorateClass$L([
   inject(ColorChangedEventListener)
 ], ToolsService.prototype, "_colorChangedListener", 2);
-__decorateClass$K([
+__decorateClass$L([
   inject(ElementsSetup)
 ], ToolsService.prototype, "_elementsSetup", 2);
-__decorateClass$K([
+__decorateClass$L([
   postConstruct()
 ], ToolsService.prototype, "postConstruct", 1);
-ToolsService = __decorateClass$K([
+ToolsService = __decorateClass$L([
   injectable(),
   __decorateParam$4(0, inject(loggerFactory))
 ], ToolsService);
-function create_fragment$O(ctx) {
+function create_fragment$P(ctx) {
   let div;
   let p0;
   let t4;
@@ -26951,8 +26953,8 @@ function create_fragment$O(ctx) {
     }
   };
 }
-__name(create_fragment$O, "create_fragment$O");
-function instance$I($$self, $$props, $$invalidate) {
+__name(create_fragment$P, "create_fragment$P");
+function instance$J($$self, $$props, $$invalidate) {
   let $balance;
   let $sensitivity;
   let { feature } = $$props;
@@ -27004,24 +27006,24 @@ function instance$I($$self, $$props, $$invalidate) {
     canvas_1_binding
   ];
 }
-__name(instance$I, "instance$I");
+__name(instance$J, "instance$J");
 const _Drawing_pressure_info = class _Drawing_pressure_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$I, create_fragment$O, safe_not_equal, { feature: 3 });
+    init(this, options, instance$J, create_fragment$P, safe_not_equal, { feature: 3 });
   }
 };
 __name(_Drawing_pressure_info, "Drawing_pressure_info");
 let Drawing_pressure_info = _Drawing_pressure_info;
-var __defProp$J = Object.defineProperty;
-var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$K = Object.defineProperty;
+var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$J(target, key, result);
+  if (result) __defProp$K(target, key, result);
   return result;
-}, "__decorateClass$J");
+}, "__decorateClass$K");
 const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -27096,7 +27098,7 @@ const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeatur
 };
 __name(_DrawingPressureFeature, "DrawingPressureFeature");
 let DrawingPressureFeature = _DrawingPressureFeature;
-__decorateClass$J([
+__decorateClass$K([
   inject(ToolsService)
 ], DrawingPressureFeature.prototype, "_toolsService");
 const _ReceiverMethodSubscription = class _ReceiverMethodSubscription {
@@ -30149,16 +30151,16 @@ function isLogger(logger) {
   return logger.log !== void 0;
 }
 __name(isLogger, "isLogger");
-var __defProp$I = Object.defineProperty;
+var __defProp$J = Object.defineProperty;
 var __getOwnPropDesc$5 = Object.getOwnPropertyDescriptor;
-var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$5(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$I(target, key, result);
+  if (kind && result) __defProp$J(target, key, result);
   return result;
-}, "__decorateClass$I");
+}, "__decorateClass$J");
 var __decorateParam$3 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$3");
 const hubTypeMap = {
   IGuildLobbiesHub: {
@@ -30231,21 +30233,21 @@ let SocketService = (_ya = class {
     });
   }
 }, __name(_ya, "SocketService"), _ya);
-SocketService = __decorateClass$I([
+SocketService = __decorateClass$J([
   injectable(),
   __decorateParam$3(0, inject(loggerFactory)),
   __decorateParam$3(1, inject(TokenService))
 ], SocketService);
-var __defProp$H = Object.defineProperty;
+var __defProp$I = Object.defineProperty;
 var __getOwnPropDesc$4 = Object.getOwnPropertyDescriptor;
-var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$4(target, key) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$H(target, key, result);
+  if (kind && result) __defProp$I(target, key, result);
   return result;
-}, "__decorateClass$H");
+}, "__decorateClass$I");
 var __decorateParam$2 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$2");
 let LobbyConnectionService = (_za = class {
   constructor(loggerFactory2) {
@@ -30385,10 +30387,10 @@ let LobbyConnectionService = (_za = class {
     await this.connection.hub.claimLobbyOwnership();
   }
 }, __name(_za, "LobbyConnectionService"), _za);
-__decorateClass$H([
+__decorateClass$I([
   inject(SocketService)
 ], LobbyConnectionService.prototype, "_socketService", 2);
-LobbyConnectionService = __decorateClass$H([
+LobbyConnectionService = __decorateClass$I([
   injectable(),
   __decorateParam$2(0, inject(loggerFactory))
 ], LobbyConnectionService);
@@ -30466,7 +30468,7 @@ function create_if_block$q(ctx) {
   };
 }
 __name(create_if_block$q, "create_if_block$q");
-function create_fragment$N(ctx) {
+function create_fragment$O(ctx) {
   let if_block_anchor;
   let if_block = (
     /*$currentDrop*/
@@ -30510,8 +30512,8 @@ function create_fragment$N(ctx) {
     }
   };
 }
-__name(create_fragment$N, "create_fragment$N");
-function instance$H($$self, $$props, $$invalidate) {
+__name(create_fragment$O, "create_fragment$O");
+function instance$I($$self, $$props, $$invalidate) {
   let $currentDrop;
   let { feature } = $$props;
   let { drops } = $$props;
@@ -30534,22 +30536,22 @@ function instance$H($$self, $$props, $$invalidate) {
   };
   return [feature, $currentDrop, currentDrop, getDropUrl, drops, pointerdown_handler];
 }
-__name(instance$H, "instance$H");
+__name(instance$I, "instance$I");
 const _Drops = class _Drops extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$H, create_fragment$N, safe_not_equal, { feature: 0, drops: 4 });
+    init(this, options, instance$I, create_fragment$O, safe_not_equal, { feature: 0, drops: 4 });
   }
 };
 __name(_Drops, "Drops");
 let Drops = _Drops;
-function get_each_context$p(ctx, list, i) {
+function get_each_context$q(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[3] = list[i];
   return child_ctx;
 }
-__name(get_each_context$p, "get_each_context$p");
-function create_each_block$p(ctx) {
+__name(get_each_context$q, "get_each_context$q");
+function create_each_block$q(ctx) {
   let div;
   let b;
   let t0;
@@ -30640,7 +30642,7 @@ function create_each_block$p(ctx) {
     }
   };
 }
-__name(create_each_block$p, "create_each_block$p");
+__name(create_each_block$q, "create_each_block$q");
 function create_if_block$p(ctx) {
   let p;
   return {
@@ -30659,7 +30661,7 @@ function create_if_block$p(ctx) {
   };
 }
 __name(create_if_block$p, "create_if_block$p");
-function create_fragment$M(ctx) {
+function create_fragment$N(ctx) {
   let h3;
   let t1;
   let p;
@@ -30674,7 +30676,7 @@ function create_fragment$M(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$p(get_each_context$p(ctx, each_value, i));
+    each_blocks[i] = create_each_block$q(get_each_context$q(ctx, each_value, i));
   }
   let if_block = (
     /*$claims*/
@@ -30724,11 +30726,11 @@ function create_fragment$M(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$p(ctx2, each_value, i);
+          const child_ctx = get_each_context$q(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$p(child_ctx);
+            each_blocks[i] = create_each_block$q(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div, t6);
           }
@@ -30770,8 +30772,8 @@ function create_fragment$M(ctx) {
     }
   };
 }
-__name(create_fragment$M, "create_fragment$M");
-function instance$G($$self, $$props, $$invalidate) {
+__name(create_fragment$N, "create_fragment$N");
+function instance$H($$self, $$props, $$invalidate) {
   let $claims;
   let { feature } = $$props;
   const claims = feature.recordedClaimsStore;
@@ -30781,24 +30783,24 @@ function instance$G($$self, $$props, $$invalidate) {
   };
   return [$claims, claims, feature];
 }
-__name(instance$G, "instance$G");
+__name(instance$H, "instance$H");
 const _Drops_info = class _Drops_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$G, create_fragment$M, safe_not_equal, { feature: 2 });
+    init(this, options, instance$H, create_fragment$N, safe_not_equal, { feature: 2 });
   }
 };
 __name(_Drops_info, "Drops_info");
 let Drops_info = _Drops_info;
-var __defProp$G = Object.defineProperty;
-var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$H = Object.defineProperty;
+var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$G(target, key, result);
+  if (result) __defProp$H(target, key, result);
   return result;
-}, "__decorateClass$G");
+}, "__decorateClass$H");
 const _DropsFeature = class _DropsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -30953,22 +30955,22 @@ const _DropsFeature = class _DropsFeature extends TypoFeature {
 };
 __name(_DropsFeature, "DropsFeature");
 let DropsFeature = _DropsFeature;
-__decorateClass$G([
+__decorateClass$H([
   inject(ElementsSetup)
 ], DropsFeature.prototype, "_elementsSetup");
-__decorateClass$G([
+__decorateClass$H([
   inject(ApiDataSetup)
 ], DropsFeature.prototype, "_apiDataSetup");
-__decorateClass$G([
+__decorateClass$H([
   inject(LobbyConnectionService)
 ], DropsFeature.prototype, "_lobbyConnectionService");
-__decorateClass$G([
+__decorateClass$H([
   inject(ChatService)
 ], DropsFeature.prototype, "_chatService");
-__decorateClass$G([
+__decorateClass$H([
   inject(ToastService)
 ], DropsFeature.prototype, "_toastService");
-__decorateClass$G([
+__decorateClass$H([
   inject(LobbyLeftEventListener)
 ], DropsFeature.prototype, "_lobbyLeftEventListener");
 const BLANK = "_";
@@ -31041,12 +31043,12 @@ function guessCorrectHint(character, index, hints) {
   return hints[index] === character && hints[index] !== BLANK;
 }
 __name(guessCorrectHint, "guessCorrectHint");
-function get_each_context$o(ctx, list, i) {
+function get_each_context$p(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[3] = list[i];
   return child_ctx;
 }
-__name(get_each_context$o, "get_each_context$o");
+__name(get_each_context$p, "get_each_context$p");
 function get_each_context_1$9(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[6] = list[i];
@@ -31183,7 +31185,7 @@ function create_each_block_1$9(ctx) {
   };
 }
 __name(create_each_block_1$9, "create_each_block_1$9");
-function create_each_block$o(ctx) {
+function create_each_block$p(ctx) {
   let div;
   let t;
   let if_block = (
@@ -31228,13 +31230,13 @@ function create_each_block$o(ctx) {
     }
   };
 }
-__name(create_each_block$o, "create_each_block$o");
-function create_fragment$L(ctx) {
+__name(create_each_block$p, "create_each_block$p");
+function create_fragment$M(ctx) {
   let each_1_anchor;
   let each_value = ensure_array_like(["warning", "correct"]);
   let each_blocks = [];
   for (let i = 0; i < 2; i += 1) {
-    each_blocks[i] = create_each_block$o(get_each_context$o(ctx, each_value, i));
+    each_blocks[i] = create_each_block$p(get_each_context$p(ctx, each_value, i));
   }
   return {
     c() {
@@ -31257,11 +31259,11 @@ function create_fragment$L(ctx) {
         each_value = ensure_array_like(["warning", "correct"]);
         let i;
         for (i = 0; i < 2; i += 1) {
-          const child_ctx = get_each_context$o(ctx2, each_value, i);
+          const child_ctx = get_each_context$p(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$o(child_ctx);
+            each_blocks[i] = create_each_block$p(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -31281,8 +31283,8 @@ function create_fragment$L(ctx) {
     }
   };
 }
-__name(create_fragment$L, "create_fragment$L");
-function instance$F($$self, $$props, $$invalidate) {
+__name(create_fragment$M, "create_fragment$M");
+function instance$G($$self, $$props, $$invalidate) {
   let $guess;
   let { feature } = $$props;
   const guess = feature.guessChangedStore;
@@ -31292,24 +31294,24 @@ function instance$F($$self, $$props, $$invalidate) {
   };
   return [$guess, guess, feature];
 }
-__name(instance$F, "instance$F");
+__name(instance$G, "instance$G");
 const _Guess_check = class _Guess_check extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$F, create_fragment$L, safe_not_equal, { feature: 2 });
+    init(this, options, instance$G, create_fragment$M, safe_not_equal, { feature: 2 });
   }
 };
 __name(_Guess_check, "Guess_check");
 let Guess_check = _Guess_check;
-var __defProp$F = Object.defineProperty;
-var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$G = Object.defineProperty;
+var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$F(target, key, result);
+  if (result) __defProp$G(target, key, result);
   return result;
-}, "__decorateClass$F");
+}, "__decorateClass$G");
 const _GuessCheckFeature = class _GuessCheckFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -31368,16 +31370,16 @@ const _GuessCheckFeature = class _GuessCheckFeature extends TypoFeature {
 };
 __name(_GuessCheckFeature, "GuessCheckFeature");
 let GuessCheckFeature = _GuessCheckFeature;
-__decorateClass$F([
+__decorateClass$G([
   inject(ElementsSetup)
 ], GuessCheckFeature.prototype, "_elementsSetup");
-__decorateClass$F([
+__decorateClass$G([
   inject(ChatTypedEventListener)
 ], GuessCheckFeature.prototype, "_chatTypedEventListener");
-__decorateClass$F([
+__decorateClass$G([
   inject(LobbyLeftEventListener)
 ], GuessCheckFeature.prototype, "_lobbyLeftEventListener");
-__decorateClass$F([
+__decorateClass$G([
   inject(DrawingService)
 ], GuessCheckFeature.prototype, "_drawingService");
 const _HotkeysFeature = class _HotkeysFeature extends TypoFeature {
@@ -31482,7 +31484,7 @@ const _HotkeysFeature = class _HotkeysFeature extends TypoFeature {
 };
 __name(_HotkeysFeature, "HotkeysFeature");
 let HotkeysFeature = _HotkeysFeature;
-function create_catch_block$2(ctx) {
+function create_catch_block$3(ctx) {
   return {
     c: noop$1,
     m: noop$1,
@@ -31492,8 +31494,8 @@ function create_catch_block$2(ctx) {
     d: noop$1
   };
 }
-__name(create_catch_block$2, "create_catch_block$2");
-function create_then_block$2(ctx) {
+__name(create_catch_block$3, "create_catch_block$3");
+function create_then_block$3(ctx) {
   let if_block_anchor;
   let if_block = (
     /*imageIndex*/
@@ -31537,7 +31539,7 @@ function create_then_block$2(ctx) {
     }
   };
 }
-__name(create_then_block$2, "create_then_block$2");
+__name(create_then_block$3, "create_then_block$3");
 function create_if_block$n(ctx) {
   let img;
   let img_src_value;
@@ -31598,7 +31600,7 @@ function create_if_block$n(ctx) {
   };
 }
 __name(create_if_block$n, "create_if_block$n");
-function create_pending_block$2(ctx) {
+function create_pending_block$3(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({});
@@ -31625,8 +31627,8 @@ function create_pending_block$2(ctx) {
     }
   };
 }
-__name(create_pending_block$2, "create_pending_block$2");
-function create_fragment$K(ctx) {
+__name(create_pending_block$3, "create_pending_block$3");
+function create_fragment$L(ctx) {
   let div2;
   let div1;
   let h3;
@@ -31645,9 +31647,9 @@ function create_fragment$K(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$2,
-    then: create_then_block$2,
-    catch: create_catch_block$2,
+    pending: create_pending_block$3,
+    then: create_then_block$3,
+    catch: create_catch_block$3,
     value: 5,
     blocks: [, , ,]
   };
@@ -31779,9 +31781,9 @@ function create_fragment$K(ctx) {
     }
   };
 }
-__name(create_fragment$K, "create_fragment$K");
+__name(create_fragment$L, "create_fragment$L");
 const contextmenu_handler = /* @__PURE__ */ __name((event) => event.preventDefault(), "contextmenu_handler");
-function instance$E($$self, $$props, $$invalidate) {
+function instance$F($$self, $$props, $$invalidate) {
   let images;
   let $word;
   let $hidden;
@@ -31837,24 +31839,24 @@ function instance$E($$self, $$props, $$invalidate) {
     click_handler2
   ];
 }
-__name(instance$E, "instance$E");
+__name(instance$F, "instance$F");
 const _Image_agent = class _Image_agent extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$E, create_fragment$K, safe_not_equal, { feature: 0 });
+    init(this, options, instance$F, create_fragment$L, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Image_agent, "Image_agent");
 let Image_agent = _Image_agent;
-var __defProp$E = Object.defineProperty;
-var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$F = Object.defineProperty;
+var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$E(target, key, result);
+  if (result) __defProp$F(target, key, result);
   return result;
-}, "__decorateClass$E");
+}, "__decorateClass$F");
 const _ImageAgentFeature = class _ImageAgentFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -31928,16 +31930,16 @@ const _ImageAgentFeature = class _ImageAgentFeature extends TypoFeature {
 };
 __name(_ImageAgentFeature, "ImageAgentFeature");
 let ImageAgentFeature = _ImageAgentFeature;
-__decorateClass$E([
+__decorateClass$F([
   inject(ElementsSetup)
 ], ImageAgentFeature.prototype, "_elementsSetup");
-__decorateClass$E([
+__decorateClass$F([
   inject(LobbyService)
 ], ImageAgentFeature.prototype, "_lobbyService");
-__decorateClass$E([
+__decorateClass$F([
   inject(DrawingService)
 ], ImageAgentFeature.prototype, "_drawingService");
-function create_fragment$J(ctx) {
+function create_fragment$K(ctx) {
   let t0;
   let br0;
   let t1;
@@ -32000,24 +32002,24 @@ function create_fragment$J(ctx) {
     }
   };
 }
-__name(create_fragment$J, "create_fragment$J");
+__name(create_fragment$K, "create_fragment$K");
 const _Line_tool_info = class _Line_tool_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$J, safe_not_equal, {});
+    init(this, options, null, create_fragment$K, safe_not_equal, {});
   }
 };
 __name(_Line_tool_info, "Line_tool_info");
 let Line_tool_info = _Line_tool_info;
-var __defProp$D = Object.defineProperty;
-var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$E = Object.defineProperty;
+var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$D(target, key, result);
+  if (result) __defProp$E(target, key, result);
   return result;
-}, "__decorateClass$D");
+}, "__decorateClass$E");
 const _LineToolFeature = class _LineToolFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -32341,22 +32343,22 @@ const _LineToolFeature = class _LineToolFeature extends TypoFeature {
 };
 __name(_LineToolFeature, "LineToolFeature");
 let LineToolFeature = _LineToolFeature;
-__decorateClass$D([
+__decorateClass$E([
   inject(ToastService)
 ], LineToolFeature.prototype, "_toastService");
-__decorateClass$D([
+__decorateClass$E([
   inject(PrioritizedCanvasEventsSetup)
 ], LineToolFeature.prototype, "_prioritizedCanvasEventsSetup");
-__decorateClass$D([
+__decorateClass$E([
   inject(ElementsSetup)
 ], LineToolFeature.prototype, "_elementsSetup");
-__decorateClass$D([
+__decorateClass$E([
   inject(LobbyService)
 ], LineToolFeature.prototype, "_lobbyService");
-__decorateClass$D([
+__decorateClass$E([
   inject(DrawingService)
 ], LineToolFeature.prototype, "_drawingService");
-__decorateClass$D([
+__decorateClass$E([
   inject(ToolsService)
 ], LineToolFeature.prototype, "_toolsService");
 function repeatAfterDelay(source$, delayMs) {
@@ -32368,14 +32370,14 @@ function repeatAfterDelay(source$, delayMs) {
   );
 }
 __name(repeatAfterDelay, "repeatAfterDelay");
-function get_each_context$n(ctx, list, i) {
+function get_each_context$o(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[14] = list[i];
   child_ctx[15] = list;
   child_ctx[16] = i;
   return child_ctx;
 }
-__name(get_each_context$n, "get_each_context$n");
+__name(get_each_context$o, "get_each_context$o");
 function create_else_block$c(ctx) {
   let b;
   let t1;
@@ -32501,7 +32503,7 @@ function create_if_block_3$5(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$n(get_each_context$n(ctx, each_value, i));
+    each_blocks[i] = create_each_block$o(get_each_context$o(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -32605,12 +32607,12 @@ function create_if_block_3$5(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$n(ctx2, each_value, i);
+          const child_ctx = get_each_context$o(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$n(child_ctx);
+            each_blocks[i] = create_each_block$o(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div1, null);
@@ -32654,7 +32656,7 @@ function create_if_block_3$5(ctx) {
   };
 }
 __name(create_if_block_3$5, "create_if_block_3$5");
-function create_each_block$n(ctx) {
+function create_each_block$o(ctx) {
   let checkbox;
   let updating_checked;
   let current;
@@ -32734,7 +32736,7 @@ function create_each_block$n(ctx) {
     }
   };
 }
-__name(create_each_block$n, "create_each_block$n");
+__name(create_each_block$o, "create_each_block$o");
 function create_if_block_1$c(ctx) {
   let div1;
   let t0;
@@ -32983,7 +32985,7 @@ function create_if_block$m(ctx) {
   };
 }
 __name(create_if_block$m, "create_if_block$m");
-function create_fragment$I(ctx) {
+function create_fragment$J(ctx) {
   let div1;
   let div0;
   let current_block_type_index;
@@ -33157,8 +33159,8 @@ function create_fragment$I(ctx) {
     }
   };
 }
-__name(create_fragment$I, "create_fragment$I");
-function instance$D($$self, $$props, $$invalidate) {
+__name(create_fragment$J, "create_fragment$J");
+function instance$E($$self, $$props, $$invalidate) {
   let $connection;
   let $devmode;
   let { feature } = $$props;
@@ -33222,24 +33224,24 @@ function instance$D($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$D, "instance$D");
+__name(instance$E, "instance$E");
 const _Lobby_status = class _Lobby_status extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$D, create_fragment$I, safe_not_equal, { feature: 0 });
+    init(this, options, instance$E, create_fragment$J, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Lobby_status, "Lobby_status");
 let Lobby_status = _Lobby_status;
-var __defProp$C = Object.defineProperty;
-var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$D = Object.defineProperty;
+var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$C(target, key, result);
+  if (result) __defProp$D(target, key, result);
   return result;
-}, "__decorateClass$C");
+}, "__decorateClass$D");
 const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -33560,25 +33562,25 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
 };
 __name(_LobbyStatusFeature, "LobbyStatusFeature");
 let LobbyStatusFeature = _LobbyStatusFeature;
-__decorateClass$C([
+__decorateClass$D([
   inject(LobbyService)
 ], LobbyStatusFeature.prototype, "_lobbyService");
-__decorateClass$C([
+__decorateClass$D([
   inject(ElementsSetup)
 ], LobbyStatusFeature.prototype, "_elementsSetup");
-__decorateClass$C([
+__decorateClass$D([
   inject(MemberService)
 ], LobbyStatusFeature.prototype, "_memberService");
-__decorateClass$C([
+__decorateClass$D([
   inject(ToastService)
 ], LobbyStatusFeature.prototype, "_toastService");
-__decorateClass$C([
+__decorateClass$D([
   inject(GlobalSettingsService)
 ], LobbyStatusFeature.prototype, "_settingsService");
-__decorateClass$C([
+__decorateClass$D([
   inject(LobbyConnectionService)
 ], LobbyStatusFeature.prototype, "_lobbyConnectionService");
-function create_fragment$H(ctx) {
+function create_fragment$I(ctx) {
   let t;
   let br;
   return {
@@ -33601,24 +33603,24 @@ function create_fragment$H(ctx) {
     }
   };
 }
-__name(create_fragment$H, "create_fragment$H");
+__name(create_fragment$I, "create_fragment$I");
 const _Lobby_time_visualizer_info = class _Lobby_time_visualizer_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$H, safe_not_equal, {});
+    init(this, options, null, create_fragment$I, safe_not_equal, {});
   }
 };
 __name(_Lobby_time_visualizer_info, "Lobby_time_visualizer_info");
 let Lobby_time_visualizer_info = _Lobby_time_visualizer_info;
-var __defProp$B = Object.defineProperty;
-var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$C = Object.defineProperty;
+var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$B(target, key, result);
+  if (result) __defProp$C(target, key, result);
   return result;
-}, "__decorateClass$B");
+}, "__decorateClass$C");
 const _LobbyTimeVisualizerFeature = class _LobbyTimeVisualizerFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -33728,24 +33730,24 @@ const _LobbyTimeVisualizerFeature = class _LobbyTimeVisualizerFeature extends Ty
 };
 __name(_LobbyTimeVisualizerFeature, "LobbyTimeVisualizerFeature");
 let LobbyTimeVisualizerFeature = _LobbyTimeVisualizerFeature;
-__decorateClass$B([
+__decorateClass$C([
   inject(LobbyStateChangedEventListener)
 ], LobbyTimeVisualizerFeature.prototype, "_lobbyStateChangedEventListener");
-__decorateClass$B([
+__decorateClass$C([
   inject(LobbyJoinedEventListener)
 ], LobbyTimeVisualizerFeature.prototype, "_lobbyJoinedEventListener");
-__decorateClass$B([
+__decorateClass$C([
   inject(LobbyLeftEventListener)
 ], LobbyTimeVisualizerFeature.prototype, "_lobbyLeftEventListener");
-var __defProp$A = Object.defineProperty;
-var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$B = Object.defineProperty;
+var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$A(target, key, result);
+  if (result) __defProp$B(target, key, result);
   return result;
-}, "__decorateClass$A");
+}, "__decorateClass$B");
 const _PlayerIdsFeature = class _PlayerIdsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -33786,10 +33788,10 @@ const _PlayerIdsFeature = class _PlayerIdsFeature extends TypoFeature {
 };
 __name(_PlayerIdsFeature, "PlayerIdsFeature");
 let PlayerIdsFeature = _PlayerIdsFeature;
-__decorateClass$A([
+__decorateClass$B([
   inject(PlayersService)
 ], PlayerIdsFeature.prototype, "_playersService");
-function create_fragment$G(ctx) {
+function create_fragment$H(ctx) {
   let div1;
   let div0;
   let t0;
@@ -33870,8 +33872,8 @@ function create_fragment$G(ctx) {
     }
   };
 }
-__name(create_fragment$G, "create_fragment$G");
-function instance$C($$self, $$props, $$invalidate) {
+__name(create_fragment$H, "create_fragment$H");
+function instance$D($$self, $$props, $$invalidate) {
   let { title } = $$props;
   let { direction } = $$props;
   let { anchorX } = $$props;
@@ -33884,11 +33886,11 @@ function instance$C($$self, $$props, $$invalidate) {
   };
   return [title, direction, anchorX, anchorY];
 }
-__name(instance$C, "instance$C");
+__name(instance$D, "instance$D");
 const _Tooltip = class _Tooltip extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$C, create_fragment$G, safe_not_equal, {
+    init(this, options, instance$D, create_fragment$H, safe_not_equal, {
       title: 0,
       direction: 1,
       anchorX: 2,
@@ -34063,7 +34065,7 @@ const _TooltipsFeature = class _TooltipsFeature extends TypoFeature {
 };
 __name(_TooltipsFeature, "TooltipsFeature");
 let TooltipsFeature = _TooltipsFeature;
-function create_fragment$F(ctx) {
+function create_fragment$G(ctx) {
   let img;
   let img_src_value;
   return {
@@ -34123,8 +34125,8 @@ function create_fragment$F(ctx) {
     }
   };
 }
-__name(create_fragment$F, "create_fragment$F");
-function instance$B($$self, $$props, $$invalidate) {
+__name(create_fragment$G, "create_fragment$G");
+function instance$C($$self, $$props, $$invalidate) {
   let { x } = $$props;
   let { y } = $$props;
   let { src } = $$props;
@@ -34141,11 +34143,11 @@ function instance$B($$self, $$props, $$invalidate) {
   };
   return [x, y, src, hasEnoughDistance];
 }
-__name(instance$B, "instance$B");
+__name(instance$C, "instance$C");
 const _Controls_onboarding_emoji = class _Controls_onboarding_emoji extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$B, create_fragment$F, safe_not_equal, { x: 0, y: 1, src: 2, hasEnoughDistance: 3 });
+    init(this, options, instance$C, create_fragment$G, safe_not_equal, { x: 0, y: 1, src: 2, hasEnoughDistance: 3 });
   }
   get hasEnoughDistance() {
     return this.$$.ctx[3];
@@ -34153,7 +34155,7 @@ const _Controls_onboarding_emoji = class _Controls_onboarding_emoji extends Svel
 };
 __name(_Controls_onboarding_emoji, "Controls_onboarding_emoji");
 let Controls_onboarding_emoji = _Controls_onboarding_emoji;
-function create_fragment$E(ctx) {
+function create_fragment$F(ctx) {
   let h3;
   let t1;
   let p0;
@@ -34250,16 +34252,16 @@ function create_fragment$E(ctx) {
     }
   };
 }
-__name(create_fragment$E, "create_fragment$E");
+__name(create_fragment$F, "create_fragment$F");
 const _Old_typo_onboarding = class _Old_typo_onboarding extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$E, safe_not_equal, {});
+    init(this, options, null, create_fragment$F, safe_not_equal, {});
   }
 };
 __name(_Old_typo_onboarding, "Old_typo_onboarding");
 let Old_typo_onboarding = _Old_typo_onboarding;
-function create_fragment$D(ctx) {
+function create_fragment$E(ctx) {
   let h3;
   let t1;
   let div;
@@ -34292,21 +34294,21 @@ function create_fragment$D(ctx) {
     }
   };
 }
-__name(create_fragment$D, "create_fragment$D");
+__name(create_fragment$E, "create_fragment$E");
 const _Typo_credits_onboarding = class _Typo_credits_onboarding extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$D, safe_not_equal, {});
+    init(this, options, null, create_fragment$E, safe_not_equal, {});
   }
 };
 __name(_Typo_credits_onboarding, "Typo_credits_onboarding");
 let Typo_credits_onboarding = _Typo_credits_onboarding;
-function get_each_context$m(ctx, list, i) {
+function get_each_context$n(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[29] = list[i];
   return child_ctx;
 }
-__name(get_each_context$m, "get_each_context$m");
+__name(get_each_context$n, "get_each_context$n");
 function get_each_context_1$8(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[33] = list[i];
@@ -34442,9 +34444,9 @@ function create_if_block_1$b(ctx) {
     current: null,
     token: null,
     hasCatch: false,
-    pending: create_pending_block$1,
-    then: create_then_block$1,
-    catch: create_catch_block$1,
+    pending: create_pending_block$2,
+    then: create_then_block$2,
+    catch: create_catch_block$2,
     value: 32,
     blocks: [, , ,]
   };
@@ -34495,7 +34497,7 @@ function create_if_block_1$b(ctx) {
   };
 }
 __name(create_if_block_1$b, "create_if_block_1$b");
-function create_catch_block$1(ctx) {
+function create_catch_block$2(ctx) {
   return {
     c: noop$1,
     m: noop$1,
@@ -34505,8 +34507,8 @@ function create_catch_block$1(ctx) {
     d: noop$1
   };
 }
-__name(create_catch_block$1, "create_catch_block$1");
-function create_then_block$1(ctx) {
+__name(create_catch_block$2, "create_catch_block$2");
+function create_then_block$2(ctx) {
   let show_if;
   let t0;
   let div0;
@@ -34641,7 +34643,7 @@ function create_then_block$1(ctx) {
     }
   };
 }
-__name(create_then_block$1, "create_then_block$1");
+__name(create_then_block$2, "create_then_block$2");
 function create_else_block_1$1(ctx) {
   let span;
   return {
@@ -34926,7 +34928,7 @@ function create_each_block_1$8(ctx) {
   };
 }
 __name(create_each_block_1$8, "create_each_block_1$8");
-function create_pending_block$1(ctx) {
+function create_pending_block$2(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({
@@ -34955,7 +34957,7 @@ function create_pending_block$1(ctx) {
     }
   };
 }
-__name(create_pending_block$1, "create_pending_block$1");
+__name(create_pending_block$2, "create_pending_block$2");
 function create_if_block$l(ctx) {
   let div2;
   let div0;
@@ -34969,7 +34971,7 @@ function create_if_block$l(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$m(get_each_context$m(ctx, each_value, i));
+    each_blocks[i] = create_each_block$n(get_each_context$n(ctx, each_value, i));
   }
   var switch_value = (
     /*activeSection*/
@@ -35018,11 +35020,11 @@ function create_if_block$l(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$m(ctx2, each_value, i);
+          const child_ctx = get_each_context$n(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$m(child_ctx);
+            each_blocks[i] = create_each_block$n(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div0, null);
           }
@@ -35072,7 +35074,7 @@ function create_if_block$l(ctx) {
   };
 }
 __name(create_if_block$l, "create_if_block$l");
-function create_each_block$m(ctx) {
+function create_each_block$n(ctx) {
   let b;
   let mounted;
   let dispose;
@@ -35129,8 +35131,8 @@ function create_each_block$m(ctx) {
     }
   };
 }
-__name(create_each_block$m, "create_each_block$m");
-function create_fragment$C(ctx) {
+__name(create_each_block$n, "create_each_block$n");
+function create_fragment$D(ctx) {
   let div4;
   let div2;
   let div0;
@@ -35415,11 +35417,11 @@ function create_fragment$C(ctx) {
     }
   };
 }
-__name(create_fragment$C, "create_fragment$C");
+__name(create_fragment$D, "create_fragment$D");
 const func$3 = /* @__PURE__ */ __name((task) => task.completed, "func$3");
 const func_1 = /* @__PURE__ */ __name((task) => !task.completed, "func_1");
 const func_2$1 = /* @__PURE__ */ __name((task) => task.completed, "func_2$1");
-function instance$A($$self, $$props, $$invalidate) {
+function instance$B($$self, $$props, $$invalidate) {
   let { feature } = $$props;
   let { firstLoad } = $$props;
   let hero;
@@ -35572,24 +35574,24 @@ function instance$A($$self, $$props, $$invalidate) {
     click_handler_10
   ];
 }
-__name(instance$A, "instance$A");
+__name(instance$B, "instance$B");
 const _Controls_onboarding = class _Controls_onboarding extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$A, create_fragment$C, safe_not_equal, { feature: 0, firstLoad: 1 }, null, [-1, -1]);
+    init(this, options, instance$B, create_fragment$D, safe_not_equal, { feature: 0, firstLoad: 1 }, null, [-1, -1]);
   }
 };
 __name(_Controls_onboarding, "Controls_onboarding");
 let Controls_onboarding = _Controls_onboarding;
-var __defProp$z = Object.defineProperty;
-var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __defProp$A = Object.defineProperty;
+var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key, result) || result;
-  if (result) __defProp$z(target, key, result);
+  if (result) __defProp$A(target, key, result);
   return result;
-}, "__decorateClass$z");
+}, "__decorateClass$A");
 const _ControlsOnboardingFeature = (_Aa = class extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -35775,19 +35777,582 @@ const _ControlsOnboardingFeature = (_Aa = class extends TypoFeature {
     (await this._viewInfoTask).complete();
   }
 }, __name(_Aa, "_ControlsOnboardingFeature"), _Aa);
-__decorateClass$z([
+__decorateClass$A([
   inject(ElementsSetup)
 ], _ControlsOnboardingFeature.prototype, "_elementsSetup");
-__decorateClass$z([
+__decorateClass$A([
   inject(ModalService)
 ], _ControlsOnboardingFeature.prototype, "_modalService");
-__decorateClass$z([
+__decorateClass$A([
   inject(FeaturesService)
 ], _ControlsOnboardingFeature.prototype, "_featuresService");
-__decorateClass$z([
+__decorateClass$A([
   inject(ToastService)
 ], _ControlsOnboardingFeature.prototype, "_toastService");
 let ControlsOnboardingFeature = _ControlsOnboardingFeature;
+function get_each_context$m(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[6] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$m, "get_each_context$m");
+function create_catch_block$1(ctx) {
+  return {
+    c: noop$1,
+    m: noop$1,
+    p: noop$1,
+    i: noop$1,
+    o: noop$1,
+    d: noop$1
+  };
+}
+__name(create_catch_block$1, "create_catch_block$1");
+function create_then_block$1(ctx) {
+  let h3;
+  let t1;
+  let p;
+  let t4;
+  let br1;
+  let t5;
+  let div;
+  let current;
+  let each_value = ensure_array_like(
+    /*profiles*/
+    ctx[5]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$m(get_each_context$m(ctx, each_value, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      h3 = element$1("h3");
+      h3.textContent = "Saved Profiles";
+      t1 = space();
+      p = element$1("p");
+      p.innerHTML = `Typo profiles let you save and switch the entire data of typo.<br/>
+    Switching to a profile or deleting a profile will reload the page.`;
+      t4 = space();
+      br1 = element$1("br");
+      t5 = space();
+      div = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(div, "class", "typo-profiles svelte-16buojm");
+    },
+    m(target, anchor) {
+      insert(target, h3, anchor);
+      insert(target, t1, anchor);
+      insert(target, p, anchor);
+      insert(target, t4, anchor);
+      insert(target, br1, anchor);
+      insert(target, t5, anchor);
+      insert(target, div, anchor);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div, null);
+        }
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*feature*/
+      1) {
+        each_value = ensure_array_like(
+          /*profiles*/
+          ctx2[5]
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$m(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block$m(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(div, null);
+          }
+        }
+        group_outros();
+        for (i = each_value.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h3);
+        detach(t1);
+        detach(p);
+        detach(t4);
+        detach(br1);
+        detach(t5);
+        detach(div);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_then_block$1, "create_then_block$1");
+function create_each_block$m(ctx) {
+  let div;
+  let span;
+  let t0_value = (
+    /*profile*/
+    ctx[6].name + ""
+  );
+  let t0;
+  let t1;
+  let iconbutton;
+  let t2;
+  let current;
+  let mounted;
+  let dispose;
+  function click_handler2(...args) {
+    return (
+      /*click_handler*/
+      ctx[1](
+        /*profile*/
+        ctx[6],
+        ...args
+      )
+    );
+  }
+  __name(click_handler2, "click_handler");
+  iconbutton = new Icon_button({
+    props: {
+      size: "1.5rem",
+      icon: (
+        /*profile*/
+        ctx[6].active ? "file-img-enabled-gif" : "file-img-trash-gif"
+      ),
+      name: "Delete",
+      hoverMove: false,
+      greyscaleInactive: true
+    }
+  });
+  iconbutton.$on("click", click_handler2);
+  function click_handler_1() {
+    return (
+      /*click_handler_1*/
+      ctx[2](
+        /*profile*/
+        ctx[6]
+      )
+    );
+  }
+  __name(click_handler_1, "click_handler_1");
+  return {
+    c() {
+      div = element$1("div");
+      span = element$1("span");
+      t0 = text(t0_value);
+      t1 = space();
+      create_component(iconbutton.$$.fragment);
+      t2 = space();
+      attr(div, "class", "typo-profile svelte-16buojm");
+      toggle_class(
+        div,
+        "active",
+        /*profile*/
+        ctx[6].active
+      );
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      append(div, span);
+      append(span, t0);
+      append(div, t1);
+      mount_component(iconbutton, div, null);
+      append(div, t2);
+      current = true;
+      if (!mounted) {
+        dispose = listen(div, "click", click_handler_1);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if ((!current || dirty & /*feature*/
+      1) && t0_value !== (t0_value = /*profile*/
+      ctx[6].name + "")) set_data(t0, t0_value);
+      const iconbutton_changes = {};
+      if (dirty & /*feature*/
+      1) iconbutton_changes.icon = /*profile*/
+      ctx[6].active ? "file-img-enabled-gif" : "file-img-trash-gif";
+      iconbutton.$set(iconbutton_changes);
+      if (!current || dirty & /*feature*/
+      1) {
+        toggle_class(
+          div,
+          "active",
+          /*profile*/
+          ctx[6].active
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(iconbutton.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(iconbutton.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      destroy_component(iconbutton);
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block$m, "create_each_block$m");
+function create_pending_block$1(ctx) {
+  let bounceload;
+  let current;
+  bounceload = new Bounceload({ props: { content: "Loading Profiles" } });
+  return {
+    c() {
+      create_component(bounceload.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(bounceload, target, anchor);
+      current = true;
+    },
+    p: noop$1,
+    i(local) {
+      if (current) return;
+      transition_in(bounceload.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(bounceload.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(bounceload, detaching);
+    }
+  };
+}
+__name(create_pending_block$1, "create_pending_block$1");
+function create_fragment$C(ctx) {
+  let promise;
+  let t0;
+  let br0;
+  let t1;
+  let h30;
+  let t3;
+  let p0;
+  let t6;
+  let br2;
+  let t7;
+  let flatbutton0;
+  let t8;
+  let br3;
+  let t9;
+  let br4;
+  let t10;
+  let h31;
+  let t12;
+  let p1;
+  let t15;
+  let br6;
+  let t16;
+  let flatbutton1;
+  let current;
+  let info = {
+    ctx,
+    current: null,
+    token: null,
+    hasCatch: false,
+    pending: create_pending_block$1,
+    then: create_then_block$1,
+    catch: create_catch_block$1,
+    value: 5,
+    blocks: [, , ,]
+  };
+  handle_promise(promise = /*feature*/
+  ctx[0].getProfiles(), info);
+  flatbutton0 = new Flat_button({
+    props: {
+      content: "Create profile",
+      color: "green"
+    }
+  });
+  flatbutton0.$on(
+    "click",
+    /*click_handler_2*/
+    ctx[3]
+  );
+  flatbutton1 = new Flat_button({
+    props: { content: "Reset typo", color: "orange" }
+  });
+  flatbutton1.$on(
+    "click",
+    /*click_handler_3*/
+    ctx[4]
+  );
+  return {
+    c() {
+      info.block.c();
+      t0 = space();
+      br0 = element$1("br");
+      t1 = space();
+      h30 = element$1("h3");
+      h30.textContent = "Create new profile";
+      t3 = space();
+      p0 = element$1("p");
+      p0.innerHTML = `A new empty profile will be added.<br/>
+  This will reload the page.`;
+      t6 = space();
+      br2 = element$1("br");
+      t7 = space();
+      create_component(flatbutton0.$$.fragment);
+      t8 = space();
+      br3 = element$1("br");
+      t9 = space();
+      br4 = element$1("br");
+      t10 = space();
+      h31 = element$1("h3");
+      h31.textContent = "Reset typo";
+      t12 = space();
+      p1 = element$1("p");
+      p1.innerHTML = `Resetting typo will erase all data. Typo will behave like after a fresh installation.<br/>
+  This is irreversible and will reload the page.`;
+      t15 = space();
+      br6 = element$1("br");
+      t16 = space();
+      create_component(flatbutton1.$$.fragment);
+    },
+    m(target, anchor) {
+      info.block.m(target, info.anchor = anchor);
+      info.mount = () => t0.parentNode;
+      info.anchor = t0;
+      insert(target, t0, anchor);
+      insert(target, br0, anchor);
+      insert(target, t1, anchor);
+      insert(target, h30, anchor);
+      insert(target, t3, anchor);
+      insert(target, p0, anchor);
+      insert(target, t6, anchor);
+      insert(target, br2, anchor);
+      insert(target, t7, anchor);
+      mount_component(flatbutton0, target, anchor);
+      insert(target, t8, anchor);
+      insert(target, br3, anchor);
+      insert(target, t9, anchor);
+      insert(target, br4, anchor);
+      insert(target, t10, anchor);
+      insert(target, h31, anchor);
+      insert(target, t12, anchor);
+      insert(target, p1, anchor);
+      insert(target, t15, anchor);
+      insert(target, br6, anchor);
+      insert(target, t16, anchor);
+      mount_component(flatbutton1, target, anchor);
+      current = true;
+    },
+    p(new_ctx, [dirty]) {
+      ctx = new_ctx;
+      info.ctx = ctx;
+      if (dirty & /*feature*/
+      1 && promise !== (promise = /*feature*/
+      ctx[0].getProfiles()) && handle_promise(promise, info)) ;
+      else {
+        update_await_block_branch(info, ctx, dirty);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(info.block);
+      transition_in(flatbutton0.$$.fragment, local);
+      transition_in(flatbutton1.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      for (let i = 0; i < 3; i += 1) {
+        const block = info.blocks[i];
+        transition_out(block);
+      }
+      transition_out(flatbutton0.$$.fragment, local);
+      transition_out(flatbutton1.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t0);
+        detach(br0);
+        detach(t1);
+        detach(h30);
+        detach(t3);
+        detach(p0);
+        detach(t6);
+        detach(br2);
+        detach(t7);
+        detach(t8);
+        detach(br3);
+        detach(t9);
+        detach(br4);
+        detach(t10);
+        detach(h31);
+        detach(t12);
+        detach(p1);
+        detach(t15);
+        detach(br6);
+        detach(t16);
+      }
+      info.block.d(detaching);
+      info.token = null;
+      info = null;
+      destroy_component(flatbutton0, detaching);
+      destroy_component(flatbutton1, detaching);
+    }
+  };
+}
+__name(create_fragment$C, "create_fragment$C");
+function instance$A($$self, $$props, $$invalidate) {
+  let { feature } = $$props;
+  const click_handler2 = /* @__PURE__ */ __name((profile, e) => {
+    e.stopImmediatePropagation();
+    if (!profile.active) feature.deleteProfile(profile.name);
+  }, "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name((profile) => {
+    if (!profile.active) feature.switchToProfile(profile.name);
+  }, "click_handler_1");
+  const click_handler_2 = /* @__PURE__ */ __name(() => feature.createProfile(), "click_handler_2");
+  const click_handler_3 = /* @__PURE__ */ __name(() => feature.resetTypo(), "click_handler_3");
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+  };
+  return [feature, click_handler2, click_handler_1, click_handler_2, click_handler_3];
+}
+__name(instance$A, "instance$A");
+const _Controls_profiles = class _Controls_profiles extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$A, create_fragment$C, safe_not_equal, { feature: 0 });
+  }
+};
+__name(_Controls_profiles, "Controls_profiles");
+let Controls_profiles = _Controls_profiles;
+var __defProp$z = Object.defineProperty;
+var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key, result) || result;
+  if (result) __defProp$z(target, key, result);
+  return result;
+}, "__decorateClass$z");
+const _ControlsProfilesFeature = class _ControlsProfilesFeature extends TypoFeature {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_elementsSetup");
+    __publicField(this, "_toastService");
+    __publicField(this, "name", "Typo Profiles");
+    __publicField(this, "description", "Switch between different typo profiles.");
+    __publicField(this, "tags", [
+      FeatureTag.DEVELOPMENT
+    ]);
+    __publicField(this, "featureId", 48);
+    __publicField(this, "toggleEnabled", false);
+  }
+  get featureManagementComponent() {
+    return { componentType: Controls_profiles, props: { feature: this } };
+  }
+  async getProfiles() {
+    const currentProfile = await typoRuntime.currentProfile();
+    return (await typoRuntime.getProfiles()).map((profile) => ({ name: profile, active: profile === currentProfile }));
+  }
+  async deleteProfile(profile) {
+    const currentProfile = await typoRuntime.currentProfile();
+    if (profile === currentProfile) {
+      this._logger.error("Cannot delete the current profile.");
+      await this._toastService.showToast("Cannot delete the current profile " + profile);
+      return;
+    }
+    const toast = await this._toastService.showConfirmToast(
+      `Delete profile ${profile}?`,
+      "Deleting a profile will reload the page.",
+      1e4,
+      { confirm: "Delete profile", cancel: "Cancel deletion" }
+    );
+    const result = await toast.result;
+    if (!result) return;
+    await typoRuntime.deleteProfile(profile);
+    window.location.reload();
+  }
+  async switchToProfile(profile) {
+    const toast = await this._toastService.showConfirmToast(
+      `Switch to profile ${profile}?`,
+      "Switching a profile will reload the page.",
+      1e4,
+      { confirm: "Switch now", cancel: "Cancel switch" }
+    );
+    const result = await toast.result;
+    if (!result) return;
+    await typoRuntime.switchToProfile(profile);
+    window.location.reload();
+  }
+  async createProfile() {
+    const toast = await this._toastService.showPromptToast("Create and activate profile", "Enter a name for the new profile");
+    const result = await toast.result;
+    if (result === null || result.length === 0) return;
+    const profiles = await typoRuntime.getProfiles();
+    if (profiles.includes(result)) {
+      this._logger.error("Profile already exists");
+      await this._toastService.showToast("Profile already exists", "A profile with the name " + result + " already exists.\nPlease choose a different name.");
+      return;
+    }
+    await typoRuntime.createAndSwitchToProfile(result);
+    window.location.reload();
+  }
+  async resetTypo() {
+    const toast = await this._toastService.showConfirmToast(
+      "Reset Typo?",
+      "This will delete ALL saved data (themes, palettes, login, profiles, filters..) and reload the page.",
+      1e4,
+      { confirm: "Reset typo (think twice)", cancel: "Cancel reset (panic!)" }
+    );
+    const result = await toast.result;
+    if (!result) return;
+    await typoRuntime.resetTypo();
+    window.location.reload();
+  }
+};
+__name(_ControlsProfilesFeature, "ControlsProfilesFeature");
+let ControlsProfilesFeature = _ControlsProfilesFeature;
+__decorateClass$z([
+  inject(ElementsSetup)
+], ControlsProfilesFeature.prototype, "_elementsSetup");
+__decorateClass$z([
+  inject(ToastService)
+], ControlsProfilesFeature.prototype, "_toastService");
 function create_if_block$k(ctx) {
   let br;
   let span;
@@ -37836,7 +38401,7 @@ function create_each_block_1$6(ctx) {
       span = element$1("span");
       span.textContent = `#${/*tag*/
       ctx[14]}`;
-      attr(span, "class", "filter svelte-r72rb3");
+      attr(span, "class", "filter svelte-173i13r");
       toggle_class(
         span,
         "selected",
@@ -38073,27 +38638,27 @@ function create_fragment$x(ctx) {
       t10 = space();
       div5 = element$1("div");
       if (if_block) if_block.c();
-      attr(div0, "class", "typo-features-info svelte-r72rb3");
-      attr(div1, "class", "filters svelte-r72rb3");
+      attr(div0, "class", "typo-features-info svelte-173i13r");
+      attr(div1, "class", "filters svelte-173i13r");
       attr(input, "type", "text");
       attr(input, "placeholder", "Search for feature/hotkey/command/setting name or description");
-      attr(div2, "class", "typo-features-filter svelte-r72rb3");
-      attr(div3, "class", "typo-features-list color-scrollbar svelte-r72rb3");
-      attr(div4, "class", "typo-features svelte-r72rb3");
+      attr(div2, "class", "typo-features-filter svelte-173i13r");
+      attr(div3, "class", "typo-features-list color-scrollbar svelte-173i13r");
+      attr(div4, "class", "typo-features svelte-173i13r");
       toggle_class(
         div4,
         "settingsVisible",
         /*selectedDetailsFeature*/
         ctx[1] !== void 0
       );
-      attr(div5, "class", "typo-feature-settings color-scrollbar svelte-r72rb3");
+      attr(div5, "class", "typo-feature-settings color-scrollbar svelte-173i13r");
       toggle_class(
         div5,
         "settingsVisible",
         /*selectedDetailsFeature*/
         ctx[1] !== void 0
       );
-      attr(div6, "class", "typo-features-container svelte-r72rb3");
+      attr(div6, "class", "typo-features-container svelte-173i13r");
     },
     m(target, anchor) {
       insert(target, div6, anchor);
@@ -56583,7 +57148,8 @@ new ExtensionContainer(interceptor).registerServices(
   CustomizerPracticeJoinFeature,
   CustomizerOutfitToggleFeature,
   CanvasRateIconsFeature,
-  ControlsOnboardingFeature
+  ControlsOnboardingFeature,
+  ControlsProfilesFeature
 );
 interceptor.triggerPatchInjection();
 //# sourceMappingURL=app.ts.js.map
