@@ -17124,22 +17124,24 @@ PlayersService = __decorateClass$19([
 ], PlayersService);
 function create_fragment$13(ctx) {
   let p;
+  let span1;
   let b;
   let t0;
   let b_class_value;
   let t1;
-  let span;
+  let span0;
   let t2;
   return {
     c() {
       p = element$1("p");
+      span1 = element$1("span");
       b = element$1("b");
       t0 = text(
         /*title*/
         ctx[1]
       );
       t1 = space();
-      span = element$1("span");
+      span0 = element$1("span");
       t2 = text(
         /*content*/
         ctx[0]
@@ -17147,20 +17149,23 @@ function create_fragment$13(ctx) {
       attr(b, "class", b_class_value = null_to_empty(
         /*style*/
         ctx[2]
-      ) + " svelte-18gwyvz");
-      attr(span, "class", "svelte-18gwyvz");
-      attr(p, "class", "typo-chat-message svelte-18gwyvz");
+      ) + " svelte-1q3466u");
+      attr(span0, "class", "svelte-1q3466u");
+      attr(span1, "class", "svelte-1q3466u");
+      attr(p, "class", "typo-chat-message svelte-1q3466u");
     },
     m(target, anchor) {
       insert(target, p, anchor);
-      append(p, b);
+      append(p, span1);
+      append(span1, b);
       append(b, t0);
-      ctx[7](b);
-      append(p, t1);
-      append(p, span);
-      append(span, t2);
-      ctx[8](span);
-      ctx[9](p);
+      ctx[8](b);
+      append(span1, t1);
+      append(span1, span0);
+      append(span0, t2);
+      ctx[9](span0);
+      ctx[10](span1);
+      ctx[11](p);
     },
     p(ctx2, [dirty]) {
       if (dirty & /*title*/
@@ -17173,7 +17178,7 @@ function create_fragment$13(ctx) {
       4 && b_class_value !== (b_class_value = null_to_empty(
         /*style*/
         ctx2[2]
-      ) + " svelte-18gwyvz")) {
+      ) + " svelte-1q3466u")) {
         attr(b, "class", b_class_value);
       }
       if (dirty & /*content*/
@@ -17189,9 +17194,10 @@ function create_fragment$13(ctx) {
       if (detaching) {
         detach(p);
       }
-      ctx[7](null);
       ctx[8](null);
       ctx[9](null);
+      ctx[10](null);
+      ctx[11](null);
     }
   };
 }
@@ -17205,13 +17211,15 @@ function instance$X($$self, $$props, $$invalidate) {
   let messageElement;
   let titleElement;
   let contentElement;
+  let wrapperElement;
   onMount(() => {
     resolve2({
       element: messageElement,
       title,
       content,
       contentElement,
-      titleElement
+      titleElement,
+      wrapperElement
     });
   });
   function b_binding($$value) {
@@ -17221,17 +17229,24 @@ function instance$X($$self, $$props, $$invalidate) {
     });
   }
   __name(b_binding, "b_binding");
-  function span_binding($$value) {
+  function span0_binding($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
       contentElement = $$value;
       $$invalidate(5, contentElement);
     });
   }
-  __name(span_binding, "span_binding");
-  function p_binding($$value) {
+  __name(span0_binding, "span0_binding");
+  function span1_binding($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
       messageElement = $$value;
       $$invalidate(3, messageElement);
+    });
+  }
+  __name(span1_binding, "span1_binding");
+  function p_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      wrapperElement = $$value;
+      $$invalidate(6, wrapperElement);
     });
   }
   __name(p_binding, "p_binding");
@@ -17247,9 +17262,11 @@ function instance$X($$self, $$props, $$invalidate) {
     messageElement,
     titleElement,
     contentElement,
+    wrapperElement,
     message,
     b_binding,
-    span_binding,
+    span0_binding,
+    span1_binding,
     p_binding
   ];
 }
@@ -17261,11 +17278,11 @@ const _Message = class _Message extends SvelteComponent {
       content: 0,
       title: 1,
       style: 2,
-      message: 6
+      message: 7
     });
   }
   get message() {
-    return this.$$.ctx[6];
+    return this.$$.ctx[7];
   }
 };
 __name(_Message, "Message");
@@ -52032,14 +52049,24 @@ const _PlayerAwardsFeature = class _PlayerAwardsFeature extends TypoFeature {
     });
     this._awardedSubscription = this._lobbyConnectionService.awardGifted$.pipe(
       withLatestFrom(this._lobbyService.lobby$)
-    ).subscribe(([award, lobby]) => {
+    ).subscribe(async ([award, lobby]) => {
       var _a2;
       const awardDto = apiData.awards.find((a) => a.id === award.awardId);
+      if (awardDto === void 0) {
+        this._logger.warn("Award dto not found", award);
+      }
       const awarder = ((_a2 = lobby == null ? void 0 : lobby.players.find((p) => p.id === award.awarderLobbyPlayerId)) == null ? void 0 : _a2.name) ?? "Unknown";
       const title = `${awarder} awarded this with a ${(awardDto == null ? void 0 : awardDto.name) ?? "Award"}!`;
       const message = `
 ${awardDto == null ? void 0 : awardDto.description}`;
-      this._chatService.addChatMessage(message, title, "info");
+      const messageComponent = await this._chatService.addChatMessage(message, title, "info");
+      const chatMessage = await messageComponent.message;
+      const awardIcon = createElement(`<img 
+        src="${awardDto == null ? void 0 : awardDto.url}" 
+        alt="${awardDto == null ? void 0 : awardDto.name}"
+        style="height: 2rem; width: 2rem; margin: 0 .5rem"
+      >`);
+      chatMessage.wrapperElement.insertAdjacentElement("afterbegin", awardIcon);
       component.$set({ currentAwardPresentation: structuredClone(awardDto) });
       this._cloudService.addPendingAwardInventoryId(award.awardInventoryId);
     });
