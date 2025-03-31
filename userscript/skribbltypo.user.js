@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.0 beta-usc b8afc9a
+// @version      27.0.0 beta-usc 6d29a68
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc b8afc9a", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc 6d29a68", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
