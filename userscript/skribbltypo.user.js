@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.0 beta-usc 032ba1a
+// @version      27.0.0 beta-usc f3f7823
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc 032ba1a", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc f3f7823", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -2013,17 +2013,17 @@
     typo.messagePort.postMessage({ id: 10, data });
     //document.dispatchEvent(new CustomEvent("practiceJoined", {detail: data}));
     aa(data);
-  });
 
-  S = new Proxy({},{
-    emit: (...data) => typo.emitPort.postMessage(data),
-    other: (...data) => void 0,
-    get (target, prop) {
-      if(prop === "emit"){
-        return this.emit;
+    S = new Proxy({},{
+      emit: (...data) => typo.emitPort.postMessage(data),
+      other: (...data) => void 0,
+      get (target, prop) {
+        if(prop === "emit"){
+          return this.emit;
+        }
+        else return this.other;
       }
-      else return this.other;
-    }
+    });
   });
   /* TYPOEND */
 
