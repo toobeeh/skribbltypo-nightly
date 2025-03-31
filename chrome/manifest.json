@@ -54,8 +54,7 @@
     }
   ],
   "permissions": [
-    "storage",
     "activeTab"
   ],
-  "version_name": "27.0.0 beta-crx 305d99c"
+  "version_name": "27.0.0 beta-crx feb996b"
 }

@@ -55,8 +55,7 @@
     }
   ],
   "permissions": [
-    "storage",
     "activeTab"
   ],
-  "version_name": "27.0.0 beta-ffx 305d99c"
+  "version_name": "27.0.0 beta-ffx feb996b"
 }
