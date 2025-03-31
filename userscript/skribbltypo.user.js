@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.0 beta-usc f3f7823
+// @version      27.0.0 beta-usc 305d99c
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc f3f7823", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc 305d99c", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -7810,7 +7810,7 @@
         attr(div0, "class", "alpha-thumb svelte-1x2m4l5");
         set_style(div0, "top", "calc(50% - .5rem)");
         set_style(div0, "left", "calc(" + /*alpha*/
-        (ctx[7] ?? 1) * 100 + "% - .5rem)");
+        (ctx[6] ?? 1) * 100 + "% - .5rem)");
         toggle_class(
           div0,
           "listen",
@@ -7851,9 +7851,9 @@
       },
       p(ctx2, dirty) {
         if (dirty & /*alpha*/
-        128) {
+        64) {
           set_style(div0, "left", "calc(" + /*alpha*/
-          (ctx2[7] ?? 1) * 100 + "% - .5rem)");
+          (ctx2[6] ?? 1) * 100 + "% - .5rem)");
         }
         if (dirty & /*listenAlpha*/
         1024) {
@@ -7924,9 +7924,9 @@
         attr(div0, "class", "picker-header svelte-1x2m4l5");
         attr(div1, "class", "color-thumb svelte-1x2m4l5");
         set_style(div1, "top", "calc(100% - " + /*value*/
-        ctx[6] + "% - .5rem)");
-        set_style(div1, "left", "calc(" + /*saturation*/
         ctx[5] + "% - .5rem)");
+        set_style(div1, "left", "calc(" + /*saturation*/
+        ctx[4] + "% - .5rem)");
         toggle_class(
           div1,
           "listen",
@@ -7935,11 +7935,11 @@
         );
         attr(div2, "class", "color-rect svelte-1x2m4l5");
         set_style(div2, "background", "linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), linear-gradient(to right, hsl(0, 0%, 100%), hsl(" + /*hue*/
-        ctx[4] + ", 100%, 50%))");
+        ctx[3] + ", 100%, 50%))");
         attr(div3, "class", "hue-thumb svelte-1x2m4l5");
         set_style(div3, "top", "calc(50% - .5rem)");
         set_style(div3, "left", "calc(" + /*hue*/
-        ctx[4] / 3.6 + "% - .5rem)");
+        ctx[3] / 3.6 + "% - .5rem)");
         toggle_class(
           div3,
           "listen",
@@ -7969,7 +7969,7 @@
         set_input_value(
           input,
           /*inputHex*/
-          ctx[3]
+          ctx[7]
         );
         if (!mounted) {
           dispose = [
@@ -8042,14 +8042,14 @@
           if_block0 = null;
         }
         if (dirty & /*value*/
-        64) {
+        32) {
           set_style(div1, "top", "calc(100% - " + /*value*/
-          ctx2[6] + "% - .5rem)");
+          ctx2[5] + "% - .5rem)");
         }
         if (dirty & /*saturation*/
-        32) {
+        16) {
           set_style(div1, "left", "calc(" + /*saturation*/
-          ctx2[5] + "% - .5rem)");
+          ctx2[4] + "% - .5rem)");
         }
         if (dirty & /*listenSV*/
         256) {
@@ -8061,14 +8061,14 @@
           );
         }
         if (dirty & /*hue*/
-        16) {
+        8) {
           set_style(div2, "background", "linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), linear-gradient(to right, hsl(0, 0%, 100%), hsl(" + /*hue*/
-          ctx2[4] + ", 100%, 50%))");
+          ctx2[3] + ", 100%, 50%))");
         }
         if (dirty & /*hue*/
-        16) {
+        8) {
           set_style(div3, "left", "calc(" + /*hue*/
-          ctx2[4] / 3.6 + "% - .5rem)");
+          ctx2[3] / 3.6 + "% - .5rem)");
         }
         if (dirty & /*listenHue*/
         512) {
@@ -8095,12 +8095,12 @@
           if_block1 = null;
         }
         if (dirty & /*inputHex*/
-        8 && input.value !== /*inputHex*/
-        ctx2[3]) {
+        128 && input.value !== /*inputHex*/
+        ctx2[7]) {
           set_input_value(
             input,
             /*inputHex*/
-            ctx2[3]
+            ctx2[7]
           );
         }
       },
@@ -8134,10 +8134,10 @@
       const rect = event.target.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
-      $$invalidate(5, saturation = x / rect.width * 100);
-      $$invalidate(6, value = 100 - y / rect.height * 100);
+      $$invalidate(4, saturation = Math.min(100, Math.max(0, x / rect.width * 100)));
+      $$invalidate(5, value = Math.min(100, Math.max(0, 100 - y / rect.height * 100)));
       $$invalidate(0, color = Color.fromHsv(hue, saturation, value, alpha));
-      $$invalidate(3, inputHex = color.hex);
+      $$invalidate(7, inputHex = color.hex);
     }, "handleSV");
     let listenHue = false;
     const handleHue = /* @__PURE__ */ __name((event) => {
@@ -8145,9 +8145,9 @@
       $$invalidate(9, listenHue = false);
       const rect = event.target.getBoundingClientRect();
       const x = event.clientX - rect.left;
-      $$invalidate(4, hue = x / rect.width * 360);
+      $$invalidate(3, hue = Math.min(359, Math.max(0, x / rect.width * 360)));
       $$invalidate(0, color = Color.fromHsv(hue, saturation, value, alpha));
-      $$invalidate(3, inputHex = color.hex);
+      $$invalidate(7, inputHex = color.hex);
     }, "handleHue");
     let listenAlpha = false;
     const handleAlpha = /* @__PURE__ */ __name((event) => {
@@ -8155,16 +8155,16 @@
       $$invalidate(10, listenAlpha = false);
       const rect = event.target.getBoundingClientRect();
       const x = event.clientX - rect.left;
-      $$invalidate(7, alpha = x / rect.width);
+      $$invalidate(6, alpha = Math.min(100, Math.max(0, x / rect.width)));
       $$invalidate(0, color = Color.fromHsv(hue, saturation, value, alpha));
-      $$invalidate(3, inputHex = color.hex);
+      $$invalidate(7, inputHex = color.hex);
     }, "handleAlpha");
     const mousedown_handler = /* @__PURE__ */ __name(() => $$invalidate(8, listenSV = true), "mousedown_handler");
     const mousedown_handler_1 = /* @__PURE__ */ __name(() => $$invalidate(9, listenHue = true), "mousedown_handler_1");
     const mousedown_handler_2 = /* @__PURE__ */ __name(() => $$invalidate(10, listenAlpha = true), "mousedown_handler_2");
     function input_input_handler() {
       inputHex = this.value;
-      $$invalidate(3, inputHex);
+      $$invalidate(7, inputHex);
     }
     __name(input_input_handler, "input_input_handler");
     const change_handler = /* @__PURE__ */ __name((event) => {
@@ -8176,14 +8176,19 @@
       if ("description" in $$props2) $$invalidate(2, description = $$props2.description);
     };
     $$self.$$.update = () => {
-      if ($$self.$$.dirty & /*color, allowAlpha*/
-      3) {
+      if ($$self.$$.dirty & /*color, hue, saturation, value, alpha, allowAlpha*/
+      123) {
         {
-          const hsv = color.hsv;
-          $$invalidate(4, hue = hsv[0] ?? 0);
-          $$invalidate(5, saturation = hsv[1] ?? 100);
-          $$invalidate(6, value = hsv[2] ?? 50);
-          $$invalidate(7, alpha = allowAlpha ? hsv[3] : void 0);
+          const newHex = color.hex;
+          const oldHex = Color.fromHsv(hue, saturation, value, alpha).hex;
+          console.log(newHex, oldHex);
+          if (newHex !== oldHex) {
+            const hsv = color.hsv;
+            $$invalidate(3, hue = hsv[0] ?? 0);
+            $$invalidate(4, saturation = hsv[1] ?? 100);
+            $$invalidate(5, value = hsv[2] ?? 50);
+            $$invalidate(6, alpha = allowAlpha ? hsv[3] : void 0);
+          }
         }
       }
     };
@@ -8191,11 +8196,11 @@
       color,
       allowAlpha,
       description,
-      inputHex,
       hue,
       saturation,
       value,
       alpha,
+      inputHex,
       listenSV,
       listenHue,
       listenAlpha,
