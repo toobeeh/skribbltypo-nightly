@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.0 beta-usc feb996b
+// @version      27.0.0 beta-usc b8afc9a
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc feb996b", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.0", versionName: "27.0.0 beta-usc b8afc9a", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -2281,13 +2281,15 @@
           let sent = 0; /* to calculate correct undo offset */
 
           for(const command of data){
-            const sequence = typo.msiColorSwitch.ensureColorSequence(command);
-            if(sequence === undefined) buffer.push(command);
+            /* DO NOT edit reference as it's used in local cmd history */
+            const commandCopy = structuredClone(command);
+            const sequence = typo.msiColorSwitch.ensureColorSequence(commandCopy);
+            if(sequence === undefined) buffer.push(commandCopy);
             else {
               if(buffer.length > 0) events.push({id: Ia, data: buffer});
               events.push({id: Ia, data: sequence});
               events.push({id: Ta, data: dt + sent});
-              buffer.push(command);
+              buffer.push(commandCopy);
             }
           }
 
