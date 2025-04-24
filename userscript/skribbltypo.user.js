@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.1 beta-usc 12fbd6f
+// @version      27.0.1 beta-usc d80e48f
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 12fbd6f", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc d80e48f", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -24931,6 +24931,14 @@
   __decorateClass$Z([
     inject(MessageSentEventListener)
   ], ChatRecallFeature.prototype, "_messageSent");
+  function createCrossCustomEvent(type, detail) {
+    if (cloneInto !== void 0 && document.defaultView !== null) {
+      const safeDetail = cloneInto ? cloneInto(detail, document.defaultView) : detail;
+      return new document.defaultView.CustomEvent(type, safeDetail);
+    }
+    return new CustomEvent(type, detail);
+  }
+  __name(createCrossCustomEvent, "createCrossCustomEvent");
   const _ImageData = class _ImageData {
     constructor(_base64Full, _blob) {
       this._base64Full = _base64Full;
@@ -25046,7 +25054,7 @@
     }
     onDrawCommand(command) {
       this._logger.debug("Incoming draw command", command);
-      document.dispatchEvent(new CustomEvent("performDrawCommand", { detail: command }));
+      document.dispatchEvent(createCrossCustomEvent("performDrawCommand", { detail: command }));
     }
     /**
      * create observable for all draw command updates

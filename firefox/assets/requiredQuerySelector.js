@@ -1,6 +1,11 @@
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 const _ExtensionRuntime = class _ExtensionRuntime {
+  customEvent(event, detail) {
+    return new CustomEvent(event, {
+      detail
+    });
+  }
   getSetting(key) {
     return chrome.runtime.sendMessage({ type: "get setting", key });
   }

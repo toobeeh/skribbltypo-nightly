@@ -21486,6 +21486,14 @@ __decorateClass$Z([
 __decorateClass$Z([
   inject(MessageSentEventListener)
 ], ChatRecallFeature.prototype, "_messageSent");
+function createCrossCustomEvent(type, detail) {
+  if (cloneInto !== void 0 && document.defaultView !== null) {
+    const safeDetail = cloneInto ? cloneInto(detail, document.defaultView) : detail;
+    return new document.defaultView.CustomEvent(type, safeDetail);
+  }
+  return new CustomEvent(type, detail);
+}
+__name(createCrossCustomEvent, "createCrossCustomEvent");
 const _ImageData = class _ImageData {
   constructor(_base64Full, _blob) {
     this._base64Full = _base64Full;
@@ -21601,7 +21609,7 @@ let DrawingService = (_na = class {
   }
   onDrawCommand(command) {
     this._logger.debug("Incoming draw command", command);
-    document.dispatchEvent(new CustomEvent("performDrawCommand", { detail: command }));
+    document.dispatchEvent(createCrossCustomEvent("performDrawCommand", { detail: command }));
   }
   /**
    * create observable for all draw command updates
