@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.1 beta-usc 3ae7845
+// @version      27.0.1 beta-usc bc135b6
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 3ae7845", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc bc135b6", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -16741,6 +16741,25 @@
   PrioritizedCanvasEventsSetup = __decorateClass$1g([
     earlySetup()
   ], PrioritizedCanvasEventsSetup);
+  const createStylesheet = /* @__PURE__ */ __name(() => {
+    const style2 = document.createElement("style");
+    document.head.append(style2);
+    if (style2.sheet === null) {
+      style2.remove();
+      throw new Error("Unable to create stylesheet");
+    }
+    const handle = {
+      sheet: style2.sheet,
+      remove: style2.remove.bind(style2),
+      clear: /* @__PURE__ */ __name(() => {
+        style2.innerText = "";
+      }, "clear"),
+      replace: /* @__PURE__ */ __name((cssText) => {
+        style2.innerText = cssText;
+      }, "replace")
+    };
+    return handle;
+  }, "createStylesheet");
   function create_fragment$15(ctx) {
     let t0;
     let br0;
@@ -16880,8 +16899,7 @@
       const { add } = await this._prioritizedCanvasEventsSetup.complete();
       add("postDraw")("pointermove", this._canvasPointermoveListener);
       add("postDraw")("pointerout", this._canvasPointeroutListener);
-      this._zoomStyle = new CSSStyleSheet();
-      document.adoptedStyleSheets = [...document.adoptedStyleSheets, this._zoomStyle];
+      this._zoomStyle = createStylesheet();
       this._zoomResetSubscription = this._imageResetEventListener.events$.pipe(
         /* on image clear */
         mergeWith(
@@ -16904,15 +16922,15 @@
       ).subscribe((state) => this.processZoomStateUpdate(state));
     }
     async onDestroy() {
-      var _a2, _b2, _c2;
+      var _a2, _b2, _c2, _d2;
       const { remove } = await this._prioritizedCanvasEventsSetup.complete();
       remove("pointermove", this._canvasPointermoveListener);
       remove("pointerout", this._canvasPointeroutListener);
-      document.adoptedStyleSheets = document.adoptedStyleSheets.filter((s) => s !== this._zoomStyle);
+      (_a2 = this._zoomStyle) == null ? void 0 : _a2.remove();
       this._zoomStyle = void 0;
-      (_a2 = this._toastHandle) == null ? void 0 : _a2.close();
-      (_b2 = this._zoomStateSubscription) == null ? void 0 : _b2.unsubscribe();
-      (_c2 = this._zoomResetSubscription) == null ? void 0 : _c2.unsubscribe();
+      (_b2 = this._toastHandle) == null ? void 0 : _b2.close();
+      (_c2 = this._zoomStateSubscription) == null ? void 0 : _c2.unsubscribe();
+      (_d2 = this._zoomResetSubscription) == null ? void 0 : _d2.unsubscribe();
       this._zoomStateSubscription = void 0;
       this._zoomResetSubscription = void 0;
       this._toastHandle = void 0;
@@ -16927,10 +16945,10 @@
         return;
       }
       if (level === void 0 || position === void 0) {
-        await sheet.replace("");
+        sheet.clear();
         return;
       }
-      await sheet.replace(`
+      sheet.replace(`
       #game-canvas {
         width: 800px;
         aspect-ratio: 8/6;
@@ -37536,8 +37554,7 @@
       return { componentType: Lobby_time_visualizer_info, props: {} };
     }
     async onActivate() {
-      this._visualizerStyle = new CSSStyleSheet();
-      document.adoptedStyleSheets = [...document.adoptedStyleSheets, this._visualizerStyle];
+      this._visualizerStyle = createStylesheet();
       this._lobbyJoinedEventListener.events$.pipe(
         mergeWith(this._lobbyLeftEventListener.events$),
         map((event) => event.data),
@@ -37573,10 +37590,11 @@
       });
     }
     async onDestroy() {
-      var _a2;
+      var _a2, _b2;
       (_a2 = this.visualizerEventSubscription) == null ? void 0 : _a2.unsubscribe();
       this.visualizerEventSubscription = void 0;
-      document.adoptedStyleSheets = document.adoptedStyleSheets.filter((sheet) => sheet !== this._visualizerStyle);
+      (_b2 = this._visualizerStyle) == null ? void 0 : _b2.remove();
+      this._visualizerStyle = void 0;
     }
     async visualizeEvent(data) {
       this._logger.debug("Visualize event", data);
@@ -37584,13 +37602,13 @@
         this._logger.error("Visualizer style not set");
         return;
       }
-      await this._visualizerStyle.replace("");
+      this._visualizerStyle.clear();
       if (data === void 0) return;
       const { time, max } = data;
       await firstValueFrom(of(1).pipe(delay(10)));
       const startColor = await this._colorStartSetting.getValue();
       const endColor = await this._colorEndSetting.getValue();
-      await this._visualizerStyle.replace(`  
+      this._visualizerStyle.replace(`  
       @keyframes countdown {
         0% { width: ${Math.floor(time * 100 / max)}%; background-color: ${startColor}; }
         50% { width: ${Math.floor(time * 50 / max)}%; background-color: ${startColor}; }
@@ -56802,7 +56820,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       );
     }
     async apply(trigger) {
-      var _a2, _b2;
+      var _a2, _b2, _c2;
       if (trigger) {
         if (!this._messagesSubscription) {
           this._messagesSubscription = this._chatService.playerMessageReceived$.subscribe((message) => {
@@ -56815,17 +56833,16 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           });
         }
         if (!this._style) {
-          this._style = new CSSStyleSheet();
-          this._style.insertRule(".typo-challenge-deaf-guess-hidden span, .player-bubble .content .text { filter: blur(3px); }");
-          this._style.insertRule("#game form.chat-form .characters, #game-word .hints { opacity: 0 }");
-          document.adoptedStyleSheets = [...document.adoptedStyleSheets, this._style];
+          this._style = createStylesheet();
+          this._style.sheet.insertRule(".typo-challenge-deaf-guess-hidden span, .player-bubble .content .text { filter: blur(3px); }");
+          this._style.sheet.insertRule("#game form.chat-form .characters, #game-word .hints { opacity: 0 }");
         }
       } else {
         (_a2 = this._messagesSubscription) == null ? void 0 : _a2.unsubscribe();
         this._messagesSubscription = void 0;
         (_b2 = this._blurredMessages) == null ? void 0 : _b2.forEach((message) => message.classList.remove("typo-challenge-deaf-guess-hidden"));
         this._blurredMessages = void 0;
-        document.adoptedStyleSheets = document.adoptedStyleSheets.filter((sheet) => sheet !== this._style);
+        (_c2 = this._style) == null ? void 0 : _c2.remove();
         this._style = void 0;
       }
       return;
@@ -56870,9 +56887,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     }
     async apply(trigger) {
       if (!trigger) return;
-      this._style = new CSSStyleSheet();
-      this._style.insertRule(".tool[data-tooltip='Undo'], .tool[data-tooltip='Clear'] { display: none }");
-      document.adoptedStyleSheets = [...document.adoptedStyleSheets, this._style];
+      this._style = createStylesheet();
+      this._style.sheet.insertRule(".tool[data-tooltip='Undo'], .tool[data-tooltip='Clear'] { display: none }");
       this._canvasClearedSubscription = this._canvasClearedEvent.events$.subscribe(async (event) => {
         await this._drawingService.drawImage(event.data);
       });
@@ -56881,7 +56897,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     destroy() {
       var _a2;
       if (this._style) {
-        document.adoptedStyleSheets = document.adoptedStyleSheets.filter((style2) => style2 !== this._style);
+        this._style.remove();
         this._style = void 0;
       }
       (_a2 = this._canvasClearedSubscription) == null ? void 0 : _a2.unsubscribe();
@@ -57053,13 +57069,12 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     async apply(trigger) {
       if (trigger) {
         if (!this._style) {
-          this._style = new CSSStyleSheet();
-          this._style.insertRule("#game form.chat-form { display: none }");
-          document.adoptedStyleSheets = [...document.adoptedStyleSheets, this._style];
+          this._style = createStylesheet();
+          this._style.sheet.insertRule("#game form.chat-form { display: none }");
         }
       } else {
         if (this._style) {
-          document.adoptedStyleSheets = document.adoptedStyleSheets.filter((style2) => style2 !== this._style);
+          this._style.remove();
           this._style = void 0;
         }
       }
