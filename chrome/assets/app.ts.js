@@ -35691,7 +35691,7 @@ function create_fragment$D(ctx) {
       b.textContent = "Typo is the toolbox for everything you need on skribbl.io";
       t4 = space();
       div1 = element$1("div");
-      div1.innerHTML = `XOXO to all beta testers &lt;3<br/>Alpha, Foley, hunt3r.zip, Hex, ibot, Max, Oivoo, shawty, Tuc, ShortM, XVIdevilIVX`;
+      div1.innerHTML = `XOXO to all beta testers &lt;3<br/>Alpha, Foley, Hex, hunt3r, ibot, Max, Oivoo, shawty, Tuc, ShortM, XVIdevilIVX`;
       t7 = space();
       div3 = element$1("div");
       h40 = element$1("h4");

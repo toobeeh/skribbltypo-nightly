@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.1 beta-usc 73422e9
+// @version      27.0.1 beta-usc fbba10c
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 73422e9", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc fbba10c", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -39136,7 +39136,7 @@
         b.textContent = "Typo is the toolbox for everything you need on skribbl.io";
         t4 = space();
         div1 = element("div");
-        div1.innerHTML = `XOXO to all beta testers &lt;3<br/>Alpha, Foley, hunt3r.zip, Hex, ibot, Max, Oivoo, shawty, Tuc, ShortM, XVIdevilIVX`;
+        div1.innerHTML = `XOXO to all beta testers &lt;3<br/>Alpha, Foley, Hex, hunt3r, ibot, Max, Oivoo, shawty, Tuc, ShortM, XVIdevilIVX`;
         t7 = space();
         div3 = element("div");
         h40 = element("h4");
