@@ -26411,9 +26411,8 @@ function create_each_block$r(ctx) {
         div,
         "width",
         /*colors*/
-        ctx[0].preferredColumnWidth ? `calc(var(--UNIT) * ${/*colors*/
-        ctx[0].preferredColumnWidth / /*colors*/
-        ctx[0].columns}` : ""
+        ctx[0].preferredColumnWidth ? `calc(var(--UNIT) / 2 * ${/*colors*/
+        ctx[0].preferredColumnWidth}` : ""
       );
     },
     m(target, anchor) {
@@ -26440,9 +26439,8 @@ function create_each_block$r(ctx) {
           div,
           "width",
           /*colors*/
-          ctx[0].preferredColumnWidth ? `calc(var(--UNIT) * ${/*colors*/
-          ctx[0].preferredColumnWidth / /*colors*/
-          ctx[0].columns}` : ""
+          ctx[0].preferredColumnWidth ? `calc(var(--UNIT) / 2 * ${/*colors*/
+          ctx[0].preferredColumnWidth}` : ""
         );
       }
     },
@@ -53592,9 +53590,9 @@ const _MonochromeChallenge = class _MonochromeChallenge extends TypoChallenge {
         palette = palette ?? defaultPalettes.skribblPalette;
         const random = Math.floor(Math.random() * palette.columns);
         return {
-          preferredColumnWidth: palette.columns,
+          preferredColumnWidth: Math.min(palette.columns, palette.colorHexCodes.length),
           columns: 1,
-          colorHexCodes: (palette == null ? void 0 : palette.colorHexCodes.filter((_, index) => index % palette.columns === random)) ?? []
+          colorHexCodes: palette.columns === 1 || palette.colorHexCodes.length === 1 ? palette.colorHexCodes : (palette == null ? void 0 : palette.colorHexCodes.filter((_, index) => index % palette.columns === random)) ?? []
         };
       });
     }

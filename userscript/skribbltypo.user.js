@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.1 beta-usc 48b3e06
+// @version      27.0.1 beta-usc 438896f
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 48b3e06", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 438896f", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -29856,9 +29856,8 @@
           div,
           "width",
           /*colors*/
-          ctx[0].preferredColumnWidth ? `calc(var(--UNIT) * ${/*colors*/
-        ctx[0].preferredColumnWidth / /*colors*/
-        ctx[0].columns}` : ""
+          ctx[0].preferredColumnWidth ? `calc(var(--UNIT) / 2 * ${/*colors*/
+        ctx[0].preferredColumnWidth}` : ""
         );
       },
       m(target, anchor) {
@@ -29885,9 +29884,8 @@
             div,
             "width",
             /*colors*/
-            ctx[0].preferredColumnWidth ? `calc(var(--UNIT) * ${/*colors*/
-          ctx[0].preferredColumnWidth / /*colors*/
-          ctx[0].columns}` : ""
+            ctx[0].preferredColumnWidth ? `calc(var(--UNIT) / 2 * ${/*colors*/
+          ctx[0].preferredColumnWidth}` : ""
           );
         }
       },
@@ -57037,9 +57035,9 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           palette = palette ?? defaultPalettes.skribblPalette;
           const random = Math.floor(Math.random() * palette.columns);
           return {
-            preferredColumnWidth: palette.columns,
+            preferredColumnWidth: Math.min(palette.columns, palette.colorHexCodes.length),
             columns: 1,
-            colorHexCodes: (palette == null ? void 0 : palette.colorHexCodes.filter((_, index) => index % palette.columns === random)) ?? []
+            colorHexCodes: palette.columns === 1 || palette.colorHexCodes.length === 1 ? palette.colorHexCodes : (palette == null ? void 0 : palette.colorHexCodes.filter((_, index) => index % palette.columns === random)) ?? []
           };
         });
       }
