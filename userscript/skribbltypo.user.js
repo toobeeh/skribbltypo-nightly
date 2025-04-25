@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.1 beta-usc 14a7e43
+// @version      27.0.1 beta-usc 48b3e06
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 14a7e43", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 48b3e06", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -34476,27 +34476,34 @@
     let t1;
     let t2;
     let span0;
-    let t3_value = (
+    let t3_value = new Date(
       /*claim*/
-      ctx[3].username + ""
-    );
+      ctx[3].dropId
+    ).toLocaleTimeString() + "";
     let t3;
     let t4;
     let span1;
     let t5_value = (
       /*claim*/
-      ctx[3].catchTime + ""
+      ctx[3].username + ""
     );
     let t5;
     let t6;
-    let t7;
     let span2;
-    let t8_value = Math.round(
+    let t7_value = (
+      /*claim*/
+      ctx[3].catchTime + ""
+    );
+    let t7;
+    let t8;
+    let t9;
+    let span3;
+    let t10_value = Math.round(
       /*claim*/
       ctx[3].leagueWeight * 100
     ) + "";
-    let t8;
-    let t9;
+    let t10;
+    let t11;
     return {
       c() {
         div = element("div");
@@ -34509,11 +34516,14 @@
         t4 = space();
         span1 = element("span");
         t5 = text(t5_value);
-        t6 = text("ms");
-        t7 = space();
+        t6 = space();
         span2 = element("span");
-        t8 = text(t8_value);
-        t9 = text("%");
+        t7 = text(t7_value);
+        t8 = text("ms");
+        t9 = space();
+        span3 = element("span");
+        t10 = text(t10_value);
+        t11 = text("%");
         attr(div, "class", "typo-drop-claims-claim svelte-qhyy9");
       },
       m(target, anchor) {
@@ -34527,27 +34537,35 @@
         append(div, t4);
         append(div, span1);
         append(span1, t5);
-        append(span1, t6);
-        append(div, t7);
+        append(div, t6);
         append(div, span2);
+        append(span2, t7);
         append(span2, t8);
-        append(span2, t9);
+        append(div, t9);
+        append(div, span3);
+        append(span3, t10);
+        append(span3, t11);
       },
       p(ctx2, dirty) {
         if (dirty & /*$claims*/
         1 && t1_value !== (t1_value = /*claim*/
         ctx2[3].dropId + "")) set_data(t1, t1_value);
         if (dirty & /*$claims*/
-        1 && t3_value !== (t3_value = /*claim*/
-        ctx2[3].username + "")) set_data(t3, t3_value);
+        1 && t3_value !== (t3_value = new Date(
+          /*claim*/
+          ctx2[3].dropId
+        ).toLocaleTimeString() + "")) set_data(t3, t3_value);
         if (dirty & /*$claims*/
         1 && t5_value !== (t5_value = /*claim*/
-        ctx2[3].catchTime + "")) set_data(t5, t5_value);
+        ctx2[3].username + "")) set_data(t5, t5_value);
         if (dirty & /*$claims*/
-        1 && t8_value !== (t8_value = Math.round(
+        1 && t7_value !== (t7_value = /*claim*/
+        ctx2[3].catchTime + "")) set_data(t7, t7_value);
+        if (dirty & /*$claims*/
+        1 && t10_value !== (t10_value = Math.round(
           /*claim*/
           ctx2[3].leagueWeight * 100
-        ) + "")) set_data(t8, t8_value);
+        ) + "")) set_data(t10, t10_value);
       },
       d(detaching) {
         if (detaching) {
@@ -34632,7 +34650,7 @@
         if (if_block) if_block.m(div, null);
       },
       p(ctx2, [dirty]) {
-        if (dirty & /*Math, $claims*/
+        if (dirty & /*Math, $claims, Date*/
         1) {
           each_value = ensure_array_like(
             /*$claims*/
@@ -38108,7 +38126,10 @@
     To exit zoom, click Ctrl again.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Custom Colors</b><br class="svelte-115f3km"/>
     When you use custom colors in public lobbies, typo will now show the closest skribbl color for non-typo users.<br class="svelte-115f3km"/>
     It is still recommended that you use custom colors only in lobbies with typo players, because fill behavior might appear differently for non-typo-users.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Practice Lobby</b><br class="svelte-115f3km"/>
-    Instead of clicking your avatar on the home screen, you can enter the offline free draw mode using the palette icon next to your avatar.<br class="svelte-115f3km"/></p>`;
+    Instead of clicking your avatar on the home screen, you can enter the offline free draw mode using the palette icon next to your avatar.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Drop Catch Reports</b><br class="svelte-115f3km"/>
+    When someone catches drops suspiciously fast, you could report the catch by revealing the drop ID in the drop message.<br class="svelte-115f3km"/>
+    To report drops in the new typo, open the &quot;Drops&quot; feature in the typo setting, where you will find a log of all drop catches.<br class="svelte-115f3km"/>
+    To report a drop, you can copy its ID and the catch time and send it on the typo discord server.<br class="svelte-115f3km"/></p>`;
         attr(h3, "class", "svelte-115f3km");
       },
       m(target, anchor) {
