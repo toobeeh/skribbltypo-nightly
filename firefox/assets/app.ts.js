@@ -9326,6 +9326,9 @@ let TypoFeature = (_k = class {
   get featureTags() {
     return this.tags;
   }
+  get activated() {
+    return this._isActivated;
+  }
   /**
    * A component to display feature customization settings
    */
@@ -24280,6 +24283,14 @@ let FeaturesService = (_ta = class {
   get features() {
     return [...this._features];
   }
+  async activateFeature(featureType) {
+    const feature = this._features.find((f) => f instanceof featureType);
+    if (!feature) {
+      this._logger.error("Attempted to activate a feature that is not registered", feature);
+      throw new Error("Feature not registered");
+    }
+    return feature.activate();
+  }
 }, __name(_ta, "FeaturesService"), _ta);
 FeaturesService = __decorateClass$R([
   injectable(),
@@ -24585,12 +24596,15 @@ var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key, kind) =
 var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$5");
 let ColorsService = (_ua = class {
   constructor(loggerFactory2) {
+    __publicField(this, "_toastService");
+    __publicField(this, "_featuresService");
     __publicField(this, "_logger");
     __publicField(this, "_savedPalettesSetting", new ExtensionSetting("colors_saved_palettes", []));
     __publicField(this, "_activePaletteSetting", new ExtensionSetting("colors_active_palette", void 0));
     __publicField(this, "_selectedPalette$", new BehaviorSubject(void 0));
     __publicField(this, "_pickerColors$", new BehaviorSubject(void 0));
     __publicField(this, "_colorSelector$", new BehaviorSubject(void 0));
+    __publicField(this, "featureActive", false);
     this._logger = loggerFactory2(this);
     this._activePaletteSetting.changes$.pipe(
       combineLatestWith(this._savedPalettesSetting.changes$),
@@ -24650,7 +24664,13 @@ let ColorsService = (_ua = class {
     palettes.push(palette);
     await this._savedPalettesSetting.setValue(palettes);
   }
-  setColorSelector(selector) {
+  async setColorSelector(selector) {
+    if (!this.featureActive) {
+      this._logger.error("Attempted to save palette while feature is not active");
+      const handle = await this._toastService.showConfirmToast("Attempted to modify color palette, feature disabled.", "Do you want to enable the palettes feature?", 5e3, { confirm: "Enable", cancel: "Cancel" });
+      const result = await handle.result;
+      if (result) await this._featuresService.activateFeature(DrawingColorPalettesFeature);
+    }
     this._colorSelector$.next(selector);
   }
   resetColorSelector() {
@@ -24659,7 +24679,19 @@ let ColorsService = (_ua = class {
   get colorSelectorActive() {
     return this._colorSelector$.value === void 0;
   }
+  async onFeatureActivate() {
+    this.featureActive = true;
+  }
+  async onFeatureDestroy() {
+    this.featureActive = false;
+  }
 }, __name(_ua, "ColorsService"), _ua);
+__decorateClass$O([
+  inject(ToastService)
+], ColorsService.prototype, "_toastService", 2);
+__decorateClass$O([
+  inject(FeaturesService)
+], ColorsService.prototype, "_featuresService", 2);
 ColorsService = __decorateClass$O([
   injectable(),
   __decorateParam$5(0, inject(loggerFactory))
@@ -26577,18 +26609,23 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
     __publicField(this, "_colorsService");
     __publicField(this, "name", "Color Palettes");
     __publicField(this, "description", "Use custom color palettes instead of the default skribbl colors");
-    __publicField(this, "tags", [
-      FeatureTag.DRAWING
-    ]);
+    __publicField(this, "tags", [FeatureTag.DRAWING]);
     __publicField(this, "featureId", 32);
     __publicField(this, "_hideOriginalPaletteStyle", createElement(`<style>
     #game #game-toolbar .colors:has(.top) {
       display: none;
     }
   </style>`));
-    __publicField(this, "_importedPalettes", new ExtensionSetting("imported_palettes", false, this));
+    __publicField(this, "_importedPalettes", new ExtensionSetting(
+      "imported_palettes",
+      false,
+      this
+    ));
     __publicField(this, "_activePaletteSubscription");
     __publicField(this, "_colorPalettePicker");
+  }
+  get boundServices() {
+    return [this._colorsService];
   }
   get featureInfoComponent() {
     return { componentType: Drawing_color_palettes_info, props: {} };
@@ -26597,10 +26634,14 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
     return { componentType: Drawing_color_palettes_manage, props: { feature: this } };
   }
   async onActivate() {
-    this._activePaletteSubscription = this._colorsService.pickerColors$.subscribe((palette) => this.updatePaletteStyle(palette));
+    this._activePaletteSubscription = this._colorsService.pickerColors$.subscribe(
+      (palette) => this.updatePaletteStyle(palette)
+    );
     if (!await this._importedPalettes.getValue()) {
       try {
-        const savedPalettes = this.parseSavedOldTypoPalettes().filter((p) => p.name !== "sketchfulPalette");
+        const savedPalettes = this.parseSavedOldTypoPalettes().filter(
+          (p) => p.name !== "sketchfulPalette"
+        );
         for (const palette of savedPalettes) {
           await this._colorsService.savePalette(palette);
         }
@@ -26631,7 +26672,8 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
       return;
     }
     const elements2 = await this._elementsSetup.complete();
-    if (this._hideOriginalPaletteStyle.parentElement === null) document.body.appendChild(this._hideOriginalPaletteStyle);
+    if (this._hideOriginalPaletteStyle.parentElement === null)
+      document.body.appendChild(this._hideOriginalPaletteStyle);
     this._colorPalettePicker = new Color_palette_picker({
       target: elements2.skribblToolbar,
       anchor: elements2.colorContainer,
@@ -26647,7 +26689,12 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
    */
   async removePalette(name) {
     this._logger.info(`Removing palette ${name}`);
-    if (!await (await this._toastService.showConfirmToast(`Do you want to remove the palette ${name}?`, void 0, 1e4, { confirm: "Delete palette", cancel: "Cancel deletion" })).result) {
+    if (!await (await this._toastService.showConfirmToast(
+      `Do you want to remove the palette ${name}?`,
+      void 0,
+      1e4,
+      { confirm: "Delete palette", cancel: "Cancel deletion" }
+    )).result) {
       this._logger.info(`User canceled removal of palette ${name}`);
       return;
     }
@@ -26676,7 +26723,10 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
       return palette;
     } catch (e) {
       this._logger.error("Failed to parse palette from json", e);
-      this._toastService.showToast("Failed to read palette", "Invalid palette format. Check the JSON data!");
+      this._toastService.showToast(
+        "Failed to read palette",
+        "Invalid palette format. Check the JSON data!"
+      );
       throw e;
     }
   }
@@ -26694,7 +26744,8 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
         const name = map2.get("name");
         const colors = map2.get("colors");
         const rowCount = map2.get("rowCount");
-        if (typeof name !== "string" || !Array.isArray(colors) || typeof rowCount !== "number") throw new Error("Palette is missing properties");
+        if (typeof name !== "string" || !Array.isArray(colors) || typeof rowCount !== "number")
+          throw new Error("Palette is missing properties");
         const mappedColors = [];
         for (const color of colors) {
           if (typeof color !== "object") throw new Error("Color data is not a object");
@@ -26753,7 +26804,9 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
    */
   async exportPalette(palette) {
     this._logger.info(`Exporting palette ${palette.name} to clipboard`, palette);
-    const toast = await this._toastService.showLoadingToast(`Exporting palette ${palette.name} to clipboard`);
+    const toast = await this._toastService.showLoadingToast(
+      `Exporting palette ${palette.name} to clipboard`
+    );
     try {
       const json = JSON.stringify(palette);
       await navigator.clipboard.writeText(json);
@@ -35638,7 +35691,7 @@ function create_fragment$D(ctx) {
       b.textContent = "Typo is the toolbox for everything you need on skribbl.io";
       t4 = space();
       div1 = element$1("div");
-      div1.innerHTML = `XOXO to all beta testers &lt;3<br/>hunt3r, maxsl, ibot, tuc, devil, gummee, alpha, jax, hu_la_la, shawty, hex, bittercold, shortm, ao4g, foley, oivoo`;
+      div1.innerHTML = `XOXO to all beta testers &lt;3<br/>Alpha, Foley, hunt3r.zip, Hex, ibot, Max, Oivoo, shawty, Tuc, ShortM, XVIdevilIVX`;
       t7 = space();
       div3 = element$1("div");
       h40 = element$1("h4");
