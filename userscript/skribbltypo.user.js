@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.1 beta-usc bc135b6
+// @version      27.0.1 beta-usc 14a7e43
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc bc135b6", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 14a7e43", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -24957,6 +24957,14 @@
     return new CustomEvent(type, detail);
   }
   __name(createCrossCustomEvent, "createCrossCustomEvent");
+  async function crossImage(src) {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = src;
+    await new Promise((resolve2) => img.onload = resolve2);
+    return img;
+  }
+  __name(crossImage, "crossImage");
   const _ImageData = class _ImageData {
     constructor(_base64Full, _blob) {
       this._base64Full = _base64Full;
@@ -25244,9 +25252,7 @@
     }
     async drawImage(imageBase64, x, y, dx, dy) {
       this._logger.debug("Drawing image", imageBase64, x, y, dx, dy);
-      const img = new Image();
-      img.src = imageBase64;
-      await new Promise((resolve2) => img.onload = resolve2);
+      const img = await crossImage(imageBase64);
       const canvas = (await this.elementsSetup.complete()).canvas;
       const ctx = canvas.getContext("2d");
       ctx == null ? void 0 : ctx.drawImage(img, x ?? 0, y ?? 0, dx ?? img.width, dy ?? img.height);
