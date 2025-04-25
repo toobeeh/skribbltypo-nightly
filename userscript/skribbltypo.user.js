@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.1 beta-usc 5ce1ce7
+// @version      27.0.1 beta-usc 73422e9
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 5ce1ce7", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 73422e9", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -24953,8 +24953,8 @@
     inject(MessageSentEventListener)
   ], ChatRecallFeature.prototype, "_messageSent");
   function createCrossCustomEvent(type, detail) {
-    if (cloneInto !== void 0 && document.defaultView !== null) {
-      const safeDetail = cloneInto ? cloneInto(detail, document.defaultView) : detail;
+    if (typeof cloneInto !== "undefined" && cloneInto !== void 0 && document.defaultView !== null) {
+      const safeDetail = cloneInto(detail, document.defaultView);
       return new document.defaultView.CustomEvent(type, safeDetail);
     }
     return new CustomEvent(type, detail);
@@ -36220,7 +36220,7 @@
      * @param event
      * @private
      */
-    async onCanvasDown(event) {
+    onCanvasDown(event) {
       this._logger.debug("Canvas clicked", event);
       if (this._lineListenToggle$.value) {
         const canvas = event.target;
