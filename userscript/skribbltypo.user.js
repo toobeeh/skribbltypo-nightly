@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.1 beta-usc fbba10c
+// @version      27.0.1 beta-usc 16ddd28
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @match        https://skribbl.io/*
@@ -9,7 +9,7 @@
 // @run-at       document-start
 // ==/UserScript==
 
-(e=>{if(typeof GM_addStyle=="function"){GM_addStyle(e);return}const t=document.createElement("style");t.textContent=e,document.head.append(t)})(' div.svelte-kfudwd.svelte-kfudwd{display:flex;justify-content:flex-start;align-items:center;gap:.5em;cursor:pointer;padding:.2em}div.disabled.svelte-kfudwd.svelte-kfudwd{opacity:.5;pointer-events:none}div.svelte-kfudwd img.svelte-kfudwd{height:1.5em;aspect-ratio:1;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3));-webkit-user-select:none;user-select:none}div.svelte-kfudwd span.svelte-kfudwd{-webkit-user-select:none;user-select:none;font-weight:600}b.svelte-rvotkt{font-size:1.1rem}.typo-numeric-setting.svelte-i0zktq.svelte-i0zktq{display:grid;align-items:center;grid-template-columns:auto auto;grid-template-rows:auto auto auto}.typo-numeric-setting.svelte-i0zktq b.svelte-i0zktq{font-size:1.1rem}.typo-numeric-setting.svelte-i0zktq input.svelte-i0zktq:invalid{border-color:unset}.typo-numeric-setting.svelte-i0zktq input[type=number].svelte-i0zktq{width:10ex}.typo-numeric-setting.svelte-i0zktq input[type=range].svelte-i0zktq{grid-column:span 2}.typo-numeric-setting.svelte-zlhfg4.svelte-zlhfg4{display:flex;flex-direction:column;justify-items:stretch;gap:.5rem}.typo-numeric-setting.svelte-zlhfg4 b.svelte-zlhfg4{font-size:1.1rem}.typo-text-setting.svelte-xq58hp.svelte-xq58hp{display:grid;align-items:center;grid-template-columns:auto auto;grid-template-rows:auto auto}.typo-text-setting.svelte-xq58hp b.svelte-xq58hp{font-size:1.1rem}.typo-text-setting.svelte-xq58hp input.svelte-xq58hp:invalid{border-color:unset}.typo-text-setting.svelte-xq58hp input.svelte-xq58hp{grid-column:span 2}.color-picker.svelte-1x2m4l5.svelte-1x2m4l5.svelte-1x2m4l5{color:var(--COLOR_PANEL_TEXT);-webkit-user-select:none;user-select:none;display:flex;flex-direction:column;gap:.5rem;width:100%}.color-picker.svelte-1x2m4l5 .picker-header.svelte-1x2m4l5.svelte-1x2m4l5{display:flex;width:100%;flex-direction:row;gap:1rem;align-items:center;justify-content:center}.color-picker.svelte-1x2m4l5 .picker-header.svelte-1x2m4l5>img.svelte-1x2m4l5{-webkit-user-select:none;user-select:none;height:1.2rem;width:1.2rem;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.color-picker.svelte-1x2m4l5 .picker-header h3.svelte-1x2m4l5.svelte-1x2m4l5{margin-bottom:0}.color-picker.svelte-1x2m4l5 .color-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;aspect-ratio:1;position:relative;cursor:crosshair;border-radius:3px}.color-picker.svelte-1x2m4l5 .color-rect .color-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}.color-picker.svelte-1x2m4l5 .color-rect .color-thumb.listen.svelte-1x2m4l5.svelte-1x2m4l5{display:none}.color-picker.svelte-1x2m4l5 .hue-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;height:1rem;position:relative;cursor:pointer;border-radius:3px;background:linear-gradient(to right,#ff0400,#ffc300 12.5%,#fff200,#dcff00 18.75%,#7dff00,#1dff00 31.25%,#00ff13,#00ff42 37.5%,#00fdff,#003eff 62.5%,#000fff,#2100ff 68.75%,#8000ff,#e000ff 81.25%,#f0e,#ff00bf 87.5%,red)}.color-picker.svelte-1x2m4l5 .hue-rect .hue-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}.color-picker.svelte-1x2m4l5 .alpha-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;height:1rem;position:relative;cursor:pointer;border-radius:3px}.color-picker.svelte-1x2m4l5 .alpha-rect .alpha-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}@keyframes svelte-1bdf7g-slideIn{0%{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:100}}@keyframes svelte-1bdf7g-slideOut{0%{transform:scaleY(1);opacity:100}to{transform:scaleY(0);opacity:0}}.typo-color-picker-button.svelte-1bdf7g.svelte-1bdf7g{aspect-ratio:1;position:relative}.typo-color-picker-button.svelte-1bdf7g .color-picker-button-content.svelte-1bdf7g{position:absolute;top:0;right:0;bottom:0;left:0;cursor:pointer}.typo-color-picker-button.svelte-1bdf7g .color-picker-popout.svelte-1bdf7g{position:absolute;z-index:10;width:20em;border-radius:10px;padding:1rem;background-color:var(--COLOR_PANEL_HI);filter:drop-shadow(0 5px 10px rgba(0,0,0,.3));animation:svelte-1bdf7g-slideIn .08s ease-out}.typo-color-picker-button.svelte-1bdf7g .color-picker-popout.closing.svelte-1bdf7g{animation:svelte-1bdf7g-slideOut .08s ease-out forwards}.typo-text-setting.svelte-1pjx4sn.svelte-1pjx4sn{gap:.5rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start}.typo-text-setting.svelte-1pjx4sn b.svelte-1pjx4sn{font-size:1.1rem}.typo-chat-controls{grid-area:chat;display:flex;justify-items:center;justify-content:end;gap:.5rem;margin-top:.5rem;margin-right:.5rem;margin-left:auto;height:min-content;z-index:1;-webkit-user-select:none;user-select:none}.typo-controls.svelte-7pthaj{position:fixed;display:flex;align-items:center;gap:.5em;z-index:100}.typo-controls.topleft.svelte-7pthaj{left:.5em;top:.5em}.typo-controls.topright.svelte-7pthaj{right:.5em;top:.5em}.typo-controls.bottomright.svelte-7pthaj{right:.5em;bottom:.5em}.typo-controls.bottomleft.svelte-7pthaj{left:.5em;bottom:.5em}.typo-controls.vertical.svelte-7pthaj{flex-direction:column}.typo-controls.horizontal.svelte-7pthaj{flex-direction:row}.typo-customizer-actions.svelte-10me7lg{position:absolute;display:flex;flex-direction:column;gap:4px;top:40px;right:4px}.typo-toast-container{position:fixed;left:0;right:0;top:0;height:0;overflow:visible;z-index:10000;display:flex;flex-direction:column;align-items:center;gap:1rem;padding-top:1rem}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(2)) .panel-header.svelte-12u7yxy .svelte-12u7yxy:nth-child(1){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(3)) .panel-header.svelte-12u7yxy .svelte-12u7yxy:nth-child(2){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(4)) .panel-header.svelte-12u7yxy .svelte-12u7yxy:nth-child(3){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(5)) .panel-header.svelte-12u7yxy .svelte-12u7yxy:nth-child(4){display:none}#home .panel.typo-panel:not(:has(.typo-panel-tab:not(:empty))){display:none}#home .panel.panel-right{margin-left:20px}#home .panel.panel-left{margin-right:20px}#home .panel.typo-panel{flex:0 0 400px;max-height:calc(400px - 2em);margin-top:2em;display:flex;flex-direction:column;align-items:normal;justify-content:flex-start;color:var(--COLOR_PANEL_TEXT)}#home .panel.typo-panel .panel-header.svelte-12u7yxy.svelte-12u7yxy{display:flex;justify-content:space-between;font-weight:600}#home .panel.typo-panel .panel-header.svelte-12u7yxy h2.svelte-12u7yxy{cursor:pointer}#home .panel.typo-panel .panel-header.svelte-12u7yxy h2.inactive.svelte-12u7yxy{opacity:.5}#home .panel.typo-panel .typo-panel-tab.svelte-12u7yxy.svelte-12u7yxy{margin-top:1rem;overflow:auto;flex-grow:1}#home .panel.typo-panel>div.svelte-12u7yxy.svelte-12u7yxy:empty{display:none}.typo-toolbar{grid-area:4/3/4/3;border-radius:3px;background-color:var(--COLOR_CHAT_BG_BASE);display:flex;align-items:center;justify-content:space-evenly}.typo-toolbar:empty{display:none}#game-canvas #game-rate.typo-icons :is(.like,.dislike){background-repeat:no-repeat;background-size:90%;background-position:center}#game-canvas #game-rate.typo-icons .like,.player-bubble .icon[style*=thumbsup]{background-image:var(--file-img-thumbsup-gif)!important}#game-canvas #game-rate.typo-icons .dislike,.player-bubble .icon[style*=thumbsdown]{background-image:var(--file-img-thumbsdown-gif)!important}@keyframes svelte-c1csua-bounceload{0%{transform:scale(.5)}to{transform:translate(-40%) scale(1.5)}}div.svelte-c1csua.svelte-c1csua{display:flex;justify-content:center;align-items:center;gap:.5em;padding:.8em}div.svelte-c1csua .icon.svelte-c1csua{display:inline-block;height:1.5em;aspect-ratio:1;background-image:url(/img/size.gif);background-size:1em;background-repeat:no-repeat;background-position:center;transform:scale(1.5);filter:drop-shadow(3px 3px 0 rgba(0,0,0,.3));animation:svelte-c1csua-bounceload .5s infinite;animation-direction:alternate;animation-timing-function:ease-in-out;transform-origin:center;margin-right:.5em;margin-left:.5em}div.svelte-c1csua span.svelte-c1csua{color:var(--COLOR_PANEL_TEXT);font-weight:700}.typo-icon-button.svelte-b0w31n.svelte-b0w31n{-webkit-user-select:none;user-select:none;display:block;cursor:pointer;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-icon-button.disabled.svelte-b0w31n.svelte-b0w31n{pointer-events:none;opacity:.5}.typo-icon-button.svelte-b0w31n img.svelte-b0w31n{aspect-ratio:1;transform:translateY(0);transition:transform 65ms ease-in-out}.typo-icon-button.svelte-b0w31n:hover img.effect.svelte-b0w31n{transform:translateY(-3px)}.typo-icon-button.greyscale.svelte-b0w31n img.svelte-b0w31n{filter:grayscale(.7);opacity:.7}.typo-icon-button.greyscale.svelte-b0w31n img.svelte-b0w31n:hover{filter:grayscale(0);opacity:1}@keyframes svelte-12e6hb5-slideIn{0%{transform:translateY(-50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-12e6hb5-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(-50vh);opacity:0}}.typo-toast.svelte-12e6hb5.svelte-12e6hb5{padding:1rem 3rem 1rem 1rem;background-color:var(--COLOR_PANEL_HI);border-radius:5px;color:var(--COLOR_PANEL_TEXT);filter:drop-shadow(0 5px 10px rgba(0,0,0,.3));min-width:clamp(20rem,20rem,80%);position:relative;animation:svelte-12e6hb5-slideIn .15s ease-out;display:flex;flex-direction:column;align-items:flex-start;white-space-collapse:preserve;gap:.5rem}.typo-toast.closing.svelte-12e6hb5.svelte-12e6hb5{animation:svelte-12e6hb5-slideOut .15s ease-out forwards}.typo-toast.loading.svelte-12e6hb5.svelte-12e6hb5{cursor:progress}.typo-toast.svelte-12e6hb5 form.svelte-12e6hb5{display:flex;width:100%}.typo-toast.svelte-12e6hb5 form input[type=submit].svelte-12e6hb5{display:none}.typo-toast.svelte-12e6hb5 .typo-toast-confirm.svelte-12e6hb5{width:100%;display:flex;flex-direction:row;gap:1rem}.typo-toast.svelte-12e6hb5 .typo-toast-confirm span.svelte-12e6hb5{display:flex;flex-direction:row;gap:.5rem;cursor:pointer;align-items:center}.typo-toast.svelte-12e6hb5 .close-toast.svelte-12e6hb5{position:absolute;right:.5rem;top:0;font-weight:900;opacity:.7;cursor:pointer;font-size:2rem}.typo-chat-message.svelte-1q3466u.svelte-1q3466u{display:flex;flex-direction:row;align-items:center}.typo-chat-message.svelte-1q3466u b.info.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_DRAWING)}.typo-chat-message.svelte-1q3466u b.error.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_LEAVE)}.typo-chat-message.svelte-1q3466u b.success.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_GUESSED)}.typo-chat-message.svelte-1q3466u b.normal.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_BASE)}.typo-chat-message.svelte-1q3466u span.svelte-1q3466u{white-space:preserve}.typo-avatar-container.svelte-1orh9gx.svelte-1orh9gx{width:var(--typo-avatar-container-size);aspect-ratio:1;position:relative}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.svelte-1orh9gx{position:absolute}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.svelte-1orh9gx:is(.color,.mouth,.eyes,.special){background-repeat:no-repeat}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.svelte-1orh9gx:is(.color,.mouth,.eyes){top:0;right:0;bottom:0;left:0}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.color.svelte-1orh9gx{z-index:0;background-image:url(https://skribbl.io/img/avatar/color_atlas.gif)}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.mouth.svelte-1orh9gx{z-index:1;background-image:url(https://skribbl.io/img/avatar/mouth_atlas.gif)}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.eyes.svelte-1orh9gx{z-index:2;background-image:url(https://skribbl.io/img/avatar/eyes_atlas.gif)}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.special.svelte-1orh9gx{z-index:3;background-image:url(https://skribbl.io/img/avatar/special_atlas.gif);inset:calc(-1 * var(--typo-avatar-container-size) * 32 / 48 / 2)}@keyframes svelte-1mc834d-slideIn{0%{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:100}}@keyframes svelte-1mc834d-slideOut{0%{transform:scaleY(1);opacity:100}to{transform:scaleY(0);opacity:0}}.typo-area-flyout.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d{position:relative;color:var(--COLOR_PANEL_TEXT);z-index:1;border-radius:10px;padding:1em;animation:svelte-1mc834d-slideIn .08s ease-out;display:flex;gap:1rem;flex-direction:column;align-items:center}.typo-area-flyout.align-top.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d{align-self:start;transform-origin:top}.typo-area-flyout.align-bottom.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d{align-self:end;transform-origin:bottom}.typo-area-flyout.closing.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d{animation:svelte-1mc834d-slideOut .08s ease-out forwards}.typo-area-flyout.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d:after{animation:svelte-1mc834d-slideIn .08s ease-out;background:var(--COLOR_PANEL_BG);content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:10px;z-index:-1;transform:none!important;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}.typo-area-flyout.closing.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d:after{animation:svelte-1mc834d-slideOut .08s ease-out forwards}.typo-area-flyout.svelte-1mc834d .close-explicit.svelte-1mc834d.svelte-1mc834d{position:absolute;top:0;right:.5rem;font-size:1.5rem;font-weight:900;cursor:pointer;z-index:1}.typo-area-flyout.svelte-1mc834d>h3.svelte-1mc834d.svelte-1mc834d{display:flex;gap:1em;align-items:center}.typo-area-flyout.svelte-1mc834d>h3.svelte-1mc834d>img.svelte-1mc834d{-webkit-user-select:none;user-select:none;height:1.8em;width:1.8em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-area-flyout.svelte-1mc834d>.content.svelte-1mc834d.svelte-1mc834d{width:100%;overflow-y:auto;padding:0 1em}.typo-command-preview.svelte-19nsl5m.svelte-19nsl5m{display:flex;flex-direction:column;gap:1rem}.typo-command-preview.svelte-19nsl5m.svelte-19nsl5m:not(:has(.typo-command-result)){gap:.2rem}.typo-command-preview.svelte-19nsl5m .typo-command-result.svelte-19nsl5m{display:flex;flex-direction:column;gap:.2rem}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis.svelte-19nsl5m{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-arg.svelte-19nsl5m{background-color:var(--COLOR_PANEL_BG);padding:.2rem;border-radius:3px;opacity:.5}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-arg.current.svelte-19nsl5m{opacity:1}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-id.svelte-19nsl5m{padding:.2rem;border-radius:3px;font-weight:bolder}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-id.current.svelte-19nsl5m{background-color:var(--COLOR_PANEL_BG)}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-description .typo-command-result-param-type.svelte-19nsl5m{display:block;opacity:.7}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-state.svelte-19nsl5m{display:flex;gap:.5rem;align-items:center;margin-top:.3rem;opacity:.7}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-state img.svelte-19nsl5m{height:1.3rem}.chat-form:has(#typo-command-input) input:not(#typo-command-input){display:none}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container{display:inline-flex;flex-wrap:wrap;align-items:center;gap:1ex}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container .typo-emoji{background-image:var(--typo-emoji-url);color:transparent;overflow:hidden;width:1.5em;height:1.5em;background-size:contain;background-repeat:no-repeat;display:inline-block;image-rendering:auto}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container .typo-emoji::selection{background-color:transparent;color:transparent}.typo-command-preview.svelte-198xt5o.svelte-198xt5o{display:flex;flex-wrap:wrap;flex-direction:row;gap:.5ex;justify-content:space-evenly}.typo-command-preview.svelte-198xt5o .emoji-picker-candidate.svelte-198xt5o{height:2.5em;aspect-ratio:1;image-rendering:auto;cursor:pointer;transition:transform .1s}.typo-command-preview.svelte-198xt5o .emoji-picker-candidate.svelte-198xt5o:hover{transform:scale(.9)}.typo-emoji-picker-hint.svelte-198xt5o.svelte-198xt5o{text-align:center;margin-bottom:1em;font-weight:600;text-overflow:ellipsis;overflow:hidden}form.chat-form.typo-extended input{padding-right:2.5em}.typo-chat-profile-link{cursor:pointer}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq{padding:.5rem;border-radius:.5em;position:relative;-webkit-user-select:none;user-select:none;font-weight:700;text-shadow:1px 1px 0 rgba(0,0,0,.168627451)}.typo-flat-button.disabled.svelte-1nuwppq.svelte-1nuwppq{pointer-events:none;opacity:.5}.typo-flat-button.green.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_SUBMIT_BG);color:var(--COLOR_BUTTON_SUBMIT_TEXT)}.typo-flat-button.orange.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_DANGER_BG);color:var(--COLOR_BUTTON_DANGER_TEXT)}.typo-flat-button.blue.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_NORMAL_BG);color:var(--COLOR_BUTTON_NORMAL_TEXT)}.typo-flat-button.svelte-1nuwppq>span.svelte-1nuwppq{z-index:2;position:relative}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq:after{position:absolute;top:0;right:0;bottom:0;left:0;content:"";z-index:0;opacity:0;background:#000;transition:opacity .1s;border-radius:.5em}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq:hover:after{opacity:.1}.typo-quickreact-focus.svelte-yvtrmi.svelte-yvtrmi:focus{outline:none}.typo-quickreact-keys.svelte-yvtrmi.svelte-yvtrmi{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.typo-quickreact-keys.svelte-yvtrmi b.svelte-yvtrmi{grid-column:span 2;text-align:center}@keyframes svelte-1rg8obs-slideIn{0%{transform:translateY(50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-1rg8obs-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(50vh);opacity:0}}@keyframes svelte-1rg8obs-fadeIn{0%{opacity:0}to{opacity:100}}@keyframes svelte-1rg8obs-fadeOut{0%{opacity:100}to{opacity:0}}div.content.svelte-1rg8obs.svelte-1rg8obs.svelte-1rg8obs{position:fixed;top:10vh;right:0;bottom:0;left:0;background:var(--COLOR_PANEL_BG);z-index:9999;animation:svelte-1rg8obs-slideIn .15s ease-out;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:flex;flex-direction:column;align-items:center;color:var(--COLOR_PANEL_TEXT)}div.content.closing.svelte-1rg8obs.svelte-1rg8obs.svelte-1rg8obs{animation:svelte-1rg8obs-slideOut .15s ease-out forwards}div.content.svelte-1rg8obs .content-title.svelte-1rg8obs.svelte-1rg8obs{display:flex;justify-content:space-between;width:100%;align-items:center;padding-left:2em;padding-right:2em}div.content.svelte-1rg8obs .content-title.svelte-1rg8obs>div.svelte-1rg8obs:last-child{-webkit-user-select:none;user-select:none;position:relative;top:-2vh;cursor:pointer;font-weight:700;font-size:2.5rem;opacity:.7}div.content.svelte-1rg8obs .content-title.svelte-1rg8obs>div.svelte-1rg8obs:last-child:hover{opacity:1}div.content.svelte-1rg8obs .content-wrapper.svelte-1rg8obs.svelte-1rg8obs{overscroll-behavior:none;display:flex;flex-direction:column;overflow-y:scroll;width:100%;align-items:stretch;flex-grow:1}div.content-top.svelte-1rg8obs.svelte-1rg8obs.svelte-1rg8obs{position:fixed;top:calc(7vh + 1px);z-index:9999;background:var(--COLOR_PANEL_BG);clip-path:polygon(100% 0,0% 100%,100% 100%);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:none;height:3vh;width:100vw;animation:svelte-1rg8obs-slideIn .15s ease-out}div.content-top.closing.svelte-1rg8obs.svelte-1rg8obs.svelte-1rg8obs{animation:svelte-1rg8obs-slideOut .15s ease-out forwards}div.backdrop.svelte-1rg8obs.svelte-1rg8obs.svelte-1rg8obs{position:fixed;top:0;right:0;bottom:0;left:0;background:#00000080;z-index:9998;animation:svelte-1rg8obs-fadeIn .15s ease-out}div.backdrop.closing.svelte-1rg8obs.svelte-1rg8obs.svelte-1rg8obs{animation:svelte-1rg8obs-fadeOut .15s ease-out forwards}body:has(.typo-modal){overflow:hidden}@keyframes svelte-1prt0rp-slideIn{0%{transform:translateY(50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-1prt0rp-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(50vh);opacity:0}}@keyframes svelte-1prt0rp-fadeIn{0%{opacity:0}to{opacity:100}}@keyframes svelte-1prt0rp-fadeOut{0%{opacity:100}to{opacity:0}}div.content.svelte-1prt0rp.svelte-1prt0rp.svelte-1prt0rp{background:var(--COLOR_PANEL_BG);animation:svelte-1prt0rp-slideIn .15s ease-out;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);max-height:calc(100vh - 4rem);display:flex;flex-direction:column;align-items:center;color:var(--COLOR_PANEL_TEXT);padding:2rem;border-radius:3px}div.content.closing.svelte-1prt0rp.svelte-1prt0rp.svelte-1prt0rp{animation:svelte-1prt0rp-slideOut .15s ease-out forwards}div.content.svelte-1prt0rp .content-title.svelte-1prt0rp.svelte-1prt0rp{display:flex;justify-content:space-between;width:100%;align-items:center;padding-left:2em;padding-right:2em}div.content.svelte-1prt0rp .content-title.svelte-1prt0rp>div.svelte-1prt0rp:last-child{-webkit-user-select:none;user-select:none;position:relative;top:-2vh;right:-2rem;cursor:pointer;font-weight:700;font-size:2.5rem;opacity:.7}div.content.svelte-1prt0rp .content-title.svelte-1prt0rp>div.svelte-1prt0rp:last-child:hover{opacity:1}div.content.svelte-1prt0rp .content-wrapper.svelte-1prt0rp.svelte-1prt0rp{overscroll-behavior:none;display:flex;flex-direction:column;overflow-y:scroll;width:100%;flex-grow:1;align-items:stretch}div.backdrop.svelte-1prt0rp.svelte-1prt0rp.svelte-1prt0rp{position:fixed;top:0;right:0;bottom:0;left:0;background:#00000080;z-index:9999;animation:svelte-1prt0rp-fadeIn .15s ease-out;display:grid;place-content:center;padding:3rem}div.backdrop.closing.svelte-1prt0rp.svelte-1prt0rp.svelte-1prt0rp{animation:svelte-1prt0rp-fadeOut .15s ease-out forwards}.typo-gallery-grid.svelte-skb05m.svelte-skb05m.svelte-skb05m{display:grid;grid-template-columns:20rem auto;gap:2rem;width:100%;padding-left:2rem;padding-right:2rem;padding-top:2rem;flex-grow:1;overflow:hidden}.typo-gallery-grid.svelte-skb05m h3.svelte-skb05m.svelte-skb05m{text-align:center}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.svelte-skb05m.svelte-skb05m{display:flex;flex-direction:column;gap:.5rem;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);padding-right:2rem;margin-bottom:2rem;transition:opacity .06s;grid-area:1/1/1/1}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.svelte-skb05m>.svelte-skb05m:not(span,.navigate-page){margin-bottom:1rem}.typo-gallery-grid.svelte-skb05m .gallery-sidebar .navigate-page.svelte-skb05m.svelte-skb05m{width:100%;justify-content:space-between;display:flex;gap:1rem;align-items:center;margin-top:auto}.typo-gallery-grid.svelte-skb05m .gallery-sidebar .navigate-page span.svelte-skb05m.svelte-skb05m{font-weight:600;-webkit-user-select:none;user-select:none}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.present.svelte-skb05m.svelte-skb05m{opacity:0;pointer-events:none}.typo-gallery-grid.svelte-skb05m .gallery-results.svelte-skb05m.svelte-skb05m{height:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,20rem);gap:1rem;justify-content:space-between;margin-bottom:2rem;grid-area:1/2/1/2;transition:opacity .06s}.typo-gallery-grid.svelte-skb05m .gallery-results img.svelte-skb05m.svelte-skb05m{width:100%;cursor:pointer;border-radius:3px}.typo-gallery-grid.svelte-skb05m .gallery-results .loading.svelte-skb05m.svelte-skb05m{grid-column:1/-1;display:grid}.typo-gallery-grid.svelte-skb05m .gallery-results.present.svelte-skb05m.svelte-skb05m{opacity:0;pointer-events:none}.typo-gallery-grid.svelte-skb05m .present-image.svelte-skb05m.svelte-skb05m{grid-area:1/2/1/2;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;overflow:auto}.typo-gallery-grid.svelte-skb05m .present-image img.svelte-skb05m.svelte-skb05m{border-radius:3px}.typo-gallery-grid.svelte-skb05m .present-sidebar.svelte-skb05m.svelte-skb05m{display:flex;flex-direction:column;gap:.5rem;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);padding-right:2rem;margin-bottom:2rem;grid-area:1/1/1/1}.typo-gallery-grid.svelte-skb05m .present-sidebar .exit-present.svelte-skb05m.svelte-skb05m{cursor:pointer;display:flex;gap:1rem;justify-content:center;align-items:center;font-weight:600;margin-top:auto}.typo-palette-builder-container.svelte-nspiqx.svelte-nspiqx{background-color:var(--COLOR_PANEL_HI);border-radius:3px;gap:2rem;padding:1rem;display:grid;grid-template-columns:auto auto;flex-direction:column}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-inputs.svelte-nspiqx{display:flex;flex-direction:column;gap:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-inputs b.svelte-nspiqx{margin-top:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-actions.svelte-nspiqx{display:flex;flex-direction:column;gap:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-colors.svelte-nspiqx{display:grid;gap:.2rem}.typo-color-palette-manage-list.svelte-vvz4gm{display:flex;flex-direction:row-reverse;gap:1rem;flex-wrap:wrap;justify-content:flex-end}#game-toolbar .typo-palette.colors.svelte-1mmx4c4.svelte-1mmx4c4{height:fit-content}.typo-palette-picker.svelte-1mmx4c4.svelte-1mmx4c4{display:grid;overflow:hidden;border-radius:var(--BORDER_RADIUS);max-width:calc(13 * var(--UNIT) / 2);overflow-x:auto}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4{aspect-ratio:1;height:calc(var(--UNIT) / 2);cursor:pointer;position:relative}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4:after{content:"";position:absolute;left:2px;top:2px;right:2px;bottom:2px;border-radius:3px}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4:hover:after{border-width:3px;border-style:solid;border-color:#0009}canvas.svelte-18097wc{border-radius:3px;width:10rem}@keyframes svelte-15kb90n-drop-in{0%{transform:translateY(-50%);opacity:0}to{transform:translateY(0);opacity:1}}.typo-drop.svelte-15kb90n{position:absolute;bottom:5px;height:48px;aspect-ratio:1;background-size:cover;background-position:center;cursor:pointer;-webkit-user-select:none;user-select:none;animation:svelte-15kb90n-drop-in .05s ease-in forwards}.typo-drop-claims.svelte-qhyy9.svelte-qhyy9{display:flex;flex-direction:column;gap:.5rem}.typo-drop-claims.svelte-qhyy9 .typo-drop-claims-claim.svelte-qhyy9{display:flex;gap:.4rem}@keyframes svelte-dq3z80-warn-blink{0%{opacity:1}25%{opacity:0}50%{opacity:0}75%{opacity:1}to{opacity:1}}#game-word .hints{position:relative}.typo-hints-overlay.svelte-dq3z80.svelte-dq3z80{position:absolute;display:flex;gap:.08em;z-index:10}.typo-hints-overlay.warning.svelte-dq3z80.svelte-dq3z80{z-index:11;animation:svelte-dq3z80-warn-blink .7s infinite}.typo-hints-overlay.warning.svelte-dq3z80 .overlay-character.warning.svelte-dq3z80{opacity:1;color:red;background-color:var(--COLOR_CHAT_BG_BASE)}.typo-hints-overlay.warning.svelte-dq3z80 .overlay-character.svelte-dq3z80:not(.warning){opacity:0}.typo-hints-overlay.correct.svelte-dq3z80 .overlay-character.warning.svelte-dq3z80{opacity:0}.typo-hints-overlay.svelte-dq3z80 .overlay-character.svelte-dq3z80{width:1ch;color:inherit;opacity:.6}.typo-hints-overlay.svelte-dq3z80 .overlay-character.hidden.svelte-dq3z80{opacity:0}.typo-image-agent.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{grid-area:chat;align-self:flex-start;width:calc(300px - .4rem);position:relative;justify-self:center;margin-top:.2rem;border-radius:10px;transform-origin:top;align-items:center;color:var(--COLOR_PANEL_TEXT);z-index:1;padding:1rem;transition:transform .08s ease-out,opacity .08s ease-out}.typo-image-agent.closed.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{opacity:0;transform:scaleY(0)}.typo-image-agent.svelte-1d6izv1 .close-agent.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{position:absolute;top:0;right:.5rem;font-size:1.5rem;font-weight:900;cursor:pointer;z-index:1}.typo-image-agent.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1:not(.hidden):after{background:var(--COLOR_PANEL_BG);content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:10px;z-index:0;transform:none!important;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);transition:transform .08s ease-out,opacity .08s ease-out}.typo-image-agent.closed.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1:after{opacity:0;transform:scaleY(0)}.typo-image-agent.svelte-1d6izv1 .agent-content.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{z-index:1;width:100%;display:flex;flex-direction:column;gap:1rem;position:relative}.typo-image-agent.svelte-1d6izv1 .agent-content.svelte-1d6izv1>h3.svelte-1d6izv1.svelte-1d6izv1{width:100%;display:flex;gap:1em;align-items:center;justify-content:center;margin-bottom:0}.typo-image-agent.svelte-1d6izv1 .agent-content.svelte-1d6izv1>h3.svelte-1d6izv1>img.svelte-1d6izv1{-webkit-user-select:none;user-select:none;height:1.8em;width:1.8em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-image-agent.svelte-1d6izv1 .agent-content.svelte-1d6izv1>img.svelte-1d6izv1.svelte-1d6izv1{width:100%;border-radius:3px;cursor:pointer}.typo-image-agent.svelte-1d6izv1 .agent-inputs.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{display:flex;gap:1rem}.typo-image-agent.svelte-1d6izv1 .agent-inputs input.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{flex-grow:1}.typo-lobby-status-settings.svelte-1iaxigp.svelte-1iaxigp{display:flex;flex-direction:column;gap:1rem}.typo-lobby-status-settings.svelte-1iaxigp .status-settings.svelte-1iaxigp{display:flex;gap:1rem;flex-direction:column}@keyframes svelte-ffctjy-appear{0%{opacity:0;scale:0}to{opacity:1;scale:1}}.typo-tooltip.svelte-ffctjy.svelte-ffctjy{position:fixed;display:flex;z-index:10000;align-items:center;animation:svelte-ffctjy-appear .1s forwards ease-out;pointer-events:none;transform-origin:0 0}.typo-tooltip.svelte-ffctjy span.svelte-ffctjy{background-color:var(--COLOR_TOOL_TIP_BG);color:var(--COLOR_PANEL_TEXT);border-radius:var(--BORDER_RADIUS);padding:7px;text-shadow:1px 1px 0 rgba(0,0,0,.2196078431);text-align:center;font-size:13px;font-weight:700;white-space:pre}.typo-tooltip.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{height:0;width:0}.typo-tooltip.E.svelte-ffctjy.svelte-ffctjy{transform:translateY(-50%);flex-direction:row}.typo-tooltip.E.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-right:10px solid var(--COLOR_TOOL_TIP_BG);border-top:10px solid transparent;border-bottom:10px solid transparent}.typo-tooltip.S.svelte-ffctjy.svelte-ffctjy{transform:translate(-50%);flex-direction:column}.typo-tooltip.S.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-bottom:10px solid var(--COLOR_TOOL_TIP_BG);border-left:10px solid transparent;border-right:10px solid transparent}.typo-tooltip.N.svelte-ffctjy.svelte-ffctjy{flex-direction:column-reverse;transform:translate(-50%) translateY(-100%)}.typo-tooltip.N.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-top:10px solid var(--COLOR_TOOL_TIP_BG);border-left:10px solid transparent;border-right:10px solid transparent}.typo-tooltip.W.svelte-ffctjy.svelte-ffctjy{flex-direction:row-reverse;transform:translate(-100%) translateY(-50%)}.typo-tooltip.W.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-left:10px solid var(--COLOR_TOOL_TIP_BG);border-top:10px solid transparent;border-bottom:10px solid transparent}@keyframes svelte-1593rkb-iconAppear{0%{opacity:.3;transform:scale(0) translateY(30px)}50%{opacity:1}to{opacity:0;transform:scale(1) translateY(-30px)}}.typo-onboarding-emote.svelte-1593rkb{height:30px;aspect-ratio:1;animation:svelte-1593rkb-iconAppear 2.5s forwards ease-out;position:absolute;-webkit-user-select:none;user-select:none}p.svelte-115f3km.svelte-115f3km,ul.svelte-115f3km.svelte-115f3km,h3.svelte-115f3km.svelte-115f3km,h4.svelte-115f3km.svelte-115f3km{margin-bottom:1rem}p.svelte-115f3km>.svelte-115f3km,ul.svelte-115f3km>.svelte-115f3km{text-align:start}a.svelte-115f3km.svelte-115f3km{cursor:pointer;font-weight:700}p.svelte-1d2n9p6,ul.svelte-1d2n9p6,h3.svelte-1d2n9p6,h4.svelte-1d2n9p6{margin-bottom:1rem}a.svelte-1d2n9p6{cursor:pointer;font-weight:700}.typo-onboarding-wrapper.svelte-1ss70a9.svelte-1ss70a9{display:flex;align-items:center;flex-direction:column;margin:1rem}.typo-onboarding-hero.svelte-1ss70a9.svelte-1ss70a9{display:grid;place-content:center;position:relative;padding:100px 300px;margin:40px;margin-bottom:2rem;transition:padding .4s,margin-top .4s}.typo-onboarding-hero.hidden.svelte-1ss70a9.svelte-1ss70a9{margin-top:0;padding:0}.typo-onboarding-hero.svelte-1ss70a9>div.svelte-1ss70a9{text-align:center;position:relative}.typo-onboarding-hero.svelte-1ss70a9:hover:not(.hidden) .beta-credits.svelte-1ss70a9{opacity:.5}.typo-onboarding-hero.svelte-1ss70a9 .beta-credits.svelte-1ss70a9{position:absolute;bottom:0;width:100%;opacity:0;-webkit-user-select:none;user-select:none;transition:opacity .4s;transition-delay:.5s;text-align:center;font-size:.8rem;z-index:10}.onboarding-tabs.svelte-1ss70a9.svelte-1ss70a9{display:flex;gap:1rem;justify-content:center}.onboarding-tabs.svelte-1ss70a9 h4.svelte-1ss70a9{cursor:pointer;padding:1rem;opacity:.5;-webkit-user-select:none;user-select:none}.onboarding-tabs.svelte-1ss70a9 h4.active.svelte-1ss70a9{opacity:1}.typo-onboarding-presets.svelte-1ss70a9.svelte-1ss70a9{display:flex;flex-direction:column;gap:1rem;align-items:center}.typo-onboarding-presets.svelte-1ss70a9 .typo-onboarding-preset.svelte-1ss70a9{position:relative;cursor:pointer;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;display:flex;flex-direction:column;gap:1rem;min-width:clamp(40em,40em,100%);max-width:clamp(40em,40em,100%);transition:transform .2s}.typo-onboarding-presets.svelte-1ss70a9 .typo-onboarding-preset.svelte-1ss70a9:hover{transform:translate(1rem)}.typo-onboarding-presets.svelte-1ss70a9 .typo-onboarding-preset.svelte-1ss70a9:hover:before{opacity:1}.typo-onboarding-presets.svelte-1ss70a9 .typo-onboarding-preset.svelte-1ss70a9:before{content:"";background-image:var(--file-img-arrow-right-gif);background-repeat:no-repeat;background-size:contain;width:2.5rem;background-position:center;position:absolute;top:0;bottom:0;left:-3.5rem;opacity:0;transition:opacity .2s;pointer-events:none}.typo-onboarding-checklist.svelte-1ss70a9.svelte-1ss70a9{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:1rem}.typo-onboarding-checklist.svelte-1ss70a9 .typo-onboarding-task.svelte-1ss70a9{cursor:pointer;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;display:flex;flex-direction:column;gap:1rem;min-width:clamp(40em,40em,100%);max-width:clamp(40em,40em,100%)}.typo-onboarding-checklist.svelte-1ss70a9 .typo-onboarding-task.done.svelte-1ss70a9{cursor:auto}.typo-onboarding-checklist.svelte-1ss70a9 .typo-onboarding-task.done .description.svelte-1ss70a9{opacity:.5}.typo-onboarding-checklist.svelte-1ss70a9 .typo-onboarding-task .details.svelte-1ss70a9{display:flex;gap:1rem}.typo-onboarding-extras.svelte-1ss70a9.svelte-1ss70a9{display:flex;flex-direction:row;gap:3rem;align-self:stretch;padding:0 2rem 2rem}.typo-onboarding-extras.svelte-1ss70a9 .typo-onboarding-extras-sections.svelte-1ss70a9{display:flex;flex-direction:column;gap:1rem}.typo-onboarding-extras.svelte-1ss70a9 .typo-onboarding-extras-sections b.svelte-1ss70a9{cursor:pointer;opacity:.5;-webkit-user-select:none;user-select:none}.typo-onboarding-extras.svelte-1ss70a9 .typo-onboarding-extras-sections b.active.svelte-1ss70a9{opacity:1}.typo-onboarding-extras.svelte-1ss70a9 .typo-onboarding-extras-content.svelte-1ss70a9{flex-grow:1;display:flex;flex-direction:column;align-items:center}.typo-profiles.svelte-16buojm.svelte-16buojm{display:flex;flex-direction:column;gap:1rem;align-items:stretch;width:fit-content}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm{display:flex;position:relative;gap:1rem;cursor:pointer;border-radius:3px;padding:.5rem;align-items:center;background-color:var(--COLOR_PANEL_HI);transition:transform .2s;justify-content:space-between}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:hover{transform:translate(1rem)}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:hover:before{opacity:1}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:before{content:"";background-image:var(--file-img-arrow-right-gif);background-repeat:no-repeat;background-size:contain;width:2rem;background-position:center;position:absolute;top:0;bottom:0;left:-3rem;opacity:0;transition:opacity .2s;pointer-events:none}.typo-feature-settings-hotkey.svelte-10zlzgr.svelte-10zlzgr{background-color:var(--COLOR_PANEL_HI);display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:1fr 1fr;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem;align-items:center}.typo-feature-settings-hotkey.svelte-10zlzgr .inputs-disabled-hint.svelte-10zlzgr{font-size:.8rem;opacity:.7}.typo-feature-settings-hotkey.svelte-10zlzgr .button-container.svelte-10zlzgr{font-size:1em}.typo-feature-settings-command.svelte-lvvgs4.svelte-lvvgs4{background-color:var(--COLOR_PANEL_HI);display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:1fr 1fr;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem;align-items:center}.typo-feature-settings-command.svelte-lvvgs4 .button-container.svelte-lvvgs4{font-size:1em}.typo-feature-settings-title.svelte-1njssi3.svelte-1njssi3{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-hero.svelte-1njssi3{opacity:.7;font-weight:600;justify-self:start}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-back.svelte-1njssi3{cursor:pointer;opacity:.7;font-weight:600;justify-self:end}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-back.svelte-1njssi3:hover{opacity:1}.typo-feature-settings-title.svelte-1njssi3>h1.svelte-1njssi3{justify-self:center}.typo-feature-settings-summary.svelte-1njssi3.svelte-1njssi3{text-align:center}.typo-feature-settings-info.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-management.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-hotkeys.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-default.svelte-1njssi3.svelte-1njssi3{width:100%;display:flex;flex-direction:column}.typo-feature-settings-info.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-management.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-hotkeys.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-default.svelte-1njssi3 h2.svelte-1njssi3{margin-bottom:.5em}.typo-feature-settings-default.svelte-1njssi3 .typo-feature-settings-default-list.svelte-1njssi3{display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem}.typo-feature-settings-default.svelte-1njssi3 .typo-feature-settings-default-list .typo-feature-settings-default-item.svelte-1njssi3{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-feature-settings-hotkeys-list.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-commands-list.svelte-1njssi3.svelte-1njssi3{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap}.typo-feature-item.svelte-xje42n.svelte-xje42n{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-feature-item.hidden.svelte-xje42n.svelte-xje42n{display:none}.typo-feature-item.svelte-xje42n .feature-tags.svelte-xje42n{opacity:.5;font-size:.9rem;text-transform:lowercase}.typo-feature-item.devMode.svelte-xje42n .feature-id.svelte-xje42n{display:block;position:absolute;bottom:0;right:0;-webkit-user-select:none;user-select:none;opacity:.5;padding:.2rem}.typo-feature-item.svelte-xje42n .feature-id.svelte-xje42n{display:none}.typo-feature-item.svelte-xje42n .description.svelte-xje42n{flex-grow:1;display:flex;gap:1rem;align-items:center;-webkit-user-select:none;user-select:none}.typo-feature-item.svelte-xje42n .description[role=button].svelte-xje42n{cursor:pointer}.typo-feature-item.svelte-xje42n .description img.svelte-xje42n{filter:grayscale(100%);opacity:.7;width:1.5em;height:1.5em}.typo-feature-item.svelte-xje42n .description img.svelte-xje42n:hover{filter:grayscale(0%);opacity:1}.typo-feature-item.svelte-xje42n .name-toggle.svelte-xje42n{display:flex;align-items:center;gap:1rem;font-weight:700;font-size:1.2rem;cursor:pointer;-webkit-user-select:none;user-select:none}.typo-feature-item.svelte-xje42n .name-toggle.locked.svelte-xje42n{cursor:not-allowed}.typo-feature-item.svelte-xje42n .name-toggle.locked img.svelte-xje42n{filter:grayscale(100%);opacity:.7}.typo-feature-item.svelte-xje42n .name-toggle img.svelte-xje42n{width:1.5em;height:1.5em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-feature-item.svelte-xje42n .name-toggle span.svelte-xje42n:last-child{font-size:1rem;opacity:.5;margin-left:auto;text-transform:uppercase}.typo-features-container.svelte-173i13r.svelte-173i13r{position:relative;width:100%;flex-grow:1;overflow-x:hidden}.typo-features-info.svelte-173i13r.svelte-173i13r{max-width:clamp(40em,40em,100%);text-align:left;padding-bottom:2em}.typo-features-filter.svelte-173i13r.svelte-173i13r{display:grid;gap:1rem;grid-template-columns:auto auto;padding-bottom:2em;align-items:center}.typo-features-filter.svelte-173i13r .filters.svelte-173i13r{display:flex;gap:1rem}.typo-features-filter.svelte-173i13r .filter.svelte-173i13r{text-transform:lowercase;cursor:pointer;padding:.3rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px;opacity:.6}.typo-features-filter.svelte-173i13r .filter.selected.svelte-173i13r{opacity:1}.typo-feature-settings.svelte-173i13r.svelte-173i13r{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;flex-direction:column;gap:2rem;margin:0 2em 2em;padding:2em;overflow:auto;transform:translate(-100vw);transition:transform .1s ease-in-out;border-radius:3px}.typo-feature-settings.settingsVisible.svelte-173i13r.svelte-173i13r{transform:translate(0)}.typo-features.svelte-173i13r.svelte-173i13r{display:flex;flex-direction:column;align-items:center;position:absolute;top:0;right:0;bottom:0;left:0;transform:translate(0);transition:transform .1s ease-in-out}.typo-features.settingsVisible.svelte-173i13r.svelte-173i13r{transform:translate(100vw)}.typo-features.svelte-173i13r .typo-features-list.svelte-173i13r{width:100%;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:2rem;padding:0 2em 2em;overflow:auto}.typo-themes-browser-header.svelte-163v0av.svelte-163v0av{padding-bottom:1rem;text-align:center}.typo-themes-browser-list.svelte-163v0av.svelte-163v0av{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap;justify-content:center}.typo-themes-browser-item.svelte-163v0av.svelte-163v0av{background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;gap:1rem;justify-content:start;align-items:center;min-width:clamp(30em,30em,100%);max-width:clamp(30em,30em,100%);display:grid;grid-template-columns:auto 1fr}.typo-themes-browser-item.svelte-163v0av span.svelte-163v0av{opacity:.5}.typo-themes-browser-item.svelte-163v0av div.svelte-163v0av{justify-self:end}.typo-themes-editor.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:column;height:100%}.typo-themes-editor-header.svelte-1gh1qig.svelte-1gh1qig{padding-bottom:1rem;text-align:center}.typo-themes-editor-content.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:column;gap:2rem;align-items:start;padding:0 2rem;overflow:auto}details.svelte-1gh1qig.svelte-1gh1qig{border-radius:3px;padding:.5rem 1rem}details[open].svelte-1gh1qig.svelte-1gh1qig{background-color:var(--COLOR_PANEL_HI)}details[open].svelte-1gh1qig summary.svelte-1gh1qig{margin-bottom:.5rem}summary.svelte-1gh1qig.svelte-1gh1qig{font-weight:700;cursor:pointer;-webkit-user-select:none;user-select:none;font-size:1.2rem}.typo-themes-editor-content-section.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:row;gap:3rem;flex-wrap:wrap;align-items:center;width:100%;padding-bottom:.5rem}.typo-themes-editor-content-section.svelte-1gh1qig .group.svelte-1gh1qig{display:flex;flex-direction:row;gap:1rem;align-items:center}.typo-themes-editor-content-section.svelte-1gh1qig .group.svelte-1gh1qig:vertical{flex-direction:column}.typo-themes-editor-content-section.svelte-1gh1qig .group input.svelte-1gh1qig{width:auto;box-sizing:border-box}.color-pickers.svelte-1gh1qig.svelte-1gh1qig,.style-hooks.svelte-1gh1qig.svelte-1gh1qig{display:grid;grid-template-columns:auto auto;grid-gap:.5rem 2rem}.typo-themes-list-header.svelte-6dmj7f.svelte-6dmj7f.svelte-6dmj7f{padding-bottom:1rem;text-align:center}.typo-themes-list-list.svelte-6dmj7f.svelte-6dmj7f.svelte-6dmj7f{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap;justify-content:center}.typo-themes-list-item.svelte-6dmj7f.svelte-6dmj7f.svelte-6dmj7f{background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;gap:1rem;justify-content:center;align-items:start;display:flex;flex-direction:column;min-width:clamp(20em,20em,100%)}.typo-themes-list-item.svelte-6dmj7f .active-marker.svelte-6dmj7f.svelte-6dmj7f{display:flex;gap:.5rem;align-items:center}.typo-themes-list-item.svelte-6dmj7f .active-marker img.svelte-6dmj7f.svelte-6dmj7f{height:1.5rem;aspect-ratio:1}.typo-themes-list-item.svelte-6dmj7f>div.svelte-6dmj7f.svelte-6dmj7f{display:flex;flex-direction:row;gap:1rem;width:100%}.typo-themes-list-item.svelte-6dmj7f>div span.svelte-6dmj7f.svelte-6dmj7f{opacity:.5}.typo-themes-list-item.svelte-6dmj7f>div.svelte-6dmj7f>.svelte-6dmj7f:last-child:not(:first-child){flex-grow:1;text-align:end}.typo-themes-content.svelte-1ikbg14.svelte-1ikbg14{padding:1rem;width:100%;height:100%;display:flex;flex-direction:column;overflow:auto}.typo-themes-navigation.svelte-1ikbg14.svelte-1ikbg14{display:flex;align-items:center;justify-content:center;gap:2rem;margin-top:1rem;margin-bottom:2rem}.typo-themes-navigation.svelte-1ikbg14 h3.svelte-1ikbg14{opacity:.5;cursor:pointer}.typo-themes-navigation.svelte-1ikbg14 h3.selected.svelte-1ikbg14{opacity:1}.typo-themes-tab.svelte-1ikbg14.svelte-1ikbg14{overflow:auto}#game-toolbar:has(.typo-brush-lab-switch.expanded){grid-template-rows:max-content}#game-toolbar:not(:has(.typo-brush-lab-switch.expanded))>.typo-brush-lab-group{display:none}.typo-brush-lab-group.svelte-p5jc91.svelte-p5jc91{display:flex;flex-direction:row;align-items:center;gap:2rem;grid-row:2}.typo-brush-lab-group.svelte-p5jc91 .typo-brush-lab-mods.svelte-p5jc91,.typo-brush-lab-group.svelte-p5jc91 .typo-brush-lab-tools.svelte-p5jc91{display:flex;flex-direction:row;gap:.5rem}.item-selection.svelte-15vhuqn.svelte-15vhuqn{display:grid;grid-template-columns:auto 1fr;flex-grow:1;width:100%;padding:1rem 2rem;gap:2rem}.item-selection.svelte-15vhuqn .item-sidebar.svelte-15vhuqn{display:flex;flex-direction:column;gap:1rem;padding-right:2rem;height:100%;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);overflow:auto}.item-selection.svelte-15vhuqn .item-sidebar h3.svelte-15vhuqn{opacity:.5}.item-selection.svelte-15vhuqn .item-sidebar .item-sidebar-entry.svelte-15vhuqn{display:flex;gap:.5rem;align-items:center;cursor:pointer}.item-selection.svelte-15vhuqn .item-sidebar .item-sidebar-entry img.svelte-15vhuqn{height:2rem}.item-selection.svelte-15vhuqn .item-details.svelte-15vhuqn{display:flex;flex-direction:column;gap:1rem}.item-selection.svelte-15vhuqn .item-details .item-title.svelte-15vhuqn{display:flex;align-items:center;gap:2rem}.item-selection.svelte-15vhuqn .item-details .item-title b.svelte-15vhuqn{opacity:.5}.item-selection.svelte-15vhuqn .item-details .item-details-settings-list.svelte-15vhuqn{display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem}.item-selection.svelte-15vhuqn .item-details .item-details-settings-list .item-details-settings-item.svelte-15vhuqn{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.color-tools.svelte-iqw7hb.svelte-iqw7hb{height:var(--UNIT);width:calc(var(--UNIT) / 2)}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb,.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb{height:50%;width:100%;color:var(--COLOR_TOOL_TEXT);background-color:var(--COLOR_TOOL_BASE);cursor:pointer;background-size:contain;background-position:center;background-repeat:no-repeat}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb:hover,.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb:hover{background-color:var(--COLOR_TOOL_HOVER)}.color-tools.svelte-iqw7hb .pipette.selected.svelte-iqw7hb{background-color:var(--COLOR_TOOL_ACTIVE)}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb{border-bottom:1px solid lightgray;background-image:var(--file-img-crosshair-gif);border-radius:var(--BORDER_RADIUS) var(--BORDER_RADIUS) 0 0}.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb{border-top:1px solid lightgray;background-image:var(--file-img-inspect-gif);border-radius:0 0 var(--BORDER_RADIUS) var(--BORDER_RADIUS)}.typo-logs-export.svelte-oun24t.svelte-oun24t,.typo-logs-logger-list.svelte-oun24t.svelte-oun24t,.typo-logs-overwrite.svelte-oun24t.svelte-oun24t{display:flex;flex-direction:row;flex-wrap:wrap;gap:1rem;margin:1rem;align-items:center}.typo-logs-logger-list.svelte-oun24t .typo-logs-logger.svelte-oun24t{min-width:clamp(10em,auto,100%);max-width:clamp(10em,auto,100%);background-color:var(--COLOR_PANEL_HI);display:flex;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem}.typo-logs-logger-list.svelte-oun24t .typo-logs-logger.hidden.svelte-oun24t{display:none}.typo-cabin.svelte-10x5c2g.svelte-10x5c2g{height:100%;overflow:auto;position:relative}.typo-cabin.svelte-10x5c2g .typo-cabin-saving.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;display:none;place-content:center;z-index:2}.typo-cabin.loading.svelte-10x5c2g .typo-cabin-saving.svelte-10x5c2g{display:grid}.typo-cabin.loading.svelte-10x5c2g .typo-cabin-picker.svelte-10x5c2g{opacity:.2}.typo-cabin.svelte-10x5c2g .typo-cabin-scroll.svelte-10x5c2g{height:100%;overflow:auto;padding-right:.5rem}.typo-cabin-picker.svelte-10x5c2g.svelte-10x5c2g{display:grid;grid-template-columns:1fr 1fr 1fr;grid-gap:.5rem}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene.svelte-10x5c2g{order:0;grid-column:span 3;width:100%;aspect-ratio:3;background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;transition:transform .1s;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-thumb.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;opacity:1;transition:opacity .1s}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene.svelte-10x5c2g:hover{transform:scale(.95)}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene:hover .typo-cabin-scene-info.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene:hover .typo-cabin-scene-thumb.svelte-10x5c2g{opacity:.2}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-info.svelte-10x5c2g{opacity:0;text-align:center;font-size:.8rem;transition:opacity .1s;z-index:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-info.visible.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.svelte-10x5c2g{background-color:var(--COLOR_PANEL_BG);border-radius:5px;width:100%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;transition:transform .1s;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-thumb.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;opacity:1;transition:opacity .1s}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.svelte-10x5c2g:hover:not(.dragging){transform:scale(.9)}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot:hover:not(.dragging) .typo-cabin-slot-info.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot:hover:not(.dragging) .typo-cabin-slot-thumb.svelte-10x5c2g{opacity:.2}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-info.svelte-10x5c2g{opacity:0;text-align:center;font-size:.8rem;transition:opacity .1s;z-index:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-info.visible.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.locked.svelte-10x5c2g{cursor:not-allowed}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.locked .typo-cabin-slot-info.svelte-10x5c2g{opacity:.9}.typo-sprite-picker.svelte-1srogek.svelte-1srogek{display:flex;flex-direction:column;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list.svelte-1srogek{flex-grow:1;width:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:1rem;padding:0 2rem}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene.svelte-1srogek{background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;gap:.1rem;padding:.1rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene.svelte-1srogek:hover{transform:scale(.9)}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene .typo-sprite-picker-scene-thumb.svelte-1srogek{width:5rem;aspect-ratio:1;background-size:cover}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene span.svelte-1srogek{font-size:.9rem;opacity:.9;text-align:center}.typo-scene-picker.svelte-1s2xvs0.svelte-1s2xvs0{display:flex;flex-direction:column;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list.svelte-1s2xvs0{flex-grow:1;width:100%;overflow:auto;display:flex;align-items:center;flex-direction:column;gap:1rem;padding:0 2rem}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene.svelte-1s2xvs0{background-color:var(--COLOR_PANEL_BG);border-radius:3px;display:flex;flex-direction:column;gap:.1rem;padding:.4rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene.svelte-1s2xvs0:hover{transform:scale(.9)}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene .typo-scene-picker-scene-thumb.svelte-1s2xvs0{width:20rem;max-width:90%;aspect-ratio:3;background-size:cover;border-radius:3px}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.svelte-1s2xvs0{font-size:.9rem;opacity:.9;text-align:center}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.id.svelte-1s2xvs0{opacity:.5}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.name.svelte-1s2xvs0{font-weight:700}div.panel-changelog.svelte-1fbg7r5.svelte-1fbg7r5{display:flex;flex-direction:column;justify-content:center;padding:0 .5rem}div.panel-changelog.svelte-1fbg7r5>.changelog.svelte-1fbg7r5{white-space:pre;text-wrap:pretty}div.panel-changelog.svelte-1fbg7r5>.changelog .change.svelte-1fbg7r5{display:flex;flex-direction:column;gap:.5rem;padding:.5rem 0}div.panel-changelog.svelte-1fbg7r5>.changelog .change.svelte-1fbg7r5:not(:last-child){border-bottom:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}div.panel-changelog.svelte-1fbg7r5>.changelog .change .title.svelte-1fbg7r5{display:flex;justify-content:space-between;gap:1rem;align-items:center}div.panel-changelog.svelte-1fbg7r5>.changelog .change .title span.svelte-1fbg7r5{font-size:.8rem;opacity:.7}div.panel-changelog.svelte-1fbg7r5 .typo-version.svelte-1fbg7r5{font-size:.8rem;opacity:.7}.typo-lobby-filters.svelte-lqoucf.svelte-lqoucf{display:flex;flex-direction:column;overflow:auto;height:100%;gap:1rem}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-header.svelte-lqoucf{display:flex;justify-content:space-between;align-items:center}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list.svelte-lqoucf{flex-grow:1;display:flex;flex-wrap:wrap;gap:1rem;align-content:flex-start;overflow:auto}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item.svelte-lqoucf{display:flex;align-items:center;gap:.5rem;padding:.2rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item .typo-lobby-filters-item-remove.svelte-lqoucf{opacity:0;transition:opacity .1s}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item:hover .typo-lobby-filters-item-remove.svelte-lqoucf{opacity:1}.typo-filter-form.svelte-9ect24.svelte-9ect24{display:flex;flex-direction:column;gap:2rem}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs.svelte-9ect24{display:flex;flex-direction:column;gap:1rem}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row.svelte-9ect24{display:flex;gap:1rem;align-items:center}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row input[type=text].svelte-9ect24{width:auto;flex-grow:1}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row input[type=number].svelte-9ect24{width:5rem}.typo-filter-search.svelte-1apd7dj.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:column;gap:2rem;max-width:min(50vw,100%)}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:row;flex-wrap:wrap;gap:1rem;justify-content:center}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:column;gap:.5rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:.5rem}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.lobby.svelte-1apd7dj.svelte-1apd7dj{cursor:pointer}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.svelte-1apd7dj>b.svelte-1apd7dj{flex-grow:1;text-align:center}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item .typo-filter-search-list-item-description.svelte-1apd7dj.svelte-1apd7dj{white-space:preserve}.typo-lobbies-discord.svelte-tkvjrc.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-direction:column;gap:.5rem;padding-bottom:1rem;padding-right:.5rem}.typo-lobbies-discord.svelte-tkvjrc .typo-lobbies-discord-buttons.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-wrap:wrap;gap:.5rem}.typo-lobbies-discovered.svelte-tkvjrc.svelte-tkvjrc.svelte-tkvjrc{padding-top:1rem;display:flex;flex-direction:column;gap:.5rem;padding-right:.5rem;border-top:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-direction:column-reverse;gap:.5rem}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons.svelte-tkvjrc>div.svelte-tkvjrc{display:grid;grid-template-columns:auto auto;grid-template-rows:1fr 1fr;gap:1rem;row-gap:0;place-items:center;background-color:var(--COLOR_PANEL_BG);padding:.2rem;border-radius:3px;font-size:.9rem;cursor:pointer;-webkit-user-select:none;user-select:none}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons>div.svelte-tkvjrc b.svelte-tkvjrc{opacity:.7;justify-self:baseline}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons>div.svelte-tkvjrc span.svelte-tkvjrc{grid-column:2/2;grid-row:1/3}#game-players .player .player-icons .typo-awards-icon.svelte-19i0k4m{height:20px;width:20px;align-self:flex-end}@keyframes svelte-aldc0m-award-presentation{0%{opacity:0;background-size:100%}25%{opacity:1;background-size:30px}50%{opacity:1;background-size:48px}to{opacity:0;background-size:48px}}.typo-awards-icon.svelte-aldc0m{position:absolute;top:60px;right:4px}.typo-awards-presentation.svelte-aldc0m{position:absolute;top:0;right:0;bottom:0;left:0;background-position:center;background-repeat:no-repeat;pointer-events:none;animation:svelte-aldc0m-award-presentation 3s ease-out forwards}.typo-award-picker.svelte-9q5vog.svelte-9q5vog{display:flex;flex-direction:column;height:100%;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-award-picker.svelte-9q5vog .typo-award-picker-list.svelte-9q5vog{flex-grow:1;width:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(6rem,1fr));gap:1rem;padding:0 2rem}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award.svelte-9q5vog{background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;gap:.1rem;padding:.1rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award.svelte-9q5vog:hover{transform:scale(.9)}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award .typo-award-picker-award-thumb.svelte-9q5vog{width:4rem;aspect-ratio:1;background-size:cover}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award span.svelte-9q5vog{font-size:.9rem;opacity:.9;text-align:center}.typo-player-scene.svelte-eg9tl1{position:absolute;top:0;right:0;bottom:0;left:0;background-repeat:no-repeat;background-size:cover;background-position:center;z-index:-1}.sprite-slot.svelte-1uuttlm{position:absolute;left:-33%;top:-33%;width:166%;height:166%;background-repeat:no-repeat;background-size:contain}.typo-toolbar-challenges-list.svelte-wy9tne.svelte-wy9tne{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1rem}.typo-toolbar-challenges-list.svelte-wy9tne .challenge.svelte-wy9tne{display:flex;flex-direction:column}.typo-toolbar-challenges-list.svelte-wy9tne .challenge span.svelte-wy9tne{padding-left:2rem}.typo-toolbar-imagelab-actions.svelte-1tv05w9.svelte-1tv05w9{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:.7rem}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .lockedHint.svelte-1tv05w9{display:flex;gap:1rem;align-items:center;margin-bottom:1rem;width:100%}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .lockedHint span.svelte-1tv05w9{flex-grow:1;-webkit-user-select:none;user-select:none;font-weight:600;opacity:.8}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.svelte-1tv05w9{display:flex;gap:1rem;align-items:center}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.locked.svelte-1tv05w9>:last-child{pointer-events:none;opacity:.5}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.svelte-1tv05w9>:last-child{flex-grow:1}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands .remove.svelte-1tv05w9{filter:grayscale(.7);transition:filter 60ms}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands .remove.svelte-1tv05w9:hover{filter:grayscale(0)}.typo-imagelab-position-picker.svelte-zwzp7f{display:flex;flex-direction:column;gap:.5rem}.typo-image-post.svelte-f411i0.svelte-f411i0{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1em}.typo-image-post.svelte-f411i0 img.svelte-f411i0{border-radius:3px}.typo-image-post.svelte-f411i0 .navigate-image.svelte-f411i0{display:flex;justify-content:space-between;align-items:center}.typo-image-post.svelte-f411i0 .not-logged-in.svelte-f411i0,.typo-image-post.svelte-f411i0 .typo-post-info.svelte-f411i0{font-weight:600;opacity:.7}.typo-toolbar-save-actions.svelte-1xyzs78{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1em}.lobby-navigation.svelte-yw7ztm.svelte-yw7ztm{gap:1rem;display:flex;position:absolute;width:fit-content;right:50px;padding-right:1rem;height:100%;align-items:center}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm,.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm{content:var(--file-img-arrow-small-gif);cursor:pointer;height:42px;aspect-ratio:1;transition:scale .1s ease-in-out}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm:hover,.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm:hover{scale:1.1}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm{filter:drop-shadow(rgba(0,0,0,.3) 3px 3px 0px) sepia(1) saturate(5) brightness(.8) hue-rotate(324deg)}.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm{transform:rotateY(180deg);filter:drop-shadow(rgba(0,0,0,.3) -3px 3px 0px) sepia(1) saturate(5) brightness(.7) hue-rotate(56deg)}#home .panel.member-info.svelte-j680fu.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;flex-direction:column;gap:1em;padding:1em;width:100%;margin-bottom:10px;color:var(--COLOR_PANEL_TEXT)}#home .panel.member-info.svelte-j680fu img.typo-icon.svelte-j680fu.svelte-j680fu.svelte-j680fu{height:1.2em;image-rendering:auto;aspect-ratio:1;content:var(--file-img-typo-gif)}#home .panel.member-info.svelte-j680fu>.member-login.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;align-items:center;gap:1rem;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.7}#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;justify-content:space-between;align-items:center}#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu>span.svelte-j680fu.svelte-j680fu,#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu>a.svelte-j680fu.svelte-j680fu{display:flex;align-items:center;gap:.5em;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.7;color:inherit;text-decoration:none}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;justify-content:space-evenly}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu.svelte-j680fu{display:flex;gap:.2em}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>div.stat-icon.svelte-j680fu{height:1.5rem;aspect-ratio:1;background-position:center;background-size:cover;background-repeat:no-repeat}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>span.svelte-j680fu{font-weight:700}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>span.svelte-j680fu:nth-child(2){opacity:.8}div.typo-news.svelte-1x3jcfi.svelte-1x3jcfi{display:flex;flex-direction:column;justify-content:center;padding:0 .5rem}div.typo-news.svelte-1x3jcfi>.news.svelte-1x3jcfi{white-space:pre;text-wrap:pretty;display:flex;flex-direction:column}div.typo-news.svelte-1x3jcfi>.news .announcement.svelte-1x3jcfi{display:flex;flex-direction:column;gap:.5rem;padding:.5rem 0}div.typo-news.svelte-1x3jcfi>.news .announcement.svelte-1x3jcfi:not(:last-child){border-bottom:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}div.typo-news.svelte-1x3jcfi>.news .announcement .title.svelte-1x3jcfi{display:flex;justify-content:space-between;gap:1rem;align-items:center}div.typo-news.svelte-1x3jcfi>.news .announcement .title span.svelte-1x3jcfi{font-size:.8rem;opacity:.7}h2,h3{margin-top:0}:root{--COLOR_BUTTON_DANGER_BG: hsl(44, 81%, 51%);--COLOR_BUTTON_SUBMIT_BG: hsl(110, 75%, 55%);--COLOR_BUTTON_NORMAL_BG: hsl(208, 80%, 54%);--COLOR_BUTTON_DANGER_TEXT: hsl(0, 0%, 100%);--COLOR_BUTTON_SUBMIT_TEXT: hsl(0, 0%, 100%);--COLOR_BUTTON_NORMAL_TEXT: hsl(0, 0%, 100%)}.color-scrollbar::-webkit-scrollbar,.color-scrollbar ::-webkit-scrollbar{width:14px;border-radius:7px;background-color:var(--COLOR_PANEL_LO)}.color-scrollbar::-webkit-scrollbar-thumb,.color-scrollbar ::-webkit-scrollbar-thumb{border-radius:7px;background-color:var(--COLOR_PANEL_HI)}input.typo[type=text]{border-radius:.5rem;font-weight:600;padding:.5rem}img{display:block}.tool[data-tooltip="No Tool"]{display:none}#game-players{z-index:1}html:not([data-typo_loading_screen_disabled=true]) body>*{opacity:0;transition:opacity .2s;transition-delay:.1s}html:not([data-typo_loading_screen_disabled=true]) body[data-typo_loaded=true]>*{opacity:1}html:not([data-typo_loading_screen_disabled=true]) body:after{display:grid;place-content:center;content:"";position:fixed;top:0;left:0;width:100vw;height:100vh;opacity:1;transition:opacity .2s;background-image:var(--file-img-wand-gif);background-size:10rem;background-repeat:no-repeat;background-position:center;pointer-events:none}html:not([data-typo_loading_screen_disabled=true]) body[data-typo_loaded=true]:after{opacity:0} ');
+(e=>{if(typeof GM_addStyle=="function"){GM_addStyle(e);return}const t=document.createElement("style");t.textContent=e,document.head.append(t)})(' div.svelte-kfudwd.svelte-kfudwd{display:flex;justify-content:flex-start;align-items:center;gap:.5em;cursor:pointer;padding:.2em}div.disabled.svelte-kfudwd.svelte-kfudwd{opacity:.5;pointer-events:none}div.svelte-kfudwd img.svelte-kfudwd{height:1.5em;aspect-ratio:1;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3));-webkit-user-select:none;user-select:none}div.svelte-kfudwd span.svelte-kfudwd{-webkit-user-select:none;user-select:none;font-weight:600}b.svelte-rvotkt{font-size:1.1rem}.typo-numeric-setting.svelte-i0zktq.svelte-i0zktq{display:grid;align-items:center;grid-template-columns:auto auto;grid-template-rows:auto auto auto}.typo-numeric-setting.svelte-i0zktq b.svelte-i0zktq{font-size:1.1rem}.typo-numeric-setting.svelte-i0zktq input.svelte-i0zktq:invalid{border-color:unset}.typo-numeric-setting.svelte-i0zktq input[type=number].svelte-i0zktq{width:10ex}.typo-numeric-setting.svelte-i0zktq input[type=range].svelte-i0zktq{grid-column:span 2}.typo-numeric-setting.svelte-zlhfg4.svelte-zlhfg4{display:flex;flex-direction:column;justify-items:stretch;gap:.5rem}.typo-numeric-setting.svelte-zlhfg4 b.svelte-zlhfg4{font-size:1.1rem}.typo-text-setting.svelte-xq58hp.svelte-xq58hp{display:grid;align-items:center;grid-template-columns:auto auto;grid-template-rows:auto auto}.typo-text-setting.svelte-xq58hp b.svelte-xq58hp{font-size:1.1rem}.typo-text-setting.svelte-xq58hp input.svelte-xq58hp:invalid{border-color:unset}.typo-text-setting.svelte-xq58hp input.svelte-xq58hp{grid-column:span 2}.color-picker.svelte-1x2m4l5.svelte-1x2m4l5.svelte-1x2m4l5{color:var(--COLOR_PANEL_TEXT);-webkit-user-select:none;user-select:none;display:flex;flex-direction:column;gap:.5rem;width:100%}.color-picker.svelte-1x2m4l5 .picker-header.svelte-1x2m4l5.svelte-1x2m4l5{display:flex;width:100%;flex-direction:row;gap:1rem;align-items:center;justify-content:center}.color-picker.svelte-1x2m4l5 .picker-header.svelte-1x2m4l5>img.svelte-1x2m4l5{-webkit-user-select:none;user-select:none;height:1.2rem;width:1.2rem;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.color-picker.svelte-1x2m4l5 .picker-header h3.svelte-1x2m4l5.svelte-1x2m4l5{margin-bottom:0}.color-picker.svelte-1x2m4l5 .color-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;aspect-ratio:1;position:relative;cursor:crosshair;border-radius:3px}.color-picker.svelte-1x2m4l5 .color-rect .color-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}.color-picker.svelte-1x2m4l5 .color-rect .color-thumb.listen.svelte-1x2m4l5.svelte-1x2m4l5{display:none}.color-picker.svelte-1x2m4l5 .hue-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;height:1rem;position:relative;cursor:pointer;border-radius:3px;background:linear-gradient(to right,#ff0400,#ffc300 12.5%,#fff200,#dcff00 18.75%,#7dff00,#1dff00 31.25%,#00ff13,#00ff42 37.5%,#00fdff,#003eff 62.5%,#000fff,#2100ff 68.75%,#8000ff,#e000ff 81.25%,#f0e,#ff00bf 87.5%,red)}.color-picker.svelte-1x2m4l5 .hue-rect .hue-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}.color-picker.svelte-1x2m4l5 .alpha-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;height:1rem;position:relative;cursor:pointer;border-radius:3px}.color-picker.svelte-1x2m4l5 .alpha-rect .alpha-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}@keyframes svelte-1bdf7g-slideIn{0%{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:100}}@keyframes svelte-1bdf7g-slideOut{0%{transform:scaleY(1);opacity:100}to{transform:scaleY(0);opacity:0}}.typo-color-picker-button.svelte-1bdf7g.svelte-1bdf7g{aspect-ratio:1;position:relative}.typo-color-picker-button.svelte-1bdf7g .color-picker-button-content.svelte-1bdf7g{position:absolute;top:0;right:0;bottom:0;left:0;cursor:pointer}.typo-color-picker-button.svelte-1bdf7g .color-picker-popout.svelte-1bdf7g{position:absolute;z-index:10;width:20em;border-radius:10px;padding:1rem;background-color:var(--COLOR_PANEL_HI);filter:drop-shadow(0 5px 10px rgba(0,0,0,.3));animation:svelte-1bdf7g-slideIn .08s ease-out}.typo-color-picker-button.svelte-1bdf7g .color-picker-popout.closing.svelte-1bdf7g{animation:svelte-1bdf7g-slideOut .08s ease-out forwards}.typo-text-setting.svelte-1pjx4sn.svelte-1pjx4sn{gap:.5rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start}.typo-text-setting.svelte-1pjx4sn b.svelte-1pjx4sn{font-size:1.1rem}.typo-chat-controls{grid-area:chat;display:flex;justify-items:center;justify-content:end;gap:.5rem;margin-top:.5rem;margin-right:.5rem;margin-left:auto;height:min-content;z-index:1;-webkit-user-select:none;user-select:none}.typo-controls.svelte-1c97t9h.svelte-1c97t9h{position:fixed;display:flex;align-items:center;gap:.5em;z-index:100}.typo-controls.topleft.svelte-1c97t9h.svelte-1c97t9h{left:.5em;top:.5em}.typo-controls.topright.svelte-1c97t9h.svelte-1c97t9h{right:.5em;top:.5em}.typo-controls.bottomright.svelte-1c97t9h.svelte-1c97t9h{right:.5em;bottom:.5em}.typo-controls.bottomleft.svelte-1c97t9h.svelte-1c97t9h{left:.5em;bottom:.5em}.typo-controls.vertical.svelte-1c97t9h.svelte-1c97t9h{flex-direction:column}.typo-controls.horizontal.svelte-1c97t9h.svelte-1c97t9h{flex-direction:row}@media (max-aspect-ratio: 1){.typo-controls.svelte-1c97t9h:not(.expanded)>:not(.typo-controls-mobile-expand){display:none}}.typo-controls.svelte-1c97t9h .typo-controls-mobile-expand.svelte-1c97t9h{display:none}@media (max-aspect-ratio: 1){.typo-controls.svelte-1c97t9h .typo-controls-mobile-expand.svelte-1c97t9h{display:grid;place-content:center;height:2rem;aspect-ratio:1;border-radius:100%;background-color:var(--COLOR_PANEL_HI);background-size:1.2rem;background-position:center;background-repeat:no-repeat;cursor:pointer;-webkit-user-select:none;user-select:none;opacity:.9}}.typo-customizer-actions.svelte-2foe7d{position:absolute;display:flex;flex-direction:column;gap:4px;top:40px;right:4px}@media (max-aspect-ratio: 1){.typo-customizer-actions.svelte-2foe7d{gap:1.25vh;top:7.5vh;right:1.25vh}}.typo-toast-container{position:fixed;left:0;right:0;top:0;height:0;overflow:visible;z-index:10000;display:flex;flex-direction:column;align-items:center;gap:1rem;padding-top:1rem}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(2)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(1){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(3)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(2){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(4)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(3){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(5)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(4){display:none}#home .panel.typo-panel:not(:has(.typo-panel-tab:not(:empty))){display:none}#home .panel.panel-right{margin-left:20px}@media (max-aspect-ratio: 1){#home .panel.panel-right{margin-left:0;order:2}}#home .panel.panel-left{margin-right:20px}@media (max-aspect-ratio: 1){#home .panel.panel-left{margin-right:0;order:3}}#home .panel.typo-panel{flex:0 0 400px;max-height:calc(400px - 2em);margin-top:2em;display:flex;flex-direction:column;align-items:normal;justify-content:flex-start;color:var(--COLOR_PANEL_TEXT)}#home .panel.typo-panel .panel-header.svelte-14yq9xv.svelte-14yq9xv{display:flex;justify-content:space-between;font-weight:600}#home .panel.typo-panel .panel-header.svelte-14yq9xv h2.svelte-14yq9xv{cursor:pointer}#home .panel.typo-panel .panel-header.svelte-14yq9xv h2.inactive.svelte-14yq9xv{opacity:.5}#home .panel.typo-panel .typo-panel-tab.svelte-14yq9xv.svelte-14yq9xv{margin-top:1rem;overflow:auto;flex-grow:1}#home .panel.typo-panel>div.svelte-14yq9xv.svelte-14yq9xv:empty{display:none}.typo-toolbar{grid-area:4/3/4/3;border-radius:3px;background-color:var(--COLOR_CHAT_BG_BASE);display:flex;align-items:center;justify-content:space-evenly}@media (max-aspect-ratio: 1){.typo-toolbar{display:none}}.typo-toolbar:empty{display:none}#game-canvas #game-rate.typo-icons :is(.like,.dislike){background-repeat:no-repeat;background-size:90%;background-position:center}#game-canvas #game-rate.typo-icons .like,.player-bubble .icon[style*=thumbsup]{background-image:var(--file-img-thumbsup-gif)!important}#game-canvas #game-rate.typo-icons .dislike,.player-bubble .icon[style*=thumbsdown]{background-image:var(--file-img-thumbsdown-gif)!important}@keyframes svelte-c1csua-bounceload{0%{transform:scale(.5)}to{transform:translate(-40%) scale(1.5)}}div.svelte-c1csua.svelte-c1csua{display:flex;justify-content:center;align-items:center;gap:.5em;padding:.8em}div.svelte-c1csua .icon.svelte-c1csua{display:inline-block;height:1.5em;aspect-ratio:1;background-image:url(/img/size.gif);background-size:1em;background-repeat:no-repeat;background-position:center;transform:scale(1.5);filter:drop-shadow(3px 3px 0 rgba(0,0,0,.3));animation:svelte-c1csua-bounceload .5s infinite;animation-direction:alternate;animation-timing-function:ease-in-out;transform-origin:center;margin-right:.5em;margin-left:.5em}div.svelte-c1csua span.svelte-c1csua{color:var(--COLOR_PANEL_TEXT);font-weight:700}.typo-icon-button.svelte-b0w31n.svelte-b0w31n{-webkit-user-select:none;user-select:none;display:block;cursor:pointer;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-icon-button.disabled.svelte-b0w31n.svelte-b0w31n{pointer-events:none;opacity:.5}.typo-icon-button.svelte-b0w31n img.svelte-b0w31n{aspect-ratio:1;transform:translateY(0);transition:transform 65ms ease-in-out}.typo-icon-button.svelte-b0w31n:hover img.effect.svelte-b0w31n{transform:translateY(-3px)}.typo-icon-button.greyscale.svelte-b0w31n img.svelte-b0w31n{filter:grayscale(.7);opacity:.7}.typo-icon-button.greyscale.svelte-b0w31n img.svelte-b0w31n:hover{filter:grayscale(0);opacity:1}@keyframes svelte-12e6hb5-slideIn{0%{transform:translateY(-50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-12e6hb5-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(-50vh);opacity:0}}.typo-toast.svelte-12e6hb5.svelte-12e6hb5{padding:1rem 3rem 1rem 1rem;background-color:var(--COLOR_PANEL_HI);border-radius:5px;color:var(--COLOR_PANEL_TEXT);filter:drop-shadow(0 5px 10px rgba(0,0,0,.3));min-width:clamp(20rem,20rem,80%);position:relative;animation:svelte-12e6hb5-slideIn .15s ease-out;display:flex;flex-direction:column;align-items:flex-start;white-space-collapse:preserve;gap:.5rem}.typo-toast.closing.svelte-12e6hb5.svelte-12e6hb5{animation:svelte-12e6hb5-slideOut .15s ease-out forwards}.typo-toast.loading.svelte-12e6hb5.svelte-12e6hb5{cursor:progress}.typo-toast.svelte-12e6hb5 form.svelte-12e6hb5{display:flex;width:100%}.typo-toast.svelte-12e6hb5 form input[type=submit].svelte-12e6hb5{display:none}.typo-toast.svelte-12e6hb5 .typo-toast-confirm.svelte-12e6hb5{width:100%;display:flex;flex-direction:row;gap:1rem}.typo-toast.svelte-12e6hb5 .typo-toast-confirm span.svelte-12e6hb5{display:flex;flex-direction:row;gap:.5rem;cursor:pointer;align-items:center}.typo-toast.svelte-12e6hb5 .close-toast.svelte-12e6hb5{position:absolute;right:.5rem;top:0;font-weight:900;opacity:.7;cursor:pointer;font-size:2rem}.typo-chat-message.svelte-1q3466u.svelte-1q3466u{display:flex;flex-direction:row;align-items:center}.typo-chat-message.svelte-1q3466u b.info.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_DRAWING)}.typo-chat-message.svelte-1q3466u b.error.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_LEAVE)}.typo-chat-message.svelte-1q3466u b.success.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_GUESSED)}.typo-chat-message.svelte-1q3466u b.normal.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_BASE)}.typo-chat-message.svelte-1q3466u span.svelte-1q3466u{white-space:preserve}.typo-avatar-container.svelte-1orh9gx.svelte-1orh9gx{width:var(--typo-avatar-container-size);aspect-ratio:1;position:relative}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.svelte-1orh9gx{position:absolute}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.svelte-1orh9gx:is(.color,.mouth,.eyes,.special){background-repeat:no-repeat}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.svelte-1orh9gx:is(.color,.mouth,.eyes){top:0;right:0;bottom:0;left:0}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.color.svelte-1orh9gx{z-index:0;background-image:url(https://skribbl.io/img/avatar/color_atlas.gif)}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.mouth.svelte-1orh9gx{z-index:1;background-image:url(https://skribbl.io/img/avatar/mouth_atlas.gif)}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.eyes.svelte-1orh9gx{z-index:2;background-image:url(https://skribbl.io/img/avatar/eyes_atlas.gif)}.typo-avatar-container.svelte-1orh9gx .typo-avatar-layer.special.svelte-1orh9gx{z-index:3;background-image:url(https://skribbl.io/img/avatar/special_atlas.gif);inset:calc(-1 * var(--typo-avatar-container-size) * 32 / 48 / 2)}@keyframes svelte-1mc834d-slideIn{0%{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:100}}@keyframes svelte-1mc834d-slideOut{0%{transform:scaleY(1);opacity:100}to{transform:scaleY(0);opacity:0}}.typo-area-flyout.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d{position:relative;color:var(--COLOR_PANEL_TEXT);z-index:1;border-radius:10px;padding:1em;animation:svelte-1mc834d-slideIn .08s ease-out;display:flex;gap:1rem;flex-direction:column;align-items:center}.typo-area-flyout.align-top.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d{align-self:start;transform-origin:top}.typo-area-flyout.align-bottom.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d{align-self:end;transform-origin:bottom}.typo-area-flyout.closing.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d{animation:svelte-1mc834d-slideOut .08s ease-out forwards}.typo-area-flyout.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d:after{animation:svelte-1mc834d-slideIn .08s ease-out;background:var(--COLOR_PANEL_BG);content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:10px;z-index:-1;transform:none!important;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}.typo-area-flyout.closing.svelte-1mc834d.svelte-1mc834d.svelte-1mc834d:after{animation:svelte-1mc834d-slideOut .08s ease-out forwards}.typo-area-flyout.svelte-1mc834d .close-explicit.svelte-1mc834d.svelte-1mc834d{position:absolute;top:0;right:.5rem;font-size:1.5rem;font-weight:900;cursor:pointer;z-index:1}.typo-area-flyout.svelte-1mc834d>h3.svelte-1mc834d.svelte-1mc834d{display:flex;gap:1em;align-items:center}.typo-area-flyout.svelte-1mc834d>h3.svelte-1mc834d>img.svelte-1mc834d{-webkit-user-select:none;user-select:none;height:1.8em;width:1.8em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-area-flyout.svelte-1mc834d>.content.svelte-1mc834d.svelte-1mc834d{width:100%;overflow-y:auto;padding:0 1em}.typo-command-preview.svelte-19nsl5m.svelte-19nsl5m{display:flex;flex-direction:column;gap:1rem}.typo-command-preview.svelte-19nsl5m.svelte-19nsl5m:not(:has(.typo-command-result)){gap:.2rem}.typo-command-preview.svelte-19nsl5m .typo-command-result.svelte-19nsl5m{display:flex;flex-direction:column;gap:.2rem}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis.svelte-19nsl5m{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-arg.svelte-19nsl5m{background-color:var(--COLOR_PANEL_BG);padding:.2rem;border-radius:3px;opacity:.5}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-arg.current.svelte-19nsl5m{opacity:1}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-id.svelte-19nsl5m{padding:.2rem;border-radius:3px;font-weight:bolder}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-id.current.svelte-19nsl5m{background-color:var(--COLOR_PANEL_BG)}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-description .typo-command-result-param-type.svelte-19nsl5m{display:block;opacity:.7}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-state.svelte-19nsl5m{display:flex;gap:.5rem;align-items:center;margin-top:.3rem;opacity:.7}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-state img.svelte-19nsl5m{height:1.3rem}.chat-form:has(#typo-command-input) input:not(#typo-command-input){display:none}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container{display:inline-flex;flex-wrap:wrap;align-items:center;gap:1ex}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container .typo-emoji{background-image:var(--typo-emoji-url);color:transparent;overflow:hidden;width:1.5em;height:1.5em;background-size:contain;background-repeat:no-repeat;display:inline-block;image-rendering:auto}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container .typo-emoji::selection{background-color:transparent;color:transparent}.typo-command-preview.svelte-198xt5o.svelte-198xt5o{display:flex;flex-wrap:wrap;flex-direction:row;gap:.5ex;justify-content:space-evenly}.typo-command-preview.svelte-198xt5o .emoji-picker-candidate.svelte-198xt5o{height:2.5em;aspect-ratio:1;image-rendering:auto;cursor:pointer;transition:transform .1s}.typo-command-preview.svelte-198xt5o .emoji-picker-candidate.svelte-198xt5o:hover{transform:scale(.9)}.typo-emoji-picker-hint.svelte-198xt5o.svelte-198xt5o{text-align:center;margin-bottom:1em;font-weight:600;text-overflow:ellipsis;overflow:hidden}form.chat-form.typo-extended input{padding-right:2.5em}.typo-chat-profile-link{cursor:pointer}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq{padding:.5rem;border-radius:.5em;position:relative;-webkit-user-select:none;user-select:none;font-weight:700;text-shadow:1px 1px 0 rgba(0,0,0,.168627451)}.typo-flat-button.disabled.svelte-1nuwppq.svelte-1nuwppq{pointer-events:none;opacity:.5}.typo-flat-button.green.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_SUBMIT_BG);color:var(--COLOR_BUTTON_SUBMIT_TEXT)}.typo-flat-button.orange.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_DANGER_BG);color:var(--COLOR_BUTTON_DANGER_TEXT)}.typo-flat-button.blue.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_NORMAL_BG);color:var(--COLOR_BUTTON_NORMAL_TEXT)}.typo-flat-button.svelte-1nuwppq>span.svelte-1nuwppq{z-index:2;position:relative}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq:after{position:absolute;top:0;right:0;bottom:0;left:0;content:"";z-index:0;opacity:0;background:#000;transition:opacity .1s;border-radius:.5em}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq:hover:after{opacity:.1}.typo-quickreact-focus.svelte-yvtrmi.svelte-yvtrmi:focus{outline:none}.typo-quickreact-keys.svelte-yvtrmi.svelte-yvtrmi{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.typo-quickreact-keys.svelte-yvtrmi b.svelte-yvtrmi{grid-column:span 2;text-align:center}@keyframes svelte-lwvpkp-slideIn{0%{transform:translateY(50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-lwvpkp-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(50vh);opacity:0}}@keyframes svelte-lwvpkp-fadeIn{0%{opacity:0}to{opacity:100}}@keyframes svelte-lwvpkp-fadeOut{0%{opacity:100}to{opacity:0}}div.content.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:10vh;right:0;bottom:0;left:0;max-width:100vw;background:var(--COLOR_PANEL_BG);z-index:9999;animation:svelte-lwvpkp-slideIn .15s ease-out;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:flex;flex-direction:column;align-items:center;color:var(--COLOR_PANEL_TEXT)}div.content.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-slideOut .15s ease-out forwards}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp.svelte-lwvpkp{display:flex;justify-content:space-between;width:100%;align-items:center;padding-left:2em;padding-right:2em}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp>div.svelte-lwvpkp:last-child{-webkit-user-select:none;user-select:none;position:relative;top:-2vh;cursor:pointer;font-weight:700;font-size:2.5rem;opacity:.7}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp>div.svelte-lwvpkp:last-child:hover{opacity:1}div.content.svelte-lwvpkp .content-wrapper.svelte-lwvpkp.svelte-lwvpkp{overscroll-behavior:none;display:flex;flex-direction:column;overflow-y:scroll;width:100%;align-items:stretch;flex-grow:1;padding:0 .5rem}div.content-top.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:calc(7vh + 1px);z-index:9999;background:var(--COLOR_PANEL_BG);clip-path:polygon(100% 0,0% 100%,100% 100%);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:none;height:3vh;width:100vw;animation:svelte-lwvpkp-slideIn .15s ease-out}div.content-top.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-slideOut .15s ease-out forwards}div.backdrop.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:0;right:0;bottom:0;left:0;background:#00000080;z-index:9998;animation:svelte-lwvpkp-fadeIn .15s ease-out}div.backdrop.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-fadeOut .15s ease-out forwards}body:has(.typo-modal){overflow:hidden}@keyframes svelte-1n76u56-slideIn{0%{transform:translateY(50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-1n76u56-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(50vh);opacity:0}}@keyframes svelte-1n76u56-fadeIn{0%{opacity:0}to{opacity:100}}@keyframes svelte-1n76u56-fadeOut{0%{opacity:100}to{opacity:0}}div.content.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{background:var(--COLOR_PANEL_BG);animation:svelte-1n76u56-slideIn .15s ease-out;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);max-height:calc(100vh - 4rem);max-width:calc(100vh - 4rem);display:flex;flex-direction:column;align-items:center;color:var(--COLOR_PANEL_TEXT);padding:2rem;border-radius:3px}div.content.closing.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{animation:svelte-1n76u56-slideOut .15s ease-out forwards}div.content.svelte-1n76u56 .content-title.svelte-1n76u56.svelte-1n76u56{display:flex;justify-content:space-between;width:100%;align-items:center;padding-left:2em;padding-right:2em}div.content.svelte-1n76u56 .content-title.svelte-1n76u56>div.svelte-1n76u56:last-child{-webkit-user-select:none;user-select:none;position:relative;top:-2vh;right:-2rem;cursor:pointer;font-weight:700;font-size:2.5rem;opacity:.7}div.content.svelte-1n76u56 .content-title.svelte-1n76u56>div.svelte-1n76u56:last-child:hover{opacity:1}div.content.svelte-1n76u56 .content-wrapper.svelte-1n76u56.svelte-1n76u56{overscroll-behavior:none;display:flex;flex-direction:column;overflow-y:scroll;width:100%;flex-grow:1;align-items:stretch;padding:0 .5rem}div.backdrop.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{position:fixed;top:0;right:0;bottom:0;left:0;background:#00000080;z-index:9999;animation:svelte-1n76u56-fadeIn .15s ease-out;display:grid;place-content:center;padding:3rem}div.backdrop.closing.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{animation:svelte-1n76u56-fadeOut .15s ease-out forwards}.typo-gallery-grid.svelte-skb05m.svelte-skb05m.svelte-skb05m{display:grid;grid-template-columns:20rem auto;gap:2rem;width:100%;padding-left:2rem;padding-right:2rem;padding-top:2rem;flex-grow:1;overflow:hidden}.typo-gallery-grid.svelte-skb05m h3.svelte-skb05m.svelte-skb05m{text-align:center}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.svelte-skb05m.svelte-skb05m{display:flex;flex-direction:column;gap:.5rem;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);padding-right:2rem;margin-bottom:2rem;transition:opacity .06s;grid-area:1/1/1/1}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.svelte-skb05m>.svelte-skb05m:not(span,.navigate-page){margin-bottom:1rem}.typo-gallery-grid.svelte-skb05m .gallery-sidebar .navigate-page.svelte-skb05m.svelte-skb05m{width:100%;justify-content:space-between;display:flex;gap:1rem;align-items:center;margin-top:auto}.typo-gallery-grid.svelte-skb05m .gallery-sidebar .navigate-page span.svelte-skb05m.svelte-skb05m{font-weight:600;-webkit-user-select:none;user-select:none}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.present.svelte-skb05m.svelte-skb05m{opacity:0;pointer-events:none}.typo-gallery-grid.svelte-skb05m .gallery-results.svelte-skb05m.svelte-skb05m{height:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,20rem);gap:1rem;justify-content:space-between;margin-bottom:2rem;grid-area:1/2/1/2;transition:opacity .06s}.typo-gallery-grid.svelte-skb05m .gallery-results img.svelte-skb05m.svelte-skb05m{width:100%;cursor:pointer;border-radius:3px}.typo-gallery-grid.svelte-skb05m .gallery-results .loading.svelte-skb05m.svelte-skb05m{grid-column:1/-1;display:grid}.typo-gallery-grid.svelte-skb05m .gallery-results.present.svelte-skb05m.svelte-skb05m{opacity:0;pointer-events:none}.typo-gallery-grid.svelte-skb05m .present-image.svelte-skb05m.svelte-skb05m{grid-area:1/2/1/2;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;overflow:auto}.typo-gallery-grid.svelte-skb05m .present-image img.svelte-skb05m.svelte-skb05m{border-radius:3px}.typo-gallery-grid.svelte-skb05m .present-sidebar.svelte-skb05m.svelte-skb05m{display:flex;flex-direction:column;gap:.5rem;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);padding-right:2rem;margin-bottom:2rem;grid-area:1/1/1/1}.typo-gallery-grid.svelte-skb05m .present-sidebar .exit-present.svelte-skb05m.svelte-skb05m{cursor:pointer;display:flex;gap:1rem;justify-content:center;align-items:center;font-weight:600;margin-top:auto}.typo-themes-browser-header.svelte-17gbclg.svelte-17gbclg{padding-bottom:1rem;text-align:center}.typo-themes-browser-list.svelte-17gbclg.svelte-17gbclg{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap;justify-content:center}.typo-themes-browser-item.svelte-17gbclg.svelte-17gbclg{background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;gap:1rem;justify-content:start;align-items:center;width:clamp(min(100%,30em),min(100%,30em),max(100%,30em));display:grid;grid-template-columns:auto 1fr}.typo-themes-browser-item.svelte-17gbclg span.svelte-17gbclg{opacity:.5}.typo-themes-browser-item.svelte-17gbclg div.svelte-17gbclg{justify-self:end}.typo-themes-editor.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:column;height:100%}.typo-themes-editor-header.svelte-1gh1qig.svelte-1gh1qig{padding-bottom:1rem;text-align:center}.typo-themes-editor-content.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:column;gap:2rem;align-items:start;padding:0 2rem;overflow:auto}details.svelte-1gh1qig.svelte-1gh1qig{border-radius:3px;padding:.5rem 1rem}details[open].svelte-1gh1qig.svelte-1gh1qig{background-color:var(--COLOR_PANEL_HI)}details[open].svelte-1gh1qig summary.svelte-1gh1qig{margin-bottom:.5rem}summary.svelte-1gh1qig.svelte-1gh1qig{font-weight:700;cursor:pointer;-webkit-user-select:none;user-select:none;font-size:1.2rem}.typo-themes-editor-content-section.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:row;gap:3rem;flex-wrap:wrap;align-items:center;width:100%;padding-bottom:.5rem}.typo-themes-editor-content-section.svelte-1gh1qig .group.svelte-1gh1qig{display:flex;flex-direction:row;gap:1rem;align-items:center}.typo-themes-editor-content-section.svelte-1gh1qig .group.svelte-1gh1qig:vertical{flex-direction:column}.typo-themes-editor-content-section.svelte-1gh1qig .group input.svelte-1gh1qig{width:auto;box-sizing:border-box}.color-pickers.svelte-1gh1qig.svelte-1gh1qig,.style-hooks.svelte-1gh1qig.svelte-1gh1qig{display:grid;grid-template-columns:auto auto;grid-gap:.5rem 2rem}.typo-themes-list-header.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{padding-bottom:1rem;text-align:center}.typo-themes-list-list.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap;justify-content:center}.typo-themes-list-item.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;gap:1rem;justify-content:center;align-items:start;display:flex;flex-direction:column;width:clamp(min(100%,20em),min(100%,20em),max(100%,20em))}.typo-themes-list-item.svelte-wdh6rb .active-marker.svelte-wdh6rb.svelte-wdh6rb{display:flex;gap:.5rem;align-items:center}.typo-themes-list-item.svelte-wdh6rb .active-marker img.svelte-wdh6rb.svelte-wdh6rb{height:1.5rem;aspect-ratio:1}.typo-themes-list-item.svelte-wdh6rb>div.svelte-wdh6rb.svelte-wdh6rb{display:flex;flex-direction:row;gap:1rem;width:100%}.typo-themes-list-item.svelte-wdh6rb>div span.svelte-wdh6rb.svelte-wdh6rb{opacity:.5}.typo-themes-list-item.svelte-wdh6rb>div.svelte-wdh6rb>.svelte-wdh6rb:last-child:not(:first-child){flex-grow:1;text-align:end}.typo-themes-content.svelte-1ikbg14.svelte-1ikbg14{padding:1rem;width:100%;height:100%;display:flex;flex-direction:column;overflow:auto}.typo-themes-navigation.svelte-1ikbg14.svelte-1ikbg14{display:flex;align-items:center;justify-content:center;gap:2rem;margin-top:1rem;margin-bottom:2rem}.typo-themes-navigation.svelte-1ikbg14 h3.svelte-1ikbg14{opacity:.5;cursor:pointer}.typo-themes-navigation.svelte-1ikbg14 h3.selected.svelte-1ikbg14{opacity:1}.typo-themes-tab.svelte-1ikbg14.svelte-1ikbg14{overflow:auto}.typo-palette-builder-container.svelte-nspiqx.svelte-nspiqx{background-color:var(--COLOR_PANEL_HI);border-radius:3px;gap:2rem;padding:1rem;display:grid;grid-template-columns:auto auto;flex-direction:column}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-inputs.svelte-nspiqx{display:flex;flex-direction:column;gap:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-inputs b.svelte-nspiqx{margin-top:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-actions.svelte-nspiqx{display:flex;flex-direction:column;gap:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-colors.svelte-nspiqx{display:grid;gap:.2rem}.typo-color-palette-manage-list.svelte-vvz4gm{display:flex;flex-direction:row-reverse;gap:1rem;flex-wrap:wrap;justify-content:flex-end}#game-toolbar .typo-palette.colors.svelte-1mmx4c4.svelte-1mmx4c4{height:fit-content}.typo-palette-picker.svelte-1mmx4c4.svelte-1mmx4c4{display:grid;overflow:hidden;border-radius:var(--BORDER_RADIUS);max-width:calc(13 * var(--UNIT) / 2);overflow-x:auto}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4{aspect-ratio:1;height:calc(var(--UNIT) / 2);cursor:pointer;position:relative}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4:after{content:"";position:absolute;left:2px;top:2px;right:2px;bottom:2px;border-radius:3px}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4:hover:after{border-width:3px;border-style:solid;border-color:#0009}.color-tools.svelte-iqw7hb.svelte-iqw7hb{height:var(--UNIT);width:calc(var(--UNIT) / 2)}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb,.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb{height:50%;width:100%;color:var(--COLOR_TOOL_TEXT);background-color:var(--COLOR_TOOL_BASE);cursor:pointer;background-size:contain;background-position:center;background-repeat:no-repeat}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb:hover,.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb:hover{background-color:var(--COLOR_TOOL_HOVER)}.color-tools.svelte-iqw7hb .pipette.selected.svelte-iqw7hb{background-color:var(--COLOR_TOOL_ACTIVE)}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb{border-bottom:1px solid lightgray;background-image:var(--file-img-crosshair-gif);border-radius:var(--BORDER_RADIUS) var(--BORDER_RADIUS) 0 0}.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb{border-top:1px solid lightgray;background-image:var(--file-img-inspect-gif);border-radius:0 0 var(--BORDER_RADIUS) var(--BORDER_RADIUS)}canvas.svelte-18097wc{border-radius:3px;width:10rem}@keyframes svelte-15kb90n-drop-in{0%{transform:translateY(-50%);opacity:0}to{transform:translateY(0);opacity:1}}.typo-drop.svelte-15kb90n{position:absolute;bottom:5px;height:48px;aspect-ratio:1;background-size:cover;background-position:center;cursor:pointer;-webkit-user-select:none;user-select:none;animation:svelte-15kb90n-drop-in .05s ease-in forwards}.typo-drop-claims.svelte-qhyy9.svelte-qhyy9{display:flex;flex-direction:column;gap:.5rem}.typo-drop-claims.svelte-qhyy9 .typo-drop-claims-claim.svelte-qhyy9{display:flex;gap:.4rem}@keyframes svelte-dq3z80-warn-blink{0%{opacity:1}25%{opacity:0}50%{opacity:0}75%{opacity:1}to{opacity:1}}#game-word .hints{position:relative}.typo-hints-overlay.svelte-dq3z80.svelte-dq3z80{position:absolute;display:flex;gap:.08em;z-index:10}.typo-hints-overlay.warning.svelte-dq3z80.svelte-dq3z80{z-index:11;animation:svelte-dq3z80-warn-blink .7s infinite}.typo-hints-overlay.warning.svelte-dq3z80 .overlay-character.warning.svelte-dq3z80{opacity:1;color:red;background-color:var(--COLOR_CHAT_BG_BASE)}.typo-hints-overlay.warning.svelte-dq3z80 .overlay-character.svelte-dq3z80:not(.warning){opacity:0}.typo-hints-overlay.correct.svelte-dq3z80 .overlay-character.warning.svelte-dq3z80{opacity:0}.typo-hints-overlay.svelte-dq3z80 .overlay-character.svelte-dq3z80{width:1ch;color:inherit;opacity:.6}.typo-hints-overlay.svelte-dq3z80 .overlay-character.hidden.svelte-dq3z80{opacity:0}.typo-image-agent.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{grid-area:chat;align-self:flex-start;width:calc(300px - .4rem);position:relative;justify-self:center;margin-top:.2rem;border-radius:10px;transform-origin:top;align-items:center;color:var(--COLOR_PANEL_TEXT);z-index:1;padding:1rem;transition:transform .08s ease-out,opacity .08s ease-out}.typo-image-agent.closed.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{opacity:0;transform:scaleY(0)}.typo-image-agent.svelte-1d6izv1 .close-agent.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{position:absolute;top:0;right:.5rem;font-size:1.5rem;font-weight:900;cursor:pointer;z-index:1}.typo-image-agent.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1:not(.hidden):after{background:var(--COLOR_PANEL_BG);content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:10px;z-index:0;transform:none!important;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);transition:transform .08s ease-out,opacity .08s ease-out}.typo-image-agent.closed.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1:after{opacity:0;transform:scaleY(0)}.typo-image-agent.svelte-1d6izv1 .agent-content.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{z-index:1;width:100%;display:flex;flex-direction:column;gap:1rem;position:relative}.typo-image-agent.svelte-1d6izv1 .agent-content.svelte-1d6izv1>h3.svelte-1d6izv1.svelte-1d6izv1{width:100%;display:flex;gap:1em;align-items:center;justify-content:center;margin-bottom:0}.typo-image-agent.svelte-1d6izv1 .agent-content.svelte-1d6izv1>h3.svelte-1d6izv1>img.svelte-1d6izv1{-webkit-user-select:none;user-select:none;height:1.8em;width:1.8em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-image-agent.svelte-1d6izv1 .agent-content.svelte-1d6izv1>img.svelte-1d6izv1.svelte-1d6izv1{width:100%;border-radius:3px;cursor:pointer}.typo-image-agent.svelte-1d6izv1 .agent-inputs.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{display:flex;gap:1rem}.typo-image-agent.svelte-1d6izv1 .agent-inputs input.svelte-1d6izv1.svelte-1d6izv1.svelte-1d6izv1{flex-grow:1}.typo-lobby-status-settings.svelte-1iaxigp.svelte-1iaxigp{display:flex;flex-direction:column;gap:1rem}.typo-lobby-status-settings.svelte-1iaxigp .status-settings.svelte-1iaxigp{display:flex;gap:1rem;flex-direction:column}.typo-cabin.svelte-10x5c2g.svelte-10x5c2g{height:100%;overflow:auto;position:relative}.typo-cabin.svelte-10x5c2g .typo-cabin-saving.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;display:none;place-content:center;z-index:2}.typo-cabin.loading.svelte-10x5c2g .typo-cabin-saving.svelte-10x5c2g{display:grid}.typo-cabin.loading.svelte-10x5c2g .typo-cabin-picker.svelte-10x5c2g{opacity:.2}.typo-cabin.svelte-10x5c2g .typo-cabin-scroll.svelte-10x5c2g{height:100%;overflow:auto;padding-right:.5rem}.typo-cabin-picker.svelte-10x5c2g.svelte-10x5c2g{display:grid;grid-template-columns:1fr 1fr 1fr;grid-gap:.5rem}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene.svelte-10x5c2g{order:0;grid-column:span 3;width:100%;aspect-ratio:3;background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;transition:transform .1s;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-thumb.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;opacity:1;transition:opacity .1s}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene.svelte-10x5c2g:hover{transform:scale(.95)}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene:hover .typo-cabin-scene-info.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene:hover .typo-cabin-scene-thumb.svelte-10x5c2g{opacity:.2}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-info.svelte-10x5c2g{opacity:0;text-align:center;font-size:.8rem;transition:opacity .1s;z-index:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-info.visible.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.svelte-10x5c2g{background-color:var(--COLOR_PANEL_BG);border-radius:5px;width:100%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;transition:transform .1s;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-thumb.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;opacity:1;transition:opacity .1s}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.svelte-10x5c2g:hover:not(.dragging){transform:scale(.9)}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot:hover:not(.dragging) .typo-cabin-slot-info.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot:hover:not(.dragging) .typo-cabin-slot-thumb.svelte-10x5c2g{opacity:.2}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-info.svelte-10x5c2g{opacity:0;text-align:center;font-size:.8rem;transition:opacity .1s;z-index:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-info.visible.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.locked.svelte-10x5c2g{cursor:not-allowed}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.locked .typo-cabin-slot-info.svelte-10x5c2g{opacity:.9}.typo-sprite-picker.svelte-1srogek.svelte-1srogek{display:flex;flex-direction:column;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list.svelte-1srogek{flex-grow:1;width:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:1rem;padding:0 2rem}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene.svelte-1srogek{background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;gap:.1rem;padding:.1rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene.svelte-1srogek:hover{transform:scale(.9)}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene .typo-sprite-picker-scene-thumb.svelte-1srogek{width:5rem;aspect-ratio:1;background-size:cover}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene span.svelte-1srogek{font-size:.9rem;opacity:.9;text-align:center}.typo-scene-picker.svelte-1s2xvs0.svelte-1s2xvs0{display:flex;flex-direction:column;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list.svelte-1s2xvs0{flex-grow:1;width:100%;overflow:auto;display:flex;align-items:center;flex-direction:column;gap:1rem;padding:0 2rem}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene.svelte-1s2xvs0{background-color:var(--COLOR_PANEL_BG);border-radius:3px;display:flex;flex-direction:column;gap:.1rem;padding:.4rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene.svelte-1s2xvs0:hover{transform:scale(.9)}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene .typo-scene-picker-scene-thumb.svelte-1s2xvs0{width:20rem;max-width:90%;aspect-ratio:3;background-size:cover;border-radius:3px}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.svelte-1s2xvs0{font-size:.9rem;opacity:.9;text-align:center}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.id.svelte-1s2xvs0{opacity:.5}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.name.svelte-1s2xvs0{font-weight:700}div.panel-changelog.svelte-1fbg7r5.svelte-1fbg7r5{display:flex;flex-direction:column;justify-content:center;padding:0 .5rem}div.panel-changelog.svelte-1fbg7r5>.changelog.svelte-1fbg7r5{white-space:pre;text-wrap:pretty}div.panel-changelog.svelte-1fbg7r5>.changelog .change.svelte-1fbg7r5{display:flex;flex-direction:column;gap:.5rem;padding:.5rem 0}div.panel-changelog.svelte-1fbg7r5>.changelog .change.svelte-1fbg7r5:not(:last-child){border-bottom:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}div.panel-changelog.svelte-1fbg7r5>.changelog .change .title.svelte-1fbg7r5{display:flex;justify-content:space-between;gap:1rem;align-items:center}div.panel-changelog.svelte-1fbg7r5>.changelog .change .title span.svelte-1fbg7r5{font-size:.8rem;opacity:.7}div.panel-changelog.svelte-1fbg7r5 .typo-version.svelte-1fbg7r5{font-size:.8rem;opacity:.7}.typo-lobbies-discord.svelte-tkvjrc.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-direction:column;gap:.5rem;padding-bottom:1rem;padding-right:.5rem}.typo-lobbies-discord.svelte-tkvjrc .typo-lobbies-discord-buttons.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-wrap:wrap;gap:.5rem}.typo-lobbies-discovered.svelte-tkvjrc.svelte-tkvjrc.svelte-tkvjrc{padding-top:1rem;display:flex;flex-direction:column;gap:.5rem;padding-right:.5rem;border-top:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-direction:column-reverse;gap:.5rem}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons.svelte-tkvjrc>div.svelte-tkvjrc{display:grid;grid-template-columns:auto auto;grid-template-rows:1fr 1fr;gap:1rem;row-gap:0;place-items:center;background-color:var(--COLOR_PANEL_BG);padding:.2rem;border-radius:3px;font-size:.9rem;cursor:pointer;-webkit-user-select:none;user-select:none}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons>div.svelte-tkvjrc b.svelte-tkvjrc{opacity:.7;justify-self:baseline}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons>div.svelte-tkvjrc span.svelte-tkvjrc{grid-column:2/2;grid-row:1/3}div.typo-news.svelte-1x3jcfi.svelte-1x3jcfi{display:flex;flex-direction:column;justify-content:center;padding:0 .5rem}div.typo-news.svelte-1x3jcfi>.news.svelte-1x3jcfi{white-space:pre;text-wrap:pretty;display:flex;flex-direction:column}div.typo-news.svelte-1x3jcfi>.news .announcement.svelte-1x3jcfi{display:flex;flex-direction:column;gap:.5rem;padding:.5rem 0}div.typo-news.svelte-1x3jcfi>.news .announcement.svelte-1x3jcfi:not(:last-child){border-bottom:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}div.typo-news.svelte-1x3jcfi>.news .announcement .title.svelte-1x3jcfi{display:flex;justify-content:space-between;gap:1rem;align-items:center}div.typo-news.svelte-1x3jcfi>.news .announcement .title span.svelte-1x3jcfi{font-size:.8rem;opacity:.7}@keyframes svelte-ffctjy-appear{0%{opacity:0;scale:0}to{opacity:1;scale:1}}.typo-tooltip.svelte-ffctjy.svelte-ffctjy{position:fixed;display:flex;z-index:10000;align-items:center;animation:svelte-ffctjy-appear .1s forwards ease-out;pointer-events:none;transform-origin:0 0}.typo-tooltip.svelte-ffctjy span.svelte-ffctjy{background-color:var(--COLOR_TOOL_TIP_BG);color:var(--COLOR_PANEL_TEXT);border-radius:var(--BORDER_RADIUS);padding:7px;text-shadow:1px 1px 0 rgba(0,0,0,.2196078431);text-align:center;font-size:13px;font-weight:700;white-space:pre}.typo-tooltip.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{height:0;width:0}.typo-tooltip.E.svelte-ffctjy.svelte-ffctjy{transform:translateY(-50%);flex-direction:row}.typo-tooltip.E.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-right:10px solid var(--COLOR_TOOL_TIP_BG);border-top:10px solid transparent;border-bottom:10px solid transparent}.typo-tooltip.S.svelte-ffctjy.svelte-ffctjy{transform:translate(-50%);flex-direction:column}.typo-tooltip.S.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-bottom:10px solid var(--COLOR_TOOL_TIP_BG);border-left:10px solid transparent;border-right:10px solid transparent}.typo-tooltip.N.svelte-ffctjy.svelte-ffctjy{flex-direction:column-reverse;transform:translate(-50%) translateY(-100%)}.typo-tooltip.N.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-top:10px solid var(--COLOR_TOOL_TIP_BG);border-left:10px solid transparent;border-right:10px solid transparent}.typo-tooltip.W.svelte-ffctjy.svelte-ffctjy{flex-direction:row-reverse;transform:translate(-100%) translateY(-50%)}.typo-tooltip.W.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-left:10px solid var(--COLOR_TOOL_TIP_BG);border-top:10px solid transparent;border-bottom:10px solid transparent}#home .panel.member-info.svelte-j680fu.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;flex-direction:column;gap:1em;padding:1em;width:100%;margin-bottom:10px;color:var(--COLOR_PANEL_TEXT)}#home .panel.member-info.svelte-j680fu img.typo-icon.svelte-j680fu.svelte-j680fu.svelte-j680fu{height:1.2em;image-rendering:auto;aspect-ratio:1;content:var(--file-img-typo-gif)}#home .panel.member-info.svelte-j680fu>.member-login.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;align-items:center;gap:1rem;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.7}#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;justify-content:space-between;align-items:center}#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu>span.svelte-j680fu.svelte-j680fu,#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu>a.svelte-j680fu.svelte-j680fu{display:flex;align-items:center;gap:.5em;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.7;color:inherit;text-decoration:none}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;justify-content:space-evenly}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu.svelte-j680fu{display:flex;gap:.2em}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>div.stat-icon.svelte-j680fu{height:1.5rem;aspect-ratio:1;background-position:center;background-size:cover;background-repeat:no-repeat}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>span.svelte-j680fu{font-weight:700}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>span.svelte-j680fu:nth-child(2){opacity:.8}@keyframes svelte-1593rkb-iconAppear{0%{opacity:.3;transform:scale(0) translateY(30px)}50%{opacity:1}to{opacity:0;transform:scale(1) translateY(-30px)}}.typo-onboarding-emote.svelte-1593rkb{height:30px;aspect-ratio:1;animation:svelte-1593rkb-iconAppear 2.5s forwards ease-out;position:absolute;-webkit-user-select:none;user-select:none}p.svelte-115f3km.svelte-115f3km,ul.svelte-115f3km.svelte-115f3km,h3.svelte-115f3km.svelte-115f3km,h4.svelte-115f3km.svelte-115f3km{margin-bottom:1rem}p.svelte-115f3km>.svelte-115f3km,ul.svelte-115f3km>.svelte-115f3km{text-align:start}a.svelte-115f3km.svelte-115f3km{cursor:pointer;font-weight:700}p.svelte-1d2n9p6,ul.svelte-1d2n9p6,h3.svelte-1d2n9p6,h4.svelte-1d2n9p6{margin-bottom:1rem}a.svelte-1d2n9p6{cursor:pointer;font-weight:700}.typo-onboarding-wrapper.svelte-bu1e3.svelte-bu1e3{display:flex;align-items:center;flex-direction:column;margin:1rem}.typo-onboarding-hero.svelte-bu1e3.svelte-bu1e3{display:grid;place-content:center;position:relative;padding:100px 300px;margin:40px 40px 2rem;transition:padding .4s,margin-top .4s}@media (max-aspect-ratio: 1){.typo-onboarding-hero.svelte-bu1e3.svelte-bu1e3{padding:4rem 0 0}}.typo-onboarding-hero.hidden.svelte-bu1e3.svelte-bu1e3{margin-top:0;padding:0}.typo-onboarding-hero.svelte-bu1e3>div.svelte-bu1e3{text-align:center;position:relative}.typo-onboarding-hero.svelte-bu1e3:hover:not(.hidden) .beta-credits.svelte-bu1e3{opacity:.5}.typo-onboarding-hero.svelte-bu1e3 .beta-credits.svelte-bu1e3{position:absolute;bottom:0;width:100%;opacity:0;-webkit-user-select:none;user-select:none;transition:opacity .4s;transition-delay:.5s;text-align:center;font-size:.8rem;z-index:10}.onboarding-tabs.svelte-bu1e3.svelte-bu1e3{display:flex;gap:1rem;justify-content:center}.onboarding-tabs.svelte-bu1e3 h4.svelte-bu1e3{cursor:pointer;padding:1rem;opacity:.5;-webkit-user-select:none;user-select:none;text-align:center}.onboarding-tabs.svelte-bu1e3 h4.active.svelte-bu1e3{opacity:1}.typo-onboarding-presets.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem;align-items:center}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3{position:relative;cursor:pointer;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;display:flex;flex-direction:column;gap:1rem;width:clamp(min(40em,100%),min(40em,100%),max(40em,100%));transition:transform .2s}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:hover{transform:translate(1rem)}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:hover:before{opacity:1}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:before{content:"";background-image:var(--file-img-arrow-right-gif);background-repeat:no-repeat;background-size:contain;width:2.5rem;background-position:center;position:absolute;top:0;bottom:0;left:-3.5rem;opacity:0;transition:opacity .2s;pointer-events:none}.typo-onboarding-checklist-wrapper.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:column;align-items:stretch}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:1rem}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.svelte-bu1e3{cursor:pointer;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;display:flex;flex-direction:column;gap:1rem;width:clamp(min(40em,100%),min(40em,100%),max(40em,100%))}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.done.svelte-bu1e3{cursor:auto}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.done .description.svelte-bu1e3{opacity:.5}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task .details.svelte-bu1e3{display:flex;gap:1rem}.typo-onboarding-extras.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:row;gap:3rem;align-self:stretch;padding:0 2rem 2rem}@media (max-aspect-ratio: 1){.typo-onboarding-extras.svelte-bu1e3.svelte-bu1e3{flex-direction:column}}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections b.svelte-bu1e3{cursor:pointer;opacity:.5;-webkit-user-select:none;user-select:none}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections b.active.svelte-bu1e3{opacity:1}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-content.svelte-bu1e3{flex-grow:1;display:flex;flex-direction:column;align-items:center}.typo-profiles.svelte-16buojm.svelte-16buojm{display:flex;flex-direction:column;gap:1rem;align-items:stretch;width:fit-content}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm{display:flex;position:relative;gap:1rem;cursor:pointer;border-radius:3px;padding:.5rem;align-items:center;background-color:var(--COLOR_PANEL_HI);transition:transform .2s;justify-content:space-between}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:hover{transform:translate(1rem)}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:hover:before{opacity:1}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:before{content:"";background-image:var(--file-img-arrow-right-gif);background-repeat:no-repeat;background-size:contain;width:2rem;background-position:center;position:absolute;top:0;bottom:0;left:-3rem;opacity:0;transition:opacity .2s;pointer-events:none}.typo-feature-settings-hotkey.svelte-10zlzgr.svelte-10zlzgr{background-color:var(--COLOR_PANEL_HI);display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:1fr 1fr;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem;align-items:center}.typo-feature-settings-hotkey.svelte-10zlzgr .inputs-disabled-hint.svelte-10zlzgr{font-size:.8rem;opacity:.7}.typo-feature-settings-hotkey.svelte-10zlzgr .button-container.svelte-10zlzgr{font-size:1em}.typo-feature-settings-command.svelte-lvvgs4.svelte-lvvgs4{background-color:var(--COLOR_PANEL_HI);display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:1fr 1fr;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem;align-items:center}.typo-feature-settings-command.svelte-lvvgs4 .button-container.svelte-lvvgs4{font-size:1em}.typo-feature-settings-title.svelte-1njssi3.svelte-1njssi3{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-hero.svelte-1njssi3{opacity:.7;font-weight:600;justify-self:start}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-back.svelte-1njssi3{cursor:pointer;opacity:.7;font-weight:600;justify-self:end}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-back.svelte-1njssi3:hover{opacity:1}.typo-feature-settings-title.svelte-1njssi3>h1.svelte-1njssi3{justify-self:center}.typo-feature-settings-summary.svelte-1njssi3.svelte-1njssi3{text-align:center}.typo-feature-settings-info.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-management.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-hotkeys.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-default.svelte-1njssi3.svelte-1njssi3{width:100%;display:flex;flex-direction:column}.typo-feature-settings-info.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-management.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-hotkeys.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-default.svelte-1njssi3 h2.svelte-1njssi3{margin-bottom:.5em}.typo-feature-settings-default.svelte-1njssi3 .typo-feature-settings-default-list.svelte-1njssi3{display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem}.typo-feature-settings-default.svelte-1njssi3 .typo-feature-settings-default-list .typo-feature-settings-default-item.svelte-1njssi3{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-feature-settings-hotkeys-list.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-commands-list.svelte-1njssi3.svelte-1njssi3{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap}.typo-feature-item.svelte-xje42n.svelte-xje42n{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-feature-item.hidden.svelte-xje42n.svelte-xje42n{display:none}.typo-feature-item.svelte-xje42n .feature-tags.svelte-xje42n{opacity:.5;font-size:.9rem;text-transform:lowercase}.typo-feature-item.devMode.svelte-xje42n .feature-id.svelte-xje42n{display:block;position:absolute;bottom:0;right:0;-webkit-user-select:none;user-select:none;opacity:.5;padding:.2rem}.typo-feature-item.svelte-xje42n .feature-id.svelte-xje42n{display:none}.typo-feature-item.svelte-xje42n .description.svelte-xje42n{flex-grow:1;display:flex;gap:1rem;align-items:center;-webkit-user-select:none;user-select:none}.typo-feature-item.svelte-xje42n .description[role=button].svelte-xje42n{cursor:pointer}.typo-feature-item.svelte-xje42n .description img.svelte-xje42n{filter:grayscale(100%);opacity:.7;width:1.5em;height:1.5em}.typo-feature-item.svelte-xje42n .description img.svelte-xje42n:hover{filter:grayscale(0%);opacity:1}.typo-feature-item.svelte-xje42n .name-toggle.svelte-xje42n{display:flex;align-items:center;gap:1rem;font-weight:700;font-size:1.2rem;cursor:pointer;-webkit-user-select:none;user-select:none}.typo-feature-item.svelte-xje42n .name-toggle.locked.svelte-xje42n{cursor:not-allowed}.typo-feature-item.svelte-xje42n .name-toggle.locked img.svelte-xje42n{filter:grayscale(100%);opacity:.7}.typo-feature-item.svelte-xje42n .name-toggle img.svelte-xje42n{width:1.5em;height:1.5em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-feature-item.svelte-xje42n .name-toggle span.svelte-xje42n:last-child{font-size:1rem;opacity:.5;margin-left:auto;text-transform:uppercase}.typo-features-container.svelte-1ly2c3r.svelte-1ly2c3r{position:relative;width:100%;flex-grow:1;overflow-x:hidden}.typo-features-info.svelte-1ly2c3r.svelte-1ly2c3r{max-width:clamp(40em,40em,100%);text-align:left;padding-bottom:2em}.typo-features-filter.svelte-1ly2c3r.svelte-1ly2c3r{display:grid;gap:1rem;grid-template-columns:auto auto;padding-bottom:2em;align-items:center}.typo-features-filter.svelte-1ly2c3r .filters.svelte-1ly2c3r{display:flex;flex-wrap:wrap;gap:1rem}.typo-features-filter.svelte-1ly2c3r .filter.svelte-1ly2c3r{text-transform:lowercase;cursor:pointer;padding:.3rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px;opacity:.6}.typo-features-filter.svelte-1ly2c3r .filter.selected.svelte-1ly2c3r{opacity:1}.typo-feature-settings.svelte-1ly2c3r.svelte-1ly2c3r{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;flex-direction:column;gap:2rem;margin:0 2em 2em;padding:2em;overflow:auto;transform:translate(-100vw);transition:transform .1s ease-in-out;border-radius:3px}.typo-feature-settings.settingsVisible.svelte-1ly2c3r.svelte-1ly2c3r{transform:translate(0)}.typo-features.svelte-1ly2c3r.svelte-1ly2c3r{display:flex;flex-direction:column;align-items:center;position:absolute;top:0;right:0;bottom:0;left:0;transform:translate(0);transition:transform .1s ease-in-out}.typo-features.settingsVisible.svelte-1ly2c3r.svelte-1ly2c3r{transform:translate(100vw)}.typo-features.svelte-1ly2c3r .typo-features-list.svelte-1ly2c3r{width:100%;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:2rem;margin:0 2rem;padding-bottom:2rem;overflow:auto}#game-toolbar:has(.typo-brush-lab-switch.expanded){grid-template-rows:max-content}#game-toolbar:not(:has(.typo-brush-lab-switch.expanded))>.typo-brush-lab-group{display:none}.typo-brush-lab-group.svelte-p5jc91.svelte-p5jc91{display:flex;flex-direction:row;align-items:center;gap:2rem;grid-row:2}.typo-brush-lab-group.svelte-p5jc91 .typo-brush-lab-mods.svelte-p5jc91,.typo-brush-lab-group.svelte-p5jc91 .typo-brush-lab-tools.svelte-p5jc91{display:flex;flex-direction:row;gap:.5rem}.item-selection.svelte-15vhuqn.svelte-15vhuqn{display:grid;grid-template-columns:auto 1fr;flex-grow:1;width:100%;padding:1rem 2rem;gap:2rem}.item-selection.svelte-15vhuqn .item-sidebar.svelte-15vhuqn{display:flex;flex-direction:column;gap:1rem;padding-right:2rem;height:100%;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);overflow:auto}.item-selection.svelte-15vhuqn .item-sidebar h3.svelte-15vhuqn{opacity:.5}.item-selection.svelte-15vhuqn .item-sidebar .item-sidebar-entry.svelte-15vhuqn{display:flex;gap:.5rem;align-items:center;cursor:pointer}.item-selection.svelte-15vhuqn .item-sidebar .item-sidebar-entry img.svelte-15vhuqn{height:2rem}.item-selection.svelte-15vhuqn .item-details.svelte-15vhuqn{display:flex;flex-direction:column;gap:1rem}.item-selection.svelte-15vhuqn .item-details .item-title.svelte-15vhuqn{display:flex;align-items:center;gap:2rem}.item-selection.svelte-15vhuqn .item-details .item-title b.svelte-15vhuqn{opacity:.5}.item-selection.svelte-15vhuqn .item-details .item-details-settings-list.svelte-15vhuqn{display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem}.item-selection.svelte-15vhuqn .item-details .item-details-settings-list .item-details-settings-item.svelte-15vhuqn{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-logs-export.svelte-oun24t.svelte-oun24t,.typo-logs-logger-list.svelte-oun24t.svelte-oun24t,.typo-logs-overwrite.svelte-oun24t.svelte-oun24t{display:flex;flex-direction:row;flex-wrap:wrap;gap:1rem;margin:1rem;align-items:center}.typo-logs-logger-list.svelte-oun24t .typo-logs-logger.svelte-oun24t{min-width:clamp(10em,auto,100%);max-width:clamp(10em,auto,100%);background-color:var(--COLOR_PANEL_HI);display:flex;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem}.typo-logs-logger-list.svelte-oun24t .typo-logs-logger.hidden.svelte-oun24t{display:none}.typo-lobby-filters.svelte-lqoucf.svelte-lqoucf{display:flex;flex-direction:column;overflow:auto;height:100%;gap:1rem}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-header.svelte-lqoucf{display:flex;justify-content:space-between;align-items:center}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list.svelte-lqoucf{flex-grow:1;display:flex;flex-wrap:wrap;gap:1rem;align-content:flex-start;overflow:auto}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item.svelte-lqoucf{display:flex;align-items:center;gap:.5rem;padding:.2rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item .typo-lobby-filters-item-remove.svelte-lqoucf{opacity:0;transition:opacity .1s}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item:hover .typo-lobby-filters-item-remove.svelte-lqoucf{opacity:1}.typo-filter-form.svelte-9ect24.svelte-9ect24{display:flex;flex-direction:column;gap:2rem}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs.svelte-9ect24{display:flex;flex-direction:column;gap:1rem}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row.svelte-9ect24{display:flex;gap:1rem;align-items:center}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row input[type=text].svelte-9ect24{width:auto;flex-grow:1}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row input[type=number].svelte-9ect24{width:5rem}.typo-filter-search.svelte-1apd7dj.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:column;gap:2rem;max-width:min(50vw,100%)}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:row;flex-wrap:wrap;gap:1rem;justify-content:center}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:column;gap:.5rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:.5rem}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.lobby.svelte-1apd7dj.svelte-1apd7dj{cursor:pointer}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.svelte-1apd7dj>b.svelte-1apd7dj{flex-grow:1;text-align:center}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item .typo-filter-search-list-item-description.svelte-1apd7dj.svelte-1apd7dj{white-space:preserve}#game-players .player .player-icons .typo-awards-icon.svelte-19i0k4m{height:20px;width:20px;align-self:flex-end}@keyframes svelte-aldc0m-award-presentation{0%{opacity:0;background-size:100%}25%{opacity:1;background-size:30px}50%{opacity:1;background-size:48px}to{opacity:0;background-size:48px}}.typo-awards-icon.svelte-aldc0m{position:absolute;top:60px;right:4px}.typo-awards-presentation.svelte-aldc0m{position:absolute;top:0;right:0;bottom:0;left:0;background-position:center;background-repeat:no-repeat;pointer-events:none;animation:svelte-aldc0m-award-presentation 3s ease-out forwards}.typo-award-picker.svelte-9q5vog.svelte-9q5vog{display:flex;flex-direction:column;height:100%;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-award-picker.svelte-9q5vog .typo-award-picker-list.svelte-9q5vog{flex-grow:1;width:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(6rem,1fr));gap:1rem;padding:0 2rem}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award.svelte-9q5vog{background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;gap:.1rem;padding:.1rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award.svelte-9q5vog:hover{transform:scale(.9)}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award .typo-award-picker-award-thumb.svelte-9q5vog{width:4rem;aspect-ratio:1;background-size:cover}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award span.svelte-9q5vog{font-size:.9rem;opacity:.9;text-align:center}.typo-player-scene.svelte-eg9tl1{position:absolute;top:0;right:0;bottom:0;left:0;background-repeat:no-repeat;background-size:cover;background-position:center;z-index:-1}.sprite-slot.svelte-1uuttlm{position:absolute;left:-33%;top:-33%;width:166%;height:166%;background-repeat:no-repeat;background-size:contain}.typo-toolbar-challenges-list.svelte-wy9tne.svelte-wy9tne{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1rem}.typo-toolbar-challenges-list.svelte-wy9tne .challenge.svelte-wy9tne{display:flex;flex-direction:column}.typo-toolbar-challenges-list.svelte-wy9tne .challenge span.svelte-wy9tne{padding-left:2rem}.typo-toolbar-imagelab-actions.svelte-1tv05w9.svelte-1tv05w9{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:.7rem}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .lockedHint.svelte-1tv05w9{display:flex;gap:1rem;align-items:center;margin-bottom:1rem;width:100%}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .lockedHint span.svelte-1tv05w9{flex-grow:1;-webkit-user-select:none;user-select:none;font-weight:600;opacity:.8}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.svelte-1tv05w9{display:flex;gap:1rem;align-items:center}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.locked.svelte-1tv05w9>:last-child{pointer-events:none;opacity:.5}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.svelte-1tv05w9>:last-child{flex-grow:1}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands .remove.svelte-1tv05w9{filter:grayscale(.7);transition:filter 60ms}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands .remove.svelte-1tv05w9:hover{filter:grayscale(0)}.typo-imagelab-position-picker.svelte-zwzp7f{display:flex;flex-direction:column;gap:.5rem}.typo-image-post.svelte-f411i0.svelte-f411i0{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1em}.typo-image-post.svelte-f411i0 img.svelte-f411i0{border-radius:3px}.typo-image-post.svelte-f411i0 .navigate-image.svelte-f411i0{display:flex;justify-content:space-between;align-items:center}.typo-image-post.svelte-f411i0 .not-logged-in.svelte-f411i0,.typo-image-post.svelte-f411i0 .typo-post-info.svelte-f411i0{font-weight:600;opacity:.7}.typo-toolbar-save-actions.svelte-1xyzs78{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1em}.lobby-navigation.svelte-yw7ztm.svelte-yw7ztm{gap:1rem;display:flex;position:absolute;width:fit-content;right:50px;padding-right:1rem;height:100%;align-items:center}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm,.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm{content:var(--file-img-arrow-small-gif);cursor:pointer;height:42px;aspect-ratio:1;transition:scale .1s ease-in-out}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm:hover,.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm:hover{scale:1.1}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm{filter:drop-shadow(rgba(0,0,0,.3) 3px 3px 0px) sepia(1) saturate(5) brightness(.8) hue-rotate(324deg)}.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm{transform:rotateY(180deg);filter:drop-shadow(rgba(0,0,0,.3) -3px 3px 0px) sepia(1) saturate(5) brightness(.7) hue-rotate(56deg)}h2,h3{margin-top:0}:root{--COLOR_BUTTON_DANGER_BG: hsl(44, 81%, 51%);--COLOR_BUTTON_SUBMIT_BG: hsl(110, 75%, 55%);--COLOR_BUTTON_NORMAL_BG: hsl(208, 80%, 54%);--COLOR_BUTTON_DANGER_TEXT: hsl(0, 0%, 100%);--COLOR_BUTTON_SUBMIT_TEXT: hsl(0, 0%, 100%);--COLOR_BUTTON_NORMAL_TEXT: hsl(0, 0%, 100%)}.color-scrollbar::-webkit-scrollbar,.color-scrollbar ::-webkit-scrollbar{width:14px;border-radius:7px;background-color:var(--COLOR_PANEL_LO)}.color-scrollbar::-webkit-scrollbar-thumb,.color-scrollbar ::-webkit-scrollbar-thumb{border-radius:7px;background-color:var(--COLOR_PANEL_HI)}input.typo[type=text]{border-radius:.5rem;font-weight:600;padding:.5rem}img{display:block}.tool[data-tooltip="No Tool"]{display:none}#game-players{z-index:1}html:not([data-typo_loading_screen_disabled=true]) body>*{opacity:0;transition:opacity .2s;transition-delay:.1s}html:not([data-typo_loading_screen_disabled=true]) body[data-typo_loaded=true]>*{opacity:1}html:not([data-typo_loading_screen_disabled=true]) body:after{display:grid;place-content:center;content:"";position:fixed;top:0;left:0;width:100vw;height:100vh;opacity:1;transition:opacity .2s;background-image:var(--file-img-wand-gif);background-size:10rem;background-repeat:no-repeat;background-position:center;pointer-events:none}html:not([data-typo_loading_screen_disabled=true]) body[data-typo_loaded=true]:after{opacity:0} ');
 
 (function () {
   'use strict';
@@ -439,7 +439,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc fbba10c", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.1", versionName: "27.0.1 beta-usc 16ddd28", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -13247,34 +13247,67 @@
     __decorateParam$l(0, inject(loggerFactory))
   ], GlobalSettingsService);
   function create_fragment$1b(ctx) {
-    let div;
-    let div_class_value;
+    let div1;
+    let div0;
+    let div1_class_value;
+    let mounted;
+    let dispose;
     return {
       c() {
-        div = element("div");
-        attr(div, "class", div_class_value = "typo-controls " + /*$position*/
-        ctx[1] + " " + /*$direction*/
-        ctx[2] + " svelte-7pthaj");
+        div1 = element("div");
+        div0 = element("div");
+        attr(div0, "class", "typo-controls-mobile-expand svelte-1c97t9h");
+        set_style(div0, "background-image", "var(--file-img-typo-gif)");
+        attr(div1, "class", div1_class_value = "typo-controls " + /*$position*/
+        ctx[2] + " " + /*$direction*/
+        ctx[3] + " svelte-1c97t9h");
+        toggle_class(
+          div1,
+          "expanded",
+          /*mobileExpanded*/
+          ctx[1]
+        );
       },
       m(target, anchor) {
-        insert(target, div, anchor);
-        ctx[7](div);
+        insert(target, div1, anchor);
+        append(div1, div0);
+        ctx[9](div1);
+        if (!mounted) {
+          dispose = listen(
+            div0,
+            "click",
+            /*click_handler*/
+            ctx[8]
+          );
+          mounted = true;
+        }
       },
       p(ctx2, [dirty]) {
         if (dirty & /*$position, $direction*/
-        6 && div_class_value !== (div_class_value = "typo-controls " + /*$position*/
-        ctx2[1] + " " + /*$direction*/
-        ctx2[2] + " svelte-7pthaj")) {
-          attr(div, "class", div_class_value);
+        12 && div1_class_value !== (div1_class_value = "typo-controls " + /*$position*/
+        ctx2[2] + " " + /*$direction*/
+        ctx2[3] + " svelte-1c97t9h")) {
+          attr(div1, "class", div1_class_value);
+        }
+        if (dirty & /*$position, $direction, mobileExpanded*/
+        14) {
+          toggle_class(
+            div1,
+            "expanded",
+            /*mobileExpanded*/
+            ctx2[1]
+          );
         }
       },
       i: noop,
       o: noop,
       d(detaching) {
         if (detaching) {
-          detach(div);
+          detach(div1);
         }
-        ctx[7](null);
+        ctx[9](null);
+        mounted = false;
+        dispose();
       }
     };
   }
@@ -13292,38 +13325,42 @@
       resolve2(elem);
     });
     const position = globalSettings.settings.controlsPosition.store;
-    component_subscribe($$self, position, (value) => $$invalidate(1, $position = value));
+    component_subscribe($$self, position, (value) => $$invalidate(2, $position = value));
     const direction = globalSettings.settings.controlsDirection.store;
-    component_subscribe($$self, direction, (value) => $$invalidate(2, $direction = value));
-    function div_binding($$value) {
+    component_subscribe($$self, direction, (value) => $$invalidate(3, $direction = value));
+    let mobileExpanded = false;
+    const click_handler2 = /* @__PURE__ */ __name(() => $$invalidate(1, mobileExpanded = !mobileExpanded), "click_handler");
+    function div1_binding($$value) {
       binding_callbacks[$$value ? "unshift" : "push"](() => {
         elem = $$value;
         $$invalidate(0, elem);
       });
     }
-    __name(div_binding, "div_binding");
+    __name(div1_binding, "div1_binding");
     $$self.$$set = ($$props2) => {
-      if ("globalSettings" in $$props2) $$invalidate(5, globalSettings = $$props2.globalSettings);
+      if ("globalSettings" in $$props2) $$invalidate(6, globalSettings = $$props2.globalSettings);
     };
     return [
       elem,
+      mobileExpanded,
       $position,
       $direction,
       position,
       direction,
       globalSettings,
       element2,
-      div_binding
+      click_handler2,
+      div1_binding
     ];
   }
   __name(instance$12, "instance$12");
   const _Controls = class _Controls extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$12, create_fragment$1b, safe_not_equal, { globalSettings: 5, element: 6 });
+      init(this, options, instance$12, create_fragment$1b, safe_not_equal, { globalSettings: 6, element: 7 });
     }
     get element() {
-      return this.$$.ctx[6];
+      return this.$$.ctx[7];
     }
   };
   __name(_Controls, "Controls");
@@ -13367,7 +13404,7 @@
     return {
       c() {
         div = element("div");
-        attr(div, "class", "typo-customizer-actions svelte-10me7lg");
+        attr(div, "class", "typo-customizer-actions svelte-2foe7d");
       },
       m(target, anchor) {
         insert(target, div, anchor);
@@ -13529,7 +13566,7 @@
         t = text(t_value);
         attr(h2, "tabindex", "0");
         attr(h2, "role", "button");
-        attr(h2, "class", "svelte-12u7yxy");
+        attr(h2, "class", "svelte-14yq9xv");
         toggle_class(
           h2,
           "inactive",
@@ -13583,7 +13620,7 @@
       c() {
         div = element("div");
         attr(div, "class", div_class_value = "typo-panel-tab color-scrollbar panel-tab-" + /*tab*/
-        ctx[4].id + " svelte-12u7yxy");
+        ctx[4].id + " svelte-14yq9xv");
         div.hidden = div_hidden_value = /*tab*/
         ctx[4] !== /*activeTab*/
         ctx[1];
@@ -13594,7 +13631,7 @@
       p(ctx2, dirty) {
         if (dirty & /*tabs*/
         1 && div_class_value !== (div_class_value = "typo-panel-tab color-scrollbar panel-tab-" + /*tab*/
-        ctx2[4].id + " svelte-12u7yxy")) {
+        ctx2[4].id + " svelte-14yq9xv")) {
           attr(div, "class", div_class_value);
         }
         if (dirty & /*tabs, activeTab*/
@@ -13643,7 +13680,7 @@
           each_blocks[i].c();
         }
         each1_anchor = empty();
-        attr(div, "class", "panel-header svelte-12u7yxy");
+        attr(div, "class", "panel-header svelte-14yq9xv");
       },
       m(target, anchor) {
         insert(target, div, anchor);
@@ -25662,7 +25699,7 @@
         t6 = space();
         div5 = element("div");
         if (switch_instance) create_component(switch_instance.$$.fragment);
-        attr(div0, "class", "backdrop svelte-1rg8obs");
+        attr(div0, "class", "backdrop svelte-lwvpkp");
         attr(div0, "role", "presentation");
         toggle_class(
           div0,
@@ -25670,7 +25707,7 @@
           /*closing*/
           ctx[2]
         );
-        attr(div1, "class", "content-top svelte-1rg8obs");
+        attr(div1, "class", "content-top svelte-lwvpkp");
         attr(div1, "role", "presentation");
         toggle_class(
           div1,
@@ -25678,19 +25715,19 @@
           /*closing*/
           ctx[2]
         );
-        attr(div2, "class", "svelte-1rg8obs");
+        attr(div2, "class", "svelte-lwvpkp");
         attr(div3, "role", "button");
         attr(div3, "tabindex", "0");
-        attr(div3, "class", "svelte-1rg8obs");
+        attr(div3, "class", "svelte-lwvpkp");
         toggle_class(
           div3,
           "closing",
           /*closing*/
           ctx[2]
         );
-        attr(div4, "class", "content-title svelte-1rg8obs");
-        attr(div5, "class", "content-wrapper color-scrollbar svelte-1rg8obs");
-        attr(div6, "class", "content typo-modal svelte-1rg8obs");
+        attr(div4, "class", "content-title svelte-lwvpkp");
+        attr(div5, "class", "content-wrapper color-scrollbar svelte-lwvpkp");
+        attr(div6, "class", "content typo-modal svelte-lwvpkp");
         toggle_class(
           div6,
           "closing",
@@ -25943,26 +25980,26 @@
         t4 = space();
         div3 = element("div");
         if (switch_instance) create_component(switch_instance.$$.fragment);
-        attr(div0, "class", "svelte-1prt0rp");
+        attr(div0, "class", "svelte-1n76u56");
         attr(div1, "role", "button");
         attr(div1, "tabindex", "0");
-        attr(div1, "class", "svelte-1prt0rp");
+        attr(div1, "class", "svelte-1n76u56");
         toggle_class(
           div1,
           "closing",
           /*closing*/
           ctx[2]
         );
-        attr(div2, "class", "content-title svelte-1prt0rp");
-        attr(div3, "class", "content-wrapper color-scrollbar svelte-1prt0rp");
-        attr(div4, "class", "content typo-modal svelte-1prt0rp");
+        attr(div2, "class", "content-title svelte-1n76u56");
+        attr(div3, "class", "content-wrapper color-scrollbar svelte-1n76u56");
+        attr(div4, "class", "content typo-modal svelte-1n76u56");
         toggle_class(
           div4,
           "closing",
           /*closing*/
           ctx[2]
         );
-        attr(div5, "class", "backdrop svelte-1prt0rp");
+        attr(div5, "class", "backdrop svelte-1n76u56");
         attr(div5, "role", "presentation");
         toggle_class(
           div5,
@@ -27741,15 +27778,4800 @@
     injectable(),
     __decorateParam$6(0, inject(loggerFactory))
   ], FeaturesService);
+  const themeColors = Object.freeze({
+    "--COLOR_PANEL_BG": [226, 85, 32, 0.75],
+    "--COLOR_PANEL_LO": [226, 90, 27, 0.75],
+    "--COLOR_PANEL_BUTTON": [226, 67, 49],
+    "--COLOR_PANEL_BUTTON_HOVER": [226, 73, 43],
+    "--COLOR_PANEL_BUTTON_ACTIVE": [226, 72, 41],
+    "--COLOR_PANEL_HI": [226, 80, 44],
+    "--COLOR_PANEL_FOCUS": [32, 85, 56],
+    "--COLOR_PANEL_BORDER": [232, 85, 11],
+    "--COLOR_PANEL_BORDER_FOCUS": [207, 98, 66],
+    "--COLOR_PANEL_TEXT": [0, 0, 94],
+    "--COLOR_PANEL_TEXT_FOCUS": [0, 0, 100],
+    "--COLOR_PANEL_TEXT_PLACEHOLDER": [0, 0, 61],
+    "--COLOR_TOOL_BASE": [0, 0, 100],
+    "--COLOR_TOOL_HOVER": [0, 0, 77],
+    "--COLOR_TOOL_TEXT": [0, 0, 0],
+    "--COLOR_TOOL_SIZE_BASE": [0, 0, 100],
+    "--COLOR_TOOL_SIZE_HOVER": [0, 0, 77],
+    "--COLOR_TOOL_ACTIVE": [271, 77, 66],
+    "--COLOR_TOOL_SIZE_ACTIVE": [271, 77, 66],
+    "--COLOR_INPUT_BG": [0, 0, 100],
+    "--COLOR_INPUT_HOVER": [0, 0, 100],
+    "--COLOR_INPUT_TEXT": [0, 0, 17],
+    "--COLOR_INPUT_BORDER": [0, 0, 44],
+    "--COLOR_INPUT_BORDER_FOCUS": [207, 98, 66],
+    "--COLOR_PLAYER_TEXT_BASE": [0, 0, 0],
+    "--COLOR_PLAYER_ME": [214, 100, 64],
+    "--COLOR_PLAYER_ME_GUESSED": [216, 100, 35],
+    "--COLOR_PLAYER_BG_BASE": [0, 0, 100],
+    "--COLOR_PLAYER_BG_ALT": [0, 0, 93],
+    "--COLOR_PLAYER_BG_GUESSED_BASE": [113, 68, 58],
+    "--COLOR_PLAYER_BG_GUESSED_ALT": [113, 57, 50],
+    "--COLOR_TOOL_TIP_BG": [226, 100, 64],
+    "--COLOR_GAMEBAR_TEXT": [0, 0, 0],
+    "--COLOR_GAMEBAR_ROUND_TEXT": [0, 0, 0],
+    "--COLOR_GAMEBAR_WORD_DESCRIPTION": [0, 0, 21],
+    "--COLOR_TEXT_CANVAS_TRANSPARENT": [0, 0, 25],
+    "--COLOR_CHAT_TEXT_BASE": [0, 0, 0],
+    "--COLOR_CHAT_TEXT_GUESSED": [103, 68, 48],
+    "--COLOR_CHAT_TEXT_CLOSE": [54, 100, 44],
+    "--COLOR_CHAT_TEXT_DRAWING": [216, 60, 52],
+    "--COLOR_CHAT_TEXT_JOIN": [103, 68, 48],
+    "--COLOR_CHAT_TEXT_LEAVE": [21, 91, 42],
+    "--COLOR_CHAT_TEXT_OWNER": [32, 100, 63],
+    "--COLOR_CHAT_TEXT_GUESSCHAT": [86, 47, 46],
+    "--COLOR_CHAT_BG_BASE": [0, 0, 100],
+    "--COLOR_CHAT_BG_ALT": [0, 0, 93],
+    "--COLOR_CHAT_SCROLLBAR": [0, 0, 49],
+    "--COLOR_CHAT_SCROLLBAR_THUMB": [0, 0, 78],
+    "--COLOR_CHAT_BG_GUESSED_BASE": [105, 100, 94],
+    "--COLOR_CHAT_BG_GUESSED_ALT": [104, 100, 87],
+    "--COLOR_CHAT_INPUT_COUNT": [0, 0, 0],
+    "--COLOR_BUTTON_DANGER_BG": [44, 81, 51],
+    "--COLOR_BUTTON_SUBMIT_BG": [110, 75, 55],
+    "--COLOR_BUTTON_NORMAL_BG": [208, 80, 54],
+    "--COLOR_BUTTON_DANGER_TEXT": [0, 0, 100],
+    "--COLOR_BUTTON_SUBMIT_TEXT": [0, 0, 100],
+    "--COLOR_BUTTON_NORMAL_TEXT": [0, 0, 100]
+  });
+  const createEmptyTheme = /* @__PURE__ */ __name((author, name, id2) => {
+    const date = /* @__PURE__ */ new Date();
+    const theme = {
+      meta: {
+        author,
+        created: date.getTime(),
+        id: id2 === void 0 ? date.getTime() : id2,
+        name: name ?? `Untitled Theme ${date.getTime()}`,
+        type: "theme"
+      },
+      colors: structuredClone(themeColors),
+      hooks: {},
+      images: {},
+      misc: {}
+    };
+    return theme;
+  }, "createEmptyTheme");
+  function convertOldTheme(options, theme) {
+    theme.images.urlLogo = options.urlLogo;
+    theme.images.urlBackground = options.urlBackground;
+    theme.images.urlBackgroundGame = options.urlBackgroundGame;
+    theme.misc.fontStyle = options.fontStyle;
+    theme.misc.htmlText = options.injection;
+    let css2 = "";
+    if (options["containerBackgroundsCheck"] == true) {
+      const val = options["containerBackgrounds"] ? options["containerBackgrounds"].trim() : "";
+      css2 += ":root {--COLOR_PANEL_BUTTON: " + (val != "" ? val : "transparent") + " !important}";
+      css2 += "#setting-bar .content, #emojiPrev, #imageAgent, #home .news ::-webkit-scrollbar, #home .news ::-webkit-scrollbar-thumb, .modalContainer, .toast, #modal .box, #home .panel, #home .bottom .footer {background-color: " + (val != "" ? val : "transparent") + " !important}";
+      css2 += "#home .bottom svg {fill: " + (val != "" ? val : "transparent") + " !important}";
+    }
+    if (options["containerBackgroundsCheck"] == true && options["ingameContainerBackgroundsCheck"] !== false) {
+      options["ingameContainerBackgrounds"] = options["containerBackgrounds"];
+      options["ingameContainerBackgroundsCheck"] = true;
+    }
+    if (options["ingameContainerBackgroundsCheck"] == true) {
+      const val = options["ingameContainerBackgrounds"] ? options["ingameContainerBackgrounds"].trim() : "";
+      css2 += "#game-bar, .clickable,  #game-room .settings, #game-room .players,   .tooltip .tooltip-content, #imageAgent, #gamemodePopup, #optionsPopup, #downloadPopup, #sharePopup, #typoUserInfo, #imageOptions, div#game-toolbar.typomod div.tools-container div.tools div.tool, #game-toolbar divdiv.preview div.graphic-container, #game-room .container-settings, #game-chat .container, #game-players .players-list .player, #game-players .players-list .player.odd {background-color: " + (val != "" ? val : "transparent") + " !important}";
+      css2 += "#game-players .players-list .player.odd{background-image: linear-gradient(0, " + (val != "" ? val : "transparent") + ", " + (val != "" ? val : "transparent") + ");}";
+      css2 += "#game-chat .chat-content {background:none}";
+      css2 += ":root{ --COLOR_TOOL_TIP_BG: " + val + " !important; --COLOR_CHAT_BG_BASE: " + val + " !important; } ";
+      css2 += "#game-players div.list div.player div.bubble div.arrow{border-right-color:" + val + "} #game-players div.list div.player div.bubble div.content{background-color:" + val + "}";
+      css2 += "#game-chat .chat-content p:nth-child(even), #game-chat .chat-content p.guessed:nth-child(even) {background-color: #ffffff20;} #game-chat .chat-content p.guessed:nth-child(odd){background-color:transparent}";
+    }
+    if (options["containerOutlinesCheck"] == true) {
+      const val = options["containerOutlines"] ? options["containerOutlines"].trim() : "";
+      css2 += "#game-bar,  #game-room .settings, #game-room .players,   #imageAgent, #modal .box, #home .panel, .modalContainer, #game-chat, #game-players .players-list .player, #imageOptions {border-radius: 4px; border: 2px solid " + (val != "" ? val : "transparent") + " !important}";
+    }
+    if (options["containerImages"] && options["containerImages"].trim() != "") {
+      css2 += "#game-bar, #game-room .settings, #game-room .players,  #imageAgent, #gamemodePopup, #optionsPopup, #downloadPopup, #sharePopup, #typoUserInfo, #imageOptions, #game-room .container-settings, #game-chat, #game-players .players-list  {background-image: url(" + options["containerImages"].trim() + ") !important}";
+      css2 += "#game-players .players-list {background:none !important}";
+    }
+    const color = options["fontColor"] ? options["fontColor"] : "";
+    if (color && color != "") {
+      css2 += "#home .bottom .footer .notice, *:not(.chat-content *), .characters {color:" + color.trim() + " !important}";
+      css2 += "input[type=checkbox].flatUI, #game-chat form input, input[type=text].flatUI, #home .bottom .footer .section-container .section{color:unset}";
+    }
+    if (!options["ingameFontColor"] && options["fontColor"]) {
+      options["ingameFontColor"] = options["fontColor"];
+    }
+    const ingamecolor = options["ingameFontColor"] ? options["ingameFontColor"] : "";
+    if (ingamecolor && ingamecolor != "") {
+      css2 += ":root{ --COLOR_CHAT_TEXT_BASE:" + ingamecolor.trim() + " !important}";
+      css2 += "#game *:not(.chat-content *) {color:" + ingamecolor.trim() + "}";
+      css2 += "div#game-toolbar.typomod div.tools-container div.tools div.tool div.key, #game-word .description, #game-round .round-max, #game-round span, #game-players .player-amount b:nth-child(4), #game-players .player-amount span {color:" + ingamecolor.trim() + "; filter: brightness(0.8);}";
+    }
+    const colorBtns = options["fontColorButtons"] ? options["fontColorButtons"] : "";
+    if (colorBtns && colorBtns != "") css2 += "select, input, button, textarea {color:" + colorBtns.trim() + "}";
+    if (ingamecolor || color || colorBtns) css2 += "#game-clock{color:black !important}";
+    if (options["inputBackgroundsCheck"] == true) {
+      const val = options["inputBackgrounds"] ? options["inputBackgrounds"].trim() : "";
+      css2 += "input[type=checkbox], input[type=checkbox].flatUI,#modal .container .box .content .container-rooms .room, button.flatUI.green,button.flatUI.orange, button.flatUI.blue, button.flatUI, input[type=text].flatUI, .link .input-container .link-overlay, input, textarea, button, select, #quickreact > span {background: " + (val != "" ? val : "transparent") + " !important; box-shadow:none !important;} ";
+      css2 += "button:is(.flatUI, .flatUI.green, .flatUI.orange, .flatUI.blue):is(:hover, :active, :focus), input:is(:hover, :active, :focus), textarea:is(:hover, :active, :focus), button:is(:hover, :active, :focus), select:is(:hover, :active, :focus) {background: " + (val != "" ? val : "transparent") + " !important; opacity: 0.75}";
+      css2 += ":is(#game-room .container-settings .group.customwords .checkbox, .report-menu) input[type=checkbox]:checked:after { content: '🞬'; height:100%; width: 100%; display: grid; place-content: center;}";
+    }
+    if (options["inputOutlinesCheck"] == true) {
+      const val = options["inputOutlines"] ? options["inputOutlines"].trim() : "";
+      css2 += ".link .input-container .link-overlay {display:none !important} input[type=checkbox]{border:none !important;} input, textarea, button, select {border: 2px solid " + (val != "" ? val : "transparent") + " !important; }";
+    }
+    if (options["hideFooter"] == true) {
+      css2 += ".tos, .notice {display:none}";
+    }
+    if (options["hideTypoInfo"] == true) {
+      css2 += "#typoUserInfo {display:none !important}";
+    }
+    if (options["hideDiscord"] == true) {
+      css2 += "#home .socials {opacity:0}";
+    }
+    if (options["hideInGameLogo"] == true) {
+      css2 += "#game #game-logo{display:none} #game{margin-top:2em}";
+    }
+    if (options["hideAvatarLogo"] == true) {
+      css2 += "#home .logo-big .avatar-container {display:none }";
+    }
+    if (options["hideTypoPanels"] == true) {
+      css2 += "#panelgrid .panel:is(:first-child, :last-child) {display:none } #panelgrid{grid-template-columns: 100% !important}";
+    }
+    if (options["hideAvatarSprites"] == true) {
+      css2 += ".avatar-customizer .spriteSlot{display:none }";
+      css2 += ".avatar-customizer {background-image: unset !important }";
+      css2 += ".avatar-customizer .color, .avatar-customizer .mouth, .avatar-customizer .eyes {opacity: 1 !important}";
+    }
+    theme.misc.cssText = css2;
+  }
+  __name(convertOldTheme, "convertOldTheme");
   var __defProp$Q = Object.defineProperty;
+  var __getOwnPropDesc$8 = Object.getOwnPropertyDescriptor;
   var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$8(target, key) : target;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = (kind ? decorator(target, key, result) : decorator(result)) || result;
+    if (kind && result) __defProp$Q(target, key, result);
+    return result;
+  }, "__decorateClass$Q");
+  var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$5");
+  let ThemesService = (_ua = class {
+    constructor(loggerFactory2, _elementsSetup, _apiService) {
+      __publicField(this, "_logger");
+      __publicField(this, "_originalTheme", createEmptyTheme("Mel", "Original Skribbl", 0));
+      __publicField(this, "_activeThemeSetting", new ExtensionSetting("active_theme_local_id", void 0));
+      __publicField(this, "_savedThemesSetting", new ExtensionSetting("saved_themes", [{
+        theme: this._originalTheme,
+        savedAt: Date.now(),
+        enableManage: false
+      }]));
+      __publicField(this, "_loadedEditorTheme$", new BehaviorSubject(void 0));
+      this._elementsSetup = _elementsSetup;
+      this._apiService = _apiService;
+      this._logger = loggerFactory2(this);
+    }
+    get activeThemeSetting() {
+      return this._activeThemeSetting.asFrozen;
+    }
+    get savedThemesSetting() {
+      return this._savedThemesSetting.asFrozen;
+    }
+    get loadedEditorTheme$() {
+      return this._loadedEditorTheme$.asObservable();
+    }
+    get loadedEditorThemeStore() {
+      return fromObservable(this._loadedEditorTheme$, this._loadedEditorTheme$.value);
+    }
+    /**
+     * Load a theme to the editor; might receive changes via updateLoadedEditorTheme without saving later
+     * @param theme
+     */
+    async loadThemeToEditor(theme) {
+      this._logger.info("Loading theme to editor", theme);
+      const themes = await this._savedThemesSetting.getValue();
+      const existingTheme = themes.find((t) => t.theme.meta.id === theme.theme.meta.id);
+      if (existingTheme === void 0) {
+        this._logger.error("Theme not found", theme);
+        throw new Error("Theme not found");
+      }
+      this._loadedEditorTheme$.next(structuredClone(theme));
+    }
+    /**
+     * Update the loaded theme in the editor
+     * @param theme
+     */
+    updateLoadedEditorTheme(theme) {
+      var _a2;
+      this._logger.debug("Updating loaded theme", theme);
+      if (((_a2 = this._loadedEditorTheme$.value) == null ? void 0 : _a2.theme.meta.id) !== theme.theme.meta.id) {
+        this._logger.error("Theme not loaded or different theme loaded", theme);
+        throw new Error("Theme not loaded or different theme loaded");
+      }
+      this._loadedEditorTheme$.next(structuredClone(theme));
+    }
+    /**
+     * Unload a theme from the editor
+     */
+    async unloadThemeFromEditor() {
+      this._logger.info("Unloading theme from editor");
+      this._loadedEditorTheme$.next(void 0);
+    }
+    /**
+     * Create an empty new local theme and sore it
+     */
+    async createLocalTheme() {
+      this._logger.info("Creating new theme");
+      const elements2 = await this._elementsSetup.complete();
+      const username = elements2.inputName.value.length > 0 ? elements2.inputName.value : "User";
+      const theme = createEmptyTheme(username, "Untitled Theme");
+      const themes = await this._savedThemesSetting.getValue();
+      const newTheme = {
+        theme,
+        savedAt: Date.now(),
+        enableManage: true
+      };
+      await this._savedThemesSetting.setValue([newTheme, ...themes]);
+      return newTheme;
+    }
+    /**
+     * Save the state of the loaded theme in the editor to the original local theme and unload theme from editor
+     */
+    async saveLoadedEditorTheme() {
+      this._logger.info("Updating local theme and unloading from editor");
+      const editorTheme = this._loadedEditorTheme$.value;
+      const themes = await this._savedThemesSetting.getValue();
+      const savedTheme = themes.find((t) => t.theme.meta.id === (editorTheme == null ? void 0 : editorTheme.theme.meta.id));
+      if (editorTheme === void 0 || savedTheme === void 0) {
+        this._logger.error("Theme to update not found", editorTheme);
+        throw new Error("Theme to update not found");
+      }
+      savedTheme.theme = editorTheme.theme;
+      savedTheme.savedAt = Date.now();
+      await this._savedThemesSetting.setValue([savedTheme, ...themes.filter((t) => t.theme.meta.id !== savedTheme.theme.meta.id)]);
+      this._loadedEditorTheme$.next(void 0);
+      await this._activeThemeSetting.setValue(savedTheme.theme.meta.id);
+      return savedTheme;
+    }
+    async importOldTheme(options, name) {
+      this._logger.info("Importing old theme", options);
+      const theme = createEmptyTheme("Unknown", name);
+      convertOldTheme(options, theme);
+      const themes = await this._savedThemesSetting.getValue();
+      const existingTheme = themes.find((t) => t.theme.meta.id === theme.meta.id);
+      if (existingTheme !== void 0) {
+        this._logger.warn("Theme already exists, assigning new ID", theme);
+        theme.meta.id = Date.now();
+      }
+      const savedTheme = {
+        theme,
+        savedAt: Date.now(),
+        publicTheme: void 0,
+        enableManage: true
+      };
+      await this._savedThemesSetting.setValue([savedTheme, ...themes]);
+      return savedTheme;
+    }
+    async importThemeFromString(themeString) {
+      const theme = JSON.parse(themeString);
+      if (typeof theme !== "object" || theme === null) {
+        throw new Error("Invalid theme data");
+      }
+      const savedTheme = {
+        theme,
+        savedAt: Date.now(),
+        publicTheme: void 0,
+        enableManage: true
+      };
+      const themes = await this._savedThemesSetting.getValue();
+      const existingTheme = themes.find((t) => t.theme.meta.id === theme.meta.id);
+      if (existingTheme !== void 0) {
+        this._logger.warn("Theme already exists, assigning new ID", theme);
+        theme.meta.id = Date.now();
+      }
+      await this._savedThemesSetting.setValue([savedTheme, ...themes]);
+      return savedTheme;
+    }
+    /**
+     * Download a featured theme and save to local themes
+     * @param theme
+     */
+    async savePublicTheme(theme) {
+      this._logger.info("Saving public theme", theme);
+      const themeData = await this._apiService.getApi(ThemesApi).useThemeById({ id: theme.id });
+      const saveData = {
+        theme: themeData,
+        savedAt: Date.now(),
+        publicTheme: {
+          publicId: theme.id,
+          localVersion: theme.version
+        },
+        enableManage: false
+      };
+      let currentThemes = await this._savedThemesSetting.getValue();
+      const existingTheme = currentThemes.find((t) => t.theme.meta.id === themeData.meta.id);
+      if (existingTheme !== void 0) {
+        this._logger.warn("Theme already saved", theme);
+        return existingTheme;
+      }
+      currentThemes = [saveData, ...currentThemes];
+      await this._savedThemesSetting.setValue(currentThemes);
+      return saveData;
+    }
+    /**
+     * Activate a local theme
+     */
+    async activateLocalTheme(id2) {
+      this._logger.info("Activating local theme", id2);
+      const themes = await this._savedThemesSetting.getValue();
+      const existingTheme = themes.find((t) => t.theme.meta.id === id2);
+      if (existingTheme === void 0) {
+        this._logger.warn("Local Theme not found", id2);
+        throw new Error("Local Theme not found");
+      }
+      this._loadedEditorTheme$.next(void 0);
+      await this._activeThemeSetting.setValue(existingTheme.theme.meta.id);
+      return existingTheme;
+    }
+    /**
+     * Activate a saved public theme
+     */
+    async activatePublicTheme(theme) {
+      this._logger.debug("Getting saved theme of public listing", theme);
+      const themes = await this._savedThemesSetting.getValue();
+      const existingTheme = themes.find((t) => {
+        var _a2;
+        return ((_a2 = t.publicTheme) == null ? void 0 : _a2.publicId) === theme.id;
+      });
+      if (existingTheme === void 0) {
+        this._logger.error("Theme not found", theme);
+        throw new Error("Theme not found");
+      }
+      this._loadedEditorTheme$.next(void 0);
+      await this._activeThemeSetting.setValue(existingTheme.theme.meta.id);
+      return existingTheme;
+    }
+    /**
+     * Removed a saved theme, no matter if local or public
+     * @param localId
+     */
+    async removeSavedTheme(localId) {
+      var _a2;
+      this._logger.info("Removing saved theme", localId);
+      const themes = await this._savedThemesSetting.getValue();
+      const theme = themes.find((t) => t.theme.meta.id === localId);
+      if (theme === void 0) {
+        this._logger.error("Theme not found", localId);
+        throw new Error("Theme not found");
+      }
+      const filtered = themes.filter((t) => t.theme.meta.id !== localId);
+      await this._savedThemesSetting.setValue(filtered);
+      if (((_a2 = this._loadedEditorTheme$.value) == null ? void 0 : _a2.theme.meta.id) === localId) {
+        this._loadedEditorTheme$.next(void 0);
+      }
+      return theme;
+    }
+    /**
+     * Share a theme by uploading it, creating a share id and copying it to clipboard
+     * @param theme
+     */
+    async shareTheme(theme) {
+      this._logger.debug("Sharing theme", theme);
+      const response = await this._apiService.getApi(ThemesApi).shareTheme({ themeDto: theme });
+      const shareId = response.id;
+      this._logger.info("created theme share id:", response.id);
+      return shareId;
+    }
+    /**
+     * Import a theme by share id
+     * @param shareId
+     */
+    async importTheme(shareId) {
+      this._logger.debug("Importing theme", shareId);
+      const theme = await this._apiService.getApi(ThemesApi).getThemeById({ id: shareId });
+      this._logger.info("Loaded theme", theme);
+      const themes = await this._savedThemesSetting.getValue();
+      const existingTheme = themes.find((t) => t.theme.meta.id === theme.meta.id);
+      if (existingTheme !== void 0) {
+        this._logger.warn("Theme already exists, assigning new ID", theme);
+        theme.meta.id = Date.now();
+      }
+      const savedTheme = {
+        theme,
+        savedAt: Date.now(),
+        publicTheme: void 0,
+        enableManage: true
+      };
+      await this._savedThemesSetting.setValue([savedTheme, ...themes]);
+      return savedTheme;
+    }
+  }, __name(_ua, "ThemesService"), _ua);
+  ThemesService = __decorateClass$Q([
+    injectable(),
+    __decorateParam$5(0, inject(loggerFactory)),
+    __decorateParam$5(1, inject(ElementsSetup)),
+    __decorateParam$5(2, inject(ApiService))
+  ], ThemesService);
+  const getCssVariableSelectorHooks = /* @__PURE__ */ __name((cssText, colorVariables) => {
+    var _a2;
+    const parser = new DOMParser();
+    const css2 = parser.parseFromString(`<style>${cssText}</style>`, "text/html").querySelector("style");
+    const rules = (_a2 = css2 == null ? void 0 : css2.sheet) == null ? void 0 : _a2.cssRules;
+    if (rules === null || rules === void 0) {
+      throw new Error("Failed to parse css rules");
+    }
+    const variableSelectors = {};
+    colorVariables.forEach((colorVariable) => {
+      variableSelectors[colorVariable] = [];
+    });
+    for (const rule of rules) {
+      if (rule instanceof CSSStyleRule) {
+        for (const propertyName in rule.style) {
+          const propertyValue = rule.style.getPropertyValue(propertyName);
+          colorVariables.forEach((colorVariable) => {
+            if (propertyValue.includes(`var(${colorVariable}`)) {
+              variableSelectors[colorVariable].push(rule.selectorText);
+            }
+          });
+        }
+      }
+    }
+    return variableSelectors;
+  }, "getCssVariableSelectorHooks");
+  var __defProp$P = Object.defineProperty;
+  var __getOwnPropDesc$7 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$7(target, key) : target;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = (kind ? decorator(target, key, result) : decorator(result)) || result;
+    if (kind && result) __defProp$P(target, key, result);
+    return result;
+  }, "__decorateClass$P");
+  let CssColorVarSelectorsSetup = (_va = class extends Setup {
+    async runSetup() {
+      const css2 = await (await fetch("/css/style.css")).text();
+      return getCssVariableSelectorHooks(css2, Object.keys(themeColors));
+    }
+  }, __name(_va, "CssColorVarSelectorsSetup"), _va);
+  CssColorVarSelectorsSetup = __decorateClass$P([
+    earlySetup()
+  ], CssColorVarSelectorsSetup);
+  const generateColorScheme = /* @__PURE__ */ __name((mainColor, textColor, useIngame, useInputs, invertInputText) => {
+    const theme = structuredClone(themeColors);
+    const mainHueBase = 226;
+    const mainSatBase = 85;
+    const mainLigBase = 32;
+    const mainOpBase = 0.75;
+    if (mainColor) {
+      const mainHsl = mainColor.hsl;
+      const mainHue = mainHsl[0];
+      const mainSat = mainHsl[1];
+      const mainLig = mainHsl[2];
+      const mains = [
+        "--COLOR_PANEL_BG",
+        "--COLOR_PANEL_LO",
+        "--COLOR_PANEL_BUTTON",
+        "--COLOR_PANEL_BUTTON_HOVER",
+        "--COLOR_PANEL_BUTTON_ACTIVE",
+        "--COLOR_PANEL_HI",
+        "--COLOR_PANEL_FOCUS",
+        "--COLOR_PANEL_BORDER",
+        "--COLOR_TOOL_TIP_BG"
+      ];
+      mains.forEach((k) => theme[k][0] = (theme[k][0] - mainHueBase + mainHue) % 360);
+      mains.forEach((k) => theme[k][1] = theme[k][1] * (mainSat / 100));
+      mains.forEach((k) => theme[k][2] = theme[k][2] * (mainLig / 100));
+      theme["--COLOR_CHAT_SCROLLBAR"] = [...theme["--COLOR_PANEL_LO"]];
+      theme["--COLOR_CHAT_SCROLLBAR_THUMB"] = [...theme["--COLOR_PANEL_HI"]];
+      if (useIngame) {
+        const themeSat = mainSatBase * (mainSat / 100);
+        const themeLight = mainLigBase * (mainLig / 100);
+        theme["--COLOR_CHAT_BG_BASE"] = [mainHue, themeSat, themeLight, mainOpBase];
+        theme["--COLOR_CHAT_BG_ALT"] = [mainHue, themeSat, themeLight - 7, mainOpBase];
+        theme["--COLOR_PLAYER_BG_BASE"] = [mainHue, themeSat, themeLight, mainOpBase];
+        theme["--COLOR_PLAYER_BG_ALT"] = [mainHue, themeSat, themeLight - 7, mainOpBase];
+      }
+      if (useInputs) {
+        theme["--COLOR_INPUT_BORDER"] = [mainHue, mainSatBase, 75 * (mainLigBase / 100), 0.4];
+        theme["--COLOR_INPUT_BORDER_FOCUS"] = [mainHue, mainSatBase, 85 * (mainLigBase / 100), 0.4];
+        theme["--COLOR_INPUT_BG"] = [mainHue, mainSatBase, 80 * (mainLigBase / 100), 0.3];
+        theme["--COLOR_INPUT_HOVER"] = [mainHue, mainSatBase, 90 * (mainLigBase / 100), 0.3];
+      }
+    }
+    if (textColor) {
+      const textHsl = textColor.hsl;
+      const texts = [
+        /* if ingame generation enabled */
+        ...useIngame ? [
+          "--COLOR_GAMEBAR_TEXT",
+          "--COLOR_GAMEBAR_ROUND_TEXT",
+          "--COLOR_PLAYER_TEXT_BASE",
+          "--COLOR_CHAT_TEXT_BASE"
+        ] : [],
+        /* if input generation enabled */
+        ...useInputs ? [
+          "--COLOR_INPUT_TEXT"
+        ] : [],
+        "--COLOR_PANEL_TEXT"
+      ];
+      texts.forEach((k) => theme[k] = [textHsl[0], textHsl[1], textHsl[2], ...textHsl[3] ? [textHsl[3]] : []]);
+      if (useInputs) theme["--COLOR_PANEL_TEXT_PLACEHOLDER"] = [textHsl[0], textHsl[1], textHsl[2] - 50];
+      if (useIngame) theme["--COLOR_GAMEBAR_WORD_DESCRIPTION"] = [textHsl[0], textHsl[1], textHsl[2], 0.7];
+      if (invertInputText) theme["--COLOR_INPUT_TEXT"][2] = 100 - theme["--COLOR_INPUT_TEXT"][2];
+    }
+    return theme;
+  }, "generateColorScheme");
+  const generateThemeBackgroundElement = /* @__PURE__ */ __name((theme) => {
+    return createElement(`<div id='typo-theme-background-${theme.meta.id}' class="typo-theme-background"></div>`);
+  }, "generateThemeBackgroundElement");
+  const stringHasContent = /* @__PURE__ */ __name((str) => {
+    return str !== void 0 && str.trim().length > 0;
+  }, "stringHasContent");
+  const generateStyleElementForTheme = /* @__PURE__ */ __name((theme, selectorHooks) => {
+    const colorsCss = Object.entries(theme.colors).map((entry) => {
+      const value = entry[1];
+      const colorString = value.length == 3 ? `hsl(${value[0]}, ${value[1]}%, ${value[2]}%)` : `hsla(${value[0]}, ${value[1]}%, ${value[2]}%, ${value[3]})`;
+      return `${entry[0]}: ${colorString};`;
+    }).join("\n");
+    const style2 = document.createElement("STYLE");
+    style2.id = `typo-theme-style-${theme.meta.id}`;
+    style2.innerHTML = `
+        :root {${colorsCss}}
+        body {
+            background: none;
+        }
+        .typo-theme-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: ${theme.images.backgroundTint ?? ""};
+            z-index: -10;
+            pointer-events: none;
+            filter: brightness(${!stringHasContent(theme.images.urlBackground) && (theme.images.backgroundTint ?? "transparent") !== "transparent" ? 4 : 1});
+        }
+        .typo-theme-background::after {
+            image-rendering: unset;
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-position: center;
+            background-image: url(${stringHasContent(theme.images.urlBackground) ? theme.images.urlBackground : "/img/background.png"});
+            background-repeat: ${!stringHasContent(theme.images.urlBackground) || theme.images.backgroundRepeat ? "repeat" : "no-repeat"};
+            background-size: ${!stringHasContent(theme.images.urlBackground) ? "350px" : theme.images.backgroundRepeat ? "auto" : "cover"};
+            mix-blend-mode: ${theme.images.backgroundTint == "transparent" || !stringHasContent(theme.images.backgroundTint) ? "none" : "multiply"};
+            filter: ${theme.images.backgroundTint == "transparent" || !stringHasContent(theme.images.backgroundTint) ? "none" : "saturate(0%)"};
+        }
+        body:has(#game[style*="display: flex"]) .typo-theme-background${stringHasContent(theme.images.urlBackgroundGame) ? "" : ".disabled"}::after {
+            background-image: url(${theme.images.urlBackgroundGame});
+        }
+
+        ${theme.misc.hideFooter ? ".tos, .notice {display:none}" : ""}
+        
+        ${theme.misc.hideInGameLogo ? "#game #game-logo{display:none} #game{margin-top:2em}" : ""}
+
+        ${theme.misc.hideAvatarLogo ? "#home .logo-big .avatar-container {display:none }" : ""}
+
+        ${theme.misc.hideSkribblPanels ? ".bottom .footer .section-container { display: none !important }" : ""}
+
+        ${stringHasContent(theme.images.containerImages) ? `
+        #game-bar, #game-room .settings, #game-room .players,  #imageAgent, #gamemodePopup, #optionsPopup, #downloadPopup, 
+        #sharePopup, #typoUserInfo, #imageOptions, #game-room .container-settings, #game-chat 
+        .chat-content, #game-players .players-list  {background-image: url(${theme.images.containerImages}) !important}
+        #game-players .players-list .player {background:none !important}
+        ` : ""}
+
+        .flatUi.orange, .button-orange {
+            background-color: var(--COLOR_BUTTON_DANGER_BG) !important;
+            color: var(--COLOR_BUTTON_DANGER_TEXT) !important;
+        }
+        .flatUI.green, .button-play, #start-game {
+            color: var(--COLOR_BUTTON_SUBMIT_TEXT) !important;
+            background-color: var(--COLOR_BUTTON_SUBMIT_BG) !important;
+        }
+        .flatUI.blue, .button-create, .button-blue, #copy-invite {
+            background-color: var(--COLOR_BUTTON_NORMAL_BG) !important;
+            color: var(--COLOR_BUTTON_NORMAL_TEXT) !important;
+        }
+
+        :is(.flatUi.orange, .button-orange):is(:hover, :active, :focus) {
+            background-color: var(--COLOR_BUTTON_DANGER_BG) !important;
+            color: var(--COLOR_BUTTON_DANGER_TEXT) !important;
+            opacity: 0.8;
+        }
+        :is(.flatUI.green, .button-play, #start-game):is(:hover, :active, :focus) {
+            color: var(--COLOR_BUTTON_SUBMIT_TEXT) !important;
+            background-color: var(--COLOR_BUTTON_SUBMIT_BG) !important;
+            opacity: 0.8;
+        }
+        :is(.flatUI.blue, .button-create, .button-blue, #copy-invite):is(:hover, :active, :focus) {
+            background-color: var(--COLOR_BUTTON_NORMAL_BG) !important;
+            color: var(--COLOR_BUTTON_NORMAL_TEXT) !important;
+            opacity: 0.8;
+        }
+
+        ${stringHasContent(theme.misc.fontStyle) ? `*{font-family:'${theme.misc.fontStyle.trim().split(":")[0].replaceAll("+", " ")}', sans-serif !important}` : ""}
+
+        ${stringHasContent(theme.images.urlLogo) ? `
+          div.logo-big a {display: flex; justify-content: center }
+          div.logo-big img, div#game-logo img {max-height:20vh; content: url(${theme.images.urlLogo}) }
+        ` : ""}
+
+        ${Object.entries(theme.hooks ? theme.hooks : {}).filter((entry) => entry[1] !== "").map((entry) => `${selectorHooks[entry[0]].join(",")}{${entry[1]}}`).join("\n")}
+
+        ::-webkit-scrollbar {
+            width: 14px;
+            border-radius: 7px;
+            background-color: var(--COLOR_PANEL_LO); 
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            border-radius: 7px;
+            background-color: var(--COLOR_PANEL_HI)
+        }
+
+        #game-chat ::-webkit-scrollbar {
+            width: 14px;
+            border-radius: 7px;
+            background-color: var(--COLOR_CHAT_SCROLLBAR); 
+        }
+        
+        #game-chat ::-webkit-scrollbar-thumb {
+            border-radius: 7px;
+            background-color: var(--COLOR_CHAT_SCROLLBAR_THUMB); 
+        }
+
+        ${theme.misc.cssText ?? ""}
+    
+        `;
+    return style2;
+  }, "generateStyleElementForTheme");
+  const generateThemeExternalCssElement = /* @__PURE__ */ __name((theme) => {
+    return theme.misc.themeCssUrl && theme.misc.themeCssUrl.length > 0 ? [
+      createElement(`<link id='typo-theme-external-css-${theme.meta.id}' rel="stylesheet" href="${theme.misc.themeCssUrl}">`)
+    ] : [];
+  }, "generateThemeExternalCssElement");
+  const generateThemeFontElements = /* @__PURE__ */ __name((theme) => {
+    var _a2;
+    return theme.misc.fontStyle && theme.misc.fontStyle.length > 0 ? [
+      createElement(`<link id='typo-theme-font-preconnect-${theme.meta.id}' rel="preconnect" href="https://fonts.gstatic.com">`),
+      createElement(`<link id='typo-theme-font-style-${theme.meta.id}' href="https://fonts.googleapis.com/css2?family=${(_a2 = theme.misc.fontStyle) == null ? void 0 : _a2.trim()}&display=swap" rel="stylesheet">`)
+    ] : [];
+  }, "generateThemeFontElements");
+  const generateThemeCustomHtmlElement = /* @__PURE__ */ __name((theme) => {
+    return theme.misc.htmlText && theme.misc.htmlText.length > 0 ? [
+      createElement(`<div id='typo-theme-html-${theme.meta.id}'>${theme.misc.htmlText}</div>`)
+    ] : [];
+  }, "generateThemeCustomHtmlElement");
+  function get_each_context$t(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[14] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context$t, "get_each_context$t");
+  function create_catch_block$3(ctx) {
+    return {
+      c: noop,
+      m: noop,
+      p: noop,
+      i: noop,
+      o: noop,
+      d: noop
+    };
+  }
+  __name(create_catch_block$3, "create_catch_block$3");
+  function create_then_block$3(ctx) {
+    let div;
+    let current;
+    let each_value = ensure_array_like(
+      /*themes*/
+      ctx[13]
+    );
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$t(get_each_context$t(ctx, each_value, i));
+    }
+    const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+      each_blocks[i] = null;
+    }), "out");
+    return {
+      c() {
+        div = element("div");
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        attr(div, "class", "typo-themes-browser-list svelte-17gbclg");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(div, null);
+          }
+        }
+        current = true;
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*feature, currentTheme, $savedThemes, $devmode*/
+        15) {
+          each_value = ensure_array_like(
+            /*themes*/
+            ctx2[13]
+          );
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$t(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+              transition_in(each_blocks[i], 1);
+            } else {
+              each_blocks[i] = create_each_block$t(child_ctx);
+              each_blocks[i].c();
+              transition_in(each_blocks[i], 1);
+              each_blocks[i].m(div, null);
+            }
+          }
+          group_outros();
+          for (i = each_value.length; i < each_blocks.length; i += 1) {
+            out(i);
+          }
+          check_outros();
+        }
+      },
+      i(local) {
+        if (current) return;
+        for (let i = 0; i < each_value.length; i += 1) {
+          transition_in(each_blocks[i]);
+        }
+        current = true;
+      },
+      o(local) {
+        each_blocks = each_blocks.filter(Boolean);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          transition_out(each_blocks[i]);
+        }
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        destroy_each(each_blocks, detaching);
+      }
+    };
+  }
+  __name(create_then_block$3, "create_then_block$3");
+  function create_if_block_1$d(ctx) {
+    let div0;
+    let t0;
+    let div1;
+    let span0;
+    let t1;
+    let t2_value = (
+      /*theme*/
+      ctx[14].version + ""
+    );
+    let t2;
+    let t3;
+    let span1;
+    let t4;
+    let t5_value = (
+      /*theme*/
+      ctx[14].id + ""
+    );
+    let t5;
+    return {
+      c() {
+        div0 = element("div");
+        t0 = space();
+        div1 = element("div");
+        span0 = element("span");
+        t1 = text("v");
+        t2 = text(t2_value);
+        t3 = space();
+        span1 = element("span");
+        t4 = text("#");
+        t5 = text(t5_value);
+        attr(div0, "class", "svelte-17gbclg");
+        attr(span0, "class", "svelte-17gbclg");
+        attr(span1, "class", "svelte-17gbclg");
+        attr(div1, "class", "svelte-17gbclg");
+      },
+      m(target, anchor) {
+        insert(target, div0, anchor);
+        insert(target, t0, anchor);
+        insert(target, div1, anchor);
+        append(div1, span0);
+        append(span0, t1);
+        append(span0, t2);
+        append(div1, t3);
+        append(div1, span1);
+        append(span1, t4);
+        append(span1, t5);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*feature*/
+        1 && t2_value !== (t2_value = /*theme*/
+        ctx2[14].version + "")) set_data(t2, t2_value);
+        if (dirty & /*feature*/
+        1 && t5_value !== (t5_value = /*theme*/
+        ctx2[14].id + "")) set_data(t5, t5_value);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div0);
+          detach(t0);
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_if_block_1$d, "create_if_block_1$d");
+  function create_else_block$c(ctx) {
+    let flatbutton;
+    let current;
+    function click_handler_1() {
+      return (
+        /*click_handler_1*/
+        ctx[12](
+          /*theme*/
+          ctx[14]
+        )
+      );
+    }
+    __name(click_handler_1, "click_handler_1");
+    flatbutton = new Flat_button({
+      props: { content: "Download", color: "blue" }
+    });
+    flatbutton.$on("click", click_handler_1);
+    return {
+      c() {
+        create_component(flatbutton.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(flatbutton, target, anchor);
+        current = true;
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(flatbutton, detaching);
+      }
+    };
+  }
+  __name(create_else_block$c, "create_else_block$c");
+  function create_if_block$r(ctx) {
+    var _a2, _b2, _c2, _d2;
+    let flatbutton;
+    let current;
+    function click_handler2() {
+      return (
+        /*click_handler*/
+        ctx[11](
+          /*theme*/
+          ctx[14]
+        )
+      );
+    }
+    __name(click_handler2, "click_handler");
+    flatbutton = new Flat_button({
+      props: {
+        content: (
+          /*currentTheme*/
+          ((_b2 = (_a2 = ctx[2]) == null ? void 0 : _a2.publicTheme) == null ? void 0 : _b2.publicId) === /*theme*/
+          ctx[14].id ? "Active" : "Activate"
+        ),
+        disabled: (
+          /*currentTheme*/
+          ((_d2 = (_c2 = ctx[2]) == null ? void 0 : _c2.publicTheme) == null ? void 0 : _d2.publicId) === /*theme*/
+          ctx[14].id
+        ),
+        color: "green"
+      }
+    });
+    flatbutton.$on("click", click_handler2);
+    return {
+      c() {
+        create_component(flatbutton.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(flatbutton, target, anchor);
+        current = true;
+      },
+      p(new_ctx, dirty) {
+        var _a3, _b3, _c3, _d3;
+        ctx = new_ctx;
+        const flatbutton_changes = {};
+        if (dirty & /*currentTheme, feature*/
+        5) flatbutton_changes.content = /*currentTheme*/
+        ((_b3 = (_a3 = ctx[2]) == null ? void 0 : _a3.publicTheme) == null ? void 0 : _b3.publicId) === /*theme*/
+        ctx[14].id ? "Active" : "Activate";
+        if (dirty & /*currentTheme, feature*/
+        5) flatbutton_changes.disabled = /*currentTheme*/
+        ((_d3 = (_c3 = ctx[2]) == null ? void 0 : _c3.publicTheme) == null ? void 0 : _d3.publicId) === /*theme*/
+        ctx[14].id;
+        flatbutton.$set(flatbutton_changes);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(flatbutton, detaching);
+      }
+    };
+  }
+  __name(create_if_block$r, "create_if_block$r");
+  function create_each_block$t(ctx) {
+    let div2;
+    let b;
+    let t0_value = (
+      /*theme*/
+      ctx[14].name + ""
+    );
+    let t0;
+    let t1;
+    let div0;
+    let t2;
+    let t3_value = (
+      /*theme*/
+      ctx[14].author + ""
+    );
+    let t3;
+    let t4;
+    let t5;
+    let show_if;
+    let current_block_type_index;
+    let if_block1;
+    let t6;
+    let div1;
+    let t7_value = (
+      /*theme*/
+      ctx[14].downloads + ""
+    );
+    let t7;
+    let t8;
+    let t9;
+    let current;
+    function func2(...args) {
+      return (
+        /*func*/
+        ctx[10](
+          /*theme*/
+          ctx[14],
+          ...args
+        )
+      );
+    }
+    __name(func2, "func");
+    let if_block0 = (
+      /*$devmode*/
+      ctx[3] && create_if_block_1$d(ctx)
+    );
+    const if_block_creators = [create_if_block$r, create_else_block$c];
+    const if_blocks = [];
+    function select_block_type(ctx2, dirty) {
+      if (dirty & /*$savedThemes, feature*/
+      3) show_if = null;
+      if (show_if == null) show_if = !!/*$savedThemes*/
+      ctx2[1].some(func2);
+      if (show_if) return 0;
+      return 1;
+    }
+    __name(select_block_type, "select_block_type");
+    current_block_type_index = select_block_type(ctx, -1);
+    if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    return {
+      c() {
+        div2 = element("div");
+        b = element("b");
+        t0 = text(t0_value);
+        t1 = space();
+        div0 = element("div");
+        t2 = text("by ");
+        t3 = text(t3_value);
+        t4 = space();
+        if (if_block0) if_block0.c();
+        t5 = space();
+        if_block1.c();
+        t6 = space();
+        div1 = element("div");
+        t7 = text(t7_value);
+        t8 = text(" downloads");
+        t9 = space();
+        attr(div0, "class", "svelte-17gbclg");
+        attr(div1, "class", "svelte-17gbclg");
+        attr(div2, "class", "typo-themes-browser-item svelte-17gbclg");
+      },
+      m(target, anchor) {
+        insert(target, div2, anchor);
+        append(div2, b);
+        append(b, t0);
+        append(div2, t1);
+        append(div2, div0);
+        append(div0, t2);
+        append(div0, t3);
+        append(div2, t4);
+        if (if_block0) if_block0.m(div2, null);
+        append(div2, t5);
+        if_blocks[current_block_type_index].m(div2, null);
+        append(div2, t6);
+        append(div2, div1);
+        append(div1, t7);
+        append(div1, t8);
+        append(div2, t9);
+        current = true;
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+        if ((!current || dirty & /*feature*/
+        1) && t0_value !== (t0_value = /*theme*/
+        ctx[14].name + "")) set_data(t0, t0_value);
+        if ((!current || dirty & /*feature*/
+        1) && t3_value !== (t3_value = /*theme*/
+        ctx[14].author + "")) set_data(t3, t3_value);
+        if (
+          /*$devmode*/
+          ctx[3]
+        ) {
+          if (if_block0) {
+            if_block0.p(ctx, dirty);
+          } else {
+            if_block0 = create_if_block_1$d(ctx);
+            if_block0.c();
+            if_block0.m(div2, t5);
+          }
+        } else if (if_block0) {
+          if_block0.d(1);
+          if_block0 = null;
+        }
+        let previous_block_index = current_block_type_index;
+        current_block_type_index = select_block_type(ctx, dirty);
+        if (current_block_type_index === previous_block_index) {
+          if_blocks[current_block_type_index].p(ctx, dirty);
+        } else {
+          group_outros();
+          transition_out(if_blocks[previous_block_index], 1, 1, () => {
+            if_blocks[previous_block_index] = null;
+          });
+          check_outros();
+          if_block1 = if_blocks[current_block_type_index];
+          if (!if_block1) {
+            if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+            if_block1.c();
+          } else {
+            if_block1.p(ctx, dirty);
+          }
+          transition_in(if_block1, 1);
+          if_block1.m(div2, t6);
+        }
+        if ((!current || dirty & /*feature*/
+        1) && t7_value !== (t7_value = /*theme*/
+        ctx[14].downloads + "")) set_data(t7, t7_value);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(if_block1);
+        current = true;
+      },
+      o(local) {
+        transition_out(if_block1);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div2);
+        }
+        if (if_block0) if_block0.d();
+        if_blocks[current_block_type_index].d();
+      }
+    };
+  }
+  __name(create_each_block$t, "create_each_block$t");
+  function create_pending_block$3(ctx) {
+    return {
+      c: noop,
+      m: noop,
+      p: noop,
+      i: noop,
+      o: noop,
+      d: noop
+    };
+  }
+  __name(create_pending_block$3, "create_pending_block$3");
+  function create_fragment$T(ctx) {
+    let div;
+    let t2;
+    let await_block_anchor;
+    let promise;
+    let current;
+    let info = {
+      ctx,
+      current: null,
+      token: null,
+      hasCatch: false,
+      pending: create_pending_block$3,
+      then: create_then_block$3,
+      catch: create_catch_block$3,
+      value: 13,
+      blocks: [, , ,]
+    };
+    handle_promise(promise = /*feature*/
+    ctx[0].getOnlineThemes(), info);
+    return {
+      c() {
+        div = element("div");
+        div.innerHTML = `Here you can discover themes made by other typo users. When you download a theme, it will be activated and saved to your local themes.<br/>
+  When a theme receives an update, it will be automatically downloaded.`;
+        t2 = space();
+        await_block_anchor = empty();
+        info.block.c();
+        attr(div, "class", "typo-themes-browser-header svelte-17gbclg");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        insert(target, t2, anchor);
+        insert(target, await_block_anchor, anchor);
+        info.block.m(target, info.anchor = anchor);
+        info.mount = () => await_block_anchor.parentNode;
+        info.anchor = await_block_anchor;
+        current = true;
+      },
+      p(new_ctx, [dirty]) {
+        ctx = new_ctx;
+        info.ctx = ctx;
+        if (dirty & /*feature*/
+        1 && promise !== (promise = /*feature*/
+        ctx[0].getOnlineThemes()) && handle_promise(promise, info)) ;
+        else {
+          update_await_block_branch(info, ctx, dirty);
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(info.block);
+        current = true;
+      },
+      o(local) {
+        for (let i = 0; i < 3; i += 1) {
+          const block = info.blocks[i];
+          transition_out(block);
+        }
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+          detach(t2);
+          detach(await_block_anchor);
+        }
+        info.block.d(detaching);
+        info.token = null;
+        info = null;
+      }
+    };
+  }
+  __name(create_fragment$T, "create_fragment$T");
+  function instance$M($$self, $$props, $$invalidate) {
+    let $currentThemeId;
+    let $savedThemes;
+    let $loadedEditorTheme;
+    let $devmode;
+    let { feature } = $$props;
+    const devmode = feature.devmodeStore;
+    component_subscribe($$self, devmode, (value) => $$invalidate(3, $devmode = value));
+    const savedThemes = feature.savedThemesStore;
+    component_subscribe($$self, savedThemes, (value) => $$invalidate(1, $savedThemes = value));
+    const currentThemeId = feature.activeThemeStore;
+    component_subscribe($$self, currentThemeId, (value) => $$invalidate(8, $currentThemeId = value));
+    const loadedEditorTheme = feature.loadedEditorThemeStore;
+    component_subscribe($$self, loadedEditorTheme, (value) => $$invalidate(9, $loadedEditorTheme = value));
+    let currentTheme;
+    const func2 = /* @__PURE__ */ __name((theme, t) => {
+      var _a2;
+      return ((_a2 = t.publicTheme) == null ? void 0 : _a2.publicId) === theme.id;
+    }, "func");
+    const click_handler2 = /* @__PURE__ */ __name((theme) => feature.activatePublicTheme(theme), "click_handler");
+    const click_handler_1 = /* @__PURE__ */ __name(async (theme) => {
+      await feature.savePublicTheme(theme);
+      await feature.activatePublicTheme(theme);
+    }, "click_handler_1");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    };
+    $$self.$$.update = () => {
+      if ($$self.$$.dirty & /*$loadedEditorTheme, $savedThemes, $currentThemeId*/
+      770) {
+        {
+          $$invalidate(2, currentTheme = $loadedEditorTheme === void 0 ? $savedThemes.find((t) => t.theme.meta.id === $currentThemeId) : void 0);
+        }
+      }
+    };
+    return [
+      feature,
+      $savedThemes,
+      currentTheme,
+      $devmode,
+      devmode,
+      savedThemes,
+      currentThemeId,
+      loadedEditorTheme,
+      $currentThemeId,
+      $loadedEditorTheme,
+      func2,
+      click_handler2,
+      click_handler_1
+    ];
+  }
+  __name(instance$M, "instance$M");
+  const _Themes_browser = class _Themes_browser extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$M, create_fragment$T, safe_not_equal, { feature: 0 });
+    }
+  };
+  __name(_Themes_browser, "Themes_browser");
+  let Themes_browser = _Themes_browser;
+  function get_each_context$s(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[61] = list[i];
+    child_ctx[62] = list;
+    child_ctx[63] = i;
+    return child_ctx;
+  }
+  __name(get_each_context$s, "get_each_context$s");
+  function get_each_context_1$a(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[61] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context_1$a, "get_each_context_1$a");
+  function create_else_block$b(ctx) {
+    let div0;
+    let h3;
+    let t0;
+    let t1_value = (
+      /*$loadedTheme*/
+      ctx[2].theme.meta.name + ""
+    );
+    let t1;
+    let t2;
+    let br0;
+    let t3;
+    let flatbutton0;
+    let t4;
+    let flatbutton1;
+    let t5;
+    let flatbutton2;
+    let t6;
+    let div42;
+    let div5;
+    let div2;
+    let div1;
+    let t8;
+    let input0;
+    let t9;
+    let div4;
+    let div3;
+    let t11;
+    let input1;
+    let t12;
+    let details0;
+    let summary0;
+    let t14;
+    let br1;
+    let t15;
+    let br2;
+    let t16;
+    let br3;
+    let t17;
+    let div10;
+    let div7;
+    let div6;
+    let t19;
+    let colorpickerbutton0;
+    let updating_color;
+    let t20;
+    let div9;
+    let div8;
+    let t22;
+    let colorpickerbutton1;
+    let updating_color_1;
+    let t23;
+    let br4;
+    let t24;
+    let div11;
+    let checkbox0;
+    let updating_checked;
+    let t25;
+    let checkbox1;
+    let updating_checked_1;
+    let t26;
+    let checkbox2;
+    let updating_checked_2;
+    let t27;
+    let br5;
+    let t28;
+    let div12;
+    let flatbutton3;
+    let t29;
+    let details1;
+    let summary1;
+    let t31;
+    let div21;
+    let div14;
+    let div13;
+    let t33;
+    let input2;
+    let t34;
+    let div16;
+    let div15;
+    let t36;
+    let input3;
+    let t37;
+    let div18;
+    let div17;
+    let t39;
+    let input4;
+    let t40;
+    let div20;
+    let div19;
+    let t42;
+    let input5;
+    let t43;
+    let br6;
+    let t44;
+    let div23;
+    let div22;
+    let checkbox3;
+    let updating_checked_3;
+    let t45;
+    let colorpickerbutton2;
+    let t46;
+    let br7;
+    let t47;
+    let div24;
+    let checkbox4;
+    let updating_checked_4;
+    let t48;
+    let details2;
+    let summary2;
+    let t50;
+    let p0;
+    let t52;
+    let p1;
+    let t54;
+    let p2;
+    let t56;
+    let br8;
+    let t57;
+    let div27;
+    let div26;
+    let div25;
+    let t58;
+    let details3;
+    let summary3;
+    let t60;
+    let div32;
+    let div29;
+    let div28;
+    let t62;
+    let input6;
+    let t63;
+    let div31;
+    let div30;
+    let t65;
+    let input7;
+    let t66;
+    let br9;
+    let t67;
+    let div37;
+    let div34;
+    let div33;
+    let t69;
+    let input8;
+    let t70;
+    let div36;
+    let div35;
+    let t72;
+    let input9;
+    let t73;
+    let br10;
+    let t74;
+    let div38;
+    let checkbox5;
+    let updating_checked_5;
+    let t75;
+    let checkbox6;
+    let updating_checked_6;
+    let t76;
+    let checkbox7;
+    let updating_checked_7;
+    let t77;
+    let checkbox8;
+    let updating_checked_8;
+    let t78;
+    let details4;
+    let summary4;
+    let t80;
+    let p3;
+    let t82;
+    let p4;
+    let t84;
+    let p5;
+    let t86;
+    let br11;
+    let t87;
+    let div41;
+    let div40;
+    let div39;
+    let current;
+    let mounted;
+    let dispose;
+    flatbutton0 = new Flat_button({
+      props: {
+        content: "Discard & Delete",
+        color: "orange"
+      }
+    });
+    flatbutton0.$on(
+      "click",
+      /*click_handler_2*/
+      ctx[18]
+    );
+    flatbutton1 = new Flat_button({
+      props: {
+        content: "Discard Changes",
+        color: "blue"
+      }
+    });
+    flatbutton1.$on(
+      "click",
+      /*click_handler_3*/
+      ctx[19]
+    );
+    flatbutton2 = new Flat_button({
+      props: { content: "Save Theme", color: "green" }
+    });
+    flatbutton2.$on(
+      "click",
+      /*click_handler_4*/
+      ctx[20]
+    );
+    function colorpickerbutton0_color_binding(value) {
+      ctx[23](value);
+    }
+    __name(colorpickerbutton0_color_binding, "colorpickerbutton0_color_binding");
+    let colorpickerbutton0_props = {};
+    if (
+      /*schemePrimaryColor*/
+      ctx[3] !== void 0
+    ) {
+      colorpickerbutton0_props.color = /*schemePrimaryColor*/
+      ctx[3];
+    }
+    colorpickerbutton0 = new Color_picker_button({ props: colorpickerbutton0_props });
+    binding_callbacks.push(() => bind(colorpickerbutton0, "color", colorpickerbutton0_color_binding));
+    function colorpickerbutton1_color_binding(value) {
+      ctx[24](value);
+    }
+    __name(colorpickerbutton1_color_binding, "colorpickerbutton1_color_binding");
+    let colorpickerbutton1_props = {};
+    if (
+      /*schemeTextColor*/
+      ctx[4] !== void 0
+    ) {
+      colorpickerbutton1_props.color = /*schemeTextColor*/
+      ctx[4];
+    }
+    colorpickerbutton1 = new Color_picker_button({ props: colorpickerbutton1_props });
+    binding_callbacks.push(() => bind(colorpickerbutton1, "color", colorpickerbutton1_color_binding));
+    function checkbox0_checked_binding(value) {
+      ctx[25](value);
+    }
+    __name(checkbox0_checked_binding, "checkbox0_checked_binding");
+    let checkbox0_props = {
+      description: "Generate colors for input fields"
+    };
+    if (
+      /*schemeOnInputs*/
+      ctx[6] !== void 0
+    ) {
+      checkbox0_props.checked = /*schemeOnInputs*/
+      ctx[6];
+    }
+    checkbox0 = new Checkbox({ props: checkbox0_props });
+    binding_callbacks.push(() => bind(checkbox0, "checked", checkbox0_checked_binding));
+    function checkbox1_checked_binding(value) {
+      ctx[26](value);
+    }
+    __name(checkbox1_checked_binding, "checkbox1_checked_binding");
+    let checkbox1_props = {
+      description: "Invert text brightness on input fields"
+    };
+    if (
+      /*schemeInvertInputBrightness*/
+      ctx[7] !== void 0
+    ) {
+      checkbox1_props.checked = /*schemeInvertInputBrightness*/
+      ctx[7];
+    }
+    checkbox1 = new Checkbox({ props: checkbox1_props });
+    binding_callbacks.push(() => bind(checkbox1, "checked", checkbox1_checked_binding));
+    function checkbox2_checked_binding(value) {
+      ctx[27](value);
+    }
+    __name(checkbox2_checked_binding, "checkbox2_checked_binding");
+    let checkbox2_props = { description: "Use theme colors in-game" };
+    if (
+      /*schemeIngame*/
+      ctx[9] !== void 0
+    ) {
+      checkbox2_props.checked = /*schemeIngame*/
+      ctx[9];
+    }
+    checkbox2 = new Checkbox({ props: checkbox2_props });
+    binding_callbacks.push(() => bind(checkbox2, "checked", checkbox2_checked_binding));
+    flatbutton3 = new Flat_button({
+      props: {
+        content: "Generate Color Scheme",
+        color: "green"
+      }
+    });
+    flatbutton3.$on(
+      "click",
+      /*click_handler_5*/
+      ctx[28]
+    );
+    function checkbox3_checked_binding(value) {
+      ctx[37](value);
+    }
+    __name(checkbox3_checked_binding, "checkbox3_checked_binding");
+    let checkbox3_props = {
+      description: "Tint the skribbl background with a color"
+    };
+    if (
+      /*schemeEnableBackgroundTint*/
+      ctx[8] !== void 0
+    ) {
+      checkbox3_props.checked = /*schemeEnableBackgroundTint*/
+      ctx[8];
+    }
+    checkbox3 = new Checkbox({ props: checkbox3_props });
+    binding_callbacks.push(() => bind(checkbox3, "checked", checkbox3_checked_binding));
+    checkbox3.$on(
+      "change",
+      /*change_handler_4*/
+      ctx[38]
+    );
+    colorpickerbutton2 = new Color_picker_button({
+      props: {
+        allowAlpha: true,
+        colorChanged: (
+          /*func*/
+          ctx[39]
+        )
+      }
+    });
+    function checkbox4_checked_binding(value) {
+      ctx[40](value);
+    }
+    __name(checkbox4_checked_binding, "checkbox4_checked_binding");
+    let checkbox4_props = {
+      description: "Repeat custom background image"
+    };
+    if (
+      /*$loadedTheme*/
+      ctx[2].theme.images.backgroundRepeat !== void 0
+    ) {
+      checkbox4_props.checked = /*$loadedTheme*/
+      ctx[2].theme.images.backgroundRepeat;
+    }
+    checkbox4 = new Checkbox({ props: checkbox4_props });
+    binding_callbacks.push(() => bind(checkbox4, "checked", checkbox4_checked_binding));
+    checkbox4.$on(
+      "change",
+      /*change_handler_5*/
+      ctx[41]
+    );
+    let each_value_1 = ensure_array_like(
+      /*themeColors*/
+      ctx[11]
+    );
+    let each_blocks_1 = [];
+    for (let i = 0; i < each_value_1.length; i += 1) {
+      each_blocks_1[i] = create_each_block_1$a(get_each_context_1$a(ctx, each_value_1, i));
+    }
+    const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks_1[i], 1, 1, () => {
+      each_blocks_1[i] = null;
+    }), "out");
+    function checkbox5_checked_binding(value) {
+      ctx[51](value);
+    }
+    __name(checkbox5_checked_binding, "checkbox5_checked_binding");
+    let checkbox5_props = { description: "Hide skribbl footer" };
+    if (
+      /*$loadedTheme*/
+      ctx[2].theme.misc.hideFooter !== void 0
+    ) {
+      checkbox5_props.checked = /*$loadedTheme*/
+      ctx[2].theme.misc.hideFooter;
+    }
+    checkbox5 = new Checkbox({ props: checkbox5_props });
+    binding_callbacks.push(() => bind(checkbox5, "checked", checkbox5_checked_binding));
+    checkbox5.$on(
+      "change",
+      /*change_handler_10*/
+      ctx[52]
+    );
+    function checkbox6_checked_binding(value) {
+      ctx[53](value);
+    }
+    __name(checkbox6_checked_binding, "checkbox6_checked_binding");
+    let checkbox6_props = {
+      description: "Hide About, News & How-To Panels"
+    };
+    if (
+      /*$loadedTheme*/
+      ctx[2].theme.misc.hideSkribblPanels !== void 0
+    ) {
+      checkbox6_props.checked = /*$loadedTheme*/
+      ctx[2].theme.misc.hideSkribblPanels;
+    }
+    checkbox6 = new Checkbox({ props: checkbox6_props });
+    binding_callbacks.push(() => bind(checkbox6, "checked", checkbox6_checked_binding));
+    checkbox6.$on(
+      "change",
+      /*change_handler_11*/
+      ctx[54]
+    );
+    function checkbox7_checked_binding(value) {
+      ctx[55](value);
+    }
+    __name(checkbox7_checked_binding, "checkbox7_checked_binding");
+    let checkbox7_props = {
+      description: "Hide avatars below skribbl logo"
+    };
+    if (
+      /*$loadedTheme*/
+      ctx[2].theme.misc.hideAvatarLogo !== void 0
+    ) {
+      checkbox7_props.checked = /*$loadedTheme*/
+      ctx[2].theme.misc.hideAvatarLogo;
+    }
+    checkbox7 = new Checkbox({ props: checkbox7_props });
+    binding_callbacks.push(() => bind(checkbox7, "checked", checkbox7_checked_binding));
+    checkbox7.$on(
+      "change",
+      /*change_handler_12*/
+      ctx[56]
+    );
+    function checkbox8_checked_binding(value) {
+      ctx[57](value);
+    }
+    __name(checkbox8_checked_binding, "checkbox8_checked_binding");
+    let checkbox8_props = { description: "Hide in-game skribbl logo" };
+    if (
+      /*$loadedTheme*/
+      ctx[2].theme.misc.hideInGameLogo !== void 0
+    ) {
+      checkbox8_props.checked = /*$loadedTheme*/
+      ctx[2].theme.misc.hideInGameLogo;
+    }
+    checkbox8 = new Checkbox({ props: checkbox8_props });
+    binding_callbacks.push(() => bind(checkbox8, "checked", checkbox8_checked_binding));
+    checkbox8.$on(
+      "change",
+      /*change_handler_13*/
+      ctx[58]
+    );
+    let each_value = ensure_array_like(Object.entries(
+      /*variableHooks*/
+      ctx[1]
+    ));
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$s(get_each_context$s(ctx, each_value, i));
+    }
+    return {
+      c() {
+        div0 = element("div");
+        h3 = element("h3");
+        t0 = text("Editing Theme: ");
+        t1 = text(t1_value);
+        t2 = space();
+        br0 = element("br");
+        t3 = space();
+        create_component(flatbutton0.$$.fragment);
+        t4 = space();
+        create_component(flatbutton1.$$.fragment);
+        t5 = space();
+        create_component(flatbutton2.$$.fragment);
+        t6 = space();
+        div42 = element("div");
+        div5 = element("div");
+        div2 = element("div");
+        div1 = element("div");
+        div1.textContent = "Theme Name:";
+        t8 = space();
+        input0 = element("input");
+        t9 = space();
+        div4 = element("div");
+        div3 = element("div");
+        div3.textContent = "Creator Name:";
+        t11 = space();
+        input1 = element("input");
+        t12 = space();
+        details0 = element("details");
+        summary0 = element("summary");
+        summary0.textContent = "Color Scheme";
+        t14 = text("\n\n        Using the color scheme generator, you can easily create a unique color theme for skribbl.");
+        br1 = element("br");
+        t15 = text('\n        This overwrites all existing color customizations in "Advanced Color Settings".');
+        br2 = element("br");
+        t16 = space();
+        br3 = element("br");
+        t17 = space();
+        div10 = element("div");
+        div7 = element("div");
+        div6 = element("div");
+        div6.textContent = "Primary Color:";
+        t19 = space();
+        create_component(colorpickerbutton0.$$.fragment);
+        t20 = space();
+        div9 = element("div");
+        div8 = element("div");
+        div8.textContent = "Text Color:";
+        t22 = space();
+        create_component(colorpickerbutton1.$$.fragment);
+        t23 = space();
+        br4 = element("br");
+        t24 = space();
+        div11 = element("div");
+        create_component(checkbox0.$$.fragment);
+        t25 = space();
+        create_component(checkbox1.$$.fragment);
+        t26 = space();
+        create_component(checkbox2.$$.fragment);
+        t27 = space();
+        br5 = element("br");
+        t28 = space();
+        div12 = element("div");
+        create_component(flatbutton3.$$.fragment);
+        t29 = space();
+        details1 = element("details");
+        summary1 = element("summary");
+        summary1.textContent = "Image Settings";
+        t31 = space();
+        div21 = element("div");
+        div14 = element("div");
+        div13 = element("div");
+        div13.textContent = "Replace Skribbl Logo:";
+        t33 = space();
+        input2 = element("input");
+        t34 = space();
+        div16 = element("div");
+        div15 = element("div");
+        div15.textContent = "Replace Background:";
+        t36 = space();
+        input3 = element("input");
+        t37 = space();
+        div18 = element("div");
+        div17 = element("div");
+        div17.textContent = "In-Game Background:";
+        t39 = space();
+        input4 = element("input");
+        t40 = space();
+        div20 = element("div");
+        div19 = element("div");
+        div19.textContent = "Container Background:";
+        t42 = space();
+        input5 = element("input");
+        t43 = space();
+        br6 = element("br");
+        t44 = space();
+        div23 = element("div");
+        div22 = element("div");
+        create_component(checkbox3.$$.fragment);
+        t45 = space();
+        create_component(colorpickerbutton2.$$.fragment);
+        t46 = space();
+        br7 = element("br");
+        t47 = space();
+        div24 = element("div");
+        create_component(checkbox4.$$.fragment);
+        t48 = space();
+        details2 = element("details");
+        summary2 = element("summary");
+        summary2.textContent = "Advanced Color Settings";
+        t50 = space();
+        p0 = element("p");
+        p0.textContent = "Advanced color settings allow you to customize the appearance of skribbl in more detail.";
+        t52 = space();
+        p1 = element("p");
+        p1.textContent = "These settings are overwritten when the color scheme generator is used.";
+        t54 = space();
+        p2 = element("p");
+        p2.textContent = "The color names are taken from the skribbl code.";
+        t56 = space();
+        br8 = element("br");
+        t57 = space();
+        div27 = element("div");
+        div26 = element("div");
+        div25 = element("div");
+        for (let i = 0; i < each_blocks_1.length; i += 1) {
+          each_blocks_1[i].c();
+        }
+        t58 = space();
+        details3 = element("details");
+        summary3 = element("summary");
+        summary3.textContent = "Miscellaneous";
+        t60 = space();
+        div32 = element("div");
+        div29 = element("div");
+        div28 = element("div");
+        div28.textContent = "Use Google Font:";
+        t62 = space();
+        input6 = element("input");
+        t63 = space();
+        div31 = element("div");
+        div30 = element("div");
+        div30.textContent = "External CSS URL:";
+        t65 = space();
+        input7 = element("input");
+        t66 = space();
+        br9 = element("br");
+        t67 = space();
+        div37 = element("div");
+        div34 = element("div");
+        div33 = element("div");
+        div33.textContent = "Custom CSS:";
+        t69 = space();
+        input8 = element("input");
+        t70 = space();
+        div36 = element("div");
+        div35 = element("div");
+        div35.textContent = "HTML Element Injection:";
+        t72 = space();
+        input9 = element("input");
+        t73 = space();
+        br10 = element("br");
+        t74 = space();
+        div38 = element("div");
+        create_component(checkbox5.$$.fragment);
+        t75 = space();
+        create_component(checkbox6.$$.fragment);
+        t76 = space();
+        create_component(checkbox7.$$.fragment);
+        t77 = space();
+        create_component(checkbox8.$$.fragment);
+        t78 = space();
+        details4 = element("details");
+        summary4 = element("summary");
+        summary4.textContent = "Skribbl Style Hooks";
+        t80 = space();
+        p3 = element("p");
+        p3.textContent = "Skribbl style hooks allow more advanced CSS styling without having to dig through the skribbl css classes.";
+        t82 = space();
+        p4 = element("p");
+        p4.textContent = "The CSS you write will be applied wherever the skribbl color variable is used.";
+        t84 = space();
+        p5 = element("p");
+        p5.textContent = "Hover over the ℹ️ icon to display the linked CSS classes.";
+        t86 = space();
+        br11 = element("br");
+        t87 = space();
+        div41 = element("div");
+        div40 = element("div");
+        div39 = element("div");
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        set_style(h3, "flex-grow", "1");
+        attr(div0, "class", "typo-themes-editor-header svelte-1gh1qig");
+        attr(input0, "type", "text");
+        attr(input0, "class", "svelte-1gh1qig");
+        attr(div2, "class", "group svelte-1gh1qig");
+        attr(input1, "type", "text");
+        attr(input1, "class", "svelte-1gh1qig");
+        attr(div4, "class", "group svelte-1gh1qig");
+        attr(div5, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(summary0, "class", "svelte-1gh1qig");
+        attr(div7, "class", "group svelte-1gh1qig");
+        attr(div9, "class", "group svelte-1gh1qig");
+        attr(div10, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(div11, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(div12, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        details0.open = true;
+        attr(details0, "class", "svelte-1gh1qig");
+        attr(summary1, "class", "svelte-1gh1qig");
+        attr(input2, "type", "text");
+        attr(input2, "placeholder", "https://link.here/image.gif");
+        attr(input2, "class", "svelte-1gh1qig");
+        attr(div14, "class", "group svelte-1gh1qig");
+        attr(input3, "type", "text");
+        attr(input3, "placeholder", "https://link.here/image.gif");
+        attr(input3, "class", "svelte-1gh1qig");
+        attr(div16, "class", "group svelte-1gh1qig");
+        attr(input4, "type", "text");
+        attr(input4, "placeholder", "https://link.here/image.gif");
+        attr(input4, "class", "svelte-1gh1qig");
+        attr(div18, "class", "group svelte-1gh1qig");
+        attr(input5, "type", "text");
+        attr(input5, "placeholder", "https://link.here/image.gif");
+        attr(input5, "class", "svelte-1gh1qig");
+        attr(div20, "class", "group svelte-1gh1qig");
+        attr(div21, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(div22, "class", "group svelte-1gh1qig");
+        attr(div23, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(div24, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        details1.open = true;
+        attr(details1, "class", "svelte-1gh1qig");
+        attr(summary2, "class", "svelte-1gh1qig");
+        attr(div25, "class", "color-pickers svelte-1gh1qig");
+        attr(div26, "class", "group svelte-1gh1qig");
+        attr(div27, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(details2, "class", "svelte-1gh1qig");
+        attr(summary3, "class", "svelte-1gh1qig");
+        attr(input6, "type", "text");
+        attr(input6, "placeholder", "Google Fonts import URL");
+        attr(input6, "class", "svelte-1gh1qig");
+        attr(div29, "class", "group svelte-1gh1qig");
+        attr(input7, "type", "text");
+        attr(input7, "placeholder", "https://some.website/link-to-style.css");
+        attr(input7, "class", "svelte-1gh1qig");
+        attr(div31, "class", "group svelte-1gh1qig");
+        attr(div32, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(input8, "type", "text");
+        attr(input8, "placeholder", ".logo-big { display: none !important; }");
+        attr(input8, "class", "svelte-1gh1qig");
+        attr(div34, "class", "group svelte-1gh1qig");
+        attr(input9, "type", "text");
+        attr(input9, "placeholder", "<div>hello there</div>");
+        attr(input9, "class", "svelte-1gh1qig");
+        attr(div36, "class", "group svelte-1gh1qig");
+        attr(div37, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(div38, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(details3, "class", "svelte-1gh1qig");
+        attr(summary4, "class", "svelte-1gh1qig");
+        attr(div39, "class", "style-hooks svelte-1gh1qig");
+        attr(div40, "class", "group svelte-1gh1qig");
+        attr(div41, "class", "typo-themes-editor-content-section svelte-1gh1qig");
+        attr(details4, "class", "svelte-1gh1qig");
+        attr(div42, "class", "typo-themes-editor-content svelte-1gh1qig");
+      },
+      m(target, anchor) {
+        insert(target, div0, anchor);
+        append(div0, h3);
+        append(h3, t0);
+        append(h3, t1);
+        append(div0, t2);
+        append(div0, br0);
+        append(div0, t3);
+        mount_component(flatbutton0, div0, null);
+        append(div0, t4);
+        mount_component(flatbutton1, div0, null);
+        append(div0, t5);
+        mount_component(flatbutton2, div0, null);
+        insert(target, t6, anchor);
+        insert(target, div42, anchor);
+        append(div42, div5);
+        append(div5, div2);
+        append(div2, div1);
+        append(div2, t8);
+        append(div2, input0);
+        set_input_value(
+          input0,
+          /*$loadedTheme*/
+          ctx[2].theme.meta.name
+        );
+        append(div5, t9);
+        append(div5, div4);
+        append(div4, div3);
+        append(div4, t11);
+        append(div4, input1);
+        set_input_value(
+          input1,
+          /*$loadedTheme*/
+          ctx[2].theme.meta.author
+        );
+        append(div42, t12);
+        append(div42, details0);
+        append(details0, summary0);
+        append(details0, t14);
+        append(details0, br1);
+        append(details0, t15);
+        append(details0, br2);
+        append(details0, t16);
+        append(details0, br3);
+        append(details0, t17);
+        append(details0, div10);
+        append(div10, div7);
+        append(div7, div6);
+        append(div7, t19);
+        mount_component(colorpickerbutton0, div7, null);
+        append(div10, t20);
+        append(div10, div9);
+        append(div9, div8);
+        append(div9, t22);
+        mount_component(colorpickerbutton1, div9, null);
+        append(details0, t23);
+        append(details0, br4);
+        append(details0, t24);
+        append(details0, div11);
+        mount_component(checkbox0, div11, null);
+        append(div11, t25);
+        mount_component(checkbox1, div11, null);
+        append(div11, t26);
+        mount_component(checkbox2, div11, null);
+        append(details0, t27);
+        append(details0, br5);
+        append(details0, t28);
+        append(details0, div12);
+        mount_component(flatbutton3, div12, null);
+        append(div42, t29);
+        append(div42, details1);
+        append(details1, summary1);
+        append(details1, t31);
+        append(details1, div21);
+        append(div21, div14);
+        append(div14, div13);
+        append(div14, t33);
+        append(div14, input2);
+        set_input_value(
+          input2,
+          /*$loadedTheme*/
+          ctx[2].theme.images.urlLogo
+        );
+        append(div21, t34);
+        append(div21, div16);
+        append(div16, div15);
+        append(div16, t36);
+        append(div16, input3);
+        set_input_value(
+          input3,
+          /*$loadedTheme*/
+          ctx[2].theme.images.urlBackground
+        );
+        append(div21, t37);
+        append(div21, div18);
+        append(div18, div17);
+        append(div18, t39);
+        append(div18, input4);
+        set_input_value(
+          input4,
+          /*$loadedTheme*/
+          ctx[2].theme.images.urlBackgroundGame
+        );
+        append(div21, t40);
+        append(div21, div20);
+        append(div20, div19);
+        append(div20, t42);
+        append(div20, input5);
+        set_input_value(
+          input5,
+          /*$loadedTheme*/
+          ctx[2].theme.images.containerImages
+        );
+        append(details1, t43);
+        append(details1, br6);
+        append(details1, t44);
+        append(details1, div23);
+        append(div23, div22);
+        mount_component(checkbox3, div22, null);
+        append(div22, t45);
+        mount_component(colorpickerbutton2, div22, null);
+        append(details1, t46);
+        append(details1, br7);
+        append(details1, t47);
+        append(details1, div24);
+        mount_component(checkbox4, div24, null);
+        append(div42, t48);
+        append(div42, details2);
+        append(details2, summary2);
+        append(details2, t50);
+        append(details2, p0);
+        append(details2, t52);
+        append(details2, p1);
+        append(details2, t54);
+        append(details2, p2);
+        append(details2, t56);
+        append(details2, br8);
+        append(details2, t57);
+        append(details2, div27);
+        append(div27, div26);
+        append(div26, div25);
+        for (let i = 0; i < each_blocks_1.length; i += 1) {
+          if (each_blocks_1[i]) {
+            each_blocks_1[i].m(div25, null);
+          }
+        }
+        append(div42, t58);
+        append(div42, details3);
+        append(details3, summary3);
+        append(details3, t60);
+        append(details3, div32);
+        append(div32, div29);
+        append(div29, div28);
+        append(div29, t62);
+        append(div29, input6);
+        set_input_value(
+          input6,
+          /*$loadedTheme*/
+          ctx[2].theme.misc.fontStyle
+        );
+        append(div32, t63);
+        append(div32, div31);
+        append(div31, div30);
+        append(div31, t65);
+        append(div31, input7);
+        set_input_value(
+          input7,
+          /*$loadedTheme*/
+          ctx[2].theme.misc.themeCssUrl
+        );
+        append(details3, t66);
+        append(details3, br9);
+        append(details3, t67);
+        append(details3, div37);
+        append(div37, div34);
+        append(div34, div33);
+        append(div34, t69);
+        append(div34, input8);
+        set_input_value(
+          input8,
+          /*$loadedTheme*/
+          ctx[2].theme.misc.cssText
+        );
+        append(div37, t70);
+        append(div37, div36);
+        append(div36, div35);
+        append(div36, t72);
+        append(div36, input9);
+        set_input_value(
+          input9,
+          /*$loadedTheme*/
+          ctx[2].theme.misc.htmlText
+        );
+        append(details3, t73);
+        append(details3, br10);
+        append(details3, t74);
+        append(details3, div38);
+        mount_component(checkbox5, div38, null);
+        append(div38, t75);
+        mount_component(checkbox6, div38, null);
+        append(div38, t76);
+        mount_component(checkbox7, div38, null);
+        append(div38, t77);
+        mount_component(checkbox8, div38, null);
+        append(div42, t78);
+        append(div42, details4);
+        append(details4, summary4);
+        append(details4, t80);
+        append(details4, p3);
+        append(details4, t82);
+        append(details4, p4);
+        append(details4, t84);
+        append(details4, p5);
+        append(details4, t86);
+        append(details4, br11);
+        append(details4, t87);
+        append(details4, div41);
+        append(div41, div40);
+        append(div40, div39);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(div39, null);
+          }
+        }
+        current = true;
+        if (!mounted) {
+          dispose = [
+            listen(
+              input0,
+              "input",
+              /*input0_input_handler*/
+              ctx[21]
+            ),
+            listen(
+              input1,
+              "input",
+              /*input1_input_handler*/
+              ctx[22]
+            ),
+            listen(
+              input2,
+              "input",
+              /*input2_input_handler*/
+              ctx[29]
+            ),
+            listen(
+              input2,
+              "change",
+              /*change_handler*/
+              ctx[30]
+            ),
+            listen(
+              input3,
+              "input",
+              /*input3_input_handler*/
+              ctx[31]
+            ),
+            listen(
+              input3,
+              "change",
+              /*change_handler_1*/
+              ctx[32]
+            ),
+            listen(
+              input4,
+              "input",
+              /*input4_input_handler*/
+              ctx[33]
+            ),
+            listen(
+              input4,
+              "change",
+              /*change_handler_2*/
+              ctx[34]
+            ),
+            listen(
+              input5,
+              "input",
+              /*input5_input_handler*/
+              ctx[35]
+            ),
+            listen(
+              input5,
+              "change",
+              /*change_handler_3*/
+              ctx[36]
+            ),
+            listen(
+              input6,
+              "input",
+              /*input6_input_handler*/
+              ctx[43]
+            ),
+            listen(
+              input6,
+              "change",
+              /*change_handler_6*/
+              ctx[44]
+            ),
+            listen(
+              input7,
+              "input",
+              /*input7_input_handler*/
+              ctx[45]
+            ),
+            listen(
+              input7,
+              "change",
+              /*change_handler_7*/
+              ctx[46]
+            ),
+            listen(
+              input8,
+              "input",
+              /*input8_input_handler*/
+              ctx[47]
+            ),
+            listen(
+              input8,
+              "change",
+              /*change_handler_8*/
+              ctx[48]
+            ),
+            listen(
+              input9,
+              "input",
+              /*input9_input_handler*/
+              ctx[49]
+            ),
+            listen(
+              input9,
+              "change",
+              /*change_handler_9*/
+              ctx[50]
+            )
+          ];
+          mounted = true;
+        }
+      },
+      p(ctx2, dirty) {
+        if ((!current || dirty[0] & /*$loadedTheme*/
+        4) && t1_value !== (t1_value = /*$loadedTheme*/
+        ctx2[2].theme.meta.name + "")) set_data(t1, t1_value);
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input0.value !== /*$loadedTheme*/
+        ctx2[2].theme.meta.name) {
+          set_input_value(
+            input0,
+            /*$loadedTheme*/
+            ctx2[2].theme.meta.name
+          );
+        }
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input1.value !== /*$loadedTheme*/
+        ctx2[2].theme.meta.author) {
+          set_input_value(
+            input1,
+            /*$loadedTheme*/
+            ctx2[2].theme.meta.author
+          );
+        }
+        const colorpickerbutton0_changes = {};
+        if (!updating_color && dirty[0] & /*schemePrimaryColor*/
+        8) {
+          updating_color = true;
+          colorpickerbutton0_changes.color = /*schemePrimaryColor*/
+          ctx2[3];
+          add_flush_callback(() => updating_color = false);
+        }
+        colorpickerbutton0.$set(colorpickerbutton0_changes);
+        const colorpickerbutton1_changes = {};
+        if (!updating_color_1 && dirty[0] & /*schemeTextColor*/
+        16) {
+          updating_color_1 = true;
+          colorpickerbutton1_changes.color = /*schemeTextColor*/
+          ctx2[4];
+          add_flush_callback(() => updating_color_1 = false);
+        }
+        colorpickerbutton1.$set(colorpickerbutton1_changes);
+        const checkbox0_changes = {};
+        if (!updating_checked && dirty[0] & /*schemeOnInputs*/
+        64) {
+          updating_checked = true;
+          checkbox0_changes.checked = /*schemeOnInputs*/
+          ctx2[6];
+          add_flush_callback(() => updating_checked = false);
+        }
+        checkbox0.$set(checkbox0_changes);
+        const checkbox1_changes = {};
+        if (!updating_checked_1 && dirty[0] & /*schemeInvertInputBrightness*/
+        128) {
+          updating_checked_1 = true;
+          checkbox1_changes.checked = /*schemeInvertInputBrightness*/
+          ctx2[7];
+          add_flush_callback(() => updating_checked_1 = false);
+        }
+        checkbox1.$set(checkbox1_changes);
+        const checkbox2_changes = {};
+        if (!updating_checked_2 && dirty[0] & /*schemeIngame*/
+        512) {
+          updating_checked_2 = true;
+          checkbox2_changes.checked = /*schemeIngame*/
+          ctx2[9];
+          add_flush_callback(() => updating_checked_2 = false);
+        }
+        checkbox2.$set(checkbox2_changes);
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input2.value !== /*$loadedTheme*/
+        ctx2[2].theme.images.urlLogo) {
+          set_input_value(
+            input2,
+            /*$loadedTheme*/
+            ctx2[2].theme.images.urlLogo
+          );
+        }
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input3.value !== /*$loadedTheme*/
+        ctx2[2].theme.images.urlBackground) {
+          set_input_value(
+            input3,
+            /*$loadedTheme*/
+            ctx2[2].theme.images.urlBackground
+          );
+        }
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input4.value !== /*$loadedTheme*/
+        ctx2[2].theme.images.urlBackgroundGame) {
+          set_input_value(
+            input4,
+            /*$loadedTheme*/
+            ctx2[2].theme.images.urlBackgroundGame
+          );
+        }
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input5.value !== /*$loadedTheme*/
+        ctx2[2].theme.images.containerImages) {
+          set_input_value(
+            input5,
+            /*$loadedTheme*/
+            ctx2[2].theme.images.containerImages
+          );
+        }
+        const checkbox3_changes = {};
+        if (!updating_checked_3 && dirty[0] & /*schemeEnableBackgroundTint*/
+        256) {
+          updating_checked_3 = true;
+          checkbox3_changes.checked = /*schemeEnableBackgroundTint*/
+          ctx2[8];
+          add_flush_callback(() => updating_checked_3 = false);
+        }
+        checkbox3.$set(checkbox3_changes);
+        const colorpickerbutton2_changes = {};
+        if (dirty[0] & /*schemeBackgroundTint, schemeEnableBackgroundTint, $loadedTheme, feature*/
+        293) colorpickerbutton2_changes.colorChanged = /*func*/
+        ctx2[39];
+        colorpickerbutton2.$set(colorpickerbutton2_changes);
+        const checkbox4_changes = {};
+        if (!updating_checked_4 && dirty[0] & /*$loadedTheme*/
+        4) {
+          updating_checked_4 = true;
+          checkbox4_changes.checked = /*$loadedTheme*/
+          ctx2[2].theme.images.backgroundRepeat;
+          add_flush_callback(() => updating_checked_4 = false);
+        }
+        checkbox4.$set(checkbox4_changes);
+        if (dirty[0] & /*themeColors, $loadedTheme, feature*/
+        2053) {
+          each_value_1 = ensure_array_like(
+            /*themeColors*/
+            ctx2[11]
+          );
+          let i;
+          for (i = 0; i < each_value_1.length; i += 1) {
+            const child_ctx = get_each_context_1$a(ctx2, each_value_1, i);
+            if (each_blocks_1[i]) {
+              each_blocks_1[i].p(child_ctx, dirty);
+              transition_in(each_blocks_1[i], 1);
+            } else {
+              each_blocks_1[i] = create_each_block_1$a(child_ctx);
+              each_blocks_1[i].c();
+              transition_in(each_blocks_1[i], 1);
+              each_blocks_1[i].m(div25, null);
+            }
+          }
+          group_outros();
+          for (i = each_value_1.length; i < each_blocks_1.length; i += 1) {
+            out(i);
+          }
+          check_outros();
+        }
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input6.value !== /*$loadedTheme*/
+        ctx2[2].theme.misc.fontStyle) {
+          set_input_value(
+            input6,
+            /*$loadedTheme*/
+            ctx2[2].theme.misc.fontStyle
+          );
+        }
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input7.value !== /*$loadedTheme*/
+        ctx2[2].theme.misc.themeCssUrl) {
+          set_input_value(
+            input7,
+            /*$loadedTheme*/
+            ctx2[2].theme.misc.themeCssUrl
+          );
+        }
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input8.value !== /*$loadedTheme*/
+        ctx2[2].theme.misc.cssText) {
+          set_input_value(
+            input8,
+            /*$loadedTheme*/
+            ctx2[2].theme.misc.cssText
+          );
+        }
+        if (dirty[0] & /*$loadedTheme*/
+        4 && input9.value !== /*$loadedTheme*/
+        ctx2[2].theme.misc.htmlText) {
+          set_input_value(
+            input9,
+            /*$loadedTheme*/
+            ctx2[2].theme.misc.htmlText
+          );
+        }
+        const checkbox5_changes = {};
+        if (!updating_checked_5 && dirty[0] & /*$loadedTheme*/
+        4) {
+          updating_checked_5 = true;
+          checkbox5_changes.checked = /*$loadedTheme*/
+          ctx2[2].theme.misc.hideFooter;
+          add_flush_callback(() => updating_checked_5 = false);
+        }
+        checkbox5.$set(checkbox5_changes);
+        const checkbox6_changes = {};
+        if (!updating_checked_6 && dirty[0] & /*$loadedTheme*/
+        4) {
+          updating_checked_6 = true;
+          checkbox6_changes.checked = /*$loadedTheme*/
+          ctx2[2].theme.misc.hideSkribblPanels;
+          add_flush_callback(() => updating_checked_6 = false);
+        }
+        checkbox6.$set(checkbox6_changes);
+        const checkbox7_changes = {};
+        if (!updating_checked_7 && dirty[0] & /*$loadedTheme*/
+        4) {
+          updating_checked_7 = true;
+          checkbox7_changes.checked = /*$loadedTheme*/
+          ctx2[2].theme.misc.hideAvatarLogo;
+          add_flush_callback(() => updating_checked_7 = false);
+        }
+        checkbox7.$set(checkbox7_changes);
+        const checkbox8_changes = {};
+        if (!updating_checked_8 && dirty[0] & /*$loadedTheme*/
+        4) {
+          updating_checked_8 = true;
+          checkbox8_changes.checked = /*$loadedTheme*/
+          ctx2[2].theme.misc.hideInGameLogo;
+          add_flush_callback(() => updating_checked_8 = false);
+        }
+        checkbox8.$set(checkbox8_changes);
+        if (dirty[0] & /*$loadedTheme, variableHooks, feature*/
+        7) {
+          each_value = ensure_array_like(Object.entries(
+            /*variableHooks*/
+            ctx2[1]
+          ));
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$s(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+            } else {
+              each_blocks[i] = create_each_block$s(child_ctx);
+              each_blocks[i].c();
+              each_blocks[i].m(div39, null);
+            }
+          }
+          for (; i < each_blocks.length; i += 1) {
+            each_blocks[i].d(1);
+          }
+          each_blocks.length = each_value.length;
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton0.$$.fragment, local);
+        transition_in(flatbutton1.$$.fragment, local);
+        transition_in(flatbutton2.$$.fragment, local);
+        transition_in(colorpickerbutton0.$$.fragment, local);
+        transition_in(colorpickerbutton1.$$.fragment, local);
+        transition_in(checkbox0.$$.fragment, local);
+        transition_in(checkbox1.$$.fragment, local);
+        transition_in(checkbox2.$$.fragment, local);
+        transition_in(flatbutton3.$$.fragment, local);
+        transition_in(checkbox3.$$.fragment, local);
+        transition_in(colorpickerbutton2.$$.fragment, local);
+        transition_in(checkbox4.$$.fragment, local);
+        for (let i = 0; i < each_value_1.length; i += 1) {
+          transition_in(each_blocks_1[i]);
+        }
+        transition_in(checkbox5.$$.fragment, local);
+        transition_in(checkbox6.$$.fragment, local);
+        transition_in(checkbox7.$$.fragment, local);
+        transition_in(checkbox8.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton0.$$.fragment, local);
+        transition_out(flatbutton1.$$.fragment, local);
+        transition_out(flatbutton2.$$.fragment, local);
+        transition_out(colorpickerbutton0.$$.fragment, local);
+        transition_out(colorpickerbutton1.$$.fragment, local);
+        transition_out(checkbox0.$$.fragment, local);
+        transition_out(checkbox1.$$.fragment, local);
+        transition_out(checkbox2.$$.fragment, local);
+        transition_out(flatbutton3.$$.fragment, local);
+        transition_out(checkbox3.$$.fragment, local);
+        transition_out(colorpickerbutton2.$$.fragment, local);
+        transition_out(checkbox4.$$.fragment, local);
+        each_blocks_1 = each_blocks_1.filter(Boolean);
+        for (let i = 0; i < each_blocks_1.length; i += 1) {
+          transition_out(each_blocks_1[i]);
+        }
+        transition_out(checkbox5.$$.fragment, local);
+        transition_out(checkbox6.$$.fragment, local);
+        transition_out(checkbox7.$$.fragment, local);
+        transition_out(checkbox8.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div0);
+          detach(t6);
+          detach(div42);
+        }
+        destroy_component(flatbutton0);
+        destroy_component(flatbutton1);
+        destroy_component(flatbutton2);
+        destroy_component(colorpickerbutton0);
+        destroy_component(colorpickerbutton1);
+        destroy_component(checkbox0);
+        destroy_component(checkbox1);
+        destroy_component(checkbox2);
+        destroy_component(flatbutton3);
+        destroy_component(checkbox3);
+        destroy_component(colorpickerbutton2);
+        destroy_component(checkbox4);
+        destroy_each(each_blocks_1, detaching);
+        destroy_component(checkbox5);
+        destroy_component(checkbox6);
+        destroy_component(checkbox7);
+        destroy_component(checkbox8);
+        destroy_each(each_blocks, detaching);
+        mounted = false;
+        run_all(dispose);
+      }
+    };
+  }
+  __name(create_else_block$b, "create_else_block$b");
+  function create_if_block$q(ctx) {
+    let div0;
+    let t0;
+    let br0;
+    let t1;
+    let br1;
+    let t2;
+    let flatbutton0;
+    let t3;
+    let br2;
+    let t4;
+    let br3;
+    let t5;
+    let div2;
+    let div1;
+    let t7;
+    let br4;
+    let t8;
+    let input;
+    let t9;
+    let flatbutton1;
+    let current;
+    let mounted;
+    let dispose;
+    flatbutton0 = new Flat_button({
+      props: {
+        content: "Create new Theme",
+        color: "green"
+      }
+    });
+    flatbutton0.$on(
+      "click",
+      /*click_handler*/
+      ctx[15]
+    );
+    flatbutton1 = new Flat_button({
+      props: { content: "Import Theme", color: "blue" }
+    });
+    flatbutton1.$on(
+      "click",
+      /*click_handler_1*/
+      ctx[17]
+    );
+    return {
+      c() {
+        div0 = element("div");
+        t0 = text('No theme loaded for editing. Select one of your themes in the "Saved Themes" tab or create a new one!');
+        br0 = element("br");
+        t1 = space();
+        br1 = element("br");
+        t2 = space();
+        create_component(flatbutton0.$$.fragment);
+        t3 = space();
+        br2 = element("br");
+        t4 = space();
+        br3 = element("br");
+        t5 = space();
+        div2 = element("div");
+        div1 = element("div");
+        div1.textContent = "If you have received a theme share ID, you can import it here:";
+        t7 = space();
+        br4 = element("br");
+        t8 = space();
+        input = element("input");
+        t9 = space();
+        create_component(flatbutton1.$$.fragment);
+        attr(div0, "class", "typo-themes-editor-header svelte-1gh1qig");
+        attr(input, "type", "text");
+        set_style(input, "width", "auto");
+        set_style(input, "margin-right", "1rem");
+        attr(input, "placeholder", "Share ID");
+        attr(div2, "class", "typo-themes-editor-header svelte-1gh1qig");
+      },
+      m(target, anchor) {
+        insert(target, div0, anchor);
+        append(div0, t0);
+        append(div0, br0);
+        append(div0, t1);
+        append(div0, br1);
+        append(div0, t2);
+        mount_component(flatbutton0, div0, null);
+        insert(target, t3, anchor);
+        insert(target, br2, anchor);
+        insert(target, t4, anchor);
+        insert(target, br3, anchor);
+        insert(target, t5, anchor);
+        insert(target, div2, anchor);
+        append(div2, div1);
+        append(div2, t7);
+        append(div2, br4);
+        append(div2, t8);
+        append(div2, input);
+        set_input_value(
+          input,
+          /*shareId*/
+          ctx[10]
+        );
+        append(div2, t9);
+        mount_component(flatbutton1, div2, null);
+        current = true;
+        if (!mounted) {
+          dispose = listen(
+            input,
+            "input",
+            /*input_input_handler*/
+            ctx[16]
+          );
+          mounted = true;
+        }
+      },
+      p(ctx2, dirty) {
+        if (dirty[0] & /*shareId*/
+        1024 && input.value !== /*shareId*/
+        ctx2[10]) {
+          set_input_value(
+            input,
+            /*shareId*/
+            ctx2[10]
+          );
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton0.$$.fragment, local);
+        transition_in(flatbutton1.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton0.$$.fragment, local);
+        transition_out(flatbutton1.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div0);
+          detach(t3);
+          detach(br2);
+          detach(t4);
+          detach(br3);
+          detach(t5);
+          detach(div2);
+        }
+        destroy_component(flatbutton0);
+        destroy_component(flatbutton1);
+        mounted = false;
+        dispose();
+      }
+    };
+  }
+  __name(create_if_block$q, "create_if_block$q");
+  function create_each_block_1$a(ctx) {
+    let div;
+    let t0_value = (
+      /*color*/
+      ctx[61][0].replace("--", "") + ""
+    );
+    let t0;
+    let t1;
+    let t2;
+    let colorpickerbutton;
+    let current;
+    function func_12(...args) {
+      return (
+        /*func_1*/
+        ctx[42](
+          /*color*/
+          ctx[61],
+          ...args
+        )
+      );
+    }
+    __name(func_12, "func_1");
+    colorpickerbutton = new Color_picker_button({
+      props: {
+        color: (
+          /*color*/
+          ctx[61][1]
+        ),
+        allowAlpha: true,
+        colorChanged: func_12
+      }
+    });
+    return {
+      c() {
+        div = element("div");
+        t0 = text(t0_value);
+        t1 = text(":");
+        t2 = space();
+        create_component(colorpickerbutton.$$.fragment);
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        append(div, t0);
+        append(div, t1);
+        insert(target, t2, anchor);
+        mount_component(colorpickerbutton, target, anchor);
+        current = true;
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+        if ((!current || dirty[0] & /*themeColors*/
+        2048) && t0_value !== (t0_value = /*color*/
+        ctx[61][0].replace("--", "") + "")) set_data(t0, t0_value);
+        const colorpickerbutton_changes = {};
+        if (dirty[0] & /*themeColors*/
+        2048) colorpickerbutton_changes.color = /*color*/
+        ctx[61][1];
+        if (dirty[0] & /*$loadedTheme, themeColors, feature*/
+        2053) colorpickerbutton_changes.colorChanged = func_12;
+        colorpickerbutton.$set(colorpickerbutton_changes);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(colorpickerbutton.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(colorpickerbutton.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+          detach(t2);
+        }
+        destroy_component(colorpickerbutton, detaching);
+      }
+    };
+  }
+  __name(create_each_block_1$a, "create_each_block_1$a");
+  function create_each_block$s(ctx) {
+    let div;
+    let abbr;
+    let t0;
+    let abbr_title_value;
+    let t1;
+    let t2_value = (
+      /*color*/
+      ctx[61][0].replace("--", "") + ""
+    );
+    let t2;
+    let t3;
+    let t4;
+    let input;
+    let mounted;
+    let dispose;
+    function input_input_handler_1() {
+      ctx[59].call(
+        input,
+        /*color*/
+        ctx[61]
+      );
+    }
+    __name(input_input_handler_1, "input_input_handler_1");
+    return {
+      c() {
+        div = element("div");
+        abbr = element("abbr");
+        t0 = text("ℹ️");
+        t1 = space();
+        t2 = text(t2_value);
+        t3 = text(":");
+        t4 = space();
+        input = element("input");
+        attr(abbr, "title", abbr_title_value = /*color*/
+        ctx[61][1].join(", "));
+        attr(input, "type", "text");
+        attr(input, "placeholder", "color: red; border: 1px solid green;");
+        attr(input, "class", "svelte-1gh1qig");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        append(div, abbr);
+        append(abbr, t0);
+        append(div, t1);
+        append(div, t2);
+        append(div, t3);
+        insert(target, t4, anchor);
+        insert(target, input, anchor);
+        set_input_value(
+          input,
+          /*$loadedTheme*/
+          ctx[2].theme.hooks[
+            /*color*/
+            ctx[61][0]
+          ]
+        );
+        if (!mounted) {
+          dispose = [
+            listen(input, "input", input_input_handler_1),
+            listen(
+              input,
+              "change",
+              /*change_handler_14*/
+              ctx[60]
+            )
+          ];
+          mounted = true;
+        }
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+        if (dirty[0] & /*variableHooks*/
+        2 && abbr_title_value !== (abbr_title_value = /*color*/
+        ctx[61][1].join(", "))) {
+          attr(abbr, "title", abbr_title_value);
+        }
+        if (dirty[0] & /*variableHooks*/
+        2 && t2_value !== (t2_value = /*color*/
+        ctx[61][0].replace("--", "") + "")) set_data(t2, t2_value);
+        if (dirty[0] & /*$loadedTheme, variableHooks*/
+        6 && input.value !== /*$loadedTheme*/
+        ctx[2].theme.hooks[
+          /*color*/
+          ctx[61][0]
+        ]) {
+          set_input_value(
+            input,
+            /*$loadedTheme*/
+            ctx[2].theme.hooks[
+              /*color*/
+              ctx[61][0]
+            ]
+          );
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+          detach(t4);
+          detach(input);
+        }
+        mounted = false;
+        run_all(dispose);
+      }
+    };
+  }
+  __name(create_each_block$s, "create_each_block$s");
+  function create_fragment$S(ctx) {
+    let div;
+    let current_block_type_index;
+    let if_block;
+    let current;
+    const if_block_creators = [create_if_block$q, create_else_block$b];
+    const if_blocks = [];
+    function select_block_type(ctx2, dirty) {
+      if (
+        /*$loadedTheme*/
+        ctx2[2] === void 0
+      ) return 0;
+      return 1;
+    }
+    __name(select_block_type, "select_block_type");
+    current_block_type_index = select_block_type(ctx);
+    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    return {
+      c() {
+        div = element("div");
+        if_block.c();
+        attr(div, "class", "typo-themes-editor svelte-1gh1qig");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        if_blocks[current_block_type_index].m(div, null);
+        current = true;
+      },
+      p(ctx2, dirty) {
+        let previous_block_index = current_block_type_index;
+        current_block_type_index = select_block_type(ctx2);
+        if (current_block_type_index === previous_block_index) {
+          if_blocks[current_block_type_index].p(ctx2, dirty);
+        } else {
+          group_outros();
+          transition_out(if_blocks[previous_block_index], 1, 1, () => {
+            if_blocks[previous_block_index] = null;
+          });
+          check_outros();
+          if_block = if_blocks[current_block_type_index];
+          if (!if_block) {
+            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+            if_block.c();
+          } else {
+            if_block.p(ctx2, dirty);
+          }
+          transition_in(if_block, 1);
+          if_block.m(div, null);
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(if_block);
+        current = true;
+      },
+      o(local) {
+        transition_out(if_block);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        if_blocks[current_block_type_index].d();
+      }
+    };
+  }
+  __name(create_fragment$S, "create_fragment$S");
+  function instance$L($$self, $$props, $$invalidate) {
+    let $loadedTheme;
+    let $activeThemeTab;
+    let schemePrimaryColor = Color.fromHex("#4197c5");
+    let schemeTextColor = Color.fromHex("#FFFFFF");
+    let schemeBackgroundTint = Color.fromHex("#2f61eb");
+    let schemeOnInputs = true;
+    let schemeInvertInputBrightness = false;
+    let schemeEnableBackgroundTint = true;
+    let schemeIngame = false;
+    let shareId = "";
+    let { feature } = $$props;
+    let { variableHooks } = $$props;
+    const loadedTheme = feature.loadedEditorThemeStore;
+    component_subscribe($$self, loadedTheme, (value) => $$invalidate(2, $loadedTheme = value));
+    const activeThemeTab = feature.activeThemeTabStore;
+    component_subscribe($$self, activeThemeTab, (value) => $$invalidate(12, $activeThemeTab = value));
+    let themeColors2 = [];
+    const click_handler2 = /* @__PURE__ */ __name(async () => {
+      const theme = await feature.createLocalTheme();
+      await feature.loadThemeToEditor(theme);
+    }, "click_handler");
+    function input_input_handler() {
+      shareId = this.value;
+      $$invalidate(10, shareId);
+    }
+    __name(input_input_handler, "input_input_handler");
+    const click_handler_1 = /* @__PURE__ */ __name(async () => {
+      const theme = await feature.importTheme(shareId);
+      await feature.activateLocalTheme(theme.theme.meta.id);
+      set_store_value(activeThemeTab, $activeThemeTab = "list", $activeThemeTab);
+    }, "click_handler_1");
+    const click_handler_2 = /* @__PURE__ */ __name(async () => {
+      const id2 = $loadedTheme.theme.meta.id;
+      await feature.unloadThemeFromEditor();
+      await feature.removeSavedTheme(id2);
+    }, "click_handler_2");
+    const click_handler_3 = /* @__PURE__ */ __name(() => feature.unloadThemeFromEditor(), "click_handler_3");
+    const click_handler_4 = /* @__PURE__ */ __name(() => {
+      feature.saveLoadedEditorTheme();
+      feature.activeThemeTabStore.set("list");
+    }, "click_handler_4");
+    function input0_input_handler() {
+      $loadedTheme.theme.meta.name = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input0_input_handler, "input0_input_handler");
+    function input1_input_handler() {
+      $loadedTheme.theme.meta.author = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input1_input_handler, "input1_input_handler");
+    function colorpickerbutton0_color_binding(value) {
+      schemePrimaryColor = value;
+      $$invalidate(3, schemePrimaryColor);
+    }
+    __name(colorpickerbutton0_color_binding, "colorpickerbutton0_color_binding");
+    function colorpickerbutton1_color_binding(value) {
+      schemeTextColor = value;
+      $$invalidate(4, schemeTextColor);
+    }
+    __name(colorpickerbutton1_color_binding, "colorpickerbutton1_color_binding");
+    function checkbox0_checked_binding(value) {
+      schemeOnInputs = value;
+      $$invalidate(6, schemeOnInputs);
+    }
+    __name(checkbox0_checked_binding, "checkbox0_checked_binding");
+    function checkbox1_checked_binding(value) {
+      schemeInvertInputBrightness = value;
+      $$invalidate(7, schemeInvertInputBrightness);
+    }
+    __name(checkbox1_checked_binding, "checkbox1_checked_binding");
+    function checkbox2_checked_binding(value) {
+      schemeIngame = value;
+      $$invalidate(9, schemeIngame);
+    }
+    __name(checkbox2_checked_binding, "checkbox2_checked_binding");
+    const click_handler_52 = /* @__PURE__ */ __name(async () => {
+      await feature.setColorScheme($loadedTheme.theme, schemePrimaryColor, schemeTextColor, schemeOnInputs, schemeInvertInputBrightness, schemeIngame);
+      feature.updateLoadedEditorTheme($loadedTheme);
+    }, "click_handler_5");
+    function input2_input_handler() {
+      $loadedTheme.theme.images.urlLogo = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input2_input_handler, "input2_input_handler");
+    const change_handler = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler");
+    function input3_input_handler() {
+      $loadedTheme.theme.images.urlBackground = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input3_input_handler, "input3_input_handler");
+    const change_handler_1 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_1");
+    function input4_input_handler() {
+      $loadedTheme.theme.images.urlBackgroundGame = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input4_input_handler, "input4_input_handler");
+    const change_handler_2 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_2");
+    function input5_input_handler() {
+      $loadedTheme.theme.images.containerImages = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input5_input_handler, "input5_input_handler");
+    const change_handler_3 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_3");
+    function checkbox3_checked_binding(value) {
+      schemeEnableBackgroundTint = value;
+      $$invalidate(8, schemeEnableBackgroundTint), $$invalidate(2, $loadedTheme);
+    }
+    __name(checkbox3_checked_binding, "checkbox3_checked_binding");
+    const change_handler_4 = /* @__PURE__ */ __name(() => {
+      if (schemeEnableBackgroundTint) {
+        set_store_value(loadedTheme, $loadedTheme.theme.images.backgroundTint = schemeBackgroundTint.hex, $loadedTheme);
+      } else {
+        set_store_value(loadedTheme, $loadedTheme.theme.images.backgroundTint = void 0, $loadedTheme);
+      }
+      feature.updateLoadedEditorTheme($loadedTheme);
+    }, "change_handler_4");
+    const func2 = /* @__PURE__ */ __name((color) => {
+      $$invalidate(5, schemeBackgroundTint = color);
+      $$invalidate(8, schemeEnableBackgroundTint = true);
+      set_store_value(loadedTheme, $loadedTheme.theme.images.backgroundTint = color.hex, $loadedTheme);
+      feature.updateLoadedEditorTheme($loadedTheme);
+    }, "func");
+    function checkbox4_checked_binding(value) {
+      if ($$self.$$.not_equal($loadedTheme.theme.images.backgroundRepeat, value)) {
+        $loadedTheme.theme.images.backgroundRepeat = value;
+        loadedTheme.set($loadedTheme);
+      }
+    }
+    __name(checkbox4_checked_binding, "checkbox4_checked_binding");
+    const change_handler_5 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_5");
+    const func_12 = /* @__PURE__ */ __name((color, update2) => {
+      set_store_value(loadedTheme, $loadedTheme.theme.colors[color[0]] = update2.hsl, $loadedTheme);
+      feature.updateLoadedEditorTheme($loadedTheme);
+    }, "func_1");
+    function input6_input_handler() {
+      $loadedTheme.theme.misc.fontStyle = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input6_input_handler, "input6_input_handler");
+    const change_handler_6 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_6");
+    function input7_input_handler() {
+      $loadedTheme.theme.misc.themeCssUrl = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input7_input_handler, "input7_input_handler");
+    const change_handler_7 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_7");
+    function input8_input_handler() {
+      $loadedTheme.theme.misc.cssText = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input8_input_handler, "input8_input_handler");
+    const change_handler_8 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_8");
+    function input9_input_handler() {
+      $loadedTheme.theme.misc.htmlText = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input9_input_handler, "input9_input_handler");
+    const change_handler_9 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_9");
+    function checkbox5_checked_binding(value) {
+      if ($$self.$$.not_equal($loadedTheme.theme.misc.hideFooter, value)) {
+        $loadedTheme.theme.misc.hideFooter = value;
+        loadedTheme.set($loadedTheme);
+      }
+    }
+    __name(checkbox5_checked_binding, "checkbox5_checked_binding");
+    const change_handler_10 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_10");
+    function checkbox6_checked_binding(value) {
+      if ($$self.$$.not_equal($loadedTheme.theme.misc.hideSkribblPanels, value)) {
+        $loadedTheme.theme.misc.hideSkribblPanels = value;
+        loadedTheme.set($loadedTheme);
+      }
+    }
+    __name(checkbox6_checked_binding, "checkbox6_checked_binding");
+    const change_handler_11 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_11");
+    function checkbox7_checked_binding(value) {
+      if ($$self.$$.not_equal($loadedTheme.theme.misc.hideAvatarLogo, value)) {
+        $loadedTheme.theme.misc.hideAvatarLogo = value;
+        loadedTheme.set($loadedTheme);
+      }
+    }
+    __name(checkbox7_checked_binding, "checkbox7_checked_binding");
+    const change_handler_12 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_12");
+    function checkbox8_checked_binding(value) {
+      if ($$self.$$.not_equal($loadedTheme.theme.misc.hideInGameLogo, value)) {
+        $loadedTheme.theme.misc.hideInGameLogo = value;
+        loadedTheme.set($loadedTheme);
+      }
+    }
+    __name(checkbox8_checked_binding, "checkbox8_checked_binding");
+    const change_handler_13 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_13");
+    function input_input_handler_1(color) {
+      $loadedTheme.theme.hooks[color[0]] = this.value;
+      loadedTheme.set($loadedTheme);
+    }
+    __name(input_input_handler_1, "input_input_handler_1");
+    const change_handler_14 = /* @__PURE__ */ __name(() => {
+      feature.updateLoadedEditorTheme($loadedTheme);
+    }, "change_handler_14");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+      if ("variableHooks" in $$props2) $$invalidate(1, variableHooks = $$props2.variableHooks);
+    };
+    $$self.$$.update = () => {
+      if ($$self.$$.dirty[0] & /*$loadedTheme*/
+      4) {
+        {
+          $$invalidate(11, themeColors2 = $loadedTheme ? Object.entries($loadedTheme.theme.colors).map((entry) => {
+            const color = Color.fromHsl(entry[1][0], entry[1][1], entry[1][2], entry[1][3]);
+            return [entry[0], color];
+          }) : []);
+          if (($loadedTheme == null ? void 0 : $loadedTheme.theme.images.backgroundTint) && ($loadedTheme == null ? void 0 : $loadedTheme.theme.images.backgroundTint) !== "transparent") {
+            $$invalidate(5, schemeBackgroundTint = Color.fromHex($loadedTheme.theme.images.backgroundTint));
+            $$invalidate(8, schemeEnableBackgroundTint = true);
+          } else {
+            $$invalidate(8, schemeEnableBackgroundTint = false);
+          }
+        }
+      }
+    };
+    return [
+      feature,
+      variableHooks,
+      $loadedTheme,
+      schemePrimaryColor,
+      schemeTextColor,
+      schemeBackgroundTint,
+      schemeOnInputs,
+      schemeInvertInputBrightness,
+      schemeEnableBackgroundTint,
+      schemeIngame,
+      shareId,
+      themeColors2,
+      $activeThemeTab,
+      loadedTheme,
+      activeThemeTab,
+      click_handler2,
+      input_input_handler,
+      click_handler_1,
+      click_handler_2,
+      click_handler_3,
+      click_handler_4,
+      input0_input_handler,
+      input1_input_handler,
+      colorpickerbutton0_color_binding,
+      colorpickerbutton1_color_binding,
+      checkbox0_checked_binding,
+      checkbox1_checked_binding,
+      checkbox2_checked_binding,
+      click_handler_52,
+      input2_input_handler,
+      change_handler,
+      input3_input_handler,
+      change_handler_1,
+      input4_input_handler,
+      change_handler_2,
+      input5_input_handler,
+      change_handler_3,
+      checkbox3_checked_binding,
+      change_handler_4,
+      func2,
+      checkbox4_checked_binding,
+      change_handler_5,
+      func_12,
+      input6_input_handler,
+      change_handler_6,
+      input7_input_handler,
+      change_handler_7,
+      input8_input_handler,
+      change_handler_8,
+      input9_input_handler,
+      change_handler_9,
+      checkbox5_checked_binding,
+      change_handler_10,
+      checkbox6_checked_binding,
+      change_handler_11,
+      checkbox7_checked_binding,
+      change_handler_12,
+      checkbox8_checked_binding,
+      change_handler_13,
+      input_input_handler_1,
+      change_handler_14
+    ];
+  }
+  __name(instance$L, "instance$L");
+  const _Themes_editor = class _Themes_editor extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$L, create_fragment$S, safe_not_equal, { feature: 0, variableHooks: 1 }, null, [-1, -1, -1]);
+    }
+  };
+  __name(_Themes_editor, "Themes_editor");
+  let Themes_editor = _Themes_editor;
+  function get_each_context$r(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[15] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context$r, "get_each_context$r");
+  function create_else_block$a(ctx) {
+    let div1;
+    return {
+      c() {
+        div1 = element("div");
+        div1.innerHTML = `<img src="" alt="disabled" style="content: var(--file-img-disabled-gif)" class="svelte-wdh6rb"/> <div>Inactive</div>`;
+        attr(div1, "class", "active-marker svelte-wdh6rb");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_else_block$a, "create_else_block$a");
+  function create_if_block_5$2(ctx) {
+    let div1;
+    return {
+      c() {
+        div1 = element("div");
+        div1.innerHTML = `<img src="" alt="enabled" style="content: var(--file-img-enabled-gif)" class="svelte-wdh6rb"/> <div>Editing</div>`;
+        attr(div1, "class", "active-marker svelte-wdh6rb");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_if_block_5$2, "create_if_block_5$2");
+  function create_if_block_4$6(ctx) {
+    let div1;
+    return {
+      c() {
+        div1 = element("div");
+        div1.innerHTML = `<img src="" alt="enabled" style="content: var(--file-img-enabled-gif)" class="svelte-wdh6rb"/> <div>Selected</div>`;
+        attr(div1, "class", "active-marker svelte-wdh6rb");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_if_block_4$6, "create_if_block_4$6");
+  function create_if_block_3$6(ctx) {
+    let span0;
+    let t0;
+    let t1_value = (
+      /*theme*/
+      ctx[15].publicTheme.localVersion + ""
+    );
+    let t1;
+    let t2;
+    let span1;
+    let t3;
+    let t4_value = (
+      /*theme*/
+      ctx[15].publicTheme.publicId + ""
+    );
+    let t4;
+    return {
+      c() {
+        span0 = element("span");
+        t0 = text("v");
+        t1 = text(t1_value);
+        t2 = space();
+        span1 = element("span");
+        t3 = text("#");
+        t4 = text(t4_value);
+        attr(span0, "class", "svelte-wdh6rb");
+        attr(span1, "class", "svelte-wdh6rb");
+      },
+      m(target, anchor) {
+        insert(target, span0, anchor);
+        append(span0, t0);
+        append(span0, t1);
+        insert(target, t2, anchor);
+        insert(target, span1, anchor);
+        append(span1, t3);
+        append(span1, t4);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*$savedThemes*/
+        2 && t1_value !== (t1_value = /*theme*/
+        ctx2[15].publicTheme.localVersion + "")) set_data(t1, t1_value);
+        if (dirty & /*$savedThemes*/
+        2 && t4_value !== (t4_value = /*theme*/
+        ctx2[15].publicTheme.publicId + "")) set_data(t4, t4_value);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(span0);
+          detach(t2);
+          detach(span1);
+        }
+      }
+    };
+  }
+  __name(create_if_block_3$6, "create_if_block_3$6");
+  function create_if_block_2$9(ctx) {
+    let flatbutton;
+    let current;
+    function click_handler_1() {
+      return (
+        /*click_handler_1*/
+        ctx[12](
+          /*theme*/
+          ctx[15]
+        )
+      );
+    }
+    __name(click_handler_1, "click_handler_1");
+    flatbutton = new Flat_button({
+      props: { content: "Remove", color: "orange" }
+    });
+    flatbutton.$on("click", click_handler_1);
+    return {
+      c() {
+        create_component(flatbutton.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(flatbutton, target, anchor);
+        current = true;
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(flatbutton, detaching);
+      }
+    };
+  }
+  __name(create_if_block_2$9, "create_if_block_2$9");
+  function create_if_block_1$c(ctx) {
+    var _a2, _b2;
+    let flatbutton;
+    let current;
+    function click_handler_2() {
+      return (
+        /*click_handler_2*/
+        ctx[13](
+          /*theme*/
+          ctx[15]
+        )
+      );
+    }
+    __name(click_handler_2, "click_handler_2");
+    flatbutton = new Flat_button({
+      props: {
+        content: (
+          /*$loadedEditorTheme*/
+          ((_a2 = ctx[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
+          ctx[15].theme.meta.id ? "Editing" : "Edit"
+        ),
+        color: "blue",
+        disabled: (
+          /*$loadedEditorTheme*/
+          ((_b2 = ctx[3]) == null ? void 0 : _b2.theme.meta.id) === /*theme*/
+          ctx[15].theme.meta.id
+        )
+      }
+    });
+    flatbutton.$on("click", click_handler_2);
+    return {
+      c() {
+        create_component(flatbutton.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(flatbutton, target, anchor);
+        current = true;
+      },
+      p(new_ctx, dirty) {
+        var _a3, _b3;
+        ctx = new_ctx;
+        const flatbutton_changes = {};
+        if (dirty & /*$loadedEditorTheme, $savedThemes*/
+        10) flatbutton_changes.content = /*$loadedEditorTheme*/
+        ((_a3 = ctx[3]) == null ? void 0 : _a3.theme.meta.id) === /*theme*/
+        ctx[15].theme.meta.id ? "Editing" : "Edit";
+        if (dirty & /*$loadedEditorTheme, $savedThemes*/
+        10) flatbutton_changes.disabled = /*$loadedEditorTheme*/
+        ((_b3 = ctx[3]) == null ? void 0 : _b3.theme.meta.id) === /*theme*/
+        ctx[15].theme.meta.id;
+        flatbutton.$set(flatbutton_changes);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(flatbutton, detaching);
+      }
+    };
+  }
+  __name(create_if_block_1$c, "create_if_block_1$c");
+  function create_if_block$p(ctx) {
+    var _a2;
+    let flatbutton;
+    let current;
+    function click_handler_3() {
+      return (
+        /*click_handler_3*/
+        ctx[14](
+          /*theme*/
+          ctx[15]
+        )
+      );
+    }
+    __name(click_handler_3, "click_handler_3");
+    flatbutton = new Flat_button({
+      props: {
+        content: "Share",
+        color: "blue",
+        disabled: (
+          /*$loadedEditorTheme*/
+          ((_a2 = ctx[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
+          ctx[15].theme.meta.id
+        )
+      }
+    });
+    flatbutton.$on("click", click_handler_3);
+    return {
+      c() {
+        create_component(flatbutton.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(flatbutton, target, anchor);
+        current = true;
+      },
+      p(new_ctx, dirty) {
+        var _a3;
+        ctx = new_ctx;
+        const flatbutton_changes = {};
+        if (dirty & /*$loadedEditorTheme, $savedThemes*/
+        10) flatbutton_changes.disabled = /*$loadedEditorTheme*/
+        ((_a3 = ctx[3]) == null ? void 0 : _a3.theme.meta.id) === /*theme*/
+        ctx[15].theme.meta.id;
+        flatbutton.$set(flatbutton_changes);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(flatbutton, detaching);
+      }
+    };
+  }
+  __name(create_if_block$p, "create_if_block$p");
+  function create_each_block$r(ctx) {
+    let div5;
+    let div0;
+    let b;
+    let t0_value = (
+      /*theme*/
+      ctx[15].theme.meta.name + ""
+    );
+    let t0;
+    let t1;
+    let span;
+    let t2_value = (
+      /*theme*/
+      ctx[15].publicTheme ? "Featured Theme" : "Local Theme"
+    );
+    let t2;
+    let t3;
+    let div2;
+    let t4;
+    let div1;
+    let t5;
+    let t6_value = (
+      /*theme*/
+      ctx[15].theme.meta.author + ""
+    );
+    let t6;
+    let t7;
+    let t8;
+    let div3;
+    let flatbutton;
+    let t9;
+    let t10;
+    let div4;
+    let t11;
+    let t12;
+    let current;
+    function select_block_type(ctx2, dirty) {
+      var _a2;
+      if (
+        /*$currentThemeId*/
+        ctx2[2] === /*theme*/
+        ctx2[15].theme.meta.id && /*$loadedEditorTheme*/
+        ctx2[3] === void 0
+      ) return create_if_block_4$6;
+      if (
+        /*$loadedEditorTheme*/
+        ((_a2 = ctx2[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
+        ctx2[15].theme.meta.id
+      ) return create_if_block_5$2;
+      return create_else_block$a;
+    }
+    __name(select_block_type, "select_block_type");
+    let current_block_type = select_block_type(ctx);
+    let if_block0 = current_block_type(ctx);
+    let if_block1 = (
+      /*$devmode*/
+      ctx[4] && /*theme*/
+      ctx[15].publicTheme && create_if_block_3$6(ctx)
+    );
+    function click_handler2() {
+      return (
+        /*click_handler*/
+        ctx[11](
+          /*theme*/
+          ctx[15]
+        )
+      );
+    }
+    __name(click_handler2, "click_handler");
+    flatbutton = new Flat_button({
+      props: {
+        content: (
+          /*$currentThemeId*/
+          ctx[2] === /*theme*/
+          ctx[15].theme.meta.id && /*$loadedEditorTheme*/
+          ctx[3] === void 0 ? "Active" : "Activate"
+        ),
+        disabled: (
+          /*$currentThemeId*/
+          ctx[2] === /*theme*/
+          ctx[15].theme.meta.id && /*$loadedEditorTheme*/
+          ctx[3] === void 0
+        ),
+        color: "green"
+      }
+    });
+    flatbutton.$on("click", click_handler2);
+    let if_block2 = (
+      /*theme*/
+      (ctx[15].publicTheme || /*theme*/
+      ctx[15].enableManage === true) && create_if_block_2$9(ctx)
+    );
+    let if_block3 = (
+      /*theme*/
+      ctx[15].enableManage === true && create_if_block_1$c(ctx)
+    );
+    let if_block4 = (
+      /*theme*/
+      ctx[15].enableManage === true && create_if_block$p(ctx)
+    );
+    return {
+      c() {
+        div5 = element("div");
+        div0 = element("div");
+        b = element("b");
+        t0 = text(t0_value);
+        t1 = space();
+        span = element("span");
+        t2 = text(t2_value);
+        t3 = space();
+        div2 = element("div");
+        if_block0.c();
+        t4 = space();
+        div1 = element("div");
+        t5 = text("by ");
+        t6 = text(t6_value);
+        t7 = space();
+        if (if_block1) if_block1.c();
+        t8 = space();
+        div3 = element("div");
+        create_component(flatbutton.$$.fragment);
+        t9 = space();
+        if (if_block2) if_block2.c();
+        t10 = space();
+        div4 = element("div");
+        if (if_block3) if_block3.c();
+        t11 = space();
+        if (if_block4) if_block4.c();
+        t12 = space();
+        attr(b, "class", "svelte-wdh6rb");
+        attr(span, "class", "svelte-wdh6rb");
+        attr(div0, "class", "svelte-wdh6rb");
+        attr(div1, "class", "svelte-wdh6rb");
+        attr(div2, "class", "svelte-wdh6rb");
+        attr(div3, "class", "svelte-wdh6rb");
+        attr(div4, "class", "svelte-wdh6rb");
+        attr(div5, "class", "typo-themes-list-item svelte-wdh6rb");
+      },
+      m(target, anchor) {
+        insert(target, div5, anchor);
+        append(div5, div0);
+        append(div0, b);
+        append(b, t0);
+        append(div0, t1);
+        append(div0, span);
+        append(span, t2);
+        append(div5, t3);
+        append(div5, div2);
+        if_block0.m(div2, null);
+        append(div2, t4);
+        append(div2, div1);
+        append(div1, t5);
+        append(div1, t6);
+        append(div2, t7);
+        if (if_block1) if_block1.m(div2, null);
+        append(div5, t8);
+        append(div5, div3);
+        mount_component(flatbutton, div3, null);
+        append(div3, t9);
+        if (if_block2) if_block2.m(div3, null);
+        append(div5, t10);
+        append(div5, div4);
+        if (if_block3) if_block3.m(div4, null);
+        append(div4, t11);
+        if (if_block4) if_block4.m(div4, null);
+        append(div5, t12);
+        current = true;
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+        if ((!current || dirty & /*$savedThemes*/
+        2) && t0_value !== (t0_value = /*theme*/
+        ctx[15].theme.meta.name + "")) set_data(t0, t0_value);
+        if ((!current || dirty & /*$savedThemes*/
+        2) && t2_value !== (t2_value = /*theme*/
+        ctx[15].publicTheme ? "Featured Theme" : "Local Theme")) set_data(t2, t2_value);
+        if (current_block_type !== (current_block_type = select_block_type(ctx))) {
+          if_block0.d(1);
+          if_block0 = current_block_type(ctx);
+          if (if_block0) {
+            if_block0.c();
+            if_block0.m(div2, t4);
+          }
+        }
+        if ((!current || dirty & /*$savedThemes*/
+        2) && t6_value !== (t6_value = /*theme*/
+        ctx[15].theme.meta.author + "")) set_data(t6, t6_value);
+        if (
+          /*$devmode*/
+          ctx[4] && /*theme*/
+          ctx[15].publicTheme
+        ) {
+          if (if_block1) {
+            if_block1.p(ctx, dirty);
+          } else {
+            if_block1 = create_if_block_3$6(ctx);
+            if_block1.c();
+            if_block1.m(div2, null);
+          }
+        } else if (if_block1) {
+          if_block1.d(1);
+          if_block1 = null;
+        }
+        const flatbutton_changes = {};
+        if (dirty & /*$currentThemeId, $savedThemes, $loadedEditorTheme*/
+        14) flatbutton_changes.content = /*$currentThemeId*/
+        ctx[2] === /*theme*/
+        ctx[15].theme.meta.id && /*$loadedEditorTheme*/
+        ctx[3] === void 0 ? "Active" : "Activate";
+        if (dirty & /*$currentThemeId, $savedThemes, $loadedEditorTheme*/
+        14) flatbutton_changes.disabled = /*$currentThemeId*/
+        ctx[2] === /*theme*/
+        ctx[15].theme.meta.id && /*$loadedEditorTheme*/
+        ctx[3] === void 0;
+        flatbutton.$set(flatbutton_changes);
+        if (
+          /*theme*/
+          ctx[15].publicTheme || /*theme*/
+          ctx[15].enableManage === true
+        ) {
+          if (if_block2) {
+            if_block2.p(ctx, dirty);
+            if (dirty & /*$savedThemes*/
+            2) {
+              transition_in(if_block2, 1);
+            }
+          } else {
+            if_block2 = create_if_block_2$9(ctx);
+            if_block2.c();
+            transition_in(if_block2, 1);
+            if_block2.m(div3, null);
+          }
+        } else if (if_block2) {
+          group_outros();
+          transition_out(if_block2, 1, 1, () => {
+            if_block2 = null;
+          });
+          check_outros();
+        }
+        if (
+          /*theme*/
+          ctx[15].enableManage === true
+        ) {
+          if (if_block3) {
+            if_block3.p(ctx, dirty);
+            if (dirty & /*$savedThemes*/
+            2) {
+              transition_in(if_block3, 1);
+            }
+          } else {
+            if_block3 = create_if_block_1$c(ctx);
+            if_block3.c();
+            transition_in(if_block3, 1);
+            if_block3.m(div4, t11);
+          }
+        } else if (if_block3) {
+          group_outros();
+          transition_out(if_block3, 1, 1, () => {
+            if_block3 = null;
+          });
+          check_outros();
+        }
+        if (
+          /*theme*/
+          ctx[15].enableManage === true
+        ) {
+          if (if_block4) {
+            if_block4.p(ctx, dirty);
+            if (dirty & /*$savedThemes*/
+            2) {
+              transition_in(if_block4, 1);
+            }
+          } else {
+            if_block4 = create_if_block$p(ctx);
+            if_block4.c();
+            transition_in(if_block4, 1);
+            if_block4.m(div4, null);
+          }
+        } else if (if_block4) {
+          group_outros();
+          transition_out(if_block4, 1, 1, () => {
+            if_block4 = null;
+          });
+          check_outros();
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton.$$.fragment, local);
+        transition_in(if_block2);
+        transition_in(if_block3);
+        transition_in(if_block4);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton.$$.fragment, local);
+        transition_out(if_block2);
+        transition_out(if_block3);
+        transition_out(if_block4);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div5);
+        }
+        if_block0.d();
+        if (if_block1) if_block1.d();
+        destroy_component(flatbutton);
+        if (if_block2) if_block2.d();
+        if (if_block3) if_block3.d();
+        if (if_block4) if_block4.d();
+      }
+    };
+  }
+  __name(create_each_block$r, "create_each_block$r");
+  function create_fragment$R(ctx) {
+    let div0;
+    let t1;
+    let div1;
+    let current;
+    let each_value = ensure_array_like(
+      /*$savedThemes*/
+      ctx[1]
+    );
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$r(get_each_context$r(ctx, each_value, i));
+    }
+    const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+      each_blocks[i] = null;
+    }), "out");
+    return {
+      c() {
+        div0 = element("div");
+        div0.textContent = "Downloaded and created themes will appear here. Select a theme to change the appearance of skribbl!";
+        t1 = space();
+        div1 = element("div");
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        attr(div0, "class", "typo-themes-list-header svelte-wdh6rb");
+        attr(div1, "class", "typo-themes-list-list svelte-wdh6rb");
+      },
+      m(target, anchor) {
+        insert(target, div0, anchor);
+        insert(target, t1, anchor);
+        insert(target, div1, anchor);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(div1, null);
+          }
+        }
+        current = true;
+      },
+      p(ctx2, [dirty]) {
+        if (dirty & /*$loadedEditorTheme, $savedThemes, feature, $selectedTab, $currentThemeId, undefined, $devmode*/
+        63) {
+          each_value = ensure_array_like(
+            /*$savedThemes*/
+            ctx2[1]
+          );
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$r(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+              transition_in(each_blocks[i], 1);
+            } else {
+              each_blocks[i] = create_each_block$r(child_ctx);
+              each_blocks[i].c();
+              transition_in(each_blocks[i], 1);
+              each_blocks[i].m(div1, null);
+            }
+          }
+          group_outros();
+          for (i = each_value.length; i < each_blocks.length; i += 1) {
+            out(i);
+          }
+          check_outros();
+        }
+      },
+      i(local) {
+        if (current) return;
+        for (let i = 0; i < each_value.length; i += 1) {
+          transition_in(each_blocks[i]);
+        }
+        current = true;
+      },
+      o(local) {
+        each_blocks = each_blocks.filter(Boolean);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          transition_out(each_blocks[i]);
+        }
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div0);
+          detach(t1);
+          detach(div1);
+        }
+        destroy_each(each_blocks, detaching);
+      }
+    };
+  }
+  __name(create_fragment$R, "create_fragment$R");
+  function instance$K($$self, $$props, $$invalidate) {
+    let $savedThemes;
+    let $currentThemeId;
+    let $loadedEditorTheme;
+    let $devmode;
+    let $selectedTab;
+    let { feature } = $$props;
+    const devmode = feature.devmodeStore;
+    component_subscribe($$self, devmode, (value) => $$invalidate(4, $devmode = value));
+    const savedThemes = feature.savedThemesStore;
+    component_subscribe($$self, savedThemes, (value) => $$invalidate(1, $savedThemes = value));
+    const currentThemeId = feature.activeThemeStore;
+    component_subscribe($$self, currentThemeId, (value) => $$invalidate(2, $currentThemeId = value));
+    const loadedEditorTheme = feature.loadedEditorThemeStore;
+    component_subscribe($$self, loadedEditorTheme, (value) => $$invalidate(3, $loadedEditorTheme = value));
+    const selectedTab = feature.activeThemeTabStore;
+    component_subscribe($$self, selectedTab, (value) => $$invalidate(5, $selectedTab = value));
+    const click_handler2 = /* @__PURE__ */ __name((theme) => feature.activateLocalTheme(theme.theme.meta.id), "click_handler");
+    const click_handler_1 = /* @__PURE__ */ __name((theme) => feature.removeSavedTheme(theme.theme.meta.id), "click_handler_1");
+    const click_handler_2 = /* @__PURE__ */ __name((theme) => {
+      feature.loadThemeToEditor(theme);
+      set_store_value(selectedTab, $selectedTab = "editor", $selectedTab);
+    }, "click_handler_2");
+    const click_handler_3 = /* @__PURE__ */ __name((theme) => {
+      feature.shareTheme(theme.theme);
+    }, "click_handler_3");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    };
+    return [
+      feature,
+      $savedThemes,
+      $currentThemeId,
+      $loadedEditorTheme,
+      $devmode,
+      $selectedTab,
+      devmode,
+      savedThemes,
+      currentThemeId,
+      loadedEditorTheme,
+      selectedTab,
+      click_handler2,
+      click_handler_1,
+      click_handler_2,
+      click_handler_3
+    ];
+  }
+  __name(instance$K, "instance$K");
+  const _Themes_list = class _Themes_list extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$K, create_fragment$R, safe_not_equal, { feature: 0 });
+    }
+  };
+  __name(_Themes_list, "Themes_list");
+  let Themes_list = _Themes_list;
+  function create_if_block_2$8(ctx) {
+    let themesbrowser;
+    let current;
+    themesbrowser = new Themes_browser({ props: { feature: (
+      /*feature*/
+      ctx[0]
+    ) } });
+    return {
+      c() {
+        create_component(themesbrowser.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(themesbrowser, target, anchor);
+        current = true;
+      },
+      p(ctx2, dirty) {
+        const themesbrowser_changes = {};
+        if (dirty & /*feature*/
+        1) themesbrowser_changes.feature = /*feature*/
+        ctx2[0];
+        themesbrowser.$set(themesbrowser_changes);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(themesbrowser.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(themesbrowser.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(themesbrowser, detaching);
+      }
+    };
+  }
+  __name(create_if_block_2$8, "create_if_block_2$8");
+  function create_if_block_1$b(ctx) {
+    let themeseditor;
+    let current;
+    themeseditor = new Themes_editor({
+      props: {
+        feature: (
+          /*feature*/
+          ctx[0]
+        ),
+        variableHooks: (
+          /*variableHooks*/
+          ctx[1]
+        )
+      }
+    });
+    return {
+      c() {
+        create_component(themeseditor.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(themeseditor, target, anchor);
+        current = true;
+      },
+      p(ctx2, dirty) {
+        const themeseditor_changes = {};
+        if (dirty & /*feature*/
+        1) themeseditor_changes.feature = /*feature*/
+        ctx2[0];
+        if (dirty & /*variableHooks*/
+        2) themeseditor_changes.variableHooks = /*variableHooks*/
+        ctx2[1];
+        themeseditor.$set(themeseditor_changes);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(themeseditor.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(themeseditor.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(themeseditor, detaching);
+      }
+    };
+  }
+  __name(create_if_block_1$b, "create_if_block_1$b");
+  function create_if_block$o(ctx) {
+    let themeslist;
+    let current;
+    themeslist = new Themes_list({ props: { feature: (
+      /*feature*/
+      ctx[0]
+    ) } });
+    return {
+      c() {
+        create_component(themeslist.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(themeslist, target, anchor);
+        current = true;
+      },
+      p(ctx2, dirty) {
+        const themeslist_changes = {};
+        if (dirty & /*feature*/
+        1) themeslist_changes.feature = /*feature*/
+        ctx2[0];
+        themeslist.$set(themeslist_changes);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(themeslist.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(themeslist.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(themeslist, detaching);
+      }
+    };
+  }
+  __name(create_if_block$o, "create_if_block$o");
+  function create_fragment$Q(ctx) {
+    let div2;
+    let div0;
+    let h30;
+    let t1;
+    let h31;
+    let t3;
+    let h32;
+    let t5;
+    let div1;
+    let current_block_type_index;
+    let if_block;
+    let current;
+    let mounted;
+    let dispose;
+    const if_block_creators = [create_if_block$o, create_if_block_1$b, create_if_block_2$8];
+    const if_blocks = [];
+    function select_block_type(ctx2, dirty) {
+      if (
+        /*$selectedTab*/
+        ctx2[2] === "list"
+      ) return 0;
+      if (
+        /*$selectedTab*/
+        ctx2[2] === "editor"
+      ) return 1;
+      if (
+        /*$selectedTab*/
+        ctx2[2] === "browser"
+      ) return 2;
+      return -1;
+    }
+    __name(select_block_type, "select_block_type");
+    if (~(current_block_type_index = select_block_type(ctx))) {
+      if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    }
+    return {
+      c() {
+        div2 = element("div");
+        div0 = element("div");
+        h30 = element("h3");
+        h30.textContent = "Saved Themes";
+        t1 = space();
+        h31 = element("h3");
+        h31.textContent = "Theme Editor";
+        t3 = space();
+        h32 = element("h3");
+        h32.textContent = "Discover Themes";
+        t5 = space();
+        div1 = element("div");
+        if (if_block) if_block.c();
+        attr(h30, "class", "svelte-1ikbg14");
+        toggle_class(
+          h30,
+          "selected",
+          /*$selectedTab*/
+          ctx[2] === "list"
+        );
+        attr(h31, "class", "svelte-1ikbg14");
+        toggle_class(
+          h31,
+          "selected",
+          /*$selectedTab*/
+          ctx[2] === "editor"
+        );
+        attr(h32, "class", "svelte-1ikbg14");
+        toggle_class(
+          h32,
+          "selected",
+          /*$selectedTab*/
+          ctx[2] === "browser"
+        );
+        attr(div0, "class", "typo-themes-navigation svelte-1ikbg14");
+        attr(div1, "class", "typo-themes-tab color-scrollbar svelte-1ikbg14");
+        attr(div2, "class", "typo-themes-content svelte-1ikbg14");
+      },
+      m(target, anchor) {
+        insert(target, div2, anchor);
+        append(div2, div0);
+        append(div0, h30);
+        append(div0, t1);
+        append(div0, h31);
+        append(div0, t3);
+        append(div0, h32);
+        append(div2, t5);
+        append(div2, div1);
+        if (~current_block_type_index) {
+          if_blocks[current_block_type_index].m(div1, null);
+        }
+        current = true;
+        if (!mounted) {
+          dispose = [
+            listen(
+              h30,
+              "click",
+              /*click_handler*/
+              ctx[4]
+            ),
+            listen(
+              h31,
+              "click",
+              /*click_handler_1*/
+              ctx[5]
+            ),
+            listen(
+              h32,
+              "click",
+              /*click_handler_2*/
+              ctx[6]
+            )
+          ];
+          mounted = true;
+        }
+      },
+      p(ctx2, [dirty]) {
+        if (!current || dirty & /*$selectedTab*/
+        4) {
+          toggle_class(
+            h30,
+            "selected",
+            /*$selectedTab*/
+            ctx2[2] === "list"
+          );
+        }
+        if (!current || dirty & /*$selectedTab*/
+        4) {
+          toggle_class(
+            h31,
+            "selected",
+            /*$selectedTab*/
+            ctx2[2] === "editor"
+          );
+        }
+        if (!current || dirty & /*$selectedTab*/
+        4) {
+          toggle_class(
+            h32,
+            "selected",
+            /*$selectedTab*/
+            ctx2[2] === "browser"
+          );
+        }
+        let previous_block_index = current_block_type_index;
+        current_block_type_index = select_block_type(ctx2);
+        if (current_block_type_index === previous_block_index) {
+          if (~current_block_type_index) {
+            if_blocks[current_block_type_index].p(ctx2, dirty);
+          }
+        } else {
+          if (if_block) {
+            group_outros();
+            transition_out(if_blocks[previous_block_index], 1, 1, () => {
+              if_blocks[previous_block_index] = null;
+            });
+            check_outros();
+          }
+          if (~current_block_type_index) {
+            if_block = if_blocks[current_block_type_index];
+            if (!if_block) {
+              if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+              if_block.c();
+            } else {
+              if_block.p(ctx2, dirty);
+            }
+            transition_in(if_block, 1);
+            if_block.m(div1, null);
+          } else {
+            if_block = null;
+          }
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(if_block);
+        current = true;
+      },
+      o(local) {
+        transition_out(if_block);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div2);
+        }
+        if (~current_block_type_index) {
+          if_blocks[current_block_type_index].d();
+        }
+        mounted = false;
+        run_all(dispose);
+      }
+    };
+  }
+  __name(create_fragment$Q, "create_fragment$Q");
+  function instance$J($$self, $$props, $$invalidate) {
+    let $selectedTab;
+    let { feature } = $$props;
+    let { variableHooks } = $$props;
+    const selectedTab = feature.activeThemeTabStore;
+    component_subscribe($$self, selectedTab, (value) => $$invalidate(2, $selectedTab = value));
+    const click_handler2 = /* @__PURE__ */ __name(() => set_store_value(selectedTab, $selectedTab = "list", $selectedTab), "click_handler");
+    const click_handler_1 = /* @__PURE__ */ __name(() => set_store_value(selectedTab, $selectedTab = "editor", $selectedTab), "click_handler_1");
+    const click_handler_2 = /* @__PURE__ */ __name(() => set_store_value(selectedTab, $selectedTab = "browser", $selectedTab), "click_handler_2");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+      if ("variableHooks" in $$props2) $$invalidate(1, variableHooks = $$props2.variableHooks);
+    };
+    return [
+      feature,
+      variableHooks,
+      $selectedTab,
+      selectedTab,
+      click_handler2,
+      click_handler_1,
+      click_handler_2
+    ];
+  }
+  __name(instance$J, "instance$J");
+  const _Controls_themes = class _Controls_themes extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$J, create_fragment$Q, safe_not_equal, { feature: 0, variableHooks: 1 });
+    }
+  };
+  __name(_Controls_themes, "Controls_themes");
+  let Controls_themes = _Controls_themes;
+  var __defProp$O = Object.defineProperty;
+  var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$Q(target, key, result);
+    if (result) __defProp$O(target, key, result);
     return result;
-  }, "__decorateClass$Q");
+  }, "__decorateClass$O");
+  const _ControlsThemesFeature = class _ControlsThemesFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_elementsSetup");
+      __publicField(this, "_cssColorVarSelectorsSetup");
+      __publicField(this, "_apiDataSetup");
+      __publicField(this, "_modalService");
+      __publicField(this, "_toastService");
+      __publicField(this, "_themesService");
+      __publicField(this, "_globalSettingsService");
+      __publicField(this, "name", "Themes");
+      __publicField(this, "description", "Customize the skribbl.io appearance with pre-made themes or your own style");
+      __publicField(this, "tags", [
+        FeatureTag.INTERFACE
+      ]);
+      __publicField(this, "featureId", 34);
+      __publicField(this, "_onboardingTask", this.useOnboardingTask({
+        key: "theme_activated",
+        name: "Activate a theme",
+        description: "Select a theme to customize the style of skribbl.",
+        start: /* @__PURE__ */ __name(() => this.openThemesPopup(), "start")
+      }));
+      __publicField(this, "_iconComponent");
+      __publicField(this, "_iconClickSubscription");
+      __publicField(this, "_themeResetSubscription");
+      __publicField(this, "_currentThemeSubscription");
+      __publicField(this, "_activeThemeTab$", new BehaviorSubject("list"));
+      __publicField(this, "_themeElements", []);
+      __publicField(this, "_variableHooks");
+      __publicField(this, "_importedOldThemes", new ExtensionSetting("imported_old_themes", false, this));
+      __publicField(this, "_importedOldThemes2", new ExtensionSetting("imported_old_themes2", false, this));
+    }
+    async onActivate() {
+      const elements2 = await this._elementsSetup.complete();
+      this._variableHooks = await this._cssColorVarSelectorsSetup.complete();
+      this._iconComponent = new Icon_button({
+        target: elements2.controls,
+        props: {
+          hoverMove: false,
+          size: "48px",
+          icon: "file-img-themes-gif",
+          name: "Themes",
+          order: 3,
+          tooltipAction: this.createTooltip
+        }
+      });
+      this._iconClickSubscription = this._iconComponent.click$.subscribe(() => {
+        this.openThemesPopup();
+      });
+      this._themeResetSubscription = this._themesService.savedThemesSetting.changes$.pipe(
+        combineLatestWith(this._themesService.activeThemeSetting.changes$)
+      ).subscribe(([themes, activeId]) => {
+        if (!themes.some((t) => t.theme.meta.id === activeId)) this._themesService.activeThemeSetting.setValue(0);
+      });
+      this._currentThemeSubscription = this._themesService.activeThemeSetting.changes$.pipe(
+        withLatestFrom(this._themesService.savedThemesSetting.changes$),
+        map(([activeId, themes]) => {
+          var _a2;
+          return activeId === 0 ? void 0 : (_a2 = themes.find((t) => t.theme.meta.id === activeId)) == null ? void 0 : _a2.theme;
+        }),
+        combineLatestWith(this._themesService.loadedEditorTheme$),
+        map(([activeTheme, loadedTheme]) => (loadedTheme == null ? void 0 : loadedTheme.theme) ?? activeTheme)
+      ).subscribe((theme) => {
+        this._logger.debug("Active theme changed", theme);
+        this.setThemeElements(theme);
+      });
+      await this.importOldTypoThemes();
+    }
+    async onDestroy() {
+      var _a2, _b2, _c2, _d2;
+      (_a2 = this._iconComponent) == null ? void 0 : _a2.$destroy();
+      (_b2 = this._iconClickSubscription) == null ? void 0 : _b2.unsubscribe();
+      this._iconClickSubscription = void 0;
+      (_c2 = this._themeResetSubscription) == null ? void 0 : _c2.unsubscribe();
+      this._themeResetSubscription = void 0;
+      (_d2 = this._currentThemeSubscription) == null ? void 0 : _d2.unsubscribe();
+      this._currentThemeSubscription = void 0;
+      await this.setThemeElements(void 0);
+      this._variableHooks = void 0;
+    }
+    openThemesPopup() {
+      if (!this._variableHooks) throw new Error("Themes feature not activated?");
+      const themesComponent = {
+        componentType: Controls_themes,
+        props: {
+          feature: this,
+          variableHooks: this._variableHooks
+        }
+      };
+      this._modalService.showModal(themesComponent.componentType, themesComponent.props, "Typo Themes");
+    }
+    get savedThemesStore() {
+      return this._themesService.savedThemesSetting.store;
+    }
+    get activeThemeStore() {
+      return this._themesService.activeThemeSetting.store;
+    }
+    get loadedEditorThemeStore() {
+      return this._themesService.loadedEditorThemeStore;
+    }
+    get activeThemeTabStore() {
+      return fromObservable(this._activeThemeTab$, this._activeThemeTab$.value, (value) => this._activeThemeTab$.next(value));
+    }
+    get devmodeStore() {
+      return this._globalSettingsService.settings.devMode.store;
+    }
+    async getOnlineThemes() {
+      return (await this._apiDataSetup.complete()).themes;
+    }
+    async loadThemeToEditor(theme) {
+      const toast = await this._toastService.showLoadingToast("Loading theme to editor");
+      try {
+        await this._themesService.loadThemeToEditor(theme);
+        toast.resolve(`Theme ${theme.theme.meta.name} loaded`);
+      } catch {
+        toast.reject("Failed to load theme");
+      }
+    }
+    updateLoadedEditorTheme(theme) {
+      this._themesService.updateLoadedEditorTheme(theme);
+    }
+    async unloadThemeFromEditor() {
+      await this._themesService.unloadThemeFromEditor();
+      await this._toastService.showToast("Theme unloaded from editor");
+    }
+    async createLocalTheme() {
+      const toast = await this._toastService.showLoadingToast("Creating new theme");
+      try {
+        const theme = await this._themesService.createLocalTheme();
+        toast.resolve("New theme created");
+        return theme;
+      } catch (e) {
+        toast.reject("Failed to create theme");
+        throw e;
+      }
+    }
+    async importOldTypoThemes() {
+      try {
+        const oldThemes = localStorage.getItem("themes");
+        if (!await this._importedOldThemes.getValue() && oldThemes !== null) {
+          const oldThemesObject = JSON.parse(oldThemes);
+          if (!Array.isArray(oldThemesObject)) throw new Error("invalid themes data");
+          for (const theme of oldThemesObject) {
+            try {
+              await this.importOldTheme(theme);
+            } catch (e) {
+              this._logger.error("Failed to import old typo theme", e);
+            }
+          }
+          await this._importedOldThemes.setValue(true);
+        }
+        const oldThemes2 = localStorage.getItem("themesv2");
+        if (!await this._importedOldThemes2.getValue() && oldThemes2 !== null) {
+          const oldThemes2Object = JSON.parse(oldThemes2);
+          if (!Array.isArray(oldThemes2Object)) throw new Error("invalid themes data");
+          for (const theme of oldThemes2Object) {
+            try {
+              await this._themesService.importThemeFromString(JSON.stringify(theme));
+            } catch (e) {
+              this._logger.error("Failed to import old typo theme", e);
+            }
+          }
+          await this._importedOldThemes2.setValue(true);
+        }
+      } catch (e) {
+        this._logger.error("Failed to import old typo themes", e);
+        throw e;
+      }
+    }
+    async importOldTheme(oldTheme) {
+      try {
+        if (typeof oldTheme !== "object") throw new Error("Invalid theme data");
+        const oldThemeKeys = new Map(Object.entries(oldTheme));
+        const options = oldThemeKeys.get("options");
+        const name = oldThemeKeys.get("name");
+        if (typeof options !== "object") throw new Error("Invalid theme options");
+        if (typeof name !== "string") throw new Error("Invalid theme name");
+        if (name === "Original") {
+          this._logger.info("Skipping original theme");
+          return;
+        }
+        await this._themesService.importOldTheme(options, name);
+      } catch (e) {
+        throw e;
+      }
+    }
+    async saveLoadedEditorTheme() {
+      const toast = await this._toastService.showLoadingToast("Saving theme changes");
+      try {
+        const theme = await this._themesService.saveLoadedEditorTheme();
+        toast.resolve(`Theme ${theme.theme.meta.name} updated`);
+        return theme;
+      } catch (e) {
+        toast.reject("Failed to create theme");
+        throw e;
+      }
+    }
+    async savePublicTheme(theme) {
+      const toast = await this._toastService.showLoadingToast("Saving theme");
+      try {
+        const localTheme = await this._themesService.savePublicTheme(theme);
+        toast.resolve(`Theme ${localTheme.theme.meta.name} saved`);
+      } catch {
+        toast.reject("Failed to save theme");
+      }
+    }
+    async activateLocalTheme(id2) {
+      const toast = await this._toastService.showLoadingToast("Activating theme");
+      try {
+        const theme = await this._themesService.activateLocalTheme(id2);
+        (await this._onboardingTask).complete();
+        toast.resolve(`Theme ${theme.theme.meta.name} activated`);
+      } catch {
+        toast.reject("Failed to activate theme");
+      }
+    }
+    async activatePublicTheme(theme) {
+      const toast = await this._toastService.showLoadingToast("Activating theme");
+      try {
+        const localTheme = await this._themesService.activatePublicTheme(theme);
+        (await this._onboardingTask).complete();
+        toast.resolve(`Theme ${localTheme.theme.meta.name} activated`);
+      } catch {
+        toast.reject("Failed to activate theme");
+      }
+    }
+    async removeSavedTheme(localId) {
+      if (!await (await this._toastService.showConfirmToast("Do you want to delete the theme?", void 0, 1e4, { confirm: "Delete theme", cancel: "Cancel deletion" })).result) {
+        this._logger.info("User canceled theme removal");
+        return;
+      }
+      const toast = await this._toastService.showLoadingToast("Removing theme");
+      try {
+        const theme = await this._themesService.removeSavedTheme(localId);
+        toast.resolve(`Theme ${theme.theme.meta.name} removed`);
+      } catch {
+        toast.reject("Failed to remove theme");
+      }
+    }
+    async shareTheme(theme) {
+      const toast = await this._toastService.showLoadingToast("Sharing theme");
+      try {
+        const id2 = await this._themesService.shareTheme(theme);
+        await navigator.clipboard.writeText(id2);
+        toast.resolve(`Share id (${id2}) for theme ${theme.meta.name} copied`);
+      } catch {
+        toast.reject("Failed to share theme");
+      }
+    }
+    async importTheme(shareId) {
+      const toast = await this._toastService.showLoadingToast("Importing theme");
+      try {
+        const theme = await this._themesService.importTheme(shareId);
+        toast.resolve(`Theme ${theme.theme.meta.name} imported`);
+        return theme;
+      } catch (e) {
+        toast.reject("Failed to import theme");
+        throw e;
+      }
+    }
+    /**
+     * Update the html elements that represent the selelcted theme
+     * @param theme
+     * @private
+     */
+    async setThemeElements(theme) {
+      this._logger.info("Setting theme elements", theme);
+      this._themeElements.forEach((e) => e.remove());
+      this._themeElements = theme ? await this.createThemeElements(theme) : [];
+      this._themeElements.forEach((e) => document.body.appendChild(e));
+    }
+    /**
+     * Create html elements to display a theme
+     * @param theme
+     * @private
+     */
+    async createThemeElements(theme) {
+      const selectorHooks = await this._cssColorVarSelectorsSetup.complete();
+      const themeStyle = generateStyleElementForTheme(theme, selectorHooks);
+      const themeFont = generateThemeFontElements(theme);
+      const themeHtml = generateThemeCustomHtmlElement(theme);
+      const themeExternalCss = generateThemeExternalCssElement(theme);
+      const themeBackground = generateThemeBackgroundElement(theme);
+      return [themeStyle, ...themeFont, ...themeHtml, ...themeExternalCss, themeBackground];
+    }
+    /**
+     * Generate a color scheme based on parameters and fill the color variables accordingly
+     * @param theme
+     * @param primary
+     * @param text
+     * @param useOnInputs
+     * @param invertInputText
+     * @param useIngame
+     */
+    async setColorScheme(theme, primary, text2, useOnInputs, invertInputText, useIngame) {
+      this._logger.debug("Setting color scheme", theme, primary, text2, useOnInputs, invertInputText, useIngame);
+      const colors = generateColorScheme(primary, text2, useIngame, useOnInputs, invertInputText);
+      theme.colors = colors;
+      await this._toastService.showToast("Color scheme updated");
+    }
+  };
+  __name(_ControlsThemesFeature, "ControlsThemesFeature");
+  let ControlsThemesFeature = _ControlsThemesFeature;
+  __decorateClass$O([
+    inject(ElementsSetup)
+  ], ControlsThemesFeature.prototype, "_elementsSetup");
+  __decorateClass$O([
+    inject(CssColorVarSelectorsSetup)
+  ], ControlsThemesFeature.prototype, "_cssColorVarSelectorsSetup");
+  __decorateClass$O([
+    inject(ApiDataSetup)
+  ], ControlsThemesFeature.prototype, "_apiDataSetup");
+  __decorateClass$O([
+    inject(ModalService)
+  ], ControlsThemesFeature.prototype, "_modalService");
+  __decorateClass$O([
+    inject(ToastService)
+  ], ControlsThemesFeature.prototype, "_toastService");
+  __decorateClass$O([
+    inject(ThemesService)
+  ], ControlsThemesFeature.prototype, "_themesService");
+  __decorateClass$O([
+    inject(GlobalSettingsService)
+  ], ControlsThemesFeature.prototype, "_globalSettingsService");
+  var __defProp$N = Object.defineProperty;
+  var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key, result) || result;
+    if (result) __defProp$N(target, key, result);
+    return result;
+  }, "__decorateClass$N");
   const _CustomizerOutfitToggleFeature = class _CustomizerOutfitToggleFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -27808,24 +32630,24 @@
   };
   __name(_CustomizerOutfitToggleFeature, "CustomizerOutfitToggleFeature");
   let CustomizerOutfitToggleFeature = _CustomizerOutfitToggleFeature;
-  __decorateClass$Q([
+  __decorateClass$N([
     inject(ElementsSetup)
   ], CustomizerOutfitToggleFeature.prototype, "_elementsSetup");
-  __decorateClass$Q([
+  __decorateClass$N([
     inject(GlobalSettingsService)
   ], CustomizerOutfitToggleFeature.prototype, "_globalSettingsService");
-  __decorateClass$Q([
+  __decorateClass$N([
     inject(MemberService)
   ], CustomizerOutfitToggleFeature.prototype, "_memberService");
-  var __defProp$P = Object.defineProperty;
-  var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$M = Object.defineProperty;
+  var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$P(target, key, result);
+    if (result) __defProp$M(target, key, result);
     return result;
-  }, "__decorateClass$P");
+  }, "__decorateClass$M");
   const _CustomizerPracticeJoinFeature = class _CustomizerPracticeJoinFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -27875,7 +32697,7 @@
   };
   __name(_CustomizerPracticeJoinFeature, "CustomizerPracticeJoinFeature");
   let CustomizerPracticeJoinFeature = _CustomizerPracticeJoinFeature;
-  __decorateClass$P([
+  __decorateClass$M([
     inject(ElementsSetup)
   ], CustomizerPracticeJoinFeature.prototype, "_elementsSetup");
   const defaultPalettes = {
@@ -28028,18 +32850,18 @@
       ]
     }
   };
-  var __defProp$O = Object.defineProperty;
-  var __getOwnPropDesc$8 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$8(target, key) : target;
+  var __defProp$L = Object.defineProperty;
+  var __getOwnPropDesc$6 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$6(target, key) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$O(target, key, result);
+    if (kind && result) __defProp$L(target, key, result);
     return result;
-  }, "__decorateClass$O");
-  var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$5");
-  let ColorsService = (_ua = class {
+  }, "__decorateClass$L");
+  var __decorateParam$4 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$4");
+  let ColorsService = (_wa = class {
     constructor(loggerFactory2) {
       __publicField(this, "_toastService");
       __publicField(this, "_featuresService");
@@ -28130,18 +32952,18 @@
     async onFeatureDestroy() {
       this.featureActive = false;
     }
-  }, __name(_ua, "ColorsService"), _ua);
-  __decorateClass$O([
+  }, __name(_wa, "ColorsService"), _wa);
+  __decorateClass$L([
     inject(ToastService)
   ], ColorsService.prototype, "_toastService", 2);
-  __decorateClass$O([
+  __decorateClass$L([
     inject(FeaturesService)
   ], ColorsService.prototype, "_featuresService", 2);
-  ColorsService = __decorateClass$O([
+  ColorsService = __decorateClass$L([
     injectable(),
-    __decorateParam$5(0, inject(loggerFactory))
+    __decorateParam$4(0, inject(loggerFactory))
   ], ColorsService);
-  function create_fragment$T(ctx) {
+  function create_fragment$P(ctx) {
     let t0;
     let br0;
     let t1;
@@ -28202,24 +33024,24 @@
       }
     };
   }
-  __name(create_fragment$T, "create_fragment$T");
+  __name(create_fragment$P, "create_fragment$P");
   const _Drawing_color_palettes_info = class _Drawing_color_palettes_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, null, create_fragment$T, safe_not_equal, {});
+      init(this, options, null, create_fragment$P, safe_not_equal, {});
     }
   };
   __name(_Drawing_color_palettes_info, "Drawing_color_palettes_info");
   let Drawing_color_palettes_info = _Drawing_color_palettes_info;
-  function get_each_context$t(ctx, list, i) {
+  function get_each_context$q(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[16] = list[i];
     child_ctx[17] = list;
     child_ctx[18] = i;
     return child_ctx;
   }
-  __name(get_each_context$t, "get_each_context$t");
-  function create_each_block$t(ctx) {
+  __name(get_each_context$q, "get_each_context$q");
+  function create_each_block$q(ctx) {
     let div;
     let colorpickerbutton;
     let updating_color;
@@ -28289,8 +33111,8 @@
       }
     };
   }
-  __name(create_each_block$t, "create_each_block$t");
-  function create_if_block_4$6(ctx) {
+  __name(create_each_block$q, "create_each_block$q");
+  function create_if_block_4$5(ctx) {
     let flatbutton;
     let current;
     flatbutton = new Flat_button({
@@ -28324,8 +33146,8 @@
       }
     };
   }
-  __name(create_if_block_4$6, "create_if_block_4$6");
-  function create_if_block_3$6(ctx) {
+  __name(create_if_block_4$5, "create_if_block_4$5");
+  function create_if_block_3$5(ctx) {
     let flatbutton;
     let current;
     flatbutton = new Flat_button({
@@ -28362,8 +33184,8 @@
       }
     };
   }
-  __name(create_if_block_3$6, "create_if_block_3$6");
-  function create_if_block_2$9(ctx) {
+  __name(create_if_block_3$5, "create_if_block_3$5");
+  function create_if_block_2$7(ctx) {
     let flatbutton;
     let current;
     flatbutton = new Flat_button({
@@ -28400,8 +33222,8 @@
       }
     };
   }
-  __name(create_if_block_2$9, "create_if_block_2$9");
-  function create_if_block_1$d(ctx) {
+  __name(create_if_block_2$7, "create_if_block_2$7");
+  function create_if_block_1$a(ctx) {
     let flatbutton;
     let current;
     flatbutton = new Flat_button({
@@ -28435,8 +33257,8 @@
       }
     };
   }
-  __name(create_if_block_1$d, "create_if_block_1$d");
-  function create_if_block$r(ctx) {
+  __name(create_if_block_1$a, "create_if_block_1$a");
+  function create_if_block$n(ctx) {
     let flatbutton;
     let current;
     flatbutton = new Flat_button({
@@ -28470,8 +33292,8 @@
       }
     };
   }
-  __name(create_if_block$r, "create_if_block$r");
-  function create_fragment$S(ctx) {
+  __name(create_if_block$n, "create_if_block$n");
+  function create_fragment$O(ctx) {
     let div3;
     let div1;
     let b0;
@@ -28504,30 +33326,30 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$t(get_each_context$t(ctx, each_value, i));
+      each_blocks[i] = create_each_block$q(get_each_context$q(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
     }), "out");
     let if_block0 = (
       /*onPaletteSave*/
-      ctx[0] && create_if_block_4$6(ctx)
+      ctx[0] && create_if_block_4$5(ctx)
     );
     let if_block1 = (
       /*onPaletteDelete*/
-      ctx[2] && create_if_block_3$6(ctx)
+      ctx[2] && create_if_block_3$5(ctx)
     );
     let if_block2 = (
       /*onPaletteExport*/
-      ctx[1] && create_if_block_2$9(ctx)
+      ctx[1] && create_if_block_2$7(ctx)
     );
     let if_block3 = (
       /*onPaletteSave*/
-      ctx[0] && create_if_block_1$d(ctx)
+      ctx[0] && create_if_block_1$a(ctx)
     );
     let if_block4 = (
       /*onPaletteSave*/
-      ctx[0] && create_if_block$r(ctx)
+      ctx[0] && create_if_block$n(ctx)
     );
     return {
       c() {
@@ -28687,12 +33509,12 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$t(ctx2, each_value, i);
+            const child_ctx = get_each_context$q(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$t(child_ctx);
+              each_blocks[i] = create_each_block$q(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div0, null);
@@ -28735,7 +33557,7 @@
               transition_in(if_block0, 1);
             }
           } else {
-            if_block0 = create_if_block_4$6(ctx2);
+            if_block0 = create_if_block_4$5(ctx2);
             if_block0.c();
             transition_in(if_block0, 1);
             if_block0.m(div2, t9);
@@ -28758,7 +33580,7 @@
               transition_in(if_block1, 1);
             }
           } else {
-            if_block1 = create_if_block_3$6(ctx2);
+            if_block1 = create_if_block_3$5(ctx2);
             if_block1.c();
             transition_in(if_block1, 1);
             if_block1.m(div2, t10);
@@ -28781,7 +33603,7 @@
               transition_in(if_block2, 1);
             }
           } else {
-            if_block2 = create_if_block_2$9(ctx2);
+            if_block2 = create_if_block_2$7(ctx2);
             if_block2.c();
             transition_in(if_block2, 1);
             if_block2.m(div2, t11);
@@ -28804,7 +33626,7 @@
               transition_in(if_block3, 1);
             }
           } else {
-            if_block3 = create_if_block_1$d(ctx2);
+            if_block3 = create_if_block_1$a(ctx2);
             if_block3.c();
             transition_in(if_block3, 1);
             if_block3.m(div2, t13);
@@ -28827,7 +33649,7 @@
               transition_in(if_block4, 1);
             }
           } else {
-            if_block4 = create_if_block$r(ctx2);
+            if_block4 = create_if_block$n(ctx2);
             if_block4.c();
             transition_in(if_block4, 1);
             if_block4.m(div2, null);
@@ -28879,8 +33701,8 @@
       }
     };
   }
-  __name(create_fragment$S, "create_fragment$S");
-  function instance$M($$self, $$props, $$invalidate) {
+  __name(create_fragment$O, "create_fragment$O");
+  function instance$I($$self, $$props, $$invalidate) {
     let name = "new-palette";
     let colors = [];
     let columns = 10;
@@ -28950,11 +33772,11 @@
       click_handler_4
     ];
   }
-  __name(instance$M, "instance$M");
+  __name(instance$I, "instance$I");
   const _Color_palette_builder = class _Color_palette_builder extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$M, create_fragment$S, safe_not_equal, {
+      init(this, options, instance$I, create_fragment$O, safe_not_equal, {
         onPaletteSave: 0,
         onPaletteExport: 1,
         onPaletteDelete: 2,
@@ -28964,18 +33786,18 @@
   };
   __name(_Color_palette_builder, "Color_palette_builder");
   let Color_palette_builder = _Color_palette_builder;
-  function get_each_context$s(ctx, list, i) {
+  function get_each_context$p(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[15] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$s, "get_each_context$s");
-  function get_each_context_1$a(ctx, list, i) {
+  __name(get_each_context$p, "get_each_context$p");
+  function get_each_context_1$9(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[15] = list[i];
     return child_ctx;
   }
-  __name(get_each_context_1$a, "get_each_context_1$a");
+  __name(get_each_context_1$9, "get_each_context_1$9");
   function get_each_context_2$3(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[15] = list[i];
@@ -29162,7 +33984,7 @@
     };
   }
   __name(create_key_block$1, "create_key_block$1");
-  function create_each_block_1$a(ctx) {
+  function create_each_block_1$9(ctx) {
     let previous_key = (
       /*palette*/
       ctx[15]
@@ -29212,8 +34034,8 @@
       }
     };
   }
-  __name(create_each_block_1$a, "create_each_block_1$a");
-  function create_each_block$s(ctx) {
+  __name(create_each_block_1$9, "create_each_block_1$9");
+  function create_each_block$p(ctx) {
     let colorpalettebuilder;
     let current;
     function func_3() {
@@ -29264,8 +34086,8 @@
       }
     };
   }
-  __name(create_each_block$s, "create_each_block$s");
-  function create_fragment$R(ctx) {
+  __name(create_each_block$p, "create_each_block$p");
+  function create_fragment$N(ctx) {
     let h30;
     let t1;
     let br0;
@@ -29360,7 +34182,7 @@
     );
     let each_blocks_1 = [];
     for (let i2 = 0; i2 < each_value_1.length; i2 += 1) {
-      each_blocks_1[i2] = create_each_block_1$a(get_each_context_1$a(ctx, each_value_1, i2));
+      each_blocks_1[i2] = create_each_block_1$9(get_each_context_1$9(ctx, each_value_1, i2));
     }
     const out = /* @__PURE__ */ __name((i2) => transition_out(each_blocks_1[i2], 1, 1, () => {
       each_blocks_1[i2] = null;
@@ -29371,7 +34193,7 @@
     ));
     let each_blocks = [];
     for (let i2 = 0; i2 < each_value.length; i2 += 1) {
-      each_blocks[i2] = create_each_block$s(get_each_context$s(ctx, each_value, i2));
+      each_blocks[i2] = create_each_block$p(get_each_context$p(ctx, each_value, i2));
     }
     const out_1 = /* @__PURE__ */ __name((i2) => transition_out(each_blocks[i2], 1, 1, () => {
       each_blocks[i2] = null;
@@ -29647,12 +34469,12 @@
           );
           let i2;
           for (i2 = 0; i2 < each_value_1.length; i2 += 1) {
-            const child_ctx = get_each_context_1$a(ctx2, each_value_1, i2);
+            const child_ctx = get_each_context_1$9(ctx2, each_value_1, i2);
             if (each_blocks_1[i2]) {
               each_blocks_1[i2].p(child_ctx, dirty);
               transition_in(each_blocks_1[i2], 1);
             } else {
-              each_blocks_1[i2] = create_each_block_1$a(child_ctx);
+              each_blocks_1[i2] = create_each_block_1$9(child_ctx);
               each_blocks_1[i2].c();
               transition_in(each_blocks_1[i2], 1);
               each_blocks_1[i2].m(div, t17);
@@ -29672,12 +34494,12 @@
           ));
           let i2;
           for (i2 = 0; i2 < each_value.length; i2 += 1) {
-            const child_ctx = get_each_context$s(ctx2, each_value, i2);
+            const child_ctx = get_each_context$p(ctx2, each_value, i2);
             if (each_blocks[i2]) {
               each_blocks[i2].p(child_ctx, dirty);
               transition_in(each_blocks[i2], 1);
             } else {
-              each_blocks[i2] = create_each_block$s(child_ctx);
+              each_blocks[i2] = create_each_block$p(child_ctx);
               each_blocks[i2].c();
               transition_in(each_blocks[i2], 1);
               each_blocks[i2].m(div, null);
@@ -29792,8 +34614,8 @@
       }
     };
   }
-  __name(create_fragment$R, "create_fragment$R");
-  function instance$L($$self, $$props, $$invalidate) {
+  __name(create_fragment$N, "create_fragment$N");
+  function instance$H($$self, $$props, $$invalidate) {
     let $activePalette;
     let $palettes;
     let { feature } = $$props;
@@ -29845,22 +34667,22 @@
       click_handler_1
     ];
   }
-  __name(instance$L, "instance$L");
+  __name(instance$H, "instance$H");
   const _Drawing_color_palettes_manage = class _Drawing_color_palettes_manage extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$L, create_fragment$R, safe_not_equal, { feature: 0 });
+      init(this, options, instance$H, create_fragment$N, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Drawing_color_palettes_manage, "Drawing_color_palettes_manage");
   let Drawing_color_palettes_manage = _Drawing_color_palettes_manage;
-  function get_each_context$r(ctx, list, i) {
+  function get_each_context$o(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[3] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$r, "get_each_context$r");
-  function create_each_block$r(ctx) {
+  __name(get_each_context$o, "get_each_context$o");
+  function create_each_block$o(ctx) {
     let div;
     let mounted;
     let dispose;
@@ -29930,8 +34752,8 @@
       }
     };
   }
-  __name(create_each_block$r, "create_each_block$r");
-  function create_fragment$Q(ctx) {
+  __name(create_each_block$o, "create_each_block$o");
+  function create_fragment$M(ctx) {
     let div1;
     let div0;
     let mounted;
@@ -29942,7 +34764,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$r(get_each_context$r(ctx, each_value, i));
+      each_blocks[i] = create_each_block$o(get_each_context$o(ctx, each_value, i));
     }
     return {
       c() {
@@ -29984,11 +34806,11 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$r(ctx2, each_value, i);
+            const child_ctx = get_each_context$o(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$r(child_ctx);
+              each_blocks[i] = create_each_block$o(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div0, null);
             }
@@ -30016,8 +34838,8 @@
       }
     };
   }
-  __name(create_fragment$Q, "create_fragment$Q");
-  function instance$K($$self, $$props, $$invalidate) {
+  __name(create_fragment$M, "create_fragment$M");
+  function instance$G($$self, $$props, $$invalidate) {
     let { colors } = $$props;
     let { feature } = $$props;
     const pointerdown_handler = /* @__PURE__ */ __name((color) => feature.setColor(color), "pointerdown_handler");
@@ -30027,24 +34849,24 @@
     };
     return [colors, feature, pointerdown_handler];
   }
-  __name(instance$K, "instance$K");
+  __name(instance$G, "instance$G");
   const _Color_palette_picker = class _Color_palette_picker extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$K, create_fragment$Q, safe_not_equal, { colors: 0, feature: 1 });
+      init(this, options, instance$G, create_fragment$M, safe_not_equal, { colors: 0, feature: 1 });
     }
   };
   __name(_Color_palette_picker, "Color_palette_picker");
   let Color_palette_picker = _Color_palette_picker;
-  var __defProp$N = Object.defineProperty;
-  var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$K = Object.defineProperty;
+  var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$N(target, key, result);
+    if (result) __defProp$K(target, key, result);
     return result;
-  }, "__decorateClass$N");
+  }, "__decorateClass$K");
   const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -30283,29 +35105,29 @@
   };
   __name(_DrawingColorPalettesFeature, "DrawingColorPalettesFeature");
   let DrawingColorPalettesFeature = _DrawingColorPalettesFeature;
-  __decorateClass$N([
+  __decorateClass$K([
     inject(ElementsSetup)
   ], DrawingColorPalettesFeature.prototype, "_elementsSetup");
-  __decorateClass$N([
+  __decorateClass$K([
     inject(ToastService)
   ], DrawingColorPalettesFeature.prototype, "_toastService");
-  __decorateClass$N([
+  __decorateClass$K([
     inject(DrawingService)
   ], DrawingColorPalettesFeature.prototype, "_drawingService");
-  __decorateClass$N([
+  __decorateClass$K([
     inject(ColorsService)
   ], DrawingColorPalettesFeature.prototype, "_colorsService");
-  var __defProp$M = Object.defineProperty;
-  var __getOwnPropDesc$7 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$7(target, key) : target;
+  var __defProp$J = Object.defineProperty;
+  var __getOwnPropDesc$5 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$5(target, key) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$M(target, key, result);
+    if (kind && result) __defProp$J(target, key, result);
     return result;
-  }, "__decorateClass$M");
-  let TypoDrawMod = (_va = class {
+  }, "__decorateClass$J");
+  let TypoDrawMod = (_xa = class {
     constructor() {
       /**
        * Indicator if this mod requires the skribbl sampling throttle to be disabled
@@ -30316,8 +35138,8 @@
     noEffect(line, pressure, brushStyle) {
       return { lines: [line], style: brushStyle };
     }
-  }, __name(_va, "TypoDrawMod"), _va);
-  TypoDrawMod = __decorateClass$M([
+  }, __name(_xa, "TypoDrawMod"), _xa);
+  TypoDrawMod = __decorateClass$J([
     injectable()
   ], TypoDrawMod);
   const _ConstantDrawMod = class _ConstantDrawMod extends TypoDrawMod {
@@ -30343,55 +35165,6 @@
   };
   __name(_ConstantDrawMod, "ConstantDrawMod");
   let ConstantDrawMod = _ConstantDrawMod;
-  const calculatePressurePoint = /* @__PURE__ */ __name((p, s, b) => {
-    const A = 1 / (1 + Math.exp(b * s));
-    const B = 1 / (1 + Math.exp(-s * (p - b)));
-    const C = 1 / (1 + Math.exp(-s * (1 - b)));
-    return (B - A) / (C - A);
-  }, "calculatePressurePoint");
-  const _PressureMod = class _PressureMod extends ConstantDrawMod {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_maxSize", 40);
-      __publicField(this, "_minSize", 4);
-      __publicField(this, "_sensitivity", 6);
-      __publicField(this, "_balance", 0.5);
-    }
-    /**
-     * Set the brush size depending on the pressure
-     * @param line
-     * @param pressure
-     * @param style
-     * @param eventId
-     * @param strokeId
-     */
-    async applyConstantEffect(line, pressure, style2) {
-      if (pressure === void 0) {
-        return {
-          style: style2,
-          line
-        };
-      }
-      const point = calculatePressurePoint(pressure, this._sensitivity, this._balance);
-      const size = Math.floor(this._minSize + (this._maxSize - this._minSize) * point);
-      style2.size = size;
-      return {
-        style: style2,
-        line
-      };
-    }
-    /**
-     * Set the sensitivity and balance of the pressure point function
-     * @param sensitivity
-     * @param balance
-     */
-    setParams(sensitivity, balance) {
-      this._sensitivity = sensitivity;
-      this._balance = balance;
-    }
-  };
-  __name(_PressureMod, "PressureMod");
-  let PressureMod = _PressureMod;
   const _TypoDrawTool = class _TypoDrawTool extends ConstantDrawMod {
     constructor() {
       super(...arguments);
@@ -30438,6 +35211,47 @@
   };
   __name(_TypoDrawTool, "TypoDrawTool");
   let TypoDrawTool = _TypoDrawTool;
+  var __defProp$I = Object.defineProperty;
+  var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key, result) || result;
+    if (result) __defProp$I(target, key, result);
+    return result;
+  }, "__decorateClass$I");
+  const _PipetteTool = class _PipetteTool extends TypoDrawTool {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_elementsSetup");
+      __publicField(this, "createCommands", this.noCommands);
+    }
+    createCursor() {
+      return { source: "var(--file-img-pipette_cur-png)", x: 7, y: 37 };
+    }
+    /**
+     * Get the pixel color of the canvas at a certain position
+     * @param line
+     * @param pressure
+     * @param style
+     */
+    async applyConstantEffect(line, pressure, style2) {
+      const elements2 = await this._elementsSetup.complete();
+      const canvas = elements2.canvas;
+      const ctx = canvas.getContext("2d");
+      if (ctx !== null) {
+        const imageData = ctx.getImageData(line.to[0], line.to[1], 1, 1);
+        const rgb = imageData.data.slice(0, 3);
+        style2.color = Color.fromRgb(rgb[0], rgb[1], rgb[2]).skribblCode;
+      }
+      return this.noConstantEffect(line, pressure, style2);
+    }
+  };
+  __name(_PipetteTool, "PipetteTool");
+  let PipetteTool = _PipetteTool;
+  __decorateClass$I([
+    inject(ElementsSetup)
+  ], PipetteTool.prototype, "_elementsSetup");
   const _ExtensionContainer = class _ExtensionContainer {
     constructor(_interceptor) {
       /**
@@ -30603,18 +35417,18 @@
   };
   __name(_CoordinateListener, "CoordinateListener");
   let CoordinateListener = _CoordinateListener;
-  var __defProp$L = Object.defineProperty;
-  var __getOwnPropDesc$6 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$6(target, key) : target;
+  var __defProp$H = Object.defineProperty;
+  var __getOwnPropDesc$4 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$4(target, key) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$L(target, key, result);
+    if (kind && result) __defProp$H(target, key, result);
     return result;
-  }, "__decorateClass$L");
-  var __decorateParam$4 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$4");
-  let ToolsService = (_wa = class {
+  }, "__decorateClass$H");
+  var __decorateParam$3 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$3");
+  let ToolsService = (_ya = class {
     constructor(loggerFactory2) {
       __publicField(this, "_prioritizedCanvasEventsSetup");
       __publicField(this, "_drawingService");
@@ -30794,39 +35608,358 @@
     resolveModOrTool(tool) {
       return this._extensionContainer.resolveService(tool);
     }
-  }, __name(_wa, "ToolsService"), _wa);
-  __decorateClass$L([
+  }, __name(_ya, "ToolsService"), _ya);
+  __decorateClass$H([
     inject(PrioritizedCanvasEventsSetup)
   ], ToolsService.prototype, "_prioritizedCanvasEventsSetup", 2);
-  __decorateClass$L([
+  __decorateClass$H([
     inject(DrawingService)
   ], ToolsService.prototype, "_drawingService", 2);
-  __decorateClass$L([
+  __decorateClass$H([
     inject(ToolChangedEventListener)
   ], ToolsService.prototype, "_toolChangedListener", 2);
-  __decorateClass$L([
+  __decorateClass$H([
     inject(ExtensionContainer)
   ], ToolsService.prototype, "_extensionContainer", 2);
-  __decorateClass$L([
+  __decorateClass$H([
     inject(LobbyService)
   ], ToolsService.prototype, "_lobbyService", 2);
-  __decorateClass$L([
+  __decorateClass$H([
     inject(SizeChangedEventListener)
   ], ToolsService.prototype, "_sizeChangedListener", 2);
-  __decorateClass$L([
+  __decorateClass$H([
     inject(ColorChangedEventListener)
   ], ToolsService.prototype, "_colorChangedListener", 2);
-  __decorateClass$L([
+  __decorateClass$H([
     inject(ElementsSetup)
   ], ToolsService.prototype, "_elementsSetup", 2);
-  __decorateClass$L([
+  __decorateClass$H([
     postConstruct()
   ], ToolsService.prototype, "postConstruct", 1);
-  ToolsService = __decorateClass$L([
+  ToolsService = __decorateClass$H([
     injectable(),
-    __decorateParam$4(0, inject(loggerFactory))
+    __decorateParam$3(0, inject(loggerFactory))
   ], ToolsService);
-  function create_fragment$P(ctx) {
+  function create_fragment$L(ctx) {
+    let t0;
+    let br0;
+    let t1;
+    let br1;
+    return {
+      c() {
+        t0 = text("Add a hotkey to quickly focus the chat input, so you can start guessing right away. ");
+        br0 = element("br");
+        t1 = text("\nIf the auto-focus setting is enabled, the chat input will be focused automatically when someone else starts drawing. ");
+        br1 = element("br");
+      },
+      m(target, anchor) {
+        insert(target, t0, anchor);
+        insert(target, br0, anchor);
+        insert(target, t1, anchor);
+        insert(target, br1, anchor);
+      },
+      p: noop,
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(t0);
+          detach(br0);
+          detach(t1);
+          detach(br1);
+        }
+      }
+    };
+  }
+  __name(create_fragment$L, "create_fragment$L");
+  const _Drawing_color_tools_info = class _Drawing_color_tools_info extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, null, create_fragment$L, safe_not_equal, {});
+    }
+  };
+  __name(_Drawing_color_tools_info, "Drawing_color_tools_info");
+  let Drawing_color_tools_info = _Drawing_color_tools_info;
+  function create_fragment$K(ctx) {
+    let div2;
+    let div0;
+    let t;
+    let div1;
+    let colorpickerbutton;
+    let current;
+    let mounted;
+    let dispose;
+    colorpickerbutton = new Color_picker_button({
+      props: {
+        color: (
+          /*$color*/
+          ctx[2]
+        ),
+        allowAlpha: false,
+        useBackground: false,
+        height: "auto",
+        borderRadius: "0",
+        colorChanged: (
+          /*func*/
+          ctx[6]
+        ),
+        description: "Warning: Only typo users can see custom colors."
+      }
+    });
+    return {
+      c() {
+        div2 = element("div");
+        div0 = element("div");
+        t = space();
+        div1 = element("div");
+        create_component(colorpickerbutton.$$.fragment);
+        attr(div0, "class", "pipette svelte-iqw7hb");
+        toggle_class(
+          div0,
+          "selected",
+          /*$selectedTool*/
+          ctx[1] instanceof PipetteTool
+        );
+        attr(div1, "class", "picker svelte-iqw7hb");
+        attr(div2, "class", "color-tools svelte-iqw7hb");
+      },
+      m(target, anchor) {
+        insert(target, div2, anchor);
+        append(div2, div0);
+        append(div2, t);
+        append(div2, div1);
+        mount_component(colorpickerbutton, div1, null);
+        current = true;
+        if (!mounted) {
+          dispose = [
+            listen(
+              div0,
+              "click",
+              /*click_handler*/
+              ctx[5]
+            ),
+            action_destroyer(
+              /*feature*/
+              ctx[0].createTooltip(div0, { title: "Pipette", lock: "Y" })
+            ),
+            action_destroyer(
+              /*feature*/
+              ctx[0].createTooltip(div1, { title: "Picker", lock: "Y" })
+            )
+          ];
+          mounted = true;
+        }
+      },
+      p(ctx2, [dirty]) {
+        if (!current || dirty & /*$selectedTool*/
+        2) {
+          toggle_class(
+            div0,
+            "selected",
+            /*$selectedTool*/
+            ctx2[1] instanceof PipetteTool
+          );
+        }
+        const colorpickerbutton_changes = {};
+        if (dirty & /*$color*/
+        4) colorpickerbutton_changes.color = /*$color*/
+        ctx2[2];
+        if (dirty & /*feature*/
+        1) colorpickerbutton_changes.colorChanged = /*func*/
+        ctx2[6];
+        colorpickerbutton.$set(colorpickerbutton_changes);
+      },
+      i(local) {
+        if (current) return;
+        transition_in(colorpickerbutton.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(colorpickerbutton.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div2);
+        }
+        destroy_component(colorpickerbutton);
+        mounted = false;
+        run_all(dispose);
+      }
+    };
+  }
+  __name(create_fragment$K, "create_fragment$K");
+  function instance$F($$self, $$props, $$invalidate) {
+    let $selectedTool;
+    let $color;
+    let { feature } = $$props;
+    const selectedTool = feature.selectedToolStore;
+    component_subscribe($$self, selectedTool, (value) => $$invalidate(1, $selectedTool = value));
+    const color = feature.colorStore;
+    component_subscribe($$self, color, (value) => $$invalidate(2, $color = value));
+    const click_handler2 = /* @__PURE__ */ __name(() => feature.selectPipetteTool(), "click_handler");
+    const func2 = /* @__PURE__ */ __name((c) => feature.updatePickedColor(c), "func");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    };
+    return [feature, $selectedTool, $color, selectedTool, color, click_handler2, func2];
+  }
+  __name(instance$F, "instance$F");
+  const _Drawing_color_tools = class _Drawing_color_tools extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$F, create_fragment$K, safe_not_equal, { feature: 0 });
+    }
+  };
+  __name(_Drawing_color_tools, "Drawing_color_tools");
+  let Drawing_color_tools = _Drawing_color_tools;
+  var __defProp$G = Object.defineProperty;
+  var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key, result) || result;
+    if (result) __defProp$G(target, key, result);
+    return result;
+  }, "__decorateClass$G");
+  const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "elementsSetup");
+      __publicField(this, "_toolsService");
+      __publicField(this, "_drawingService");
+      __publicField(this, "_colorChangedListener");
+      __publicField(this, "name", "Color Tools");
+      __publicField(this, "description", "Add a pipette and color picker to the toolbar");
+      __publicField(this, "tags", [
+        FeatureTag.DRAWING
+      ]);
+      __publicField(this, "featureId", 31);
+      __publicField(this, "pipetteHotkey", this.useHotkey(new HotkeyAction(
+        "activate_pipette",
+        "Use Pipette",
+        "Activate the pipette tool to select a color from the canvas",
+        this,
+        () => this.selectPipetteTool(),
+        void 0
+      )));
+      __publicField(this, "_component");
+      __publicField(this, "_pipetteTool");
+      __publicField(this, "_colorChangeSubscription");
+      __publicField(this, "_currentColor$", new Subject$1());
+    }
+    get featureInfoComponent() {
+      return { componentType: Drawing_color_tools_info, props: {} };
+    }
+    async onActivate() {
+      const elements2 = await this.elementsSetup.complete();
+      this._pipetteTool = this._toolsService.resolveModOrTool(PipetteTool);
+      this._colorChangedListener.events$.pipe(
+        withLatestFrom(this._currentColor$),
+        filter(([event, currentColor]) => event.data.hex !== currentColor.hex),
+        map(([event]) => event)
+      ).subscribe((event) => {
+        this._currentColor$.next(event.data);
+      });
+      this._component = new Drawing_color_tools({
+        target: elements2.skribblTools,
+        anchor: elements2.skribblBrushTools,
+        props: {
+          feature: this
+        }
+      });
+    }
+    async onDestroy() {
+      var _a2, _b2;
+      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
+      this._component = void 0;
+      (_b2 = this._colorChangeSubscription) == null ? void 0 : _b2.unsubscribe();
+      this._colorChangeSubscription = void 0;
+      this._pipetteTool = void 0;
+    }
+    selectPipetteTool() {
+      if (!this._pipetteTool) {
+        this._logger.error("Pipette tool not initialized");
+        throw new Error("Pipette tool not initialized yet");
+      }
+      this._logger.info("Pipette tool selected");
+      this._toolsService.activateTool(this._pipetteTool);
+    }
+    get selectedToolStore() {
+      return fromObservable(this._toolsService.activeTool$, skribblTool.brush);
+    }
+    get colorStore() {
+      return fromObservable(this._currentColor$, new Color(0, 0, 0));
+    }
+    updatePickedColor(color) {
+      this._logger.info("Color picked", color);
+      this._drawingService.setColor(color.skribblCode);
+    }
+  };
+  __name(_DrawingColorToolsFeature, "DrawingColorToolsFeature");
+  let DrawingColorToolsFeature = _DrawingColorToolsFeature;
+  __decorateClass$G([
+    inject(ElementsSetup)
+  ], DrawingColorToolsFeature.prototype, "elementsSetup");
+  __decorateClass$G([
+    inject(ToolsService)
+  ], DrawingColorToolsFeature.prototype, "_toolsService");
+  __decorateClass$G([
+    inject(DrawingService)
+  ], DrawingColorToolsFeature.prototype, "_drawingService");
+  __decorateClass$G([
+    inject(ColorChangedEventListener)
+  ], DrawingColorToolsFeature.prototype, "_colorChangedListener");
+  const calculatePressurePoint = /* @__PURE__ */ __name((p, s, b) => {
+    const A = 1 / (1 + Math.exp(b * s));
+    const B = 1 / (1 + Math.exp(-s * (p - b)));
+    const C = 1 / (1 + Math.exp(-s * (1 - b)));
+    return (B - A) / (C - A);
+  }, "calculatePressurePoint");
+  const _PressureMod = class _PressureMod extends ConstantDrawMod {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_maxSize", 40);
+      __publicField(this, "_minSize", 4);
+      __publicField(this, "_sensitivity", 6);
+      __publicField(this, "_balance", 0.5);
+    }
+    /**
+     * Set the brush size depending on the pressure
+     * @param line
+     * @param pressure
+     * @param style
+     * @param eventId
+     * @param strokeId
+     */
+    async applyConstantEffect(line, pressure, style2) {
+      if (pressure === void 0) {
+        return {
+          style: style2,
+          line
+        };
+      }
+      const point = calculatePressurePoint(pressure, this._sensitivity, this._balance);
+      const size = Math.floor(this._minSize + (this._maxSize - this._minSize) * point);
+      style2.size = size;
+      return {
+        style: style2,
+        line
+      };
+    }
+    /**
+     * Set the sensitivity and balance of the pressure point function
+     * @param sensitivity
+     * @param balance
+     */
+    setParams(sensitivity, balance) {
+      this._sensitivity = sensitivity;
+      this._balance = balance;
+    }
+  };
+  __name(_PressureMod, "PressureMod");
+  let PressureMod = _PressureMod;
+  function create_fragment$J(ctx) {
     let div;
     let p0;
     let t5;
@@ -30911,8 +36044,8 @@
       }
     };
   }
-  __name(create_fragment$P, "create_fragment$P");
-  function instance$J($$self, $$props, $$invalidate) {
+  __name(create_fragment$J, "create_fragment$J");
+  function instance$E($$self, $$props, $$invalidate) {
     let $balance;
     let $sensitivity;
     let { feature } = $$props;
@@ -30964,24 +36097,24 @@
       canvas_1_binding
     ];
   }
-  __name(instance$J, "instance$J");
+  __name(instance$E, "instance$E");
   const _Drawing_pressure_info = class _Drawing_pressure_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$J, create_fragment$P, safe_not_equal, { feature: 3 });
+      init(this, options, instance$E, create_fragment$J, safe_not_equal, { feature: 3 });
     }
   };
   __name(_Drawing_pressure_info, "Drawing_pressure_info");
   let Drawing_pressure_info = _Drawing_pressure_info;
-  var __defProp$K = Object.defineProperty;
-  var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$F = Object.defineProperty;
+  var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$K(target, key, result);
+    if (result) __defProp$F(target, key, result);
     return result;
-  }, "__decorateClass$K");
+  }, "__decorateClass$F");
   const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -31063,7 +36196,7 @@
   };
   __name(_DrawingPressureFeature, "DrawingPressureFeature");
   let DrawingPressureFeature = _DrawingPressureFeature;
-  __decorateClass$K([
+  __decorateClass$F([
     inject(ToolsService)
   ], DrawingPressureFeature.prototype, "_toolsService");
   const _ReceiverMethodSubscription = class _ReceiverMethodSubscription {
@@ -33014,7 +38147,7 @@
     TransferFormat2[TransferFormat2["Text"] = 1] = "Text";
     TransferFormat2[TransferFormat2["Binary"] = 2] = "Binary";
   })(TransferFormat || (TransferFormat = {}));
-  let AbortController$1 = (_xa = class {
+  let AbortController$1 = (_za = class {
     constructor() {
       this._isAborted = false;
       this.onabort = null;
@@ -33033,7 +38166,7 @@
     get aborted() {
       return this._isAborted;
     }
-  }, __name(_xa, "AbortController"), _xa);
+  }, __name(_za, "AbortController"), _za);
   const _LongPollingTransport = class _LongPollingTransport {
     // This is an internal type, not exported from 'index' so this is really just internal.
     get pollAborted() {
@@ -34116,17 +39249,17 @@
     return logger.log !== void 0;
   }
   __name(isLogger, "isLogger");
-  var __defProp$J = Object.defineProperty;
-  var __getOwnPropDesc$5 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$5(target, key) : target;
+  var __defProp$E = Object.defineProperty;
+  var __getOwnPropDesc$3 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$3(target, key) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$J(target, key, result);
+    if (kind && result) __defProp$E(target, key, result);
     return result;
-  }, "__decorateClass$J");
-  var __decorateParam$3 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$3");
+  }, "__decorateClass$E");
+  var __decorateParam$2 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$2");
   const hubTypeMap = {
     IGuildLobbiesHub: {
       url: "guildLobbies"
@@ -34138,7 +39271,7 @@
       url: "onlineItems"
     }
   };
-  let SocketService = (_ya = class {
+  let SocketService = (_Aa = class {
     constructor(loggerFactory2, tokenService) {
       __publicField(this, "_logger");
       __publicField(
@@ -34197,24 +39330,24 @@
         document.addEventListener("pointermove", interactionListener, { once: true });
       });
     }
-  }, __name(_ya, "SocketService"), _ya);
-  SocketService = __decorateClass$J([
+  }, __name(_Aa, "SocketService"), _Aa);
+  SocketService = __decorateClass$E([
     injectable(),
-    __decorateParam$3(0, inject(loggerFactory)),
-    __decorateParam$3(1, inject(TokenService))
+    __decorateParam$2(0, inject(loggerFactory)),
+    __decorateParam$2(1, inject(TokenService))
   ], SocketService);
-  var __defProp$I = Object.defineProperty;
-  var __getOwnPropDesc$4 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$4(target, key) : target;
+  var __defProp$D = Object.defineProperty;
+  var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$I(target, key, result);
+    if (kind && result) __defProp$D(target, key, result);
     return result;
-  }, "__decorateClass$I");
-  var __decorateParam$2 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$2");
-  let LobbyConnectionService = (_za = class {
+  }, "__decorateClass$D");
+  var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$1");
+  let LobbyConnectionService = (_Ba = class {
     constructor(loggerFactory2) {
       __publicField(this, "_socketService");
       __publicField(this, "_logger");
@@ -34351,13 +39484,13 @@
       this._logger.info("Lobby ownership resigned, claiming now");
       await this.connection.hub.claimLobbyOwnership();
     }
-  }, __name(_za, "LobbyConnectionService"), _za);
-  __decorateClass$I([
+  }, __name(_Ba, "LobbyConnectionService"), _Ba);
+  __decorateClass$D([
     inject(SocketService)
   ], LobbyConnectionService.prototype, "_socketService", 2);
-  LobbyConnectionService = __decorateClass$I([
+  LobbyConnectionService = __decorateClass$D([
     injectable(),
-    __decorateParam$2(0, inject(loggerFactory))
+    __decorateParam$1(0, inject(loggerFactory))
   ], LobbyConnectionService);
   const parseSignalRError = /* @__PURE__ */ __name((error) => {
     if (!(error instanceof Error)) throw error;
@@ -34372,7 +39505,7 @@
       };
     } else throw error;
   }, "parseSignalRError");
-  function create_if_block$q(ctx) {
+  function create_if_block$m(ctx) {
     let div;
     let mounted;
     let dispose;
@@ -34432,13 +39565,13 @@
       }
     };
   }
-  __name(create_if_block$q, "create_if_block$q");
-  function create_fragment$O(ctx) {
+  __name(create_if_block$m, "create_if_block$m");
+  function create_fragment$I(ctx) {
     let if_block_anchor;
     let if_block = (
       /*$currentDrop*/
       ctx[1] !== void 0 && /*$currentDrop*/
-      ctx[1].ownClaimed === false && create_if_block$q(ctx)
+      ctx[1].ownClaimed === false && create_if_block$m(ctx)
     );
     return {
       c() {
@@ -34458,7 +39591,7 @@
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$q(ctx2);
+            if_block = create_if_block$m(ctx2);
             if_block.c();
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
           }
@@ -34477,8 +39610,8 @@
       }
     };
   }
-  __name(create_fragment$O, "create_fragment$O");
-  function instance$I($$self, $$props, $$invalidate) {
+  __name(create_fragment$I, "create_fragment$I");
+  function instance$D($$self, $$props, $$invalidate) {
     let $currentDrop;
     let { feature } = $$props;
     let { drops } = $$props;
@@ -34501,22 +39634,22 @@
     };
     return [feature, $currentDrop, currentDrop, getDropUrl, drops, pointerdown_handler];
   }
-  __name(instance$I, "instance$I");
+  __name(instance$D, "instance$D");
   const _Drops = class _Drops extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$I, create_fragment$O, safe_not_equal, { feature: 0, drops: 4 });
+      init(this, options, instance$D, create_fragment$I, safe_not_equal, { feature: 0, drops: 4 });
     }
   };
   __name(_Drops, "Drops");
   let Drops = _Drops;
-  function get_each_context$q(ctx, list, i) {
+  function get_each_context$n(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[3] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$q, "get_each_context$q");
-  function create_each_block$q(ctx) {
+  __name(get_each_context$n, "get_each_context$n");
+  function create_each_block$n(ctx) {
     let div;
     let b;
     let t0;
@@ -34625,8 +39758,8 @@
       }
     };
   }
-  __name(create_each_block$q, "create_each_block$q");
-  function create_if_block$p(ctx) {
+  __name(create_each_block$n, "create_each_block$n");
+  function create_if_block$l(ctx) {
     let p;
     return {
       c() {
@@ -34643,8 +39776,8 @@
       }
     };
   }
-  __name(create_if_block$p, "create_if_block$p");
-  function create_fragment$N(ctx) {
+  __name(create_if_block$l, "create_if_block$l");
+  function create_fragment$H(ctx) {
     let h3;
     let t1;
     let p;
@@ -34659,11 +39792,11 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$q(get_each_context$q(ctx, each_value, i));
+      each_blocks[i] = create_each_block$n(get_each_context$n(ctx, each_value, i));
     }
     let if_block = (
       /*$claims*/
-      ctx[0].length === 0 && create_if_block$p()
+      ctx[0].length === 0 && create_if_block$l()
     );
     return {
       c() {
@@ -34709,11 +39842,11 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$q(ctx2, each_value, i);
+            const child_ctx = get_each_context$n(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$q(child_ctx);
+              each_blocks[i] = create_each_block$n(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div, t6);
             }
@@ -34729,7 +39862,7 @@
         ) {
           if (if_block) ;
           else {
-            if_block = create_if_block$p();
+            if_block = create_if_block$l();
             if_block.c();
             if_block.m(div, null);
           }
@@ -34755,8 +39888,8 @@
       }
     };
   }
-  __name(create_fragment$N, "create_fragment$N");
-  function instance$H($$self, $$props, $$invalidate) {
+  __name(create_fragment$H, "create_fragment$H");
+  function instance$C($$self, $$props, $$invalidate) {
     let $claims;
     let { feature } = $$props;
     const claims = feature.recordedClaimsStore;
@@ -34766,24 +39899,24 @@
     };
     return [$claims, claims, feature];
   }
-  __name(instance$H, "instance$H");
+  __name(instance$C, "instance$C");
   const _Drops_info = class _Drops_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$H, create_fragment$N, safe_not_equal, { feature: 2 });
+      init(this, options, instance$C, create_fragment$H, safe_not_equal, { feature: 2 });
     }
   };
   __name(_Drops_info, "Drops_info");
   let Drops_info = _Drops_info;
-  var __defProp$H = Object.defineProperty;
-  var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$C = Object.defineProperty;
+  var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$H(target, key, result);
+    if (result) __defProp$C(target, key, result);
     return result;
-  }, "__decorateClass$H");
+  }, "__decorateClass$C");
   const _DropsFeature = class _DropsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -34938,22 +40071,22 @@
   };
   __name(_DropsFeature, "DropsFeature");
   let DropsFeature = _DropsFeature;
-  __decorateClass$H([
+  __decorateClass$C([
     inject(ElementsSetup)
   ], DropsFeature.prototype, "_elementsSetup");
-  __decorateClass$H([
+  __decorateClass$C([
     inject(ApiDataSetup)
   ], DropsFeature.prototype, "_apiDataSetup");
-  __decorateClass$H([
+  __decorateClass$C([
     inject(LobbyConnectionService)
   ], DropsFeature.prototype, "_lobbyConnectionService");
-  __decorateClass$H([
+  __decorateClass$C([
     inject(ChatService)
   ], DropsFeature.prototype, "_chatService");
-  __decorateClass$H([
+  __decorateClass$C([
     inject(ToastService)
   ], DropsFeature.prototype, "_toastService");
-  __decorateClass$H([
+  __decorateClass$C([
     inject(LobbyLeftEventListener)
   ], DropsFeature.prototype, "_lobbyLeftEventListener");
   const BLANK = "_";
@@ -35026,20 +40159,20 @@
     return hints[index] === character && hints[index] !== BLANK;
   }
   __name(guessCorrectHint, "guessCorrectHint");
-  function get_each_context$p(ctx, list, i) {
+  function get_each_context$m(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[3] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$p, "get_each_context$p");
-  function get_each_context_1$9(ctx, list, i) {
+  __name(get_each_context$m, "get_each_context$m");
+  function get_each_context_1$8(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[6] = list[i];
     child_ctx[8] = i;
     return child_ctx;
   }
-  __name(get_each_context_1$9, "get_each_context_1$9");
-  function create_if_block$o(ctx) {
+  __name(get_each_context_1$8, "get_each_context_1$8");
+  function create_if_block$k(ctx) {
     let each_1_anchor;
     let each_value_1 = ensure_array_like(
       /*$guess*/
@@ -35047,7 +40180,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks[i] = create_each_block_1$9(get_each_context_1$9(ctx, each_value_1, i));
+      each_blocks[i] = create_each_block_1$8(get_each_context_1$8(ctx, each_value_1, i));
     }
     return {
       c() {
@@ -35073,11 +40206,11 @@
           );
           let i;
           for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$9(ctx2, each_value_1, i);
+            const child_ctx = get_each_context_1$8(ctx2, each_value_1, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block_1$9(child_ctx);
+              each_blocks[i] = create_each_block_1$8(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
             }
@@ -35096,8 +40229,8 @@
       }
     };
   }
-  __name(create_if_block$o, "create_if_block$o");
-  function create_each_block_1$9(ctx) {
+  __name(create_if_block$k, "create_if_block$k");
+  function create_each_block_1$8(ctx) {
     let span;
     let t0_value = (
       /*guessCharacter*/
@@ -35167,13 +40300,13 @@
       }
     };
   }
-  __name(create_each_block_1$9, "create_each_block_1$9");
-  function create_each_block$p(ctx) {
+  __name(create_each_block_1$8, "create_each_block_1$8");
+  function create_each_block$m(ctx) {
     let div;
     let t;
     let if_block = (
       /*$guess*/
-      ctx[0] !== null && create_if_block$o(ctx)
+      ctx[0] !== null && create_if_block$k(ctx)
     );
     return {
       c() {
@@ -35196,7 +40329,7 @@
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$o(ctx2);
+            if_block = create_if_block$k(ctx2);
             if_block.c();
             if_block.m(div, t);
           }
@@ -35213,13 +40346,13 @@
       }
     };
   }
-  __name(create_each_block$p, "create_each_block$p");
-  function create_fragment$M(ctx) {
+  __name(create_each_block$m, "create_each_block$m");
+  function create_fragment$G(ctx) {
     let each_1_anchor;
     let each_value = ensure_array_like(["warning", "correct"]);
     let each_blocks = [];
     for (let i = 0; i < 2; i += 1) {
-      each_blocks[i] = create_each_block$p(get_each_context$p(ctx, each_value, i));
+      each_blocks[i] = create_each_block$m(get_each_context$m(ctx, each_value, i));
     }
     return {
       c() {
@@ -35242,11 +40375,11 @@
           each_value = ensure_array_like(["warning", "correct"]);
           let i;
           for (i = 0; i < 2; i += 1) {
-            const child_ctx = get_each_context$p(ctx2, each_value, i);
+            const child_ctx = get_each_context$m(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$p(child_ctx);
+              each_blocks[i] = create_each_block$m(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
             }
@@ -35266,8 +40399,8 @@
       }
     };
   }
-  __name(create_fragment$M, "create_fragment$M");
-  function instance$G($$self, $$props, $$invalidate) {
+  __name(create_fragment$G, "create_fragment$G");
+  function instance$B($$self, $$props, $$invalidate) {
     let $guess;
     let { feature } = $$props;
     const guess = feature.guessChangedStore;
@@ -35277,24 +40410,24 @@
     };
     return [$guess, guess, feature];
   }
-  __name(instance$G, "instance$G");
+  __name(instance$B, "instance$B");
   const _Guess_check = class _Guess_check extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$G, create_fragment$M, safe_not_equal, { feature: 2 });
+      init(this, options, instance$B, create_fragment$G, safe_not_equal, { feature: 2 });
     }
   };
   __name(_Guess_check, "Guess_check");
   let Guess_check = _Guess_check;
-  var __defProp$G = Object.defineProperty;
-  var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$B = Object.defineProperty;
+  var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$G(target, key, result);
+    if (result) __defProp$B(target, key, result);
     return result;
-  }, "__decorateClass$G");
+  }, "__decorateClass$B");
   const _GuessCheckFeature = class _GuessCheckFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -35353,16 +40486,16 @@
   };
   __name(_GuessCheckFeature, "GuessCheckFeature");
   let GuessCheckFeature = _GuessCheckFeature;
-  __decorateClass$G([
+  __decorateClass$B([
     inject(ElementsSetup)
   ], GuessCheckFeature.prototype, "_elementsSetup");
-  __decorateClass$G([
+  __decorateClass$B([
     inject(ChatTypedEventListener)
   ], GuessCheckFeature.prototype, "_chatTypedEventListener");
-  __decorateClass$G([
+  __decorateClass$B([
     inject(LobbyLeftEventListener)
   ], GuessCheckFeature.prototype, "_lobbyLeftEventListener");
-  __decorateClass$G([
+  __decorateClass$B([
     inject(DrawingService)
   ], GuessCheckFeature.prototype, "_drawingService");
   const _HotkeysFeature = class _HotkeysFeature extends TypoFeature {
@@ -35467,7 +40600,7 @@
   };
   __name(_HotkeysFeature, "HotkeysFeature");
   let HotkeysFeature = _HotkeysFeature;
-  function create_catch_block$3(ctx) {
+  function create_catch_block$2(ctx) {
     return {
       c: noop,
       m: noop,
@@ -35477,13 +40610,13 @@
       d: noop
     };
   }
-  __name(create_catch_block$3, "create_catch_block$3");
-  function create_then_block$3(ctx) {
+  __name(create_catch_block$2, "create_catch_block$2");
+  function create_then_block$2(ctx) {
     let if_block_anchor;
     let if_block = (
       /*imageIndex*/
       ctx[4] !== void 0 && /*images*/
-      ctx[5].length > 0 && create_if_block$n(ctx)
+      ctx[5].length > 0 && create_if_block$j(ctx)
     );
     return {
       c() {
@@ -35503,7 +40636,7 @@
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$n(ctx2);
+            if_block = create_if_block$j(ctx2);
             if_block.c();
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
           }
@@ -35522,8 +40655,8 @@
       }
     };
   }
-  __name(create_then_block$3, "create_then_block$3");
-  function create_if_block$n(ctx) {
+  __name(create_then_block$2, "create_then_block$2");
+  function create_if_block$j(ctx) {
     let img;
     let img_src_value;
     let mounted;
@@ -35582,8 +40715,8 @@
       }
     };
   }
-  __name(create_if_block$n, "create_if_block$n");
-  function create_pending_block$3(ctx) {
+  __name(create_if_block$j, "create_if_block$j");
+  function create_pending_block$2(ctx) {
     let bounceload;
     let current;
     bounceload = new Bounceload({});
@@ -35610,8 +40743,8 @@
       }
     };
   }
-  __name(create_pending_block$3, "create_pending_block$3");
-  function create_fragment$L(ctx) {
+  __name(create_pending_block$2, "create_pending_block$2");
+  function create_fragment$F(ctx) {
     let div2;
     let div1;
     let h3;
@@ -35630,9 +40763,9 @@
       current: null,
       token: null,
       hasCatch: false,
-      pending: create_pending_block$3,
-      then: create_then_block$3,
-      catch: create_catch_block$3,
+      pending: create_pending_block$2,
+      then: create_then_block$2,
+      catch: create_catch_block$2,
       value: 5,
       blocks: [, , ,]
     };
@@ -35764,9 +40897,9 @@
       }
     };
   }
-  __name(create_fragment$L, "create_fragment$L");
+  __name(create_fragment$F, "create_fragment$F");
   const contextmenu_handler = /* @__PURE__ */ __name((event) => event.preventDefault(), "contextmenu_handler");
-  function instance$F($$self, $$props, $$invalidate) {
+  function instance$A($$self, $$props, $$invalidate) {
     let images;
     let $word;
     let $hidden;
@@ -35822,24 +40955,24 @@
       click_handler2
     ];
   }
-  __name(instance$F, "instance$F");
+  __name(instance$A, "instance$A");
   const _Image_agent = class _Image_agent extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$F, create_fragment$L, safe_not_equal, { feature: 0 });
+      init(this, options, instance$A, create_fragment$F, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Image_agent, "Image_agent");
   let Image_agent = _Image_agent;
-  var __defProp$F = Object.defineProperty;
-  var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$A = Object.defineProperty;
+  var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$F(target, key, result);
+    if (result) __defProp$A(target, key, result);
     return result;
-  }, "__decorateClass$F");
+  }, "__decorateClass$A");
   const _ImageAgentFeature = class _ImageAgentFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -35913,16 +41046,16 @@
   };
   __name(_ImageAgentFeature, "ImageAgentFeature");
   let ImageAgentFeature = _ImageAgentFeature;
-  __decorateClass$F([
+  __decorateClass$A([
     inject(ElementsSetup)
   ], ImageAgentFeature.prototype, "_elementsSetup");
-  __decorateClass$F([
+  __decorateClass$A([
     inject(LobbyService)
   ], ImageAgentFeature.prototype, "_lobbyService");
-  __decorateClass$F([
+  __decorateClass$A([
     inject(DrawingService)
   ], ImageAgentFeature.prototype, "_drawingService");
-  function create_fragment$K(ctx) {
+  function create_fragment$E(ctx) {
     let t0;
     let br0;
     let t1;
@@ -35985,24 +41118,24 @@
       }
     };
   }
-  __name(create_fragment$K, "create_fragment$K");
+  __name(create_fragment$E, "create_fragment$E");
   const _Line_tool_info = class _Line_tool_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, null, create_fragment$K, safe_not_equal, {});
+      init(this, options, null, create_fragment$E, safe_not_equal, {});
     }
   };
   __name(_Line_tool_info, "Line_tool_info");
   let Line_tool_info = _Line_tool_info;
-  var __defProp$E = Object.defineProperty;
-  var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$z = Object.defineProperty;
+  var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$E(target, key, result);
+    if (result) __defProp$z(target, key, result);
     return result;
-  }, "__decorateClass$E");
+  }, "__decorateClass$z");
   const _LineToolFeature = class _LineToolFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -36326,22 +41459,22 @@
   };
   __name(_LineToolFeature, "LineToolFeature");
   let LineToolFeature = _LineToolFeature;
-  __decorateClass$E([
+  __decorateClass$z([
     inject(ToastService)
   ], LineToolFeature.prototype, "_toastService");
-  __decorateClass$E([
+  __decorateClass$z([
     inject(PrioritizedCanvasEventsSetup)
   ], LineToolFeature.prototype, "_prioritizedCanvasEventsSetup");
-  __decorateClass$E([
+  __decorateClass$z([
     inject(ElementsSetup)
   ], LineToolFeature.prototype, "_elementsSetup");
-  __decorateClass$E([
+  __decorateClass$z([
     inject(LobbyService)
   ], LineToolFeature.prototype, "_lobbyService");
-  __decorateClass$E([
+  __decorateClass$z([
     inject(DrawingService)
   ], LineToolFeature.prototype, "_drawingService");
-  __decorateClass$E([
+  __decorateClass$z([
     inject(ToolsService)
   ], LineToolFeature.prototype, "_toolsService");
   function repeatAfterDelay(source$, delayMs) {
@@ -36353,15 +41486,15 @@
     );
   }
   __name(repeatAfterDelay, "repeatAfterDelay");
-  function get_each_context$o(ctx, list, i) {
+  function get_each_context$l(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[14] = list[i];
     child_ctx[15] = list;
     child_ctx[16] = i;
     return child_ctx;
   }
-  __name(get_each_context$o, "get_each_context$o");
-  function create_else_block$c(ctx) {
+  __name(get_each_context$l, "get_each_context$l");
+  function create_else_block$9(ctx) {
     let b;
     let t1;
     let br;
@@ -36388,8 +41521,8 @@
       }
     };
   }
-  __name(create_else_block$c, "create_else_block$c");
-  function create_if_block_5$2(ctx) {
+  __name(create_else_block$9, "create_else_block$9");
+  function create_if_block_5$1(ctx) {
     let b;
     let t1;
     let br;
@@ -36416,8 +41549,8 @@
       }
     };
   }
-  __name(create_if_block_5$2, "create_if_block_5$2");
-  function create_if_block_4$5(ctx) {
+  __name(create_if_block_5$1, "create_if_block_5$1");
+  function create_if_block_4$4(ctx) {
     let bounceload;
     let current;
     bounceload = new Bounceload({
@@ -36445,8 +41578,8 @@
       }
     };
   }
-  __name(create_if_block_4$5, "create_if_block_4$5");
-  function create_if_block_3$5(ctx) {
+  __name(create_if_block_4$4, "create_if_block_4$4");
+  function create_if_block_3$4(ctx) {
     let div2;
     let span;
     let t1;
@@ -36486,7 +41619,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$o(get_each_context$o(ctx, each_value, i));
+      each_blocks[i] = create_each_block$l(get_each_context$l(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
@@ -36590,12 +41723,12 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$o(ctx2, each_value, i);
+            const child_ctx = get_each_context$l(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$o(child_ctx);
+              each_blocks[i] = create_each_block$l(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div1, null);
@@ -36638,8 +41771,8 @@
       }
     };
   }
-  __name(create_if_block_3$5, "create_if_block_3$5");
-  function create_each_block$o(ctx) {
+  __name(create_if_block_3$4, "create_if_block_3$4");
+  function create_each_block$l(ctx) {
     let checkbox;
     let updating_checked;
     let current;
@@ -36719,8 +41852,8 @@
       }
     };
   }
-  __name(create_each_block$o, "create_each_block$o");
-  function create_if_block_1$c(ctx) {
+  __name(create_each_block$l, "create_each_block$l");
+  function create_if_block_1$9(ctx) {
     let div1;
     let t0;
     let div0;
@@ -36734,7 +41867,7 @@
     let t3;
     let if_block = (
       /*$connection*/
-      ctx[4].typoLobbyState.lobbySettings.description !== "" && create_if_block_2$8(ctx)
+      ctx[4].typoLobbyState.lobbySettings.description !== "" && create_if_block_2$6(ctx)
     );
     return {
       c() {
@@ -36767,7 +41900,7 @@
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block_2$8(ctx2);
+            if_block = create_if_block_2$6(ctx2);
             if_block.c();
             if_block.m(div1, t0);
           }
@@ -36787,8 +41920,8 @@
       }
     };
   }
-  __name(create_if_block_1$c, "create_if_block_1$c");
-  function create_if_block_2$8(ctx) {
+  __name(create_if_block_1$9, "create_if_block_1$9");
+  function create_if_block_2$6(ctx) {
     let b;
     let br;
     let t1;
@@ -36826,8 +41959,8 @@
       }
     };
   }
-  __name(create_if_block_2$8, "create_if_block_2$8");
-  function create_if_block$m(ctx) {
+  __name(create_if_block_2$6, "create_if_block_2$6");
+  function create_if_block$i(ctx) {
     var _a2, _b2;
     let div1;
     let div0;
@@ -36967,8 +42100,8 @@
       }
     };
   }
-  __name(create_if_block$m, "create_if_block$m");
-  function create_fragment$J(ctx) {
+  __name(create_if_block$i, "create_if_block$i");
+  function create_fragment$D(ctx) {
     let div1;
     let div0;
     let current_block_type_index;
@@ -36977,7 +42110,7 @@
     let t1;
     let t2;
     let current;
-    const if_block_creators = [create_if_block_4$5, create_if_block_5$2, create_else_block$c];
+    const if_block_creators = [create_if_block_4$4, create_if_block_5$1, create_else_block$9];
     const if_blocks = [];
     function select_block_type(ctx2, dirty) {
       if (
@@ -36997,17 +42130,17 @@
       /*$connection*/
       ctx[4] !== void 0 && /*$connection*/
       ctx[4] !== "unauthorized" && /*$connection*/
-      ctx[4].typoLobbyState.playerIsOwner && create_if_block_3$5(ctx)
+      ctx[4].typoLobbyState.playerIsOwner && create_if_block_3$4(ctx)
     );
     let if_block2 = (
       /*$connection*/
       ctx[4] !== void 0 && /*$connection*/
       ctx[4] !== "unauthorized" && /*$connection*/
-      ctx[4].typoLobbyState.playerIsOwner === false && create_if_block_1$c(ctx)
+      ctx[4].typoLobbyState.playerIsOwner === false && create_if_block_1$9(ctx)
     );
     let if_block3 = (
       /*$devmode*/
-      ctx[5] === true && create_if_block$m(ctx)
+      ctx[5] === true && create_if_block$i(ctx)
     );
     return {
       c() {
@@ -37065,7 +42198,7 @@
               transition_in(if_block1, 1);
             }
           } else {
-            if_block1 = create_if_block_3$5(ctx2);
+            if_block1 = create_if_block_3$4(ctx2);
             if_block1.c();
             transition_in(if_block1, 1);
             if_block1.m(div1, t1);
@@ -37086,7 +42219,7 @@
           if (if_block2) {
             if_block2.p(ctx2, dirty);
           } else {
-            if_block2 = create_if_block_1$c(ctx2);
+            if_block2 = create_if_block_1$9(ctx2);
             if_block2.c();
             if_block2.m(div1, t2);
           }
@@ -37105,7 +42238,7 @@
               transition_in(if_block3, 1);
             }
           } else {
-            if_block3 = create_if_block$m(ctx2);
+            if_block3 = create_if_block$i(ctx2);
             if_block3.c();
             transition_in(if_block3, 1);
             if_block3.m(div1, null);
@@ -37142,8 +42275,8 @@
       }
     };
   }
-  __name(create_fragment$J, "create_fragment$J");
-  function instance$E($$self, $$props, $$invalidate) {
+  __name(create_fragment$D, "create_fragment$D");
+  function instance$z($$self, $$props, $$invalidate) {
     let $connection;
     let $devmode;
     let { feature } = $$props;
@@ -37207,24 +42340,24 @@
       click_handler_2
     ];
   }
-  __name(instance$E, "instance$E");
+  __name(instance$z, "instance$z");
   const _Lobby_status = class _Lobby_status extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$E, create_fragment$J, safe_not_equal, { feature: 0 });
+      init(this, options, instance$z, create_fragment$D, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Lobby_status, "Lobby_status");
   let Lobby_status = _Lobby_status;
-  var __defProp$D = Object.defineProperty;
-  var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$y = Object.defineProperty;
+  var __decorateClass$y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$D(target, key, result);
+    if (result) __defProp$y(target, key, result);
     return result;
-  }, "__decorateClass$D");
+  }, "__decorateClass$y");
   const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -37545,25 +42678,25 @@
   };
   __name(_LobbyStatusFeature, "LobbyStatusFeature");
   let LobbyStatusFeature = _LobbyStatusFeature;
-  __decorateClass$D([
+  __decorateClass$y([
     inject(LobbyService)
   ], LobbyStatusFeature.prototype, "_lobbyService");
-  __decorateClass$D([
+  __decorateClass$y([
     inject(ElementsSetup)
   ], LobbyStatusFeature.prototype, "_elementsSetup");
-  __decorateClass$D([
+  __decorateClass$y([
     inject(MemberService)
   ], LobbyStatusFeature.prototype, "_memberService");
-  __decorateClass$D([
+  __decorateClass$y([
     inject(ToastService)
   ], LobbyStatusFeature.prototype, "_toastService");
-  __decorateClass$D([
+  __decorateClass$y([
     inject(GlobalSettingsService)
   ], LobbyStatusFeature.prototype, "_settingsService");
-  __decorateClass$D([
+  __decorateClass$y([
     inject(LobbyConnectionService)
   ], LobbyStatusFeature.prototype, "_lobbyConnectionService");
-  function create_fragment$I(ctx) {
+  function create_fragment$C(ctx) {
     let t;
     let br;
     return {
@@ -37586,24 +42719,24 @@
       }
     };
   }
-  __name(create_fragment$I, "create_fragment$I");
+  __name(create_fragment$C, "create_fragment$C");
   const _Lobby_time_visualizer_info = class _Lobby_time_visualizer_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, null, create_fragment$I, safe_not_equal, {});
+      init(this, options, null, create_fragment$C, safe_not_equal, {});
     }
   };
   __name(_Lobby_time_visualizer_info, "Lobby_time_visualizer_info");
   let Lobby_time_visualizer_info = _Lobby_time_visualizer_info;
-  var __defProp$C = Object.defineProperty;
-  var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$x = Object.defineProperty;
+  var __decorateClass$x = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$C(target, key, result);
+    if (result) __defProp$x(target, key, result);
     return result;
-  }, "__decorateClass$C");
+  }, "__decorateClass$x");
   const _LobbyTimeVisualizerFeature = class _LobbyTimeVisualizerFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -37713,24 +42846,3446 @@
   };
   __name(_LobbyTimeVisualizerFeature, "LobbyTimeVisualizerFeature");
   let LobbyTimeVisualizerFeature = _LobbyTimeVisualizerFeature;
-  __decorateClass$C([
+  __decorateClass$x([
     inject(LobbyStateChangedEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyStateChangedEventListener");
-  __decorateClass$C([
+  __decorateClass$x([
     inject(LobbyJoinedEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyJoinedEventListener");
-  __decorateClass$C([
+  __decorateClass$x([
     inject(LobbyLeftEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyLeftEventListener");
-  var __defProp$B = Object.defineProperty;
-  var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  function get_each_context$k(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[15] = list[i];
+    child_ctx[17] = i;
+    return child_ctx;
+  }
+  __name(get_each_context$k, "get_each_context$k");
+  function get_each_context_1$7(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[15] = list[i];
+    child_ctx[17] = i;
+    return child_ctx;
+  }
+  __name(get_each_context_1$7, "get_each_context_1$7");
+  function create_else_block$8(ctx) {
+    let div1;
+    let div0;
+    let t0;
+    let t1;
+    let if_block = (
+      /*$scenePickerEnabled*/
+      ctx[5] && create_if_block_3$3(ctx)
+    );
+    let each_value_1 = ensure_array_like({
+      length: (
+        /*$memberStore*/
+        ctx[4].memberData.slots.unlockedSlots
+      )
+    });
+    let each_blocks_1 = [];
+    for (let i = 0; i < each_value_1.length; i += 1) {
+      each_blocks_1[i] = create_each_block_1$7(get_each_context_1$7(ctx, each_value_1, i));
+    }
+    let each_value = ensure_array_like({
+      length: Math.max(9 - /*$memberStore*/
+      ctx[4].memberData.slots.unlockedSlots, 3 - /*$memberStore*/
+      ctx[4].memberData.slots.unlockedSlots % 3)
+    });
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$k(get_each_context$k(ctx, each_value, i));
+    }
+    return {
+      c() {
+        div1 = element("div");
+        div0 = element("div");
+        if (if_block) if_block.c();
+        t0 = space();
+        for (let i = 0; i < each_blocks_1.length; i += 1) {
+          each_blocks_1[i].c();
+        }
+        t1 = space();
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        attr(div0, "class", "typo-cabin-picker svelte-10x5c2g");
+        attr(div1, "class", "typo-cabin-scroll svelte-10x5c2g");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        if (if_block) if_block.m(div0, null);
+        append(div0, t0);
+        for (let i = 0; i < each_blocks_1.length; i += 1) {
+          if (each_blocks_1[i]) {
+            each_blocks_1[i].m(div0, null);
+          }
+        }
+        append(div0, t1);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(div0, null);
+          }
+        }
+      },
+      p(ctx2, dirty) {
+        if (
+          /*$scenePickerEnabled*/
+          ctx2[5]
+        ) {
+          if (if_block) {
+            if_block.p(ctx2, dirty);
+          } else {
+            if_block = create_if_block_3$3(ctx2);
+            if_block.c();
+            if_block.m(div0, t0);
+          }
+        } else if (if_block) {
+          if_block.d(1);
+          if_block = null;
+        }
+        if (dirty & /*dndTrack, dndTargetSlot, undefined, Array, $memberStore, loading, feature, Number*/
+        31) {
+          each_value_1 = ensure_array_like({
+            length: (
+              /*$memberStore*/
+              ctx2[4].memberData.slots.unlockedSlots
+            )
+          });
+          let i;
+          for (i = 0; i < each_value_1.length; i += 1) {
+            const child_ctx = get_each_context_1$7(ctx2, each_value_1, i);
+            if (each_blocks_1[i]) {
+              each_blocks_1[i].p(child_ctx, dirty);
+            } else {
+              each_blocks_1[i] = create_each_block_1$7(child_ctx);
+              each_blocks_1[i].c();
+              each_blocks_1[i].m(div0, t1);
+            }
+          }
+          for (; i < each_blocks_1.length; i += 1) {
+            each_blocks_1[i].d(1);
+          }
+          each_blocks_1.length = each_value_1.length;
+        }
+        if (dirty & /*$memberStore*/
+        16) {
+          each_value = ensure_array_like({
+            length: Math.max(9 - /*$memberStore*/
+            ctx2[4].memberData.slots.unlockedSlots, 3 - /*$memberStore*/
+            ctx2[4].memberData.slots.unlockedSlots % 3)
+          });
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$k(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+            } else {
+              each_blocks[i] = create_each_block$k(child_ctx);
+              each_blocks[i].c();
+              each_blocks[i].m(div0, null);
+            }
+          }
+          for (; i < each_blocks.length; i += 1) {
+            each_blocks[i].d(1);
+          }
+          each_blocks.length = each_value.length;
+        }
+      },
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+        if (if_block) if_block.d();
+        destroy_each(each_blocks_1, detaching);
+        destroy_each(each_blocks, detaching);
+      }
+    };
+  }
+  __name(create_else_block$8, "create_else_block$8");
+  function create_if_block_1$8(ctx) {
+    let div;
+    return {
+      c() {
+        div = element("div");
+        div.textContent = "You need to log in to use sprites.";
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+      },
+      p: noop,
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+      }
+    };
+  }
+  __name(create_if_block_1$8, "create_if_block_1$8");
+  function create_if_block$h(ctx) {
+    let bounceload;
+    let current;
+    bounceload = new Bounceload({
+      props: { content: "Loading inventory.." }
+    });
+    return {
+      c() {
+        create_component(bounceload.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(bounceload, target, anchor);
+        current = true;
+      },
+      p: noop,
+      i(local) {
+        if (current) return;
+        transition_in(bounceload.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(bounceload.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(bounceload, detaching);
+      }
+    };
+  }
+  __name(create_if_block$h, "create_if_block$h");
+  function create_if_block_3$3(ctx) {
+    let div;
+    let mounted;
+    let dispose;
+    function select_block_type_1(ctx2, dirty) {
+      if (
+        /*$memberStore*/
+        ctx2[4].scene && /*$memberStore*/
+        ctx2[4].scene.scene
+      ) return create_if_block_4$3;
+      return create_else_block_2;
+    }
+    __name(select_block_type_1, "select_block_type_1");
+    let current_block_type = select_block_type_1(ctx);
+    let if_block = current_block_type(ctx);
+    return {
+      c() {
+        div = element("div");
+        if_block.c();
+        attr(div, "class", "typo-cabin-scene svelte-10x5c2g");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        if_block.m(div, null);
+        if (!mounted) {
+          dispose = [
+            listen(
+              div,
+              "click",
+              /*click_handler*/
+              ctx[8]
+            ),
+            listen(
+              div,
+              "contextmenu",
+              /*contextmenu_handler*/
+              ctx[9]
+            )
+          ];
+          mounted = true;
+        }
+      },
+      p(ctx2, dirty) {
+        if (current_block_type === (current_block_type = select_block_type_1(ctx2)) && if_block) {
+          if_block.p(ctx2, dirty);
+        } else {
+          if_block.d(1);
+          if_block = current_block_type(ctx2);
+          if (if_block) {
+            if_block.c();
+            if_block.m(div, null);
+          }
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        if_block.d();
+        mounted = false;
+        run_all(dispose);
+      }
+    };
+  }
+  __name(create_if_block_3$3, "create_if_block_3$3");
+  function create_else_block_2(ctx) {
+    let div;
+    return {
+      c() {
+        div = element("div");
+        div.textContent = "No scene selected";
+        attr(div, "class", "typo-cabin-scene-info visible svelte-10x5c2g");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+      },
+      p: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+      }
+    };
+  }
+  __name(create_else_block_2, "create_else_block_2");
+  function create_if_block_4$3(ctx) {
+    let div0;
+    let t0_value = (
+      /*$memberStore*/
+      ctx[4].scene.scene.name + ""
+    );
+    let t0;
+    let t1;
+    let t2_value = (
+      /*$memberStore*/
+      ctx[4].scene.scene.id + ""
+    );
+    let t2;
+    let t3;
+    let t4;
+    let div1;
+    return {
+      c() {
+        div0 = element("div");
+        t0 = text(t0_value);
+        t1 = text(" (#");
+        t2 = text(t2_value);
+        t3 = text(")");
+        t4 = space();
+        div1 = element("div");
+        attr(div0, "class", "typo-cabin-scene-info svelte-10x5c2g");
+        attr(div1, "class", "typo-cabin-scene-thumb svelte-10x5c2g");
+        set_style(div1, "background-image", "url(" + /*feature*/
+        ctx[0].getItemThumbnailUrl(
+          /*$memberStore*/
+          ctx[4].scene.scene,
+          /*$memberStore*/
+          ctx[4].scene.shift
+        ) + ")");
+      },
+      m(target, anchor) {
+        insert(target, div0, anchor);
+        append(div0, t0);
+        append(div0, t1);
+        append(div0, t2);
+        append(div0, t3);
+        insert(target, t4, anchor);
+        insert(target, div1, anchor);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*$memberStore*/
+        16 && t0_value !== (t0_value = /*$memberStore*/
+        ctx2[4].scene.scene.name + "")) set_data(t0, t0_value);
+        if (dirty & /*$memberStore*/
+        16 && t2_value !== (t2_value = /*$memberStore*/
+        ctx2[4].scene.scene.id + "")) set_data(t2, t2_value);
+        if (dirty & /*feature, $memberStore*/
+        17) {
+          set_style(div1, "background-image", "url(" + /*feature*/
+          ctx2[0].getItemThumbnailUrl(
+            /*$memberStore*/
+            ctx2[4].scene.scene,
+            /*$memberStore*/
+            ctx2[4].scene.shift
+          ) + ")");
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div0);
+          detach(t4);
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_if_block_4$3, "create_if_block_4$3");
+  function create_else_block_1$1(ctx) {
+    let div0;
+    let t2;
+    let div1;
+    return {
+      c() {
+        div0 = element("div");
+        div0.textContent = `Slot #${/*slot*/
+      ctx[17] + 1}`;
+        t2 = space();
+        div1 = element("div");
+        div1.textContent = "Empty";
+        attr(div0, "class", "typo-cabin-slot-info visible svelte-10x5c2g");
+        attr(div1, "class", "typo-cabin-slot-info visible svelte-10x5c2g");
+      },
+      m(target, anchor) {
+        insert(target, div0, anchor);
+        insert(target, t2, anchor);
+        insert(target, div1, anchor);
+      },
+      p: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(div0);
+          detach(t2);
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_else_block_1$1, "create_else_block_1$1");
+  function create_if_block_2$5(ctx) {
+    var _a2, _b2, _c2;
+    let div0;
+    let t2;
+    let div1;
+    let t3_value = (
+      /*$memberStore*/
+      (((_b2 = (_a2 = ctx[4].slots.get(
+        /*slot*/
+        ctx[17]
+      )) == null ? void 0 : _a2.sprite) == null ? void 0 : _b2.name) ?? "Unknown") + ""
+    );
+    let t3;
+    let t4;
+    let t5_value = (
+      /*$memberStore*/
+      ((_c2 = ctx[4].slots.get(
+        /*slot*/
+        ctx[17]
+      )) == null ? void 0 : _c2.spriteId) + ""
+    );
+    let t5;
+    let t6;
+    let t7;
+    let div2;
+    return {
+      c() {
+        var _a3, _b3;
+        div0 = element("div");
+        div0.textContent = `Slot #${/*slot*/
+      ctx[17] + 1}`;
+        t2 = space();
+        div1 = element("div");
+        t3 = text(t3_value);
+        t4 = text("\n              (#");
+        t5 = text(t5_value);
+        t6 = text(")");
+        t7 = space();
+        div2 = element("div");
+        attr(div0, "class", "typo-cabin-slot-info svelte-10x5c2g");
+        attr(div1, "class", "typo-cabin-slot-info svelte-10x5c2g");
+        attr(div2, "class", "typo-cabin-slot-thumb svelte-10x5c2g");
+        set_style(div2, "background-image", "url(" + /*feature*/
+        ctx[0].getItemThumbnailUrl(
+          /*$memberStore*/
+          (_a3 = ctx[4].slots.get(
+            /*slot*/
+            ctx[17]
+          )) == null ? void 0 : _a3.sprite,
+          /*$memberStore*/
+          (_b3 = ctx[4].slots.get(
+            /*slot*/
+            ctx[17]
+          )) == null ? void 0 : _b3.colorShift
+        ) + ")");
+      },
+      m(target, anchor) {
+        insert(target, div0, anchor);
+        insert(target, t2, anchor);
+        insert(target, div1, anchor);
+        append(div1, t3);
+        append(div1, t4);
+        append(div1, t5);
+        append(div1, t6);
+        insert(target, t7, anchor);
+        insert(target, div2, anchor);
+      },
+      p(ctx2, dirty) {
+        var _a3, _b3, _c3, _d2, _e2;
+        if (dirty & /*$memberStore*/
+        16 && t3_value !== (t3_value = /*$memberStore*/
+        (((_b3 = (_a3 = ctx2[4].slots.get(
+          /*slot*/
+          ctx2[17]
+        )) == null ? void 0 : _a3.sprite) == null ? void 0 : _b3.name) ?? "Unknown") + "")) set_data(t3, t3_value);
+        if (dirty & /*$memberStore*/
+        16 && t5_value !== (t5_value = /*$memberStore*/
+        ((_c3 = ctx2[4].slots.get(
+          /*slot*/
+          ctx2[17]
+        )) == null ? void 0 : _c3.spriteId) + "")) set_data(t5, t5_value);
+        if (dirty & /*feature, $memberStore*/
+        17) {
+          set_style(div2, "background-image", "url(" + /*feature*/
+          ctx2[0].getItemThumbnailUrl(
+            /*$memberStore*/
+            (_d2 = ctx2[4].slots.get(
+              /*slot*/
+              ctx2[17]
+            )) == null ? void 0 : _d2.sprite,
+            /*$memberStore*/
+            (_e2 = ctx2[4].slots.get(
+              /*slot*/
+              ctx2[17]
+            )) == null ? void 0 : _e2.colorShift
+          ) + ")");
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div0);
+          detach(t2);
+          detach(div1);
+          detach(t7);
+          detach(div2);
+        }
+      }
+    };
+  }
+  __name(create_if_block_2$5, "create_if_block_2$5");
+  function create_each_block_1$7(ctx) {
+    let div;
+    let show_if;
+    let t;
+    let mounted;
+    let dispose;
+    function select_block_type_2(ctx2, dirty) {
+      if (dirty & /*$memberStore*/
+      16) show_if = null;
+      if (show_if == null) show_if = !!/*$memberStore*/
+      ctx2[4].slots.has(
+        /*slot*/
+        ctx2[17]
+      );
+      if (show_if) return create_if_block_2$5;
+      return create_else_block_1$1;
+    }
+    __name(select_block_type_2, "select_block_type_2");
+    let current_block_type = select_block_type_2(ctx, -1);
+    let if_block = current_block_type(ctx);
+    function dragenter_handler(...args) {
+      return (
+        /*dragenter_handler*/
+        ctx[10](
+          /*slot*/
+          ctx[17],
+          ...args
+        )
+      );
+    }
+    __name(dragenter_handler, "dragenter_handler");
+    function dragstart_handler() {
+      return (
+        /*dragstart_handler*/
+        ctx[11](
+          /*slot*/
+          ctx[17]
+        )
+      );
+    }
+    __name(dragstart_handler, "dragstart_handler");
+    function click_handler_1() {
+      return (
+        /*click_handler_1*/
+        ctx[13](
+          /*slot*/
+          ctx[17]
+        )
+      );
+    }
+    __name(click_handler_1, "click_handler_1");
+    function contextmenu_handler_1(...args) {
+      return (
+        /*contextmenu_handler_1*/
+        ctx[14](
+          /*slot*/
+          ctx[17],
+          ...args
+        )
+      );
+    }
+    __name(contextmenu_handler_1, "contextmenu_handler_1");
+    return {
+      c() {
+        div = element("div");
+        if_block.c();
+        t = space();
+        attr(div, "class", "typo-cabin-slot svelte-10x5c2g");
+        attr(div, "role", "gridcell");
+        attr(
+          div,
+          "tabindex",
+          /*slot*/
+          ctx[17]
+        );
+        attr(div, "draggable", "true");
+        set_style(
+          div,
+          "order",
+          /*dndTrack*/
+          ctx[2] ? (
+            /*dndTrack*/
+            ctx[2][
+              /*slot*/
+              ctx[17]
+            ]
+          ) : (
+            /*slot*/
+            ctx[17]
+          )
+        );
+        toggle_class(
+          div,
+          "dragging",
+          /*dndTargetSlot*/
+          ctx[1] !== void 0
+        );
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        if_block.m(div, null);
+        append(div, t);
+        if (!mounted) {
+          dispose = [
+            listen(div, "dragenter", dragenter_handler),
+            listen(div, "dragstart", dragstart_handler),
+            listen(
+              div,
+              "dragend",
+              /*dragend_handler*/
+              ctx[12]
+            ),
+            listen(div, "click", click_handler_1),
+            listen(div, "contextmenu", contextmenu_handler_1)
+          ];
+          mounted = true;
+        }
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+        if (current_block_type === (current_block_type = select_block_type_2(ctx, dirty)) && if_block) {
+          if_block.p(ctx, dirty);
+        } else {
+          if_block.d(1);
+          if_block = current_block_type(ctx);
+          if (if_block) {
+            if_block.c();
+            if_block.m(div, t);
+          }
+        }
+        if (dirty & /*dndTrack*/
+        4) {
+          set_style(
+            div,
+            "order",
+            /*dndTrack*/
+            ctx[2] ? (
+              /*dndTrack*/
+              ctx[2][
+                /*slot*/
+                ctx[17]
+              ]
+            ) : (
+              /*slot*/
+              ctx[17]
+            )
+          );
+        }
+        if (dirty & /*dndTargetSlot, undefined*/
+        2) {
+          toggle_class(
+            div,
+            "dragging",
+            /*dndTargetSlot*/
+            ctx[1] !== void 0
+          );
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        if_block.d();
+        mounted = false;
+        run_all(dispose);
+      }
+    };
+  }
+  __name(create_each_block_1$7, "create_each_block_1$7");
+  function create_each_block$k(ctx) {
+    let div2;
+    let div0;
+    let t0;
+    let t1_value = (
+      /*slot*/
+      ctx[17] + /*$memberStore*/
+      ctx[4].memberData.slots.unlockedSlots + 1 + ""
+    );
+    let t1;
+    let t2;
+    let div1;
+    let t4;
+    return {
+      c() {
+        div2 = element("div");
+        div0 = element("div");
+        t0 = text("Slot #");
+        t1 = text(t1_value);
+        t2 = space();
+        div1 = element("div");
+        div1.textContent = "Locked";
+        t4 = space();
+        attr(div0, "class", "typo-cabin-slot-info svelte-10x5c2g");
+        attr(div1, "class", "typo-cabin-slot-info svelte-10x5c2g");
+        attr(div2, "class", "typo-cabin-slot locked svelte-10x5c2g");
+        set_style(
+          div2,
+          "order",
+          /*slot*/
+          ctx[17] + /*$memberStore*/
+          ctx[4].memberData.slots.unlockedSlots + 1
+        );
+      },
+      m(target, anchor) {
+        insert(target, div2, anchor);
+        append(div2, div0);
+        append(div0, t0);
+        append(div0, t1);
+        append(div2, t2);
+        append(div2, div1);
+        append(div2, t4);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*$memberStore*/
+        16 && t1_value !== (t1_value = /*slot*/
+        ctx2[17] + /*$memberStore*/
+        ctx2[4].memberData.slots.unlockedSlots + 1 + "")) set_data(t1, t1_value);
+        if (dirty & /*$memberStore*/
+        16) {
+          set_style(
+            div2,
+            "order",
+            /*slot*/
+            ctx2[17] + /*$memberStore*/
+            ctx2[4].memberData.slots.unlockedSlots + 1
+          );
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div2);
+        }
+      }
+    };
+  }
+  __name(create_each_block$k, "create_each_block$k");
+  function create_fragment$B(ctx) {
+    let div1;
+    let div0;
+    let bounceload;
+    let t;
+    let current_block_type_index;
+    let if_block;
+    let current;
+    bounceload = new Bounceload({ props: { content: "Saving.." } });
+    const if_block_creators = [create_if_block$h, create_if_block_1$8, create_else_block$8];
+    const if_blocks = [];
+    function select_block_type(ctx2, dirty) {
+      if (
+        /*$memberStore*/
+        ctx2[4] === void 0
+      ) return 0;
+      if (
+        /*$memberStore*/
+        ctx2[4] === null
+      ) return 1;
+      return 2;
+    }
+    __name(select_block_type, "select_block_type");
+    current_block_type_index = select_block_type(ctx);
+    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    return {
+      c() {
+        div1 = element("div");
+        div0 = element("div");
+        create_component(bounceload.$$.fragment);
+        t = space();
+        if_block.c();
+        attr(div0, "class", "typo-cabin-saving svelte-10x5c2g");
+        attr(div1, "class", "typo-cabin svelte-10x5c2g");
+        toggle_class(
+          div1,
+          "loading",
+          /*loading*/
+          ctx[3]
+        );
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        mount_component(bounceload, div0, null);
+        append(div1, t);
+        if_blocks[current_block_type_index].m(div1, null);
+        current = true;
+      },
+      p(ctx2, [dirty]) {
+        let previous_block_index = current_block_type_index;
+        current_block_type_index = select_block_type(ctx2);
+        if (current_block_type_index === previous_block_index) {
+          if_blocks[current_block_type_index].p(ctx2, dirty);
+        } else {
+          group_outros();
+          transition_out(if_blocks[previous_block_index], 1, 1, () => {
+            if_blocks[previous_block_index] = null;
+          });
+          check_outros();
+          if_block = if_blocks[current_block_type_index];
+          if (!if_block) {
+            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+            if_block.c();
+          } else {
+            if_block.p(ctx2, dirty);
+          }
+          transition_in(if_block, 1);
+          if_block.m(div1, null);
+        }
+        if (!current || dirty & /*loading*/
+        8) {
+          toggle_class(
+            div1,
+            "loading",
+            /*loading*/
+            ctx2[3]
+          );
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(bounceload.$$.fragment, local);
+        transition_in(if_block);
+        current = true;
+      },
+      o(local) {
+        transition_out(bounceload.$$.fragment, local);
+        transition_out(if_block);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+        destroy_component(bounceload);
+        if_blocks[current_block_type_index].d();
+      }
+    };
+  }
+  __name(create_fragment$B, "create_fragment$B");
+  function instance$y($$self, $$props, $$invalidate) {
+    let $memberStore;
+    let $scenePickerEnabled;
+    let { feature } = $$props;
+    const memberStore = feature.memberStore;
+    component_subscribe($$self, memberStore, (value) => $$invalidate(4, $memberStore = value));
+    const scenePickerEnabled = feature.scenePickerSettingStore;
+    component_subscribe($$self, scenePickerEnabled, (value) => $$invalidate(5, $scenePickerEnabled = value));
+    let dndTargetSlot;
+    let dndTrack;
+    let loading = false;
+    const click_handler2 = /* @__PURE__ */ __name(async () => {
+      const scene = await feature.promptSceneSelection($memberStore.memberData.sceneInventory);
+      if (scene !== void 0) {
+        $$invalidate(3, loading = true);
+        await feature.setScene((scene == null ? void 0 : scene.scene) ?? null, scene == null ? void 0 : scene.shift, $memberStore.memberData.member.userLogin);
+        $$invalidate(3, loading = false);
+      }
+    }, "click_handler");
+    const contextmenu_handler2 = /* @__PURE__ */ __name(async (event) => {
+      event.preventDefault();
+      $$invalidate(3, loading = true);
+      await feature.setScene(null, void 0, $memberStore.memberData.member.userLogin);
+      $$invalidate(3, loading = false);
+    }, "contextmenu_handler");
+    const dragenter_handler = /* @__PURE__ */ __name((slot, event) => {
+      if (dndTargetSlot === slot || dndTrack === void 0 || dndTargetSlot === void 0) return;
+      const newTrack = [...Array($memberStore.memberData.slots.unlockedSlots).keys()];
+      for (let i = 0; i < dndTrack.length; i++) {
+        if (i >= slot && i < dndTargetSlot) {
+          newTrack[i] = i + 1;
+        }
+        if (i <= slot && i > dndTargetSlot) {
+          newTrack[i] = i - 1;
+        }
+      }
+      newTrack[dndTargetSlot] = dndTrack[slot];
+      $$invalidate(2, dndTrack = newTrack);
+    }, "dragenter_handler");
+    const dragstart_handler = /* @__PURE__ */ __name((slot) => {
+      $$invalidate(1, dndTargetSlot = slot);
+      $$invalidate(2, dndTrack = [...Array($memberStore.memberData.slots.unlockedSlots).keys()]);
+    }, "dragstart_handler");
+    const dragend_handler = /* @__PURE__ */ __name(async () => {
+      $$invalidate(3, loading = true);
+      await feature.reorderSlots(dndTrack, $memberStore.memberData.spriteInventory, Number($memberStore.memberData.member.userLogin));
+      $$invalidate(1, dndTargetSlot = void 0);
+      $$invalidate(2, dndTrack = void 0);
+      $$invalidate(3, loading = false);
+    }, "dragend_handler");
+    const click_handler_1 = /* @__PURE__ */ __name(async (slot) => {
+      const sprite = await feature.promptSpriteSelection($memberStore.memberData.spriteInventory);
+      if (sprite !== void 0) {
+        $$invalidate(3, loading = true);
+        await feature.setSpriteOnSlot(slot + 1, sprite, $memberStore.memberData.member.userLogin);
+        $$invalidate(3, loading = false);
+      }
+    }, "click_handler_1");
+    const contextmenu_handler_1 = /* @__PURE__ */ __name(async (slot, event) => {
+      event.preventDefault();
+      $$invalidate(3, loading = true);
+      await feature.setSpriteOnSlot(slot + 1, null, $memberStore.memberData.member.userLogin);
+      $$invalidate(3, loading = false);
+    }, "contextmenu_handler_1");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    };
+    return [
+      feature,
+      dndTargetSlot,
+      dndTrack,
+      loading,
+      $memberStore,
+      $scenePickerEnabled,
+      memberStore,
+      scenePickerEnabled,
+      click_handler2,
+      contextmenu_handler2,
+      dragenter_handler,
+      dragstart_handler,
+      dragend_handler,
+      click_handler_1,
+      contextmenu_handler_1
+    ];
+  }
+  __name(instance$y, "instance$y");
+  const _Panel_cabin = class _Panel_cabin extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$y, create_fragment$B, safe_not_equal, { feature: 0 });
+    }
+  };
+  __name(_Panel_cabin, "Panel_cabin");
+  let Panel_cabin = _Panel_cabin;
+  function get_each_context$j(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[7] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context$j, "get_each_context$j");
+  function create_if_block$g(ctx) {
+    var _a2, _b2;
+    let div1;
+    let div0;
+    let t0;
+    let span0;
+    let t1;
+    let t2_value = (
+      /*spritesMap*/
+      ((_a2 = ctx[2].get(
+        /*sprite*/
+        ctx[7].spriteId
+      )) == null ? void 0 : _a2.id) + ""
+    );
+    let t2;
+    let t3;
+    let span1;
+    let t4_value = (
+      /*spritesMap*/
+      ((_b2 = ctx[2].get(
+        /*sprite*/
+        ctx[7].spriteId
+      )) == null ? void 0 : _b2.name) + ""
+    );
+    let t4;
+    let t5;
+    let mounted;
+    let dispose;
+    function click_handler_1() {
+      return (
+        /*click_handler_1*/
+        ctx[6](
+          /*sprite*/
+          ctx[7]
+        )
+      );
+    }
+    __name(click_handler_1, "click_handler_1");
+    return {
+      c() {
+        var _a3;
+        div1 = element("div");
+        div0 = element("div");
+        t0 = space();
+        span0 = element("span");
+        t1 = text("#");
+        t2 = text(t2_value);
+        t3 = space();
+        span1 = element("span");
+        t4 = text(t4_value);
+        t5 = space();
+        attr(div0, "class", "typo-sprite-picker-scene-thumb svelte-1srogek");
+        set_style(div0, "background-image", "url(" + /*spritesMap*/
+        ((_a3 = ctx[2].get(
+          /*sprite*/
+          ctx[7].spriteId
+        )) == null ? void 0 : _a3.url) + ")");
+        attr(span0, "class", "svelte-1srogek");
+        attr(span1, "class", "svelte-1srogek");
+        attr(div1, "class", "typo-sprite-picker-scene svelte-1srogek");
+        set_style(
+          div1,
+          "order",
+          /*sprite*/
+          ctx[7].spriteId
+        );
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        append(div1, t0);
+        append(div1, span0);
+        append(span0, t1);
+        append(span0, t2);
+        append(div1, t3);
+        append(div1, span1);
+        append(span1, t4);
+        append(div1, t5);
+        if (!mounted) {
+          dispose = listen(div1, "click", click_handler_1);
+          mounted = true;
+        }
+      },
+      p(new_ctx, dirty) {
+        var _a3, _b3, _c2;
+        ctx = new_ctx;
+        if (dirty & /*spritesMap, inventory*/
+        6) {
+          set_style(div0, "background-image", "url(" + /*spritesMap*/
+          ((_a3 = ctx[2].get(
+            /*sprite*/
+            ctx[7].spriteId
+          )) == null ? void 0 : _a3.url) + ")");
+        }
+        if (dirty & /*spritesMap, inventory*/
+        6 && t2_value !== (t2_value = /*spritesMap*/
+        ((_b3 = ctx[2].get(
+          /*sprite*/
+          ctx[7].spriteId
+        )) == null ? void 0 : _b3.id) + "")) set_data(t2, t2_value);
+        if (dirty & /*spritesMap, inventory*/
+        6 && t4_value !== (t4_value = /*spritesMap*/
+        ((_c2 = ctx[2].get(
+          /*sprite*/
+          ctx[7].spriteId
+        )) == null ? void 0 : _c2.name) + "")) set_data(t4, t4_value);
+        if (dirty & /*inventory*/
+        2) {
+          set_style(
+            div1,
+            "order",
+            /*sprite*/
+            ctx[7].spriteId
+          );
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+        mounted = false;
+        dispose();
+      }
+    };
+  }
+  __name(create_if_block$g, "create_if_block$g");
+  function create_each_block$j(ctx) {
+    let if_block_anchor;
+    let if_block = (
+      /*sprite*/
+      ctx[7].slot === void 0 && create_if_block$g(ctx)
+    );
+    return {
+      c() {
+        if (if_block) if_block.c();
+        if_block_anchor = empty();
+      },
+      m(target, anchor) {
+        if (if_block) if_block.m(target, anchor);
+        insert(target, if_block_anchor, anchor);
+      },
+      p(ctx2, dirty) {
+        if (
+          /*sprite*/
+          ctx2[7].slot === void 0
+        ) {
+          if (if_block) {
+            if_block.p(ctx2, dirty);
+          } else {
+            if_block = create_if_block$g(ctx2);
+            if_block.c();
+            if_block.m(if_block_anchor.parentNode, if_block_anchor);
+          }
+        } else if (if_block) {
+          if_block.d(1);
+          if_block = null;
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(if_block_anchor);
+        }
+        if (if_block) if_block.d(detaching);
+      }
+    };
+  }
+  __name(create_each_block$j, "create_each_block$j");
+  function create_fragment$A(ctx) {
+    let div3;
+    let span0;
+    let t2;
+    let div2;
+    let div1;
+    let t5;
+    let mounted;
+    let dispose;
+    let each_value = ensure_array_like(
+      /*inventory*/
+      ctx[1]
+    );
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$j(get_each_context$j(ctx, each_value, i));
+    }
+    return {
+      c() {
+        div3 = element("div");
+        span0 = element("span");
+        span0.innerHTML = `Choose a sprite from your inventory which will be used on the selected slot.<br/>
+    You can only choose sprites that are not already in use.`;
+        t2 = space();
+        div2 = element("div");
+        div1 = element("div");
+        div1.innerHTML = `<div class="typo-sprite-picker-scene-thumb svelte-1srogek"></div> <span class="svelte-1srogek">Empty</span>`;
+        t5 = space();
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        attr(span0, "class", "svelte-1srogek");
+        attr(div1, "class", "typo-sprite-picker-scene svelte-1srogek");
+        attr(div2, "class", "typo-sprite-picker-list color-scrollbar svelte-1srogek");
+        attr(div3, "class", "typo-sprite-picker svelte-1srogek");
+      },
+      m(target, anchor) {
+        insert(target, div3, anchor);
+        append(div3, span0);
+        append(div3, t2);
+        append(div3, div2);
+        append(div2, div1);
+        append(div2, t5);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(div2, null);
+          }
+        }
+        if (!mounted) {
+          dispose = listen(
+            div1,
+            "click",
+            /*click_handler*/
+            ctx[5]
+          );
+          mounted = true;
+        }
+      },
+      p(ctx2, [dirty]) {
+        if (dirty & /*inventory, onPick, spritesMap, undefined*/
+        7) {
+          each_value = ensure_array_like(
+            /*inventory*/
+            ctx2[1]
+          );
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$j(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+            } else {
+              each_blocks[i] = create_each_block$j(child_ctx);
+              each_blocks[i].c();
+              each_blocks[i].m(div2, null);
+            }
+          }
+          for (; i < each_blocks.length; i += 1) {
+            each_blocks[i].d(1);
+          }
+          each_blocks.length = each_value.length;
+        }
+      },
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(div3);
+        }
+        destroy_each(each_blocks, detaching);
+        mounted = false;
+        dispose();
+      }
+    };
+  }
+  __name(create_fragment$A, "create_fragment$A");
+  function instance$x($$self, $$props, $$invalidate) {
+    let { feature } = $$props;
+    let { onPick } = $$props;
+    let { sprites } = $$props;
+    let { inventory } = $$props;
+    let spritesMap = /* @__PURE__ */ new Map();
+    const click_handler2 = /* @__PURE__ */ __name(() => onPick(null), "click_handler");
+    const click_handler_1 = /* @__PURE__ */ __name((sprite) => onPick(spritesMap.get(sprite.spriteId)), "click_handler_1");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(3, feature = $$props2.feature);
+      if ("onPick" in $$props2) $$invalidate(0, onPick = $$props2.onPick);
+      if ("sprites" in $$props2) $$invalidate(4, sprites = $$props2.sprites);
+      if ("inventory" in $$props2) $$invalidate(1, inventory = $$props2.inventory);
+    };
+    $$self.$$.update = () => {
+      if ($$self.$$.dirty & /*sprites*/
+      16) {
+        {
+          $$invalidate(2, spritesMap = new Map(sprites.map((sprite) => [sprite.id, sprite])));
+        }
+      }
+    };
+    return [
+      onPick,
+      inventory,
+      spritesMap,
+      feature,
+      sprites,
+      click_handler2,
+      click_handler_1
+    ];
+  }
+  __name(instance$x, "instance$x");
+  const _Panel_cabin_sprite_picker = class _Panel_cabin_sprite_picker extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$x, create_fragment$A, safe_not_equal, {
+        feature: 3,
+        onPick: 0,
+        sprites: 4,
+        inventory: 1
+      });
+    }
+  };
+  __name(_Panel_cabin_sprite_picker, "Panel_cabin_sprite_picker");
+  let Panel_cabin_sprite_picker = _Panel_cabin_sprite_picker;
+  function get_each_context$i(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[9] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context$i, "get_each_context$i");
+  function create_else_block$7(ctx) {
+    var _a2, _b2;
+    let div1;
+    let div0;
+    let t0;
+    let span0;
+    let t1;
+    let t2_value = (
+      /*scenesMap*/
+      ((_a2 = ctx[3].get(
+        /*scene*/
+        ctx[9].sceneId
+      )) == null ? void 0 : _a2.id) + ""
+    );
+    let t2;
+    let t3;
+    let span1;
+    let t4_value = (
+      /*scenesMap*/
+      ((_b2 = ctx[3].get(
+        /*scene*/
+        ctx[9].sceneId
+      )) == null ? void 0 : _b2.name) + ""
+    );
+    let t4;
+    let t5;
+    let mounted;
+    let dispose;
+    function click_handler_2() {
+      return (
+        /*click_handler_2*/
+        ctx[8](
+          /*scene*/
+          ctx[9]
+        )
+      );
+    }
+    __name(click_handler_2, "click_handler_2");
+    return {
+      c() {
+        var _a3;
+        div1 = element("div");
+        div0 = element("div");
+        t0 = space();
+        span0 = element("span");
+        t1 = text("#");
+        t2 = text(t2_value);
+        t3 = space();
+        span1 = element("span");
+        t4 = text(t4_value);
+        t5 = space();
+        attr(div0, "class", "typo-scene-picker-scene-thumb svelte-1s2xvs0");
+        set_style(div0, "background-image", "url(" + /*scenesMap*/
+        ((_a3 = ctx[3].get(
+          /*scene*/
+          ctx[9].sceneId
+        )) == null ? void 0 : _a3.url) + ")");
+        attr(span0, "class", "id svelte-1s2xvs0");
+        attr(span1, "class", "name svelte-1s2xvs0");
+        attr(div1, "class", "typo-scene-picker-scene svelte-1s2xvs0");
+        set_style(
+          div1,
+          "order",
+          /*scene*/
+          ctx[9].sceneId
+        );
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        append(div1, t0);
+        append(div1, span0);
+        append(span0, t1);
+        append(span0, t2);
+        append(div1, t3);
+        append(div1, span1);
+        append(span1, t4);
+        append(div1, t5);
+        if (!mounted) {
+          dispose = listen(div1, "click", click_handler_2);
+          mounted = true;
+        }
+      },
+      p(new_ctx, dirty) {
+        var _a3, _b3, _c2;
+        ctx = new_ctx;
+        if (dirty & /*scenesMap, inventory*/
+        12) {
+          set_style(div0, "background-image", "url(" + /*scenesMap*/
+          ((_a3 = ctx[3].get(
+            /*scene*/
+            ctx[9].sceneId
+          )) == null ? void 0 : _a3.url) + ")");
+        }
+        if (dirty & /*scenesMap, inventory*/
+        12 && t2_value !== (t2_value = /*scenesMap*/
+        ((_b3 = ctx[3].get(
+          /*scene*/
+          ctx[9].sceneId
+        )) == null ? void 0 : _b3.id) + "")) set_data(t2, t2_value);
+        if (dirty & /*scenesMap, inventory*/
+        12 && t4_value !== (t4_value = /*scenesMap*/
+        ((_c2 = ctx[3].get(
+          /*scene*/
+          ctx[9].sceneId
+        )) == null ? void 0 : _c2.name) + "")) set_data(t4, t4_value);
+        if (dirty & /*inventory*/
+        4) {
+          set_style(
+            div1,
+            "order",
+            /*scene*/
+            ctx[9].sceneId
+          );
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+        mounted = false;
+        dispose();
+      }
+    };
+  }
+  __name(create_else_block$7, "create_else_block$7");
+  function create_if_block$f(ctx) {
+    var _a2, _b2, _c2;
+    let div1;
+    let div0;
+    let t0;
+    let span0;
+    let t1;
+    let t2_value = (
+      /*scenesMap*/
+      ((_a2 = ctx[3].get(
+        /*scene*/
+        ctx[9].sceneId
+      )) == null ? void 0 : _a2.id) + ""
+    );
+    let t2;
+    let t3;
+    let t4_value = (
+      /*scene*/
+      ctx[9].sceneShift + ""
+    );
+    let t4;
+    let t5;
+    let t6;
+    let span1;
+    let t7_value = (
+      /*scenesMap*/
+      ((_c2 = (_b2 = ctx[3].get(
+        /*scene*/
+        ctx[9].sceneId
+      )) == null ? void 0 : _b2.themes.find(func2)) == null ? void 0 : _c2.name) + ""
+    );
+    let t7;
+    let t8;
+    let mounted;
+    let dispose;
+    function func2(...args) {
+      return (
+        /*func*/
+        ctx[6](
+          /*scene*/
+          ctx[9],
+          ...args
+        )
+      );
+    }
+    __name(func2, "func");
+    function click_handler_1() {
+      return (
+        /*click_handler_1*/
+        ctx[7](
+          /*scene*/
+          ctx[9]
+        )
+      );
+    }
+    __name(click_handler_1, "click_handler_1");
+    return {
+      c() {
+        div1 = element("div");
+        div0 = element("div");
+        t0 = space();
+        span0 = element("span");
+        t1 = text("#");
+        t2 = text(t2_value);
+        t3 = text(" (color #");
+        t4 = text(t4_value);
+        t5 = text(")");
+        t6 = space();
+        span1 = element("span");
+        t7 = text(t7_value);
+        t8 = space();
+        attr(div0, "class", "typo-scene-picker-scene-thumb svelte-1s2xvs0");
+        set_style(div0, "background-image", "url(" + /*feature*/
+        ctx[0].getItemThumbnailUrl(
+          /*scenesMap*/
+          ctx[3].get(
+            /*scene*/
+            ctx[9].sceneId
+          ),
+          /*scene*/
+          ctx[9].sceneShift
+        ) + ")");
+        attr(span0, "class", "id svelte-1s2xvs0");
+        attr(span1, "class", "name svelte-1s2xvs0");
+        attr(div1, "class", "typo-scene-picker-scene svelte-1s2xvs0");
+        set_style(
+          div1,
+          "order",
+          /*scene*/
+          ctx[9].sceneId
+        );
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        append(div1, t0);
+        append(div1, span0);
+        append(span0, t1);
+        append(span0, t2);
+        append(span0, t3);
+        append(span0, t4);
+        append(span0, t5);
+        append(div1, t6);
+        append(div1, span1);
+        append(span1, t7);
+        insert(target, t8, anchor);
+        if (!mounted) {
+          dispose = listen(div1, "click", click_handler_1);
+          mounted = true;
+        }
+      },
+      p(new_ctx, dirty) {
+        var _a3, _b3, _c3;
+        ctx = new_ctx;
+        if (dirty & /*feature, scenesMap, inventory*/
+        13) {
+          set_style(div0, "background-image", "url(" + /*feature*/
+          ctx[0].getItemThumbnailUrl(
+            /*scenesMap*/
+            ctx[3].get(
+              /*scene*/
+              ctx[9].sceneId
+            ),
+            /*scene*/
+            ctx[9].sceneShift
+          ) + ")");
+        }
+        if (dirty & /*scenesMap, inventory*/
+        12 && t2_value !== (t2_value = /*scenesMap*/
+        ((_a3 = ctx[3].get(
+          /*scene*/
+          ctx[9].sceneId
+        )) == null ? void 0 : _a3.id) + "")) set_data(t2, t2_value);
+        if (dirty & /*inventory*/
+        4 && t4_value !== (t4_value = /*scene*/
+        ctx[9].sceneShift + "")) set_data(t4, t4_value);
+        if (dirty & /*scenesMap, inventory*/
+        12 && t7_value !== (t7_value = /*scenesMap*/
+        ((_c3 = (_b3 = ctx[3].get(
+          /*scene*/
+          ctx[9].sceneId
+        )) == null ? void 0 : _b3.themes.find(func2)) == null ? void 0 : _c3.name) + "")) set_data(t7, t7_value);
+        if (dirty & /*inventory*/
+        4) {
+          set_style(
+            div1,
+            "order",
+            /*scene*/
+            ctx[9].sceneId
+          );
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+          detach(t8);
+        }
+        mounted = false;
+        dispose();
+      }
+    };
+  }
+  __name(create_if_block$f, "create_if_block$f");
+  function create_each_block$i(ctx) {
+    let if_block_anchor;
+    function select_block_type(ctx2, dirty) {
+      if (
+        /*scene*/
+        ctx2[9].sceneShift
+      ) return create_if_block$f;
+      return create_else_block$7;
+    }
+    __name(select_block_type, "select_block_type");
+    let current_block_type = select_block_type(ctx);
+    let if_block = current_block_type(ctx);
+    return {
+      c() {
+        if_block.c();
+        if_block_anchor = empty();
+      },
+      m(target, anchor) {
+        if_block.m(target, anchor);
+        insert(target, if_block_anchor, anchor);
+      },
+      p(ctx2, dirty) {
+        if (current_block_type === (current_block_type = select_block_type(ctx2)) && if_block) {
+          if_block.p(ctx2, dirty);
+        } else {
+          if_block.d(1);
+          if_block = current_block_type(ctx2);
+          if (if_block) {
+            if_block.c();
+            if_block.m(if_block_anchor.parentNode, if_block_anchor);
+          }
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(if_block_anchor);
+        }
+        if_block.d(detaching);
+      }
+    };
+  }
+  __name(create_each_block$i, "create_each_block$i");
+  function create_fragment$z(ctx) {
+    let div3;
+    let span0;
+    let t1;
+    let div2;
+    let div1;
+    let t4;
+    let mounted;
+    let dispose;
+    let each_value = ensure_array_like(
+      /*inventory*/
+      ctx[2].scenes
+    );
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$i(get_each_context$i(ctx, each_value, i));
+    }
+    return {
+      c() {
+        div3 = element("div");
+        span0 = element("span");
+        span0.textContent = "Choose a scene from your inventory which will be used as your avatar background.";
+        t1 = space();
+        div2 = element("div");
+        div1 = element("div");
+        div1.innerHTML = `<div class="typo-scene-picker-scene-thumb svelte-1s2xvs0"></div> <span class="svelte-1s2xvs0">Empty</span>`;
+        t4 = space();
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        attr(span0, "class", "svelte-1s2xvs0");
+        attr(div1, "class", "typo-scene-picker-scene svelte-1s2xvs0");
+        attr(div2, "class", "typo-scene-picker-list color-scrollbar svelte-1s2xvs0");
+        attr(div3, "class", "typo-scene-picker svelte-1s2xvs0");
+      },
+      m(target, anchor) {
+        insert(target, div3, anchor);
+        append(div3, span0);
+        append(div3, t1);
+        append(div3, div2);
+        append(div2, div1);
+        append(div2, t4);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(div2, null);
+          }
+        }
+        if (!mounted) {
+          dispose = listen(
+            div1,
+            "click",
+            /*click_handler*/
+            ctx[5]
+          );
+          mounted = true;
+        }
+      },
+      p(ctx2, [dirty]) {
+        if (dirty & /*inventory, onPick, scenesMap, feature, undefined*/
+        15) {
+          each_value = ensure_array_like(
+            /*inventory*/
+            ctx2[2].scenes
+          );
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$i(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+            } else {
+              each_blocks[i] = create_each_block$i(child_ctx);
+              each_blocks[i].c();
+              each_blocks[i].m(div2, null);
+            }
+          }
+          for (; i < each_blocks.length; i += 1) {
+            each_blocks[i].d(1);
+          }
+          each_blocks.length = each_value.length;
+        }
+      },
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(div3);
+        }
+        destroy_each(each_blocks, detaching);
+        mounted = false;
+        dispose();
+      }
+    };
+  }
+  __name(create_fragment$z, "create_fragment$z");
+  function instance$w($$self, $$props, $$invalidate) {
+    let { feature } = $$props;
+    let { onPick } = $$props;
+    let { scenes } = $$props;
+    let { inventory } = $$props;
+    let scenesMap = /* @__PURE__ */ new Map();
+    const click_handler2 = /* @__PURE__ */ __name(() => onPick(null, void 0), "click_handler");
+    const func2 = /* @__PURE__ */ __name((scene, t) => t.shift === scene.sceneShift, "func");
+    const click_handler_1 = /* @__PURE__ */ __name((scene) => onPick(scenesMap.get(scene.sceneId), scene.sceneShift), "click_handler_1");
+    const click_handler_2 = /* @__PURE__ */ __name((scene) => onPick(scenesMap.get(scene.sceneId), void 0), "click_handler_2");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+      if ("onPick" in $$props2) $$invalidate(1, onPick = $$props2.onPick);
+      if ("scenes" in $$props2) $$invalidate(4, scenes = $$props2.scenes);
+      if ("inventory" in $$props2) $$invalidate(2, inventory = $$props2.inventory);
+    };
+    $$self.$$.update = () => {
+      if ($$self.$$.dirty & /*scenes*/
+      16) {
+        {
+          $$invalidate(3, scenesMap = new Map(scenes.map((scene) => [scene.id, scene])));
+        }
+      }
+    };
+    return [
+      feature,
+      onPick,
+      inventory,
+      scenesMap,
+      scenes,
+      click_handler2,
+      func2,
+      click_handler_1,
+      click_handler_2
+    ];
+  }
+  __name(instance$w, "instance$w");
+  const _Panel_cabin_scene_picker = class _Panel_cabin_scene_picker extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$w, create_fragment$z, safe_not_equal, {
+        feature: 0,
+        onPick: 1,
+        scenes: 4,
+        inventory: 2
+      });
+    }
+  };
+  __name(_Panel_cabin_scene_picker, "Panel_cabin_scene_picker");
+  let Panel_cabin_scene_picker = _Panel_cabin_scene_picker;
+  var __defProp$w = Object.defineProperty;
+  var __decorateClass$w = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$B(target, key, result);
+    if (result) __defProp$w(target, key, result);
     return result;
-  }, "__decorateClass$B");
+  }, "__decorateClass$w");
+  const _PanelCabinFeature = class _PanelCabinFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_elements");
+      __publicField(this, "_apiDataSetup");
+      __publicField(this, "_memberService");
+      __publicField(this, "_apiService");
+      __publicField(this, "_modalService");
+      __publicField(this, "_toastService");
+      __publicField(this, "_component");
+      __publicField(this, "name", "Outfit Cabin");
+      __publicField(this, "description", "Displays a drag-n-drop interface on the start page to customize your sprite combo");
+      __publicField(this, "tags", [
+        FeatureTag.PALANTIR
+      ]);
+      __publicField(this, "featureId", 3);
+      __publicField(this, "_enableScenePickerSetting", this.useSetting(
+        new BooleanExtensionSetting("enable_scene_picker", true, this).withName("Enable Scene Picker").withDescription("Show the scene picker at the top of the sprite cabin")
+      ));
+    }
+    async onActivate() {
+      const elements2 = await this._elements.complete();
+      this._component = new Panel_cabin({
+        target: elements2.cabinTab,
+        props: {
+          feature: this
+        }
+      });
+    }
+    onDestroy() {
+      var _a2;
+      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
+    }
+    get scenePickerSettingStore() {
+      return this._enableScenePickerSetting.store;
+    }
+    get memberStore() {
+      return fromObservable(
+        this._memberService.memberData$.pipe(
+          /* map data into useful structure */
+          switchMap(async (memberData) => {
+            if (memberData === null || memberData === void 0) {
+              return null;
+            }
+            const apiData = await this._apiDataSetup.complete();
+            const slots = new Map(
+              memberData.spriteInventory.filter((i) => i.slot !== void 0).map((i) => ({
+                ...i,
+                sprite: apiData.sprites.find((s) => s.id === i.spriteId)
+              })).map((i) => [(i.slot ?? 0) - 1, i])
+            );
+            const scene = memberData.sceneInventory.activeId ? {
+              id: memberData.sceneInventory.activeId,
+              shift: memberData.sceneInventory.activeShift,
+              scene: apiData.scenes.find((s) => s.id === memberData.sceneInventory.activeId)
+            } : void 0;
+            return { memberData, slots, scene };
+          })
+        ),
+        void 0
+      );
+    }
+    /**
+     * Generates a url of a scene or sprite, optionally shifted if provided
+     * @param item
+     * @param shift
+     */
+    getItemThumbnailUrl(item, shift) {
+      return item ? shift !== void 0 ? `https://static.typo.rip/sprites/rainbow/modulate.php?url=${item.url}&hue=${shift}` : item.url : "";
+    }
+    /**
+     * Reorder the slots of a user
+     * @param slotMap
+     * @param inventory
+     * @param login
+     */
+    async reorderSlots(slotMap, inventory, login) {
+      this._logger.debug("Reordering slots", slotMap, inventory);
+      if (slotMap.every((v, i) => v === i)) {
+        this._logger.info("No change in slot order");
+        return;
+      }
+      const slots = [];
+      inventory.forEach((item) => {
+        if (item.slot !== void 0) {
+          slots.push({ slotId: slotMap[item.slot - 1] + 1, spriteId: item.spriteId });
+        }
+      });
+      await this._apiService.getApi(InventoryApi).setMemberSpriteCombo({ login, spriteComboDto: { slots } });
+      await this._memberService.refreshInventory();
+      this._logger.info("Reordered slots", slots);
+    }
+    /**
+     * Prompt the user to select a sprite
+     * @param inventory
+     */
+    async promptSpriteSelection(inventory) {
+      this._logger.debug("Opening sprite picker");
+      const sprites = (await this._apiDataSetup.complete()).sprites;
+      const pickerComponent = {
+        componentType: Panel_cabin_sprite_picker,
+        propsFactory: /* @__PURE__ */ __name((submit) => ({
+          feature: this,
+          inventory,
+          sprites,
+          onPick: submit.bind(this)
+        }), "propsFactory")
+      };
+      const sprite = await this._modalService.showPrompt(
+        pickerComponent.componentType,
+        pickerComponent.propsFactory,
+        "Sprite Picker",
+        "document"
+      );
+      this._logger.debug("Sprite picker closed", sprite);
+      return sprite;
+    }
+    /**
+     * Set a sprite on a slot for a user
+     * @param slot
+     * @param sprite
+     * @param login
+     */
+    async setSpriteOnSlot(slot, sprite, login) {
+      this._logger.debug("Setting sprite on slot", slot, sprite);
+      try {
+        await this._apiService.getApi(InventoryApi).setMemberSpriteSlot({ login, spriteSlotDto: { slotId: slot, spriteId: (sprite == null ? void 0 : sprite.id) ?? 0 } });
+        await this._memberService.refreshInventory();
+      } catch (e) {
+        this._logger.error("Failed to set sprite on slot", e);
+        await this._toastService.showToast("Failed to set sprite on slot");
+      }
+    }
+    /**
+     * Prompt the user to select a scene
+     * @param inventory
+     */
+    async promptSceneSelection(inventory) {
+      this._logger.debug("Opening scene picker");
+      const scenes = (await this._apiDataSetup.complete()).scenes;
+      const pickerComponent = {
+        componentType: Panel_cabin_scene_picker,
+        propsFactory: /* @__PURE__ */ __name((submit) => ({
+          feature: this,
+          inventory,
+          scenes,
+          onPick: /* @__PURE__ */ __name((scene2, shift) => submit(scene2 ? { scene: scene2, shift } : scene2), "onPick")
+        }), "propsFactory")
+      };
+      const scene = await this._modalService.showPrompt(
+        pickerComponent.componentType,
+        pickerComponent.propsFactory,
+        "Scene Picker",
+        "document"
+      );
+      this._logger.debug("Scene picker closed", scene);
+      return scene;
+    }
+    /**
+     * Set the scene of a user
+     * @param scene
+     * @param shift
+     * @param login
+     */
+    async setScene(scene, shift, login) {
+      this._logger.debug("Setting scene", scene, shift);
+      try {
+        await this._apiService.getApi(InventoryApi).setMemberScene({ login, setActiveSceneDto: { scene: scene ? { sceneId: scene.id, sceneShift: shift } : void 0 } });
+        await this._memberService.refreshInventory();
+      } catch (e) {
+        this._logger.error("Failed to set scene", e);
+        await this._toastService.showToast("Failed to set scene");
+      }
+    }
+  };
+  __name(_PanelCabinFeature, "PanelCabinFeature");
+  let PanelCabinFeature = _PanelCabinFeature;
+  __decorateClass$w([
+    inject(ElementsSetup)
+  ], PanelCabinFeature.prototype, "_elements");
+  __decorateClass$w([
+    inject(ApiDataSetup)
+  ], PanelCabinFeature.prototype, "_apiDataSetup");
+  __decorateClass$w([
+    inject(MemberService)
+  ], PanelCabinFeature.prototype, "_memberService");
+  __decorateClass$w([
+    inject(ApiService)
+  ], PanelCabinFeature.prototype, "_apiService");
+  __decorateClass$w([
+    inject(ModalService)
+  ], PanelCabinFeature.prototype, "_modalService");
+  __decorateClass$w([
+    inject(ToastService)
+  ], PanelCabinFeature.prototype, "_toastService");
+  function get_each_context$h(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[4] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context$h, "get_each_context$h");
+  function create_if_block_1$7(ctx) {
+    let p;
+    let t0;
+    let t1_value = (
+      /*feature*/
+      ctx[0].getVersion() + ""
+    );
+    let t1;
+    return {
+      c() {
+        p = element("p");
+        t0 = text("Typo version: ");
+        t1 = text(t1_value);
+        attr(p, "class", "typo-version svelte-1fbg7r5");
+      },
+      m(target, anchor) {
+        insert(target, p, anchor);
+        append(p, t0);
+        append(p, t1);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*feature*/
+        1 && t1_value !== (t1_value = /*feature*/
+        ctx2[0].getVersion() + "")) set_data(t1, t1_value);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(p);
+        }
+      }
+    };
+  }
+  __name(create_if_block_1$7, "create_if_block_1$7");
+  function create_else_block$6(ctx) {
+    let each_1_anchor;
+    let each_value = ensure_array_like(
+      /*changes*/
+      ctx[1]
+    );
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$h(get_each_context$h(ctx, each_value, i));
+    }
+    return {
+      c() {
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        each_1_anchor = empty();
+      },
+      m(target, anchor) {
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(target, anchor);
+          }
+        }
+        insert(target, each_1_anchor, anchor);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*changes, Date, Number*/
+        2) {
+          each_value = ensure_array_like(
+            /*changes*/
+            ctx2[1]
+          );
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$h(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+            } else {
+              each_blocks[i] = create_each_block$h(child_ctx);
+              each_blocks[i].c();
+              each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+            }
+          }
+          for (; i < each_blocks.length; i += 1) {
+            each_blocks[i].d(1);
+          }
+          each_blocks.length = each_value.length;
+        }
+      },
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(each_1_anchor);
+        }
+        destroy_each(each_blocks, detaching);
+      }
+    };
+  }
+  __name(create_else_block$6, "create_else_block$6");
+  function create_if_block$e(ctx) {
+    let bounceload;
+    let current;
+    bounceload = new Bounceload({
+      props: { content: "Loading changelog.." }
+    });
+    return {
+      c() {
+        create_component(bounceload.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(bounceload, target, anchor);
+        current = true;
+      },
+      p: noop,
+      i(local) {
+        if (current) return;
+        transition_in(bounceload.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(bounceload.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(bounceload, detaching);
+      }
+    };
+  }
+  __name(create_if_block$e, "create_if_block$e");
+  function create_each_block$h(ctx) {
+    let div1;
+    let div0;
+    let b;
+    let t0_value = (
+      /*change*/
+      ctx[4].title + ""
+    );
+    let t0;
+    let t1;
+    let span;
+    let t2_value = (
+      /*change*/
+      ctx[4].affectedTypoVersion + ""
+    );
+    let t2;
+    let t3;
+    let t4_value = new Date(Number(
+      /*change*/
+      ctx[4].date
+    )).toLocaleDateString() + "";
+    let t4;
+    let t5;
+    let t6;
+    let p;
+    let t7_value = (
+      /*change*/
+      ctx[4].content + ""
+    );
+    let t7;
+    let t8;
+    return {
+      c() {
+        div1 = element("div");
+        div0 = element("div");
+        b = element("b");
+        t0 = text(t0_value);
+        t1 = space();
+        span = element("span");
+        t2 = text(t2_value);
+        t3 = text(" (");
+        t4 = text(t4_value);
+        t5 = text(")");
+        t6 = space();
+        p = element("p");
+        t7 = text(t7_value);
+        t8 = space();
+        attr(span, "class", "svelte-1fbg7r5");
+        attr(div0, "class", "title svelte-1fbg7r5");
+        attr(div1, "class", "change svelte-1fbg7r5");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        append(div0, b);
+        append(b, t0);
+        append(div0, t1);
+        append(div0, span);
+        append(span, t2);
+        append(span, t3);
+        append(span, t4);
+        append(span, t5);
+        append(div1, t6);
+        append(div1, p);
+        append(p, t7);
+        append(div1, t8);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*changes*/
+        2 && t0_value !== (t0_value = /*change*/
+        ctx2[4].title + "")) set_data(t0, t0_value);
+        if (dirty & /*changes*/
+        2 && t2_value !== (t2_value = /*change*/
+        ctx2[4].affectedTypoVersion + "")) set_data(t2, t2_value);
+        if (dirty & /*changes*/
+        2 && t4_value !== (t4_value = new Date(Number(
+          /*change*/
+          ctx2[4].date
+        )).toLocaleDateString() + "")) set_data(t4, t4_value);
+        if (dirty & /*changes*/
+        2 && t7_value !== (t7_value = /*change*/
+        ctx2[4].content + "")) set_data(t7, t7_value);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_each_block$h, "create_each_block$h");
+  function create_fragment$y(ctx) {
+    let div1;
+    let t;
+    let div0;
+    let current_block_type_index;
+    let if_block1;
+    let current;
+    let if_block0 = (
+      /*$devmode*/
+      ctx[2] && create_if_block_1$7(ctx)
+    );
+    const if_block_creators = [create_if_block$e, create_else_block$6];
+    const if_blocks = [];
+    function select_block_type(ctx2, dirty) {
+      if (
+        /*changes*/
+        ctx2[1] === void 0
+      ) return 0;
+      return 1;
+    }
+    __name(select_block_type, "select_block_type");
+    current_block_type_index = select_block_type(ctx);
+    if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    return {
+      c() {
+        div1 = element("div");
+        if (if_block0) if_block0.c();
+        t = space();
+        div0 = element("div");
+        if_block1.c();
+        attr(div0, "class", "changelog svelte-1fbg7r5");
+        attr(div1, "class", "panel-changelog svelte-1fbg7r5");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        if (if_block0) if_block0.m(div1, null);
+        append(div1, t);
+        append(div1, div0);
+        if_blocks[current_block_type_index].m(div0, null);
+        current = true;
+      },
+      p(ctx2, [dirty]) {
+        if (
+          /*$devmode*/
+          ctx2[2]
+        ) {
+          if (if_block0) {
+            if_block0.p(ctx2, dirty);
+          } else {
+            if_block0 = create_if_block_1$7(ctx2);
+            if_block0.c();
+            if_block0.m(div1, t);
+          }
+        } else if (if_block0) {
+          if_block0.d(1);
+          if_block0 = null;
+        }
+        let previous_block_index = current_block_type_index;
+        current_block_type_index = select_block_type(ctx2);
+        if (current_block_type_index === previous_block_index) {
+          if_blocks[current_block_type_index].p(ctx2, dirty);
+        } else {
+          group_outros();
+          transition_out(if_blocks[previous_block_index], 1, 1, () => {
+            if_blocks[previous_block_index] = null;
+          });
+          check_outros();
+          if_block1 = if_blocks[current_block_type_index];
+          if (!if_block1) {
+            if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+            if_block1.c();
+          } else {
+            if_block1.p(ctx2, dirty);
+          }
+          transition_in(if_block1, 1);
+          if_block1.m(div0, null);
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(if_block1);
+        current = true;
+      },
+      o(local) {
+        transition_out(if_block1);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+        if (if_block0) if_block0.d();
+        if_blocks[current_block_type_index].d();
+      }
+    };
+  }
+  __name(create_fragment$y, "create_fragment$y");
+  function instance$v($$self, $$props, $$invalidate) {
+    let $devmode;
+    let { feature } = $$props;
+    let { changes = void 0 } = $$props;
+    const devmode = feature.devmodeStore;
+    component_subscribe($$self, devmode, (value) => $$invalidate(2, $devmode = value));
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+      if ("changes" in $$props2) $$invalidate(1, changes = $$props2.changes);
+    };
+    return [feature, changes, $devmode, devmode];
+  }
+  __name(instance$v, "instance$v");
+  const _Panel_changelog = class _Panel_changelog extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$v, create_fragment$y, safe_not_equal, { feature: 0, changes: 1 });
+    }
+  };
+  __name(_Panel_changelog, "Panel_changelog");
+  let Panel_changelog = _Panel_changelog;
+  var __defProp$v = Object.defineProperty;
+  var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key, result) || result;
+    if (result) __defProp$v(target, key, result);
+    return result;
+  }, "__decorateClass$v");
+  const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_elements");
+      __publicField(this, "_apiDataSetup");
+      __publicField(this, "_globalSettingsService");
+      __publicField(this, "_component");
+      __publicField(this, "name", "Changelog");
+      __publicField(this, "description", "Displays a list of changes since the last updates on the start page");
+      __publicField(this, "tags", [
+        FeatureTag.INFORMATION
+      ]);
+      __publicField(this, "featureId", 4);
+      __publicField(this, "changelog", "I am the changelog :)");
+    }
+    async onActivate() {
+      const elements2 = await this._elements.complete();
+      this._component = new Panel_changelog({
+        target: elements2.changelogTab,
+        props: {
+          feature: this
+        }
+      });
+      const data = await this._apiDataSetup.complete();
+      const changes = data.announcements.filter((announcement) => announcement.type === AnnouncementDtoTypeEnum.Changelog).sort((a, b) => Number(b.date) - Number(a.date));
+      this._component.$set({ changes });
+    }
+    onDestroy() {
+      var _a2;
+      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
+    }
+    get devmodeStore() {
+      return this._globalSettingsService.settings.devMode.store;
+    }
+    getVersion() {
+      return typoRuntime.getReleaseDetails().versionName;
+    }
+  };
+  __name(_PanelChangelogFeature, "PanelChangelogFeature");
+  let PanelChangelogFeature = _PanelChangelogFeature;
+  __decorateClass$v([
+    inject(ElementsSetup)
+  ], PanelChangelogFeature.prototype, "_elements");
+  __decorateClass$v([
+    inject(ApiDataSetup)
+  ], PanelChangelogFeature.prototype, "_apiDataSetup");
+  __decorateClass$v([
+    inject(GlobalSettingsService)
+  ], PanelChangelogFeature.prototype, "_globalSettingsService");
+  function get_each_context$g(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[9] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context$g, "get_each_context$g");
+  function get_each_context_1$6(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[9] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context_1$6, "get_each_context_1$6");
+  function create_else_block$5(ctx) {
+    let div;
+    let t;
+    let current;
+    let each_value_1 = ensure_array_like(
+      /*$lobbies*/
+      ctx[1]
+    );
+    let each_blocks = [];
+    for (let i = 0; i < each_value_1.length; i += 1) {
+      each_blocks[i] = create_each_block_1$6(get_each_context_1$6(ctx, each_value_1, i));
+    }
+    const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+      each_blocks[i] = null;
+    }), "out");
+    let if_block = (
+      /*$lobbies*/
+      ctx[1].length === 0 && create_if_block_4$2()
+    );
+    return {
+      c() {
+        div = element("div");
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        t = space();
+        if (if_block) if_block.c();
+        attr(div, "class", "typo-lobbies-discord-buttons svelte-tkvjrc");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(div, null);
+          }
+        }
+        append(div, t);
+        if (if_block) if_block.m(div, null);
+        current = true;
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*feature, $lobbies*/
+        3) {
+          each_value_1 = ensure_array_like(
+            /*$lobbies*/
+            ctx2[1]
+          );
+          let i;
+          for (i = 0; i < each_value_1.length; i += 1) {
+            const child_ctx = get_each_context_1$6(ctx2, each_value_1, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+              transition_in(each_blocks[i], 1);
+            } else {
+              each_blocks[i] = create_each_block_1$6(child_ctx);
+              each_blocks[i].c();
+              transition_in(each_blocks[i], 1);
+              each_blocks[i].m(div, t);
+            }
+          }
+          group_outros();
+          for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+            out(i);
+          }
+          check_outros();
+        }
+        if (
+          /*$lobbies*/
+          ctx2[1].length === 0
+        ) {
+          if (if_block) ;
+          else {
+            if_block = create_if_block_4$2();
+            if_block.c();
+            if_block.m(div, null);
+          }
+        } else if (if_block) {
+          if_block.d(1);
+          if_block = null;
+        }
+      },
+      i(local) {
+        if (current) return;
+        for (let i = 0; i < each_value_1.length; i += 1) {
+          transition_in(each_blocks[i]);
+        }
+        current = true;
+      },
+      o(local) {
+        each_blocks = each_blocks.filter(Boolean);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          transition_out(each_blocks[i]);
+        }
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        destroy_each(each_blocks, detaching);
+        if (if_block) if_block.d();
+      }
+    };
+  }
+  __name(create_else_block$5, "create_else_block$5");
+  function create_if_block_3$2(ctx) {
+    let bounceload;
+    let current;
+    bounceload = new Bounceload({
+      props: { content: "Loading connected servers.." }
+    });
+    return {
+      c() {
+        create_component(bounceload.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(bounceload, target, anchor);
+        current = true;
+      },
+      p: noop,
+      i(local) {
+        if (current) return;
+        transition_in(bounceload.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(bounceload.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(bounceload, detaching);
+      }
+    };
+  }
+  __name(create_if_block_3$2, "create_if_block_3$2");
+  function create_if_block_2$4(ctx) {
+    let span;
+    return {
+      c() {
+        span = element("span");
+        span.innerHTML = `You need to log in to see lobbies of your discord friends.<br/>`;
+        attr(span, "class", "svelte-tkvjrc");
+      },
+      m(target, anchor) {
+        insert(target, span, anchor);
+      },
+      p: noop,
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(span);
+        }
+      }
+    };
+  }
+  __name(create_if_block_2$4, "create_if_block_2$4");
+  function create_each_block_1$6(ctx) {
+    let div;
+    let flatbutton;
+    let feature_createTooltip_action;
+    let current;
+    let mounted;
+    let dispose;
+    function click_handler2() {
+      return (
+        /*click_handler*/
+        ctx[7](
+          /*lobby*/
+          ctx[9]
+        )
+      );
+    }
+    __name(click_handler2, "click_handler");
+    flatbutton = new Flat_button({
+      props: {
+        content: (
+          /*lobby*/
+          ctx[9].userName
+        ),
+        color: (
+          /*lobby*/
+          ctx[9].private ? "green" : "blue"
+        )
+      }
+    });
+    flatbutton.$on("click", click_handler2);
+    return {
+      c() {
+        div = element("div");
+        create_component(flatbutton.$$.fragment);
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        mount_component(flatbutton, div, null);
+        current = true;
+        if (!mounted) {
+          dispose = action_destroyer(feature_createTooltip_action = /*feature*/
+          ctx[0].createTooltip(div, {
+            title: (
+              /*feature*/
+              ctx[0].buildButtonTooltip(
+                /*lobby*/
+                ctx[9]
+              )
+            ),
+            lock: "Y"
+          }));
+          mounted = true;
+        }
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+        const flatbutton_changes = {};
+        if (dirty & /*$lobbies*/
+        2) flatbutton_changes.content = /*lobby*/
+        ctx[9].userName;
+        if (dirty & /*$lobbies*/
+        2) flatbutton_changes.color = /*lobby*/
+        ctx[9].private ? "green" : "blue";
+        flatbutton.$set(flatbutton_changes);
+        if (feature_createTooltip_action && is_function(feature_createTooltip_action.update) && dirty & /*feature, $lobbies*/
+        3) feature_createTooltip_action.update.call(null, {
+          title: (
+            /*feature*/
+            ctx[0].buildButtonTooltip(
+              /*lobby*/
+              ctx[9]
+            )
+          ),
+          lock: "Y"
+        });
+      },
+      i(local) {
+        if (current) return;
+        transition_in(flatbutton.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(flatbutton.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        destroy_component(flatbutton);
+        mounted = false;
+        dispose();
+      }
+    };
+  }
+  __name(create_each_block_1$6, "create_each_block_1$6");
+  function create_if_block_4$2(ctx) {
+    let span;
+    return {
+      c() {
+        span = element("span");
+        span.textContent = "None of your friends are online.";
+        attr(span, "class", "svelte-tkvjrc");
+      },
+      m(target, anchor) {
+        insert(target, span, anchor);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(span);
+        }
+      }
+    };
+  }
+  __name(create_if_block_4$2, "create_if_block_4$2");
+  function create_if_block$d(ctx) {
+    let div1;
+    let b;
+    let t1;
+    let t2;
+    let div0;
+    let if_block = (
+      /*$discoveredLobbies*/
+      ctx[3].length === 0 && create_if_block_1$6()
+    );
+    let each_value = ensure_array_like(
+      /*$discoveredLobbies*/
+      ctx[3]
+    );
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$g(get_each_context$g(ctx, each_value, i));
+    }
+    return {
+      c() {
+        div1 = element("div");
+        b = element("b");
+        b.textContent = "Discovered Lobbies";
+        t1 = space();
+        if (if_block) if_block.c();
+        t2 = space();
+        div0 = element("div");
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        attr(b, "class", "svelte-tkvjrc");
+        attr(div0, "class", "typo-lobbies-discovered-buttons svelte-tkvjrc");
+        attr(div1, "class", "typo-lobbies-discovered svelte-tkvjrc");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, b);
+        append(div1, t1);
+        if (if_block) if_block.m(div1, null);
+        append(div1, t2);
+        append(div1, div0);
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(div0, null);
+          }
+        }
+      },
+      p(ctx2, dirty) {
+        if (
+          /*$discoveredLobbies*/
+          ctx2[3].length === 0
+        ) {
+          if (if_block) ;
+          else {
+            if_block = create_if_block_1$6();
+            if_block.c();
+            if_block.m(div1, t2);
+          }
+        } else if (if_block) {
+          if_block.d(1);
+          if_block = null;
+        }
+        if (dirty & /*$discoveredLobbies, feature, Date, Number*/
+        9) {
+          each_value = ensure_array_like(
+            /*$discoveredLobbies*/
+            ctx2[3]
+          );
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$g(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+            } else {
+              each_blocks[i] = create_each_block$g(child_ctx);
+              each_blocks[i].c();
+              each_blocks[i].m(div0, null);
+            }
+          }
+          for (; i < each_blocks.length; i += 1) {
+            each_blocks[i].d(1);
+          }
+          each_blocks.length = each_value.length;
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+        if (if_block) if_block.d();
+        destroy_each(each_blocks, detaching);
+      }
+    };
+  }
+  __name(create_if_block$d, "create_if_block$d");
+  function create_if_block_1$6(ctx) {
+    let div;
+    return {
+      c() {
+        div = element("div");
+        div.textContent = "Join a lobby to see it here afterwards.";
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+      }
+    };
+  }
+  __name(create_if_block_1$6, "create_if_block_1$6");
+  function create_each_block$g(ctx) {
+    let div;
+    let b;
+    let t0_value = new Date(Number(
+      /*lobby*/
+      ctx[9].seenAt
+    )).toLocaleTimeString() + "";
+    let t0;
+    let t1;
+    let span;
+    let t2_value = (
+      /*lobby*/
+      ctx[9].players.map(func$3).join(", ") + ""
+    );
+    let t2;
+    let t3;
+    let mounted;
+    let dispose;
+    function click_handler_1() {
+      return (
+        /*click_handler_1*/
+        ctx[8](
+          /*lobby*/
+          ctx[9]
+        )
+      );
+    }
+    __name(click_handler_1, "click_handler_1");
+    return {
+      c() {
+        div = element("div");
+        b = element("b");
+        t0 = text(t0_value);
+        t1 = space();
+        span = element("span");
+        t2 = text(t2_value);
+        t3 = space();
+        attr(b, "class", "svelte-tkvjrc");
+        attr(span, "class", "svelte-tkvjrc");
+        set_style(
+          div,
+          "order",
+          /*lobby*/
+          ctx[9].seenAt % 1e8
+        );
+        attr(div, "class", "svelte-tkvjrc");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        append(div, b);
+        append(b, t0);
+        append(div, t1);
+        append(div, span);
+        append(span, t2);
+        append(div, t3);
+        if (!mounted) {
+          dispose = listen(div, "click", click_handler_1);
+          mounted = true;
+        }
+      },
+      p(new_ctx, dirty) {
+        ctx = new_ctx;
+        if (dirty & /*$discoveredLobbies*/
+        8 && t0_value !== (t0_value = new Date(Number(
+          /*lobby*/
+          ctx[9].seenAt
+        )).toLocaleTimeString() + "")) set_data(t0, t0_value);
+        if (dirty & /*$discoveredLobbies*/
+        8 && t2_value !== (t2_value = /*lobby*/
+        ctx[9].players.map(func$3).join(", ") + "")) set_data(t2, t2_value);
+        if (dirty & /*$discoveredLobbies*/
+        8) {
+          set_style(
+            div,
+            "order",
+            /*lobby*/
+            ctx[9].seenAt % 1e8
+          );
+        }
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        mounted = false;
+        dispose();
+      }
+    };
+  }
+  __name(create_each_block$g, "create_each_block$g");
+  function create_fragment$x(ctx) {
+    let div1;
+    let div0;
+    let b;
+    let t1;
+    let current_block_type_index;
+    let if_block0;
+    let t2;
+    let current;
+    const if_block_creators = [create_if_block_2$4, create_if_block_3$2, create_else_block$5];
+    const if_blocks = [];
+    function select_block_type(ctx2, dirty) {
+      if (
+        /*$lobbies*/
+        ctx2[1] === null
+      ) return 0;
+      if (
+        /*$lobbies*/
+        ctx2[1] === void 0
+      ) return 1;
+      return 2;
+    }
+    __name(select_block_type, "select_block_type");
+    current_block_type_index = select_block_type(ctx);
+    if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    let if_block1 = (
+      /*$showDiscovered*/
+      ctx[2] && create_if_block$d(ctx)
+    );
+    return {
+      c() {
+        div1 = element("div");
+        div0 = element("div");
+        b = element("b");
+        b.textContent = "Online Friends";
+        t1 = space();
+        if_block0.c();
+        t2 = space();
+        if (if_block1) if_block1.c();
+        attr(b, "class", "svelte-tkvjrc");
+        attr(div0, "class", "typo-lobbies-discord svelte-tkvjrc");
+        attr(div1, "class", "svelte-tkvjrc");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        append(div0, b);
+        append(div0, t1);
+        if_blocks[current_block_type_index].m(div0, null);
+        append(div1, t2);
+        if (if_block1) if_block1.m(div1, null);
+        current = true;
+      },
+      p(ctx2, [dirty]) {
+        let previous_block_index = current_block_type_index;
+        current_block_type_index = select_block_type(ctx2);
+        if (current_block_type_index === previous_block_index) {
+          if_blocks[current_block_type_index].p(ctx2, dirty);
+        } else {
+          group_outros();
+          transition_out(if_blocks[previous_block_index], 1, 1, () => {
+            if_blocks[previous_block_index] = null;
+          });
+          check_outros();
+          if_block0 = if_blocks[current_block_type_index];
+          if (!if_block0) {
+            if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+            if_block0.c();
+          } else {
+            if_block0.p(ctx2, dirty);
+          }
+          transition_in(if_block0, 1);
+          if_block0.m(div0, null);
+        }
+        if (
+          /*$showDiscovered*/
+          ctx2[2]
+        ) {
+          if (if_block1) {
+            if_block1.p(ctx2, dirty);
+          } else {
+            if_block1 = create_if_block$d(ctx2);
+            if_block1.c();
+            if_block1.m(div1, null);
+          }
+        } else if (if_block1) {
+          if_block1.d(1);
+          if_block1 = null;
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(if_block0);
+        current = true;
+      },
+      o(local) {
+        transition_out(if_block0);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+        if_blocks[current_block_type_index].d();
+        if (if_block1) if_block1.d();
+      }
+    };
+  }
+  __name(create_fragment$x, "create_fragment$x");
+  const func$3 = /* @__PURE__ */ __name((p) => p.name, "func$3");
+  function instance$u($$self, $$props, $$invalidate) {
+    let $lobbies;
+    let $showDiscovered;
+    let $discoveredLobbies;
+    let { feature } = $$props;
+    const lobbies = feature.lobbiesStore;
+    component_subscribe($$self, lobbies, (value) => $$invalidate(1, $lobbies = value));
+    const showDiscovered = feature.showDiscoveredLobbiesStore;
+    component_subscribe($$self, showDiscovered, (value) => $$invalidate(2, $showDiscovered = value));
+    const discoveredLobbies = feature.discoveredLobbiesStore;
+    component_subscribe($$self, discoveredLobbies, (value) => $$invalidate(3, $discoveredLobbies = value));
+    const click_handler2 = /* @__PURE__ */ __name((lobby) => feature.joinLobby(lobby.lobbyId, lobby.userName), "click_handler");
+    const click_handler_1 = /* @__PURE__ */ __name((lobby) => feature.joinLobby(lobby.id ?? ""), "click_handler_1");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    };
+    return [
+      feature,
+      $lobbies,
+      $showDiscovered,
+      $discoveredLobbies,
+      lobbies,
+      showDiscovered,
+      discoveredLobbies,
+      click_handler2,
+      click_handler_1
+    ];
+  }
+  __name(instance$u, "instance$u");
+  const _Panel_lobbies = class _Panel_lobbies extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$u, create_fragment$x, safe_not_equal, { feature: 0 });
+    }
+  };
+  __name(_Panel_lobbies, "Panel_lobbies");
+  let Panel_lobbies = _Panel_lobbies;
+  var __defProp$u = Object.defineProperty;
+  var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key, result) || result;
+    if (result) __defProp$u(target, key, result);
+    return result;
+  }, "__decorateClass$u");
+  const _PanelLobbiesFeature = class _PanelLobbiesFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_elements");
+      __publicField(this, "_socketService");
+      __publicField(this, "_memberService");
+      __publicField(this, "_lobbyService");
+      __publicField(this, "_toastService");
+      __publicField(this, "_showDiscoveredLobbiesSetting", this.useSetting(
+        new BooleanExtensionSetting("show_discovered", true, this).withName("Show discovered lobbies").withDescription("Shows a list of lobbies that you were in before")
+      ));
+      __publicField(this, "_lobbies$", new BehaviorSubject(void 0));
+      __publicField(this, "_component");
+      __publicField(this, "_connection");
+      __publicField(this, "_memberSubscription");
+      __publicField(this, "name", "Lobby List");
+      __publicField(this, "description", "Displays online players from your connected discord servers on the start page");
+      __publicField(this, "tags", [
+        FeatureTag.SOCIAL,
+        FeatureTag.PALANTIR
+      ]);
+      __publicField(this, "featureId", 6);
+    }
+    async onActivate() {
+      const elements2 = await this._elements.complete();
+      this._component = new Panel_lobbies({
+        target: elements2.lobbiesTab,
+        props: {
+          feature: this
+        }
+      });
+      this._memberSubscription = this._memberService.member$.subscribe((member) => this.processMemberChange(member));
+    }
+    onDestroy() {
+      var _a2, _b2, _c2;
+      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
+      (_b2 = this._connection) == null ? void 0 : _b2.stop();
+      (_c2 = this._memberSubscription) == null ? void 0 : _c2.unsubscribe();
+      this._memberSubscription = void 0;
+    }
+    get lobbiesStore() {
+      return fromObservable(this._lobbies$.pipe(
+        map((lobbies) => lobbies === null || lobbies === void 0 ? lobbies : this.mapLobbiesToPlayerList(lobbies)),
+        tap((lobbies) => this._logger.info("Lobbies updated", lobbies))
+      ), []);
+    }
+    get discoveredLobbiesStore() {
+      return fromObservable(this._lobbyService.discoveredLobbies$, []);
+    }
+    get showDiscoveredLobbiesStore() {
+      return this._showDiscoveredLobbiesSetting.store;
+    }
+    /**
+     * Subscribe to guild lobbies of a member
+     * @param member
+     * @private
+     */
+    async processMemberChange(member) {
+      var _a2;
+      this._logger.debug("Member changed", member);
+      (_a2 = this._connection) == null ? void 0 : _a2.stop();
+      if (member === null || member === void 0) {
+        this._lobbies$.next(member);
+        return;
+      }
+      this._lobbies$.next(/* @__PURE__ */ new Map());
+      const initConnection = /* @__PURE__ */ __name(async () => {
+        const { connection: connection2, hubProxy } = await this.setupConnection();
+        this._connection = connection2;
+        await this.subscribeToLobbies(member, hubProxy);
+        return connection2;
+      }, "initConnection");
+      const connection = await initConnection();
+      this._socketService.reconnectOnUserInteraction(connection, () => initConnection());
+    }
+    /**
+     * Connect to the guild lobby hub to receive updates
+     * @private
+     */
+    async setupConnection() {
+      const connection = this._socketService.createConnection("IGuildLobbiesHub");
+      const hubProxy = this._socketService.createHub("IGuildLobbiesHub").createHubProxy(connection);
+      this._socketService.createReceiver("IGuildLobbiesReceiver").register(connection, {
+        guildLobbiesUpdated: this.onGuildLobbiesUpdated.bind(this)
+      });
+      await connection.start();
+      return { connection, hubProxy };
+    }
+    async subscribeToLobbies(member, hub) {
+      const promises = member.guilds.map(async (guild) => {
+        const currentLobbies = await hub.subscribeGuildLobbies(guild.guildID);
+        await this.onGuildLobbiesUpdated(currentLobbies);
+      });
+      await Promise.all(promises);
+    }
+    async onGuildLobbiesUpdated(lobbies) {
+      this._logger.info("Received guild lobbies for guild", lobbies.guildId);
+      const lastValue = this._lobbies$.value;
+      if (lastValue === null || lastValue === void 0) {
+        this._logger.warn("Received guild lobbies but lobbies are not initialized yet", lobbies);
+        return;
+      }
+      lastValue.set(lobbies.guildId, lobbies.lobbies);
+      this._lobbies$.next(lastValue);
+    }
+    mapLobbiesToPlayerList(lobbies) {
+      const distinct = [];
+      const list = Array.from(lobbies.values()).flat();
+      list.forEach((lobby) => {
+        if (!distinct.some((l) => l.lobbyId === lobby.lobbyId && l.userName === lobby.userName)) {
+          distinct.push(lobby);
+        }
+      });
+      return distinct;
+    }
+    buildButtonTooltip(lobby) {
+      return `🔑  ${lobby.private ? "Custom" : "Public"}
+👥 ${lobby.currentPlayers} Players
+🏳️ ${lobby.language}`;
+    }
+    async joinLobby(id2, targetName) {
+      const result = await this._lobbyService.joinLobby(id2);
+      if (result) await this._toastService.showToast(targetName ? `Joined the lobby of ${targetName}` : "Joined discovered lobby");
+      else await this._toastService.showToast(targetName ? `Failed to join the lobby of ${targetName}` : "Failed to join discovered lobby");
+    }
+  };
+  __name(_PanelLobbiesFeature, "PanelLobbiesFeature");
+  let PanelLobbiesFeature = _PanelLobbiesFeature;
+  __decorateClass$u([
+    inject(ElementsSetup)
+  ], PanelLobbiesFeature.prototype, "_elements");
+  __decorateClass$u([
+    inject(SocketService)
+  ], PanelLobbiesFeature.prototype, "_socketService");
+  __decorateClass$u([
+    inject(MemberService)
+  ], PanelLobbiesFeature.prototype, "_memberService");
+  __decorateClass$u([
+    inject(LobbyService)
+  ], PanelLobbiesFeature.prototype, "_lobbyService");
+  __decorateClass$u([
+    inject(ToastService)
+  ], PanelLobbiesFeature.prototype, "_toastService");
+  function get_each_context$f(ctx, list, i) {
+    const child_ctx = ctx.slice();
+    child_ctx[2] = list[i];
+    return child_ctx;
+  }
+  __name(get_each_context$f, "get_each_context$f");
+  function create_else_block$4(ctx) {
+    let each_1_anchor;
+    let each_value = ensure_array_like(
+      /*announcements*/
+      ctx[0]
+    );
+    let each_blocks = [];
+    for (let i = 0; i < each_value.length; i += 1) {
+      each_blocks[i] = create_each_block$f(get_each_context$f(ctx, each_value, i));
+    }
+    return {
+      c() {
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          each_blocks[i].c();
+        }
+        each_1_anchor = empty();
+      },
+      m(target, anchor) {
+        for (let i = 0; i < each_blocks.length; i += 1) {
+          if (each_blocks[i]) {
+            each_blocks[i].m(target, anchor);
+          }
+        }
+        insert(target, each_1_anchor, anchor);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*announcements, Date, Number*/
+        1) {
+          each_value = ensure_array_like(
+            /*announcements*/
+            ctx2[0]
+          );
+          let i;
+          for (i = 0; i < each_value.length; i += 1) {
+            const child_ctx = get_each_context$f(ctx2, each_value, i);
+            if (each_blocks[i]) {
+              each_blocks[i].p(child_ctx, dirty);
+            } else {
+              each_blocks[i] = create_each_block$f(child_ctx);
+              each_blocks[i].c();
+              each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+            }
+          }
+          for (; i < each_blocks.length; i += 1) {
+            each_blocks[i].d(1);
+          }
+          each_blocks.length = each_value.length;
+        }
+      },
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(each_1_anchor);
+        }
+        destroy_each(each_blocks, detaching);
+      }
+    };
+  }
+  __name(create_else_block$4, "create_else_block$4");
+  function create_if_block$c(ctx) {
+    let bounceload;
+    let current;
+    bounceload = new Bounceload({ props: { content: "Loading news.." } });
+    return {
+      c() {
+        create_component(bounceload.$$.fragment);
+      },
+      m(target, anchor) {
+        mount_component(bounceload, target, anchor);
+        current = true;
+      },
+      p: noop,
+      i(local) {
+        if (current) return;
+        transition_in(bounceload.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(bounceload.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        destroy_component(bounceload, detaching);
+      }
+    };
+  }
+  __name(create_if_block$c, "create_if_block$c");
+  function create_each_block$f(ctx) {
+    let div1;
+    let div0;
+    let b;
+    let t0_value = (
+      /*announcement*/
+      ctx[2].title + ""
+    );
+    let t0;
+    let t1;
+    let span;
+    let t2_value = new Date(Number(
+      /*announcement*/
+      ctx[2].date
+    )).toDateString() + "";
+    let t2;
+    let t3;
+    let p;
+    let t4_value = (
+      /*announcement*/
+      ctx[2].content + ""
+    );
+    let t4;
+    let t5;
+    return {
+      c() {
+        div1 = element("div");
+        div0 = element("div");
+        b = element("b");
+        t0 = text(t0_value);
+        t1 = space();
+        span = element("span");
+        t2 = text(t2_value);
+        t3 = space();
+        p = element("p");
+        t4 = text(t4_value);
+        t5 = space();
+        attr(span, "class", "svelte-1x3jcfi");
+        attr(div0, "class", "title svelte-1x3jcfi");
+        attr(div1, "class", "announcement svelte-1x3jcfi");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        append(div0, b);
+        append(b, t0);
+        append(div0, t1);
+        append(div0, span);
+        append(span, t2);
+        append(div1, t3);
+        append(div1, p);
+        append(p, t4);
+        append(div1, t5);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*announcements*/
+        1 && t0_value !== (t0_value = /*announcement*/
+        ctx2[2].title + "")) set_data(t0, t0_value);
+        if (dirty & /*announcements*/
+        1 && t2_value !== (t2_value = new Date(Number(
+          /*announcement*/
+          ctx2[2].date
+        )).toDateString() + "")) set_data(t2, t2_value);
+        if (dirty & /*announcements*/
+        1 && t4_value !== (t4_value = /*announcement*/
+        ctx2[2].content + "")) set_data(t4, t4_value);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_each_block$f, "create_each_block$f");
+  function create_fragment$w(ctx) {
+    let div1;
+    let div0;
+    let current_block_type_index;
+    let if_block;
+    let current;
+    const if_block_creators = [create_if_block$c, create_else_block$4];
+    const if_blocks = [];
+    function select_block_type(ctx2, dirty) {
+      if (
+        /*announcements*/
+        ctx2[0] === void 0
+      ) return 0;
+      return 1;
+    }
+    __name(select_block_type, "select_block_type");
+    current_block_type_index = select_block_type(ctx);
+    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    return {
+      c() {
+        div1 = element("div");
+        div0 = element("div");
+        if_block.c();
+        attr(div0, "class", "news svelte-1x3jcfi");
+        attr(div1, "class", "typo-news svelte-1x3jcfi");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        if_blocks[current_block_type_index].m(div0, null);
+        current = true;
+      },
+      p(ctx2, [dirty]) {
+        let previous_block_index = current_block_type_index;
+        current_block_type_index = select_block_type(ctx2);
+        if (current_block_type_index === previous_block_index) {
+          if_blocks[current_block_type_index].p(ctx2, dirty);
+        } else {
+          group_outros();
+          transition_out(if_blocks[previous_block_index], 1, 1, () => {
+            if_blocks[previous_block_index] = null;
+          });
+          check_outros();
+          if_block = if_blocks[current_block_type_index];
+          if (!if_block) {
+            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+            if_block.c();
+          } else {
+            if_block.p(ctx2, dirty);
+          }
+          transition_in(if_block, 1);
+          if_block.m(div0, null);
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(if_block);
+        current = true;
+      },
+      o(local) {
+        transition_out(if_block);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+        if_blocks[current_block_type_index].d();
+      }
+    };
+  }
+  __name(create_fragment$w, "create_fragment$w");
+  function instance$t($$self, $$props, $$invalidate) {
+    let { feature } = $$props;
+    let { announcements = void 0 } = $$props;
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(1, feature = $$props2.feature);
+      if ("announcements" in $$props2) $$invalidate(0, announcements = $$props2.announcements);
+    };
+    return [announcements, feature];
+  }
+  __name(instance$t, "instance$t");
+  const _Panel_news = class _Panel_news extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$t, create_fragment$w, safe_not_equal, { feature: 1, announcements: 0 });
+    }
+  };
+  __name(_Panel_news, "Panel_news");
+  let Panel_news = _Panel_news;
+  var __defProp$t = Object.defineProperty;
+  var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key, result) || result;
+    if (result) __defProp$t(target, key, result);
+    return result;
+  }, "__decorateClass$t");
+  const _PanelNewsFeature = class _PanelNewsFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_elements");
+      __publicField(this, "_apiDataSetup");
+      __publicField(this, "_component");
+      __publicField(this, "name", "Typo News");
+      __publicField(this, "description", "Displays updates and typo hints on the start page");
+      __publicField(this, "tags", [
+        FeatureTag.INFORMATION
+      ]);
+      __publicField(this, "featureId", 7);
+    }
+    async onActivate() {
+      const elements2 = await this._elements.complete();
+      this._component = new Panel_news({
+        target: elements2.newsTab,
+        props: {
+          feature: this
+        }
+      });
+      const data = await this._apiDataSetup.complete();
+      const version = typoRuntime.getReleaseDetails().versionName;
+      const announcements = data.announcements.filter(
+        (announcement) => announcement.type === AnnouncementDtoTypeEnum.Announcement && (announcement.affectedTypoVersion === version || announcement.affectedTypoVersion === void 0)
+      ).sort((a, b) => Number(b.date) - Number(a.date));
+      this._component.$set({ announcements });
+    }
+    onDestroy() {
+      var _a2;
+      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
+    }
+  };
+  __name(_PanelNewsFeature, "PanelNewsFeature");
+  let PanelNewsFeature = _PanelNewsFeature;
+  __decorateClass$t([
+    inject(ElementsSetup)
+  ], PanelNewsFeature.prototype, "_elements");
+  __decorateClass$t([
+    inject(ApiDataSetup)
+  ], PanelNewsFeature.prototype, "_apiDataSetup");
+  var __defProp$s = Object.defineProperty;
+  var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key, result) || result;
+    if (result) __defProp$s(target, key, result);
+    return result;
+  }, "__decorateClass$s");
   const _PlayerIdsFeature = class _PlayerIdsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -37771,10 +46326,10 @@
   };
   __name(_PlayerIdsFeature, "PlayerIdsFeature");
   let PlayerIdsFeature = _PlayerIdsFeature;
-  __decorateClass$B([
+  __decorateClass$s([
     inject(PlayersService)
   ], PlayerIdsFeature.prototype, "_playersService");
-  function create_fragment$H(ctx) {
+  function create_fragment$v(ctx) {
     let div1;
     let div0;
     let t0;
@@ -37855,8 +46410,8 @@
       }
     };
   }
-  __name(create_fragment$H, "create_fragment$H");
-  function instance$D($$self, $$props, $$invalidate) {
+  __name(create_fragment$v, "create_fragment$v");
+  function instance$s($$self, $$props, $$invalidate) {
     let { title } = $$props;
     let { direction } = $$props;
     let { anchorX } = $$props;
@@ -37869,11 +46424,11 @@
     };
     return [title, direction, anchorX, anchorY];
   }
-  __name(instance$D, "instance$D");
+  __name(instance$s, "instance$s");
   const _Tooltip = class _Tooltip extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$D, create_fragment$H, safe_not_equal, {
+      init(this, options, instance$s, create_fragment$v, safe_not_equal, {
         title: 0,
         direction: 1,
         anchorX: 2,
@@ -38048,7 +46603,503 @@
   };
   __name(_TooltipsFeature, "TooltipsFeature");
   let TooltipsFeature = _TooltipsFeature;
-  function create_fragment$G(ctx) {
+  function create_else_block$3(ctx) {
+    let div0;
+    let a0;
+    let img;
+    let img_src_value;
+    let t0;
+    let t1_value = (
+      /*$member*/
+      ctx[1].userName + ""
+    );
+    let t1;
+    let t2;
+    let a1;
+    let t4;
+    let span0;
+    let t6;
+    let div5;
+    let div2;
+    let div1;
+    let span1;
+    let span2;
+    let t8_value = (
+      /*$member*/
+      ctx[1].bubbles + ""
+    );
+    let t8;
+    let t9;
+    let div4;
+    let div3;
+    let span3;
+    let span4;
+    let t11_value = Math.round(
+      /*$member*/
+      ctx[1].drops * 10
+    ) / 10 + "";
+    let t11;
+    let t12;
+    let if_block_anchor;
+    let mounted;
+    let dispose;
+    let if_block = (
+      /*$devmode*/
+      ctx[2] && create_if_block_2$3(ctx)
+    );
+    return {
+      c() {
+        div0 = element("div");
+        a0 = element("a");
+        img = element("img");
+        t0 = space();
+        t1 = text(t1_value);
+        t2 = space();
+        a1 = element("a");
+        a1.textContent = "Manage";
+        t4 = space();
+        span0 = element("span");
+        span0.textContent = "Logout";
+        t6 = space();
+        div5 = element("div");
+        div2 = element("div");
+        div1 = element("div");
+        span1 = element("span");
+        span1.textContent = "Bubbles:";
+        span2 = element("span");
+        t8 = text(t8_value);
+        t9 = space();
+        div4 = element("div");
+        div3 = element("div");
+        span3 = element("span");
+        span3.textContent = "Drops:";
+        span4 = element("span");
+        t11 = text(t11_value);
+        t12 = space();
+        if (if_block) if_block.c();
+        if_block_anchor = empty();
+        attr(img, "class", "typo-icon svelte-j680fu");
+        attr(img, "alt", "typo icon");
+        if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+        attr(a0, "href", "https://www.typo.rip");
+        attr(a0, "class", "svelte-j680fu");
+        attr(a1, "href", "https://www.typo.rip/user");
+        attr(a1, "class", "svelte-j680fu");
+        attr(span0, "role", "button");
+        attr(span0, "tabindex", "0");
+        attr(span0, "class", "svelte-j680fu");
+        attr(div0, "class", "member-info-header svelte-j680fu");
+        attr(div1, "class", "stat-icon svelte-j680fu");
+        set_style(div1, "content", "var(--file-img-palantir-gif)");
+        attr(span1, "class", "svelte-j680fu");
+        attr(span2, "class", "svelte-j680fu");
+        attr(div2, "class", "svelte-j680fu");
+        attr(div3, "class", "stat-icon svelte-j680fu");
+        set_style(div3, "content", "var(--file-img-drop-gif)");
+        attr(span3, "class", "svelte-j680fu");
+        attr(span4, "class", "svelte-j680fu");
+        attr(div4, "class", "svelte-j680fu");
+        attr(div5, "class", "member-info-stats svelte-j680fu");
+      },
+      m(target, anchor) {
+        insert(target, div0, anchor);
+        append(div0, a0);
+        append(a0, img);
+        append(a0, t0);
+        append(a0, t1);
+        append(div0, t2);
+        append(div0, a1);
+        append(div0, t4);
+        append(div0, span0);
+        insert(target, t6, anchor);
+        insert(target, div5, anchor);
+        append(div5, div2);
+        append(div2, div1);
+        append(div2, span1);
+        append(div2, span2);
+        append(span2, t8);
+        append(div5, t9);
+        append(div5, div4);
+        append(div4, div3);
+        append(div4, span3);
+        append(div4, span4);
+        append(span4, t11);
+        insert(target, t12, anchor);
+        if (if_block) if_block.m(target, anchor);
+        insert(target, if_block_anchor, anchor);
+        if (!mounted) {
+          dispose = [
+            listen(
+              span0,
+              "keydown",
+              /*keydown_handler_1*/
+              ctx[7]
+            ),
+            listen(
+              span0,
+              "click",
+              /*click_handler_1*/
+              ctx[8]
+            )
+          ];
+          mounted = true;
+        }
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*$member*/
+        2 && t1_value !== (t1_value = /*$member*/
+        ctx2[1].userName + "")) set_data(t1, t1_value);
+        if (dirty & /*$member*/
+        2 && t8_value !== (t8_value = /*$member*/
+        ctx2[1].bubbles + "")) set_data(t8, t8_value);
+        if (dirty & /*$member*/
+        2 && t11_value !== (t11_value = Math.round(
+          /*$member*/
+          ctx2[1].drops * 10
+        ) / 10 + "")) set_data(t11, t11_value);
+        if (
+          /*$devmode*/
+          ctx2[2]
+        ) {
+          if (if_block) {
+            if_block.p(ctx2, dirty);
+          } else {
+            if_block = create_if_block_2$3(ctx2);
+            if_block.c();
+            if_block.m(if_block_anchor.parentNode, if_block_anchor);
+          }
+        } else if (if_block) {
+          if_block.d(1);
+          if_block = null;
+        }
+      },
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(div0);
+          detach(t6);
+          detach(div5);
+          detach(t12);
+          detach(if_block_anchor);
+        }
+        if (if_block) if_block.d(detaching);
+        mounted = false;
+        run_all(dispose);
+      }
+    };
+  }
+  __name(create_else_block$3, "create_else_block$3");
+  function create_if_block_1$5(ctx) {
+    let div;
+    let bounceload;
+    let current;
+    bounceload = new Bounceload({ props: { content: "Loading..." } });
+    return {
+      c() {
+        div = element("div");
+        create_component(bounceload.$$.fragment);
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        mount_component(bounceload, div, null);
+        current = true;
+      },
+      p: noop,
+      i(local) {
+        if (current) return;
+        transition_in(bounceload.$$.fragment, local);
+        current = true;
+      },
+      o(local) {
+        transition_out(bounceload.$$.fragment, local);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        destroy_component(bounceload);
+      }
+    };
+  }
+  __name(create_if_block_1$5, "create_if_block_1$5");
+  function create_if_block$b(ctx) {
+    let div;
+    let img;
+    let img_src_value;
+    let t0;
+    let span;
+    let mounted;
+    let dispose;
+    return {
+      c() {
+        div = element("div");
+        img = element("img");
+        t0 = space();
+        span = element("span");
+        span.textContent = "Log in with typo to collect bubbles and upgrade your avatar.";
+        attr(img, "class", "typo-icon svelte-j680fu");
+        if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+        attr(img, "alt", "typo icon");
+        attr(span, "role", "button");
+        attr(span, "tabindex", "0");
+        attr(div, "class", "member-login svelte-j680fu");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        append(div, img);
+        append(div, t0);
+        append(div, span);
+        if (!mounted) {
+          dispose = [
+            listen(
+              span,
+              "keydown",
+              /*keydown_handler*/
+              ctx[5]
+            ),
+            listen(
+              span,
+              "click",
+              /*click_handler*/
+              ctx[6]
+            )
+          ];
+          mounted = true;
+        }
+      },
+      p: noop,
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        mounted = false;
+        run_all(dispose);
+      }
+    };
+  }
+  __name(create_if_block$b, "create_if_block$b");
+  function create_if_block_2$3(ctx) {
+    let div1;
+    let div0;
+    let span0;
+    let span1;
+    let span2;
+    let t1_value = (
+      /*$member*/
+      ctx[1].userLogin + ""
+    );
+    let t1;
+    return {
+      c() {
+        div1 = element("div");
+        div0 = element("div");
+        span0 = element("span");
+        span1 = element("span");
+        span1.textContent = "Typo ID:";
+        span2 = element("span");
+        t1 = text(t1_value);
+        attr(span0, "class", "svelte-j680fu");
+        attr(span1, "class", "svelte-j680fu");
+        attr(span2, "class", "svelte-j680fu");
+        attr(div0, "class", "svelte-j680fu");
+        attr(div1, "class", "member-info-stats svelte-j680fu");
+      },
+      m(target, anchor) {
+        insert(target, div1, anchor);
+        append(div1, div0);
+        append(div0, span0);
+        append(div0, span1);
+        append(div0, span2);
+        append(span2, t1);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*$member*/
+        2 && t1_value !== (t1_value = /*$member*/
+        ctx2[1].userLogin + "")) set_data(t1, t1_value);
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div1);
+        }
+      }
+    };
+  }
+  __name(create_if_block_2$3, "create_if_block_2$3");
+  function create_fragment$u(ctx) {
+    let div;
+    let current_block_type_index;
+    let if_block;
+    let current;
+    const if_block_creators = [create_if_block$b, create_if_block_1$5, create_else_block$3];
+    const if_blocks = [];
+    function select_block_type(ctx2, dirty) {
+      if (
+        /*$member*/
+        ctx2[1] === null
+      ) return 0;
+      if (
+        /*$member*/
+        ctx2[1] === void 0
+      ) return 1;
+      return 2;
+    }
+    __name(select_block_type, "select_block_type");
+    current_block_type_index = select_block_type(ctx);
+    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    return {
+      c() {
+        div = element("div");
+        if_block.c();
+        attr(div, "class", "member-info panel svelte-j680fu");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        if_blocks[current_block_type_index].m(div, null);
+        current = true;
+      },
+      p(ctx2, [dirty]) {
+        let previous_block_index = current_block_type_index;
+        current_block_type_index = select_block_type(ctx2);
+        if (current_block_type_index === previous_block_index) {
+          if_blocks[current_block_type_index].p(ctx2, dirty);
+        } else {
+          group_outros();
+          transition_out(if_blocks[previous_block_index], 1, 1, () => {
+            if_blocks[previous_block_index] = null;
+          });
+          check_outros();
+          if_block = if_blocks[current_block_type_index];
+          if (!if_block) {
+            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+            if_block.c();
+          } else {
+            if_block.p(ctx2, dirty);
+          }
+          transition_in(if_block, 1);
+          if_block.m(div, null);
+        }
+      },
+      i(local) {
+        if (current) return;
+        transition_in(if_block);
+        current = true;
+      },
+      o(local) {
+        transition_out(if_block);
+        current = false;
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+        if_blocks[current_block_type_index].d();
+      }
+    };
+  }
+  __name(create_fragment$u, "create_fragment$u");
+  function instance$r($$self, $$props, $$invalidate) {
+    let $member;
+    let $devmode;
+    let { feature } = $$props;
+    const member = feature.memberStore;
+    component_subscribe($$self, member, (value) => $$invalidate(1, $member = value));
+    const devmode = feature.devmodeStore;
+    component_subscribe($$self, devmode, (value) => $$invalidate(2, $devmode = value));
+    const keydown_handler = /* @__PURE__ */ __name(() => feature.login(), "keydown_handler");
+    const click_handler2 = /* @__PURE__ */ __name(() => feature.login(), "click_handler");
+    const keydown_handler_1 = /* @__PURE__ */ __name(() => feature.logout(), "keydown_handler_1");
+    const click_handler_1 = /* @__PURE__ */ __name(() => feature.logout(), "click_handler_1");
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    };
+    return [
+      feature,
+      $member,
+      $devmode,
+      member,
+      devmode,
+      keydown_handler,
+      click_handler2,
+      keydown_handler_1,
+      click_handler_1
+    ];
+  }
+  __name(instance$r, "instance$r");
+  const _User_info = class _User_info extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$r, create_fragment$u, safe_not_equal, { feature: 0 });
+    }
+  };
+  __name(_User_info, "User_info");
+  let User_info = _User_info;
+  var __defProp$r = Object.defineProperty;
+  var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key, result) || result;
+    if (result) __defProp$r(target, key, result);
+    return result;
+  }, "__decorateClass$r");
+  const _UserInfoFeature = class _UserInfoFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_elementsSetup");
+      __publicField(this, "_memberService");
+      __publicField(this, "_globalSettingsService");
+      __publicField(this, "_element");
+      __publicField(this, "name", "User Info");
+      __publicField(this, "description", "Shows information about the logged-in user beneath the avatar selection");
+      __publicField(this, "tags", [
+        FeatureTag.INFORMATION,
+        FeatureTag.PALANTIR
+      ]);
+      __publicField(this, "featureId", 13);
+    }
+    async onActivate() {
+      const elements2 = await this._elementsSetup.complete();
+      this._element = new User_info({
+        target: elements2.avatarPanel,
+        anchor: elements2.playButton,
+        props: {
+          feature: this
+        }
+      });
+    }
+    onDestroy() {
+      var _a2;
+      (_a2 = this._element) == null ? void 0 : _a2.$destroy();
+    }
+    get memberStore() {
+      return fromObservable(this._memberService.member$, null);
+    }
+    get devmodeStore() {
+      return this._globalSettingsService.settings.devMode.store;
+    }
+    login() {
+      this._memberService.login();
+    }
+    logout() {
+      this._memberService.logout();
+    }
+  };
+  __name(_UserInfoFeature, "UserInfoFeature");
+  let UserInfoFeature = _UserInfoFeature;
+  __decorateClass$r([
+    inject(ElementsSetup)
+  ], UserInfoFeature.prototype, "_elementsSetup");
+  __decorateClass$r([
+    inject(MemberService)
+  ], UserInfoFeature.prototype, "_memberService");
+  __decorateClass$r([
+    inject(GlobalSettingsService)
+  ], UserInfoFeature.prototype, "_globalSettingsService");
+  function create_fragment$t(ctx) {
     let img;
     let img_src_value;
     return {
@@ -38108,8 +47159,8 @@
       }
     };
   }
-  __name(create_fragment$G, "create_fragment$G");
-  function instance$C($$self, $$props, $$invalidate) {
+  __name(create_fragment$t, "create_fragment$t");
+  function instance$q($$self, $$props, $$invalidate) {
     let { x } = $$props;
     let { y } = $$props;
     let { src } = $$props;
@@ -38126,11 +47177,11 @@
     };
     return [x, y, src, hasEnoughDistance];
   }
-  __name(instance$C, "instance$C");
+  __name(instance$q, "instance$q");
   const _Controls_onboarding_emoji = class _Controls_onboarding_emoji extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$C, create_fragment$G, safe_not_equal, { x: 0, y: 1, src: 2, hasEnoughDistance: 3 });
+      init(this, options, instance$q, create_fragment$t, safe_not_equal, { x: 0, y: 1, src: 2, hasEnoughDistance: 3 });
     }
     get hasEnoughDistance() {
       return this.$$.ctx[3];
@@ -38138,7 +47189,7 @@
   };
   __name(_Controls_onboarding_emoji, "Controls_onboarding_emoji");
   let Controls_onboarding_emoji = _Controls_onboarding_emoji;
-  function create_fragment$F(ctx) {
+  function create_fragment$s(ctx) {
     let h3;
     let t1;
     let div;
@@ -38200,16 +47251,16 @@
       }
     };
   }
-  __name(create_fragment$F, "create_fragment$F");
+  __name(create_fragment$s, "create_fragment$s");
   const _Old_typo_onboarding = class _Old_typo_onboarding extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, null, create_fragment$F, safe_not_equal, {});
+      init(this, options, null, create_fragment$s, safe_not_equal, {});
     }
   };
   __name(_Old_typo_onboarding, "Old_typo_onboarding");
   let Old_typo_onboarding = _Old_typo_onboarding;
-  function create_fragment$E(ctx) {
+  function create_fragment$r(ctx) {
     let h3;
     let t1;
     let div;
@@ -38242,34 +47293,34 @@
       }
     };
   }
-  __name(create_fragment$E, "create_fragment$E");
+  __name(create_fragment$r, "create_fragment$r");
   const _Typo_credits_onboarding = class _Typo_credits_onboarding extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, null, create_fragment$E, safe_not_equal, {});
+      init(this, options, null, create_fragment$r, safe_not_equal, {});
     }
   };
   __name(_Typo_credits_onboarding, "Typo_credits_onboarding");
   let Typo_credits_onboarding = _Typo_credits_onboarding;
-  function get_each_context$n(ctx, list, i) {
+  function get_each_context$e(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[29] = list[i];
+    child_ctx[30] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$n, "get_each_context$n");
-  function get_each_context_1$8(ctx, list, i) {
+  __name(get_each_context$e, "get_each_context$e");
+  function get_each_context_1$5(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[33] = list[i];
+    child_ctx[34] = list[i];
     return child_ctx;
   }
-  __name(get_each_context_1$8, "get_each_context_1$8");
+  __name(get_each_context_1$5, "get_each_context_1$5");
   function get_each_context_2$2(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[33] = list[i];
+    child_ctx[34] = list[i];
     return child_ctx;
   }
   __name(get_each_context_2$2, "get_each_context_2$2");
-  function create_if_block_4$4(ctx) {
+  function create_if_block_4$1(ctx) {
     let p;
     let t2;
     let br1;
@@ -38299,7 +47350,7 @@
         div1.innerHTML = `<h3>Recommended</h3> <div>A set of the most popular typo features that will enhance your skribbl.io experience.</div>`;
         t7 = space();
         div3 = element("div");
-        div3.innerHTML = `<h3>Tablet &amp; Phone</h3> <div>Activates only features that will - probably - work on mobile devices.</div>`;
+        div3.innerHTML = `<h3>Phone</h3> <div>Activates only features that will - probably - work on mobile devices. Limited support!</div>`;
         t11 = space();
         div5 = element("div");
         div5.innerHTML = `<h3>Minimal</h3> <div>Skribbl looks as close to original as possible, but essential features are still present.</div>`;
@@ -38310,12 +47361,12 @@
         div9 = element("div");
         div9.innerHTML = `<h3>Nothing</h3> <div>Vanilla skribbl.io experience. You will only notice the settings button.</div>`;
         set_style(p, "text-align", "center");
-        attr(div1, "class", "typo-onboarding-preset svelte-1ss70a9");
-        attr(div3, "class", "typo-onboarding-preset svelte-1ss70a9");
-        attr(div5, "class", "typo-onboarding-preset svelte-1ss70a9");
-        attr(div7, "class", "typo-onboarding-preset svelte-1ss70a9");
-        attr(div9, "class", "typo-onboarding-preset svelte-1ss70a9");
-        attr(div10, "class", "typo-onboarding-presets svelte-1ss70a9");
+        attr(div1, "class", "typo-onboarding-preset svelte-bu1e3");
+        attr(div3, "class", "typo-onboarding-preset svelte-bu1e3");
+        attr(div5, "class", "typo-onboarding-preset svelte-bu1e3");
+        attr(div7, "class", "typo-onboarding-preset svelte-bu1e3");
+        attr(div9, "class", "typo-onboarding-preset svelte-bu1e3");
+        attr(div10, "class", "typo-onboarding-presets svelte-bu1e3");
       },
       m(target, anchor) {
         insert(target, p, anchor);
@@ -38382,8 +47433,8 @@
       }
     };
   }
-  __name(create_if_block_4$4, "create_if_block_4$4");
-  function create_if_block_1$b(ctx) {
+  __name(create_if_block_4$1, "create_if_block_4$1");
+  function create_if_block_1$4(ctx) {
     let await_block_anchor;
     let promise;
     let current;
@@ -38392,10 +47443,10 @@
       current: null,
       token: null,
       hasCatch: false,
-      pending: create_pending_block$2,
-      then: create_then_block$2,
-      catch: create_catch_block$2,
-      value: 32,
+      pending: create_pending_block$1,
+      then: create_then_block$1,
+      catch: create_catch_block$1,
+      value: 33,
       blocks: [, , ,]
     };
     handle_promise(promise = /*feature*/
@@ -38444,8 +47495,8 @@
       }
     };
   }
-  __name(create_if_block_1$b, "create_if_block_1$b");
-  function create_catch_block$2(ctx) {
+  __name(create_if_block_1$4, "create_if_block_1$4");
+  function create_catch_block$1(ctx) {
     return {
       c: noop,
       m: noop,
@@ -38455,10 +47506,11 @@
       d: noop
     };
   }
-  __name(create_catch_block$2, "create_catch_block$2");
-  function create_then_block$2(ctx) {
+  __name(create_catch_block$1, "create_catch_block$1");
+  function create_then_block$1(ctx) {
     let show_if;
     let t0;
+    let div2;
     let div0;
     let t1;
     let div1;
@@ -38466,16 +47518,16 @@
       if (dirty[0] & /*feature*/
       1) show_if = null;
       if (show_if == null) show_if = !!/*checklist*/
-      ctx2[32].every(func$3);
-      if (show_if) return create_if_block_3$4;
-      return create_else_block_1$1;
+      ctx2[33].every(func$2);
+      if (show_if) return create_if_block_3$1;
+      return create_else_block_1;
     }
     __name(select_block_type, "select_block_type");
     let current_block_type = select_block_type(ctx, [-1, -1]);
     let if_block = current_block_type(ctx);
     let each_value_2 = ensure_array_like(
       /*checklist*/
-      ctx[32].filter(func_1)
+      ctx[33].filter(func_1)
     );
     let each_blocks_1 = [];
     for (let i = 0; i < each_value_2.length; i += 1) {
@@ -38483,16 +47535,17 @@
     }
     let each_value_1 = ensure_array_like(
       /*checklist*/
-      ctx[32].filter(func_2$1)
+      ctx[33].filter(func_2$1)
     );
     let each_blocks = [];
     for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks[i] = create_each_block_1$8(get_each_context_1$8(ctx, each_value_1, i));
+      each_blocks[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
     }
     return {
       c() {
         if_block.c();
         t0 = space();
+        div2 = element("div");
         div0 = element("div");
         for (let i = 0; i < each_blocks_1.length; i += 1) {
           each_blocks_1[i].c();
@@ -38502,20 +47555,22 @@
         for (let i = 0; i < each_blocks.length; i += 1) {
           each_blocks[i].c();
         }
-        attr(div0, "class", "typo-onboarding-checklist svelte-1ss70a9");
-        attr(div1, "class", "typo-onboarding-checklist svelte-1ss70a9");
+        attr(div0, "class", "typo-onboarding-checklist svelte-bu1e3");
+        attr(div1, "class", "typo-onboarding-checklist svelte-bu1e3");
+        attr(div2, "class", "typo-onboarding-checklist-wrapper svelte-bu1e3");
       },
       m(target, anchor) {
         if_block.m(target, anchor);
         insert(target, t0, anchor);
-        insert(target, div0, anchor);
+        insert(target, div2, anchor);
+        append(div2, div0);
         for (let i = 0; i < each_blocks_1.length; i += 1) {
           if (each_blocks_1[i]) {
             each_blocks_1[i].m(div0, null);
           }
         }
-        insert(target, t1, anchor);
-        insert(target, div1, anchor);
+        append(div2, t1);
+        append(div2, div1);
         for (let i = 0; i < each_blocks.length; i += 1) {
           if (each_blocks[i]) {
             each_blocks[i].m(div1, null);
@@ -38535,7 +47590,7 @@
         1) {
           each_value_2 = ensure_array_like(
             /*checklist*/
-            ctx2[32].filter(func_1)
+            ctx2[33].filter(func_1)
           );
           let i;
           for (i = 0; i < each_value_2.length; i += 1) {
@@ -38557,15 +47612,15 @@
         1) {
           each_value_1 = ensure_array_like(
             /*checklist*/
-            ctx2[32].filter(func_2$1)
+            ctx2[33].filter(func_2$1)
           );
           let i;
           for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$8(ctx2, each_value_1, i);
+            const child_ctx = get_each_context_1$5(ctx2, each_value_1, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block_1$8(child_ctx);
+              each_blocks[i] = create_each_block_1$5(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div1, null);
             }
@@ -38581,9 +47636,7 @@
       d(detaching) {
         if (detaching) {
           detach(t0);
-          detach(div0);
-          detach(t1);
-          detach(div1);
+          detach(div2);
         }
         if_block.d(detaching);
         destroy_each(each_blocks_1, detaching);
@@ -38591,13 +47644,13 @@
       }
     };
   }
-  __name(create_then_block$2, "create_then_block$2");
-  function create_else_block_1$1(ctx) {
+  __name(create_then_block$1, "create_then_block$1");
+  function create_else_block_1(ctx) {
     let span;
     return {
       c() {
         span = element("span");
-        span.textContent = "Complete all tasks to finalize your skribbl setup:";
+        span.textContent = "You can complete following tasks to familiarize yourself with typo:";
       },
       m(target, anchor) {
         insert(target, span, anchor);
@@ -38609,8 +47662,8 @@
       }
     };
   }
-  __name(create_else_block_1$1, "create_else_block_1$1");
-  function create_if_block_3$4(ctx) {
+  __name(create_else_block_1, "create_else_block_1");
+  function create_if_block_3$1(ctx) {
     let span;
     return {
       c() {
@@ -38627,13 +47680,13 @@
       }
     };
   }
-  __name(create_if_block_3$4, "create_if_block_3$4");
+  __name(create_if_block_3$1, "create_if_block_3$1");
   function create_each_block_2$2(ctx) {
     let div2;
     let h4;
     let t0_value = (
       /*task*/
-      ctx[33].name + ""
+      ctx[34].name + ""
     );
     let t0;
     let t1;
@@ -38644,7 +47697,7 @@
     let div0;
     let t3_value = (
       /*task*/
-      ctx[33].description + ""
+      ctx[34].description + ""
     );
     let t3;
     let t4;
@@ -38655,7 +47708,7 @@
         /*click_handler_9*/
         ctx[21](
           /*task*/
-          ctx[33]
+          ctx[34]
         )
       );
     }
@@ -38675,14 +47728,14 @@
         if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
         set_style(img, "content", "var(--file-img-arrow-right-gif)");
         set_style(img, "height", "1.5rem");
-        attr(div0, "class", "description svelte-1ss70a9");
-        attr(div1, "class", "details svelte-1ss70a9");
-        attr(div2, "class", "typo-onboarding-task svelte-1ss70a9");
+        attr(div0, "class", "description svelte-bu1e3");
+        attr(div1, "class", "details svelte-bu1e3");
+        attr(div2, "class", "typo-onboarding-task svelte-bu1e3");
         set_style(
           div2,
           "order",
           /*task*/
-          ctx[33].priority
+          ctx[34].priority
         );
       },
       m(target, anchor) {
@@ -38705,17 +47758,17 @@
         ctx = new_ctx;
         if (dirty[0] & /*feature*/
         1 && t0_value !== (t0_value = /*task*/
-        ctx[33].name + "")) set_data(t0, t0_value);
+        ctx[34].name + "")) set_data(t0, t0_value);
         if (dirty[0] & /*feature*/
         1 && t3_value !== (t3_value = /*task*/
-        ctx[33].description + "")) set_data(t3, t3_value);
+        ctx[34].description + "")) set_data(t3, t3_value);
         if (dirty[0] & /*feature*/
         1) {
           set_style(
             div2,
             "order",
             /*task*/
-            ctx[33].priority
+            ctx[34].priority
           );
         }
       },
@@ -38729,7 +47782,7 @@
     };
   }
   __name(create_each_block_2$2, "create_each_block_2$2");
-  function create_else_block$b(ctx) {
+  function create_else_block$2(ctx) {
     let img;
     let img_src_value;
     return {
@@ -38749,8 +47802,8 @@
       }
     };
   }
-  __name(create_else_block$b, "create_else_block$b");
-  function create_if_block_2$7(ctx) {
+  __name(create_else_block$2, "create_else_block$2");
+  function create_if_block_2$2(ctx) {
     let img;
     let img_src_value;
     let t0;
@@ -38779,13 +47832,13 @@
       }
     };
   }
-  __name(create_if_block_2$7, "create_if_block_2$7");
-  function create_each_block_1$8(ctx) {
+  __name(create_if_block_2$2, "create_if_block_2$2");
+  function create_each_block_1$5(ctx) {
     let div2;
     let h4;
     let t0_value = (
       /*task*/
-      ctx[33].name + ""
+      ctx[34].name + ""
     );
     let t0;
     let t1;
@@ -38794,16 +47847,16 @@
     let div0;
     let t3_value = (
       /*task*/
-      ctx[33].description + ""
+      ctx[34].description + ""
     );
     let t3;
     let t4;
     function select_block_type_1(ctx2, dirty) {
       if (
         /*task*/
-        ctx2[33].completed
-      ) return create_if_block_2$7;
-      return create_else_block$b;
+        ctx2[34].completed
+      ) return create_if_block_2$2;
+      return create_else_block$2;
     }
     __name(select_block_type_1, "select_block_type_1");
     let current_block_type = select_block_type_1(ctx);
@@ -38820,14 +47873,14 @@
         div0 = element("div");
         t3 = text(t3_value);
         t4 = space();
-        attr(div0, "class", "description svelte-1ss70a9");
-        attr(div1, "class", "details svelte-1ss70a9");
-        attr(div2, "class", "typo-onboarding-task done svelte-1ss70a9");
+        attr(div0, "class", "description svelte-bu1e3");
+        attr(div1, "class", "details svelte-bu1e3");
+        attr(div2, "class", "typo-onboarding-task done svelte-bu1e3");
         set_style(
           div2,
           "order",
           /*task*/
-          ctx[33].priority
+          ctx[34].priority
         );
       },
       m(target, anchor) {
@@ -38845,7 +47898,7 @@
       p(ctx2, dirty) {
         if (dirty[0] & /*feature*/
         1 && t0_value !== (t0_value = /*task*/
-        ctx2[33].name + "")) set_data(t0, t0_value);
+        ctx2[34].name + "")) set_data(t0, t0_value);
         if (current_block_type !== (current_block_type = select_block_type_1(ctx2))) {
           if_block.d(1);
           if_block = current_block_type(ctx2);
@@ -38856,14 +47909,14 @@
         }
         if (dirty[0] & /*feature*/
         1 && t3_value !== (t3_value = /*task*/
-        ctx2[33].description + "")) set_data(t3, t3_value);
+        ctx2[34].description + "")) set_data(t3, t3_value);
         if (dirty[0] & /*feature*/
         1) {
           set_style(
             div2,
             "order",
             /*task*/
-            ctx2[33].priority
+            ctx2[34].priority
           );
         }
       },
@@ -38875,8 +47928,8 @@
       }
     };
   }
-  __name(create_each_block_1$8, "create_each_block_1$8");
-  function create_pending_block$2(ctx) {
+  __name(create_each_block_1$5, "create_each_block_1$5");
+  function create_pending_block$1(ctx) {
     let bounceload;
     let current;
     bounceload = new Bounceload({
@@ -38905,8 +47958,8 @@
       }
     };
   }
-  __name(create_pending_block$2, "create_pending_block$2");
-  function create_if_block$l(ctx) {
+  __name(create_pending_block$1, "create_pending_block$1");
+  function create_if_block$a(ctx) {
     let div2;
     let div0;
     let t;
@@ -38919,7 +47972,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$n(get_each_context$n(ctx, each_value, i));
+      each_blocks[i] = create_each_block$e(get_each_context$e(ctx, each_value, i));
     }
     var switch_value = (
       /*activeSection*/
@@ -38942,9 +47995,9 @@
         t = space();
         div1 = element("div");
         if (switch_instance) create_component(switch_instance.$$.fragment);
-        attr(div0, "class", "typo-onboarding-extras-sections svelte-1ss70a9");
-        attr(div1, "class", "typo-onboarding-extras-content svelte-1ss70a9");
-        attr(div2, "class", "typo-onboarding-extras svelte-1ss70a9");
+        attr(div0, "class", "typo-onboarding-extras-sections svelte-bu1e3");
+        attr(div1, "class", "typo-onboarding-extras-content svelte-bu1e3");
+        attr(div2, "class", "typo-onboarding-extras svelte-bu1e3");
       },
       m(target, anchor) {
         insert(target, div2, anchor);
@@ -38968,11 +48021,11 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$n(ctx2, each_value, i);
+            const child_ctx = get_each_context$e(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$n(child_ctx);
+              each_blocks[i] = create_each_block$e(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div0, null);
             }
@@ -39021,8 +48074,8 @@
       }
     };
   }
-  __name(create_if_block$l, "create_if_block$l");
-  function create_each_block$n(ctx) {
+  __name(create_if_block$a, "create_if_block$a");
+  function create_each_block$e(ctx) {
     let b;
     let mounted;
     let dispose;
@@ -39031,7 +48084,7 @@
         /*click_handler_10*/
         ctx[22](
           /*section*/
-          ctx[29]
+          ctx[30]
         )
       );
     }
@@ -39040,14 +48093,14 @@
       c() {
         b = element("b");
         b.textContent = `${/*section*/
-      ctx[29].name}`;
-        attr(b, "class", "svelte-1ss70a9");
+      ctx[30].name}`;
+        attr(b, "class", "svelte-bu1e3");
         toggle_class(
           b,
           "active",
           /*activeSection*/
           ctx[6] === /*section*/
-          ctx[29]
+          ctx[30]
         );
       },
       m(target, anchor) {
@@ -39066,7 +48119,7 @@
             "active",
             /*activeSection*/
             ctx[6] === /*section*/
-            ctx[29]
+            ctx[30]
           );
         }
       },
@@ -39079,8 +48132,8 @@
       }
     };
   }
-  __name(create_each_block$n, "create_each_block$n");
-  function create_fragment$D(ctx) {
+  __name(create_each_block$e, "create_each_block$e");
+  function create_fragment$q(ctx) {
     let div4;
     let div2;
     let div0;
@@ -39113,15 +48166,15 @@
     let dispose;
     let if_block0 = (
       /*activeTab*/
-      ctx[4] === "presets" && create_if_block_4$4(ctx)
+      ctx[4] === "presets" && create_if_block_4$1(ctx)
     );
     let if_block1 = (
       /*activeTab*/
-      ctx[4] === "tasks" && create_if_block_1$b(ctx)
+      ctx[4] === "tasks" && create_if_block_1$4(ctx)
     );
     let if_block2 = (
       /*activeTab*/
-      ctx[4] === "extras" && create_if_block$l(ctx)
+      ctx[4] === "extras" && create_if_block$a(ctx)
     );
     return {
       c() {
@@ -39155,33 +48208,33 @@
         if (if_block1) if_block1.c();
         t16 = space();
         if (if_block2) if_block2.c();
-        attr(div0, "class", "svelte-1ss70a9");
-        attr(div1, "class", "beta-credits svelte-1ss70a9");
+        attr(div0, "class", "svelte-bu1e3");
+        attr(div1, "class", "beta-credits svelte-bu1e3");
         attr(div2, "class", div2_class_value = "typo-onboarding-hero " + /*hideHero*/
-        (ctx[5] ? "hidden" : "") + " svelte-1ss70a9");
-        attr(h40, "class", "svelte-1ss70a9");
+        (ctx[5] ? "hidden" : "") + " svelte-bu1e3");
+        attr(h40, "class", "svelte-bu1e3");
         toggle_class(
           h40,
           "active",
           /*activeTab*/
           ctx[4] === "presets"
         );
-        attr(h41, "class", "svelte-1ss70a9");
+        attr(h41, "class", "svelte-bu1e3");
         toggle_class(
           h41,
           "active",
           /*activeTab*/
           ctx[4] === "tasks"
         );
-        attr(h42, "class", "svelte-1ss70a9");
+        attr(h42, "class", "svelte-bu1e3");
         toggle_class(
           h42,
           "active",
           /*activeTab*/
           ctx[4] === "extras"
         );
-        attr(div3, "class", "onboarding-tabs svelte-1ss70a9");
-        attr(div4, "class", "typo-onboarding-wrapper color-scrollbar svelte-1ss70a9");
+        attr(div3, "class", "onboarding-tabs svelte-bu1e3");
+        attr(div4, "class", "typo-onboarding-wrapper color-scrollbar svelte-bu1e3");
       },
       m(target, anchor) {
         insert(target, div4, anchor);
@@ -39248,7 +48301,7 @@
         ctx2[1] ? "Welcome to" : "Thanks for using")) set_data(t0, t0_value);
         if (!current || dirty[0] & /*hideHero*/
         32 && div2_class_value !== (div2_class_value = "typo-onboarding-hero " + /*hideHero*/
-        (ctx2[5] ? "hidden" : "") + " svelte-1ss70a9")) {
+        (ctx2[5] ? "hidden" : "") + " svelte-bu1e3")) {
           attr(div2, "class", div2_class_value);
         }
         if (!current || dirty[0] & /*activeTab*/
@@ -39285,7 +48338,7 @@
           if (if_block0) {
             if_block0.p(ctx2, dirty);
           } else {
-            if_block0 = create_if_block_4$4(ctx2);
+            if_block0 = create_if_block_4$1(ctx2);
             if_block0.c();
             if_block0.m(div4, t15);
           }
@@ -39304,7 +48357,7 @@
               transition_in(if_block1, 1);
             }
           } else {
-            if_block1 = create_if_block_1$b(ctx2);
+            if_block1 = create_if_block_1$4(ctx2);
             if_block1.c();
             transition_in(if_block1, 1);
             if_block1.m(div4, t16);
@@ -39327,7 +48380,7 @@
               transition_in(if_block2, 1);
             }
           } else {
-            if_block2 = create_if_block$l(ctx2);
+            if_block2 = create_if_block$a(ctx2);
             if_block2.c();
             transition_in(if_block2, 1);
             if_block2.m(div4, null);
@@ -39365,11 +48418,11 @@
       }
     };
   }
-  __name(create_fragment$D, "create_fragment$D");
-  const func$3 = /* @__PURE__ */ __name((task) => task.completed, "func$3");
+  __name(create_fragment$q, "create_fragment$q");
+  const func$2 = /* @__PURE__ */ __name((task) => task.completed, "func$2");
   const func_1 = /* @__PURE__ */ __name((task) => !task.completed, "func_1");
   const func_2$1 = /* @__PURE__ */ __name((task) => task.completed, "func_2$1");
-  function instance$B($$self, $$props, $$invalidate) {
+  function instance$p($$self, $$props, $$invalidate) {
     let { feature } = $$props;
     let { firstLoad } = $$props;
     let hero;
@@ -39430,8 +48483,15 @@
     const activateFeaturePreset = /* @__PURE__ */ __name((preset) => {
       feature.activateFeaturePreset(preset);
       if (firstLoad) useTab("tasks");
+      else feature.closeOnboardingIfOpen();
     }, "activateFeaturePreset");
     let activeTab = firstLoad ? "presets" : "tasks";
+    const activeTabFocus = feature.tabFocusRequestsStore;
+    activeTabFocus.subscribe((v) => {
+      if (v !== void 0) {
+        useTab(v);
+      }
+    });
     let hideHero = false;
     const useTab = /* @__PURE__ */ __name((tab) => {
       $$invalidate(5, hideHero = true);
@@ -39522,25 +48582,25 @@
       click_handler_10
     ];
   }
-  __name(instance$B, "instance$B");
+  __name(instance$p, "instance$p");
   const _Controls_onboarding = class _Controls_onboarding extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$B, create_fragment$D, safe_not_equal, { feature: 0, firstLoad: 1 }, null, [-1, -1]);
+      init(this, options, instance$p, create_fragment$q, safe_not_equal, { feature: 0, firstLoad: 1 }, null, [-1, -1]);
     }
   };
   __name(_Controls_onboarding, "Controls_onboarding");
   let Controls_onboarding = _Controls_onboarding;
-  var __defProp$A = Object.defineProperty;
-  var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$q = Object.defineProperty;
+  var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$A(target, key, result);
+    if (result) __defProp$q(target, key, result);
     return result;
-  }, "__decorateClass$A");
-  const _ControlsOnboardingFeature = (_Aa = class extends TypoFeature {
+  }, "__decorateClass$q");
+  const _ControlsOnboardingFeature = (_Ca = class extends TypoFeature {
     constructor() {
       super(...arguments);
       __publicField(this, "_elementsSetup");
@@ -39567,7 +48627,7 @@
         name: "Read about the new typo",
         description: "Open the 'more info' tab to read an intro and changes of the new typo.",
         start: /* @__PURE__ */ __name(async () => {
-          await this._toastService.showToast("Scroll up and open the 'More Info' tab to complete the challenge!");
+          this._tabFocusRequests$.next("extras");
           return false;
         }, "start"),
         priority: 1
@@ -39606,7 +48666,7 @@
             ChatMessageSplitsFeature,
             CustomizerPracticeJoinFeature,
             CustomizerOutfitToggleFeature,
-            _Aa,
+            _Ca,
             TooltipsFeature
           ]
         },
@@ -39620,13 +48680,33 @@
         },
         mobile: {
           mode: "whitelist",
-          features: []
+          features: [
+            LobbyStatusFeature,
+            ChatEmojisFeature,
+            ChatProfileLinkFeature,
+            LobbyTimeVisualizerFeature,
+            DrawingPressureFeature,
+            ChatClearFeature,
+            CustomizerPracticeJoinFeature,
+            CustomizerOutfitToggleFeature,
+            _Ca,
+            TooltipsFeature,
+            ControlsThemesFeature,
+            UserInfoFeature,
+            PanelLobbiesFeature,
+            PanelCabinFeature,
+            PanelNewsFeature,
+            PanelChangelogFeature,
+            DrawingColorToolsFeature,
+            CanvasRateIconsFeature
+          ]
         }
       });
       __publicField(this, "_iconComponent");
       __publicField(this, "_iconClickSubscription");
       __publicField(this, "_currentModal");
       __publicField(this, "_taskCompletedSubscription");
+      __publicField(this, "_tabFocusRequests$", new Subject$1());
     }
     async onActivate() {
       const elements2 = await this._elementsSetup.complete();
@@ -39660,6 +48740,9 @@
       this._iconClickSubscription = void 0;
       (_c2 = this._taskCompletedSubscription) == null ? void 0 : _c2.unsubscribe();
       this._taskCompletedSubscription = void 0;
+    }
+    get tabFocusRequestsStore() {
+      return fromObservable(this._tabFocusRequests$, void 0);
     }
     showOnboarding(firstLoad = false) {
       var _a2;
@@ -39724,27 +48807,27 @@
     async completeInfoTask() {
       (await this._viewInfoTask).complete();
     }
-  }, __name(_Aa, "_ControlsOnboardingFeature"), _Aa);
-  __decorateClass$A([
+  }, __name(_Ca, "_ControlsOnboardingFeature"), _Ca);
+  __decorateClass$q([
     inject(ElementsSetup)
   ], _ControlsOnboardingFeature.prototype, "_elementsSetup");
-  __decorateClass$A([
+  __decorateClass$q([
     inject(ModalService)
   ], _ControlsOnboardingFeature.prototype, "_modalService");
-  __decorateClass$A([
+  __decorateClass$q([
     inject(FeaturesService)
   ], _ControlsOnboardingFeature.prototype, "_featuresService");
-  __decorateClass$A([
+  __decorateClass$q([
     inject(ToastService)
   ], _ControlsOnboardingFeature.prototype, "_toastService");
   let ControlsOnboardingFeature = _ControlsOnboardingFeature;
-  function get_each_context$m(ctx, list, i) {
+  function get_each_context$d(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[6] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$m, "get_each_context$m");
-  function create_catch_block$1(ctx) {
+  __name(get_each_context$d, "get_each_context$d");
+  function create_catch_block(ctx) {
     return {
       c: noop,
       m: noop,
@@ -39754,8 +48837,8 @@
       d: noop
     };
   }
-  __name(create_catch_block$1, "create_catch_block$1");
-  function create_then_block$1(ctx) {
+  __name(create_catch_block, "create_catch_block");
+  function create_then_block(ctx) {
     let h3;
     let t1;
     let p;
@@ -39770,7 +48853,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$m(get_each_context$m(ctx, each_value, i));
+      each_blocks[i] = create_each_block$d(get_each_context$d(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
@@ -39816,12 +48899,12 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$m(ctx2, each_value, i);
+            const child_ctx = get_each_context$d(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$m(child_ctx);
+              each_blocks[i] = create_each_block$d(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div, null);
@@ -39862,8 +48945,8 @@
       }
     };
   }
-  __name(create_then_block$1, "create_then_block$1");
-  function create_each_block$m(ctx) {
+  __name(create_then_block, "create_then_block");
+  function create_each_block$d(ctx) {
     let div;
     let span;
     let t0_value = (
@@ -39979,8 +49062,8 @@
       }
     };
   }
-  __name(create_each_block$m, "create_each_block$m");
-  function create_pending_block$1(ctx) {
+  __name(create_each_block$d, "create_each_block$d");
+  function create_pending_block(ctx) {
     let bounceload;
     let current;
     bounceload = new Bounceload({ props: { content: "Loading Profiles" } });
@@ -40007,8 +49090,8 @@
       }
     };
   }
-  __name(create_pending_block$1, "create_pending_block$1");
-  function create_fragment$C(ctx) {
+  __name(create_pending_block, "create_pending_block");
+  function create_fragment$p(ctx) {
     let promise;
     let t0;
     let br0;
@@ -40038,9 +49121,9 @@
       current: null,
       token: null,
       hasCatch: false,
-      pending: create_pending_block$1,
-      then: create_then_block$1,
-      catch: create_catch_block$1,
+      pending: create_pending_block,
+      then: create_then_block,
+      catch: create_catch_block,
       value: 5,
       blocks: [, , ,]
     };
@@ -40182,8 +49265,8 @@
       }
     };
   }
-  __name(create_fragment$C, "create_fragment$C");
-  function instance$A($$self, $$props, $$invalidate) {
+  __name(create_fragment$p, "create_fragment$p");
+  function instance$o($$self, $$props, $$invalidate) {
     let { feature } = $$props;
     const click_handler2 = /* @__PURE__ */ __name((profile, e) => {
       e.stopImmediatePropagation();
@@ -40199,24 +49282,24 @@
     };
     return [feature, click_handler2, click_handler_1, click_handler_2, click_handler_3];
   }
-  __name(instance$A, "instance$A");
+  __name(instance$o, "instance$o");
   const _Controls_profiles = class _Controls_profiles extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$A, create_fragment$C, safe_not_equal, { feature: 0 });
+      init(this, options, instance$o, create_fragment$p, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Controls_profiles, "Controls_profiles");
   let Controls_profiles = _Controls_profiles;
-  var __defProp$z = Object.defineProperty;
-  var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$p = Object.defineProperty;
+  var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$z(target, key, result);
+    if (result) __defProp$p(target, key, result);
     return result;
-  }, "__decorateClass$z");
+  }, "__decorateClass$p");
   const _ControlsProfilesFeature = class _ControlsProfilesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -40295,13 +49378,13 @@
   };
   __name(_ControlsProfilesFeature, "ControlsProfilesFeature");
   let ControlsProfilesFeature = _ControlsProfilesFeature;
-  __decorateClass$z([
+  __decorateClass$p([
     inject(ElementsSetup)
   ], ControlsProfilesFeature.prototype, "_elementsSetup");
-  __decorateClass$z([
+  __decorateClass$p([
     inject(ToastService)
   ], ControlsProfilesFeature.prototype, "_toastService");
-  function create_if_block$k(ctx) {
+  function create_if_block$9(ctx) {
     let br;
     let span;
     return {
@@ -40323,8 +49406,8 @@
       }
     };
   }
-  __name(create_if_block$k, "create_if_block$k");
-  function create_fragment$B(ctx) {
+  __name(create_if_block$9, "create_if_block$9");
+  function create_fragment$o(ctx) {
     let div5;
     let h3;
     let t0_value = (
@@ -40359,7 +49442,7 @@
     let dispose;
     let if_block = (
       /*hotkey*/
-      ctx[0].disabledOnInputs && create_if_block$k()
+      ctx[0].disabledOnInputs && create_if_block$9()
     );
     flatbutton0 = new Flat_button({
       props: {
@@ -40488,7 +49571,7 @@
         ) {
           if (if_block) ;
           else {
-            if_block = create_if_block$k();
+            if_block = create_if_block$9();
             if_block.c();
             if_block.m(div0, null);
           }
@@ -40544,8 +49627,8 @@
       }
     };
   }
-  __name(create_fragment$B, "create_fragment$B");
-  function instance$z($$self, $$props, $$invalidate) {
+  __name(create_fragment$o, "create_fragment$o");
+  function instance$n($$self, $$props, $$invalidate) {
     let $comboStore;
     let $enabledStore;
     let { hotkey } = $$props;
@@ -40634,16 +49717,16 @@
       keydown_handler
     ];
   }
-  __name(instance$z, "instance$z");
+  __name(instance$n, "instance$n");
   const _Controls_settings_hotkey = class _Controls_settings_hotkey extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$z, create_fragment$B, safe_not_equal, { hotkey: 0, feature: 1 });
+      init(this, options, instance$n, create_fragment$o, safe_not_equal, { hotkey: 0, feature: 1 });
     }
   };
   __name(_Controls_settings_hotkey, "Controls_settings_hotkey");
   let Controls_settings_hotkey = _Controls_settings_hotkey;
-  function create_fragment$A(ctx) {
+  function create_fragment$n(ctx) {
     let div5;
     let h3;
     let t0_value = (
@@ -40825,8 +49908,8 @@
       }
     };
   }
-  __name(create_fragment$A, "create_fragment$A");
-  function instance$y($$self, $$props, $$invalidate) {
+  __name(create_fragment$n, "create_fragment$n");
+  function instance$m($$self, $$props, $$invalidate) {
     let $idStore;
     let $enabledStore;
     let { command } = $$props;
@@ -40878,34 +49961,34 @@
       input_input_handler
     ];
   }
-  __name(instance$y, "instance$y");
+  __name(instance$m, "instance$m");
   const _Controls_settings_command = class _Controls_settings_command extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$y, create_fragment$A, safe_not_equal, { command: 0, feature: 6 });
+      init(this, options, instance$m, create_fragment$n, safe_not_equal, { command: 0, feature: 6 });
     }
   };
   __name(_Controls_settings_command, "Controls_settings_command");
   let Controls_settings_command = _Controls_settings_command;
-  function get_each_context$l(ctx, list, i) {
+  function get_each_context$c(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[9] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$l, "get_each_context$l");
-  function get_each_context_1$7(ctx, list, i) {
+  __name(get_each_context$c, "get_each_context$c");
+  function get_each_context_1$4(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[12] = list[i];
     return child_ctx;
   }
-  __name(get_each_context_1$7, "get_each_context_1$7");
+  __name(get_each_context_1$4, "get_each_context_1$4");
   function get_each_context_2$1(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[15] = list[i];
     return child_ctx;
   }
   __name(get_each_context_2$1, "get_each_context_2$1");
-  function create_if_block_5$1(ctx) {
+  function create_if_block_5(ctx) {
     let div1;
     let h2;
     let t1;
@@ -41003,8 +50086,8 @@
       }
     };
   }
-  __name(create_if_block_5$1, "create_if_block_5$1");
-  function create_if_block_4$3(ctx) {
+  __name(create_if_block_5, "create_if_block_5");
+  function create_if_block_4(ctx) {
     let div1;
     let h2;
     let t1;
@@ -41096,7 +50179,7 @@
       }
     };
   }
-  __name(create_if_block_4$3, "create_if_block_4$3");
+  __name(create_if_block_4, "create_if_block_4");
   function create_each_block_2$1(ctx) {
     let div;
     let switch_instance;
@@ -41188,7 +50271,7 @@
     };
   }
   __name(create_each_block_2$1, "create_each_block_2$1");
-  function create_if_block_3$3(ctx) {
+  function create_if_block_3(ctx) {
     let div1;
     let h2;
     let t1;
@@ -41286,8 +50369,8 @@
       }
     };
   }
-  __name(create_if_block_3$3, "create_if_block_3$3");
-  function create_if_block_1$a(ctx) {
+  __name(create_if_block_3, "create_if_block_3");
+  function create_if_block_1$3(ctx) {
     let div1;
     let h2;
     let t1;
@@ -41299,14 +50382,14 @@
     let div0;
     let current;
     let if_block = !/*supportskeyboardLayout*/
-    ctx[7] && create_if_block_2$6();
+    ctx[7] && create_if_block_2$1();
     let each_value_1 = ensure_array_like(
       /*featureHotkeys*/
       ctx[5]
     );
     let each_blocks = [];
     for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks[i] = create_each_block_1$7(get_each_context_1$7(ctx, each_value_1, i));
+      each_blocks[i] = create_each_block_1$4(get_each_context_1$4(ctx, each_value_1, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
@@ -41362,12 +50445,12 @@
           );
           let i;
           for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$7(ctx2, each_value_1, i);
+            const child_ctx = get_each_context_1$4(ctx2, each_value_1, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block_1$7(child_ctx);
+              each_blocks[i] = create_each_block_1$4(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div0, null);
@@ -41403,8 +50486,8 @@
       }
     };
   }
-  __name(create_if_block_1$a, "create_if_block_1$a");
-  function create_if_block_2$6(ctx) {
+  __name(create_if_block_1$3, "create_if_block_1$3");
+  function create_if_block_2$1(ctx) {
     let p;
     return {
       c() {
@@ -41422,8 +50505,8 @@
       }
     };
   }
-  __name(create_if_block_2$6, "create_if_block_2$6");
-  function create_each_block_1$7(ctx) {
+  __name(create_if_block_2$1, "create_if_block_2$1");
+  function create_each_block_1$4(ctx) {
     let controlssettingshotkey;
     let current;
     controlssettingshotkey = new Controls_settings_hotkey({
@@ -41470,8 +50553,8 @@
       }
     };
   }
-  __name(create_each_block_1$7, "create_each_block_1$7");
-  function create_if_block$j(ctx) {
+  __name(create_each_block_1$4, "create_each_block_1$4");
+  function create_if_block$8(ctx) {
     let div1;
     let h2;
     let t1;
@@ -41487,7 +50570,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$l(get_each_context$l(ctx, each_value, i));
+      each_blocks[i] = create_each_block$c(get_each_context$c(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
@@ -41538,12 +50621,12 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$l(ctx2, each_value, i);
+            const child_ctx = get_each_context$c(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$l(child_ctx);
+              each_blocks[i] = create_each_block$c(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div0, null);
@@ -41578,8 +50661,8 @@
       }
     };
   }
-  __name(create_if_block$j, "create_if_block$j");
-  function create_each_block$l(ctx) {
+  __name(create_if_block$8, "create_if_block$8");
+  function create_each_block$c(ctx) {
     let controlssettingscommand;
     let current;
     controlssettingscommand = new Controls_settings_command({
@@ -41626,8 +50709,8 @@
       }
     };
   }
-  __name(create_each_block$l, "create_each_block$l");
-  function create_fragment$z(ctx) {
+  __name(create_each_block$c, "create_each_block$c");
+  function create_fragment$m(ctx) {
     let div2;
     let div0;
     let t1;
@@ -41657,23 +50740,23 @@
     let dispose;
     let if_block0 = (
       /*infoComponent*/
-      ctx[4] && create_if_block_5$1(ctx)
+      ctx[4] && create_if_block_5(ctx)
     );
     let if_block1 = (
       /*feature*/
-      ctx[1].settings.length > 0 && create_if_block_4$3(ctx)
+      ctx[1].settings.length > 0 && create_if_block_4(ctx)
     );
     let if_block2 = (
       /*settingsComponent*/
-      ctx[3] && create_if_block_3$3(ctx)
+      ctx[3] && create_if_block_3(ctx)
     );
     let if_block3 = (
       /*featureHotkeys*/
-      ctx[5].length > 0 && create_if_block_1$a(ctx)
+      ctx[5].length > 0 && create_if_block_1$3(ctx)
     );
     let if_block4 = (
       /*featureCommands*/
-      ctx[6].length > 0 && create_if_block$j(ctx)
+      ctx[6].length > 0 && create_if_block$8(ctx)
     );
     return {
       c() {
@@ -41757,7 +50840,7 @@
               transition_in(if_block0, 1);
             }
           } else {
-            if_block0 = create_if_block_5$1(ctx2);
+            if_block0 = create_if_block_5(ctx2);
             if_block0.c();
             transition_in(if_block0, 1);
             if_block0.m(t8.parentNode, t8);
@@ -41780,7 +50863,7 @@
               transition_in(if_block1, 1);
             }
           } else {
-            if_block1 = create_if_block_4$3(ctx2);
+            if_block1 = create_if_block_4(ctx2);
             if_block1.c();
             transition_in(if_block1, 1);
             if_block1.m(t9.parentNode, t9);
@@ -41803,7 +50886,7 @@
               transition_in(if_block2, 1);
             }
           } else {
-            if_block2 = create_if_block_3$3(ctx2);
+            if_block2 = create_if_block_3(ctx2);
             if_block2.c();
             transition_in(if_block2, 1);
             if_block2.m(t10.parentNode, t10);
@@ -41826,7 +50909,7 @@
               transition_in(if_block3, 1);
             }
           } else {
-            if_block3 = create_if_block_1$a(ctx2);
+            if_block3 = create_if_block_1$3(ctx2);
             if_block3.c();
             transition_in(if_block3, 1);
             if_block3.m(t11.parentNode, t11);
@@ -41849,7 +50932,7 @@
               transition_in(if_block4, 1);
             }
           } else {
-            if_block4 = create_if_block$j(ctx2);
+            if_block4 = create_if_block$8(ctx2);
             if_block4.c();
             transition_in(if_block4, 1);
             if_block4.m(if_block4_anchor.parentNode, if_block4_anchor);
@@ -41901,8 +50984,8 @@
       }
     };
   }
-  __name(create_fragment$z, "create_fragment$z");
-  function instance$x($$self, $$props, $$invalidate) {
+  __name(create_fragment$m, "create_fragment$m");
+  function instance$l($$self, $$props, $$invalidate) {
     var _a2;
     let { detailsClosed } = $$props;
     let { feature } = $$props;
@@ -41942,11 +51025,11 @@
       click_handler2
     ];
   }
-  __name(instance$x, "instance$x");
+  __name(instance$l, "instance$l");
   const _Controls_settings_details = class _Controls_settings_details extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$x, create_fragment$z, safe_not_equal, {
+      init(this, options, instance$l, create_fragment$m, safe_not_equal, {
         detailsClosed: 0,
         feature: 1,
         settingsFeature: 2
@@ -41955,7 +51038,7 @@
   };
   __name(_Controls_settings_details, "Controls_settings_details");
   let Controls_settings_details = _Controls_settings_details;
-  function create_else_block$a(ctx) {
+  function create_else_block$1(ctx) {
     let div;
     let t_value = (
       /*feature*/
@@ -41984,8 +51067,8 @@
       }
     };
   }
-  __name(create_else_block$a, "create_else_block$a");
-  function create_if_block$i(ctx) {
+  __name(create_else_block$1, "create_else_block$1");
+  function create_if_block$7(ctx) {
     let div;
     let img;
     let img_src_value;
@@ -42050,8 +51133,8 @@
       }
     };
   }
-  __name(create_if_block$i, "create_if_block$i");
-  function create_fragment$y(ctx) {
+  __name(create_if_block$7, "create_if_block$7");
+  function create_fragment$l(ctx) {
     let div3;
     let div0;
     let img;
@@ -42076,7 +51159,7 @@
     let div1;
     let t6_value = (
       /*feature*/
-      ctx[0].tags.map(func$2).join(" ") + ""
+      ctx[0].tags.map(func$1).join(" ") + ""
     );
     let t6;
     let t7;
@@ -42093,8 +51176,8 @@
       if (
         /*feature*/
         ctx2[0].hasDetailComponents
-      ) return create_if_block$i;
-      return create_else_block$a;
+      ) return create_if_block$7;
+      return create_else_block$1;
     }
     __name(select_block_type, "select_block_type");
     let current_block_type = select_block_type(ctx);
@@ -42220,7 +51303,7 @@
         }
         if (dirty & /*feature*/
         1 && t6_value !== (t6_value = /*feature*/
-        ctx2[0].tags.map(func$2).join(" ") + "")) set_data(t6, t6_value);
+        ctx2[0].tags.map(func$1).join(" ") + "")) set_data(t6, t6_value);
         if (dirty & /*feature*/
         1 && t9_value !== (t9_value = /*feature*/
         ctx2[0].featureId + "")) set_data(t9, t9_value);
@@ -42256,9 +51339,9 @@
       }
     };
   }
-  __name(create_fragment$y, "create_fragment$y");
-  const func$2 = /* @__PURE__ */ __name((t) => "#" + t, "func$2");
-  function instance$w($$self, $$props, $$invalidate) {
+  __name(create_fragment$l, "create_fragment$l");
+  const func$1 = /* @__PURE__ */ __name((t) => "#" + t, "func$1");
+  function instance$k($$self, $$props, $$invalidate) {
     let $featureState, $$unsubscribe_featureState = noop, $$subscribe_featureState = /* @__PURE__ */ __name(() => ($$unsubscribe_featureState(), $$unsubscribe_featureState = subscribe(featureState, ($$value) => $$invalidate(4, $featureState = $$value)), featureState), "$$subscribe_featureState");
     $$self.$$.on_destroy.push(() => $$unsubscribe_featureState());
     let { devmodeEnabled } = $$props;
@@ -42305,11 +51388,11 @@
       click_handler_1
     ];
   }
-  __name(instance$w, "instance$w");
+  __name(instance$k, "instance$k");
   const _Controls_settings_feature = class _Controls_settings_feature extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$w, create_fragment$y, safe_not_equal, {
+      init(this, options, instance$k, create_fragment$l, safe_not_equal, {
         devmodeEnabled: 1,
         feature: 0,
         featureSettingsClicked: 2
@@ -42318,19 +51401,19 @@
   };
   __name(_Controls_settings_feature, "Controls_settings_feature");
   let Controls_settings_feature = _Controls_settings_feature;
-  function get_each_context$k(ctx, list, i) {
+  function get_each_context$b(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[11] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$k, "get_each_context$k");
-  function get_each_context_1$6(ctx, list, i) {
+  __name(get_each_context$b, "get_each_context$b");
+  function get_each_context_1$3(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[14] = list[i];
     return child_ctx;
   }
-  __name(get_each_context_1$6, "get_each_context_1$6");
-  function create_each_block_1$6(ctx) {
+  __name(get_each_context_1$3, "get_each_context_1$3");
+  function create_each_block_1$3(ctx) {
     let span;
     let mounted;
     let dispose;
@@ -42349,7 +51432,7 @@
         span = element("span");
         span.textContent = `#${/*tag*/
       ctx[14]}`;
-        attr(span, "class", "filter svelte-173i13r");
+        attr(span, "class", "filter svelte-1ly2c3r");
         toggle_class(
           span,
           "selected",
@@ -42391,8 +51474,8 @@
       }
     };
   }
-  __name(create_each_block_1$6, "create_each_block_1$6");
-  function create_each_block$k(ctx) {
+  __name(create_each_block_1$3, "create_each_block_1$3");
+  function create_each_block$b(ctx) {
     let controlssettingsfeatureitem;
     let current;
     function func2() {
@@ -42453,8 +51536,8 @@
       }
     };
   }
-  __name(create_each_block$k, "create_each_block$k");
-  function create_if_block$h(ctx) {
+  __name(create_each_block$b, "create_each_block$b");
+  function create_if_block$6(ctx) {
     let controlssettingsdetails;
     let current;
     controlssettingsdetails = new Controls_settings_details({
@@ -42508,8 +51591,8 @@
       }
     };
   }
-  __name(create_if_block$h, "create_if_block$h");
-  function create_fragment$x(ctx) {
+  __name(create_if_block$6, "create_if_block$6");
+  function create_fragment$k(ctx) {
     let div6;
     let div4;
     let div0;
@@ -42532,7 +51615,7 @@
     let each_value_1 = ensure_array_like(featureTags);
     let each_blocks_1 = [];
     for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks_1[i] = create_each_block_1$6(get_each_context_1$6(ctx, each_value_1, i));
+      each_blocks_1[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
     }
     let each_value = ensure_array_like(
       /*feature*/
@@ -42547,14 +51630,14 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$k(get_each_context$k(ctx, each_value, i));
+      each_blocks[i] = create_each_block$b(get_each_context$b(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
     }), "out");
     let if_block = (
       /*selectedDetailsFeature*/
-      ctx[1] && create_if_block$h(ctx)
+      ctx[1] && create_if_block$6(ctx)
     );
     return {
       c() {
@@ -42586,27 +51669,27 @@
         t10 = space();
         div5 = element("div");
         if (if_block) if_block.c();
-        attr(div0, "class", "typo-features-info svelte-173i13r");
-        attr(div1, "class", "filters svelte-173i13r");
+        attr(div0, "class", "typo-features-info svelte-1ly2c3r");
+        attr(div1, "class", "filters svelte-1ly2c3r");
         attr(input, "type", "text");
         attr(input, "placeholder", "Search for feature/hotkey/command/setting name or description");
-        attr(div2, "class", "typo-features-filter svelte-173i13r");
-        attr(div3, "class", "typo-features-list color-scrollbar svelte-173i13r");
-        attr(div4, "class", "typo-features svelte-173i13r");
+        attr(div2, "class", "typo-features-filter svelte-1ly2c3r");
+        attr(div3, "class", "typo-features-list color-scrollbar svelte-1ly2c3r");
+        attr(div4, "class", "typo-features svelte-1ly2c3r");
         toggle_class(
           div4,
           "settingsVisible",
           /*selectedDetailsFeature*/
           ctx[1] !== void 0
         );
-        attr(div5, "class", "typo-feature-settings color-scrollbar svelte-173i13r");
+        attr(div5, "class", "typo-feature-settings color-scrollbar svelte-1ly2c3r");
         toggle_class(
           div5,
           "settingsVisible",
           /*selectedDetailsFeature*/
           ctx[1] !== void 0
         );
-        attr(div6, "class", "typo-features-container svelte-173i13r");
+        attr(div6, "class", "typo-features-container svelte-1ly2c3r");
       },
       m(target, anchor) {
         insert(target, div6, anchor);
@@ -42658,11 +51741,11 @@
           each_value_1 = ensure_array_like(featureTags);
           let i;
           for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$6(ctx2, each_value_1, i);
+            const child_ctx = get_each_context_1$3(ctx2, each_value_1, i);
             if (each_blocks_1[i]) {
               each_blocks_1[i].p(child_ctx, dirty);
             } else {
-              each_blocks_1[i] = create_each_block_1$6(child_ctx);
+              each_blocks_1[i] = create_each_block_1$3(child_ctx);
               each_blocks_1[i].c();
               each_blocks_1[i].m(div1, null);
             }
@@ -42696,12 +51779,12 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$k(ctx2, each_value, i);
+            const child_ctx = get_each_context$b(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$k(child_ctx);
+              each_blocks[i] = create_each_block$b(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div3, null);
@@ -42733,7 +51816,7 @@
               transition_in(if_block, 1);
             }
           } else {
-            if_block = create_if_block$h(ctx2);
+            if_block = create_if_block$6(ctx2);
             if_block.c();
             transition_in(if_block, 1);
             if_block.m(div5, null);
@@ -42783,8 +51866,8 @@
       }
     };
   }
-  __name(create_fragment$x, "create_fragment$x");
-  function instance$v($$self, $$props, $$invalidate) {
+  __name(create_fragment$k, "create_fragment$k");
+  function instance$j($$self, $$props, $$invalidate) {
     let $devMode;
     let { feature } = $$props;
     const devMode = feature.devModeStore;
@@ -42822,24 +51905,24 @@
       func_12
     ];
   }
-  __name(instance$v, "instance$v");
+  __name(instance$j, "instance$j");
   const _Controls_settings = class _Controls_settings extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$v, create_fragment$x, safe_not_equal, { feature: 0 });
+      init(this, options, instance$j, create_fragment$k, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Controls_settings, "Controls_settings");
   let Controls_settings = _Controls_settings;
-  var __defProp$y = Object.defineProperty;
-  var __decorateClass$y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$o = Object.defineProperty;
+  var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$y(target, key, result);
+    if (result) __defProp$o(target, key, result);
     return result;
-  }, "__decorateClass$y");
+  }, "__decorateClass$o");
   const _ControlsSettingsFeature = class _ControlsSettingsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -42985,4811 +52068,30 @@
   };
   __name(_ControlsSettingsFeature, "ControlsSettingsFeature");
   let ControlsSettingsFeature = _ControlsSettingsFeature;
-  __decorateClass$y([
+  __decorateClass$o([
     inject(ElementsSetup)
   ], ControlsSettingsFeature.prototype, "_elementsSetup");
-  __decorateClass$y([
+  __decorateClass$o([
     inject(ModalService)
   ], ControlsSettingsFeature.prototype, "_modalService");
-  __decorateClass$y([
+  __decorateClass$o([
     inject(ToastService)
   ], ControlsSettingsFeature.prototype, "_toastService");
-  __decorateClass$y([
+  __decorateClass$o([
     inject(FeaturesService)
   ], ControlsSettingsFeature.prototype, "_featuresService");
-  __decorateClass$y([
+  __decorateClass$o([
     inject(GlobalSettingsService)
   ], ControlsSettingsFeature.prototype, "_settingsService");
-  const themeColors = Object.freeze({
-    "--COLOR_PANEL_BG": [226, 85, 32, 0.75],
-    "--COLOR_PANEL_LO": [226, 90, 27, 0.75],
-    "--COLOR_PANEL_BUTTON": [226, 67, 49],
-    "--COLOR_PANEL_BUTTON_HOVER": [226, 73, 43],
-    "--COLOR_PANEL_BUTTON_ACTIVE": [226, 72, 41],
-    "--COLOR_PANEL_HI": [226, 80, 44],
-    "--COLOR_PANEL_FOCUS": [32, 85, 56],
-    "--COLOR_PANEL_BORDER": [232, 85, 11],
-    "--COLOR_PANEL_BORDER_FOCUS": [207, 98, 66],
-    "--COLOR_PANEL_TEXT": [0, 0, 94],
-    "--COLOR_PANEL_TEXT_FOCUS": [0, 0, 100],
-    "--COLOR_PANEL_TEXT_PLACEHOLDER": [0, 0, 61],
-    "--COLOR_TOOL_BASE": [0, 0, 100],
-    "--COLOR_TOOL_HOVER": [0, 0, 77],
-    "--COLOR_TOOL_TEXT": [0, 0, 0],
-    "--COLOR_TOOL_SIZE_BASE": [0, 0, 100],
-    "--COLOR_TOOL_SIZE_HOVER": [0, 0, 77],
-    "--COLOR_TOOL_ACTIVE": [271, 77, 66],
-    "--COLOR_TOOL_SIZE_ACTIVE": [271, 77, 66],
-    "--COLOR_INPUT_BG": [0, 0, 100],
-    "--COLOR_INPUT_HOVER": [0, 0, 100],
-    "--COLOR_INPUT_TEXT": [0, 0, 17],
-    "--COLOR_INPUT_BORDER": [0, 0, 44],
-    "--COLOR_INPUT_BORDER_FOCUS": [207, 98, 66],
-    "--COLOR_PLAYER_TEXT_BASE": [0, 0, 0],
-    "--COLOR_PLAYER_ME": [214, 100, 64],
-    "--COLOR_PLAYER_ME_GUESSED": [216, 100, 35],
-    "--COLOR_PLAYER_BG_BASE": [0, 0, 100],
-    "--COLOR_PLAYER_BG_ALT": [0, 0, 93],
-    "--COLOR_PLAYER_BG_GUESSED_BASE": [113, 68, 58],
-    "--COLOR_PLAYER_BG_GUESSED_ALT": [113, 57, 50],
-    "--COLOR_TOOL_TIP_BG": [226, 100, 64],
-    "--COLOR_GAMEBAR_TEXT": [0, 0, 0],
-    "--COLOR_GAMEBAR_ROUND_TEXT": [0, 0, 0],
-    "--COLOR_GAMEBAR_WORD_DESCRIPTION": [0, 0, 21],
-    "--COLOR_TEXT_CANVAS_TRANSPARENT": [0, 0, 25],
-    "--COLOR_CHAT_TEXT_BASE": [0, 0, 0],
-    "--COLOR_CHAT_TEXT_GUESSED": [103, 68, 48],
-    "--COLOR_CHAT_TEXT_CLOSE": [54, 100, 44],
-    "--COLOR_CHAT_TEXT_DRAWING": [216, 60, 52],
-    "--COLOR_CHAT_TEXT_JOIN": [103, 68, 48],
-    "--COLOR_CHAT_TEXT_LEAVE": [21, 91, 42],
-    "--COLOR_CHAT_TEXT_OWNER": [32, 100, 63],
-    "--COLOR_CHAT_TEXT_GUESSCHAT": [86, 47, 46],
-    "--COLOR_CHAT_BG_BASE": [0, 0, 100],
-    "--COLOR_CHAT_BG_ALT": [0, 0, 93],
-    "--COLOR_CHAT_SCROLLBAR": [0, 0, 49],
-    "--COLOR_CHAT_SCROLLBAR_THUMB": [0, 0, 78],
-    "--COLOR_CHAT_BG_GUESSED_BASE": [105, 100, 94],
-    "--COLOR_CHAT_BG_GUESSED_ALT": [104, 100, 87],
-    "--COLOR_CHAT_INPUT_COUNT": [0, 0, 0],
-    "--COLOR_BUTTON_DANGER_BG": [44, 81, 51],
-    "--COLOR_BUTTON_SUBMIT_BG": [110, 75, 55],
-    "--COLOR_BUTTON_NORMAL_BG": [208, 80, 54],
-    "--COLOR_BUTTON_DANGER_TEXT": [0, 0, 100],
-    "--COLOR_BUTTON_SUBMIT_TEXT": [0, 0, 100],
-    "--COLOR_BUTTON_NORMAL_TEXT": [0, 0, 100]
-  });
-  const createEmptyTheme = /* @__PURE__ */ __name((author, name, id2) => {
-    const date = /* @__PURE__ */ new Date();
-    const theme = {
-      meta: {
-        author,
-        created: date.getTime(),
-        id: id2 === void 0 ? date.getTime() : id2,
-        name: name ?? `Untitled Theme ${date.getTime()}`,
-        type: "theme"
-      },
-      colors: structuredClone(themeColors),
-      hooks: {},
-      images: {},
-      misc: {}
-    };
-    return theme;
-  }, "createEmptyTheme");
-  function convertOldTheme(options, theme) {
-    theme.images.urlLogo = options.urlLogo;
-    theme.images.urlBackground = options.urlBackground;
-    theme.images.urlBackgroundGame = options.urlBackgroundGame;
-    theme.misc.fontStyle = options.fontStyle;
-    theme.misc.htmlText = options.injection;
-    let css2 = "";
-    if (options["containerBackgroundsCheck"] == true) {
-      const val = options["containerBackgrounds"] ? options["containerBackgrounds"].trim() : "";
-      css2 += ":root {--COLOR_PANEL_BUTTON: " + (val != "" ? val : "transparent") + " !important}";
-      css2 += "#setting-bar .content, #emojiPrev, #imageAgent, #home .news ::-webkit-scrollbar, #home .news ::-webkit-scrollbar-thumb, .modalContainer, .toast, #modal .box, #home .panel, #home .bottom .footer {background-color: " + (val != "" ? val : "transparent") + " !important}";
-      css2 += "#home .bottom svg {fill: " + (val != "" ? val : "transparent") + " !important}";
-    }
-    if (options["containerBackgroundsCheck"] == true && options["ingameContainerBackgroundsCheck"] !== false) {
-      options["ingameContainerBackgrounds"] = options["containerBackgrounds"];
-      options["ingameContainerBackgroundsCheck"] = true;
-    }
-    if (options["ingameContainerBackgroundsCheck"] == true) {
-      const val = options["ingameContainerBackgrounds"] ? options["ingameContainerBackgrounds"].trim() : "";
-      css2 += "#game-bar, .clickable,  #game-room .settings, #game-room .players,   .tooltip .tooltip-content, #imageAgent, #gamemodePopup, #optionsPopup, #downloadPopup, #sharePopup, #typoUserInfo, #imageOptions, div#game-toolbar.typomod div.tools-container div.tools div.tool, #game-toolbar divdiv.preview div.graphic-container, #game-room .container-settings, #game-chat .container, #game-players .players-list .player, #game-players .players-list .player.odd {background-color: " + (val != "" ? val : "transparent") + " !important}";
-      css2 += "#game-players .players-list .player.odd{background-image: linear-gradient(0, " + (val != "" ? val : "transparent") + ", " + (val != "" ? val : "transparent") + ");}";
-      css2 += "#game-chat .chat-content {background:none}";
-      css2 += ":root{ --COLOR_TOOL_TIP_BG: " + val + " !important; --COLOR_CHAT_BG_BASE: " + val + " !important; } ";
-      css2 += "#game-players div.list div.player div.bubble div.arrow{border-right-color:" + val + "} #game-players div.list div.player div.bubble div.content{background-color:" + val + "}";
-      css2 += "#game-chat .chat-content p:nth-child(even), #game-chat .chat-content p.guessed:nth-child(even) {background-color: #ffffff20;} #game-chat .chat-content p.guessed:nth-child(odd){background-color:transparent}";
-    }
-    if (options["containerOutlinesCheck"] == true) {
-      const val = options["containerOutlines"] ? options["containerOutlines"].trim() : "";
-      css2 += "#game-bar,  #game-room .settings, #game-room .players,   #imageAgent, #modal .box, #home .panel, .modalContainer, #game-chat, #game-players .players-list .player, #imageOptions {border-radius: 4px; border: 2px solid " + (val != "" ? val : "transparent") + " !important}";
-    }
-    if (options["containerImages"] && options["containerImages"].trim() != "") {
-      css2 += "#game-bar, #game-room .settings, #game-room .players,  #imageAgent, #gamemodePopup, #optionsPopup, #downloadPopup, #sharePopup, #typoUserInfo, #imageOptions, #game-room .container-settings, #game-chat, #game-players .players-list  {background-image: url(" + options["containerImages"].trim() + ") !important}";
-      css2 += "#game-players .players-list {background:none !important}";
-    }
-    const color = options["fontColor"] ? options["fontColor"] : "";
-    if (color && color != "") {
-      css2 += "#home .bottom .footer .notice, *:not(.chat-content *), .characters {color:" + color.trim() + " !important}";
-      css2 += "input[type=checkbox].flatUI, #game-chat form input, input[type=text].flatUI, #home .bottom .footer .section-container .section{color:unset}";
-    }
-    if (!options["ingameFontColor"] && options["fontColor"]) {
-      options["ingameFontColor"] = options["fontColor"];
-    }
-    const ingamecolor = options["ingameFontColor"] ? options["ingameFontColor"] : "";
-    if (ingamecolor && ingamecolor != "") {
-      css2 += ":root{ --COLOR_CHAT_TEXT_BASE:" + ingamecolor.trim() + " !important}";
-      css2 += "#game *:not(.chat-content *) {color:" + ingamecolor.trim() + "}";
-      css2 += "div#game-toolbar.typomod div.tools-container div.tools div.tool div.key, #game-word .description, #game-round .round-max, #game-round span, #game-players .player-amount b:nth-child(4), #game-players .player-amount span {color:" + ingamecolor.trim() + "; filter: brightness(0.8);}";
-    }
-    const colorBtns = options["fontColorButtons"] ? options["fontColorButtons"] : "";
-    if (colorBtns && colorBtns != "") css2 += "select, input, button, textarea {color:" + colorBtns.trim() + "}";
-    if (ingamecolor || color || colorBtns) css2 += "#game-clock{color:black !important}";
-    if (options["inputBackgroundsCheck"] == true) {
-      const val = options["inputBackgrounds"] ? options["inputBackgrounds"].trim() : "";
-      css2 += "input[type=checkbox], input[type=checkbox].flatUI,#modal .container .box .content .container-rooms .room, button.flatUI.green,button.flatUI.orange, button.flatUI.blue, button.flatUI, input[type=text].flatUI, .link .input-container .link-overlay, input, textarea, button, select, #quickreact > span {background: " + (val != "" ? val : "transparent") + " !important; box-shadow:none !important;} ";
-      css2 += "button:is(.flatUI, .flatUI.green, .flatUI.orange, .flatUI.blue):is(:hover, :active, :focus), input:is(:hover, :active, :focus), textarea:is(:hover, :active, :focus), button:is(:hover, :active, :focus), select:is(:hover, :active, :focus) {background: " + (val != "" ? val : "transparent") + " !important; opacity: 0.75}";
-      css2 += ":is(#game-room .container-settings .group.customwords .checkbox, .report-menu) input[type=checkbox]:checked:after { content: '🞬'; height:100%; width: 100%; display: grid; place-content: center;}";
-    }
-    if (options["inputOutlinesCheck"] == true) {
-      const val = options["inputOutlines"] ? options["inputOutlines"].trim() : "";
-      css2 += ".link .input-container .link-overlay {display:none !important} input[type=checkbox]{border:none !important;} input, textarea, button, select {border: 2px solid " + (val != "" ? val : "transparent") + " !important; }";
-    }
-    if (options["hideFooter"] == true) {
-      css2 += ".tos, .notice {display:none}";
-    }
-    if (options["hideTypoInfo"] == true) {
-      css2 += "#typoUserInfo {display:none !important}";
-    }
-    if (options["hideDiscord"] == true) {
-      css2 += "#home .socials {opacity:0}";
-    }
-    if (options["hideInGameLogo"] == true) {
-      css2 += "#game #game-logo{display:none} #game{margin-top:2em}";
-    }
-    if (options["hideAvatarLogo"] == true) {
-      css2 += "#home .logo-big .avatar-container {display:none }";
-    }
-    if (options["hideTypoPanels"] == true) {
-      css2 += "#panelgrid .panel:is(:first-child, :last-child) {display:none } #panelgrid{grid-template-columns: 100% !important}";
-    }
-    if (options["hideAvatarSprites"] == true) {
-      css2 += ".avatar-customizer .spriteSlot{display:none }";
-      css2 += ".avatar-customizer {background-image: unset !important }";
-      css2 += ".avatar-customizer .color, .avatar-customizer .mouth, .avatar-customizer .eyes {opacity: 1 !important}";
-    }
-    theme.misc.cssText = css2;
-  }
-  __name(convertOldTheme, "convertOldTheme");
-  var __defProp$x = Object.defineProperty;
-  var __getOwnPropDesc$3 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$x = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$3(target, key) : target;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$x(target, key, result);
-    return result;
-  }, "__decorateClass$x");
-  var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$1");
-  let ThemesService = (_Ba = class {
-    constructor(loggerFactory2, _elementsSetup, _apiService) {
-      __publicField(this, "_logger");
-      __publicField(this, "_originalTheme", createEmptyTheme("Mel", "Original Skribbl", 0));
-      __publicField(this, "_activeThemeSetting", new ExtensionSetting("active_theme_local_id", void 0));
-      __publicField(this, "_savedThemesSetting", new ExtensionSetting("saved_themes", [{
-        theme: this._originalTheme,
-        savedAt: Date.now(),
-        enableManage: false
-      }]));
-      __publicField(this, "_loadedEditorTheme$", new BehaviorSubject(void 0));
-      this._elementsSetup = _elementsSetup;
-      this._apiService = _apiService;
-      this._logger = loggerFactory2(this);
-    }
-    get activeThemeSetting() {
-      return this._activeThemeSetting.asFrozen;
-    }
-    get savedThemesSetting() {
-      return this._savedThemesSetting.asFrozen;
-    }
-    get loadedEditorTheme$() {
-      return this._loadedEditorTheme$.asObservable();
-    }
-    get loadedEditorThemeStore() {
-      return fromObservable(this._loadedEditorTheme$, this._loadedEditorTheme$.value);
-    }
-    /**
-     * Load a theme to the editor; might receive changes via updateLoadedEditorTheme without saving later
-     * @param theme
-     */
-    async loadThemeToEditor(theme) {
-      this._logger.info("Loading theme to editor", theme);
-      const themes = await this._savedThemesSetting.getValue();
-      const existingTheme = themes.find((t) => t.theme.meta.id === theme.theme.meta.id);
-      if (existingTheme === void 0) {
-        this._logger.error("Theme not found", theme);
-        throw new Error("Theme not found");
-      }
-      this._loadedEditorTheme$.next(structuredClone(theme));
-    }
-    /**
-     * Update the loaded theme in the editor
-     * @param theme
-     */
-    updateLoadedEditorTheme(theme) {
-      var _a2;
-      this._logger.debug("Updating loaded theme", theme);
-      if (((_a2 = this._loadedEditorTheme$.value) == null ? void 0 : _a2.theme.meta.id) !== theme.theme.meta.id) {
-        this._logger.error("Theme not loaded or different theme loaded", theme);
-        throw new Error("Theme not loaded or different theme loaded");
-      }
-      this._loadedEditorTheme$.next(structuredClone(theme));
-    }
-    /**
-     * Unload a theme from the editor
-     */
-    async unloadThemeFromEditor() {
-      this._logger.info("Unloading theme from editor");
-      this._loadedEditorTheme$.next(void 0);
-    }
-    /**
-     * Create an empty new local theme and sore it
-     */
-    async createLocalTheme() {
-      this._logger.info("Creating new theme");
-      const elements2 = await this._elementsSetup.complete();
-      const username = elements2.inputName.value.length > 0 ? elements2.inputName.value : "User";
-      const theme = createEmptyTheme(username, "Untitled Theme");
-      const themes = await this._savedThemesSetting.getValue();
-      const newTheme = {
-        theme,
-        savedAt: Date.now(),
-        enableManage: true
-      };
-      await this._savedThemesSetting.setValue([newTheme, ...themes]);
-      return newTheme;
-    }
-    /**
-     * Save the state of the loaded theme in the editor to the original local theme and unload theme from editor
-     */
-    async saveLoadedEditorTheme() {
-      this._logger.info("Updating local theme and unloading from editor");
-      const editorTheme = this._loadedEditorTheme$.value;
-      const themes = await this._savedThemesSetting.getValue();
-      const savedTheme = themes.find((t) => t.theme.meta.id === (editorTheme == null ? void 0 : editorTheme.theme.meta.id));
-      if (editorTheme === void 0 || savedTheme === void 0) {
-        this._logger.error("Theme to update not found", editorTheme);
-        throw new Error("Theme to update not found");
-      }
-      savedTheme.theme = editorTheme.theme;
-      savedTheme.savedAt = Date.now();
-      await this._savedThemesSetting.setValue([savedTheme, ...themes.filter((t) => t.theme.meta.id !== savedTheme.theme.meta.id)]);
-      this._loadedEditorTheme$.next(void 0);
-      await this._activeThemeSetting.setValue(savedTheme.theme.meta.id);
-      return savedTheme;
-    }
-    async importOldTheme(options, name) {
-      this._logger.info("Importing old theme", options);
-      const theme = createEmptyTheme("Unknown", name);
-      convertOldTheme(options, theme);
-      const themes = await this._savedThemesSetting.getValue();
-      const existingTheme = themes.find((t) => t.theme.meta.id === theme.meta.id);
-      if (existingTheme !== void 0) {
-        this._logger.warn("Theme already exists, assigning new ID", theme);
-        theme.meta.id = Date.now();
-      }
-      const savedTheme = {
-        theme,
-        savedAt: Date.now(),
-        publicTheme: void 0,
-        enableManage: true
-      };
-      await this._savedThemesSetting.setValue([savedTheme, ...themes]);
-      return savedTheme;
-    }
-    async importThemeFromString(themeString) {
-      const theme = JSON.parse(themeString);
-      if (typeof theme !== "object" || theme === null) {
-        throw new Error("Invalid theme data");
-      }
-      const savedTheme = {
-        theme,
-        savedAt: Date.now(),
-        publicTheme: void 0,
-        enableManage: true
-      };
-      const themes = await this._savedThemesSetting.getValue();
-      const existingTheme = themes.find((t) => t.theme.meta.id === theme.meta.id);
-      if (existingTheme !== void 0) {
-        this._logger.warn("Theme already exists, assigning new ID", theme);
-        theme.meta.id = Date.now();
-      }
-      await this._savedThemesSetting.setValue([savedTheme, ...themes]);
-      return savedTheme;
-    }
-    /**
-     * Download a featured theme and save to local themes
-     * @param theme
-     */
-    async savePublicTheme(theme) {
-      this._logger.info("Saving public theme", theme);
-      const themeData = await this._apiService.getApi(ThemesApi).useThemeById({ id: theme.id });
-      const saveData = {
-        theme: themeData,
-        savedAt: Date.now(),
-        publicTheme: {
-          publicId: theme.id,
-          localVersion: theme.version
-        },
-        enableManage: false
-      };
-      let currentThemes = await this._savedThemesSetting.getValue();
-      const existingTheme = currentThemes.find((t) => t.theme.meta.id === themeData.meta.id);
-      if (existingTheme !== void 0) {
-        this._logger.warn("Theme already saved", theme);
-        return existingTheme;
-      }
-      currentThemes = [saveData, ...currentThemes];
-      await this._savedThemesSetting.setValue(currentThemes);
-      return saveData;
-    }
-    /**
-     * Activate a local theme
-     */
-    async activateLocalTheme(id2) {
-      this._logger.info("Activating local theme", id2);
-      const themes = await this._savedThemesSetting.getValue();
-      const existingTheme = themes.find((t) => t.theme.meta.id === id2);
-      if (existingTheme === void 0) {
-        this._logger.warn("Local Theme not found", id2);
-        throw new Error("Local Theme not found");
-      }
-      this._loadedEditorTheme$.next(void 0);
-      await this._activeThemeSetting.setValue(existingTheme.theme.meta.id);
-      return existingTheme;
-    }
-    /**
-     * Activate a saved public theme
-     */
-    async activatePublicTheme(theme) {
-      this._logger.debug("Getting saved theme of public listing", theme);
-      const themes = await this._savedThemesSetting.getValue();
-      const existingTheme = themes.find((t) => {
-        var _a2;
-        return ((_a2 = t.publicTheme) == null ? void 0 : _a2.publicId) === theme.id;
-      });
-      if (existingTheme === void 0) {
-        this._logger.error("Theme not found", theme);
-        throw new Error("Theme not found");
-      }
-      this._loadedEditorTheme$.next(void 0);
-      await this._activeThemeSetting.setValue(existingTheme.theme.meta.id);
-      return existingTheme;
-    }
-    /**
-     * Removed a saved theme, no matter if local or public
-     * @param localId
-     */
-    async removeSavedTheme(localId) {
-      var _a2;
-      this._logger.info("Removing saved theme", localId);
-      const themes = await this._savedThemesSetting.getValue();
-      const theme = themes.find((t) => t.theme.meta.id === localId);
-      if (theme === void 0) {
-        this._logger.error("Theme not found", localId);
-        throw new Error("Theme not found");
-      }
-      const filtered = themes.filter((t) => t.theme.meta.id !== localId);
-      await this._savedThemesSetting.setValue(filtered);
-      if (((_a2 = this._loadedEditorTheme$.value) == null ? void 0 : _a2.theme.meta.id) === localId) {
-        this._loadedEditorTheme$.next(void 0);
-      }
-      return theme;
-    }
-    /**
-     * Share a theme by uploading it, creating a share id and copying it to clipboard
-     * @param theme
-     */
-    async shareTheme(theme) {
-      this._logger.debug("Sharing theme", theme);
-      const response = await this._apiService.getApi(ThemesApi).shareTheme({ themeDto: theme });
-      const shareId = response.id;
-      this._logger.info("created theme share id:", response.id);
-      return shareId;
-    }
-    /**
-     * Import a theme by share id
-     * @param shareId
-     */
-    async importTheme(shareId) {
-      this._logger.debug("Importing theme", shareId);
-      const theme = await this._apiService.getApi(ThemesApi).getThemeById({ id: shareId });
-      this._logger.info("Loaded theme", theme);
-      const themes = await this._savedThemesSetting.getValue();
-      const existingTheme = themes.find((t) => t.theme.meta.id === theme.meta.id);
-      if (existingTheme !== void 0) {
-        this._logger.warn("Theme already exists, assigning new ID", theme);
-        theme.meta.id = Date.now();
-      }
-      const savedTheme = {
-        theme,
-        savedAt: Date.now(),
-        publicTheme: void 0,
-        enableManage: true
-      };
-      await this._savedThemesSetting.setValue([savedTheme, ...themes]);
-      return savedTheme;
-    }
-  }, __name(_Ba, "ThemesService"), _Ba);
-  ThemesService = __decorateClass$x([
-    injectable(),
-    __decorateParam$1(0, inject(loggerFactory)),
-    __decorateParam$1(1, inject(ElementsSetup)),
-    __decorateParam$1(2, inject(ApiService))
-  ], ThemesService);
-  const getCssVariableSelectorHooks = /* @__PURE__ */ __name((cssText, colorVariables) => {
-    var _a2;
-    const parser = new DOMParser();
-    const css2 = parser.parseFromString(`<style>${cssText}</style>`, "text/html").querySelector("style");
-    const rules = (_a2 = css2 == null ? void 0 : css2.sheet) == null ? void 0 : _a2.cssRules;
-    if (rules === null || rules === void 0) {
-      throw new Error("Failed to parse css rules");
-    }
-    const variableSelectors = {};
-    colorVariables.forEach((colorVariable) => {
-      variableSelectors[colorVariable] = [];
-    });
-    for (const rule of rules) {
-      if (rule instanceof CSSStyleRule) {
-        for (const propertyName in rule.style) {
-          const propertyValue = rule.style.getPropertyValue(propertyName);
-          colorVariables.forEach((colorVariable) => {
-            if (propertyValue.includes(`var(${colorVariable}`)) {
-              variableSelectors[colorVariable].push(rule.selectorText);
-            }
-          });
-        }
-      }
-    }
-    return variableSelectors;
-  }, "getCssVariableSelectorHooks");
-  var __defProp$w = Object.defineProperty;
-  var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$w = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key) : target;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$w(target, key, result);
-    return result;
-  }, "__decorateClass$w");
-  let CssColorVarSelectorsSetup = (_Ca = class extends Setup {
-    async runSetup() {
-      const css2 = await (await fetch("/css/style.css")).text();
-      return getCssVariableSelectorHooks(css2, Object.keys(themeColors));
-    }
-  }, __name(_Ca, "CssColorVarSelectorsSetup"), _Ca);
-  CssColorVarSelectorsSetup = __decorateClass$w([
-    earlySetup()
-  ], CssColorVarSelectorsSetup);
-  const generateColorScheme = /* @__PURE__ */ __name((mainColor, textColor, useIngame, useInputs, invertInputText) => {
-    const theme = structuredClone(themeColors);
-    const mainHueBase = 226;
-    const mainSatBase = 85;
-    const mainLigBase = 32;
-    const mainOpBase = 0.75;
-    if (mainColor) {
-      const mainHsl = mainColor.hsl;
-      const mainHue = mainHsl[0];
-      const mainSat = mainHsl[1];
-      const mainLig = mainHsl[2];
-      const mains = [
-        "--COLOR_PANEL_BG",
-        "--COLOR_PANEL_LO",
-        "--COLOR_PANEL_BUTTON",
-        "--COLOR_PANEL_BUTTON_HOVER",
-        "--COLOR_PANEL_BUTTON_ACTIVE",
-        "--COLOR_PANEL_HI",
-        "--COLOR_PANEL_FOCUS",
-        "--COLOR_PANEL_BORDER",
-        "--COLOR_TOOL_TIP_BG"
-      ];
-      mains.forEach((k) => theme[k][0] = (theme[k][0] - mainHueBase + mainHue) % 360);
-      mains.forEach((k) => theme[k][1] = theme[k][1] * (mainSat / 100));
-      mains.forEach((k) => theme[k][2] = theme[k][2] * (mainLig / 100));
-      theme["--COLOR_CHAT_SCROLLBAR"] = [...theme["--COLOR_PANEL_LO"]];
-      theme["--COLOR_CHAT_SCROLLBAR_THUMB"] = [...theme["--COLOR_PANEL_HI"]];
-      if (useIngame) {
-        const themeSat = mainSatBase * (mainSat / 100);
-        const themeLight = mainLigBase * (mainLig / 100);
-        theme["--COLOR_CHAT_BG_BASE"] = [mainHue, themeSat, themeLight, mainOpBase];
-        theme["--COLOR_CHAT_BG_ALT"] = [mainHue, themeSat, themeLight - 7, mainOpBase];
-        theme["--COLOR_PLAYER_BG_BASE"] = [mainHue, themeSat, themeLight, mainOpBase];
-        theme["--COLOR_PLAYER_BG_ALT"] = [mainHue, themeSat, themeLight - 7, mainOpBase];
-      }
-      if (useInputs) {
-        theme["--COLOR_INPUT_BORDER"] = [mainHue, mainSatBase, 75 * (mainLigBase / 100), 0.4];
-        theme["--COLOR_INPUT_BORDER_FOCUS"] = [mainHue, mainSatBase, 85 * (mainLigBase / 100), 0.4];
-        theme["--COLOR_INPUT_BG"] = [mainHue, mainSatBase, 80 * (mainLigBase / 100), 0.3];
-        theme["--COLOR_INPUT_HOVER"] = [mainHue, mainSatBase, 90 * (mainLigBase / 100), 0.3];
-      }
-    }
-    if (textColor) {
-      const textHsl = textColor.hsl;
-      const texts = [
-        /* if ingame generation enabled */
-        ...useIngame ? [
-          "--COLOR_GAMEBAR_TEXT",
-          "--COLOR_GAMEBAR_ROUND_TEXT",
-          "--COLOR_PLAYER_TEXT_BASE",
-          "--COLOR_CHAT_TEXT_BASE"
-        ] : [],
-        /* if input generation enabled */
-        ...useInputs ? [
-          "--COLOR_INPUT_TEXT"
-        ] : [],
-        "--COLOR_PANEL_TEXT"
-      ];
-      texts.forEach((k) => theme[k] = [textHsl[0], textHsl[1], textHsl[2], ...textHsl[3] ? [textHsl[3]] : []]);
-      if (useInputs) theme["--COLOR_PANEL_TEXT_PLACEHOLDER"] = [textHsl[0], textHsl[1], textHsl[2] - 50];
-      if (useIngame) theme["--COLOR_GAMEBAR_WORD_DESCRIPTION"] = [textHsl[0], textHsl[1], textHsl[2], 0.7];
-      if (invertInputText) theme["--COLOR_INPUT_TEXT"][2] = 100 - theme["--COLOR_INPUT_TEXT"][2];
-    }
-    return theme;
-  }, "generateColorScheme");
-  const generateThemeBackgroundElement = /* @__PURE__ */ __name((theme) => {
-    return createElement(`<div id='typo-theme-background-${theme.meta.id}' class="typo-theme-background"></div>`);
-  }, "generateThemeBackgroundElement");
-  const stringHasContent = /* @__PURE__ */ __name((str) => {
-    return str !== void 0 && str.trim().length > 0;
-  }, "stringHasContent");
-  const generateStyleElementForTheme = /* @__PURE__ */ __name((theme, selectorHooks) => {
-    const colorsCss = Object.entries(theme.colors).map((entry) => {
-      const value = entry[1];
-      const colorString = value.length == 3 ? `hsl(${value[0]}, ${value[1]}%, ${value[2]}%)` : `hsla(${value[0]}, ${value[1]}%, ${value[2]}%, ${value[3]})`;
-      return `${entry[0]}: ${colorString};`;
-    }).join("\n");
-    const style2 = document.createElement("STYLE");
-    style2.id = `typo-theme-style-${theme.meta.id}`;
-    style2.innerHTML = `
-        :root {${colorsCss}}
-        body {
-            background: none;
-        }
-        .typo-theme-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: ${theme.images.backgroundTint ?? ""};
-            z-index: -10;
-            pointer-events: none;
-            filter: brightness(${!stringHasContent(theme.images.urlBackground) && (theme.images.backgroundTint ?? "transparent") !== "transparent" ? 4 : 1});
-        }
-        .typo-theme-background::after {
-            image-rendering: unset;
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-position: center;
-            background-image: url(${stringHasContent(theme.images.urlBackground) ? theme.images.urlBackground : "/img/background.png"});
-            background-repeat: ${!stringHasContent(theme.images.urlBackground) || theme.images.backgroundRepeat ? "repeat" : "no-repeat"};
-            background-size: ${!stringHasContent(theme.images.urlBackground) ? "350px" : theme.images.backgroundRepeat ? "auto" : "cover"};
-            mix-blend-mode: ${theme.images.backgroundTint == "transparent" || !stringHasContent(theme.images.backgroundTint) ? "none" : "multiply"};
-            filter: ${theme.images.backgroundTint == "transparent" || !stringHasContent(theme.images.backgroundTint) ? "none" : "saturate(0%)"};
-        }
-        body:has(#game[style*="display: flex"]) .typo-theme-background${stringHasContent(theme.images.urlBackgroundGame) ? "" : ".disabled"}::after {
-            background-image: url(${theme.images.urlBackgroundGame});
-        }
-
-        ${theme.misc.hideFooter ? ".tos, .notice {display:none}" : ""}
-        
-        ${theme.misc.hideInGameLogo ? "#game #game-logo{display:none} #game{margin-top:2em}" : ""}
-
-        ${theme.misc.hideAvatarLogo ? "#home .logo-big .avatar-container {display:none }" : ""}
-
-        ${theme.misc.hideSkribblPanels ? ".bottom .footer .section-container { display: none !important }" : ""}
-
-        ${stringHasContent(theme.images.containerImages) ? `
-        #game-bar, #game-room .settings, #game-room .players,  #imageAgent, #gamemodePopup, #optionsPopup, #downloadPopup, 
-        #sharePopup, #typoUserInfo, #imageOptions, #game-room .container-settings, #game-chat 
-        .chat-content, #game-players .players-list  {background-image: url(${theme.images.containerImages}) !important}
-        #game-players .players-list .player {background:none !important}
-        ` : ""}
-
-        .flatUi.orange, .button-orange {
-            background-color: var(--COLOR_BUTTON_DANGER_BG) !important;
-            color: var(--COLOR_BUTTON_DANGER_TEXT) !important;
-        }
-        .flatUI.green, .button-play, #start-game {
-            color: var(--COLOR_BUTTON_SUBMIT_TEXT) !important;
-            background-color: var(--COLOR_BUTTON_SUBMIT_BG) !important;
-        }
-        .flatUI.blue, .button-create, .button-blue, #copy-invite {
-            background-color: var(--COLOR_BUTTON_NORMAL_BG) !important;
-            color: var(--COLOR_BUTTON_NORMAL_TEXT) !important;
-        }
-
-        :is(.flatUi.orange, .button-orange):is(:hover, :active, :focus) {
-            background-color: var(--COLOR_BUTTON_DANGER_BG) !important;
-            color: var(--COLOR_BUTTON_DANGER_TEXT) !important;
-            opacity: 0.8;
-        }
-        :is(.flatUI.green, .button-play, #start-game):is(:hover, :active, :focus) {
-            color: var(--COLOR_BUTTON_SUBMIT_TEXT) !important;
-            background-color: var(--COLOR_BUTTON_SUBMIT_BG) !important;
-            opacity: 0.8;
-        }
-        :is(.flatUI.blue, .button-create, .button-blue, #copy-invite):is(:hover, :active, :focus) {
-            background-color: var(--COLOR_BUTTON_NORMAL_BG) !important;
-            color: var(--COLOR_BUTTON_NORMAL_TEXT) !important;
-            opacity: 0.8;
-        }
-
-        ${stringHasContent(theme.misc.fontStyle) ? `*{font-family:'${theme.misc.fontStyle.trim().split(":")[0].replaceAll("+", " ")}', sans-serif !important}` : ""}
-
-        ${stringHasContent(theme.images.urlLogo) ? `
-          div.logo-big a {display: flex; justify-content: center }
-          div.logo-big img, div#game-logo img {max-height:20vh; content: url(${theme.images.urlLogo}) }
-        ` : ""}
-
-        ${Object.entries(theme.hooks ? theme.hooks : {}).filter((entry) => entry[1] !== "").map((entry) => `${selectorHooks[entry[0]].join(",")}{${entry[1]}}`).join("\n")}
-
-        ::-webkit-scrollbar {
-            width: 14px;
-            border-radius: 7px;
-            background-color: var(--COLOR_PANEL_LO); 
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            border-radius: 7px;
-            background-color: var(--COLOR_PANEL_HI)
-        }
-
-        #game-chat ::-webkit-scrollbar {
-            width: 14px;
-            border-radius: 7px;
-            background-color: var(--COLOR_CHAT_SCROLLBAR); 
-        }
-        
-        #game-chat ::-webkit-scrollbar-thumb {
-            border-radius: 7px;
-            background-color: var(--COLOR_CHAT_SCROLLBAR_THUMB); 
-        }
-
-        ${theme.misc.cssText ?? ""}
-    
-        `;
-    return style2;
-  }, "generateStyleElementForTheme");
-  const generateThemeExternalCssElement = /* @__PURE__ */ __name((theme) => {
-    return theme.misc.themeCssUrl && theme.misc.themeCssUrl.length > 0 ? [
-      createElement(`<link id='typo-theme-external-css-${theme.meta.id}' rel="stylesheet" href="${theme.misc.themeCssUrl}">`)
-    ] : [];
-  }, "generateThemeExternalCssElement");
-  const generateThemeFontElements = /* @__PURE__ */ __name((theme) => {
-    var _a2;
-    return theme.misc.fontStyle && theme.misc.fontStyle.length > 0 ? [
-      createElement(`<link id='typo-theme-font-preconnect-${theme.meta.id}' rel="preconnect" href="https://fonts.gstatic.com">`),
-      createElement(`<link id='typo-theme-font-style-${theme.meta.id}' href="https://fonts.googleapis.com/css2?family=${(_a2 = theme.misc.fontStyle) == null ? void 0 : _a2.trim()}&display=swap" rel="stylesheet">`)
-    ] : [];
-  }, "generateThemeFontElements");
-  const generateThemeCustomHtmlElement = /* @__PURE__ */ __name((theme) => {
-    return theme.misc.htmlText && theme.misc.htmlText.length > 0 ? [
-      createElement(`<div id='typo-theme-html-${theme.meta.id}'>${theme.misc.htmlText}</div>`)
-    ] : [];
-  }, "generateThemeCustomHtmlElement");
-  function get_each_context$j(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[14] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context$j, "get_each_context$j");
-  function create_catch_block(ctx) {
-    return {
-      c: noop,
-      m: noop,
-      p: noop,
-      i: noop,
-      o: noop,
-      d: noop
-    };
-  }
-  __name(create_catch_block, "create_catch_block");
-  function create_then_block(ctx) {
-    let div;
-    let current;
-    let each_value = ensure_array_like(
-      /*themes*/
-      ctx[13]
-    );
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$j(get_each_context$j(ctx, each_value, i));
-    }
-    const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-      each_blocks[i] = null;
-    }), "out");
-    return {
-      c() {
-        div = element("div");
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        attr(div, "class", "typo-themes-browser-list svelte-163v0av");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(div, null);
-          }
-        }
-        current = true;
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*feature, currentTheme, $savedThemes, $devmode*/
-        15) {
-          each_value = ensure_array_like(
-            /*themes*/
-            ctx2[13]
-          );
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$j(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-              transition_in(each_blocks[i], 1);
-            } else {
-              each_blocks[i] = create_each_block$j(child_ctx);
-              each_blocks[i].c();
-              transition_in(each_blocks[i], 1);
-              each_blocks[i].m(div, null);
-            }
-          }
-          group_outros();
-          for (i = each_value.length; i < each_blocks.length; i += 1) {
-            out(i);
-          }
-          check_outros();
-        }
-      },
-      i(local) {
-        if (current) return;
-        for (let i = 0; i < each_value.length; i += 1) {
-          transition_in(each_blocks[i]);
-        }
-        current = true;
-      },
-      o(local) {
-        each_blocks = each_blocks.filter(Boolean);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          transition_out(each_blocks[i]);
-        }
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        destroy_each(each_blocks, detaching);
-      }
-    };
-  }
-  __name(create_then_block, "create_then_block");
-  function create_if_block_1$9(ctx) {
-    let div0;
-    let t0;
-    let div1;
-    let span0;
-    let t1;
-    let t2_value = (
-      /*theme*/
-      ctx[14].version + ""
-    );
-    let t2;
-    let t3;
-    let span1;
-    let t4;
-    let t5_value = (
-      /*theme*/
-      ctx[14].id + ""
-    );
-    let t5;
-    return {
-      c() {
-        div0 = element("div");
-        t0 = space();
-        div1 = element("div");
-        span0 = element("span");
-        t1 = text("v");
-        t2 = text(t2_value);
-        t3 = space();
-        span1 = element("span");
-        t4 = text("#");
-        t5 = text(t5_value);
-        attr(div0, "class", "svelte-163v0av");
-        attr(span0, "class", "svelte-163v0av");
-        attr(span1, "class", "svelte-163v0av");
-        attr(div1, "class", "svelte-163v0av");
-      },
-      m(target, anchor) {
-        insert(target, div0, anchor);
-        insert(target, t0, anchor);
-        insert(target, div1, anchor);
-        append(div1, span0);
-        append(span0, t1);
-        append(span0, t2);
-        append(div1, t3);
-        append(div1, span1);
-        append(span1, t4);
-        append(span1, t5);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*feature*/
-        1 && t2_value !== (t2_value = /*theme*/
-        ctx2[14].version + "")) set_data(t2, t2_value);
-        if (dirty & /*feature*/
-        1 && t5_value !== (t5_value = /*theme*/
-        ctx2[14].id + "")) set_data(t5, t5_value);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div0);
-          detach(t0);
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_if_block_1$9, "create_if_block_1$9");
-  function create_else_block$9(ctx) {
-    let flatbutton;
-    let current;
-    function click_handler_1() {
-      return (
-        /*click_handler_1*/
-        ctx[12](
-          /*theme*/
-          ctx[14]
-        )
-      );
-    }
-    __name(click_handler_1, "click_handler_1");
-    flatbutton = new Flat_button({
-      props: { content: "Download", color: "blue" }
-    });
-    flatbutton.$on("click", click_handler_1);
-    return {
-      c() {
-        create_component(flatbutton.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(flatbutton, target, anchor);
-        current = true;
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(flatbutton, detaching);
-      }
-    };
-  }
-  __name(create_else_block$9, "create_else_block$9");
-  function create_if_block$g(ctx) {
-    var _a2, _b2, _c2, _d2;
-    let flatbutton;
-    let current;
-    function click_handler2() {
-      return (
-        /*click_handler*/
-        ctx[11](
-          /*theme*/
-          ctx[14]
-        )
-      );
-    }
-    __name(click_handler2, "click_handler");
-    flatbutton = new Flat_button({
-      props: {
-        content: (
-          /*currentTheme*/
-          ((_b2 = (_a2 = ctx[2]) == null ? void 0 : _a2.publicTheme) == null ? void 0 : _b2.publicId) === /*theme*/
-          ctx[14].id ? "Active" : "Activate"
-        ),
-        disabled: (
-          /*currentTheme*/
-          ((_d2 = (_c2 = ctx[2]) == null ? void 0 : _c2.publicTheme) == null ? void 0 : _d2.publicId) === /*theme*/
-          ctx[14].id
-        ),
-        color: "green"
-      }
-    });
-    flatbutton.$on("click", click_handler2);
-    return {
-      c() {
-        create_component(flatbutton.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(flatbutton, target, anchor);
-        current = true;
-      },
-      p(new_ctx, dirty) {
-        var _a3, _b3, _c3, _d3;
-        ctx = new_ctx;
-        const flatbutton_changes = {};
-        if (dirty & /*currentTheme, feature*/
-        5) flatbutton_changes.content = /*currentTheme*/
-        ((_b3 = (_a3 = ctx[2]) == null ? void 0 : _a3.publicTheme) == null ? void 0 : _b3.publicId) === /*theme*/
-        ctx[14].id ? "Active" : "Activate";
-        if (dirty & /*currentTheme, feature*/
-        5) flatbutton_changes.disabled = /*currentTheme*/
-        ((_d3 = (_c3 = ctx[2]) == null ? void 0 : _c3.publicTheme) == null ? void 0 : _d3.publicId) === /*theme*/
-        ctx[14].id;
-        flatbutton.$set(flatbutton_changes);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(flatbutton, detaching);
-      }
-    };
-  }
-  __name(create_if_block$g, "create_if_block$g");
-  function create_each_block$j(ctx) {
-    let div2;
-    let b;
-    let t0_value = (
-      /*theme*/
-      ctx[14].name + ""
-    );
-    let t0;
-    let t1;
-    let div0;
-    let t2;
-    let t3_value = (
-      /*theme*/
-      ctx[14].author + ""
-    );
-    let t3;
-    let t4;
-    let t5;
-    let show_if;
-    let current_block_type_index;
-    let if_block1;
-    let t6;
-    let div1;
-    let t7_value = (
-      /*theme*/
-      ctx[14].downloads + ""
-    );
-    let t7;
-    let t8;
-    let t9;
-    let current;
-    function func2(...args) {
-      return (
-        /*func*/
-        ctx[10](
-          /*theme*/
-          ctx[14],
-          ...args
-        )
-      );
-    }
-    __name(func2, "func");
-    let if_block0 = (
-      /*$devmode*/
-      ctx[3] && create_if_block_1$9(ctx)
-    );
-    const if_block_creators = [create_if_block$g, create_else_block$9];
-    const if_blocks = [];
-    function select_block_type(ctx2, dirty) {
-      if (dirty & /*$savedThemes, feature*/
-      3) show_if = null;
-      if (show_if == null) show_if = !!/*$savedThemes*/
-      ctx2[1].some(func2);
-      if (show_if) return 0;
-      return 1;
-    }
-    __name(select_block_type, "select_block_type");
-    current_block_type_index = select_block_type(ctx, -1);
-    if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    return {
-      c() {
-        div2 = element("div");
-        b = element("b");
-        t0 = text(t0_value);
-        t1 = space();
-        div0 = element("div");
-        t2 = text("by ");
-        t3 = text(t3_value);
-        t4 = space();
-        if (if_block0) if_block0.c();
-        t5 = space();
-        if_block1.c();
-        t6 = space();
-        div1 = element("div");
-        t7 = text(t7_value);
-        t8 = text(" downloads");
-        t9 = space();
-        attr(div0, "class", "svelte-163v0av");
-        attr(div1, "class", "svelte-163v0av");
-        attr(div2, "class", "typo-themes-browser-item svelte-163v0av");
-      },
-      m(target, anchor) {
-        insert(target, div2, anchor);
-        append(div2, b);
-        append(b, t0);
-        append(div2, t1);
-        append(div2, div0);
-        append(div0, t2);
-        append(div0, t3);
-        append(div2, t4);
-        if (if_block0) if_block0.m(div2, null);
-        append(div2, t5);
-        if_blocks[current_block_type_index].m(div2, null);
-        append(div2, t6);
-        append(div2, div1);
-        append(div1, t7);
-        append(div1, t8);
-        append(div2, t9);
-        current = true;
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-        if ((!current || dirty & /*feature*/
-        1) && t0_value !== (t0_value = /*theme*/
-        ctx[14].name + "")) set_data(t0, t0_value);
-        if ((!current || dirty & /*feature*/
-        1) && t3_value !== (t3_value = /*theme*/
-        ctx[14].author + "")) set_data(t3, t3_value);
-        if (
-          /*$devmode*/
-          ctx[3]
-        ) {
-          if (if_block0) {
-            if_block0.p(ctx, dirty);
-          } else {
-            if_block0 = create_if_block_1$9(ctx);
-            if_block0.c();
-            if_block0.m(div2, t5);
-          }
-        } else if (if_block0) {
-          if_block0.d(1);
-          if_block0 = null;
-        }
-        let previous_block_index = current_block_type_index;
-        current_block_type_index = select_block_type(ctx, dirty);
-        if (current_block_type_index === previous_block_index) {
-          if_blocks[current_block_type_index].p(ctx, dirty);
-        } else {
-          group_outros();
-          transition_out(if_blocks[previous_block_index], 1, 1, () => {
-            if_blocks[previous_block_index] = null;
-          });
-          check_outros();
-          if_block1 = if_blocks[current_block_type_index];
-          if (!if_block1) {
-            if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-            if_block1.c();
-          } else {
-            if_block1.p(ctx, dirty);
-          }
-          transition_in(if_block1, 1);
-          if_block1.m(div2, t6);
-        }
-        if ((!current || dirty & /*feature*/
-        1) && t7_value !== (t7_value = /*theme*/
-        ctx[14].downloads + "")) set_data(t7, t7_value);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(if_block1);
-        current = true;
-      },
-      o(local) {
-        transition_out(if_block1);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div2);
-        }
-        if (if_block0) if_block0.d();
-        if_blocks[current_block_type_index].d();
-      }
-    };
-  }
-  __name(create_each_block$j, "create_each_block$j");
-  function create_pending_block(ctx) {
-    return {
-      c: noop,
-      m: noop,
-      p: noop,
-      i: noop,
-      o: noop,
-      d: noop
-    };
-  }
-  __name(create_pending_block, "create_pending_block");
-  function create_fragment$w(ctx) {
-    let div;
-    let t2;
-    let await_block_anchor;
-    let promise;
-    let current;
-    let info = {
-      ctx,
-      current: null,
-      token: null,
-      hasCatch: false,
-      pending: create_pending_block,
-      then: create_then_block,
-      catch: create_catch_block,
-      value: 13,
-      blocks: [, , ,]
-    };
-    handle_promise(promise = /*feature*/
-    ctx[0].getOnlineThemes(), info);
-    return {
-      c() {
-        div = element("div");
-        div.innerHTML = `Here you can discover themes made by other typo users. When you download a theme, it will be activated and saved to your local themes.<br/>
-  When a theme receives an update, it will be automatically downloaded.`;
-        t2 = space();
-        await_block_anchor = empty();
-        info.block.c();
-        attr(div, "class", "typo-themes-browser-header svelte-163v0av");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        insert(target, t2, anchor);
-        insert(target, await_block_anchor, anchor);
-        info.block.m(target, info.anchor = anchor);
-        info.mount = () => await_block_anchor.parentNode;
-        info.anchor = await_block_anchor;
-        current = true;
-      },
-      p(new_ctx, [dirty]) {
-        ctx = new_ctx;
-        info.ctx = ctx;
-        if (dirty & /*feature*/
-        1 && promise !== (promise = /*feature*/
-        ctx[0].getOnlineThemes()) && handle_promise(promise, info)) ;
-        else {
-          update_await_block_branch(info, ctx, dirty);
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(info.block);
-        current = true;
-      },
-      o(local) {
-        for (let i = 0; i < 3; i += 1) {
-          const block = info.blocks[i];
-          transition_out(block);
-        }
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-          detach(t2);
-          detach(await_block_anchor);
-        }
-        info.block.d(detaching);
-        info.token = null;
-        info = null;
-      }
-    };
-  }
-  __name(create_fragment$w, "create_fragment$w");
-  function instance$u($$self, $$props, $$invalidate) {
-    let $currentThemeId;
-    let $savedThemes;
-    let $loadedEditorTheme;
-    let $devmode;
-    let { feature } = $$props;
-    const devmode = feature.devmodeStore;
-    component_subscribe($$self, devmode, (value) => $$invalidate(3, $devmode = value));
-    const savedThemes = feature.savedThemesStore;
-    component_subscribe($$self, savedThemes, (value) => $$invalidate(1, $savedThemes = value));
-    const currentThemeId = feature.activeThemeStore;
-    component_subscribe($$self, currentThemeId, (value) => $$invalidate(8, $currentThemeId = value));
-    const loadedEditorTheme = feature.loadedEditorThemeStore;
-    component_subscribe($$self, loadedEditorTheme, (value) => $$invalidate(9, $loadedEditorTheme = value));
-    let currentTheme;
-    const func2 = /* @__PURE__ */ __name((theme, t) => {
-      var _a2;
-      return ((_a2 = t.publicTheme) == null ? void 0 : _a2.publicId) === theme.id;
-    }, "func");
-    const click_handler2 = /* @__PURE__ */ __name((theme) => feature.activatePublicTheme(theme), "click_handler");
-    const click_handler_1 = /* @__PURE__ */ __name(async (theme) => {
-      await feature.savePublicTheme(theme);
-      await feature.activatePublicTheme(theme);
-    }, "click_handler_1");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-    };
-    $$self.$$.update = () => {
-      if ($$self.$$.dirty & /*$loadedEditorTheme, $savedThemes, $currentThemeId*/
-      770) {
-        {
-          $$invalidate(2, currentTheme = $loadedEditorTheme === void 0 ? $savedThemes.find((t) => t.theme.meta.id === $currentThemeId) : void 0);
-        }
-      }
-    };
-    return [
-      feature,
-      $savedThemes,
-      currentTheme,
-      $devmode,
-      devmode,
-      savedThemes,
-      currentThemeId,
-      loadedEditorTheme,
-      $currentThemeId,
-      $loadedEditorTheme,
-      func2,
-      click_handler2,
-      click_handler_1
-    ];
-  }
-  __name(instance$u, "instance$u");
-  const _Themes_browser = class _Themes_browser extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$u, create_fragment$w, safe_not_equal, { feature: 0 });
-    }
-  };
-  __name(_Themes_browser, "Themes_browser");
-  let Themes_browser = _Themes_browser;
-  function get_each_context$i(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[61] = list[i];
-    child_ctx[62] = list;
-    child_ctx[63] = i;
-    return child_ctx;
-  }
-  __name(get_each_context$i, "get_each_context$i");
-  function get_each_context_1$5(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[61] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context_1$5, "get_each_context_1$5");
-  function create_else_block$8(ctx) {
-    let div0;
-    let h3;
-    let t0;
-    let t1_value = (
-      /*$loadedTheme*/
-      ctx[2].theme.meta.name + ""
-    );
-    let t1;
-    let t2;
-    let br0;
-    let t3;
-    let flatbutton0;
-    let t4;
-    let flatbutton1;
-    let t5;
-    let flatbutton2;
-    let t6;
-    let div42;
-    let div5;
-    let div2;
-    let div1;
-    let t8;
-    let input0;
-    let t9;
-    let div4;
-    let div3;
-    let t11;
-    let input1;
-    let t12;
-    let details0;
-    let summary0;
-    let t14;
-    let br1;
-    let t15;
-    let br2;
-    let t16;
-    let br3;
-    let t17;
-    let div10;
-    let div7;
-    let div6;
-    let t19;
-    let colorpickerbutton0;
-    let updating_color;
-    let t20;
-    let div9;
-    let div8;
-    let t22;
-    let colorpickerbutton1;
-    let updating_color_1;
-    let t23;
-    let br4;
-    let t24;
-    let div11;
-    let checkbox0;
-    let updating_checked;
-    let t25;
-    let checkbox1;
-    let updating_checked_1;
-    let t26;
-    let checkbox2;
-    let updating_checked_2;
-    let t27;
-    let br5;
-    let t28;
-    let div12;
-    let flatbutton3;
-    let t29;
-    let details1;
-    let summary1;
-    let t31;
-    let div21;
-    let div14;
-    let div13;
-    let t33;
-    let input2;
-    let t34;
-    let div16;
-    let div15;
-    let t36;
-    let input3;
-    let t37;
-    let div18;
-    let div17;
-    let t39;
-    let input4;
-    let t40;
-    let div20;
-    let div19;
-    let t42;
-    let input5;
-    let t43;
-    let br6;
-    let t44;
-    let div23;
-    let div22;
-    let checkbox3;
-    let updating_checked_3;
-    let t45;
-    let colorpickerbutton2;
-    let t46;
-    let br7;
-    let t47;
-    let div24;
-    let checkbox4;
-    let updating_checked_4;
-    let t48;
-    let details2;
-    let summary2;
-    let t50;
-    let p0;
-    let t52;
-    let p1;
-    let t54;
-    let p2;
-    let t56;
-    let br8;
-    let t57;
-    let div27;
-    let div26;
-    let div25;
-    let t58;
-    let details3;
-    let summary3;
-    let t60;
-    let div32;
-    let div29;
-    let div28;
-    let t62;
-    let input6;
-    let t63;
-    let div31;
-    let div30;
-    let t65;
-    let input7;
-    let t66;
-    let br9;
-    let t67;
-    let div37;
-    let div34;
-    let div33;
-    let t69;
-    let input8;
-    let t70;
-    let div36;
-    let div35;
-    let t72;
-    let input9;
-    let t73;
-    let br10;
-    let t74;
-    let div38;
-    let checkbox5;
-    let updating_checked_5;
-    let t75;
-    let checkbox6;
-    let updating_checked_6;
-    let t76;
-    let checkbox7;
-    let updating_checked_7;
-    let t77;
-    let checkbox8;
-    let updating_checked_8;
-    let t78;
-    let details4;
-    let summary4;
-    let t80;
-    let p3;
-    let t82;
-    let p4;
-    let t84;
-    let p5;
-    let t86;
-    let br11;
-    let t87;
-    let div41;
-    let div40;
-    let div39;
-    let current;
-    let mounted;
-    let dispose;
-    flatbutton0 = new Flat_button({
-      props: {
-        content: "Discard & Delete",
-        color: "orange"
-      }
-    });
-    flatbutton0.$on(
-      "click",
-      /*click_handler_2*/
-      ctx[18]
-    );
-    flatbutton1 = new Flat_button({
-      props: {
-        content: "Discard Changes",
-        color: "blue"
-      }
-    });
-    flatbutton1.$on(
-      "click",
-      /*click_handler_3*/
-      ctx[19]
-    );
-    flatbutton2 = new Flat_button({
-      props: { content: "Save Theme", color: "green" }
-    });
-    flatbutton2.$on(
-      "click",
-      /*click_handler_4*/
-      ctx[20]
-    );
-    function colorpickerbutton0_color_binding(value) {
-      ctx[23](value);
-    }
-    __name(colorpickerbutton0_color_binding, "colorpickerbutton0_color_binding");
-    let colorpickerbutton0_props = {};
-    if (
-      /*schemePrimaryColor*/
-      ctx[3] !== void 0
-    ) {
-      colorpickerbutton0_props.color = /*schemePrimaryColor*/
-      ctx[3];
-    }
-    colorpickerbutton0 = new Color_picker_button({ props: colorpickerbutton0_props });
-    binding_callbacks.push(() => bind(colorpickerbutton0, "color", colorpickerbutton0_color_binding));
-    function colorpickerbutton1_color_binding(value) {
-      ctx[24](value);
-    }
-    __name(colorpickerbutton1_color_binding, "colorpickerbutton1_color_binding");
-    let colorpickerbutton1_props = {};
-    if (
-      /*schemeTextColor*/
-      ctx[4] !== void 0
-    ) {
-      colorpickerbutton1_props.color = /*schemeTextColor*/
-      ctx[4];
-    }
-    colorpickerbutton1 = new Color_picker_button({ props: colorpickerbutton1_props });
-    binding_callbacks.push(() => bind(colorpickerbutton1, "color", colorpickerbutton1_color_binding));
-    function checkbox0_checked_binding(value) {
-      ctx[25](value);
-    }
-    __name(checkbox0_checked_binding, "checkbox0_checked_binding");
-    let checkbox0_props = {
-      description: "Generate colors for input fields"
-    };
-    if (
-      /*schemeOnInputs*/
-      ctx[6] !== void 0
-    ) {
-      checkbox0_props.checked = /*schemeOnInputs*/
-      ctx[6];
-    }
-    checkbox0 = new Checkbox({ props: checkbox0_props });
-    binding_callbacks.push(() => bind(checkbox0, "checked", checkbox0_checked_binding));
-    function checkbox1_checked_binding(value) {
-      ctx[26](value);
-    }
-    __name(checkbox1_checked_binding, "checkbox1_checked_binding");
-    let checkbox1_props = {
-      description: "Invert text brightness on input fields"
-    };
-    if (
-      /*schemeInvertInputBrightness*/
-      ctx[7] !== void 0
-    ) {
-      checkbox1_props.checked = /*schemeInvertInputBrightness*/
-      ctx[7];
-    }
-    checkbox1 = new Checkbox({ props: checkbox1_props });
-    binding_callbacks.push(() => bind(checkbox1, "checked", checkbox1_checked_binding));
-    function checkbox2_checked_binding(value) {
-      ctx[27](value);
-    }
-    __name(checkbox2_checked_binding, "checkbox2_checked_binding");
-    let checkbox2_props = { description: "Use theme colors in-game" };
-    if (
-      /*schemeIngame*/
-      ctx[9] !== void 0
-    ) {
-      checkbox2_props.checked = /*schemeIngame*/
-      ctx[9];
-    }
-    checkbox2 = new Checkbox({ props: checkbox2_props });
-    binding_callbacks.push(() => bind(checkbox2, "checked", checkbox2_checked_binding));
-    flatbutton3 = new Flat_button({
-      props: {
-        content: "Generate Color Scheme",
-        color: "green"
-      }
-    });
-    flatbutton3.$on(
-      "click",
-      /*click_handler_5*/
-      ctx[28]
-    );
-    function checkbox3_checked_binding(value) {
-      ctx[37](value);
-    }
-    __name(checkbox3_checked_binding, "checkbox3_checked_binding");
-    let checkbox3_props = {
-      description: "Tint the skribbl background with a color"
-    };
-    if (
-      /*schemeEnableBackgroundTint*/
-      ctx[8] !== void 0
-    ) {
-      checkbox3_props.checked = /*schemeEnableBackgroundTint*/
-      ctx[8];
-    }
-    checkbox3 = new Checkbox({ props: checkbox3_props });
-    binding_callbacks.push(() => bind(checkbox3, "checked", checkbox3_checked_binding));
-    checkbox3.$on(
-      "change",
-      /*change_handler_4*/
-      ctx[38]
-    );
-    colorpickerbutton2 = new Color_picker_button({
-      props: {
-        allowAlpha: true,
-        colorChanged: (
-          /*func*/
-          ctx[39]
-        )
-      }
-    });
-    function checkbox4_checked_binding(value) {
-      ctx[40](value);
-    }
-    __name(checkbox4_checked_binding, "checkbox4_checked_binding");
-    let checkbox4_props = {
-      description: "Repeat custom background image"
-    };
-    if (
-      /*$loadedTheme*/
-      ctx[2].theme.images.backgroundRepeat !== void 0
-    ) {
-      checkbox4_props.checked = /*$loadedTheme*/
-      ctx[2].theme.images.backgroundRepeat;
-    }
-    checkbox4 = new Checkbox({ props: checkbox4_props });
-    binding_callbacks.push(() => bind(checkbox4, "checked", checkbox4_checked_binding));
-    checkbox4.$on(
-      "change",
-      /*change_handler_5*/
-      ctx[41]
-    );
-    let each_value_1 = ensure_array_like(
-      /*themeColors*/
-      ctx[11]
-    );
-    let each_blocks_1 = [];
-    for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks_1[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
-    }
-    const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks_1[i], 1, 1, () => {
-      each_blocks_1[i] = null;
-    }), "out");
-    function checkbox5_checked_binding(value) {
-      ctx[51](value);
-    }
-    __name(checkbox5_checked_binding, "checkbox5_checked_binding");
-    let checkbox5_props = { description: "Hide skribbl footer" };
-    if (
-      /*$loadedTheme*/
-      ctx[2].theme.misc.hideFooter !== void 0
-    ) {
-      checkbox5_props.checked = /*$loadedTheme*/
-      ctx[2].theme.misc.hideFooter;
-    }
-    checkbox5 = new Checkbox({ props: checkbox5_props });
-    binding_callbacks.push(() => bind(checkbox5, "checked", checkbox5_checked_binding));
-    checkbox5.$on(
-      "change",
-      /*change_handler_10*/
-      ctx[52]
-    );
-    function checkbox6_checked_binding(value) {
-      ctx[53](value);
-    }
-    __name(checkbox6_checked_binding, "checkbox6_checked_binding");
-    let checkbox6_props = {
-      description: "Hide About, News & How-To Panels"
-    };
-    if (
-      /*$loadedTheme*/
-      ctx[2].theme.misc.hideSkribblPanels !== void 0
-    ) {
-      checkbox6_props.checked = /*$loadedTheme*/
-      ctx[2].theme.misc.hideSkribblPanels;
-    }
-    checkbox6 = new Checkbox({ props: checkbox6_props });
-    binding_callbacks.push(() => bind(checkbox6, "checked", checkbox6_checked_binding));
-    checkbox6.$on(
-      "change",
-      /*change_handler_11*/
-      ctx[54]
-    );
-    function checkbox7_checked_binding(value) {
-      ctx[55](value);
-    }
-    __name(checkbox7_checked_binding, "checkbox7_checked_binding");
-    let checkbox7_props = {
-      description: "Hide avatars below skribbl logo"
-    };
-    if (
-      /*$loadedTheme*/
-      ctx[2].theme.misc.hideAvatarLogo !== void 0
-    ) {
-      checkbox7_props.checked = /*$loadedTheme*/
-      ctx[2].theme.misc.hideAvatarLogo;
-    }
-    checkbox7 = new Checkbox({ props: checkbox7_props });
-    binding_callbacks.push(() => bind(checkbox7, "checked", checkbox7_checked_binding));
-    checkbox7.$on(
-      "change",
-      /*change_handler_12*/
-      ctx[56]
-    );
-    function checkbox8_checked_binding(value) {
-      ctx[57](value);
-    }
-    __name(checkbox8_checked_binding, "checkbox8_checked_binding");
-    let checkbox8_props = { description: "Hide in-game skribbl logo" };
-    if (
-      /*$loadedTheme*/
-      ctx[2].theme.misc.hideInGameLogo !== void 0
-    ) {
-      checkbox8_props.checked = /*$loadedTheme*/
-      ctx[2].theme.misc.hideInGameLogo;
-    }
-    checkbox8 = new Checkbox({ props: checkbox8_props });
-    binding_callbacks.push(() => bind(checkbox8, "checked", checkbox8_checked_binding));
-    checkbox8.$on(
-      "change",
-      /*change_handler_13*/
-      ctx[58]
-    );
-    let each_value = ensure_array_like(Object.entries(
-      /*variableHooks*/
-      ctx[1]
-    ));
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$i(get_each_context$i(ctx, each_value, i));
-    }
-    return {
-      c() {
-        div0 = element("div");
-        h3 = element("h3");
-        t0 = text("Editing Theme: ");
-        t1 = text(t1_value);
-        t2 = space();
-        br0 = element("br");
-        t3 = space();
-        create_component(flatbutton0.$$.fragment);
-        t4 = space();
-        create_component(flatbutton1.$$.fragment);
-        t5 = space();
-        create_component(flatbutton2.$$.fragment);
-        t6 = space();
-        div42 = element("div");
-        div5 = element("div");
-        div2 = element("div");
-        div1 = element("div");
-        div1.textContent = "Theme Name:";
-        t8 = space();
-        input0 = element("input");
-        t9 = space();
-        div4 = element("div");
-        div3 = element("div");
-        div3.textContent = "Creator Name:";
-        t11 = space();
-        input1 = element("input");
-        t12 = space();
-        details0 = element("details");
-        summary0 = element("summary");
-        summary0.textContent = "Color Scheme";
-        t14 = text("\n\n        Using the color scheme generator, you can easily create a unique color theme for skribbl.");
-        br1 = element("br");
-        t15 = text('\n        This overwrites all existing color customizations in "Advanced Color Settings".');
-        br2 = element("br");
-        t16 = space();
-        br3 = element("br");
-        t17 = space();
-        div10 = element("div");
-        div7 = element("div");
-        div6 = element("div");
-        div6.textContent = "Primary Color:";
-        t19 = space();
-        create_component(colorpickerbutton0.$$.fragment);
-        t20 = space();
-        div9 = element("div");
-        div8 = element("div");
-        div8.textContent = "Text Color:";
-        t22 = space();
-        create_component(colorpickerbutton1.$$.fragment);
-        t23 = space();
-        br4 = element("br");
-        t24 = space();
-        div11 = element("div");
-        create_component(checkbox0.$$.fragment);
-        t25 = space();
-        create_component(checkbox1.$$.fragment);
-        t26 = space();
-        create_component(checkbox2.$$.fragment);
-        t27 = space();
-        br5 = element("br");
-        t28 = space();
-        div12 = element("div");
-        create_component(flatbutton3.$$.fragment);
-        t29 = space();
-        details1 = element("details");
-        summary1 = element("summary");
-        summary1.textContent = "Image Settings";
-        t31 = space();
-        div21 = element("div");
-        div14 = element("div");
-        div13 = element("div");
-        div13.textContent = "Replace Skribbl Logo:";
-        t33 = space();
-        input2 = element("input");
-        t34 = space();
-        div16 = element("div");
-        div15 = element("div");
-        div15.textContent = "Replace Background:";
-        t36 = space();
-        input3 = element("input");
-        t37 = space();
-        div18 = element("div");
-        div17 = element("div");
-        div17.textContent = "In-Game Background:";
-        t39 = space();
-        input4 = element("input");
-        t40 = space();
-        div20 = element("div");
-        div19 = element("div");
-        div19.textContent = "Container Background:";
-        t42 = space();
-        input5 = element("input");
-        t43 = space();
-        br6 = element("br");
-        t44 = space();
-        div23 = element("div");
-        div22 = element("div");
-        create_component(checkbox3.$$.fragment);
-        t45 = space();
-        create_component(colorpickerbutton2.$$.fragment);
-        t46 = space();
-        br7 = element("br");
-        t47 = space();
-        div24 = element("div");
-        create_component(checkbox4.$$.fragment);
-        t48 = space();
-        details2 = element("details");
-        summary2 = element("summary");
-        summary2.textContent = "Advanced Color Settings";
-        t50 = space();
-        p0 = element("p");
-        p0.textContent = "Advanced color settings allow you to customize the appearance of skribbl in more detail.";
-        t52 = space();
-        p1 = element("p");
-        p1.textContent = "These settings are overwritten when the color scheme generator is used.";
-        t54 = space();
-        p2 = element("p");
-        p2.textContent = "The color names are taken from the skribbl code.";
-        t56 = space();
-        br8 = element("br");
-        t57 = space();
-        div27 = element("div");
-        div26 = element("div");
-        div25 = element("div");
-        for (let i = 0; i < each_blocks_1.length; i += 1) {
-          each_blocks_1[i].c();
-        }
-        t58 = space();
-        details3 = element("details");
-        summary3 = element("summary");
-        summary3.textContent = "Miscellaneous";
-        t60 = space();
-        div32 = element("div");
-        div29 = element("div");
-        div28 = element("div");
-        div28.textContent = "Use Google Font:";
-        t62 = space();
-        input6 = element("input");
-        t63 = space();
-        div31 = element("div");
-        div30 = element("div");
-        div30.textContent = "External CSS URL:";
-        t65 = space();
-        input7 = element("input");
-        t66 = space();
-        br9 = element("br");
-        t67 = space();
-        div37 = element("div");
-        div34 = element("div");
-        div33 = element("div");
-        div33.textContent = "Custom CSS:";
-        t69 = space();
-        input8 = element("input");
-        t70 = space();
-        div36 = element("div");
-        div35 = element("div");
-        div35.textContent = "HTML Element Injection:";
-        t72 = space();
-        input9 = element("input");
-        t73 = space();
-        br10 = element("br");
-        t74 = space();
-        div38 = element("div");
-        create_component(checkbox5.$$.fragment);
-        t75 = space();
-        create_component(checkbox6.$$.fragment);
-        t76 = space();
-        create_component(checkbox7.$$.fragment);
-        t77 = space();
-        create_component(checkbox8.$$.fragment);
-        t78 = space();
-        details4 = element("details");
-        summary4 = element("summary");
-        summary4.textContent = "Skribbl Style Hooks";
-        t80 = space();
-        p3 = element("p");
-        p3.textContent = "Skribbl style hooks allow more advanced CSS styling without having to dig through the skribbl css classes.";
-        t82 = space();
-        p4 = element("p");
-        p4.textContent = "The CSS you write will be applied wherever the skribbl color variable is used.";
-        t84 = space();
-        p5 = element("p");
-        p5.textContent = "Hover over the ℹ️ icon to display the linked CSS classes.";
-        t86 = space();
-        br11 = element("br");
-        t87 = space();
-        div41 = element("div");
-        div40 = element("div");
-        div39 = element("div");
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        set_style(h3, "flex-grow", "1");
-        attr(div0, "class", "typo-themes-editor-header svelte-1gh1qig");
-        attr(input0, "type", "text");
-        attr(input0, "class", "svelte-1gh1qig");
-        attr(div2, "class", "group svelte-1gh1qig");
-        attr(input1, "type", "text");
-        attr(input1, "class", "svelte-1gh1qig");
-        attr(div4, "class", "group svelte-1gh1qig");
-        attr(div5, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(summary0, "class", "svelte-1gh1qig");
-        attr(div7, "class", "group svelte-1gh1qig");
-        attr(div9, "class", "group svelte-1gh1qig");
-        attr(div10, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(div11, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(div12, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        details0.open = true;
-        attr(details0, "class", "svelte-1gh1qig");
-        attr(summary1, "class", "svelte-1gh1qig");
-        attr(input2, "type", "text");
-        attr(input2, "placeholder", "https://link.here/image.gif");
-        attr(input2, "class", "svelte-1gh1qig");
-        attr(div14, "class", "group svelte-1gh1qig");
-        attr(input3, "type", "text");
-        attr(input3, "placeholder", "https://link.here/image.gif");
-        attr(input3, "class", "svelte-1gh1qig");
-        attr(div16, "class", "group svelte-1gh1qig");
-        attr(input4, "type", "text");
-        attr(input4, "placeholder", "https://link.here/image.gif");
-        attr(input4, "class", "svelte-1gh1qig");
-        attr(div18, "class", "group svelte-1gh1qig");
-        attr(input5, "type", "text");
-        attr(input5, "placeholder", "https://link.here/image.gif");
-        attr(input5, "class", "svelte-1gh1qig");
-        attr(div20, "class", "group svelte-1gh1qig");
-        attr(div21, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(div22, "class", "group svelte-1gh1qig");
-        attr(div23, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(div24, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        details1.open = true;
-        attr(details1, "class", "svelte-1gh1qig");
-        attr(summary2, "class", "svelte-1gh1qig");
-        attr(div25, "class", "color-pickers svelte-1gh1qig");
-        attr(div26, "class", "group svelte-1gh1qig");
-        attr(div27, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(details2, "class", "svelte-1gh1qig");
-        attr(summary3, "class", "svelte-1gh1qig");
-        attr(input6, "type", "text");
-        attr(input6, "placeholder", "Google Fonts import URL");
-        attr(input6, "class", "svelte-1gh1qig");
-        attr(div29, "class", "group svelte-1gh1qig");
-        attr(input7, "type", "text");
-        attr(input7, "placeholder", "https://some.website/link-to-style.css");
-        attr(input7, "class", "svelte-1gh1qig");
-        attr(div31, "class", "group svelte-1gh1qig");
-        attr(div32, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(input8, "type", "text");
-        attr(input8, "placeholder", ".logo-big { display: none !important; }");
-        attr(input8, "class", "svelte-1gh1qig");
-        attr(div34, "class", "group svelte-1gh1qig");
-        attr(input9, "type", "text");
-        attr(input9, "placeholder", "<div>hello there</div>");
-        attr(input9, "class", "svelte-1gh1qig");
-        attr(div36, "class", "group svelte-1gh1qig");
-        attr(div37, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(div38, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(details3, "class", "svelte-1gh1qig");
-        attr(summary4, "class", "svelte-1gh1qig");
-        attr(div39, "class", "style-hooks svelte-1gh1qig");
-        attr(div40, "class", "group svelte-1gh1qig");
-        attr(div41, "class", "typo-themes-editor-content-section svelte-1gh1qig");
-        attr(details4, "class", "svelte-1gh1qig");
-        attr(div42, "class", "typo-themes-editor-content svelte-1gh1qig");
-      },
-      m(target, anchor) {
-        insert(target, div0, anchor);
-        append(div0, h3);
-        append(h3, t0);
-        append(h3, t1);
-        append(div0, t2);
-        append(div0, br0);
-        append(div0, t3);
-        mount_component(flatbutton0, div0, null);
-        append(div0, t4);
-        mount_component(flatbutton1, div0, null);
-        append(div0, t5);
-        mount_component(flatbutton2, div0, null);
-        insert(target, t6, anchor);
-        insert(target, div42, anchor);
-        append(div42, div5);
-        append(div5, div2);
-        append(div2, div1);
-        append(div2, t8);
-        append(div2, input0);
-        set_input_value(
-          input0,
-          /*$loadedTheme*/
-          ctx[2].theme.meta.name
-        );
-        append(div5, t9);
-        append(div5, div4);
-        append(div4, div3);
-        append(div4, t11);
-        append(div4, input1);
-        set_input_value(
-          input1,
-          /*$loadedTheme*/
-          ctx[2].theme.meta.author
-        );
-        append(div42, t12);
-        append(div42, details0);
-        append(details0, summary0);
-        append(details0, t14);
-        append(details0, br1);
-        append(details0, t15);
-        append(details0, br2);
-        append(details0, t16);
-        append(details0, br3);
-        append(details0, t17);
-        append(details0, div10);
-        append(div10, div7);
-        append(div7, div6);
-        append(div7, t19);
-        mount_component(colorpickerbutton0, div7, null);
-        append(div10, t20);
-        append(div10, div9);
-        append(div9, div8);
-        append(div9, t22);
-        mount_component(colorpickerbutton1, div9, null);
-        append(details0, t23);
-        append(details0, br4);
-        append(details0, t24);
-        append(details0, div11);
-        mount_component(checkbox0, div11, null);
-        append(div11, t25);
-        mount_component(checkbox1, div11, null);
-        append(div11, t26);
-        mount_component(checkbox2, div11, null);
-        append(details0, t27);
-        append(details0, br5);
-        append(details0, t28);
-        append(details0, div12);
-        mount_component(flatbutton3, div12, null);
-        append(div42, t29);
-        append(div42, details1);
-        append(details1, summary1);
-        append(details1, t31);
-        append(details1, div21);
-        append(div21, div14);
-        append(div14, div13);
-        append(div14, t33);
-        append(div14, input2);
-        set_input_value(
-          input2,
-          /*$loadedTheme*/
-          ctx[2].theme.images.urlLogo
-        );
-        append(div21, t34);
-        append(div21, div16);
-        append(div16, div15);
-        append(div16, t36);
-        append(div16, input3);
-        set_input_value(
-          input3,
-          /*$loadedTheme*/
-          ctx[2].theme.images.urlBackground
-        );
-        append(div21, t37);
-        append(div21, div18);
-        append(div18, div17);
-        append(div18, t39);
-        append(div18, input4);
-        set_input_value(
-          input4,
-          /*$loadedTheme*/
-          ctx[2].theme.images.urlBackgroundGame
-        );
-        append(div21, t40);
-        append(div21, div20);
-        append(div20, div19);
-        append(div20, t42);
-        append(div20, input5);
-        set_input_value(
-          input5,
-          /*$loadedTheme*/
-          ctx[2].theme.images.containerImages
-        );
-        append(details1, t43);
-        append(details1, br6);
-        append(details1, t44);
-        append(details1, div23);
-        append(div23, div22);
-        mount_component(checkbox3, div22, null);
-        append(div22, t45);
-        mount_component(colorpickerbutton2, div22, null);
-        append(details1, t46);
-        append(details1, br7);
-        append(details1, t47);
-        append(details1, div24);
-        mount_component(checkbox4, div24, null);
-        append(div42, t48);
-        append(div42, details2);
-        append(details2, summary2);
-        append(details2, t50);
-        append(details2, p0);
-        append(details2, t52);
-        append(details2, p1);
-        append(details2, t54);
-        append(details2, p2);
-        append(details2, t56);
-        append(details2, br8);
-        append(details2, t57);
-        append(details2, div27);
-        append(div27, div26);
-        append(div26, div25);
-        for (let i = 0; i < each_blocks_1.length; i += 1) {
-          if (each_blocks_1[i]) {
-            each_blocks_1[i].m(div25, null);
-          }
-        }
-        append(div42, t58);
-        append(div42, details3);
-        append(details3, summary3);
-        append(details3, t60);
-        append(details3, div32);
-        append(div32, div29);
-        append(div29, div28);
-        append(div29, t62);
-        append(div29, input6);
-        set_input_value(
-          input6,
-          /*$loadedTheme*/
-          ctx[2].theme.misc.fontStyle
-        );
-        append(div32, t63);
-        append(div32, div31);
-        append(div31, div30);
-        append(div31, t65);
-        append(div31, input7);
-        set_input_value(
-          input7,
-          /*$loadedTheme*/
-          ctx[2].theme.misc.themeCssUrl
-        );
-        append(details3, t66);
-        append(details3, br9);
-        append(details3, t67);
-        append(details3, div37);
-        append(div37, div34);
-        append(div34, div33);
-        append(div34, t69);
-        append(div34, input8);
-        set_input_value(
-          input8,
-          /*$loadedTheme*/
-          ctx[2].theme.misc.cssText
-        );
-        append(div37, t70);
-        append(div37, div36);
-        append(div36, div35);
-        append(div36, t72);
-        append(div36, input9);
-        set_input_value(
-          input9,
-          /*$loadedTheme*/
-          ctx[2].theme.misc.htmlText
-        );
-        append(details3, t73);
-        append(details3, br10);
-        append(details3, t74);
-        append(details3, div38);
-        mount_component(checkbox5, div38, null);
-        append(div38, t75);
-        mount_component(checkbox6, div38, null);
-        append(div38, t76);
-        mount_component(checkbox7, div38, null);
-        append(div38, t77);
-        mount_component(checkbox8, div38, null);
-        append(div42, t78);
-        append(div42, details4);
-        append(details4, summary4);
-        append(details4, t80);
-        append(details4, p3);
-        append(details4, t82);
-        append(details4, p4);
-        append(details4, t84);
-        append(details4, p5);
-        append(details4, t86);
-        append(details4, br11);
-        append(details4, t87);
-        append(details4, div41);
-        append(div41, div40);
-        append(div40, div39);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(div39, null);
-          }
-        }
-        current = true;
-        if (!mounted) {
-          dispose = [
-            listen(
-              input0,
-              "input",
-              /*input0_input_handler*/
-              ctx[21]
-            ),
-            listen(
-              input1,
-              "input",
-              /*input1_input_handler*/
-              ctx[22]
-            ),
-            listen(
-              input2,
-              "input",
-              /*input2_input_handler*/
-              ctx[29]
-            ),
-            listen(
-              input2,
-              "change",
-              /*change_handler*/
-              ctx[30]
-            ),
-            listen(
-              input3,
-              "input",
-              /*input3_input_handler*/
-              ctx[31]
-            ),
-            listen(
-              input3,
-              "change",
-              /*change_handler_1*/
-              ctx[32]
-            ),
-            listen(
-              input4,
-              "input",
-              /*input4_input_handler*/
-              ctx[33]
-            ),
-            listen(
-              input4,
-              "change",
-              /*change_handler_2*/
-              ctx[34]
-            ),
-            listen(
-              input5,
-              "input",
-              /*input5_input_handler*/
-              ctx[35]
-            ),
-            listen(
-              input5,
-              "change",
-              /*change_handler_3*/
-              ctx[36]
-            ),
-            listen(
-              input6,
-              "input",
-              /*input6_input_handler*/
-              ctx[43]
-            ),
-            listen(
-              input6,
-              "change",
-              /*change_handler_6*/
-              ctx[44]
-            ),
-            listen(
-              input7,
-              "input",
-              /*input7_input_handler*/
-              ctx[45]
-            ),
-            listen(
-              input7,
-              "change",
-              /*change_handler_7*/
-              ctx[46]
-            ),
-            listen(
-              input8,
-              "input",
-              /*input8_input_handler*/
-              ctx[47]
-            ),
-            listen(
-              input8,
-              "change",
-              /*change_handler_8*/
-              ctx[48]
-            ),
-            listen(
-              input9,
-              "input",
-              /*input9_input_handler*/
-              ctx[49]
-            ),
-            listen(
-              input9,
-              "change",
-              /*change_handler_9*/
-              ctx[50]
-            )
-          ];
-          mounted = true;
-        }
-      },
-      p(ctx2, dirty) {
-        if ((!current || dirty[0] & /*$loadedTheme*/
-        4) && t1_value !== (t1_value = /*$loadedTheme*/
-        ctx2[2].theme.meta.name + "")) set_data(t1, t1_value);
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input0.value !== /*$loadedTheme*/
-        ctx2[2].theme.meta.name) {
-          set_input_value(
-            input0,
-            /*$loadedTheme*/
-            ctx2[2].theme.meta.name
-          );
-        }
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input1.value !== /*$loadedTheme*/
-        ctx2[2].theme.meta.author) {
-          set_input_value(
-            input1,
-            /*$loadedTheme*/
-            ctx2[2].theme.meta.author
-          );
-        }
-        const colorpickerbutton0_changes = {};
-        if (!updating_color && dirty[0] & /*schemePrimaryColor*/
-        8) {
-          updating_color = true;
-          colorpickerbutton0_changes.color = /*schemePrimaryColor*/
-          ctx2[3];
-          add_flush_callback(() => updating_color = false);
-        }
-        colorpickerbutton0.$set(colorpickerbutton0_changes);
-        const colorpickerbutton1_changes = {};
-        if (!updating_color_1 && dirty[0] & /*schemeTextColor*/
-        16) {
-          updating_color_1 = true;
-          colorpickerbutton1_changes.color = /*schemeTextColor*/
-          ctx2[4];
-          add_flush_callback(() => updating_color_1 = false);
-        }
-        colorpickerbutton1.$set(colorpickerbutton1_changes);
-        const checkbox0_changes = {};
-        if (!updating_checked && dirty[0] & /*schemeOnInputs*/
-        64) {
-          updating_checked = true;
-          checkbox0_changes.checked = /*schemeOnInputs*/
-          ctx2[6];
-          add_flush_callback(() => updating_checked = false);
-        }
-        checkbox0.$set(checkbox0_changes);
-        const checkbox1_changes = {};
-        if (!updating_checked_1 && dirty[0] & /*schemeInvertInputBrightness*/
-        128) {
-          updating_checked_1 = true;
-          checkbox1_changes.checked = /*schemeInvertInputBrightness*/
-          ctx2[7];
-          add_flush_callback(() => updating_checked_1 = false);
-        }
-        checkbox1.$set(checkbox1_changes);
-        const checkbox2_changes = {};
-        if (!updating_checked_2 && dirty[0] & /*schemeIngame*/
-        512) {
-          updating_checked_2 = true;
-          checkbox2_changes.checked = /*schemeIngame*/
-          ctx2[9];
-          add_flush_callback(() => updating_checked_2 = false);
-        }
-        checkbox2.$set(checkbox2_changes);
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input2.value !== /*$loadedTheme*/
-        ctx2[2].theme.images.urlLogo) {
-          set_input_value(
-            input2,
-            /*$loadedTheme*/
-            ctx2[2].theme.images.urlLogo
-          );
-        }
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input3.value !== /*$loadedTheme*/
-        ctx2[2].theme.images.urlBackground) {
-          set_input_value(
-            input3,
-            /*$loadedTheme*/
-            ctx2[2].theme.images.urlBackground
-          );
-        }
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input4.value !== /*$loadedTheme*/
-        ctx2[2].theme.images.urlBackgroundGame) {
-          set_input_value(
-            input4,
-            /*$loadedTheme*/
-            ctx2[2].theme.images.urlBackgroundGame
-          );
-        }
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input5.value !== /*$loadedTheme*/
-        ctx2[2].theme.images.containerImages) {
-          set_input_value(
-            input5,
-            /*$loadedTheme*/
-            ctx2[2].theme.images.containerImages
-          );
-        }
-        const checkbox3_changes = {};
-        if (!updating_checked_3 && dirty[0] & /*schemeEnableBackgroundTint*/
-        256) {
-          updating_checked_3 = true;
-          checkbox3_changes.checked = /*schemeEnableBackgroundTint*/
-          ctx2[8];
-          add_flush_callback(() => updating_checked_3 = false);
-        }
-        checkbox3.$set(checkbox3_changes);
-        const colorpickerbutton2_changes = {};
-        if (dirty[0] & /*schemeBackgroundTint, schemeEnableBackgroundTint, $loadedTheme, feature*/
-        293) colorpickerbutton2_changes.colorChanged = /*func*/
-        ctx2[39];
-        colorpickerbutton2.$set(colorpickerbutton2_changes);
-        const checkbox4_changes = {};
-        if (!updating_checked_4 && dirty[0] & /*$loadedTheme*/
-        4) {
-          updating_checked_4 = true;
-          checkbox4_changes.checked = /*$loadedTheme*/
-          ctx2[2].theme.images.backgroundRepeat;
-          add_flush_callback(() => updating_checked_4 = false);
-        }
-        checkbox4.$set(checkbox4_changes);
-        if (dirty[0] & /*themeColors, $loadedTheme, feature*/
-        2053) {
-          each_value_1 = ensure_array_like(
-            /*themeColors*/
-            ctx2[11]
-          );
-          let i;
-          for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$5(ctx2, each_value_1, i);
-            if (each_blocks_1[i]) {
-              each_blocks_1[i].p(child_ctx, dirty);
-              transition_in(each_blocks_1[i], 1);
-            } else {
-              each_blocks_1[i] = create_each_block_1$5(child_ctx);
-              each_blocks_1[i].c();
-              transition_in(each_blocks_1[i], 1);
-              each_blocks_1[i].m(div25, null);
-            }
-          }
-          group_outros();
-          for (i = each_value_1.length; i < each_blocks_1.length; i += 1) {
-            out(i);
-          }
-          check_outros();
-        }
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input6.value !== /*$loadedTheme*/
-        ctx2[2].theme.misc.fontStyle) {
-          set_input_value(
-            input6,
-            /*$loadedTheme*/
-            ctx2[2].theme.misc.fontStyle
-          );
-        }
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input7.value !== /*$loadedTheme*/
-        ctx2[2].theme.misc.themeCssUrl) {
-          set_input_value(
-            input7,
-            /*$loadedTheme*/
-            ctx2[2].theme.misc.themeCssUrl
-          );
-        }
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input8.value !== /*$loadedTheme*/
-        ctx2[2].theme.misc.cssText) {
-          set_input_value(
-            input8,
-            /*$loadedTheme*/
-            ctx2[2].theme.misc.cssText
-          );
-        }
-        if (dirty[0] & /*$loadedTheme*/
-        4 && input9.value !== /*$loadedTheme*/
-        ctx2[2].theme.misc.htmlText) {
-          set_input_value(
-            input9,
-            /*$loadedTheme*/
-            ctx2[2].theme.misc.htmlText
-          );
-        }
-        const checkbox5_changes = {};
-        if (!updating_checked_5 && dirty[0] & /*$loadedTheme*/
-        4) {
-          updating_checked_5 = true;
-          checkbox5_changes.checked = /*$loadedTheme*/
-          ctx2[2].theme.misc.hideFooter;
-          add_flush_callback(() => updating_checked_5 = false);
-        }
-        checkbox5.$set(checkbox5_changes);
-        const checkbox6_changes = {};
-        if (!updating_checked_6 && dirty[0] & /*$loadedTheme*/
-        4) {
-          updating_checked_6 = true;
-          checkbox6_changes.checked = /*$loadedTheme*/
-          ctx2[2].theme.misc.hideSkribblPanels;
-          add_flush_callback(() => updating_checked_6 = false);
-        }
-        checkbox6.$set(checkbox6_changes);
-        const checkbox7_changes = {};
-        if (!updating_checked_7 && dirty[0] & /*$loadedTheme*/
-        4) {
-          updating_checked_7 = true;
-          checkbox7_changes.checked = /*$loadedTheme*/
-          ctx2[2].theme.misc.hideAvatarLogo;
-          add_flush_callback(() => updating_checked_7 = false);
-        }
-        checkbox7.$set(checkbox7_changes);
-        const checkbox8_changes = {};
-        if (!updating_checked_8 && dirty[0] & /*$loadedTheme*/
-        4) {
-          updating_checked_8 = true;
-          checkbox8_changes.checked = /*$loadedTheme*/
-          ctx2[2].theme.misc.hideInGameLogo;
-          add_flush_callback(() => updating_checked_8 = false);
-        }
-        checkbox8.$set(checkbox8_changes);
-        if (dirty[0] & /*$loadedTheme, variableHooks, feature*/
-        7) {
-          each_value = ensure_array_like(Object.entries(
-            /*variableHooks*/
-            ctx2[1]
-          ));
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$i(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-            } else {
-              each_blocks[i] = create_each_block$i(child_ctx);
-              each_blocks[i].c();
-              each_blocks[i].m(div39, null);
-            }
-          }
-          for (; i < each_blocks.length; i += 1) {
-            each_blocks[i].d(1);
-          }
-          each_blocks.length = each_value.length;
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton0.$$.fragment, local);
-        transition_in(flatbutton1.$$.fragment, local);
-        transition_in(flatbutton2.$$.fragment, local);
-        transition_in(colorpickerbutton0.$$.fragment, local);
-        transition_in(colorpickerbutton1.$$.fragment, local);
-        transition_in(checkbox0.$$.fragment, local);
-        transition_in(checkbox1.$$.fragment, local);
-        transition_in(checkbox2.$$.fragment, local);
-        transition_in(flatbutton3.$$.fragment, local);
-        transition_in(checkbox3.$$.fragment, local);
-        transition_in(colorpickerbutton2.$$.fragment, local);
-        transition_in(checkbox4.$$.fragment, local);
-        for (let i = 0; i < each_value_1.length; i += 1) {
-          transition_in(each_blocks_1[i]);
-        }
-        transition_in(checkbox5.$$.fragment, local);
-        transition_in(checkbox6.$$.fragment, local);
-        transition_in(checkbox7.$$.fragment, local);
-        transition_in(checkbox8.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton0.$$.fragment, local);
-        transition_out(flatbutton1.$$.fragment, local);
-        transition_out(flatbutton2.$$.fragment, local);
-        transition_out(colorpickerbutton0.$$.fragment, local);
-        transition_out(colorpickerbutton1.$$.fragment, local);
-        transition_out(checkbox0.$$.fragment, local);
-        transition_out(checkbox1.$$.fragment, local);
-        transition_out(checkbox2.$$.fragment, local);
-        transition_out(flatbutton3.$$.fragment, local);
-        transition_out(checkbox3.$$.fragment, local);
-        transition_out(colorpickerbutton2.$$.fragment, local);
-        transition_out(checkbox4.$$.fragment, local);
-        each_blocks_1 = each_blocks_1.filter(Boolean);
-        for (let i = 0; i < each_blocks_1.length; i += 1) {
-          transition_out(each_blocks_1[i]);
-        }
-        transition_out(checkbox5.$$.fragment, local);
-        transition_out(checkbox6.$$.fragment, local);
-        transition_out(checkbox7.$$.fragment, local);
-        transition_out(checkbox8.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div0);
-          detach(t6);
-          detach(div42);
-        }
-        destroy_component(flatbutton0);
-        destroy_component(flatbutton1);
-        destroy_component(flatbutton2);
-        destroy_component(colorpickerbutton0);
-        destroy_component(colorpickerbutton1);
-        destroy_component(checkbox0);
-        destroy_component(checkbox1);
-        destroy_component(checkbox2);
-        destroy_component(flatbutton3);
-        destroy_component(checkbox3);
-        destroy_component(colorpickerbutton2);
-        destroy_component(checkbox4);
-        destroy_each(each_blocks_1, detaching);
-        destroy_component(checkbox5);
-        destroy_component(checkbox6);
-        destroy_component(checkbox7);
-        destroy_component(checkbox8);
-        destroy_each(each_blocks, detaching);
-        mounted = false;
-        run_all(dispose);
-      }
-    };
-  }
-  __name(create_else_block$8, "create_else_block$8");
-  function create_if_block$f(ctx) {
-    let div0;
-    let t0;
-    let br0;
-    let t1;
-    let br1;
-    let t2;
-    let flatbutton0;
-    let t3;
-    let br2;
-    let t4;
-    let br3;
-    let t5;
-    let div2;
-    let div1;
-    let t7;
-    let br4;
-    let t8;
-    let input;
-    let t9;
-    let flatbutton1;
-    let current;
-    let mounted;
-    let dispose;
-    flatbutton0 = new Flat_button({
-      props: {
-        content: "Create new Theme",
-        color: "green"
-      }
-    });
-    flatbutton0.$on(
-      "click",
-      /*click_handler*/
-      ctx[15]
-    );
-    flatbutton1 = new Flat_button({
-      props: { content: "Import Theme", color: "blue" }
-    });
-    flatbutton1.$on(
-      "click",
-      /*click_handler_1*/
-      ctx[17]
-    );
-    return {
-      c() {
-        div0 = element("div");
-        t0 = text('No theme loaded for editing. Select one of your themes in the "Saved Themes" tab or create a new one!');
-        br0 = element("br");
-        t1 = space();
-        br1 = element("br");
-        t2 = space();
-        create_component(flatbutton0.$$.fragment);
-        t3 = space();
-        br2 = element("br");
-        t4 = space();
-        br3 = element("br");
-        t5 = space();
-        div2 = element("div");
-        div1 = element("div");
-        div1.textContent = "If you have received a theme share ID, you can import it here:";
-        t7 = space();
-        br4 = element("br");
-        t8 = space();
-        input = element("input");
-        t9 = space();
-        create_component(flatbutton1.$$.fragment);
-        attr(div0, "class", "typo-themes-editor-header svelte-1gh1qig");
-        attr(input, "type", "text");
-        set_style(input, "width", "auto");
-        set_style(input, "margin-right", "1rem");
-        attr(input, "placeholder", "Share ID");
-        attr(div2, "class", "typo-themes-editor-header svelte-1gh1qig");
-      },
-      m(target, anchor) {
-        insert(target, div0, anchor);
-        append(div0, t0);
-        append(div0, br0);
-        append(div0, t1);
-        append(div0, br1);
-        append(div0, t2);
-        mount_component(flatbutton0, div0, null);
-        insert(target, t3, anchor);
-        insert(target, br2, anchor);
-        insert(target, t4, anchor);
-        insert(target, br3, anchor);
-        insert(target, t5, anchor);
-        insert(target, div2, anchor);
-        append(div2, div1);
-        append(div2, t7);
-        append(div2, br4);
-        append(div2, t8);
-        append(div2, input);
-        set_input_value(
-          input,
-          /*shareId*/
-          ctx[10]
-        );
-        append(div2, t9);
-        mount_component(flatbutton1, div2, null);
-        current = true;
-        if (!mounted) {
-          dispose = listen(
-            input,
-            "input",
-            /*input_input_handler*/
-            ctx[16]
-          );
-          mounted = true;
-        }
-      },
-      p(ctx2, dirty) {
-        if (dirty[0] & /*shareId*/
-        1024 && input.value !== /*shareId*/
-        ctx2[10]) {
-          set_input_value(
-            input,
-            /*shareId*/
-            ctx2[10]
-          );
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton0.$$.fragment, local);
-        transition_in(flatbutton1.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton0.$$.fragment, local);
-        transition_out(flatbutton1.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div0);
-          detach(t3);
-          detach(br2);
-          detach(t4);
-          detach(br3);
-          detach(t5);
-          detach(div2);
-        }
-        destroy_component(flatbutton0);
-        destroy_component(flatbutton1);
-        mounted = false;
-        dispose();
-      }
-    };
-  }
-  __name(create_if_block$f, "create_if_block$f");
-  function create_each_block_1$5(ctx) {
-    let div;
-    let t0_value = (
-      /*color*/
-      ctx[61][0].replace("--", "") + ""
-    );
-    let t0;
-    let t1;
-    let t2;
-    let colorpickerbutton;
-    let current;
-    function func_12(...args) {
-      return (
-        /*func_1*/
-        ctx[42](
-          /*color*/
-          ctx[61],
-          ...args
-        )
-      );
-    }
-    __name(func_12, "func_1");
-    colorpickerbutton = new Color_picker_button({
-      props: {
-        color: (
-          /*color*/
-          ctx[61][1]
-        ),
-        allowAlpha: true,
-        colorChanged: func_12
-      }
-    });
-    return {
-      c() {
-        div = element("div");
-        t0 = text(t0_value);
-        t1 = text(":");
-        t2 = space();
-        create_component(colorpickerbutton.$$.fragment);
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        append(div, t0);
-        append(div, t1);
-        insert(target, t2, anchor);
-        mount_component(colorpickerbutton, target, anchor);
-        current = true;
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-        if ((!current || dirty[0] & /*themeColors*/
-        2048) && t0_value !== (t0_value = /*color*/
-        ctx[61][0].replace("--", "") + "")) set_data(t0, t0_value);
-        const colorpickerbutton_changes = {};
-        if (dirty[0] & /*themeColors*/
-        2048) colorpickerbutton_changes.color = /*color*/
-        ctx[61][1];
-        if (dirty[0] & /*$loadedTheme, themeColors, feature*/
-        2053) colorpickerbutton_changes.colorChanged = func_12;
-        colorpickerbutton.$set(colorpickerbutton_changes);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(colorpickerbutton.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(colorpickerbutton.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-          detach(t2);
-        }
-        destroy_component(colorpickerbutton, detaching);
-      }
-    };
-  }
-  __name(create_each_block_1$5, "create_each_block_1$5");
-  function create_each_block$i(ctx) {
-    let div;
-    let abbr;
-    let t0;
-    let abbr_title_value;
-    let t1;
-    let t2_value = (
-      /*color*/
-      ctx[61][0].replace("--", "") + ""
-    );
-    let t2;
-    let t3;
-    let t4;
-    let input;
-    let mounted;
-    let dispose;
-    function input_input_handler_1() {
-      ctx[59].call(
-        input,
-        /*color*/
-        ctx[61]
-      );
-    }
-    __name(input_input_handler_1, "input_input_handler_1");
-    return {
-      c() {
-        div = element("div");
-        abbr = element("abbr");
-        t0 = text("ℹ️");
-        t1 = space();
-        t2 = text(t2_value);
-        t3 = text(":");
-        t4 = space();
-        input = element("input");
-        attr(abbr, "title", abbr_title_value = /*color*/
-        ctx[61][1].join(", "));
-        attr(input, "type", "text");
-        attr(input, "placeholder", "color: red; border: 1px solid green;");
-        attr(input, "class", "svelte-1gh1qig");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        append(div, abbr);
-        append(abbr, t0);
-        append(div, t1);
-        append(div, t2);
-        append(div, t3);
-        insert(target, t4, anchor);
-        insert(target, input, anchor);
-        set_input_value(
-          input,
-          /*$loadedTheme*/
-          ctx[2].theme.hooks[
-            /*color*/
-            ctx[61][0]
-          ]
-        );
-        if (!mounted) {
-          dispose = [
-            listen(input, "input", input_input_handler_1),
-            listen(
-              input,
-              "change",
-              /*change_handler_14*/
-              ctx[60]
-            )
-          ];
-          mounted = true;
-        }
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-        if (dirty[0] & /*variableHooks*/
-        2 && abbr_title_value !== (abbr_title_value = /*color*/
-        ctx[61][1].join(", "))) {
-          attr(abbr, "title", abbr_title_value);
-        }
-        if (dirty[0] & /*variableHooks*/
-        2 && t2_value !== (t2_value = /*color*/
-        ctx[61][0].replace("--", "") + "")) set_data(t2, t2_value);
-        if (dirty[0] & /*$loadedTheme, variableHooks*/
-        6 && input.value !== /*$loadedTheme*/
-        ctx[2].theme.hooks[
-          /*color*/
-          ctx[61][0]
-        ]) {
-          set_input_value(
-            input,
-            /*$loadedTheme*/
-            ctx[2].theme.hooks[
-              /*color*/
-              ctx[61][0]
-            ]
-          );
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-          detach(t4);
-          detach(input);
-        }
-        mounted = false;
-        run_all(dispose);
-      }
-    };
-  }
-  __name(create_each_block$i, "create_each_block$i");
-  function create_fragment$v(ctx) {
-    let div;
-    let current_block_type_index;
-    let if_block;
-    let current;
-    const if_block_creators = [create_if_block$f, create_else_block$8];
-    const if_blocks = [];
-    function select_block_type(ctx2, dirty) {
-      if (
-        /*$loadedTheme*/
-        ctx2[2] === void 0
-      ) return 0;
-      return 1;
-    }
-    __name(select_block_type, "select_block_type");
-    current_block_type_index = select_block_type(ctx);
-    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    return {
-      c() {
-        div = element("div");
-        if_block.c();
-        attr(div, "class", "typo-themes-editor svelte-1gh1qig");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        if_blocks[current_block_type_index].m(div, null);
-        current = true;
-      },
-      p(ctx2, dirty) {
-        let previous_block_index = current_block_type_index;
-        current_block_type_index = select_block_type(ctx2);
-        if (current_block_type_index === previous_block_index) {
-          if_blocks[current_block_type_index].p(ctx2, dirty);
-        } else {
-          group_outros();
-          transition_out(if_blocks[previous_block_index], 1, 1, () => {
-            if_blocks[previous_block_index] = null;
-          });
-          check_outros();
-          if_block = if_blocks[current_block_type_index];
-          if (!if_block) {
-            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-            if_block.c();
-          } else {
-            if_block.p(ctx2, dirty);
-          }
-          transition_in(if_block, 1);
-          if_block.m(div, null);
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(if_block);
-        current = true;
-      },
-      o(local) {
-        transition_out(if_block);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        if_blocks[current_block_type_index].d();
-      }
-    };
-  }
-  __name(create_fragment$v, "create_fragment$v");
-  function instance$t($$self, $$props, $$invalidate) {
-    let $loadedTheme;
-    let $activeThemeTab;
-    let schemePrimaryColor = Color.fromHex("#4197c5");
-    let schemeTextColor = Color.fromHex("#FFFFFF");
-    let schemeBackgroundTint = Color.fromHex("#2f61eb");
-    let schemeOnInputs = true;
-    let schemeInvertInputBrightness = false;
-    let schemeEnableBackgroundTint = true;
-    let schemeIngame = false;
-    let shareId = "";
-    let { feature } = $$props;
-    let { variableHooks } = $$props;
-    const loadedTheme = feature.loadedEditorThemeStore;
-    component_subscribe($$self, loadedTheme, (value) => $$invalidate(2, $loadedTheme = value));
-    const activeThemeTab = feature.activeThemeTabStore;
-    component_subscribe($$self, activeThemeTab, (value) => $$invalidate(12, $activeThemeTab = value));
-    let themeColors2 = [];
-    const click_handler2 = /* @__PURE__ */ __name(async () => {
-      const theme = await feature.createLocalTheme();
-      await feature.loadThemeToEditor(theme);
-    }, "click_handler");
-    function input_input_handler() {
-      shareId = this.value;
-      $$invalidate(10, shareId);
-    }
-    __name(input_input_handler, "input_input_handler");
-    const click_handler_1 = /* @__PURE__ */ __name(async () => {
-      const theme = await feature.importTheme(shareId);
-      await feature.activateLocalTheme(theme.theme.meta.id);
-      set_store_value(activeThemeTab, $activeThemeTab = "list", $activeThemeTab);
-    }, "click_handler_1");
-    const click_handler_2 = /* @__PURE__ */ __name(async () => {
-      const id2 = $loadedTheme.theme.meta.id;
-      await feature.unloadThemeFromEditor();
-      await feature.removeSavedTheme(id2);
-    }, "click_handler_2");
-    const click_handler_3 = /* @__PURE__ */ __name(() => feature.unloadThemeFromEditor(), "click_handler_3");
-    const click_handler_4 = /* @__PURE__ */ __name(() => {
-      feature.saveLoadedEditorTheme();
-      feature.activeThemeTabStore.set("list");
-    }, "click_handler_4");
-    function input0_input_handler() {
-      $loadedTheme.theme.meta.name = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input0_input_handler, "input0_input_handler");
-    function input1_input_handler() {
-      $loadedTheme.theme.meta.author = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input1_input_handler, "input1_input_handler");
-    function colorpickerbutton0_color_binding(value) {
-      schemePrimaryColor = value;
-      $$invalidate(3, schemePrimaryColor);
-    }
-    __name(colorpickerbutton0_color_binding, "colorpickerbutton0_color_binding");
-    function colorpickerbutton1_color_binding(value) {
-      schemeTextColor = value;
-      $$invalidate(4, schemeTextColor);
-    }
-    __name(colorpickerbutton1_color_binding, "colorpickerbutton1_color_binding");
-    function checkbox0_checked_binding(value) {
-      schemeOnInputs = value;
-      $$invalidate(6, schemeOnInputs);
-    }
-    __name(checkbox0_checked_binding, "checkbox0_checked_binding");
-    function checkbox1_checked_binding(value) {
-      schemeInvertInputBrightness = value;
-      $$invalidate(7, schemeInvertInputBrightness);
-    }
-    __name(checkbox1_checked_binding, "checkbox1_checked_binding");
-    function checkbox2_checked_binding(value) {
-      schemeIngame = value;
-      $$invalidate(9, schemeIngame);
-    }
-    __name(checkbox2_checked_binding, "checkbox2_checked_binding");
-    const click_handler_52 = /* @__PURE__ */ __name(async () => {
-      await feature.setColorScheme($loadedTheme.theme, schemePrimaryColor, schemeTextColor, schemeOnInputs, schemeInvertInputBrightness, schemeIngame);
-      feature.updateLoadedEditorTheme($loadedTheme);
-    }, "click_handler_5");
-    function input2_input_handler() {
-      $loadedTheme.theme.images.urlLogo = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input2_input_handler, "input2_input_handler");
-    const change_handler = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler");
-    function input3_input_handler() {
-      $loadedTheme.theme.images.urlBackground = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input3_input_handler, "input3_input_handler");
-    const change_handler_1 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_1");
-    function input4_input_handler() {
-      $loadedTheme.theme.images.urlBackgroundGame = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input4_input_handler, "input4_input_handler");
-    const change_handler_2 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_2");
-    function input5_input_handler() {
-      $loadedTheme.theme.images.containerImages = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input5_input_handler, "input5_input_handler");
-    const change_handler_3 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_3");
-    function checkbox3_checked_binding(value) {
-      schemeEnableBackgroundTint = value;
-      $$invalidate(8, schemeEnableBackgroundTint), $$invalidate(2, $loadedTheme);
-    }
-    __name(checkbox3_checked_binding, "checkbox3_checked_binding");
-    const change_handler_4 = /* @__PURE__ */ __name(() => {
-      if (schemeEnableBackgroundTint) {
-        set_store_value(loadedTheme, $loadedTheme.theme.images.backgroundTint = schemeBackgroundTint.hex, $loadedTheme);
-      } else {
-        set_store_value(loadedTheme, $loadedTheme.theme.images.backgroundTint = void 0, $loadedTheme);
-      }
-      feature.updateLoadedEditorTheme($loadedTheme);
-    }, "change_handler_4");
-    const func2 = /* @__PURE__ */ __name((color) => {
-      $$invalidate(5, schemeBackgroundTint = color);
-      $$invalidate(8, schemeEnableBackgroundTint = true);
-      set_store_value(loadedTheme, $loadedTheme.theme.images.backgroundTint = color.hex, $loadedTheme);
-      feature.updateLoadedEditorTheme($loadedTheme);
-    }, "func");
-    function checkbox4_checked_binding(value) {
-      if ($$self.$$.not_equal($loadedTheme.theme.images.backgroundRepeat, value)) {
-        $loadedTheme.theme.images.backgroundRepeat = value;
-        loadedTheme.set($loadedTheme);
-      }
-    }
-    __name(checkbox4_checked_binding, "checkbox4_checked_binding");
-    const change_handler_5 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_5");
-    const func_12 = /* @__PURE__ */ __name((color, update2) => {
-      set_store_value(loadedTheme, $loadedTheme.theme.colors[color[0]] = update2.hsl, $loadedTheme);
-      feature.updateLoadedEditorTheme($loadedTheme);
-    }, "func_1");
-    function input6_input_handler() {
-      $loadedTheme.theme.misc.fontStyle = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input6_input_handler, "input6_input_handler");
-    const change_handler_6 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_6");
-    function input7_input_handler() {
-      $loadedTheme.theme.misc.themeCssUrl = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input7_input_handler, "input7_input_handler");
-    const change_handler_7 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_7");
-    function input8_input_handler() {
-      $loadedTheme.theme.misc.cssText = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input8_input_handler, "input8_input_handler");
-    const change_handler_8 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_8");
-    function input9_input_handler() {
-      $loadedTheme.theme.misc.htmlText = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input9_input_handler, "input9_input_handler");
-    const change_handler_9 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_9");
-    function checkbox5_checked_binding(value) {
-      if ($$self.$$.not_equal($loadedTheme.theme.misc.hideFooter, value)) {
-        $loadedTheme.theme.misc.hideFooter = value;
-        loadedTheme.set($loadedTheme);
-      }
-    }
-    __name(checkbox5_checked_binding, "checkbox5_checked_binding");
-    const change_handler_10 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_10");
-    function checkbox6_checked_binding(value) {
-      if ($$self.$$.not_equal($loadedTheme.theme.misc.hideSkribblPanels, value)) {
-        $loadedTheme.theme.misc.hideSkribblPanels = value;
-        loadedTheme.set($loadedTheme);
-      }
-    }
-    __name(checkbox6_checked_binding, "checkbox6_checked_binding");
-    const change_handler_11 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_11");
-    function checkbox7_checked_binding(value) {
-      if ($$self.$$.not_equal($loadedTheme.theme.misc.hideAvatarLogo, value)) {
-        $loadedTheme.theme.misc.hideAvatarLogo = value;
-        loadedTheme.set($loadedTheme);
-      }
-    }
-    __name(checkbox7_checked_binding, "checkbox7_checked_binding");
-    const change_handler_12 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_12");
-    function checkbox8_checked_binding(value) {
-      if ($$self.$$.not_equal($loadedTheme.theme.misc.hideInGameLogo, value)) {
-        $loadedTheme.theme.misc.hideInGameLogo = value;
-        loadedTheme.set($loadedTheme);
-      }
-    }
-    __name(checkbox8_checked_binding, "checkbox8_checked_binding");
-    const change_handler_13 = /* @__PURE__ */ __name(() => feature.updateLoadedEditorTheme($loadedTheme), "change_handler_13");
-    function input_input_handler_1(color) {
-      $loadedTheme.theme.hooks[color[0]] = this.value;
-      loadedTheme.set($loadedTheme);
-    }
-    __name(input_input_handler_1, "input_input_handler_1");
-    const change_handler_14 = /* @__PURE__ */ __name(() => {
-      feature.updateLoadedEditorTheme($loadedTheme);
-    }, "change_handler_14");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-      if ("variableHooks" in $$props2) $$invalidate(1, variableHooks = $$props2.variableHooks);
-    };
-    $$self.$$.update = () => {
-      if ($$self.$$.dirty[0] & /*$loadedTheme*/
-      4) {
-        {
-          $$invalidate(11, themeColors2 = $loadedTheme ? Object.entries($loadedTheme.theme.colors).map((entry) => {
-            const color = Color.fromHsl(entry[1][0], entry[1][1], entry[1][2], entry[1][3]);
-            return [entry[0], color];
-          }) : []);
-          if (($loadedTheme == null ? void 0 : $loadedTheme.theme.images.backgroundTint) && ($loadedTheme == null ? void 0 : $loadedTheme.theme.images.backgroundTint) !== "transparent") {
-            $$invalidate(5, schemeBackgroundTint = Color.fromHex($loadedTheme.theme.images.backgroundTint));
-            $$invalidate(8, schemeEnableBackgroundTint = true);
-          } else {
-            $$invalidate(8, schemeEnableBackgroundTint = false);
-          }
-        }
-      }
-    };
-    return [
-      feature,
-      variableHooks,
-      $loadedTheme,
-      schemePrimaryColor,
-      schemeTextColor,
-      schemeBackgroundTint,
-      schemeOnInputs,
-      schemeInvertInputBrightness,
-      schemeEnableBackgroundTint,
-      schemeIngame,
-      shareId,
-      themeColors2,
-      $activeThemeTab,
-      loadedTheme,
-      activeThemeTab,
-      click_handler2,
-      input_input_handler,
-      click_handler_1,
-      click_handler_2,
-      click_handler_3,
-      click_handler_4,
-      input0_input_handler,
-      input1_input_handler,
-      colorpickerbutton0_color_binding,
-      colorpickerbutton1_color_binding,
-      checkbox0_checked_binding,
-      checkbox1_checked_binding,
-      checkbox2_checked_binding,
-      click_handler_52,
-      input2_input_handler,
-      change_handler,
-      input3_input_handler,
-      change_handler_1,
-      input4_input_handler,
-      change_handler_2,
-      input5_input_handler,
-      change_handler_3,
-      checkbox3_checked_binding,
-      change_handler_4,
-      func2,
-      checkbox4_checked_binding,
-      change_handler_5,
-      func_12,
-      input6_input_handler,
-      change_handler_6,
-      input7_input_handler,
-      change_handler_7,
-      input8_input_handler,
-      change_handler_8,
-      input9_input_handler,
-      change_handler_9,
-      checkbox5_checked_binding,
-      change_handler_10,
-      checkbox6_checked_binding,
-      change_handler_11,
-      checkbox7_checked_binding,
-      change_handler_12,
-      checkbox8_checked_binding,
-      change_handler_13,
-      input_input_handler_1,
-      change_handler_14
-    ];
-  }
-  __name(instance$t, "instance$t");
-  const _Themes_editor = class _Themes_editor extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$t, create_fragment$v, safe_not_equal, { feature: 0, variableHooks: 1 }, null, [-1, -1, -1]);
-    }
-  };
-  __name(_Themes_editor, "Themes_editor");
-  let Themes_editor = _Themes_editor;
-  function get_each_context$h(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[15] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context$h, "get_each_context$h");
-  function create_else_block$7(ctx) {
-    let div1;
-    return {
-      c() {
-        div1 = element("div");
-        div1.innerHTML = `<img src="" alt="disabled" style="content: var(--file-img-disabled-gif)" class="svelte-6dmj7f"/> <div>Inactive</div>`;
-        attr(div1, "class", "active-marker svelte-6dmj7f");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_else_block$7, "create_else_block$7");
-  function create_if_block_5(ctx) {
-    let div1;
-    return {
-      c() {
-        div1 = element("div");
-        div1.innerHTML = `<img src="" alt="enabled" style="content: var(--file-img-enabled-gif)" class="svelte-6dmj7f"/> <div>Editing</div>`;
-        attr(div1, "class", "active-marker svelte-6dmj7f");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_if_block_5, "create_if_block_5");
-  function create_if_block_4$2(ctx) {
-    let div1;
-    return {
-      c() {
-        div1 = element("div");
-        div1.innerHTML = `<img src="" alt="enabled" style="content: var(--file-img-enabled-gif)" class="svelte-6dmj7f"/> <div>Selected</div>`;
-        attr(div1, "class", "active-marker svelte-6dmj7f");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_if_block_4$2, "create_if_block_4$2");
-  function create_if_block_3$2(ctx) {
-    let span0;
-    let t0;
-    let t1_value = (
-      /*theme*/
-      ctx[15].publicTheme.localVersion + ""
-    );
-    let t1;
-    let t2;
-    let span1;
-    let t3;
-    let t4_value = (
-      /*theme*/
-      ctx[15].publicTheme.publicId + ""
-    );
-    let t4;
-    return {
-      c() {
-        span0 = element("span");
-        t0 = text("v");
-        t1 = text(t1_value);
-        t2 = space();
-        span1 = element("span");
-        t3 = text("#");
-        t4 = text(t4_value);
-        attr(span0, "class", "svelte-6dmj7f");
-        attr(span1, "class", "svelte-6dmj7f");
-      },
-      m(target, anchor) {
-        insert(target, span0, anchor);
-        append(span0, t0);
-        append(span0, t1);
-        insert(target, t2, anchor);
-        insert(target, span1, anchor);
-        append(span1, t3);
-        append(span1, t4);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*$savedThemes*/
-        2 && t1_value !== (t1_value = /*theme*/
-        ctx2[15].publicTheme.localVersion + "")) set_data(t1, t1_value);
-        if (dirty & /*$savedThemes*/
-        2 && t4_value !== (t4_value = /*theme*/
-        ctx2[15].publicTheme.publicId + "")) set_data(t4, t4_value);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(span0);
-          detach(t2);
-          detach(span1);
-        }
-      }
-    };
-  }
-  __name(create_if_block_3$2, "create_if_block_3$2");
-  function create_if_block_2$5(ctx) {
-    let flatbutton;
-    let current;
-    function click_handler_1() {
-      return (
-        /*click_handler_1*/
-        ctx[12](
-          /*theme*/
-          ctx[15]
-        )
-      );
-    }
-    __name(click_handler_1, "click_handler_1");
-    flatbutton = new Flat_button({
-      props: { content: "Remove", color: "orange" }
-    });
-    flatbutton.$on("click", click_handler_1);
-    return {
-      c() {
-        create_component(flatbutton.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(flatbutton, target, anchor);
-        current = true;
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(flatbutton, detaching);
-      }
-    };
-  }
-  __name(create_if_block_2$5, "create_if_block_2$5");
-  function create_if_block_1$8(ctx) {
-    var _a2, _b2;
-    let flatbutton;
-    let current;
-    function click_handler_2() {
-      return (
-        /*click_handler_2*/
-        ctx[13](
-          /*theme*/
-          ctx[15]
-        )
-      );
-    }
-    __name(click_handler_2, "click_handler_2");
-    flatbutton = new Flat_button({
-      props: {
-        content: (
-          /*$loadedEditorTheme*/
-          ((_a2 = ctx[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
-          ctx[15].theme.meta.id ? "Editing" : "Edit"
-        ),
-        color: "blue",
-        disabled: (
-          /*$loadedEditorTheme*/
-          ((_b2 = ctx[3]) == null ? void 0 : _b2.theme.meta.id) === /*theme*/
-          ctx[15].theme.meta.id
-        )
-      }
-    });
-    flatbutton.$on("click", click_handler_2);
-    return {
-      c() {
-        create_component(flatbutton.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(flatbutton, target, anchor);
-        current = true;
-      },
-      p(new_ctx, dirty) {
-        var _a3, _b3;
-        ctx = new_ctx;
-        const flatbutton_changes = {};
-        if (dirty & /*$loadedEditorTheme, $savedThemes*/
-        10) flatbutton_changes.content = /*$loadedEditorTheme*/
-        ((_a3 = ctx[3]) == null ? void 0 : _a3.theme.meta.id) === /*theme*/
-        ctx[15].theme.meta.id ? "Editing" : "Edit";
-        if (dirty & /*$loadedEditorTheme, $savedThemes*/
-        10) flatbutton_changes.disabled = /*$loadedEditorTheme*/
-        ((_b3 = ctx[3]) == null ? void 0 : _b3.theme.meta.id) === /*theme*/
-        ctx[15].theme.meta.id;
-        flatbutton.$set(flatbutton_changes);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(flatbutton, detaching);
-      }
-    };
-  }
-  __name(create_if_block_1$8, "create_if_block_1$8");
-  function create_if_block$e(ctx) {
-    var _a2;
-    let flatbutton;
-    let current;
-    function click_handler_3() {
-      return (
-        /*click_handler_3*/
-        ctx[14](
-          /*theme*/
-          ctx[15]
-        )
-      );
-    }
-    __name(click_handler_3, "click_handler_3");
-    flatbutton = new Flat_button({
-      props: {
-        content: "Share",
-        color: "blue",
-        disabled: (
-          /*$loadedEditorTheme*/
-          ((_a2 = ctx[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
-          ctx[15].theme.meta.id
-        )
-      }
-    });
-    flatbutton.$on("click", click_handler_3);
-    return {
-      c() {
-        create_component(flatbutton.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(flatbutton, target, anchor);
-        current = true;
-      },
-      p(new_ctx, dirty) {
-        var _a3;
-        ctx = new_ctx;
-        const flatbutton_changes = {};
-        if (dirty & /*$loadedEditorTheme, $savedThemes*/
-        10) flatbutton_changes.disabled = /*$loadedEditorTheme*/
-        ((_a3 = ctx[3]) == null ? void 0 : _a3.theme.meta.id) === /*theme*/
-        ctx[15].theme.meta.id;
-        flatbutton.$set(flatbutton_changes);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(flatbutton, detaching);
-      }
-    };
-  }
-  __name(create_if_block$e, "create_if_block$e");
-  function create_each_block$h(ctx) {
-    let div4;
-    let div0;
-    let b;
-    let t0_value = (
-      /*theme*/
-      ctx[15].theme.meta.name + ""
-    );
-    let t0;
-    let t1;
-    let span;
-    let t2_value = (
-      /*theme*/
-      ctx[15].publicTheme ? "Featured Theme" : "Local Theme"
-    );
-    let t2;
-    let t3;
-    let div2;
-    let t4;
-    let div1;
-    let t5;
-    let t6_value = (
-      /*theme*/
-      ctx[15].theme.meta.author + ""
-    );
-    let t6;
-    let t7;
-    let t8;
-    let div3;
-    let flatbutton;
-    let t9;
-    let t10;
-    let t11;
-    let t12;
-    let current;
-    function select_block_type(ctx2, dirty) {
-      var _a2;
-      if (
-        /*$currentThemeId*/
-        ctx2[2] === /*theme*/
-        ctx2[15].theme.meta.id && /*$loadedEditorTheme*/
-        ctx2[3] === void 0
-      ) return create_if_block_4$2;
-      if (
-        /*$loadedEditorTheme*/
-        ((_a2 = ctx2[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
-        ctx2[15].theme.meta.id
-      ) return create_if_block_5;
-      return create_else_block$7;
-    }
-    __name(select_block_type, "select_block_type");
-    let current_block_type = select_block_type(ctx);
-    let if_block0 = current_block_type(ctx);
-    let if_block1 = (
-      /*$devmode*/
-      ctx[4] && /*theme*/
-      ctx[15].publicTheme && create_if_block_3$2(ctx)
-    );
-    function click_handler2() {
-      return (
-        /*click_handler*/
-        ctx[11](
-          /*theme*/
-          ctx[15]
-        )
-      );
-    }
-    __name(click_handler2, "click_handler");
-    flatbutton = new Flat_button({
-      props: {
-        content: (
-          /*$currentThemeId*/
-          ctx[2] === /*theme*/
-          ctx[15].theme.meta.id && /*$loadedEditorTheme*/
-          ctx[3] === void 0 ? "Active" : "Activate"
-        ),
-        disabled: (
-          /*$currentThemeId*/
-          ctx[2] === /*theme*/
-          ctx[15].theme.meta.id && /*$loadedEditorTheme*/
-          ctx[3] === void 0
-        ),
-        color: "green"
-      }
-    });
-    flatbutton.$on("click", click_handler2);
-    let if_block2 = (
-      /*theme*/
-      (ctx[15].publicTheme || /*theme*/
-      ctx[15].enableManage === true) && create_if_block_2$5(ctx)
-    );
-    let if_block3 = (
-      /*theme*/
-      ctx[15].enableManage === true && create_if_block_1$8(ctx)
-    );
-    let if_block4 = (
-      /*theme*/
-      ctx[15].enableManage === true && create_if_block$e(ctx)
-    );
-    return {
-      c() {
-        div4 = element("div");
-        div0 = element("div");
-        b = element("b");
-        t0 = text(t0_value);
-        t1 = space();
-        span = element("span");
-        t2 = text(t2_value);
-        t3 = space();
-        div2 = element("div");
-        if_block0.c();
-        t4 = space();
-        div1 = element("div");
-        t5 = text("by ");
-        t6 = text(t6_value);
-        t7 = space();
-        if (if_block1) if_block1.c();
-        t8 = space();
-        div3 = element("div");
-        create_component(flatbutton.$$.fragment);
-        t9 = space();
-        if (if_block2) if_block2.c();
-        t10 = space();
-        if (if_block3) if_block3.c();
-        t11 = space();
-        if (if_block4) if_block4.c();
-        t12 = space();
-        attr(b, "class", "svelte-6dmj7f");
-        attr(span, "class", "svelte-6dmj7f");
-        attr(div0, "class", "svelte-6dmj7f");
-        attr(div1, "class", "svelte-6dmj7f");
-        attr(div2, "class", "svelte-6dmj7f");
-        attr(div3, "class", "svelte-6dmj7f");
-        attr(div4, "class", "typo-themes-list-item svelte-6dmj7f");
-      },
-      m(target, anchor) {
-        insert(target, div4, anchor);
-        append(div4, div0);
-        append(div0, b);
-        append(b, t0);
-        append(div0, t1);
-        append(div0, span);
-        append(span, t2);
-        append(div4, t3);
-        append(div4, div2);
-        if_block0.m(div2, null);
-        append(div2, t4);
-        append(div2, div1);
-        append(div1, t5);
-        append(div1, t6);
-        append(div2, t7);
-        if (if_block1) if_block1.m(div2, null);
-        append(div4, t8);
-        append(div4, div3);
-        mount_component(flatbutton, div3, null);
-        append(div3, t9);
-        if (if_block2) if_block2.m(div3, null);
-        append(div3, t10);
-        if (if_block3) if_block3.m(div3, null);
-        append(div3, t11);
-        if (if_block4) if_block4.m(div3, null);
-        append(div4, t12);
-        current = true;
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-        if ((!current || dirty & /*$savedThemes*/
-        2) && t0_value !== (t0_value = /*theme*/
-        ctx[15].theme.meta.name + "")) set_data(t0, t0_value);
-        if ((!current || dirty & /*$savedThemes*/
-        2) && t2_value !== (t2_value = /*theme*/
-        ctx[15].publicTheme ? "Featured Theme" : "Local Theme")) set_data(t2, t2_value);
-        if (current_block_type !== (current_block_type = select_block_type(ctx))) {
-          if_block0.d(1);
-          if_block0 = current_block_type(ctx);
-          if (if_block0) {
-            if_block0.c();
-            if_block0.m(div2, t4);
-          }
-        }
-        if ((!current || dirty & /*$savedThemes*/
-        2) && t6_value !== (t6_value = /*theme*/
-        ctx[15].theme.meta.author + "")) set_data(t6, t6_value);
-        if (
-          /*$devmode*/
-          ctx[4] && /*theme*/
-          ctx[15].publicTheme
-        ) {
-          if (if_block1) {
-            if_block1.p(ctx, dirty);
-          } else {
-            if_block1 = create_if_block_3$2(ctx);
-            if_block1.c();
-            if_block1.m(div2, null);
-          }
-        } else if (if_block1) {
-          if_block1.d(1);
-          if_block1 = null;
-        }
-        const flatbutton_changes = {};
-        if (dirty & /*$currentThemeId, $savedThemes, $loadedEditorTheme*/
-        14) flatbutton_changes.content = /*$currentThemeId*/
-        ctx[2] === /*theme*/
-        ctx[15].theme.meta.id && /*$loadedEditorTheme*/
-        ctx[3] === void 0 ? "Active" : "Activate";
-        if (dirty & /*$currentThemeId, $savedThemes, $loadedEditorTheme*/
-        14) flatbutton_changes.disabled = /*$currentThemeId*/
-        ctx[2] === /*theme*/
-        ctx[15].theme.meta.id && /*$loadedEditorTheme*/
-        ctx[3] === void 0;
-        flatbutton.$set(flatbutton_changes);
-        if (
-          /*theme*/
-          ctx[15].publicTheme || /*theme*/
-          ctx[15].enableManage === true
-        ) {
-          if (if_block2) {
-            if_block2.p(ctx, dirty);
-            if (dirty & /*$savedThemes*/
-            2) {
-              transition_in(if_block2, 1);
-            }
-          } else {
-            if_block2 = create_if_block_2$5(ctx);
-            if_block2.c();
-            transition_in(if_block2, 1);
-            if_block2.m(div3, t10);
-          }
-        } else if (if_block2) {
-          group_outros();
-          transition_out(if_block2, 1, 1, () => {
-            if_block2 = null;
-          });
-          check_outros();
-        }
-        if (
-          /*theme*/
-          ctx[15].enableManage === true
-        ) {
-          if (if_block3) {
-            if_block3.p(ctx, dirty);
-            if (dirty & /*$savedThemes*/
-            2) {
-              transition_in(if_block3, 1);
-            }
-          } else {
-            if_block3 = create_if_block_1$8(ctx);
-            if_block3.c();
-            transition_in(if_block3, 1);
-            if_block3.m(div3, t11);
-          }
-        } else if (if_block3) {
-          group_outros();
-          transition_out(if_block3, 1, 1, () => {
-            if_block3 = null;
-          });
-          check_outros();
-        }
-        if (
-          /*theme*/
-          ctx[15].enableManage === true
-        ) {
-          if (if_block4) {
-            if_block4.p(ctx, dirty);
-            if (dirty & /*$savedThemes*/
-            2) {
-              transition_in(if_block4, 1);
-            }
-          } else {
-            if_block4 = create_if_block$e(ctx);
-            if_block4.c();
-            transition_in(if_block4, 1);
-            if_block4.m(div3, null);
-          }
-        } else if (if_block4) {
-          group_outros();
-          transition_out(if_block4, 1, 1, () => {
-            if_block4 = null;
-          });
-          check_outros();
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton.$$.fragment, local);
-        transition_in(if_block2);
-        transition_in(if_block3);
-        transition_in(if_block4);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton.$$.fragment, local);
-        transition_out(if_block2);
-        transition_out(if_block3);
-        transition_out(if_block4);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div4);
-        }
-        if_block0.d();
-        if (if_block1) if_block1.d();
-        destroy_component(flatbutton);
-        if (if_block2) if_block2.d();
-        if (if_block3) if_block3.d();
-        if (if_block4) if_block4.d();
-      }
-    };
-  }
-  __name(create_each_block$h, "create_each_block$h");
-  function create_fragment$u(ctx) {
-    let div0;
-    let t1;
-    let div1;
-    let current;
-    let each_value = ensure_array_like(
-      /*$savedThemes*/
-      ctx[1]
-    );
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$h(get_each_context$h(ctx, each_value, i));
-    }
-    const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-      each_blocks[i] = null;
-    }), "out");
-    return {
-      c() {
-        div0 = element("div");
-        div0.textContent = "Downloaded and created themes will appear here. Select a theme to change the appearance of skribbl!";
-        t1 = space();
-        div1 = element("div");
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        attr(div0, "class", "typo-themes-list-header svelte-6dmj7f");
-        attr(div1, "class", "typo-themes-list-list svelte-6dmj7f");
-      },
-      m(target, anchor) {
-        insert(target, div0, anchor);
-        insert(target, t1, anchor);
-        insert(target, div1, anchor);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(div1, null);
-          }
-        }
-        current = true;
-      },
-      p(ctx2, [dirty]) {
-        if (dirty & /*$loadedEditorTheme, $savedThemes, feature, $selectedTab, $currentThemeId, undefined, $devmode*/
-        63) {
-          each_value = ensure_array_like(
-            /*$savedThemes*/
-            ctx2[1]
-          );
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$h(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-              transition_in(each_blocks[i], 1);
-            } else {
-              each_blocks[i] = create_each_block$h(child_ctx);
-              each_blocks[i].c();
-              transition_in(each_blocks[i], 1);
-              each_blocks[i].m(div1, null);
-            }
-          }
-          group_outros();
-          for (i = each_value.length; i < each_blocks.length; i += 1) {
-            out(i);
-          }
-          check_outros();
-        }
-      },
-      i(local) {
-        if (current) return;
-        for (let i = 0; i < each_value.length; i += 1) {
-          transition_in(each_blocks[i]);
-        }
-        current = true;
-      },
-      o(local) {
-        each_blocks = each_blocks.filter(Boolean);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          transition_out(each_blocks[i]);
-        }
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div0);
-          detach(t1);
-          detach(div1);
-        }
-        destroy_each(each_blocks, detaching);
-      }
-    };
-  }
-  __name(create_fragment$u, "create_fragment$u");
-  function instance$s($$self, $$props, $$invalidate) {
-    let $savedThemes;
-    let $currentThemeId;
-    let $loadedEditorTheme;
-    let $devmode;
-    let $selectedTab;
-    let { feature } = $$props;
-    const devmode = feature.devmodeStore;
-    component_subscribe($$self, devmode, (value) => $$invalidate(4, $devmode = value));
-    const savedThemes = feature.savedThemesStore;
-    component_subscribe($$self, savedThemes, (value) => $$invalidate(1, $savedThemes = value));
-    const currentThemeId = feature.activeThemeStore;
-    component_subscribe($$self, currentThemeId, (value) => $$invalidate(2, $currentThemeId = value));
-    const loadedEditorTheme = feature.loadedEditorThemeStore;
-    component_subscribe($$self, loadedEditorTheme, (value) => $$invalidate(3, $loadedEditorTheme = value));
-    const selectedTab = feature.activeThemeTabStore;
-    component_subscribe($$self, selectedTab, (value) => $$invalidate(5, $selectedTab = value));
-    const click_handler2 = /* @__PURE__ */ __name((theme) => feature.activateLocalTheme(theme.theme.meta.id), "click_handler");
-    const click_handler_1 = /* @__PURE__ */ __name((theme) => feature.removeSavedTheme(theme.theme.meta.id), "click_handler_1");
-    const click_handler_2 = /* @__PURE__ */ __name((theme) => {
-      feature.loadThemeToEditor(theme);
-      set_store_value(selectedTab, $selectedTab = "editor", $selectedTab);
-    }, "click_handler_2");
-    const click_handler_3 = /* @__PURE__ */ __name((theme) => {
-      feature.shareTheme(theme.theme);
-    }, "click_handler_3");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-    };
-    return [
-      feature,
-      $savedThemes,
-      $currentThemeId,
-      $loadedEditorTheme,
-      $devmode,
-      $selectedTab,
-      devmode,
-      savedThemes,
-      currentThemeId,
-      loadedEditorTheme,
-      selectedTab,
-      click_handler2,
-      click_handler_1,
-      click_handler_2,
-      click_handler_3
-    ];
-  }
-  __name(instance$s, "instance$s");
-  const _Themes_list = class _Themes_list extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$s, create_fragment$u, safe_not_equal, { feature: 0 });
-    }
-  };
-  __name(_Themes_list, "Themes_list");
-  let Themes_list = _Themes_list;
-  function create_if_block_2$4(ctx) {
-    let themesbrowser;
-    let current;
-    themesbrowser = new Themes_browser({ props: { feature: (
-      /*feature*/
-      ctx[0]
-    ) } });
-    return {
-      c() {
-        create_component(themesbrowser.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(themesbrowser, target, anchor);
-        current = true;
-      },
-      p(ctx2, dirty) {
-        const themesbrowser_changes = {};
-        if (dirty & /*feature*/
-        1) themesbrowser_changes.feature = /*feature*/
-        ctx2[0];
-        themesbrowser.$set(themesbrowser_changes);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(themesbrowser.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(themesbrowser.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(themesbrowser, detaching);
-      }
-    };
-  }
-  __name(create_if_block_2$4, "create_if_block_2$4");
-  function create_if_block_1$7(ctx) {
-    let themeseditor;
-    let current;
-    themeseditor = new Themes_editor({
-      props: {
-        feature: (
-          /*feature*/
-          ctx[0]
-        ),
-        variableHooks: (
-          /*variableHooks*/
-          ctx[1]
-        )
-      }
-    });
-    return {
-      c() {
-        create_component(themeseditor.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(themeseditor, target, anchor);
-        current = true;
-      },
-      p(ctx2, dirty) {
-        const themeseditor_changes = {};
-        if (dirty & /*feature*/
-        1) themeseditor_changes.feature = /*feature*/
-        ctx2[0];
-        if (dirty & /*variableHooks*/
-        2) themeseditor_changes.variableHooks = /*variableHooks*/
-        ctx2[1];
-        themeseditor.$set(themeseditor_changes);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(themeseditor.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(themeseditor.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(themeseditor, detaching);
-      }
-    };
-  }
-  __name(create_if_block_1$7, "create_if_block_1$7");
-  function create_if_block$d(ctx) {
-    let themeslist;
-    let current;
-    themeslist = new Themes_list({ props: { feature: (
-      /*feature*/
-      ctx[0]
-    ) } });
-    return {
-      c() {
-        create_component(themeslist.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(themeslist, target, anchor);
-        current = true;
-      },
-      p(ctx2, dirty) {
-        const themeslist_changes = {};
-        if (dirty & /*feature*/
-        1) themeslist_changes.feature = /*feature*/
-        ctx2[0];
-        themeslist.$set(themeslist_changes);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(themeslist.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(themeslist.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(themeslist, detaching);
-      }
-    };
-  }
-  __name(create_if_block$d, "create_if_block$d");
-  function create_fragment$t(ctx) {
-    let div2;
-    let div0;
-    let h30;
-    let t1;
-    let h31;
-    let t3;
-    let h32;
-    let t5;
-    let div1;
-    let current_block_type_index;
-    let if_block;
-    let current;
-    let mounted;
-    let dispose;
-    const if_block_creators = [create_if_block$d, create_if_block_1$7, create_if_block_2$4];
-    const if_blocks = [];
-    function select_block_type(ctx2, dirty) {
-      if (
-        /*$selectedTab*/
-        ctx2[2] === "list"
-      ) return 0;
-      if (
-        /*$selectedTab*/
-        ctx2[2] === "editor"
-      ) return 1;
-      if (
-        /*$selectedTab*/
-        ctx2[2] === "browser"
-      ) return 2;
-      return -1;
-    }
-    __name(select_block_type, "select_block_type");
-    if (~(current_block_type_index = select_block_type(ctx))) {
-      if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    }
-    return {
-      c() {
-        div2 = element("div");
-        div0 = element("div");
-        h30 = element("h3");
-        h30.textContent = "Saved Themes";
-        t1 = space();
-        h31 = element("h3");
-        h31.textContent = "Theme Editor";
-        t3 = space();
-        h32 = element("h3");
-        h32.textContent = "Discover Themes";
-        t5 = space();
-        div1 = element("div");
-        if (if_block) if_block.c();
-        attr(h30, "class", "svelte-1ikbg14");
-        toggle_class(
-          h30,
-          "selected",
-          /*$selectedTab*/
-          ctx[2] === "list"
-        );
-        attr(h31, "class", "svelte-1ikbg14");
-        toggle_class(
-          h31,
-          "selected",
-          /*$selectedTab*/
-          ctx[2] === "editor"
-        );
-        attr(h32, "class", "svelte-1ikbg14");
-        toggle_class(
-          h32,
-          "selected",
-          /*$selectedTab*/
-          ctx[2] === "browser"
-        );
-        attr(div0, "class", "typo-themes-navigation svelte-1ikbg14");
-        attr(div1, "class", "typo-themes-tab color-scrollbar svelte-1ikbg14");
-        attr(div2, "class", "typo-themes-content svelte-1ikbg14");
-      },
-      m(target, anchor) {
-        insert(target, div2, anchor);
-        append(div2, div0);
-        append(div0, h30);
-        append(div0, t1);
-        append(div0, h31);
-        append(div0, t3);
-        append(div0, h32);
-        append(div2, t5);
-        append(div2, div1);
-        if (~current_block_type_index) {
-          if_blocks[current_block_type_index].m(div1, null);
-        }
-        current = true;
-        if (!mounted) {
-          dispose = [
-            listen(
-              h30,
-              "click",
-              /*click_handler*/
-              ctx[4]
-            ),
-            listen(
-              h31,
-              "click",
-              /*click_handler_1*/
-              ctx[5]
-            ),
-            listen(
-              h32,
-              "click",
-              /*click_handler_2*/
-              ctx[6]
-            )
-          ];
-          mounted = true;
-        }
-      },
-      p(ctx2, [dirty]) {
-        if (!current || dirty & /*$selectedTab*/
-        4) {
-          toggle_class(
-            h30,
-            "selected",
-            /*$selectedTab*/
-            ctx2[2] === "list"
-          );
-        }
-        if (!current || dirty & /*$selectedTab*/
-        4) {
-          toggle_class(
-            h31,
-            "selected",
-            /*$selectedTab*/
-            ctx2[2] === "editor"
-          );
-        }
-        if (!current || dirty & /*$selectedTab*/
-        4) {
-          toggle_class(
-            h32,
-            "selected",
-            /*$selectedTab*/
-            ctx2[2] === "browser"
-          );
-        }
-        let previous_block_index = current_block_type_index;
-        current_block_type_index = select_block_type(ctx2);
-        if (current_block_type_index === previous_block_index) {
-          if (~current_block_type_index) {
-            if_blocks[current_block_type_index].p(ctx2, dirty);
-          }
-        } else {
-          if (if_block) {
-            group_outros();
-            transition_out(if_blocks[previous_block_index], 1, 1, () => {
-              if_blocks[previous_block_index] = null;
-            });
-            check_outros();
-          }
-          if (~current_block_type_index) {
-            if_block = if_blocks[current_block_type_index];
-            if (!if_block) {
-              if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-              if_block.c();
-            } else {
-              if_block.p(ctx2, dirty);
-            }
-            transition_in(if_block, 1);
-            if_block.m(div1, null);
-          } else {
-            if_block = null;
-          }
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(if_block);
-        current = true;
-      },
-      o(local) {
-        transition_out(if_block);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div2);
-        }
-        if (~current_block_type_index) {
-          if_blocks[current_block_type_index].d();
-        }
-        mounted = false;
-        run_all(dispose);
-      }
-    };
-  }
-  __name(create_fragment$t, "create_fragment$t");
-  function instance$r($$self, $$props, $$invalidate) {
-    let $selectedTab;
-    let { feature } = $$props;
-    let { variableHooks } = $$props;
-    const selectedTab = feature.activeThemeTabStore;
-    component_subscribe($$self, selectedTab, (value) => $$invalidate(2, $selectedTab = value));
-    const click_handler2 = /* @__PURE__ */ __name(() => set_store_value(selectedTab, $selectedTab = "list", $selectedTab), "click_handler");
-    const click_handler_1 = /* @__PURE__ */ __name(() => set_store_value(selectedTab, $selectedTab = "editor", $selectedTab), "click_handler_1");
-    const click_handler_2 = /* @__PURE__ */ __name(() => set_store_value(selectedTab, $selectedTab = "browser", $selectedTab), "click_handler_2");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-      if ("variableHooks" in $$props2) $$invalidate(1, variableHooks = $$props2.variableHooks);
-    };
-    return [
-      feature,
-      variableHooks,
-      $selectedTab,
-      selectedTab,
-      click_handler2,
-      click_handler_1,
-      click_handler_2
-    ];
-  }
-  __name(instance$r, "instance$r");
-  const _Controls_themes = class _Controls_themes extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$r, create_fragment$t, safe_not_equal, { feature: 0, variableHooks: 1 });
-    }
-  };
-  __name(_Controls_themes, "Controls_themes");
-  let Controls_themes = _Controls_themes;
-  var __defProp$v = Object.defineProperty;
-  var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$n = Object.defineProperty;
+  var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$v(target, key, result);
+    if (result) __defProp$n(target, key, result);
     return result;
-  }, "__decorateClass$v");
-  const _ControlsThemesFeature = class _ControlsThemesFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_elementsSetup");
-      __publicField(this, "_cssColorVarSelectorsSetup");
-      __publicField(this, "_apiDataSetup");
-      __publicField(this, "_modalService");
-      __publicField(this, "_toastService");
-      __publicField(this, "_themesService");
-      __publicField(this, "_globalSettingsService");
-      __publicField(this, "name", "Themes");
-      __publicField(this, "description", "Customize the skribbl.io appearance with pre-made themes or your own style");
-      __publicField(this, "tags", [
-        FeatureTag.INTERFACE
-      ]);
-      __publicField(this, "featureId", 34);
-      __publicField(this, "_onboardingTask", this.useOnboardingTask({
-        key: "theme_activated",
-        name: "Activate a theme",
-        description: "Select a theme to customize the style of skribbl.",
-        start: /* @__PURE__ */ __name(() => this.openThemesPopup(), "start")
-      }));
-      __publicField(this, "_iconComponent");
-      __publicField(this, "_iconClickSubscription");
-      __publicField(this, "_themeResetSubscription");
-      __publicField(this, "_currentThemeSubscription");
-      __publicField(this, "_activeThemeTab$", new BehaviorSubject("list"));
-      __publicField(this, "_themeElements", []);
-      __publicField(this, "_variableHooks");
-      __publicField(this, "_importedOldThemes", new ExtensionSetting("imported_old_themes", false, this));
-      __publicField(this, "_importedOldThemes2", new ExtensionSetting("imported_old_themes2", false, this));
-    }
-    async onActivate() {
-      const elements2 = await this._elementsSetup.complete();
-      this._variableHooks = await this._cssColorVarSelectorsSetup.complete();
-      this._iconComponent = new Icon_button({
-        target: elements2.controls,
-        props: {
-          hoverMove: false,
-          size: "48px",
-          icon: "file-img-themes-gif",
-          name: "Themes",
-          order: 3,
-          tooltipAction: this.createTooltip
-        }
-      });
-      this._iconClickSubscription = this._iconComponent.click$.subscribe(() => {
-        this.openThemesPopup();
-      });
-      this._themeResetSubscription = this._themesService.savedThemesSetting.changes$.pipe(
-        combineLatestWith(this._themesService.activeThemeSetting.changes$)
-      ).subscribe(([themes, activeId]) => {
-        if (!themes.some((t) => t.theme.meta.id === activeId)) this._themesService.activeThemeSetting.setValue(0);
-      });
-      this._currentThemeSubscription = this._themesService.activeThemeSetting.changes$.pipe(
-        withLatestFrom(this._themesService.savedThemesSetting.changes$),
-        map(([activeId, themes]) => {
-          var _a2;
-          return activeId === 0 ? void 0 : (_a2 = themes.find((t) => t.theme.meta.id === activeId)) == null ? void 0 : _a2.theme;
-        }),
-        combineLatestWith(this._themesService.loadedEditorTheme$),
-        map(([activeTheme, loadedTheme]) => (loadedTheme == null ? void 0 : loadedTheme.theme) ?? activeTheme)
-      ).subscribe((theme) => {
-        this._logger.debug("Active theme changed", theme);
-        this.setThemeElements(theme);
-      });
-      await this.importOldTypoThemes();
-    }
-    async onDestroy() {
-      var _a2, _b2, _c2, _d2;
-      (_a2 = this._iconComponent) == null ? void 0 : _a2.$destroy();
-      (_b2 = this._iconClickSubscription) == null ? void 0 : _b2.unsubscribe();
-      this._iconClickSubscription = void 0;
-      (_c2 = this._themeResetSubscription) == null ? void 0 : _c2.unsubscribe();
-      this._themeResetSubscription = void 0;
-      (_d2 = this._currentThemeSubscription) == null ? void 0 : _d2.unsubscribe();
-      this._currentThemeSubscription = void 0;
-      await this.setThemeElements(void 0);
-      this._variableHooks = void 0;
-    }
-    openThemesPopup() {
-      if (!this._variableHooks) throw new Error("Themes feature not activated?");
-      const themesComponent = {
-        componentType: Controls_themes,
-        props: {
-          feature: this,
-          variableHooks: this._variableHooks
-        }
-      };
-      this._modalService.showModal(themesComponent.componentType, themesComponent.props, "Typo Themes");
-    }
-    get savedThemesStore() {
-      return this._themesService.savedThemesSetting.store;
-    }
-    get activeThemeStore() {
-      return this._themesService.activeThemeSetting.store;
-    }
-    get loadedEditorThemeStore() {
-      return this._themesService.loadedEditorThemeStore;
-    }
-    get activeThemeTabStore() {
-      return fromObservable(this._activeThemeTab$, this._activeThemeTab$.value, (value) => this._activeThemeTab$.next(value));
-    }
-    get devmodeStore() {
-      return this._globalSettingsService.settings.devMode.store;
-    }
-    async getOnlineThemes() {
-      return (await this._apiDataSetup.complete()).themes;
-    }
-    async loadThemeToEditor(theme) {
-      const toast = await this._toastService.showLoadingToast("Loading theme to editor");
-      try {
-        await this._themesService.loadThemeToEditor(theme);
-        toast.resolve(`Theme ${theme.theme.meta.name} loaded`);
-      } catch {
-        toast.reject("Failed to load theme");
-      }
-    }
-    updateLoadedEditorTheme(theme) {
-      this._themesService.updateLoadedEditorTheme(theme);
-    }
-    async unloadThemeFromEditor() {
-      await this._themesService.unloadThemeFromEditor();
-      await this._toastService.showToast("Theme unloaded from editor");
-    }
-    async createLocalTheme() {
-      const toast = await this._toastService.showLoadingToast("Creating new theme");
-      try {
-        const theme = await this._themesService.createLocalTheme();
-        toast.resolve("New theme created");
-        return theme;
-      } catch (e) {
-        toast.reject("Failed to create theme");
-        throw e;
-      }
-    }
-    async importOldTypoThemes() {
-      try {
-        const oldThemes = localStorage.getItem("themes");
-        if (!await this._importedOldThemes.getValue() && oldThemes !== null) {
-          const oldThemesObject = JSON.parse(oldThemes);
-          if (!Array.isArray(oldThemesObject)) throw new Error("invalid themes data");
-          for (const theme of oldThemesObject) {
-            try {
-              await this.importOldTheme(theme);
-            } catch (e) {
-              this._logger.error("Failed to import old typo theme", e);
-            }
-          }
-          await this._importedOldThemes.setValue(true);
-        }
-        const oldThemes2 = localStorage.getItem("themesv2");
-        if (!await this._importedOldThemes2.getValue() && oldThemes2 !== null) {
-          const oldThemes2Object = JSON.parse(oldThemes2);
-          if (!Array.isArray(oldThemes2Object)) throw new Error("invalid themes data");
-          for (const theme of oldThemes2Object) {
-            try {
-              await this._themesService.importThemeFromString(JSON.stringify(theme));
-            } catch (e) {
-              this._logger.error("Failed to import old typo theme", e);
-            }
-          }
-          await this._importedOldThemes2.setValue(true);
-        }
-      } catch (e) {
-        this._logger.error("Failed to import old typo themes", e);
-        throw e;
-      }
-    }
-    async importOldTheme(oldTheme) {
-      try {
-        if (typeof oldTheme !== "object") throw new Error("Invalid theme data");
-        const oldThemeKeys = new Map(Object.entries(oldTheme));
-        const options = oldThemeKeys.get("options");
-        const name = oldThemeKeys.get("name");
-        if (typeof options !== "object") throw new Error("Invalid theme options");
-        if (typeof name !== "string") throw new Error("Invalid theme name");
-        if (name === "Original") {
-          this._logger.info("Skipping original theme");
-          return;
-        }
-        await this._themesService.importOldTheme(options, name);
-      } catch (e) {
-        throw e;
-      }
-    }
-    async saveLoadedEditorTheme() {
-      const toast = await this._toastService.showLoadingToast("Saving theme changes");
-      try {
-        const theme = await this._themesService.saveLoadedEditorTheme();
-        toast.resolve(`Theme ${theme.theme.meta.name} updated`);
-        return theme;
-      } catch (e) {
-        toast.reject("Failed to create theme");
-        throw e;
-      }
-    }
-    async savePublicTheme(theme) {
-      const toast = await this._toastService.showLoadingToast("Saving theme");
-      try {
-        const localTheme = await this._themesService.savePublicTheme(theme);
-        toast.resolve(`Theme ${localTheme.theme.meta.name} saved`);
-      } catch {
-        toast.reject("Failed to save theme");
-      }
-    }
-    async activateLocalTheme(id2) {
-      const toast = await this._toastService.showLoadingToast("Activating theme");
-      try {
-        const theme = await this._themesService.activateLocalTheme(id2);
-        (await this._onboardingTask).complete();
-        toast.resolve(`Theme ${theme.theme.meta.name} activated`);
-      } catch {
-        toast.reject("Failed to activate theme");
-      }
-    }
-    async activatePublicTheme(theme) {
-      const toast = await this._toastService.showLoadingToast("Activating theme");
-      try {
-        const localTheme = await this._themesService.activatePublicTheme(theme);
-        (await this._onboardingTask).complete();
-        toast.resolve(`Theme ${localTheme.theme.meta.name} activated`);
-      } catch {
-        toast.reject("Failed to activate theme");
-      }
-    }
-    async removeSavedTheme(localId) {
-      if (!await (await this._toastService.showConfirmToast("Do you want to delete the theme?", void 0, 1e4, { confirm: "Delete theme", cancel: "Cancel deletion" })).result) {
-        this._logger.info("User canceled theme removal");
-        return;
-      }
-      const toast = await this._toastService.showLoadingToast("Removing theme");
-      try {
-        const theme = await this._themesService.removeSavedTheme(localId);
-        toast.resolve(`Theme ${theme.theme.meta.name} removed`);
-      } catch {
-        toast.reject("Failed to remove theme");
-      }
-    }
-    async shareTheme(theme) {
-      const toast = await this._toastService.showLoadingToast("Sharing theme");
-      try {
-        const id2 = await this._themesService.shareTheme(theme);
-        await navigator.clipboard.writeText(id2);
-        toast.resolve(`Share id (${id2}) for theme ${theme.meta.name} copied`);
-      } catch {
-        toast.reject("Failed to share theme");
-      }
-    }
-    async importTheme(shareId) {
-      const toast = await this._toastService.showLoadingToast("Importing theme");
-      try {
-        const theme = await this._themesService.importTheme(shareId);
-        toast.resolve(`Theme ${theme.theme.meta.name} imported`);
-        return theme;
-      } catch (e) {
-        toast.reject("Failed to import theme");
-        throw e;
-      }
-    }
-    /**
-     * Update the html elements that represent the selelcted theme
-     * @param theme
-     * @private
-     */
-    async setThemeElements(theme) {
-      this._logger.info("Setting theme elements", theme);
-      this._themeElements.forEach((e) => e.remove());
-      this._themeElements = theme ? await this.createThemeElements(theme) : [];
-      this._themeElements.forEach((e) => document.body.appendChild(e));
-    }
-    /**
-     * Create html elements to display a theme
-     * @param theme
-     * @private
-     */
-    async createThemeElements(theme) {
-      const selectorHooks = await this._cssColorVarSelectorsSetup.complete();
-      const themeStyle = generateStyleElementForTheme(theme, selectorHooks);
-      const themeFont = generateThemeFontElements(theme);
-      const themeHtml = generateThemeCustomHtmlElement(theme);
-      const themeExternalCss = generateThemeExternalCssElement(theme);
-      const themeBackground = generateThemeBackgroundElement(theme);
-      return [themeStyle, ...themeFont, ...themeHtml, ...themeExternalCss, themeBackground];
-    }
-    /**
-     * Generate a color scheme based on parameters and fill the color variables accordingly
-     * @param theme
-     * @param primary
-     * @param text
-     * @param useOnInputs
-     * @param invertInputText
-     * @param useIngame
-     */
-    async setColorScheme(theme, primary, text2, useOnInputs, invertInputText, useIngame) {
-      this._logger.debug("Setting color scheme", theme, primary, text2, useOnInputs, invertInputText, useIngame);
-      const colors = generateColorScheme(primary, text2, useIngame, useOnInputs, invertInputText);
-      theme.colors = colors;
-      await this._toastService.showToast("Color scheme updated");
-    }
-  };
-  __name(_ControlsThemesFeature, "ControlsThemesFeature");
-  let ControlsThemesFeature = _ControlsThemesFeature;
-  __decorateClass$v([
-    inject(ElementsSetup)
-  ], ControlsThemesFeature.prototype, "_elementsSetup");
-  __decorateClass$v([
-    inject(CssColorVarSelectorsSetup)
-  ], ControlsThemesFeature.prototype, "_cssColorVarSelectorsSetup");
-  __decorateClass$v([
-    inject(ApiDataSetup)
-  ], ControlsThemesFeature.prototype, "_apiDataSetup");
-  __decorateClass$v([
-    inject(ModalService)
-  ], ControlsThemesFeature.prototype, "_modalService");
-  __decorateClass$v([
-    inject(ToastService)
-  ], ControlsThemesFeature.prototype, "_toastService");
-  __decorateClass$v([
-    inject(ThemesService)
-  ], ControlsThemesFeature.prototype, "_themesService");
-  __decorateClass$v([
-    inject(GlobalSettingsService)
-  ], ControlsThemesFeature.prototype, "_globalSettingsService");
-  var __defProp$u = Object.defineProperty;
-  var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key, result) || result;
-    if (result) __defProp$u(target, key, result);
-    return result;
-  }, "__decorateClass$u");
+  }, "__decorateClass$n");
   const _MandalaMod = class _MandalaMod extends TypoDrawMod {
     constructor() {
       super(...arguments);
@@ -47846,7 +52148,7 @@
   };
   __name(_MandalaMod, "MandalaMod");
   let MandalaMod = _MandalaMod;
-  __decorateClass$u([
+  __decorateClass$n([
     inject(ToolsService)
   ], MandalaMod.prototype, "_toolsService");
   const _NoiseMod = class _NoiseMod extends ConstantDrawMod {
@@ -47983,15 +52285,15 @@
   };
   __name(_RainbowMod, "RainbowMod");
   let RainbowMod = _RainbowMod;
-  var __defProp$t = Object.defineProperty;
-  var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$m = Object.defineProperty;
+  var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$t(target, key, result);
+    if (result) __defProp$m(target, key, result);
     return result;
-  }, "__decorateClass$t");
+  }, "__decorateClass$m");
   const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
     constructor() {
       super(...arguments);
@@ -48028,18 +52330,18 @@
   };
   __name(_RandomColorMod, "RandomColorMod");
   let RandomColorMod = _RandomColorMod;
-  __decorateClass$t([
+  __decorateClass$m([
     inject(ColorsService)
   ], RandomColorMod.prototype, "_colorsService");
-  var __defProp$s = Object.defineProperty;
-  var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$l = Object.defineProperty;
+  var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$s(target, key, result);
+    if (result) __defProp$l(target, key, result);
     return result;
-  }, "__decorateClass$s");
+  }, "__decorateClass$l");
   const _SculptMod = class _SculptMod extends TypoDrawMod {
     constructor() {
       super(...arguments);
@@ -48085,7 +52387,7 @@
   };
   __name(_SculptMod, "SculptMod");
   let SculptMod = _SculptMod;
-  __decorateClass$s([
+  __decorateClass$l([
     inject(ToolsService)
   ], SculptMod.prototype, "_toolsService");
   const _TiltMod = class _TiltMod extends ConstantDrawMod {
@@ -48204,15 +52506,15 @@
   };
   __name(_DotTool, "DotTool");
   let DotTool = _DotTool;
-  var __defProp$r = Object.defineProperty;
-  var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$k = Object.defineProperty;
+  var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$r(target, key, result);
+    if (result) __defProp$k(target, key, result);
     return result;
-  }, "__decorateClass$r");
+  }, "__decorateClass$k");
   const _GridTool = class _GridTool extends TypoDrawTool {
     constructor() {
       super(...arguments);
@@ -48256,10 +52558,10 @@
   };
   __name(_GridTool, "GridTool");
   let GridTool = _GridTool;
-  __decorateClass$r([
+  __decorateClass$k([
     inject(ToolsService)
   ], GridTool.prototype, "_toolsService");
-  function create_fragment$s(ctx) {
+  function create_fragment$j(ctx) {
     let div;
     return {
       c() {
@@ -48279,24 +52581,24 @@
       }
     };
   }
-  __name(create_fragment$s, "create_fragment$s");
-  function instance$q($$self, $$props, $$invalidate) {
+  __name(create_fragment$j, "create_fragment$j");
+  function instance$i($$self, $$props, $$invalidate) {
     let { feature } = $$props;
     $$self.$$set = ($$props2) => {
       if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
     };
     return [feature];
   }
-  __name(instance$q, "instance$q");
+  __name(instance$i, "instance$i");
   const _Drawing_brush_lab_info = class _Drawing_brush_lab_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$q, create_fragment$s, safe_not_equal, { feature: 0 });
+      init(this, options, instance$i, create_fragment$j, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Drawing_brush_lab_info, "Drawing_brush_lab_info");
   let Drawing_brush_lab_info = _Drawing_brush_lab_info;
-  function create_fragment$r(ctx) {
+  function create_fragment$i(ctx) {
     let div1;
     let mounted;
     let dispose;
@@ -48352,8 +52654,8 @@
       }
     };
   }
-  __name(create_fragment$r, "create_fragment$r");
-  function instance$p($$self, $$props, $$invalidate) {
+  __name(create_fragment$i, "create_fragment$i");
+  function instance$h($$self, $$props, $$invalidate) {
     const toggle = /* @__PURE__ */ __name(() => {
       $$invalidate(1, expanded = !expanded);
     }, "toggle");
@@ -48365,11 +52667,11 @@
     };
     return [feature, expanded, toggle, click_handler2];
   }
-  __name(instance$p, "instance$p");
+  __name(instance$h, "instance$h");
   const _Drawing_brush_lab_switch = class _Drawing_brush_lab_switch extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$p, create_fragment$r, safe_not_equal, { toggle: 2, feature: 0 });
+      init(this, options, instance$h, create_fragment$i, safe_not_equal, { toggle: 2, feature: 0 });
     }
     get toggle() {
       return this.$$.ctx[2];
@@ -48377,19 +52679,19 @@
   };
   __name(_Drawing_brush_lab_switch, "Drawing_brush_lab_switch");
   let Drawing_brush_lab_switch = _Drawing_brush_lab_switch;
-  function get_each_context$g(ctx, list, i) {
+  function get_each_context$a(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[6] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$g, "get_each_context$g");
-  function get_each_context_1$4(ctx, list, i) {
+  __name(get_each_context$a, "get_each_context$a");
+  function get_each_context_1$2(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[9] = list[i];
     return child_ctx;
   }
-  __name(get_each_context_1$4, "get_each_context_1$4");
-  function create_each_block_1$4(ctx) {
+  __name(get_each_context_1$2, "get_each_context_1$2");
+  function create_each_block_1$2(ctx) {
     let div1;
     let div0;
     let t;
@@ -48483,8 +52785,8 @@
       }
     };
   }
-  __name(create_each_block_1$4, "create_each_block_1$4");
-  function create_each_block$g(ctx) {
+  __name(create_each_block_1$2, "create_each_block_1$2");
+  function create_each_block$a(ctx) {
     let div1;
     let div0;
     let t;
@@ -48578,8 +52880,8 @@
       }
     };
   }
-  __name(create_each_block$g, "create_each_block$g");
-  function create_fragment$q(ctx) {
+  __name(create_each_block$a, "create_each_block$a");
+  function create_fragment$h(ctx) {
     let div5;
     let div2;
     let div1;
@@ -48595,7 +52897,7 @@
     );
     let each_blocks_1 = [];
     for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks_1[i] = create_each_block_1$4(get_each_context_1$4(ctx, each_value_1, i));
+      each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
     }
     let each_value = ensure_array_like(
       /*$tools*/
@@ -48603,7 +52905,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$g(get_each_context$g(ctx, each_value, i));
+      each_blocks[i] = create_each_block$a(get_each_context$a(ctx, each_value, i));
     }
     return {
       c() {
@@ -48670,11 +52972,11 @@
           );
           let i;
           for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$4(ctx2, each_value_1, i);
+            const child_ctx = get_each_context_1$2(ctx2, each_value_1, i);
             if (each_blocks_1[i]) {
               each_blocks_1[i].p(child_ctx, dirty);
             } else {
-              each_blocks_1[i] = create_each_block_1$4(child_ctx);
+              each_blocks_1[i] = create_each_block_1$2(child_ctx);
               each_blocks_1[i].c();
               each_blocks_1[i].m(div3, null);
             }
@@ -48692,11 +52994,11 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$g(ctx2, each_value, i);
+            const child_ctx = get_each_context$a(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$g(child_ctx);
+              each_blocks[i] = create_each_block$a(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div4, null);
             }
@@ -48720,8 +53022,8 @@
       }
     };
   }
-  __name(create_fragment$q, "create_fragment$q");
-  function instance$o($$self, $$props, $$invalidate) {
+  __name(create_fragment$h, "create_fragment$h");
+  function instance$g($$self, $$props, $$invalidate) {
     let $tools;
     let { feature } = $$props;
     const tools = feature.toolbarItemsStore;
@@ -48746,27 +53048,27 @@
     };
     return [feature, $tools, tools, click_handler2, click_handler_1, click_handler_2];
   }
-  __name(instance$o, "instance$o");
+  __name(instance$g, "instance$g");
   const _Drawing_brush_lab_group = class _Drawing_brush_lab_group extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$o, create_fragment$q, safe_not_equal, { feature: 0 });
+      init(this, options, instance$g, create_fragment$h, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Drawing_brush_lab_group, "Drawing_brush_lab_group");
   let Drawing_brush_lab_group = _Drawing_brush_lab_group;
-  function get_each_context$f(ctx, list, i) {
+  function get_each_context$9(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[9] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$f, "get_each_context$f");
-  function get_each_context_1$3(ctx, list, i) {
+  __name(get_each_context$9, "get_each_context$9");
+  function get_each_context_1$1(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[12] = list[i];
     return child_ctx;
   }
-  __name(get_each_context_1$3, "get_each_context_1$3");
+  __name(get_each_context_1$1, "get_each_context_1$1");
   function get_each_context_2(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[12] = list[i];
@@ -48935,7 +53237,7 @@
     };
   }
   __name(create_each_block_2, "create_each_block_2");
-  function create_each_block_1$3(ctx) {
+  function create_each_block_1$1(ctx) {
     let div;
     let img;
     let img_src_value;
@@ -49015,8 +53317,8 @@
       }
     };
   }
-  __name(create_each_block_1$3, "create_each_block_1$3");
-  function create_if_block$c(ctx) {
+  __name(create_each_block_1$1, "create_each_block_1$1");
+  function create_if_block$5(ctx) {
     let div;
     let current;
     let each_value = ensure_array_like(
@@ -49025,7 +53327,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$f(get_each_context$f(ctx, each_value, i));
+      each_blocks[i] = create_each_block$9(get_each_context$9(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
@@ -49056,12 +53358,12 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$f(ctx2, each_value, i);
+            const child_ctx = get_each_context$9(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$f(child_ctx);
+              each_blocks[i] = create_each_block$9(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div, null);
@@ -49096,8 +53398,8 @@
       }
     };
   }
-  __name(create_if_block$c, "create_if_block$c");
-  function create_each_block$f(ctx) {
+  __name(create_if_block$5, "create_if_block$5");
+  function create_each_block$9(ctx) {
     let div;
     let switch_instance;
     let t;
@@ -49187,8 +53489,8 @@
       }
     };
   }
-  __name(create_each_block$f, "create_each_block$f");
-  function create_fragment$p(ctx) {
+  __name(create_each_block$9, "create_each_block$9");
+  function create_fragment$g(ctx) {
     var _a2, _b2;
     let p0;
     let t3;
@@ -49263,12 +53565,12 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
+      each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
     }
     let if_block = (
       /*selectedItem*/
       ctx[1] !== void 0 && /*selectedItem*/
-      ctx[1].settings.length > 0 && create_if_block$c(ctx)
+      ctx[1].settings.length > 0 && create_if_block$5(ctx)
     );
     return {
       c() {
@@ -49442,11 +53744,11 @@
           );
           let i;
           for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$3(ctx2, each_value_1, i);
+            const child_ctx = get_each_context_1$1(ctx2, each_value_1, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block_1$3(child_ctx);
+              each_blocks[i] = create_each_block_1$1(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div0, null);
             }
@@ -49489,7 +53791,7 @@
               transition_in(if_block, 1);
             }
           } else {
-            if_block = create_if_block$c(ctx2);
+            if_block = create_if_block$5(ctx2);
             if_block.c();
             transition_in(if_block, 1);
             if_block.m(div2, null);
@@ -49524,8 +53826,8 @@
       }
     };
   }
-  __name(create_fragment$p, "create_fragment$p");
-  function instance$n($$self, $$props, $$invalidate) {
+  __name(create_fragment$g, "create_fragment$g");
+  function instance$f($$self, $$props, $$invalidate) {
     let $items;
     let { feature } = $$props;
     const items = feature.toolbarItemsStore;
@@ -49560,24 +53862,24 @@
       click_handler_2
     ];
   }
-  __name(instance$n, "instance$n");
+  __name(instance$f, "instance$f");
   const _Drawing_brush_lab_manage = class _Drawing_brush_lab_manage extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$n, create_fragment$p, safe_not_equal, { feature: 3 });
+      init(this, options, instance$f, create_fragment$g, safe_not_equal, { feature: 3 });
     }
   };
   __name(_Drawing_brush_lab_manage, "Drawing_brush_lab_manage");
   let Drawing_brush_lab_manage = _Drawing_brush_lab_manage;
-  var __defProp$q = Object.defineProperty;
-  var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$j = Object.defineProperty;
+  var __decorateClass$j = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$q(target, key, result);
+    if (result) __defProp$j(target, key, result);
     return result;
-  }, "__decorateClass$q");
+  }, "__decorateClass$j");
   const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -49687,333 +53989,22 @@
   };
   __name(_DrawingBrushLabFeature, "DrawingBrushLabFeature");
   let DrawingBrushLabFeature = _DrawingBrushLabFeature;
-  __decorateClass$q([
+  __decorateClass$j([
     inject(ToolsService)
   ], DrawingBrushLabFeature.prototype, "_toolsService");
-  __decorateClass$q([
+  __decorateClass$j([
     inject(ElementsSetup)
   ], DrawingBrushLabFeature.prototype, "_elementsSetup");
-  __decorateClass$q([
+  __decorateClass$j([
     inject(ModalService)
   ], DrawingBrushLabFeature.prototype, "_modalService");
-  var __defProp$p = Object.defineProperty;
-  var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key, result) || result;
-    if (result) __defProp$p(target, key, result);
-    return result;
-  }, "__decorateClass$p");
-  const _PipetteTool = class _PipetteTool extends TypoDrawTool {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_elementsSetup");
-      __publicField(this, "createCommands", this.noCommands);
-    }
-    createCursor() {
-      return { source: "var(--file-img-pipette_cur-png)", x: 7, y: 37 };
-    }
-    /**
-     * Get the pixel color of the canvas at a certain position
-     * @param line
-     * @param pressure
-     * @param style
-     */
-    async applyConstantEffect(line, pressure, style2) {
-      const elements2 = await this._elementsSetup.complete();
-      const canvas = elements2.canvas;
-      const ctx = canvas.getContext("2d");
-      if (ctx !== null) {
-        const imageData = ctx.getImageData(line.to[0], line.to[1], 1, 1);
-        const rgb = imageData.data.slice(0, 3);
-        style2.color = Color.fromRgb(rgb[0], rgb[1], rgb[2]).skribblCode;
-      }
-      return this.noConstantEffect(line, pressure, style2);
-    }
-  };
-  __name(_PipetteTool, "PipetteTool");
-  let PipetteTool = _PipetteTool;
-  __decorateClass$p([
-    inject(ElementsSetup)
-  ], PipetteTool.prototype, "_elementsSetup");
-  function create_fragment$o(ctx) {
-    let t0;
-    let br0;
-    let t1;
-    let br1;
-    return {
-      c() {
-        t0 = text("Add a hotkey to quickly focus the chat input, so you can start guessing right away. ");
-        br0 = element("br");
-        t1 = text("\nIf the auto-focus setting is enabled, the chat input will be focused automatically when someone else starts drawing. ");
-        br1 = element("br");
-      },
-      m(target, anchor) {
-        insert(target, t0, anchor);
-        insert(target, br0, anchor);
-        insert(target, t1, anchor);
-        insert(target, br1, anchor);
-      },
-      p: noop,
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(t0);
-          detach(br0);
-          detach(t1);
-          detach(br1);
-        }
-      }
-    };
-  }
-  __name(create_fragment$o, "create_fragment$o");
-  const _Drawing_color_tools_info = class _Drawing_color_tools_info extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, null, create_fragment$o, safe_not_equal, {});
-    }
-  };
-  __name(_Drawing_color_tools_info, "Drawing_color_tools_info");
-  let Drawing_color_tools_info = _Drawing_color_tools_info;
-  function create_fragment$n(ctx) {
-    let div2;
-    let div0;
-    let t;
-    let div1;
-    let colorpickerbutton;
-    let current;
-    let mounted;
-    let dispose;
-    colorpickerbutton = new Color_picker_button({
-      props: {
-        color: (
-          /*$color*/
-          ctx[2]
-        ),
-        allowAlpha: false,
-        useBackground: false,
-        height: "auto",
-        borderRadius: "0",
-        colorChanged: (
-          /*func*/
-          ctx[6]
-        ),
-        description: "Warning: Only typo users can see custom colors."
-      }
-    });
-    return {
-      c() {
-        div2 = element("div");
-        div0 = element("div");
-        t = space();
-        div1 = element("div");
-        create_component(colorpickerbutton.$$.fragment);
-        attr(div0, "class", "pipette svelte-iqw7hb");
-        toggle_class(
-          div0,
-          "selected",
-          /*$selectedTool*/
-          ctx[1] instanceof PipetteTool
-        );
-        attr(div1, "class", "picker svelte-iqw7hb");
-        attr(div2, "class", "color-tools svelte-iqw7hb");
-      },
-      m(target, anchor) {
-        insert(target, div2, anchor);
-        append(div2, div0);
-        append(div2, t);
-        append(div2, div1);
-        mount_component(colorpickerbutton, div1, null);
-        current = true;
-        if (!mounted) {
-          dispose = [
-            listen(
-              div0,
-              "click",
-              /*click_handler*/
-              ctx[5]
-            ),
-            action_destroyer(
-              /*feature*/
-              ctx[0].createTooltip(div0, { title: "Pipette", lock: "Y" })
-            ),
-            action_destroyer(
-              /*feature*/
-              ctx[0].createTooltip(div1, { title: "Picker", lock: "Y" })
-            )
-          ];
-          mounted = true;
-        }
-      },
-      p(ctx2, [dirty]) {
-        if (!current || dirty & /*$selectedTool*/
-        2) {
-          toggle_class(
-            div0,
-            "selected",
-            /*$selectedTool*/
-            ctx2[1] instanceof PipetteTool
-          );
-        }
-        const colorpickerbutton_changes = {};
-        if (dirty & /*$color*/
-        4) colorpickerbutton_changes.color = /*$color*/
-        ctx2[2];
-        if (dirty & /*feature*/
-        1) colorpickerbutton_changes.colorChanged = /*func*/
-        ctx2[6];
-        colorpickerbutton.$set(colorpickerbutton_changes);
-      },
-      i(local) {
-        if (current) return;
-        transition_in(colorpickerbutton.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(colorpickerbutton.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div2);
-        }
-        destroy_component(colorpickerbutton);
-        mounted = false;
-        run_all(dispose);
-      }
-    };
-  }
-  __name(create_fragment$n, "create_fragment$n");
-  function instance$m($$self, $$props, $$invalidate) {
-    let $selectedTool;
-    let $color;
-    let { feature } = $$props;
-    const selectedTool = feature.selectedToolStore;
-    component_subscribe($$self, selectedTool, (value) => $$invalidate(1, $selectedTool = value));
-    const color = feature.colorStore;
-    component_subscribe($$self, color, (value) => $$invalidate(2, $color = value));
-    const click_handler2 = /* @__PURE__ */ __name(() => feature.selectPipetteTool(), "click_handler");
-    const func2 = /* @__PURE__ */ __name((c) => feature.updatePickedColor(c), "func");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-    };
-    return [feature, $selectedTool, $color, selectedTool, color, click_handler2, func2];
-  }
-  __name(instance$m, "instance$m");
-  const _Drawing_color_tools = class _Drawing_color_tools extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$m, create_fragment$n, safe_not_equal, { feature: 0 });
-    }
-  };
-  __name(_Drawing_color_tools, "Drawing_color_tools");
-  let Drawing_color_tools = _Drawing_color_tools;
-  var __defProp$o = Object.defineProperty;
-  var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key, result) || result;
-    if (result) __defProp$o(target, key, result);
-    return result;
-  }, "__decorateClass$o");
-  const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "elementsSetup");
-      __publicField(this, "_toolsService");
-      __publicField(this, "_drawingService");
-      __publicField(this, "_colorChangedListener");
-      __publicField(this, "name", "Color Tools");
-      __publicField(this, "description", "Add a pipette and color picker to the toolbar");
-      __publicField(this, "tags", [
-        FeatureTag.DRAWING
-      ]);
-      __publicField(this, "featureId", 31);
-      __publicField(this, "pipetteHotkey", this.useHotkey(new HotkeyAction(
-        "activate_pipette",
-        "Use Pipette",
-        "Activate the pipette tool to select a color from the canvas",
-        this,
-        () => this.selectPipetteTool(),
-        void 0
-      )));
-      __publicField(this, "_component");
-      __publicField(this, "_pipetteTool");
-      __publicField(this, "_colorChangeSubscription");
-      __publicField(this, "_currentColor$", new Subject$1());
-    }
-    get featureInfoComponent() {
-      return { componentType: Drawing_color_tools_info, props: {} };
-    }
-    async onActivate() {
-      const elements2 = await this.elementsSetup.complete();
-      this._pipetteTool = this._toolsService.resolveModOrTool(PipetteTool);
-      this._colorChangedListener.events$.pipe(
-        withLatestFrom(this._currentColor$),
-        filter(([event, currentColor]) => event.data.hex !== currentColor.hex),
-        map(([event]) => event)
-      ).subscribe((event) => {
-        this._currentColor$.next(event.data);
-      });
-      this._component = new Drawing_color_tools({
-        target: elements2.skribblTools,
-        anchor: elements2.skribblBrushTools,
-        props: {
-          feature: this
-        }
-      });
-    }
-    async onDestroy() {
-      var _a2, _b2;
-      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
-      this._component = void 0;
-      (_b2 = this._colorChangeSubscription) == null ? void 0 : _b2.unsubscribe();
-      this._colorChangeSubscription = void 0;
-      this._pipetteTool = void 0;
-    }
-    selectPipetteTool() {
-      if (!this._pipetteTool) {
-        this._logger.error("Pipette tool not initialized");
-        throw new Error("Pipette tool not initialized yet");
-      }
-      this._logger.info("Pipette tool selected");
-      this._toolsService.activateTool(this._pipetteTool);
-    }
-    get selectedToolStore() {
-      return fromObservable(this._toolsService.activeTool$, skribblTool.brush);
-    }
-    get colorStore() {
-      return fromObservable(this._currentColor$, new Color(0, 0, 0));
-    }
-    updatePickedColor(color) {
-      this._logger.info("Color picked", color);
-      this._drawingService.setColor(color.skribblCode);
-    }
-  };
-  __name(_DrawingColorToolsFeature, "DrawingColorToolsFeature");
-  let DrawingColorToolsFeature = _DrawingColorToolsFeature;
-  __decorateClass$o([
-    inject(ElementsSetup)
-  ], DrawingColorToolsFeature.prototype, "elementsSetup");
-  __decorateClass$o([
-    inject(ToolsService)
-  ], DrawingColorToolsFeature.prototype, "_toolsService");
-  __decorateClass$o([
-    inject(DrawingService)
-  ], DrawingColorToolsFeature.prototype, "_drawingService");
-  __decorateClass$o([
-    inject(ColorChangedEventListener)
-  ], DrawingColorToolsFeature.prototype, "_colorChangedListener");
-  function get_each_context$e(ctx, list, i) {
+  function get_each_context$8(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[10] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$e, "get_each_context$e");
-  function create_each_block$e(ctx) {
+  __name(get_each_context$8, "get_each_context$8");
+  function create_each_block$8(ctx) {
     let div;
     let b;
     let t0_value = (
@@ -50151,8 +54142,8 @@
       }
     };
   }
-  __name(create_each_block$e, "create_each_block$e");
-  function create_fragment$m(ctx) {
+  __name(create_each_block$8, "create_each_block$8");
+  function create_fragment$f(ctx) {
     let h30;
     let t1;
     let div0;
@@ -50213,7 +54204,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$e(get_each_context$e(ctx, each_value, i));
+      each_blocks[i] = create_each_block$8(get_each_context$8(ctx, each_value, i));
     }
     return {
       c() {
@@ -50333,11 +54324,11 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$e(ctx2, each_value, i);
+            const child_ctx = get_each_context$8(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$e(child_ctx);
+              each_blocks[i] = create_each_block$8(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div3, null);
             }
@@ -50387,8 +54378,8 @@
       }
     };
   }
-  __name(create_fragment$m, "create_fragment$m");
-  function instance$l($$self, $$props, $$invalidate) {
+  __name(create_fragment$f, "create_fragment$f");
+  function instance$e($$self, $$props, $$invalidate) {
     let { feature } = $$props;
     let resetAll;
     let loggers = feature.loggers;
@@ -50428,16 +54419,16 @@
       change_handler
     ];
   }
-  __name(instance$l, "instance$l");
+  __name(instance$e, "instance$e");
   const _Logging_manage = class _Logging_manage extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$l, create_fragment$m, safe_not_equal, { feature: 0 });
+      init(this, options, instance$e, create_fragment$f, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Logging_manage, "Logging_manage");
   let Logging_manage = _Logging_manage;
-  function create_fragment$l(ctx) {
+  function create_fragment$e(ctx) {
     let t0;
     let br0;
     let t1;
@@ -50488,24 +54479,24 @@
       }
     };
   }
-  __name(create_fragment$l, "create_fragment$l");
+  __name(create_fragment$e, "create_fragment$e");
   const _Logging_info = class _Logging_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, null, create_fragment$l, safe_not_equal, {});
+      init(this, options, null, create_fragment$e, safe_not_equal, {});
     }
   };
   __name(_Logging_info, "Logging_info");
   let Logging_info = _Logging_info;
-  var __defProp$n = Object.defineProperty;
-  var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$i = Object.defineProperty;
+  var __decorateClass$i = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$n(target, key, result);
+    if (result) __defProp$i(target, key, result);
     return result;
-  }, "__decorateClass$n");
+  }, "__decorateClass$i");
   const _LoggingFeature = class _LoggingFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -50575,2349 +54566,22 @@
   };
   __name(_LoggingFeature, "LoggingFeature");
   let LoggingFeature = _LoggingFeature;
-  __decorateClass$n([
+  __decorateClass$i([
     inject(LoggingService)
   ], LoggingFeature.prototype, "_loggingService");
-  __decorateClass$n([
+  __decorateClass$i([
     inject(ToastService)
   ], LoggingFeature.prototype, "_toastService");
-  function get_each_context$d(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[15] = list[i];
-    child_ctx[17] = i;
-    return child_ctx;
-  }
-  __name(get_each_context$d, "get_each_context$d");
-  function get_each_context_1$2(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[15] = list[i];
-    child_ctx[17] = i;
-    return child_ctx;
-  }
-  __name(get_each_context_1$2, "get_each_context_1$2");
-  function create_else_block$6(ctx) {
-    let div1;
-    let div0;
-    let t0;
-    let t1;
-    let if_block = (
-      /*$scenePickerEnabled*/
-      ctx[5] && create_if_block_3$1(ctx)
-    );
-    let each_value_1 = ensure_array_like({
-      length: (
-        /*$memberStore*/
-        ctx[4].memberData.slots.unlockedSlots
-      )
-    });
-    let each_blocks_1 = [];
-    for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
-    }
-    let each_value = ensure_array_like({
-      length: Math.max(9 - /*$memberStore*/
-      ctx[4].memberData.slots.unlockedSlots, 3 - /*$memberStore*/
-      ctx[4].memberData.slots.unlockedSlots % 3)
-    });
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$d(get_each_context$d(ctx, each_value, i));
-    }
-    return {
-      c() {
-        div1 = element("div");
-        div0 = element("div");
-        if (if_block) if_block.c();
-        t0 = space();
-        for (let i = 0; i < each_blocks_1.length; i += 1) {
-          each_blocks_1[i].c();
-        }
-        t1 = space();
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        attr(div0, "class", "typo-cabin-picker svelte-10x5c2g");
-        attr(div1, "class", "typo-cabin-scroll svelte-10x5c2g");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        if (if_block) if_block.m(div0, null);
-        append(div0, t0);
-        for (let i = 0; i < each_blocks_1.length; i += 1) {
-          if (each_blocks_1[i]) {
-            each_blocks_1[i].m(div0, null);
-          }
-        }
-        append(div0, t1);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(div0, null);
-          }
-        }
-      },
-      p(ctx2, dirty) {
-        if (
-          /*$scenePickerEnabled*/
-          ctx2[5]
-        ) {
-          if (if_block) {
-            if_block.p(ctx2, dirty);
-          } else {
-            if_block = create_if_block_3$1(ctx2);
-            if_block.c();
-            if_block.m(div0, t0);
-          }
-        } else if (if_block) {
-          if_block.d(1);
-          if_block = null;
-        }
-        if (dirty & /*dndTrack, dndTargetSlot, undefined, Array, $memberStore, loading, feature, Number*/
-        31) {
-          each_value_1 = ensure_array_like({
-            length: (
-              /*$memberStore*/
-              ctx2[4].memberData.slots.unlockedSlots
-            )
-          });
-          let i;
-          for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$2(ctx2, each_value_1, i);
-            if (each_blocks_1[i]) {
-              each_blocks_1[i].p(child_ctx, dirty);
-            } else {
-              each_blocks_1[i] = create_each_block_1$2(child_ctx);
-              each_blocks_1[i].c();
-              each_blocks_1[i].m(div0, t1);
-            }
-          }
-          for (; i < each_blocks_1.length; i += 1) {
-            each_blocks_1[i].d(1);
-          }
-          each_blocks_1.length = each_value_1.length;
-        }
-        if (dirty & /*$memberStore*/
-        16) {
-          each_value = ensure_array_like({
-            length: Math.max(9 - /*$memberStore*/
-            ctx2[4].memberData.slots.unlockedSlots, 3 - /*$memberStore*/
-            ctx2[4].memberData.slots.unlockedSlots % 3)
-          });
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$d(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-            } else {
-              each_blocks[i] = create_each_block$d(child_ctx);
-              each_blocks[i].c();
-              each_blocks[i].m(div0, null);
-            }
-          }
-          for (; i < each_blocks.length; i += 1) {
-            each_blocks[i].d(1);
-          }
-          each_blocks.length = each_value.length;
-        }
-      },
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-        if (if_block) if_block.d();
-        destroy_each(each_blocks_1, detaching);
-        destroy_each(each_blocks, detaching);
-      }
-    };
-  }
-  __name(create_else_block$6, "create_else_block$6");
-  function create_if_block_1$6(ctx) {
-    let div;
-    return {
-      c() {
-        div = element("div");
-        div.textContent = "You need to log in to use sprites.";
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-      },
-      p: noop,
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-      }
-    };
-  }
-  __name(create_if_block_1$6, "create_if_block_1$6");
-  function create_if_block$b(ctx) {
-    let bounceload;
-    let current;
-    bounceload = new Bounceload({
-      props: { content: "Loading inventory.." }
-    });
-    return {
-      c() {
-        create_component(bounceload.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(bounceload, target, anchor);
-        current = true;
-      },
-      p: noop,
-      i(local) {
-        if (current) return;
-        transition_in(bounceload.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(bounceload.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(bounceload, detaching);
-      }
-    };
-  }
-  __name(create_if_block$b, "create_if_block$b");
-  function create_if_block_3$1(ctx) {
-    let div;
-    let mounted;
-    let dispose;
-    function select_block_type_1(ctx2, dirty) {
-      if (
-        /*$memberStore*/
-        ctx2[4].scene && /*$memberStore*/
-        ctx2[4].scene.scene
-      ) return create_if_block_4$1;
-      return create_else_block_2;
-    }
-    __name(select_block_type_1, "select_block_type_1");
-    let current_block_type = select_block_type_1(ctx);
-    let if_block = current_block_type(ctx);
-    return {
-      c() {
-        div = element("div");
-        if_block.c();
-        attr(div, "class", "typo-cabin-scene svelte-10x5c2g");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        if_block.m(div, null);
-        if (!mounted) {
-          dispose = [
-            listen(
-              div,
-              "click",
-              /*click_handler*/
-              ctx[8]
-            ),
-            listen(
-              div,
-              "contextmenu",
-              /*contextmenu_handler*/
-              ctx[9]
-            )
-          ];
-          mounted = true;
-        }
-      },
-      p(ctx2, dirty) {
-        if (current_block_type === (current_block_type = select_block_type_1(ctx2)) && if_block) {
-          if_block.p(ctx2, dirty);
-        } else {
-          if_block.d(1);
-          if_block = current_block_type(ctx2);
-          if (if_block) {
-            if_block.c();
-            if_block.m(div, null);
-          }
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        if_block.d();
-        mounted = false;
-        run_all(dispose);
-      }
-    };
-  }
-  __name(create_if_block_3$1, "create_if_block_3$1");
-  function create_else_block_2(ctx) {
-    let div;
-    return {
-      c() {
-        div = element("div");
-        div.textContent = "No scene selected";
-        attr(div, "class", "typo-cabin-scene-info visible svelte-10x5c2g");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-      },
-      p: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-      }
-    };
-  }
-  __name(create_else_block_2, "create_else_block_2");
-  function create_if_block_4$1(ctx) {
-    let div0;
-    let t0_value = (
-      /*$memberStore*/
-      ctx[4].scene.scene.name + ""
-    );
-    let t0;
-    let t1;
-    let t2_value = (
-      /*$memberStore*/
-      ctx[4].scene.scene.id + ""
-    );
-    let t2;
-    let t3;
-    let t4;
-    let div1;
-    return {
-      c() {
-        div0 = element("div");
-        t0 = text(t0_value);
-        t1 = text(" (#");
-        t2 = text(t2_value);
-        t3 = text(")");
-        t4 = space();
-        div1 = element("div");
-        attr(div0, "class", "typo-cabin-scene-info svelte-10x5c2g");
-        attr(div1, "class", "typo-cabin-scene-thumb svelte-10x5c2g");
-        set_style(div1, "background-image", "url(" + /*feature*/
-        ctx[0].getItemThumbnailUrl(
-          /*$memberStore*/
-          ctx[4].scene.scene,
-          /*$memberStore*/
-          ctx[4].scene.shift
-        ) + ")");
-      },
-      m(target, anchor) {
-        insert(target, div0, anchor);
-        append(div0, t0);
-        append(div0, t1);
-        append(div0, t2);
-        append(div0, t3);
-        insert(target, t4, anchor);
-        insert(target, div1, anchor);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*$memberStore*/
-        16 && t0_value !== (t0_value = /*$memberStore*/
-        ctx2[4].scene.scene.name + "")) set_data(t0, t0_value);
-        if (dirty & /*$memberStore*/
-        16 && t2_value !== (t2_value = /*$memberStore*/
-        ctx2[4].scene.scene.id + "")) set_data(t2, t2_value);
-        if (dirty & /*feature, $memberStore*/
-        17) {
-          set_style(div1, "background-image", "url(" + /*feature*/
-          ctx2[0].getItemThumbnailUrl(
-            /*$memberStore*/
-            ctx2[4].scene.scene,
-            /*$memberStore*/
-            ctx2[4].scene.shift
-          ) + ")");
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div0);
-          detach(t4);
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_if_block_4$1, "create_if_block_4$1");
-  function create_else_block_1(ctx) {
-    let div0;
-    let t2;
-    let div1;
-    return {
-      c() {
-        div0 = element("div");
-        div0.textContent = `Slot #${/*slot*/
-      ctx[17] + 1}`;
-        t2 = space();
-        div1 = element("div");
-        div1.textContent = "Empty";
-        attr(div0, "class", "typo-cabin-slot-info visible svelte-10x5c2g");
-        attr(div1, "class", "typo-cabin-slot-info visible svelte-10x5c2g");
-      },
-      m(target, anchor) {
-        insert(target, div0, anchor);
-        insert(target, t2, anchor);
-        insert(target, div1, anchor);
-      },
-      p: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(div0);
-          detach(t2);
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_else_block_1, "create_else_block_1");
-  function create_if_block_2$3(ctx) {
-    var _a2, _b2, _c2;
-    let div0;
-    let t2;
-    let div1;
-    let t3_value = (
-      /*$memberStore*/
-      (((_b2 = (_a2 = ctx[4].slots.get(
-        /*slot*/
-        ctx[17]
-      )) == null ? void 0 : _a2.sprite) == null ? void 0 : _b2.name) ?? "Unknown") + ""
-    );
-    let t3;
-    let t4;
-    let t5_value = (
-      /*$memberStore*/
-      ((_c2 = ctx[4].slots.get(
-        /*slot*/
-        ctx[17]
-      )) == null ? void 0 : _c2.spriteId) + ""
-    );
-    let t5;
-    let t6;
-    let t7;
-    let div2;
-    return {
-      c() {
-        var _a3, _b3;
-        div0 = element("div");
-        div0.textContent = `Slot #${/*slot*/
-      ctx[17] + 1}`;
-        t2 = space();
-        div1 = element("div");
-        t3 = text(t3_value);
-        t4 = text("\n              (#");
-        t5 = text(t5_value);
-        t6 = text(")");
-        t7 = space();
-        div2 = element("div");
-        attr(div0, "class", "typo-cabin-slot-info svelte-10x5c2g");
-        attr(div1, "class", "typo-cabin-slot-info svelte-10x5c2g");
-        attr(div2, "class", "typo-cabin-slot-thumb svelte-10x5c2g");
-        set_style(div2, "background-image", "url(" + /*feature*/
-        ctx[0].getItemThumbnailUrl(
-          /*$memberStore*/
-          (_a3 = ctx[4].slots.get(
-            /*slot*/
-            ctx[17]
-          )) == null ? void 0 : _a3.sprite,
-          /*$memberStore*/
-          (_b3 = ctx[4].slots.get(
-            /*slot*/
-            ctx[17]
-          )) == null ? void 0 : _b3.colorShift
-        ) + ")");
-      },
-      m(target, anchor) {
-        insert(target, div0, anchor);
-        insert(target, t2, anchor);
-        insert(target, div1, anchor);
-        append(div1, t3);
-        append(div1, t4);
-        append(div1, t5);
-        append(div1, t6);
-        insert(target, t7, anchor);
-        insert(target, div2, anchor);
-      },
-      p(ctx2, dirty) {
-        var _a3, _b3, _c3, _d2, _e2;
-        if (dirty & /*$memberStore*/
-        16 && t3_value !== (t3_value = /*$memberStore*/
-        (((_b3 = (_a3 = ctx2[4].slots.get(
-          /*slot*/
-          ctx2[17]
-        )) == null ? void 0 : _a3.sprite) == null ? void 0 : _b3.name) ?? "Unknown") + "")) set_data(t3, t3_value);
-        if (dirty & /*$memberStore*/
-        16 && t5_value !== (t5_value = /*$memberStore*/
-        ((_c3 = ctx2[4].slots.get(
-          /*slot*/
-          ctx2[17]
-        )) == null ? void 0 : _c3.spriteId) + "")) set_data(t5, t5_value);
-        if (dirty & /*feature, $memberStore*/
-        17) {
-          set_style(div2, "background-image", "url(" + /*feature*/
-          ctx2[0].getItemThumbnailUrl(
-            /*$memberStore*/
-            (_d2 = ctx2[4].slots.get(
-              /*slot*/
-              ctx2[17]
-            )) == null ? void 0 : _d2.sprite,
-            /*$memberStore*/
-            (_e2 = ctx2[4].slots.get(
-              /*slot*/
-              ctx2[17]
-            )) == null ? void 0 : _e2.colorShift
-          ) + ")");
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div0);
-          detach(t2);
-          detach(div1);
-          detach(t7);
-          detach(div2);
-        }
-      }
-    };
-  }
-  __name(create_if_block_2$3, "create_if_block_2$3");
-  function create_each_block_1$2(ctx) {
-    let div;
-    let show_if;
-    let t;
-    let mounted;
-    let dispose;
-    function select_block_type_2(ctx2, dirty) {
-      if (dirty & /*$memberStore*/
-      16) show_if = null;
-      if (show_if == null) show_if = !!/*$memberStore*/
-      ctx2[4].slots.has(
-        /*slot*/
-        ctx2[17]
-      );
-      if (show_if) return create_if_block_2$3;
-      return create_else_block_1;
-    }
-    __name(select_block_type_2, "select_block_type_2");
-    let current_block_type = select_block_type_2(ctx, -1);
-    let if_block = current_block_type(ctx);
-    function dragenter_handler(...args) {
-      return (
-        /*dragenter_handler*/
-        ctx[10](
-          /*slot*/
-          ctx[17],
-          ...args
-        )
-      );
-    }
-    __name(dragenter_handler, "dragenter_handler");
-    function dragstart_handler() {
-      return (
-        /*dragstart_handler*/
-        ctx[11](
-          /*slot*/
-          ctx[17]
-        )
-      );
-    }
-    __name(dragstart_handler, "dragstart_handler");
-    function click_handler_1() {
-      return (
-        /*click_handler_1*/
-        ctx[13](
-          /*slot*/
-          ctx[17]
-        )
-      );
-    }
-    __name(click_handler_1, "click_handler_1");
-    function contextmenu_handler_1(...args) {
-      return (
-        /*contextmenu_handler_1*/
-        ctx[14](
-          /*slot*/
-          ctx[17],
-          ...args
-        )
-      );
-    }
-    __name(contextmenu_handler_1, "contextmenu_handler_1");
-    return {
-      c() {
-        div = element("div");
-        if_block.c();
-        t = space();
-        attr(div, "class", "typo-cabin-slot svelte-10x5c2g");
-        attr(div, "role", "gridcell");
-        attr(
-          div,
-          "tabindex",
-          /*slot*/
-          ctx[17]
-        );
-        attr(div, "draggable", "true");
-        set_style(
-          div,
-          "order",
-          /*dndTrack*/
-          ctx[2] ? (
-            /*dndTrack*/
-            ctx[2][
-              /*slot*/
-              ctx[17]
-            ]
-          ) : (
-            /*slot*/
-            ctx[17]
-          )
-        );
-        toggle_class(
-          div,
-          "dragging",
-          /*dndTargetSlot*/
-          ctx[1] !== void 0
-        );
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        if_block.m(div, null);
-        append(div, t);
-        if (!mounted) {
-          dispose = [
-            listen(div, "dragenter", dragenter_handler),
-            listen(div, "dragstart", dragstart_handler),
-            listen(
-              div,
-              "dragend",
-              /*dragend_handler*/
-              ctx[12]
-            ),
-            listen(div, "click", click_handler_1),
-            listen(div, "contextmenu", contextmenu_handler_1)
-          ];
-          mounted = true;
-        }
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-        if (current_block_type === (current_block_type = select_block_type_2(ctx, dirty)) && if_block) {
-          if_block.p(ctx, dirty);
-        } else {
-          if_block.d(1);
-          if_block = current_block_type(ctx);
-          if (if_block) {
-            if_block.c();
-            if_block.m(div, t);
-          }
-        }
-        if (dirty & /*dndTrack*/
-        4) {
-          set_style(
-            div,
-            "order",
-            /*dndTrack*/
-            ctx[2] ? (
-              /*dndTrack*/
-              ctx[2][
-                /*slot*/
-                ctx[17]
-              ]
-            ) : (
-              /*slot*/
-              ctx[17]
-            )
-          );
-        }
-        if (dirty & /*dndTargetSlot, undefined*/
-        2) {
-          toggle_class(
-            div,
-            "dragging",
-            /*dndTargetSlot*/
-            ctx[1] !== void 0
-          );
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        if_block.d();
-        mounted = false;
-        run_all(dispose);
-      }
-    };
-  }
-  __name(create_each_block_1$2, "create_each_block_1$2");
-  function create_each_block$d(ctx) {
-    let div2;
-    let div0;
-    let t0;
-    let t1_value = (
-      /*slot*/
-      ctx[17] + /*$memberStore*/
-      ctx[4].memberData.slots.unlockedSlots + 1 + ""
-    );
-    let t1;
-    let t2;
-    let div1;
-    let t4;
-    return {
-      c() {
-        div2 = element("div");
-        div0 = element("div");
-        t0 = text("Slot #");
-        t1 = text(t1_value);
-        t2 = space();
-        div1 = element("div");
-        div1.textContent = "Locked";
-        t4 = space();
-        attr(div0, "class", "typo-cabin-slot-info svelte-10x5c2g");
-        attr(div1, "class", "typo-cabin-slot-info svelte-10x5c2g");
-        attr(div2, "class", "typo-cabin-slot locked svelte-10x5c2g");
-        set_style(
-          div2,
-          "order",
-          /*slot*/
-          ctx[17] + /*$memberStore*/
-          ctx[4].memberData.slots.unlockedSlots + 1
-        );
-      },
-      m(target, anchor) {
-        insert(target, div2, anchor);
-        append(div2, div0);
-        append(div0, t0);
-        append(div0, t1);
-        append(div2, t2);
-        append(div2, div1);
-        append(div2, t4);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*$memberStore*/
-        16 && t1_value !== (t1_value = /*slot*/
-        ctx2[17] + /*$memberStore*/
-        ctx2[4].memberData.slots.unlockedSlots + 1 + "")) set_data(t1, t1_value);
-        if (dirty & /*$memberStore*/
-        16) {
-          set_style(
-            div2,
-            "order",
-            /*slot*/
-            ctx2[17] + /*$memberStore*/
-            ctx2[4].memberData.slots.unlockedSlots + 1
-          );
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div2);
-        }
-      }
-    };
-  }
-  __name(create_each_block$d, "create_each_block$d");
-  function create_fragment$k(ctx) {
-    let div1;
-    let div0;
-    let bounceload;
-    let t;
-    let current_block_type_index;
-    let if_block;
-    let current;
-    bounceload = new Bounceload({ props: { content: "Saving.." } });
-    const if_block_creators = [create_if_block$b, create_if_block_1$6, create_else_block$6];
-    const if_blocks = [];
-    function select_block_type(ctx2, dirty) {
-      if (
-        /*$memberStore*/
-        ctx2[4] === void 0
-      ) return 0;
-      if (
-        /*$memberStore*/
-        ctx2[4] === null
-      ) return 1;
-      return 2;
-    }
-    __name(select_block_type, "select_block_type");
-    current_block_type_index = select_block_type(ctx);
-    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    return {
-      c() {
-        div1 = element("div");
-        div0 = element("div");
-        create_component(bounceload.$$.fragment);
-        t = space();
-        if_block.c();
-        attr(div0, "class", "typo-cabin-saving svelte-10x5c2g");
-        attr(div1, "class", "typo-cabin svelte-10x5c2g");
-        toggle_class(
-          div1,
-          "loading",
-          /*loading*/
-          ctx[3]
-        );
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        mount_component(bounceload, div0, null);
-        append(div1, t);
-        if_blocks[current_block_type_index].m(div1, null);
-        current = true;
-      },
-      p(ctx2, [dirty]) {
-        let previous_block_index = current_block_type_index;
-        current_block_type_index = select_block_type(ctx2);
-        if (current_block_type_index === previous_block_index) {
-          if_blocks[current_block_type_index].p(ctx2, dirty);
-        } else {
-          group_outros();
-          transition_out(if_blocks[previous_block_index], 1, 1, () => {
-            if_blocks[previous_block_index] = null;
-          });
-          check_outros();
-          if_block = if_blocks[current_block_type_index];
-          if (!if_block) {
-            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-            if_block.c();
-          } else {
-            if_block.p(ctx2, dirty);
-          }
-          transition_in(if_block, 1);
-          if_block.m(div1, null);
-        }
-        if (!current || dirty & /*loading*/
-        8) {
-          toggle_class(
-            div1,
-            "loading",
-            /*loading*/
-            ctx2[3]
-          );
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(bounceload.$$.fragment, local);
-        transition_in(if_block);
-        current = true;
-      },
-      o(local) {
-        transition_out(bounceload.$$.fragment, local);
-        transition_out(if_block);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-        destroy_component(bounceload);
-        if_blocks[current_block_type_index].d();
-      }
-    };
-  }
-  __name(create_fragment$k, "create_fragment$k");
-  function instance$k($$self, $$props, $$invalidate) {
-    let $memberStore;
-    let $scenePickerEnabled;
-    let { feature } = $$props;
-    const memberStore = feature.memberStore;
-    component_subscribe($$self, memberStore, (value) => $$invalidate(4, $memberStore = value));
-    const scenePickerEnabled = feature.scenePickerSettingStore;
-    component_subscribe($$self, scenePickerEnabled, (value) => $$invalidate(5, $scenePickerEnabled = value));
-    let dndTargetSlot;
-    let dndTrack;
-    let loading = false;
-    const click_handler2 = /* @__PURE__ */ __name(async () => {
-      const scene = await feature.promptSceneSelection($memberStore.memberData.sceneInventory);
-      if (scene !== void 0) {
-        $$invalidate(3, loading = true);
-        await feature.setScene((scene == null ? void 0 : scene.scene) ?? null, scene == null ? void 0 : scene.shift, $memberStore.memberData.member.userLogin);
-        $$invalidate(3, loading = false);
-      }
-    }, "click_handler");
-    const contextmenu_handler2 = /* @__PURE__ */ __name(async (event) => {
-      event.preventDefault();
-      $$invalidate(3, loading = true);
-      await feature.setScene(null, void 0, $memberStore.memberData.member.userLogin);
-      $$invalidate(3, loading = false);
-    }, "contextmenu_handler");
-    const dragenter_handler = /* @__PURE__ */ __name((slot, event) => {
-      if (dndTargetSlot === slot || dndTrack === void 0 || dndTargetSlot === void 0) return;
-      const newTrack = [...Array($memberStore.memberData.slots.unlockedSlots).keys()];
-      for (let i = 0; i < dndTrack.length; i++) {
-        if (i >= slot && i < dndTargetSlot) {
-          newTrack[i] = i + 1;
-        }
-        if (i <= slot && i > dndTargetSlot) {
-          newTrack[i] = i - 1;
-        }
-      }
-      newTrack[dndTargetSlot] = dndTrack[slot];
-      $$invalidate(2, dndTrack = newTrack);
-    }, "dragenter_handler");
-    const dragstart_handler = /* @__PURE__ */ __name((slot) => {
-      $$invalidate(1, dndTargetSlot = slot);
-      $$invalidate(2, dndTrack = [...Array($memberStore.memberData.slots.unlockedSlots).keys()]);
-    }, "dragstart_handler");
-    const dragend_handler = /* @__PURE__ */ __name(async () => {
-      $$invalidate(3, loading = true);
-      await feature.reorderSlots(dndTrack, $memberStore.memberData.spriteInventory, Number($memberStore.memberData.member.userLogin));
-      $$invalidate(1, dndTargetSlot = void 0);
-      $$invalidate(2, dndTrack = void 0);
-      $$invalidate(3, loading = false);
-    }, "dragend_handler");
-    const click_handler_1 = /* @__PURE__ */ __name(async (slot) => {
-      const sprite = await feature.promptSpriteSelection($memberStore.memberData.spriteInventory);
-      if (sprite !== void 0) {
-        $$invalidate(3, loading = true);
-        await feature.setSpriteOnSlot(slot + 1, sprite, $memberStore.memberData.member.userLogin);
-        $$invalidate(3, loading = false);
-      }
-    }, "click_handler_1");
-    const contextmenu_handler_1 = /* @__PURE__ */ __name(async (slot, event) => {
-      event.preventDefault();
-      $$invalidate(3, loading = true);
-      await feature.setSpriteOnSlot(slot + 1, null, $memberStore.memberData.member.userLogin);
-      $$invalidate(3, loading = false);
-    }, "contextmenu_handler_1");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-    };
-    return [
-      feature,
-      dndTargetSlot,
-      dndTrack,
-      loading,
-      $memberStore,
-      $scenePickerEnabled,
-      memberStore,
-      scenePickerEnabled,
-      click_handler2,
-      contextmenu_handler2,
-      dragenter_handler,
-      dragstart_handler,
-      dragend_handler,
-      click_handler_1,
-      contextmenu_handler_1
-    ];
-  }
-  __name(instance$k, "instance$k");
-  const _Panel_cabin = class _Panel_cabin extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$k, create_fragment$k, safe_not_equal, { feature: 0 });
-    }
-  };
-  __name(_Panel_cabin, "Panel_cabin");
-  let Panel_cabin = _Panel_cabin;
-  function get_each_context$c(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[7] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context$c, "get_each_context$c");
-  function create_if_block$a(ctx) {
-    var _a2, _b2;
-    let div1;
-    let div0;
-    let t0;
-    let span0;
-    let t1;
-    let t2_value = (
-      /*spritesMap*/
-      ((_a2 = ctx[2].get(
-        /*sprite*/
-        ctx[7].spriteId
-      )) == null ? void 0 : _a2.id) + ""
-    );
-    let t2;
-    let t3;
-    let span1;
-    let t4_value = (
-      /*spritesMap*/
-      ((_b2 = ctx[2].get(
-        /*sprite*/
-        ctx[7].spriteId
-      )) == null ? void 0 : _b2.name) + ""
-    );
-    let t4;
-    let t5;
-    let mounted;
-    let dispose;
-    function click_handler_1() {
-      return (
-        /*click_handler_1*/
-        ctx[6](
-          /*sprite*/
-          ctx[7]
-        )
-      );
-    }
-    __name(click_handler_1, "click_handler_1");
-    return {
-      c() {
-        var _a3;
-        div1 = element("div");
-        div0 = element("div");
-        t0 = space();
-        span0 = element("span");
-        t1 = text("#");
-        t2 = text(t2_value);
-        t3 = space();
-        span1 = element("span");
-        t4 = text(t4_value);
-        t5 = space();
-        attr(div0, "class", "typo-sprite-picker-scene-thumb svelte-1srogek");
-        set_style(div0, "background-image", "url(" + /*spritesMap*/
-        ((_a3 = ctx[2].get(
-          /*sprite*/
-          ctx[7].spriteId
-        )) == null ? void 0 : _a3.url) + ")");
-        attr(span0, "class", "svelte-1srogek");
-        attr(span1, "class", "svelte-1srogek");
-        attr(div1, "class", "typo-sprite-picker-scene svelte-1srogek");
-        set_style(
-          div1,
-          "order",
-          /*sprite*/
-          ctx[7].spriteId
-        );
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        append(div1, t0);
-        append(div1, span0);
-        append(span0, t1);
-        append(span0, t2);
-        append(div1, t3);
-        append(div1, span1);
-        append(span1, t4);
-        append(div1, t5);
-        if (!mounted) {
-          dispose = listen(div1, "click", click_handler_1);
-          mounted = true;
-        }
-      },
-      p(new_ctx, dirty) {
-        var _a3, _b3, _c2;
-        ctx = new_ctx;
-        if (dirty & /*spritesMap, inventory*/
-        6) {
-          set_style(div0, "background-image", "url(" + /*spritesMap*/
-          ((_a3 = ctx[2].get(
-            /*sprite*/
-            ctx[7].spriteId
-          )) == null ? void 0 : _a3.url) + ")");
-        }
-        if (dirty & /*spritesMap, inventory*/
-        6 && t2_value !== (t2_value = /*spritesMap*/
-        ((_b3 = ctx[2].get(
-          /*sprite*/
-          ctx[7].spriteId
-        )) == null ? void 0 : _b3.id) + "")) set_data(t2, t2_value);
-        if (dirty & /*spritesMap, inventory*/
-        6 && t4_value !== (t4_value = /*spritesMap*/
-        ((_c2 = ctx[2].get(
-          /*sprite*/
-          ctx[7].spriteId
-        )) == null ? void 0 : _c2.name) + "")) set_data(t4, t4_value);
-        if (dirty & /*inventory*/
-        2) {
-          set_style(
-            div1,
-            "order",
-            /*sprite*/
-            ctx[7].spriteId
-          );
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-        mounted = false;
-        dispose();
-      }
-    };
-  }
-  __name(create_if_block$a, "create_if_block$a");
-  function create_each_block$c(ctx) {
-    let if_block_anchor;
-    let if_block = (
-      /*sprite*/
-      ctx[7].slot === void 0 && create_if_block$a(ctx)
-    );
-    return {
-      c() {
-        if (if_block) if_block.c();
-        if_block_anchor = empty();
-      },
-      m(target, anchor) {
-        if (if_block) if_block.m(target, anchor);
-        insert(target, if_block_anchor, anchor);
-      },
-      p(ctx2, dirty) {
-        if (
-          /*sprite*/
-          ctx2[7].slot === void 0
-        ) {
-          if (if_block) {
-            if_block.p(ctx2, dirty);
-          } else {
-            if_block = create_if_block$a(ctx2);
-            if_block.c();
-            if_block.m(if_block_anchor.parentNode, if_block_anchor);
-          }
-        } else if (if_block) {
-          if_block.d(1);
-          if_block = null;
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(if_block_anchor);
-        }
-        if (if_block) if_block.d(detaching);
-      }
-    };
-  }
-  __name(create_each_block$c, "create_each_block$c");
-  function create_fragment$j(ctx) {
-    let div3;
-    let span0;
-    let t2;
-    let div2;
-    let div1;
-    let t5;
-    let mounted;
-    let dispose;
-    let each_value = ensure_array_like(
-      /*inventory*/
-      ctx[1]
-    );
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$c(get_each_context$c(ctx, each_value, i));
-    }
-    return {
-      c() {
-        div3 = element("div");
-        span0 = element("span");
-        span0.innerHTML = `Choose a sprite from your inventory which will be used on the selected slot.<br/>
-    You can only choose sprites that are not already in use.`;
-        t2 = space();
-        div2 = element("div");
-        div1 = element("div");
-        div1.innerHTML = `<div class="typo-sprite-picker-scene-thumb svelte-1srogek"></div> <span class="svelte-1srogek">Empty</span>`;
-        t5 = space();
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        attr(span0, "class", "svelte-1srogek");
-        attr(div1, "class", "typo-sprite-picker-scene svelte-1srogek");
-        attr(div2, "class", "typo-sprite-picker-list color-scrollbar svelte-1srogek");
-        attr(div3, "class", "typo-sprite-picker svelte-1srogek");
-      },
-      m(target, anchor) {
-        insert(target, div3, anchor);
-        append(div3, span0);
-        append(div3, t2);
-        append(div3, div2);
-        append(div2, div1);
-        append(div2, t5);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(div2, null);
-          }
-        }
-        if (!mounted) {
-          dispose = listen(
-            div1,
-            "click",
-            /*click_handler*/
-            ctx[5]
-          );
-          mounted = true;
-        }
-      },
-      p(ctx2, [dirty]) {
-        if (dirty & /*inventory, onPick, spritesMap, undefined*/
-        7) {
-          each_value = ensure_array_like(
-            /*inventory*/
-            ctx2[1]
-          );
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$c(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-            } else {
-              each_blocks[i] = create_each_block$c(child_ctx);
-              each_blocks[i].c();
-              each_blocks[i].m(div2, null);
-            }
-          }
-          for (; i < each_blocks.length; i += 1) {
-            each_blocks[i].d(1);
-          }
-          each_blocks.length = each_value.length;
-        }
-      },
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(div3);
-        }
-        destroy_each(each_blocks, detaching);
-        mounted = false;
-        dispose();
-      }
-    };
-  }
-  __name(create_fragment$j, "create_fragment$j");
-  function instance$j($$self, $$props, $$invalidate) {
-    let { feature } = $$props;
-    let { onPick } = $$props;
-    let { sprites } = $$props;
-    let { inventory } = $$props;
-    let spritesMap = /* @__PURE__ */ new Map();
-    const click_handler2 = /* @__PURE__ */ __name(() => onPick(null), "click_handler");
-    const click_handler_1 = /* @__PURE__ */ __name((sprite) => onPick(spritesMap.get(sprite.spriteId)), "click_handler_1");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(3, feature = $$props2.feature);
-      if ("onPick" in $$props2) $$invalidate(0, onPick = $$props2.onPick);
-      if ("sprites" in $$props2) $$invalidate(4, sprites = $$props2.sprites);
-      if ("inventory" in $$props2) $$invalidate(1, inventory = $$props2.inventory);
-    };
-    $$self.$$.update = () => {
-      if ($$self.$$.dirty & /*sprites*/
-      16) {
-        {
-          $$invalidate(2, spritesMap = new Map(sprites.map((sprite) => [sprite.id, sprite])));
-        }
-      }
-    };
-    return [
-      onPick,
-      inventory,
-      spritesMap,
-      feature,
-      sprites,
-      click_handler2,
-      click_handler_1
-    ];
-  }
-  __name(instance$j, "instance$j");
-  const _Panel_cabin_sprite_picker = class _Panel_cabin_sprite_picker extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$j, create_fragment$j, safe_not_equal, {
-        feature: 3,
-        onPick: 0,
-        sprites: 4,
-        inventory: 1
-      });
-    }
-  };
-  __name(_Panel_cabin_sprite_picker, "Panel_cabin_sprite_picker");
-  let Panel_cabin_sprite_picker = _Panel_cabin_sprite_picker;
-  function get_each_context$b(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[9] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context$b, "get_each_context$b");
-  function create_else_block$5(ctx) {
-    var _a2, _b2;
-    let div1;
-    let div0;
-    let t0;
-    let span0;
-    let t1;
-    let t2_value = (
-      /*scenesMap*/
-      ((_a2 = ctx[3].get(
-        /*scene*/
-        ctx[9].sceneId
-      )) == null ? void 0 : _a2.id) + ""
-    );
-    let t2;
-    let t3;
-    let span1;
-    let t4_value = (
-      /*scenesMap*/
-      ((_b2 = ctx[3].get(
-        /*scene*/
-        ctx[9].sceneId
-      )) == null ? void 0 : _b2.name) + ""
-    );
-    let t4;
-    let t5;
-    let mounted;
-    let dispose;
-    function click_handler_2() {
-      return (
-        /*click_handler_2*/
-        ctx[8](
-          /*scene*/
-          ctx[9]
-        )
-      );
-    }
-    __name(click_handler_2, "click_handler_2");
-    return {
-      c() {
-        var _a3;
-        div1 = element("div");
-        div0 = element("div");
-        t0 = space();
-        span0 = element("span");
-        t1 = text("#");
-        t2 = text(t2_value);
-        t3 = space();
-        span1 = element("span");
-        t4 = text(t4_value);
-        t5 = space();
-        attr(div0, "class", "typo-scene-picker-scene-thumb svelte-1s2xvs0");
-        set_style(div0, "background-image", "url(" + /*scenesMap*/
-        ((_a3 = ctx[3].get(
-          /*scene*/
-          ctx[9].sceneId
-        )) == null ? void 0 : _a3.url) + ")");
-        attr(span0, "class", "id svelte-1s2xvs0");
-        attr(span1, "class", "name svelte-1s2xvs0");
-        attr(div1, "class", "typo-scene-picker-scene svelte-1s2xvs0");
-        set_style(
-          div1,
-          "order",
-          /*scene*/
-          ctx[9].sceneId
-        );
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        append(div1, t0);
-        append(div1, span0);
-        append(span0, t1);
-        append(span0, t2);
-        append(div1, t3);
-        append(div1, span1);
-        append(span1, t4);
-        append(div1, t5);
-        if (!mounted) {
-          dispose = listen(div1, "click", click_handler_2);
-          mounted = true;
-        }
-      },
-      p(new_ctx, dirty) {
-        var _a3, _b3, _c2;
-        ctx = new_ctx;
-        if (dirty & /*scenesMap, inventory*/
-        12) {
-          set_style(div0, "background-image", "url(" + /*scenesMap*/
-          ((_a3 = ctx[3].get(
-            /*scene*/
-            ctx[9].sceneId
-          )) == null ? void 0 : _a3.url) + ")");
-        }
-        if (dirty & /*scenesMap, inventory*/
-        12 && t2_value !== (t2_value = /*scenesMap*/
-        ((_b3 = ctx[3].get(
-          /*scene*/
-          ctx[9].sceneId
-        )) == null ? void 0 : _b3.id) + "")) set_data(t2, t2_value);
-        if (dirty & /*scenesMap, inventory*/
-        12 && t4_value !== (t4_value = /*scenesMap*/
-        ((_c2 = ctx[3].get(
-          /*scene*/
-          ctx[9].sceneId
-        )) == null ? void 0 : _c2.name) + "")) set_data(t4, t4_value);
-        if (dirty & /*inventory*/
-        4) {
-          set_style(
-            div1,
-            "order",
-            /*scene*/
-            ctx[9].sceneId
-          );
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-        mounted = false;
-        dispose();
-      }
-    };
-  }
-  __name(create_else_block$5, "create_else_block$5");
-  function create_if_block$9(ctx) {
-    var _a2, _b2, _c2;
-    let div1;
-    let div0;
-    let t0;
-    let span0;
-    let t1;
-    let t2_value = (
-      /*scenesMap*/
-      ((_a2 = ctx[3].get(
-        /*scene*/
-        ctx[9].sceneId
-      )) == null ? void 0 : _a2.id) + ""
-    );
-    let t2;
-    let t3;
-    let t4_value = (
-      /*scene*/
-      ctx[9].sceneShift + ""
-    );
-    let t4;
-    let t5;
-    let t6;
-    let span1;
-    let t7_value = (
-      /*scenesMap*/
-      ((_c2 = (_b2 = ctx[3].get(
-        /*scene*/
-        ctx[9].sceneId
-      )) == null ? void 0 : _b2.themes.find(func2)) == null ? void 0 : _c2.name) + ""
-    );
-    let t7;
-    let t8;
-    let mounted;
-    let dispose;
-    function func2(...args) {
-      return (
-        /*func*/
-        ctx[6](
-          /*scene*/
-          ctx[9],
-          ...args
-        )
-      );
-    }
-    __name(func2, "func");
-    function click_handler_1() {
-      return (
-        /*click_handler_1*/
-        ctx[7](
-          /*scene*/
-          ctx[9]
-        )
-      );
-    }
-    __name(click_handler_1, "click_handler_1");
-    return {
-      c() {
-        div1 = element("div");
-        div0 = element("div");
-        t0 = space();
-        span0 = element("span");
-        t1 = text("#");
-        t2 = text(t2_value);
-        t3 = text(" (color #");
-        t4 = text(t4_value);
-        t5 = text(")");
-        t6 = space();
-        span1 = element("span");
-        t7 = text(t7_value);
-        t8 = space();
-        attr(div0, "class", "typo-scene-picker-scene-thumb svelte-1s2xvs0");
-        set_style(div0, "background-image", "url(" + /*feature*/
-        ctx[0].getItemThumbnailUrl(
-          /*scenesMap*/
-          ctx[3].get(
-            /*scene*/
-            ctx[9].sceneId
-          ),
-          /*scene*/
-          ctx[9].sceneShift
-        ) + ")");
-        attr(span0, "class", "id svelte-1s2xvs0");
-        attr(span1, "class", "name svelte-1s2xvs0");
-        attr(div1, "class", "typo-scene-picker-scene svelte-1s2xvs0");
-        set_style(
-          div1,
-          "order",
-          /*scene*/
-          ctx[9].sceneId
-        );
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        append(div1, t0);
-        append(div1, span0);
-        append(span0, t1);
-        append(span0, t2);
-        append(span0, t3);
-        append(span0, t4);
-        append(span0, t5);
-        append(div1, t6);
-        append(div1, span1);
-        append(span1, t7);
-        insert(target, t8, anchor);
-        if (!mounted) {
-          dispose = listen(div1, "click", click_handler_1);
-          mounted = true;
-        }
-      },
-      p(new_ctx, dirty) {
-        var _a3, _b3, _c3;
-        ctx = new_ctx;
-        if (dirty & /*feature, scenesMap, inventory*/
-        13) {
-          set_style(div0, "background-image", "url(" + /*feature*/
-          ctx[0].getItemThumbnailUrl(
-            /*scenesMap*/
-            ctx[3].get(
-              /*scene*/
-              ctx[9].sceneId
-            ),
-            /*scene*/
-            ctx[9].sceneShift
-          ) + ")");
-        }
-        if (dirty & /*scenesMap, inventory*/
-        12 && t2_value !== (t2_value = /*scenesMap*/
-        ((_a3 = ctx[3].get(
-          /*scene*/
-          ctx[9].sceneId
-        )) == null ? void 0 : _a3.id) + "")) set_data(t2, t2_value);
-        if (dirty & /*inventory*/
-        4 && t4_value !== (t4_value = /*scene*/
-        ctx[9].sceneShift + "")) set_data(t4, t4_value);
-        if (dirty & /*scenesMap, inventory*/
-        12 && t7_value !== (t7_value = /*scenesMap*/
-        ((_c3 = (_b3 = ctx[3].get(
-          /*scene*/
-          ctx[9].sceneId
-        )) == null ? void 0 : _b3.themes.find(func2)) == null ? void 0 : _c3.name) + "")) set_data(t7, t7_value);
-        if (dirty & /*inventory*/
-        4) {
-          set_style(
-            div1,
-            "order",
-            /*scene*/
-            ctx[9].sceneId
-          );
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-          detach(t8);
-        }
-        mounted = false;
-        dispose();
-      }
-    };
-  }
-  __name(create_if_block$9, "create_if_block$9");
-  function create_each_block$b(ctx) {
-    let if_block_anchor;
-    function select_block_type(ctx2, dirty) {
-      if (
-        /*scene*/
-        ctx2[9].sceneShift
-      ) return create_if_block$9;
-      return create_else_block$5;
-    }
-    __name(select_block_type, "select_block_type");
-    let current_block_type = select_block_type(ctx);
-    let if_block = current_block_type(ctx);
-    return {
-      c() {
-        if_block.c();
-        if_block_anchor = empty();
-      },
-      m(target, anchor) {
-        if_block.m(target, anchor);
-        insert(target, if_block_anchor, anchor);
-      },
-      p(ctx2, dirty) {
-        if (current_block_type === (current_block_type = select_block_type(ctx2)) && if_block) {
-          if_block.p(ctx2, dirty);
-        } else {
-          if_block.d(1);
-          if_block = current_block_type(ctx2);
-          if (if_block) {
-            if_block.c();
-            if_block.m(if_block_anchor.parentNode, if_block_anchor);
-          }
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(if_block_anchor);
-        }
-        if_block.d(detaching);
-      }
-    };
-  }
-  __name(create_each_block$b, "create_each_block$b");
-  function create_fragment$i(ctx) {
-    let div3;
-    let span0;
-    let t1;
-    let div2;
-    let div1;
-    let t4;
-    let mounted;
-    let dispose;
-    let each_value = ensure_array_like(
-      /*inventory*/
-      ctx[2].scenes
-    );
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$b(get_each_context$b(ctx, each_value, i));
-    }
-    return {
-      c() {
-        div3 = element("div");
-        span0 = element("span");
-        span0.textContent = "Choose a scene from your inventory which will be used as your avatar background.";
-        t1 = space();
-        div2 = element("div");
-        div1 = element("div");
-        div1.innerHTML = `<div class="typo-scene-picker-scene-thumb svelte-1s2xvs0"></div> <span class="svelte-1s2xvs0">Empty</span>`;
-        t4 = space();
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        attr(span0, "class", "svelte-1s2xvs0");
-        attr(div1, "class", "typo-scene-picker-scene svelte-1s2xvs0");
-        attr(div2, "class", "typo-scene-picker-list color-scrollbar svelte-1s2xvs0");
-        attr(div3, "class", "typo-scene-picker svelte-1s2xvs0");
-      },
-      m(target, anchor) {
-        insert(target, div3, anchor);
-        append(div3, span0);
-        append(div3, t1);
-        append(div3, div2);
-        append(div2, div1);
-        append(div2, t4);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(div2, null);
-          }
-        }
-        if (!mounted) {
-          dispose = listen(
-            div1,
-            "click",
-            /*click_handler*/
-            ctx[5]
-          );
-          mounted = true;
-        }
-      },
-      p(ctx2, [dirty]) {
-        if (dirty & /*inventory, onPick, scenesMap, feature, undefined*/
-        15) {
-          each_value = ensure_array_like(
-            /*inventory*/
-            ctx2[2].scenes
-          );
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$b(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-            } else {
-              each_blocks[i] = create_each_block$b(child_ctx);
-              each_blocks[i].c();
-              each_blocks[i].m(div2, null);
-            }
-          }
-          for (; i < each_blocks.length; i += 1) {
-            each_blocks[i].d(1);
-          }
-          each_blocks.length = each_value.length;
-        }
-      },
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(div3);
-        }
-        destroy_each(each_blocks, detaching);
-        mounted = false;
-        dispose();
-      }
-    };
-  }
-  __name(create_fragment$i, "create_fragment$i");
-  function instance$i($$self, $$props, $$invalidate) {
-    let { feature } = $$props;
-    let { onPick } = $$props;
-    let { scenes } = $$props;
-    let { inventory } = $$props;
-    let scenesMap = /* @__PURE__ */ new Map();
-    const click_handler2 = /* @__PURE__ */ __name(() => onPick(null, void 0), "click_handler");
-    const func2 = /* @__PURE__ */ __name((scene, t) => t.shift === scene.sceneShift, "func");
-    const click_handler_1 = /* @__PURE__ */ __name((scene) => onPick(scenesMap.get(scene.sceneId), scene.sceneShift), "click_handler_1");
-    const click_handler_2 = /* @__PURE__ */ __name((scene) => onPick(scenesMap.get(scene.sceneId), void 0), "click_handler_2");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-      if ("onPick" in $$props2) $$invalidate(1, onPick = $$props2.onPick);
-      if ("scenes" in $$props2) $$invalidate(4, scenes = $$props2.scenes);
-      if ("inventory" in $$props2) $$invalidate(2, inventory = $$props2.inventory);
-    };
-    $$self.$$.update = () => {
-      if ($$self.$$.dirty & /*scenes*/
-      16) {
-        {
-          $$invalidate(3, scenesMap = new Map(scenes.map((scene) => [scene.id, scene])));
-        }
-      }
-    };
-    return [
-      feature,
-      onPick,
-      inventory,
-      scenesMap,
-      scenes,
-      click_handler2,
-      func2,
-      click_handler_1,
-      click_handler_2
-    ];
-  }
-  __name(instance$i, "instance$i");
-  const _Panel_cabin_scene_picker = class _Panel_cabin_scene_picker extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$i, create_fragment$i, safe_not_equal, {
-        feature: 0,
-        onPick: 1,
-        scenes: 4,
-        inventory: 2
-      });
-    }
-  };
-  __name(_Panel_cabin_scene_picker, "Panel_cabin_scene_picker");
-  let Panel_cabin_scene_picker = _Panel_cabin_scene_picker;
-  var __defProp$m = Object.defineProperty;
-  var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key, result) || result;
-    if (result) __defProp$m(target, key, result);
-    return result;
-  }, "__decorateClass$m");
-  const _PanelCabinFeature = class _PanelCabinFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_elements");
-      __publicField(this, "_apiDataSetup");
-      __publicField(this, "_memberService");
-      __publicField(this, "_apiService");
-      __publicField(this, "_modalService");
-      __publicField(this, "_toastService");
-      __publicField(this, "_component");
-      __publicField(this, "name", "Outfit Cabin");
-      __publicField(this, "description", "Displays a drag-n-drop interface on the start page to customize your sprite combo");
-      __publicField(this, "tags", [
-        FeatureTag.PALANTIR
-      ]);
-      __publicField(this, "featureId", 3);
-      __publicField(this, "_enableScenePickerSetting", this.useSetting(
-        new BooleanExtensionSetting("enable_scene_picker", true, this).withName("Enable Scene Picker").withDescription("Show the scene picker at the top of the sprite cabin")
-      ));
-    }
-    async onActivate() {
-      const elements2 = await this._elements.complete();
-      this._component = new Panel_cabin({
-        target: elements2.cabinTab,
-        props: {
-          feature: this
-        }
-      });
-    }
-    onDestroy() {
-      var _a2;
-      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
-    }
-    get scenePickerSettingStore() {
-      return this._enableScenePickerSetting.store;
-    }
-    get memberStore() {
-      return fromObservable(
-        this._memberService.memberData$.pipe(
-          /* map data into useful structure */
-          switchMap(async (memberData) => {
-            if (memberData === null || memberData === void 0) {
-              return null;
-            }
-            const apiData = await this._apiDataSetup.complete();
-            const slots = new Map(
-              memberData.spriteInventory.filter((i) => i.slot !== void 0).map((i) => ({
-                ...i,
-                sprite: apiData.sprites.find((s) => s.id === i.spriteId)
-              })).map((i) => [(i.slot ?? 0) - 1, i])
-            );
-            const scene = memberData.sceneInventory.activeId ? {
-              id: memberData.sceneInventory.activeId,
-              shift: memberData.sceneInventory.activeShift,
-              scene: apiData.scenes.find((s) => s.id === memberData.sceneInventory.activeId)
-            } : void 0;
-            return { memberData, slots, scene };
-          })
-        ),
-        void 0
-      );
-    }
-    /**
-     * Generates a url of a scene or sprite, optionally shifted if provided
-     * @param item
-     * @param shift
-     */
-    getItemThumbnailUrl(item, shift) {
-      return item ? shift !== void 0 ? `https://static.typo.rip/sprites/rainbow/modulate.php?url=${item.url}&hue=${shift}` : item.url : "";
-    }
-    /**
-     * Reorder the slots of a user
-     * @param slotMap
-     * @param inventory
-     * @param login
-     */
-    async reorderSlots(slotMap, inventory, login) {
-      this._logger.debug("Reordering slots", slotMap, inventory);
-      if (slotMap.every((v, i) => v === i)) {
-        this._logger.info("No change in slot order");
-        return;
-      }
-      const slots = [];
-      inventory.forEach((item) => {
-        if (item.slot !== void 0) {
-          slots.push({ slotId: slotMap[item.slot - 1] + 1, spriteId: item.spriteId });
-        }
-      });
-      await this._apiService.getApi(InventoryApi).setMemberSpriteCombo({ login, spriteComboDto: { slots } });
-      await this._memberService.refreshInventory();
-      this._logger.info("Reordered slots", slots);
-    }
-    /**
-     * Prompt the user to select a sprite
-     * @param inventory
-     */
-    async promptSpriteSelection(inventory) {
-      this._logger.debug("Opening sprite picker");
-      const sprites = (await this._apiDataSetup.complete()).sprites;
-      const pickerComponent = {
-        componentType: Panel_cabin_sprite_picker,
-        propsFactory: /* @__PURE__ */ __name((submit) => ({
-          feature: this,
-          inventory,
-          sprites,
-          onPick: submit.bind(this)
-        }), "propsFactory")
-      };
-      const sprite = await this._modalService.showPrompt(
-        pickerComponent.componentType,
-        pickerComponent.propsFactory,
-        "Sprite Picker",
-        "document"
-      );
-      this._logger.debug("Sprite picker closed", sprite);
-      return sprite;
-    }
-    /**
-     * Set a sprite on a slot for a user
-     * @param slot
-     * @param sprite
-     * @param login
-     */
-    async setSpriteOnSlot(slot, sprite, login) {
-      this._logger.debug("Setting sprite on slot", slot, sprite);
-      try {
-        await this._apiService.getApi(InventoryApi).setMemberSpriteSlot({ login, spriteSlotDto: { slotId: slot, spriteId: (sprite == null ? void 0 : sprite.id) ?? 0 } });
-        await this._memberService.refreshInventory();
-      } catch (e) {
-        this._logger.error("Failed to set sprite on slot", e);
-        await this._toastService.showToast("Failed to set sprite on slot");
-      }
-    }
-    /**
-     * Prompt the user to select a scene
-     * @param inventory
-     */
-    async promptSceneSelection(inventory) {
-      this._logger.debug("Opening scene picker");
-      const scenes = (await this._apiDataSetup.complete()).scenes;
-      const pickerComponent = {
-        componentType: Panel_cabin_scene_picker,
-        propsFactory: /* @__PURE__ */ __name((submit) => ({
-          feature: this,
-          inventory,
-          scenes,
-          onPick: /* @__PURE__ */ __name((scene2, shift) => submit(scene2 ? { scene: scene2, shift } : scene2), "onPick")
-        }), "propsFactory")
-      };
-      const scene = await this._modalService.showPrompt(
-        pickerComponent.componentType,
-        pickerComponent.propsFactory,
-        "Scene Picker",
-        "document"
-      );
-      this._logger.debug("Scene picker closed", scene);
-      return scene;
-    }
-    /**
-     * Set the scene of a user
-     * @param scene
-     * @param shift
-     * @param login
-     */
-    async setScene(scene, shift, login) {
-      this._logger.debug("Setting scene", scene, shift);
-      try {
-        await this._apiService.getApi(InventoryApi).setMemberScene({ login, setActiveSceneDto: { scene: scene ? { sceneId: scene.id, sceneShift: shift } : void 0 } });
-        await this._memberService.refreshInventory();
-      } catch (e) {
-        this._logger.error("Failed to set scene", e);
-        await this._toastService.showToast("Failed to set scene");
-      }
-    }
-  };
-  __name(_PanelCabinFeature, "PanelCabinFeature");
-  let PanelCabinFeature = _PanelCabinFeature;
-  __decorateClass$m([
-    inject(ElementsSetup)
-  ], PanelCabinFeature.prototype, "_elements");
-  __decorateClass$m([
-    inject(ApiDataSetup)
-  ], PanelCabinFeature.prototype, "_apiDataSetup");
-  __decorateClass$m([
-    inject(MemberService)
-  ], PanelCabinFeature.prototype, "_memberService");
-  __decorateClass$m([
-    inject(ApiService)
-  ], PanelCabinFeature.prototype, "_apiService");
-  __decorateClass$m([
-    inject(ModalService)
-  ], PanelCabinFeature.prototype, "_modalService");
-  __decorateClass$m([
-    inject(ToastService)
-  ], PanelCabinFeature.prototype, "_toastService");
-  function get_each_context$a(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[4] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context$a, "get_each_context$a");
-  function create_if_block_1$5(ctx) {
-    let p;
-    let t0;
-    let t1_value = (
-      /*feature*/
-      ctx[0].getVersion() + ""
-    );
-    let t1;
-    return {
-      c() {
-        p = element("p");
-        t0 = text("Typo version: ");
-        t1 = text(t1_value);
-        attr(p, "class", "typo-version svelte-1fbg7r5");
-      },
-      m(target, anchor) {
-        insert(target, p, anchor);
-        append(p, t0);
-        append(p, t1);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*feature*/
-        1 && t1_value !== (t1_value = /*feature*/
-        ctx2[0].getVersion() + "")) set_data(t1, t1_value);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(p);
-        }
-      }
-    };
-  }
-  __name(create_if_block_1$5, "create_if_block_1$5");
-  function create_else_block$4(ctx) {
-    let each_1_anchor;
-    let each_value = ensure_array_like(
-      /*changes*/
-      ctx[1]
-    );
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$a(get_each_context$a(ctx, each_value, i));
-    }
-    return {
-      c() {
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        each_1_anchor = empty();
-      },
-      m(target, anchor) {
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(target, anchor);
-          }
-        }
-        insert(target, each_1_anchor, anchor);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*changes, Date, Number*/
-        2) {
-          each_value = ensure_array_like(
-            /*changes*/
-            ctx2[1]
-          );
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$a(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-            } else {
-              each_blocks[i] = create_each_block$a(child_ctx);
-              each_blocks[i].c();
-              each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
-            }
-          }
-          for (; i < each_blocks.length; i += 1) {
-            each_blocks[i].d(1);
-          }
-          each_blocks.length = each_value.length;
-        }
-      },
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(each_1_anchor);
-        }
-        destroy_each(each_blocks, detaching);
-      }
-    };
-  }
-  __name(create_else_block$4, "create_else_block$4");
-  function create_if_block$8(ctx) {
-    let bounceload;
-    let current;
-    bounceload = new Bounceload({
-      props: { content: "Loading changelog.." }
-    });
-    return {
-      c() {
-        create_component(bounceload.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(bounceload, target, anchor);
-        current = true;
-      },
-      p: noop,
-      i(local) {
-        if (current) return;
-        transition_in(bounceload.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(bounceload.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(bounceload, detaching);
-      }
-    };
-  }
-  __name(create_if_block$8, "create_if_block$8");
-  function create_each_block$a(ctx) {
-    let div1;
-    let div0;
-    let b;
-    let t0_value = (
-      /*change*/
-      ctx[4].title + ""
-    );
-    let t0;
-    let t1;
-    let span;
-    let t2_value = (
-      /*change*/
-      ctx[4].affectedTypoVersion + ""
-    );
-    let t2;
-    let t3;
-    let t4_value = new Date(Number(
-      /*change*/
-      ctx[4].date
-    )).toLocaleDateString() + "";
-    let t4;
-    let t5;
-    let t6;
-    let p;
-    let t7_value = (
-      /*change*/
-      ctx[4].content + ""
-    );
-    let t7;
-    let t8;
-    return {
-      c() {
-        div1 = element("div");
-        div0 = element("div");
-        b = element("b");
-        t0 = text(t0_value);
-        t1 = space();
-        span = element("span");
-        t2 = text(t2_value);
-        t3 = text(" (");
-        t4 = text(t4_value);
-        t5 = text(")");
-        t6 = space();
-        p = element("p");
-        t7 = text(t7_value);
-        t8 = space();
-        attr(span, "class", "svelte-1fbg7r5");
-        attr(div0, "class", "title svelte-1fbg7r5");
-        attr(div1, "class", "change svelte-1fbg7r5");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        append(div0, b);
-        append(b, t0);
-        append(div0, t1);
-        append(div0, span);
-        append(span, t2);
-        append(span, t3);
-        append(span, t4);
-        append(span, t5);
-        append(div1, t6);
-        append(div1, p);
-        append(p, t7);
-        append(div1, t8);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*changes*/
-        2 && t0_value !== (t0_value = /*change*/
-        ctx2[4].title + "")) set_data(t0, t0_value);
-        if (dirty & /*changes*/
-        2 && t2_value !== (t2_value = /*change*/
-        ctx2[4].affectedTypoVersion + "")) set_data(t2, t2_value);
-        if (dirty & /*changes*/
-        2 && t4_value !== (t4_value = new Date(Number(
-          /*change*/
-          ctx2[4].date
-        )).toLocaleDateString() + "")) set_data(t4, t4_value);
-        if (dirty & /*changes*/
-        2 && t7_value !== (t7_value = /*change*/
-        ctx2[4].content + "")) set_data(t7, t7_value);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_each_block$a, "create_each_block$a");
-  function create_fragment$h(ctx) {
-    let div1;
-    let t;
-    let div0;
-    let current_block_type_index;
-    let if_block1;
-    let current;
-    let if_block0 = (
-      /*$devmode*/
-      ctx[2] && create_if_block_1$5(ctx)
-    );
-    const if_block_creators = [create_if_block$8, create_else_block$4];
-    const if_blocks = [];
-    function select_block_type(ctx2, dirty) {
-      if (
-        /*changes*/
-        ctx2[1] === void 0
-      ) return 0;
-      return 1;
-    }
-    __name(select_block_type, "select_block_type");
-    current_block_type_index = select_block_type(ctx);
-    if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    return {
-      c() {
-        div1 = element("div");
-        if (if_block0) if_block0.c();
-        t = space();
-        div0 = element("div");
-        if_block1.c();
-        attr(div0, "class", "changelog svelte-1fbg7r5");
-        attr(div1, "class", "panel-changelog svelte-1fbg7r5");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        if (if_block0) if_block0.m(div1, null);
-        append(div1, t);
-        append(div1, div0);
-        if_blocks[current_block_type_index].m(div0, null);
-        current = true;
-      },
-      p(ctx2, [dirty]) {
-        if (
-          /*$devmode*/
-          ctx2[2]
-        ) {
-          if (if_block0) {
-            if_block0.p(ctx2, dirty);
-          } else {
-            if_block0 = create_if_block_1$5(ctx2);
-            if_block0.c();
-            if_block0.m(div1, t);
-          }
-        } else if (if_block0) {
-          if_block0.d(1);
-          if_block0 = null;
-        }
-        let previous_block_index = current_block_type_index;
-        current_block_type_index = select_block_type(ctx2);
-        if (current_block_type_index === previous_block_index) {
-          if_blocks[current_block_type_index].p(ctx2, dirty);
-        } else {
-          group_outros();
-          transition_out(if_blocks[previous_block_index], 1, 1, () => {
-            if_blocks[previous_block_index] = null;
-          });
-          check_outros();
-          if_block1 = if_blocks[current_block_type_index];
-          if (!if_block1) {
-            if_block1 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-            if_block1.c();
-          } else {
-            if_block1.p(ctx2, dirty);
-          }
-          transition_in(if_block1, 1);
-          if_block1.m(div0, null);
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(if_block1);
-        current = true;
-      },
-      o(local) {
-        transition_out(if_block1);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-        if (if_block0) if_block0.d();
-        if_blocks[current_block_type_index].d();
-      }
-    };
-  }
-  __name(create_fragment$h, "create_fragment$h");
-  function instance$h($$self, $$props, $$invalidate) {
-    let $devmode;
-    let { feature } = $$props;
-    let { changes = void 0 } = $$props;
-    const devmode = feature.devmodeStore;
-    component_subscribe($$self, devmode, (value) => $$invalidate(2, $devmode = value));
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-      if ("changes" in $$props2) $$invalidate(1, changes = $$props2.changes);
-    };
-    return [feature, changes, $devmode, devmode];
-  }
-  __name(instance$h, "instance$h");
-  const _Panel_changelog = class _Panel_changelog extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$h, create_fragment$h, safe_not_equal, { feature: 0, changes: 1 });
-    }
-  };
-  __name(_Panel_changelog, "Panel_changelog");
-  let Panel_changelog = _Panel_changelog;
-  var __defProp$l = Object.defineProperty;
-  var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key, result) || result;
-    if (result) __defProp$l(target, key, result);
-    return result;
-  }, "__decorateClass$l");
-  const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_elements");
-      __publicField(this, "_apiDataSetup");
-      __publicField(this, "_globalSettingsService");
-      __publicField(this, "_component");
-      __publicField(this, "name", "Changelog");
-      __publicField(this, "description", "Displays a list of changes since the last updates on the start page");
-      __publicField(this, "tags", [
-        FeatureTag.INFORMATION
-      ]);
-      __publicField(this, "featureId", 4);
-      __publicField(this, "changelog", "I am the changelog :)");
-    }
-    async onActivate() {
-      const elements2 = await this._elements.complete();
-      this._component = new Panel_changelog({
-        target: elements2.changelogTab,
-        props: {
-          feature: this
-        }
-      });
-      const data = await this._apiDataSetup.complete();
-      const changes = data.announcements.filter((announcement) => announcement.type === AnnouncementDtoTypeEnum.Changelog).sort((a, b) => Number(b.date) - Number(a.date));
-      this._component.$set({ changes });
-    }
-    onDestroy() {
-      var _a2;
-      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
-    }
-    get devmodeStore() {
-      return this._globalSettingsService.settings.devMode.store;
-    }
-    getVersion() {
-      return typoRuntime.getReleaseDetails().versionName;
-    }
-  };
-  __name(_PanelChangelogFeature, "PanelChangelogFeature");
-  let PanelChangelogFeature = _PanelChangelogFeature;
-  __decorateClass$l([
-    inject(ElementsSetup)
-  ], PanelChangelogFeature.prototype, "_elements");
-  __decorateClass$l([
-    inject(ApiDataSetup)
-  ], PanelChangelogFeature.prototype, "_apiDataSetup");
-  __decorateClass$l([
-    inject(GlobalSettingsService)
-  ], PanelChangelogFeature.prototype, "_globalSettingsService");
-  var __defProp$k = Object.defineProperty;
+  var __defProp$h = Object.defineProperty;
   var __getOwnPropDesc$1 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$1(target, key) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$k(target, key, result);
+    if (kind && result) __defProp$h(target, key, result);
     return result;
-  }, "__decorateClass$k");
+  }, "__decorateClass$h");
   var __decorateParam = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam");
   let LobbyItemsService = (_Da = class {
     constructor(loggerFactory2) {
@@ -52946,24 +54610,24 @@
       return this._onlineItems$.asObservable();
     }
   }, __name(_Da, "LobbyItemsService"), _Da);
-  __decorateClass$k([
+  __decorateClass$h([
     inject(SocketService)
   ], LobbyItemsService.prototype, "_socketService", 2);
-  __decorateClass$k([
+  __decorateClass$h([
     postConstruct()
   ], LobbyItemsService.prototype, "postConstruct", 1);
-  LobbyItemsService = __decorateClass$k([
+  LobbyItemsService = __decorateClass$h([
     injectable(),
     __decorateParam(0, inject(loggerFactory))
   ], LobbyItemsService);
-  function get_each_context$9(ctx, list, i) {
+  function get_each_context$7(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[10] = list[i];
     child_ctx[12] = i;
     return child_ctx;
   }
-  __name(get_each_context$9, "get_each_context$9");
-  function create_if_block$7(ctx) {
+  __name(get_each_context$7, "get_each_context$7");
+  function create_if_block$4(ctx) {
     let div;
     return {
       c() {
@@ -52980,8 +54644,8 @@
       }
     };
   }
-  __name(create_if_block$7, "create_if_block$7");
-  function create_each_block$9(ctx) {
+  __name(create_if_block$4, "create_if_block$4");
+  function create_each_block$7(ctx) {
     let div1;
     let checkbox;
     let t0;
@@ -53129,8 +54793,8 @@
       }
     };
   }
-  __name(create_each_block$9, "create_each_block$9");
-  function create_fragment$g(ctx) {
+  __name(create_each_block$7, "create_each_block$7");
+  function create_fragment$d(ctx) {
     let div2;
     let div0;
     let t0;
@@ -53142,7 +54806,7 @@
     let current;
     let if_block = (
       /*$filters*/
-      ctx[2].length === 0 && create_if_block$7()
+      ctx[2].length === 0 && create_if_block$4()
     );
     let each_value = ensure_array_like(
       /*$filters*/
@@ -53150,7 +54814,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$9(get_each_context$9(ctx, each_value, i));
+      each_blocks[i] = create_each_block$7(get_each_context$7(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
@@ -53216,7 +54880,7 @@
         ) {
           if (if_block) ;
           else {
-            if_block = create_if_block$7();
+            if_block = create_if_block$4();
             if_block.c();
             if_block.m(div0, t0);
           }
@@ -53232,12 +54896,12 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$9(ctx2, each_value, i);
+            const child_ctx = get_each_context$7(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$9(child_ctx);
+              each_blocks[i] = create_each_block$7(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div0, null);
@@ -53279,8 +54943,8 @@
       }
     };
   }
-  __name(create_fragment$g, "create_fragment$g");
-  function instance$g($$self, $$props, $$invalidate) {
+  __name(create_fragment$d, "create_fragment$d");
+  function instance$d($$self, $$props, $$invalidate) {
     let filterStates;
     let $selectedFilters;
     let $filters;
@@ -53325,16 +54989,16 @@
       click_handler_2
     ];
   }
-  __name(instance$g, "instance$g");
+  __name(instance$d, "instance$d");
   const _Panel_filters = class _Panel_filters extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$g, create_fragment$g, safe_not_equal, { feature: 0 });
+      init(this, options, instance$d, create_fragment$d, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Panel_filters, "Panel_filters");
   let Panel_filters = _Panel_filters;
-  function create_fragment$f(ctx) {
+  function create_fragment$c(ctx) {
     let div9;
     let div0;
     let t3;
@@ -53770,8 +55434,8 @@
       }
     };
   }
-  __name(create_fragment$f, "create_fragment$f");
-  function instance$f($$self, $$props, $$invalidate) {
+  __name(create_fragment$c, "create_fragment$c");
+  function instance$c($$self, $$props, $$invalidate) {
     let { feature } = $$props;
     let { onCreate } = $$props;
     const filter2 = {
@@ -53847,28 +55511,28 @@
       checkbox_checked_binding
     ];
   }
-  __name(instance$f, "instance$f");
+  __name(instance$c, "instance$c");
   const _Filter_form = class _Filter_form extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$f, create_fragment$f, safe_not_equal, { feature: 2, onCreate: 0 });
+      init(this, options, instance$c, create_fragment$c, safe_not_equal, { feature: 2, onCreate: 0 });
     }
   };
   __name(_Filter_form, "Filter_form");
   let Filter_form = _Filter_form;
-  function get_each_context$8(ctx, list, i) {
+  function get_each_context$6(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[7] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$8, "get_each_context$8");
-  function get_each_context_1$1(ctx, list, i) {
+  __name(get_each_context$6, "get_each_context$6");
+  function get_each_context_1(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[10] = list[i];
     return child_ctx;
   }
-  __name(get_each_context_1$1, "get_each_context_1$1");
-  function create_each_block_1$1(ctx) {
+  __name(get_each_context_1, "get_each_context_1");
+  function create_each_block_1(ctx) {
     let div1;
     let b;
     let t0_value = (
@@ -53927,8 +55591,8 @@
       }
     };
   }
-  __name(create_each_block_1$1, "create_each_block_1$1");
-  function create_each_block$8(ctx) {
+  __name(create_each_block_1, "create_each_block_1");
+  function create_each_block$6(ctx) {
     let div1;
     let b;
     let t0_value = (
@@ -54024,8 +55688,8 @@
       }
     };
   }
-  __name(create_each_block$8, "create_each_block$8");
-  function create_fragment$e(ctx) {
+  __name(create_each_block$6, "create_each_block$6");
+  function create_fragment$b(ctx) {
     let div4;
     let div0;
     let t2;
@@ -54050,15 +55714,15 @@
     );
     let each_blocks_1 = [];
     for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks_1[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+      each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
     }
     let each_value = ensure_array_like(
       /*$visitedLobbies*/
-      ctx[3].filter(func$1)
+      ctx[3].filter(func)
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$8(get_each_context$8(ctx, each_value, i));
+      each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
     }
     return {
       c() {
@@ -54123,11 +55787,11 @@
           );
           let i;
           for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1$1(ctx2, each_value_1, i);
+            const child_ctx = get_each_context_1(ctx2, each_value_1, i);
             if (each_blocks_1[i]) {
               each_blocks_1[i].p(child_ctx, dirty);
             } else {
-              each_blocks_1[i] = create_each_block_1$1(child_ctx);
+              each_blocks_1[i] = create_each_block_1(child_ctx);
               each_blocks_1[i].c();
               each_blocks_1[i].m(div1, null);
             }
@@ -54144,15 +55808,15 @@
         12) {
           each_value = ensure_array_like(
             /*$visitedLobbies*/
-            ctx2[3].filter(func$1)
+            ctx2[3].filter(func)
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$8(ctx2, each_value, i);
+            const child_ctx = get_each_context$6(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$8(child_ctx);
+              each_blocks[i] = create_each_block$6(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div3, null);
             }
@@ -54174,10 +55838,10 @@
       }
     };
   }
-  __name(create_fragment$e, "create_fragment$e");
-  const func$1 = /* @__PURE__ */ __name((lobby) => lobby.players.length > 1, "func$1");
+  __name(create_fragment$b, "create_fragment$b");
+  const func = /* @__PURE__ */ __name((lobby) => lobby.players.length > 1, "func");
   const func_2 = /* @__PURE__ */ __name((p) => p.name, "func_2");
-  function instance$e($$self, $$props, $$invalidate) {
+  function instance$b($$self, $$props, $$invalidate) {
     let $visitedLobbies;
     let { feature } = $$props;
     let { filters } = $$props;
@@ -54201,24 +55865,24 @@
       click_handler2
     ];
   }
-  __name(instance$e, "instance$e");
+  __name(instance$b, "instance$b");
   const _Filter_search = class _Filter_search extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$e, create_fragment$e, safe_not_equal, { feature: 0, filters: 1, lobbySelected: 2 });
+      init(this, options, instance$b, create_fragment$b, safe_not_equal, { feature: 0, filters: 1, lobbySelected: 2 });
     }
   };
   __name(_Filter_search, "Filter_search");
   let Filter_search = _Filter_search;
-  var __defProp$j = Object.defineProperty;
-  var __decorateClass$j = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$g = Object.defineProperty;
+  var __decorateClass$g = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$j(target, key, result);
+    if (result) __defProp$g(target, key, result);
     return result;
-  }, "__decorateClass$j");
+  }, "__decorateClass$g");
   const _PanelFiltersFeature = class _PanelFiltersFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -54528,807 +56192,21 @@
   };
   __name(_PanelFiltersFeature, "PanelFiltersFeature");
   let PanelFiltersFeature = _PanelFiltersFeature;
-  __decorateClass$j([
+  __decorateClass$g([
     inject(ElementsSetup)
   ], PanelFiltersFeature.prototype, "_elements");
-  __decorateClass$j([
+  __decorateClass$g([
     inject(LobbyService)
   ], PanelFiltersFeature.prototype, "_lobbyService");
-  __decorateClass$j([
+  __decorateClass$g([
     inject(ModalService)
   ], PanelFiltersFeature.prototype, "_modalService");
-  __decorateClass$j([
+  __decorateClass$g([
     inject(ToastService)
   ], PanelFiltersFeature.prototype, "_toastService");
-  __decorateClass$j([
+  __decorateClass$g([
     inject(LobbyItemsService)
   ], PanelFiltersFeature.prototype, "_lobbyItemsService");
-  function get_each_context$7(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[9] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context$7, "get_each_context$7");
-  function get_each_context_1(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[9] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context_1, "get_each_context_1");
-  function create_else_block$3(ctx) {
-    let div;
-    let t;
-    let current;
-    let each_value_1 = ensure_array_like(
-      /*$lobbies*/
-      ctx[1]
-    );
-    let each_blocks = [];
-    for (let i = 0; i < each_value_1.length; i += 1) {
-      each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
-    }
-    const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-      each_blocks[i] = null;
-    }), "out");
-    let if_block = (
-      /*$lobbies*/
-      ctx[1].length === 0 && create_if_block_4()
-    );
-    return {
-      c() {
-        div = element("div");
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        t = space();
-        if (if_block) if_block.c();
-        attr(div, "class", "typo-lobbies-discord-buttons svelte-tkvjrc");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(div, null);
-          }
-        }
-        append(div, t);
-        if (if_block) if_block.m(div, null);
-        current = true;
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*feature, $lobbies*/
-        3) {
-          each_value_1 = ensure_array_like(
-            /*$lobbies*/
-            ctx2[1]
-          );
-          let i;
-          for (i = 0; i < each_value_1.length; i += 1) {
-            const child_ctx = get_each_context_1(ctx2, each_value_1, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-              transition_in(each_blocks[i], 1);
-            } else {
-              each_blocks[i] = create_each_block_1(child_ctx);
-              each_blocks[i].c();
-              transition_in(each_blocks[i], 1);
-              each_blocks[i].m(div, t);
-            }
-          }
-          group_outros();
-          for (i = each_value_1.length; i < each_blocks.length; i += 1) {
-            out(i);
-          }
-          check_outros();
-        }
-        if (
-          /*$lobbies*/
-          ctx2[1].length === 0
-        ) {
-          if (if_block) ;
-          else {
-            if_block = create_if_block_4();
-            if_block.c();
-            if_block.m(div, null);
-          }
-        } else if (if_block) {
-          if_block.d(1);
-          if_block = null;
-        }
-      },
-      i(local) {
-        if (current) return;
-        for (let i = 0; i < each_value_1.length; i += 1) {
-          transition_in(each_blocks[i]);
-        }
-        current = true;
-      },
-      o(local) {
-        each_blocks = each_blocks.filter(Boolean);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          transition_out(each_blocks[i]);
-        }
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        destroy_each(each_blocks, detaching);
-        if (if_block) if_block.d();
-      }
-    };
-  }
-  __name(create_else_block$3, "create_else_block$3");
-  function create_if_block_3(ctx) {
-    let bounceload;
-    let current;
-    bounceload = new Bounceload({
-      props: { content: "Loading connected servers.." }
-    });
-    return {
-      c() {
-        create_component(bounceload.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(bounceload, target, anchor);
-        current = true;
-      },
-      p: noop,
-      i(local) {
-        if (current) return;
-        transition_in(bounceload.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(bounceload.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(bounceload, detaching);
-      }
-    };
-  }
-  __name(create_if_block_3, "create_if_block_3");
-  function create_if_block_2$2(ctx) {
-    let span;
-    return {
-      c() {
-        span = element("span");
-        span.innerHTML = `You need to log in to see lobbies of your discord friends.<br/>`;
-        attr(span, "class", "svelte-tkvjrc");
-      },
-      m(target, anchor) {
-        insert(target, span, anchor);
-      },
-      p: noop,
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(span);
-        }
-      }
-    };
-  }
-  __name(create_if_block_2$2, "create_if_block_2$2");
-  function create_each_block_1(ctx) {
-    let div;
-    let flatbutton;
-    let feature_createTooltip_action;
-    let current;
-    let mounted;
-    let dispose;
-    function click_handler2() {
-      return (
-        /*click_handler*/
-        ctx[7](
-          /*lobby*/
-          ctx[9]
-        )
-      );
-    }
-    __name(click_handler2, "click_handler");
-    flatbutton = new Flat_button({
-      props: {
-        content: (
-          /*lobby*/
-          ctx[9].userName
-        ),
-        color: (
-          /*lobby*/
-          ctx[9].private ? "green" : "blue"
-        )
-      }
-    });
-    flatbutton.$on("click", click_handler2);
-    return {
-      c() {
-        div = element("div");
-        create_component(flatbutton.$$.fragment);
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        mount_component(flatbutton, div, null);
-        current = true;
-        if (!mounted) {
-          dispose = action_destroyer(feature_createTooltip_action = /*feature*/
-          ctx[0].createTooltip(div, {
-            title: (
-              /*feature*/
-              ctx[0].buildButtonTooltip(
-                /*lobby*/
-                ctx[9]
-              )
-            ),
-            lock: "Y"
-          }));
-          mounted = true;
-        }
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-        const flatbutton_changes = {};
-        if (dirty & /*$lobbies*/
-        2) flatbutton_changes.content = /*lobby*/
-        ctx[9].userName;
-        if (dirty & /*$lobbies*/
-        2) flatbutton_changes.color = /*lobby*/
-        ctx[9].private ? "green" : "blue";
-        flatbutton.$set(flatbutton_changes);
-        if (feature_createTooltip_action && is_function(feature_createTooltip_action.update) && dirty & /*feature, $lobbies*/
-        3) feature_createTooltip_action.update.call(null, {
-          title: (
-            /*feature*/
-            ctx[0].buildButtonTooltip(
-              /*lobby*/
-              ctx[9]
-            )
-          ),
-          lock: "Y"
-        });
-      },
-      i(local) {
-        if (current) return;
-        transition_in(flatbutton.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(flatbutton.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        destroy_component(flatbutton);
-        mounted = false;
-        dispose();
-      }
-    };
-  }
-  __name(create_each_block_1, "create_each_block_1");
-  function create_if_block_4(ctx) {
-    let span;
-    return {
-      c() {
-        span = element("span");
-        span.textContent = "None of your friends are online.";
-        attr(span, "class", "svelte-tkvjrc");
-      },
-      m(target, anchor) {
-        insert(target, span, anchor);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(span);
-        }
-      }
-    };
-  }
-  __name(create_if_block_4, "create_if_block_4");
-  function create_if_block$6(ctx) {
-    let div1;
-    let b;
-    let t1;
-    let t2;
-    let div0;
-    let if_block = (
-      /*$discoveredLobbies*/
-      ctx[3].length === 0 && create_if_block_1$4()
-    );
-    let each_value = ensure_array_like(
-      /*$discoveredLobbies*/
-      ctx[3]
-    );
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$7(get_each_context$7(ctx, each_value, i));
-    }
-    return {
-      c() {
-        div1 = element("div");
-        b = element("b");
-        b.textContent = "Discovered Lobbies";
-        t1 = space();
-        if (if_block) if_block.c();
-        t2 = space();
-        div0 = element("div");
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        attr(b, "class", "svelte-tkvjrc");
-        attr(div0, "class", "typo-lobbies-discovered-buttons svelte-tkvjrc");
-        attr(div1, "class", "typo-lobbies-discovered svelte-tkvjrc");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, b);
-        append(div1, t1);
-        if (if_block) if_block.m(div1, null);
-        append(div1, t2);
-        append(div1, div0);
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(div0, null);
-          }
-        }
-      },
-      p(ctx2, dirty) {
-        if (
-          /*$discoveredLobbies*/
-          ctx2[3].length === 0
-        ) {
-          if (if_block) ;
-          else {
-            if_block = create_if_block_1$4();
-            if_block.c();
-            if_block.m(div1, t2);
-          }
-        } else if (if_block) {
-          if_block.d(1);
-          if_block = null;
-        }
-        if (dirty & /*$discoveredLobbies, feature, Date, Number*/
-        9) {
-          each_value = ensure_array_like(
-            /*$discoveredLobbies*/
-            ctx2[3]
-          );
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$7(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-            } else {
-              each_blocks[i] = create_each_block$7(child_ctx);
-              each_blocks[i].c();
-              each_blocks[i].m(div0, null);
-            }
-          }
-          for (; i < each_blocks.length; i += 1) {
-            each_blocks[i].d(1);
-          }
-          each_blocks.length = each_value.length;
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-        if (if_block) if_block.d();
-        destroy_each(each_blocks, detaching);
-      }
-    };
-  }
-  __name(create_if_block$6, "create_if_block$6");
-  function create_if_block_1$4(ctx) {
-    let div;
-    return {
-      c() {
-        div = element("div");
-        div.textContent = "Join a lobby to see it here afterwards.";
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-      }
-    };
-  }
-  __name(create_if_block_1$4, "create_if_block_1$4");
-  function create_each_block$7(ctx) {
-    let div;
-    let b;
-    let t0_value = new Date(Number(
-      /*lobby*/
-      ctx[9].seenAt
-    )).toLocaleTimeString() + "";
-    let t0;
-    let t1;
-    let span;
-    let t2_value = (
-      /*lobby*/
-      ctx[9].players.map(func).join(", ") + ""
-    );
-    let t2;
-    let t3;
-    let mounted;
-    let dispose;
-    function click_handler_1() {
-      return (
-        /*click_handler_1*/
-        ctx[8](
-          /*lobby*/
-          ctx[9]
-        )
-      );
-    }
-    __name(click_handler_1, "click_handler_1");
-    return {
-      c() {
-        div = element("div");
-        b = element("b");
-        t0 = text(t0_value);
-        t1 = space();
-        span = element("span");
-        t2 = text(t2_value);
-        t3 = space();
-        attr(b, "class", "svelte-tkvjrc");
-        attr(span, "class", "svelte-tkvjrc");
-        set_style(
-          div,
-          "order",
-          /*lobby*/
-          ctx[9].seenAt % 1e8
-        );
-        attr(div, "class", "svelte-tkvjrc");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        append(div, b);
-        append(b, t0);
-        append(div, t1);
-        append(div, span);
-        append(span, t2);
-        append(div, t3);
-        if (!mounted) {
-          dispose = listen(div, "click", click_handler_1);
-          mounted = true;
-        }
-      },
-      p(new_ctx, dirty) {
-        ctx = new_ctx;
-        if (dirty & /*$discoveredLobbies*/
-        8 && t0_value !== (t0_value = new Date(Number(
-          /*lobby*/
-          ctx[9].seenAt
-        )).toLocaleTimeString() + "")) set_data(t0, t0_value);
-        if (dirty & /*$discoveredLobbies*/
-        8 && t2_value !== (t2_value = /*lobby*/
-        ctx[9].players.map(func).join(", ") + "")) set_data(t2, t2_value);
-        if (dirty & /*$discoveredLobbies*/
-        8) {
-          set_style(
-            div,
-            "order",
-            /*lobby*/
-            ctx[9].seenAt % 1e8
-          );
-        }
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        mounted = false;
-        dispose();
-      }
-    };
-  }
-  __name(create_each_block$7, "create_each_block$7");
-  function create_fragment$d(ctx) {
-    let div1;
-    let div0;
-    let b;
-    let t1;
-    let current_block_type_index;
-    let if_block0;
-    let t2;
-    let current;
-    const if_block_creators = [create_if_block_2$2, create_if_block_3, create_else_block$3];
-    const if_blocks = [];
-    function select_block_type(ctx2, dirty) {
-      if (
-        /*$lobbies*/
-        ctx2[1] === null
-      ) return 0;
-      if (
-        /*$lobbies*/
-        ctx2[1] === void 0
-      ) return 1;
-      return 2;
-    }
-    __name(select_block_type, "select_block_type");
-    current_block_type_index = select_block_type(ctx);
-    if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    let if_block1 = (
-      /*$showDiscovered*/
-      ctx[2] && create_if_block$6(ctx)
-    );
-    return {
-      c() {
-        div1 = element("div");
-        div0 = element("div");
-        b = element("b");
-        b.textContent = "Online Friends";
-        t1 = space();
-        if_block0.c();
-        t2 = space();
-        if (if_block1) if_block1.c();
-        attr(b, "class", "svelte-tkvjrc");
-        attr(div0, "class", "typo-lobbies-discord svelte-tkvjrc");
-        attr(div1, "class", "svelte-tkvjrc");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        append(div0, b);
-        append(div0, t1);
-        if_blocks[current_block_type_index].m(div0, null);
-        append(div1, t2);
-        if (if_block1) if_block1.m(div1, null);
-        current = true;
-      },
-      p(ctx2, [dirty]) {
-        let previous_block_index = current_block_type_index;
-        current_block_type_index = select_block_type(ctx2);
-        if (current_block_type_index === previous_block_index) {
-          if_blocks[current_block_type_index].p(ctx2, dirty);
-        } else {
-          group_outros();
-          transition_out(if_blocks[previous_block_index], 1, 1, () => {
-            if_blocks[previous_block_index] = null;
-          });
-          check_outros();
-          if_block0 = if_blocks[current_block_type_index];
-          if (!if_block0) {
-            if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-            if_block0.c();
-          } else {
-            if_block0.p(ctx2, dirty);
-          }
-          transition_in(if_block0, 1);
-          if_block0.m(div0, null);
-        }
-        if (
-          /*$showDiscovered*/
-          ctx2[2]
-        ) {
-          if (if_block1) {
-            if_block1.p(ctx2, dirty);
-          } else {
-            if_block1 = create_if_block$6(ctx2);
-            if_block1.c();
-            if_block1.m(div1, null);
-          }
-        } else if (if_block1) {
-          if_block1.d(1);
-          if_block1 = null;
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(if_block0);
-        current = true;
-      },
-      o(local) {
-        transition_out(if_block0);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-        if_blocks[current_block_type_index].d();
-        if (if_block1) if_block1.d();
-      }
-    };
-  }
-  __name(create_fragment$d, "create_fragment$d");
-  const func = /* @__PURE__ */ __name((p) => p.name, "func");
-  function instance$d($$self, $$props, $$invalidate) {
-    let $lobbies;
-    let $showDiscovered;
-    let $discoveredLobbies;
-    let { feature } = $$props;
-    const lobbies = feature.lobbiesStore;
-    component_subscribe($$self, lobbies, (value) => $$invalidate(1, $lobbies = value));
-    const showDiscovered = feature.showDiscoveredLobbiesStore;
-    component_subscribe($$self, showDiscovered, (value) => $$invalidate(2, $showDiscovered = value));
-    const discoveredLobbies = feature.discoveredLobbiesStore;
-    component_subscribe($$self, discoveredLobbies, (value) => $$invalidate(3, $discoveredLobbies = value));
-    const click_handler2 = /* @__PURE__ */ __name((lobby) => feature.joinLobby(lobby.lobbyId, lobby.userName), "click_handler");
-    const click_handler_1 = /* @__PURE__ */ __name((lobby) => feature.joinLobby(lobby.id ?? ""), "click_handler_1");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-    };
-    return [
-      feature,
-      $lobbies,
-      $showDiscovered,
-      $discoveredLobbies,
-      lobbies,
-      showDiscovered,
-      discoveredLobbies,
-      click_handler2,
-      click_handler_1
-    ];
-  }
-  __name(instance$d, "instance$d");
-  const _Panel_lobbies = class _Panel_lobbies extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$d, create_fragment$d, safe_not_equal, { feature: 0 });
-    }
-  };
-  __name(_Panel_lobbies, "Panel_lobbies");
-  let Panel_lobbies = _Panel_lobbies;
-  var __defProp$i = Object.defineProperty;
-  var __decorateClass$i = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key, result) || result;
-    if (result) __defProp$i(target, key, result);
-    return result;
-  }, "__decorateClass$i");
-  const _PanelLobbiesFeature = class _PanelLobbiesFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_elements");
-      __publicField(this, "_socketService");
-      __publicField(this, "_memberService");
-      __publicField(this, "_lobbyService");
-      __publicField(this, "_toastService");
-      __publicField(this, "_showDiscoveredLobbiesSetting", this.useSetting(
-        new BooleanExtensionSetting("show_discovered", true, this).withName("Show discovered lobbies").withDescription("Shows a list of lobbies that you were in before")
-      ));
-      __publicField(this, "_lobbies$", new BehaviorSubject(void 0));
-      __publicField(this, "_component");
-      __publicField(this, "_connection");
-      __publicField(this, "_memberSubscription");
-      __publicField(this, "name", "Lobby List");
-      __publicField(this, "description", "Displays online players from your connected discord servers on the start page");
-      __publicField(this, "tags", [
-        FeatureTag.SOCIAL,
-        FeatureTag.PALANTIR
-      ]);
-      __publicField(this, "featureId", 6);
-    }
-    async onActivate() {
-      const elements2 = await this._elements.complete();
-      this._component = new Panel_lobbies({
-        target: elements2.lobbiesTab,
-        props: {
-          feature: this
-        }
-      });
-      this._memberSubscription = this._memberService.member$.subscribe((member) => this.processMemberChange(member));
-    }
-    onDestroy() {
-      var _a2, _b2, _c2;
-      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
-      (_b2 = this._connection) == null ? void 0 : _b2.stop();
-      (_c2 = this._memberSubscription) == null ? void 0 : _c2.unsubscribe();
-      this._memberSubscription = void 0;
-    }
-    get lobbiesStore() {
-      return fromObservable(this._lobbies$.pipe(
-        map((lobbies) => lobbies === null || lobbies === void 0 ? lobbies : this.mapLobbiesToPlayerList(lobbies)),
-        tap((lobbies) => this._logger.info("Lobbies updated", lobbies))
-      ), []);
-    }
-    get discoveredLobbiesStore() {
-      return fromObservable(this._lobbyService.discoveredLobbies$, []);
-    }
-    get showDiscoveredLobbiesStore() {
-      return this._showDiscoveredLobbiesSetting.store;
-    }
-    /**
-     * Subscribe to guild lobbies of a member
-     * @param member
-     * @private
-     */
-    async processMemberChange(member) {
-      var _a2;
-      this._logger.debug("Member changed", member);
-      (_a2 = this._connection) == null ? void 0 : _a2.stop();
-      if (member === null || member === void 0) {
-        this._lobbies$.next(member);
-        return;
-      }
-      this._lobbies$.next(/* @__PURE__ */ new Map());
-      const initConnection = /* @__PURE__ */ __name(async () => {
-        const { connection: connection2, hubProxy } = await this.setupConnection();
-        this._connection = connection2;
-        await this.subscribeToLobbies(member, hubProxy);
-        return connection2;
-      }, "initConnection");
-      const connection = await initConnection();
-      this._socketService.reconnectOnUserInteraction(connection, () => initConnection());
-    }
-    /**
-     * Connect to the guild lobby hub to receive updates
-     * @private
-     */
-    async setupConnection() {
-      const connection = this._socketService.createConnection("IGuildLobbiesHub");
-      const hubProxy = this._socketService.createHub("IGuildLobbiesHub").createHubProxy(connection);
-      this._socketService.createReceiver("IGuildLobbiesReceiver").register(connection, {
-        guildLobbiesUpdated: this.onGuildLobbiesUpdated.bind(this)
-      });
-      await connection.start();
-      return { connection, hubProxy };
-    }
-    async subscribeToLobbies(member, hub) {
-      const promises = member.guilds.map(async (guild) => {
-        const currentLobbies = await hub.subscribeGuildLobbies(guild.guildID);
-        await this.onGuildLobbiesUpdated(currentLobbies);
-      });
-      await Promise.all(promises);
-    }
-    async onGuildLobbiesUpdated(lobbies) {
-      this._logger.info("Received guild lobbies for guild", lobbies.guildId);
-      const lastValue = this._lobbies$.value;
-      if (lastValue === null || lastValue === void 0) {
-        this._logger.warn("Received guild lobbies but lobbies are not initialized yet", lobbies);
-        return;
-      }
-      lastValue.set(lobbies.guildId, lobbies.lobbies);
-      this._lobbies$.next(lastValue);
-    }
-    mapLobbiesToPlayerList(lobbies) {
-      const distinct = [];
-      const list = Array.from(lobbies.values()).flat();
-      list.forEach((lobby) => {
-        if (!distinct.some((l) => l.lobbyId === lobby.lobbyId && l.userName === lobby.userName)) {
-          distinct.push(lobby);
-        }
-      });
-      return distinct;
-    }
-    buildButtonTooltip(lobby) {
-      return `🔑  ${lobby.private ? "Custom" : "Public"}
-👥 ${lobby.currentPlayers} Players
-🏳️ ${lobby.language}`;
-    }
-    async joinLobby(id2, targetName) {
-      const result = await this._lobbyService.joinLobby(id2);
-      if (result) await this._toastService.showToast(targetName ? `Joined the lobby of ${targetName}` : "Joined discovered lobby");
-      else await this._toastService.showToast(targetName ? `Failed to join the lobby of ${targetName}` : "Failed to join discovered lobby");
-    }
-  };
-  __name(_PanelLobbiesFeature, "PanelLobbiesFeature");
-  let PanelLobbiesFeature = _PanelLobbiesFeature;
-  __decorateClass$i([
-    inject(ElementsSetup)
-  ], PanelLobbiesFeature.prototype, "_elements");
-  __decorateClass$i([
-    inject(SocketService)
-  ], PanelLobbiesFeature.prototype, "_socketService");
-  __decorateClass$i([
-    inject(MemberService)
-  ], PanelLobbiesFeature.prototype, "_memberService");
-  __decorateClass$i([
-    inject(LobbyService)
-  ], PanelLobbiesFeature.prototype, "_lobbyService");
-  __decorateClass$i([
-    inject(ToastService)
-  ], PanelLobbiesFeature.prototype, "_toastService");
   const isAnonymousPlayerIdentification = /* @__PURE__ */ __name((value) => {
     return value.lobbyKey !== void 0 && value.lobbyPlayerId !== void 0;
   }, "isAnonymousPlayerIdentification");
@@ -55341,13 +56219,13 @@
     OnlineItemTypeDto2[OnlineItemTypeDto2["Rewardee"] = 5] = "Rewardee";
     return OnlineItemTypeDto2;
   })(OnlineItemTypeDto || {});
-  function get_each_context$6(ctx, list, i) {
+  function get_each_context$5(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[3] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$6, "get_each_context$6");
-  function create_each_block$6(ctx) {
+  __name(get_each_context$5, "get_each_context$5");
+  function create_each_block$5(ctx) {
     let div;
     return {
       c() {
@@ -55373,8 +56251,8 @@
       }
     };
   }
-  __name(create_each_block$6, "create_each_block$6");
-  function create_fragment$c(ctx) {
+  __name(create_each_block$5, "create_each_block$5");
+  function create_fragment$a(ctx) {
     let each_1_anchor;
     let each_value = ensure_array_like(
       /*awards*/
@@ -55382,7 +56260,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+      each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
     }
     return {
       c() {
@@ -55408,11 +56286,11 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$6(ctx2, each_value, i);
+            const child_ctx = get_each_context$5(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$6(child_ctx);
+              each_blocks[i] = create_each_block$5(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
             }
@@ -55433,8 +56311,8 @@
       }
     };
   }
-  __name(create_fragment$c, "create_fragment$c");
-  function instance$c($$self, $$props, $$invalidate) {
+  __name(create_fragment$a, "create_fragment$a");
+  function instance$a($$self, $$props, $$invalidate) {
     let { playerDisplay } = $$props;
     let { awards } = $$props;
     const getAwards = /* @__PURE__ */ __name(() => {
@@ -55446,11 +56324,11 @@
     };
     return [awards, playerDisplay, getAwards];
   }
-  __name(instance$c, "instance$c");
+  __name(instance$a, "instance$a");
   const _Awards_display = class _Awards_display extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$c, create_fragment$c, safe_not_equal, {
+      init(this, options, instance$a, create_fragment$a, safe_not_equal, {
         playerDisplay: 1,
         awards: 0,
         getAwards: 2
@@ -55462,7 +56340,7 @@
   };
   __name(_Awards_display, "Awards_display");
   let Awards_display = _Awards_display;
-  function create_if_block_1$3(ctx) {
+  function create_if_block_1$2(ctx) {
     let div;
     let iconbutton;
     let current;
@@ -55518,8 +56396,8 @@
       }
     };
   }
-  __name(create_if_block_1$3, "create_if_block_1$3");
-  function create_if_block$5(ctx) {
+  __name(create_if_block_1$2, "create_if_block_1$2");
+  function create_if_block$3(ctx) {
     let previous_key = (
       /*currentAwardPresentation*/
       ctx[1]
@@ -55555,7 +56433,7 @@
       }
     };
   }
-  __name(create_if_block$5, "create_if_block$5");
+  __name(create_if_block$3, "create_if_block$3");
   function create_key_block(ctx) {
     let div;
     return {
@@ -55583,7 +56461,7 @@
     };
   }
   __name(create_key_block, "create_key_block");
-  function create_fragment$b(ctx) {
+  function create_fragment$9(ctx) {
     let t;
     let if_block1_anchor;
     let current;
@@ -55591,11 +56469,11 @@
       /*$member*/
       ctx[2] !== void 0 && /*$member*/
       ctx[2] !== null && /*$awardable*/
-      ctx[3] && create_if_block_1$3(ctx)
+      ctx[3] && create_if_block_1$2(ctx)
     );
     let if_block1 = (
       /*currentAwardPresentation*/
-      ctx[1] !== void 0 && create_if_block$5(ctx)
+      ctx[1] !== void 0 && create_if_block$3(ctx)
     );
     return {
       c() {
@@ -55625,7 +56503,7 @@
               transition_in(if_block0, 1);
             }
           } else {
-            if_block0 = create_if_block_1$3(ctx2);
+            if_block0 = create_if_block_1$2(ctx2);
             if_block0.c();
             transition_in(if_block0, 1);
             if_block0.m(t.parentNode, t);
@@ -55644,7 +56522,7 @@
           if (if_block1) {
             if_block1.p(ctx2, dirty);
           } else {
-            if_block1 = create_if_block$5(ctx2);
+            if_block1 = create_if_block$3(ctx2);
             if_block1.c();
             if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
           }
@@ -55672,8 +56550,8 @@
       }
     };
   }
-  __name(create_fragment$b, "create_fragment$b");
-  function instance$b($$self, $$props, $$invalidate) {
+  __name(create_fragment$9, "create_fragment$9");
+  function instance$9($$self, $$props, $$invalidate) {
     let $member;
     let $awardable;
     let { feature } = $$props;
@@ -55702,22 +56580,22 @@
       click_handler2
     ];
   }
-  __name(instance$b, "instance$b");
+  __name(instance$9, "instance$9");
   const _Player_awards = class _Player_awards extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$b, create_fragment$b, safe_not_equal, { feature: 0, currentAwardPresentation: 1 });
+      init(this, options, instance$9, create_fragment$9, safe_not_equal, { feature: 0, currentAwardPresentation: 1 });
     }
   };
   __name(_Player_awards, "Player_awards");
   let Player_awards = _Player_awards;
-  function get_each_context$5(ctx, list, i) {
+  function get_each_context$4(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[4] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$5, "get_each_context$5");
-  function create_each_block$5(ctx) {
+  __name(get_each_context$4, "get_each_context$4");
+  function create_each_block$4(ctx) {
     let div1;
     let div0;
     let t0;
@@ -55847,8 +56725,8 @@
       }
     };
   }
-  __name(create_each_block$5, "create_each_block$5");
-  function create_fragment$a(ctx) {
+  __name(create_each_block$4, "create_each_block$4");
+  function create_fragment$8(ctx) {
     let div1;
     let span;
     let t1;
@@ -55859,7 +56737,7 @@
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
+      each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
     }
     return {
       c() {
@@ -55895,11 +56773,11 @@
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$5(ctx2, each_value, i);
+            const child_ctx = get_each_context$4(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$5(child_ctx);
+              each_blocks[i] = create_each_block$4(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(div0, null);
             }
@@ -55920,8 +56798,8 @@
       }
     };
   }
-  __name(create_fragment$a, "create_fragment$a");
-  function instance$a($$self, $$props, $$invalidate) {
+  __name(create_fragment$8, "create_fragment$8");
+  function instance$8($$self, $$props, $$invalidate) {
     let { onPick } = $$props;
     let { awards } = $$props;
     const getAwardRarityName = /* @__PURE__ */ __name((rarity) => {
@@ -55943,24 +56821,24 @@
     };
     return [onPick, awards, getAwardRarityName, click_handler2];
   }
-  __name(instance$a, "instance$a");
+  __name(instance$8, "instance$8");
   const _Player_awards_award_picker = class _Player_awards_award_picker extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$a, create_fragment$a, safe_not_equal, { onPick: 0, awards: 1 });
+      init(this, options, instance$8, create_fragment$8, safe_not_equal, { onPick: 0, awards: 1 });
     }
   };
   __name(_Player_awards_award_picker, "Player_awards_award_picker");
   let Player_awards_award_picker = _Player_awards_award_picker;
-  var __defProp$h = Object.defineProperty;
-  var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$f = Object.defineProperty;
+  var __decorateClass$f = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$h(target, key, result);
+    if (result) __defProp$f(target, key, result);
     return result;
-  }, "__decorateClass$h");
+  }, "__decorateClass$f");
   const _PlayerAwardsFeature = class _PlayerAwardsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -56176,46 +57054,46 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerAwardsFeature, "PlayerAwardsFeature");
   let PlayerAwardsFeature = _PlayerAwardsFeature;
-  __decorateClass$h([
+  __decorateClass$f([
     inject(ElementsSetup)
   ], PlayerAwardsFeature.prototype, "_elementsSetup");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(ApiDataSetup)
   ], PlayerAwardsFeature.prototype, "_apiDataSetup");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(LobbyConnectionService)
   ], PlayerAwardsFeature.prototype, "_lobbyConnectionService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(ChatService)
   ], PlayerAwardsFeature.prototype, "_chatService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(ToastService)
   ], PlayerAwardsFeature.prototype, "_toastService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(LobbyItemsService)
   ], PlayerAwardsFeature.prototype, "_lobbyItemsService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(LobbyService)
   ], PlayerAwardsFeature.prototype, "_lobbyService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(PlayersService)
   ], PlayerAwardsFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(MemberService)
   ], PlayerAwardsFeature.prototype, "_memberService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(ApiService)
   ], PlayerAwardsFeature.prototype, "_apiService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(ModalService)
   ], PlayerAwardsFeature.prototype, "_modalService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(CloudService)
   ], PlayerAwardsFeature.prototype, "_cloudService");
-  __decorateClass$h([
+  __decorateClass$f([
     inject(LobbyLeftEventListener)
   ], PlayerAwardsFeature.prototype, "_lobbyLeftEventListener");
-  function create_if_block$4(ctx) {
+  function create_if_block$2(ctx) {
     let div;
     return {
       c() {
@@ -56247,12 +57125,12 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_if_block$4, "create_if_block$4");
-  function create_fragment$9(ctx) {
+  __name(create_if_block$2, "create_if_block$2");
+  function create_fragment$7(ctx) {
     let if_block_anchor;
     let if_block = (
       /*scene*/
-      ctx[0] !== void 0 && create_if_block$4(ctx)
+      ctx[0] !== void 0 && create_if_block$2(ctx)
     );
     return {
       c() {
@@ -56271,7 +57149,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$4(ctx2);
+            if_block = create_if_block$2(ctx2);
             if_block.c();
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
           }
@@ -56290,8 +57168,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_fragment$9, "create_fragment$9");
-  function instance$9($$self, $$props, $$invalidate) {
+  __name(create_fragment$7, "create_fragment$7");
+  function instance$7($$self, $$props, $$invalidate) {
     let { scene = void 0 } = $$props;
     let { playerDisplay } = $$props;
     const getScene = /* @__PURE__ */ __name(() => scene, "getScene");
@@ -56317,11 +57195,11 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     };
     return [scene, getUrl, playerDisplay, getScene];
   }
-  __name(instance$9, "instance$9");
+  __name(instance$7, "instance$7");
   const _Scene_container = class _Scene_container extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$9, create_fragment$9, safe_not_equal, { scene: 0, playerDisplay: 2, getScene: 3 });
+      init(this, options, instance$7, create_fragment$7, safe_not_equal, { scene: 0, playerDisplay: 2, getScene: 3 });
     }
     get getScene() {
       return this.$$.ctx[3];
@@ -56329,15 +57207,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Scene_container, "Scene_container");
   let Scene_container = _Scene_container;
-  var __defProp$g = Object.defineProperty;
-  var __decorateClass$g = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$e = Object.defineProperty;
+  var __decorateClass$e = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$g(target, key, result);
+    if (result) __defProp$e(target, key, result);
     return result;
-  }, "__decorateClass$g");
+  }, "__decorateClass$e");
   const _PlayerScenesFeature = class _PlayerScenesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -56477,25 +57355,25 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerScenesFeature, "PlayerScenesFeature");
   let PlayerScenesFeature = _PlayerScenesFeature;
-  __decorateClass$g([
+  __decorateClass$e([
     inject(ApiDataSetup)
   ], PlayerScenesFeature.prototype, "_apiDataSetup");
-  __decorateClass$g([
+  __decorateClass$e([
     inject(LobbyItemsService)
   ], PlayerScenesFeature.prototype, "_lobbyItemsService");
-  __decorateClass$g([
+  __decorateClass$e([
     inject(PlayersService)
   ], PlayerScenesFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$g([
+  __decorateClass$e([
     inject(MemberService)
   ], PlayerScenesFeature.prototype, "_memberService");
-  function get_each_context$4(ctx, list, i) {
+  function get_each_context$3(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[4] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$4, "get_each_context$4");
-  function create_each_block$4(ctx) {
+  __name(get_each_context$3, "get_each_context$3");
+  function create_each_block$3(ctx) {
     let div;
     return {
       c() {
@@ -56542,8 +57420,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_each_block$4, "create_each_block$4");
-  function create_fragment$8(ctx) {
+  __name(create_each_block$3, "create_each_block$3");
+  function create_fragment$6(ctx) {
     let each_1_anchor;
     let each_value = ensure_array_like(
       /*sprites*/
@@ -56551,7 +57429,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
+      each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
     }
     return {
       c() {
@@ -56577,11 +57455,11 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$4(ctx2, each_value, i);
+            const child_ctx = get_each_context$3(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$4(child_ctx);
+              each_blocks[i] = create_each_block$3(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
             }
@@ -56602,8 +57480,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_fragment$8, "create_fragment$8");
-  function instance$8($$self, $$props, $$invalidate) {
+  __name(create_fragment$6, "create_fragment$6");
+  function instance$6($$self, $$props, $$invalidate) {
     let { sprites = [] } = $$props;
     let { playerDisplay } = $$props;
     const getSprites = /* @__PURE__ */ __name(() => sprites, "getSprites");
@@ -56628,11 +57506,11 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     };
     return [sprites, getUrl, playerDisplay, getSprites];
   }
-  __name(instance$8, "instance$8");
+  __name(instance$6, "instance$6");
   const _Sprite_container = class _Sprite_container extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$8, create_fragment$8, safe_not_equal, {
+      init(this, options, instance$6, create_fragment$6, safe_not_equal, {
         sprites: 0,
         playerDisplay: 2,
         getSprites: 3
@@ -56644,15 +57522,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Sprite_container, "Sprite_container");
   let Sprite_container = _Sprite_container;
-  var __defProp$f = Object.defineProperty;
-  var __decorateClass$f = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$d = Object.defineProperty;
+  var __decorateClass$d = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$f(target, key, result);
+    if (result) __defProp$d(target, key, result);
     return result;
-  }, "__decorateClass$f");
+  }, "__decorateClass$d");
   const _PlayerSpritesFeature = class _PlayerSpritesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -56789,42 +57667,42 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerSpritesFeature, "PlayerSpritesFeature");
   let PlayerSpritesFeature = _PlayerSpritesFeature;
-  __decorateClass$f([
+  __decorateClass$d([
     inject(ApiDataSetup)
   ], PlayerSpritesFeature.prototype, "_apiDataSetup");
-  __decorateClass$f([
+  __decorateClass$d([
     inject(LobbyItemsService)
   ], PlayerSpritesFeature.prototype, "_lobbyItemsService");
-  __decorateClass$f([
+  __decorateClass$d([
     inject(PlayersService)
   ], PlayerSpritesFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$f([
+  __decorateClass$d([
     inject(MemberService)
   ], PlayerSpritesFeature.prototype, "_memberService");
-  var __defProp$e = Object.defineProperty;
+  var __defProp$c = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-  var __decorateClass$e = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __decorateClass$c = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-    if (kind && result) __defProp$e(target, key, result);
+    if (kind && result) __defProp$c(target, key, result);
     return result;
-  }, "__decorateClass$e");
+  }, "__decorateClass$c");
   let TypoChallenge = (_Ea = class {
   }, __name(_Ea, "TypoChallenge"), _Ea);
-  TypoChallenge = __decorateClass$e([
+  TypoChallenge = __decorateClass$c([
     injectable()
   ], TypoChallenge);
-  var __defProp$d = Object.defineProperty;
-  var __decorateClass$d = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$b = Object.defineProperty;
+  var __decorateClass$b = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$d(target, key, result);
+    if (result) __defProp$b(target, key, result);
     return result;
-  }, "__decorateClass$d");
+  }, "__decorateClass$b");
   const _BlindGuessChallenge = class _BlindGuessChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -56858,24 +57736,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_BlindGuessChallenge, "BlindGuessChallenge");
   let BlindGuessChallenge = _BlindGuessChallenge;
-  __decorateClass$d([
+  __decorateClass$b([
     inject(LobbyService)
   ], BlindGuessChallenge.prototype, "_lobbyService");
-  __decorateClass$d([
+  __decorateClass$b([
     inject(DrawingService)
   ], BlindGuessChallenge.prototype, "_drawingService");
-  __decorateClass$d([
+  __decorateClass$b([
     inject(ElementsSetup)
   ], BlindGuessChallenge.prototype, "_elementsSetup");
-  var __defProp$c = Object.defineProperty;
-  var __decorateClass$c = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$a = Object.defineProperty;
+  var __decorateClass$a = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$c(target, key, result);
+    if (result) __defProp$a(target, key, result);
     return result;
-  }, "__decorateClass$c");
+  }, "__decorateClass$a");
   const _DeafGuessChallenge = class _DeafGuessChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -56931,24 +57809,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DeafGuessChallenge, "DeafGuessChallenge");
   let DeafGuessChallenge = _DeafGuessChallenge;
-  __decorateClass$c([
+  __decorateClass$a([
     inject(LobbyService)
   ], DeafGuessChallenge.prototype, "_lobbyService");
-  __decorateClass$c([
+  __decorateClass$a([
     inject(DrawingService)
   ], DeafGuessChallenge.prototype, "_drawingService");
-  __decorateClass$c([
+  __decorateClass$a([
     inject(ChatService)
   ], DeafGuessChallenge.prototype, "_chatService");
-  var __defProp$b = Object.defineProperty;
-  var __decorateClass$b = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$9 = Object.defineProperty;
+  var __decorateClass$9 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$b(target, key, result);
+    if (result) __defProp$9(target, key, result);
     return result;
-  }, "__decorateClass$b");
+  }, "__decorateClass$9");
   const _DontClearChallenge = class _DontClearChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -56983,24 +57861,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DontClearChallenge, "DontClearChallenge");
   let DontClearChallenge = _DontClearChallenge;
-  __decorateClass$b([
+  __decorateClass$9([
     inject(CanvasClearedEventListener)
   ], DontClearChallenge.prototype, "_canvasClearedEvent");
-  __decorateClass$b([
+  __decorateClass$9([
     inject(DrawingService)
   ], DontClearChallenge.prototype, "_drawingService");
-  __decorateClass$b([
+  __decorateClass$9([
     inject(ToastService)
   ], DontClearChallenge.prototype, "_toastService");
-  var __defProp$a = Object.defineProperty;
-  var __decorateClass$a = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$8 = Object.defineProperty;
+  var __decorateClass$8 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$a(target, key, result);
+    if (result) __defProp$8(target, key, result);
     return result;
-  }, "__decorateClass$a");
+  }, "__decorateClass$8");
   const _DrunkVisionChallenge = class _DrunkVisionChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -57046,24 +57924,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DrunkVisionChallenge, "DrunkVisionChallenge");
   let DrunkVisionChallenge = _DrunkVisionChallenge;
-  __decorateClass$a([
+  __decorateClass$8([
     inject(LobbyService)
   ], DrunkVisionChallenge.prototype, "_lobbyService");
-  __decorateClass$a([
+  __decorateClass$8([
     inject(DrawingService)
   ], DrunkVisionChallenge.prototype, "_drawingService");
-  __decorateClass$a([
+  __decorateClass$8([
     inject(ElementsSetup)
   ], DrunkVisionChallenge.prototype, "_elementsSetup");
-  var __defProp$9 = Object.defineProperty;
-  var __decorateClass$9 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$7 = Object.defineProperty;
+  var __decorateClass$7 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$9(target, key, result);
+    if (result) __defProp$7(target, key, result);
     return result;
-  }, "__decorateClass$9");
+  }, "__decorateClass$7");
   const _MonochromeChallenge = class _MonochromeChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -57101,24 +57979,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_MonochromeChallenge, "MonochromeChallenge");
   let MonochromeChallenge = _MonochromeChallenge;
-  __decorateClass$9([
+  __decorateClass$7([
     inject(LobbyService)
   ], MonochromeChallenge.prototype, "_lobbyService");
-  __decorateClass$9([
+  __decorateClass$7([
     inject(DrawingService)
   ], MonochromeChallenge.prototype, "_drawingService");
-  __decorateClass$9([
+  __decorateClass$7([
     inject(ColorsService)
   ], MonochromeChallenge.prototype, "_colorsService");
-  var __defProp$8 = Object.defineProperty;
-  var __decorateClass$8 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$6 = Object.defineProperty;
+  var __decorateClass$6 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$8(target, key, result);
+    if (result) __defProp$6(target, key, result);
     return result;
-  }, "__decorateClass$8");
+  }, "__decorateClass$6");
   const _OneShotChallenge = class _OneShotChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -57164,22 +58042,22 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_OneShotChallenge, "OneShotChallenge");
   let OneShotChallenge = _OneShotChallenge;
-  __decorateClass$8([
+  __decorateClass$6([
     inject(LobbyService)
   ], OneShotChallenge.prototype, "_lobbyService");
-  __decorateClass$8([
+  __decorateClass$6([
     inject(DrawingService)
   ], OneShotChallenge.prototype, "_drawingService");
-  __decorateClass$8([
+  __decorateClass$6([
     inject(MessageSentEventListener)
   ], OneShotChallenge.prototype, "_messageSentEventListener");
-  function get_each_context$3(ctx, list, i) {
+  function get_each_context$2(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[5] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$3, "get_each_context$3");
-  function create_each_block$3(ctx) {
+  __name(get_each_context$2, "get_each_context$2");
+  function create_each_block$2(ctx) {
     let div;
     let checkbox;
     let t0;
@@ -57261,8 +58139,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_each_block$3, "create_each_block$3");
-  function create_fragment$7(ctx) {
+  __name(create_each_block$2, "create_each_block$2");
+  function create_fragment$5(ctx) {
     let div;
     let current;
     let each_value = ensure_array_like(
@@ -57271,7 +58149,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+      each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
@@ -57302,12 +58180,12 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$3(ctx2, each_value, i);
+            const child_ctx = get_each_context$2(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$3(child_ctx);
+              each_blocks[i] = create_each_block$2(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div, null);
@@ -57342,8 +58220,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_fragment$7, "create_fragment$7");
-  function instance$7($$self, $$props, $$invalidate) {
+  __name(create_fragment$5, "create_fragment$5");
+  function instance$5($$self, $$props, $$invalidate) {
     let $activeIds;
     let { feature } = $$props;
     const challenges = feature.challenges;
@@ -57358,24 +58236,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     };
     return [$activeIds, challenges, activeIds, feature, change_handler];
   }
-  __name(instance$7, "instance$7");
+  __name(instance$5, "instance$5");
   const _Toolbar_challenges = class _Toolbar_challenges extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$7, create_fragment$7, safe_not_equal, { feature: 3 });
+      init(this, options, instance$5, create_fragment$5, safe_not_equal, { feature: 3 });
     }
   };
   __name(_Toolbar_challenges, "Toolbar_challenges");
   let Toolbar_challenges = _Toolbar_challenges;
-  var __defProp$7 = Object.defineProperty;
-  var __decorateClass$7 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$5 = Object.defineProperty;
+  var __decorateClass$5 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$7(target, key, result);
+    if (result) __defProp$5(target, key, result);
     return result;
-  }, "__decorateClass$7");
+  }, "__decorateClass$5");
   const _ToolbarChallengesFeature = class _ToolbarChallengesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -57536,21 +58414,21 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarChallengesFeature, "ToolbarChallengesFeature");
   let ToolbarChallengesFeature = _ToolbarChallengesFeature;
-  __decorateClass$7([
+  __decorateClass$5([
     inject(ElementsSetup)
   ], ToolbarChallengesFeature.prototype, "_elementsSetup");
-  __decorateClass$7([
+  __decorateClass$5([
     inject(ExtensionContainer)
   ], ToolbarChallengesFeature.prototype, "_container");
-  var __defProp$6 = Object.defineProperty;
-  var __decorateClass$6 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$4 = Object.defineProperty;
+  var __decorateClass$4 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$6(target, key, result);
+    if (result) __defProp$4(target, key, result);
     return result;
-  }, "__decorateClass$6");
+  }, "__decorateClass$4");
   const _ToolbarFullscreenFeature = class _ToolbarFullscreenFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -57606,7 +58484,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarFullscreenFeature, "ToolbarFullscreenFeature");
   let ToolbarFullscreenFeature = _ToolbarFullscreenFeature;
-  __decorateClass$6([
+  __decorateClass$4([
     inject(ElementsSetup)
   ], ToolbarFullscreenFeature.prototype, "_elementsSetup");
   const chooseFile = /* @__PURE__ */ __name(async (accept, multiple) => {
@@ -57625,13 +58503,13 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       };
     });
   }, "chooseFile");
-  function get_each_context$2(ctx, list, i) {
+  function get_each_context$1(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[17] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$2, "get_each_context$2");
-  function create_if_block_1$2(ctx) {
+  __name(get_each_context$1, "get_each_context$1");
+  function create_if_block_1$1(ctx) {
     let div;
     let iconbutton;
     let t0;
@@ -57685,8 +58563,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_if_block_1$2, "create_if_block_1$2");
-  function create_each_block$2(ctx) {
+  __name(create_if_block_1$1, "create_if_block_1$1");
+  function create_each_block$1(ctx) {
     let div1;
     let div0;
     let iconbutton;
@@ -57793,8 +58671,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_each_block$2, "create_each_block$2");
-  function create_if_block$3(ctx) {
+  __name(create_each_block$1, "create_each_block$1");
+  function create_if_block$1(ctx) {
     let checkbox;
     let updating_checked;
     let current;
@@ -57845,8 +58723,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_if_block$3, "create_if_block$3");
-  function create_fragment$6(ctx) {
+  __name(create_if_block$1, "create_if_block$1");
+  function create_fragment$4(ctx) {
     let div;
     let t0;
     let t1;
@@ -57868,7 +58746,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     let dispose;
     let if_block0 = (
       /*$locked*/
-      ctx[1] && create_if_block_1$2(ctx)
+      ctx[1] && create_if_block_1$1(ctx)
     );
     let each_value = ensure_array_like(
       /*$store*/
@@ -57876,7 +58754,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+      each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
     }
     const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
       each_blocks[i] = null;
@@ -57935,7 +58813,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     binding_callbacks.push(() => bind(checkbox, "checked", checkbox_checked_binding));
     let if_block1 = (
       /*$devmode*/
-      ctx[3] && create_if_block$3(ctx)
+      ctx[3] && create_if_block$1(ctx)
     );
     return {
       c() {
@@ -58015,7 +58893,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
               transition_in(if_block0, 1);
             }
           } else {
-            if_block0 = create_if_block_1$2(ctx2);
+            if_block0 = create_if_block_1$1(ctx2);
             if_block0.c();
             transition_in(if_block0, 1);
             if_block0.m(div, t0);
@@ -58035,12 +58913,12 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$2(ctx2, each_value, i);
+            const child_ctx = get_each_context$1(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
               transition_in(each_blocks[i], 1);
             } else {
-              each_blocks[i] = create_each_block$2(child_ctx);
+              each_blocks[i] = create_each_block$1(child_ctx);
               each_blocks[i].c();
               transition_in(each_blocks[i], 1);
               each_blocks[i].m(div, t1);
@@ -58081,7 +58959,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
               transition_in(if_block1, 1);
             }
           } else {
-            if_block1 = create_if_block$3(ctx2);
+            if_block1 = create_if_block$1(ctx2);
             if_block1.c();
             transition_in(if_block1, 1);
             if_block1.m(div, null);
@@ -58139,8 +59017,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_fragment$6, "create_fragment$6");
-  function instance$6($$self, $$props, $$invalidate) {
+  __name(create_fragment$4, "create_fragment$4");
+  function instance$4($$self, $$props, $$invalidate) {
     let $locked;
     let $store;
     let $devmode;
@@ -58204,16 +59082,16 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       checkbox_checked_binding_1
     ];
   }
-  __name(instance$6, "instance$6");
+  __name(instance$4, "instance$4");
   const _Toolbar_imagelab = class _Toolbar_imagelab extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$6, create_fragment$6, safe_not_equal, { feature: 0 });
+      init(this, options, instance$4, create_fragment$4, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Toolbar_imagelab, "Toolbar_imagelab");
   let Toolbar_imagelab = _Toolbar_imagelab;
-  function create_fragment$5(ctx) {
+  function create_fragment$3(ctx) {
     let div;
     let p;
     let t6;
@@ -58326,8 +59204,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_fragment$5, "create_fragment$5");
-  function instance$5($$self, $$props, $$invalidate) {
+  __name(create_fragment$3, "create_fragment$3");
+  function instance$3($$self, $$props, $$invalidate) {
     let { onPick } = $$props;
     const click_handler2 = /* @__PURE__ */ __name(() => onPick("fit"), "click_handler");
     const click_handler_1 = /* @__PURE__ */ __name(() => onPick("fill"), "click_handler_1");
@@ -58338,24 +59216,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     };
     return [onPick, click_handler2, click_handler_1, click_handler_2, click_handler_3];
   }
-  __name(instance$5, "instance$5");
+  __name(instance$3, "instance$3");
   const _Imagelab_position_picker = class _Imagelab_position_picker extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$5, create_fragment$5, safe_not_equal, { onPick: 0 });
+      init(this, options, instance$3, create_fragment$3, safe_not_equal, { onPick: 0 });
     }
   };
   __name(_Imagelab_position_picker, "Imagelab_position_picker");
   let Imagelab_position_picker = _Imagelab_position_picker;
-  var __defProp$5 = Object.defineProperty;
-  var __decorateClass$5 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$3 = Object.defineProperty;
+  var __decorateClass$3 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$5(target, key, result);
+    if (result) __defProp$3(target, key, result);
     return result;
-  }, "__decorateClass$5");
+  }, "__decorateClass$3");
   const _ToolbarImageLabFeature = class _ToolbarImageLabFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -58663,37 +59541,37 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarImageLabFeature, "ToolbarImageLabFeature");
   let ToolbarImageLabFeature = _ToolbarImageLabFeature;
-  __decorateClass$5([
+  __decorateClass$3([
     inject(ElementsSetup)
   ], ToolbarImageLabFeature.prototype, "_elementsSetup");
-  __decorateClass$5([
+  __decorateClass$3([
     inject(DrawingService)
   ], ToolbarImageLabFeature.prototype, "_drawingService");
-  __decorateClass$5([
+  __decorateClass$3([
     inject(ImagelabService)
   ], ToolbarImageLabFeature.prototype, "_drawCommandsService");
-  __decorateClass$5([
+  __decorateClass$3([
     inject(ToastService)
   ], ToolbarImageLabFeature.prototype, "_toastService");
-  __decorateClass$5([
+  __decorateClass$3([
     inject(ModalService)
   ], ToolbarImageLabFeature.prototype, "_modalService");
-  __decorateClass$5([
+  __decorateClass$3([
     inject(PrioritizedCanvasEventsSetup)
   ], ToolbarImageLabFeature.prototype, "_canvasEventsSetup");
-  __decorateClass$5([
+  __decorateClass$3([
     inject(LobbyService)
   ], ToolbarImageLabFeature.prototype, "_lobbyService");
-  __decorateClass$5([
+  __decorateClass$3([
     inject(GlobalSettingsService)
   ], ToolbarImageLabFeature.prototype, "_globalSettingsService");
-  function get_each_context$1(ctx, list, i) {
+  function get_each_context(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[15] = list[i];
     return child_ctx;
   }
-  __name(get_each_context$1, "get_each_context$1");
-  function create_else_block$2(ctx) {
+  __name(get_each_context, "get_each_context");
+  function create_else_block(ctx) {
     let div;
     return {
       c() {
@@ -58713,8 +59591,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_else_block$2, "create_else_block$2");
-  function create_if_block_1$1(ctx) {
+  __name(create_else_block, "create_else_block");
+  function create_if_block_1(ctx) {
     let input;
     let t0;
     let img;
@@ -58810,12 +59688,12 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     );
     let each_blocks = [];
     for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+      each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     }
     let if_block = (
       /*selectedWebhook*/
       ctx[5] !== null && /*loading*/
-      ctx[4] === null && create_if_block_2$1(ctx)
+      ctx[4] === null && create_if_block_2(ctx)
     );
     return {
       c() {
@@ -58990,11 +59868,11 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           );
           let i;
           for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context$1(ctx2, each_value, i);
+            const child_ctx = get_each_context(ctx2, each_value, i);
             if (each_blocks[i]) {
               each_blocks[i].p(child_ctx, dirty);
             } else {
-              each_blocks[i] = create_each_block$1(child_ctx);
+              each_blocks[i] = create_each_block(child_ctx);
               each_blocks[i].c();
               each_blocks[i].m(select, null);
             }
@@ -59024,7 +59902,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
               transition_in(if_block, 1);
             }
           } else {
-            if_block = create_if_block_2$1(ctx2);
+            if_block = create_if_block_2(ctx2);
             if_block.c();
             transition_in(if_block, 1);
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -59077,8 +59955,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_if_block_1$1, "create_if_block_1$1");
-  function create_each_block$1(ctx) {
+  __name(create_if_block_1, "create_if_block_1");
+  function create_each_block(ctx) {
     let option;
     let t0_value = (
       /*webhook*/
@@ -59132,8 +60010,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_each_block$1, "create_each_block$1");
-  function create_if_block_2$1(ctx) {
+  __name(create_each_block, "create_each_block");
+  function create_if_block_2(ctx) {
     let flatbutton;
     let current;
     flatbutton = new Flat_button({
@@ -59170,8 +60048,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_if_block_2$1, "create_if_block_2$1");
-  function create_if_block$2(ctx) {
+  __name(create_if_block_2, "create_if_block_2");
+  function create_if_block(ctx) {
     let div;
     return {
       c() {
@@ -59189,14 +60067,14 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_if_block$2, "create_if_block$2");
-  function create_fragment$4(ctx) {
+  __name(create_if_block, "create_if_block");
+  function create_fragment$2(ctx) {
     let div;
     let current_block_type_index;
     let if_block0;
     let t;
     let current;
-    const if_block_creators = [create_if_block_1$1, create_else_block$2];
+    const if_block_creators = [create_if_block_1, create_else_block];
     const if_blocks = [];
     function select_block_type(ctx2, dirty) {
       if (
@@ -59213,7 +60091,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     let if_block1 = (
       /*$member*/
       (ctx[6] === null || /*$member*/
-      ctx[6] === void 0) && create_if_block$2()
+      ctx[6] === void 0) && create_if_block()
     );
     return {
       c() {
@@ -59258,7 +60136,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
         ) {
           if (if_block1) ;
           else {
-            if_block1 = create_if_block$2();
+            if_block1 = create_if_block();
             if_block1.c();
             if_block1.m(div, null);
           }
@@ -59285,8 +60163,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_fragment$4, "create_fragment$4");
-  function instance$4($$self, $$props, $$invalidate) {
+  __name(create_fragment$2, "create_fragment$2");
+  function instance$2($$self, $$props, $$invalidate) {
     let $history;
     let $member;
     let { feature } = $$props;
@@ -59343,24 +60221,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       click_handler_2
     ];
   }
-  __name(instance$4, "instance$4");
+  __name(instance$2, "instance$2");
   const _Toolbar_imagepost = class _Toolbar_imagepost extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$4, create_fragment$4, safe_not_equal, { feature: 0 });
+      init(this, options, instance$2, create_fragment$2, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Toolbar_imagepost, "Toolbar_imagepost");
   let Toolbar_imagepost = _Toolbar_imagepost;
-  var __defProp$4 = Object.defineProperty;
-  var __decorateClass$4 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$2 = Object.defineProperty;
+  var __decorateClass$2 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$4(target, key, result);
+    if (result) __defProp$2(target, key, result);
     return result;
-  }, "__decorateClass$4");
+  }, "__decorateClass$2");
   const _ToolbarImagePostFeature = class _ToolbarImagePostFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -59495,32 +60373,32 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarImagePostFeature, "ToolbarImagePostFeature");
   let ToolbarImagePostFeature = _ToolbarImagePostFeature;
-  __decorateClass$4([
+  __decorateClass$2([
     inject(ElementsSetup)
   ], ToolbarImagePostFeature.prototype, "_elementsSetup");
-  __decorateClass$4([
+  __decorateClass$2([
     inject(ImagePostService)
   ], ToolbarImagePostFeature.prototype, "_imagePostService");
-  __decorateClass$4([
+  __decorateClass$2([
     inject(ImageFinishedService)
   ], ToolbarImagePostFeature.prototype, "_imageFinishedService");
-  __decorateClass$4([
+  __decorateClass$2([
     inject(DrawingService)
   ], ToolbarImagePostFeature.prototype, "_drawingService");
-  __decorateClass$4([
+  __decorateClass$2([
     inject(MemberService)
   ], ToolbarImagePostFeature.prototype, "_memberService");
-  __decorateClass$4([
+  __decorateClass$2([
     inject(ApiService)
   ], ToolbarImagePostFeature.prototype, "_apiService");
-  __decorateClass$4([
+  __decorateClass$2([
     inject(ToastService)
   ], ToolbarImagePostFeature.prototype, "_toastService");
   const copyBlobToClipboard = /* @__PURE__ */ __name(async (blob) => {
     const data = [new ClipboardItem({ [blob.type]: blob })];
     await navigator.clipboard.write(data);
   }, "copyBlobToClipboard");
-  function create_fragment$3(ctx) {
+  function create_fragment$1(ctx) {
     let div;
     let input;
     let t0;
@@ -59672,8 +60550,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_fragment$3, "create_fragment$3");
-  function instance$3($$self, $$props, $$invalidate) {
+  __name(create_fragment$1, "create_fragment$1");
+  function instance$1($$self, $$props, $$invalidate) {
     let { feature } = $$props;
     feature.customName = "";
     function input_input_handler() {
@@ -59699,24 +60577,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       click_handler_4
     ];
   }
-  __name(instance$3, "instance$3");
+  __name(instance$1, "instance$1");
   const _Toolbar_save = class _Toolbar_save extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$3, create_fragment$3, safe_not_equal, { feature: 0 });
+      init(this, options, instance$1, create_fragment$1, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Toolbar_save, "Toolbar_save");
   let Toolbar_save = _Toolbar_save;
-  var __defProp$3 = Object.defineProperty;
-  var __decorateClass$3 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp$1 = Object.defineProperty;
+  var __decorateClass$1 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$3(target, key, result);
+    if (result) __defProp$1(target, key, result);
     return result;
-  }, "__decorateClass$3");
+  }, "__decorateClass$1");
   const _ToolbarSaveFeature = class _ToolbarSaveFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -59979,28 +60857,28 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarSaveFeature, "ToolbarSaveFeature");
   let ToolbarSaveFeature = _ToolbarSaveFeature;
-  __decorateClass$3([
+  __decorateClass$1([
     inject(ElementsSetup)
   ], ToolbarSaveFeature.prototype, "_elementsSetup");
-  __decorateClass$3([
+  __decorateClass$1([
     inject(DrawingService)
   ], ToolbarSaveFeature.prototype, "_drawingService");
-  __decorateClass$3([
+  __decorateClass$1([
     inject(LobbyService)
   ], ToolbarSaveFeature.prototype, "_lobbyService");
-  __decorateClass$3([
+  __decorateClass$1([
     inject(ToastService)
   ], ToolbarSaveFeature.prototype, "_toastService");
-  __decorateClass$3([
+  __decorateClass$1([
     inject(CloudService)
   ], ToolbarSaveFeature.prototype, "_cloudService");
-  __decorateClass$3([
+  __decorateClass$1([
     inject(MemberService)
   ], ToolbarSaveFeature.prototype, "_memberService");
-  __decorateClass$3([
+  __decorateClass$1([
     inject(ImageFinishedService)
   ], ToolbarSaveFeature.prototype, "_imageFinishedService");
-  function create_fragment$2(ctx) {
+  function create_fragment(ctx) {
     let div;
     let img0;
     let img0_src_value;
@@ -60066,8 +60944,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       }
     };
   }
-  __name(create_fragment$2, "create_fragment$2");
-  function instance$2($$self, $$props, $$invalidate) {
+  __name(create_fragment, "create_fragment");
+  function instance($$self, $$props, $$invalidate) {
     let { feature } = $$props;
     const click_handler2 = /* @__PURE__ */ __name(() => feature.exitLobby(), "click_handler");
     const click_handler_1 = /* @__PURE__ */ __name(() => feature.nextLobby(), "click_handler_1");
@@ -60076,24 +60954,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     };
     return [feature, click_handler2, click_handler_1];
   }
-  __name(instance$2, "instance$2");
+  __name(instance, "instance");
   const _Lobby_navigation = class _Lobby_navigation extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$2, create_fragment$2, safe_not_equal, { feature: 0 });
+      init(this, options, instance, create_fragment, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Lobby_navigation, "Lobby_navigation");
   let Lobby_navigation = _Lobby_navigation;
-  var __defProp$2 = Object.defineProperty;
-  var __decorateClass$2 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+  var __defProp2 = Object.defineProperty;
+  var __decorateClass = /* @__PURE__ */ __name((decorators, target, key, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key, result) || result;
-    if (result) __defProp$2(target, key, result);
+    if (result) __defProp2(target, key, result);
     return result;
-  }, "__decorateClass$2");
+  }, "__decorateClass");
   const _LobbyNavigationFeature = class _LobbyNavigationFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -60179,817 +61057,12 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_LobbyNavigationFeature, "LobbyNavigationFeature");
   let LobbyNavigationFeature = _LobbyNavigationFeature;
-  __decorateClass$2([
+  __decorateClass([
     inject(ElementsSetup)
   ], LobbyNavigationFeature.prototype, "_elementsSetup");
-  __decorateClass$2([
+  __decorateClass([
     inject(LobbyService)
   ], LobbyNavigationFeature.prototype, "_lobbyService");
-  function create_else_block$1(ctx) {
-    let div0;
-    let a0;
-    let img;
-    let img_src_value;
-    let t0;
-    let t1_value = (
-      /*$member*/
-      ctx[1].userName + ""
-    );
-    let t1;
-    let t2;
-    let a1;
-    let t4;
-    let span0;
-    let t6;
-    let div5;
-    let div2;
-    let div1;
-    let span1;
-    let span2;
-    let t8_value = (
-      /*$member*/
-      ctx[1].bubbles + ""
-    );
-    let t8;
-    let t9;
-    let div4;
-    let div3;
-    let span3;
-    let span4;
-    let t11_value = Math.round(
-      /*$member*/
-      ctx[1].drops * 10
-    ) / 10 + "";
-    let t11;
-    let t12;
-    let if_block_anchor;
-    let mounted;
-    let dispose;
-    let if_block = (
-      /*$devmode*/
-      ctx[2] && create_if_block_2(ctx)
-    );
-    return {
-      c() {
-        div0 = element("div");
-        a0 = element("a");
-        img = element("img");
-        t0 = space();
-        t1 = text(t1_value);
-        t2 = space();
-        a1 = element("a");
-        a1.textContent = "Manage";
-        t4 = space();
-        span0 = element("span");
-        span0.textContent = "Logout";
-        t6 = space();
-        div5 = element("div");
-        div2 = element("div");
-        div1 = element("div");
-        span1 = element("span");
-        span1.textContent = "Bubbles:";
-        span2 = element("span");
-        t8 = text(t8_value);
-        t9 = space();
-        div4 = element("div");
-        div3 = element("div");
-        span3 = element("span");
-        span3.textContent = "Drops:";
-        span4 = element("span");
-        t11 = text(t11_value);
-        t12 = space();
-        if (if_block) if_block.c();
-        if_block_anchor = empty();
-        attr(img, "class", "typo-icon svelte-j680fu");
-        attr(img, "alt", "typo icon");
-        if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-        attr(a0, "href", "https://www.typo.rip");
-        attr(a0, "class", "svelte-j680fu");
-        attr(a1, "href", "https://www.typo.rip/user");
-        attr(a1, "class", "svelte-j680fu");
-        attr(span0, "role", "button");
-        attr(span0, "tabindex", "0");
-        attr(span0, "class", "svelte-j680fu");
-        attr(div0, "class", "member-info-header svelte-j680fu");
-        attr(div1, "class", "stat-icon svelte-j680fu");
-        set_style(div1, "content", "var(--file-img-palantir-gif)");
-        attr(span1, "class", "svelte-j680fu");
-        attr(span2, "class", "svelte-j680fu");
-        attr(div2, "class", "svelte-j680fu");
-        attr(div3, "class", "stat-icon svelte-j680fu");
-        set_style(div3, "content", "var(--file-img-drop-gif)");
-        attr(span3, "class", "svelte-j680fu");
-        attr(span4, "class", "svelte-j680fu");
-        attr(div4, "class", "svelte-j680fu");
-        attr(div5, "class", "member-info-stats svelte-j680fu");
-      },
-      m(target, anchor) {
-        insert(target, div0, anchor);
-        append(div0, a0);
-        append(a0, img);
-        append(a0, t0);
-        append(a0, t1);
-        append(div0, t2);
-        append(div0, a1);
-        append(div0, t4);
-        append(div0, span0);
-        insert(target, t6, anchor);
-        insert(target, div5, anchor);
-        append(div5, div2);
-        append(div2, div1);
-        append(div2, span1);
-        append(div2, span2);
-        append(span2, t8);
-        append(div5, t9);
-        append(div5, div4);
-        append(div4, div3);
-        append(div4, span3);
-        append(div4, span4);
-        append(span4, t11);
-        insert(target, t12, anchor);
-        if (if_block) if_block.m(target, anchor);
-        insert(target, if_block_anchor, anchor);
-        if (!mounted) {
-          dispose = [
-            listen(
-              span0,
-              "keydown",
-              /*keydown_handler_1*/
-              ctx[7]
-            ),
-            listen(
-              span0,
-              "click",
-              /*click_handler_1*/
-              ctx[8]
-            )
-          ];
-          mounted = true;
-        }
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*$member*/
-        2 && t1_value !== (t1_value = /*$member*/
-        ctx2[1].userName + "")) set_data(t1, t1_value);
-        if (dirty & /*$member*/
-        2 && t8_value !== (t8_value = /*$member*/
-        ctx2[1].bubbles + "")) set_data(t8, t8_value);
-        if (dirty & /*$member*/
-        2 && t11_value !== (t11_value = Math.round(
-          /*$member*/
-          ctx2[1].drops * 10
-        ) / 10 + "")) set_data(t11, t11_value);
-        if (
-          /*$devmode*/
-          ctx2[2]
-        ) {
-          if (if_block) {
-            if_block.p(ctx2, dirty);
-          } else {
-            if_block = create_if_block_2(ctx2);
-            if_block.c();
-            if_block.m(if_block_anchor.parentNode, if_block_anchor);
-          }
-        } else if (if_block) {
-          if_block.d(1);
-          if_block = null;
-        }
-      },
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(div0);
-          detach(t6);
-          detach(div5);
-          detach(t12);
-          detach(if_block_anchor);
-        }
-        if (if_block) if_block.d(detaching);
-        mounted = false;
-        run_all(dispose);
-      }
-    };
-  }
-  __name(create_else_block$1, "create_else_block$1");
-  function create_if_block_1(ctx) {
-    let div;
-    let bounceload;
-    let current;
-    bounceload = new Bounceload({ props: { content: "Loading..." } });
-    return {
-      c() {
-        div = element("div");
-        create_component(bounceload.$$.fragment);
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        mount_component(bounceload, div, null);
-        current = true;
-      },
-      p: noop,
-      i(local) {
-        if (current) return;
-        transition_in(bounceload.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(bounceload.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        destroy_component(bounceload);
-      }
-    };
-  }
-  __name(create_if_block_1, "create_if_block_1");
-  function create_if_block$1(ctx) {
-    let div;
-    let img;
-    let img_src_value;
-    let t0;
-    let span;
-    let mounted;
-    let dispose;
-    return {
-      c() {
-        div = element("div");
-        img = element("img");
-        t0 = space();
-        span = element("span");
-        span.textContent = "Log in with typo to collect bubbles and upgrade your avatar.";
-        attr(img, "class", "typo-icon svelte-j680fu");
-        if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-        attr(img, "alt", "typo icon");
-        attr(span, "role", "button");
-        attr(span, "tabindex", "0");
-        attr(div, "class", "member-login svelte-j680fu");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        append(div, img);
-        append(div, t0);
-        append(div, span);
-        if (!mounted) {
-          dispose = [
-            listen(
-              span,
-              "keydown",
-              /*keydown_handler*/
-              ctx[5]
-            ),
-            listen(
-              span,
-              "click",
-              /*click_handler*/
-              ctx[6]
-            )
-          ];
-          mounted = true;
-        }
-      },
-      p: noop,
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        mounted = false;
-        run_all(dispose);
-      }
-    };
-  }
-  __name(create_if_block$1, "create_if_block$1");
-  function create_if_block_2(ctx) {
-    let div1;
-    let div0;
-    let span0;
-    let span1;
-    let span2;
-    let t1_value = (
-      /*$member*/
-      ctx[1].userLogin + ""
-    );
-    let t1;
-    return {
-      c() {
-        div1 = element("div");
-        div0 = element("div");
-        span0 = element("span");
-        span1 = element("span");
-        span1.textContent = "Typo ID:";
-        span2 = element("span");
-        t1 = text(t1_value);
-        attr(span0, "class", "svelte-j680fu");
-        attr(span1, "class", "svelte-j680fu");
-        attr(span2, "class", "svelte-j680fu");
-        attr(div0, "class", "svelte-j680fu");
-        attr(div1, "class", "member-info-stats svelte-j680fu");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        append(div0, span0);
-        append(div0, span1);
-        append(div0, span2);
-        append(span2, t1);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*$member*/
-        2 && t1_value !== (t1_value = /*$member*/
-        ctx2[1].userLogin + "")) set_data(t1, t1_value);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_if_block_2, "create_if_block_2");
-  function create_fragment$1(ctx) {
-    let div;
-    let current_block_type_index;
-    let if_block;
-    let current;
-    const if_block_creators = [create_if_block$1, create_if_block_1, create_else_block$1];
-    const if_blocks = [];
-    function select_block_type(ctx2, dirty) {
-      if (
-        /*$member*/
-        ctx2[1] === null
-      ) return 0;
-      if (
-        /*$member*/
-        ctx2[1] === void 0
-      ) return 1;
-      return 2;
-    }
-    __name(select_block_type, "select_block_type");
-    current_block_type_index = select_block_type(ctx);
-    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    return {
-      c() {
-        div = element("div");
-        if_block.c();
-        attr(div, "class", "member-info panel svelte-j680fu");
-      },
-      m(target, anchor) {
-        insert(target, div, anchor);
-        if_blocks[current_block_type_index].m(div, null);
-        current = true;
-      },
-      p(ctx2, [dirty]) {
-        let previous_block_index = current_block_type_index;
-        current_block_type_index = select_block_type(ctx2);
-        if (current_block_type_index === previous_block_index) {
-          if_blocks[current_block_type_index].p(ctx2, dirty);
-        } else {
-          group_outros();
-          transition_out(if_blocks[previous_block_index], 1, 1, () => {
-            if_blocks[previous_block_index] = null;
-          });
-          check_outros();
-          if_block = if_blocks[current_block_type_index];
-          if (!if_block) {
-            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-            if_block.c();
-          } else {
-            if_block.p(ctx2, dirty);
-          }
-          transition_in(if_block, 1);
-          if_block.m(div, null);
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(if_block);
-        current = true;
-      },
-      o(local) {
-        transition_out(if_block);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div);
-        }
-        if_blocks[current_block_type_index].d();
-      }
-    };
-  }
-  __name(create_fragment$1, "create_fragment$1");
-  function instance$1($$self, $$props, $$invalidate) {
-    let $member;
-    let $devmode;
-    let { feature } = $$props;
-    const member = feature.memberStore;
-    component_subscribe($$self, member, (value) => $$invalidate(1, $member = value));
-    const devmode = feature.devmodeStore;
-    component_subscribe($$self, devmode, (value) => $$invalidate(2, $devmode = value));
-    const keydown_handler = /* @__PURE__ */ __name(() => feature.login(), "keydown_handler");
-    const click_handler2 = /* @__PURE__ */ __name(() => feature.login(), "click_handler");
-    const keydown_handler_1 = /* @__PURE__ */ __name(() => feature.logout(), "keydown_handler_1");
-    const click_handler_1 = /* @__PURE__ */ __name(() => feature.logout(), "click_handler_1");
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-    };
-    return [
-      feature,
-      $member,
-      $devmode,
-      member,
-      devmode,
-      keydown_handler,
-      click_handler2,
-      keydown_handler_1,
-      click_handler_1
-    ];
-  }
-  __name(instance$1, "instance$1");
-  const _User_info = class _User_info extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance$1, create_fragment$1, safe_not_equal, { feature: 0 });
-    }
-  };
-  __name(_User_info, "User_info");
-  let User_info = _User_info;
-  var __defProp$1 = Object.defineProperty;
-  var __decorateClass$1 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key, result) || result;
-    if (result) __defProp$1(target, key, result);
-    return result;
-  }, "__decorateClass$1");
-  const _UserInfoFeature = class _UserInfoFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_elementsSetup");
-      __publicField(this, "_memberService");
-      __publicField(this, "_globalSettingsService");
-      __publicField(this, "_element");
-      __publicField(this, "name", "User Info");
-      __publicField(this, "description", "Shows information about the logged-in user beneath the avatar selection");
-      __publicField(this, "tags", [
-        FeatureTag.INFORMATION,
-        FeatureTag.PALANTIR
-      ]);
-      __publicField(this, "featureId", 13);
-    }
-    async onActivate() {
-      const elements2 = await this._elementsSetup.complete();
-      this._element = new User_info({
-        target: elements2.avatarPanel,
-        anchor: elements2.playButton,
-        props: {
-          feature: this
-        }
-      });
-    }
-    onDestroy() {
-      var _a2;
-      (_a2 = this._element) == null ? void 0 : _a2.$destroy();
-    }
-    get memberStore() {
-      return fromObservable(this._memberService.member$, null);
-    }
-    get devmodeStore() {
-      return this._globalSettingsService.settings.devMode.store;
-    }
-    login() {
-      this._memberService.login();
-    }
-    logout() {
-      this._memberService.logout();
-    }
-  };
-  __name(_UserInfoFeature, "UserInfoFeature");
-  let UserInfoFeature = _UserInfoFeature;
-  __decorateClass$1([
-    inject(ElementsSetup)
-  ], UserInfoFeature.prototype, "_elementsSetup");
-  __decorateClass$1([
-    inject(MemberService)
-  ], UserInfoFeature.prototype, "_memberService");
-  __decorateClass$1([
-    inject(GlobalSettingsService)
-  ], UserInfoFeature.prototype, "_globalSettingsService");
-  function get_each_context(ctx, list, i) {
-    const child_ctx = ctx.slice();
-    child_ctx[2] = list[i];
-    return child_ctx;
-  }
-  __name(get_each_context, "get_each_context");
-  function create_else_block(ctx) {
-    let each_1_anchor;
-    let each_value = ensure_array_like(
-      /*announcements*/
-      ctx[0]
-    );
-    let each_blocks = [];
-    for (let i = 0; i < each_value.length; i += 1) {
-      each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
-    }
-    return {
-      c() {
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          each_blocks[i].c();
-        }
-        each_1_anchor = empty();
-      },
-      m(target, anchor) {
-        for (let i = 0; i < each_blocks.length; i += 1) {
-          if (each_blocks[i]) {
-            each_blocks[i].m(target, anchor);
-          }
-        }
-        insert(target, each_1_anchor, anchor);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*announcements, Date, Number*/
-        1) {
-          each_value = ensure_array_like(
-            /*announcements*/
-            ctx2[0]
-          );
-          let i;
-          for (i = 0; i < each_value.length; i += 1) {
-            const child_ctx = get_each_context(ctx2, each_value, i);
-            if (each_blocks[i]) {
-              each_blocks[i].p(child_ctx, dirty);
-            } else {
-              each_blocks[i] = create_each_block(child_ctx);
-              each_blocks[i].c();
-              each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
-            }
-          }
-          for (; i < each_blocks.length; i += 1) {
-            each_blocks[i].d(1);
-          }
-          each_blocks.length = each_value.length;
-        }
-      },
-      i: noop,
-      o: noop,
-      d(detaching) {
-        if (detaching) {
-          detach(each_1_anchor);
-        }
-        destroy_each(each_blocks, detaching);
-      }
-    };
-  }
-  __name(create_else_block, "create_else_block");
-  function create_if_block(ctx) {
-    let bounceload;
-    let current;
-    bounceload = new Bounceload({ props: { content: "Loading news.." } });
-    return {
-      c() {
-        create_component(bounceload.$$.fragment);
-      },
-      m(target, anchor) {
-        mount_component(bounceload, target, anchor);
-        current = true;
-      },
-      p: noop,
-      i(local) {
-        if (current) return;
-        transition_in(bounceload.$$.fragment, local);
-        current = true;
-      },
-      o(local) {
-        transition_out(bounceload.$$.fragment, local);
-        current = false;
-      },
-      d(detaching) {
-        destroy_component(bounceload, detaching);
-      }
-    };
-  }
-  __name(create_if_block, "create_if_block");
-  function create_each_block(ctx) {
-    let div1;
-    let div0;
-    let b;
-    let t0_value = (
-      /*announcement*/
-      ctx[2].title + ""
-    );
-    let t0;
-    let t1;
-    let span;
-    let t2_value = new Date(Number(
-      /*announcement*/
-      ctx[2].date
-    )).toDateString() + "";
-    let t2;
-    let t3;
-    let p;
-    let t4_value = (
-      /*announcement*/
-      ctx[2].content + ""
-    );
-    let t4;
-    let t5;
-    return {
-      c() {
-        div1 = element("div");
-        div0 = element("div");
-        b = element("b");
-        t0 = text(t0_value);
-        t1 = space();
-        span = element("span");
-        t2 = text(t2_value);
-        t3 = space();
-        p = element("p");
-        t4 = text(t4_value);
-        t5 = space();
-        attr(span, "class", "svelte-1x3jcfi");
-        attr(div0, "class", "title svelte-1x3jcfi");
-        attr(div1, "class", "announcement svelte-1x3jcfi");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        append(div0, b);
-        append(b, t0);
-        append(div0, t1);
-        append(div0, span);
-        append(span, t2);
-        append(div1, t3);
-        append(div1, p);
-        append(p, t4);
-        append(div1, t5);
-      },
-      p(ctx2, dirty) {
-        if (dirty & /*announcements*/
-        1 && t0_value !== (t0_value = /*announcement*/
-        ctx2[2].title + "")) set_data(t0, t0_value);
-        if (dirty & /*announcements*/
-        1 && t2_value !== (t2_value = new Date(Number(
-          /*announcement*/
-          ctx2[2].date
-        )).toDateString() + "")) set_data(t2, t2_value);
-        if (dirty & /*announcements*/
-        1 && t4_value !== (t4_value = /*announcement*/
-        ctx2[2].content + "")) set_data(t4, t4_value);
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-      }
-    };
-  }
-  __name(create_each_block, "create_each_block");
-  function create_fragment(ctx) {
-    let div1;
-    let div0;
-    let current_block_type_index;
-    let if_block;
-    let current;
-    const if_block_creators = [create_if_block, create_else_block];
-    const if_blocks = [];
-    function select_block_type(ctx2, dirty) {
-      if (
-        /*announcements*/
-        ctx2[0] === void 0
-      ) return 0;
-      return 1;
-    }
-    __name(select_block_type, "select_block_type");
-    current_block_type_index = select_block_type(ctx);
-    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    return {
-      c() {
-        div1 = element("div");
-        div0 = element("div");
-        if_block.c();
-        attr(div0, "class", "news svelte-1x3jcfi");
-        attr(div1, "class", "typo-news svelte-1x3jcfi");
-      },
-      m(target, anchor) {
-        insert(target, div1, anchor);
-        append(div1, div0);
-        if_blocks[current_block_type_index].m(div0, null);
-        current = true;
-      },
-      p(ctx2, [dirty]) {
-        let previous_block_index = current_block_type_index;
-        current_block_type_index = select_block_type(ctx2);
-        if (current_block_type_index === previous_block_index) {
-          if_blocks[current_block_type_index].p(ctx2, dirty);
-        } else {
-          group_outros();
-          transition_out(if_blocks[previous_block_index], 1, 1, () => {
-            if_blocks[previous_block_index] = null;
-          });
-          check_outros();
-          if_block = if_blocks[current_block_type_index];
-          if (!if_block) {
-            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
-            if_block.c();
-          } else {
-            if_block.p(ctx2, dirty);
-          }
-          transition_in(if_block, 1);
-          if_block.m(div0, null);
-        }
-      },
-      i(local) {
-        if (current) return;
-        transition_in(if_block);
-        current = true;
-      },
-      o(local) {
-        transition_out(if_block);
-        current = false;
-      },
-      d(detaching) {
-        if (detaching) {
-          detach(div1);
-        }
-        if_blocks[current_block_type_index].d();
-      }
-    };
-  }
-  __name(create_fragment, "create_fragment");
-  function instance($$self, $$props, $$invalidate) {
-    let { feature } = $$props;
-    let { announcements = void 0 } = $$props;
-    $$self.$$set = ($$props2) => {
-      if ("feature" in $$props2) $$invalidate(1, feature = $$props2.feature);
-      if ("announcements" in $$props2) $$invalidate(0, announcements = $$props2.announcements);
-    };
-    return [announcements, feature];
-  }
-  __name(instance, "instance");
-  const _Panel_news = class _Panel_news extends SvelteComponent {
-    constructor(options) {
-      super();
-      init(this, options, instance, create_fragment, safe_not_equal, { feature: 1, announcements: 0 });
-    }
-  };
-  __name(_Panel_news, "Panel_news");
-  let Panel_news = _Panel_news;
-  var __defProp2 = Object.defineProperty;
-  var __decorateClass = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key, result) || result;
-    if (result) __defProp2(target, key, result);
-    return result;
-  }, "__decorateClass");
-  const _PanelNewsFeature = class _PanelNewsFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_elements");
-      __publicField(this, "_apiDataSetup");
-      __publicField(this, "_component");
-      __publicField(this, "name", "Typo News");
-      __publicField(this, "description", "Displays updates and typo hints on the start page");
-      __publicField(this, "tags", [
-        FeatureTag.INFORMATION
-      ]);
-      __publicField(this, "featureId", 7);
-    }
-    async onActivate() {
-      const elements2 = await this._elements.complete();
-      this._component = new Panel_news({
-        target: elements2.newsTab,
-        props: {
-          feature: this
-        }
-      });
-      const data = await this._apiDataSetup.complete();
-      const version = typoRuntime.getReleaseDetails().versionName;
-      const announcements = data.announcements.filter(
-        (announcement) => announcement.type === AnnouncementDtoTypeEnum.Announcement && (announcement.affectedTypoVersion === version || announcement.affectedTypoVersion === void 0)
-      ).sort((a, b) => Number(b.date) - Number(a.date));
-      this._component.$set({ announcements });
-    }
-    onDestroy() {
-      var _a2;
-      (_a2 = this._component) == null ? void 0 : _a2.$destroy();
-    }
-  };
-  __name(_PanelNewsFeature, "PanelNewsFeature");
-  let PanelNewsFeature = _PanelNewsFeature;
-  __decorateClass([
-    inject(ElementsSetup)
-  ], PanelNewsFeature.prototype, "_elements");
-  __decorateClass([
-    inject(ApiDataSetup)
-  ], PanelNewsFeature.prototype, "_apiDataSetup");
   const interceptor = new Interceptor(true);
   LoggingService.defaultLogLevel = "warn";
   new ExtensionContainer(interceptor).registerServices(
