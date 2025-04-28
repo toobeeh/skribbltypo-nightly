@@ -1,7 +1,7 @@
 {
   "name": "skribbltypo",
   "description": "The toolbox for everything you need on skribbl.io",
-  "version": "27.0.1",
+  "version": "27.0.2",
   "manifest_version": 3,
   "icons": {
     "16": "icons/16Fit.png",
@@ -56,5 +56,5 @@
   "permissions": [
     "activeTab"
   ],
-  "version_name": "27.0.1 beta-crx 16ddd28"
+  "version_name": "27.0.2 beta-crx c163092"
 }
