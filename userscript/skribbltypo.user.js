@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.2 beta-usc c163092
+// @version      27.0.3 beta-usc b0bb185
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
+// @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
 // @match        https://skribbl.io/*
 // @grant        GM_addStyle
 // @run-at       document-start
@@ -439,7 +440,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.2", versionName: "27.0.2 beta-usc c163092", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.0.3", versionName: "27.0.3 beta-usc b0bb185", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -47196,24 +47197,27 @@
     return {
       c() {
         h3 = element("h3");
-        h3.textContent = "Introducing the new typo";
+        h3.textContent = "Introducing the new Typo";
         t1 = space();
         div = element("div");
-        div.innerHTML = `<p class="svelte-115f3km">Starting in April 2025, typo is receiving its biggest update so far.<br class="svelte-115f3km"/>
+        div.innerHTML = `<p class="svelte-115f3km">Starting in April 2025, Typo is receiving its biggest update so far.<br class="svelte-115f3km"/>
     Typo still has the same features, but makes them much more user-friendly, accessible and customizable.<br class="svelte-115f3km"/>
-    So far, typo provided the tools, but now it&#39;s the whole workshop!</p> <h4 class="svelte-115f3km">A quick-start guide</h4> <p class="svelte-115f3km">All typo features can now be customized, so you don&#39;t have anything that messes with your optimal skribbl experience.<br class="svelte-115f3km"/>
-    To set up typo to your preferences, click the wrench icon at the top left (unless customized to somewhere else ;).<br class="svelte-115f3km"/>
+    So far, Typo provided the tools, but now it&#39;s the whole workshop!</p> <h4 class="svelte-115f3km">A quick-start guide</h4> <p class="svelte-115f3km">All Typo features can now be customized, so you don&#39;t have anything that messes with your optimal skribbl experience.<br class="svelte-115f3km"/>
+    To set up Typo to your preferences, click the wrench icon at the top left (unless customized to somewhere else ;).<br class="svelte-115f3km"/>
     There, you can:</p> <ul class="svelte-115f3km"><li class="svelte-115f3km">Enable or disable every feature</li> <li class="svelte-115f3km">Adjust feature settings to your likes</li> <li class="svelte-115f3km">Change and toggle hotkeys and chat commands of features</li> <li class="svelte-115f3km">View some extra info &amp; hints about features</li></ul> <p class="svelte-115f3km">To get started, you can browse through the list of features and view their details.<br class="svelte-115f3km"/>
     Features are also categorized by tags so you can easily find what you are looking for.<br class="svelte-115f3km"/>
     While you might see many features that you already know of, you could discover some that were newly added or features that you didn&#39;t notice yet!<br class="svelte-115f3km"/>
-    To change general typo settings, choose the &quot;Typo Settings&quot; feature in the Typo Features view.<br class="svelte-115f3km"/>
+    To change general Typo settings, choose the &quot;Typo Settings&quot; feature in the Typo Features view.<br class="svelte-115f3km"/>
     You can reset all data or switch between profiles in the &quot;Typo Profiles&quot; feature.<br class="svelte-115f3km"/>
     If you have any questions or feedback, join the community on <a href="https://discord.com/invite/pAapmUmWAM" class="svelte-115f3km">Discord</a>!</p> <br/> <h4 class="svelte-115f3km">The most important changes</h4> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Typo Settings</b><br class="svelte-115f3km"/>
     Typo settings are now located directly on skribbl (read the quick-start-guide ;) instead of the extension popup menu.<br class="svelte-115f3km"/>
-    You can customize everything that you&#39;re used to from the popup menu, now found in the respective feature dialog.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Lobby Privacy</b><br class="svelte-115f3km"/>
+    You can customize everything that you&#39;re used to from the popup menu, now found in the respective feature dialog.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Typo Pen Pressure</b><br class="svelte-115f3km"/>
+    Typo pressure has now an improved adjustment system which allows more precise control.<br class="svelte-115f3km"/>
+    You will notice that your previous setting has been reset.<br class="svelte-115f3km"/>
+    To adjust the sensitivity, go to the &quot;Typo Settings&quot;, choose the &quot;Pressure&quot; feature, and adjust the sliders to your liking.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Lobby Privacy</b><br class="svelte-115f3km"/>
     Instead of the lock icon at the very left side, a connection icon is displayed at the top-right corner of the chat.<br class="svelte-115f3km"/>
     An icon with a checkmark means that the lobby has privacy settings active (not visible to everyone).<br class="svelte-115f3km"/>
-    If you&#39;re the lobby owner (first typo player to join), you can change lobby settings there.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Filter Search</b><br class="svelte-115f3km"/>
+    If you&#39;re the lobby owner (first Typo player to join), you can change lobby settings there.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Filter Search</b><br class="svelte-115f3km"/>
     To start a lobby search with filters, you need to use the &quot;Start Search&quot; button in the &quot;Filters&quot; tab on the home screen.<br class="svelte-115f3km"/>
     Clicking &quot;Play&quot; will always just join the next public/private lobby.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Chat Commands</b><br class="svelte-115f3km"/>
     Chat commands received a massive facelift!<br class="svelte-115f3km"/>
@@ -47226,12 +47230,12 @@
     Hotkeys can also consist of combinations.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Zoom Drawing</b><br class="svelte-115f3km"/>
     Zooming still uses the Ctrl hotkey, but now starts immediately at the last cursor position without clicking on the canvas.<br class="svelte-115f3km"/>
     To exit zoom, click Ctrl again.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Custom Colors</b><br class="svelte-115f3km"/>
-    When you use custom colors in public lobbies, typo will now show the closest skribbl color for non-typo users.<br class="svelte-115f3km"/>
-    It is still recommended that you use custom colors only in lobbies with typo players, because fill behavior might appear differently for non-typo-users.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Practice Lobby</b><br class="svelte-115f3km"/>
+    When you use custom colors in public lobbies, Typo will now show the closest skribbl color for non-Typo users.<br class="svelte-115f3km"/>
+    It is still recommended that you use custom colors only in lobbies with Typo players, because fill behavior might appear differently for non-Typo-users.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Practice Lobby</b><br class="svelte-115f3km"/>
     Instead of clicking your avatar on the home screen, you can enter the offline free draw mode using the palette icon next to your avatar.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Drop Catch Reports</b><br class="svelte-115f3km"/>
     When someone catches drops suspiciously fast, you could report the catch by revealing the drop ID in the drop message.<br class="svelte-115f3km"/>
-    To report drops in the new typo, open the &quot;Drops&quot; feature in the typo setting, where you will find a log of all drop catches.<br class="svelte-115f3km"/>
-    To report a drop, you can copy its ID and the catch time and send it on the typo discord server.<br class="svelte-115f3km"/></p>`;
+    To report drops in the new Typo, open the &quot;Drops&quot; feature in the Typo setting, where you will find a log of all drop catches.<br class="svelte-115f3km"/>
+    To report a drop, you can copy its ID and the catch time and send it on the Typo discord server.<br class="svelte-115f3km"/></p>`;
         attr(h3, "class", "svelte-115f3km");
       },
       m(target, anchor) {
@@ -47270,10 +47274,10 @@
         h3.textContent = "Credits & Imprint";
         t1 = space();
         div = element("div");
-        div.innerHTML = `<p class="svelte-1d2n9p6">Glad to see you using typo!<br/><br/>
+        div.innerHTML = `<p class="svelte-1d2n9p6">Glad to see you using Typo!<br/><br/>
     This extension grew with me and my coding skills over the years from a small script to a complex project.<br/>
     The awesome skribbl.io community (&amp; game ;) was my main drive to keep improving adding more and more features.<br/>
-    Thanks so much to every user, beta tester and developer for making this passion of mine more than a hobby.<br/></p> <h4 class="svelte-1d2n9p6">Helpful links</h4> <ul class="svelte-1d2n9p6"><li><a href="https://typo.rip" class="svelte-1d2n9p6">typo.rip</a> - The official website with a bunch of tools and infos</li> <li><a href="https://discord.com/invite/pAapmUmWAM" class="svelte-1d2n9p6">Discord</a> - Join the community, talk about typo &amp; skribbl or ask for feature support</li> <li><a href="https://www.patreon.com/skribbltypo" class="svelte-1d2n9p6">Patreon</a> - Feed the developer 💖</li> <li><a href="https://github.com/toobeeh/skribbltypo" class="svelte-1d2n9p6">GitHub</a> - Contribute to the project, view the sourcecode or report issues &amp; improvements</li></ul> <h4 class="svelte-1d2n9p6">Legal stuff &amp; rules</h4> <ul class="svelte-1d2n9p6"><li><a href="https://typo.rip/privacy" class="svelte-1d2n9p6">Privacy Policy</a> - How typo handles your data</li> <li><a href="https://typo.rip/help/rules" class="svelte-1d2n9p6">Rules &amp; Fair Play</a> - How to behave using typo</li> <li>I prefer to stay anonymous though :] - enjoy, tobeh</li></ul>`;
+    Thanks so much to every user, beta tester and developer for making this passion of mine more than a hobby.<br/></p> <h4 class="svelte-1d2n9p6">Helpful links</h4> <ul class="svelte-1d2n9p6"><li><a href="https://typo.rip" class="svelte-1d2n9p6">typo.rip</a> - The official website with a bunch of tools and infos</li> <li><a href="https://discord.com/invite/pAapmUmWAM" class="svelte-1d2n9p6">Discord</a> - Join the community, talk about Typo &amp; skribbl or ask for feature support</li> <li><a href="https://www.patreon.com/skribbltypo" class="svelte-1d2n9p6">Patreon</a> - Feed the developer 💖</li> <li><a href="https://github.com/toobeeh/skribbltypo" class="svelte-1d2n9p6">GitHub</a> - Contribute to the project, view the sourcecode or report issues &amp; improvements</li></ul> <h4 class="svelte-1d2n9p6">Legal stuff &amp; rules</h4> <ul class="svelte-1d2n9p6"><li><a href="https://typo.rip/privacy" class="svelte-1d2n9p6">Privacy Policy</a> - How Typo handles your data</li> <li><a href="https://typo.rip/help/rules" class="svelte-1d2n9p6">Rules &amp; Fair Play</a> - How to behave using Typo</li> <li>I prefer to stay anonymous though :] - enjoy, tobeh</li></ul>`;
         attr(h3, "class", "svelte-1d2n9p6");
       },
       m(target, anchor) {
@@ -47356,7 +47360,7 @@
         div5.innerHTML = `<h3>Minimal</h3> <div>Skribbl looks as close to original as possible, but essential features are still present.</div>`;
         t15 = space();
         div7 = element("div");
-        div7.innerHTML = `<h3>Everything</h3> <div>The full package; all nifty tools that typo has to offer!</div>`;
+        div7.innerHTML = `<h3>Everything</h3> <div>The full package; all nifty tools that Typo has to offer!</div>`;
         t19 = space();
         div9 = element("div");
         div9.innerHTML = `<h3>Nothing</h3> <div>Vanilla skribbl.io experience. You will only notice the settings button.</div>`;
@@ -47650,7 +47654,7 @@
     return {
       c() {
         span = element("span");
-        span.textContent = "You can complete following tasks to familiarize yourself with typo:";
+        span.textContent = "You can complete following tasks to familiarize yourself with Typo:";
       },
       m(target, anchor) {
         insert(target, span, anchor);
