@@ -35935,10 +35935,13 @@ let LobbyConnectionService = (_Ba = class {
     __publicField(this, "_dropClaimed$", new Subject$1());
     __publicField(this, "_dropCleared$", new Subject$1());
     __publicField(this, "_awardGifted$", new Subject$1());
+    __publicField(this, "_pausedSetting", new ExtensionSetting("pause_lobby_connection", false));
     this._logger = loggerFactory2(this);
   }
-  onFeatureActivate() {
-    return Promise.resolve(void 0);
+  async onFeatureActivate() {
+    if (await this._pausedSetting.getValue()) {
+      this._connection$.next("paused");
+    }
   }
   async onFeatureDestroy() {
     await this.destroyConnection();
@@ -35963,7 +35966,7 @@ let LobbyConnectionService = (_Ba = class {
    */
   get connection() {
     const connection = this._connection$.value;
-    if (connection === void 0 || connection === "unauthorized") {
+    if (connection === void 0 || connection === "unauthorized" || connection === "paused") {
       this._logger.error("connection is not initialized");
       throw new Error("connection is not initialized");
     }
@@ -35980,7 +35983,7 @@ let LobbyConnectionService = (_Ba = class {
    * @private
    */
   get isConnected() {
-    return this._connection$.value !== void 0 && this._connection$.value !== "unauthorized";
+    return this._connection$.value !== void 0 && this._connection$.value !== "unauthorized" && this._connection$.value !== "paused";
   }
   /**
    * Sets up the connection to the lobby hub and initializes the receiver
@@ -35988,6 +35991,11 @@ let LobbyConnectionService = (_Ba = class {
    */
   async setupConnection(lobbyId, lobby, playerId, member) {
     var _a2;
+    if (await this._pausedSetting.getValue()) {
+      this._logger.warn("Tried to connect, but Connection is paused");
+      this._connection$.next("paused");
+      return "failed";
+    }
     const claim = (_a2 = this._existingTypoLobbyStates.get(lobbyId)) == null ? void 0 : _a2.ownershipClaimToken;
     const connection = this._socketService.createConnection("ILobbyHub");
     const hub = this._socketService.createHub("ILobbyHub").createHubProxy(connection);
@@ -36027,14 +36035,15 @@ let LobbyConnectionService = (_Ba = class {
    * and closes the flyout if opened
    * @private
    */
-  async destroyConnection(setUnauthorizedStatus = false) {
-    if (this._connection$.value !== void 0 && this._connection$.value !== "unauthorized") {
+  async destroyConnection(reason) {
+    if (this._connection$.value !== void 0 && this._connection$.value !== "unauthorized" && this._connection$.value !== "paused") {
       await this._connection$.value.connection.stop();
     }
     if (this._abortConnecting) {
       this._abortConnecting();
     }
-    if (setUnauthorizedStatus) this._connection$.next("unauthorized");
+    if (reason === "unauthorized") this._connection$.next("unauthorized");
+    else if (reason === "paused") this._connection$.next("paused");
     else this._connection$.next(void 0);
   }
   /**
@@ -36059,6 +36068,14 @@ let LobbyConnectionService = (_Ba = class {
   async lobbyOwnershipResigned() {
     this._logger.info("Lobby ownership resigned, claiming now");
     await this.connection.hub.claimLobbyOwnership();
+  }
+  async setPaused(paused) {
+    await this._pausedSetting.setValue(paused);
+    if (this.isConnected) {
+      await this.destroyConnection("paused");
+    } else if (!paused) {
+      this._connection$.next(void 0);
+    }
   }
 }, __name(_Ba, "LobbyConnectionService"), _Ba);
 __decorateClass$E([
@@ -38072,63 +38089,129 @@ function repeatAfterDelay(source$, delayMs) {
 __name(repeatAfterDelay, "repeatAfterDelay");
 function get_each_context$l(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[14] = list[i];
-  child_ctx[15] = list;
-  child_ctx[16] = i;
+  child_ctx[16] = list[i];
+  child_ctx[17] = list;
+  child_ctx[18] = i;
   return child_ctx;
 }
 __name(get_each_context$l, "get_each_context$l");
 function create_else_block$a(ctx) {
-  let b;
-  let t1;
-  let br;
+  let flatbutton;
+  let t0;
+  let span;
+  let current;
+  flatbutton = new Flat_button({
+    props: {
+      content: "Pause Connection",
+      color: "blue"
+    }
+  });
+  flatbutton.$on(
+    "click",
+    /*click_handler_1*/
+    ctx[9]
+  );
   return {
     c() {
-      b = element$1("b");
-      b.textContent = "Lobby Connected:";
-      t1 = text(" Your lobby is connected to typo and will be visible on Discord.");
-      br = element$1("br");
+      create_component(flatbutton.$$.fragment);
+      t0 = space();
+      span = element$1("span");
+      span.innerHTML = `<b>Lobby Connected:</b> Your lobby is connected to typo and will be visible on Discord.<br/>`;
     },
     m(target, anchor) {
-      insert(target, b, anchor);
-      insert(target, t1, anchor);
-      insert(target, br, anchor);
+      mount_component(flatbutton, target, anchor);
+      insert(target, t0, anchor);
+      insert(target, span, anchor);
+      current = true;
     },
-    i: noop$1,
-    o: noop$1,
+    p: noop$1,
+    i(local) {
+      if (current) return;
+      transition_in(flatbutton.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(flatbutton.$$.fragment, local);
+      current = false;
+    },
     d(detaching) {
       if (detaching) {
-        detach(b);
-        detach(t1);
-        detach(br);
+        detach(t0);
+        detach(span);
       }
+      destroy_component(flatbutton, detaching);
     }
   };
 }
 __name(create_else_block$a, "create_else_block$a");
-function create_if_block_5$1(ctx) {
-  let b;
-  let t1;
-  let br;
+function create_if_block_6(ctx) {
+  let flatbutton;
+  let t0;
+  let span;
+  let current;
+  flatbutton = new Flat_button({
+    props: {
+      content: "Resume Connection",
+      color: "blue"
+    }
+  });
+  flatbutton.$on(
+    "click",
+    /*click_handler*/
+    ctx[8]
+  );
   return {
     c() {
-      b = element$1("b");
-      b.textContent = "Log-in required:";
-      t1 = text(" You need to log in with typo to use the lobby status feature.");
-      br = element$1("br");
+      create_component(flatbutton.$$.fragment);
+      t0 = space();
+      span = element$1("span");
+      span.innerHTML = `<b>Connection paused:</b>
+        Your lobby is currently not visible on Discord.<br/>
+        You are incognito and no data is sent, but your sprites and scenes won&#39;t show up.<br/>
+        Drops won&#39;t appear and you won&#39;t be able to give or receive awards.`;
     },
     m(target, anchor) {
-      insert(target, b, anchor);
-      insert(target, t1, anchor);
-      insert(target, br, anchor);
+      mount_component(flatbutton, target, anchor);
+      insert(target, t0, anchor);
+      insert(target, span, anchor);
+      current = true;
     },
+    p: noop$1,
+    i(local) {
+      if (current) return;
+      transition_in(flatbutton.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(flatbutton.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t0);
+        detach(span);
+      }
+      destroy_component(flatbutton, detaching);
+    }
+  };
+}
+__name(create_if_block_6, "create_if_block_6");
+function create_if_block_5$1(ctx) {
+  let span;
+  return {
+    c() {
+      span = element$1("span");
+      span.innerHTML = `<b>Log-in required:</b> You need to log in with typo to use the lobby status feature.<br/>`;
+    },
+    m(target, anchor) {
+      insert(target, span, anchor);
+    },
+    p: noop$1,
     i: noop$1,
     o: noop$1,
     d(detaching) {
       if (detaching) {
-        detach(b);
-        detach(t1);
-        detach(br);
+        detach(span);
       }
     }
   };
@@ -38148,6 +38231,7 @@ function create_if_block_4$4(ctx) {
       mount_component(bounceload, target, anchor);
       current = true;
     },
+    p: noop$1,
     i(local) {
       if (current) return;
       transition_in(bounceload.$$.fragment, local);
@@ -38184,7 +38268,7 @@ function create_if_block_3$4(ctx) {
   let mounted;
   let dispose;
   function checkbox_checked_binding(value) {
-    ctx[9](value);
+    ctx[11](value);
   }
   __name(checkbox_checked_binding, "checkbox_checked_binding");
   let checkbox_props = { description: "Share link on all servers" };
@@ -38213,8 +38297,8 @@ function create_if_block_3$4(ctx) {
   });
   flatbutton.$on(
     "click",
-    /*click_handler*/
-    ctx[11]
+    /*click_handler_2*/
+    ctx[13]
   );
   return {
     c() {
@@ -38241,7 +38325,7 @@ function create_if_block_3$4(ctx) {
       create_component(flatbutton.$$.fragment);
       attr(input, "type", "text");
       attr(input, "placeholder", "Description in the Palantir Bot");
-      attr(div2, "class", "status-settings svelte-1iaxigp");
+      attr(div2, "class", "status-settings svelte-1y63bp4");
     },
     m(target, anchor) {
       insert(target, div2, anchor);
@@ -38275,7 +38359,7 @@ function create_if_block_3$4(ctx) {
           input,
           "input",
           /*input_input_handler*/
-          ctx[8]
+          ctx[10]
         );
         mounted = true;
       }
@@ -38361,10 +38445,10 @@ function create_each_block$l(ctx) {
   let updating_checked;
   let current;
   function checkbox_checked_binding_1(value) {
-    ctx[10](
+    ctx[12](
       value,
       /*guild*/
-      ctx[14]
+      ctx[16]
     );
   }
   __name(checkbox_checked_binding_1, "checkbox_checked_binding_1");
@@ -38375,20 +38459,20 @@ function create_each_block$l(ctx) {
     ),
     description: (
       /*guild*/
-      ctx[14].guildName
+      ctx[16].guildName
     )
   };
   if (
     /*lobbyAllowedServers*/
     ctx[3][
       /*guild*/
-      ctx[14].guildID
+      ctx[16].guildID
     ] !== void 0
   ) {
     checkbox_props.checked = /*lobbyAllowedServers*/
     ctx[3][
       /*guild*/
-      ctx[14].guildID
+      ctx[16].guildID
     ];
   }
   checkbox = new Checkbox({ props: checkbox_props });
@@ -38409,14 +38493,14 @@ function create_each_block$l(ctx) {
       ctx[2];
       if (dirty & /*$connection*/
       16) checkbox_changes.description = /*guild*/
-      ctx[14].guildName;
+      ctx[16].guildName;
       if (!updating_checked && dirty & /*lobbyAllowedServers, $connection*/
       24) {
         updating_checked = true;
         checkbox_changes.checked = /*lobbyAllowedServers*/
         ctx[3][
           /*guild*/
-          ctx[14].guildID
+          ctx[16].guildID
         ];
         add_flush_callback(() => updating_checked = false);
       }
@@ -38464,7 +38548,7 @@ function create_if_block_1$9(ctx) {
       br = element$1("br");
       t2 = space();
       t3 = text(t3_value);
-      attr(div1, "class", "status-settings svelte-1iaxigp");
+      attr(div1, "class", "status-settings svelte-1y63bp4");
     },
     m(target, anchor) {
       insert(target, div1, anchor);
@@ -38556,7 +38640,10 @@ function create_if_block$j(ctx) {
       /*$connection*/
       ctx[4] === "unauthorized" ? "not logged in" : (
         /*$connection*/
-        (_a2 = ctx[4]) == null ? void 0 : _a2.typoLobbyState.lobbyId
+        ctx[4] === "paused" ? "paused" : (
+          /*$connection*/
+          (_a2 = ctx[4]) == null ? void 0 : _a2.typoLobbyState.lobbyId
+        )
       )
     )) + ""
   );
@@ -38572,7 +38659,10 @@ function create_if_block$j(ctx) {
       /*$connection*/
       ctx[4] === "unauthorized" ? "not logged in" : (
         /*$connection*/
-        (_b2 = ctx[4]) == null ? void 0 : _b2.typoLobbyState.ownershipClaim
+        ctx[4] === "paused" ? "paused" : (
+          /*$connection*/
+          (_b2 = ctx[4]) == null ? void 0 : _b2.typoLobbyState.ownershipClaim
+        )
       )
     )) + ""
   );
@@ -38590,8 +38680,8 @@ function create_if_block$j(ctx) {
   });
   flatbutton0.$on(
     "click",
-    /*click_handler_1*/
-    ctx[12]
+    /*click_handler_3*/
+    ctx[14]
   );
   flatbutton1 = new Flat_button({
     props: {
@@ -38601,8 +38691,8 @@ function create_if_block$j(ctx) {
   });
   flatbutton1.$on(
     "click",
-    /*click_handler_2*/
-    ctx[13]
+    /*click_handler_4*/
+    ctx[15]
   );
   return {
     c() {
@@ -38623,7 +38713,7 @@ function create_if_block$j(ctx) {
       create_component(flatbutton0.$$.fragment);
       t9 = space();
       create_component(flatbutton1.$$.fragment);
-      attr(div1, "class", "status-settings svelte-1iaxigp");
+      attr(div1, "class", "status-settings svelte-1y63bp4");
     },
     m(target, anchor) {
       insert(target, div1, anchor);
@@ -38651,7 +38741,10 @@ function create_if_block$j(ctx) {
         /*$connection*/
         ctx2[4] === "unauthorized" ? "not logged in" : (
           /*$connection*/
-          (_a3 = ctx2[4]) == null ? void 0 : _a3.typoLobbyState.lobbyId
+          ctx2[4] === "paused" ? "paused" : (
+            /*$connection*/
+            (_a3 = ctx2[4]) == null ? void 0 : _a3.typoLobbyState.lobbyId
+          )
         )
       )) + "")) set_data(t2, t2_value);
       if ((!current || dirty & /*$connection*/
@@ -38660,7 +38753,10 @@ function create_if_block$j(ctx) {
         /*$connection*/
         ctx2[4] === "unauthorized" ? "not logged in" : (
           /*$connection*/
-          (_b3 = ctx2[4]) == null ? void 0 : _b3.typoLobbyState.ownershipClaim
+          ctx2[4] === "paused" ? "paused" : (
+            /*$connection*/
+            (_b3 = ctx2[4]) == null ? void 0 : _b3.typoLobbyState.ownershipClaim
+          )
         )
       )) + "")) set_data(t7, t7_value);
     },
@@ -38694,7 +38790,7 @@ function create_fragment$D(ctx) {
   let t1;
   let t2;
   let current;
-  const if_block_creators = [create_if_block_4$4, create_if_block_5$1, create_else_block$a];
+  const if_block_creators = [create_if_block_4$4, create_if_block_5$1, create_if_block_6, create_else_block$a];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -38705,7 +38801,11 @@ function create_fragment$D(ctx) {
       /*$connection*/
       ctx2[4] === "unauthorized"
     ) return 1;
-    return 2;
+    if (
+      /*$connection*/
+      ctx2[4] === "paused"
+    ) return 2;
+    return 3;
   }
   __name(select_block_type, "select_block_type");
   current_block_type_index = select_block_type(ctx);
@@ -38714,12 +38814,14 @@ function create_fragment$D(ctx) {
     /*$connection*/
     ctx[4] !== void 0 && /*$connection*/
     ctx[4] !== "unauthorized" && /*$connection*/
+    ctx[4] !== "paused" && /*$connection*/
     ctx[4].typoLobbyState.playerIsOwner && create_if_block_3$4(ctx)
   );
   let if_block2 = (
     /*$connection*/
     ctx[4] !== void 0 && /*$connection*/
     ctx[4] !== "unauthorized" && /*$connection*/
+    ctx[4] !== "paused" && /*$connection*/
     ctx[4].typoLobbyState.playerIsOwner === false && create_if_block_1$9(ctx)
   );
   let if_block3 = (
@@ -38737,8 +38839,8 @@ function create_fragment$D(ctx) {
       if (if_block2) if_block2.c();
       t2 = space();
       if (if_block3) if_block3.c();
-      attr(div0, "class", "status-info");
-      attr(div1, "class", "typo-lobby-status-settings svelte-1iaxigp");
+      attr(div0, "class", "status-info svelte-1y63bp4");
+      attr(div1, "class", "typo-lobby-status-settings svelte-1y63bp4");
     },
     m(target, anchor) {
       insert(target, div1, anchor);
@@ -38755,7 +38857,9 @@ function create_fragment$D(ctx) {
     p(ctx2, [dirty]) {
       let previous_block_index = current_block_type_index;
       current_block_type_index = select_block_type(ctx2);
-      if (current_block_type_index !== previous_block_index) {
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
         group_outros();
         transition_out(if_blocks[previous_block_index], 1, 1, () => {
           if_blocks[previous_block_index] = null;
@@ -38765,6 +38869,8 @@ function create_fragment$D(ctx) {
         if (!if_block0) {
           if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
           if_block0.c();
+        } else {
+          if_block0.p(ctx2, dirty);
         }
         transition_in(if_block0, 1);
         if_block0.m(div0, null);
@@ -38773,6 +38879,7 @@ function create_fragment$D(ctx) {
         /*$connection*/
         ctx2[4] !== void 0 && /*$connection*/
         ctx2[4] !== "unauthorized" && /*$connection*/
+        ctx2[4] !== "paused" && /*$connection*/
         ctx2[4].typoLobbyState.playerIsOwner
       ) {
         if (if_block1) {
@@ -38798,6 +38905,7 @@ function create_fragment$D(ctx) {
         /*$connection*/
         ctx2[4] !== void 0 && /*$connection*/
         ctx2[4] !== "unauthorized" && /*$connection*/
+        ctx2[4] !== "paused" && /*$connection*/
         ctx2[4].typoLobbyState.playerIsOwner === false
       ) {
         if (if_block2) {
@@ -38872,12 +38980,14 @@ function instance$z($$self, $$props, $$invalidate) {
   const devmode = feature.isDevmodeStore;
   component_subscribe($$self, devmode, (value) => $$invalidate(5, $devmode = value));
   connection.subscribe((conn) => {
-    if (conn && conn !== "unauthorized") {
+    if (conn && conn !== "unauthorized" && conn !== "paused") {
       $$invalidate(1, lobbyDescription = conn.typoLobbyState.lobbySettings.description);
       $$invalidate(2, lobbyDisableWhitelistAllowedServers = !conn.typoLobbyState.lobbySettings.whitelistAllowedServers);
       $$invalidate(3, lobbyAllowedServers = Object.fromEntries(conn.typoLobbyState.lobbySettings.allowedServers.map((s) => [s, true])));
     }
   });
+  const click_handler2 = /* @__PURE__ */ __name(() => feature.setPaused(false), "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name(() => feature.setPaused(true), "click_handler_1");
   function input_input_handler() {
     lobbyDescription = this.value;
     $$invalidate(1, lobbyDescription);
@@ -38895,15 +39005,15 @@ function instance$z($$self, $$props, $$invalidate) {
     }
   }
   __name(checkbox_checked_binding_1, "checkbox_checked_binding_1");
-  const click_handler2 = /* @__PURE__ */ __name(() => {
-    feature.updateLobbySettings(lobbyDescription, !lobbyDisableWhitelistAllowedServers, lobbyAllowedServers);
-  }, "click_handler");
-  const click_handler_1 = /* @__PURE__ */ __name(() => {
-    feature.resetConnection();
-  }, "click_handler_1");
   const click_handler_2 = /* @__PURE__ */ __name(() => {
-    feature.triggerManualRefresh();
+    feature.updateLobbySettings(lobbyDescription, !lobbyDisableWhitelistAllowedServers, lobbyAllowedServers);
   }, "click_handler_2");
+  const click_handler_3 = /* @__PURE__ */ __name(() => {
+    feature.resetConnection();
+  }, "click_handler_3");
+  const click_handler_4 = /* @__PURE__ */ __name(() => {
+    feature.triggerManualRefresh();
+  }, "click_handler_4");
   $$self.$$set = ($$props2) => {
     if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
   };
@@ -38916,12 +39026,14 @@ function instance$z($$self, $$props, $$invalidate) {
     $devmode,
     connection,
     devmode,
+    click_handler2,
+    click_handler_1,
     input_input_handler,
     checkbox_checked_binding,
     checkbox_checked_binding_1,
-    click_handler2,
-    click_handler_1,
-    click_handler_2
+    click_handler_2,
+    click_handler_3,
+    click_handler_4
   ];
 }
 __name(instance$z, "instance$z");
@@ -39014,8 +39126,8 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
       var _a2, _b2;
       if ((type === "public" || type === "custom") && connection !== "unauthorized") {
         if (!this._controlIcon) await this.setupSettings();
-        const open = (connection == null ? void 0 : connection.typoLobbyState.lobbySettings.whitelistAllowedServers) === false;
-        const icon = connection === void 0 ? "file-img-connection-loading-gif" : open ? "file-img-connection-gif" : "file-img-connection-secure-gif";
+        const open = connection !== "paused" && (connection == null ? void 0 : connection.typoLobbyState.lobbySettings.whitelistAllowedServers) === false;
+        const icon = connection === void 0 ? "file-img-connection-loading-gif" : connection === "paused" ? "file-img-connection-paused-gif" : open ? "file-img-connection-gif" : "file-img-connection-secure-gif";
         const greyscale = connection !== void 0;
         (_a2 = this._controlIcon) == null ? void 0 : _a2.$set({
           icon,
@@ -39049,6 +39161,7 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
       })()
     );
     this._lobbySubscription.add(() => this._logger.info("Lobby status update sub stopped"));
+    await this._lobbyConnectionService.setPaused(false);
   }
   async onDestroy() {
     var _a2, _b2;
@@ -39129,7 +39242,7 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
   async processLobbyUpdate(lobby, member) {
     this._logger.info("processing lobby status update", lobby, member == null ? void 0 : member.userName);
     if (member === null || member === void 0) {
-      await this._lobbyConnectionService.destroyConnection(true);
+      await this._lobbyConnectionService.destroyConnection("unauthorized");
       return;
     }
     if (lobby === null || lobby.id === null) {
@@ -39258,6 +39371,15 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
   async triggerManualRefresh() {
     this._triggerManualRefresh$.next(void 0);
     await this._toastService.showToast(void 0, "Manual refresh triggered");
+  }
+  async setPaused(paused) {
+    await this._lobbyConnectionService.setPaused(paused);
+    if (paused) {
+      await this._toastService.showToast("You are now incognito!", "Lobby connection has been paused.\nYou will no longer be visible on discord.\nSprites, Scenes and Drops are paused as well.");
+    } else {
+      await this._toastService.showToast("Resumed Connection", "Your lobby will be visible on discord and sprites, scenes and drops will show up.");
+    }
+    this._triggerManualRefresh$.next(void 0);
   }
 };
 __name(_LobbyStatusFeature, "LobbyStatusFeature");
