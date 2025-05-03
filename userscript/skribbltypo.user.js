@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.0.3 beta-usc 036b387
+// @version      27.1.0 beta-usc 78f923f
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -440,7 +440,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.0.3", versionName: "27.0.3 beta-usc 036b387", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.0", versionName: "27.1.0 beta-usc 78f923f", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -1882,7 +1882,7 @@
     tt.querySelector(".colors").classList.toggle("open")
   }), D(n, "click", function(e) {
     ot.classList.toggle("open")
-  }), D(c, "keyup", function(e) {
+  }), D(c, "keydown", function(e) {
     if ("Enter" == e.code) return _n[0].focus(), 0;
     if ("input" == c.activeElement.tagName.toLowerCase() || "textarea" == c.activeElement.tagName.toLowerCase() || -1 != qt) return 0;
     for (var t = e.key.toLowerCase().replace("key", ""), n = 0; n < u.length; n++)

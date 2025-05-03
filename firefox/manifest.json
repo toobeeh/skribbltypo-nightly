@@ -1,7 +1,7 @@
 {
   "name": "skribbltypo",
   "description": "The toolbox for everything you need on skribbl.io",
-  "version": "27.0.3",
+  "version": "27.1.0",
   "manifest_version": 3,
   "icons": {
     "16": "icons/16Fit.png",
@@ -57,7 +57,7 @@
   "permissions": [
     "activeTab"
   ],
-  "version_name": "27.0.3 beta-ffx 036b387",
+  "version_name": "27.1.0 beta-ffx 78f923f",
   "browser_specific_settings": {
     "gecko": {
       "id": "{0b67dc2f-1517-451c-b5cb-8b28270b03e6}",
