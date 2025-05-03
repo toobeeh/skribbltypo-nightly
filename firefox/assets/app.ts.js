@@ -17829,6 +17829,7 @@ const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
     __publicField(this, "tags", [FeatureTag.INTERFACE]);
     __publicField(this, "featureId", 50);
     __publicField(this, "_avatarContainers", /* @__PURE__ */ new Set());
+    __publicField(this, "featureEnabledDefault", false);
     __publicField(this, "_chatSubscription");
     __publicField(this, "_chatMutationObserver");
   }
