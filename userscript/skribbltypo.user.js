@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.0 beta-usc 224fd77
+// @version      27.1.0 beta-usc e9ce7d5
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.0", versionName: "27.1.0 beta-usc 224fd77", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.0", versionName: "27.1.0 beta-usc e9ce7d5", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -25028,6 +25028,9 @@
           ["ControlRight", "ArrowLeft"]
         )
       ));
+      __publicField(this, "_muteActionToastsSetting", this.useSetting(
+        new BooleanExtensionSetting("mute_action_toasts", false, this).withName("Mute Info Toasts").withDescription("Mute the info toasts when liking/disliking/votekicking a player")
+      ));
       __publicField(this, "_subscription");
       __publicField(this, "_flyoutComponent");
       __publicField(this, "_flyoutSubscription");
@@ -25103,37 +25106,40 @@
       })));
     }
     async likeCurrentPlayer() {
-      const toast = await this._toastService.showLoadingToast("Liking current player");
+      const muteToasts = await this._muteActionToastsSetting.getValue();
+      const toast = muteToasts ? void 0 : await this._toastService.showLoadingToast("Liking current player");
       let player;
       try {
         const availablePlayer = await this.getCurrentInteractionPlayer((interactions) => interactions.rateAvailable);
         if (availablePlayer === void 0) throw new Error("No player available to rate");
         player = availablePlayer;
       } catch (e) {
-        toast.reject(e.message);
+        toast == null ? void 0 : toast.reject(e.message);
         return;
       }
       await this._lobbyInteractionsService.likePlayer();
       await this.hideGameRate();
-      toast.resolve(`Liked the drawing of ${player.name}`);
+      toast == null ? void 0 : toast.resolve(`Liked the drawing of ${player.name}`);
     }
     async dislikeCurrentPlayer() {
-      const toast = await this._toastService.showLoadingToast("Disliking current player");
+      const muteToasts = await this._muteActionToastsSetting.getValue();
+      const toast = muteToasts ? void 0 : await this._toastService.showLoadingToast("Disliking current player");
       let player;
       try {
         const availablePlayer = await this.getCurrentInteractionPlayer((interactions) => interactions.rateAvailable);
         if (availablePlayer === void 0) throw new Error("No player available to rate");
         player = availablePlayer;
       } catch (e) {
-        toast.reject(e.message);
+        toast == null ? void 0 : toast.reject(e.message);
         return;
       }
       await this._lobbyInteractionsService.dislikePlayer();
       await this.hideGameRate();
-      toast.resolve(`Disliked the drawing of ${player.name}`);
+      toast == null ? void 0 : toast.resolve(`Disliked the drawing of ${player.name}`);
     }
     async votekickPlayer(player) {
-      const toast = await this._toastService.showLoadingToast(`Voting to kick ${player === void 0 ? "current player" : player.name}`);
+      const muteToasts = await this._muteActionToastsSetting.getValue();
+      const toast = muteToasts ? void 0 : await this._toastService.showLoadingToast(`Voting to kick ${player === void 0 ? "current player" : player.name}`);
       try {
         const targetPlayer = await this.getCurrentInteractionPlayer((interactions) => interactions.votekickAvailable);
         if (player === void 0) {
@@ -25141,11 +25147,11 @@
           player = targetPlayer;
         }
       } catch (e) {
-        toast.reject(e.message);
+        toast == null ? void 0 : toast.reject(e.message);
         return;
       }
       await this._lobbyInteractionsService.votekickPlayer(player.id);
-      toast.resolve(`Voted to kick ${player.name}`);
+      toast == null ? void 0 : toast.resolve(`Voted to kick ${player.name}`);
     }
   };
   __name(_ChatQuickReactFeature, "ChatQuickReactFeature");
