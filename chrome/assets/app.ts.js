@@ -1,10 +1,16 @@
 var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __typeError = (msg) => {
+  throw TypeError(msg);
+};
+var __defNormalProp = (obj, key2, value) => key2 in obj ? __defProp(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
-var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _Z, __, _$, _aa, _ba, _ca, _da, _ea, _fa, _ga, _ha, _ia, _ja, _ka, _la, _ma, _na, _oa, _pa, _qa, _ra, _sa, _ta, _ua, _va, _wa, _xa, _ya, _za, _Aa, _Ba, _Ca, _Da, _Ea;
+var __publicField = (obj, key2, value) => __defNormalProp(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
+var __accessCheck = (obj, member, msg) => member.has(obj) || __typeError("Cannot " + msg);
+var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
+var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _Z, __, _$, _aa, _ba, _ca, _da, _ea, _fa, _ga, _ha, _ia, _ja, _ka, _la, _ma, _na, _oa, _pa, _qa, _ra, _sa, _ta, _ua, _va, _wa, _xa, _ya, _za, _Aa, _Ba, _Ca, _Marked_instances, parseMarkdown_fn, onError_fn, _Da, _Ea, _Fa, _Ga;
 import { t as typoRuntime, e as element, r as requireElement, a as appendElement, c as createElement, b as requireElements, d as elements } from "./requiredQuerySelector.js";
-import { i as is_promise, g as get_current_component, s as set_current_component, a as group_outros, t as transition_out, c as check_outros, b as transition_in, f as flush, n as noop$1, d as safe_not_equal, S as SvelteComponent, e as init, h as element$1, j as space, k as src_url_equal, l as attr, m as set_style, o as toggle_class, p as insert, q as append, r as listen, u as detach, v as run_all, w as createEventDispatcher, x as text, y as set_data, z as bubble, A as empty, B as binding_callbacks, C as bind$1, D as create_component, E as mount_component, F as add_flush_callback, G as destroy_component, H as subscribe, I as set_input_value, J as to_number, K as add_render_callback, L as select_option, M as destroy_each, N as select_value, O as onMount, P as set_store_value, Q as component_subscribe, R as action_destroyer, T as is_function, U as null_to_empty, V as construct_svelte_component, W as onDestroy, X as assign } from "./index.js";
+import { i as is_promise, g as get_current_component, s as set_current_component, a as group_outros, t as transition_out, c as check_outros, b as transition_in, f as flush, n as noop$1, d as safe_not_equal, S as SvelteComponent, e as init, h as element$1, j as space, k as src_url_equal, l as attr, m as set_style, o as toggle_class, p as insert, q as append, r as listen, u as detach, v as run_all, w as createEventDispatcher, x as text, y as set_data, z as bubble, A as empty, B as binding_callbacks, C as bind$1, D as create_component, E as mount_component, F as add_flush_callback, G as destroy_component, H as subscribe, I as set_input_value, J as to_number, K as add_render_callback, L as select_option, M as destroy_each, N as select_value, O as onMount, P as set_store_value, Q as component_subscribe, R as action_destroyer, T as is_function, U as null_to_empty, V as construct_svelte_component, W as onDestroy, X as assign, Y as compute_rest_props, Z as exclude_internal_props, _ as getContext, $ as create_slot, a0 as update_slot_base, a1 as get_all_dirty_from_scope, a2 as get_slot_changes, a3 as HtmlTag, a4 as setContext } from "./index.js";
 const Metadata$1 = /* @__PURE__ */ new WeakMap();
 function decorateProperty(decorators, target, propertyKey, descriptor) {
   decorators.reverse().forEach((decorator) => {
@@ -1788,8 +1794,8 @@ function argsArgArrayOrObject(args) {
     if (isPOJO(first_1)) {
       var keys = getKeys(first_1);
       return {
-        args: keys.map(function(key) {
-          return first_1[key];
+        args: keys.map(function(key2) {
+          return first_1[key2];
         }),
         keys
       };
@@ -1803,8 +1809,8 @@ function isPOJO(obj) {
 }
 __name(isPOJO, "isPOJO");
 function createObject(keys, values) {
-  return keys.reduce(function(result, key, i) {
-    return result[key] = values[i], result;
+  return keys.reduce(function(result, key2, i) {
+    return result[key2] = values[i], result;
   }, {});
 }
 __name(createObject, "createObject");
@@ -2707,9 +2713,9 @@ const _Interceptor = class _Interceptor {
       }
     }, "removeListener");
     const canvas = requireElement("#game-canvas > canvas");
-    for (const key in canvas) {
-      if (/^on/.test(key)) {
-        const eventType = key.slice(2);
+    for (const key2 in canvas) {
+      if (/^on/.test(key2)) {
+        const eventType = key2.slice(2);
         canvas.addEventListener(eventType, (event) => {
           const eventListeners = this._canvasEventListener.get(eventType);
           if (eventListeners === void 0) return;
@@ -2755,23 +2761,23 @@ __name(_Interceptor, "Interceptor");
 let Interceptor = _Interceptor;
 function handle_promise(promise, info) {
   const token = info.token = {};
-  function update(type, index, key, value) {
+  function update(type, index, key2, value) {
     if (info.token !== token) return;
     info.resolved = value;
     let child_ctx = info.ctx;
-    if (key !== void 0) {
+    if (key2 !== void 0) {
       child_ctx = child_ctx.slice();
-      child_ctx[key] = value;
+      child_ctx[key2] = value;
     }
-    const block = type && (info.current = type)(child_ctx);
+    const block2 = type && (info.current = type)(child_ctx);
     let needs_flush = false;
     if (info.block) {
       if (info.blocks) {
-        info.blocks.forEach((block2, i) => {
-          if (i !== index && block2) {
+        info.blocks.forEach((block3, i) => {
+          if (i !== index && block3) {
             group_outros();
-            transition_out(block2, 1, 1, () => {
-              if (info.blocks[i] === block2) {
+            transition_out(block3, 1, 1, () => {
+              if (info.blocks[i] === block3) {
                 info.blocks[i] = null;
               }
             });
@@ -2781,13 +2787,13 @@ function handle_promise(promise, info) {
       } else {
         info.block.d(1);
       }
-      block.c();
-      transition_in(block, 1);
-      block.m(info.mount(), info.anchor);
+      block2.c();
+      transition_in(block2, 1);
+      block2.m(info.mount(), info.anchor);
       needs_flush = true;
     }
-    info.block = block;
-    if (info.blocks) info.blocks[index] = block;
+    info.block = block2;
+    if (info.blocks) info.blocks[index] = block2;
     if (needs_flush) {
       flush();
     }
@@ -2849,24 +2855,24 @@ function get_spread_update(levels, updates) {
     const o = levels[i];
     const n = updates[i];
     if (n) {
-      for (const key in o) {
-        if (!(key in n)) to_null_out[key] = 1;
+      for (const key2 in o) {
+        if (!(key2 in n)) to_null_out[key2] = 1;
       }
-      for (const key in n) {
-        if (!accounted_for[key]) {
-          update[key] = n[key];
-          accounted_for[key] = 1;
+      for (const key2 in n) {
+        if (!accounted_for[key2]) {
+          update[key2] = n[key2];
+          accounted_for[key2] = 1;
         }
       }
       levels[i] = n;
     } else {
-      for (const key in o) {
-        accounted_for[key] = 1;
+      for (const key2 in o) {
+        accounted_for[key2] = 1;
       }
     }
   }
-  for (const key in to_null_out) {
-    if (!(key in update)) update[key] = void 0;
+  for (const key2 in to_null_out) {
+    if (!(key2 in update)) update[key2] = void 0;
   }
   return update;
 }
@@ -2941,7 +2947,7 @@ function fromObservable(observable2, initialValue, onWrite, allowWriteBeforeEmit
   };
 }
 __name(fromObservable, "fromObservable");
-function create_if_block$H(ctx) {
+function create_if_block$L(ctx) {
   let span;
   let t;
   return {
@@ -2972,8 +2978,8 @@ function create_if_block$H(ctx) {
     }
   };
 }
-__name(create_if_block$H, "create_if_block$H");
-function create_fragment$1j(ctx) {
+__name(create_if_block$L, "create_if_block$L");
+function create_fragment$1H(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -2982,7 +2988,7 @@ function create_fragment$1j(ctx) {
   let dispose;
   let if_block = (
     /*description*/
-    ctx[2] && create_if_block$H(ctx)
+    ctx[2] && create_if_block$L(ctx)
   );
   return {
     c() {
@@ -3053,7 +3059,7 @@ function create_fragment$1j(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$H(ctx2);
+          if_block = create_if_block$L(ctx2);
           if_block.c();
           if_block.m(div, null);
         }
@@ -3092,8 +3098,8 @@ function create_fragment$1j(ctx) {
     }
   };
 }
-__name(create_fragment$1j, "create_fragment$1j");
-function instance$1a($$self, $$props, $$invalidate) {
+__name(create_fragment$1H, "create_fragment$1H");
+function instance$1x($$self, $$props, $$invalidate) {
   let { checked = false } = $$props;
   let { disabled = false } = $$props;
   let { description = "" } = $$props;
@@ -3106,8 +3112,8 @@ function instance$1a($$self, $$props, $$invalidate) {
     $$invalidate(0, checked = !checked);
     dispatch("change", checked);
   }, "click_handler_1");
-  const keypress_handler = /* @__PURE__ */ __name((key) => {
-    key.key === "Enter" ? $$invalidate(0, checked = !checked) : 0;
+  const keypress_handler = /* @__PURE__ */ __name((key2) => {
+    key2.key === "Enter" ? $$invalidate(0, checked = !checked) : 0;
     dispatch("change", checked);
   }, "keypress_handler");
   $$self.$$set = ($$props2) => {
@@ -3125,16 +3131,16 @@ function instance$1a($$self, $$props, $$invalidate) {
     keypress_handler
   ];
 }
-__name(instance$1a, "instance$1a");
+__name(instance$1x, "instance$1x");
 const _Checkbox = class _Checkbox extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1a, create_fragment$1j, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
+    init(this, options, instance$1x, create_fragment$1H, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
   }
 };
 __name(_Checkbox, "Checkbox");
 let Checkbox = _Checkbox;
-function create_if_block$G(ctx) {
+function create_if_block$K(ctx) {
   let b;
   let checkbox;
   let updating_checked;
@@ -3216,13 +3222,13 @@ function create_if_block$G(ctx) {
     }
   };
 }
-__name(create_if_block$G, "create_if_block$G");
-function create_fragment$1i(ctx) {
+__name(create_if_block$K, "create_if_block$K");
+function create_fragment$1G(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*settingStore*/
-    ctx[1] && create_if_block$G(ctx)
+    ctx[1] && create_if_block$K(ctx)
   );
   return {
     c() {
@@ -3246,7 +3252,7 @@ function create_fragment$1i(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$G(ctx2);
+          if_block = create_if_block$K(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -3276,8 +3282,8 @@ function create_fragment$1i(ctx) {
     }
   };
 }
-__name(create_fragment$1i, "create_fragment$1i");
-function instance$19($$self, $$props, $$invalidate) {
+__name(create_fragment$1G, "create_fragment$1G");
+function instance$1w($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3300,16 +3306,16 @@ function instance$19($$self, $$props, $$invalidate) {
   };
   return [setting, settingStore, $settingStore, checkbox_checked_binding];
 }
-__name(instance$19, "instance$19");
+__name(instance$1w, "instance$1w");
 const _Boolean_setting_input = class _Boolean_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$19, create_fragment$1i, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1w, create_fragment$1G, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Boolean_setting_input, "Boolean_setting_input");
 let Boolean_setting_input = _Boolean_setting_input;
-function create_if_block$F(ctx) {
+function create_if_block$J(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3334,7 +3340,7 @@ function create_if_block$F(ctx) {
   let if_block = (
     /*withSliderAndSteps*/
     ctx[2] !== void 0 && /*bounds*/
-    ctx[1] && create_if_block_1$k(ctx)
+    ctx[1] && create_if_block_1$m(ctx)
   );
   return {
     c() {
@@ -3416,7 +3422,7 @@ function create_if_block$F(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block_1$k(ctx2);
+          if_block = create_if_block_1$m(ctx2);
           if_block.c();
           if_block.m(div1, t3);
         }
@@ -3438,8 +3444,8 @@ function create_if_block$F(ctx) {
     }
   };
 }
-__name(create_if_block$F, "create_if_block$F");
-function create_if_block_1$k(ctx) {
+__name(create_if_block$J, "create_if_block$J");
+function create_if_block_1$m(ctx) {
   let input;
   let input_min_value;
   let input_max_value;
@@ -3524,12 +3530,12 @@ function create_if_block_1$k(ctx) {
     }
   };
 }
-__name(create_if_block_1$k, "create_if_block_1$k");
-function create_fragment$1h(ctx) {
+__name(create_if_block_1$m, "create_if_block_1$m");
+function create_fragment$1F(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[3] && create_if_block$F(ctx)
+    ctx[3] && create_if_block$J(ctx)
   );
   return {
     c() {
@@ -3548,7 +3554,7 @@ function create_fragment$1h(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$F(ctx2);
+          if_block = create_if_block$J(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3567,8 +3573,8 @@ function create_fragment$1h(ctx) {
     }
   };
 }
-__name(create_fragment$1h, "create_fragment$1h");
-function instance$18($$self, $$props, $$invalidate) {
+__name(create_fragment$1F, "create_fragment$1F");
+function instance$1v($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3608,11 +3614,11 @@ function instance$18($$self, $$props, $$invalidate) {
     input_change_input_handler
   ];
 }
-__name(instance$18, "instance$18");
+__name(instance$1v, "instance$1v");
 const _Numeric_setting_input = class _Numeric_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$18, create_fragment$1h, safe_not_equal, {
+    init(this, options, instance$1v, create_fragment$1F, safe_not_equal, {
       setting: 0,
       bounds: 1,
       withSliderAndSteps: 2
@@ -3621,14 +3627,14 @@ const _Numeric_setting_input = class _Numeric_setting_input extends SvelteCompon
 };
 __name(_Numeric_setting_input, "Numeric_setting_input");
 let Numeric_setting_input = _Numeric_setting_input;
-function get_each_context$y(ctx, list, i) {
+function get_each_context$z(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i].choice;
   child_ctx[6] = list[i].name;
   return child_ctx;
 }
-__name(get_each_context$y, "get_each_context$y");
-function create_if_block$E(ctx) {
+__name(get_each_context$z, "get_each_context$z");
+function create_if_block$I(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3653,7 +3659,7 @@ function create_if_block$E(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$y(get_each_context$y(ctx, each_value, i));
+    each_blocks[i] = create_each_block$z(get_each_context$z(ctx, each_value, i));
   }
   return {
     c() {
@@ -3720,11 +3726,11 @@ function create_if_block$E(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$y(ctx2, each_value, i);
+          const child_ctx = get_each_context$z(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$y(child_ctx);
+            each_blocks[i] = create_each_block$z(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(select, null);
           }
@@ -3756,8 +3762,8 @@ function create_if_block$E(ctx) {
     }
   };
 }
-__name(create_if_block$E, "create_if_block$E");
-function create_each_block$y(ctx) {
+__name(create_if_block$I, "create_if_block$I");
+function create_each_block$z(ctx) {
   let option;
   let t_value = (
     /*name*/
@@ -3795,12 +3801,12 @@ function create_each_block$y(ctx) {
     }
   };
 }
-__name(create_each_block$y, "create_each_block$y");
-function create_fragment$1g(ctx) {
+__name(create_each_block$z, "create_each_block$z");
+function create_fragment$1E(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[2] && create_if_block$E(ctx)
+    ctx[2] && create_if_block$I(ctx)
   );
   return {
     c() {
@@ -3819,7 +3825,7 @@ function create_fragment$1g(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$E(ctx2);
+          if_block = create_if_block$I(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3838,8 +3844,8 @@ function create_fragment$1g(ctx) {
     }
   };
 }
-__name(create_fragment$1g, "create_fragment$1g");
-function instance$17($$self, $$props, $$invalidate) {
+__name(create_fragment$1E, "create_fragment$1E");
+function instance$1u($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(3, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3865,16 +3871,16 @@ function instance$17($$self, $$props, $$invalidate) {
   };
   return [setting, choices, settingStore, $settingStore, select_change_handler];
 }
-__name(instance$17, "instance$17");
+__name(instance$1u, "instance$1u");
 const _Choice_setting_input = class _Choice_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$17, create_fragment$1g, safe_not_equal, { setting: 0, choices: 1 });
+    init(this, options, instance$1u, create_fragment$1E, safe_not_equal, { setting: 0, choices: 1 });
   }
 };
 __name(_Choice_setting_input, "Choice_setting_input");
 let Choice_setting_input = _Choice_setting_input;
-function create_if_block$D(ctx) {
+function create_if_block$H(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3958,12 +3964,12 @@ function create_if_block$D(ctx) {
     }
   };
 }
-__name(create_if_block$D, "create_if_block$D");
-function create_fragment$1f(ctx) {
+__name(create_if_block$H, "create_if_block$H");
+function create_fragment$1D(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[1] && create_if_block$D(ctx)
+    ctx[1] && create_if_block$H(ctx)
   );
   return {
     c() {
@@ -3982,7 +3988,7 @@ function create_fragment$1f(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$D(ctx2);
+          if_block = create_if_block$H(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -4001,8 +4007,8 @@ function create_fragment$1f(ctx) {
     }
   };
 }
-__name(create_fragment$1f, "create_fragment$1f");
-function instance$16($$self, $$props, $$invalidate) {
+__name(create_fragment$1D, "create_fragment$1D");
+function instance$1t($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -4025,11 +4031,11 @@ function instance$16($$self, $$props, $$invalidate) {
   };
   return [setting, settingStore, $settingStore, input_input_handler];
 }
-__name(instance$16, "instance$16");
+__name(instance$1t, "instance$1t");
 const _Text_setting_input = class _Text_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$16, create_fragment$1f, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1t, create_fragment$1D, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Text_setting_input, "Text_setting_input");
@@ -4263,7 +4269,7 @@ __publicField(_Color, "skribblColors", [
   [99, 48, 13]
 ]);
 let Color = _Color;
-function create_if_block_1$j(ctx) {
+function create_if_block_1$l(ctx) {
   let p;
   let t;
   return {
@@ -4293,8 +4299,8 @@ function create_if_block_1$j(ctx) {
     }
   };
 }
-__name(create_if_block_1$j, "create_if_block_1$j");
-function create_if_block$C(ctx) {
+__name(create_if_block_1$l, "create_if_block_1$l");
+function create_if_block$G(ctx) {
   let div1;
   let div0;
   let mounted;
@@ -4376,8 +4382,8 @@ function create_if_block$C(ctx) {
     }
   };
 }
-__name(create_if_block$C, "create_if_block$C");
-function create_fragment$1e(ctx) {
+__name(create_if_block$G, "create_if_block$G");
+function create_fragment$1C(ctx) {
   let div5;
   let div0;
   let t2;
@@ -4394,11 +4400,11 @@ function create_fragment$1e(ctx) {
   let dispose;
   let if_block0 = (
     /*description*/
-    ctx[2].length > 0 && create_if_block_1$j(ctx)
+    ctx[2].length > 0 && create_if_block_1$l(ctx)
   );
   let if_block1 = (
     /*allowAlpha*/
-    ctx[1] && create_if_block$C(ctx)
+    ctx[1] && create_if_block$G(ctx)
   );
   return {
     c() {
@@ -4529,7 +4535,7 @@ function create_fragment$1e(ctx) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
         } else {
-          if_block0 = create_if_block_1$j(ctx2);
+          if_block0 = create_if_block_1$l(ctx2);
           if_block0.c();
           if_block0.m(div5, t3);
         }
@@ -4582,7 +4588,7 @@ function create_fragment$1e(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$C(ctx2);
+          if_block1 = create_if_block$G(ctx2);
           if_block1.c();
           if_block1.m(div5, t6);
         }
@@ -4613,8 +4619,8 @@ function create_fragment$1e(ctx) {
     }
   };
 }
-__name(create_fragment$1e, "create_fragment$1e");
-function instance$15($$self, $$props, $$invalidate) {
+__name(create_fragment$1C, "create_fragment$1C");
+function instance$1s($$self, $$props, $$invalidate) {
   let { color = Color.fromHex("#45588d") } = $$props;
   let { allowAlpha = false } = $$props;
   let { description = "" } = $$props;
@@ -4710,16 +4716,16 @@ function instance$15($$self, $$props, $$invalidate) {
     change_handler
   ];
 }
-__name(instance$15, "instance$15");
+__name(instance$1s, "instance$1s");
 const _Color_picker = class _Color_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$15, create_fragment$1e, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
+    init(this, options, instance$1s, create_fragment$1C, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
   }
 };
 __name(_Color_picker, "Color_picker");
 let Color_picker = _Color_picker;
-function create_if_block$B(ctx) {
+function create_if_block$F(ctx) {
   let div;
   let colorpicker;
   let updating_color;
@@ -4890,8 +4896,8 @@ function create_if_block$B(ctx) {
     }
   };
 }
-__name(create_if_block$B, "create_if_block$B");
-function create_fragment$1d(ctx) {
+__name(create_if_block$F, "create_if_block$F");
+function create_fragment$1B(ctx) {
   let div1;
   let div0;
   let t;
@@ -4901,7 +4907,7 @@ function create_fragment$1d(ctx) {
   let dispose;
   let if_block = (
     /*popupPosition*/
-    ctx[6] && create_if_block$B(ctx)
+    ctx[6] && create_if_block$F(ctx)
   );
   return {
     c() {
@@ -4984,7 +4990,7 @@ function create_fragment$1d(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$B(ctx2);
+          if_block = create_if_block$F(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div1, null);
@@ -5030,9 +5036,9 @@ function create_fragment$1d(ctx) {
     }
   };
 }
-__name(create_fragment$1d, "create_fragment$1d");
+__name(create_fragment$1B, "create_fragment$1B");
 const click_handler = /* @__PURE__ */ __name((e) => e.stopImmediatePropagation(), "click_handler");
-function instance$14($$self, $$props, $$invalidate) {
+function instance$1r($$self, $$props, $$invalidate) {
   let { color = Color.fromHex("#45588d") } = $$props;
   let { allowAlpha = false } = $$props;
   let { useBackground = true } = $$props;
@@ -5109,11 +5115,11 @@ function instance$14($$self, $$props, $$invalidate) {
     colorpicker_color_binding
   ];
 }
-__name(instance$14, "instance$14");
+__name(instance$1r, "instance$1r");
 const _Color_picker_button = class _Color_picker_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$14, create_fragment$1d, safe_not_equal, {
+    init(this, options, instance$1r, create_fragment$1B, safe_not_equal, {
       color: 0,
       allowAlpha: 1,
       useBackground: 2,
@@ -5126,7 +5132,7 @@ const _Color_picker_button = class _Color_picker_button extends SvelteComponent 
 };
 __name(_Color_picker_button, "Color_picker_button");
 let Color_picker_button = _Color_picker_button;
-function create_if_block$A(ctx) {
+function create_if_block$E(ctx) {
   let div2;
   let b;
   let t0_value = (
@@ -5220,13 +5226,13 @@ function create_if_block$A(ctx) {
     }
   };
 }
-__name(create_if_block$A, "create_if_block$A");
-function create_fragment$1c(ctx) {
+__name(create_if_block$E, "create_if_block$E");
+function create_fragment$1A(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*settingStore*/
-    ctx[2] && create_if_block$A(ctx)
+    ctx[2] && create_if_block$E(ctx)
   );
   return {
     c() {
@@ -5250,7 +5256,7 @@ function create_fragment$1c(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$A(ctx2);
+          if_block = create_if_block$E(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -5280,8 +5286,8 @@ function create_fragment$1c(ctx) {
     }
   };
 }
-__name(create_fragment$1c, "create_fragment$1c");
-function instance$13($$self, $$props, $$invalidate) {
+__name(create_fragment$1A, "create_fragment$1A");
+function instance$1q($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -5316,21 +5322,21 @@ function instance$13($$self, $$props, $$invalidate) {
   };
   return [setting, color, settingStore, colorpickerbutton_color_binding];
 }
-__name(instance$13, "instance$13");
+__name(instance$1q, "instance$1q");
 const _Color_hex_setting_input = class _Color_hex_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$13, create_fragment$1c, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1q, create_fragment$1A, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Color_hex_setting_input, "Color_hex_setting_input");
 let Color_hex_setting_input = _Color_hex_setting_input;
 const _ExtensionSetting = class _ExtensionSetting {
-  constructor(key, defaultValue, feature) {
+  constructor(key2, defaultValue, feature) {
     __publicField(this, "_name");
     __publicField(this, "_description");
     __publicField(this, "_changes", new BehaviorSubject(null));
-    this.key = key;
+    this.key = key2;
     this.defaultValue = defaultValue;
     this.feature = feature;
     this.feature = feature;
@@ -5568,8 +5574,8 @@ var INVALID_BINDING_TYPE = "Invalid binding type:";
 var NO_MORE_SNAPSHOTS_AVAILABLE = "No snapshot available to restore.";
 var INVALID_MIDDLEWARE_RETURN = "Invalid return type in middleware. Middleware must return!";
 var INVALID_FUNCTION_BINDING = "Value provided to function binding must be a function!";
-var LAZY_IN_SYNC = /* @__PURE__ */ __name(function(key) {
-  return "You are attempting to construct '" + key + "' in a synchronous way\n but it has asynchronous dependencies.";
+var LAZY_IN_SYNC = /* @__PURE__ */ __name(function(key2) {
+  return "You are attempting to construct '" + key2 + "' in a synchronous way\n but it has asynchronous dependencies.";
 }, "LAZY_IN_SYNC");
 var INVALID_TO_SELF_VALUE = "The toSelf function can only be applied when a constructor is used as service identifier";
 var INVALID_DECORATOR_OPERATION = "The @inject @multiInject @tagged and @named decorators must be applied to the parameters of a class constructor or a class property.";
@@ -5753,8 +5759,8 @@ var Context = function() {
   return Context2;
 }();
 var Metadata = function() {
-  function Metadata2(key, value) {
-    this.key = key;
+  function Metadata2(key2, value) {
+    this.key = key2;
     this.value = value;
   }
   __name(Metadata2, "Metadata");
@@ -5830,10 +5836,10 @@ var Target = function() {
     }
   }
   __name(Target2, "Target");
-  Target2.prototype.hasTag = function(key) {
+  Target2.prototype.hasTag = function(key2) {
     for (var _i2 = 0, _a2 = this.metadata; _i2 < _a2.length; _i2++) {
       var m = _a2[_i2];
-      if (m.key === key) {
+      if (m.key === key2) {
         return true;
       }
     }
@@ -5850,8 +5856,8 @@ var Target = function() {
   };
   Target2.prototype.isTagged = function() {
     return this.metadata.some(function(metadata2) {
-      return NON_CUSTOM_TAG_KEYS.every(function(key) {
-        return metadata2.key !== key;
+      return NON_CUSTOM_TAG_KEYS.every(function(key2) {
+        return metadata2.key !== key2;
       });
     });
   };
@@ -5869,8 +5875,8 @@ var Target = function() {
   Target2.prototype.getCustomTags = function() {
     if (this.isTagged()) {
       return this.metadata.filter(function(metadata2) {
-        return NON_CUSTOM_TAG_KEYS.every(function(key) {
-          return metadata2.key !== key;
+        return NON_CUSTOM_TAG_KEYS.every(function(key2) {
+          return metadata2.key !== key2;
         });
       });
     } else {
@@ -5880,12 +5886,12 @@ var Target = function() {
   Target2.prototype.matchesNamedTag = function(name) {
     return this.matchesTag(NAMED_TAG)(name);
   };
-  Target2.prototype.matchesTag = function(key) {
+  Target2.prototype.matchesTag = function(key2) {
     var _this = this;
     return function(value) {
       for (var _i2 = 0, _a2 = _this.metadata; _i2 < _a2.length; _i2++) {
         var m = _a2[_i2];
-        if (m.key === key && m.value === value) {
+        if (m.key === key2 && m.value === value) {
           return true;
         }
       }
@@ -5980,11 +5986,11 @@ function getClassPropsAsTargets(metadataReader, constructorFunc, constructorName
   var stringKeys = Object.keys(classPropsMetadata);
   var keys = stringKeys.concat(symbolKeys);
   for (var _i2 = 0, keys_1 = keys; _i2 < keys_1.length; _i2++) {
-    var key = keys_1[_i2];
-    var targetMetadata = classPropsMetadata[key];
+    var key2 = keys_1[_i2];
+    var targetMetadata = classPropsMetadata[key2];
     var metadata2 = formatTargetMetadata(targetMetadata);
-    var identifier = metadata2.targetName || key;
-    var serviceIdentifier = _getServiceIdentifierForProperty(metadata2.inject, metadata2.multiInject, key, constructorName);
+    var identifier = metadata2.targetName || key2;
+    var serviceIdentifier = _getServiceIdentifierForProperty(metadata2.inject, metadata2.multiInject, key2, constructorName);
     var target = new Target(TargetTypeEnum.ClassProperty, identifier, serviceIdentifier);
     target.metadata = targetMetadata;
     targets.push(target);
@@ -6055,12 +6061,12 @@ function getBindingDictionary(cntnr) {
   return cntnr._bindingDictionary;
 }
 __name(getBindingDictionary, "getBindingDictionary");
-function _createTarget(isMultiInject, targetType, serviceIdentifier, name, key, value) {
+function _createTarget(isMultiInject, targetType, serviceIdentifier, name, key2, value) {
   var metadataKey = isMultiInject ? MULTI_INJECT_TAG : INJECT_TAG;
   var injectMetadata = new Metadata(metadataKey, serviceIdentifier);
   var target = new Target(targetType, name, serviceIdentifier, injectMetadata);
-  if (key !== void 0) {
-    var tagMetadata = new Metadata(key, value);
+  if (key2 !== void 0) {
+    var tagMetadata = new Metadata(key2, value);
     target.metadata.push(tagMetadata);
   }
   return target;
@@ -6161,12 +6167,12 @@ function getBindings(container, serviceIdentifier) {
   return bindings;
 }
 __name(getBindings, "getBindings");
-function plan(metadataReader, container, isMultiInject, targetType, serviceIdentifier, key, value, avoidConstraints) {
+function plan(metadataReader, container, isMultiInject, targetType, serviceIdentifier, key2, value, avoidConstraints) {
   if (avoidConstraints === void 0) {
     avoidConstraints = false;
   }
   var context = new Context(container);
-  var target = _createTarget(isMultiInject, targetType, serviceIdentifier, "", key, value);
+  var target = _createTarget(isMultiInject, targetType, serviceIdentifier, "", key2, value);
   try {
     _createSubRequests(metadataReader, avoidConstraints, serviceIdentifier, context, null, target);
     return context;
@@ -6178,8 +6184,8 @@ function plan(metadataReader, container, isMultiInject, targetType, serviceIdent
   }
 }
 __name(plan, "plan");
-function createMockRequest(container, serviceIdentifier, key, value) {
-  var target = new Target(TargetTypeEnum.Variable, "", serviceIdentifier, new Metadata(key, value));
+function createMockRequest(container, serviceIdentifier, key2, value) {
+  var target = new Target(TargetTypeEnum.Variable, "", serviceIdentifier, new Metadata(key2, value));
   var context = new Context(container);
   var request = new Request(serviceIdentifier, context, null, [], target);
   return request;
@@ -6926,12 +6932,12 @@ var traverseAncerstors = /* @__PURE__ */ __name(function(request, constraint) {
     return false;
   }
 }, "traverseAncerstors");
-var taggedConstraint = /* @__PURE__ */ __name(function(key) {
+var taggedConstraint = /* @__PURE__ */ __name(function(key2) {
   return function(value) {
     var constraint = /* @__PURE__ */ __name(function(request) {
-      return request !== null && request.target !== null && request.target.matchesTag(key)(value);
+      return request !== null && request.target !== null && request.target.matchesTag(key2)(value);
     }, "constraint");
-    constraint.metaData = new Metadata(key, value);
+    constraint.metaData = new Metadata(key2, value);
     return constraint;
   };
 }, "taggedConstraint");
@@ -7374,7 +7380,7 @@ var Lookup = function() {
   Lookup2.prototype.removeByCondition = function(condition) {
     var _this = this;
     var removals = [];
-    this._map.forEach(function(entries, key) {
+    this._map.forEach(function(entries, key2) {
       var updatedEntries = [];
       for (var _i2 = 0, entries_1 = entries; _i2 < entries_1.length; _i2++) {
         var entry = entries_1[_i2];
@@ -7385,7 +7391,7 @@ var Lookup = function() {
           updatedEntries.push(entry);
         }
       }
-      _this._setValue(key, updatedEntries);
+      _this._setValue(key2, updatedEntries);
     });
     return removals;
   };
@@ -7397,16 +7403,16 @@ var Lookup = function() {
   };
   Lookup2.prototype.clone = function() {
     var copy = new Lookup2();
-    this._map.forEach(function(value, key) {
+    this._map.forEach(function(value, key2) {
       value.forEach(function(b) {
-        return copy.add(key, isClonable(b) ? b.clone() : b);
+        return copy.add(key2, isClonable(b) ? b.clone() : b);
       });
     });
     return copy;
   };
   Lookup2.prototype.traverse = function(func2) {
-    this._map.forEach(function(value, key) {
-      func2(key, value);
+    this._map.forEach(function(value, key2) {
+      func2(key2, value);
     });
   };
   Lookup2.prototype._setValue = function(serviceIdentifier, value) {
@@ -7825,17 +7831,17 @@ var Container = function() {
   Container2.prototype.isBoundNamed = function(serviceIdentifier, named) {
     return this.isBoundTagged(serviceIdentifier, NAMED_TAG, named);
   };
-  Container2.prototype.isBoundTagged = function(serviceIdentifier, key, value) {
+  Container2.prototype.isBoundTagged = function(serviceIdentifier, key2, value) {
     var bound = false;
     if (this._bindingDictionary.hasKey(serviceIdentifier)) {
       var bindings = this._bindingDictionary.get(serviceIdentifier);
-      var request_1 = createMockRequest(this, serviceIdentifier, key, value);
+      var request_1 = createMockRequest(this, serviceIdentifier, key2, value);
       bound = bindings.some(function(b) {
         return b.constraint(request_1);
       });
     }
     if (!bound && this.parent) {
-      bound = this.parent.isBoundTagged(serviceIdentifier, key, value);
+      bound = this.parent.isBoundTagged(serviceIdentifier, key2, value);
     }
     return bound;
   };
@@ -7884,15 +7890,15 @@ var Container = function() {
       });
     });
   };
-  Container2.prototype.getTagged = function(serviceIdentifier, key, value) {
-    var getArgs = this._getNotAllArgs(serviceIdentifier, false, key, value);
+  Container2.prototype.getTagged = function(serviceIdentifier, key2, value) {
+    var getArgs = this._getNotAllArgs(serviceIdentifier, false, key2, value);
     return this._getButThrowIfAsync(getArgs);
   };
-  Container2.prototype.getTaggedAsync = function(serviceIdentifier, key, value) {
+  Container2.prototype.getTaggedAsync = function(serviceIdentifier, key2, value) {
     return __awaiter(this, void 0, void 0, function() {
       var getArgs;
       return __generator(this, function(_a2) {
-        getArgs = this._getNotAllArgs(serviceIdentifier, false, key, value);
+        getArgs = this._getNotAllArgs(serviceIdentifier, false, key2, value);
         return [2, this._get(getArgs)];
       });
     });
@@ -7911,12 +7917,12 @@ var Container = function() {
     var getArgs = this._getAllArgs(serviceIdentifier);
     return this._getAll(getArgs);
   };
-  Container2.prototype.getAllTagged = function(serviceIdentifier, key, value) {
-    var getArgs = this._getNotAllArgs(serviceIdentifier, true, key, value);
+  Container2.prototype.getAllTagged = function(serviceIdentifier, key2, value) {
+    var getArgs = this._getNotAllArgs(serviceIdentifier, true, key2, value);
     return this._getButThrowIfAsync(getArgs);
   };
-  Container2.prototype.getAllTaggedAsync = function(serviceIdentifier, key, value) {
-    var getArgs = this._getNotAllArgs(serviceIdentifier, true, key, value);
+  Container2.prototype.getAllTaggedAsync = function(serviceIdentifier, key2, value) {
+    var getArgs = this._getNotAllArgs(serviceIdentifier, true, key2, value);
     return this._getAll(getArgs);
   };
   Container2.prototype.getAllNamed = function(serviceIdentifier, named) {
@@ -8121,12 +8127,12 @@ var Container = function() {
     };
     return getAllArgs;
   };
-  Container2.prototype._getNotAllArgs = function(serviceIdentifier, isMultiInject, key, value) {
+  Container2.prototype._getNotAllArgs = function(serviceIdentifier, isMultiInject, key2, value) {
     var getNotAllArgs = {
       avoidConstraints: false,
       isMultiInject,
       serviceIdentifier,
-      key,
+      key: key2,
       value
     };
     return getNotAllArgs;
@@ -8296,13 +8302,13 @@ function _ensureNoMetadataKeyDuplicates(metadata2) {
   return metadatas;
 }
 __name(_ensureNoMetadataKeyDuplicates, "_ensureNoMetadataKeyDuplicates");
-function _tagParameterOrProperty(metadataKey, annotationTarget, key, metadata2) {
+function _tagParameterOrProperty(metadataKey, annotationTarget, key2, metadata2) {
   var metadatas = _ensureNoMetadataKeyDuplicates(metadata2);
   var paramsOrPropertiesMetadata = {};
   if (Reflect.hasOwnMetadata(metadataKey, annotationTarget)) {
     paramsOrPropertiesMetadata = Reflect.getMetadata(metadataKey, annotationTarget);
   }
-  var paramOrPropertyMetadata = paramsOrPropertiesMetadata[key];
+  var paramOrPropertyMetadata = paramsOrPropertiesMetadata[key2];
   if (paramOrPropertyMetadata === void 0) {
     paramOrPropertyMetadata = [];
   } else {
@@ -8319,7 +8325,7 @@ function _tagParameterOrProperty(metadataKey, annotationTarget, key, metadata2) 
     }
   }
   paramOrPropertyMetadata.push.apply(paramOrPropertyMetadata, metadatas);
-  paramsOrPropertiesMetadata[key] = paramOrPropertyMetadata;
+  paramsOrPropertiesMetadata[key2] = paramOrPropertyMetadata;
   Reflect.defineMetadata(metadataKey, paramsOrPropertiesMetadata, annotationTarget);
 }
 __name(_tagParameterOrProperty, "_tagParameterOrProperty");
@@ -8372,16 +8378,16 @@ __name(propertyEventDecorator, "propertyEventDecorator");
 var postConstruct = propertyEventDecorator(POST_CONSTRUCT, MULTIPLE_POST_CONSTRUCT_METHODS);
 var __defProp$1$ = Object.defineProperty;
 var __getOwnPropDesc$Z = Object.getOwnPropertyDescriptor;
-var __defNormalProp2 = /* @__PURE__ */ __name((obj, key, value) => key in obj ? __defProp$1$(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value, "__defNormalProp");
-var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Z(target, key) : target;
+var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$1$(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
+var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Z(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1$(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1$(target, key2, result);
   return result;
 }, "__decorateClass$1$");
-var __publicField2 = /* @__PURE__ */ __name((obj, key, value) => __defNormalProp2(obj, typeof key !== "symbol" ? key + "" : key, value), "__publicField");
+var __publicField2 = /* @__PURE__ */ __name((obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value), "__publicField");
 let LoggingService = (_a = class {
   constructor() {
     __publicField(this, "_prefix", "skribbltypo");
@@ -8463,15 +8469,15 @@ let ApplicationEvent = _ApplicationEvent;
 const loggerFactory = Symbol("loggerFactory");
 var __defProp$1_ = Object.defineProperty;
 var __getOwnPropDesc$Y = Object.getOwnPropertyDescriptor;
-var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Y(target, key) : target;
+var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Y(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1_(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1_(target, key2, result);
   return result;
 }, "__decorateClass$1_");
-var __decorateParam$u = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$u");
+var __decorateParam$u = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$u");
 let EventsService = (_b = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -8502,15 +8508,15 @@ EventsService = __decorateClass$1_([
 ], EventsService);
 var __defProp$1Z = Object.defineProperty;
 var __getOwnPropDesc$X = Object.getOwnPropertyDescriptor;
-var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$X(target, key) : target;
+var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$X(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1Z(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1Z(target, key2, result);
   return result;
 }, "__decorateClass$1Z");
-var __decorateParam$t = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$t");
+var __decorateParam$t = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$t");
 let EventProcessor = (_c = class {
   constructor(loggerFactory2, _eventsService) {
     __publicField(this, "_logger");
@@ -8549,15 +8555,15 @@ EventProcessor = __decorateClass$1Z([
 ], EventProcessor);
 var __defProp$1Y = Object.defineProperty;
 var __getOwnPropDesc$W = Object.getOwnPropertyDescriptor;
-var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$W(target, key) : target;
+var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$W(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1Y(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1Y(target, key2, result);
   return result;
 }, "__decorateClass$1Y");
-var __decorateParam$s = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$s");
+var __decorateParam$s = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$s");
 let EventListener = (_d = class {
   constructor(_eventsService, loggerFactory2) {
     /**
@@ -8586,12 +8592,12 @@ EventListener = __decorateClass$1Y([
 ], EventListener);
 var __defProp$1X = Object.defineProperty;
 var __getOwnPropDesc$V = Object.getOwnPropertyDescriptor;
-var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$V(target, key) : target;
+var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$V(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1X(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1X(target, key2, result);
   return result;
 }, "__decorateClass$1X");
 const _CanvasClearedEvent = class _CanvasClearedEvent extends ApplicationEvent {
@@ -8883,15 +8889,15 @@ __name(_ExtensionCommand, "ExtensionCommand");
 let ExtensionCommand = _ExtensionCommand;
 var __defProp$1W = Object.defineProperty;
 var __getOwnPropDesc$U = Object.getOwnPropertyDescriptor;
-var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$U(target, key) : target;
+var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$U(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1W(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1W(target, key2, result);
   return result;
 }, "__decorateClass$1W");
-var __decorateParam$r = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$r");
+var __decorateParam$r = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$r");
 let CommandsService = (_g = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -8983,15 +8989,15 @@ CommandsService = __decorateClass$1W([
 ], CommandsService);
 var __defProp$1V = Object.defineProperty;
 var __getOwnPropDesc$T = Object.getOwnPropertyDescriptor;
-var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$T(target, key) : target;
+var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$T(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1V(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1V(target, key2, result);
   return result;
 }, "__decorateClass$1V");
-var __decorateParam$q = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$q");
+var __decorateParam$q = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$q");
 let HotkeysService = (_h = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -9068,15 +9074,15 @@ HotkeysService = __decorateClass$1V([
 ], HotkeysService);
 var __defProp$1U = Object.defineProperty;
 var __getOwnPropDesc$S = Object.getOwnPropertyDescriptor;
-var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$S(target, key) : target;
+var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$S(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1U(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1U(target, key2, result);
   return result;
 }, "__decorateClass$1U");
-var __decorateParam$p = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$p");
+var __decorateParam$p = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$p");
 let TooltipsService = (_i = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -9162,15 +9168,15 @@ TooltipsService = __decorateClass$1U([
 ], TooltipsService);
 var __defProp$1T = Object.defineProperty;
 var __getOwnPropDesc$R = Object.getOwnPropertyDescriptor;
-var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$R(target, key) : target;
+var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$R(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1T(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1T(target, key2, result);
   return result;
 }, "__decorateClass$1T");
-var __decorateParam$o = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$o");
+var __decorateParam$o = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$o");
 let OnboardingService = (_j = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -9234,15 +9240,15 @@ OnboardingService = __decorateClass$1T([
 ], OnboardingService);
 var __defProp$1S = Object.defineProperty;
 var __getOwnPropDesc$Q = Object.getOwnPropertyDescriptor;
-var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Q(target, key) : target;
+var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Q(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1S(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1S(target, key2, result);
   return result;
 }, "__decorateClass$1S");
-var __decorateParam$n = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$n");
+var __decorateParam$n = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$n");
 let TypoFeature = (_k = class {
   constructor(loggerFactory2, _hotkeysService, _tooltipsService, _commandsService, _onboardingService) {
     __publicField(this, "featureEnabledDefault", true);
@@ -9446,12 +9452,12 @@ TypoFeature = __decorateClass$1S([
 ], TypoFeature);
 var __defProp$1R = Object.defineProperty;
 var __getOwnPropDesc$P = Object.getOwnPropertyDescriptor;
-var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$P(target, key) : target;
+var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$P(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1R(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1R(target, key2, result);
   return result;
 }, "__decorateClass$1R");
 let LoggerService = (_l = class {
@@ -9552,15 +9558,15 @@ LoggerService = __decorateClass$1R([
 ], LoggerService);
 var __defProp$1Q = Object.defineProperty;
 var __getOwnPropDesc$O = Object.getOwnPropertyDescriptor;
-var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$O(target, key) : target;
+var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$O(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1Q(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1Q(target, key2, result);
   return result;
 }, "__decorateClass$1Q");
-var __decorateParam$m = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$m");
+var __decorateParam$m = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$m");
 let Setup = (_m = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -9595,12 +9601,12 @@ function isEarlySetup(target) {
 __name(isEarlySetup, "isEarlySetup");
 var __defProp$1P = Object.defineProperty;
 var __getOwnPropDesc$N = Object.getOwnPropertyDescriptor;
-var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$N(target, key) : target;
+var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$N(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1P(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1P(target, key2, result);
   return result;
 }, "__decorateClass$1P");
 let GamePatchReadySetup = (_n = class extends Setup {
@@ -9619,12 +9625,12 @@ GamePatchReadySetup = __decorateClass$1P([
   earlySetup()
 ], GamePatchReadySetup);
 var __defProp$1O = Object.defineProperty;
-var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1O(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1O(target, key2, result);
   return result;
 }, "__decorateClass$1O");
 const _ChatControlsSetup = class _ChatControlsSetup extends Setup {
@@ -9705,7 +9711,7 @@ const _HotkeyAction = class _HotkeyAction {
         return this._comboSetting.changes$.pipe(
           take(1),
           map((combo) => !(this._preventWhenInputActive && inputActive) && combo.length > 0 ? combo : null),
-          map((combo) => combo ? combo.length === keys.length && combo.every((key) => keys.includes(key)) : false)
+          map((combo) => combo ? combo.length === keys.length && combo.every((key2) => keys.includes(key2)) : false)
         );
       }),
       switchMap((matches) => {
@@ -9727,7 +9733,7 @@ const _HotkeyAction = class _HotkeyAction {
   releaseIfNotMatches(keys) {
     return this._comboSetting.changes$.pipe(
       take(1),
-      map((combo) => combo ? combo.length === keys.length && combo.every((key) => keys.includes(key)) : false),
+      map((combo) => combo ? combo.length === keys.length && combo.every((key2) => keys.includes(key2)) : false),
       switchMap((matches) => {
         if (matches) return of(false);
         if (this._releaseAction) {
@@ -9743,15 +9749,15 @@ __name(_HotkeyAction, "HotkeyAction");
 let HotkeyAction = _HotkeyAction;
 var __defProp$1N = Object.defineProperty;
 var __getOwnPropDesc$M = Object.getOwnPropertyDescriptor;
-var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$M(target, key) : target;
+var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$M(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1N(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1N(target, key2, result);
   return result;
 }, "__decorateClass$1N");
-var __decorateParam$l = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$l");
+var __decorateParam$l = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$l");
 let GlobalSettingsService = (_o = class {
   constructor(loggerFactory2) {
     __publicField(this, "_globalHotkeysList", {
@@ -9801,7 +9807,7 @@ GlobalSettingsService = __decorateClass$1N([
   injectable(),
   __decorateParam$l(0, inject(loggerFactory))
 ], GlobalSettingsService);
-function create_fragment$1b(ctx) {
+function create_fragment$1z(ctx) {
   let div1;
   let div0;
   let div1_class_value;
@@ -9866,8 +9872,8 @@ function create_fragment$1b(ctx) {
     }
   };
 }
-__name(create_fragment$1b, "create_fragment$1b");
-function instance$12($$self, $$props, $$invalidate) {
+__name(create_fragment$1z, "create_fragment$1z");
+function instance$1p($$self, $$props, $$invalidate) {
   let $position;
   let $direction;
   let elem;
@@ -9908,11 +9914,11 @@ function instance$12($$self, $$props, $$invalidate) {
     div1_binding
   ];
 }
-__name(instance$12, "instance$12");
+__name(instance$1p, "instance$1p");
 const _Controls = class _Controls extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$12, create_fragment$1b, safe_not_equal, { globalSettings: 6, element: 7 });
+    init(this, options, instance$1p, create_fragment$1z, safe_not_equal, { globalSettings: 6, element: 7 });
   }
   get element() {
     return this.$$.ctx[7];
@@ -9921,12 +9927,12 @@ const _Controls = class _Controls extends SvelteComponent {
 __name(_Controls, "Controls");
 let Controls = _Controls;
 var __defProp$1M = Object.defineProperty;
-var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1M(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1M(target, key2, result);
   return result;
 }, "__decorateClass$1M");
 const _ControlsSetup = class _ControlsSetup extends Setup {
@@ -9954,7 +9960,7 @@ __decorateClass$1M([
 __decorateClass$1M([
   inject(GlobalSettingsService)
 ], ControlsSetup.prototype, "_settingsService");
-function create_fragment$1a(ctx) {
+function create_fragment$1y(ctx) {
   let div;
   return {
     c() {
@@ -9976,8 +9982,8 @@ function create_fragment$1a(ctx) {
     }
   };
 }
-__name(create_fragment$1a, "create_fragment$1a");
-function instance$11($$self, $$props, $$invalidate) {
+__name(create_fragment$1y, "create_fragment$1y");
+function instance$1o($$self, $$props, $$invalidate) {
   let elem;
   let resolve2;
   const element2 = new Promise((res) => {
@@ -9995,11 +10001,11 @@ function instance$11($$self, $$props, $$invalidate) {
   __name(div_binding, "div_binding");
   return [elem, element2, div_binding];
 }
-__name(instance$11, "instance$11");
+__name(instance$1o, "instance$1o");
 const _Customizer_actions = class _Customizer_actions extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$11, create_fragment$1a, safe_not_equal, { element: 1 });
+    init(this, options, instance$1o, create_fragment$1y, safe_not_equal, { element: 1 });
   }
   get element() {
     return this.$$.ctx[1];
@@ -10019,12 +10025,12 @@ __name(_CustomizerActionsSetup, "CustomizerActionsSetup");
 let CustomizerActionsSetup = _CustomizerActionsSetup;
 var __defProp$1L = Object.defineProperty;
 var __getOwnPropDesc$L = Object.getOwnPropertyDescriptor;
-var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$L(target, key) : target;
+var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$L(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1L(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1L(target, key2, result);
   return result;
 }, "__decorateClass$1L");
 let SkribblInitializedSetup = (_p = class extends Setup {
@@ -10047,12 +10053,12 @@ const _Toast_container = class _Toast_container extends SvelteComponent {
 __name(_Toast_container, "Toast_container");
 let Toast_container = _Toast_container;
 var __defProp$1K = Object.defineProperty;
-var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1K(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1K(target, key2, result);
   return result;
 }, "__decorateClass$1K");
 const _ToastSetup = class _ToastSetup extends Setup {
@@ -10074,19 +10080,19 @@ let ToastSetup = _ToastSetup;
 __decorateClass$1K([
   inject(GamePatchReadySetup)
 ], ToastSetup.prototype, "_gameReadySetup");
-function get_each_context$x(ctx, list, i) {
+function get_each_context$y(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[4] = list[i];
   return child_ctx;
 }
-__name(get_each_context$x, "get_each_context$x");
-function get_each_context_1$c(ctx, list, i) {
+__name(get_each_context$y, "get_each_context$y");
+function get_each_context_1$d(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[4] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$c, "get_each_context_1$c");
-function create_each_block_1$c(ctx) {
+__name(get_each_context_1$d, "get_each_context_1$d");
+function create_each_block_1$d(ctx) {
   let h2;
   let t_value = (
     /*tab*/
@@ -10166,8 +10172,8 @@ function create_each_block_1$c(ctx) {
     }
   };
 }
-__name(create_each_block_1$c, "create_each_block_1$c");
-function create_each_block$x(ctx) {
+__name(create_each_block_1$d, "create_each_block_1$d");
+function create_each_block$y(ctx) {
   let div;
   let div_class_value;
   let div_hidden_value;
@@ -10203,8 +10209,8 @@ function create_each_block$x(ctx) {
     }
   };
 }
-__name(create_each_block$x, "create_each_block$x");
-function create_fragment$19(ctx) {
+__name(create_each_block$y, "create_each_block$y");
+function create_fragment$1x(ctx) {
   let div;
   let t;
   let each1_anchor;
@@ -10214,7 +10220,7 @@ function create_fragment$19(ctx) {
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$c(get_each_context_1$c(ctx, each_value_1, i));
+    each_blocks_1[i] = create_each_block_1$d(get_each_context_1$d(ctx, each_value_1, i));
   }
   let each_value = ensure_array_like(
     /*tabs*/
@@ -10222,7 +10228,7 @@ function create_fragment$19(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$x(get_each_context$x(ctx, each_value, i));
+    each_blocks[i] = create_each_block$y(get_each_context$y(ctx, each_value, i));
   }
   return {
     c() {
@@ -10261,11 +10267,11 @@ function create_fragment$19(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$c(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$d(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_1$c(child_ctx);
+            each_blocks_1[i] = create_each_block_1$d(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(div, null);
           }
@@ -10283,11 +10289,11 @@ function create_fragment$19(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$x(ctx2, each_value, i);
+          const child_ctx = get_each_context$y(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$x(child_ctx);
+            each_blocks[i] = create_each_block$y(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each1_anchor.parentNode, each1_anchor);
           }
@@ -10311,8 +10317,8 @@ function create_fragment$19(ctx) {
     }
   };
 }
-__name(create_fragment$19, "create_fragment$19");
-function instance$10($$self, $$props, $$invalidate) {
+__name(create_fragment$1x, "create_fragment$1x");
+function instance$1n($$self, $$props, $$invalidate) {
   let { tabs = [] } = $$props;
   let activeTab = tabs[0];
   const keydown_handler = /* @__PURE__ */ __name((tab) => $$invalidate(1, activeTab = tab), "keydown_handler");
@@ -10322,22 +10328,22 @@ function instance$10($$self, $$props, $$invalidate) {
   };
   return [tabs, activeTab, keydown_handler, click_handler2];
 }
-__name(instance$10, "instance$10");
+__name(instance$1n, "instance$1n");
 const _Panel_tabs = class _Panel_tabs extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$10, create_fragment$19, safe_not_equal, { tabs: 0 });
+    init(this, options, instance$1n, create_fragment$1x, safe_not_equal, { tabs: 0 });
   }
 };
 __name(_Panel_tabs, "Panel_tabs");
 let Panel_tabs = _Panel_tabs;
 var __defProp$1J = Object.defineProperty;
-var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1J(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1J(target, key2, result);
   return result;
 }, "__decorateClass$1J");
 const _PanelSetup = class _PanelSetup extends Setup {
@@ -10380,12 +10386,12 @@ const _Toolbar = class _Toolbar extends SvelteComponent {
 __name(_Toolbar, "Toolbar");
 let Toolbar = _Toolbar;
 var __defProp$1I = Object.defineProperty;
-var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1I(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1I(target, key2, result);
   return result;
 }, "__decorateClass$1I");
 const _ToolbarSetup = class _ToolbarSetup extends Setup {
@@ -10408,12 +10414,12 @@ __decorateClass$1I([
   inject(GamePatchReadySetup)
 ], ToolbarSetup.prototype, "_gameReadySetup");
 var __defProp$1H = Object.defineProperty;
-var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1H(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1H(target, key2, result);
   return result;
 }, "__decorateClass$1H");
 function getElements$1(panels, toolbar, controls, toastContainer, chatControls, customizerActions) {
@@ -10511,12 +10517,12 @@ __decorateClass$1H([
 ], ElementsSetup.prototype, "_customizerIconsSetup");
 var __defProp$1G = Object.defineProperty;
 var __getOwnPropDesc$K = Object.getOwnPropertyDescriptor;
-var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$K(target, key) : target;
+var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$K(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1G(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1G(target, key2, result);
   return result;
 }, "__decorateClass$1G");
 const _ChatTypedEvent = class _ChatTypedEvent extends ApplicationEvent {
@@ -10573,12 +10579,12 @@ const chatTypedEventRegistration = {
 };
 var __defProp$1F = Object.defineProperty;
 var __getOwnPropDesc$J = Object.getOwnPropertyDescriptor;
-var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$J(target, key) : target;
+var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$J(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1F(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1F(target, key2, result);
   return result;
 }, "__decorateClass$1F");
 const _ColorChangedEvent = class _ColorChangedEvent extends ApplicationEvent {
@@ -10626,12 +10632,12 @@ const colorChangedEventRegistration = {
 };
 var __defProp$1E = Object.defineProperty;
 var __getOwnPropDesc$I = Object.getOwnPropertyDescriptor;
-var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$I(target, key) : target;
+var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$I(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1E(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1E(target, key2, result);
   return result;
 }, "__decorateClass$1E");
 let SkribblEmitRelaySetup = (_u = class extends Setup {
@@ -10657,12 +10663,12 @@ SkribblEmitRelaySetup = __decorateClass$1E([
 ], SkribblEmitRelaySetup);
 var __defProp$1D = Object.defineProperty;
 var __getOwnPropDesc$H = Object.getOwnPropertyDescriptor;
-var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$H(target, key) : target;
+var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$H(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1D(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1D(target, key2, result);
   return result;
 }, "__decorateClass$1D");
 let SkribblMessageRelaySetup = (_v = class extends Setup {
@@ -10697,12 +10703,12 @@ SkribblMessageRelaySetup = __decorateClass$1D([
 ], SkribblMessageRelaySetup);
 var __defProp$1C = Object.defineProperty;
 var __getOwnPropDesc$G = Object.getOwnPropertyDescriptor;
-var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$G(target, key) : target;
+var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$G(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1C(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1C(target, key2, result);
   return result;
 }, "__decorateClass$1C");
 const _DrawEvent = class _DrawEvent extends ApplicationEvent {
@@ -10780,12 +10786,12 @@ const drawEventRegistration = {
 };
 var __defProp$1B = Object.defineProperty;
 var __getOwnPropDesc$F = Object.getOwnPropertyDescriptor;
-var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$F(target, key) : target;
+var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$F(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1B(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1B(target, key2, result);
   return result;
 }, "__decorateClass$1B");
 const _HintsAddedEvent = class _HintsAddedEvent extends ApplicationEvent {
@@ -10843,12 +10849,12 @@ const hintsAddedEventRegistration = {
 };
 var __defProp$1A = Object.defineProperty;
 var __getOwnPropDesc$E = Object.getOwnPropertyDescriptor;
-var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$E(target, key) : target;
+var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$E(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1A(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1A(target, key2, result);
   return result;
 }, "__decorateClass$1A");
 const _ImageResetEvent = class _ImageResetEvent extends ApplicationEvent {
@@ -10940,12 +10946,12 @@ const parseSkribblLobbyInteractedEvent = /* @__PURE__ */ __name((data) => {
 }, "parseSkribblLobbyInteractedEvent");
 var __defProp$1z = Object.defineProperty;
 var __getOwnPropDesc$D = Object.getOwnPropertyDescriptor;
-var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$D(target, key) : target;
+var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$D(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1z(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1z(target, key2, result);
   return result;
 }, "__decorateClass$1z");
 const _LobbyInteractedEvent = class _LobbyInteractedEvent extends ApplicationEvent {
@@ -11009,12 +11015,12 @@ __name(_GameSettingsSetup, "GameSettingsSetup");
 let GameSettingsSetup = _GameSettingsSetup;
 var __defProp$1y = Object.defineProperty;
 var __getOwnPropDesc$C = Object.getOwnPropertyDescriptor;
-var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$C(target, key) : target;
+var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$C(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1y(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1y(target, key2, result);
   return result;
 }, "__decorateClass$1y");
 const _LobbyJoinFailedEvent = class _LobbyJoinFailedEvent extends ApplicationEvent {
@@ -11067,12 +11073,12 @@ const lobbyJoinFailedEventRegistration = {
 };
 var __defProp$1x = Object.defineProperty;
 var __getOwnPropDesc$B = Object.getOwnPropertyDescriptor;
-var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$B(target, key) : target;
+var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$B(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1x(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1x(target, key2, result);
   return result;
 }, "__decorateClass$1x");
 const _LobbyPlayerChangedEvent = class _LobbyPlayerChangedEvent extends ApplicationEvent {
@@ -11198,12 +11204,12 @@ const parseLobbyStateUpdate = /* @__PURE__ */ __name((data) => {
 }, "parseLobbyStateUpdate");
 var __defProp$1w = Object.defineProperty;
 var __getOwnPropDesc$A = Object.getOwnPropertyDescriptor;
-var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$A(target, key) : target;
+var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$A(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1w(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1w(target, key2, result);
   return result;
 }, "__decorateClass$1w");
 const _LobbyStateChangedEvent = class _LobbyStateChangedEvent extends ApplicationEvent {
@@ -11278,12 +11284,12 @@ const lobbyStateChangedEventRegistration = {
 };
 var __defProp$1v = Object.defineProperty;
 var __getOwnPropDesc$z = Object.getOwnPropertyDescriptor;
-var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$z(target, key) : target;
+var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$z(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1v(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1v(target, key2, result);
   return result;
 }, "__decorateClass$1v");
 const _MessageReceivedEvent = class _MessageReceivedEvent extends ApplicationEvent {
@@ -11333,12 +11339,12 @@ const messageReceivedEventRegistration = {
 };
 var __defProp$1u = Object.defineProperty;
 var __getOwnPropDesc$y = Object.getOwnPropertyDescriptor;
-var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$y(target, key) : target;
+var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$y(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1u(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1u(target, key2, result);
   return result;
 }, "__decorateClass$1u");
 const _MessageSentEvent = class _MessageSentEvent extends ApplicationEvent {
@@ -11387,12 +11393,12 @@ const messageSentEventRegistration = {
 };
 var __defProp$1t = Object.defineProperty;
 var __getOwnPropDesc$x = Object.getOwnPropertyDescriptor;
-var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$x(target, key) : target;
+var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$x(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1t(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1t(target, key2, result);
   return result;
 }, "__decorateClass$1t");
 const _PlayerPopupVisibilityChangedEvent = class _PlayerPopupVisibilityChangedEvent extends ApplicationEvent {
@@ -11448,12 +11454,12 @@ const playerPopupVisibilityChangedEventRegistration = {
 };
 var __defProp$1s = Object.defineProperty;
 var __getOwnPropDesc$w = Object.getOwnPropertyDescriptor;
-var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$w(target, key) : target;
+var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$w(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1s(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1s(target, key2, result);
   return result;
 }, "__decorateClass$1s");
 const _RoundStartedEvent = class _RoundStartedEvent extends ApplicationEvent {
@@ -11507,12 +11513,12 @@ const roundStartedEventRegistration = {
 };
 var __defProp$1r = Object.defineProperty;
 var __getOwnPropDesc$v = Object.getOwnPropertyDescriptor;
-var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$v(target, key) : target;
+var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$v(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1r(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1r(target, key2, result);
   return result;
 }, "__decorateClass$1r");
 const _ScoreboardVisibilityChangedEvent = class _ScoreboardVisibilityChangedEvent extends ApplicationEvent {
@@ -11567,12 +11573,12 @@ const scoreboardVisibilityChangedEventRegistration = {
 };
 var __defProp$1q = Object.defineProperty;
 var __getOwnPropDesc$u = Object.getOwnPropertyDescriptor;
-var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$u(target, key) : target;
+var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$u(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1q(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1q(target, key2, result);
   return result;
 }, "__decorateClass$1q");
 const _SizeChangedEvent = class _SizeChangedEvent extends ApplicationEvent {
@@ -11619,12 +11625,12 @@ const sizeChangedEventRegistration = {
 };
 var __defProp$1p = Object.defineProperty;
 var __getOwnPropDesc$t = Object.getOwnPropertyDescriptor;
-var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$t(target, key) : target;
+var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$t(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1p(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1p(target, key2, result);
   return result;
 }, "__decorateClass$1p");
 const _TextOverlayVisibilityChangedEvent = class _TextOverlayVisibilityChangedEvent extends ApplicationEvent {
@@ -11680,12 +11686,12 @@ const textOverlayVisibilityChangedEventRegistration = {
 };
 var __defProp$1o = Object.defineProperty;
 var __getOwnPropDesc$s = Object.getOwnPropertyDescriptor;
-var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$s(target, key) : target;
+var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$s(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1o(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1o(target, key2, result);
   return result;
 }, "__decorateClass$1o");
 var skribblTool = /* @__PURE__ */ ((skribblTool2) => {
@@ -11740,12 +11746,12 @@ const toolChangedEventRegistration = {
 };
 var __defProp$1n = Object.defineProperty;
 var __getOwnPropDesc$r = Object.getOwnPropertyDescriptor;
-var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$r(target, key) : target;
+var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$r(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1n(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1n(target, key2, result);
   return result;
 }, "__decorateClass$1n");
 const _WordGuessedEvent = class _WordGuessedEvent extends ApplicationEvent {
@@ -11820,12 +11826,12 @@ const _Canvas_rate_icons = class _Canvas_rate_icons extends SvelteComponent {
 __name(_Canvas_rate_icons, "Canvas_rate_icons");
 let Canvas_rate_icons = _Canvas_rate_icons;
 var __defProp$1m = Object.defineProperty;
-var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1m(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1m(target, key2, result);
   return result;
 }, "__decorateClass$1m");
 const _CanvasRateIconsFeature = class _CanvasRateIconsFeature extends TypoFeature {
@@ -11862,12 +11868,12 @@ __decorateClass$1m([
 ], CanvasRateIconsFeature.prototype, "_elementsSetup");
 var __defProp$1l = Object.defineProperty;
 var __getOwnPropDesc$q = Object.getOwnPropertyDescriptor;
-var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$q(target, key) : target;
+var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$q(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1l(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1l(target, key2, result);
   return result;
 }, "__decorateClass$1l");
 const _LobbyLeftEvent = class _LobbyLeftEvent extends ApplicationEvent {
@@ -11930,12 +11936,12 @@ const parseSkribblLobbyDataEvent = /* @__PURE__ */ __name((data, languages) => {
 }, "parseSkribblLobbyDataEvent");
 var __defProp$1k = Object.defineProperty;
 var __getOwnPropDesc$p = Object.getOwnPropertyDescriptor;
-var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$p(target, key) : target;
+var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$p(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1k(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1k(target, key2, result);
   return result;
 }, "__decorateClass$1k");
 const _LobbyJoinedEvent = class _LobbyJoinedEvent extends ApplicationEvent {
@@ -12003,15 +12009,15 @@ const lobbyJoinedEventRegistration = {
 };
 var __defProp$1j = Object.defineProperty;
 var __getOwnPropDesc$o = Object.getOwnPropertyDescriptor;
-var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$o(target, key) : target;
+var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$o(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1j(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1j(target, key2, result);
   return result;
 }, "__decorateClass$1j");
-var __decorateParam$k = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$k");
+var __decorateParam$k = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$k");
 let LobbyService = (_ea = class {
   constructor(loggerFactory2, lobbyJoined, lobbyLeft, lobbyPlayerChanged, lobbyStateChanged, roundStarted, wordGuessed, elementsSetup, lobbyJoinFailedListener) {
     __publicField(this, "_logger");
@@ -12137,7 +12143,7 @@ LobbyService = __decorateClass$1j([
   __decorateParam$k(7, inject(ElementsSetup)),
   __decorateParam$k(8, inject(LobbyJoinFailedListener))
 ], LobbyService);
-function create_fragment$18(ctx) {
+function create_fragment$1w(ctx) {
   let div1;
   let div0;
   let t0;
@@ -12181,24 +12187,24 @@ function create_fragment$18(ctx) {
     }
   };
 }
-__name(create_fragment$18, "create_fragment$18");
-function instance$$($$self, $$props, $$invalidate) {
+__name(create_fragment$1w, "create_fragment$1w");
+function instance$1m($$self, $$props, $$invalidate) {
   let { content = "Loading..." } = $$props;
   $$self.$$set = ($$props2) => {
     if ("content" in $$props2) $$invalidate(0, content = $$props2.content);
   };
   return [content];
 }
-__name(instance$$, "instance$$");
+__name(instance$1m, "instance$1m");
 const _Bounceload = class _Bounceload extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$$, create_fragment$18, safe_not_equal, { content: 0 });
+    init(this, options, instance$1m, create_fragment$1w, safe_not_equal, { content: 0 });
   }
 };
 __name(_Bounceload, "Bounceload");
 let Bounceload = _Bounceload;
-function create_fragment$17(ctx) {
+function create_fragment$1v(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -12389,8 +12395,8 @@ function create_fragment$17(ctx) {
     }
   };
 }
-__name(create_fragment$17, "create_fragment$17");
-function instance$_($$self, $$props, $$invalidate) {
+__name(create_fragment$1v, "create_fragment$1v");
+function instance$1l($$self, $$props, $$invalidate) {
   let { disabled = false } = $$props;
   let { icon } = $$props;
   let { name } = $$props;
@@ -12437,11 +12443,11 @@ function instance$_($$self, $$props, $$invalidate) {
     keypress_handler
   ];
 }
-__name(instance$_, "instance$_");
+__name(instance$1l, "instance$1l");
 const _Icon_button = class _Icon_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$_, create_fragment$17, safe_not_equal, {
+    init(this, options, instance$1l, create_fragment$1v, safe_not_equal, {
       disabled: 0,
       icon: 1,
       name: 2,
@@ -12460,7 +12466,7 @@ const _Icon_button = class _Icon_button extends SvelteComponent {
 };
 __name(_Icon_button, "Icon_button");
 let Icon_button = _Icon_button;
-function create_if_block_5$4(ctx) {
+function create_if_block_5$6(ctx) {
   let h3;
   let t;
   return {
@@ -12490,8 +12496,8 @@ function create_if_block_5$4(ctx) {
     }
   };
 }
-__name(create_if_block_5$4, "create_if_block_5$4");
-function create_else_block$h(ctx) {
+__name(create_if_block_5$6, "create_if_block_5$6");
+function create_else_block$l(ctx) {
   let t0;
   let t1;
   let t2;
@@ -12499,20 +12505,20 @@ function create_else_block$h(ctx) {
   let current;
   let if_block0 = (
     /*allowClose*/
-    ctx[5] && create_if_block_4$8(ctx)
+    ctx[5] && create_if_block_4$a(ctx)
   );
   let if_block1 = (
     /*content*/
     ctx[0] !== void 0 && /*promptHandler*/
-    ctx[3] === void 0 && create_if_block_3$8(ctx)
+    ctx[3] === void 0 && create_if_block_3$a(ctx)
   );
   let if_block2 = (
     /*promptHandler*/
-    ctx[3] !== void 0 && create_if_block_2$d(ctx)
+    ctx[3] !== void 0 && create_if_block_2$g(ctx)
   );
   let if_block3 = (
     /*confirmHandler*/
-    ctx[2] !== void 0 && create_if_block_1$i(ctx)
+    ctx[2] !== void 0 && create_if_block_1$k(ctx)
   );
   return {
     c() {
@@ -12544,7 +12550,7 @@ function create_else_block$h(ctx) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
         } else {
-          if_block0 = create_if_block_4$8(ctx2);
+          if_block0 = create_if_block_4$a(ctx2);
           if_block0.c();
           if_block0.m(t0.parentNode, t0);
         }
@@ -12560,7 +12566,7 @@ function create_else_block$h(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block_3$8(ctx2);
+          if_block1 = create_if_block_3$a(ctx2);
           if_block1.c();
           if_block1.m(t1.parentNode, t1);
         }
@@ -12575,7 +12581,7 @@ function create_else_block$h(ctx) {
         if (if_block2) {
           if_block2.p(ctx2, dirty);
         } else {
-          if_block2 = create_if_block_2$d(ctx2);
+          if_block2 = create_if_block_2$g(ctx2);
           if_block2.c();
           if_block2.m(t2.parentNode, t2);
         }
@@ -12594,7 +12600,7 @@ function create_else_block$h(ctx) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block_1$i(ctx2);
+          if_block3 = create_if_block_1$k(ctx2);
           if_block3.c();
           transition_in(if_block3, 1);
           if_block3.m(if_block3_anchor.parentNode, if_block3_anchor);
@@ -12630,8 +12636,8 @@ function create_else_block$h(ctx) {
     }
   };
 }
-__name(create_else_block$h, "create_else_block$h");
-function create_if_block$z(ctx) {
+__name(create_else_block$l, "create_else_block$l");
+function create_if_block$D(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({ props: { content: (
@@ -12667,8 +12673,8 @@ function create_if_block$z(ctx) {
     }
   };
 }
-__name(create_if_block$z, "create_if_block$z");
-function create_if_block_4$8(ctx) {
+__name(create_if_block$D, "create_if_block$D");
+function create_if_block_4$a(ctx) {
   let span;
   let mounted;
   let dispose;
@@ -12700,8 +12706,8 @@ function create_if_block_4$8(ctx) {
     }
   };
 }
-__name(create_if_block_4$8, "create_if_block_4$8");
-function create_if_block_3$8(ctx) {
+__name(create_if_block_4$a, "create_if_block_4$a");
+function create_if_block_3$a(ctx) {
   let span;
   let t;
   return {
@@ -12732,8 +12738,8 @@ function create_if_block_3$8(ctx) {
     }
   };
 }
-__name(create_if_block_3$8, "create_if_block_3$8");
-function create_if_block_2$d(ctx) {
+__name(create_if_block_3$a, "create_if_block_3$a");
+function create_if_block_2$g(ctx) {
   let form;
   let input0;
   let t;
@@ -12817,8 +12823,8 @@ function create_if_block_2$d(ctx) {
     }
   };
 }
-__name(create_if_block_2$d, "create_if_block_2$d");
-function create_if_block_1$i(ctx) {
+__name(create_if_block_2$g, "create_if_block_2$g");
+function create_if_block_1$k(ctx) {
   let div;
   let span0;
   let iconbutton0;
@@ -12932,8 +12938,8 @@ function create_if_block_1$i(ctx) {
     }
   };
 }
-__name(create_if_block_1$i, "create_if_block_1$i");
-function create_fragment$16(ctx) {
+__name(create_if_block_1$k, "create_if_block_1$k");
+function create_fragment$1u(ctx) {
   let div;
   let t;
   let current_block_type_index;
@@ -12941,9 +12947,9 @@ function create_fragment$16(ctx) {
   let current;
   let if_block0 = (
     /*title*/
-    ctx[1] !== void 0 && create_if_block_5$4(ctx)
+    ctx[1] !== void 0 && create_if_block_5$6(ctx)
   );
-  const if_block_creators = [create_if_block$z, create_else_block$h];
+  const if_block_creators = [create_if_block$D, create_else_block$l];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -12990,7 +12996,7 @@ function create_fragment$16(ctx) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
         } else {
-          if_block0 = create_if_block_5$4(ctx2);
+          if_block0 = create_if_block_5$6(ctx2);
           if_block0.c();
           if_block0.m(div, t);
         }
@@ -13055,8 +13061,8 @@ function create_fragment$16(ctx) {
     }
   };
 }
-__name(create_fragment$16, "create_fragment$16");
-function instance$Z($$self, $$props, $$invalidate) {
+__name(create_fragment$1u, "create_fragment$1u");
+function instance$1k($$self, $$props, $$invalidate) {
   let { content } = $$props;
   let { title } = $$props;
   let { closeHandler } = $$props;
@@ -13115,11 +13121,11 @@ function instance$Z($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$Z, "instance$Z");
+__name(instance$1k, "instance$1k");
 const _Toast = class _Toast extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$Z, create_fragment$16, safe_not_equal, {
+    init(this, options, instance$1k, create_fragment$1u, safe_not_equal, {
       content: 0,
       title: 1,
       closeHandler: 11,
@@ -13140,15 +13146,15 @@ __name(_Toast, "Toast");
 let Toast = _Toast;
 var __defProp$1i = Object.defineProperty;
 var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
-var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key) : target;
+var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1i(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1i(target, key2, result);
   return result;
 }, "__decorateClass$1i");
-var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$j");
+var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$j");
 let ToastService = (_fa = class {
   constructor(loggerFactory2, _elementsSetup) {
     __publicField(this, "_logger");
@@ -13313,12 +13319,12 @@ ToastService = __decorateClass$1i([
 ], ToastService);
 var __defProp$1h = Object.defineProperty;
 var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
-var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key) : target;
+var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1h(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1h(target, key2, result);
   return result;
 }, "__decorateClass$1h");
 let PrioritizedCanvasEventsSetup = (_ga = class extends Setup {
@@ -13355,7 +13361,7 @@ const createStylesheet = /* @__PURE__ */ __name(() => {
   };
   return handle;
 }, "createStylesheet");
-function create_fragment$15(ctx) {
+function create_fragment$1t(ctx) {
   let t0;
   let br0;
   let t1;
@@ -13414,22 +13420,22 @@ function create_fragment$15(ctx) {
     }
   };
 }
-__name(create_fragment$15, "create_fragment$15");
+__name(create_fragment$1t, "create_fragment$1t");
 const _Canvas_zoom_info = class _Canvas_zoom_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$15, safe_not_equal, {});
+    init(this, options, null, create_fragment$1t, safe_not_equal, {});
   }
 };
 __name(_Canvas_zoom_info, "Canvas_zoom_info");
 let Canvas_zoom_info = _Canvas_zoom_info;
 var __defProp$1g = Object.defineProperty;
-var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1g(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1g(target, key2, result);
   return result;
 }, "__decorateClass$1g");
 const _CanvasZoomFeature = class _CanvasZoomFeature extends TypoFeature {
@@ -13974,7 +13980,7 @@ const _BaseAPI = class _BaseAPI {
       url += "?" + this.configuration.queryParamsStringify(context.query);
     }
     const headers = Object.assign({}, this.configuration.headers, context.headers);
-    Object.keys(headers).forEach((key) => headers[key] === void 0 ? delete headers[key] : {});
+    Object.keys(headers).forEach((key2) => headers[key2] === void 0 ? delete headers[key2] : {});
     const initOverrideFn = typeof initOverrides === "function" ? initOverrides : async () => initOverrides;
     const initParams = {
       method: context.method,
@@ -14053,18 +14059,18 @@ const _RequiredError = class _RequiredError extends Error {
 __name(_RequiredError, "RequiredError");
 let RequiredError = _RequiredError;
 function querystring(params, prefix = "") {
-  return Object.keys(params).map((key) => querystringSingleKey(key, params[key], prefix)).filter((part) => part.length > 0).join("&");
+  return Object.keys(params).map((key2) => querystringSingleKey(key2, params[key2], prefix)).filter((part) => part.length > 0).join("&");
 }
 __name(querystring, "querystring");
-function querystringSingleKey(key, value, keyPrefix = "") {
-  const fullKey = keyPrefix + (keyPrefix.length ? `[${key}]` : key);
+function querystringSingleKey(key2, value, keyPrefix = "") {
+  const fullKey = keyPrefix + (keyPrefix.length ? `[${key2}]` : key2);
   if (value instanceof Array) {
     const multiValue = value.map((singleValue) => encodeURIComponent(String(singleValue))).join(`&${encodeURIComponent(fullKey)}=`);
     return `${encodeURIComponent(fullKey)}=${multiValue}`;
   }
   if (value instanceof Set) {
     const valueAsArray = Array.from(value);
-    return querystringSingleKey(key, valueAsArray, keyPrefix);
+    return querystringSingleKey(key2, valueAsArray, keyPrefix);
   }
   if (value instanceof Date) {
     return `${encodeURIComponent(fullKey)}=${encodeURIComponent(value.toISOString())}`;
@@ -14126,7 +14132,8 @@ function AnnouncementDtoFromJSONTyped(json, ignoreDiscriminator) {
     "content": json["content"],
     "affectedTypoVersion": json["affectedTypoVersion"] == null ? void 0 : json["affectedTypoVersion"],
     "date": json["date"],
-    "type": json["type"]
+    "type": json["type"],
+    "details": json["details"] == null ? void 0 : json["details"]
   };
 }
 __name(AnnouncementDtoFromJSONTyped, "AnnouncementDtoFromJSONTyped");
@@ -14161,7 +14168,11 @@ function AwardInventoryDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(AwardInventoryDtoFromJSONTyped, "AwardInventoryDtoFromJSONTyped");
-function CloudDeleteDtoToJSON(value) {
+function CloudDeleteDtoToJSON(json) {
+  return CloudDeleteDtoToJSONTyped(json, false);
+}
+__name(CloudDeleteDtoToJSON, "CloudDeleteDtoToJSON");
+function CloudDeleteDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14169,7 +14180,7 @@ function CloudDeleteDtoToJSON(value) {
     "ids": value["ids"]
   };
 }
-__name(CloudDeleteDtoToJSON, "CloudDeleteDtoToJSON");
+__name(CloudDeleteDtoToJSONTyped, "CloudDeleteDtoToJSONTyped");
 function CloudImageDtoFromJSON(json) {
   return CloudImageDtoFromJSONTyped(json);
 }
@@ -14189,7 +14200,11 @@ function CloudImageDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(CloudImageDtoFromJSONTyped, "CloudImageDtoFromJSONTyped");
-function CloudSearchDtoToJSON(value) {
+function CloudSearchDtoToJSON(json) {
+  return CloudSearchDtoToJSONTyped(json, false);
+}
+__name(CloudSearchDtoToJSON, "CloudSearchDtoToJSON");
+function CloudSearchDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14205,8 +14220,12 @@ function CloudSearchDtoToJSON(value) {
     "titleQuery": value["titleQuery"]
   };
 }
-__name(CloudSearchDtoToJSON, "CloudSearchDtoToJSON");
-function CloudUploadDtoToJSON(value) {
+__name(CloudSearchDtoToJSONTyped, "CloudSearchDtoToJSONTyped");
+function CloudUploadDtoToJSON(json) {
+  return CloudUploadDtoToJSONTyped(json, false);
+}
+__name(CloudUploadDtoToJSON, "CloudUploadDtoToJSON");
+function CloudUploadDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14220,7 +14239,7 @@ function CloudUploadDtoToJSON(value) {
     "imageBase64": value["imageBase64"]
   };
 }
-__name(CloudUploadDtoToJSON, "CloudUploadDtoToJSON");
+__name(CloudUploadDtoToJSONTyped, "CloudUploadDtoToJSONTyped");
 function CloudUploadedDtoFromJSON(json) {
   return CloudUploadedDtoFromJSONTyped(json);
 }
@@ -14234,7 +14253,11 @@ function CloudUploadedDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(CloudUploadedDtoFromJSONTyped, "CloudUploadedDtoFromJSONTyped");
-function EmojiCandidateDtoToJSON(value) {
+function EmojiCandidateDtoToJSON(json) {
+  return EmojiCandidateDtoToJSONTyped(json, false);
+}
+__name(EmojiCandidateDtoToJSON, "EmojiCandidateDtoToJSON");
+function EmojiCandidateDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14244,7 +14267,7 @@ function EmojiCandidateDtoToJSON(value) {
     "animated": value["animated"]
   };
 }
-__name(EmojiCandidateDtoToJSON, "EmojiCandidateDtoToJSON");
+__name(EmojiCandidateDtoToJSONTyped, "EmojiCandidateDtoToJSONTyped");
 function EmojiDtoFromJSON(json) {
   return EmojiDtoFromJSONTyped(json);
 }
@@ -14378,7 +14401,11 @@ function MemberWebhookDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(MemberWebhookDtoFromJSONTyped, "MemberWebhookDtoFromJSONTyped");
-function PostImageDtoToJSON(value) {
+function PostImageDtoToJSON(json) {
+  return PostImageDtoToJSONTyped(json, false);
+}
+__name(PostImageDtoToJSON, "PostImageDtoToJSON");
+function PostImageDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14390,7 +14417,7 @@ function PostImageDtoToJSON(value) {
     "imageBase64": value["imageBase64"]
   };
 }
-__name(PostImageDtoToJSON, "PostImageDtoToJSON");
+__name(PostImageDtoToJSONTyped, "PostImageDtoToJSONTyped");
 function SceneThemeDtoFromJSON(json) {
   return SceneThemeDtoFromJSONTyped(json);
 }
@@ -14440,7 +14467,11 @@ function SceneInventoryItemDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(SceneInventoryItemDtoFromJSONTyped, "SceneInventoryItemDtoFromJSONTyped");
-function SceneInventoryItemDtoToJSON(value) {
+function SceneInventoryItemDtoToJSON(json) {
+  return SceneInventoryItemDtoToJSONTyped(json, false);
+}
+__name(SceneInventoryItemDtoToJSON, "SceneInventoryItemDtoToJSON");
+function SceneInventoryItemDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14449,7 +14480,7 @@ function SceneInventoryItemDtoToJSON(value) {
     "sceneShift": value["sceneShift"]
   };
 }
-__name(SceneInventoryItemDtoToJSON, "SceneInventoryItemDtoToJSON");
+__name(SceneInventoryItemDtoToJSONTyped, "SceneInventoryItemDtoToJSONTyped");
 function SceneInventoryDtoFromJSON(json) {
   return SceneInventoryDtoFromJSONTyped(json);
 }
@@ -14465,7 +14496,11 @@ function SceneInventoryDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(SceneInventoryDtoFromJSONTyped, "SceneInventoryDtoFromJSONTyped");
-function SetActiveSceneDtoToJSON(value) {
+function SetActiveSceneDtoToJSON(json) {
+  return SetActiveSceneDtoToJSONTyped(json, false);
+}
+__name(SetActiveSceneDtoToJSON, "SetActiveSceneDtoToJSON");
+function SetActiveSceneDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14473,8 +14508,12 @@ function SetActiveSceneDtoToJSON(value) {
     "scene": SceneInventoryItemDtoToJSON(value["scene"])
   };
 }
-__name(SetActiveSceneDtoToJSON, "SetActiveSceneDtoToJSON");
-function SpriteSlotDtoToJSON(value) {
+__name(SetActiveSceneDtoToJSONTyped, "SetActiveSceneDtoToJSONTyped");
+function SpriteSlotDtoToJSON(json) {
+  return SpriteSlotDtoToJSONTyped(json, false);
+}
+__name(SpriteSlotDtoToJSON, "SpriteSlotDtoToJSON");
+function SpriteSlotDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14483,8 +14522,12 @@ function SpriteSlotDtoToJSON(value) {
     "spriteId": value["spriteId"]
   };
 }
-__name(SpriteSlotDtoToJSON, "SpriteSlotDtoToJSON");
-function SpriteComboDtoToJSON(value) {
+__name(SpriteSlotDtoToJSONTyped, "SpriteSlotDtoToJSONTyped");
+function SpriteComboDtoToJSON(json) {
+  return SpriteComboDtoToJSONTyped(json, false);
+}
+__name(SpriteComboDtoToJSON, "SpriteComboDtoToJSON");
+function SpriteComboDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14492,7 +14535,7 @@ function SpriteComboDtoToJSON(value) {
     "slots": value["slots"].map(SpriteSlotDtoToJSON)
   };
 }
-__name(SpriteComboDtoToJSON, "SpriteComboDtoToJSON");
+__name(SpriteComboDtoToJSONTyped, "SpriteComboDtoToJSONTyped");
 function SpriteDtoFromJSON(json) {
   return SpriteDtoFromJSONTyped(json);
 }
@@ -14559,7 +14602,11 @@ function ThemeMetaDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(ThemeMetaDtoFromJSONTyped, "ThemeMetaDtoFromJSONTyped");
-function ThemeMetaDtoToJSON(value) {
+function ThemeMetaDtoToJSON(json) {
+  return ThemeMetaDtoToJSONTyped(json, false);
+}
+__name(ThemeMetaDtoToJSON, "ThemeMetaDtoToJSON");
+function ThemeMetaDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14571,7 +14618,7 @@ function ThemeMetaDtoToJSON(value) {
     "name": value["name"]
   };
 }
-__name(ThemeMetaDtoToJSON, "ThemeMetaDtoToJSON");
+__name(ThemeMetaDtoToJSONTyped, "ThemeMetaDtoToJSONTyped");
 function ThemeDtoFromJSON(json) {
   return ThemeDtoFromJSONTyped(json);
 }
@@ -14589,7 +14636,11 @@ function ThemeDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(ThemeDtoFromJSONTyped, "ThemeDtoFromJSONTyped");
-function ThemeDtoToJSON(value) {
+function ThemeDtoToJSON(json) {
+  return ThemeDtoToJSONTyped(json, false);
+}
+__name(ThemeDtoToJSON, "ThemeDtoToJSON");
+function ThemeDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14601,7 +14652,7 @@ function ThemeDtoToJSON(value) {
     "meta": ThemeMetaDtoToJSON(value["meta"])
   };
 }
-__name(ThemeDtoToJSON, "ThemeDtoToJSON");
+__name(ThemeDtoToJSONTyped, "ThemeDtoToJSONTyped");
 function ThemeListingDtoFromJSON(json) {
   return ThemeListingDtoFromJSONTyped(json);
 }
@@ -14619,7 +14670,11 @@ function ThemeListingDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(ThemeListingDtoFromJSONTyped, "ThemeListingDtoFromJSONTyped");
-function ThemePublishRequestDtoToJSON(value) {
+function ThemePublishRequestDtoToJSON(json) {
+  return ThemePublishRequestDtoToJSONTyped(json, false);
+}
+__name(ThemePublishRequestDtoToJSON, "ThemePublishRequestDtoToJSON");
+function ThemePublishRequestDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14627,7 +14682,7 @@ function ThemePublishRequestDtoToJSON(value) {
     "owner": value["owner"]
   };
 }
-__name(ThemePublishRequestDtoToJSON, "ThemePublishRequestDtoToJSON");
+__name(ThemePublishRequestDtoToJSONTyped, "ThemePublishRequestDtoToJSONTyped");
 function ThemeShareDtoFromJSON(json) {
   return ThemeShareDtoFromJSONTyped(json);
 }
@@ -14641,7 +14696,11 @@ function ThemeShareDtoFromJSONTyped(json, ignoreDiscriminator) {
   };
 }
 __name(ThemeShareDtoFromJSONTyped, "ThemeShareDtoFromJSONTyped");
-function ThemeUpdateRequestDtoToJSON(value) {
+function ThemeUpdateRequestDtoToJSON(json) {
+  return ThemeUpdateRequestDtoToJSONTyped(json, false);
+}
+__name(ThemeUpdateRequestDtoToJSON, "ThemeUpdateRequestDtoToJSON");
+function ThemeUpdateRequestDtoToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14649,8 +14708,12 @@ function ThemeUpdateRequestDtoToJSON(value) {
     "newId": value["newId"]
   };
 }
-__name(ThemeUpdateRequestDtoToJSON, "ThemeUpdateRequestDtoToJSON");
-function UpdateDiscordIDToJSON(value) {
+__name(ThemeUpdateRequestDtoToJSONTyped, "ThemeUpdateRequestDtoToJSONTyped");
+function UpdateDiscordIDToJSON(json) {
+  return UpdateDiscordIDToJSONTyped(json, false);
+}
+__name(UpdateDiscordIDToJSON, "UpdateDiscordIDToJSON");
+function UpdateDiscordIDToJSONTyped(value, ignoreDiscriminator = false) {
   if (value == null) {
     return value;
   }
@@ -14658,7 +14721,7 @@ function UpdateDiscordIDToJSON(value) {
     "id": value["id"]
   };
 }
-__name(UpdateDiscordIDToJSON, "UpdateDiscordIDToJSON");
+__name(UpdateDiscordIDToJSONTyped, "UpdateDiscordIDToJSONTyped");
 const _AnnouncementsApi = class _AnnouncementsApi extends BaseAPI {
   /**
    *   Required Roles: None  Rate limit default: 10 Requests / 60000 ms TTL
@@ -16448,15 +16511,15 @@ __name(_ThemesApi, "ThemesApi");
 let ThemesApi = _ThemesApi;
 var __defProp$1f = Object.defineProperty;
 var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
-var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key) : target;
+var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1f(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1f(target, key2, result);
   return result;
 }, "__decorateClass$1f");
-var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$i");
+var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$i");
 let TokenService = (_ha = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -16486,15 +16549,15 @@ TokenService = __decorateClass$1f([
 ], TokenService);
 var __defProp$1e = Object.defineProperty;
 var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
-var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key) : target;
+var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1e(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1e(target, key2, result);
   return result;
 }, "__decorateClass$1e");
-var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$h");
+var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$h");
 let ApiService = (_ia = class {
   constructor(loggerFactory2, tokenService) {
     __publicField(this, "_logger");
@@ -16542,15 +16605,15 @@ ApiService = __decorateClass$1e([
 ], ApiService);
 var __defProp$1d = Object.defineProperty;
 var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
-var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key) : target;
+var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1d(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1d(target, key2, result);
   return result;
 }, "__decorateClass$1d");
-var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$g");
+var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$g");
 let MemberService = (_ja = class {
   constructor(loggerFactory2, _apiService, _tokenService, _onboardingService) {
     __publicField(this, "_logger");
@@ -16870,12 +16933,12 @@ const _SkribblScoreboardRegularPlayer = class _SkribblScoreboardRegularPlayer {
 __name(_SkribblScoreboardRegularPlayer, "SkribblScoreboardRegularPlayer");
 let SkribblScoreboardRegularPlayer = _SkribblScoreboardRegularPlayer;
 var __defProp$1c = Object.defineProperty;
-var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1c(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1c(target, key2, result);
   return result;
 }, "__decorateClass$1c");
 const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
@@ -16907,23 +16970,23 @@ __decorateClass$1c([
 __decorateClass$1c([
   inject(MemberService)
 ], LandingPlayerSetup.prototype, "_memberService");
-const calculateLobbyKey = /* @__PURE__ */ __name((key) => {
-  const sum = [...key].reduce((sum2, char) => sum2 + char.charCodeAt(0), 0);
-  const hashed = [...key].map((char) => String.fromCharCode(char.charCodeAt(0) + sum));
+const calculateLobbyKey = /* @__PURE__ */ __name((key2) => {
+  const sum = [...key2].reduce((sum2, char) => sum2 + char.charCodeAt(0), 0);
+  const hashed = [...key2].map((char) => String.fromCharCode(char.charCodeAt(0) + sum));
   const newKey = hashed.join("");
   return newKey;
 }, "calculateLobbyKey");
 var __defProp$1b = Object.defineProperty;
 var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
-var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key) : target;
+var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1b(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1b(target, key2, result);
   return result;
 }, "__decorateClass$1b");
-var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$f");
+var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$f");
 let PlayersService = (_ka = class {
   constructor(loggerFactory2) {
     __publicField(this, "_elementsSetup");
@@ -16993,11 +17056,11 @@ let PlayersService = (_ka = class {
     ).subscribe(([event, member]) => {
       const players = event.data.players.map((player) => {
         try {
-          const key = event.data.id ? calculateLobbyKey(event.data.id) : void 0;
+          const key2 = event.data.id ? calculateLobbyKey(event.data.id) : void 0;
           return new SkribblLobbyPlayer(
             player,
-            key,
-            key === void 0 && member ? Number(member.userLogin) : void 0
+            key2,
+            key2 === void 0 && member ? Number(member.userLogin) : void 0
           );
         } catch (e) {
           this._logger.error("Failed to create player", player, e);
@@ -17026,11 +17089,11 @@ let PlayersService = (_ka = class {
         const current = this._lobbyPlayers$.value;
         let newPlayer;
         try {
-          const key = lobbyId ? calculateLobbyKey(lobbyId) : void 0;
+          const key2 = lobbyId ? calculateLobbyKey(lobbyId) : void 0;
           newPlayer = new SkribblLobbyPlayer(
             event.data.joined,
-            key,
-            key === void 0 && member ? Number(member.userLogin) : void 0
+            key2,
+            key2 === void 0 && member ? Number(member.userLogin) : void 0
           );
         } catch (e) {
           this._logger.error("Failed to create player", event.data.joined, e);
@@ -17203,7 +17266,7 @@ PlayersService = __decorateClass$1b([
   injectable(),
   __decorateParam$f(0, inject(loggerFactory))
 ], PlayersService);
-function create_fragment$14(ctx) {
+function create_fragment$1s(ctx) {
   let p;
   let span1;
   let b;
@@ -17282,8 +17345,8 @@ function create_fragment$14(ctx) {
     }
   };
 }
-__name(create_fragment$14, "create_fragment$14");
-function instance$Y($$self, $$props, $$invalidate) {
+__name(create_fragment$1s, "create_fragment$1s");
+function instance$1j($$self, $$props, $$invalidate) {
   let { content = "" } = $$props;
   let { title = "" } = $$props;
   let { style = "normal" } = $$props;
@@ -17351,11 +17414,11 @@ function instance$Y($$self, $$props, $$invalidate) {
     p_binding
   ];
 }
-__name(instance$Y, "instance$Y");
+__name(instance$1j, "instance$1j");
 const _Message = class _Message extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$Y, create_fragment$14, safe_not_equal, {
+    init(this, options, instance$1j, create_fragment$1s, safe_not_equal, {
       content: 0,
       title: 1,
       style: 2,
@@ -17370,15 +17433,15 @@ __name(_Message, "Message");
 let Message = _Message;
 var __defProp$1a = Object.defineProperty;
 var __getOwnPropDesc$h = Object.getOwnPropertyDescriptor;
-var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$h(target, key) : target;
+var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$h(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1a(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1a(target, key2, result);
   return result;
 }, "__decorateClass$1a");
-var __decorateParam$e = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$e");
+var __decorateParam$e = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$e");
 let ChatService = (_la = class {
   constructor(loggerFactory2) {
     __publicField(this, "_elementsSetup");
@@ -17614,7 +17677,7 @@ const wrapOffsetAsStyle = /* @__PURE__ */ __name((atlas, offset, containerSize) 
     background-size: calc(${backgroundSize});
   `;
 }, "wrapOffsetAsStyle");
-function create_if_block$y(ctx) {
+function create_if_block$C(ctx) {
   let div;
   let div_style_value;
   return {
@@ -17647,8 +17710,8 @@ function create_if_block$y(ctx) {
     }
   };
 }
-__name(create_if_block$y, "create_if_block$y");
-function create_fragment$13(ctx) {
+__name(create_if_block$C, "create_if_block$C");
+function create_fragment$1r(ctx) {
   let div3;
   let div0;
   let div0_style_value;
@@ -17662,7 +17725,7 @@ function create_fragment$13(ctx) {
   let if_block = (
     /*avatar*/
     ctx[0][3] !== void 0 && /*avatar*/
-    ctx[0][3] >= 0 && create_if_block$y(ctx)
+    ctx[0][3] >= 0 && create_if_block$C(ctx)
   );
   return {
     c() {
@@ -17744,7 +17807,7 @@ function create_fragment$13(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$y(ctx2);
+          if_block = create_if_block$C(ctx2);
           if_block.c();
           if_block.m(div3, null);
         }
@@ -17773,8 +17836,8 @@ function create_fragment$13(ctx) {
     }
   };
 }
-__name(create_fragment$13, "create_fragment$13");
-function instance$X($$self, $$props, $$invalidate) {
+__name(create_fragment$1r, "create_fragment$1r");
+function instance$1i($$self, $$props, $$invalidate) {
   let { avatar } = $$props;
   let { size = "80px" } = $$props;
   let resolve2;
@@ -17796,11 +17859,11 @@ function instance$X($$self, $$props, $$invalidate) {
   };
   return [avatar, size, container, element2, div3_binding];
 }
-__name(instance$X, "instance$X");
+__name(instance$1i, "instance$1i");
 const _Skribbl_avatar = class _Skribbl_avatar extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$X, create_fragment$13, safe_not_equal, { avatar: 0, size: 1, element: 3 });
+    init(this, options, instance$1i, create_fragment$1r, safe_not_equal, { avatar: 0, size: 1, element: 3 });
   }
   get element() {
     return this.$$.ctx[3];
@@ -17809,12 +17872,12 @@ const _Skribbl_avatar = class _Skribbl_avatar extends SvelteComponent {
 __name(_Skribbl_avatar, "Skribbl_avatar");
 let Skribbl_avatar = _Skribbl_avatar;
 var __defProp$19 = Object.defineProperty;
-var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$19(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$19(target, key2, result);
   return result;
 }, "__decorateClass$19");
 const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
@@ -17840,8 +17903,8 @@ const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
           map((lobby) => (lobby == null ? void 0 : lobby.id) ? calculateLobbyKey(lobby.id) : null)
         )
       ),
-      filter(([, key]) => key !== null)
-    ).subscribe(async ([message, key]) => this.processNewMessage(message, key));
+      filter(([, key2]) => key2 !== null)
+    ).subscribe(async ([message, key2]) => this.processNewMessage(message, key2));
     this.observeRemovedMessages();
   }
   async onDestroy() {
@@ -17856,9 +17919,9 @@ const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
     (_b2 = this._chatMutationObserver) == null ? void 0 : _b2.disconnect();
     this._chatMutationObserver = void 0;
   }
-  async processNewMessage(message, key) {
+  async processNewMessage(message, key2) {
     this._logger.info("Processing new chat message", message);
-    if (key === null) {
+    if (key2 === null) {
       this._logger.warn("No lobby key found for chat message", message);
       return;
     }
@@ -17875,7 +17938,7 @@ const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
     });
     message.element.insertAdjacentElement("afterbegin", container);
     const avatarContainer = await avatar.element;
-    const display = new SkribblChatPlayer(skribblPlayer, key, avatarContainer);
+    const display = new SkribblChatPlayer(skribblPlayer, key2, avatarContainer);
     this._avatarContainers.add({ element: container, player: display });
     this._playersService.addChatPlayer(display);
   }
@@ -17914,12 +17977,12 @@ __decorateClass$19([
   inject(ElementsSetup)
 ], ChatAvatarsFeature.prototype, "_elementsSetup");
 var __defProp$18 = Object.defineProperty;
-var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$18(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$18(target, key2, result);
   return result;
 }, "__decorateClass$18");
 const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
@@ -18071,14 +18134,14 @@ const _InterpretableSilentSuccess = class _InterpretableSilentSuccess extends In
 };
 __name(_InterpretableSilentSuccess, "InterpretableSilentSuccess");
 let InterpretableSilentSuccess = _InterpretableSilentSuccess;
-function create_if_block_1$h(ctx) {
+function create_if_block_1$j(ctx) {
   let h3;
   let t0;
   let span;
   let t1;
   let if_block = (
     /*iconName*/
-    ctx[7] && create_if_block_2$c(ctx)
+    ctx[7] && create_if_block_2$f(ctx)
   );
   return {
     c() {
@@ -18107,7 +18170,7 @@ function create_if_block_1$h(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block_2$c(ctx2);
+          if_block = create_if_block_2$f(ctx2);
           if_block.c();
           if_block.m(h3, t0);
         }
@@ -18130,8 +18193,8 @@ function create_if_block_1$h(ctx) {
     }
   };
 }
-__name(create_if_block_1$h, "create_if_block_1$h");
-function create_if_block_2$c(ctx) {
+__name(create_if_block_1$j, "create_if_block_1$j");
+function create_if_block_2$f(ctx) {
   let img;
   let img_src_value;
   return {
@@ -18160,8 +18223,8 @@ function create_if_block_2$c(ctx) {
     }
   };
 }
-__name(create_if_block_2$c, "create_if_block_2$c");
-function create_if_block$x(ctx) {
+__name(create_if_block_2$f, "create_if_block_2$f");
+function create_if_block$B(ctx) {
   let span;
   let mounted;
   let dispose;
@@ -18193,8 +18256,8 @@ function create_if_block$x(ctx) {
     }
   };
 }
-__name(create_if_block$x, "create_if_block$x");
-function create_fragment$12(ctx) {
+__name(create_if_block$B, "create_if_block$B");
+function create_fragment$1q(ctx) {
   let div1;
   let t0;
   let div0;
@@ -18203,7 +18266,7 @@ function create_fragment$12(ctx) {
   let current;
   let if_block0 = (
     /*title*/
-    ctx[6] && create_if_block_1$h(ctx)
+    ctx[6] && create_if_block_1$j(ctx)
   );
   const switch_instance_spread_levels = [
     /*componentData*/
@@ -18233,7 +18296,7 @@ function create_fragment$12(ctx) {
   }
   let if_block1 = (
     /*closeStrategy*/
-    ctx[0] === "explicit" && create_if_block$x(ctx)
+    ctx[0] === "explicit" && create_if_block$B(ctx)
   );
   return {
     c() {
@@ -18315,7 +18378,7 @@ function create_fragment$12(ctx) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
         } else {
-          if_block0 = create_if_block_1$h(ctx2);
+          if_block0 = create_if_block_1$j(ctx2);
           if_block0.c();
           if_block0.m(div1, t0);
         }
@@ -18366,7 +18429,7 @@ function create_fragment$12(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$x(ctx2);
+          if_block1 = create_if_block$B(ctx2);
           if_block1.c();
           if_block1.m(div1, null);
         }
@@ -18441,8 +18504,8 @@ function create_fragment$12(ctx) {
     }
   };
 }
-__name(create_fragment$12, "create_fragment$12");
-function instance$W($$self, $$props, $$invalidate) {
+__name(create_fragment$1q, "create_fragment$1q");
+function instance$1h($$self, $$props, $$invalidate) {
   let { closeStrategy = "implicit" } = $$props;
   let { alignment = "bottom" } = $$props;
   let { marginY = ".5em" } = $$props;
@@ -18530,11 +18593,11 @@ function instance$W($$self, $$props, $$invalidate) {
     div1_binding
   ];
 }
-__name(instance$W, "instance$W");
+__name(instance$1h, "instance$1h");
 const _Area_flyout = class _Area_flyout extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$W, create_fragment$12, safe_not_equal, {
+    init(this, options, instance$1h, create_fragment$1q, safe_not_equal, {
       closeStrategy: 0,
       alignment: 1,
       marginY: 2,
@@ -18559,25 +18622,25 @@ const _Area_flyout = class _Area_flyout extends SvelteComponent {
 };
 __name(_Area_flyout, "Area_flyout");
 let Area_flyout = _Area_flyout;
-function get_each_context$w(ctx, list, i) {
+function get_each_context$x(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i];
   return child_ctx;
 }
-__name(get_each_context$w, "get_each_context$w");
-function get_each_context_1$b(ctx, list, i) {
+__name(get_each_context$x, "get_each_context$x");
+function get_each_context_1$c(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$b, "get_each_context_1$b");
-function get_each_context_2$4(ctx, list, i) {
+__name(get_each_context_1$c, "get_each_context_1$c");
+function get_each_context_2$5(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[11] = list[i];
   return child_ctx;
 }
-__name(get_each_context_2$4, "get_each_context_2$4");
-function create_if_block_1$g(ctx) {
+__name(get_each_context_2$5, "get_each_context_2$5");
+function create_if_block_1$i(ctx) {
   let div3;
   let div1;
   let div0;
@@ -18608,7 +18671,7 @@ function create_if_block_1$g(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks[i] = create_each_block_2$4(get_each_context_2$4(ctx, each_value_2, i));
+    each_blocks[i] = create_each_block_2$5(get_each_context_2$5(ctx, each_value_2, i));
   }
   function select_block_type(ctx2, dirty) {
     if (dirty & /*feature, $currentCommands*/
@@ -18616,7 +18679,7 @@ function create_if_block_1$g(ctx) {
     if (
       /*result*/
       ctx2[5].context.currentInterpretedParameter === void 0
-    ) return create_if_block_4$7;
+    ) return create_if_block_4$9;
     if (show_if == null) show_if = !!!/*feature*/
     ctx2[0].otherHasExecutionTarget(
       /*result*/
@@ -18624,13 +18687,13 @@ function create_if_block_1$g(ctx) {
       /*$currentCommands*/
       ctx2[1]
     );
-    if (show_if) return create_if_block_5$3;
+    if (show_if) return create_if_block_5$5;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx, -1);
   let if_block0 = current_block_type && current_block_type(ctx);
   let if_block1 = !/*result*/
-  (ctx[5].result instanceof InterpretableCommandPartialMatch) && create_if_block_2$b(ctx);
+  (ctx[5].result instanceof InterpretableCommandPartialMatch) && create_if_block_2$e(ctx);
   return {
     c() {
       div3 = element$1("div");
@@ -18712,11 +18775,11 @@ function create_if_block_1$g(ctx) {
         );
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2$4(ctx, each_value_2, i);
+          const child_ctx = get_each_context_2$5(ctx, each_value_2, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_2$4(child_ctx);
+            each_blocks[i] = create_each_block_2$5(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div1, null);
           }
@@ -18741,7 +18804,7 @@ function create_if_block_1$g(ctx) {
         if (if_block1) {
           if_block1.p(ctx, dirty);
         } else {
-          if_block1 = create_if_block_2$b(ctx);
+          if_block1 = create_if_block_2$e(ctx);
           if_block1.c();
           if_block1.m(div3, null);
         }
@@ -18765,7 +18828,7 @@ function create_if_block_1$g(ctx) {
     }
   };
 }
-__name(create_if_block_1$g, "create_if_block_1$g");
+__name(create_if_block_1$i, "create_if_block_1$i");
 function create_catch_block_1(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
@@ -18800,7 +18863,7 @@ function create_pending_block_1(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
 __name(create_pending_block_1, "create_pending_block_1");
-function create_each_block_2$4(ctx) {
+function create_each_block_2$5(ctx) {
   let div;
   let t0_value = (
     /*param*/
@@ -18857,8 +18920,8 @@ function create_each_block_2$4(ctx) {
     }
   };
 }
-__name(create_each_block_2$4, "create_each_block_2$4");
-function create_if_block_5$3(ctx) {
+__name(create_each_block_2$5, "create_each_block_2$5");
+function create_if_block_5$5(ctx) {
   let b0;
   let t0_value = (
     /*result*/
@@ -18931,8 +18994,8 @@ function create_if_block_5$3(ctx) {
     }
   };
 }
-__name(create_if_block_5$3, "create_if_block_5$3");
-function create_if_block_4$7(ctx) {
+__name(create_if_block_5$5, "create_if_block_5$5");
+function create_if_block_4$9(ctx) {
   let t_value = (
     /*result*/
     ctx[5].context.command.description + ""
@@ -18957,8 +19020,8 @@ function create_if_block_4$7(ctx) {
     }
   };
 }
-__name(create_if_block_4$7, "create_if_block_4$7");
-function create_if_block_2$b(ctx) {
+__name(create_if_block_4$9, "create_if_block_4$9");
+function create_if_block_2$e(ctx) {
   let div;
   let show_if;
   function select_block_type_1(ctx2, dirty) {
@@ -18971,8 +19034,8 @@ function create_if_block_2$b(ctx) {
       /*$currentCommands*/
       ctx2[1]
     );
-    if (show_if) return create_if_block_3$7;
-    return create_else_block$g;
+    if (show_if) return create_if_block_3$9;
+    return create_else_block$k;
   }
   __name(select_block_type_1, "select_block_type_1");
   let current_block_type = select_block_type_1(ctx, -1);
@@ -19007,8 +19070,8 @@ function create_if_block_2$b(ctx) {
     }
   };
 }
-__name(create_if_block_2$b, "create_if_block_2$b");
-function create_else_block$g(ctx) {
+__name(create_if_block_2$e, "create_if_block_2$e");
+function create_else_block$k(ctx) {
   let img;
   let img_src_value;
   let t0;
@@ -19071,8 +19134,8 @@ function create_else_block$g(ctx) {
     }
   };
 }
-__name(create_else_block$g, "create_else_block$g");
-function create_if_block_3$7(ctx) {
+__name(create_else_block$k, "create_else_block$k");
+function create_if_block_3$9(ctx) {
   let span;
   return {
     c() {
@@ -19090,12 +19153,12 @@ function create_if_block_3$7(ctx) {
     }
   };
 }
-__name(create_if_block_3$7, "create_if_block_3$7");
-function create_each_block_1$b(ctx) {
+__name(create_if_block_3$9, "create_if_block_3$9");
+function create_each_block_1$c(ctx) {
   let if_block_anchor;
   let if_block = (
     /*result*/
-    ctx[5].result !== null && create_if_block_1$g(ctx)
+    ctx[5].result !== null && create_if_block_1$i(ctx)
   );
   return {
     c() {
@@ -19114,7 +19177,7 @@ function create_each_block_1$b(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block_1$g(ctx2);
+          if_block = create_if_block_1$i(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -19131,8 +19194,8 @@ function create_each_block_1$b(ctx) {
     }
   };
 }
-__name(create_each_block_1$b, "create_each_block_1$b");
-function create_if_block$w(ctx) {
+__name(create_each_block_1$c, "create_each_block_1$c");
+function create_if_block$A(ctx) {
   let div;
   let t1;
   let each_1_anchor;
@@ -19142,7 +19205,7 @@ function create_if_block$w(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$w(get_each_context$w(ctx, each_value, i));
+    each_blocks[i] = create_each_block$x(get_each_context$x(ctx, each_value, i));
   }
   return {
     c() {
@@ -19173,11 +19236,11 @@ function create_if_block$w(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$w(ctx2, each_value, i);
+          const child_ctx = get_each_context$x(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$w(child_ctx);
+            each_blocks[i] = create_each_block$x(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -19198,7 +19261,7 @@ function create_if_block$w(ctx) {
     }
   };
 }
-__name(create_if_block$w, "create_if_block$w");
+__name(create_if_block$A, "create_if_block$A");
 function create_catch_block$5(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
@@ -19233,7 +19296,7 @@ function create_pending_block$5(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
 __name(create_pending_block$5, "create_pending_block$5");
-function create_each_block$w(ctx) {
+function create_each_block$x(ctx) {
   let b;
   let t0;
   let promise;
@@ -19289,8 +19352,8 @@ function create_each_block$w(ctx) {
     }
   };
 }
-__name(create_each_block$w, "create_each_block$w");
-function create_fragment$11(ctx) {
+__name(create_each_block$x, "create_each_block$x");
+function create_fragment$1p(ctx) {
   let div;
   let t;
   let show_if = (
@@ -19303,9 +19366,9 @@ function create_fragment$11(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$b(get_each_context_1$b(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$c(get_each_context_1$c(ctx, each_value_1, i));
   }
-  let if_block = show_if && create_if_block$w(ctx);
+  let if_block = show_if && create_if_block$A(ctx);
   return {
     c() {
       div = element$1("div");
@@ -19335,11 +19398,11 @@ function create_fragment$11(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$b(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$c(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_1$b(child_ctx);
+            each_blocks[i] = create_each_block_1$c(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div, t);
           }
@@ -19356,7 +19419,7 @@ function create_fragment$11(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$w(ctx2);
+          if_block = create_if_block$A(ctx2);
           if_block.c();
           if_block.m(div, null);
         }
@@ -19376,9 +19439,9 @@ function create_fragment$11(ctx) {
     }
   };
 }
-__name(create_fragment$11, "create_fragment$11");
+__name(create_fragment$1p, "create_fragment$1p");
 const func$4 = /* @__PURE__ */ __name((result) => result.result === null, "func$4");
-function instance$V($$self, $$props, $$invalidate) {
+function instance$1g($$self, $$props, $$invalidate) {
   let $currentCommands;
   let $combo;
   let { feature } = $$props;
@@ -19391,16 +19454,16 @@ function instance$V($$self, $$props, $$invalidate) {
   };
   return [feature, $currentCommands, $combo, currentCommands, combo];
 }
-__name(instance$V, "instance$V");
+__name(instance$1g, "instance$1g");
 const _Command_preview = class _Command_preview extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$V, create_fragment$11, safe_not_equal, { feature: 0 });
+    init(this, options, instance$1g, create_fragment$1p, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Command_preview, "Command_preview");
 let Command_preview = _Command_preview;
-function create_fragment$10(ctx) {
+function create_fragment$1o(ctx) {
   let input;
   let mounted;
   let dispose;
@@ -19441,12 +19504,12 @@ function create_fragment$10(ctx) {
     }
   };
 }
-__name(create_fragment$10, "create_fragment$10");
+__name(create_fragment$1o, "create_fragment$1o");
 const submit_handler = /* @__PURE__ */ __name((e) => {
   e.preventDefault();
   e.stopImmediatePropagation();
 }, "submit_handler");
-function instance$U($$self, $$props, $$invalidate) {
+function instance$1f($$self, $$props, $$invalidate) {
   let { onInput } = $$props;
   const input_handler = /* @__PURE__ */ __name((e) => {
     onInput(e.currentTarget.value);
@@ -19456,22 +19519,22 @@ function instance$U($$self, $$props, $$invalidate) {
   };
   return [onInput, input_handler];
 }
-__name(instance$U, "instance$U");
+__name(instance$1f, "instance$1f");
 const _Command_input = class _Command_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$U, create_fragment$10, safe_not_equal, { onInput: 0 });
+    init(this, options, instance$1f, create_fragment$1o, safe_not_equal, { onInput: 0 });
   }
 };
 __name(_Command_input, "Command_input");
 let Command_input = _Command_input;
 var __defProp$17 = Object.defineProperty;
-var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$17(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$17(target, key2, result);
   return result;
 }, "__decorateClass$17");
 const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
@@ -19730,12 +19793,12 @@ __decorateClass$17([
   inject(ToastService)
 ], ChatCommandsFeature.prototype, "_toastService");
 var __defProp$16 = Object.defineProperty;
-var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$16(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$16(target, key2, result);
   return result;
 }, "__decorateClass$16");
 const _ChatCopyFormattedFeature = class _ChatCopyFormattedFeature extends TypoFeature {
@@ -19872,12 +19935,12 @@ function promiseAllObject(obj) {
 }
 __name(promiseAllObject, "promiseAllObject");
 var __defProp$15 = Object.defineProperty;
-var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$15(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$15(target, key2, result);
   return result;
 }, "__decorateClass$15");
 function getData(spritesApi, scenesApi, eventsApi, emojisApi, announcementsApi, themesApi, awardsApi) {
@@ -19928,7 +19991,7 @@ __decorateClass$15([
 __decorateClass$15([
   inject(loggerFactory)
 ], ApiDataSetup.prototype, "_loggerFactory");
-function create_fragment$$(ctx) {
+function create_fragment$1n(ctx) {
   let div;
   return {
     c() {
@@ -19948,26 +20011,26 @@ function create_fragment$$(ctx) {
     }
   };
 }
-__name(create_fragment$$, "create_fragment$$");
-function instance$T($$self) {
+__name(create_fragment$1n, "create_fragment$1n");
+function instance$1e($$self) {
   return [];
 }
-__name(instance$T, "instance$T");
+__name(instance$1e, "instance$1e");
 const _Chat_emojis = class _Chat_emojis extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$T, create_fragment$$, safe_not_equal, {});
+    init(this, options, instance$1e, create_fragment$1n, safe_not_equal, {});
   }
 };
 __name(_Chat_emojis, "Chat_emojis");
 let Chat_emojis = _Chat_emojis;
-function get_each_context$v(ctx, list, i) {
+function get_each_context$w(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[8] = list[i];
   return child_ctx;
 }
-__name(get_each_context$v, "get_each_context$v");
-function create_else_block$f(ctx) {
+__name(get_each_context$w, "get_each_context$w");
+function create_else_block$j(ctx) {
   let t;
   return {
     c() {
@@ -19984,8 +20047,8 @@ function create_else_block$f(ctx) {
     }
   };
 }
-__name(create_else_block$f, "create_else_block$f");
-function create_if_block_1$f(ctx) {
+__name(create_else_block$j, "create_else_block$j");
+function create_if_block_1$h(ctx) {
   let t0;
   let t1_value = (
     /*hoverEmoji*/
@@ -20018,8 +20081,8 @@ function create_if_block_1$f(ctx) {
     }
   };
 }
-__name(create_if_block_1$f, "create_if_block_1$f");
-function create_if_block$v(ctx) {
+__name(create_if_block_1$h, "create_if_block_1$h");
+function create_if_block$z(ctx) {
   let t0;
   let br;
   let t1;
@@ -20044,8 +20107,8 @@ function create_if_block$v(ctx) {
     }
   };
 }
-__name(create_if_block$v, "create_if_block$v");
-function create_each_block$v(ctx) {
+__name(create_if_block$z, "create_if_block$z");
+function create_each_block$w(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -20112,8 +20175,8 @@ function create_each_block$v(ctx) {
     }
   };
 }
-__name(create_each_block$v, "create_each_block$v");
-function create_fragment$_(ctx) {
+__name(create_each_block$w, "create_each_block$w");
+function create_fragment$1m(ctx) {
   let div0;
   let t;
   let div1;
@@ -20123,12 +20186,12 @@ function create_fragment$_(ctx) {
     if (
       /*$emojiCandidates*/
       ctx2[2].length === 0
-    ) return create_if_block$v;
+    ) return create_if_block$z;
     if (
       /*hoverEmoji*/
       ctx2[1] !== void 0
-    ) return create_if_block_1$f;
-    return create_else_block$f;
+    ) return create_if_block_1$h;
+    return create_else_block$j;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -20139,7 +20202,7 @@ function create_fragment$_(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$v(get_each_context$v(ctx, each_value, i));
+    each_blocks[i] = create_each_block$w(get_each_context$w(ctx, each_value, i));
   }
   return {
     c() {
@@ -20192,11 +20255,11 @@ function create_fragment$_(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$v(ctx2, each_value, i);
+          const child_ctx = get_each_context$w(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$v(child_ctx);
+            each_blocks[i] = create_each_block$w(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div1, null);
           }
@@ -20222,8 +20285,8 @@ function create_fragment$_(ctx) {
     }
   };
 }
-__name(create_fragment$_, "create_fragment$_");
-function instance$S($$self, $$props, $$invalidate) {
+__name(create_fragment$1m, "create_fragment$1m");
+function instance$1d($$self, $$props, $$invalidate) {
   let $emojiCandidates;
   let { feature } = $$props;
   let { onSelected = void 0 } = $$props;
@@ -20248,22 +20311,22 @@ function instance$S($$self, $$props, $$invalidate) {
     mouseleave_handler
   ];
 }
-__name(instance$S, "instance$S");
+__name(instance$1d, "instance$1d");
 const _Emoji_picker = class _Emoji_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$S, create_fragment$_, safe_not_equal, { feature: 4, onSelected: 0 });
+    init(this, options, instance$1d, create_fragment$1m, safe_not_equal, { feature: 4, onSelected: 0 });
   }
 };
 __name(_Emoji_picker, "Emoji_picker");
 let Emoji_picker = _Emoji_picker;
 var __defProp$14 = Object.defineProperty;
-var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$14(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$14(target, key2, result);
   return result;
 }, "__decorateClass$14");
 const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
@@ -20422,7 +20485,7 @@ __decorateClass$14([
 __decorateClass$14([
   inject(ChatService)
 ], ChatEmojisFeature.prototype, "_chatService");
-function create_fragment$Z(ctx) {
+function create_fragment$1l(ctx) {
   let t0;
   let br0;
   let t1;
@@ -20453,22 +20516,22 @@ function create_fragment$Z(ctx) {
     }
   };
 }
-__name(create_fragment$Z, "create_fragment$Z");
+__name(create_fragment$1l, "create_fragment$1l");
 const _Chat_focus_info = class _Chat_focus_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$Z, safe_not_equal, {});
+    init(this, options, null, create_fragment$1l, safe_not_equal, {});
   }
 };
 __name(_Chat_focus_info, "Chat_focus_info");
 let Chat_focus_info = _Chat_focus_info;
 var __defProp$13 = Object.defineProperty;
-var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$13(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$13(target, key2, result);
   return result;
 }, "__decorateClass$13");
 const _ChatFocusFeature = class _ChatFocusFeature extends TypoFeature {
@@ -20534,12 +20597,12 @@ const _Chat_message_splits = class _Chat_message_splits extends SvelteComponent 
 __name(_Chat_message_splits, "Chat_message_splits");
 let Chat_message_splits = _Chat_message_splits;
 var __defProp$12 = Object.defineProperty;
-var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$12(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$12(target, key2, result);
   return result;
 }, "__decorateClass$12");
 const _ChatMessageSplitsFeature = class _ChatMessageSplitsFeature extends TypoFeature {
@@ -20586,12 +20649,12 @@ const _Chat_profile_link = class _Chat_profile_link extends SvelteComponent {
 __name(_Chat_profile_link, "Chat_profile_link");
 let Chat_profile_link = _Chat_profile_link;
 var __defProp$11 = Object.defineProperty;
-var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$11(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$11(target, key2, result);
   return result;
 }, "__decorateClass$11");
 const _ChatProfileLinkFeature = class _ChatProfileLinkFeature extends TypoFeature {
@@ -20709,15 +20772,15 @@ __name(_StringOptionalCommandParameter, "StringOptionalCommandParameter");
 let StringOptionalCommandParameter = _StringOptionalCommandParameter;
 var __defProp$10 = Object.defineProperty;
 var __getOwnPropDesc$g = Object.getOwnPropertyDescriptor;
-var __decorateClass$10 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$g(target, key) : target;
+var __decorateClass$10 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$g(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$10(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$10(target, key2, result);
   return result;
 }, "__decorateClass$10");
-var __decorateParam$d = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$d");
+var __decorateParam$d = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$d");
 let LobbyInteractionsService = (_ma = class {
   constructor(loggerFactory2) {
     __publicField(this, "_lobbyService");
@@ -20813,7 +20876,7 @@ LobbyInteractionsService = __decorateClass$10([
   injectable(),
   __decorateParam$d(0, inject(loggerFactory))
 ], LobbyInteractionsService);
-function create_fragment$Y(ctx) {
+function create_fragment$1k(ctx) {
   let button;
   let span;
   let t;
@@ -20893,8 +20956,8 @@ function create_fragment$Y(ctx) {
     }
   };
 }
-__name(create_fragment$Y, "create_fragment$Y");
-function instance$R($$self, $$props, $$invalidate) {
+__name(create_fragment$1k, "create_fragment$1k");
+function instance$1c($$self, $$props, $$invalidate) {
   let { content } = $$props;
   let { color } = $$props;
   let { disabled = false } = $$props;
@@ -20912,11 +20975,11 @@ function instance$R($$self, $$props, $$invalidate) {
   };
   return [content, color, disabled, click, click$, click_handler2, click_handler_1];
 }
-__name(instance$R, "instance$R");
+__name(instance$1c, "instance$1c");
 const _Flat_button = class _Flat_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$R, create_fragment$Y, safe_not_equal, {
+    init(this, options, instance$1c, create_fragment$1k, safe_not_equal, {
       content: 0,
       color: 1,
       disabled: 2,
@@ -20929,7 +20992,7 @@ const _Flat_button = class _Flat_button extends SvelteComponent {
 };
 __name(_Flat_button, "Flat_button");
 let Flat_button = _Flat_button;
-function create_else_block$e(ctx) {
+function create_else_block$i(ctx) {
   let div;
   return {
     c() {
@@ -20950,8 +21013,8 @@ function create_else_block$e(ctx) {
     }
   };
 }
-__name(create_else_block$e, "create_else_block$e");
-function create_if_block$u(ctx) {
+__name(create_else_block$i, "create_else_block$i");
+function create_if_block$y(ctx) {
   let div;
   let b;
   let t0;
@@ -21089,15 +21152,15 @@ function create_if_block$u(ctx) {
     }
   };
 }
-__name(create_if_block$u, "create_if_block$u");
-function create_fragment$X(ctx) {
+__name(create_if_block$y, "create_if_block$y");
+function create_fragment$1j(ctx) {
   let div;
   let current_block_type_index;
   let if_block;
   let current;
   let mounted;
   let dispose;
-  const if_block_creators = [create_if_block$u, create_else_block$e];
+  const if_block_creators = [create_if_block$y, create_else_block$i];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -21174,8 +21237,8 @@ function create_fragment$X(ctx) {
     }
   };
 }
-__name(create_fragment$X, "create_fragment$X");
-function instance$Q($$self, $$props, $$invalidate) {
+__name(create_fragment$1j, "create_fragment$1j");
+function instance$1b($$self, $$props, $$invalidate) {
   let $availableInteractions;
   let { feature } = $$props;
   let wrapper;
@@ -21232,22 +21295,22 @@ function instance$Q($$self, $$props, $$invalidate) {
     keydown_handler
   ];
 }
-__name(instance$Q, "instance$Q");
+__name(instance$1b, "instance$1b");
 const _Quick_react = class _Quick_react extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$Q, create_fragment$X, safe_not_equal, { feature: 0 });
+    init(this, options, instance$1b, create_fragment$1j, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Quick_react, "Quick_react");
 let Quick_react = _Quick_react;
 var __defProp$$ = Object.defineProperty;
-var __decorateClass$$ = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$$(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$$(target, key2, result);
   return result;
 }, "__decorateClass$$");
 const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature {
@@ -21494,12 +21557,12 @@ __decorateClass$$([
   inject(LobbyService)
 ], ChatQuickReactFeature.prototype, "_lobbyService");
 var __defProp$_ = Object.defineProperty;
-var __decorateClass$_ = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$_(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$_(target, key2, result);
   return result;
 }, "__decorateClass$_");
 const _ChatRecallFeature = class _ChatRecallFeature extends TypoFeature {
@@ -21622,15 +21685,15 @@ __name(_ImageData, "ImageData");
 let ImageData = _ImageData;
 var __defProp$Z = Object.defineProperty;
 var __getOwnPropDesc$f = Object.getOwnPropertyDescriptor;
-var __decorateClass$Z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$f(target, key) : target;
+var __decorateClass$Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$f(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$Z(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$Z(target, key2, result);
   return result;
 }, "__decorateClass$Z");
-var __decorateParam$c = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$c");
+var __decorateParam$c = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$c");
 let DrawingService = (_na = class {
   /* [commands, scheduled] -> scheduled false when cancel/schedule skipped */
   constructor(loggerFactory2, lobbyLeft, lobbyChanged, hintsAdded, draw, wordGuessed, imageReset, elementsSetup, skribblMessages) {
@@ -21931,15 +21994,15 @@ DrawingService = __decorateClass$Z([
 ], DrawingService);
 var __defProp$Y = Object.defineProperty;
 var __getOwnPropDesc$e = Object.getOwnPropertyDescriptor;
-var __decorateClass$Y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$e(target, key) : target;
+var __decorateClass$Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$e(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$Y(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$Y(target, key2, result);
   return result;
 }, "__decorateClass$Y");
-var __decorateParam$b = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$b");
+var __decorateParam$b = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$b");
 let ImageFinishedService = (_oa = class {
   constructor(loggerFactory2, _drawingService, _lobbyService) {
     __publicField(this, "_logger");
@@ -22021,15 +22084,15 @@ ImageFinishedService = __decorateClass$Y([
 ], ImageFinishedService);
 var __defProp$X = Object.defineProperty;
 var __getOwnPropDesc$d = Object.getOwnPropertyDescriptor;
-var __decorateClass$X = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$d(target, key) : target;
+var __decorateClass$X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$d(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$X(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$X(target, key2, result);
   return result;
 }, "__decorateClass$X");
-var __decorateParam$a = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$a");
+var __decorateParam$a = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$a");
 let CloudService = (_pa = class {
   constructor(loggerFactory2) {
     __publicField(this, "_apiService");
@@ -22096,15 +22159,15 @@ const convertOldSkd = /* @__PURE__ */ __name((oldSkd) => {
 }, "convertOldSkd");
 var __defProp$W = Object.defineProperty;
 var __getOwnPropDesc$c = Object.getOwnPropertyDescriptor;
-var __decorateClass$W = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$c(target, key) : target;
+var __decorateClass$W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$c(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$W(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$W(target, key2, result);
   return result;
 }, "__decorateClass$W");
-var __decorateParam$9 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$9");
+var __decorateParam$9 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$9");
 let ImagelabService = (_qa = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -22152,15 +22215,15 @@ ImagelabService = __decorateClass$W([
 ], ImagelabService);
 var __defProp$V = Object.defineProperty;
 var __getOwnPropDesc$b = Object.getOwnPropertyDescriptor;
-var __decorateClass$V = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$b(target, key) : target;
+var __decorateClass$V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$b(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$V(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$V(target, key2, result);
   return result;
 }, "__decorateClass$V");
-var __decorateParam$8 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$8");
+var __decorateParam$8 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$8");
 let ImagePostService = (_ra = class {
   constructor(loggerFactory2, _imageFinishedService) {
     __publicField(this, "_logger");
@@ -22209,7 +22272,7 @@ ImagePostService = __decorateClass$V([
   __decorateParam$8(0, inject(loggerFactory)),
   __decorateParam$8(1, inject(ImageFinishedService))
 ], ImagePostService);
-function create_fragment$W(ctx) {
+function create_fragment$1i(ctx) {
   let div0;
   let t0;
   let div1;
@@ -22452,8 +22515,8 @@ function create_fragment$W(ctx) {
     }
   };
 }
-__name(create_fragment$W, "create_fragment$W");
-function instance$P($$self, $$props, $$invalidate) {
+__name(create_fragment$1i, "create_fragment$1i");
+function instance$1a($$self, $$props, $$invalidate) {
   let { componentData } = $$props;
   let { closeHandler } = $$props;
   let { title } = $$props;
@@ -22483,11 +22546,11 @@ function instance$P($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$P, "instance$P");
+__name(instance$1a, "instance$1a");
 const _Modal_document = class _Modal_document extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$P, create_fragment$W, safe_not_equal, {
+    init(this, options, instance$1a, create_fragment$1i, safe_not_equal, {
       componentData: 0,
       closeHandler: 4,
       title: 1
@@ -22496,7 +22559,7 @@ const _Modal_document = class _Modal_document extends SvelteComponent {
 };
 __name(_Modal_document, "Modal_document");
 let Modal_document = _Modal_document;
-function create_fragment$V(ctx) {
+function create_fragment$1h(ctx) {
   let div5;
   let div4;
   let div2;
@@ -22703,8 +22766,8 @@ function create_fragment$V(ctx) {
     }
   };
 }
-__name(create_fragment$V, "create_fragment$V");
-function instance$O($$self, $$props, $$invalidate) {
+__name(create_fragment$1h, "create_fragment$1h");
+function instance$19($$self, $$props, $$invalidate) {
   let { componentData } = $$props;
   let { closeHandler } = $$props;
   let { title } = $$props;
@@ -22734,11 +22797,11 @@ function instance$O($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$O, "instance$O");
+__name(instance$19, "instance$19");
 const _Modal_card = class _Modal_card extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$O, create_fragment$V, safe_not_equal, {
+    init(this, options, instance$19, create_fragment$1h, safe_not_equal, {
       componentData: 0,
       closeHandler: 4,
       title: 1
@@ -22749,15 +22812,15 @@ __name(_Modal_card, "Modal_card");
 let Modal_card = _Modal_card;
 var __defProp$U = Object.defineProperty;
 var __getOwnPropDesc$a = Object.getOwnPropertyDescriptor;
-var __decorateClass$U = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$a(target, key) : target;
+var __decorateClass$U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$a(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$U(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$U(target, key2, result);
   return result;
 }, "__decorateClass$U");
-var __decorateParam$7 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$7");
+var __decorateParam$7 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$7");
 let ModalService = (_sa = class {
   constructor(loggerFactory2, _globalSettingsService) {
     __publicField(this, "_logger");
@@ -22894,13 +22957,13 @@ const _TypedWorkerExecutor = class _TypedWorkerExecutor {
 __name(_TypedWorkerExecutor, "TypedWorkerExecutor");
 let TypedWorkerExecutor = _TypedWorkerExecutor;
 const gifRendererWorkerBase64 = "InVzZSBzdHJpY3QiOwooKCkgPT4gewogIHZhciBfX2NyZWF0ZSA9IE9iamVjdC5jcmVhdGU7CiAgdmFyIF9fZGVmUHJvcCA9IE9iamVjdC5kZWZpbmVQcm9wZXJ0eTsKICB2YXIgX19nZXRPd25Qcm9wRGVzYyA9IE9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3I7CiAgdmFyIF9fZ2V0T3duUHJvcE5hbWVzID0gT2JqZWN0LmdldE93blByb3BlcnR5TmFtZXM7CiAgdmFyIF9fZ2V0UHJvdG9PZiA9IE9iamVjdC5nZXRQcm90b3R5cGVPZjsKICB2YXIgX19oYXNPd25Qcm9wID0gT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eTsKICB2YXIgX19jb21tb25KUyA9IChjYiwgbW9kKSA9PiBmdW5jdGlvbiBfX3JlcXVpcmUoKSB7CiAgICByZXR1cm4gbW9kIHx8ICgwLCBjYltfX2dldE93blByb3BOYW1lcyhjYilbMF1dKSgobW9kID0geyBleHBvcnRzOiB7fSB9KS5leHBvcnRzLCBtb2QpLCBtb2QuZXhwb3J0czsKICB9OwogIHZhciBfX2NvcHlQcm9wcyA9ICh0bywgZnJvbSwgZXhjZXB0LCBkZXNjKSA9PiB7CiAgICBpZiAoZnJvbSAmJiB0eXBlb2YgZnJvbSA9PT0gIm9iamVjdCIgfHwgdHlwZW9mIGZyb20gPT09ICJmdW5jdGlvbiIpIHsKICAgICAgZm9yIChsZXQga2V5IG9mIF9fZ2V0T3duUHJvcE5hbWVzKGZyb20pKQogICAgICAgIGlmICghX19oYXNPd25Qcm9wLmNhbGwodG8sIGtleSkgJiYga2V5ICE9PSBleGNlcHQpCiAgICAgICAgICBfX2RlZlByb3AodG8sIGtleSwgeyBnZXQ6ICgpID0+IGZyb21ba2V5XSwgZW51bWVyYWJsZTogIShkZXNjID0gX19nZXRPd25Qcm9wRGVzYyhmcm9tLCBrZXkpKSB8fCBkZXNjLmVudW1lcmFibGUgfSk7CiAgICB9CiAgICByZXR1cm4gdG87CiAgfTsKICB2YXIgX190b0VTTSA9IChtb2QsIGlzTm9kZU1vZGUsIHRhcmdldCkgPT4gKHRhcmdldCA9IG1vZCAhPSBudWxsID8gX19jcmVhdGUoX19nZXRQcm90b09mKG1vZCkpIDoge30sIF9fY29weVByb3BzKAogICAgLy8gSWYgdGhlIGltcG9ydGVyIGlzIGluIG5vZGUgY29tcGF0aWJpbGl0eSBtb2RlIG9yIHRoaXMgaXMgbm90IGFuIEVTTQogICAgLy8gZmlsZSB0aGF0IGhhcyBiZWVuIGNvbnZlcnRlZCB0byBhIENvbW1vbkpTIGZpbGUgdXNpbmcgYSBCYWJlbC0KICAgIC8vIGNvbXBhdGlibGUgdHJhbnNmb3JtIChpLmUuICJfX2VzTW9kdWxlIiBoYXMgbm90IGJlZW4gc2V0KSwgdGhlbiBzZXQKICAgIC8vICJkZWZhdWx0IiB0byB0aGUgQ29tbW9uSlMgIm1vZHVsZS5leHBvcnRzIiBmb3Igbm9kZSBjb21wYXRpYmlsaXR5LgogICAgaXNOb2RlTW9kZSB8fCAhbW9kIHx8ICFtb2QuX19lc01vZHVsZSA/IF9fZGVmUHJvcCh0YXJnZXQsICJkZWZhdWx0IiwgeyB2YWx1ZTogbW9kLCBlbnVtZXJhYmxlOiB0cnVlIH0pIDogdGFyZ2V0LAogICAgbW9kCiAgKSk7CgogIC8vIG5vZGVfbW9kdWxlcy9vbWdnaWYvb21nZ2lmLmpzCiAgdmFyIHJlcXVpcmVfb21nZ2lmID0gX19jb21tb25KUyh7CiAgICAibm9kZV9tb2R1bGVzL29tZ2dpZi9vbWdnaWYuanMiKGV4cG9ydHMpIHsKICAgICAgInVzZSBzdHJpY3QiOwogICAgICBmdW5jdGlvbiBHaWZXcml0ZXIyKGJ1Ziwgd2lkdGgsIGhlaWdodCwgZ29wdHMpIHsKICAgICAgICB2YXIgcCA9IDA7CiAgICAgICAgdmFyIGdvcHRzID0gZ29wdHMgPT09IHZvaWQgMCA/IHt9IDogZ29wdHM7CiAgICAgICAgdmFyIGxvb3BfY291bnQgPSBnb3B0cy5sb29wID09PSB2b2lkIDAgPyBudWxsIDogZ29wdHMubG9vcDsKICAgICAgICB2YXIgZ2xvYmFsX3BhbGV0dGUgPSBnb3B0cy5wYWxldHRlID09PSB2b2lkIDAgPyBudWxsIDogZ29wdHMucGFsZXR0ZTsKICAgICAgICBpZiAod2lkdGggPD0gMCB8fCBoZWlnaHQgPD0gMCB8fCB3aWR0aCA+IDY1NTM1IHx8IGhlaWdodCA+IDY1NTM1KQogICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJXaWR0aC9IZWlnaHQgaW52YWxpZC4iKTsKICAgICAgICBmdW5jdGlvbiBjaGVja19wYWxldHRlX2FuZF9udW1fY29sb3JzKHBhbGV0dGUpIHsKICAgICAgICAgIHZhciBudW1fY29sb3JzID0gcGFsZXR0ZS5sZW5ndGg7CiAgICAgICAgICBpZiAobnVtX2NvbG9ycyA8IDIgfHwgbnVtX2NvbG9ycyA+IDI1NiB8fCBudW1fY29sb3JzICYgbnVtX2NvbG9ycyAtIDEpIHsKICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKAogICAgICAgICAgICAgICJJbnZhbGlkIGNvZGUvY29sb3IgbGVuZ3RoLCBtdXN0IGJlIHBvd2VyIG9mIDIgYW5kIDIgLi4gMjU2LiIKICAgICAgICAgICAgKTsKICAgICAgICAgIH0KICAgICAgICAgIHJldHVybiBudW1fY29sb3JzOwogICAgICAgIH0KICAgICAgICBidWZbcCsrXSA9IDcxOwogICAgICAgIGJ1ZltwKytdID0gNzM7CiAgICAgICAgYnVmW3ArK10gPSA3MDsKICAgICAgICBidWZbcCsrXSA9IDU2OwogICAgICAgIGJ1ZltwKytdID0gNTc7CiAgICAgICAgYnVmW3ArK10gPSA5NzsKICAgICAgICB2YXIgZ3BfbnVtX2NvbG9yc19wb3cyID0gMDsKICAgICAgICB2YXIgYmFja2dyb3VuZCA9IDA7CiAgICAgICAgaWYgKGdsb2JhbF9wYWxldHRlICE9PSBudWxsKSB7CiAgICAgICAgICB2YXIgZ3BfbnVtX2NvbG9ycyA9IGNoZWNrX3BhbGV0dGVfYW5kX251bV9jb2xvcnMoZ2xvYmFsX3BhbGV0dGUpOwogICAgICAgICAgd2hpbGUgKGdwX251bV9jb2xvcnMgPj49IDEpICsrZ3BfbnVtX2NvbG9yc19wb3cyOwogICAgICAgICAgZ3BfbnVtX2NvbG9ycyA9IDEgPDwgZ3BfbnVtX2NvbG9yc19wb3cyOwogICAgICAgICAgLS1ncF9udW1fY29sb3JzX3BvdzI7CiAgICAgICAgICBpZiAoZ29wdHMuYmFja2dyb3VuZCAhPT0gdm9pZCAwKSB7CiAgICAgICAgICAgIGJhY2tncm91bmQgPSBnb3B0cy5iYWNrZ3JvdW5kOwogICAgICAgICAgICBpZiAoYmFja2dyb3VuZCA+PSBncF9udW1fY29sb3JzKQogICAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiQmFja2dyb3VuZCBpbmRleCBvdXQgb2YgcmFuZ2UuIik7CiAgICAgICAgICAgIGlmIChiYWNrZ3JvdW5kID09PSAwKQogICAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiQmFja2dyb3VuZCBpbmRleCBleHBsaWNpdGx5IHBhc3NlZCBhcyAwLiIpOwogICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBidWZbcCsrXSA9IHdpZHRoICYgMjU1OwogICAgICAgIGJ1ZltwKytdID0gd2lkdGggPj4gOCAmIDI1NTsKICAgICAgICBidWZbcCsrXSA9IGhlaWdodCAmIDI1NTsKICAgICAgICBidWZbcCsrXSA9IGhlaWdodCA+PiA4ICYgMjU1OwogICAgICAgIGJ1ZltwKytdID0gKGdsb2JhbF9wYWxldHRlICE9PSBudWxsID8gMTI4IDogMCkgfCAvLyBHbG9iYWwgQ29sb3IgVGFibGUgRmxhZy4KICAgICAgICBncF9udW1fY29sb3JzX3BvdzI7CiAgICAgICAgYnVmW3ArK10gPSBiYWNrZ3JvdW5kOwogICAgICAgIGJ1ZltwKytdID0gMDsKICAgICAgICBpZiAoZ2xvYmFsX3BhbGV0dGUgIT09IG51bGwpIHsKICAgICAgICAgIGZvciAodmFyIGkgPSAwLCBpbCA9IGdsb2JhbF9wYWxldHRlLmxlbmd0aDsgaSA8IGlsOyArK2kpIHsKICAgICAgICAgICAgdmFyIHJnYiA9IGdsb2JhbF9wYWxldHRlW2ldOwogICAgICAgICAgICBidWZbcCsrXSA9IHJnYiA+PiAxNiAmIDI1NTsKICAgICAgICAgICAgYnVmW3ArK10gPSByZ2IgPj4gOCAmIDI1NTsKICAgICAgICAgICAgYnVmW3ArK10gPSByZ2IgJiAyNTU7CiAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIGlmIChsb29wX2NvdW50ICE9PSBudWxsKSB7CiAgICAgICAgICBpZiAobG9vcF9jb3VudCA8IDAgfHwgbG9vcF9jb3VudCA+IDY1NTM1KQogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIkxvb3AgY291bnQgaW52YWxpZC4iKTsKICAgICAgICAgIGJ1ZltwKytdID0gMzM7CiAgICAgICAgICBidWZbcCsrXSA9IDI1NTsKICAgICAgICAgIGJ1ZltwKytdID0gMTE7CiAgICAgICAgICBidWZbcCsrXSA9IDc4OwogICAgICAgICAgYnVmW3ArK10gPSA2OTsKICAgICAgICAgIGJ1ZltwKytdID0gODQ7CiAgICAgICAgICBidWZbcCsrXSA9IDgzOwogICAgICAgICAgYnVmW3ArK10gPSA2NzsKICAgICAgICAgIGJ1ZltwKytdID0gNjU7CiAgICAgICAgICBidWZbcCsrXSA9IDgwOwogICAgICAgICAgYnVmW3ArK10gPSA2OTsKICAgICAgICAgIGJ1ZltwKytdID0gNTA7CiAgICAgICAgICBidWZbcCsrXSA9IDQ2OwogICAgICAgICAgYnVmW3ArK10gPSA0ODsKICAgICAgICAgIGJ1ZltwKytdID0gMzsKICAgICAgICAgIGJ1ZltwKytdID0gMTsKICAgICAgICAgIGJ1ZltwKytdID0gbG9vcF9jb3VudCAmIDI1NTsKICAgICAgICAgIGJ1ZltwKytdID0gbG9vcF9jb3VudCA+PiA4ICYgMjU1OwogICAgICAgICAgYnVmW3ArK10gPSAwOwogICAgICAgIH0KICAgICAgICB2YXIgZW5kZWQgPSBmYWxzZTsKICAgICAgICB0aGlzLmFkZEZyYW1lID0gZnVuY3Rpb24oeCwgeSwgdywgaCwgaW5kZXhlZF9waXhlbHMsIG9wdHMpIHsKICAgICAgICAgIGlmIChlbmRlZCA9PT0gdHJ1ZSkgewogICAgICAgICAgICAtLXA7CiAgICAgICAgICAgIGVuZGVkID0gZmFsc2U7CiAgICAgICAgICB9CiAgICAgICAgICBvcHRzID0gb3B0cyA9PT0gdm9pZCAwID8ge30gOiBvcHRzOwogICAgICAgICAgaWYgKHggPCAwIHx8IHkgPCAwIHx8IHggPiA2NTUzNSB8fCB5ID4gNjU1MzUpCiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigieC95IGludmFsaWQuIik7CiAgICAgICAgICBpZiAodyA8PSAwIHx8IGggPD0gMCB8fCB3ID4gNjU1MzUgfHwgaCA+IDY1NTM1KQogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIldpZHRoL0hlaWdodCBpbnZhbGlkLiIpOwogICAgICAgICAgaWYgKGluZGV4ZWRfcGl4ZWxzLmxlbmd0aCA8IHcgKiBoKQogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIk5vdCBlbm91Z2ggcGl4ZWxzIGZvciB0aGUgZnJhbWUgc2l6ZS4iKTsKICAgICAgICAgIHZhciB1c2luZ19sb2NhbF9wYWxldHRlID0gdHJ1ZTsKICAgICAgICAgIHZhciBwYWxldHRlID0gb3B0cy5wYWxldHRlOwogICAgICAgICAgaWYgKHBhbGV0dGUgPT09IHZvaWQgMCB8fCBwYWxldHRlID09PSBudWxsKSB7CiAgICAgICAgICAgIHVzaW5nX2xvY2FsX3BhbGV0dGUgPSBmYWxzZTsKICAgICAgICAgICAgcGFsZXR0ZSA9IGdsb2JhbF9wYWxldHRlOwogICAgICAgICAgfQogICAgICAgICAgaWYgKHBhbGV0dGUgPT09IHZvaWQgMCB8fCBwYWxldHRlID09PSBudWxsKQogICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIk11c3Qgc3VwcGx5IGVpdGhlciBhIGxvY2FsIG9yIGdsb2JhbCBwYWxldHRlLiIpOwogICAgICAgICAgdmFyIG51bV9jb2xvcnMgPSBjaGVja19wYWxldHRlX2FuZF9udW1fY29sb3JzKHBhbGV0dGUpOwogICAgICAgICAgdmFyIG1pbl9jb2RlX3NpemUgPSAwOwogICAgICAgICAgd2hpbGUgKG51bV9jb2xvcnMgPj49IDEpICsrbWluX2NvZGVfc2l6ZTsKICAgICAgICAgIG51bV9jb2xvcnMgPSAxIDw8IG1pbl9jb2RlX3NpemU7CiAgICAgICAgICB2YXIgZGVsYXkgPSBvcHRzLmRlbGF5ID09PSB2b2lkIDAgPyAwIDogb3B0cy5kZWxheTsKICAgICAgICAgIHZhciBkaXNwb3NhbCA9IG9wdHMuZGlzcG9zYWwgPT09IHZvaWQgMCA/IDAgOiBvcHRzLmRpc3Bvc2FsOwogICAgICAgICAgaWYgKGRpc3Bvc2FsIDwgMCB8fCBkaXNwb3NhbCA+IDMpCiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiRGlzcG9zYWwgb3V0IG9mIHJhbmdlLiIpOwogICAgICAgICAgdmFyIHVzZV90cmFuc3BhcmVuY3kgPSBmYWxzZTsKICAgICAgICAgIHZhciB0cmFuc3BhcmVudF9pbmRleCA9IDA7CiAgICAgICAgICBpZiAob3B0cy50cmFuc3BhcmVudCAhPT0gdm9pZCAwICYmIG9wdHMudHJhbnNwYXJlbnQgIT09IG51bGwpIHsKICAgICAgICAgICAgdXNlX3RyYW5zcGFyZW5jeSA9IHRydWU7CiAgICAgICAgICAgIHRyYW5zcGFyZW50X2luZGV4ID0gb3B0cy50cmFuc3BhcmVudDsKICAgICAgICAgICAgaWYgKHRyYW5zcGFyZW50X2luZGV4IDwgMCB8fCB0cmFuc3BhcmVudF9pbmRleCA+PSBudW1fY29sb3JzKQogICAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiVHJhbnNwYXJlbnQgY29sb3IgaW5kZXguIik7CiAgICAgICAgICB9CiAgICAgICAgICBpZiAoZGlzcG9zYWwgIT09IDAgfHwgdXNlX3RyYW5zcGFyZW5jeSB8fCBkZWxheSAhPT0gMCkgewogICAgICAgICAgICBidWZbcCsrXSA9IDMzOwogICAgICAgICAgICBidWZbcCsrXSA9IDI0OTsKICAgICAgICAgICAgYnVmW3ArK10gPSA0OwogICAgICAgICAgICBidWZbcCsrXSA9IGRpc3Bvc2FsIDw8IDIgfCAodXNlX3RyYW5zcGFyZW5jeSA9PT0gdHJ1ZSA/IDEgOiAwKTsKICAgICAgICAgICAgYnVmW3ArK10gPSBkZWxheSAmIDI1NTsKICAgICAgICAgICAgYnVmW3ArK10gPSBkZWxheSA+PiA4ICYgMjU1OwogICAgICAgICAgICBidWZbcCsrXSA9IHRyYW5zcGFyZW50X2luZGV4OwogICAgICAgICAgICBidWZbcCsrXSA9IDA7CiAgICAgICAgICB9CiAgICAgICAgICBidWZbcCsrXSA9IDQ0OwogICAgICAgICAgYnVmW3ArK10gPSB4ICYgMjU1OwogICAgICAgICAgYnVmW3ArK10gPSB4ID4+IDggJiAyNTU7CiAgICAgICAgICBidWZbcCsrXSA9IHkgJiAyNTU7CiAgICAgICAgICBidWZbcCsrXSA9IHkgPj4gOCAmIDI1NTsKICAgICAgICAgIGJ1ZltwKytdID0gdyAmIDI1NTsKICAgICAgICAgIGJ1ZltwKytdID0gdyA+PiA4ICYgMjU1OwogICAgICAgICAgYnVmW3ArK10gPSBoICYgMjU1OwogICAgICAgICAgYnVmW3ArK10gPSBoID4+IDggJiAyNTU7CiAgICAgICAgICBidWZbcCsrXSA9IHVzaW5nX2xvY2FsX3BhbGV0dGUgPT09IHRydWUgPyAxMjggfCBtaW5fY29kZV9zaXplIC0gMSA6IDA7CiAgICAgICAgICBpZiAodXNpbmdfbG9jYWxfcGFsZXR0ZSA9PT0gdHJ1ZSkgewogICAgICAgICAgICBmb3IgKHZhciBpMiA9IDAsIGlsMiA9IHBhbGV0dGUubGVuZ3RoOyBpMiA8IGlsMjsgKytpMikgewogICAgICAgICAgICAgIHZhciByZ2IyID0gcGFsZXR0ZVtpMl07CiAgICAgICAgICAgICAgYnVmW3ArK10gPSByZ2IyID4+IDE2ICYgMjU1OwogICAgICAgICAgICAgIGJ1ZltwKytdID0gcmdiMiA+PiA4ICYgMjU1OwogICAgICAgICAgICAgIGJ1ZltwKytdID0gcmdiMiAmIDI1NTsKICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgICAgcCA9IEdpZldyaXRlck91dHB1dExaV0NvZGVTdHJlYW0oCiAgICAgICAgICAgIGJ1ZiwKICAgICAgICAgICAgcCwKICAgICAgICAgICAgbWluX2NvZGVfc2l6ZSA8IDIgPyAyIDogbWluX2NvZGVfc2l6ZSwKICAgICAgICAgICAgaW5kZXhlZF9waXhlbHMKICAgICAgICAgICk7CiAgICAgICAgICByZXR1cm4gcDsKICAgICAgICB9OwogICAgICAgIHRoaXMuZW5kID0gZnVuY3Rpb24oKSB7CiAgICAgICAgICBpZiAoZW5kZWQgPT09IGZhbHNlKSB7CiAgICAgICAgICAgIGJ1ZltwKytdID0gNTk7CiAgICAgICAgICAgIGVuZGVkID0gdHJ1ZTsKICAgICAgICAgIH0KICAgICAgICAgIHJldHVybiBwOwogICAgICAgIH07CiAgICAgICAgdGhpcy5nZXRPdXRwdXRCdWZmZXIgPSBmdW5jdGlvbigpIHsKICAgICAgICAgIHJldHVybiBidWY7CiAgICAgICAgfTsKICAgICAgICB0aGlzLnNldE91dHB1dEJ1ZmZlciA9IGZ1bmN0aW9uKHYpIHsKICAgICAgICAgIGJ1ZiA9IHY7CiAgICAgICAgfTsKICAgICAgICB0aGlzLmdldE91dHB1dEJ1ZmZlclBvc2l0aW9uID0gZnVuY3Rpb24oKSB7CiAgICAgICAgICByZXR1cm4gcDsKICAgICAgICB9OwogICAgICAgIHRoaXMuc2V0T3V0cHV0QnVmZmVyUG9zaXRpb24gPSBmdW5jdGlvbih2KSB7CiAgICAgICAgICBwID0gdjsKICAgICAgICB9OwogICAgICB9CiAgICAgIGZ1bmN0aW9uIEdpZldyaXRlck91dHB1dExaV0NvZGVTdHJlYW0oYnVmLCBwLCBtaW5fY29kZV9zaXplLCBpbmRleF9zdHJlYW0pIHsKICAgICAgICBidWZbcCsrXSA9IG1pbl9jb2RlX3NpemU7CiAgICAgICAgdmFyIGN1cl9zdWJibG9jayA9IHArKzsKICAgICAgICB2YXIgY2xlYXJfY29kZSA9IDEgPDwgbWluX2NvZGVfc2l6ZTsKICAgICAgICB2YXIgY29kZV9tYXNrID0gY2xlYXJfY29kZSAtIDE7CiAgICAgICAgdmFyIGVvaV9jb2RlID0gY2xlYXJfY29kZSArIDE7CiAgICAgICAgdmFyIG5leHRfY29kZSA9IGVvaV9jb2RlICsgMTsKICAgICAgICB2YXIgY3VyX2NvZGVfc2l6ZSA9IG1pbl9jb2RlX3NpemUgKyAxOwogICAgICAgIHZhciBjdXJfc2hpZnQgPSAwOwogICAgICAgIHZhciBjdXIgPSAwOwogICAgICAgIGZ1bmN0aW9uIGVtaXRfYnl0ZXNfdG9fYnVmZmVyKGJpdF9ibG9ja19zaXplKSB7CiAgICAgICAgICB3aGlsZSAoY3VyX3NoaWZ0ID49IGJpdF9ibG9ja19zaXplKSB7CiAgICAgICAgICAgIGJ1ZltwKytdID0gY3VyICYgMjU1OwogICAgICAgICAgICBjdXIgPj49IDg7CiAgICAgICAgICAgIGN1cl9zaGlmdCAtPSA4OwogICAgICAgICAgICBpZiAocCA9PT0gY3VyX3N1YmJsb2NrICsgMjU2KSB7CiAgICAgICAgICAgICAgYnVmW2N1cl9zdWJibG9ja10gPSAyNTU7CiAgICAgICAgICAgICAgY3VyX3N1YmJsb2NrID0gcCsrOwogICAgICAgICAgICB9CiAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIGZ1bmN0aW9uIGVtaXRfY29kZShjKSB7CiAgICAgICAgICBjdXIgfD0gYyA8PCBjdXJfc2hpZnQ7CiAgICAgICAgICBjdXJfc2hpZnQgKz0gY3VyX2NvZGVfc2l6ZTsKICAgICAgICAgIGVtaXRfYnl0ZXNfdG9fYnVmZmVyKDgpOwogICAgICAgIH0KICAgICAgICB2YXIgaWJfY29kZSA9IGluZGV4X3N0cmVhbVswXSAmIGNvZGVfbWFzazsKICAgICAgICB2YXIgY29kZV90YWJsZSA9IHt9OwogICAgICAgIGVtaXRfY29kZShjbGVhcl9jb2RlKTsKICAgICAgICBmb3IgKHZhciBpID0gMSwgaWwgPSBpbmRleF9zdHJlYW0ubGVuZ3RoOyBpIDwgaWw7ICsraSkgewogICAgICAgICAgdmFyIGsgPSBpbmRleF9zdHJlYW1baV0gJiBjb2RlX21hc2s7CiAgICAgICAgICB2YXIgY3VyX2tleSA9IGliX2NvZGUgPDwgOCB8IGs7CiAgICAgICAgICB2YXIgY3VyX2NvZGUgPSBjb2RlX3RhYmxlW2N1cl9rZXldOwogICAgICAgICAgaWYgKGN1cl9jb2RlID09PSB2b2lkIDApIHsKICAgICAgICAgICAgY3VyIHw9IGliX2NvZGUgPDwgY3VyX3NoaWZ0OwogICAgICAgICAgICBjdXJfc2hpZnQgKz0gY3VyX2NvZGVfc2l6ZTsKICAgICAgICAgICAgd2hpbGUgKGN1cl9zaGlmdCA+PSA4KSB7CiAgICAgICAgICAgICAgYnVmW3ArK10gPSBjdXIgJiAyNTU7CiAgICAgICAgICAgICAgY3VyID4+PSA4OwogICAgICAgICAgICAgIGN1cl9zaGlmdCAtPSA4OwogICAgICAgICAgICAgIGlmIChwID09PSBjdXJfc3ViYmxvY2sgKyAyNTYpIHsKICAgICAgICAgICAgICAgIGJ1ZltjdXJfc3ViYmxvY2tdID0gMjU1OwogICAgICAgICAgICAgICAgY3VyX3N1YmJsb2NrID0gcCsrOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAobmV4dF9jb2RlID09PSA0MDk2KSB7CiAgICAgICAgICAgICAgZW1pdF9jb2RlKGNsZWFyX2NvZGUpOwogICAgICAgICAgICAgIG5leHRfY29kZSA9IGVvaV9jb2RlICsgMTsKICAgICAgICAgICAgICBjdXJfY29kZV9zaXplID0gbWluX2NvZGVfc2l6ZSArIDE7CiAgICAgICAgICAgICAgY29kZV90YWJsZSA9IHt9OwogICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgIGlmIChuZXh0X2NvZGUgPj0gMSA8PCBjdXJfY29kZV9zaXplKSArK2N1cl9jb2RlX3NpemU7CiAgICAgICAgICAgICAgY29kZV90YWJsZVtjdXJfa2V5XSA9IG5leHRfY29kZSsrOwogICAgICAgICAgICB9CiAgICAgICAgICAgIGliX2NvZGUgPSBrOwogICAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgaWJfY29kZSA9IGN1cl9jb2RlOwogICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBlbWl0X2NvZGUoaWJfY29kZSk7CiAgICAgICAgZW1pdF9jb2RlKGVvaV9jb2RlKTsKICAgICAgICBlbWl0X2J5dGVzX3RvX2J1ZmZlcigxKTsKICAgICAgICBpZiAoY3VyX3N1YmJsb2NrICsgMSA9PT0gcCkgewogICAgICAgICAgYnVmW2N1cl9zdWJibG9ja10gPSAwOwogICAgICAgIH0gZWxzZSB7CiAgICAgICAgICBidWZbY3VyX3N1YmJsb2NrXSA9IHAgLSBjdXJfc3ViYmxvY2sgLSAxOwogICAgICAgICAgYnVmW3ArK10gPSAwOwogICAgICAgIH0KICAgICAgICByZXR1cm4gcDsKICAgICAgfQogICAgICBmdW5jdGlvbiBHaWZSZWFkZXIoYnVmKSB7CiAgICAgICAgdmFyIHAgPSAwOwogICAgICAgIGlmIChidWZbcCsrXSAhPT0gNzEgfHwgYnVmW3ArK10gIT09IDczIHx8IGJ1ZltwKytdICE9PSA3MCB8fCBidWZbcCsrXSAhPT0gNTYgfHwgKGJ1ZltwKytdICsgMSAmIDI1MykgIT09IDU2IHx8IGJ1ZltwKytdICE9PSA5NykgewogICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJJbnZhbGlkIEdJRiA4N2EvODlhIGhlYWRlci4iKTsKICAgICAgICB9CiAgICAgICAgdmFyIHdpZHRoID0gYnVmW3ArK10gfCBidWZbcCsrXSA8PCA4OwogICAgICAgIHZhciBoZWlnaHQgPSBidWZbcCsrXSB8IGJ1ZltwKytdIDw8IDg7CiAgICAgICAgdmFyIHBmMCA9IGJ1ZltwKytdOwogICAgICAgIHZhciBnbG9iYWxfcGFsZXR0ZV9mbGFnID0gcGYwID4+IDc7CiAgICAgICAgdmFyIG51bV9nbG9iYWxfY29sb3JzX3BvdzIgPSBwZjAgJiA3OwogICAgICAgIHZhciBudW1fZ2xvYmFsX2NvbG9ycyA9IDEgPDwgbnVtX2dsb2JhbF9jb2xvcnNfcG93MiArIDE7CiAgICAgICAgdmFyIGJhY2tncm91bmQgPSBidWZbcCsrXTsKICAgICAgICBidWZbcCsrXTsKICAgICAgICB2YXIgZ2xvYmFsX3BhbGV0dGVfb2Zmc2V0ID0gbnVsbDsKICAgICAgICB2YXIgZ2xvYmFsX3BhbGV0dGVfc2l6ZSA9IG51bGw7CiAgICAgICAgaWYgKGdsb2JhbF9wYWxldHRlX2ZsYWcpIHsKICAgICAgICAgIGdsb2JhbF9wYWxldHRlX29mZnNldCA9IHA7CiAgICAgICAgICBnbG9iYWxfcGFsZXR0ZV9zaXplID0gbnVtX2dsb2JhbF9jb2xvcnM7CiAgICAgICAgICBwICs9IG51bV9nbG9iYWxfY29sb3JzICogMzsKICAgICAgICB9CiAgICAgICAgdmFyIG5vX2VvZiA9IHRydWU7CiAgICAgICAgdmFyIGZyYW1lcyA9IFtdOwogICAgICAgIHZhciBkZWxheSA9IDA7CiAgICAgICAgdmFyIHRyYW5zcGFyZW50X2luZGV4ID0gbnVsbDsKICAgICAgICB2YXIgZGlzcG9zYWwgPSAwOwogICAgICAgIHZhciBsb29wX2NvdW50ID0gbnVsbDsKICAgICAgICB0aGlzLndpZHRoID0gd2lkdGg7CiAgICAgICAgdGhpcy5oZWlnaHQgPSBoZWlnaHQ7CiAgICAgICAgd2hpbGUgKG5vX2VvZiAmJiBwIDwgYnVmLmxlbmd0aCkgewogICAgICAgICAgc3dpdGNoIChidWZbcCsrXSkgewogICAgICAgICAgICBjYXNlIDMzOgogICAgICAgICAgICAgIHN3aXRjaCAoYnVmW3ArK10pIHsKICAgICAgICAgICAgICAgIGNhc2UgMjU1OgogICAgICAgICAgICAgICAgICBpZiAoYnVmW3BdICE9PSAxMSB8fCAvLyAyMSBGRiBhbHJlYWR5IHJlYWQsIGNoZWNrIGJsb2NrIHNpemUuCiAgICAgICAgICAgICAgICAgIC8vIE5FVFNDQVBFMi4wCiAgICAgICAgICAgICAgICAgIGJ1ZltwICsgMV0gPT0gNzggJiYgYnVmW3AgKyAyXSA9PSA2OSAmJiBidWZbcCArIDNdID09IDg0ICYmIGJ1ZltwICsgNF0gPT0gODMgJiYgYnVmW3AgKyA1XSA9PSA2NyAmJiBidWZbcCArIDZdID09IDY1ICYmIGJ1ZltwICsgN10gPT0gODAgJiYgYnVmW3AgKyA4XSA9PSA2OSAmJiBidWZbcCArIDldID09IDUwICYmIGJ1ZltwICsgMTBdID09IDQ2ICYmIGJ1ZltwICsgMTFdID09IDQ4ICYmIC8vIFN1Yi1ibG9jawogICAgICAgICAgICAgICAgICBidWZbcCArIDEyXSA9PSAzICYmIGJ1ZltwICsgMTNdID09IDEgJiYgYnVmW3AgKyAxNl0gPT0gMCkgewogICAgICAgICAgICAgICAgICAgIHAgKz0gMTQ7CiAgICAgICAgICAgICAgICAgICAgbG9vcF9jb3VudCA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICAgICAgICBwKys7CiAgICAgICAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgICAgICAgcCArPSAxMjsKICAgICAgICAgICAgICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICAgICAgICAgICAgdmFyIGJsb2NrX3NpemUgPSBidWZbcCsrXTsKICAgICAgICAgICAgICAgICAgICAgIGlmICghKGJsb2NrX3NpemUgPj0gMCkpIHRocm93IEVycm9yKCJJbnZhbGlkIGJsb2NrIHNpemUiKTsKICAgICAgICAgICAgICAgICAgICAgIGlmIChibG9ja19zaXplID09PSAwKSBicmVhazsKICAgICAgICAgICAgICAgICAgICAgIHAgKz0gYmxvY2tfc2l6ZTsKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgICAgICBjYXNlIDI0OToKICAgICAgICAgICAgICAgICAgaWYgKGJ1ZltwKytdICE9PSA0IHx8IGJ1ZltwICsgNF0gIT09IDApCiAgICAgICAgICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJJbnZhbGlkIGdyYXBoaWNzIGV4dGVuc2lvbiBibG9jay4iKTsKICAgICAgICAgICAgICAgICAgdmFyIHBmMSA9IGJ1ZltwKytdOwogICAgICAgICAgICAgICAgICBkZWxheSA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICAgICAgdHJhbnNwYXJlbnRfaW5kZXggPSBidWZbcCsrXTsKICAgICAgICAgICAgICAgICAgaWYgKChwZjEgJiAxKSA9PT0gMCkgdHJhbnNwYXJlbnRfaW5kZXggPSBudWxsOwogICAgICAgICAgICAgICAgICBkaXNwb3NhbCA9IHBmMSA+PiAyICYgNzsKICAgICAgICAgICAgICAgICAgcCsrOwogICAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgICAgIGNhc2UgMjU0OgogICAgICAgICAgICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICAgICAgICAgIHZhciBibG9ja19zaXplID0gYnVmW3ArK107CiAgICAgICAgICAgICAgICAgICAgaWYgKCEoYmxvY2tfc2l6ZSA+PSAwKSkgdGhyb3cgRXJyb3IoIkludmFsaWQgYmxvY2sgc2l6ZSIpOwogICAgICAgICAgICAgICAgICAgIGlmIChibG9ja19zaXplID09PSAwKSBicmVhazsKICAgICAgICAgICAgICAgICAgICBwICs9IGJsb2NrX3NpemU7CiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgICAgICBkZWZhdWx0OgogICAgICAgICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoCiAgICAgICAgICAgICAgICAgICAgIlVua25vd24gZ3JhcGhpYyBjb250cm9sIGxhYmVsOiAweCIgKyBidWZbcCAtIDFdLnRvU3RyaW5nKDE2KQogICAgICAgICAgICAgICAgICApOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgY2FzZSA0NDoKICAgICAgICAgICAgICB2YXIgeCA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICB2YXIgeSA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICB2YXIgdyA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICB2YXIgaCA9IGJ1ZltwKytdIHwgYnVmW3ArK10gPDwgODsKICAgICAgICAgICAgICB2YXIgcGYyID0gYnVmW3ArK107CiAgICAgICAgICAgICAgdmFyIGxvY2FsX3BhbGV0dGVfZmxhZyA9IHBmMiA+PiA3OwogICAgICAgICAgICAgIHZhciBpbnRlcmxhY2VfZmxhZyA9IHBmMiA+PiA2ICYgMTsKICAgICAgICAgICAgICB2YXIgbnVtX2xvY2FsX2NvbG9yc19wb3cyID0gcGYyICYgNzsKICAgICAgICAgICAgICB2YXIgbnVtX2xvY2FsX2NvbG9ycyA9IDEgPDwgbnVtX2xvY2FsX2NvbG9yc19wb3cyICsgMTsKICAgICAgICAgICAgICB2YXIgcGFsZXR0ZV9vZmZzZXQgPSBnbG9iYWxfcGFsZXR0ZV9vZmZzZXQ7CiAgICAgICAgICAgICAgdmFyIHBhbGV0dGVfc2l6ZSA9IGdsb2JhbF9wYWxldHRlX3NpemU7CiAgICAgICAgICAgICAgdmFyIGhhc19sb2NhbF9wYWxldHRlID0gZmFsc2U7CiAgICAgICAgICAgICAgaWYgKGxvY2FsX3BhbGV0dGVfZmxhZykgewogICAgICAgICAgICAgICAgdmFyIGhhc19sb2NhbF9wYWxldHRlID0gdHJ1ZTsKICAgICAgICAgICAgICAgIHBhbGV0dGVfb2Zmc2V0ID0gcDsKICAgICAgICAgICAgICAgIHBhbGV0dGVfc2l6ZSA9IG51bV9sb2NhbF9jb2xvcnM7CiAgICAgICAgICAgICAgICBwICs9IG51bV9sb2NhbF9jb2xvcnMgKiAzOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgICB2YXIgZGF0YV9vZmZzZXQgPSBwOwogICAgICAgICAgICAgIHArKzsKICAgICAgICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICAgICAgdmFyIGJsb2NrX3NpemUgPSBidWZbcCsrXTsKICAgICAgICAgICAgICAgIGlmICghKGJsb2NrX3NpemUgPj0gMCkpIHRocm93IEVycm9yKCJJbnZhbGlkIGJsb2NrIHNpemUiKTsKICAgICAgICAgICAgICAgIGlmIChibG9ja19zaXplID09PSAwKSBicmVhazsKICAgICAgICAgICAgICAgIHAgKz0gYmxvY2tfc2l6ZTsKICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgZnJhbWVzLnB1c2goewogICAgICAgICAgICAgICAgeCwKICAgICAgICAgICAgICAgIHksCiAgICAgICAgICAgICAgICB3aWR0aDogdywKICAgICAgICAgICAgICAgIGhlaWdodDogaCwKICAgICAgICAgICAgICAgIGhhc19sb2NhbF9wYWxldHRlLAogICAgICAgICAgICAgICAgcGFsZXR0ZV9vZmZzZXQsCiAgICAgICAgICAgICAgICBwYWxldHRlX3NpemUsCiAgICAgICAgICAgICAgICBkYXRhX29mZnNldCwKICAgICAgICAgICAgICAgIGRhdGFfbGVuZ3RoOiBwIC0gZGF0YV9vZmZzZXQsCiAgICAgICAgICAgICAgICB0cmFuc3BhcmVudF9pbmRleCwKICAgICAgICAgICAgICAgIGludGVybGFjZWQ6ICEhaW50ZXJsYWNlX2ZsYWcsCiAgICAgICAgICAgICAgICBkZWxheSwKICAgICAgICAgICAgICAgIGRpc3Bvc2FsCiAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgIGNhc2UgNTk6CiAgICAgICAgICAgICAgbm9fZW9mID0gZmFsc2U7CiAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgIGRlZmF1bHQ6CiAgICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJVbmtub3duIGdpZiBibG9jazogMHgiICsgYnVmW3AgLSAxXS50b1N0cmluZygxNikpOwogICAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgfQogICAgICAgIH0KICAgICAgICB0aGlzLm51bUZyYW1lcyA9IGZ1bmN0aW9uKCkgewogICAgICAgICAgcmV0dXJuIGZyYW1lcy5sZW5ndGg7CiAgICAgICAgfTsKICAgICAgICB0aGlzLmxvb3BDb3VudCA9IGZ1bmN0aW9uKCkgewogICAgICAgICAgcmV0dXJuIGxvb3BfY291bnQ7CiAgICAgICAgfTsKICAgICAgICB0aGlzLmZyYW1lSW5mbyA9IGZ1bmN0aW9uKGZyYW1lX251bSkgewogICAgICAgICAgaWYgKGZyYW1lX251bSA8IDAgfHwgZnJhbWVfbnVtID49IGZyYW1lcy5sZW5ndGgpCiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiRnJhbWUgaW5kZXggb3V0IG9mIHJhbmdlLiIpOwogICAgICAgICAgcmV0dXJuIGZyYW1lc1tmcmFtZV9udW1dOwogICAgICAgIH07CiAgICAgICAgdGhpcy5kZWNvZGVBbmRCbGl0RnJhbWVCR1JBID0gZnVuY3Rpb24oZnJhbWVfbnVtLCBwaXhlbHMpIHsKICAgICAgICAgIHZhciBmcmFtZSA9IHRoaXMuZnJhbWVJbmZvKGZyYW1lX251bSk7CiAgICAgICAgICB2YXIgbnVtX3BpeGVscyA9IGZyYW1lLndpZHRoICogZnJhbWUuaGVpZ2h0OwogICAgICAgICAgdmFyIGluZGV4X3N0cmVhbSA9IG5ldyBVaW50OEFycmF5KG51bV9waXhlbHMpOwogICAgICAgICAgR2lmUmVhZGVyTFpXT3V0cHV0SW5kZXhTdHJlYW0oCiAgICAgICAgICAgIGJ1ZiwKICAgICAgICAgICAgZnJhbWUuZGF0YV9vZmZzZXQsCiAgICAgICAgICAgIGluZGV4X3N0cmVhbSwKICAgICAgICAgICAgbnVtX3BpeGVscwogICAgICAgICAgKTsKICAgICAgICAgIHZhciBwYWxldHRlX29mZnNldDIgPSBmcmFtZS5wYWxldHRlX29mZnNldDsKICAgICAgICAgIHZhciB0cmFucyA9IGZyYW1lLnRyYW5zcGFyZW50X2luZGV4OwogICAgICAgICAgaWYgKHRyYW5zID09PSBudWxsKSB0cmFucyA9IDI1NjsKICAgICAgICAgIHZhciBmcmFtZXdpZHRoID0gZnJhbWUud2lkdGg7CiAgICAgICAgICB2YXIgZnJhbWVzdHJpZGUgPSB3aWR0aCAtIGZyYW1ld2lkdGg7CiAgICAgICAgICB2YXIgeGxlZnQgPSBmcmFtZXdpZHRoOwogICAgICAgICAgdmFyIG9wYmVnID0gKGZyYW1lLnkgKiB3aWR0aCArIGZyYW1lLngpICogNDsKICAgICAgICAgIHZhciBvcGVuZCA9ICgoZnJhbWUueSArIGZyYW1lLmhlaWdodCkgKiB3aWR0aCArIGZyYW1lLngpICogNDsKICAgICAgICAgIHZhciBvcCA9IG9wYmVnOwogICAgICAgICAgdmFyIHNjYW5zdHJpZGUgPSBmcmFtZXN0cmlkZSAqIDQ7CiAgICAgICAgICBpZiAoZnJhbWUuaW50ZXJsYWNlZCA9PT0gdHJ1ZSkgewogICAgICAgICAgICBzY2Fuc3RyaWRlICs9IHdpZHRoICogNCAqIDc7CiAgICAgICAgICB9CiAgICAgICAgICB2YXIgaW50ZXJsYWNlc2tpcCA9IDg7CiAgICAgICAgICBmb3IgKHZhciBpID0gMCwgaWwgPSBpbmRleF9zdHJlYW0ubGVuZ3RoOyBpIDwgaWw7ICsraSkgewogICAgICAgICAgICB2YXIgaW5kZXggPSBpbmRleF9zdHJlYW1baV07CiAgICAgICAgICAgIGlmICh4bGVmdCA9PT0gMCkgewogICAgICAgICAgICAgIG9wICs9IHNjYW5zdHJpZGU7CiAgICAgICAgICAgICAgeGxlZnQgPSBmcmFtZXdpZHRoOwogICAgICAgICAgICAgIGlmIChvcCA+PSBvcGVuZCkgewogICAgICAgICAgICAgICAgc2NhbnN0cmlkZSA9IGZyYW1lc3RyaWRlICogNCArIHdpZHRoICogNCAqIChpbnRlcmxhY2Vza2lwIC0gMSk7CiAgICAgICAgICAgICAgICBvcCA9IG9wYmVnICsgKGZyYW1ld2lkdGggKyBmcmFtZXN0cmlkZSkgKiAoaW50ZXJsYWNlc2tpcCA8PCAxKTsKICAgICAgICAgICAgICAgIGludGVybGFjZXNraXAgPj49IDE7CiAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIGlmIChpbmRleCA9PT0gdHJhbnMpIHsKICAgICAgICAgICAgICBvcCArPSA0OwogICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgIHZhciByID0gYnVmW3BhbGV0dGVfb2Zmc2V0MiArIGluZGV4ICogM107CiAgICAgICAgICAgICAgdmFyIGcgPSBidWZbcGFsZXR0ZV9vZmZzZXQyICsgaW5kZXggKiAzICsgMV07CiAgICAgICAgICAgICAgdmFyIGIgPSBidWZbcGFsZXR0ZV9vZmZzZXQyICsgaW5kZXggKiAzICsgMl07CiAgICAgICAgICAgICAgcGl4ZWxzW29wKytdID0gYjsKICAgICAgICAgICAgICBwaXhlbHNbb3ArK10gPSBnOwogICAgICAgICAgICAgIHBpeGVsc1tvcCsrXSA9IHI7CiAgICAgICAgICAgICAgcGl4ZWxzW29wKytdID0gMjU1OwogICAgICAgICAgICB9CiAgICAgICAgICAgIC0teGxlZnQ7CiAgICAgICAgICB9CiAgICAgICAgfTsKICAgICAgICB0aGlzLmRlY29kZUFuZEJsaXRGcmFtZVJHQkEgPSBmdW5jdGlvbihmcmFtZV9udW0sIHBpeGVscykgewogICAgICAgICAgdmFyIGZyYW1lID0gdGhpcy5mcmFtZUluZm8oZnJhbWVfbnVtKTsKICAgICAgICAgIHZhciBudW1fcGl4ZWxzID0gZnJhbWUud2lkdGggKiBmcmFtZS5oZWlnaHQ7CiAgICAgICAgICB2YXIgaW5kZXhfc3RyZWFtID0gbmV3IFVpbnQ4QXJyYXkobnVtX3BpeGVscyk7CiAgICAgICAgICBHaWZSZWFkZXJMWldPdXRwdXRJbmRleFN0cmVhbSgKICAgICAgICAgICAgYnVmLAogICAgICAgICAgICBmcmFtZS5kYXRhX29mZnNldCwKICAgICAgICAgICAgaW5kZXhfc3RyZWFtLAogICAgICAgICAgICBudW1fcGl4ZWxzCiAgICAgICAgICApOwogICAgICAgICAgdmFyIHBhbGV0dGVfb2Zmc2V0MiA9IGZyYW1lLnBhbGV0dGVfb2Zmc2V0OwogICAgICAgICAgdmFyIHRyYW5zID0gZnJhbWUudHJhbnNwYXJlbnRfaW5kZXg7CiAgICAgICAgICBpZiAodHJhbnMgPT09IG51bGwpIHRyYW5zID0gMjU2OwogICAgICAgICAgdmFyIGZyYW1ld2lkdGggPSBmcmFtZS53aWR0aDsKICAgICAgICAgIHZhciBmcmFtZXN0cmlkZSA9IHdpZHRoIC0gZnJhbWV3aWR0aDsKICAgICAgICAgIHZhciB4bGVmdCA9IGZyYW1ld2lkdGg7CiAgICAgICAgICB2YXIgb3BiZWcgPSAoZnJhbWUueSAqIHdpZHRoICsgZnJhbWUueCkgKiA0OwogICAgICAgICAgdmFyIG9wZW5kID0gKChmcmFtZS55ICsgZnJhbWUuaGVpZ2h0KSAqIHdpZHRoICsgZnJhbWUueCkgKiA0OwogICAgICAgICAgdmFyIG9wID0gb3BiZWc7CiAgICAgICAgICB2YXIgc2NhbnN0cmlkZSA9IGZyYW1lc3RyaWRlICogNDsKICAgICAgICAgIGlmIChmcmFtZS5pbnRlcmxhY2VkID09PSB0cnVlKSB7CiAgICAgICAgICAgIHNjYW5zdHJpZGUgKz0gd2lkdGggKiA0ICogNzsKICAgICAgICAgIH0KICAgICAgICAgIHZhciBpbnRlcmxhY2Vza2lwID0gODsKICAgICAgICAgIGZvciAodmFyIGkgPSAwLCBpbCA9IGluZGV4X3N0cmVhbS5sZW5ndGg7IGkgPCBpbDsgKytpKSB7CiAgICAgICAgICAgIHZhciBpbmRleCA9IGluZGV4X3N0cmVhbVtpXTsKICAgICAgICAgICAgaWYgKHhsZWZ0ID09PSAwKSB7CiAgICAgICAgICAgICAgb3AgKz0gc2NhbnN0cmlkZTsKICAgICAgICAgICAgICB4bGVmdCA9IGZyYW1ld2lkdGg7CiAgICAgICAgICAgICAgaWYgKG9wID49IG9wZW5kKSB7CiAgICAgICAgICAgICAgICBzY2Fuc3RyaWRlID0gZnJhbWVzdHJpZGUgKiA0ICsgd2lkdGggKiA0ICogKGludGVybGFjZXNraXAgLSAxKTsKICAgICAgICAgICAgICAgIG9wID0gb3BiZWcgKyAoZnJhbWV3aWR0aCArIGZyYW1lc3RyaWRlKSAqIChpbnRlcmxhY2Vza2lwIDw8IDEpOwogICAgICAgICAgICAgICAgaW50ZXJsYWNlc2tpcCA+Pj0gMTsKICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKGluZGV4ID09PSB0cmFucykgewogICAgICAgICAgICAgIG9wICs9IDQ7CiAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgdmFyIHIgPSBidWZbcGFsZXR0ZV9vZmZzZXQyICsgaW5kZXggKiAzXTsKICAgICAgICAgICAgICB2YXIgZyA9IGJ1ZltwYWxldHRlX29mZnNldDIgKyBpbmRleCAqIDMgKyAxXTsKICAgICAgICAgICAgICB2YXIgYiA9IGJ1ZltwYWxldHRlX29mZnNldDIgKyBpbmRleCAqIDMgKyAyXTsKICAgICAgICAgICAgICBwaXhlbHNbb3ArK10gPSByOwogICAgICAgICAgICAgIHBpeGVsc1tvcCsrXSA9IGc7CiAgICAgICAgICAgICAgcGl4ZWxzW29wKytdID0gYjsKICAgICAgICAgICAgICBwaXhlbHNbb3ArK10gPSAyNTU7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgLS14bGVmdDsKICAgICAgICAgIH0KICAgICAgICB9OwogICAgICB9CiAgICAgIGZ1bmN0aW9uIEdpZlJlYWRlckxaV091dHB1dEluZGV4U3RyZWFtKGNvZGVfc3RyZWFtLCBwLCBvdXRwdXQsIG91dHB1dF9sZW5ndGgpIHsKICAgICAgICB2YXIgbWluX2NvZGVfc2l6ZSA9IGNvZGVfc3RyZWFtW3ArK107CiAgICAgICAgdmFyIGNsZWFyX2NvZGUgPSAxIDw8IG1pbl9jb2RlX3NpemU7CiAgICAgICAgdmFyIGVvaV9jb2RlID0gY2xlYXJfY29kZSArIDE7CiAgICAgICAgdmFyIG5leHRfY29kZSA9IGVvaV9jb2RlICsgMTsKICAgICAgICB2YXIgY3VyX2NvZGVfc2l6ZSA9IG1pbl9jb2RlX3NpemUgKyAxOwogICAgICAgIHZhciBjb2RlX21hc2sgPSAoMSA8PCBjdXJfY29kZV9zaXplKSAtIDE7CiAgICAgICAgdmFyIGN1cl9zaGlmdCA9IDA7CiAgICAgICAgdmFyIGN1ciA9IDA7CiAgICAgICAgdmFyIG9wID0gMDsKICAgICAgICB2YXIgc3ViYmxvY2tfc2l6ZSA9IGNvZGVfc3RyZWFtW3ArK107CiAgICAgICAgdmFyIGNvZGVfdGFibGUgPSBuZXcgSW50MzJBcnJheSg0MDk2KTsKICAgICAgICB2YXIgcHJldl9jb2RlID0gbnVsbDsKICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgd2hpbGUgKGN1cl9zaGlmdCA8IDE2KSB7CiAgICAgICAgICAgIGlmIChzdWJibG9ja19zaXplID09PSAwKSBicmVhazsKICAgICAgICAgICAgY3VyIHw9IGNvZGVfc3RyZWFtW3ArK10gPDwgY3VyX3NoaWZ0OwogICAgICAgICAgICBjdXJfc2hpZnQgKz0gODsKICAgICAgICAgICAgaWYgKHN1YmJsb2NrX3NpemUgPT09IDEpIHsKICAgICAgICAgICAgICBzdWJibG9ja19zaXplID0gY29kZV9zdHJlYW1bcCsrXTsKICAgICAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgICAtLXN1YmJsb2NrX3NpemU7CiAgICAgICAgICAgIH0KICAgICAgICAgIH0KICAgICAgICAgIGlmIChjdXJfc2hpZnQgPCBjdXJfY29kZV9zaXplKQogICAgICAgICAgICBicmVhazsKICAgICAgICAgIHZhciBjb2RlID0gY3VyICYgY29kZV9tYXNrOwogICAgICAgICAgY3VyID4+PSBjdXJfY29kZV9zaXplOwogICAgICAgICAgY3VyX3NoaWZ0IC09IGN1cl9jb2RlX3NpemU7CiAgICAgICAgICBpZiAoY29kZSA9PT0gY2xlYXJfY29kZSkgewogICAgICAgICAgICBuZXh0X2NvZGUgPSBlb2lfY29kZSArIDE7CiAgICAgICAgICAgIGN1cl9jb2RlX3NpemUgPSBtaW5fY29kZV9zaXplICsgMTsKICAgICAgICAgICAgY29kZV9tYXNrID0gKDEgPDwgY3VyX2NvZGVfc2l6ZSkgLSAxOwogICAgICAgICAgICBwcmV2X2NvZGUgPSBudWxsOwogICAgICAgICAgICBjb250aW51ZTsKICAgICAgICAgIH0gZWxzZSBpZiAoY29kZSA9PT0gZW9pX2NvZGUpIHsKICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICB9CiAgICAgICAgICB2YXIgY2hhc2VfY29kZSA9IGNvZGUgPCBuZXh0X2NvZGUgPyBjb2RlIDogcHJldl9jb2RlOwogICAgICAgICAgdmFyIGNoYXNlX2xlbmd0aCA9IDA7CiAgICAgICAgICB2YXIgY2hhc2UgPSBjaGFzZV9jb2RlOwogICAgICAgICAgd2hpbGUgKGNoYXNlID4gY2xlYXJfY29kZSkgewogICAgICAgICAgICBjaGFzZSA9IGNvZGVfdGFibGVbY2hhc2VdID4+IDg7CiAgICAgICAgICAgICsrY2hhc2VfbGVuZ3RoOwogICAgICAgICAgfQogICAgICAgICAgdmFyIGsgPSBjaGFzZTsKICAgICAgICAgIHZhciBvcF9lbmQgPSBvcCArIGNoYXNlX2xlbmd0aCArIChjaGFzZV9jb2RlICE9PSBjb2RlID8gMSA6IDApOwogICAgICAgICAgaWYgKG9wX2VuZCA+IG91dHB1dF9sZW5ndGgpIHsKICAgICAgICAgICAgY29uc29sZS5sb2coIldhcm5pbmcsIGdpZiBzdHJlYW0gbG9uZ2VyIHRoYW4gZXhwZWN0ZWQuIik7CiAgICAgICAgICAgIHJldHVybjsKICAgICAgICAgIH0KICAgICAgICAgIG91dHB1dFtvcCsrXSA9IGs7CiAgICAgICAgICBvcCArPSBjaGFzZV9sZW5ndGg7CiAgICAgICAgICB2YXIgYiA9IG9wOwogICAgICAgICAgaWYgKGNoYXNlX2NvZGUgIT09IGNvZGUpCiAgICAgICAgICAgIG91dHB1dFtvcCsrXSA9IGs7CiAgICAgICAgICBjaGFzZSA9IGNoYXNlX2NvZGU7CiAgICAgICAgICB3aGlsZSAoY2hhc2VfbGVuZ3RoLS0pIHsKICAgICAgICAgICAgY2hhc2UgPSBjb2RlX3RhYmxlW2NoYXNlXTsKICAgICAgICAgICAgb3V0cHV0Wy0tYl0gPSBjaGFzZSAmIDI1NTsKICAgICAgICAgICAgY2hhc2UgPj49IDg7CiAgICAgICAgICB9CiAgICAgICAgICBpZiAocHJldl9jb2RlICE9PSBudWxsICYmIG5leHRfY29kZSA8IDQwOTYpIHsKICAgICAgICAgICAgY29kZV90YWJsZVtuZXh0X2NvZGUrK10gPSBwcmV2X2NvZGUgPDwgOCB8IGs7CiAgICAgICAgICAgIGlmIChuZXh0X2NvZGUgPj0gY29kZV9tYXNrICsgMSAmJiBjdXJfY29kZV9zaXplIDwgMTIpIHsKICAgICAgICAgICAgICArK2N1cl9jb2RlX3NpemU7CiAgICAgICAgICAgICAgY29kZV9tYXNrID0gY29kZV9tYXNrIDw8IDEgfCAxOwogICAgICAgICAgICB9CiAgICAgICAgICB9CiAgICAgICAgICBwcmV2X2NvZGUgPSBjb2RlOwogICAgICAgIH0KICAgICAgICBpZiAob3AgIT09IG91dHB1dF9sZW5ndGgpIHsKICAgICAgICAgIGNvbnNvbGUubG9nKCJXYXJuaW5nLCBnaWYgc3RyZWFtIHNob3J0ZXIgdGhhbiBleHBlY3RlZC4iKTsKICAgICAgICB9CiAgICAgICAgcmV0dXJuIG91dHB1dDsKICAgICAgfQogICAgICB0cnkgewogICAgICAgIGV4cG9ydHMuR2lmV3JpdGVyID0gR2lmV3JpdGVyMjsKICAgICAgICBleHBvcnRzLkdpZlJlYWRlciA9IEdpZlJlYWRlcjsKICAgICAgfSBjYXRjaCAoZSkgewogICAgICB9CiAgICB9CiAgfSk7CgogIC8vIHNyYy91dGlsL2NvbG9yLnRzCiAgdmFyIENvbG9yID0gY2xhc3MgX0NvbG9yIHsKICAgIGNvbnN0cnVjdG9yKF9yLCBfZywgX2IsIF9hKSB7CiAgICAgIHRoaXMuX3IgPSBfcjsKICAgICAgdGhpcy5fZyA9IF9nOwogICAgICB0aGlzLl9iID0gX2I7CiAgICAgIHRoaXMuX2EgPSBfYTsKICAgIH0KICAgIHN0YXRpYyBza3JpYmJsQ29sb3JzID0gWwogICAgICBbMjU1LCAyNTUsIDI1NV0sCiAgICAgIFswLCAwLCAwXSwKICAgICAgWzE5MywgMTkzLCAxOTNdLAogICAgICBbODAsIDgwLCA4MF0sCiAgICAgIFsyMzksIDE5LCAxMV0sCiAgICAgIFsxMTYsIDExLCA3XSwKICAgICAgWzI1NSwgMTEzLCAwXSwKICAgICAgWzE5NCwgNTYsIDBdLAogICAgICBbMjU1LCAyMjgsIDBdLAogICAgICBbMjMyLCAxNjIsIDBdLAogICAgICBbMCwgMjA0LCAwXSwKICAgICAgWzAsIDcwLCAyNV0sCiAgICAgIFswLCAyNTUsIDE0NV0sCiAgICAgIFswLCAxMjAsIDkzXSwKICAgICAgWzAsIDE3OCwgMjU1XSwKICAgICAgWzAsIDg2LCAxNThdLAogICAgICBbMzUsIDMxLCAyMTFdLAogICAgICBbMTQsIDgsIDEwMV0sCiAgICAgIFsxNjMsIDAsIDE4Nl0sCiAgICAgIFs4NSwgMCwgMTA1XSwKICAgICAgWzIyMywgMTA1LCAxNjddLAogICAgICBbMTM1LCA1MywgODRdLAogICAgICBbMjU1LCAxNzIsIDE0Ml0sCiAgICAgIFsyMDQsIDExOSwgNzddLAogICAgICBbMTYwLCA4MiwgNDVdLAogICAgICBbOTksIDQ4LCAxM10KICAgIF07CiAgICBnZXQgcigpIHsKICAgICAgcmV0dXJuIHRoaXMuX3I7CiAgICB9CiAgICBnZXQgZygpIHsKICAgICAgcmV0dXJuIHRoaXMuX2c7CiAgICB9CiAgICBnZXQgYigpIHsKICAgICAgcmV0dXJuIHRoaXMuX2I7CiAgICB9CiAgICAvLyBnZXQgdGhlIHJnYiBzdHJpbmcgb2YgdGhlIGNvbG9yCiAgICBnZXQgcmdiU3RyaW5nKCkgewogICAgICByZXR1cm4gInJnYigiICsgW3RoaXMuX3IsIHRoaXMuX2csIHRoaXMuX2IsIHRoaXMuX2FdLmZpbHRlcigodikgPT4gdiAhPT0gdm9pZCAwKS5qb2luKCIsIikgKyAiKSI7CiAgICB9CiAgICBnZXQgcmdiQXJyYXkoKSB7CiAgICAgIHJldHVybiB0aGlzLl9hID8gW3RoaXMuX3IsIHRoaXMuX2csIHRoaXMuX2IsIHRoaXMuX2FdIDogW3RoaXMuX3IsIHRoaXMuX2csIHRoaXMuX2JdOwogICAgfQogICAgLy8gZ2V0IHRoZSByZ2IgdmFsdWVzIG9mIHRoZSBjb2xvcgogICAgZ2V0IHJnYigpIHsKICAgICAgcmV0dXJuIHsKICAgICAgICByOiB0aGlzLl9yLAogICAgICAgIGc6IHRoaXMuX2csCiAgICAgICAgYjogdGhpcy5fYiwKICAgICAgICBhOiB0aGlzLl9hCiAgICAgIH07CiAgICB9CiAgICAvLyBnZXQgdGhlIGhleCBzdHJpbmcgb2YgdGhlIGNvbG9yCiAgICBnZXQgaGV4KCkgewogICAgICByZXR1cm4gIiMiICsgdGhpcy5fci50b1N0cmluZygxNikucGFkU3RhcnQoMiwgIjAiKSArIHRoaXMuX2cudG9TdHJpbmcoMTYpLnBhZFN0YXJ0KDIsICIwIikgKyB0aGlzLl9iLnRvU3RyaW5nKDE2KS5wYWRTdGFydCgyLCAiMCIpICsgKHRoaXMuX2EgPyBNYXRoLmZsb29yKDI1NSAqIHRoaXMuX2EpLnRvU3RyaW5nKDE2KS5wYWRTdGFydCgyLCAiMCIpIDogIiIpOwogICAgfQogICAgc2V0IGhleChoZXgpIHsKICAgICAgY29uc3QgY29sb3IgPSBfQ29sb3IuZnJvbUhleChoZXgpOwogICAgICB0aGlzLl9yID0gY29sb3IuX3I7CiAgICAgIHRoaXMuX2cgPSBjb2xvci5fZzsKICAgICAgdGhpcy5fYiA9IGNvbG9yLl9iOwogICAgICB0aGlzLl9hID0gY29sb3IuX2E7CiAgICB9CiAgICAvKioKICAgICAqIFRoZSBhdHR0ZW1wdGVkIHNrcmliYmwgY29sb3IgY29kZQogICAgICogSWYgbm90IGZvdW5kLCByZXR1cm4gdHlvcG8gY29kZSBpbnN0ZWFkIChoZXggdmFsICsgMTAwMDApCiAgICAgKi8KICAgIGdldCBza3JpYmJsQ29kZSgpIHsKICAgICAgY29uc3Qgc2tyaWJibEluZGV4ID0gX0NvbG9yLnNrcmliYmxDb2xvcnMuZmluZEluZGV4KChjKSA9PiBjWzBdID09PSB0aGlzLl9yICYmIGNbMV0gPT09IHRoaXMuX2cgJiYgY1syXSA9PT0gdGhpcy5fYik7CiAgICAgIGlmIChza3JpYmJsSW5kZXggIT09IC0xKSByZXR1cm4gc2tyaWJibEluZGV4OwogICAgICByZXR1cm4gdGhpcy50eXBvQ29kZTsKICAgIH0KICAgIC8qKgogICAgICogVGhlIGNvbG9yIGNvZGUgZm9yIHRoZSB0eXBvIGNvbG9yIChoZXggdmFsICsgMTAwMDApCiAgICAgKi8KICAgIGdldCB0eXBvQ29kZSgpIHsKICAgICAgY29uc3QgaGV4U3RyaW5nID0gKHRoaXMuX3IgPDwgMTYgfCB0aGlzLl9nIDw8IDggfCB0aGlzLl9iKS50b1N0cmluZygxNikudG9VcHBlckNhc2UoKTsKICAgICAgcmV0dXJuIHBhcnNlSW50KGhleFN0cmluZywgMTYpICsgMWU0OwogICAgfQogICAgLy9zb3VyY2U6IGh0dHBzOi8vZ2lzdC5naXRodWIuY29tL21qYWNrc29uLzUzMTEyNTYKICAgIGdldCBoc2woKSB7CiAgICAgIGNvbnN0IHIgPSB0aGlzLnIgLyAyNTUsIGcgPSB0aGlzLmcgLyAyNTUsIGIgPSB0aGlzLmIgLyAyNTU7CiAgICAgIGNvbnN0IG1heCA9IE1hdGgubWF4KHIsIGcsIGIpLCBtaW4gPSBNYXRoLm1pbihyLCBnLCBiKTsKICAgICAgbGV0IGggPSAwLCBzID0gMDsKICAgICAgY29uc3QgbCA9IChtYXggKyBtaW4pIC8gMjsKICAgICAgaWYgKG1heCA9PSBtaW4pIHsKICAgICAgICBoID0gcyA9IDA7CiAgICAgIH0gZWxzZSB7CiAgICAgICAgY29uc3QgZCA9IG1heCAtIG1pbjsKICAgICAgICBzID0gbCA+IDAuNSA/IGQgLyAoMiAtIG1heCAtIG1pbikgOiBkIC8gKG1heCArIG1pbik7CiAgICAgICAgc3dpdGNoIChtYXgpIHsKICAgICAgICAgIGNhc2UgcjoKICAgICAgICAgICAgaCA9IChnIC0gYikgLyBkICsgKGcgPCBiID8gNiA6IDApOwogICAgICAgICAgICBicmVhazsKICAgICAgICAgIGNhc2UgZzoKICAgICAgICAgICAgaCA9IChiIC0gcikgLyBkICsgMjsKICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICBjYXNlIGI6CiAgICAgICAgICAgIGggPSAociAtIGcpIC8gZCArIDQ7CiAgICAgICAgICAgIGJyZWFrOwogICAgICAgIH0KICAgICAgICBoIC89IDY7CiAgICAgIH0KICAgICAgcmV0dXJuIHRoaXMuX2EgIT09IHZvaWQgMCA/IFtoICogMzYwLCBzICogMTAwLCBsICogMTAwLCB0aGlzLl9hXSA6IFtoICogMzYwLCBzICogMTAwLCBsICogMTAwXTsKICAgIH0KICAgIC8vIENvbnZlcnQgdG8gSFNWCiAgICBnZXQgaHN2KCkgewogICAgICBjb25zdCByID0gdGhpcy5yIC8gMjU1LCBnID0gdGhpcy5nIC8gMjU1LCBiID0gdGhpcy5iIC8gMjU1OwogICAgICBjb25zdCBtYXggPSBNYXRoLm1heChyLCBnLCBiKSwgbWluID0gTWF0aC5taW4ociwgZywgYik7CiAgICAgIGNvbnN0IGRlbHRhID0gbWF4IC0gbWluOwogICAgICBsZXQgaCA9IDAsIHMgPSAwOwogICAgICBjb25zdCB2ID0gbWF4OwogICAgICBpZiAobWF4ICE9PSAwKSB7CiAgICAgICAgcyA9IGRlbHRhIC8gbWF4OwogICAgICB9IGVsc2UgewogICAgICAgIGggPSAwOwogICAgICAgIHMgPSAwOwogICAgICB9CiAgICAgIGlmIChtYXggIT09IG1pbikgewogICAgICAgIHN3aXRjaCAobWF4KSB7CiAgICAgICAgICBjYXNlIHI6CiAgICAgICAgICAgIGggPSAoZyAtIGIpIC8gZGVsdGEgKyAoZyA8IGIgPyA2IDogMCk7CiAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgY2FzZSBnOgogICAgICAgICAgICBoID0gKGIgLSByKSAvIGRlbHRhICsgMjsKICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICBjYXNlIGI6CiAgICAgICAgICAgIGggPSAociAtIGcpIC8gZGVsdGEgKyA0OwogICAgICAgICAgICBicmVhazsKICAgICAgICB9CiAgICAgICAgaCAvPSA2OwogICAgICB9CiAgICAgIHJldHVybiBbaCAqIDM2MCwgcyAqIDEwMCwgdiAqIDEwMCwgdGhpcy5fYV07CiAgICB9CiAgICBzdGF0aWMgZnJvbVJnYihyLCBnLCBiLCBhKSB7CiAgICAgIHJldHVybiBuZXcgX0NvbG9yKE1hdGgucm91bmQociksIE1hdGgucm91bmQoZyksIE1hdGgucm91bmQoYiksIGEgPyBNYXRoLnJvdW5kKGEgKiAxMDApIC8gMTAwIDogdm9pZCAwKTsKICAgIH0KICAgIHN0YXRpYyBmcm9tSGV4KGhleCkgewogICAgICBpZiAoaGV4WzBdID09ICIjIikgaGV4ID0gaGV4LnN1YnN0cmluZygxKTsKICAgICAgY29uc3QgciA9IE1hdGgucm91bmQocGFyc2VJbnQoIjB4IiArIGhleC5zdWJzdHJpbmcoMCwgMikpKTsKICAgICAgY29uc3QgZyA9IE1hdGgucm91bmQocGFyc2VJbnQoIjB4IiArIGhleC5zdWJzdHJpbmcoMiwgNCkpKTsKICAgICAgY29uc3QgYiA9IE1hdGgucm91bmQocGFyc2VJbnQoIjB4IiArIGhleC5zdWJzdHJpbmcoNCwgNikpKTsKICAgICAgY29uc3QgYSA9IGhleC5sZW5ndGggPiA2ID8gTWF0aC5yb3VuZChwYXJzZUludCgiMHgiICsgaGV4LnN1YnN0cmluZyg2LCA4KSkpIDogdm9pZCAwOwogICAgICByZXR1cm4gbmV3IF9Db2xvcihyLCBnLCBiLCBhKTsKICAgIH0KICAgIHN0YXRpYyBmcm9tUmdiU3RyaW5nKHJnYikgewogICAgICBjb25zdCByZ2JzID0gcmdiLnRyaW0oKS5yZXBsYWNlKCIgIiwgIiIpLnNwbGl0KCIsIik7CiAgICAgIGNvbnN0IHIgPSBwYXJzZUludChyZ2JzWzBdLnJlcGxhY2UoL1teXGRdL2csICIiKSwgMTApOwogICAgICBjb25zdCBnID0gcGFyc2VJbnQocmdic1sxXS5yZXBsYWNlKC9bXlxkXS9nLCAiIiksIDEwKTsKICAgICAgY29uc3QgYiA9IHBhcnNlSW50KHJnYnNbMl0ucmVwbGFjZSgvW15cZF0vZywgIiIpLCAxMCk7CiAgICAgIGNvbnN0IGEgPSByZ2JzLmxlbmd0aCA+IDMgPyBwYXJzZUludChyZ2JzWzRdLnJlcGxhY2UoL1teXGRdL2csICIiKSwgMTApIDogdm9pZCAwOwogICAgICByZXR1cm4gbmV3IF9Db2xvcihyLCBnLCBiLCBhKTsKICAgIH0KICAgIHN0YXRpYyBmcm9tU2tyaWJibENvZGUoY29kZSkgewogICAgICBpZiAoY29kZSA8IDFlNCkgewogICAgICAgIGNvbnN0IHJnYiA9IF9Db2xvci5za3JpYmJsQ29sb3JzW2NvZGVdOwogICAgICAgIHJldHVybiBfQ29sb3IuZnJvbVJnYihyZ2JbMF0sIHJnYlsxXSwgcmdiWzJdKTsKICAgICAgfQogICAgICBjb25zdCBoZXggPSAoY29kZSAtIDFlNCkudG9TdHJpbmcoMTYpLnBhZFN0YXJ0KDYsICIwIik7CiAgICAgIHJldHVybiBfQ29sb3IuZnJvbUhleChoZXgpOwogICAgfQogICAgLy8gc291cmNlOiBodHRwczovL3N0YWNrb3ZlcmZsb3cuY29tL3F1ZXN0aW9ucy8zNjcyMTgzMC9jb252ZXJ0LWhzbC10by1yZ2ItYW5kLWhleAogICAgc3RhdGljIGZyb21Ic2woaCwgcywgbCwgYWxwaGEpIHsKICAgICAgcyAvPSAxMDA7CiAgICAgIGwgLz0gMTAwOwogICAgICBjb25zdCBrID0gKG4pID0+IChuICsgaCAvIDMwKSAlIDEyOwogICAgICBjb25zdCBhID0gcyAqIE1hdGgubWluKGwsIDEgLSBsKTsKICAgICAgY29uc3QgZiA9IChuKSA9PiBsIC0gYSAqIE1hdGgubWF4KC0xLCBNYXRoLm1pbihrKG4pIC0gMywgTWF0aC5taW4oOSAtIGsobiksIDEpKSk7CiAgICAgIGNvbnN0IHIgPSBNYXRoLnJvdW5kKGYoMCkgKiAyNTUpOwogICAgICBjb25zdCBnID0gTWF0aC5yb3VuZChmKDgpICogMjU1KTsKICAgICAgY29uc3QgYiA9IE1hdGgucm91bmQoZig0KSAqIDI1NSk7CiAgICAgIHJldHVybiBuZXcgX0NvbG9yKHIsIGcsIGIsIGFscGhhKTsKICAgIH0KICAgIC8vIFN0YXRpYyBmYWN0b3J5IG1ldGhvZCBmb3IgSFNWIHRvIFJHQiBjb252ZXJzaW9uCiAgICBzdGF0aWMgZnJvbUhzdihoLCBzLCB2LCBhKSB7CiAgICAgIHMgLz0gMTAwOwogICAgICB2IC89IDEwMDsKICAgICAgY29uc3QgYyA9IHYgKiBzOwogICAgICBjb25zdCB4ID0gYyAqICgxIC0gTWF0aC5hYnMoaCAvIDYwICUgMiAtIDEpKTsKICAgICAgY29uc3QgbSA9IHYgLSBjOwogICAgICBsZXQgciA9IDAsIGcgPSAwLCBiID0gMDsKICAgICAgaWYgKDAgPD0gaCAmJiBoIDwgNjApIHsKICAgICAgICByID0gYzsKICAgICAgICBnID0geDsKICAgICAgICBiID0gMDsKICAgICAgfSBlbHNlIGlmICg2MCA8PSBoICYmIGggPCAxMjApIHsKICAgICAgICByID0geDsKICAgICAgICBnID0gYzsKICAgICAgICBiID0gMDsKICAgICAgfSBlbHNlIGlmICgxMjAgPD0gaCAmJiBoIDwgMTgwKSB7CiAgICAgICAgciA9IDA7CiAgICAgICAgZyA9IGM7CiAgICAgICAgYiA9IHg7CiAgICAgIH0gZWxzZSBpZiAoMTgwIDw9IGggJiYgaCA8IDI0MCkgewogICAgICAgIHIgPSAwOwogICAgICAgIGcgPSB4OwogICAgICAgIGIgPSBjOwogICAgICB9IGVsc2UgaWYgKDI0MCA8PSBoICYmIGggPCAzMDApIHsKICAgICAgICByID0geDsKICAgICAgICBnID0gMDsKICAgICAgICBiID0gYzsKICAgICAgfSBlbHNlIGlmICgzMDAgPD0gaCAmJiBoIDwgMzYwKSB7CiAgICAgICAgciA9IGM7CiAgICAgICAgZyA9IDA7CiAgICAgICAgYiA9IHg7CiAgICAgIH0KICAgICAgciA9IE1hdGgucm91bmQoKHIgKyBtKSAqIDI1NSk7CiAgICAgIGcgPSBNYXRoLnJvdW5kKChnICsgbSkgKiAyNTUpOwogICAgICBiID0gTWF0aC5yb3VuZCgoYiArIG0pICogMjU1KTsKICAgICAgcmV0dXJuIG5ldyBfQ29sb3IociwgZywgYiwgYSk7CiAgICB9CiAgICBjb3B5KCkgewogICAgICByZXR1cm4gbmV3IF9Db2xvcih0aGlzLl9yLCB0aGlzLl9nLCB0aGlzLl9iLCB0aGlzLl9hKTsKICAgIH0KICAgIHdpdGhBbHBoYShhKSB7CiAgICAgIHRoaXMuX2EgPSBhOwogICAgICByZXR1cm4gdGhpczsKICAgIH0KICB9OwoKICAvLyBzcmMvdXRpbC9naWYvY2FudmFzQ29tbWFuZFByb2Nlc3Nvci50cwogIHZhciBDYW52YXNDb21tYW5kUHJvY2Vzc29yID0gY2xhc3MgewogICAgY29uc3RydWN0b3IoX2NhbnZhc0NvbnRleHQpIHsKICAgICAgdGhpcy5fY2FudmFzQ29udGV4dCA9IF9jYW52YXNDb250ZXh0OwogICAgICB0aGlzLl93aWR0aCA9IF9jYW52YXNDb250ZXh0LmNhbnZhcy53aWR0aDsKICAgICAgdGhpcy5faGVpZ2h0ID0gX2NhbnZhc0NvbnRleHQuY2FudmFzLmhlaWdodDsKICAgICAgdGhpcy5fY2FudmFzQ29udGV4dC5maWxsU3R5bGUgPSAid2hpdGUiOwogICAgICB0aGlzLl9jYW52YXNDb250ZXh0LmZpbGxSZWN0KDAsIDAsIHRoaXMuX3dpZHRoLCB0aGlzLl9oZWlnaHQpOwogICAgfQogICAgX3dpZHRoOwogICAgX2hlaWdodDsKICAgIF90aGlja25lc3NNaW4gPSA0OwogICAgX3RoaWNrbmVzc01heCA9IDQwOwogICAgLyoqCiAgICAgKiBTa3JpYmJsIGNvbWFtbmQgaW50ZXJmYWNlCiAgICAgKiBAcGFyYW0gY29tbWFuZAogICAgICogYnJ1c2g6IFswLCBjb2xvckNvZGUsIHNpemUsIHgxLCB5MSwgeDIsIHkyXQogICAgICogZmlsbDogWzEsIGNvbG9yQ29kZSwgeCwgeV0KICAgICAqCiAgICAgKi8KICAgIHByb2Nlc3NEcmF3Q29tbWFuZChjb21tYW5kKSB7CiAgICAgIGlmIChjb21tYW5kLmxlbmd0aCA8IDIpIHsKICAgICAgICB0aHJvdyBuZXcgRXJyb3IoIkludmFsaWQgY29tbWFuZCBsZW5ndGggc21hbGxlciB0aGFuIDIiKTsKICAgICAgfQogICAgICBzd2l0Y2ggKGNvbW1hbmRbMF0pIHsKICAgICAgICBjYXNlIDA6CiAgICAgICAgICBpZiAoY29tbWFuZC5sZW5ndGggPCA3KSB7CiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcigiSW52YWxpZCBicnVzaCBjb21tYW5kIGxlbmd0aCBzbWFsbGVyIHRoYW4gNyIpOwogICAgICAgICAgfQogICAgICAgICAgdGhpcy5kcmF3TGluZShjb21tYW5kWzNdLCBjb21tYW5kWzRdLCBjb21tYW5kWzVdLCBjb21tYW5kWzZdLCBjb21tYW5kWzFdLCBjb21tYW5kWzJdKTsKICAgICAgICAgIGJyZWFrOwogICAgICAgIGNhc2UgMToKICAgICAgICAgIGlmIChjb21tYW5kLmxlbmd0aCA8IDQpIHsKICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKCJJbnZhbGlkIGZpbGwgY29tbWFuZCBsZW5ndGggc21hbGxlciB0aGFuIDQiKTsKICAgICAgICAgIH0KICAgICAgICAgIHRoaXMuZmxvb2RGaWxsKGNvbW1hbmRbMl0sIGNvbW1hbmRbM10sIGNvbW1hbmRbMV0pOwogICAgICAgICAgYnJlYWs7CiAgICAgIH0KICAgIH0KICAgIGNsZWFyKCkgewogICAgICB0aGlzLl9jYW52YXNDb250ZXh0LmNsZWFyUmVjdCgwLCAwLCB0aGlzLl93aWR0aCwgdGhpcy5faGVpZ2h0KTsKICAgIH0KICAgIC8qKgogICAgICogRXhwb3J0cyBjdXJyZW50IGltYWdlIGFzIHVpbnQ4Y2xhbXBlZGFycmF5CiAgICAgKi8KICAgIGV4cG9ydEltYWdlKCkgewogICAgICByZXR1cm4gdGhpcy5fY2FudmFzQ29udGV4dC5nZXRJbWFnZURhdGEoMCwgMCwgdGhpcy5fd2lkdGgsIHRoaXMuX2hlaWdodCkuZGF0YTsKICAgIH0KICAgIGRyYXdMaW5lKHgxLCB5MSwgeDIsIHkyLCBjb2xvciwgc2l6ZSkgewogICAgICBzaXplID0gc2l6ZSA8IHRoaXMuX3RoaWNrbmVzc01pbiA/IHRoaXMuX3RoaWNrbmVzc01pbiA6IHNpemUgPiB0aGlzLl90aGlja25lc3NNYXggPyB0aGlzLl90aGlja25lc3NNYXggOiBNYXRoLmZsb29yKHNpemUpOwogICAgICBjb25zdCByZ2IgPSBDb2xvci5mcm9tU2tyaWJibENvZGUoY29sb3IpLnJnYjsKICAgICAgY29uc3QgcmFkaXVzID0gTWF0aC5jZWlsKHNpemUgLyAyKTsKICAgICAgY29uc3QgcmFkaXVzU3F1YXJlZCA9IHJhZGl1cyAqIHJhZGl1czsKICAgICAgbGV0IHN0YXJ0WCA9IHRoaXMuY2xhbXAoTWF0aC5mbG9vcih4MSksIC1yYWRpdXMsIHRoaXMuX3dpZHRoICsgcmFkaXVzKTsKICAgICAgbGV0IHN0YXJ0WSA9IHRoaXMuY2xhbXAoTWF0aC5mbG9vcih5MSksIC1yYWRpdXMsIHRoaXMuX2hlaWdodCArIHJhZGl1cyk7CiAgICAgIGxldCBlbmRYID0gdGhpcy5jbGFtcChNYXRoLmZsb29yKHgyKSwgLXJhZGl1cywgdGhpcy5fd2lkdGggKyByYWRpdXMpOwogICAgICBsZXQgZW5kWSA9IHRoaXMuY2xhbXAoTWF0aC5mbG9vcih5MiksIC1yYWRpdXMsIHRoaXMuX2hlaWdodCArIHJhZGl1cyk7CiAgICAgIGNvbnN0IG1pblggPSBNYXRoLm1pbihzdGFydFgsIGVuZFgpIC0gcmFkaXVzOwogICAgICBjb25zdCBtaW5ZID0gTWF0aC5taW4oc3RhcnRZLCBlbmRZKSAtIHJhZGl1czsKICAgICAgY29uc3QgbWF4WCA9IE1hdGgubWF4KHN0YXJ0WCwgZW5kWCkgKyByYWRpdXM7CiAgICAgIGNvbnN0IG1heFkgPSBNYXRoLm1heChzdGFydFksIGVuZFkpICsgcmFkaXVzOwogICAgICBzdGFydFggLT0gbWluWDsKICAgICAgc3RhcnRZIC09IG1pblk7CiAgICAgIGVuZFggLT0gbWluWDsKICAgICAgZW5kWSAtPSBtaW5ZOwogICAgICBjb25zdCBpbWFnZURhdGEgPSB0aGlzLl9jYW52YXNDb250ZXh0LmdldEltYWdlRGF0YShtaW5YLCBtaW5ZLCBtYXhYIC0gbWluWCwgbWF4WSAtIG1pblkpOwogICAgICBjb25zdCBhcHBseUJydXNoID0gKHgsIHkpID0+IHsKICAgICAgICBmb3IgKGxldCBvZmZzZXRYID0gLXJhZGl1czsgb2Zmc2V0WCA8PSByYWRpdXM7IG9mZnNldFgrKykgewogICAgICAgICAgZm9yIChsZXQgb2Zmc2V0WSA9IC1yYWRpdXM7IG9mZnNldFkgPD0gcmFkaXVzOyBvZmZzZXRZKyspIHsKICAgICAgICAgICAgaWYgKG9mZnNldFggKiBvZmZzZXRYICsgb2Zmc2V0WSAqIG9mZnNldFkgPCByYWRpdXNTcXVhcmVkKSB7CiAgICAgICAgICAgICAgY29uc3QgcGl4ZWxJbmRleCA9IDQgKiAoKHkgKyBvZmZzZXRZKSAqIGltYWdlRGF0YS53aWR0aCArIHggKyBvZmZzZXRYKTsKICAgICAgICAgICAgICB0aGlzLnNldFBpeGVsKGltYWdlRGF0YSwgcGl4ZWxJbmRleCwgcmdiLnIsIHJnYi5nLCByZ2IuYik7CiAgICAgICAgICAgIH0KICAgICAgICAgIH0KICAgICAgICB9CiAgICAgIH07CiAgICAgIGlmIChzdGFydFggPT09IGVuZFggJiYgc3RhcnRZID09PSBlbmRZKSB7CiAgICAgICAgYXBwbHlCcnVzaChzdGFydFgsIHN0YXJ0WSk7CiAgICAgIH0gZWxzZSB7CiAgICAgICAgYXBwbHlCcnVzaChzdGFydFgsIHN0YXJ0WSk7CiAgICAgICAgYXBwbHlCcnVzaChlbmRYLCBlbmRZKTsKICAgICAgICBjb25zdCBkZWx0YVggPSBNYXRoLmFicyhlbmRYIC0gc3RhcnRYKTsKICAgICAgICBjb25zdCBkZWx0YVkgPSBNYXRoLmFicyhlbmRZIC0gc3RhcnRZKTsKICAgICAgICBjb25zdCBzdGVwWCA9IHN0YXJ0WCA8IGVuZFggPyAxIDogLTE7CiAgICAgICAgY29uc3Qgc3RlcFkgPSBzdGFydFkgPCBlbmRZID8gMSA6IC0xOwogICAgICAgIGxldCBlcnJvciA9IGRlbHRhWCAtIGRlbHRhWTsKICAgICAgICB3aGlsZSAoc3RhcnRYICE9PSBlbmRYIHx8IHN0YXJ0WSAhPT0gZW5kWSkgewogICAgICAgICAgY29uc3QgZG91YmxlRXJyb3IgPSBlcnJvciAqIDI7CiAgICAgICAgICBpZiAoZG91YmxlRXJyb3IgPiAtZGVsdGFZKSB7CiAgICAgICAgICAgIGVycm9yIC09IGRlbHRhWTsKICAgICAgICAgICAgc3RhcnRYICs9IHN0ZXBYOwogICAgICAgICAgfQogICAgICAgICAgaWYgKGRvdWJsZUVycm9yIDwgZGVsdGFYKSB7CiAgICAgICAgICAgIGVycm9yICs9IGRlbHRhWDsKICAgICAgICAgICAgc3RhcnRZICs9IHN0ZXBZOwogICAgICAgICAgfQogICAgICAgICAgYXBwbHlCcnVzaChzdGFydFgsIHN0YXJ0WSk7CiAgICAgICAgfQogICAgICB9CiAgICAgIHRoaXMuX2NhbnZhc0NvbnRleHQucHV0SW1hZ2VEYXRhKGltYWdlRGF0YSwgbWluWCwgbWluWSk7CiAgICB9CiAgICBmbG9vZEZpbGwoeCwgeSwgY29sb3IpIHsKICAgICAgY29uc3QgaW1hZ2VEYXRhID0gdGhpcy5fY2FudmFzQ29udGV4dC5nZXRJbWFnZURhdGEoMCwgMCwgdGhpcy5fd2lkdGgsIHRoaXMuX2hlaWdodCk7CiAgICAgIHggPSB0aGlzLmNsYW1wKE1hdGguZmxvb3IoeCksIDAsIHRoaXMuX3dpZHRoKTsKICAgICAgeSA9IHRoaXMuY2xhbXAoTWF0aC5mbG9vcih5KSwgMCwgdGhpcy5faGVpZ2h0KTsKICAgICAgY29uc3QgZmlsbCA9IENvbG9yLmZyb21Ta3JpYmJsQ29kZShjb2xvcikucmdiOwogICAgICBjb25zdCBwaXhlbFN0YWNrID0gW1t4LCB5XV07CiAgICAgIGNvbnN0IHRhcmdldENvbG9yID0gdGhpcy5nZXRQaXhlbChpbWFnZURhdGEsIHgsIHkpOwogICAgICBpZiAoZmlsbC5yICE9PSB0YXJnZXRDb2xvclswXSB8fCBmaWxsLmcgIT09IHRhcmdldENvbG9yWzFdIHx8IGZpbGwuYiAhPT0gdGFyZ2V0Q29sb3JbMl0pIHsKICAgICAgICBjb25zdCBpc01hdGNoaW5nQ29sb3IgPSAocGl4ZWxJbmRleCkgPT4gewogICAgICAgICAgY29uc3QgciA9IGltYWdlRGF0YS5kYXRhW3BpeGVsSW5kZXhdOwogICAgICAgICAgY29uc3QgZyA9IGltYWdlRGF0YS5kYXRhW3BpeGVsSW5kZXggKyAxXTsKICAgICAgICAgIGNvbnN0IGIgPSBpbWFnZURhdGEuZGF0YVtwaXhlbEluZGV4ICsgMl07CiAgICAgICAgICByZXR1cm4gciA9PT0gdGFyZ2V0Q29sb3JbMF0gJiYgZyA9PT0gdGFyZ2V0Q29sb3JbMV0gJiYgYiA9PT0gdGFyZ2V0Q29sb3JbMl07CiAgICAgICAgfTsKICAgICAgICBjb25zdCB3aWR0aCA9IGltYWdlRGF0YS53aWR0aDsKICAgICAgICBjb25zdCBoZWlnaHQgPSBpbWFnZURhdGEuaGVpZ2h0OwogICAgICAgIHdoaWxlIChwaXhlbFN0YWNrLmxlbmd0aCA+IDApIHsKICAgICAgICAgIGxldCBbeDIsIHkyXSA9IHBpeGVsU3RhY2sucG9wKCkgPz8gWy0xLCAtMV07CiAgICAgICAgICBsZXQgcGl4ZWxJbmRleCA9IDQgKiAoeTIgKiB3aWR0aCArIHgyKTsKICAgICAgICAgIHdoaWxlICh5MiA+PSAwICYmIGlzTWF0Y2hpbmdDb2xvcihwaXhlbEluZGV4KSkgewogICAgICAgICAgICBwaXhlbEluZGV4IC09IDQgKiB3aWR0aDsKICAgICAgICAgICAgeTItLTsKICAgICAgICAgIH0KICAgICAgICAgIHBpeGVsSW5kZXggKz0gNCAqIHdpZHRoOwogICAgICAgICAgeTIrKzsKICAgICAgICAgIGxldCBsZWZ0U2lkZUZpbGxlZCA9IGZhbHNlOwogICAgICAgICAgbGV0IHJpZ2h0U2lkZUZpbGxlZCA9IGZhbHNlOwogICAgICAgICAgd2hpbGUgKHkyIDwgaGVpZ2h0ICYmIGlzTWF0Y2hpbmdDb2xvcihwaXhlbEluZGV4KSkgewogICAgICAgICAgICB0aGlzLnNldFBpeGVsKGltYWdlRGF0YSwgcGl4ZWxJbmRleCwgZmlsbC5yLCBmaWxsLmcsIGZpbGwuYik7CiAgICAgICAgICAgIGlmICh4MiA+IDAgJiYgaXNNYXRjaGluZ0NvbG9yKHBpeGVsSW5kZXggLSA0KSkgewogICAgICAgICAgICAgIGlmICghbGVmdFNpZGVGaWxsZWQpIHsKICAgICAgICAgICAgICAgIHBpeGVsU3RhY2sucHVzaChbeDIgLSAxLCB5Ml0pOwogICAgICAgICAgICAgICAgbGVmdFNpZGVGaWxsZWQgPSB0cnVlOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSBlbHNlIGlmIChsZWZ0U2lkZUZpbGxlZCkgewogICAgICAgICAgICAgIGxlZnRTaWRlRmlsbGVkID0gZmFsc2U7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKHgyIDwgd2lkdGggLSAxICYmIGlzTWF0Y2hpbmdDb2xvcihwaXhlbEluZGV4ICsgNCkpIHsKICAgICAgICAgICAgICBpZiAoIXJpZ2h0U2lkZUZpbGxlZCkgewogICAgICAgICAgICAgICAgcGl4ZWxTdGFjay5wdXNoKFt4MiArIDEsIHkyXSk7CiAgICAgICAgICAgICAgICByaWdodFNpZGVGaWxsZWQgPSB0cnVlOwogICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSBlbHNlIGlmIChyaWdodFNpZGVGaWxsZWQpIHsKICAgICAgICAgICAgICByaWdodFNpZGVGaWxsZWQgPSBmYWxzZTsKICAgICAgICAgICAgfQogICAgICAgICAgICBwaXhlbEluZGV4ICs9IDQgKiB3aWR0aDsKICAgICAgICAgICAgeTIrKzsKICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgdGhpcy5fY2FudmFzQ29udGV4dC5wdXRJbWFnZURhdGEoaW1hZ2VEYXRhLCAwLCAwKTsKICAgICAgfQogICAgfQogICAgZ2V0UGl4ZWwoaW1hZ2VEYXRhLCB4LCB5KSB7CiAgICAgIGNvbnN0IHBpeGVsSW5kZXggPSA0ICogKHkgKiBpbWFnZURhdGEud2lkdGggKyB4KTsKICAgICAgaWYgKHBpeGVsSW5kZXggPCAwIHx8IHBpeGVsSW5kZXggPj0gaW1hZ2VEYXRhLmRhdGEubGVuZ3RoKSB7CiAgICAgICAgcmV0dXJuIFswLCAwLCAwXTsKICAgICAgfQogICAgICByZXR1cm4gW2ltYWdlRGF0YS5kYXRhW3BpeGVsSW5kZXhdLCBpbWFnZURhdGEuZGF0YVtwaXhlbEluZGV4ICsgMV0sIGltYWdlRGF0YS5kYXRhW3BpeGVsSW5kZXggKyAyXV07CiAgICB9CiAgICBzZXRQaXhlbChpbWFnZURhdGEsIGluZGV4LCByLCBnLCBiKSB7CiAgICAgIGlmIChpbmRleCA8IDAgfHwgaW5kZXggPj0gaW1hZ2VEYXRhLmRhdGEubGVuZ3RoKSByZXR1cm47CiAgICAgIGltYWdlRGF0YS5kYXRhW2luZGV4XSA9IHI7CiAgICAgIGltYWdlRGF0YS5kYXRhW2luZGV4ICsgMV0gPSBnOwogICAgICBpbWFnZURhdGEuZGF0YVtpbmRleCArIDJdID0gYjsKICAgICAgaW1hZ2VEYXRhLmRhdGFbaW5kZXggKyAzXSA9IDI1NTsKICAgIH0KICAgIGNsYW1wKHZhbHVlLCBtaW4sIG1heCkgewogICAgICByZXR1cm4gTWF0aC5taW4oTWF0aC5tYXgodmFsdWUsIG1pbiksIG1heCk7CiAgICB9CiAgfTsKCiAgLy8gc3JjL3V0aWwvZ2lmL2dpZkVuY29kZXIudHMKICB2YXIgaW1wb3J0X29tZ2dpZiA9IF9fdG9FU00ocmVxdWlyZV9vbWdnaWYoKSwgMSk7CiAgdmFyIEdpZkVuY29kZXIgPSBjbGFzcyB7CiAgICB3aWR0aCA9IDgwMDsKICAgIGhlaWdodCA9IDYwMDsKICAgIGJ1ZmZlcjsKICAgIGdpZldyaXRlcjsKICAgIGZyYW1lQ291bnQgPSAwOwogICAgY29sb3JzOwogICAgY29uc3RydWN0b3IoY29sb3JTZXQsIGZyYW1lQ291bnQpIHsKICAgICAgdGhpcy5idWZmZXIgPSBuZXcgVWludDhBcnJheSh0aGlzLndpZHRoICogdGhpcy5oZWlnaHQgKiA1ICogZnJhbWVDb3VudCk7CiAgICAgIHRoaXMuZ2lmV3JpdGVyID0gbmV3IGltcG9ydF9vbWdnaWYuR2lmV3JpdGVyKHRoaXMuYnVmZmVyLCB0aGlzLndpZHRoLCB0aGlzLmhlaWdodCwgeyBsb29wOiAxIH0pOwogICAgICBjb25zdCBjb2xvclRvS2V5ID0gKGNvbG9yKSA9PiBjb2xvci5yZ2JBcnJheS5zbGljZSgwLCAzKS5qb2luKCIsIik7CiAgICAgIGNvbnN0IHdoaXRlID0gQ29sb3IuZnJvbVJnYigyNTUsIDI1NSwgMjU1KTsKICAgICAgdGhpcy5jb2xvcnMgPSBuZXcgTWFwKAogICAgICAgIGNvbG9yU2V0LnZhbHVlcygpLm1hcCgoY29sb3IsIGluZGV4KSA9PiBbY29sb3IucmdiQXJyYXkuc2xpY2UoMCwgMykudG9TdHJpbmcoKSwgeyBjb2xvciwgaW5kZXggfV0pCiAgICAgICk7CiAgICAgIGlmICghdGhpcy5jb2xvcnMuaGFzKGNvbG9yVG9LZXkod2hpdGUpKSkgewogICAgICAgIHRoaXMuY29sb3JzLnNldChjb2xvclRvS2V5KHdoaXRlKSwgeyBjb2xvcjogd2hpdGUsIGluZGV4OiB0aGlzLmNvbG9ycy5zaXplIH0pOwogICAgICB9CiAgICAgIGNvbnN0IG5leHRQb3dlck9mVHdvID0gKG4pID0+IE1hdGgucG93KDIsIE1hdGguY2VpbChNYXRoLmxvZzIobikpKTsKICAgICAgY29uc3QgcmVxdWlyZWRTaXplID0gbmV4dFBvd2VyT2ZUd28odGhpcy5jb2xvcnMuc2l6ZSk7CiAgICAgIGlmICh0aGlzLmNvbG9ycy5zaXplIDwgcmVxdWlyZWRTaXplKSB7CiAgICAgICAgY29uc3QgZmlsbCA9IG5ldyBBcnJheShyZXF1aXJlZFNpemUgLSB0aGlzLmNvbG9ycy5zaXplKS5maWxsKHdoaXRlKTsKICAgICAgICBmaWxsLmZvckVhY2goKGNvbG9yLCBpbmRleCkgPT4gewogICAgICAgICAgdGhpcy5jb2xvcnMuc2V0KGBmaWxsLSR7aW5kZXh9YCwgeyBjb2xvciwgaW5kZXg6IHRoaXMuY29sb3JzLnNpemUgfSk7CiAgICAgICAgfSk7CiAgICAgIH0KICAgIH0KICAgIGdldCBwYWxldHRlKCkgewogICAgICByZXR1cm4gWy4uLnRoaXMuY29sb3JzLnZhbHVlcygpXS5tYXAoKGMpID0+IHsKICAgICAgICBjb25zdCByZ2IgPSBjLmNvbG9yLnJnYkFycmF5OwogICAgICAgIHJldHVybiByZ2JbMl0gfCByZ2JbMV0gPDwgOCB8IHJnYlswXSA8PCAxNjsKICAgICAgfSk7CiAgICB9CiAgICBtYXBUb1BhbGV0dGVJbmRleChjb2xvcikgewogICAgICByZXR1cm4gdGhpcy5jb2xvcnMuZ2V0KGNvbG9yLnRvU3RyaW5nKCkpPy5pbmRleCA/PyAwOwogICAgfQogICAgYWRkRnJhbWUoaW1hZ2VEYXRhLCBkZWxheU1zKSB7CiAgICAgIGNvbnN0IHBhbGV0dGUgPSB0aGlzLnBhbGV0dGU7CiAgICAgIGNvbnN0IGluZGV4ZWRQaXhlbHMgPSBbXTsKICAgICAgZm9yIChsZXQgaSA9IDA7IGkgPCBpbWFnZURhdGEubGVuZ3RoOyBpICs9IDQpIHsKICAgICAgICBjb25zdCBjb2xvciA9IFtpbWFnZURhdGFbaV0sIGltYWdlRGF0YVtpICsgMV0sIGltYWdlRGF0YVtpICsgMl1dOwogICAgICAgIGluZGV4ZWRQaXhlbHMucHVzaCh0aGlzLm1hcFRvUGFsZXR0ZUluZGV4KGNvbG9yKSk7CiAgICAgIH0KICAgICAgdGhpcy5naWZXcml0ZXIuYWRkRnJhbWUoMCwgMCwgdGhpcy53aWR0aCwgdGhpcy5oZWlnaHQsIGluZGV4ZWRQaXhlbHMsIHsKICAgICAgICBkZWxheTogZGVsYXlNcyAvIDEwLAogICAgICAgIHBhbGV0dGUsCiAgICAgICAgZGlzcG9zYWw6IDIKICAgICAgfSk7CiAgICAgIHRoaXMuZnJhbWVDb3VudCsrOwogICAgfQogICAgZmluYWxpemUoKSB7CiAgICAgIGlmICh0aGlzLmZyYW1lQ291bnQgPT09IDApIHRocm93IG5ldyBFcnJvcigiTm8gZnJhbWVzIGFkZGVkIHRvIHRoZSBHSUYuIik7CiAgICAgIGNvbnN0IGdpZkRhdGEgPSB0aGlzLmJ1ZmZlci5zdWJhcnJheSgwLCB0aGlzLmdpZldyaXRlci5lbmQoKSk7CiAgICAgIHJldHVybiBuZXcgQmxvYihbZ2lmRGF0YV0sIHsgdHlwZTogImltYWdlL2dpZiIgfSk7CiAgICB9CiAgfTsKCiAgLy8gc3JjL3V0aWwvZ2lmL2NyZWF0ZUdpZi50cwogIGZ1bmN0aW9uIGNyZWF0ZUdpZihwcm9jZXNzb3IsIGNvbW1hbmRzLCBjb21tYW5kUmVzb2x1dGlvbiwgZnJhbWVEZWxheSwgZnJhbWVDb3VudCwgb25GcmFtZVJlbmRlcmVkKSB7CiAgICBjb25zdCBza3JpYmJsQ29sb3JDb2RlcyA9IG5ldyBTZXQoY29tbWFuZHMubWFwKChjKSA9PiBjWzFdKSk7CiAgICBpZiAoc2tyaWJibENvbG9yQ29kZXMuc2l6ZSA+IDI1NikgewogICAgICB0aHJvdyBuZXcgRXJyb3IoIlRvbyBtYW55IGNvbG9ycyBpbiB0aGUgc2tyaWJibCBjb21tYW5kcyB0byByZW5kZXIgZ2lmIik7CiAgICB9CiAgICBjb25zdCBjb2xvclNldCA9IG5ldyBTZXQoc2tyaWJibENvbG9yQ29kZXMudmFsdWVzKCkubWFwKChjKSA9PiBDb2xvci5mcm9tU2tyaWJibENvZGUoYykpKTsKICAgIGNvbnN0IGdpZkVuY29kZXIgPSBuZXcgR2lmRW5jb2Rlcihjb2xvclNldCwgZnJhbWVDb3VudCk7CiAgICBmb3IgKGxldCBpID0gMDsgaSA8IGNvbW1hbmRzLmxlbmd0aDsgaSsrKSB7CiAgICAgIHByb2Nlc3Nvci5wcm9jZXNzRHJhd0NvbW1hbmQoY29tbWFuZHNbaV0pOwogICAgICBpZiAoaSAlIGNvbW1hbmRSZXNvbHV0aW9uID09PSAwKSB7CiAgICAgICAgY29uc3QgaW1hZ2UgPSBwcm9jZXNzb3IuZXhwb3J0SW1hZ2UoKTsKICAgICAgICBnaWZFbmNvZGVyLmFkZEZyYW1lKGltYWdlLCBmcmFtZURlbGF5KTsKICAgICAgICBvbkZyYW1lUmVuZGVyZWQ/LihpLCBjb21tYW5kcy5sZW5ndGgpOwogICAgICB9CiAgICB9CiAgICBnaWZFbmNvZGVyLmFkZEZyYW1lKHByb2Nlc3Nvci5leHBvcnRJbWFnZSgpLCAyZTMpOwogICAgcmV0dXJuIGdpZkVuY29kZXIuZmluYWxpemUoKTsKICB9CgogIC8vIHNyYy93b3JrZXIvdHlwZWQtd29ya2VyLnRzCiAgdmFyIFR5cGVkV29ya2VyID0gY2xhc3MgewogICAgY29uc3RydWN0b3Iod29ya2VyKSB7CiAgICAgIHRoaXMud29ya2VyID0gd29ya2VyOwogICAgICBhZGRFdmVudExpc3RlbmVyKCJtZXNzYWdlIiwgYXN5bmMgKGV2ZW50KSA9PiB7CiAgICAgICAgY29uc3QgeyBtZXRob2ROYW1lLCBhcmdzLCBtZXNzYWdlSWQgfSA9IGV2ZW50LmRhdGE7CiAgICAgICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgdGhpcy53b3JrZXJbbWV0aG9kTmFtZV0oLi4uYXJncyk7CiAgICAgICAgcG9zdE1lc3NhZ2UoeyB0eXBlOiAicmVzdWx0IiwgbWVzc2FnZUlkLCByZXN1bHQgfSk7CiAgICAgIH0pOwogICAgfQogICAgc2VuZChtZXRob2ROYW1lLCAuLi5hcmdzKSB7CiAgICAgIHBvc3RNZXNzYWdlKHsgdHlwZTogIm5vdGlmaWNhdGlvbiIsIG1ldGhvZE5hbWUsIGFyZ3MgfSk7CiAgICB9CiAgfTsKCiAgLy8gc3JjL3dvcmtlci9naWYtcmVuZGVyZXIvZ2lmLXJlbmRlcmVyLndvcmtlci50cwogIHZhciBnaWZSZW5kZXJlcldvcmtlciA9IHsKICAgIHJlbmRlckdpZihjb21tYW5kcywgZHVyYXRpb24pIHsKICAgICAgY29uc3Qgb2Zmc2NyZWVuQ2FudmFzID0gbmV3IE9mZnNjcmVlbkNhbnZhcyg4MDAsIDYwMCk7CiAgICAgIGNvbnN0IGNvbnRleHQgPSBvZmZzY3JlZW5DYW52YXMuZ2V0Q29udGV4dCgiMmQiLCB7IHdpbGxSZWFkRnJlcXVlbnRseTogdHJ1ZSB9KTsKICAgICAgaWYgKCFjb250ZXh0KSB0aHJvdyBuZXcgRXJyb3IoIkZhaWxlZCB0byBnZXQgMmQgY29udGV4dCIpOwogICAgICBjb25zdCBwcm9jZXNzb3IgPSBuZXcgQ2FudmFzQ29tbWFuZFByb2Nlc3Nvcihjb250ZXh0KTsKICAgICAgY29uc3QgZnJhbWVEZWxheSA9IDUwOwogICAgICBjb25zdCBmcmFtZUNvdW50ID0gTWF0aC5jZWlsKGR1cmF0aW9uIC8gZnJhbWVEZWxheSk7CiAgICAgIGNvbnN0IGNvbW1hbmRSZXNvbHV0aW9uID0gTWF0aC5tYXgoMSwgTWF0aC5mbG9vcihjb21tYW5kcy5sZW5ndGggLyBmcmFtZUNvdW50KSk7CiAgICAgIGNvbnN0IGdpZiA9IGNyZWF0ZUdpZihwcm9jZXNzb3IsIGNvbW1hbmRzLCBjb21tYW5kUmVzb2x1dGlvbiwgZnJhbWVEZWxheSwgZnJhbWVDb3VudCwgKGZyYW1lSW5kZXgsIHRvdGFsRnJhbWVzKSA9PiBwYXJlbnQuc2VuZCgiZnJhbWVSZW5kZXJlZCIsIGZyYW1lSW5kZXgsIHRvdGFsRnJhbWVzKSk7CiAgICAgIHJldHVybiBnaWY7CiAgICB9CiAgfTsKICB2YXIgcGFyZW50ID0gbmV3IFR5cGVkV29ya2VyKGdpZlJlbmRlcmVyV29ya2VyKTsKfSkoKTsK";
-function get_each_context$u(ctx, list, i) {
+function get_each_context$v(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[33] = list[i];
   return child_ctx;
 }
-__name(get_each_context$u, "get_each_context$u");
-function create_if_block_2$a(ctx) {
+__name(get_each_context$v, "get_each_context$v");
+function create_if_block_2$d(ctx) {
   let flatbutton;
   let current;
   flatbutton = new Flat_button({
@@ -22934,8 +22997,8 @@ function create_if_block_2$a(ctx) {
     }
   };
 }
-__name(create_if_block_2$a, "create_if_block_2$a");
-function create_if_block_1$e(ctx) {
+__name(create_if_block_2$d, "create_if_block_2$d");
+function create_if_block_1$g(ctx) {
   let await_block_anchor;
   let promise;
   let current;
@@ -22981,8 +23044,8 @@ function create_if_block_1$e(ctx) {
     },
     o(local) {
       for (let i = 0; i < 3; i += 1) {
-        const block = info.blocks[i];
-        transition_out(block);
+        const block2 = info.blocks[i];
+        transition_out(block2);
       }
       current = false;
     },
@@ -22996,7 +23059,7 @@ function create_if_block_1$e(ctx) {
     }
   };
 }
-__name(create_if_block_1$e, "create_if_block_1$e");
+__name(create_if_block_1$g, "create_if_block_1$g");
 function create_catch_block$4(ctx) {
   return {
     c: noop$1,
@@ -23016,7 +23079,7 @@ function create_then_block$4(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$u(get_each_context$u(ctx, each_value, i));
+    each_blocks[i] = create_each_block$v(get_each_context$v(ctx, each_value, i));
   }
   return {
     c() {
@@ -23042,11 +23105,11 @@ function create_then_block$4(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$u(ctx2, each_value, i);
+          const child_ctx = get_each_context$v(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$u(child_ctx);
+            each_blocks[i] = create_each_block$v(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -23068,7 +23131,7 @@ function create_then_block$4(ctx) {
   };
 }
 __name(create_then_block$4, "create_then_block$4");
-function create_each_block$u(ctx) {
+function create_each_block$v(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -23143,7 +23206,7 @@ function create_each_block$u(ctx) {
     }
   };
 }
-__name(create_each_block$u, "create_each_block$u");
+__name(create_each_block$v, "create_each_block$v");
 function create_pending_block$4(ctx) {
   let div;
   let bounceload;
@@ -23179,7 +23242,7 @@ function create_pending_block$4(ctx) {
   };
 }
 __name(create_pending_block$4, "create_pending_block$4");
-function create_if_block$t(ctx) {
+function create_if_block$x(ctx) {
   let div0;
   let img;
   let img_src_value;
@@ -23468,8 +23531,8 @@ function create_if_block$t(ctx) {
     }
   };
 }
-__name(create_if_block$t, "create_if_block$t");
-function create_fragment$U(ctx) {
+__name(create_if_block$x, "create_if_block$x");
+function create_fragment$1g(ctx) {
   let div3;
   let div1;
   let h3;
@@ -23547,7 +23610,7 @@ function create_fragment$U(ctx) {
   binding_callbacks.push(() => bind$1(checkbox1, "checked", checkbox1_checked_binding));
   let if_block0 = (
     /*$member*/
-    ctx[2] !== null && create_if_block_2$a(ctx)
+    ctx[2] !== null && create_if_block_2$d(ctx)
   );
   iconbutton0 = new Icon_button({
     props: {
@@ -23582,11 +23645,11 @@ function create_fragment$U(ctx) {
   let if_block1 = (
     /*$member*/
     ctx[2] !== null && /*images*/
-    ctx[11] !== null && create_if_block_1$e(ctx)
+    ctx[11] !== null && create_if_block_1$g(ctx)
   );
   let if_block2 = (
     /*selectedImage*/
-    ctx[10] !== null && create_if_block$t(ctx)
+    ctx[10] !== null && create_if_block$x(ctx)
   );
   return {
     c() {
@@ -23827,7 +23890,7 @@ function create_fragment$U(ctx) {
             transition_in(if_block0, 1);
           }
         } else {
-          if_block0 = create_if_block_2$a(ctx2);
+          if_block0 = create_if_block_2$d(ctx2);
           if_block0.c();
           transition_in(if_block0, 1);
           if_block0.m(div1, t17);
@@ -23868,7 +23931,7 @@ function create_fragment$U(ctx) {
             transition_in(if_block1, 1);
           }
         } else {
-          if_block1 = create_if_block_1$e(ctx2);
+          if_block1 = create_if_block_1$g(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
           if_block1.m(div2, null);
@@ -23900,7 +23963,7 @@ function create_fragment$U(ctx) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block$t(ctx2);
+          if_block2 = create_if_block$x(ctx2);
           if_block2.c();
           transition_in(if_block2, 1);
           if_block2.m(div3, null);
@@ -23950,10 +24013,10 @@ function create_fragment$U(ctx) {
     }
   };
 }
-__name(create_fragment$U, "create_fragment$U");
+__name(create_fragment$1g, "create_fragment$1g");
 const pageSize = 200;
 const click_handler_5 = /* @__PURE__ */ __name((e) => e.stopImmediatePropagation(), "click_handler_5");
-function instance$N($$self, $$props, $$invalidate) {
+function instance$18($$self, $$props, $$invalidate) {
   let $member;
   let { feature } = $$props;
   const member = feature.memberStore;
@@ -24095,22 +24158,22 @@ function instance$N($$self, $$props, $$invalidate) {
     click_handler_13
   ];
 }
-__name(instance$N, "instance$N");
+__name(instance$18, "instance$18");
 const _Controls_cloud = class _Controls_cloud extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$N, create_fragment$U, safe_not_equal, { feature: 0 }, null, [-1, -1]);
+    init(this, options, instance$18, create_fragment$1g, safe_not_equal, { feature: 0 }, null, [-1, -1]);
   }
 };
 __name(_Controls_cloud, "Controls_cloud");
 let Controls_cloud = _Controls_cloud;
 var __defProp$T = Object.defineProperty;
-var __decorateClass$T = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$T(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$T(target, key2, result);
   return result;
 }, "__decorateClass$T");
 const _ControlsCloudFeature = class _ControlsCloudFeature extends TypoFeature {
@@ -24314,15 +24377,15 @@ __decorateClass$T([
 ], ControlsCloudFeature.prototype, "_imageFinishedService");
 var __defProp$S = Object.defineProperty;
 var __getOwnPropDesc$9 = Object.getOwnPropertyDescriptor;
-var __decorateClass$S = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$9(target, key) : target;
+var __decorateClass$S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$9(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$S(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$S(target, key2, result);
   return result;
 }, "__decorateClass$S");
-var __decorateParam$6 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$6");
+var __decorateParam$6 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$6");
 let FeaturesService = (_ta = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
@@ -24519,15 +24582,15 @@ function convertOldTheme(options, theme) {
 __name(convertOldTheme, "convertOldTheme");
 var __defProp$R = Object.defineProperty;
 var __getOwnPropDesc$8 = Object.getOwnPropertyDescriptor;
-var __decorateClass$R = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$8(target, key) : target;
+var __decorateClass$R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$8(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$R(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$R(target, key2, result);
   return result;
 }, "__decorateClass$R");
-var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$5");
+var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$5");
 let ThemesService = (_ua = class {
   constructor(loggerFactory2, _elementsSetup, _apiService) {
     __publicField(this, "_logger");
@@ -24812,12 +24875,12 @@ const getCssVariableSelectorHooks = /* @__PURE__ */ __name((cssText, colorVariab
 }, "getCssVariableSelectorHooks");
 var __defProp$Q = Object.defineProperty;
 var __getOwnPropDesc$7 = Object.getOwnPropertyDescriptor;
-var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$7(target, key) : target;
+var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$7(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$Q(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$Q(target, key2, result);
   return result;
 }, "__decorateClass$Q");
 let CssColorVarSelectorsSetup = (_va = class extends Setup {
@@ -25037,12 +25100,12 @@ const generateThemeCustomHtmlElement = /* @__PURE__ */ __name((theme) => {
     createElement(`<div id='typo-theme-html-${theme.meta.id}'>${theme.misc.htmlText}</div>`)
   ] : [];
 }, "generateThemeCustomHtmlElement");
-function get_each_context$t(ctx, list, i) {
+function get_each_context$u(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[14] = list[i];
   return child_ctx;
 }
-__name(get_each_context$t, "get_each_context$t");
+__name(get_each_context$u, "get_each_context$u");
 function create_catch_block$3(ctx) {
   return {
     c: noop$1,
@@ -25063,7 +25126,7 @@ function create_then_block$3(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$t(get_each_context$t(ctx, each_value, i));
+    each_blocks[i] = create_each_block$u(get_each_context$u(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -25094,12 +25157,12 @@ function create_then_block$3(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$t(ctx2, each_value, i);
+          const child_ctx = get_each_context$u(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$t(child_ctx);
+            each_blocks[i] = create_each_block$u(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div, null);
@@ -25135,7 +25198,7 @@ function create_then_block$3(ctx) {
   };
 }
 __name(create_then_block$3, "create_then_block$3");
-function create_if_block_1$d(ctx) {
+function create_if_block_1$f(ctx) {
   let div0;
   let t0;
   let div1;
@@ -25200,8 +25263,8 @@ function create_if_block_1$d(ctx) {
     }
   };
 }
-__name(create_if_block_1$d, "create_if_block_1$d");
-function create_else_block$d(ctx) {
+__name(create_if_block_1$f, "create_if_block_1$f");
+function create_else_block$h(ctx) {
   let flatbutton;
   let current;
   function click_handler_1() {
@@ -25243,8 +25306,8 @@ function create_else_block$d(ctx) {
     }
   };
 }
-__name(create_else_block$d, "create_else_block$d");
-function create_if_block$s(ctx) {
+__name(create_else_block$h, "create_else_block$h");
+function create_if_block$w(ctx) {
   var _a2, _b2, _c2, _d2;
   let flatbutton;
   let current;
@@ -25310,8 +25373,8 @@ function create_if_block$s(ctx) {
     }
   };
 }
-__name(create_if_block$s, "create_if_block$s");
-function create_each_block$t(ctx) {
+__name(create_if_block$w, "create_if_block$w");
+function create_each_block$u(ctx) {
   let div2;
   let b;
   let t0_value = (
@@ -25355,9 +25418,9 @@ function create_each_block$t(ctx) {
   __name(func2, "func");
   let if_block0 = (
     /*$devmode*/
-    ctx[3] && create_if_block_1$d(ctx)
+    ctx[3] && create_if_block_1$f(ctx)
   );
-  const if_block_creators = [create_if_block$s, create_else_block$d];
+  const if_block_creators = [create_if_block$w, create_else_block$h];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (dirty & /*$savedThemes, feature*/
@@ -25426,7 +25489,7 @@ function create_each_block$t(ctx) {
         if (if_block0) {
           if_block0.p(ctx, dirty);
         } else {
-          if_block0 = create_if_block_1$d(ctx);
+          if_block0 = create_if_block_1$f(ctx);
           if_block0.c();
           if_block0.m(div2, t5);
         }
@@ -25476,7 +25539,7 @@ function create_each_block$t(ctx) {
     }
   };
 }
-__name(create_each_block$t, "create_each_block$t");
+__name(create_each_block$u, "create_each_block$u");
 function create_pending_block$3(ctx) {
   return {
     c: noop$1,
@@ -25488,7 +25551,7 @@ function create_pending_block$3(ctx) {
   };
 }
 __name(create_pending_block$3, "create_pending_block$3");
-function create_fragment$T(ctx) {
+function create_fragment$1f(ctx) {
   let div;
   let t2;
   let await_block_anchor;
@@ -25543,8 +25606,8 @@ function create_fragment$T(ctx) {
     },
     o(local) {
       for (let i = 0; i < 3; i += 1) {
-        const block = info.blocks[i];
-        transition_out(block);
+        const block2 = info.blocks[i];
+        transition_out(block2);
       }
       current = false;
     },
@@ -25560,8 +25623,8 @@ function create_fragment$T(ctx) {
     }
   };
 }
-__name(create_fragment$T, "create_fragment$T");
-function instance$M($$self, $$props, $$invalidate) {
+__name(create_fragment$1f, "create_fragment$1f");
+function instance$17($$self, $$props, $$invalidate) {
   let $currentThemeId;
   let $savedThemes;
   let $loadedEditorTheme;
@@ -25612,30 +25675,30 @@ function instance$M($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$M, "instance$M");
+__name(instance$17, "instance$17");
 const _Themes_browser = class _Themes_browser extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$M, create_fragment$T, safe_not_equal, { feature: 0 });
+    init(this, options, instance$17, create_fragment$1f, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Themes_browser, "Themes_browser");
 let Themes_browser = _Themes_browser;
-function get_each_context$s(ctx, list, i) {
+function get_each_context$t(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[61] = list[i];
   child_ctx[62] = list;
   child_ctx[63] = i;
   return child_ctx;
 }
-__name(get_each_context$s, "get_each_context$s");
-function get_each_context_1$a(ctx, list, i) {
+__name(get_each_context$t, "get_each_context$t");
+function get_each_context_1$b(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[61] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$a, "get_each_context_1$a");
-function create_else_block$c(ctx) {
+__name(get_each_context_1$b, "get_each_context_1$b");
+function create_else_block$g(ctx) {
   let div0;
   let h3;
   let t0;
@@ -25989,7 +26052,7 @@ function create_else_block$c(ctx) {
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$a(get_each_context_1$a(ctx, each_value_1, i));
+    each_blocks_1[i] = create_each_block_1$b(get_each_context_1$b(ctx, each_value_1, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks_1[i], 1, 1, () => {
     each_blocks_1[i] = null;
@@ -26080,7 +26143,7 @@ function create_else_block$c(ctx) {
   ));
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$s(get_each_context$s(ctx, each_value, i));
+    each_blocks[i] = create_each_block$t(get_each_context$t(ctx, each_value, i));
   }
   return {
     c() {
@@ -26822,12 +26885,12 @@ function create_else_block$c(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$a(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$b(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
             transition_in(each_blocks_1[i], 1);
           } else {
-            each_blocks_1[i] = create_each_block_1$a(child_ctx);
+            each_blocks_1[i] = create_each_block_1$b(child_ctx);
             each_blocks_1[i].c();
             transition_in(each_blocks_1[i], 1);
             each_blocks_1[i].m(div25, null);
@@ -26919,11 +26982,11 @@ function create_else_block$c(ctx) {
         ));
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$s(ctx2, each_value, i);
+          const child_ctx = get_each_context$t(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$s(child_ctx);
+            each_blocks[i] = create_each_block$t(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div39, null);
           }
@@ -27009,8 +27072,8 @@ function create_else_block$c(ctx) {
     }
   };
 }
-__name(create_else_block$c, "create_else_block$c");
-function create_if_block$r(ctx) {
+__name(create_else_block$g, "create_else_block$g");
+function create_if_block$v(ctx) {
   let div0;
   let t0;
   let br0;
@@ -27159,8 +27222,8 @@ function create_if_block$r(ctx) {
     }
   };
 }
-__name(create_if_block$r, "create_if_block$r");
-function create_each_block_1$a(ctx) {
+__name(create_if_block$v, "create_if_block$v");
+function create_each_block_1$b(ctx) {
   let div;
   let t0_value = (
     /*color*/
@@ -27239,8 +27302,8 @@ function create_each_block_1$a(ctx) {
     }
   };
 }
-__name(create_each_block_1$a, "create_each_block_1$a");
-function create_each_block$s(ctx) {
+__name(create_each_block_1$b, "create_each_block_1$b");
+function create_each_block$t(ctx) {
   let div;
   let abbr;
   let t0;
@@ -27347,13 +27410,13 @@ function create_each_block$s(ctx) {
     }
   };
 }
-__name(create_each_block$s, "create_each_block$s");
-function create_fragment$S(ctx) {
+__name(create_each_block$t, "create_each_block$t");
+function create_fragment$1e(ctx) {
   let div;
   let current_block_type_index;
   let if_block;
   let current;
-  const if_block_creators = [create_if_block$r, create_else_block$c];
+  const if_block_creators = [create_if_block$v, create_else_block$g];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -27415,8 +27478,8 @@ function create_fragment$S(ctx) {
     }
   };
 }
-__name(create_fragment$S, "create_fragment$S");
-function instance$L($$self, $$props, $$invalidate) {
+__name(create_fragment$1e, "create_fragment$1e");
+function instance$16($$self, $$props, $$invalidate) {
   let $loadedTheme;
   let $activeThemeTab;
   let schemePrimaryColor = Color.fromHex("#4197c5");
@@ -27701,22 +27764,22 @@ function instance$L($$self, $$props, $$invalidate) {
     change_handler_14
   ];
 }
-__name(instance$L, "instance$L");
+__name(instance$16, "instance$16");
 const _Themes_editor = class _Themes_editor extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$L, create_fragment$S, safe_not_equal, { feature: 0, variableHooks: 1 }, null, [-1, -1, -1]);
+    init(this, options, instance$16, create_fragment$1e, safe_not_equal, { feature: 0, variableHooks: 1 }, null, [-1, -1, -1]);
   }
 };
 __name(_Themes_editor, "Themes_editor");
 let Themes_editor = _Themes_editor;
-function get_each_context$r(ctx, list, i) {
+function get_each_context$s(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context$r, "get_each_context$r");
-function create_else_block$b(ctx) {
+__name(get_each_context$s, "get_each_context$s");
+function create_else_block$f(ctx) {
   let div1;
   return {
     c() {
@@ -27734,8 +27797,8 @@ function create_else_block$b(ctx) {
     }
   };
 }
-__name(create_else_block$b, "create_else_block$b");
-function create_if_block_5$2(ctx) {
+__name(create_else_block$f, "create_else_block$f");
+function create_if_block_5$4(ctx) {
   let div1;
   return {
     c() {
@@ -27753,8 +27816,8 @@ function create_if_block_5$2(ctx) {
     }
   };
 }
-__name(create_if_block_5$2, "create_if_block_5$2");
-function create_if_block_4$6(ctx) {
+__name(create_if_block_5$4, "create_if_block_5$4");
+function create_if_block_4$8(ctx) {
   let div1;
   return {
     c() {
@@ -27772,8 +27835,8 @@ function create_if_block_4$6(ctx) {
     }
   };
 }
-__name(create_if_block_4$6, "create_if_block_4$6");
-function create_if_block_3$6(ctx) {
+__name(create_if_block_4$8, "create_if_block_4$8");
+function create_if_block_3$8(ctx) {
   let span0;
   let t0;
   let t1_value = (
@@ -27827,8 +27890,8 @@ function create_if_block_3$6(ctx) {
     }
   };
 }
-__name(create_if_block_3$6, "create_if_block_3$6");
-function create_if_block_2$9(ctx) {
+__name(create_if_block_3$8, "create_if_block_3$8");
+function create_if_block_2$c(ctx) {
   let flatbutton;
   let current;
   function click_handler_1() {
@@ -27870,8 +27933,8 @@ function create_if_block_2$9(ctx) {
     }
   };
 }
-__name(create_if_block_2$9, "create_if_block_2$9");
-function create_if_block_1$c(ctx) {
+__name(create_if_block_2$c, "create_if_block_2$c");
+function create_if_block_1$e(ctx) {
   var _a2, _b2;
   let flatbutton;
   let current;
@@ -27937,8 +28000,8 @@ function create_if_block_1$c(ctx) {
     }
   };
 }
-__name(create_if_block_1$c, "create_if_block_1$c");
-function create_if_block$q(ctx) {
+__name(create_if_block_1$e, "create_if_block_1$e");
+function create_if_block$u(ctx) {
   var _a2;
   let flatbutton;
   let current;
@@ -27996,8 +28059,8 @@ function create_if_block$q(ctx) {
     }
   };
 }
-__name(create_if_block$q, "create_if_block$q");
-function create_each_block$r(ctx) {
+__name(create_if_block$u, "create_if_block$u");
+function create_each_block$s(ctx) {
   let div5;
   let div0;
   let b;
@@ -28040,13 +28103,13 @@ function create_each_block$r(ctx) {
       ctx2[2] === /*theme*/
       ctx2[15].theme.meta.id && /*$loadedEditorTheme*/
       ctx2[3] === void 0
-    ) return create_if_block_4$6;
+    ) return create_if_block_4$8;
     if (
       /*$loadedEditorTheme*/
       ((_a2 = ctx2[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
       ctx2[15].theme.meta.id
-    ) return create_if_block_5$2;
-    return create_else_block$b;
+    ) return create_if_block_5$4;
+    return create_else_block$f;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -28054,7 +28117,7 @@ function create_each_block$r(ctx) {
   let if_block1 = (
     /*$devmode*/
     ctx[4] && /*theme*/
-    ctx[15].publicTheme && create_if_block_3$6(ctx)
+    ctx[15].publicTheme && create_if_block_3$8(ctx)
   );
   function click_handler2() {
     return (
@@ -28087,15 +28150,15 @@ function create_each_block$r(ctx) {
   let if_block2 = (
     /*theme*/
     (ctx[15].publicTheme || /*theme*/
-    ctx[15].enableManage === true) && create_if_block_2$9(ctx)
+    ctx[15].enableManage === true) && create_if_block_2$c(ctx)
   );
   let if_block3 = (
     /*theme*/
-    ctx[15].enableManage === true && create_if_block_1$c(ctx)
+    ctx[15].enableManage === true && create_if_block_1$e(ctx)
   );
   let if_block4 = (
     /*theme*/
-    ctx[15].enableManage === true && create_if_block$q(ctx)
+    ctx[15].enableManage === true && create_if_block$u(ctx)
   );
   return {
     c() {
@@ -28192,7 +28255,7 @@ function create_each_block$r(ctx) {
         if (if_block1) {
           if_block1.p(ctx, dirty);
         } else {
-          if_block1 = create_if_block_3$6(ctx);
+          if_block1 = create_if_block_3$8(ctx);
           if_block1.c();
           if_block1.m(div2, null);
         }
@@ -28224,7 +28287,7 @@ function create_each_block$r(ctx) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block_2$9(ctx);
+          if_block2 = create_if_block_2$c(ctx);
           if_block2.c();
           transition_in(if_block2, 1);
           if_block2.m(div3, null);
@@ -28247,7 +28310,7 @@ function create_each_block$r(ctx) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block_1$c(ctx);
+          if_block3 = create_if_block_1$e(ctx);
           if_block3.c();
           transition_in(if_block3, 1);
           if_block3.m(div4, t11);
@@ -28270,7 +28333,7 @@ function create_each_block$r(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block$q(ctx);
+          if_block4 = create_if_block$u(ctx);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(div4, null);
@@ -28311,8 +28374,8 @@ function create_each_block$r(ctx) {
     }
   };
 }
-__name(create_each_block$r, "create_each_block$r");
-function create_fragment$R(ctx) {
+__name(create_each_block$s, "create_each_block$s");
+function create_fragment$1d(ctx) {
   let div0;
   let t1;
   let div1;
@@ -28323,7 +28386,7 @@ function create_fragment$R(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$r(get_each_context$r(ctx, each_value, i));
+    each_blocks[i] = create_each_block$s(get_each_context$s(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -28360,12 +28423,12 @@ function create_fragment$R(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$r(ctx2, each_value, i);
+          const child_ctx = get_each_context$s(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$r(child_ctx);
+            each_blocks[i] = create_each_block$s(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div1, null);
@@ -28402,8 +28465,8 @@ function create_fragment$R(ctx) {
     }
   };
 }
-__name(create_fragment$R, "create_fragment$R");
-function instance$K($$self, $$props, $$invalidate) {
+__name(create_fragment$1d, "create_fragment$1d");
+function instance$15($$self, $$props, $$invalidate) {
   let $savedThemes;
   let $currentThemeId;
   let $loadedEditorTheme;
@@ -28450,16 +28513,16 @@ function instance$K($$self, $$props, $$invalidate) {
     click_handler_3
   ];
 }
-__name(instance$K, "instance$K");
+__name(instance$15, "instance$15");
 const _Themes_list = class _Themes_list extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$K, create_fragment$R, safe_not_equal, { feature: 0 });
+    init(this, options, instance$15, create_fragment$1d, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Themes_list, "Themes_list");
 let Themes_list = _Themes_list;
-function create_if_block_2$8(ctx) {
+function create_if_block_2$b(ctx) {
   let themesbrowser;
   let current;
   themesbrowser = new Themes_browser({ props: { feature: (
@@ -28495,8 +28558,8 @@ function create_if_block_2$8(ctx) {
     }
   };
 }
-__name(create_if_block_2$8, "create_if_block_2$8");
-function create_if_block_1$b(ctx) {
+__name(create_if_block_2$b, "create_if_block_2$b");
+function create_if_block_1$d(ctx) {
   let themeseditor;
   let current;
   themeseditor = new Themes_editor({
@@ -28543,8 +28606,8 @@ function create_if_block_1$b(ctx) {
     }
   };
 }
-__name(create_if_block_1$b, "create_if_block_1$b");
-function create_if_block$p(ctx) {
+__name(create_if_block_1$d, "create_if_block_1$d");
+function create_if_block$t(ctx) {
   let themeslist;
   let current;
   themeslist = new Themes_list({ props: { feature: (
@@ -28580,8 +28643,8 @@ function create_if_block$p(ctx) {
     }
   };
 }
-__name(create_if_block$p, "create_if_block$p");
-function create_fragment$Q(ctx) {
+__name(create_if_block$t, "create_if_block$t");
+function create_fragment$1c(ctx) {
   let div2;
   let div0;
   let h30;
@@ -28596,7 +28659,7 @@ function create_fragment$Q(ctx) {
   let current;
   let mounted;
   let dispose;
-  const if_block_creators = [create_if_block$p, create_if_block_1$b, create_if_block_2$8];
+  const if_block_creators = [create_if_block$t, create_if_block_1$d, create_if_block_2$b];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -28773,8 +28836,8 @@ function create_fragment$Q(ctx) {
     }
   };
 }
-__name(create_fragment$Q, "create_fragment$Q");
-function instance$J($$self, $$props, $$invalidate) {
+__name(create_fragment$1c, "create_fragment$1c");
+function instance$14($$self, $$props, $$invalidate) {
   let $selectedTab;
   let { feature } = $$props;
   let { variableHooks } = $$props;
@@ -28797,22 +28860,22 @@ function instance$J($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$J, "instance$J");
+__name(instance$14, "instance$14");
 const _Controls_themes = class _Controls_themes extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$J, create_fragment$Q, safe_not_equal, { feature: 0, variableHooks: 1 });
+    init(this, options, instance$14, create_fragment$1c, safe_not_equal, { feature: 0, variableHooks: 1 });
   }
 };
 __name(_Controls_themes, "Controls_themes");
 let Controls_themes = _Controls_themes;
 var __defProp$P = Object.defineProperty;
-var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$P(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$P(target, key2, result);
   return result;
 }, "__decorateClass$P");
 const _ControlsThemesFeature = class _ControlsThemesFeature extends TypoFeature {
@@ -29140,12 +29203,12 @@ __decorateClass$P([
   inject(GlobalSettingsService)
 ], ControlsThemesFeature.prototype, "_globalSettingsService");
 var __defProp$O = Object.defineProperty;
-var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$O(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$O(target, key2, result);
   return result;
 }, "__decorateClass$O");
 const _CustomizerOutfitToggleFeature = class _CustomizerOutfitToggleFeature extends TypoFeature {
@@ -29216,12 +29279,12 @@ __decorateClass$O([
   inject(MemberService)
 ], CustomizerOutfitToggleFeature.prototype, "_memberService");
 var __defProp$N = Object.defineProperty;
-var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$N(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$N(target, key2, result);
   return result;
 }, "__decorateClass$N");
 const _CustomizerPracticeJoinFeature = class _CustomizerPracticeJoinFeature extends TypoFeature {
@@ -29428,15 +29491,15 @@ const defaultPalettes = {
 };
 var __defProp$M = Object.defineProperty;
 var __getOwnPropDesc$6 = Object.getOwnPropertyDescriptor;
-var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$6(target, key) : target;
+var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$6(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$M(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$M(target, key2, result);
   return result;
 }, "__decorateClass$M");
-var __decorateParam$4 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$4");
+var __decorateParam$4 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$4");
 let ColorsService = (_wa = class {
   constructor(loggerFactory2) {
     __publicField(this, "_toastService");
@@ -29539,7 +29602,7 @@ ColorsService = __decorateClass$M([
   injectable(),
   __decorateParam$4(0, inject(loggerFactory))
 ], ColorsService);
-function create_fragment$P(ctx) {
+function create_fragment$1b(ctx) {
   let t0;
   let br0;
   let t1;
@@ -29600,24 +29663,24 @@ function create_fragment$P(ctx) {
     }
   };
 }
-__name(create_fragment$P, "create_fragment$P");
+__name(create_fragment$1b, "create_fragment$1b");
 const _Drawing_color_palettes_info = class _Drawing_color_palettes_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$P, safe_not_equal, {});
+    init(this, options, null, create_fragment$1b, safe_not_equal, {});
   }
 };
 __name(_Drawing_color_palettes_info, "Drawing_color_palettes_info");
 let Drawing_color_palettes_info = _Drawing_color_palettes_info;
-function get_each_context$q(ctx, list, i) {
+function get_each_context$r(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[16] = list[i];
   child_ctx[17] = list;
   child_ctx[18] = i;
   return child_ctx;
 }
-__name(get_each_context$q, "get_each_context$q");
-function create_each_block$q(ctx) {
+__name(get_each_context$r, "get_each_context$r");
+function create_each_block$r(ctx) {
   let div;
   let colorpickerbutton;
   let updating_color;
@@ -29687,8 +29750,8 @@ function create_each_block$q(ctx) {
     }
   };
 }
-__name(create_each_block$q, "create_each_block$q");
-function create_if_block_4$5(ctx) {
+__name(create_each_block$r, "create_each_block$r");
+function create_if_block_4$7(ctx) {
   let flatbutton;
   let current;
   flatbutton = new Flat_button({
@@ -29722,8 +29785,8 @@ function create_if_block_4$5(ctx) {
     }
   };
 }
-__name(create_if_block_4$5, "create_if_block_4$5");
-function create_if_block_3$5(ctx) {
+__name(create_if_block_4$7, "create_if_block_4$7");
+function create_if_block_3$7(ctx) {
   let flatbutton;
   let current;
   flatbutton = new Flat_button({
@@ -29760,8 +29823,8 @@ function create_if_block_3$5(ctx) {
     }
   };
 }
-__name(create_if_block_3$5, "create_if_block_3$5");
-function create_if_block_2$7(ctx) {
+__name(create_if_block_3$7, "create_if_block_3$7");
+function create_if_block_2$a(ctx) {
   let flatbutton;
   let current;
   flatbutton = new Flat_button({
@@ -29798,8 +29861,8 @@ function create_if_block_2$7(ctx) {
     }
   };
 }
-__name(create_if_block_2$7, "create_if_block_2$7");
-function create_if_block_1$a(ctx) {
+__name(create_if_block_2$a, "create_if_block_2$a");
+function create_if_block_1$c(ctx) {
   let flatbutton;
   let current;
   flatbutton = new Flat_button({
@@ -29833,8 +29896,8 @@ function create_if_block_1$a(ctx) {
     }
   };
 }
-__name(create_if_block_1$a, "create_if_block_1$a");
-function create_if_block$o(ctx) {
+__name(create_if_block_1$c, "create_if_block_1$c");
+function create_if_block$s(ctx) {
   let flatbutton;
   let current;
   flatbutton = new Flat_button({
@@ -29868,8 +29931,8 @@ function create_if_block$o(ctx) {
     }
   };
 }
-__name(create_if_block$o, "create_if_block$o");
-function create_fragment$O(ctx) {
+__name(create_if_block$s, "create_if_block$s");
+function create_fragment$1a(ctx) {
   let div3;
   let div1;
   let b0;
@@ -29902,30 +29965,30 @@ function create_fragment$O(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$q(get_each_context$q(ctx, each_value, i));
+    each_blocks[i] = create_each_block$r(get_each_context$r(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
   }), "out");
   let if_block0 = (
     /*onPaletteSave*/
-    ctx[0] && create_if_block_4$5(ctx)
+    ctx[0] && create_if_block_4$7(ctx)
   );
   let if_block1 = (
     /*onPaletteDelete*/
-    ctx[2] && create_if_block_3$5(ctx)
+    ctx[2] && create_if_block_3$7(ctx)
   );
   let if_block2 = (
     /*onPaletteExport*/
-    ctx[1] && create_if_block_2$7(ctx)
+    ctx[1] && create_if_block_2$a(ctx)
   );
   let if_block3 = (
     /*onPaletteSave*/
-    ctx[0] && create_if_block_1$a(ctx)
+    ctx[0] && create_if_block_1$c(ctx)
   );
   let if_block4 = (
     /*onPaletteSave*/
-    ctx[0] && create_if_block$o(ctx)
+    ctx[0] && create_if_block$s(ctx)
   );
   return {
     c() {
@@ -30085,12 +30148,12 @@ function create_fragment$O(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$q(ctx2, each_value, i);
+          const child_ctx = get_each_context$r(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$q(child_ctx);
+            each_blocks[i] = create_each_block$r(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div0, null);
@@ -30133,7 +30196,7 @@ function create_fragment$O(ctx) {
             transition_in(if_block0, 1);
           }
         } else {
-          if_block0 = create_if_block_4$5(ctx2);
+          if_block0 = create_if_block_4$7(ctx2);
           if_block0.c();
           transition_in(if_block0, 1);
           if_block0.m(div2, t9);
@@ -30156,7 +30219,7 @@ function create_fragment$O(ctx) {
             transition_in(if_block1, 1);
           }
         } else {
-          if_block1 = create_if_block_3$5(ctx2);
+          if_block1 = create_if_block_3$7(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
           if_block1.m(div2, t10);
@@ -30179,7 +30242,7 @@ function create_fragment$O(ctx) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block_2$7(ctx2);
+          if_block2 = create_if_block_2$a(ctx2);
           if_block2.c();
           transition_in(if_block2, 1);
           if_block2.m(div2, t11);
@@ -30202,7 +30265,7 @@ function create_fragment$O(ctx) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block_1$a(ctx2);
+          if_block3 = create_if_block_1$c(ctx2);
           if_block3.c();
           transition_in(if_block3, 1);
           if_block3.m(div2, t13);
@@ -30225,7 +30288,7 @@ function create_fragment$O(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block$o(ctx2);
+          if_block4 = create_if_block$s(ctx2);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(div2, null);
@@ -30277,8 +30340,8 @@ function create_fragment$O(ctx) {
     }
   };
 }
-__name(create_fragment$O, "create_fragment$O");
-function instance$I($$self, $$props, $$invalidate) {
+__name(create_fragment$1a, "create_fragment$1a");
+function instance$13($$self, $$props, $$invalidate) {
   let name = "new-palette";
   let colors = [];
   let columns = 10;
@@ -30348,11 +30411,11 @@ function instance$I($$self, $$props, $$invalidate) {
     click_handler_4
   ];
 }
-__name(instance$I, "instance$I");
+__name(instance$13, "instance$13");
 const _Color_palette_builder = class _Color_palette_builder extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$I, create_fragment$O, safe_not_equal, {
+    init(this, options, instance$13, create_fragment$1a, safe_not_equal, {
       onPaletteSave: 0,
       onPaletteExport: 1,
       onPaletteDelete: 2,
@@ -30362,31 +30425,31 @@ const _Color_palette_builder = class _Color_palette_builder extends SvelteCompon
 };
 __name(_Color_palette_builder, "Color_palette_builder");
 let Color_palette_builder = _Color_palette_builder;
-function get_each_context$p(ctx, list, i) {
+function get_each_context$q(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context$p, "get_each_context$p");
-function get_each_context_1$9(ctx, list, i) {
+__name(get_each_context$q, "get_each_context$q");
+function get_each_context_1$a(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$9, "get_each_context_1$9");
-function get_each_context_2$3(ctx, list, i) {
+__name(get_each_context_1$a, "get_each_context_1$a");
+function get_each_context_2$4(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context_2$3, "get_each_context_2$3");
-function get_each_context_3$1(ctx, list, i) {
+__name(get_each_context_2$4, "get_each_context_2$4");
+function get_each_context_3$2(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context_3$1, "get_each_context_3$1");
-function create_each_block_3$1(ctx) {
+__name(get_each_context_3$2, "get_each_context_3$2");
+function create_each_block_3$2(ctx) {
   let option;
   let t_value = (
     /*palette*/
@@ -30434,8 +30497,8 @@ function create_each_block_3$1(ctx) {
     }
   };
 }
-__name(create_each_block_3$1, "create_each_block_3$1");
-function create_each_block_2$3(ctx) {
+__name(create_each_block_3$2, "create_each_block_3$2");
+function create_each_block_2$4(ctx) {
   let option;
   let t_value = (
     /*palette*/
@@ -30483,7 +30546,7 @@ function create_each_block_2$3(ctx) {
     }
   };
 }
-__name(create_each_block_2$3, "create_each_block_2$3");
+__name(create_each_block_2$4, "create_each_block_2$4");
 function create_key_block$1(ctx) {
   let colorpalettebuilder;
   let current;
@@ -30560,7 +30623,7 @@ function create_key_block$1(ctx) {
   };
 }
 __name(create_key_block$1, "create_key_block$1");
-function create_each_block_1$9(ctx) {
+function create_each_block_1$a(ctx) {
   let previous_key = (
     /*palette*/
     ctx[15]
@@ -30610,8 +30673,8 @@ function create_each_block_1$9(ctx) {
     }
   };
 }
-__name(create_each_block_1$9, "create_each_block_1$9");
-function create_each_block$p(ctx) {
+__name(create_each_block_1$a, "create_each_block_1$a");
+function create_each_block$q(ctx) {
   let colorpalettebuilder;
   let current;
   function func_3() {
@@ -30662,8 +30725,8 @@ function create_each_block$p(ctx) {
     }
   };
 }
-__name(create_each_block$p, "create_each_block$p");
-function create_fragment$N(ctx) {
+__name(create_each_block$q, "create_each_block$q");
+function create_fragment$19(ctx) {
   let h30;
   let t1;
   let br0;
@@ -30731,7 +30794,7 @@ function create_fragment$N(ctx) {
   ));
   let each_blocks_3 = [];
   for (let i2 = 0; i2 < each_value_3.length; i2 += 1) {
-    each_blocks_3[i2] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i2));
+    each_blocks_3[i2] = create_each_block_3$2(get_each_context_3$2(ctx, each_value_3, i2));
   }
   let each_value_2 = ensure_array_like(
     /*$palettes*/
@@ -30739,7 +30802,7 @@ function create_fragment$N(ctx) {
   );
   let each_blocks_2 = [];
   for (let i2 = 0; i2 < each_value_2.length; i2 += 1) {
-    each_blocks_2[i2] = create_each_block_2$3(get_each_context_2$3(ctx, each_value_2, i2));
+    each_blocks_2[i2] = create_each_block_2$4(get_each_context_2$4(ctx, each_value_2, i2));
   }
   flatbutton0 = new Flat_button({
     props: {
@@ -30758,7 +30821,7 @@ function create_fragment$N(ctx) {
   );
   let each_blocks_1 = [];
   for (let i2 = 0; i2 < each_value_1.length; i2 += 1) {
-    each_blocks_1[i2] = create_each_block_1$9(get_each_context_1$9(ctx, each_value_1, i2));
+    each_blocks_1[i2] = create_each_block_1$a(get_each_context_1$a(ctx, each_value_1, i2));
   }
   const out = /* @__PURE__ */ __name((i2) => transition_out(each_blocks_1[i2], 1, 1, () => {
     each_blocks_1[i2] = null;
@@ -30769,7 +30832,7 @@ function create_fragment$N(ctx) {
   ));
   let each_blocks = [];
   for (let i2 = 0; i2 < each_value.length; i2 += 1) {
-    each_blocks[i2] = create_each_block$p(get_each_context$p(ctx, each_value, i2));
+    each_blocks[i2] = create_each_block$q(get_each_context$q(ctx, each_value, i2));
   }
   const out_1 = /* @__PURE__ */ __name((i2) => transition_out(each_blocks[i2], 1, 1, () => {
     each_blocks[i2] = null;
@@ -30993,11 +31056,11 @@ function create_fragment$N(ctx) {
         ));
         let i2;
         for (i2 = 0; i2 < each_value_3.length; i2 += 1) {
-          const child_ctx = get_each_context_3$1(ctx2, each_value_3, i2);
+          const child_ctx = get_each_context_3$2(ctx2, each_value_3, i2);
           if (each_blocks_3[i2]) {
             each_blocks_3[i2].p(child_ctx, dirty);
           } else {
-            each_blocks_3[i2] = create_each_block_3$1(child_ctx);
+            each_blocks_3[i2] = create_each_block_3$2(child_ctx);
             each_blocks_3[i2].c();
             each_blocks_3[i2].m(select, each0_anchor);
           }
@@ -31015,11 +31078,11 @@ function create_fragment$N(ctx) {
         );
         let i2;
         for (i2 = 0; i2 < each_value_2.length; i2 += 1) {
-          const child_ctx = get_each_context_2$3(ctx2, each_value_2, i2);
+          const child_ctx = get_each_context_2$4(ctx2, each_value_2, i2);
           if (each_blocks_2[i2]) {
             each_blocks_2[i2].p(child_ctx, dirty);
           } else {
-            each_blocks_2[i2] = create_each_block_2$3(child_ctx);
+            each_blocks_2[i2] = create_each_block_2$4(child_ctx);
             each_blocks_2[i2].c();
             each_blocks_2[i2].m(select, null);
           }
@@ -31045,12 +31108,12 @@ function create_fragment$N(ctx) {
         );
         let i2;
         for (i2 = 0; i2 < each_value_1.length; i2 += 1) {
-          const child_ctx = get_each_context_1$9(ctx2, each_value_1, i2);
+          const child_ctx = get_each_context_1$a(ctx2, each_value_1, i2);
           if (each_blocks_1[i2]) {
             each_blocks_1[i2].p(child_ctx, dirty);
             transition_in(each_blocks_1[i2], 1);
           } else {
-            each_blocks_1[i2] = create_each_block_1$9(child_ctx);
+            each_blocks_1[i2] = create_each_block_1$a(child_ctx);
             each_blocks_1[i2].c();
             transition_in(each_blocks_1[i2], 1);
             each_blocks_1[i2].m(div, t17);
@@ -31070,12 +31133,12 @@ function create_fragment$N(ctx) {
         ));
         let i2;
         for (i2 = 0; i2 < each_value.length; i2 += 1) {
-          const child_ctx = get_each_context$p(ctx2, each_value, i2);
+          const child_ctx = get_each_context$q(ctx2, each_value, i2);
           if (each_blocks[i2]) {
             each_blocks[i2].p(child_ctx, dirty);
             transition_in(each_blocks[i2], 1);
           } else {
-            each_blocks[i2] = create_each_block$p(child_ctx);
+            each_blocks[i2] = create_each_block$q(child_ctx);
             each_blocks[i2].c();
             transition_in(each_blocks[i2], 1);
             each_blocks[i2].m(div, null);
@@ -31190,8 +31253,8 @@ function create_fragment$N(ctx) {
     }
   };
 }
-__name(create_fragment$N, "create_fragment$N");
-function instance$H($$self, $$props, $$invalidate) {
+__name(create_fragment$19, "create_fragment$19");
+function instance$12($$self, $$props, $$invalidate) {
   let $activePalette;
   let $palettes;
   let { feature } = $$props;
@@ -31243,22 +31306,22 @@ function instance$H($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$H, "instance$H");
+__name(instance$12, "instance$12");
 const _Drawing_color_palettes_manage = class _Drawing_color_palettes_manage extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$H, create_fragment$N, safe_not_equal, { feature: 0 });
+    init(this, options, instance$12, create_fragment$19, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Drawing_color_palettes_manage, "Drawing_color_palettes_manage");
 let Drawing_color_palettes_manage = _Drawing_color_palettes_manage;
-function get_each_context$o(ctx, list, i) {
+function get_each_context$p(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[3] = list[i];
   return child_ctx;
 }
-__name(get_each_context$o, "get_each_context$o");
-function create_each_block$o(ctx) {
+__name(get_each_context$p, "get_each_context$p");
+function create_each_block$p(ctx) {
   let div;
   let mounted;
   let dispose;
@@ -31328,8 +31391,8 @@ function create_each_block$o(ctx) {
     }
   };
 }
-__name(create_each_block$o, "create_each_block$o");
-function create_fragment$M(ctx) {
+__name(create_each_block$p, "create_each_block$p");
+function create_fragment$18(ctx) {
   let div1;
   let div0;
   let mounted;
@@ -31340,7 +31403,7 @@ function create_fragment$M(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$o(get_each_context$o(ctx, each_value, i));
+    each_blocks[i] = create_each_block$p(get_each_context$p(ctx, each_value, i));
   }
   return {
     c() {
@@ -31382,11 +31445,11 @@ function create_fragment$M(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$o(ctx2, each_value, i);
+          const child_ctx = get_each_context$p(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$o(child_ctx);
+            each_blocks[i] = create_each_block$p(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div0, null);
           }
@@ -31414,8 +31477,8 @@ function create_fragment$M(ctx) {
     }
   };
 }
-__name(create_fragment$M, "create_fragment$M");
-function instance$G($$self, $$props, $$invalidate) {
+__name(create_fragment$18, "create_fragment$18");
+function instance$11($$self, $$props, $$invalidate) {
   let { colors } = $$props;
   let { feature } = $$props;
   const pointerdown_handler = /* @__PURE__ */ __name((color) => feature.setColor(color), "pointerdown_handler");
@@ -31425,22 +31488,22 @@ function instance$G($$self, $$props, $$invalidate) {
   };
   return [colors, feature, pointerdown_handler];
 }
-__name(instance$G, "instance$G");
+__name(instance$11, "instance$11");
 const _Color_palette_picker = class _Color_palette_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$G, create_fragment$M, safe_not_equal, { colors: 0, feature: 1 });
+    init(this, options, instance$11, create_fragment$18, safe_not_equal, { colors: 0, feature: 1 });
   }
 };
 __name(_Color_palette_picker, "Color_palette_picker");
 let Color_palette_picker = _Color_palette_picker;
 var __defProp$L = Object.defineProperty;
-var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$L(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$L(target, key2, result);
   return result;
 }, "__decorateClass$L");
 const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends TypoFeature {
@@ -31695,12 +31758,12 @@ __decorateClass$L([
 ], DrawingColorPalettesFeature.prototype, "_colorsService");
 var __defProp$K = Object.defineProperty;
 var __getOwnPropDesc$5 = Object.getOwnPropertyDescriptor;
-var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$5(target, key) : target;
+var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$5(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$K(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$K(target, key2, result);
   return result;
 }, "__decorateClass$K");
 let TypoDrawMod = (_xa = class {
@@ -31788,12 +31851,12 @@ const _TypoDrawTool = class _TypoDrawTool extends ConstantDrawMod {
 __name(_TypoDrawTool, "TypoDrawTool");
 let TypoDrawTool = _TypoDrawTool;
 var __defProp$J = Object.defineProperty;
-var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$J(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$J(target, key2, result);
   return result;
 }, "__decorateClass$J");
 const _PipetteTool = class _PipetteTool extends TypoDrawTool {
@@ -31995,15 +32058,15 @@ __name(_CoordinateListener, "CoordinateListener");
 let CoordinateListener = _CoordinateListener;
 var __defProp$I = Object.defineProperty;
 var __getOwnPropDesc$4 = Object.getOwnPropertyDescriptor;
-var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$4(target, key) : target;
+var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$4(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$I(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$I(target, key2, result);
   return result;
 }, "__decorateClass$I");
-var __decorateParam$3 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$3");
+var __decorateParam$3 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$3");
 let ToolsService = (_ya = class {
   constructor(loggerFactory2) {
     __publicField(this, "_prioritizedCanvasEventsSetup");
@@ -32216,7 +32279,7 @@ ToolsService = __decorateClass$I([
   injectable(),
   __decorateParam$3(0, inject(loggerFactory))
 ], ToolsService);
-function create_fragment$L(ctx) {
+function create_fragment$17(ctx) {
   let t0;
   let br0;
   let t1;
@@ -32247,16 +32310,16 @@ function create_fragment$L(ctx) {
     }
   };
 }
-__name(create_fragment$L, "create_fragment$L");
+__name(create_fragment$17, "create_fragment$17");
 const _Drawing_color_tools_info = class _Drawing_color_tools_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$L, safe_not_equal, {});
+    init(this, options, null, create_fragment$17, safe_not_equal, {});
   }
 };
 __name(_Drawing_color_tools_info, "Drawing_color_tools_info");
 let Drawing_color_tools_info = _Drawing_color_tools_info;
-function create_fragment$K(ctx) {
+function create_fragment$16(ctx) {
   let div2;
   let div0;
   let t;
@@ -32364,8 +32427,8 @@ function create_fragment$K(ctx) {
     }
   };
 }
-__name(create_fragment$K, "create_fragment$K");
-function instance$F($$self, $$props, $$invalidate) {
+__name(create_fragment$16, "create_fragment$16");
+function instance$10($$self, $$props, $$invalidate) {
   let $selectedTool;
   let $color;
   let { feature } = $$props;
@@ -32380,22 +32443,22 @@ function instance$F($$self, $$props, $$invalidate) {
   };
   return [feature, $selectedTool, $color, selectedTool, color, click_handler2, func2];
 }
-__name(instance$F, "instance$F");
+__name(instance$10, "instance$10");
 const _Drawing_color_tools = class _Drawing_color_tools extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$F, create_fragment$K, safe_not_equal, { feature: 0 });
+    init(this, options, instance$10, create_fragment$16, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Drawing_color_tools, "Drawing_color_tools");
 let Drawing_color_tools = _Drawing_color_tools;
 var __defProp$H = Object.defineProperty;
-var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$H(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$H(target, key2, result);
   return result;
 }, "__decorateClass$H");
 const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFeature {
@@ -32431,7 +32494,7 @@ const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFe
     const elements2 = await this.elementsSetup.complete();
     this._pipetteTool = this._toolsService.resolveModOrTool(PipetteTool);
     this._colorChangedListener.events$.pipe(
-      withLatestFrom(this._currentColor$),
+      withLatestFrom(this._currentColor$.pipe(startWith(new Color(0, 0, 0)))),
       filter(([event, currentColor]) => event.data.hex !== currentColor.hex),
       map(([event]) => event)
     ).subscribe((event) => {
@@ -32535,7 +32598,7 @@ const _PressureMod = class _PressureMod extends ConstantDrawMod {
 };
 __name(_PressureMod, "PressureMod");
 let PressureMod = _PressureMod;
-function create_fragment$J(ctx) {
+function create_fragment$15(ctx) {
   let div;
   let p0;
   let t5;
@@ -32620,8 +32683,8 @@ function create_fragment$J(ctx) {
     }
   };
 }
-__name(create_fragment$J, "create_fragment$J");
-function instance$E($$self, $$props, $$invalidate) {
+__name(create_fragment$15, "create_fragment$15");
+function instance$$($$self, $$props, $$invalidate) {
   let $balance;
   let $sensitivity;
   let { feature } = $$props;
@@ -32673,22 +32736,22 @@ function instance$E($$self, $$props, $$invalidate) {
     canvas_1_binding
   ];
 }
-__name(instance$E, "instance$E");
+__name(instance$$, "instance$$");
 const _Drawing_pressure_info = class _Drawing_pressure_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$E, create_fragment$J, safe_not_equal, { feature: 3 });
+    init(this, options, instance$$, create_fragment$15, safe_not_equal, { feature: 3 });
   }
 };
 __name(_Drawing_pressure_info, "Drawing_pressure_info");
 let Drawing_pressure_info = _Drawing_pressure_info;
 var __defProp$G = Object.defineProperty;
-var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$G(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$G(target, key2, result);
   return result;
 }, "__decorateClass$G");
 const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeature {
@@ -33687,7 +33750,7 @@ const _Subject = class _Subject {
 __name(_Subject, "Subject");
 let Subject = _Subject;
 const _MessageBuffer = class _MessageBuffer {
-  constructor(protocol, connection, bufferSize) {
+  constructor(protocol2, connection, bufferSize) {
     this._bufferSize = 1e5;
     this._messages = [];
     this._totalMessageCount = 0;
@@ -33696,7 +33759,7 @@ const _MessageBuffer = class _MessageBuffer {
     this._latestReceivedSequenceId = 0;
     this._bufferedByteCount = 0;
     this._reconnectInProgress = false;
-    this._protocol = protocol;
+    this._protocol = protocol2;
     this._connection = connection;
     this._bufferSize = bufferSize;
   }
@@ -33862,22 +33925,22 @@ const _HubConnection = class _HubConnection {
   // create method that can be used by HubConnectionBuilder. An "internal" constructor would just
   // be stripped away and the '.d.ts' file would have no constructor, which is interpreted as a
   // public parameter-less constructor.
-  static create(connection, logger, protocol, reconnectPolicy, serverTimeoutInMilliseconds, keepAliveIntervalInMilliseconds, statefulReconnectBufferSize) {
-    return new _HubConnection(connection, logger, protocol, reconnectPolicy, serverTimeoutInMilliseconds, keepAliveIntervalInMilliseconds, statefulReconnectBufferSize);
+  static create(connection, logger, protocol2, reconnectPolicy, serverTimeoutInMilliseconds, keepAliveIntervalInMilliseconds, statefulReconnectBufferSize) {
+    return new _HubConnection(connection, logger, protocol2, reconnectPolicy, serverTimeoutInMilliseconds, keepAliveIntervalInMilliseconds, statefulReconnectBufferSize);
   }
-  constructor(connection, logger, protocol, reconnectPolicy, serverTimeoutInMilliseconds, keepAliveIntervalInMilliseconds, statefulReconnectBufferSize) {
+  constructor(connection, logger, protocol2, reconnectPolicy, serverTimeoutInMilliseconds, keepAliveIntervalInMilliseconds, statefulReconnectBufferSize) {
     this._nextKeepAlive = 0;
     this._freezeEventListener = () => {
       this._logger.log(LogLevel.Warning, "The page is being frozen, this will likely lead to the connection being closed and messages being lost. For more information see the docs at https://learn.microsoft.com/aspnet/core/signalr/javascript-client#bsleep");
     };
     Arg.isRequired(connection, "connection");
     Arg.isRequired(logger, "logger");
-    Arg.isRequired(protocol, "protocol");
+    Arg.isRequired(protocol2, "protocol");
     this.serverTimeoutInMilliseconds = serverTimeoutInMilliseconds !== null && serverTimeoutInMilliseconds !== void 0 ? serverTimeoutInMilliseconds : DEFAULT_TIMEOUT_IN_MS;
     this.keepAliveIntervalInMilliseconds = keepAliveIntervalInMilliseconds !== null && keepAliveIntervalInMilliseconds !== void 0 ? keepAliveIntervalInMilliseconds : DEFAULT_PING_INTERVAL_IN_MS;
     this._statefulReconnectBufferSize = statefulReconnectBufferSize !== null && statefulReconnectBufferSize !== void 0 ? statefulReconnectBufferSize : DEFAULT_STATEFUL_RECONNECT_BUFFER_SIZE;
     this._logger = logger;
-    this._protocol = protocol;
+    this._protocol = protocol2;
     this.connection = connection;
     this._reconnectPolicy = reconnectPolicy;
     this._handshakeProtocol = new HandshakeProtocol();
@@ -34498,8 +34561,8 @@ const _HubConnection = class _HubConnection {
   _cancelCallbacksWithError(error) {
     const callbacks = this._callbacks;
     this._callbacks = {};
-    Object.keys(callbacks).forEach((key) => {
-      const callback = callbacks[key];
+    Object.keys(callbacks).forEach((key2) => {
+      const callback = callbacks[key2];
       try {
         callback(null, error);
       } catch (e) {
@@ -35755,9 +35818,9 @@ const _HubConnectionBuilder = class _HubConnectionBuilder {
    *
    * @param {IHubProtocol} protocol The {@link @microsoft/signalr.IHubProtocol} implementation to use.
    */
-  withHubProtocol(protocol) {
-    Arg.isRequired(protocol, "protocol");
-    this.protocol = protocol;
+  withHubProtocol(protocol2) {
+    Arg.isRequired(protocol2, "protocol");
+    this.protocol = protocol2;
     return this;
   }
   withAutomaticReconnect(retryDelaysOrReconnectPolicy) {
@@ -35827,15 +35890,15 @@ function isLogger(logger) {
 __name(isLogger, "isLogger");
 var __defProp$F = Object.defineProperty;
 var __getOwnPropDesc$3 = Object.getOwnPropertyDescriptor;
-var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$3(target, key) : target;
+var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$3(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$F(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$F(target, key2, result);
   return result;
 }, "__decorateClass$F");
-var __decorateParam$2 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$2");
+var __decorateParam$2 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$2");
 const hubTypeMap = {
   IGuildLobbiesHub: {
     url: "guildLobbies"
@@ -35914,15 +35977,15 @@ SocketService = __decorateClass$F([
 ], SocketService);
 var __defProp$E = Object.defineProperty;
 var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
-var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key) : target;
+var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$E(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$E(target, key2, result);
   return result;
 }, "__decorateClass$E");
-var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam$1");
+var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$1");
 let LobbyConnectionService = (_Ba = class {
   constructor(loggerFactory2) {
     __publicField(this, "_socketService");
@@ -36098,7 +36161,7 @@ const parseSignalRError = /* @__PURE__ */ __name((error) => {
     };
   } else throw error;
 }, "parseSignalRError");
-function create_if_block$n(ctx) {
+function create_if_block$r(ctx) {
   let div;
   let mounted;
   let dispose;
@@ -36158,13 +36221,13 @@ function create_if_block$n(ctx) {
     }
   };
 }
-__name(create_if_block$n, "create_if_block$n");
-function create_fragment$I(ctx) {
+__name(create_if_block$r, "create_if_block$r");
+function create_fragment$14(ctx) {
   let if_block_anchor;
   let if_block = (
     /*$currentDrop*/
     ctx[1] !== void 0 && /*$currentDrop*/
-    ctx[1].ownClaimed === false && create_if_block$n(ctx)
+    ctx[1].ownClaimed === false && create_if_block$r(ctx)
   );
   return {
     c() {
@@ -36184,7 +36247,7 @@ function create_fragment$I(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$n(ctx2);
+          if_block = create_if_block$r(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -36203,8 +36266,8 @@ function create_fragment$I(ctx) {
     }
   };
 }
-__name(create_fragment$I, "create_fragment$I");
-function instance$D($$self, $$props, $$invalidate) {
+__name(create_fragment$14, "create_fragment$14");
+function instance$_($$self, $$props, $$invalidate) {
   let $currentDrop;
   let { feature } = $$props;
   let { drops } = $$props;
@@ -36227,22 +36290,22 @@ function instance$D($$self, $$props, $$invalidate) {
   };
   return [feature, $currentDrop, currentDrop, getDropUrl, drops, pointerdown_handler];
 }
-__name(instance$D, "instance$D");
+__name(instance$_, "instance$_");
 const _Drops = class _Drops extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$D, create_fragment$I, safe_not_equal, { feature: 0, drops: 4 });
+    init(this, options, instance$_, create_fragment$14, safe_not_equal, { feature: 0, drops: 4 });
   }
 };
 __name(_Drops, "Drops");
 let Drops = _Drops;
-function get_each_context$n(ctx, list, i) {
+function get_each_context$o(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[3] = list[i];
   return child_ctx;
 }
-__name(get_each_context$n, "get_each_context$n");
-function create_each_block$n(ctx) {
+__name(get_each_context$o, "get_each_context$o");
+function create_each_block$o(ctx) {
   let div;
   let b;
   let t0;
@@ -36351,8 +36414,8 @@ function create_each_block$n(ctx) {
     }
   };
 }
-__name(create_each_block$n, "create_each_block$n");
-function create_if_block$m(ctx) {
+__name(create_each_block$o, "create_each_block$o");
+function create_if_block$q(ctx) {
   let p;
   return {
     c() {
@@ -36369,8 +36432,8 @@ function create_if_block$m(ctx) {
     }
   };
 }
-__name(create_if_block$m, "create_if_block$m");
-function create_fragment$H(ctx) {
+__name(create_if_block$q, "create_if_block$q");
+function create_fragment$13(ctx) {
   let h3;
   let t1;
   let p;
@@ -36385,11 +36448,11 @@ function create_fragment$H(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$n(get_each_context$n(ctx, each_value, i));
+    each_blocks[i] = create_each_block$o(get_each_context$o(ctx, each_value, i));
   }
   let if_block = (
     /*$claims*/
-    ctx[0].length === 0 && create_if_block$m()
+    ctx[0].length === 0 && create_if_block$q()
   );
   return {
     c() {
@@ -36435,11 +36498,11 @@ function create_fragment$H(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$n(ctx2, each_value, i);
+          const child_ctx = get_each_context$o(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$n(child_ctx);
+            each_blocks[i] = create_each_block$o(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div, t6);
           }
@@ -36455,7 +36518,7 @@ function create_fragment$H(ctx) {
       ) {
         if (if_block) ;
         else {
-          if_block = create_if_block$m();
+          if_block = create_if_block$q();
           if_block.c();
           if_block.m(div, null);
         }
@@ -36481,8 +36544,8 @@ function create_fragment$H(ctx) {
     }
   };
 }
-__name(create_fragment$H, "create_fragment$H");
-function instance$C($$self, $$props, $$invalidate) {
+__name(create_fragment$13, "create_fragment$13");
+function instance$Z($$self, $$props, $$invalidate) {
   let $claims;
   let { feature } = $$props;
   const claims = feature.recordedClaimsStore;
@@ -36492,22 +36555,22 @@ function instance$C($$self, $$props, $$invalidate) {
   };
   return [$claims, claims, feature];
 }
-__name(instance$C, "instance$C");
+__name(instance$Z, "instance$Z");
 const _Drops_info = class _Drops_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$C, create_fragment$H, safe_not_equal, { feature: 2 });
+    init(this, options, instance$Z, create_fragment$13, safe_not_equal, { feature: 2 });
   }
 };
 __name(_Drops_info, "Drops_info");
 let Drops_info = _Drops_info;
 var __defProp$D = Object.defineProperty;
-var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$D(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$D(target, key2, result);
   return result;
 }, "__decorateClass$D");
 const _DropsFeature = class _DropsFeature extends TypoFeature {
@@ -36752,20 +36815,20 @@ function guessCorrectHint(character, index, hints) {
   return hints[index] === character && hints[index] !== BLANK;
 }
 __name(guessCorrectHint, "guessCorrectHint");
-function get_each_context$m(ctx, list, i) {
+function get_each_context$n(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[3] = list[i];
   return child_ctx;
 }
-__name(get_each_context$m, "get_each_context$m");
-function get_each_context_1$8(ctx, list, i) {
+__name(get_each_context$n, "get_each_context$n");
+function get_each_context_1$9(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[6] = list[i];
   child_ctx[8] = i;
   return child_ctx;
 }
-__name(get_each_context_1$8, "get_each_context_1$8");
-function create_if_block$l(ctx) {
+__name(get_each_context_1$9, "get_each_context_1$9");
+function create_if_block$p(ctx) {
   let each_1_anchor;
   let each_value_1 = ensure_array_like(
     /*$guess*/
@@ -36773,7 +36836,7 @@ function create_if_block$l(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$8(get_each_context_1$8(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$9(get_each_context_1$9(ctx, each_value_1, i));
   }
   return {
     c() {
@@ -36799,11 +36862,11 @@ function create_if_block$l(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$8(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$9(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_1$8(child_ctx);
+            each_blocks[i] = create_each_block_1$9(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -36822,8 +36885,8 @@ function create_if_block$l(ctx) {
     }
   };
 }
-__name(create_if_block$l, "create_if_block$l");
-function create_each_block_1$8(ctx) {
+__name(create_if_block$p, "create_if_block$p");
+function create_each_block_1$9(ctx) {
   let span;
   let t0_value = (
     /*guessCharacter*/
@@ -36893,13 +36956,13 @@ function create_each_block_1$8(ctx) {
     }
   };
 }
-__name(create_each_block_1$8, "create_each_block_1$8");
-function create_each_block$m(ctx) {
+__name(create_each_block_1$9, "create_each_block_1$9");
+function create_each_block$n(ctx) {
   let div;
   let t;
   let if_block = (
     /*$guess*/
-    ctx[0] !== null && create_if_block$l(ctx)
+    ctx[0] !== null && create_if_block$p(ctx)
   );
   return {
     c() {
@@ -36922,7 +36985,7 @@ function create_each_block$m(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$l(ctx2);
+          if_block = create_if_block$p(ctx2);
           if_block.c();
           if_block.m(div, t);
         }
@@ -36939,13 +37002,13 @@ function create_each_block$m(ctx) {
     }
   };
 }
-__name(create_each_block$m, "create_each_block$m");
-function create_fragment$G(ctx) {
+__name(create_each_block$n, "create_each_block$n");
+function create_fragment$12(ctx) {
   let each_1_anchor;
   let each_value = ensure_array_like(["warning", "correct"]);
   let each_blocks = [];
   for (let i = 0; i < 2; i += 1) {
-    each_blocks[i] = create_each_block$m(get_each_context$m(ctx, each_value, i));
+    each_blocks[i] = create_each_block$n(get_each_context$n(ctx, each_value, i));
   }
   return {
     c() {
@@ -36968,11 +37031,11 @@ function create_fragment$G(ctx) {
         each_value = ensure_array_like(["warning", "correct"]);
         let i;
         for (i = 0; i < 2; i += 1) {
-          const child_ctx = get_each_context$m(ctx2, each_value, i);
+          const child_ctx = get_each_context$n(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$m(child_ctx);
+            each_blocks[i] = create_each_block$n(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -36992,8 +37055,8 @@ function create_fragment$G(ctx) {
     }
   };
 }
-__name(create_fragment$G, "create_fragment$G");
-function instance$B($$self, $$props, $$invalidate) {
+__name(create_fragment$12, "create_fragment$12");
+function instance$Y($$self, $$props, $$invalidate) {
   let $guess;
   let { feature } = $$props;
   const guess = feature.guessChangedStore;
@@ -37003,22 +37066,22 @@ function instance$B($$self, $$props, $$invalidate) {
   };
   return [$guess, guess, feature];
 }
-__name(instance$B, "instance$B");
+__name(instance$Y, "instance$Y");
 const _Guess_check = class _Guess_check extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$B, create_fragment$G, safe_not_equal, { feature: 2 });
+    init(this, options, instance$Y, create_fragment$12, safe_not_equal, { feature: 2 });
   }
 };
 __name(_Guess_check, "Guess_check");
 let Guess_check = _Guess_check;
 var __defProp$C = Object.defineProperty;
-var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$C(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$C(target, key2, result);
   return result;
 }, "__decorateClass$C");
 const _GuessCheckFeature = class _GuessCheckFeature extends TypoFeature {
@@ -37209,7 +37272,7 @@ function create_then_block$2(ctx) {
   let if_block = (
     /*imageIndex*/
     ctx[1] !== void 0 && /*images*/
-    ctx[2].length > 0 && create_if_block$k(ctx)
+    ctx[2].length > 0 && create_if_block$o(ctx)
   );
   return {
     c() {
@@ -37229,7 +37292,7 @@ function create_then_block$2(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$k(ctx2);
+          if_block = create_if_block$o(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -37249,7 +37312,7 @@ function create_then_block$2(ctx) {
   };
 }
 __name(create_then_block$2, "create_then_block$2");
-function create_if_block$k(ctx) {
+function create_if_block$o(ctx) {
   let img;
   let img_src_value;
   let mounted;
@@ -37308,7 +37371,7 @@ function create_if_block$k(ctx) {
     }
   };
 }
-__name(create_if_block$k, "create_if_block$k");
+__name(create_if_block$o, "create_if_block$o");
 function create_pending_block$2(ctx) {
   let bounceload;
   let current;
@@ -37337,7 +37400,7 @@ function create_pending_block$2(ctx) {
   };
 }
 __name(create_pending_block$2, "create_pending_block$2");
-function create_fragment$F(ctx) {
+function create_fragment$11(ctx) {
   let div1;
   let div0;
   let input;
@@ -37430,8 +37493,8 @@ function create_fragment$F(ctx) {
     },
     o(local) {
       for (let i = 0; i < 3; i += 1) {
-        const block = info.blocks[i];
-        transition_out(block);
+        const block2 = info.blocks[i];
+        transition_out(block2);
       }
       current = false;
     },
@@ -37447,9 +37510,9 @@ function create_fragment$F(ctx) {
     }
   };
 }
-__name(create_fragment$F, "create_fragment$F");
+__name(create_fragment$11, "create_fragment$11");
 const contextmenu_handler = /* @__PURE__ */ __name((event) => event.preventDefault(), "contextmenu_handler");
-function instance$A($$self, $$props, $$invalidate) {
+function instance$X($$self, $$props, $$invalidate) {
   let images;
   let $word;
   let { feature } = $$props;
@@ -37498,22 +37561,22 @@ function instance$A($$self, $$props, $$invalidate) {
     mousedown_handler
   ];
 }
-__name(instance$A, "instance$A");
+__name(instance$X, "instance$X");
 const _Image_agent_flyout = class _Image_agent_flyout extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$A, create_fragment$F, safe_not_equal, { feature: 4 });
+    init(this, options, instance$X, create_fragment$11, safe_not_equal, { feature: 4 });
   }
 };
 __name(_Image_agent_flyout, "Image_agent_flyout");
 let Image_agent_flyout = _Image_agent_flyout;
 var __defProp$B = Object.defineProperty;
-var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$B(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$B(target, key2, result);
   return result;
 }, "__decorateClass$B");
 const _ImageAgentFeature = class _ImageAgentFeature extends TypoFeature {
@@ -37656,7 +37719,7 @@ __decorateClass$B([
 __decorateClass$B([
   inject(DrawingService)
 ], ImageAgentFeature.prototype, "_drawingService");
-function create_fragment$E(ctx) {
+function create_fragment$10(ctx) {
   let t0;
   let br0;
   let t1;
@@ -37719,22 +37782,22 @@ function create_fragment$E(ctx) {
     }
   };
 }
-__name(create_fragment$E, "create_fragment$E");
+__name(create_fragment$10, "create_fragment$10");
 const _Line_tool_info = class _Line_tool_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$E, safe_not_equal, {});
+    init(this, options, null, create_fragment$10, safe_not_equal, {});
   }
 };
 __name(_Line_tool_info, "Line_tool_info");
 let Line_tool_info = _Line_tool_info;
 var __defProp$A = Object.defineProperty;
-var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$A(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$A(target, key2, result);
   return result;
 }, "__decorateClass$A");
 const _LineToolFeature = class _LineToolFeature extends TypoFeature {
@@ -38087,15 +38150,15 @@ function repeatAfterDelay(source$, delayMs) {
   );
 }
 __name(repeatAfterDelay, "repeatAfterDelay");
-function get_each_context$l(ctx, list, i) {
+function get_each_context$m(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[16] = list[i];
   child_ctx[17] = list;
   child_ctx[18] = i;
   return child_ctx;
 }
-__name(get_each_context$l, "get_each_context$l");
-function create_else_block$a(ctx) {
+__name(get_each_context$m, "get_each_context$m");
+function create_else_block$e(ctx) {
   let flatbutton;
   let t0;
   let span;
@@ -38143,7 +38206,7 @@ function create_else_block$a(ctx) {
     }
   };
 }
-__name(create_else_block$a, "create_else_block$a");
+__name(create_else_block$e, "create_else_block$e");
 function create_if_block_6(ctx) {
   let flatbutton;
   let t0;
@@ -38196,7 +38259,7 @@ function create_if_block_6(ctx) {
   };
 }
 __name(create_if_block_6, "create_if_block_6");
-function create_if_block_5$1(ctx) {
+function create_if_block_5$3(ctx) {
   let span;
   return {
     c() {
@@ -38216,8 +38279,8 @@ function create_if_block_5$1(ctx) {
     }
   };
 }
-__name(create_if_block_5$1, "create_if_block_5$1");
-function create_if_block_4$4(ctx) {
+__name(create_if_block_5$3, "create_if_block_5$3");
+function create_if_block_4$6(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({
@@ -38246,8 +38309,8 @@ function create_if_block_4$4(ctx) {
     }
   };
 }
-__name(create_if_block_4$4, "create_if_block_4$4");
-function create_if_block_3$4(ctx) {
+__name(create_if_block_4$6, "create_if_block_4$6");
+function create_if_block_3$6(ctx) {
   let div2;
   let span;
   let t1;
@@ -38287,7 +38350,7 @@ function create_if_block_3$4(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$l(get_each_context$l(ctx, each_value, i));
+    each_blocks[i] = create_each_block$m(get_each_context$m(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -38391,12 +38454,12 @@ function create_if_block_3$4(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$l(ctx2, each_value, i);
+          const child_ctx = get_each_context$m(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$l(child_ctx);
+            each_blocks[i] = create_each_block$m(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div1, null);
@@ -38439,8 +38502,8 @@ function create_if_block_3$4(ctx) {
     }
   };
 }
-__name(create_if_block_3$4, "create_if_block_3$4");
-function create_each_block$l(ctx) {
+__name(create_if_block_3$6, "create_if_block_3$6");
+function create_each_block$m(ctx) {
   let checkbox;
   let updating_checked;
   let current;
@@ -38520,8 +38583,8 @@ function create_each_block$l(ctx) {
     }
   };
 }
-__name(create_each_block$l, "create_each_block$l");
-function create_if_block_1$9(ctx) {
+__name(create_each_block$m, "create_each_block$m");
+function create_if_block_1$b(ctx) {
   let div1;
   let t0;
   let div0;
@@ -38535,7 +38598,7 @@ function create_if_block_1$9(ctx) {
   let t3;
   let if_block = (
     /*$connection*/
-    ctx[4].typoLobbyState.lobbySettings.description !== "" && create_if_block_2$6(ctx)
+    ctx[4].typoLobbyState.lobbySettings.description !== "" && create_if_block_2$9(ctx)
   );
   return {
     c() {
@@ -38568,7 +38631,7 @@ function create_if_block_1$9(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block_2$6(ctx2);
+          if_block = create_if_block_2$9(ctx2);
           if_block.c();
           if_block.m(div1, t0);
         }
@@ -38588,8 +38651,8 @@ function create_if_block_1$9(ctx) {
     }
   };
 }
-__name(create_if_block_1$9, "create_if_block_1$9");
-function create_if_block_2$6(ctx) {
+__name(create_if_block_1$b, "create_if_block_1$b");
+function create_if_block_2$9(ctx) {
   let b;
   let br;
   let t1;
@@ -38627,8 +38690,8 @@ function create_if_block_2$6(ctx) {
     }
   };
 }
-__name(create_if_block_2$6, "create_if_block_2$6");
-function create_if_block$j(ctx) {
+__name(create_if_block_2$9, "create_if_block_2$9");
+function create_if_block$n(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -38780,8 +38843,8 @@ function create_if_block$j(ctx) {
     }
   };
 }
-__name(create_if_block$j, "create_if_block$j");
-function create_fragment$D(ctx) {
+__name(create_if_block$n, "create_if_block$n");
+function create_fragment$$(ctx) {
   let div1;
   let div0;
   let current_block_type_index;
@@ -38790,7 +38853,7 @@ function create_fragment$D(ctx) {
   let t1;
   let t2;
   let current;
-  const if_block_creators = [create_if_block_4$4, create_if_block_5$1, create_if_block_6, create_else_block$a];
+  const if_block_creators = [create_if_block_4$6, create_if_block_5$3, create_if_block_6, create_else_block$e];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -38815,18 +38878,18 @@ function create_fragment$D(ctx) {
     ctx[4] !== void 0 && /*$connection*/
     ctx[4] !== "unauthorized" && /*$connection*/
     ctx[4] !== "paused" && /*$connection*/
-    ctx[4].typoLobbyState.playerIsOwner && create_if_block_3$4(ctx)
+    ctx[4].typoLobbyState.playerIsOwner && create_if_block_3$6(ctx)
   );
   let if_block2 = (
     /*$connection*/
     ctx[4] !== void 0 && /*$connection*/
     ctx[4] !== "unauthorized" && /*$connection*/
     ctx[4] !== "paused" && /*$connection*/
-    ctx[4].typoLobbyState.playerIsOwner === false && create_if_block_1$9(ctx)
+    ctx[4].typoLobbyState.playerIsOwner === false && create_if_block_1$b(ctx)
   );
   let if_block3 = (
     /*$devmode*/
-    ctx[5] === true && create_if_block$j(ctx)
+    ctx[5] === true && create_if_block$n(ctx)
   );
   return {
     c() {
@@ -38889,7 +38952,7 @@ function create_fragment$D(ctx) {
             transition_in(if_block1, 1);
           }
         } else {
-          if_block1 = create_if_block_3$4(ctx2);
+          if_block1 = create_if_block_3$6(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
           if_block1.m(div1, t1);
@@ -38911,7 +38974,7 @@ function create_fragment$D(ctx) {
         if (if_block2) {
           if_block2.p(ctx2, dirty);
         } else {
-          if_block2 = create_if_block_1$9(ctx2);
+          if_block2 = create_if_block_1$b(ctx2);
           if_block2.c();
           if_block2.m(div1, t2);
         }
@@ -38930,7 +38993,7 @@ function create_fragment$D(ctx) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block$j(ctx2);
+          if_block3 = create_if_block$n(ctx2);
           if_block3.c();
           transition_in(if_block3, 1);
           if_block3.m(div1, null);
@@ -38967,8 +39030,8 @@ function create_fragment$D(ctx) {
     }
   };
 }
-__name(create_fragment$D, "create_fragment$D");
-function instance$z($$self, $$props, $$invalidate) {
+__name(create_fragment$$, "create_fragment$$");
+function instance$W($$self, $$props, $$invalidate) {
   let $connection;
   let $devmode;
   let { feature } = $$props;
@@ -39036,22 +39099,22 @@ function instance$z($$self, $$props, $$invalidate) {
     click_handler_4
   ];
 }
-__name(instance$z, "instance$z");
+__name(instance$W, "instance$W");
 const _Lobby_status = class _Lobby_status extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$z, create_fragment$D, safe_not_equal, { feature: 0 });
+    init(this, options, instance$W, create_fragment$$, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Lobby_status, "Lobby_status");
 let Lobby_status = _Lobby_status;
 var __defProp$z = Object.defineProperty;
-var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$z(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$z(target, key2, result);
   return result;
 }, "__decorateClass$z");
 const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
@@ -39263,7 +39326,7 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
       }
       const { typoLobbyState, hub } = this._lobbyConnectionService.connection;
       if (typoLobbyState.playerIsOwner && result === "connected") {
-        const defaults = lobby.private ? {
+        const defaults2 = lobby.private ? {
           whitelistEnabled: await this._privateLobbyWhitelistEnabledSetting.getValue(),
           whitelist: await this._privateLobbyWhitelistedServersSetting.getValue()
         } : {
@@ -39273,8 +39336,8 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
         try {
           await hub.updateTypoLobbySettings({
             description: "",
-            whitelistAllowedServers: defaults.whitelistEnabled,
-            allowedServers: defaults.whitelist
+            whitelistAllowedServers: defaults2.whitelistEnabled,
+            allowedServers: defaults2.whitelist
           });
         } catch (e) {
           this._logger.error("Failed to set defaults", e);
@@ -39333,12 +39396,12 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
       if (lobby.private) {
         this._privateLobbyWhitelistEnabledSetting.setValue(whitelistAllowedServers);
         this._privateLobbyWhitelistedServersSetting.setValue(
-          Object.keys(allowedServers).filter((key) => allowedServers[key])
+          Object.keys(allowedServers).filter((key2) => allowedServers[key2])
         );
       } else {
         this._publicLobbyWhitelistEnabledSetting.setValue(whitelistAllowedServers);
         this._publicLobbyWhitelistedServersSetting.setValue(
-          Object.keys(allowedServers).filter((key) => allowedServers[key])
+          Object.keys(allowedServers).filter((key2) => allowedServers[key2])
         );
       }
     });
@@ -39346,7 +39409,7 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
       await this._lobbyConnectionService.connection.hub.updateTypoLobbySettings({
         description,
         whitelistAllowedServers,
-        allowedServers: Object.entries(allowedServers).filter(([, value]) => value).map(([key]) => key)
+        allowedServers: Object.entries(allowedServers).filter(([, value]) => value).map(([key2]) => key2)
       });
       toast.resolve();
     } catch (e) {
@@ -39402,7 +39465,7 @@ __decorateClass$z([
 __decorateClass$z([
   inject(LobbyConnectionService)
 ], LobbyStatusFeature.prototype, "_lobbyConnectionService");
-function create_fragment$C(ctx) {
+function create_fragment$_(ctx) {
   let t;
   let br;
   return {
@@ -39425,22 +39488,22 @@ function create_fragment$C(ctx) {
     }
   };
 }
-__name(create_fragment$C, "create_fragment$C");
+__name(create_fragment$_, "create_fragment$_");
 const _Lobby_time_visualizer_info = class _Lobby_time_visualizer_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$C, safe_not_equal, {});
+    init(this, options, null, create_fragment$_, safe_not_equal, {});
   }
 };
 __name(_Lobby_time_visualizer_info, "Lobby_time_visualizer_info");
 let Lobby_time_visualizer_info = _Lobby_time_visualizer_info;
 var __defProp$y = Object.defineProperty;
-var __decorateClass$y = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$y(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$y(target, key2, result);
   return result;
 }, "__decorateClass$y");
 const _LobbyTimeVisualizerFeature = class _LobbyTimeVisualizerFeature extends TypoFeature {
@@ -39561,28 +39624,28 @@ __decorateClass$y([
 __decorateClass$y([
   inject(LobbyLeftEventListener)
 ], LobbyTimeVisualizerFeature.prototype, "_lobbyLeftEventListener");
-function get_each_context$k(ctx, list, i) {
+function get_each_context$l(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   child_ctx[17] = i;
   return child_ctx;
 }
-__name(get_each_context$k, "get_each_context$k");
-function get_each_context_1$7(ctx, list, i) {
+__name(get_each_context$l, "get_each_context$l");
+function get_each_context_1$8(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   child_ctx[17] = i;
   return child_ctx;
 }
-__name(get_each_context_1$7, "get_each_context_1$7");
-function create_else_block$9(ctx) {
+__name(get_each_context_1$8, "get_each_context_1$8");
+function create_else_block$d(ctx) {
   let div1;
   let div0;
   let t0;
   let t1;
   let if_block = (
     /*$scenePickerEnabled*/
-    ctx[5] && create_if_block_3$3(ctx)
+    ctx[5] && create_if_block_3$5(ctx)
   );
   let each_value_1 = ensure_array_like({
     length: (
@@ -39592,7 +39655,7 @@ function create_else_block$9(ctx) {
   });
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$7(get_each_context_1$7(ctx, each_value_1, i));
+    each_blocks_1[i] = create_each_block_1$8(get_each_context_1$8(ctx, each_value_1, i));
   }
   let each_value = ensure_array_like({
     length: Math.max(9 - /*$memberStore*/
@@ -39601,7 +39664,7 @@ function create_else_block$9(ctx) {
   });
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$k(get_each_context$k(ctx, each_value, i));
+    each_blocks[i] = create_each_block$l(get_each_context$l(ctx, each_value, i));
   }
   return {
     c() {
@@ -39644,7 +39707,7 @@ function create_else_block$9(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block_3$3(ctx2);
+          if_block = create_if_block_3$5(ctx2);
           if_block.c();
           if_block.m(div0, t0);
         }
@@ -39662,11 +39725,11 @@ function create_else_block$9(ctx) {
         });
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$7(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$8(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_1$7(child_ctx);
+            each_blocks_1[i] = create_each_block_1$8(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(div0, t1);
           }
@@ -39685,11 +39748,11 @@ function create_else_block$9(ctx) {
         });
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$k(ctx2, each_value, i);
+          const child_ctx = get_each_context$l(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$k(child_ctx);
+            each_blocks[i] = create_each_block$l(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div0, null);
           }
@@ -39712,8 +39775,8 @@ function create_else_block$9(ctx) {
     }
   };
 }
-__name(create_else_block$9, "create_else_block$9");
-function create_if_block_1$8(ctx) {
+__name(create_else_block$d, "create_else_block$d");
+function create_if_block_1$a(ctx) {
   let div;
   return {
     c() {
@@ -39733,8 +39796,8 @@ function create_if_block_1$8(ctx) {
     }
   };
 }
-__name(create_if_block_1$8, "create_if_block_1$8");
-function create_if_block$i(ctx) {
+__name(create_if_block_1$a, "create_if_block_1$a");
+function create_if_block$m(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({
@@ -39763,8 +39826,8 @@ function create_if_block$i(ctx) {
     }
   };
 }
-__name(create_if_block$i, "create_if_block$i");
-function create_if_block_3$3(ctx) {
+__name(create_if_block$m, "create_if_block$m");
+function create_if_block_3$5(ctx) {
   let div;
   let mounted;
   let dispose;
@@ -39773,8 +39836,8 @@ function create_if_block_3$3(ctx) {
       /*$memberStore*/
       ctx2[4].scene && /*$memberStore*/
       ctx2[4].scene.scene
-    ) return create_if_block_4$3;
-    return create_else_block_2;
+    ) return create_if_block_4$5;
+    return create_else_block_2$1;
   }
   __name(select_block_type_1, "select_block_type_1");
   let current_block_type = select_block_type_1(ctx);
@@ -39828,8 +39891,8 @@ function create_if_block_3$3(ctx) {
     }
   };
 }
-__name(create_if_block_3$3, "create_if_block_3$3");
-function create_else_block_2(ctx) {
+__name(create_if_block_3$5, "create_if_block_3$5");
+function create_else_block_2$1(ctx) {
   let div;
   return {
     c() {
@@ -39848,8 +39911,8 @@ function create_else_block_2(ctx) {
     }
   };
 }
-__name(create_else_block_2, "create_else_block_2");
-function create_if_block_4$3(ctx) {
+__name(create_else_block_2$1, "create_else_block_2$1");
+function create_if_block_4$5(ctx) {
   let div0;
   let t0_value = (
     /*$memberStore*/
@@ -39920,8 +39983,8 @@ function create_if_block_4$3(ctx) {
     }
   };
 }
-__name(create_if_block_4$3, "create_if_block_4$3");
-function create_else_block_1$1(ctx) {
+__name(create_if_block_4$5, "create_if_block_4$5");
+function create_else_block_1$2(ctx) {
   let div0;
   let t2;
   let div1;
@@ -39951,8 +40014,8 @@ function create_else_block_1$1(ctx) {
     }
   };
 }
-__name(create_else_block_1$1, "create_else_block_1$1");
-function create_if_block_2$5(ctx) {
+__name(create_else_block_1$2, "create_else_block_1$2");
+function create_if_block_2$8(ctx) {
   var _a2, _b2, _c2;
   let div0;
   let t2;
@@ -40061,8 +40124,8 @@ function create_if_block_2$5(ctx) {
     }
   };
 }
-__name(create_if_block_2$5, "create_if_block_2$5");
-function create_each_block_1$7(ctx) {
+__name(create_if_block_2$8, "create_if_block_2$8");
+function create_each_block_1$8(ctx) {
   let div;
   let show_if;
   let t;
@@ -40076,8 +40139,8 @@ function create_each_block_1$7(ctx) {
       /*slot*/
       ctx2[17]
     );
-    if (show_if) return create_if_block_2$5;
-    return create_else_block_1$1;
+    if (show_if) return create_if_block_2$8;
+    return create_else_block_1$2;
   }
   __name(select_block_type_2, "select_block_type_2");
   let current_block_type = select_block_type_2(ctx, -1);
@@ -40230,8 +40293,8 @@ function create_each_block_1$7(ctx) {
     }
   };
 }
-__name(create_each_block_1$7, "create_each_block_1$7");
-function create_each_block$k(ctx) {
+__name(create_each_block_1$8, "create_each_block_1$8");
+function create_each_block$l(ctx) {
   let div2;
   let div0;
   let t0;
@@ -40297,8 +40360,8 @@ function create_each_block$k(ctx) {
     }
   };
 }
-__name(create_each_block$k, "create_each_block$k");
-function create_fragment$B(ctx) {
+__name(create_each_block$l, "create_each_block$l");
+function create_fragment$Z(ctx) {
   let div1;
   let div0;
   let bounceload;
@@ -40307,7 +40370,7 @@ function create_fragment$B(ctx) {
   let if_block;
   let current;
   bounceload = new Bounceload({ props: { content: "Saving.." } });
-  const if_block_creators = [create_if_block$i, create_if_block_1$8, create_else_block$9];
+  const if_block_creators = [create_if_block$m, create_if_block_1$a, create_else_block$d];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -40398,8 +40461,8 @@ function create_fragment$B(ctx) {
     }
   };
 }
-__name(create_fragment$B, "create_fragment$B");
-function instance$y($$self, $$props, $$invalidate) {
+__name(create_fragment$Z, "create_fragment$Z");
+function instance$V($$self, $$props, $$invalidate) {
   let $memberStore;
   let $scenePickerEnabled;
   let { feature } = $$props;
@@ -40484,22 +40547,22 @@ function instance$y($$self, $$props, $$invalidate) {
     contextmenu_handler_1
   ];
 }
-__name(instance$y, "instance$y");
+__name(instance$V, "instance$V");
 const _Panel_cabin = class _Panel_cabin extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$y, create_fragment$B, safe_not_equal, { feature: 0 });
+    init(this, options, instance$V, create_fragment$Z, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Panel_cabin, "Panel_cabin");
 let Panel_cabin = _Panel_cabin;
-function get_each_context$j(ctx, list, i) {
+function get_each_context$k(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[7] = list[i];
   return child_ctx;
 }
-__name(get_each_context$j, "get_each_context$j");
-function create_if_block$h(ctx) {
+__name(get_each_context$k, "get_each_context$k");
+function create_if_block$l(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -40624,12 +40687,12 @@ function create_if_block$h(ctx) {
     }
   };
 }
-__name(create_if_block$h, "create_if_block$h");
-function create_each_block$j(ctx) {
+__name(create_if_block$l, "create_if_block$l");
+function create_each_block$k(ctx) {
   let if_block_anchor;
   let if_block = (
     /*sprite*/
-    ctx[7].slot === void 0 && create_if_block$h(ctx)
+    ctx[7].slot === void 0 && create_if_block$l(ctx)
   );
   return {
     c() {
@@ -40648,7 +40711,7 @@ function create_each_block$j(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$h(ctx2);
+          if_block = create_if_block$l(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -40665,8 +40728,8 @@ function create_each_block$j(ctx) {
     }
   };
 }
-__name(create_each_block$j, "create_each_block$j");
-function create_fragment$A(ctx) {
+__name(create_each_block$k, "create_each_block$k");
+function create_fragment$Y(ctx) {
   let div3;
   let span0;
   let t2;
@@ -40681,7 +40744,7 @@ function create_fragment$A(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$j(get_each_context$j(ctx, each_value, i));
+    each_blocks[i] = create_each_block$k(get_each_context$k(ctx, each_value, i));
   }
   return {
     c() {
@@ -40733,11 +40796,11 @@ function create_fragment$A(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$j(ctx2, each_value, i);
+          const child_ctx = get_each_context$k(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$j(child_ctx);
+            each_blocks[i] = create_each_block$k(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div2, null);
           }
@@ -40760,8 +40823,8 @@ function create_fragment$A(ctx) {
     }
   };
 }
-__name(create_fragment$A, "create_fragment$A");
-function instance$x($$self, $$props, $$invalidate) {
+__name(create_fragment$Y, "create_fragment$Y");
+function instance$U($$self, $$props, $$invalidate) {
   let { feature } = $$props;
   let { onPick } = $$props;
   let { sprites } = $$props;
@@ -40793,11 +40856,11 @@ function instance$x($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$x, "instance$x");
+__name(instance$U, "instance$U");
 const _Panel_cabin_sprite_picker = class _Panel_cabin_sprite_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$x, create_fragment$A, safe_not_equal, {
+    init(this, options, instance$U, create_fragment$Y, safe_not_equal, {
       feature: 3,
       onPick: 0,
       sprites: 4,
@@ -40807,13 +40870,13 @@ const _Panel_cabin_sprite_picker = class _Panel_cabin_sprite_picker extends Svel
 };
 __name(_Panel_cabin_sprite_picker, "Panel_cabin_sprite_picker");
 let Panel_cabin_sprite_picker = _Panel_cabin_sprite_picker;
-function get_each_context$i(ctx, list, i) {
+function get_each_context$j(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[9] = list[i];
   return child_ctx;
 }
-__name(get_each_context$i, "get_each_context$i");
-function create_else_block$8(ctx) {
+__name(get_each_context$j, "get_each_context$j");
+function create_else_block$c(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -40938,8 +41001,8 @@ function create_else_block$8(ctx) {
     }
   };
 }
-__name(create_else_block$8, "create_else_block$8");
-function create_if_block$g(ctx) {
+__name(create_else_block$c, "create_else_block$c");
+function create_if_block$k(ctx) {
   var _a2, _b2, _c2;
   let div1;
   let div0;
@@ -41101,15 +41164,15 @@ function create_if_block$g(ctx) {
     }
   };
 }
-__name(create_if_block$g, "create_if_block$g");
-function create_each_block$i(ctx) {
+__name(create_if_block$k, "create_if_block$k");
+function create_each_block$j(ctx) {
   let if_block_anchor;
   function select_block_type(ctx2, dirty) {
     if (
       /*scene*/
       ctx2[9].sceneShift
-    ) return create_if_block$g;
-    return create_else_block$8;
+    ) return create_if_block$k;
+    return create_else_block$c;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -41143,8 +41206,8 @@ function create_each_block$i(ctx) {
     }
   };
 }
-__name(create_each_block$i, "create_each_block$i");
-function create_fragment$z(ctx) {
+__name(create_each_block$j, "create_each_block$j");
+function create_fragment$X(ctx) {
   let div3;
   let span0;
   let t1;
@@ -41159,7 +41222,7 @@ function create_fragment$z(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$i(get_each_context$i(ctx, each_value, i));
+    each_blocks[i] = create_each_block$j(get_each_context$j(ctx, each_value, i));
   }
   return {
     c() {
@@ -41210,11 +41273,11 @@ function create_fragment$z(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$i(ctx2, each_value, i);
+          const child_ctx = get_each_context$j(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$i(child_ctx);
+            each_blocks[i] = create_each_block$j(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div2, null);
           }
@@ -41237,8 +41300,8 @@ function create_fragment$z(ctx) {
     }
   };
 }
-__name(create_fragment$z, "create_fragment$z");
-function instance$w($$self, $$props, $$invalidate) {
+__name(create_fragment$X, "create_fragment$X");
+function instance$T($$self, $$props, $$invalidate) {
   let { feature } = $$props;
   let { onPick } = $$props;
   let { scenes } = $$props;
@@ -41274,11 +41337,11 @@ function instance$w($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$w, "instance$w");
+__name(instance$T, "instance$T");
 const _Panel_cabin_scene_picker = class _Panel_cabin_scene_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$w, create_fragment$z, safe_not_equal, {
+    init(this, options, instance$T, create_fragment$X, safe_not_equal, {
       feature: 0,
       onPick: 1,
       scenes: 4,
@@ -41289,12 +41352,12 @@ const _Panel_cabin_scene_picker = class _Panel_cabin_scene_picker extends Svelte
 __name(_Panel_cabin_scene_picker, "Panel_cabin_scene_picker");
 let Panel_cabin_scene_picker = _Panel_cabin_scene_picker;
 var __defProp$x = Object.defineProperty;
-var __decorateClass$x = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$x(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$x(target, key2, result);
   return result;
 }, "__decorateClass$x");
 const _PanelCabinFeature = class _PanelCabinFeature extends TypoFeature {
@@ -41492,13 +41555,13 @@ __decorateClass$x([
 __decorateClass$x([
   inject(ToastService)
 ], PanelCabinFeature.prototype, "_toastService");
-function get_each_context$h(ctx, list, i) {
+function get_each_context$i(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[4] = list[i];
+  child_ctx[5] = list[i];
   return child_ctx;
 }
-__name(get_each_context$h, "get_each_context$h");
-function create_if_block_1$7(ctx) {
+__name(get_each_context$i, "get_each_context$i");
+function create_if_block_2$7(ctx) {
   let p;
   let t0;
   let t1_value = (
@@ -41511,7 +41574,7 @@ function create_if_block_1$7(ctx) {
       p = element$1("p");
       t0 = text("Typo version: ");
       t1 = text(t1_value);
-      attr(p, "class", "typo-version svelte-1fbg7r5");
+      attr(p, "class", "typo-version svelte-eh7e5t");
     },
     m(target, anchor) {
       insert(target, p, anchor);
@@ -41530,8 +41593,8 @@ function create_if_block_1$7(ctx) {
     }
   };
 }
-__name(create_if_block_1$7, "create_if_block_1$7");
-function create_else_block$7(ctx) {
+__name(create_if_block_2$7, "create_if_block_2$7");
+function create_else_block$b(ctx) {
   let each_1_anchor;
   let each_value = ensure_array_like(
     /*changes*/
@@ -41539,7 +41602,7 @@ function create_else_block$7(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$h(get_each_context$h(ctx, each_value, i));
+    each_blocks[i] = create_each_block$i(get_each_context$i(ctx, each_value, i));
   }
   return {
     c() {
@@ -41557,19 +41620,19 @@ function create_else_block$7(ctx) {
       insert(target, each_1_anchor, anchor);
     },
     p(ctx2, dirty) {
-      if (dirty & /*changes, Date, Number*/
-      2) {
+      if (dirty & /*changes, feature, undefined, Date, Number*/
+      3) {
         each_value = ensure_array_like(
           /*changes*/
           ctx2[1]
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$h(ctx2, each_value, i);
+          const child_ctx = get_each_context$i(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$h(child_ctx);
+            each_blocks[i] = create_each_block$i(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -41590,8 +41653,8 @@ function create_else_block$7(ctx) {
     }
   };
 }
-__name(create_else_block$7, "create_else_block$7");
-function create_if_block$f(ctx) {
+__name(create_else_block$b, "create_else_block$b");
+function create_if_block$j(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({
@@ -41620,27 +41683,46 @@ function create_if_block$f(ctx) {
     }
   };
 }
-__name(create_if_block$f, "create_if_block$f");
-function create_each_block$h(ctx) {
+__name(create_if_block$j, "create_if_block$j");
+function create_if_block_1$9(ctx) {
+  let span;
+  return {
+    c() {
+      span = element$1("span");
+      span.textContent = "Read more..";
+      attr(span, "class", "details svelte-eh7e5t");
+    },
+    m(target, anchor) {
+      insert(target, span, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+      }
+    }
+  };
+}
+__name(create_if_block_1$9, "create_if_block_1$9");
+function create_each_block$i(ctx) {
   let div1;
   let div0;
   let b;
   let t0_value = (
     /*change*/
-    ctx[4].title + ""
+    ctx[5].title + ""
   );
   let t0;
   let t1;
   let span;
   let t2_value = (
     /*change*/
-    ctx[4].affectedTypoVersion + ""
+    ctx[5].affectedTypoVersion + ""
   );
   let t2;
   let t3;
   let t4_value = new Date(Number(
     /*change*/
-    ctx[4].date
+    ctx[5].date
   )).toLocaleDateString() + "";
   let t4;
   let t5;
@@ -41648,10 +41730,27 @@ function create_each_block$h(ctx) {
   let p;
   let t7_value = (
     /*change*/
-    ctx[4].content + ""
+    ctx[5].content + ""
   );
   let t7;
   let t8;
+  let t9;
+  let mounted;
+  let dispose;
+  let if_block = (
+    /*change*/
+    ctx[5].details !== void 0 && create_if_block_1$9()
+  );
+  function click_handler2() {
+    return (
+      /*click_handler*/
+      ctx[4](
+        /*change*/
+        ctx[5]
+      )
+    );
+  }
+  __name(click_handler2, "click_handler");
   return {
     c() {
       div1 = element$1("div");
@@ -41668,9 +41767,11 @@ function create_each_block$h(ctx) {
       p = element$1("p");
       t7 = text(t7_value);
       t8 = space();
-      attr(span, "class", "svelte-1fbg7r5");
-      attr(div0, "class", "title svelte-1fbg7r5");
-      attr(div1, "class", "change svelte-1fbg7r5");
+      if (if_block) if_block.c();
+      t9 = space();
+      attr(span, "class", "svelte-eh7e5t");
+      attr(div0, "class", "title svelte-eh7e5t");
+      attr(div1, "class", "change svelte-eh7e5t");
     },
     m(target, anchor) {
       insert(target, div1, anchor);
@@ -41687,32 +41788,56 @@ function create_each_block$h(ctx) {
       append(div1, p);
       append(p, t7);
       append(div1, t8);
+      if (if_block) if_block.m(div1, null);
+      append(div1, t9);
+      if (!mounted) {
+        dispose = listen(div1, "click", click_handler2);
+        mounted = true;
+      }
     },
-    p(ctx2, dirty) {
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
       if (dirty & /*changes*/
       2 && t0_value !== (t0_value = /*change*/
-      ctx2[4].title + "")) set_data(t0, t0_value);
+      ctx[5].title + "")) set_data(t0, t0_value);
       if (dirty & /*changes*/
       2 && t2_value !== (t2_value = /*change*/
-      ctx2[4].affectedTypoVersion + "")) set_data(t2, t2_value);
+      ctx[5].affectedTypoVersion + "")) set_data(t2, t2_value);
       if (dirty & /*changes*/
       2 && t4_value !== (t4_value = new Date(Number(
         /*change*/
-        ctx2[4].date
+        ctx[5].date
       )).toLocaleDateString() + "")) set_data(t4, t4_value);
       if (dirty & /*changes*/
       2 && t7_value !== (t7_value = /*change*/
-      ctx2[4].content + "")) set_data(t7, t7_value);
+      ctx[5].content + "")) set_data(t7, t7_value);
+      if (
+        /*change*/
+        ctx[5].details !== void 0
+      ) {
+        if (if_block) ;
+        else {
+          if_block = create_if_block_1$9();
+          if_block.c();
+          if_block.m(div1, t9);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
     },
     d(detaching) {
       if (detaching) {
         detach(div1);
       }
+      if (if_block) if_block.d();
+      mounted = false;
+      dispose();
     }
   };
 }
-__name(create_each_block$h, "create_each_block$h");
-function create_fragment$y(ctx) {
+__name(create_each_block$i, "create_each_block$i");
+function create_fragment$W(ctx) {
   let div1;
   let t;
   let div0;
@@ -41721,9 +41846,9 @@ function create_fragment$y(ctx) {
   let current;
   let if_block0 = (
     /*$devmode*/
-    ctx[2] && create_if_block_1$7(ctx)
+    ctx[2] && create_if_block_2$7(ctx)
   );
-  const if_block_creators = [create_if_block$f, create_else_block$7];
+  const if_block_creators = [create_if_block$j, create_else_block$b];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -41742,8 +41867,8 @@ function create_fragment$y(ctx) {
       t = space();
       div0 = element$1("div");
       if_block1.c();
-      attr(div0, "class", "changelog svelte-1fbg7r5");
-      attr(div1, "class", "panel-changelog svelte-1fbg7r5");
+      attr(div0, "class", "changelog svelte-eh7e5t");
+      attr(div1, "class", "panel-changelog svelte-eh7e5t");
     },
     m(target, anchor) {
       insert(target, div1, anchor);
@@ -41761,7 +41886,7 @@ function create_fragment$y(ctx) {
         if (if_block0) {
           if_block0.p(ctx2, dirty);
         } else {
-          if_block0 = create_if_block_1$7(ctx2);
+          if_block0 = create_if_block_2$7(ctx2);
           if_block0.c();
           if_block0.m(div1, t);
         }
@@ -41808,35 +41933,7353 @@ function create_fragment$y(ctx) {
     }
   };
 }
-__name(create_fragment$y, "create_fragment$y");
-function instance$v($$self, $$props, $$invalidate) {
+__name(create_fragment$W, "create_fragment$W");
+function instance$S($$self, $$props, $$invalidate) {
   let $devmode;
   let { feature } = $$props;
   let { changes = void 0 } = $$props;
   const devmode = feature.devmodeStore;
   component_subscribe($$self, devmode, (value) => $$invalidate(2, $devmode = value));
+  const click_handler2 = /* @__PURE__ */ __name((change) => {
+    if (change.details) feature.showDetailsModal(change);
+  }, "click_handler");
   $$self.$$set = ($$props2) => {
     if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
     if ("changes" in $$props2) $$invalidate(1, changes = $$props2.changes);
   };
-  return [feature, changes, $devmode, devmode];
+  return [feature, changes, $devmode, devmode, click_handler2];
 }
-__name(instance$v, "instance$v");
+__name(instance$S, "instance$S");
 const _Panel_changelog = class _Panel_changelog extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$v, create_fragment$y, safe_not_equal, { feature: 0, changes: 1 });
+    init(this, options, instance$S, create_fragment$W, safe_not_equal, { feature: 0, changes: 1 });
   }
 };
 __name(_Panel_changelog, "Panel_changelog");
 let Panel_changelog = _Panel_changelog;
+function supressWarnings() {
+  const origWarn = console.warn;
+  console.warn = (message) => {
+    if (message.includes("unknown prop")) return;
+    if (message.includes("unexpected slot")) return;
+    origWarn(message);
+  };
+  onMount(() => {
+    console.warn = origWarn;
+  });
+}
+__name(supressWarnings, "supressWarnings");
+function get_each_context_5(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[18] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_5, "get_each_context_5");
+function get_each_context_4(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[18] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_4, "get_each_context_4");
+function get_each_context_1$7(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[10] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_1$7, "get_each_context_1$7");
+function get_each_context_2$3(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[13] = list[i];
+  child_ctx[15] = i;
+  return child_ctx;
+}
+__name(get_each_context_2$3, "get_each_context_2$3");
+function get_each_context_3$1(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[16] = list[i];
+  child_ctx[15] = i;
+  return child_ctx;
+}
+__name(get_each_context_3$1, "get_each_context_3$1");
+function get_each_context$h(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[7] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$h, "get_each_context$h");
+function create_if_block_1$8(ctx) {
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
+  let current;
+  const if_block_creators = [create_if_block_2$6, create_if_block_3$4, create_else_block_1$1];
+  const if_blocks = [];
+  function select_block_type_1(ctx2, dirty) {
+    if (
+      /*type*/
+      ctx2[0] === "table"
+    ) return 0;
+    if (
+      /*type*/
+      ctx2[0] === "list"
+    ) return 1;
+    return 2;
+  }
+  __name(select_block_type_1, "select_block_type_1");
+  current_block_type_index = select_block_type_1(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  return {
+    c() {
+      if_block.c();
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if_blocks[current_block_type_index].m(target, anchor);
+      insert(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type_1(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
+        } else {
+          if_block.p(ctx2, dirty);
+        }
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
+    }
+  };
+}
+__name(create_if_block_1$8, "create_if_block_1$8");
+function create_if_block$i(ctx) {
+  let each_1_anchor;
+  let current;
+  let each_value = ensure_array_like(
+    /*tokens*/
+    ctx[1]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$h(get_each_context$h(ctx, each_value, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      each_1_anchor = empty();
+    },
+    m(target, anchor) {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(target, anchor);
+        }
+      }
+      insert(target, each_1_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*tokens, renderers*/
+      34) {
+        each_value = ensure_array_like(
+          /*tokens*/
+          ctx2[1]
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$h(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block$h(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+          }
+        }
+        group_outros();
+        for (i = each_value.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_if_block$i, "create_if_block$i");
+function create_else_block_1$1(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    /*$$restProps*/
+    ctx[6]
+  ];
+  var switch_value = (
+    /*renderers*/
+    ctx[5][
+      /*type*/
+      ctx[0]
+    ]
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot_11] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*$$restProps*/
+    64) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
+        /*$$restProps*/
+        ctx2[6]
+      )]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers, type*/
+      33 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5][
+        /*type*/
+        ctx2[0]
+      ])) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*$$restProps*/
+        64 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
+          /*$$restProps*/
+          ctx2[6]
+        )]) : {};
+        if (dirty & /*$$scope, tokens, renderers, $$restProps*/
+        8388706) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_else_block_1$1, "create_else_block_1$1");
+function create_if_block_3$4(ctx) {
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
+  let current;
+  const if_block_creators = [create_if_block_4$4, create_else_block$a];
+  const if_blocks = [];
+  function select_block_type_2(ctx2, dirty) {
+    if (
+      /*ordered*/
+      ctx2[4]
+    ) return 0;
+    return 1;
+  }
+  __name(select_block_type_2, "select_block_type_2");
+  current_block_type_index = select_block_type_2(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  return {
+    c() {
+      if_block.c();
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if_blocks[current_block_type_index].m(target, anchor);
+      insert(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type_2(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
+        } else {
+          if_block.p(ctx2, dirty);
+        }
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
+    }
+  };
+}
+__name(create_if_block_3$4, "create_if_block_3$4");
+function create_if_block_2$6(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  var switch_value = (
+    /*renderers*/
+    ctx[5].table
+  );
+  function switch_props(ctx2, dirty) {
+    return {
+      props: {
+        $$slots: { default: [create_default_slot] },
+        $$scope: { ctx: ctx2 }
+      }
+    };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].table)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = {};
+        if (dirty & /*$$scope, renderers, rows, $$restProps, header*/
+        8388716) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_if_block_2$6, "create_if_block_2$6");
+function create_else_block_2(ctx) {
+  let t_value = (
+    /*$$restProps*/
+    ctx[6].raw + ""
+  );
+  let t;
+  return {
+    c() {
+      t = text(t_value);
+    },
+    m(target, anchor) {
+      insert(target, t, anchor);
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*$$restProps*/
+      64 && t_value !== (t_value = /*$$restProps*/
+      ctx2[6].raw + "")) set_data(t, t_value);
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+    }
+  };
+}
+__name(create_else_block_2, "create_else_block_2");
+function create_if_block_5$2(ctx) {
+  let parser;
+  let current;
+  parser = new Parser$1({
+    props: {
+      tokens: (
+        /*tokens*/
+        ctx[1]
+      ),
+      renderers: (
+        /*renderers*/
+        ctx[5]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(parser.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(parser, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const parser_changes = {};
+      if (dirty & /*tokens*/
+      2) parser_changes.tokens = /*tokens*/
+      ctx2[1];
+      if (dirty & /*renderers*/
+      32) parser_changes.renderers = /*renderers*/
+      ctx2[5];
+      parser.$set(parser_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(parser.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(parser.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(parser, detaching);
+    }
+  };
+}
+__name(create_if_block_5$2, "create_if_block_5$2");
+function create_default_slot_11(ctx) {
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
+  let current;
+  const if_block_creators = [create_if_block_5$2, create_else_block_2];
+  const if_blocks = [];
+  function select_block_type_3(ctx2, dirty) {
+    if (
+      /*tokens*/
+      ctx2[1]
+    ) return 0;
+    return 1;
+  }
+  __name(select_block_type_3, "select_block_type_3");
+  current_block_type_index = select_block_type_3(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  return {
+    c() {
+      if_block.c();
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if_blocks[current_block_type_index].m(target, anchor);
+      insert(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type_3(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
+        } else {
+          if_block.p(ctx2, dirty);
+        }
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
+    }
+  };
+}
+__name(create_default_slot_11, "create_default_slot_11");
+function create_else_block$a(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    { ordered: (
+      /*ordered*/
+      ctx[4]
+    ) },
+    /*$$restProps*/
+    ctx[6]
+  ];
+  var switch_value = (
+    /*renderers*/
+    ctx[5].list
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot_9] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*ordered, $$restProps*/
+    80) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [
+        dirty & /*ordered*/
+        16 && { ordered: (
+          /*ordered*/
+          ctx2[4]
+        ) },
+        dirty & /*$$restProps*/
+        64 && get_spread_object(
+          /*$$restProps*/
+          ctx2[6]
+        )
+      ]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].list)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*ordered, $$restProps*/
+        80 ? get_spread_update(switch_instance_spread_levels, [
+          dirty & /*ordered*/
+          16 && { ordered: (
+            /*ordered*/
+            ctx2[4]
+          ) },
+          dirty & /*$$restProps*/
+          64 && get_spread_object(
+            /*$$restProps*/
+            ctx2[6]
+          )
+        ]) : {};
+        if (dirty & /*$$scope, $$restProps, renderers*/
+        8388704) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_else_block$a, "create_else_block$a");
+function create_if_block_4$4(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    { ordered: (
+      /*ordered*/
+      ctx[4]
+    ) },
+    /*$$restProps*/
+    ctx[6]
+  ];
+  var switch_value = (
+    /*renderers*/
+    ctx[5].list
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot_7] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*ordered, $$restProps*/
+    80) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [
+        dirty & /*ordered*/
+        16 && { ordered: (
+          /*ordered*/
+          ctx2[4]
+        ) },
+        dirty & /*$$restProps*/
+        64 && get_spread_object(
+          /*$$restProps*/
+          ctx2[6]
+        )
+      ]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].list)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*ordered, $$restProps*/
+        80 ? get_spread_update(switch_instance_spread_levels, [
+          dirty & /*ordered*/
+          16 && { ordered: (
+            /*ordered*/
+            ctx2[4]
+          ) },
+          dirty & /*$$restProps*/
+          64 && get_spread_object(
+            /*$$restProps*/
+            ctx2[6]
+          )
+        ]) : {};
+        if (dirty & /*$$scope, $$restProps, renderers*/
+        8388704) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_if_block_4$4, "create_if_block_4$4");
+function create_default_slot_10(ctx) {
+  let parser;
+  let t;
+  let current;
+  parser = new Parser$1({
+    props: {
+      tokens: (
+        /*item*/
+        ctx[18].tokens
+      ),
+      renderers: (
+        /*renderers*/
+        ctx[5]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(parser.$$.fragment);
+      t = space();
+    },
+    m(target, anchor) {
+      mount_component(parser, target, anchor);
+      insert(target, t, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const parser_changes = {};
+      if (dirty & /*$$restProps*/
+      64) parser_changes.tokens = /*item*/
+      ctx2[18].tokens;
+      if (dirty & /*renderers*/
+      32) parser_changes.renderers = /*renderers*/
+      ctx2[5];
+      parser.$set(parser_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(parser.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(parser.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+      destroy_component(parser, detaching);
+    }
+  };
+}
+__name(create_default_slot_10, "create_default_slot_10");
+function create_each_block_5(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    /*item*/
+    ctx[18]
+  ];
+  var switch_value = (
+    /*renderers*/
+    ctx[5].unorderedlistitem || /*renderers*/
+    ctx[5].listitem
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot_10] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*$$restProps*/
+    64) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
+        /*item*/
+        ctx2[18]
+      )]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].unorderedlistitem || /*renderers*/
+      ctx2[5].listitem)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*$$restProps*/
+        64 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
+          /*item*/
+          ctx2[18]
+        )]) : {};
+        if (dirty & /*$$scope, $$restProps, renderers*/
+        8388704) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_each_block_5, "create_each_block_5");
+function create_default_slot_9(ctx) {
+  let each_1_anchor;
+  let current;
+  let each_value_5 = ensure_array_like(
+    /*$$restProps*/
+    ctx[6].items
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_5.length; i += 1) {
+    each_blocks[i] = create_each_block_5(get_each_context_5(ctx, each_value_5, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      each_1_anchor = empty();
+    },
+    m(target, anchor) {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(target, anchor);
+        }
+      }
+      insert(target, each_1_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers, $$restProps*/
+      96) {
+        each_value_5 = ensure_array_like(
+          /*$$restProps*/
+          ctx2[6].items
+        );
+        let i;
+        for (i = 0; i < each_value_5.length; i += 1) {
+          const child_ctx = get_each_context_5(ctx2, each_value_5, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block_5(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+          }
+        }
+        group_outros();
+        for (i = each_value_5.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value_5.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_default_slot_9, "create_default_slot_9");
+function create_default_slot_8(ctx) {
+  let parser;
+  let t;
+  let current;
+  parser = new Parser$1({
+    props: {
+      tokens: (
+        /*item*/
+        ctx[18].tokens
+      ),
+      renderers: (
+        /*renderers*/
+        ctx[5]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(parser.$$.fragment);
+      t = space();
+    },
+    m(target, anchor) {
+      mount_component(parser, target, anchor);
+      insert(target, t, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const parser_changes = {};
+      if (dirty & /*$$restProps*/
+      64) parser_changes.tokens = /*item*/
+      ctx2[18].tokens;
+      if (dirty & /*renderers*/
+      32) parser_changes.renderers = /*renderers*/
+      ctx2[5];
+      parser.$set(parser_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(parser.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(parser.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+      destroy_component(parser, detaching);
+    }
+  };
+}
+__name(create_default_slot_8, "create_default_slot_8");
+function create_each_block_4(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  const switch_instance_spread_levels = [
+    /*item*/
+    ctx[18]
+  ];
+  var switch_value = (
+    /*renderers*/
+    ctx[5].orderedlistitem || /*renderers*/
+    ctx[5].listitem
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {
+      $$slots: { default: [create_default_slot_8] },
+      $$scope: { ctx: ctx2 }
+    };
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*$$restProps*/
+    64) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
+        /*item*/
+        ctx2[18]
+      )]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].orderedlistitem || /*renderers*/
+      ctx2[5].listitem)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*$$restProps*/
+        64 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
+          /*item*/
+          ctx2[18]
+        )]) : {};
+        if (dirty & /*$$scope, $$restProps, renderers*/
+        8388704) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_each_block_4, "create_each_block_4");
+function create_default_slot_7(ctx) {
+  let each_1_anchor;
+  let current;
+  let each_value_4 = ensure_array_like(
+    /*$$restProps*/
+    ctx[6].items
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_4.length; i += 1) {
+    each_blocks[i] = create_each_block_4(get_each_context_4(ctx, each_value_4, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      each_1_anchor = empty();
+    },
+    m(target, anchor) {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(target, anchor);
+        }
+      }
+      insert(target, each_1_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers, $$restProps*/
+      96) {
+        each_value_4 = ensure_array_like(
+          /*$$restProps*/
+          ctx2[6].items
+        );
+        let i;
+        for (i = 0; i < each_value_4.length; i += 1) {
+          const child_ctx = get_each_context_4(ctx2, each_value_4, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block_4(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+          }
+        }
+        group_outros();
+        for (i = each_value_4.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value_4.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_default_slot_7, "create_default_slot_7");
+function create_default_slot_6(ctx) {
+  let parser;
+  let t;
+  let current;
+  parser = new Parser$1({
+    props: {
+      tokens: (
+        /*headerItem*/
+        ctx[16].tokens
+      ),
+      renderers: (
+        /*renderers*/
+        ctx[5]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(parser.$$.fragment);
+      t = space();
+    },
+    m(target, anchor) {
+      mount_component(parser, target, anchor);
+      insert(target, t, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const parser_changes = {};
+      if (dirty & /*header*/
+      4) parser_changes.tokens = /*headerItem*/
+      ctx2[16].tokens;
+      if (dirty & /*renderers*/
+      32) parser_changes.renderers = /*renderers*/
+      ctx2[5];
+      parser.$set(parser_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(parser.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(parser.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+      destroy_component(parser, detaching);
+    }
+  };
+}
+__name(create_default_slot_6, "create_default_slot_6");
+function create_each_block_3$1(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  var switch_value = (
+    /*renderers*/
+    ctx[5].tablecell
+  );
+  function switch_props(ctx2, dirty) {
+    return {
+      props: {
+        header: true,
+        align: (
+          /*$$restProps*/
+          ctx2[6].align[
+            /*i*/
+            ctx2[15]
+          ] || "center"
+        ),
+        $$slots: { default: [create_default_slot_6] },
+        $$scope: { ctx: ctx2 }
+      }
+    };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].tablecell)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = {};
+        if (dirty & /*$$restProps*/
+        64) switch_instance_changes.align = /*$$restProps*/
+        ctx2[6].align[
+          /*i*/
+          ctx2[15]
+        ] || "center";
+        if (dirty & /*$$scope, header, renderers*/
+        8388644) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_each_block_3$1, "create_each_block_3$1");
+function create_default_slot_5(ctx) {
+  let each_1_anchor;
+  let current;
+  let each_value_3 = ensure_array_like(
+    /*header*/
+    ctx[2]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_3.length; i += 1) {
+    each_blocks[i] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      each_1_anchor = empty();
+    },
+    m(target, anchor) {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(target, anchor);
+        }
+      }
+      insert(target, each_1_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers, $$restProps, header*/
+      100) {
+        each_value_3 = ensure_array_like(
+          /*header*/
+          ctx2[2]
+        );
+        let i;
+        for (i = 0; i < each_value_3.length; i += 1) {
+          const child_ctx = get_each_context_3$1(ctx2, each_value_3, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block_3$1(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+          }
+        }
+        group_outros();
+        for (i = each_value_3.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value_3.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_default_slot_5, "create_default_slot_5");
+function create_default_slot_4(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  var switch_value = (
+    /*renderers*/
+    ctx[5].tablerow
+  );
+  function switch_props(ctx2, dirty) {
+    return {
+      props: {
+        $$slots: { default: [create_default_slot_5] },
+        $$scope: { ctx: ctx2 }
+      }
+    };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].tablerow)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = {};
+        if (dirty & /*$$scope, header, renderers, $$restProps*/
+        8388708) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_default_slot_4, "create_default_slot_4");
+function create_default_slot_3(ctx) {
+  let parser;
+  let current;
+  parser = new Parser$1({
+    props: {
+      tokens: (
+        /*cells*/
+        ctx[13].tokens
+      ),
+      renderers: (
+        /*renderers*/
+        ctx[5]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(parser.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(parser, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const parser_changes = {};
+      if (dirty & /*rows*/
+      8) parser_changes.tokens = /*cells*/
+      ctx2[13].tokens;
+      if (dirty & /*renderers*/
+      32) parser_changes.renderers = /*renderers*/
+      ctx2[5];
+      parser.$set(parser_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(parser.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(parser.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(parser, detaching);
+    }
+  };
+}
+__name(create_default_slot_3, "create_default_slot_3");
+function create_each_block_2$3(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  var switch_value = (
+    /*renderers*/
+    ctx[5].tablecell
+  );
+  function switch_props(ctx2, dirty) {
+    return {
+      props: {
+        header: false,
+        align: (
+          /*$$restProps*/
+          ctx2[6].align[
+            /*i*/
+            ctx2[15]
+          ] || "center"
+        ),
+        $$slots: { default: [create_default_slot_3] },
+        $$scope: { ctx: ctx2 }
+      }
+    };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].tablecell)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = {};
+        if (dirty & /*$$restProps*/
+        64) switch_instance_changes.align = /*$$restProps*/
+        ctx2[6].align[
+          /*i*/
+          ctx2[15]
+        ] || "center";
+        if (dirty & /*$$scope, rows, renderers*/
+        8388648) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_each_block_2$3, "create_each_block_2$3");
+function create_default_slot_2(ctx) {
+  let t;
+  let current;
+  let each_value_2 = ensure_array_like(
+    /*row*/
+    ctx[10]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_2.length; i += 1) {
+    each_blocks[i] = create_each_block_2$3(get_each_context_2$3(ctx, each_value_2, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      t = space();
+    },
+    m(target, anchor) {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(target, anchor);
+        }
+      }
+      insert(target, t, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers, $$restProps, rows*/
+      104) {
+        each_value_2 = ensure_array_like(
+          /*row*/
+          ctx2[10]
+        );
+        let i;
+        for (i = 0; i < each_value_2.length; i += 1) {
+          const child_ctx = get_each_context_2$3(ctx2, each_value_2, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block_2$3(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(t.parentNode, t);
+          }
+        }
+        group_outros();
+        for (i = each_value_2.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value_2.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_default_slot_2, "create_default_slot_2");
+function create_each_block_1$7(ctx) {
+  let switch_instance;
+  let switch_instance_anchor;
+  let current;
+  var switch_value = (
+    /*renderers*/
+    ctx[5].tablerow
+  );
+  function switch_props(ctx2, dirty) {
+    return {
+      props: {
+        $$slots: { default: [create_default_slot_2] },
+        $$scope: { ctx: ctx2 }
+      }
+    };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      switch_instance_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance) mount_component(switch_instance, target, anchor);
+      insert(target, switch_instance_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].tablerow)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = {};
+        if (dirty & /*$$scope, rows, renderers, $$restProps*/
+        8388712) {
+          switch_instance_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(switch_instance_anchor);
+      }
+      if (switch_instance) destroy_component(switch_instance, detaching);
+    }
+  };
+}
+__name(create_each_block_1$7, "create_each_block_1$7");
+function create_default_slot_1(ctx) {
+  let each_1_anchor;
+  let current;
+  let each_value_1 = ensure_array_like(
+    /*rows*/
+    ctx[3]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_1.length; i += 1) {
+    each_blocks[i] = create_each_block_1$7(get_each_context_1$7(ctx, each_value_1, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      each_1_anchor = empty();
+    },
+    m(target, anchor) {
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(target, anchor);
+        }
+      }
+      insert(target, each_1_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers, rows, $$restProps*/
+      104) {
+        each_value_1 = ensure_array_like(
+          /*rows*/
+          ctx2[3]
+        );
+        let i;
+        for (i = 0; i < each_value_1.length; i += 1) {
+          const child_ctx = get_each_context_1$7(ctx2, each_value_1, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block_1$7(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+          }
+        }
+        group_outros();
+        for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value_1.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(each_1_anchor);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_default_slot_1, "create_default_slot_1");
+function create_default_slot(ctx) {
+  let switch_instance0;
+  let t;
+  let switch_instance1;
+  let switch_instance1_anchor;
+  let current;
+  var switch_value = (
+    /*renderers*/
+    ctx[5].tablehead
+  );
+  function switch_props(ctx2, dirty) {
+    return {
+      props: {
+        $$slots: { default: [create_default_slot_4] },
+        $$scope: { ctx: ctx2 }
+      }
+    };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance0 = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  var switch_value_1 = (
+    /*renderers*/
+    ctx[5].tablebody
+  );
+  function switch_props_1(ctx2, dirty) {
+    return {
+      props: {
+        $$slots: { default: [create_default_slot_1] },
+        $$scope: { ctx: ctx2 }
+      }
+    };
+  }
+  __name(switch_props_1, "switch_props_1");
+  if (switch_value_1) {
+    switch_instance1 = construct_svelte_component(switch_value_1, switch_props_1(ctx));
+  }
+  return {
+    c() {
+      if (switch_instance0) create_component(switch_instance0.$$.fragment);
+      t = space();
+      if (switch_instance1) create_component(switch_instance1.$$.fragment);
+      switch_instance1_anchor = empty();
+    },
+    m(target, anchor) {
+      if (switch_instance0) mount_component(switch_instance0, target, anchor);
+      insert(target, t, anchor);
+      if (switch_instance1) mount_component(switch_instance1, target, anchor);
+      insert(target, switch_instance1_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*renderers*/
+      32 && switch_value !== (switch_value = /*renderers*/
+      ctx2[5].tablehead)) {
+        if (switch_instance0) {
+          group_outros();
+          const old_component = switch_instance0;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance0 = construct_svelte_component(switch_value, switch_props(ctx2));
+          create_component(switch_instance0.$$.fragment);
+          transition_in(switch_instance0.$$.fragment, 1);
+          mount_component(switch_instance0, t.parentNode, t);
+        } else {
+          switch_instance0 = null;
+        }
+      } else if (switch_value) {
+        const switch_instance0_changes = {};
+        if (dirty & /*$$scope, renderers, header, $$restProps*/
+        8388708) {
+          switch_instance0_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance0.$set(switch_instance0_changes);
+      }
+      if (dirty & /*renderers*/
+      32 && switch_value_1 !== (switch_value_1 = /*renderers*/
+      ctx2[5].tablebody)) {
+        if (switch_instance1) {
+          group_outros();
+          const old_component = switch_instance1;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value_1) {
+          switch_instance1 = construct_svelte_component(switch_value_1, switch_props_1(ctx2));
+          create_component(switch_instance1.$$.fragment);
+          transition_in(switch_instance1.$$.fragment, 1);
+          mount_component(switch_instance1, switch_instance1_anchor.parentNode, switch_instance1_anchor);
+        } else {
+          switch_instance1 = null;
+        }
+      } else if (switch_value_1) {
+        const switch_instance1_changes = {};
+        if (dirty & /*$$scope, rows, renderers, $$restProps*/
+        8388712) {
+          switch_instance1_changes.$$scope = { dirty, ctx: ctx2 };
+        }
+        switch_instance1.$set(switch_instance1_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance0) transition_in(switch_instance0.$$.fragment, local);
+      if (switch_instance1) transition_in(switch_instance1.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance0) transition_out(switch_instance0.$$.fragment, local);
+      if (switch_instance1) transition_out(switch_instance1.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+        detach(switch_instance1_anchor);
+      }
+      if (switch_instance0) destroy_component(switch_instance0, detaching);
+      if (switch_instance1) destroy_component(switch_instance1, detaching);
+    }
+  };
+}
+__name(create_default_slot, "create_default_slot");
+function create_each_block$h(ctx) {
+  let parser;
+  let current;
+  const parser_spread_levels = [
+    /*token*/
+    ctx[7],
+    { renderers: (
+      /*renderers*/
+      ctx[5]
+    ) }
+  ];
+  let parser_props = {};
+  for (let i = 0; i < parser_spread_levels.length; i += 1) {
+    parser_props = assign(parser_props, parser_spread_levels[i]);
+  }
+  parser = new Parser$1({ props: parser_props });
+  return {
+    c() {
+      create_component(parser.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(parser, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const parser_changes = dirty & /*tokens, renderers*/
+      34 ? get_spread_update(parser_spread_levels, [
+        dirty & /*tokens*/
+        2 && get_spread_object(
+          /*token*/
+          ctx2[7]
+        ),
+        dirty & /*renderers*/
+        32 && { renderers: (
+          /*renderers*/
+          ctx2[5]
+        ) }
+      ]) : {};
+      parser.$set(parser_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(parser.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(parser.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(parser, detaching);
+    }
+  };
+}
+__name(create_each_block$h, "create_each_block$h");
+function create_fragment$V(ctx) {
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
+  let current;
+  const if_block_creators = [create_if_block$i, create_if_block_1$8];
+  const if_blocks = [];
+  function select_block_type(ctx2, dirty) {
+    if (!/*type*/
+    ctx2[0]) return 0;
+    if (
+      /*renderers*/
+      ctx2[5][
+        /*type*/
+        ctx2[0]
+      ]
+    ) return 1;
+    return -1;
+  }
+  __name(select_block_type, "select_block_type");
+  if (~(current_block_type_index = select_block_type(ctx))) {
+    if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  }
+  return {
+    c() {
+      if (if_block) if_block.c();
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if (~current_block_type_index) {
+        if_blocks[current_block_type_index].m(target, anchor);
+      }
+      insert(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if (~current_block_type_index) {
+          if_blocks[current_block_type_index].p(ctx2, dirty);
+        }
+      } else {
+        if (if_block) {
+          group_outros();
+          transition_out(if_blocks[previous_block_index], 1, 1, () => {
+            if_blocks[previous_block_index] = null;
+          });
+          check_outros();
+        }
+        if (~current_block_type_index) {
+          if_block = if_blocks[current_block_type_index];
+          if (!if_block) {
+            if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+            if_block.c();
+          } else {
+            if_block.p(ctx2, dirty);
+          }
+          transition_in(if_block, 1);
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        } else {
+          if_block = null;
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if (~current_block_type_index) {
+        if_blocks[current_block_type_index].d(detaching);
+      }
+    }
+  };
+}
+__name(create_fragment$V, "create_fragment$V");
+function instance$R($$self, $$props, $$invalidate) {
+  const omit_props_names = ["type", "tokens", "header", "rows", "ordered", "renderers"];
+  let $$restProps = compute_rest_props($$props, omit_props_names);
+  let { type = void 0 } = $$props;
+  let { tokens = void 0 } = $$props;
+  let { header = void 0 } = $$props;
+  let { rows = void 0 } = $$props;
+  let { ordered = false } = $$props;
+  let { renderers } = $$props;
+  supressWarnings();
+  $$self.$$set = ($$new_props) => {
+    $$props = assign(assign({}, $$props), exclude_internal_props($$new_props));
+    $$invalidate(6, $$restProps = compute_rest_props($$props, omit_props_names));
+    if ("type" in $$new_props) $$invalidate(0, type = $$new_props.type);
+    if ("tokens" in $$new_props) $$invalidate(1, tokens = $$new_props.tokens);
+    if ("header" in $$new_props) $$invalidate(2, header = $$new_props.header);
+    if ("rows" in $$new_props) $$invalidate(3, rows = $$new_props.rows);
+    if ("ordered" in $$new_props) $$invalidate(4, ordered = $$new_props.ordered);
+    if ("renderers" in $$new_props) $$invalidate(5, renderers = $$new_props.renderers);
+  };
+  return [type, tokens, header, rows, ordered, renderers, $$restProps];
+}
+__name(instance$R, "instance$R");
+let Parser$1 = (_Ca = class extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$R, create_fragment$V, safe_not_equal, {
+      type: 0,
+      tokens: 1,
+      header: 2,
+      rows: 3,
+      ordered: 4,
+      renderers: 5
+    });
+  }
+}, __name(_Ca, "Parser"), _Ca);
+function getDefaults() {
+  return {
+    async: false,
+    baseUrl: null,
+    breaks: false,
+    extensions: null,
+    gfm: true,
+    headerIds: true,
+    headerPrefix: "",
+    highlight: null,
+    hooks: null,
+    langPrefix: "language-",
+    mangle: true,
+    pedantic: false,
+    renderer: null,
+    sanitize: false,
+    sanitizer: null,
+    silent: false,
+    smartypants: false,
+    tokenizer: null,
+    walkTokens: null,
+    xhtml: false
+  };
+}
+__name(getDefaults, "getDefaults");
+let defaults = getDefaults();
+function changeDefaults(newDefaults) {
+  defaults = newDefaults;
+}
+__name(changeDefaults, "changeDefaults");
+const escapeTest = /[&<>"']/;
+const escapeReplace = new RegExp(escapeTest.source, "g");
+const escapeTestNoEncode = /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/;
+const escapeReplaceNoEncode = new RegExp(escapeTestNoEncode.source, "g");
+const escapeReplacements = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;"
+};
+const getEscapeReplacement = /* @__PURE__ */ __name((ch) => escapeReplacements[ch], "getEscapeReplacement");
+function escape(html, encode) {
+  if (encode) {
+    if (escapeTest.test(html)) {
+      return html.replace(escapeReplace, getEscapeReplacement);
+    }
+  } else {
+    if (escapeTestNoEncode.test(html)) {
+      return html.replace(escapeReplaceNoEncode, getEscapeReplacement);
+    }
+  }
+  return html;
+}
+__name(escape, "escape");
+const unescapeTest = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig;
+function unescape(html) {
+  return html.replace(unescapeTest, (_, n) => {
+    n = n.toLowerCase();
+    if (n === "colon") return ":";
+    if (n.charAt(0) === "#") {
+      return n.charAt(1) === "x" ? String.fromCharCode(parseInt(n.substring(2), 16)) : String.fromCharCode(+n.substring(1));
+    }
+    return "";
+  });
+}
+__name(unescape, "unescape");
+const caret = /(^|[^\[])\^/g;
+function edit(regex, opt) {
+  regex = typeof regex === "string" ? regex : regex.source;
+  opt = opt || "";
+  const obj = {
+    replace: /* @__PURE__ */ __name((name, val) => {
+      val = val.source || val;
+      val = val.replace(caret, "$1");
+      regex = regex.replace(name, val);
+      return obj;
+    }, "replace"),
+    getRegex: /* @__PURE__ */ __name(() => {
+      return new RegExp(regex, opt);
+    }, "getRegex")
+  };
+  return obj;
+}
+__name(edit, "edit");
+const nonWordAndColonTest = /[^\w:]/g;
+const originIndependentUrl = /^$|^[a-z][a-z0-9+.-]*:|^[?#]/i;
+function cleanUrl(sanitize, base, href) {
+  if (sanitize) {
+    let prot;
+    try {
+      prot = decodeURIComponent(unescape(href)).replace(nonWordAndColonTest, "").toLowerCase();
+    } catch (e) {
+      return null;
+    }
+    if (prot.indexOf("javascript:") === 0 || prot.indexOf("vbscript:") === 0 || prot.indexOf("data:") === 0) {
+      return null;
+    }
+  }
+  if (base && !originIndependentUrl.test(href)) {
+    href = resolveUrl(base, href);
+  }
+  try {
+    href = encodeURI(href).replace(/%25/g, "%");
+  } catch (e) {
+    return null;
+  }
+  return href;
+}
+__name(cleanUrl, "cleanUrl");
+const baseUrls = {};
+const justDomain = /^[^:]+:\/*[^/]*$/;
+const protocol = /^([^:]+:)[\s\S]*$/;
+const domain = /^([^:]+:\/*[^/]*)[\s\S]*$/;
+function resolveUrl(base, href) {
+  if (!baseUrls[" " + base]) {
+    if (justDomain.test(base)) {
+      baseUrls[" " + base] = base + "/";
+    } else {
+      baseUrls[" " + base] = rtrim(base, "/", true);
+    }
+  }
+  base = baseUrls[" " + base];
+  const relativeBase = base.indexOf(":") === -1;
+  if (href.substring(0, 2) === "//") {
+    if (relativeBase) {
+      return href;
+    }
+    return base.replace(protocol, "$1") + href;
+  } else if (href.charAt(0) === "/") {
+    if (relativeBase) {
+      return href;
+    }
+    return base.replace(domain, "$1") + href;
+  } else {
+    return base + href;
+  }
+}
+__name(resolveUrl, "resolveUrl");
+const noopTest = { exec: /* @__PURE__ */ __name(function noopTest2() {
+}, "noopTest") };
+function splitCells(tableRow, count) {
+  const row = tableRow.replace(/\|/g, (match, offset, str) => {
+    let escaped = false, curr = offset;
+    while (--curr >= 0 && str[curr] === "\\") escaped = !escaped;
+    if (escaped) {
+      return "|";
+    } else {
+      return " |";
+    }
+  }), cells = row.split(/ \|/);
+  let i = 0;
+  if (!cells[0].trim()) {
+    cells.shift();
+  }
+  if (cells.length > 0 && !cells[cells.length - 1].trim()) {
+    cells.pop();
+  }
+  if (cells.length > count) {
+    cells.splice(count);
+  } else {
+    while (cells.length < count) cells.push("");
+  }
+  for (; i < cells.length; i++) {
+    cells[i] = cells[i].trim().replace(/\\\|/g, "|");
+  }
+  return cells;
+}
+__name(splitCells, "splitCells");
+function rtrim(str, c, invert) {
+  const l = str.length;
+  if (l === 0) {
+    return "";
+  }
+  let suffLen = 0;
+  while (suffLen < l) {
+    const currChar = str.charAt(l - suffLen - 1);
+    if (currChar === c && !invert) {
+      suffLen++;
+    } else if (currChar !== c && invert) {
+      suffLen++;
+    } else {
+      break;
+    }
+  }
+  return str.slice(0, l - suffLen);
+}
+__name(rtrim, "rtrim");
+function findClosingBracket(str, b) {
+  if (str.indexOf(b[1]) === -1) {
+    return -1;
+  }
+  const l = str.length;
+  let level = 0, i = 0;
+  for (; i < l; i++) {
+    if (str[i] === "\\") {
+      i++;
+    } else if (str[i] === b[0]) {
+      level++;
+    } else if (str[i] === b[1]) {
+      level--;
+      if (level < 0) {
+        return i;
+      }
+    }
+  }
+  return -1;
+}
+__name(findClosingBracket, "findClosingBracket");
+function checkDeprecations(opt, callback) {
+  if (!opt || opt.silent) {
+    return;
+  }
+  if (callback) {
+    console.warn("marked(): callback is deprecated since version 5.0.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/using_pro#async");
+  }
+  if (opt.sanitize || opt.sanitizer) {
+    console.warn("marked(): sanitize and sanitizer parameters are deprecated since version 0.7.0, should not be used and will be removed in the future. Read more here: https://marked.js.org/#/USING_ADVANCED.md#options");
+  }
+  if (opt.highlight || opt.langPrefix !== "language-") {
+    console.warn("marked(): highlight and langPrefix parameters are deprecated since version 5.0.0, should not be used and will be removed in the future. Instead use https://www.npmjs.com/package/marked-highlight.");
+  }
+  if (opt.mangle) {
+    console.warn("marked(): mangle parameter is enabled by default, but is deprecated since version 5.0.0, and will be removed in the future. To clear this warning, install https://www.npmjs.com/package/marked-mangle, or disable by setting `{mangle: false}`.");
+  }
+  if (opt.baseUrl) {
+    console.warn("marked(): baseUrl parameter is deprecated since version 5.0.0, should not be used and will be removed in the future. Instead use https://www.npmjs.com/package/marked-base-url.");
+  }
+  if (opt.smartypants) {
+    console.warn("marked(): smartypants parameter is deprecated since version 5.0.0, should not be used and will be removed in the future. Instead use https://www.npmjs.com/package/marked-smartypants.");
+  }
+  if (opt.xhtml) {
+    console.warn("marked(): xhtml parameter is deprecated since version 5.0.0, should not be used and will be removed in the future. Instead use https://www.npmjs.com/package/marked-xhtml.");
+  }
+  if (opt.headerIds || opt.headerPrefix) {
+    console.warn("marked(): headerIds and headerPrefix parameters enabled by default, but are deprecated since version 5.0.0, and will be removed in the future. To clear this warning, install  https://www.npmjs.com/package/marked-gfm-heading-id, or disable by setting `{headerIds: false}`.");
+  }
+}
+__name(checkDeprecations, "checkDeprecations");
+function outputLink(cap, link, raw, lexer) {
+  const href = link.href;
+  const title = link.title ? escape(link.title) : null;
+  const text2 = cap[1].replace(/\\([\[\]])/g, "$1");
+  if (cap[0].charAt(0) !== "!") {
+    lexer.state.inLink = true;
+    const token = {
+      type: "link",
+      raw,
+      href,
+      title,
+      text: text2,
+      tokens: lexer.inlineTokens(text2)
+    };
+    lexer.state.inLink = false;
+    return token;
+  }
+  return {
+    type: "image",
+    raw,
+    href,
+    title,
+    text: escape(text2)
+  };
+}
+__name(outputLink, "outputLink");
+function indentCodeCompensation(raw, text2) {
+  const matchIndentToCode = raw.match(/^(\s+)(?:```)/);
+  if (matchIndentToCode === null) {
+    return text2;
+  }
+  const indentToCode = matchIndentToCode[1];
+  return text2.split("\n").map((node) => {
+    const matchIndentInNode = node.match(/^\s+/);
+    if (matchIndentInNode === null) {
+      return node;
+    }
+    const [indentInNode] = matchIndentInNode;
+    if (indentInNode.length >= indentToCode.length) {
+      return node.slice(indentToCode.length);
+    }
+    return node;
+  }).join("\n");
+}
+__name(indentCodeCompensation, "indentCodeCompensation");
+const _Tokenizer = class _Tokenizer {
+  constructor(options) {
+    this.options = options || defaults;
+  }
+  space(src) {
+    const cap = this.rules.block.newline.exec(src);
+    if (cap && cap[0].length > 0) {
+      return {
+        type: "space",
+        raw: cap[0]
+      };
+    }
+  }
+  code(src) {
+    const cap = this.rules.block.code.exec(src);
+    if (cap) {
+      const text2 = cap[0].replace(/^ {1,4}/gm, "");
+      return {
+        type: "code",
+        raw: cap[0],
+        codeBlockStyle: "indented",
+        text: !this.options.pedantic ? rtrim(text2, "\n") : text2
+      };
+    }
+  }
+  fences(src) {
+    const cap = this.rules.block.fences.exec(src);
+    if (cap) {
+      const raw = cap[0];
+      const text2 = indentCodeCompensation(raw, cap[3] || "");
+      return {
+        type: "code",
+        raw,
+        lang: cap[2] ? cap[2].trim().replace(this.rules.inline._escapes, "$1") : cap[2],
+        text: text2
+      };
+    }
+  }
+  heading(src) {
+    const cap = this.rules.block.heading.exec(src);
+    if (cap) {
+      let text2 = cap[2].trim();
+      if (/#$/.test(text2)) {
+        const trimmed = rtrim(text2, "#");
+        if (this.options.pedantic) {
+          text2 = trimmed.trim();
+        } else if (!trimmed || / $/.test(trimmed)) {
+          text2 = trimmed.trim();
+        }
+      }
+      return {
+        type: "heading",
+        raw: cap[0],
+        depth: cap[1].length,
+        text: text2,
+        tokens: this.lexer.inline(text2)
+      };
+    }
+  }
+  hr(src) {
+    const cap = this.rules.block.hr.exec(src);
+    if (cap) {
+      return {
+        type: "hr",
+        raw: cap[0]
+      };
+    }
+  }
+  blockquote(src) {
+    const cap = this.rules.block.blockquote.exec(src);
+    if (cap) {
+      const text2 = cap[0].replace(/^ *>[ \t]?/gm, "");
+      const top = this.lexer.state.top;
+      this.lexer.state.top = true;
+      const tokens = this.lexer.blockTokens(text2);
+      this.lexer.state.top = top;
+      return {
+        type: "blockquote",
+        raw: cap[0],
+        tokens,
+        text: text2
+      };
+    }
+  }
+  list(src) {
+    let cap = this.rules.block.list.exec(src);
+    if (cap) {
+      let raw, istask, ischecked, indent, i, blankLine, endsWithBlankLine, line, nextLine, rawLine, itemContents, endEarly;
+      let bull = cap[1].trim();
+      const isordered = bull.length > 1;
+      const list = {
+        type: "list",
+        raw: "",
+        ordered: isordered,
+        start: isordered ? +bull.slice(0, -1) : "",
+        loose: false,
+        items: []
+      };
+      bull = isordered ? `\\d{1,9}\\${bull.slice(-1)}` : `\\${bull}`;
+      if (this.options.pedantic) {
+        bull = isordered ? bull : "[*+-]";
+      }
+      const itemRegex = new RegExp(`^( {0,3}${bull})((?:[	 ][^\\n]*)?(?:\\n|$))`);
+      while (src) {
+        endEarly = false;
+        if (!(cap = itemRegex.exec(src))) {
+          break;
+        }
+        if (this.rules.block.hr.test(src)) {
+          break;
+        }
+        raw = cap[0];
+        src = src.substring(raw.length);
+        line = cap[2].split("\n", 1)[0].replace(/^\t+/, (t) => " ".repeat(3 * t.length));
+        nextLine = src.split("\n", 1)[0];
+        if (this.options.pedantic) {
+          indent = 2;
+          itemContents = line.trimLeft();
+        } else {
+          indent = cap[2].search(/[^ ]/);
+          indent = indent > 4 ? 1 : indent;
+          itemContents = line.slice(indent);
+          indent += cap[1].length;
+        }
+        blankLine = false;
+        if (!line && /^ *$/.test(nextLine)) {
+          raw += nextLine + "\n";
+          src = src.substring(nextLine.length + 1);
+          endEarly = true;
+        }
+        if (!endEarly) {
+          const nextBulletRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`);
+          const hrRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`);
+          const fencesBeginRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:\`\`\`|~~~)`);
+          const headingBeginRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}#`);
+          while (src) {
+            rawLine = src.split("\n", 1)[0];
+            nextLine = rawLine;
+            if (this.options.pedantic) {
+              nextLine = nextLine.replace(/^ {1,4}(?=( {4})*[^ ])/g, "  ");
+            }
+            if (fencesBeginRegex.test(nextLine)) {
+              break;
+            }
+            if (headingBeginRegex.test(nextLine)) {
+              break;
+            }
+            if (nextBulletRegex.test(nextLine)) {
+              break;
+            }
+            if (hrRegex.test(src)) {
+              break;
+            }
+            if (nextLine.search(/[^ ]/) >= indent || !nextLine.trim()) {
+              itemContents += "\n" + nextLine.slice(indent);
+            } else {
+              if (blankLine) {
+                break;
+              }
+              if (line.search(/[^ ]/) >= 4) {
+                break;
+              }
+              if (fencesBeginRegex.test(line)) {
+                break;
+              }
+              if (headingBeginRegex.test(line)) {
+                break;
+              }
+              if (hrRegex.test(line)) {
+                break;
+              }
+              itemContents += "\n" + nextLine;
+            }
+            if (!blankLine && !nextLine.trim()) {
+              blankLine = true;
+            }
+            raw += rawLine + "\n";
+            src = src.substring(rawLine.length + 1);
+            line = nextLine.slice(indent);
+          }
+        }
+        if (!list.loose) {
+          if (endsWithBlankLine) {
+            list.loose = true;
+          } else if (/\n *\n *$/.test(raw)) {
+            endsWithBlankLine = true;
+          }
+        }
+        if (this.options.gfm) {
+          istask = /^\[[ xX]\] /.exec(itemContents);
+          if (istask) {
+            ischecked = istask[0] !== "[ ] ";
+            itemContents = itemContents.replace(/^\[[ xX]\] +/, "");
+          }
+        }
+        list.items.push({
+          type: "list_item",
+          raw,
+          task: !!istask,
+          checked: ischecked,
+          loose: false,
+          text: itemContents
+        });
+        list.raw += raw;
+      }
+      list.items[list.items.length - 1].raw = raw.trimRight();
+      list.items[list.items.length - 1].text = itemContents.trimRight();
+      list.raw = list.raw.trimRight();
+      const l = list.items.length;
+      for (i = 0; i < l; i++) {
+        this.lexer.state.top = false;
+        list.items[i].tokens = this.lexer.blockTokens(list.items[i].text, []);
+        if (!list.loose) {
+          const spacers = list.items[i].tokens.filter((t) => t.type === "space");
+          const hasMultipleLineBreaks = spacers.length > 0 && spacers.some((t) => /\n.*\n/.test(t.raw));
+          list.loose = hasMultipleLineBreaks;
+        }
+      }
+      if (list.loose) {
+        for (i = 0; i < l; i++) {
+          list.items[i].loose = true;
+        }
+      }
+      return list;
+    }
+  }
+  html(src) {
+    const cap = this.rules.block.html.exec(src);
+    if (cap) {
+      const token = {
+        type: "html",
+        block: true,
+        raw: cap[0],
+        pre: !this.options.sanitizer && (cap[1] === "pre" || cap[1] === "script" || cap[1] === "style"),
+        text: cap[0]
+      };
+      if (this.options.sanitize) {
+        const text2 = this.options.sanitizer ? this.options.sanitizer(cap[0]) : escape(cap[0]);
+        token.type = "paragraph";
+        token.text = text2;
+        token.tokens = this.lexer.inline(text2);
+      }
+      return token;
+    }
+  }
+  def(src) {
+    const cap = this.rules.block.def.exec(src);
+    if (cap) {
+      const tag = cap[1].toLowerCase().replace(/\s+/g, " ");
+      const href = cap[2] ? cap[2].replace(/^<(.*)>$/, "$1").replace(this.rules.inline._escapes, "$1") : "";
+      const title = cap[3] ? cap[3].substring(1, cap[3].length - 1).replace(this.rules.inline._escapes, "$1") : cap[3];
+      return {
+        type: "def",
+        tag,
+        raw: cap[0],
+        href,
+        title
+      };
+    }
+  }
+  table(src) {
+    const cap = this.rules.block.table.exec(src);
+    if (cap) {
+      const item = {
+        type: "table",
+        header: splitCells(cap[1]).map((c) => {
+          return { text: c };
+        }),
+        align: cap[2].replace(/^ *|\| *$/g, "").split(/ *\| */),
+        rows: cap[3] && cap[3].trim() ? cap[3].replace(/\n[ \t]*$/, "").split("\n") : []
+      };
+      if (item.header.length === item.align.length) {
+        item.raw = cap[0];
+        let l = item.align.length;
+        let i, j, k, row;
+        for (i = 0; i < l; i++) {
+          if (/^ *-+: *$/.test(item.align[i])) {
+            item.align[i] = "right";
+          } else if (/^ *:-+: *$/.test(item.align[i])) {
+            item.align[i] = "center";
+          } else if (/^ *:-+ *$/.test(item.align[i])) {
+            item.align[i] = "left";
+          } else {
+            item.align[i] = null;
+          }
+        }
+        l = item.rows.length;
+        for (i = 0; i < l; i++) {
+          item.rows[i] = splitCells(item.rows[i], item.header.length).map((c) => {
+            return { text: c };
+          });
+        }
+        l = item.header.length;
+        for (j = 0; j < l; j++) {
+          item.header[j].tokens = this.lexer.inline(item.header[j].text);
+        }
+        l = item.rows.length;
+        for (j = 0; j < l; j++) {
+          row = item.rows[j];
+          for (k = 0; k < row.length; k++) {
+            row[k].tokens = this.lexer.inline(row[k].text);
+          }
+        }
+        return item;
+      }
+    }
+  }
+  lheading(src) {
+    const cap = this.rules.block.lheading.exec(src);
+    if (cap) {
+      return {
+        type: "heading",
+        raw: cap[0],
+        depth: cap[2].charAt(0) === "=" ? 1 : 2,
+        text: cap[1],
+        tokens: this.lexer.inline(cap[1])
+      };
+    }
+  }
+  paragraph(src) {
+    const cap = this.rules.block.paragraph.exec(src);
+    if (cap) {
+      const text2 = cap[1].charAt(cap[1].length - 1) === "\n" ? cap[1].slice(0, -1) : cap[1];
+      return {
+        type: "paragraph",
+        raw: cap[0],
+        text: text2,
+        tokens: this.lexer.inline(text2)
+      };
+    }
+  }
+  text(src) {
+    const cap = this.rules.block.text.exec(src);
+    if (cap) {
+      return {
+        type: "text",
+        raw: cap[0],
+        text: cap[0],
+        tokens: this.lexer.inline(cap[0])
+      };
+    }
+  }
+  escape(src) {
+    const cap = this.rules.inline.escape.exec(src);
+    if (cap) {
+      return {
+        type: "escape",
+        raw: cap[0],
+        text: escape(cap[1])
+      };
+    }
+  }
+  tag(src) {
+    const cap = this.rules.inline.tag.exec(src);
+    if (cap) {
+      if (!this.lexer.state.inLink && /^<a /i.test(cap[0])) {
+        this.lexer.state.inLink = true;
+      } else if (this.lexer.state.inLink && /^<\/a>/i.test(cap[0])) {
+        this.lexer.state.inLink = false;
+      }
+      if (!this.lexer.state.inRawBlock && /^<(pre|code|kbd|script)(\s|>)/i.test(cap[0])) {
+        this.lexer.state.inRawBlock = true;
+      } else if (this.lexer.state.inRawBlock && /^<\/(pre|code|kbd|script)(\s|>)/i.test(cap[0])) {
+        this.lexer.state.inRawBlock = false;
+      }
+      return {
+        type: this.options.sanitize ? "text" : "html",
+        raw: cap[0],
+        inLink: this.lexer.state.inLink,
+        inRawBlock: this.lexer.state.inRawBlock,
+        block: false,
+        text: this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : escape(cap[0]) : cap[0]
+      };
+    }
+  }
+  link(src) {
+    const cap = this.rules.inline.link.exec(src);
+    if (cap) {
+      const trimmedUrl = cap[2].trim();
+      if (!this.options.pedantic && /^</.test(trimmedUrl)) {
+        if (!/>$/.test(trimmedUrl)) {
+          return;
+        }
+        const rtrimSlash = rtrim(trimmedUrl.slice(0, -1), "\\");
+        if ((trimmedUrl.length - rtrimSlash.length) % 2 === 0) {
+          return;
+        }
+      } else {
+        const lastParenIndex = findClosingBracket(cap[2], "()");
+        if (lastParenIndex > -1) {
+          const start = cap[0].indexOf("!") === 0 ? 5 : 4;
+          const linkLen = start + cap[1].length + lastParenIndex;
+          cap[2] = cap[2].substring(0, lastParenIndex);
+          cap[0] = cap[0].substring(0, linkLen).trim();
+          cap[3] = "";
+        }
+      }
+      let href = cap[2];
+      let title = "";
+      if (this.options.pedantic) {
+        const link = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(href);
+        if (link) {
+          href = link[1];
+          title = link[3];
+        }
+      } else {
+        title = cap[3] ? cap[3].slice(1, -1) : "";
+      }
+      href = href.trim();
+      if (/^</.test(href)) {
+        if (this.options.pedantic && !/>$/.test(trimmedUrl)) {
+          href = href.slice(1);
+        } else {
+          href = href.slice(1, -1);
+        }
+      }
+      return outputLink(cap, {
+        href: href ? href.replace(this.rules.inline._escapes, "$1") : href,
+        title: title ? title.replace(this.rules.inline._escapes, "$1") : title
+      }, cap[0], this.lexer);
+    }
+  }
+  reflink(src, links) {
+    let cap;
+    if ((cap = this.rules.inline.reflink.exec(src)) || (cap = this.rules.inline.nolink.exec(src))) {
+      let link = (cap[2] || cap[1]).replace(/\s+/g, " ");
+      link = links[link.toLowerCase()];
+      if (!link) {
+        const text2 = cap[0].charAt(0);
+        return {
+          type: "text",
+          raw: text2,
+          text: text2
+        };
+      }
+      return outputLink(cap, link, cap[0], this.lexer);
+    }
+  }
+  emStrong(src, maskedSrc, prevChar = "") {
+    let match = this.rules.inline.emStrong.lDelim.exec(src);
+    if (!match) return;
+    if (match[3] && prevChar.match(/[\p{L}\p{N}]/u)) return;
+    const nextChar = match[1] || match[2] || "";
+    if (!nextChar || !prevChar || this.rules.inline.punctuation.exec(prevChar)) {
+      const lLength = match[0].length - 1;
+      let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
+      const endReg = match[0][0] === "*" ? this.rules.inline.emStrong.rDelimAst : this.rules.inline.emStrong.rDelimUnd;
+      endReg.lastIndex = 0;
+      maskedSrc = maskedSrc.slice(-1 * src.length + lLength);
+      while ((match = endReg.exec(maskedSrc)) != null) {
+        rDelim = match[1] || match[2] || match[3] || match[4] || match[5] || match[6];
+        if (!rDelim) continue;
+        rLength = rDelim.length;
+        if (match[3] || match[4]) {
+          delimTotal += rLength;
+          continue;
+        } else if (match[5] || match[6]) {
+          if (lLength % 3 && !((lLength + rLength) % 3)) {
+            midDelimTotal += rLength;
+            continue;
+          }
+        }
+        delimTotal -= rLength;
+        if (delimTotal > 0) continue;
+        rLength = Math.min(rLength, rLength + delimTotal + midDelimTotal);
+        const raw = src.slice(0, lLength + match.index + rLength + 1);
+        if (Math.min(lLength, rLength) % 2) {
+          const text3 = raw.slice(1, -1);
+          return {
+            type: "em",
+            raw,
+            text: text3,
+            tokens: this.lexer.inlineTokens(text3)
+          };
+        }
+        const text2 = raw.slice(2, -2);
+        return {
+          type: "strong",
+          raw,
+          text: text2,
+          tokens: this.lexer.inlineTokens(text2)
+        };
+      }
+    }
+  }
+  codespan(src) {
+    const cap = this.rules.inline.code.exec(src);
+    if (cap) {
+      let text2 = cap[2].replace(/\n/g, " ");
+      const hasNonSpaceChars = /[^ ]/.test(text2);
+      const hasSpaceCharsOnBothEnds = /^ /.test(text2) && / $/.test(text2);
+      if (hasNonSpaceChars && hasSpaceCharsOnBothEnds) {
+        text2 = text2.substring(1, text2.length - 1);
+      }
+      text2 = escape(text2, true);
+      return {
+        type: "codespan",
+        raw: cap[0],
+        text: text2
+      };
+    }
+  }
+  br(src) {
+    const cap = this.rules.inline.br.exec(src);
+    if (cap) {
+      return {
+        type: "br",
+        raw: cap[0]
+      };
+    }
+  }
+  del(src) {
+    const cap = this.rules.inline.del.exec(src);
+    if (cap) {
+      return {
+        type: "del",
+        raw: cap[0],
+        text: cap[2],
+        tokens: this.lexer.inlineTokens(cap[2])
+      };
+    }
+  }
+  autolink(src, mangle2) {
+    const cap = this.rules.inline.autolink.exec(src);
+    if (cap) {
+      let text2, href;
+      if (cap[2] === "@") {
+        text2 = escape(this.options.mangle ? mangle2(cap[1]) : cap[1]);
+        href = "mailto:" + text2;
+      } else {
+        text2 = escape(cap[1]);
+        href = text2;
+      }
+      return {
+        type: "link",
+        raw: cap[0],
+        text: text2,
+        href,
+        tokens: [
+          {
+            type: "text",
+            raw: text2,
+            text: text2
+          }
+        ]
+      };
+    }
+  }
+  url(src, mangle2) {
+    let cap;
+    if (cap = this.rules.inline.url.exec(src)) {
+      let text2, href;
+      if (cap[2] === "@") {
+        text2 = escape(this.options.mangle ? mangle2(cap[0]) : cap[0]);
+        href = "mailto:" + text2;
+      } else {
+        let prevCapZero;
+        do {
+          prevCapZero = cap[0];
+          cap[0] = this.rules.inline._backpedal.exec(cap[0])[0];
+        } while (prevCapZero !== cap[0]);
+        text2 = escape(cap[0]);
+        if (cap[1] === "www.") {
+          href = "http://" + cap[0];
+        } else {
+          href = cap[0];
+        }
+      }
+      return {
+        type: "link",
+        raw: cap[0],
+        text: text2,
+        href,
+        tokens: [
+          {
+            type: "text",
+            raw: text2,
+            text: text2
+          }
+        ]
+      };
+    }
+  }
+  inlineText(src, smartypants2) {
+    const cap = this.rules.inline.text.exec(src);
+    if (cap) {
+      let text2;
+      if (this.lexer.state.inRawBlock) {
+        text2 = this.options.sanitize ? this.options.sanitizer ? this.options.sanitizer(cap[0]) : escape(cap[0]) : cap[0];
+      } else {
+        text2 = escape(this.options.smartypants ? smartypants2(cap[0]) : cap[0]);
+      }
+      return {
+        type: "text",
+        raw: cap[0],
+        text: text2
+      };
+    }
+  }
+};
+__name(_Tokenizer, "Tokenizer");
+let Tokenizer = _Tokenizer;
+const block = {
+  newline: /^(?: *(?:\n|$))+/,
+  code: /^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/,
+  fences: /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,
+  hr: /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,
+  heading: /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,
+  blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
+  list: /^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/,
+  html: "^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))",
+  def: /^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/,
+  table: noopTest,
+  lheading: /^((?:(?!^bull ).|\n(?!\n|bull ))+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+  // regex template, placeholders will be replaced according to different paragraph
+  // interruption rules of commonmark and the original markdown spec:
+  _paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/,
+  text: /^[^\n]+/
+};
+block._label = /(?!\s*\])(?:\\.|[^\[\]\\])+/;
+block._title = /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/;
+block.def = edit(block.def).replace("label", block._label).replace("title", block._title).getRegex();
+block.bullet = /(?:[*+-]|\d{1,9}[.)])/;
+block.listItemStart = edit(/^( *)(bull) */).replace("bull", block.bullet).getRegex();
+block.list = edit(block.list).replace(/bull/g, block.bullet).replace("hr", "\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))").replace("def", "\\n+(?=" + block.def.source + ")").getRegex();
+block._tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul";
+block._comment = /<!--(?!-?>)[\s\S]*?(?:-->|$)/;
+block.html = edit(block.html, "i").replace("comment", block._comment).replace("tag", block._tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
+block.lheading = edit(block.lheading).replace(/bull/g, block.bullet).getRegex();
+block.paragraph = edit(block._paragraph).replace("hr", block.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", block._tag).getRegex();
+block.blockquote = edit(block.blockquote).replace("paragraph", block.paragraph).getRegex();
+block.normal = { ...block };
+block.gfm = {
+  ...block.normal,
+  table: "^ *([^\\n ].*\\|.*)\\n {0,3}(?:\\| *)?(:?-+:? *(?:\\| *:?-+:? *)*)(?:\\| *)?(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)"
+  // Cells
+};
+block.gfm.table = edit(block.gfm.table).replace("hr", block.hr).replace("heading", " {0,3}#{1,6} ").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", block._tag).getRegex();
+block.gfm.paragraph = edit(block._paragraph).replace("hr", block.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("table", block.gfm.table).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", block._tag).getRegex();
+block.pedantic = {
+  ...block.normal,
+  html: edit(
+    `^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`
+  ).replace("comment", block._comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+  def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+  heading: /^(#{1,6})(.*)(?:\n+|$)/,
+  fences: noopTest,
+  // fences not supported
+  lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+  paragraph: edit(block.normal._paragraph).replace("hr", block.hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", block.lheading).replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").getRegex()
+};
+const inline = {
+  escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
+  autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
+  url: noopTest,
+  tag: "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>",
+  // CDATA section
+  link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
+  reflink: /^!?\[(label)\]\[(ref)\]/,
+  nolink: /^!?\[(ref)\](?:\[\])?/,
+  reflinkSearch: "reflink|nolink(?!\\()",
+  emStrong: {
+    lDelim: /^(?:\*+(?:((?!\*)[punct])|[^\s*]))|^_+(?:((?!_)[punct])|([^\s_]))/,
+    //         (1) and (2) can only be a Right Delimiter. (3) and (4) can only be Left.  (5) and (6) can be either Left or Right.
+    //         | Skip orphan inside strong      | Consume to delim | (1) #***              | (2) a***#, a***                    | (3) #***a, ***a                  | (4) ***#                 | (5) #***#                         | (6) a***a
+    rDelimAst: /^[^_*]*?__[^_*]*?\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\*)[punct](\*+)(?=[\s]|$)|[^punct\s](\*+)(?!\*)(?=[punct\s]|$)|(?!\*)[punct\s](\*+)(?=[^punct\s])|[\s](\*+)(?!\*)(?=[punct])|(?!\*)[punct](\*+)(?!\*)(?=[punct])|[^punct\s](\*+)(?=[^punct\s])/,
+    rDelimUnd: /^[^_*]*?\*\*[^_*]*?_[^_*]*?(?=\*\*)|[^_]+(?=[^_])|(?!_)[punct](_+)(?=[\s]|$)|[^punct\s](_+)(?!_)(?=[punct\s]|$)|(?!_)[punct\s](_+)(?=[^punct\s])|[\s](_+)(?!_)(?=[punct])|(?!_)[punct](_+)(?!_)(?=[punct])/
+    // ^- Not allowed for _
+  },
+  code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
+  br: /^( {2,}|\\)\n(?!\s*$)/,
+  del: noopTest,
+  text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,
+  punctuation: /^((?![*_])[\spunctuation])/
+};
+inline._punctuation = "\\p{P}$+<=>`^|~";
+inline.punctuation = edit(inline.punctuation, "u").replace(/punctuation/g, inline._punctuation).getRegex();
+inline.blockSkip = /\[[^[\]]*?\]\([^\(\)]*?\)|`[^`]*?`|<[^<>]*?>/g;
+inline.anyPunctuation = /\\[punct]/g;
+inline._escapes = /\\([punct])/g;
+inline._comment = edit(block._comment).replace("(?:-->|$)", "-->").getRegex();
+inline.emStrong.lDelim = edit(inline.emStrong.lDelim, "u").replace(/punct/g, inline._punctuation).getRegex();
+inline.emStrong.rDelimAst = edit(inline.emStrong.rDelimAst, "gu").replace(/punct/g, inline._punctuation).getRegex();
+inline.emStrong.rDelimUnd = edit(inline.emStrong.rDelimUnd, "gu").replace(/punct/g, inline._punctuation).getRegex();
+inline.anyPunctuation = edit(inline.anyPunctuation, "gu").replace(/punct/g, inline._punctuation).getRegex();
+inline._escapes = edit(inline._escapes, "gu").replace(/punct/g, inline._punctuation).getRegex();
+inline._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/;
+inline._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;
+inline.autolink = edit(inline.autolink).replace("scheme", inline._scheme).replace("email", inline._email).getRegex();
+inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;
+inline.tag = edit(inline.tag).replace("comment", inline._comment).replace("attribute", inline._attribute).getRegex();
+inline._label = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
+inline._href = /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/;
+inline._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/;
+inline.link = edit(inline.link).replace("label", inline._label).replace("href", inline._href).replace("title", inline._title).getRegex();
+inline.reflink = edit(inline.reflink).replace("label", inline._label).replace("ref", block._label).getRegex();
+inline.nolink = edit(inline.nolink).replace("ref", block._label).getRegex();
+inline.reflinkSearch = edit(inline.reflinkSearch, "g").replace("reflink", inline.reflink).replace("nolink", inline.nolink).getRegex();
+inline.normal = { ...inline };
+inline.pedantic = {
+  ...inline.normal,
+  strong: {
+    start: /^__|\*\*/,
+    middle: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
+    endAst: /\*\*(?!\*)/g,
+    endUnd: /__(?!_)/g
+  },
+  em: {
+    start: /^_|\*/,
+    middle: /^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/,
+    endAst: /\*(?!\*)/g,
+    endUnd: /_(?!_)/g
+  },
+  link: edit(/^!?\[(label)\]\((.*?)\)/).replace("label", inline._label).getRegex(),
+  reflink: edit(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", inline._label).getRegex()
+};
+inline.gfm = {
+  ...inline.normal,
+  escape: edit(inline.escape).replace("])", "~|])").getRegex(),
+  _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,
+  url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
+  _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
+  del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
+  text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
+};
+inline.gfm.url = edit(inline.gfm.url, "i").replace("email", inline.gfm._extended_email).getRegex();
+inline.breaks = {
+  ...inline.gfm,
+  br: edit(inline.br).replace("{2,}", "*").getRegex(),
+  text: edit(inline.gfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
+};
+function smartypants(text2) {
+  return text2.replace(/---/g, "—").replace(/--/g, "–").replace(/(^|[-\u2014/(\[{"\s])'/g, "$1‘").replace(/'/g, "’").replace(/(^|[-\u2014/(\[{\u2018\s])"/g, "$1“").replace(/"/g, "”").replace(/\.{3}/g, "…");
+}
+__name(smartypants, "smartypants");
+function mangle(text2) {
+  let out = "", i, ch;
+  const l = text2.length;
+  for (i = 0; i < l; i++) {
+    ch = text2.charCodeAt(i);
+    if (Math.random() > 0.5) {
+      ch = "x" + ch.toString(16);
+    }
+    out += "&#" + ch + ";";
+  }
+  return out;
+}
+__name(mangle, "mangle");
+const _Lexer = class _Lexer {
+  constructor(options) {
+    this.tokens = [];
+    this.tokens.links = /* @__PURE__ */ Object.create(null);
+    this.options = options || defaults;
+    this.options.tokenizer = this.options.tokenizer || new Tokenizer();
+    this.tokenizer = this.options.tokenizer;
+    this.tokenizer.options = this.options;
+    this.tokenizer.lexer = this;
+    this.inlineQueue = [];
+    this.state = {
+      inLink: false,
+      inRawBlock: false,
+      top: true
+    };
+    const rules = {
+      block: block.normal,
+      inline: inline.normal
+    };
+    if (this.options.pedantic) {
+      rules.block = block.pedantic;
+      rules.inline = inline.pedantic;
+    } else if (this.options.gfm) {
+      rules.block = block.gfm;
+      if (this.options.breaks) {
+        rules.inline = inline.breaks;
+      } else {
+        rules.inline = inline.gfm;
+      }
+    }
+    this.tokenizer.rules = rules;
+  }
+  /**
+   * Expose Rules
+   */
+  static get rules() {
+    return {
+      block,
+      inline
+    };
+  }
+  /**
+   * Static Lex Method
+   */
+  static lex(src, options) {
+    const lexer = new _Lexer(options);
+    return lexer.lex(src);
+  }
+  /**
+   * Static Lex Inline Method
+   */
+  static lexInline(src, options) {
+    const lexer = new _Lexer(options);
+    return lexer.inlineTokens(src);
+  }
+  /**
+   * Preprocessing
+   */
+  lex(src) {
+    src = src.replace(/\r\n|\r/g, "\n");
+    this.blockTokens(src, this.tokens);
+    let next;
+    while (next = this.inlineQueue.shift()) {
+      this.inlineTokens(next.src, next.tokens);
+    }
+    return this.tokens;
+  }
+  /**
+   * Lexing
+   */
+  blockTokens(src, tokens = []) {
+    if (this.options.pedantic) {
+      src = src.replace(/\t/g, "    ").replace(/^ +$/gm, "");
+    } else {
+      src = src.replace(/^( *)(\t+)/gm, (_, leading, tabs) => {
+        return leading + "    ".repeat(tabs.length);
+      });
+    }
+    let token, lastToken, cutSrc, lastParagraphClipped;
+    while (src) {
+      if (this.options.extensions && this.options.extensions.block && this.options.extensions.block.some((extTokenizer) => {
+        if (token = extTokenizer.call({ lexer: this }, src, tokens)) {
+          src = src.substring(token.raw.length);
+          tokens.push(token);
+          return true;
+        }
+        return false;
+      })) {
+        continue;
+      }
+      if (token = this.tokenizer.space(src)) {
+        src = src.substring(token.raw.length);
+        if (token.raw.length === 1 && tokens.length > 0) {
+          tokens[tokens.length - 1].raw += "\n";
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (token = this.tokenizer.code(src)) {
+        src = src.substring(token.raw.length);
+        lastToken = tokens[tokens.length - 1];
+        if (lastToken && (lastToken.type === "paragraph" || lastToken.type === "text")) {
+          lastToken.raw += "\n" + token.raw;
+          lastToken.text += "\n" + token.text;
+          this.inlineQueue[this.inlineQueue.length - 1].src = lastToken.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (token = this.tokenizer.fences(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.heading(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.hr(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.blockquote(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.list(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.html(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.def(src)) {
+        src = src.substring(token.raw.length);
+        lastToken = tokens[tokens.length - 1];
+        if (lastToken && (lastToken.type === "paragraph" || lastToken.type === "text")) {
+          lastToken.raw += "\n" + token.raw;
+          lastToken.text += "\n" + token.raw;
+          this.inlineQueue[this.inlineQueue.length - 1].src = lastToken.text;
+        } else if (!this.tokens.links[token.tag]) {
+          this.tokens.links[token.tag] = {
+            href: token.href,
+            title: token.title
+          };
+        }
+        continue;
+      }
+      if (token = this.tokenizer.table(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.lheading(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      cutSrc = src;
+      if (this.options.extensions && this.options.extensions.startBlock) {
+        let startIndex = Infinity;
+        const tempSrc = src.slice(1);
+        let tempStart;
+        this.options.extensions.startBlock.forEach(function(getStartIndex) {
+          tempStart = getStartIndex.call({ lexer: this }, tempSrc);
+          if (typeof tempStart === "number" && tempStart >= 0) {
+            startIndex = Math.min(startIndex, tempStart);
+          }
+        });
+        if (startIndex < Infinity && startIndex >= 0) {
+          cutSrc = src.substring(0, startIndex + 1);
+        }
+      }
+      if (this.state.top && (token = this.tokenizer.paragraph(cutSrc))) {
+        lastToken = tokens[tokens.length - 1];
+        if (lastParagraphClipped && lastToken.type === "paragraph") {
+          lastToken.raw += "\n" + token.raw;
+          lastToken.text += "\n" + token.text;
+          this.inlineQueue.pop();
+          this.inlineQueue[this.inlineQueue.length - 1].src = lastToken.text;
+        } else {
+          tokens.push(token);
+        }
+        lastParagraphClipped = cutSrc.length !== src.length;
+        src = src.substring(token.raw.length);
+        continue;
+      }
+      if (token = this.tokenizer.text(src)) {
+        src = src.substring(token.raw.length);
+        lastToken = tokens[tokens.length - 1];
+        if (lastToken && lastToken.type === "text") {
+          lastToken.raw += "\n" + token.raw;
+          lastToken.text += "\n" + token.text;
+          this.inlineQueue.pop();
+          this.inlineQueue[this.inlineQueue.length - 1].src = lastToken.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (src) {
+        const errMsg = "Infinite loop on byte: " + src.charCodeAt(0);
+        if (this.options.silent) {
+          console.error(errMsg);
+          break;
+        } else {
+          throw new Error(errMsg);
+        }
+      }
+    }
+    this.state.top = true;
+    return tokens;
+  }
+  inline(src, tokens = []) {
+    this.inlineQueue.push({ src, tokens });
+    return tokens;
+  }
+  /**
+   * Lexing/Compiling
+   */
+  inlineTokens(src, tokens = []) {
+    let token, lastToken, cutSrc;
+    let maskedSrc = src;
+    let match;
+    let keepPrevChar, prevChar;
+    if (this.tokens.links) {
+      const links = Object.keys(this.tokens.links);
+      if (links.length > 0) {
+        while ((match = this.tokenizer.rules.inline.reflinkSearch.exec(maskedSrc)) != null) {
+          if (links.includes(match[0].slice(match[0].lastIndexOf("[") + 1, -1))) {
+            maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex);
+          }
+        }
+      }
+    }
+    while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
+      maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
+    }
+    while ((match = this.tokenizer.rules.inline.anyPunctuation.exec(maskedSrc)) != null) {
+      maskedSrc = maskedSrc.slice(0, match.index) + "++" + maskedSrc.slice(this.tokenizer.rules.inline.anyPunctuation.lastIndex);
+    }
+    while (src) {
+      if (!keepPrevChar) {
+        prevChar = "";
+      }
+      keepPrevChar = false;
+      if (this.options.extensions && this.options.extensions.inline && this.options.extensions.inline.some((extTokenizer) => {
+        if (token = extTokenizer.call({ lexer: this }, src, tokens)) {
+          src = src.substring(token.raw.length);
+          tokens.push(token);
+          return true;
+        }
+        return false;
+      })) {
+        continue;
+      }
+      if (token = this.tokenizer.escape(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.tag(src)) {
+        src = src.substring(token.raw.length);
+        lastToken = tokens[tokens.length - 1];
+        if (lastToken && token.type === "text" && lastToken.type === "text") {
+          lastToken.raw += token.raw;
+          lastToken.text += token.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (token = this.tokenizer.link(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.reflink(src, this.tokens.links)) {
+        src = src.substring(token.raw.length);
+        lastToken = tokens[tokens.length - 1];
+        if (lastToken && token.type === "text" && lastToken.type === "text") {
+          lastToken.raw += token.raw;
+          lastToken.text += token.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (token = this.tokenizer.emStrong(src, maskedSrc, prevChar)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.codespan(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.br(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.del(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (token = this.tokenizer.autolink(src, mangle)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      if (!this.state.inLink && (token = this.tokenizer.url(src, mangle))) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
+      cutSrc = src;
+      if (this.options.extensions && this.options.extensions.startInline) {
+        let startIndex = Infinity;
+        const tempSrc = src.slice(1);
+        let tempStart;
+        this.options.extensions.startInline.forEach(function(getStartIndex) {
+          tempStart = getStartIndex.call({ lexer: this }, tempSrc);
+          if (typeof tempStart === "number" && tempStart >= 0) {
+            startIndex = Math.min(startIndex, tempStart);
+          }
+        });
+        if (startIndex < Infinity && startIndex >= 0) {
+          cutSrc = src.substring(0, startIndex + 1);
+        }
+      }
+      if (token = this.tokenizer.inlineText(cutSrc, smartypants)) {
+        src = src.substring(token.raw.length);
+        if (token.raw.slice(-1) !== "_") {
+          prevChar = token.raw.slice(-1);
+        }
+        keepPrevChar = true;
+        lastToken = tokens[tokens.length - 1];
+        if (lastToken && lastToken.type === "text") {
+          lastToken.raw += token.raw;
+          lastToken.text += token.text;
+        } else {
+          tokens.push(token);
+        }
+        continue;
+      }
+      if (src) {
+        const errMsg = "Infinite loop on byte: " + src.charCodeAt(0);
+        if (this.options.silent) {
+          console.error(errMsg);
+          break;
+        } else {
+          throw new Error(errMsg);
+        }
+      }
+    }
+    return tokens;
+  }
+};
+__name(_Lexer, "Lexer");
+let Lexer = _Lexer;
+const _Renderer = class _Renderer {
+  constructor(options) {
+    this.options = options || defaults;
+  }
+  code(code, infostring, escaped) {
+    const lang = (infostring || "").match(/\S*/)[0];
+    if (this.options.highlight) {
+      const out = this.options.highlight(code, lang);
+      if (out != null && out !== code) {
+        escaped = true;
+        code = out;
+      }
+    }
+    code = code.replace(/\n$/, "") + "\n";
+    if (!lang) {
+      return "<pre><code>" + (escaped ? code : escape(code, true)) + "</code></pre>\n";
+    }
+    return '<pre><code class="' + this.options.langPrefix + escape(lang) + '">' + (escaped ? code : escape(code, true)) + "</code></pre>\n";
+  }
+  /**
+   * @param {string} quote
+   */
+  blockquote(quote) {
+    return `<blockquote>
+${quote}</blockquote>
+`;
+  }
+  html(html, block2) {
+    return html;
+  }
+  /**
+   * @param {string} text
+   * @param {string} level
+   * @param {string} raw
+   * @param {any} slugger
+   */
+  heading(text2, level, raw, slugger) {
+    if (this.options.headerIds) {
+      const id2 = this.options.headerPrefix + slugger.slug(raw);
+      return `<h${level} id="${id2}">${text2}</h${level}>
+`;
+    }
+    return `<h${level}>${text2}</h${level}>
+`;
+  }
+  hr() {
+    return this.options.xhtml ? "<hr/>\n" : "<hr>\n";
+  }
+  list(body, ordered, start) {
+    const type = ordered ? "ol" : "ul", startatt = ordered && start !== 1 ? ' start="' + start + '"' : "";
+    return "<" + type + startatt + ">\n" + body + "</" + type + ">\n";
+  }
+  /**
+   * @param {string} text
+   */
+  listitem(text2) {
+    return `<li>${text2}</li>
+`;
+  }
+  checkbox(checked) {
+    return "<input " + (checked ? 'checked="" ' : "") + 'disabled="" type="checkbox"' + (this.options.xhtml ? " /" : "") + "> ";
+  }
+  /**
+   * @param {string} text
+   */
+  paragraph(text2) {
+    return `<p>${text2}</p>
+`;
+  }
+  /**
+   * @param {string} header
+   * @param {string} body
+   */
+  table(header, body) {
+    if (body) body = `<tbody>${body}</tbody>`;
+    return "<table>\n<thead>\n" + header + "</thead>\n" + body + "</table>\n";
+  }
+  /**
+   * @param {string} content
+   */
+  tablerow(content) {
+    return `<tr>
+${content}</tr>
+`;
+  }
+  tablecell(content, flags) {
+    const type = flags.header ? "th" : "td";
+    const tag = flags.align ? `<${type} align="${flags.align}">` : `<${type}>`;
+    return tag + content + `</${type}>
+`;
+  }
+  /**
+   * span level renderer
+   * @param {string} text
+   */
+  strong(text2) {
+    return `<strong>${text2}</strong>`;
+  }
+  /**
+   * @param {string} text
+   */
+  em(text2) {
+    return `<em>${text2}</em>`;
+  }
+  /**
+   * @param {string} text
+   */
+  codespan(text2) {
+    return `<code>${text2}</code>`;
+  }
+  br() {
+    return this.options.xhtml ? "<br/>" : "<br>";
+  }
+  /**
+   * @param {string} text
+   */
+  del(text2) {
+    return `<del>${text2}</del>`;
+  }
+  /**
+   * @param {string} href
+   * @param {string} title
+   * @param {string} text
+   */
+  link(href, title, text2) {
+    href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
+    if (href === null) {
+      return text2;
+    }
+    let out = '<a href="' + href + '"';
+    if (title) {
+      out += ' title="' + title + '"';
+    }
+    out += ">" + text2 + "</a>";
+    return out;
+  }
+  /**
+   * @param {string} href
+   * @param {string} title
+   * @param {string} text
+   */
+  image(href, title, text2) {
+    href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
+    if (href === null) {
+      return text2;
+    }
+    let out = `<img src="${href}" alt="${text2}"`;
+    if (title) {
+      out += ` title="${title}"`;
+    }
+    out += this.options.xhtml ? "/>" : ">";
+    return out;
+  }
+  text(text2) {
+    return text2;
+  }
+};
+__name(_Renderer, "Renderer");
+let Renderer = _Renderer;
+const _TextRenderer = class _TextRenderer {
+  // no need for block level renderers
+  strong(text2) {
+    return text2;
+  }
+  em(text2) {
+    return text2;
+  }
+  codespan(text2) {
+    return text2;
+  }
+  del(text2) {
+    return text2;
+  }
+  html(text2) {
+    return text2;
+  }
+  text(text2) {
+    return text2;
+  }
+  link(href, title, text2) {
+    return "" + text2;
+  }
+  image(href, title, text2) {
+    return "" + text2;
+  }
+  br() {
+    return "";
+  }
+};
+__name(_TextRenderer, "TextRenderer");
+let TextRenderer = _TextRenderer;
+const _Slugger = class _Slugger {
+  constructor() {
+    this.seen = {};
+  }
+  /**
+   * @param {string} value
+   */
+  serialize(value) {
+    return value.toLowerCase().trim().replace(/<[!\/a-z].*?>/ig, "").replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, "").replace(/\s/g, "-");
+  }
+  /**
+   * Finds the next safe (unique) slug to use
+   * @param {string} originalSlug
+   * @param {boolean} isDryRun
+   */
+  getNextSafeSlug(originalSlug, isDryRun) {
+    let slug = originalSlug;
+    let occurenceAccumulator = 0;
+    if (this.seen.hasOwnProperty(slug)) {
+      occurenceAccumulator = this.seen[originalSlug];
+      do {
+        occurenceAccumulator++;
+        slug = originalSlug + "-" + occurenceAccumulator;
+      } while (this.seen.hasOwnProperty(slug));
+    }
+    if (!isDryRun) {
+      this.seen[originalSlug] = occurenceAccumulator;
+      this.seen[slug] = 0;
+    }
+    return slug;
+  }
+  /**
+   * Convert string to unique id
+   * @param {object} [options]
+   * @param {boolean} [options.dryrun] Generates the next unique slug without
+   * updating the internal accumulator.
+   */
+  slug(value, options = {}) {
+    const slug = this.serialize(value);
+    return this.getNextSafeSlug(slug, options.dryrun);
+  }
+};
+__name(_Slugger, "Slugger");
+let Slugger = _Slugger;
+const _Parser = class _Parser {
+  constructor(options) {
+    this.options = options || defaults;
+    this.options.renderer = this.options.renderer || new Renderer();
+    this.renderer = this.options.renderer;
+    this.renderer.options = this.options;
+    this.textRenderer = new TextRenderer();
+    this.slugger = new Slugger();
+  }
+  /**
+   * Static Parse Method
+   */
+  static parse(tokens, options) {
+    const parser = new _Parser(options);
+    return parser.parse(tokens);
+  }
+  /**
+   * Static Parse Inline Method
+   */
+  static parseInline(tokens, options) {
+    const parser = new _Parser(options);
+    return parser.parseInline(tokens);
+  }
+  /**
+   * Parse Loop
+   */
+  parse(tokens, top = true) {
+    let out = "", i, j, k, l2, l3, row, cell, header, body, token, ordered, start, loose, itemBody, item, checked, task, checkbox, ret;
+    const l = tokens.length;
+    for (i = 0; i < l; i++) {
+      token = tokens[i];
+      if (this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[token.type]) {
+        ret = this.options.extensions.renderers[token.type].call({ parser: this }, token);
+        if (ret !== false || !["space", "hr", "heading", "code", "table", "blockquote", "list", "html", "paragraph", "text"].includes(token.type)) {
+          out += ret || "";
+          continue;
+        }
+      }
+      switch (token.type) {
+        case "space": {
+          continue;
+        }
+        case "hr": {
+          out += this.renderer.hr();
+          continue;
+        }
+        case "heading": {
+          out += this.renderer.heading(
+            this.parseInline(token.tokens),
+            token.depth,
+            unescape(this.parseInline(token.tokens, this.textRenderer)),
+            this.slugger
+          );
+          continue;
+        }
+        case "code": {
+          out += this.renderer.code(
+            token.text,
+            token.lang,
+            token.escaped
+          );
+          continue;
+        }
+        case "table": {
+          header = "";
+          cell = "";
+          l2 = token.header.length;
+          for (j = 0; j < l2; j++) {
+            cell += this.renderer.tablecell(
+              this.parseInline(token.header[j].tokens),
+              { header: true, align: token.align[j] }
+            );
+          }
+          header += this.renderer.tablerow(cell);
+          body = "";
+          l2 = token.rows.length;
+          for (j = 0; j < l2; j++) {
+            row = token.rows[j];
+            cell = "";
+            l3 = row.length;
+            for (k = 0; k < l3; k++) {
+              cell += this.renderer.tablecell(
+                this.parseInline(row[k].tokens),
+                { header: false, align: token.align[k] }
+              );
+            }
+            body += this.renderer.tablerow(cell);
+          }
+          out += this.renderer.table(header, body);
+          continue;
+        }
+        case "blockquote": {
+          body = this.parse(token.tokens);
+          out += this.renderer.blockquote(body);
+          continue;
+        }
+        case "list": {
+          ordered = token.ordered;
+          start = token.start;
+          loose = token.loose;
+          l2 = token.items.length;
+          body = "";
+          for (j = 0; j < l2; j++) {
+            item = token.items[j];
+            checked = item.checked;
+            task = item.task;
+            itemBody = "";
+            if (item.task) {
+              checkbox = this.renderer.checkbox(checked);
+              if (loose) {
+                if (item.tokens.length > 0 && item.tokens[0].type === "paragraph") {
+                  item.tokens[0].text = checkbox + " " + item.tokens[0].text;
+                  if (item.tokens[0].tokens && item.tokens[0].tokens.length > 0 && item.tokens[0].tokens[0].type === "text") {
+                    item.tokens[0].tokens[0].text = checkbox + " " + item.tokens[0].tokens[0].text;
+                  }
+                } else {
+                  item.tokens.unshift({
+                    type: "text",
+                    text: checkbox
+                  });
+                }
+              } else {
+                itemBody += checkbox;
+              }
+            }
+            itemBody += this.parse(item.tokens, loose);
+            body += this.renderer.listitem(itemBody, task, checked);
+          }
+          out += this.renderer.list(body, ordered, start);
+          continue;
+        }
+        case "html": {
+          out += this.renderer.html(token.text, token.block);
+          continue;
+        }
+        case "paragraph": {
+          out += this.renderer.paragraph(this.parseInline(token.tokens));
+          continue;
+        }
+        case "text": {
+          body = token.tokens ? this.parseInline(token.tokens) : token.text;
+          while (i + 1 < l && tokens[i + 1].type === "text") {
+            token = tokens[++i];
+            body += "\n" + (token.tokens ? this.parseInline(token.tokens) : token.text);
+          }
+          out += top ? this.renderer.paragraph(body) : body;
+          continue;
+        }
+        default: {
+          const errMsg = 'Token with "' + token.type + '" type was not found.';
+          if (this.options.silent) {
+            console.error(errMsg);
+            return;
+          } else {
+            throw new Error(errMsg);
+          }
+        }
+      }
+    }
+    return out;
+  }
+  /**
+   * Parse Inline Tokens
+   */
+  parseInline(tokens, renderer) {
+    renderer = renderer || this.renderer;
+    let out = "", i, token, ret;
+    const l = tokens.length;
+    for (i = 0; i < l; i++) {
+      token = tokens[i];
+      if (this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[token.type]) {
+        ret = this.options.extensions.renderers[token.type].call({ parser: this }, token);
+        if (ret !== false || !["escape", "html", "link", "image", "strong", "em", "codespan", "br", "del", "text"].includes(token.type)) {
+          out += ret || "";
+          continue;
+        }
+      }
+      switch (token.type) {
+        case "escape": {
+          out += renderer.text(token.text);
+          break;
+        }
+        case "html": {
+          out += renderer.html(token.text);
+          break;
+        }
+        case "link": {
+          out += renderer.link(token.href, token.title, this.parseInline(token.tokens, renderer));
+          break;
+        }
+        case "image": {
+          out += renderer.image(token.href, token.title, token.text);
+          break;
+        }
+        case "strong": {
+          out += renderer.strong(this.parseInline(token.tokens, renderer));
+          break;
+        }
+        case "em": {
+          out += renderer.em(this.parseInline(token.tokens, renderer));
+          break;
+        }
+        case "codespan": {
+          out += renderer.codespan(token.text);
+          break;
+        }
+        case "br": {
+          out += renderer.br();
+          break;
+        }
+        case "del": {
+          out += renderer.del(this.parseInline(token.tokens, renderer));
+          break;
+        }
+        case "text": {
+          out += renderer.text(token.text);
+          break;
+        }
+        default: {
+          const errMsg = 'Token with "' + token.type + '" type was not found.';
+          if (this.options.silent) {
+            console.error(errMsg);
+            return;
+          } else {
+            throw new Error(errMsg);
+          }
+        }
+      }
+    }
+    return out;
+  }
+};
+__name(_Parser, "Parser");
+let Parser = _Parser;
+const _Hooks = class _Hooks {
+  constructor(options) {
+    this.options = options || defaults;
+  }
+  /**
+   * Process markdown before marked
+   */
+  preprocess(markdown) {
+    return markdown;
+  }
+  /**
+   * Process HTML after marked is finished
+   */
+  postprocess(html) {
+    return html;
+  }
+};
+__name(_Hooks, "Hooks");
+__publicField(_Hooks, "passThroughHooks", /* @__PURE__ */ new Set([
+  "preprocess",
+  "postprocess"
+]));
+let Hooks = _Hooks;
+const _Marked = class _Marked {
+  constructor(...args) {
+    __privateAdd(this, _Marked_instances);
+    __publicField(this, "defaults", getDefaults());
+    __publicField(this, "options", this.setOptions);
+    __publicField(this, "parse", __privateMethod(this, _Marked_instances, parseMarkdown_fn).call(this, Lexer.lex, Parser.parse));
+    __publicField(this, "parseInline", __privateMethod(this, _Marked_instances, parseMarkdown_fn).call(this, Lexer.lexInline, Parser.parseInline));
+    __publicField(this, "Parser", Parser);
+    __publicField(this, "parser", Parser.parse);
+    __publicField(this, "Renderer", Renderer);
+    __publicField(this, "TextRenderer", TextRenderer);
+    __publicField(this, "Lexer", Lexer);
+    __publicField(this, "lexer", Lexer.lex);
+    __publicField(this, "Tokenizer", Tokenizer);
+    __publicField(this, "Slugger", Slugger);
+    __publicField(this, "Hooks", Hooks);
+    this.use(...args);
+  }
+  walkTokens(tokens, callback) {
+    let values = [];
+    for (const token of tokens) {
+      values = values.concat(callback.call(this, token));
+      switch (token.type) {
+        case "table": {
+          for (const cell of token.header) {
+            values = values.concat(this.walkTokens(cell.tokens, callback));
+          }
+          for (const row of token.rows) {
+            for (const cell of row) {
+              values = values.concat(this.walkTokens(cell.tokens, callback));
+            }
+          }
+          break;
+        }
+        case "list": {
+          values = values.concat(this.walkTokens(token.items, callback));
+          break;
+        }
+        default: {
+          if (this.defaults.extensions && this.defaults.extensions.childTokens && this.defaults.extensions.childTokens[token.type]) {
+            this.defaults.extensions.childTokens[token.type].forEach((childTokens) => {
+              values = values.concat(this.walkTokens(token[childTokens], callback));
+            });
+          } else if (token.tokens) {
+            values = values.concat(this.walkTokens(token.tokens, callback));
+          }
+        }
+      }
+    }
+    return values;
+  }
+  use(...args) {
+    const extensions = this.defaults.extensions || { renderers: {}, childTokens: {} };
+    args.forEach((pack) => {
+      const opts = { ...pack };
+      opts.async = this.defaults.async || opts.async || false;
+      if (pack.extensions) {
+        pack.extensions.forEach((ext) => {
+          if (!ext.name) {
+            throw new Error("extension name required");
+          }
+          if (ext.renderer) {
+            const prevRenderer = extensions.renderers[ext.name];
+            if (prevRenderer) {
+              extensions.renderers[ext.name] = function(...args2) {
+                let ret = ext.renderer.apply(this, args2);
+                if (ret === false) {
+                  ret = prevRenderer.apply(this, args2);
+                }
+                return ret;
+              };
+            } else {
+              extensions.renderers[ext.name] = ext.renderer;
+            }
+          }
+          if (ext.tokenizer) {
+            if (!ext.level || ext.level !== "block" && ext.level !== "inline") {
+              throw new Error("extension level must be 'block' or 'inline'");
+            }
+            if (extensions[ext.level]) {
+              extensions[ext.level].unshift(ext.tokenizer);
+            } else {
+              extensions[ext.level] = [ext.tokenizer];
+            }
+            if (ext.start) {
+              if (ext.level === "block") {
+                if (extensions.startBlock) {
+                  extensions.startBlock.push(ext.start);
+                } else {
+                  extensions.startBlock = [ext.start];
+                }
+              } else if (ext.level === "inline") {
+                if (extensions.startInline) {
+                  extensions.startInline.push(ext.start);
+                } else {
+                  extensions.startInline = [ext.start];
+                }
+              }
+            }
+          }
+          if (ext.childTokens) {
+            extensions.childTokens[ext.name] = ext.childTokens;
+          }
+        });
+        opts.extensions = extensions;
+      }
+      if (pack.renderer) {
+        const renderer = this.defaults.renderer || new Renderer(this.defaults);
+        for (const prop in pack.renderer) {
+          const prevRenderer = renderer[prop];
+          renderer[prop] = (...args2) => {
+            let ret = pack.renderer[prop].apply(renderer, args2);
+            if (ret === false) {
+              ret = prevRenderer.apply(renderer, args2);
+            }
+            return ret;
+          };
+        }
+        opts.renderer = renderer;
+      }
+      if (pack.tokenizer) {
+        const tokenizer = this.defaults.tokenizer || new Tokenizer(this.defaults);
+        for (const prop in pack.tokenizer) {
+          const prevTokenizer = tokenizer[prop];
+          tokenizer[prop] = (...args2) => {
+            let ret = pack.tokenizer[prop].apply(tokenizer, args2);
+            if (ret === false) {
+              ret = prevTokenizer.apply(tokenizer, args2);
+            }
+            return ret;
+          };
+        }
+        opts.tokenizer = tokenizer;
+      }
+      if (pack.hooks) {
+        const hooks = this.defaults.hooks || new Hooks();
+        for (const prop in pack.hooks) {
+          const prevHook = hooks[prop];
+          if (Hooks.passThroughHooks.has(prop)) {
+            hooks[prop] = (arg) => {
+              if (this.defaults.async) {
+                return Promise.resolve(pack.hooks[prop].call(hooks, arg)).then((ret2) => {
+                  return prevHook.call(hooks, ret2);
+                });
+              }
+              const ret = pack.hooks[prop].call(hooks, arg);
+              return prevHook.call(hooks, ret);
+            };
+          } else {
+            hooks[prop] = (...args2) => {
+              let ret = pack.hooks[prop].apply(hooks, args2);
+              if (ret === false) {
+                ret = prevHook.apply(hooks, args2);
+              }
+              return ret;
+            };
+          }
+        }
+        opts.hooks = hooks;
+      }
+      if (pack.walkTokens) {
+        const walkTokens = this.defaults.walkTokens;
+        opts.walkTokens = function(token) {
+          let values = [];
+          values.push(pack.walkTokens.call(this, token));
+          if (walkTokens) {
+            values = values.concat(walkTokens.call(this, token));
+          }
+          return values;
+        };
+      }
+      this.defaults = { ...this.defaults, ...opts };
+    });
+    return this;
+  }
+  setOptions(opt) {
+    this.defaults = { ...this.defaults, ...opt };
+    return this;
+  }
+};
+_Marked_instances = new WeakSet();
+parseMarkdown_fn = /* @__PURE__ */ __name(function(lexer, parser) {
+  return (src, opt, callback) => {
+    if (typeof opt === "function") {
+      callback = opt;
+      opt = null;
+    }
+    const origOpt = { ...opt };
+    opt = { ...this.defaults, ...origOpt };
+    const throwError = __privateMethod(this, _Marked_instances, onError_fn).call(this, opt.silent, opt.async, callback);
+    if (typeof src === "undefined" || src === null) {
+      return throwError(new Error("marked(): input parameter is undefined or null"));
+    }
+    if (typeof src !== "string") {
+      return throwError(new Error("marked(): input parameter is of type " + Object.prototype.toString.call(src) + ", string expected"));
+    }
+    checkDeprecations(opt, callback);
+    if (opt.hooks) {
+      opt.hooks.options = opt;
+    }
+    if (callback) {
+      const highlight = opt.highlight;
+      let tokens;
+      try {
+        if (opt.hooks) {
+          src = opt.hooks.preprocess(src);
+        }
+        tokens = lexer(src, opt);
+      } catch (e) {
+        return throwError(e);
+      }
+      const done = /* @__PURE__ */ __name((err) => {
+        let out;
+        if (!err) {
+          try {
+            if (opt.walkTokens) {
+              this.walkTokens(tokens, opt.walkTokens);
+            }
+            out = parser(tokens, opt);
+            if (opt.hooks) {
+              out = opt.hooks.postprocess(out);
+            }
+          } catch (e) {
+            err = e;
+          }
+        }
+        opt.highlight = highlight;
+        return err ? throwError(err) : callback(null, out);
+      }, "done");
+      if (!highlight || highlight.length < 3) {
+        return done();
+      }
+      delete opt.highlight;
+      if (!tokens.length) return done();
+      let pending = 0;
+      this.walkTokens(tokens, (token) => {
+        if (token.type === "code") {
+          pending++;
+          setTimeout(() => {
+            highlight(token.text, token.lang, (err, code) => {
+              if (err) {
+                return done(err);
+              }
+              if (code != null && code !== token.text) {
+                token.text = code;
+                token.escaped = true;
+              }
+              pending--;
+              if (pending === 0) {
+                done();
+              }
+            });
+          }, 0);
+        }
+      });
+      if (pending === 0) {
+        done();
+      }
+      return;
+    }
+    if (opt.async) {
+      return Promise.resolve(opt.hooks ? opt.hooks.preprocess(src) : src).then((src2) => lexer(src2, opt)).then((tokens) => opt.walkTokens ? Promise.all(this.walkTokens(tokens, opt.walkTokens)).then(() => tokens) : tokens).then((tokens) => parser(tokens, opt)).then((html) => opt.hooks ? opt.hooks.postprocess(html) : html).catch(throwError);
+    }
+    try {
+      if (opt.hooks) {
+        src = opt.hooks.preprocess(src);
+      }
+      const tokens = lexer(src, opt);
+      if (opt.walkTokens) {
+        this.walkTokens(tokens, opt.walkTokens);
+      }
+      let html = parser(tokens, opt);
+      if (opt.hooks) {
+        html = opt.hooks.postprocess(html);
+      }
+      return html;
+    } catch (e) {
+      return throwError(e);
+    }
+  };
+}, "#parseMarkdown");
+onError_fn = /* @__PURE__ */ __name(function(silent, async2, callback) {
+  return (e) => {
+    e.message += "\nPlease report this to https://github.com/markedjs/marked.";
+    if (silent) {
+      const msg = "<p>An error occurred:</p><pre>" + escape(e.message + "", true) + "</pre>";
+      if (async2) {
+        return Promise.resolve(msg);
+      }
+      if (callback) {
+        callback(null, msg);
+        return;
+      }
+      return msg;
+    }
+    if (async2) {
+      return Promise.reject(e);
+    }
+    if (callback) {
+      callback(e);
+      return;
+    }
+    throw e;
+  };
+}, "#onError");
+__name(_Marked, "Marked");
+let Marked = _Marked;
+const markedInstance = new Marked(defaults);
+function marked(src, opt, callback) {
+  return markedInstance.parse(src, opt, callback);
+}
+__name(marked, "marked");
+marked.options = marked.setOptions = function(opt) {
+  markedInstance.setOptions(opt);
+  marked.defaults = markedInstance.defaults;
+  changeDefaults(marked.defaults);
+  return marked;
+};
+marked.getDefaults = getDefaults;
+marked.defaults = defaults;
+marked.use = function(...args) {
+  markedInstance.use(...args);
+  marked.defaults = markedInstance.defaults;
+  changeDefaults(marked.defaults);
+  return marked;
+};
+marked.walkTokens = function(tokens, callback) {
+  return markedInstance.walkTokens(tokens, callback);
+};
+marked.parseInline = markedInstance.parseInline;
+marked.Parser = Parser;
+marked.parser = Parser.parse;
+marked.Renderer = Renderer;
+marked.TextRenderer = TextRenderer;
+marked.Lexer = Lexer;
+marked.lexer = Lexer.lex;
+marked.Tokenizer = Tokenizer;
+marked.Slugger = Slugger;
+marked.Hooks = Hooks;
+marked.parse = marked;
+marked.options;
+marked.setOptions;
+marked.use;
+marked.walkTokens;
+marked.parseInline;
+Parser.parse;
+Lexer.lex;
+const key = {};
+function create_else_block$9(ctx) {
+  let t;
+  return {
+    c() {
+      t = text(
+        /*raw*/
+        ctx[1]
+      );
+    },
+    m(target, anchor) {
+      insert(target, t, anchor);
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*raw*/
+      2) set_data(
+        t,
+        /*raw*/
+        ctx2[1]
+      );
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+    }
+  };
+}
+__name(create_else_block$9, "create_else_block$9");
+function create_if_block_5$1(ctx) {
+  let h6;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[5].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[4],
+    null
+  );
+  return {
+    c() {
+      h6 = element$1("h6");
+      if (default_slot) default_slot.c();
+      attr(
+        h6,
+        "id",
+        /*id*/
+        ctx[2]
+      );
+    },
+    m(target, anchor) {
+      insert(target, h6, anchor);
+      if (default_slot) {
+        default_slot.m(h6, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        16)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[4],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[4]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[4],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*id*/
+      4) {
+        attr(
+          h6,
+          "id",
+          /*id*/
+          ctx2[2]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h6);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_if_block_5$1, "create_if_block_5$1");
+function create_if_block_4$3(ctx) {
+  let h5;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[5].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[4],
+    null
+  );
+  return {
+    c() {
+      h5 = element$1("h5");
+      if (default_slot) default_slot.c();
+      attr(
+        h5,
+        "id",
+        /*id*/
+        ctx[2]
+      );
+    },
+    m(target, anchor) {
+      insert(target, h5, anchor);
+      if (default_slot) {
+        default_slot.m(h5, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        16)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[4],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[4]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[4],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*id*/
+      4) {
+        attr(
+          h5,
+          "id",
+          /*id*/
+          ctx2[2]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h5);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_if_block_4$3, "create_if_block_4$3");
+function create_if_block_3$3(ctx) {
+  let h4;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[5].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[4],
+    null
+  );
+  return {
+    c() {
+      h4 = element$1("h4");
+      if (default_slot) default_slot.c();
+      attr(
+        h4,
+        "id",
+        /*id*/
+        ctx[2]
+      );
+    },
+    m(target, anchor) {
+      insert(target, h4, anchor);
+      if (default_slot) {
+        default_slot.m(h4, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        16)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[4],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[4]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[4],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*id*/
+      4) {
+        attr(
+          h4,
+          "id",
+          /*id*/
+          ctx2[2]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h4);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_if_block_3$3, "create_if_block_3$3");
+function create_if_block_2$5(ctx) {
+  let h3;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[5].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[4],
+    null
+  );
+  return {
+    c() {
+      h3 = element$1("h3");
+      if (default_slot) default_slot.c();
+      attr(
+        h3,
+        "id",
+        /*id*/
+        ctx[2]
+      );
+    },
+    m(target, anchor) {
+      insert(target, h3, anchor);
+      if (default_slot) {
+        default_slot.m(h3, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        16)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[4],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[4]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[4],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*id*/
+      4) {
+        attr(
+          h3,
+          "id",
+          /*id*/
+          ctx2[2]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h3);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_if_block_2$5, "create_if_block_2$5");
+function create_if_block_1$7(ctx) {
+  let h2;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[5].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[4],
+    null
+  );
+  return {
+    c() {
+      h2 = element$1("h2");
+      if (default_slot) default_slot.c();
+      attr(
+        h2,
+        "id",
+        /*id*/
+        ctx[2]
+      );
+    },
+    m(target, anchor) {
+      insert(target, h2, anchor);
+      if (default_slot) {
+        default_slot.m(h2, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        16)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[4],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[4]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[4],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*id*/
+      4) {
+        attr(
+          h2,
+          "id",
+          /*id*/
+          ctx2[2]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h2);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_if_block_1$7, "create_if_block_1$7");
+function create_if_block$h(ctx) {
+  let h1;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[5].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[4],
+    null
+  );
+  return {
+    c() {
+      h1 = element$1("h1");
+      if (default_slot) default_slot.c();
+      attr(
+        h1,
+        "id",
+        /*id*/
+        ctx[2]
+      );
+    },
+    m(target, anchor) {
+      insert(target, h1, anchor);
+      if (default_slot) {
+        default_slot.m(h1, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        16)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[4],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[4]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[4],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*id*/
+      4) {
+        attr(
+          h1,
+          "id",
+          /*id*/
+          ctx2[2]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h1);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_if_block$h, "create_if_block$h");
+function create_fragment$U(ctx) {
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
+  let current;
+  const if_block_creators = [
+    create_if_block$h,
+    create_if_block_1$7,
+    create_if_block_2$5,
+    create_if_block_3$3,
+    create_if_block_4$3,
+    create_if_block_5$1,
+    create_else_block$9
+  ];
+  const if_blocks = [];
+  function select_block_type(ctx2, dirty) {
+    if (
+      /*depth*/
+      ctx2[0] === 1
+    ) return 0;
+    if (
+      /*depth*/
+      ctx2[0] === 2
+    ) return 1;
+    if (
+      /*depth*/
+      ctx2[0] === 3
+    ) return 2;
+    if (
+      /*depth*/
+      ctx2[0] === 4
+    ) return 3;
+    if (
+      /*depth*/
+      ctx2[0] === 5
+    ) return 4;
+    if (
+      /*depth*/
+      ctx2[0] === 6
+    ) return 5;
+    return 6;
+  }
+  __name(select_block_type, "select_block_type");
+  current_block_type_index = select_block_type(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  return {
+    c() {
+      if_block.c();
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if_blocks[current_block_type_index].m(target, anchor);
+      insert(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
+        } else {
+          if_block.p(ctx2, dirty);
+        }
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
+    }
+  };
+}
+__name(create_fragment$U, "create_fragment$U");
+function instance$Q($$self, $$props, $$invalidate) {
+  let id2;
+  let { $$slots: slots = {}, $$scope } = $$props;
+  let { depth } = $$props;
+  let { raw } = $$props;
+  let { text: text2 } = $$props;
+  const { slug, getOptions } = getContext(key);
+  const options = getOptions();
+  $$self.$$set = ($$props2) => {
+    if ("depth" in $$props2) $$invalidate(0, depth = $$props2.depth);
+    if ("raw" in $$props2) $$invalidate(1, raw = $$props2.raw);
+    if ("text" in $$props2) $$invalidate(3, text2 = $$props2.text);
+    if ("$$scope" in $$props2) $$invalidate(4, $$scope = $$props2.$$scope);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & /*text*/
+    8) {
+      $$invalidate(2, id2 = options.headerIds ? options.headerPrefix + slug(text2) : void 0);
+    }
+  };
+  return [depth, raw, id2, text2, $$scope, slots];
+}
+__name(instance$Q, "instance$Q");
+const _Heading = class _Heading extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$Q, create_fragment$U, safe_not_equal, { depth: 0, raw: 1, text: 3 });
+  }
+};
+__name(_Heading, "Heading");
+let Heading = _Heading;
+function create_fragment$T(ctx) {
+  let p;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      p = element$1("p");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, p, anchor);
+      if (default_slot) {
+        default_slot.m(p, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(p);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$T, "create_fragment$T");
+function instance$P($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$P, "instance$P");
+const _Paragraph = class _Paragraph extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$P, create_fragment$T, safe_not_equal, {});
+  }
+};
+__name(_Paragraph, "Paragraph");
+let Paragraph = _Paragraph;
+function create_fragment$S(ctx) {
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[3].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[2],
+    null
+  );
+  return {
+    c() {
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        4)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[2],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[2]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[2],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$S, "create_fragment$S");
+function instance$O($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  let { text: text2 } = $$props;
+  let { raw } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("text" in $$props2) $$invalidate(0, text2 = $$props2.text);
+    if ("raw" in $$props2) $$invalidate(1, raw = $$props2.raw);
+    if ("$$scope" in $$props2) $$invalidate(2, $$scope = $$props2.$$scope);
+  };
+  return [text2, raw, $$scope, slots];
+}
+__name(instance$O, "instance$O");
+const _Text = class _Text extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$O, create_fragment$S, safe_not_equal, { text: 0, raw: 1 });
+  }
+};
+__name(_Text, "Text");
+let Text = _Text;
+function create_fragment$R(ctx) {
+  let img;
+  let img_src_value;
+  return {
+    c() {
+      img = element$1("img");
+      if (!src_url_equal(img.src, img_src_value = /*href*/
+      ctx[0])) attr(img, "src", img_src_value);
+      attr(
+        img,
+        "title",
+        /*title*/
+        ctx[1]
+      );
+      attr(
+        img,
+        "alt",
+        /*text*/
+        ctx[2]
+      );
+    },
+    m(target, anchor) {
+      insert(target, img, anchor);
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*href*/
+      1 && !src_url_equal(img.src, img_src_value = /*href*/
+      ctx2[0])) {
+        attr(img, "src", img_src_value);
+      }
+      if (dirty & /*title*/
+      2) {
+        attr(
+          img,
+          "title",
+          /*title*/
+          ctx2[1]
+        );
+      }
+      if (dirty & /*text*/
+      4) {
+        attr(
+          img,
+          "alt",
+          /*text*/
+          ctx2[2]
+        );
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(img);
+      }
+    }
+  };
+}
+__name(create_fragment$R, "create_fragment$R");
+function instance$N($$self, $$props, $$invalidate) {
+  let { href = "" } = $$props;
+  let { title = void 0 } = $$props;
+  let { text: text2 = "" } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("href" in $$props2) $$invalidate(0, href = $$props2.href);
+    if ("title" in $$props2) $$invalidate(1, title = $$props2.title);
+    if ("text" in $$props2) $$invalidate(2, text2 = $$props2.text);
+  };
+  return [href, title, text2];
+}
+__name(instance$N, "instance$N");
+let Image$1 = (_Da = class extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$N, create_fragment$R, safe_not_equal, { href: 0, title: 1, text: 2 });
+  }
+}, __name(_Da, "Image"), _Da);
+function create_fragment$Q(ctx) {
+  let a;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[3].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[2],
+    null
+  );
+  return {
+    c() {
+      a = element$1("a");
+      if (default_slot) default_slot.c();
+      attr(
+        a,
+        "href",
+        /*href*/
+        ctx[0]
+      );
+      attr(
+        a,
+        "title",
+        /*title*/
+        ctx[1]
+      );
+    },
+    m(target, anchor) {
+      insert(target, a, anchor);
+      if (default_slot) {
+        default_slot.m(a, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        4)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[2],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[2]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[2],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*href*/
+      1) {
+        attr(
+          a,
+          "href",
+          /*href*/
+          ctx2[0]
+        );
+      }
+      if (!current || dirty & /*title*/
+      2) {
+        attr(
+          a,
+          "title",
+          /*title*/
+          ctx2[1]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(a);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$Q, "create_fragment$Q");
+function instance$M($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  let { href = "" } = $$props;
+  let { title = void 0 } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("href" in $$props2) $$invalidate(0, href = $$props2.href);
+    if ("title" in $$props2) $$invalidate(1, title = $$props2.title);
+    if ("$$scope" in $$props2) $$invalidate(2, $$scope = $$props2.$$scope);
+  };
+  return [href, title, $$scope, slots];
+}
+__name(instance$M, "instance$M");
+const _Link = class _Link extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$M, create_fragment$Q, safe_not_equal, { href: 0, title: 1 });
+  }
+};
+__name(_Link, "Link");
+let Link = _Link;
+function create_fragment$P(ctx) {
+  let em;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      em = element$1("em");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, em, anchor);
+      if (default_slot) {
+        default_slot.m(em, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(em);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$P, "create_fragment$P");
+function instance$L($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$L, "instance$L");
+const _Em = class _Em extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$L, create_fragment$P, safe_not_equal, {});
+  }
+};
+__name(_Em, "Em");
+let Em = _Em;
+function create_fragment$O(ctx) {
+  let del;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      del = element$1("del");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, del, anchor);
+      if (default_slot) {
+        default_slot.m(del, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(del);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$O, "create_fragment$O");
+function instance$K($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$K, "instance$K");
+const _Del = class _Del extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$K, create_fragment$O, safe_not_equal, {});
+  }
+};
+__name(_Del, "Del");
+let Del = _Del;
+function create_fragment$N(ctx) {
+  let code;
+  let t_value = (
+    /*raw*/
+    ctx[0].replace(/`/g, "") + ""
+  );
+  let t;
+  return {
+    c() {
+      code = element$1("code");
+      t = text(t_value);
+    },
+    m(target, anchor) {
+      insert(target, code, anchor);
+      append(code, t);
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*raw*/
+      1 && t_value !== (t_value = /*raw*/
+      ctx2[0].replace(/`/g, "") + "")) set_data(t, t_value);
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(code);
+      }
+    }
+  };
+}
+__name(create_fragment$N, "create_fragment$N");
+function instance$J($$self, $$props, $$invalidate) {
+  let { raw } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("raw" in $$props2) $$invalidate(0, raw = $$props2.raw);
+  };
+  return [raw];
+}
+__name(instance$J, "instance$J");
+const _Codespan = class _Codespan extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$J, create_fragment$N, safe_not_equal, { raw: 0 });
+  }
+};
+__name(_Codespan, "Codespan");
+let Codespan = _Codespan;
+function create_fragment$M(ctx) {
+  let strong;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      strong = element$1("strong");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, strong, anchor);
+      if (default_slot) {
+        default_slot.m(strong, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(strong);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$M, "create_fragment$M");
+function instance$I($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$I, "instance$I");
+const _Strong = class _Strong extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$I, create_fragment$M, safe_not_equal, {});
+  }
+};
+__name(_Strong, "Strong");
+let Strong = _Strong;
+function create_fragment$L(ctx) {
+  let table;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      table = element$1("table");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, table, anchor);
+      if (default_slot) {
+        default_slot.m(table, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(table);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$L, "create_fragment$L");
+function instance$H($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$H, "instance$H");
+const _Table = class _Table extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$H, create_fragment$L, safe_not_equal, {});
+  }
+};
+__name(_Table, "Table");
+let Table = _Table;
+function create_fragment$K(ctx) {
+  let thead;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      thead = element$1("thead");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, thead, anchor);
+      if (default_slot) {
+        default_slot.m(thead, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(thead);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$K, "create_fragment$K");
+function instance$G($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$G, "instance$G");
+const _TableHead = class _TableHead extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$G, create_fragment$K, safe_not_equal, {});
+  }
+};
+__name(_TableHead, "TableHead");
+let TableHead = _TableHead;
+function create_fragment$J(ctx) {
+  let tbody;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      tbody = element$1("tbody");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, tbody, anchor);
+      if (default_slot) {
+        default_slot.m(tbody, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(tbody);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$J, "create_fragment$J");
+function instance$F($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$F, "instance$F");
+const _TableBody = class _TableBody extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$F, create_fragment$J, safe_not_equal, {});
+  }
+};
+__name(_TableBody, "TableBody");
+let TableBody = _TableBody;
+function create_fragment$I(ctx) {
+  let tr;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      tr = element$1("tr");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, tr, anchor);
+      if (default_slot) {
+        default_slot.m(tr, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(tr);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$I, "create_fragment$I");
+function instance$E($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$E, "instance$E");
+const _TableRow = class _TableRow extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$E, create_fragment$I, safe_not_equal, {});
+  }
+};
+__name(_TableRow, "TableRow");
+let TableRow = _TableRow;
+function create_else_block$8(ctx) {
+  let td;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[3].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[2],
+    null
+  );
+  return {
+    c() {
+      td = element$1("td");
+      if (default_slot) default_slot.c();
+      attr(
+        td,
+        "align",
+        /*align*/
+        ctx[1]
+      );
+    },
+    m(target, anchor) {
+      insert(target, td, anchor);
+      if (default_slot) {
+        default_slot.m(td, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        4)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[2],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[2]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[2],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*align*/
+      2) {
+        attr(
+          td,
+          "align",
+          /*align*/
+          ctx2[1]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(td);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_else_block$8, "create_else_block$8");
+function create_if_block$g(ctx) {
+  let th;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[3].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[2],
+    null
+  );
+  return {
+    c() {
+      th = element$1("th");
+      if (default_slot) default_slot.c();
+      attr(
+        th,
+        "align",
+        /*align*/
+        ctx[1]
+      );
+    },
+    m(target, anchor) {
+      insert(target, th, anchor);
+      if (default_slot) {
+        default_slot.m(th, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        4)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[2],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[2]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[2],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*align*/
+      2) {
+        attr(
+          th,
+          "align",
+          /*align*/
+          ctx2[1]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(th);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_if_block$g, "create_if_block$g");
+function create_fragment$H(ctx) {
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
+  let current;
+  const if_block_creators = [create_if_block$g, create_else_block$8];
+  const if_blocks = [];
+  function select_block_type(ctx2, dirty) {
+    if (
+      /*header*/
+      ctx2[0]
+    ) return 0;
+    return 1;
+  }
+  __name(select_block_type, "select_block_type");
+  current_block_type_index = select_block_type(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  return {
+    c() {
+      if_block.c();
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if_blocks[current_block_type_index].m(target, anchor);
+      insert(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
+        } else {
+          if_block.p(ctx2, dirty);
+        }
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
+    }
+  };
+}
+__name(create_fragment$H, "create_fragment$H");
+function instance$D($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  let { header } = $$props;
+  let { align } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("header" in $$props2) $$invalidate(0, header = $$props2.header);
+    if ("align" in $$props2) $$invalidate(1, align = $$props2.align);
+    if ("$$scope" in $$props2) $$invalidate(2, $$scope = $$props2.$$scope);
+  };
+  return [header, align, $$scope, slots];
+}
+__name(instance$D, "instance$D");
+const _TableCell = class _TableCell extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$D, create_fragment$H, safe_not_equal, { header: 0, align: 1 });
+  }
+};
+__name(_TableCell, "TableCell");
+let TableCell = _TableCell;
+function create_else_block$7(ctx) {
+  let ul;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[3].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[2],
+    null
+  );
+  return {
+    c() {
+      ul = element$1("ul");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, ul, anchor);
+      if (default_slot) {
+        default_slot.m(ul, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        4)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[2],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[2]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[2],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(ul);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_else_block$7, "create_else_block$7");
+function create_if_block$f(ctx) {
+  let ol;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[3].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[2],
+    null
+  );
+  return {
+    c() {
+      ol = element$1("ol");
+      if (default_slot) default_slot.c();
+      attr(
+        ol,
+        "start",
+        /*start*/
+        ctx[1]
+      );
+    },
+    m(target, anchor) {
+      insert(target, ol, anchor);
+      if (default_slot) {
+        default_slot.m(ol, null);
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        4)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[2],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[2]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[2],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+      if (!current || dirty & /*start*/
+      2) {
+        attr(
+          ol,
+          "start",
+          /*start*/
+          ctx2[1]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(ol);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_if_block$f, "create_if_block$f");
+function create_fragment$G(ctx) {
+  let current_block_type_index;
+  let if_block;
+  let if_block_anchor;
+  let current;
+  const if_block_creators = [create_if_block$f, create_else_block$7];
+  const if_blocks = [];
+  function select_block_type(ctx2, dirty) {
+    if (
+      /*ordered*/
+      ctx2[0]
+    ) return 0;
+    return 1;
+  }
+  __name(select_block_type, "select_block_type");
+  current_block_type_index = select_block_type(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+  return {
+    c() {
+      if_block.c();
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if_blocks[current_block_type_index].m(target, anchor);
+      insert(target, if_block_anchor, anchor);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
+        } else {
+          if_block.p(ctx2, dirty);
+        }
+        transition_in(if_block, 1);
+        if_block.m(if_block_anchor.parentNode, if_block_anchor);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if_blocks[current_block_type_index].d(detaching);
+    }
+  };
+}
+__name(create_fragment$G, "create_fragment$G");
+function instance$C($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  let { ordered } = $$props;
+  let { start } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("ordered" in $$props2) $$invalidate(0, ordered = $$props2.ordered);
+    if ("start" in $$props2) $$invalidate(1, start = $$props2.start);
+    if ("$$scope" in $$props2) $$invalidate(2, $$scope = $$props2.$$scope);
+  };
+  return [ordered, start, $$scope, slots];
+}
+__name(instance$C, "instance$C");
+const _List = class _List extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$C, create_fragment$G, safe_not_equal, { ordered: 0, start: 1 });
+  }
+};
+__name(_List, "List");
+let List = _List;
+function create_fragment$F(ctx) {
+  let li;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      li = element$1("li");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, li, anchor);
+      if (default_slot) {
+        default_slot.m(li, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(li);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$F, "create_fragment$F");
+function instance$B($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$B, "instance$B");
+const _ListItem = class _ListItem extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$B, create_fragment$F, safe_not_equal, {});
+  }
+};
+__name(_ListItem, "ListItem");
+let ListItem = _ListItem;
+function create_fragment$E(ctx) {
+  let hr;
+  return {
+    c() {
+      hr = element$1("hr");
+    },
+    m(target, anchor) {
+      insert(target, hr, anchor);
+    },
+    p: noop$1,
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(hr);
+      }
+    }
+  };
+}
+__name(create_fragment$E, "create_fragment$E");
+const _Hr = class _Hr extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, null, create_fragment$E, safe_not_equal, {});
+  }
+};
+__name(_Hr, "Hr");
+let Hr = _Hr;
+function create_fragment$D(ctx) {
+  let html_tag;
+  let html_anchor;
+  return {
+    c() {
+      html_tag = new HtmlTag(false);
+      html_anchor = empty();
+      html_tag.a = html_anchor;
+    },
+    m(target, anchor) {
+      html_tag.m(
+        /*text*/
+        ctx[0],
+        target,
+        anchor
+      );
+      insert(target, html_anchor, anchor);
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*text*/
+      1) html_tag.p(
+        /*text*/
+        ctx2[0]
+      );
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(html_anchor);
+        html_tag.d();
+      }
+    }
+  };
+}
+__name(create_fragment$D, "create_fragment$D");
+function instance$A($$self, $$props, $$invalidate) {
+  let { text: text2 } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("text" in $$props2) $$invalidate(0, text2 = $$props2.text);
+  };
+  return [text2];
+}
+__name(instance$A, "instance$A");
+const _Html = class _Html extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$A, create_fragment$D, safe_not_equal, { text: 0 });
+  }
+};
+__name(_Html, "Html");
+let Html = _Html;
+function create_fragment$C(ctx) {
+  let blockquote;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      blockquote = element$1("blockquote");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, blockquote, anchor);
+      if (default_slot) {
+        default_slot.m(blockquote, null);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(blockquote);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$C, "create_fragment$C");
+function instance$z($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$z, "instance$z");
+const _Blockquote = class _Blockquote extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$z, create_fragment$C, safe_not_equal, {});
+  }
+};
+__name(_Blockquote, "Blockquote");
+let Blockquote = _Blockquote;
+function create_fragment$B(ctx) {
+  let pre;
+  let code;
+  let t;
+  return {
+    c() {
+      pre = element$1("pre");
+      code = element$1("code");
+      t = text(
+        /*text*/
+        ctx[1]
+      );
+      attr(
+        pre,
+        "class",
+        /*lang*/
+        ctx[0]
+      );
+    },
+    m(target, anchor) {
+      insert(target, pre, anchor);
+      append(pre, code);
+      append(code, t);
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*text*/
+      2) set_data(
+        t,
+        /*text*/
+        ctx2[1]
+      );
+      if (dirty & /*lang*/
+      1) {
+        attr(
+          pre,
+          "class",
+          /*lang*/
+          ctx2[0]
+        );
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(pre);
+      }
+    }
+  };
+}
+__name(create_fragment$B, "create_fragment$B");
+function instance$y($$self, $$props, $$invalidate) {
+  let { lang } = $$props;
+  let { text: text2 } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("lang" in $$props2) $$invalidate(0, lang = $$props2.lang);
+    if ("text" in $$props2) $$invalidate(1, text2 = $$props2.text);
+  };
+  return [lang, text2];
+}
+__name(instance$y, "instance$y");
+const _Code = class _Code extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$y, create_fragment$B, safe_not_equal, { lang: 0, text: 1 });
+  }
+};
+__name(_Code, "Code");
+let Code = _Code;
+function create_fragment$A(ctx) {
+  let br;
+  let current;
+  const default_slot_template = (
+    /*#slots*/
+    ctx[1].default
+  );
+  const default_slot = create_slot(
+    default_slot_template,
+    ctx,
+    /*$$scope*/
+    ctx[0],
+    null
+  );
+  return {
+    c() {
+      br = element$1("br");
+      if (default_slot) default_slot.c();
+    },
+    m(target, anchor) {
+      insert(target, br, anchor);
+      if (default_slot) {
+        default_slot.m(target, anchor);
+      }
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      if (default_slot) {
+        if (default_slot.p && (!current || dirty & /*$$scope*/
+        1)) {
+          update_slot_base(
+            default_slot,
+            default_slot_template,
+            ctx2,
+            /*$$scope*/
+            ctx2[0],
+            !current ? get_all_dirty_from_scope(
+              /*$$scope*/
+              ctx2[0]
+            ) : get_slot_changes(
+              default_slot_template,
+              /*$$scope*/
+              ctx2[0],
+              dirty,
+              null
+            ),
+            null
+          );
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(default_slot, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(default_slot, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(br);
+      }
+      if (default_slot) default_slot.d(detaching);
+    }
+  };
+}
+__name(create_fragment$A, "create_fragment$A");
+function instance$x($$self, $$props, $$invalidate) {
+  let { $$slots: slots = {}, $$scope } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("$$scope" in $$props2) $$invalidate(0, $$scope = $$props2.$$scope);
+  };
+  return [$$scope, slots];
+}
+__name(instance$x, "instance$x");
+const _Br = class _Br extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$x, create_fragment$A, safe_not_equal, {});
+  }
+};
+__name(_Br, "Br");
+let Br = _Br;
+const defaultRenderers = {
+  heading: Heading,
+  paragraph: Paragraph,
+  text: Text,
+  image: Image$1,
+  link: Link,
+  em: Em,
+  strong: Strong,
+  codespan: Codespan,
+  del: Del,
+  table: Table,
+  tablehead: TableHead,
+  tablebody: TableBody,
+  tablerow: TableRow,
+  tablecell: TableCell,
+  list: List,
+  orderedlistitem: null,
+  unorderedlistitem: null,
+  listitem: ListItem,
+  hr: Hr,
+  html: Html,
+  blockquote: Blockquote,
+  code: Code,
+  br: Br
+};
+const defaultOptions = {
+  baseUrl: null,
+  breaks: false,
+  gfm: true,
+  headerIds: true,
+  headerPrefix: "",
+  highlight: null,
+  langPrefix: "language-",
+  mangle: true,
+  pedantic: false,
+  renderer: null,
+  sanitize: false,
+  sanitizer: null,
+  silent: false,
+  smartLists: false,
+  smartypants: false,
+  tokenizer: null,
+  xhtml: false
+};
+function create_fragment$z(ctx) {
+  let parser;
+  let current;
+  parser = new Parser$1({
+    props: {
+      tokens: (
+        /*tokens*/
+        ctx[0]
+      ),
+      renderers: (
+        /*combinedRenderers*/
+        ctx[1]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(parser.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(parser, target, anchor);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      const parser_changes = {};
+      if (dirty & /*tokens*/
+      1) parser_changes.tokens = /*tokens*/
+      ctx2[0];
+      if (dirty & /*combinedRenderers*/
+      2) parser_changes.renderers = /*combinedRenderers*/
+      ctx2[1];
+      parser.$set(parser_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(parser.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(parser.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(parser, detaching);
+    }
+  };
+}
+__name(create_fragment$z, "create_fragment$z");
+function instance$w($$self, $$props, $$invalidate) {
+  let preprocessed;
+  let slugger;
+  let combinedOptions;
+  let combinedRenderers;
+  let { source = [] } = $$props;
+  let { renderers = {} } = $$props;
+  let { options = {} } = $$props;
+  let { isInline = false } = $$props;
+  const dispatch = createEventDispatcher();
+  let tokens;
+  let lexer;
+  let mounted;
+  setContext(key, {
+    slug: /* @__PURE__ */ __name((val) => slugger ? slugger.slug(val) : "", "slug"),
+    getOptions: /* @__PURE__ */ __name(() => combinedOptions, "getOptions")
+  });
+  onMount(() => {
+    $$invalidate(7, mounted = true);
+  });
+  $$self.$$set = ($$props2) => {
+    if ("source" in $$props2) $$invalidate(2, source = $$props2.source);
+    if ("renderers" in $$props2) $$invalidate(3, renderers = $$props2.renderers);
+    if ("options" in $$props2) $$invalidate(4, options = $$props2.options);
+    if ("isInline" in $$props2) $$invalidate(5, isInline = $$props2.isInline);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & /*source*/
+    4) {
+      $$invalidate(8, preprocessed = Array.isArray(source));
+    }
+    if ($$self.$$.dirty & /*source*/
+    4) {
+      slugger = source ? new Slugger() : void 0;
+    }
+    if ($$self.$$.dirty & /*options*/
+    16) {
+      $$invalidate(9, combinedOptions = { ...defaultOptions, ...options });
+    }
+    if ($$self.$$.dirty & /*preprocessed, source, combinedOptions, isInline, lexer, tokens*/
+    869) {
+      if (preprocessed) {
+        $$invalidate(0, tokens = source);
+      } else {
+        $$invalidate(6, lexer = new Lexer(combinedOptions));
+        $$invalidate(0, tokens = isInline ? lexer.inlineTokens(source) : lexer.lex(source));
+        dispatch("parsed", { tokens });
+      }
+    }
+    if ($$self.$$.dirty & /*renderers*/
+    8) {
+      $$invalidate(1, combinedRenderers = { ...defaultRenderers, ...renderers });
+    }
+    if ($$self.$$.dirty & /*mounted, preprocessed, tokens*/
+    385) {
+      mounted && !preprocessed && dispatch("parsed", { tokens });
+    }
+  };
+  return [
+    tokens,
+    combinedRenderers,
+    source,
+    renderers,
+    options,
+    isInline,
+    lexer,
+    mounted,
+    preprocessed,
+    combinedOptions
+  ];
+}
+__name(instance$w, "instance$w");
+const _SvelteMarkdown = class _SvelteMarkdown extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$w, create_fragment$z, safe_not_equal, {
+      source: 2,
+      renderers: 3,
+      options: 4,
+      isInline: 5
+    });
+  }
+};
+__name(_SvelteMarkdown, "SvelteMarkdown");
+let SvelteMarkdown = _SvelteMarkdown;
+function create_fragment$y(ctx) {
+  let br;
+  let t;
+  let div;
+  let sveltemarkdown;
+  let current;
+  sveltemarkdown = new SvelteMarkdown({
+    props: { source: (
+      /*change*/
+      ctx[0].details
+    ) }
+  });
+  return {
+    c() {
+      br = element$1("br");
+      t = space();
+      div = element$1("div");
+      create_component(sveltemarkdown.$$.fragment);
+      attr(div, "class", "details svelte-yuftoj");
+    },
+    m(target, anchor) {
+      insert(target, br, anchor);
+      insert(target, t, anchor);
+      insert(target, div, anchor);
+      mount_component(sveltemarkdown, div, null);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      const sveltemarkdown_changes = {};
+      if (dirty & /*change*/
+      1) sveltemarkdown_changes.source = /*change*/
+      ctx2[0].details;
+      sveltemarkdown.$set(sveltemarkdown_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(sveltemarkdown.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(sveltemarkdown.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(br);
+        detach(t);
+        detach(div);
+      }
+      destroy_component(sveltemarkdown);
+    }
+  };
+}
+__name(create_fragment$y, "create_fragment$y");
+function instance$v($$self, $$props, $$invalidate) {
+  let { change } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("change" in $$props2) $$invalidate(0, change = $$props2.change);
+  };
+  return [change];
+}
+__name(instance$v, "instance$v");
+const _Panel_changelog_details = class _Panel_changelog_details extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$v, create_fragment$y, safe_not_equal, { change: 0 });
+  }
+};
+__name(_Panel_changelog_details, "Panel_changelog_details");
+let Panel_changelog_details = _Panel_changelog_details;
 var __defProp$w = Object.defineProperty;
-var __decorateClass$w = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$w(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$w(target, key2, result);
   return result;
 }, "__decorateClass$w");
 const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature {
@@ -41845,6 +49288,7 @@ const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature 
     __publicField(this, "_elements");
     __publicField(this, "_apiDataSetup");
     __publicField(this, "_globalSettingsService");
+    __publicField(this, "_modalService");
     __publicField(this, "_component");
     __publicField(this, "name", "Changelog");
     __publicField(this, "description", "Displays a list of changes since the last updates on the start page");
@@ -41876,6 +49320,19 @@ const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature 
   getVersion() {
     return typoRuntime.getReleaseDetails().versionName;
   }
+  showDetailsModal(change) {
+    if (change.details === void 0) {
+      this._logger.warn("Change does not have details");
+      throw new Error("Change does not have details");
+    }
+    const modalComponent = {
+      componentType: Panel_changelog_details,
+      props: {
+        change
+      }
+    };
+    this._modalService.showModal(modalComponent.componentType, modalComponent.props, change.title, "card");
+  }
 };
 __name(_PanelChangelogFeature, "PanelChangelogFeature");
 let PanelChangelogFeature = _PanelChangelogFeature;
@@ -41888,6 +49345,9 @@ __decorateClass$w([
 __decorateClass$w([
   inject(GlobalSettingsService)
 ], PanelChangelogFeature.prototype, "_globalSettingsService");
+__decorateClass$w([
+  inject(ModalService)
+], PanelChangelogFeature.prototype, "_modalService");
 function get_each_context$g(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[9] = list[i];
@@ -42523,12 +49983,12 @@ const _Panel_lobbies = class _Panel_lobbies extends SvelteComponent {
 __name(_Panel_lobbies, "Panel_lobbies");
 let Panel_lobbies = _Panel_lobbies;
 var __defProp$v = Object.defineProperty;
-var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$v(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$v(target, key2, result);
   return result;
 }, "__decorateClass$v");
 const _PanelLobbiesFeature = class _PanelLobbiesFeature extends TypoFeature {
@@ -42934,12 +50394,12 @@ const _Panel_news = class _Panel_news extends SvelteComponent {
 __name(_Panel_news, "Panel_news");
 let Panel_news = _Panel_news;
 var __defProp$u = Object.defineProperty;
-var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$u(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$u(target, key2, result);
   return result;
 }, "__decorateClass$u");
 const _PanelNewsFeature = class _PanelNewsFeature extends TypoFeature {
@@ -42984,12 +50444,12 @@ __decorateClass$u([
   inject(ApiDataSetup)
 ], PanelNewsFeature.prototype, "_apiDataSetup");
 var __defProp$t = Object.defineProperty;
-var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$t(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$t(target, key2, result);
   return result;
 }, "__decorateClass$t");
 const _PlayerIdsFeature = class _PlayerIdsFeature extends TypoFeature {
@@ -43744,12 +51204,12 @@ const _User_info = class _User_info extends SvelteComponent {
 __name(_User_info, "User_info");
 let User_info = _User_info;
 var __defProp$s = Object.defineProperty;
-var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$s(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$s(target, key2, result);
   return result;
 }, "__decorateClass$s");
 const _UserInfoFeature = class _UserInfoFeature extends TypoFeature {
@@ -44189,8 +51649,8 @@ function create_if_block_1$4(ctx) {
     },
     o(local) {
       for (let i = 0; i < 3; i += 1) {
-        const block = info.blocks[i];
-        transition_out(block);
+        const block2 = info.blocks[i];
+        transition_out(block2);
       }
       current = false;
     },
@@ -45301,15 +52761,15 @@ const _Controls_onboarding = class _Controls_onboarding extends SvelteComponent 
 __name(_Controls_onboarding, "Controls_onboarding");
 let Controls_onboarding = _Controls_onboarding;
 var __defProp$r = Object.defineProperty;
-var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$r(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$r(target, key2, result);
   return result;
 }, "__decorateClass$r");
-const _ControlsOnboardingFeature = (_Ca = class extends TypoFeature {
+const _ControlsOnboardingFeature = (_Ea = class extends TypoFeature {
   constructor() {
     super(...arguments);
     __publicField(this, "_elementsSetup");
@@ -45375,7 +52835,7 @@ const _ControlsOnboardingFeature = (_Ca = class extends TypoFeature {
           ChatMessageSplitsFeature,
           CustomizerPracticeJoinFeature,
           CustomizerOutfitToggleFeature,
-          _Ca,
+          _Ea,
           TooltipsFeature
         ]
       },
@@ -45398,7 +52858,7 @@ const _ControlsOnboardingFeature = (_Ca = class extends TypoFeature {
           ChatClearFeature,
           CustomizerPracticeJoinFeature,
           CustomizerOutfitToggleFeature,
-          _Ca,
+          _Ea,
           TooltipsFeature,
           ControlsThemesFeature,
           UserInfoFeature,
@@ -45516,7 +52976,7 @@ const _ControlsOnboardingFeature = (_Ca = class extends TypoFeature {
   async completeInfoTask() {
     (await this._viewInfoTask).complete();
   }
-}, __name(_Ca, "_ControlsOnboardingFeature"), _Ca);
+}, __name(_Ea, "_ControlsOnboardingFeature"), _Ea);
 __decorateClass$r([
   inject(ElementsSetup)
 ], _ControlsOnboardingFeature.prototype, "_elementsSetup");
@@ -45936,8 +53396,8 @@ function create_fragment$p(ctx) {
     },
     o(local) {
       for (let i = 0; i < 3; i += 1) {
-        const block = info.blocks[i];
-        transition_out(block);
+        const block2 = info.blocks[i];
+        transition_out(block2);
       }
       transition_out(flatbutton0.$$.fragment, local);
       transition_out(flatbutton1.$$.fragment, local);
@@ -46001,12 +53461,12 @@ const _Controls_profiles = class _Controls_profiles extends SvelteComponent {
 __name(_Controls_profiles, "Controls_profiles");
 let Controls_profiles = _Controls_profiles;
 var __defProp$q = Object.defineProperty;
-var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$q(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$q(target, key2, result);
   return result;
 }, "__decorateClass$q");
 const _ControlsProfilesFeature = class _ControlsProfilesFeature extends TypoFeature {
@@ -46352,7 +53812,7 @@ function instance$n($$self, $$props, $$invalidate) {
     var _a2;
     if ((_a2 = navigator == null ? void 0 : navigator.keyboard) == null ? void 0 : _a2.getLayoutMap) {
       const layoutMap = await navigator.keyboard.getLayoutMap();
-      return combo.map((key) => layoutMap.get(key) || key).join(" + ");
+      return combo.map((key2) => layoutMap.get(key2) || key2).join(" + ");
     } else {
       return combo.join(" + ");
     }
@@ -46392,7 +53852,7 @@ function instance$n($$self, $$props, $$invalidate) {
       recordedKeys.push(event.code);
       $$invalidate(3, recordingElement.value = await getHotkeyComboHumanReadable(recordedKeys), recordingElement);
     } else {
-      $$invalidate(4, recordedKeys = recordedKeys.filter((key) => key !== event.code));
+      $$invalidate(4, recordedKeys = recordedKeys.filter((key2) => key2 !== event.code));
       $$invalidate(3, recordingElement.value = await getHotkeyComboHumanReadable(recordedKeys), recordingElement);
     }
   }, "keydown_handler");
@@ -48068,8 +55528,8 @@ function instance$k($$self, $$props, $$invalidate) {
   }, "toggleFeature");
   let featureState;
   const click_handler2 = /* @__PURE__ */ __name(async () => $$invalidate(0, feature = await toggleFeature(feature)), "click_handler");
-  const keypress_handler = /* @__PURE__ */ __name(async (key) => {
-    if (key.key === "Enter") $$invalidate(0, feature = await toggleFeature(feature));
+  const keypress_handler = /* @__PURE__ */ __name(async (key2) => {
+    if (key2.key === "Enter") $$invalidate(0, feature = await toggleFeature(feature));
   }, "keypress_handler");
   const click_handler_1 = /* @__PURE__ */ __name(() => featureSettingsClicked(), "click_handler_1");
   $$self.$$set = ($$props2) => {
@@ -48624,12 +56084,12 @@ const _Controls_settings = class _Controls_settings extends SvelteComponent {
 __name(_Controls_settings, "Controls_settings");
 let Controls_settings = _Controls_settings;
 var __defProp$p = Object.defineProperty;
-var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$p(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$p(target, key2, result);
   return result;
 }, "__decorateClass$p");
 const _ControlsSettingsFeature = class _ControlsSettingsFeature extends TypoFeature {
@@ -48793,12 +56253,12 @@ __decorateClass$p([
   inject(GlobalSettingsService)
 ], ControlsSettingsFeature.prototype, "_settingsService");
 var __defProp$o = Object.defineProperty;
-var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$o(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$o(target, key2, result);
   return result;
 }, "__decorateClass$o");
 const _MandalaMod = class _MandalaMod extends TypoDrawMod {
@@ -48995,12 +56455,12 @@ const _RainbowMod = class _RainbowMod extends ConstantDrawMod {
 __name(_RainbowMod, "RainbowMod");
 let RainbowMod = _RainbowMod;
 var __defProp$n = Object.defineProperty;
-var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$n(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$n(target, key2, result);
   return result;
 }, "__decorateClass$n");
 const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
@@ -49043,12 +56503,12 @@ __decorateClass$n([
   inject(ColorsService)
 ], RandomColorMod.prototype, "_colorsService");
 var __defProp$m = Object.defineProperty;
-var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$m(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$m(target, key2, result);
   return result;
 }, "__decorateClass$m");
 const _SculptMod = class _SculptMod extends TypoDrawMod {
@@ -49216,12 +56676,12 @@ const _DotTool = class _DotTool extends TypoDrawTool {
 __name(_DotTool, "DotTool");
 let DotTool = _DotTool;
 var __defProp$l = Object.defineProperty;
-var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$l(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$l(target, key2, result);
   return result;
 }, "__decorateClass$l");
 const _GridTool = class _GridTool extends TypoDrawTool {
@@ -50581,12 +58041,12 @@ const _Drawing_brush_lab_manage = class _Drawing_brush_lab_manage extends Svelte
 __name(_Drawing_brush_lab_manage, "Drawing_brush_lab_manage");
 let Drawing_brush_lab_manage = _Drawing_brush_lab_manage;
 var __defProp$k = Object.defineProperty;
-var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$k(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$k(target, key2, result);
   return result;
 }, "__decorateClass$k");
 const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeature {
@@ -50708,12 +58168,12 @@ __decorateClass$k([
   inject(ModalService)
 ], DrawingBrushLabFeature.prototype, "_modalService");
 var __defProp$j = Object.defineProperty;
-var __decorateClass$j = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$j(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$j(target, key2, result);
   return result;
 }, "__decorateClass$j");
 const _DrawingSizeHotkeysFeature = class _DrawingSizeHotkeysFeature extends TypoFeature {
@@ -51233,12 +58693,12 @@ const _Logging_info = class _Logging_info extends SvelteComponent {
 __name(_Logging_info, "Logging_info");
 let Logging_info = _Logging_info;
 var __defProp$i = Object.defineProperty;
-var __decorateClass$i = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$i(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$i(target, key2, result);
   return result;
 }, "__decorateClass$i");
 const _LoggingFeature = class _LoggingFeature extends TypoFeature {
@@ -51318,16 +58778,16 @@ __decorateClass$i([
 ], LoggingFeature.prototype, "_toastService");
 var __defProp$h = Object.defineProperty;
 var __getOwnPropDesc$1 = Object.getOwnPropertyDescriptor;
-var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$1(target, key) : target;
+var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$1(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$h(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$h(target, key2, result);
   return result;
 }, "__decorateClass$h");
-var __decorateParam = /* @__PURE__ */ __name((index, decorator) => (target, key) => decorator(target, key, index), "__decorateParam");
-let LobbyItemsService = (_Da = class {
+var __decorateParam = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam");
+let LobbyItemsService = (_Fa = class {
   constructor(loggerFactory2) {
     __publicField(this, "_socketService");
     __publicField(this, "_logger");
@@ -51353,7 +58813,7 @@ let LobbyItemsService = (_Da = class {
   get onlineItems$() {
     return this._onlineItems$.asObservable();
   }
-}, __name(_Da, "LobbyItemsService"), _Da);
+}, __name(_Fa, "LobbyItemsService"), _Fa);
 __decorateClass$h([
   inject(SocketService)
 ], LobbyItemsService.prototype, "_socketService", 2);
@@ -52619,12 +60079,12 @@ const _Filter_search = class _Filter_search extends SvelteComponent {
 __name(_Filter_search, "Filter_search");
 let Filter_search = _Filter_search;
 var __defProp$g = Object.defineProperty;
-var __decorateClass$g = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$g(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$g(target, key2, result);
   return result;
 }, "__decorateClass$g");
 const _PanelFiltersFeature = class _PanelFiltersFeature extends TypoFeature {
@@ -53575,12 +61035,12 @@ const _Player_awards_award_picker = class _Player_awards_award_picker extends Sv
 __name(_Player_awards_award_picker, "Player_awards_award_picker");
 let Player_awards_award_picker = _Player_awards_award_picker;
 var __defProp$f = Object.defineProperty;
-var __decorateClass$f = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$f(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$f(target, key2, result);
   return result;
 }, "__decorateClass$f");
 const _PlayerAwardsFeature = class _PlayerAwardsFeature extends TypoFeature {
@@ -53952,12 +61412,12 @@ const _Scene_container = class _Scene_container extends SvelteComponent {
 __name(_Scene_container, "Scene_container");
 let Scene_container = _Scene_container;
 var __defProp$e = Object.defineProperty;
-var __decorateClass$e = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$e(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$e(target, key2, result);
   return result;
 }, "__decorateClass$e");
 const _PlayerScenesFeature = class _PlayerScenesFeature extends TypoFeature {
@@ -54267,12 +61727,12 @@ const _Sprite_container = class _Sprite_container extends SvelteComponent {
 __name(_Sprite_container, "Sprite_container");
 let Sprite_container = _Sprite_container;
 var __defProp$d = Object.defineProperty;
-var __decorateClass$d = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$d(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$d(target, key2, result);
   return result;
 }, "__decorateClass$d");
 const _PlayerSpritesFeature = class _PlayerSpritesFeature extends TypoFeature {
@@ -54425,26 +61885,26 @@ __decorateClass$d([
 ], PlayerSpritesFeature.prototype, "_memberService");
 var __defProp$c = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __decorateClass$c = /* @__PURE__ */ __name((decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key) : target;
+var __decorateClass$c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result) __defProp$c(target, key, result);
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$c(target, key2, result);
   return result;
 }, "__decorateClass$c");
-let TypoChallenge = (_Ea = class {
-}, __name(_Ea, "TypoChallenge"), _Ea);
+let TypoChallenge = (_Ga = class {
+}, __name(_Ga, "TypoChallenge"), _Ga);
 TypoChallenge = __decorateClass$c([
   injectable()
 ], TypoChallenge);
 var __defProp$b = Object.defineProperty;
-var __decorateClass$b = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$b(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$b(target, key2, result);
   return result;
 }, "__decorateClass$b");
 const _BlindGuessChallenge = class _BlindGuessChallenge extends TypoChallenge {
@@ -54490,12 +61950,12 @@ __decorateClass$b([
   inject(ElementsSetup)
 ], BlindGuessChallenge.prototype, "_elementsSetup");
 var __defProp$a = Object.defineProperty;
-var __decorateClass$a = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$a(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$a(target, key2, result);
   return result;
 }, "__decorateClass$a");
 const _DeafGuessChallenge = class _DeafGuessChallenge extends TypoChallenge {
@@ -54563,12 +62023,12 @@ __decorateClass$a([
   inject(ChatService)
 ], DeafGuessChallenge.prototype, "_chatService");
 var __defProp$9 = Object.defineProperty;
-var __decorateClass$9 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$9 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$9(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$9(target, key2, result);
   return result;
 }, "__decorateClass$9");
 const _DontClearChallenge = class _DontClearChallenge extends TypoChallenge {
@@ -54615,12 +62075,12 @@ __decorateClass$9([
   inject(ToastService)
 ], DontClearChallenge.prototype, "_toastService");
 var __defProp$8 = Object.defineProperty;
-var __decorateClass$8 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$8 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$8(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$8(target, key2, result);
   return result;
 }, "__decorateClass$8");
 const _DrunkVisionChallenge = class _DrunkVisionChallenge extends TypoChallenge {
@@ -54678,12 +62138,12 @@ __decorateClass$8([
   inject(ElementsSetup)
 ], DrunkVisionChallenge.prototype, "_elementsSetup");
 var __defProp$7 = Object.defineProperty;
-var __decorateClass$7 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$7 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$7(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$7(target, key2, result);
   return result;
 }, "__decorateClass$7");
 const _MonochromeChallenge = class _MonochromeChallenge extends TypoChallenge {
@@ -54733,12 +62193,12 @@ __decorateClass$7([
   inject(ColorsService)
 ], MonochromeChallenge.prototype, "_colorsService");
 var __defProp$6 = Object.defineProperty;
-var __decorateClass$6 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$6 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$6(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$6(target, key2, result);
   return result;
 }, "__decorateClass$6");
 const _OneShotChallenge = class _OneShotChallenge extends TypoChallenge {
@@ -54990,12 +62450,12 @@ const _Toolbar_challenges = class _Toolbar_challenges extends SvelteComponent {
 __name(_Toolbar_challenges, "Toolbar_challenges");
 let Toolbar_challenges = _Toolbar_challenges;
 var __defProp$5 = Object.defineProperty;
-var __decorateClass$5 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$5 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$5(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$5(target, key2, result);
   return result;
 }, "__decorateClass$5");
 const _ToolbarChallengesFeature = class _ToolbarChallengesFeature extends TypoFeature {
@@ -55165,12 +62625,12 @@ __decorateClass$5([
   inject(ExtensionContainer)
 ], ToolbarChallengesFeature.prototype, "_container");
 var __defProp$4 = Object.defineProperty;
-var __decorateClass$4 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$4 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$4(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$4(target, key2, result);
   return result;
 }, "__decorateClass$4");
 const _ToolbarFullscreenFeature = class _ToolbarFullscreenFeature extends TypoFeature {
@@ -55970,12 +63430,12 @@ const _Imagelab_position_picker = class _Imagelab_position_picker extends Svelte
 __name(_Imagelab_position_picker, "Imagelab_position_picker");
 let Imagelab_position_picker = _Imagelab_position_picker;
 var __defProp$3 = Object.defineProperty;
-var __decorateClass$3 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$3 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$3(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$3(target, key2, result);
   return result;
 }, "__decorateClass$3");
 const _ToolbarImageLabFeature = class _ToolbarImageLabFeature extends TypoFeature {
@@ -56975,12 +64435,12 @@ const _Toolbar_imagepost = class _Toolbar_imagepost extends SvelteComponent {
 __name(_Toolbar_imagepost, "Toolbar_imagepost");
 let Toolbar_imagepost = _Toolbar_imagepost;
 var __defProp$2 = Object.defineProperty;
-var __decorateClass$2 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$2 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$2(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$2(target, key2, result);
   return result;
 }, "__decorateClass$2");
 const _ToolbarImagePostFeature = class _ToolbarImagePostFeature extends TypoFeature {
@@ -57331,12 +64791,12 @@ const _Toolbar_save = class _Toolbar_save extends SvelteComponent {
 __name(_Toolbar_save, "Toolbar_save");
 let Toolbar_save = _Toolbar_save;
 var __defProp$1 = Object.defineProperty;
-var __decorateClass$1 = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass$1 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp$1(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$1(target, key2, result);
   return result;
 }, "__decorateClass$1");
 const _ToolbarSaveFeature = class _ToolbarSaveFeature extends TypoFeature {
@@ -57842,12 +65302,12 @@ const _Lobby_navigation = class _Lobby_navigation extends SvelteComponent {
 __name(_Lobby_navigation, "Lobby_navigation");
 let Lobby_navigation = _Lobby_navigation;
 var __defProp2 = Object.defineProperty;
-var __decorateClass = /* @__PURE__ */ __name((decorators, target, key, kind) => {
+var __decorateClass = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
-      result = decorator(target, key, result) || result;
-  if (result) __defProp2(target, key, result);
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp2(target, key2, result);
   return result;
 }, "__decorateClass");
 const _LobbyNavigationFeature = class _LobbyNavigationFeature extends TypoFeature {

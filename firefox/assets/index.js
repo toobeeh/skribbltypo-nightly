@@ -67,6 +67,68 @@ function component_subscribe(component, store, callback) {
   component.$$.on_destroy.push(subscribe(store, callback));
 }
 __name(component_subscribe, "component_subscribe");
+function create_slot(definition, ctx, $$scope, fn) {
+  if (definition) {
+    const slot_ctx = get_slot_context(definition, ctx, $$scope, fn);
+    return definition[0](slot_ctx);
+  }
+}
+__name(create_slot, "create_slot");
+function get_slot_context(definition, ctx, $$scope, fn) {
+  return definition[1] && fn ? assign($$scope.ctx.slice(), definition[1](fn(ctx))) : $$scope.ctx;
+}
+__name(get_slot_context, "get_slot_context");
+function get_slot_changes(definition, $$scope, dirty, fn) {
+  if (definition[2] && fn) {
+    const lets = definition[2](fn(dirty));
+    if ($$scope.dirty === void 0) {
+      return lets;
+    }
+    if (typeof lets === "object") {
+      const merged = [];
+      const len = Math.max($$scope.dirty.length, lets.length);
+      for (let i = 0; i < len; i += 1) {
+        merged[i] = $$scope.dirty[i] | lets[i];
+      }
+      return merged;
+    }
+    return $$scope.dirty | lets;
+  }
+  return $$scope.dirty;
+}
+__name(get_slot_changes, "get_slot_changes");
+function update_slot_base(slot, slot_definition, ctx, $$scope, slot_changes, get_slot_context_fn) {
+  if (slot_changes) {
+    const slot_context = get_slot_context(slot_definition, ctx, $$scope, get_slot_context_fn);
+    slot.p(slot_context, slot_changes);
+  }
+}
+__name(update_slot_base, "update_slot_base");
+function get_all_dirty_from_scope($$scope) {
+  if ($$scope.ctx.length > 32) {
+    const dirty = [];
+    const length = $$scope.ctx.length / 32;
+    for (let i = 0; i < length; i++) {
+      dirty[i] = -1;
+    }
+    return dirty;
+  }
+  return -1;
+}
+__name(get_all_dirty_from_scope, "get_all_dirty_from_scope");
+function exclude_internal_props(props) {
+  const result = {};
+  for (const k in props) if (k[0] !== "$") result[k] = props[k];
+  return result;
+}
+__name(exclude_internal_props, "exclude_internal_props");
+function compute_rest_props(props, keys) {
+  const rest = {};
+  keys = new Set(keys);
+  for (const k in props) if (!keys.has(k) && k[0] !== "$") rest[k] = props[k];
+  return rest;
+}
+__name(compute_rest_props, "compute_rest_props");
 function null_to_empty(value) {
   return value == null ? "" : value;
 }
@@ -104,6 +166,10 @@ function element(name) {
   return document.createElement(name);
 }
 __name(element, "element");
+function svg_element(name) {
+  return document.createElementNS("http://www.w3.org/2000/svg", name);
+}
+__name(svg_element, "svg_element");
 function text(data) {
   return document.createTextNode(data);
 }
@@ -179,6 +245,91 @@ function custom_event(type, detail, { bubbles = false, cancelable = false } = {}
   return new CustomEvent(type, { detail, bubbles, cancelable });
 }
 __name(custom_event, "custom_event");
+const _HtmlTag = class _HtmlTag {
+  constructor(is_svg = false) {
+    /**
+     * @private
+     * @default false
+     */
+    __publicField(this, "is_svg", false);
+    /** parent for creating node */
+    __publicField(this, "e");
+    /** html tag nodes */
+    __publicField(this, "n");
+    /** target */
+    __publicField(this, "t");
+    /** anchor */
+    __publicField(this, "a");
+    this.is_svg = is_svg;
+    this.e = this.n = null;
+  }
+  /**
+   * @param {string} html
+   * @returns {void}
+   */
+  c(html) {
+    this.h(html);
+  }
+  /**
+   * @param {string} html
+   * @param {HTMLElement | SVGElement} target
+   * @param {HTMLElement | SVGElement} anchor
+   * @returns {void}
+   */
+  m(html, target, anchor = null) {
+    if (!this.e) {
+      if (this.is_svg)
+        this.e = svg_element(
+          /** @type {keyof SVGElementTagNameMap} */
+          target.nodeName
+        );
+      else
+        this.e = element(
+          /** @type {keyof HTMLElementTagNameMap} */
+          target.nodeType === 11 ? "TEMPLATE" : target.nodeName
+        );
+      this.t = target.tagName !== "TEMPLATE" ? target : (
+        /** @type {HTMLTemplateElement} */
+        target.content
+      );
+      this.c(html);
+    }
+    this.i(anchor);
+  }
+  /**
+   * @param {string} html
+   * @returns {void}
+   */
+  h(html) {
+    this.e.innerHTML = html;
+    this.n = Array.from(
+      this.e.nodeName === "TEMPLATE" ? this.e.content.childNodes : this.e.childNodes
+    );
+  }
+  /**
+   * @returns {void} */
+  i(anchor) {
+    for (let i = 0; i < this.n.length; i += 1) {
+      insert(this.t, this.n[i], anchor);
+    }
+  }
+  /**
+   * @param {string} html
+   * @returns {void}
+   */
+  p(html) {
+    this.d();
+    this.h(html);
+    this.i(this.a);
+  }
+  /**
+   * @returns {void} */
+  d() {
+    this.n.forEach(detach);
+  }
+};
+__name(_HtmlTag, "HtmlTag");
+let HtmlTag = _HtmlTag;
 function construct_svelte_component(component, props) {
   return new component(props);
 }
@@ -221,6 +372,15 @@ function createEventDispatcher() {
   };
 }
 __name(createEventDispatcher, "createEventDispatcher");
+function setContext(key, context) {
+  get_current_component().$$.context.set(key, context);
+  return context;
+}
+__name(setContext, "setContext");
+function getContext(key) {
+  return get_current_component().$$.context.get(key);
+}
+__name(getContext, "getContext");
 function bubble(component, event) {
   const callbacks = component.$$.callbacks[event.type];
   if (callbacks) {
@@ -510,6 +670,7 @@ const PUBLIC_VERSION = "4";
 if (typeof window !== "undefined")
   (window.__svelte || (window.__svelte = { v: /* @__PURE__ */ new Set() })).v.add(PUBLIC_VERSION);
 export {
+  create_slot as $,
   empty as A,
   binding_callbacks as B,
   bind as C,
@@ -534,7 +695,15 @@ export {
   construct_svelte_component as V,
   onDestroy as W,
   assign as X,
+  compute_rest_props as Y,
+  exclude_internal_props as Z,
+  getContext as _,
   group_outros as a,
+  update_slot_base as a0,
+  get_all_dirty_from_scope as a1,
+  get_slot_changes as a2,
+  HtmlTag as a3,
+  setContext as a4,
   transition_in as b,
   check_outros as c,
   safe_not_equal as d,
