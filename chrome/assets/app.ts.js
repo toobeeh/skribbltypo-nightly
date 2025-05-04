@@ -49332,7 +49332,8 @@ const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature 
     __publicField(this, "_apiDataSetup");
     __publicField(this, "_globalSettingsService");
     __publicField(this, "_modalService");
-    __publicField(this, "_lastReadVersion", new ExtensionSetting("last_read_version", "0.0.0", this));
+    __publicField(this, "_firstLoadSetting", new BooleanExtensionSetting("first_load", true, this));
+    __publicField(this, "_lastReadVersionSetting", new ExtensionSetting("last_read_version", "0.0.0", this));
     __publicField(this, "_component");
     __publicField(this, "name", "Changelog");
     __publicField(this, "description", "Displays a list of changes since the last updates on the start page");
@@ -49355,11 +49356,14 @@ const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature 
     this._component.$set({ changes });
     const lastChange = changes[0];
     const currentVersion = typoRuntime.getReleaseDetails().version;
-    if ((lastChange == null ? void 0 : lastChange.affectedTypoVersion) === currentVersion) {
-      const lastReadVersion = await this._lastReadVersion.getValue();
+    const isFirstLoad = await this._firstLoadSetting.getValue();
+    if (isFirstLoad) {
+      await this._firstLoadSetting.setValue(false);
+    } else if ((lastChange == null ? void 0 : lastChange.affectedTypoVersion) === currentVersion) {
+      const lastReadVersion = await this._lastReadVersionSetting.getValue();
       if (lastReadVersion != currentVersion) {
         this.showDetailsModal(lastChange);
-        await this._lastReadVersion.setValue(currentVersion);
+        await this._lastReadVersionSetting.setValue(currentVersion);
       }
     }
   }
