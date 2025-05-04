@@ -49204,9 +49204,25 @@ const _SvelteMarkdown = class _SvelteMarkdown extends SvelteComponent {
 __name(_SvelteMarkdown, "SvelteMarkdown");
 let SvelteMarkdown = _SvelteMarkdown;
 function create_fragment$y(ctx) {
+  let div0;
+  let span0;
+  let t0_value = new Date(Number(
+    /*change*/
+    ctx[0].date
+  )).toDateString() + "";
+  let t0;
+  let t1;
+  let span1;
+  let t2;
+  let t3_value = (
+    /*change*/
+    ctx[0].affectedTypoVersion + ""
+  );
+  let t3;
+  let t4;
   let br;
-  let t;
-  let div;
+  let t5;
+  let div1;
   let sveltemarkdown;
   let current;
   sveltemarkdown = new SvelteMarkdown({
@@ -49217,20 +49233,45 @@ function create_fragment$y(ctx) {
   });
   return {
     c() {
+      div0 = element$1("div");
+      span0 = element$1("span");
+      t0 = text(t0_value);
+      t1 = space();
+      span1 = element$1("span");
+      t2 = text("Update changelog for v");
+      t3 = text(t3_value);
+      t4 = space();
       br = element$1("br");
-      t = space();
-      div = element$1("div");
+      t5 = space();
+      div1 = element$1("div");
       create_component(sveltemarkdown.$$.fragment);
-      attr(div, "class", "details svelte-yuftoj");
+      attr(div0, "class", "info svelte-mkybs6");
+      attr(div1, "class", "details svelte-mkybs6");
     },
     m(target, anchor) {
+      insert(target, div0, anchor);
+      append(div0, span0);
+      append(span0, t0);
+      append(div0, t1);
+      append(div0, span1);
+      append(span1, t2);
+      append(span1, t3);
+      insert(target, t4, anchor);
       insert(target, br, anchor);
-      insert(target, t, anchor);
-      insert(target, div, anchor);
-      mount_component(sveltemarkdown, div, null);
+      insert(target, t5, anchor);
+      insert(target, div1, anchor);
+      mount_component(sveltemarkdown, div1, null);
       current = true;
     },
     p(ctx2, [dirty]) {
+      if ((!current || dirty & /*change*/
+      1) && t0_value !== (t0_value = new Date(Number(
+        /*change*/
+        ctx2[0].date
+      )).toDateString() + "")) set_data(t0, t0_value);
+      if ((!current || dirty & /*change*/
+      1) && t3_value !== (t3_value = /*change*/
+      ctx2[0].affectedTypoVersion + "")) set_data(t3, t3_value);
       const sveltemarkdown_changes = {};
       if (dirty & /*change*/
       1) sveltemarkdown_changes.source = /*change*/
@@ -49248,9 +49289,11 @@ function create_fragment$y(ctx) {
     },
     d(detaching) {
       if (detaching) {
+        detach(div0);
+        detach(t4);
         detach(br);
-        detach(t);
-        detach(div);
+        detach(t5);
+        detach(div1);
       }
       destroy_component(sveltemarkdown);
     }
@@ -49289,6 +49332,7 @@ const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature 
     __publicField(this, "_apiDataSetup");
     __publicField(this, "_globalSettingsService");
     __publicField(this, "_modalService");
+    __publicField(this, "_lastReadVersion", new ExtensionSetting("last_read_version", "0.0.0", this));
     __publicField(this, "_component");
     __publicField(this, "name", "Changelog");
     __publicField(this, "description", "Displays a list of changes since the last updates on the start page");
@@ -49309,6 +49353,15 @@ const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature 
     const data = await this._apiDataSetup.complete();
     const changes = data.announcements.filter((announcement) => announcement.type === AnnouncementDtoTypeEnum.Changelog).sort((a, b) => Number(b.date) - Number(a.date));
     this._component.$set({ changes });
+    const lastChange = changes[0];
+    const currentVersion = typoRuntime.getReleaseDetails().version;
+    if ((lastChange == null ? void 0 : lastChange.affectedTypoVersion) === currentVersion) {
+      const lastReadVersion = await this._lastReadVersion.getValue();
+      if (lastReadVersion != currentVersion) {
+        this.showDetailsModal(lastChange);
+        await this._lastReadVersion.setValue(currentVersion);
+      }
+    }
   }
   onDestroy() {
     var _a2;
@@ -49316,6 +49369,16 @@ const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature 
   }
   get devmodeStore() {
     return this._globalSettingsService.settings.devMode.store;
+  }
+  versionIsBiggerThan(version) {
+    const v1 = version.split(".").map(Number);
+    const v2 = typoRuntime.getReleaseDetails().version.split(".").map(Number);
+    for (let i = 0; i < Math.max(v1.length, v2.length); i++) {
+      const a = v1[i] || 0;
+      const b = v2[i] || 0;
+      if (a > b) return true;
+      if (a < b) return false;
+    }
   }
   getVersion() {
     return typoRuntime.getReleaseDetails().versionName;
