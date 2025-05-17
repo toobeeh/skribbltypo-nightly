@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.0 beta-usc f73dd15
+// @version      27.1.0 beta-usc 4e79416
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.0", versionName: "27.1.0 beta-usc f73dd15", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.0", versionName: "27.1.0 beta-usc 4e79416", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -23981,7 +23981,7 @@
       const elements2 = await this._elements.complete();
       this._logger.debug("Finding emoji candidates for: ", elements2.chatInput.value);
       const emojiHead = this.parseUnfinishedEmoji(elements2.chatInput.value);
-      const emojiCandidates = emojiHead !== void 0 ? emojis.filter((e) => e.name.includes(emojiHead)) : [];
+      const emojiCandidates = emojiHead !== void 0 ? emojis.filter((e) => e.name.toLowerCase().includes(emojiHead.toLowerCase())) : [];
       this._emojiCandidates$.next(emojiCandidates);
       if (emojiHead !== void 0 && this._flyoutComponent === void 0) {
         const flyoutContent = {

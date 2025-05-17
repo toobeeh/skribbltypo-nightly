@@ -20375,7 +20375,7 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
     const elements2 = await this._elements.complete();
     this._logger.debug("Finding emoji candidates for: ", elements2.chatInput.value);
     const emojiHead = this.parseUnfinishedEmoji(elements2.chatInput.value);
-    const emojiCandidates = emojiHead !== void 0 ? emojis.filter((e) => e.name.includes(emojiHead)) : [];
+    const emojiCandidates = emojiHead !== void 0 ? emojis.filter((e) => e.name.toLowerCase().includes(emojiHead.toLowerCase())) : [];
     this._emojiCandidates$.next(emojiCandidates);
     if (emojiHead !== void 0 && this._flyoutComponent === void 0) {
       const flyoutContent = {
