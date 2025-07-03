@@ -20338,27 +20338,36 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
     __publicField(this, "_elements");
     __publicField(this, "_apiDataSetup");
     __publicField(this, "_chatService");
+    __publicField(this, "_lobbyService");
     __publicField(this, "name", "Chat Emojis");
     __publicField(this, "description", "Adds support for emojis using ':emoji-name:' format in the chat.");
     __publicField(this, "tags", [
       FeatureTag.SOCIAL
     ]);
     __publicField(this, "featureId", 22);
+    __publicField(this, "decayRate", 0.99);
+    __publicField(this, "boostAmount", 1);
     __publicField(this, "_inputListener", this.handleInputEvent.bind(this));
+    __publicField(this, "_emojiScoresSetting", new ExtensionSetting("emojiScores", {}, this));
     __publicField(this, "_subscription");
     __publicField(this, "_component");
     __publicField(this, "_flyoutComponent");
     __publicField(this, "_flyoutSubscription");
     __publicField(this, "_emojiCandidates$", new BehaviorSubject([]));
+    __publicField(this, "_emojiScores", {});
   }
   async onActivate() {
     const elements2 = await this._elements.complete();
     elements2.chatInput.addEventListener("keyup", this._inputListener);
     const emojis = (await this._apiDataSetup.complete()).emojis;
-    this._subscription = this._chatService.playerMessageReceived$.subscribe(({ contentElement }) => {
-      this.processAddedMessage(contentElement, emojis);
+    this._subscription = this._chatService.playerMessageReceived$.pipe(
+      withLatestFrom(this._lobbyService.lobby$)
+    ).subscribe(([{ contentElement, player }, lobby]) => {
+      const isMyMessage = player.lobbyPlayerId === (lobby == null ? void 0 : lobby.meId);
+      this.processAddedMessage(contentElement, emojis, isMyMessage);
     });
     this._component = new Chat_emojis({ target: elements2.chatArea });
+    this._emojiScores = await this._emojiScoresSetting.getValue();
   }
   async onDestroy() {
     var _a2, _b2, _c2, _d2;
@@ -20373,12 +20382,27 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
     this._flyoutComponent = void 0;
     this._flyoutSubscription = void 0;
   }
+  updateScores(usedEmoji) {
+    for (const key2 in this._emojiScores) {
+      this._emojiScores[key2] *= this.decayRate;
+      this._emojiScores[key2] = parseFloat(this._emojiScores[key2].toFixed(4));
+    }
+    if (!this._emojiScores[usedEmoji]) {
+      this._emojiScores[usedEmoji] = 0;
+    }
+    this._emojiScores[usedEmoji] += this.boostAmount;
+    this._emojiScoresSetting.setValue(this._emojiScores);
+  }
   async handleInputEvent() {
     const emojis = (await this._apiDataSetup.complete()).emojis;
     const elements2 = await this._elements.complete();
     this._logger.debug("Finding emoji candidates for: ", elements2.chatInput.value);
     const emojiHead = this.parseUnfinishedEmoji(elements2.chatInput.value);
-    const emojiCandidates = emojiHead !== void 0 ? emojis.filter((e) => e.name.toLowerCase().includes(emojiHead.toLowerCase())) : [];
+    const emojiCandidates = emojiHead !== void 0 ? emojis.filter((e) => e.name.toLowerCase().includes(emojiHead.toLowerCase())).sort((a, b) => {
+      const scoreA = this._emojiScores[this.getEmojiId(a)] ?? 0;
+      const scoreB = this._emojiScores[this.getEmojiId(b)] ?? 0;
+      return scoreB - scoreA;
+    }) : [];
     this._emojiCandidates$.next(emojiCandidates);
     if (emojiHead !== void 0 && this._flyoutComponent === void 0) {
       const flyoutContent = {
@@ -20417,7 +20441,7 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
       this._flyoutComponent.close();
     }
   }
-  processAddedMessage(message, emojis) {
+  processAddedMessage(message, emojis, isMyMessage) {
     const textNodes = Array.from(message.childNodes).filter((node) => node.nodeType === Node.TEXT_NODE);
     textNodes.forEach((node) => {
       const parsedEmojis = this.parseTextWithEmojis(node.textContent ?? "");
@@ -20438,6 +20462,9 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
             emojiElement.classList.add("typo-emoji");
             newTextNode.appendChild(emojiElement);
             this.createTooltip(emojiElement, { title: emoji, lock: "Y" });
+            if (isMyMessage) {
+              this.updateScores(this.getEmojiId(emojiDto));
+            }
           } else {
             newTextNode.appendChild(document.createTextNode(emoji));
           }
@@ -20488,6 +20515,9 @@ __decorateClass$14([
 __decorateClass$14([
   inject(ChatService)
 ], ChatEmojisFeature.prototype, "_chatService");
+__decorateClass$14([
+  inject(LobbyService)
+], ChatEmojisFeature.prototype, "_lobbyService");
 function create_fragment$1l(ctx) {
   let t0;
   let br0;
