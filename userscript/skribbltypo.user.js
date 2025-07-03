@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.1 beta-usc 34b5278
+// @version      27.1.1 beta-usc f864c67
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.1", versionName: "27.1.1 beta-usc 34b5278", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.1", versionName: "27.1.1 beta-usc f864c67", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -43167,6 +43167,7 @@
       __publicField(this, "_colorStartSetting", this.useSetting(new HexColorExtensionSetting("visualizer_color_start", "#46d536", this).withName("Color Start").withDescription("Start color of the visualizer bar")));
       __publicField(this, "_colorEndSetting", this.useSetting(new HexColorExtensionSetting("visualizer_color_end", "#fa2b08", this).withName("Color End").withDescription("End color of the visualizer bar")));
       __publicField(this, "_enableChooseVisualizer", this.useSetting(new BooleanExtensionSetting("choose_visualizer", true, this).withName("Choose Visualizer").withDescription("Show a visualizer of the remaining time to choose words")));
+      __publicField(this, "_enableChooseVisualizerOnlyForYourself", this.useSetting(new BooleanExtensionSetting("choose_visualizer_self_only", false, this)).withName("Choose Visualizer Only For Yourself").withDescription("If the choose visualizer is enabled, this makes it so it only shows up when you're choosing your own word"));
       __publicField(this, "_enableDrawVisualizer", this.useSetting(new BooleanExtensionSetting("draw_visualizer", true, this).withName("Draw Visualizer").withDescription("Show a visualizer of the remaining time to draw a word")));
       __publicField(this, "_enableGuessVisualizer", this.useSetting(new BooleanExtensionSetting("guess_visualizer", true, this).withName("Guess Visualizer").withDescription("Show a visualizer of the remaining time to guess a word")));
       __publicField(this, "visualizerEventSubscription");
@@ -43184,12 +43185,13 @@
         withLatestFrom(
           this._enableDrawVisualizer.changes$,
           this._enableGuessVisualizer.changes$,
-          this._enableChooseVisualizer.changes$
+          this._enableChooseVisualizer.changes$,
+          this._enableChooseVisualizerOnlyForYourself.changes$
         ),
         map(
-          ([[lobby, event], draw, guess, choose]) => {
+          ([[lobby, event], draw, guess, choose, chooseYourselfOnly]) => {
             var _a2, _b2;
-            return ((_a2 = event.data.timerSet) == null ? void 0 : _a2.time) !== 0 && lobby !== null && (draw && ((_b2 = event.data.drawingStarted) == null ? void 0 : _b2.drawerId) === lobby.meId || guess && event.data.drawingStarted !== void 0 && event.data.drawingStarted.drawerId !== lobby.meId || choose && event.data.drawerChoosingWord !== void 0) ? { event, lobby } : event.data.timerSet ? { override: event.data.timerSet.time } : void 0;
+            return ((_a2 = event.data.timerSet) == null ? void 0 : _a2.time) !== 0 && lobby !== null && (draw && ((_b2 = event.data.drawingStarted) == null ? void 0 : _b2.drawerId) === lobby.meId || guess && event.data.drawingStarted !== void 0 && event.data.drawingStarted.drawerId !== lobby.meId || choose && event.data.drawerChoosingWord !== void 0 && (chooseYourselfOnly ? event.data.drawerChoosingWord.drawerId === lobby.meId : true)) ? { event, lobby } : event.data.timerSet ? { override: event.data.timerSet.time } : void 0;
           }
         ),
         map((data) => {
