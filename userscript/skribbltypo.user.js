@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.1 beta-usc 724d911
+// @version      27.1.1 beta-usc c12cebc
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.1", versionName: "27.1.1 beta-usc 724d911", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.1", versionName: "27.1.1 beta-usc c12cebc", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -2993,7 +2993,6 @@
         "settings",
         "token"
       );
-      window.addEventListener("click", () => console.log(this));
     }
     async getSetting(key2) {
       const value = await (await this._db).get("settings", key2);
@@ -35877,7 +35876,11 @@
     }
     removeMod(mod) {
       this._logger.debug("Removing mod", mod);
-      this._activeMods$.next(this._activeMods$.value.filter((m) => m !== mod));
+      const lengthBefore = this._activeMods$.value.length;
+      const mods = this._activeMods$.value.filter((m) => m !== mod);
+      if (lengthBefore != mods.length) {
+        this._activeMods$.next(mods);
+      }
     }
     get activeTool$() {
       return this._activeTool$.asObservable();
