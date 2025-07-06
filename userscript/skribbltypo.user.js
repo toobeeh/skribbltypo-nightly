@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.1 beta-usc a2fd177
+// @version      27.1.1 beta-usc 724d911
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.1", versionName: "27.1.1 beta-usc a2fd177", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.1", versionName: "27.1.1 beta-usc 724d911", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -2996,13 +2996,15 @@
       window.addEventListener("click", () => console.log(this));
     }
     async getSetting(key2) {
-      return await (await this._db).get("settings", key2) ?? null;
+      const value = await (await this._db).get("settings", key2);
+      return value === void 0 ? null : value;
     }
     async writeSetting(key2, value) {
       await (await this._db).put("settings", value, key2);
     }
     async getToken() {
-      return await (await this._db).get("token", "token") ?? null;
+      const value = await (await this._db).get("token", "token");
+      return value === void 0 ? null : value;
     }
     async setToken(token) {
       await (await this._db).put("token", token, "token");
