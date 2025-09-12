@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.2 beta-usc 0ea2308
+// @version      27.1.2 beta-usc 4fd0b7b
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.2", versionName: "27.1.2 beta-usc 0ea2308", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.2", versionName: "27.1.2 beta-usc 4fd0b7b", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -65576,7 +65576,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           slot: sprite.slot,
           lobbyKey: "practice"
         } : void 0;
-        const shift = sprite.colorShift && sprite.slot ? {
+        const shift = sprite.colorShift !== void 0 && sprite.slot ? {
           itemId: sprite.colorShift,
           type: OnlineItemTypeDto.SpriteShift,
           lobbyPlayerId: 0,

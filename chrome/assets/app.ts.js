@@ -61969,7 +61969,7 @@ const _PlayerSpritesFeature = class _PlayerSpritesFeature extends TypoFeature {
         slot: sprite.slot,
         lobbyKey: "practice"
       } : void 0;
-      const shift = sprite.colorShift && sprite.slot ? {
+      const shift = sprite.colorShift !== void 0 && sprite.slot ? {
         itemId: sprite.colorShift,
         type: OnlineItemTypeDto.SpriteShift,
         lobbyPlayerId: 0,
