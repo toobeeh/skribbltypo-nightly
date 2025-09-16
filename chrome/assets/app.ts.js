@@ -2568,7 +2568,6 @@ const _Interceptor = class _Interceptor {
     __publicField(this, "_typoBodyLoaded$", new BehaviorSubject(false));
     __publicField(this, "_canvasFound$", new BehaviorSubject(false));
     __publicField(this, "_contentScriptLoaded$", new BehaviorSubject(false));
-    __publicField(this, "_tokenProcessed$", new BehaviorSubject(false));
     __publicField(this, "_patchLoaded$", new BehaviorSubject(false));
     __publicField(this, "_canvasPrioritizedEventsReady$", new BehaviorSubject(void 0));
     __publicField(this, "_canvasEventListener", /* @__PURE__ */ new Map());
@@ -2582,8 +2581,8 @@ const _Interceptor = class _Interceptor {
       /* trigger listeners that have to run on typo loaded body */
       tap(() => this.listenForCanvas()),
       /* wait for all prerequisites */
-      combineLatestWith(this._canvasFound$, this._contentScriptLoaded$, this._tokenProcessed$),
-      filter(([, canvas, content, token]) => canvas && content && token)
+      combineLatestWith(this._canvasFound$, this._contentScriptLoaded$),
+      filter(([, canvas, content]) => canvas && content)
     ).subscribe(() => {
       this.debug("All prerequisites executed, injecting patch and listening to canvas events");
       this.listenPrioritizedCanvasElements();
@@ -2591,7 +2590,6 @@ const _Interceptor = class _Interceptor {
     });
     this.debug("Interceptor initialized, starting listeners for token and game.js");
     this.waitForTypoLoadedBody();
-    this.processToken();
     this.patchLoaded$.subscribe(() => {
       document.body.dataset["typo_loaded"] = "true";
     });
@@ -2610,26 +2608,6 @@ const _Interceptor = class _Interceptor {
       this._patchLoaded$.complete();
     };
     document.body.appendChild(patch);
-  }
-  async processToken() {
-    this.debug("Processing token");
-    const url = new URL(window.location.href);
-    let tokenParam = url.searchParams.get("accessToken");
-    if (tokenParam === null) {
-      const fallbackOldToken = localStorage.getItem("accessToken");
-      if (fallbackOldToken !== null) {
-        tokenParam = fallbackOldToken;
-        localStorage.removeItem("accessToken");
-      }
-    }
-    if (tokenParam !== null) {
-      await typoRuntime.setToken(tokenParam);
-      url.searchParams.delete("accessToken");
-      window.history.replaceState({}, "", url.toString());
-    }
-    this.debug("Token processed");
-    this._tokenProcessed$.next(true);
-    this._tokenProcessed$.complete();
   }
   waitForTypoLoadedBody() {
     this.debug("Listening for body from typo loader");
@@ -13839,6 +13817,83 @@ const _SkribblLobbyPlayer = class _SkribblLobbyPlayer {
 __name(_SkribblLobbyPlayer, "SkribblLobbyPlayer");
 __publicField(_SkribblLobbyPlayer, "idCounter", 0);
 let SkribblLobbyPlayer = _SkribblLobbyPlayer;
+const _OidcLogin = class _OidcLogin {
+  constructor() {
+    __publicField(this, "config", {
+      issuer: "https://api.typo.rip/openid",
+      redirectUri: "https://skribbl.io",
+      clientId: "1"
+    });
+  }
+  async getOidcConfig() {
+    if (_OidcLogin._oidcConfig) return _OidcLogin._oidcConfig;
+    const response = await fetch(this.config.issuer + "/.well-known/openid-configuration");
+    if (!response.ok) throw new Error("Failed to fetch OIDC configuration");
+    _OidcLogin._oidcConfig = await response.json();
+    return _OidcLogin._oidcConfig;
+  }
+  async loginRedirect() {
+    const oidcConfig = await this.getOidcConfig();
+    const authUrl = new URL(oidcConfig.authorization_endpoint);
+    authUrl.searchParams.append("client_id", this.config.clientId);
+    authUrl.searchParams.append("redirect_uri", this.config.redirectUri);
+    authUrl.searchParams.append("response_type", "code");
+    window.location.href = authUrl.toString();
+  }
+  hasRedirectCallback() {
+    const state = new URLSearchParams(window.location.search);
+    return state.has("code");
+  }
+  async exchangeAuthCode() {
+    const oidcConfig = await this.getOidcConfig();
+    const state = new URLSearchParams(window.location.search);
+    const code = state.get("code");
+    if (!code) throw new Error("No code found in URL");
+    const tokenResponse = await fetch(oidcConfig.token_endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: new URLSearchParams({
+        grant_type: "authorization_code",
+        code,
+        redirect_uri: this.config.redirectUri,
+        client_id: this.config.clientId
+      })
+    });
+    if (!tokenResponse.ok) throw new Error("Failed to exchange code for token");
+    this.clearUrlParams();
+    const tokenData = await tokenResponse.json();
+    return tokenData.access_token;
+  }
+  clearUrlParams() {
+    const url = new URL(window.location.href);
+    url.searchParams.delete("code");
+    url.searchParams.delete("state");
+    window.history.replaceState({}, document.title, url.toString());
+  }
+  async exchangeLegacyToken(token) {
+    const oidcConfig = await this.getOidcConfig();
+    const tokenResponse = await fetch(oidcConfig.token_endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: new URLSearchParams({
+        grant_type: "typo-legacy-token",
+        subject_token: token,
+        client_id: this.config.clientId
+      })
+    });
+    if (!tokenResponse.ok) throw new Error("Failed to exchange code for token");
+    this.clearUrlParams();
+    const tokenData = await tokenResponse.json();
+    return tokenData.access_token;
+  }
+};
+__name(_OidcLogin, "OidcLogin");
+__publicField(_OidcLogin, "_oidcConfig");
+let OidcLogin = _OidcLogin;
 const BASE_PATH = "http://localhost".replace(/\/+$/, "");
 const _Configuration = class _Configuration {
   constructor(configuration = {}) {
@@ -16531,7 +16586,29 @@ let TokenService = (_ha = class {
     this.initToken();
   }
   async initToken() {
-    const token = await typoRuntime.getToken();
+    let token = await typoRuntime.getToken();
+    if (token === null) {
+      const oidc = new OidcLogin();
+      if (oidc.hasRedirectCallback()) {
+        this._logger.error("Handling OIDC redirect callback");
+        try {
+          token = await oidc.exchangeAuthCode();
+          await typoRuntime.setToken(token);
+        } catch {
+          oidc.clearUrlParams();
+        }
+      }
+    }
+    if (token && token.length === 64) {
+      this._logger.info("Exchanging legacy token for OIDC token");
+      try {
+        const oidc = new OidcLogin();
+        token = await oidc.exchangeLegacyToken(token);
+        await typoRuntime.setToken(token);
+      } catch {
+        this._logger.warn("Failed to exchange legacy token, removing it");
+      }
+    }
     this._logger.info("Authenticated", token);
     this._token.next(token);
   }
@@ -16708,7 +16785,7 @@ let MemberService = (_ja = class {
    * Redirects the user to the login page.
    */
   login() {
-    window.location.href = "https://www.typo.rip/auth?redirect=" + encodeURI(window.location.href);
+    new OidcLogin().loginRedirect();
   }
   /**
    * Removes the token from the storage and the service.
