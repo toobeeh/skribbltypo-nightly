@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 42b8113
+// @version      27.1.3 beta-usc 289d3e5
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 42b8113", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 289d3e5", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -40396,6 +40396,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
         if (!summaryEnabled) return;
         if (prev !== void 0 && current === void 0) {
           const getEmoji = /* @__PURE__ */ __name((claim) => {
+            if (claim.clearedDrop && claim.firstClaim) return "💎🛡️";
             if (claim.clearedDrop) return "🛡️";
             if (claim.firstClaim) return "💎";
             if (claim.leagueMode) return "🧿";

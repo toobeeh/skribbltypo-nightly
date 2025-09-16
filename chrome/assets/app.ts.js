@@ -36789,6 +36789,7 @@ const _DropsFeature = class _DropsFeature extends TypoFeature {
       if (!summaryEnabled) return;
       if (prev !== void 0 && current === void 0) {
         const getEmoji = /* @__PURE__ */ __name((claim) => {
+          if (claim.clearedDrop && claim.firstClaim) return "💎🛡️";
           if (claim.clearedDrop) return "🛡️";
           if (claim.firstClaim) return "💎";
           if (claim.leagueMode) return "🧿";
