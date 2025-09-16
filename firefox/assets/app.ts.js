@@ -24408,10 +24408,18 @@ const _ControlsCloudFeature = class _ControlsCloudFeature extends TypoFeature {
     }
   }
   async saveAsGif(image) {
+    const toast = await this._toastService.showStickyToast("Saving as GIF");
     const durationPrompt = await this._toastService.showPromptToast("Enter GIF duration", "Enter the preferred duration in seconds");
-    const durationMs = await durationPrompt.result;
-    if (durationMs === null) return;
-    const toast = await this._toastService.showStickyToast("Rendering image GIF");
+    const duration = await durationPrompt.result;
+    const durationMs = parseFloat(duration ?? "") * 1e3;
+    if (duration === null) {
+      toast.close();
+      return;
+    }
+    if (Number.isNaN(durationMs)) {
+      toast.resolve("Invalid duration entered");
+      return;
+    }
     try {
       const commands = await getCloudCommands(image.commandsUrl);
       const progressBar = /* @__PURE__ */ __name((progress) => {
@@ -24431,9 +24439,10 @@ const _ControlsCloudFeature = class _ControlsCloudFeature extends TypoFeature {
           }, "frameRendered")
         }
       );
-      const gif = await worker.run("renderGif", commands, parseFloat(durationMs ?? "") * 1e3);
-      downloadBlob(gif, `${image.name}-by-${image.author}.gif`.replaceAll(" ", "_"));
-      toast.resolve("GIF rendering complete");
+      const name = `${image.name}-by-${image.author}`;
+      const gif = await worker.run("renderGif", commands, durationMs);
+      downloadBlob(gif, `${name}.gif`.replaceAll(" ", "_"));
+      toast.resolve(`${name} saved as GIF`);
     } catch (e) {
       this._logger.error("Failed to download image", e);
       toast.resolve("An error occurred");
@@ -65175,7 +65184,7 @@ const _ToolbarSaveFeature = class _ToolbarSaveFeature extends TypoFeature {
   }
   async saveAsGif() {
     this._logger.debug("Saving as gif");
-    const toast = await this._toastService.showStickyToast("Generating GIF");
+    const toast = await this._toastService.showStickyToast("Saving as GIF");
     combineLatest$1({
       commands: this._drawingService.commands$,
       lobby: this._lobbyService.lobby$.pipe(take(1)),
@@ -65188,6 +65197,10 @@ const _ToolbarSaveFeature = class _ToolbarSaveFeature extends TypoFeature {
     ).subscribe(async ({ commands, lobby, state, duration }) => {
       var _a2;
       const durationMs = parseFloat(duration ?? "") * 1e3;
+      if (duration === null) {
+        toast.close();
+        return;
+      }
       if (Number.isNaN(durationMs)) {
         toast.resolve("Invalid duration entered");
         return;
@@ -65222,7 +65235,7 @@ const _ToolbarSaveFeature = class _ToolbarSaveFeature extends TypoFeature {
         }
       );
       const gif = await worker.run("renderGif", commands, durationMs);
-      toast.resolve(`${name} rendered`, 3e3);
+      toast.resolve(`${name} saved as GIF`, 3e3);
       downloadBlob(gif, `${name}.gif`);
     });
   }

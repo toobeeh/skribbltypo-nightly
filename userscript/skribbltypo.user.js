@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 289d3e5
+// @version      27.1.3 beta-usc dc39757
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 289d3e5", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc dc39757", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -28015,10 +28015,18 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     }
     async saveAsGif(image) {
+      const toast = await this._toastService.showStickyToast("Saving as GIF");
       const durationPrompt = await this._toastService.showPromptToast("Enter GIF duration", "Enter the preferred duration in seconds");
-      const durationMs = await durationPrompt.result;
-      if (durationMs === null) return;
-      const toast = await this._toastService.showStickyToast("Rendering image GIF");
+      const duration = await durationPrompt.result;
+      const durationMs = parseFloat(duration ?? "") * 1e3;
+      if (duration === null) {
+        toast.close();
+        return;
+      }
+      if (Number.isNaN(durationMs)) {
+        toast.resolve("Invalid duration entered");
+        return;
+      }
       try {
         const commands = await getCloudCommands(image.commandsUrl);
         const progressBar = /* @__PURE__ */ __name((progress) => {
@@ -28038,9 +28046,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
             }, "frameRendered")
           }
         );
-        const gif = await worker.run("renderGif", commands, parseFloat(durationMs ?? "") * 1e3);
-        downloadBlob(gif, `${image.name}-by-${image.author}.gif`.replaceAll(" ", "_"));
-        toast.resolve("GIF rendering complete");
+        const name = `${image.name}-by-${image.author}`;
+        const gif = await worker.run("renderGif", commands, durationMs);
+        downloadBlob(gif, `${name}.gif`.replaceAll(" ", "_"));
+        toast.resolve(`${name} saved as GIF`);
       } catch (e) {
         this._logger.error("Failed to download image", e);
         toast.resolve("An error occurred");
@@ -68782,7 +68791,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     }
     async saveAsGif() {
       this._logger.debug("Saving as gif");
-      const toast = await this._toastService.showStickyToast("Generating GIF");
+      const toast = await this._toastService.showStickyToast("Saving as GIF");
       combineLatest$1({
         commands: this._drawingService.commands$,
         lobby: this._lobbyService.lobby$.pipe(take(1)),
@@ -68795,6 +68804,10 @@ ${awardDto == null ? void 0 : awardDto.description}`;
       ).subscribe(async ({ commands, lobby, state, duration }) => {
         var _a2;
         const durationMs = parseFloat(duration ?? "") * 1e3;
+        if (duration === null) {
+          toast.close();
+          return;
+        }
         if (Number.isNaN(durationMs)) {
           toast.resolve("Invalid duration entered");
           return;
@@ -68829,7 +68842,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
           }
         );
         const gif = await worker.run("renderGif", commands, durationMs);
-        toast.resolve(`${name} rendered`, 3e3);
+        toast.resolve(`${name} saved as GIF`, 3e3);
         downloadBlob(gif, `${name}.gif`);
       });
     }
