@@ -54774,7 +54774,6 @@ function create_if_block_1$3(ctx) {
       t1 = space();
       p = element$1("p");
       p.innerHTML = `Hotkeys are key combinations to quickly access feature functions. You can disable hotkeys that you don&#39;t need.<br/>
-      Hotkeys with
       To change a hotkey, click in the input field and press the desired key combination. To remove a key from the combination, press it again.<br/>
       Empty combinations will be disabled automatically.`;
       t5 = space();

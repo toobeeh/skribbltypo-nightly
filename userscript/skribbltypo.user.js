@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 4822e6b
+// @version      27.1.3 beta-usc 1eea53b
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 4822e6b", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 1eea53b", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -58381,7 +58381,6 @@ ${content2}</tr>
         t1 = space();
         p = element("p");
         p.innerHTML = `Hotkeys are key combinations to quickly access feature functions. You can disable hotkeys that you don&#39;t need.<br/>
-      Hotkeys with
       To change a hotkey, click in the input field and press the desired key combination. To remove a key from the combination, press it again.<br/>
       Empty combinations will be disabled automatically.`;
         t5 = space();
