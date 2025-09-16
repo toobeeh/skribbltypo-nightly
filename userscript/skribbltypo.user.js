@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 4878c37
+// @version      27.1.3 beta-usc 74a421c
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 4878c37", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 74a421c", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -31245,10 +31245,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     }, "click_handler_1");
     const click_handler_2 = /* @__PURE__ */ __name(async () => {
       const id2 = $loadedTheme.theme.meta.id;
-      await feature.unloadThemeFromEditor();
-      await feature.removeSavedTheme(id2);
+      await feature.discardLoadedEditorTheme(id2);
     }, "click_handler_2");
-    const click_handler_3 = /* @__PURE__ */ __name(() => feature.unloadThemeFromEditor(), "click_handler_3");
+    const click_handler_3 = /* @__PURE__ */ __name(() => feature.discardLoadedEditorTheme(), "click_handler_3");
     const click_handler_4 = /* @__PURE__ */ __name(() => {
       feature.saveLoadedEditorTheme();
       feature.activeThemeTabStore.set("list");
@@ -32731,9 +32730,30 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     updateLoadedEditorTheme(theme) {
       this._themesService.updateLoadedEditorTheme(theme);
     }
-    async unloadThemeFromEditor() {
+    async discardLoadedEditorTheme(removeThemeId) {
+      if (removeThemeId !== void 0) {
+        if (!await (await this._toastService.showConfirmToast("Do you want to discard & remove the theme?", void 0, 1e4, { confirm: "Remove theme", cancel: "Keep editing" })).result) {
+          this._logger.info("User canceled theme removal");
+          return;
+        }
+      } else {
+        if (!await (await this._toastService.showConfirmToast("Do you want to discard the changes?", void 0, 1e4, { confirm: "Discard changes", cancel: "Keep editing" })).result) {
+          this._logger.info("User canceled theme discarding");
+          return;
+        }
+      }
       await this._themesService.unloadThemeFromEditor();
-      await this._toastService.showToast("Theme unloaded from editor");
+      if (removeThemeId !== void 0) {
+        const toast = await this._toastService.showLoadingToast("Removing theme");
+        try {
+          const theme = await this._themesService.removeSavedTheme(removeThemeId);
+          toast.resolve(`Theme ${theme.theme.meta.name} removed`);
+        } catch {
+          toast.reject("Failed to remove theme");
+        }
+      } else {
+        await this._toastService.showToast("Theme unloaded from editor");
+      }
     }
     async createLocalTheme() {
       const toast = await this._toastService.showLoadingToast("Creating new theme");
