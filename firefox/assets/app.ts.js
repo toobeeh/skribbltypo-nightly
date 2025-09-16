@@ -17763,7 +17763,7 @@ function create_if_block$C(ctx) {
   return {
     c() {
       div = element$1("div");
-      attr(div, "class", "typo-avatar-layer special svelte-1orh9gx");
+      attr(div, "class", "typo-avatar-layer special svelte-ma71bf");
       attr(div, "style", div_style_value = wrapOffsetAsStyle("container", calculateAtlasOffsets(
         "container",
         /*avatar*/
@@ -17817,25 +17817,25 @@ function create_fragment$1r(ctx) {
       div2 = element$1("div");
       t2 = space();
       if (if_block) if_block.c();
-      attr(div0, "class", "typo-avatar-layer color svelte-1orh9gx");
+      attr(div0, "class", "typo-avatar-layer color svelte-ma71bf");
       attr(div0, "style", div0_style_value = wrapOffsetAsStyle("avatar", calculateAtlasOffsets(
         "avatar",
         /*avatar*/
         ctx[0][0]
       ), "var(--typo-avatar-container-size)"));
-      attr(div1, "class", "typo-avatar-layer mouth svelte-1orh9gx");
+      attr(div1, "class", "typo-avatar-layer mouth svelte-ma71bf");
       attr(div1, "style", div1_style_value = wrapOffsetAsStyle("avatar", calculateAtlasOffsets(
         "avatar",
         /*avatar*/
         ctx[0][2]
       ), "var(--typo-avatar-container-size)"));
-      attr(div2, "class", "typo-avatar-layer eyes svelte-1orh9gx");
+      attr(div2, "class", "typo-avatar-layer eyes svelte-ma71bf");
       attr(div2, "style", div2_style_value = wrapOffsetAsStyle("avatar", calculateAtlasOffsets(
         "avatar",
         /*avatar*/
         ctx[0][1]
       ), "var(--typo-avatar-container-size)"));
-      attr(div3, "class", "typo-avatar-container svelte-1orh9gx");
+      attr(div3, "class", "typo-avatar-container svelte-ma71bf");
       set_style(
         div3,
         "--typo-avatar-container-size",
