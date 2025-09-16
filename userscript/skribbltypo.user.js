@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 1eea53b
+// @version      27.1.3 beta-usc 42b8113
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 1eea53b", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 42b8113", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -40392,6 +40392,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
         pairwise(),
         withLatestFrom(this._recordedClaims$, this._enableDropSummary.changes$)
       ).subscribe(([[prev, current], claims, summaryEnabled]) => {
+        var _a2;
         if (!summaryEnabled) return;
         if (prev !== void 0 && current === void 0) {
           const getEmoji = /* @__PURE__ */ __name((claim) => {
@@ -40400,8 +40401,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
             if (claim.leagueMode) return "🧿";
             return "💧";
           }, "getEmoji");
-          const currentClaims = claims.filter((c) => c.dropId === (prev == null ? void 0 : prev.drop.dropId));
-          const title = "Drop Summary";
+          const previousDrop = prev;
+          const currentClaims = claims.filter((c) => c.dropId === previousDrop.drop.dropId);
+          const dropName = previousDrop.drop.eventDropId !== void 0 ? (_a2 = apiData.drops.find((d) => d.id === previousDrop.drop.eventDropId)) == null ? void 0 : _a2.name : void 0;
+          const title = "Drop Summary" + (dropName !== void 0 ? `: (${dropName})` : "");
           const content2 = "\n" + (currentClaims.length === 0 ? "The drop timed out :(" : currentClaims.map(
             (c) => `${getEmoji(c)} ${c.username}: ${c.catchTime}ms (${Math.round(c.leagueWeight * 100)}%)`
           ).join("\n"));

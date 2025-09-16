@@ -36785,6 +36785,7 @@ const _DropsFeature = class _DropsFeature extends TypoFeature {
       pairwise(),
       withLatestFrom(this._recordedClaims$, this._enableDropSummary.changes$)
     ).subscribe(([[prev, current], claims, summaryEnabled]) => {
+      var _a2;
       if (!summaryEnabled) return;
       if (prev !== void 0 && current === void 0) {
         const getEmoji = /* @__PURE__ */ __name((claim) => {
@@ -36793,8 +36794,10 @@ const _DropsFeature = class _DropsFeature extends TypoFeature {
           if (claim.leagueMode) return "🧿";
           return "💧";
         }, "getEmoji");
-        const currentClaims = claims.filter((c) => c.dropId === (prev == null ? void 0 : prev.drop.dropId));
-        const title = "Drop Summary";
+        const previousDrop = prev;
+        const currentClaims = claims.filter((c) => c.dropId === previousDrop.drop.dropId);
+        const dropName = previousDrop.drop.eventDropId !== void 0 ? (_a2 = apiData.drops.find((d) => d.id === previousDrop.drop.eventDropId)) == null ? void 0 : _a2.name : void 0;
+        const title = "Drop Summary" + (dropName !== void 0 ? `: (${dropName})` : "");
         const content = "\n" + (currentClaims.length === 0 ? "The drop timed out :(" : currentClaims.map(
           (c) => `${getEmoji(c)} ${c.username}: ${c.catchTime}ms (${Math.round(c.leagueWeight * 100)}%)`
         ).join("\n"));
