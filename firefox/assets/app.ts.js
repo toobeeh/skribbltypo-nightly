@@ -36297,7 +36297,9 @@ function create_if_block$r(ctx) {
         /*getDropUrl*/
         ctx[3](
           /*$currentDrop*/
-          ctx[1].drop.eventDropId
+          ctx[1].drop.eventDropId,
+          /*$currentDrop*/
+          ctx[1].leagueMode
         )
       );
     },
@@ -36327,7 +36329,9 @@ function create_if_block$r(ctx) {
           /*getDropUrl*/
           ctx2[3](
             /*$currentDrop*/
-            ctx2[1].drop.eventDropId
+            ctx2[1].drop.eventDropId,
+            /*$currentDrop*/
+            ctx2[1].leagueMode
           )
         );
       }
@@ -36393,9 +36397,9 @@ function instance$_($$self, $$props, $$invalidate) {
   let { drops } = $$props;
   const currentDrop = feature.currentDropStore;
   component_subscribe($$self, currentDrop, (value) => $$invalidate(1, $currentDrop = value));
-  function getDropUrl(id2) {
+  function getDropUrl(id2, leagueMode) {
     const drop = drops.find((drop2) => drop2.id === id2);
-    return drop ? `url(${drop.url})` : "var(--file-img-drop-gif)";
+    return leagueMode ? "var(--file-img-drop-pink-gif)" : drop ? `url(${drop.url})` : "var(--file-img-drop-gif)";
   }
   __name(getDropUrl, "getDropUrl");
   const pointerdown_handler = /* @__PURE__ */ __name(async () => {
@@ -36702,6 +36706,7 @@ const _DropsFeature = class _DropsFeature extends TypoFeature {
     __publicField(this, "_chatService");
     __publicField(this, "_toastService");
     __publicField(this, "_lobbyLeftEventListener");
+    __publicField(this, "_lobbyService");
     __publicField(this, "name", "Drops");
     __publicField(this, "description", "Show drops to collect extra bubbles when you're playing");
     __publicField(this, "tags", [
@@ -36762,10 +36767,16 @@ const _DropsFeature = class _DropsFeature extends TypoFeature {
           )
         )
       ),
-      tap((drop) => this._logger.info("Setting drop", drop))
+      tap((drop) => this._logger.info("Setting drop", drop)),
+      withLatestFrom(this._lobbyService.lobby$)
     ).subscribe(
-      (drop) => this._currentDrop$.next(
-        drop === void 0 ? void 0 : { drop, timestamp: Date.now(), ownClaimed: false }
+      ([drop, lobby]) => this._currentDrop$.next(
+        drop === void 0 ? void 0 : {
+          drop,
+          timestamp: Date.now(),
+          ownClaimed: false,
+          leagueMode: ((lobby == null ? void 0 : lobby.players.length) === 1 || (lobby == null ? void 0 : lobby.players.every((player) => player.score === 0))) ?? false
+        }
       )
     );
     this._dropSummarySubscription = this._currentDrop$.pipe(
@@ -36813,7 +36824,7 @@ const _DropsFeature = class _DropsFeature extends TypoFeature {
    */
   async claimDrop(drop, timestamp) {
     this._logger.info("Claiming drop after delay", Date.now() - timestamp);
-    this._currentDrop$.next({ drop, ownClaimed: true, timestamp });
+    this._currentDrop$.next({ drop, ownClaimed: true, timestamp, leagueMode: false });
     try {
       const result = await this._lobbyConnectionService.connection.hub.claimDrop({
         dropToken: drop.dropToken
@@ -36865,6 +36876,9 @@ __decorateClass$D([
 __decorateClass$D([
   inject(LobbyLeftEventListener)
 ], DropsFeature.prototype, "_lobbyLeftEventListener");
+__decorateClass$D([
+  inject(LobbyService)
+], DropsFeature.prototype, "_lobbyService");
 const BLANK = "_";
 const FILLER = "‎";
 const DIACRITICS = {
