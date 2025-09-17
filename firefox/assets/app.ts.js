@@ -32912,13 +32912,17 @@ const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeatur
   constructor() {
     super(...arguments);
     __publicField(this, "_toolsService");
+    __publicField(this, "_drawingService");
     __publicField(this, "name", "Modified Pen Pressure");
     __publicField(this, "description", "Use the full size range and custom sensitivity for pen pressure");
     __publicField(this, "tags", [
       FeatureTag.DRAWING
     ]);
     __publicField(this, "featureId", 37);
+    __publicField(this, "_currentPointerType", new Subject$1());
     __publicField(this, "_performanceEnabledSubscription");
+    __publicField(this, "_currentPointerTypeSubscription");
+    __publicField(this, "_pointerOverListener", this.handlePointerOver.bind(this));
     __publicField(this, "_performanceEnabledSetting", this.useSetting(
       new BooleanExtensionSetting("pressure_performance", true, this).withName("Performance Mode").withDescription("Better pressure support for less performant devices, but can't be used in combination with the brush laboratory.")
     ));
@@ -32932,6 +32936,9 @@ const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeatur
       new BooleanExtensionSetting("pressure_disable_performance_brushlab", false, this).withName("Disable Performance in Lab").withDescription("Automatically disables the performance mode (if active) when using the Brush Lab. This might cause lags on less performant devices.")
     ));
     __publicField(this, "_pressureMod");
+  }
+  handlePointerOver(e) {
+    this._currentPointerType.next(e.pointerType);
   }
   get featureInfoComponent() {
     return { componentType: Drawing_pressure_info, props: { feature: this } };
@@ -32959,9 +32966,18 @@ const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeatur
         document.documentElement.dataset["typo_pressure_performance"] = "";
       }
     });
+    document.addEventListener("pointerover", this._pointerOverListener);
+    this._currentPointerTypeSubscription = this._currentPointerType.pipe(
+      distinctUntilChanged()
+    ).subscribe((type) => {
+      if (type === "pen") {
+        this._logger.info("Pen detected, resetting size to 4");
+        this._drawingService.setSize(4);
+      }
+    });
   }
   /**
-   * An eval function which is used by tha game patch to calculate the typo pressure
+   * An eval function which is used by the game patch to calculate the typo pressure
    * Probably not the most performant option (ironic), but good enough & prevents duplicating the function.
    * @param s
    * @param b
@@ -32971,7 +32987,7 @@ const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeatur
     return `(pressure) => (${calculatePressurePoint.toString()})(pressure, ${s}, ${b})`;
   }
   async onDestroy() {
-    var _a2;
+    var _a2, _b2;
     if (this._pressureMod) {
       this._toolsService.removeMod(this._pressureMod);
       this._pressureMod = void 0;
@@ -32979,6 +32995,8 @@ const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeatur
     document.documentElement.dataset["typo_pressure_performance"] = "";
     (_a2 = this._performanceEnabledSubscription) == null ? void 0 : _a2.unsubscribe();
     this._performanceEnabledSubscription = void 0;
+    document.removeEventListener("pointerover", this._pointerOverListener);
+    (_b2 = this._currentPointerTypeSubscription) == null ? void 0 : _b2.unsubscribe();
   }
   get balanceSettingStore() {
     return this._pressureParamBalanceSetting.store;
@@ -32992,6 +33010,9 @@ let DrawingPressureFeature = _DrawingPressureFeature;
 __decorateClass$G([
   inject(ToolsService)
 ], DrawingPressureFeature.prototype, "_toolsService");
+__decorateClass$G([
+  inject(DrawingService)
+], DrawingPressureFeature.prototype, "_drawingService");
 const _ReceiverMethodSubscription = class _ReceiverMethodSubscription {
   constructor(connection, receiverMethod) {
     __publicField(this, "dispose", /* @__PURE__ */ __name(() => {
