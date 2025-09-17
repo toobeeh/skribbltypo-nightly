@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 74a421c
+// @version      27.1.3 beta-usc 087398b
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 74a421c", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 087398b", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -21704,15 +21704,20 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           () => this._chatService.chatMessageAdded$.pipe(
             withLatestFrom(this._clearChatQuotaSetting.changes$),
             scan((acc, [message, limit]) => {
-              if (limit <= 0 || acc.length < limit) return [...acc, message.element];
-              acc[0].remove();
-              return [...acc.slice(1), message.element];
+              if (limit <= 0 || acc.length < limit) {
+                acc.push(message.element);
+              } else {
+                acc[0].remove();
+                acc.splice(1);
+                acc.push(message.element);
+              }
+              return acc;
             }, []),
-            /* lsiten for clear and modify reduced array in-place */
+            /* listen for clear and modify reduced array in-place */
             switchMap((elements2) => this._chatCleared$.pipe(
               tap(() => {
                 elements2.forEach((element2) => element2.remove());
-                elements2.slice(0, elements2.length);
+                elements2.splice(0, elements2.length);
               })
             ))
           )

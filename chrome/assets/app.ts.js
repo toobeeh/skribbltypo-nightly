@@ -18097,15 +18097,20 @@ const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
         () => this._chatService.chatMessageAdded$.pipe(
           withLatestFrom(this._clearChatQuotaSetting.changes$),
           scan((acc, [message, limit]) => {
-            if (limit <= 0 || acc.length < limit) return [...acc, message.element];
-            acc[0].remove();
-            return [...acc.slice(1), message.element];
+            if (limit <= 0 || acc.length < limit) {
+              acc.push(message.element);
+            } else {
+              acc[0].remove();
+              acc.splice(1);
+              acc.push(message.element);
+            }
+            return acc;
           }, []),
-          /* lsiten for clear and modify reduced array in-place */
+          /* listen for clear and modify reduced array in-place */
           switchMap((elements2) => this._chatCleared$.pipe(
             tap(() => {
               elements2.forEach((element2) => element2.remove());
-              elements2.slice(0, elements2.length);
+              elements2.splice(0, elements2.length);
             })
           ))
         )
