@@ -17680,6 +17680,7 @@ const _SkribblChatPlayer = class _SkribblChatPlayer {
     this._elementId = "typo-chat-player-" + _SkribblChatPlayer.idCounter++;
     this._playerStyle = document.createElement("style");
     this._container.appendChild(this._playerStyle);
+    this.container.classList.add(this._elementId);
   }
   destroy() {
     this._container.classList.remove(this._elementId);
