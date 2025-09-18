@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 40e21a4
+// @version      27.1.3 beta-usc 9ea394c
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -10,7 +10,7 @@
 // @run-at       document-start
 // ==/UserScript==
 
-(e=>{if(typeof GM_addStyle=="function"){GM_addStyle(e);return}const t=document.createElement("style");t.textContent=e,document.head.append(t)})(' div.svelte-kfudwd.svelte-kfudwd{display:flex;justify-content:flex-start;align-items:center;gap:.5em;cursor:pointer;padding:.2em}div.disabled.svelte-kfudwd.svelte-kfudwd{opacity:.5;pointer-events:none}div.svelte-kfudwd img.svelte-kfudwd{height:1.5em;aspect-ratio:1;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3));-webkit-user-select:none;user-select:none}div.svelte-kfudwd span.svelte-kfudwd{-webkit-user-select:none;user-select:none;font-weight:600}b.svelte-rvotkt{font-size:1.1rem}.typo-numeric-setting.svelte-i0zktq.svelte-i0zktq{display:grid;align-items:center;grid-template-columns:auto auto;grid-template-rows:auto auto auto}.typo-numeric-setting.svelte-i0zktq b.svelte-i0zktq{font-size:1.1rem}.typo-numeric-setting.svelte-i0zktq input.svelte-i0zktq:invalid{border-color:unset}.typo-numeric-setting.svelte-i0zktq input[type=number].svelte-i0zktq{width:10ex}.typo-numeric-setting.svelte-i0zktq input[type=range].svelte-i0zktq{grid-column:span 2}.typo-numeric-setting.svelte-zlhfg4.svelte-zlhfg4{display:flex;flex-direction:column;justify-items:stretch;gap:.5rem}.typo-numeric-setting.svelte-zlhfg4 b.svelte-zlhfg4{font-size:1.1rem}.typo-text-setting.svelte-xq58hp.svelte-xq58hp{display:grid;align-items:center;grid-template-columns:auto auto;grid-template-rows:auto auto}.typo-text-setting.svelte-xq58hp b.svelte-xq58hp{font-size:1.1rem}.typo-text-setting.svelte-xq58hp input.svelte-xq58hp:invalid{border-color:unset}.typo-text-setting.svelte-xq58hp input.svelte-xq58hp{grid-column:span 2}.color-picker.svelte-1x2m4l5.svelte-1x2m4l5.svelte-1x2m4l5{color:var(--COLOR_PANEL_TEXT);-webkit-user-select:none;user-select:none;display:flex;flex-direction:column;gap:.5rem;width:100%}.color-picker.svelte-1x2m4l5 .picker-header.svelte-1x2m4l5.svelte-1x2m4l5{display:flex;width:100%;flex-direction:row;gap:1rem;align-items:center;justify-content:center}.color-picker.svelte-1x2m4l5 .picker-header.svelte-1x2m4l5>img.svelte-1x2m4l5{-webkit-user-select:none;user-select:none;height:1.2rem;width:1.2rem;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.color-picker.svelte-1x2m4l5 .picker-header h3.svelte-1x2m4l5.svelte-1x2m4l5{margin-bottom:0}.color-picker.svelte-1x2m4l5 .color-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;aspect-ratio:1;position:relative;cursor:crosshair;border-radius:3px}.color-picker.svelte-1x2m4l5 .color-rect .color-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}.color-picker.svelte-1x2m4l5 .color-rect .color-thumb.listen.svelte-1x2m4l5.svelte-1x2m4l5{display:none}.color-picker.svelte-1x2m4l5 .hue-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;height:1rem;position:relative;cursor:pointer;border-radius:3px;background:linear-gradient(to right,#ff0400,#ffc300 12.5%,#fff200,#dcff00 18.75%,#7dff00,#1dff00 31.25%,#00ff13,#00ff42 37.5%,#00fdff,#003eff 62.5%,#000fff,#2100ff 68.75%,#8000ff,#e000ff 81.25%,#f0e,#ff00bf 87.5%,red)}.color-picker.svelte-1x2m4l5 .hue-rect .hue-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}.color-picker.svelte-1x2m4l5 .alpha-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;height:1rem;position:relative;cursor:pointer;border-radius:3px}.color-picker.svelte-1x2m4l5 .alpha-rect .alpha-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}@keyframes svelte-1bdf7g-slideIn{0%{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:100}}@keyframes svelte-1bdf7g-slideOut{0%{transform:scaleY(1);opacity:100}to{transform:scaleY(0);opacity:0}}.typo-color-picker-button.svelte-1bdf7g.svelte-1bdf7g{aspect-ratio:1;position:relative}.typo-color-picker-button.svelte-1bdf7g .color-picker-button-content.svelte-1bdf7g{position:absolute;top:0;right:0;bottom:0;left:0;cursor:pointer}.typo-color-picker-button.svelte-1bdf7g .color-picker-popout.svelte-1bdf7g{position:absolute;z-index:10;width:20em;border-radius:10px;padding:1rem;background-color:var(--COLOR_PANEL_HI);filter:drop-shadow(0 5px 10px rgba(0,0,0,.3));animation:svelte-1bdf7g-slideIn .08s ease-out}.typo-color-picker-button.svelte-1bdf7g .color-picker-popout.closing.svelte-1bdf7g{animation:svelte-1bdf7g-slideOut .08s ease-out forwards}.typo-text-setting.svelte-1pjx4sn.svelte-1pjx4sn{gap:.5rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start}.typo-text-setting.svelte-1pjx4sn b.svelte-1pjx4sn{font-size:1.1rem}.typo-chat-controls{grid-area:chat;display:flex;justify-items:center;justify-content:end;gap:.5rem;margin-top:.5rem;margin-right:.5rem;margin-left:auto;height:min-content;z-index:1;-webkit-user-select:none;user-select:none}.typo-controls.svelte-1c97t9h.svelte-1c97t9h{position:fixed;display:flex;align-items:center;gap:.5em;z-index:100}.typo-controls.topleft.svelte-1c97t9h.svelte-1c97t9h{left:.5em;top:.5em}.typo-controls.topright.svelte-1c97t9h.svelte-1c97t9h{right:.5em;top:.5em}.typo-controls.bottomright.svelte-1c97t9h.svelte-1c97t9h{right:.5em;bottom:.5em}.typo-controls.bottomleft.svelte-1c97t9h.svelte-1c97t9h{left:.5em;bottom:.5em}.typo-controls.vertical.svelte-1c97t9h.svelte-1c97t9h{flex-direction:column}.typo-controls.horizontal.svelte-1c97t9h.svelte-1c97t9h{flex-direction:row}@media (max-aspect-ratio: 1){.typo-controls.svelte-1c97t9h:not(.expanded)>:not(.typo-controls-mobile-expand){display:none}}.typo-controls.svelte-1c97t9h .typo-controls-mobile-expand.svelte-1c97t9h{display:none}@media (max-aspect-ratio: 1){.typo-controls.svelte-1c97t9h .typo-controls-mobile-expand.svelte-1c97t9h{display:grid;place-content:center;height:2rem;aspect-ratio:1;border-radius:100%;background-color:var(--COLOR_PANEL_HI);background-size:1.2rem;background-position:center;background-repeat:no-repeat;cursor:pointer;-webkit-user-select:none;user-select:none;opacity:.9}}.typo-customizer-actions.svelte-2foe7d{position:absolute;display:flex;flex-direction:column;gap:4px;top:40px;right:4px}@media (max-aspect-ratio: 1){.typo-customizer-actions.svelte-2foe7d{gap:1.25vh;top:7.5vh;right:1.25vh}}.typo-toast-container{position:fixed;left:0;right:0;top:0;height:0;overflow:visible;z-index:10000;display:flex;flex-direction:column;align-items:center;gap:1rem;padding-top:1rem}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(2)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(1){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(3)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(2){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(4)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(3){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(5)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(4){display:none}#home .panel.typo-panel:not(:has(.typo-panel-tab:not(:empty))){display:none}#home .panel.panel-right{margin-left:20px}@media (max-aspect-ratio: 1){#home .panel.panel-right{margin-left:0;order:2}}#home .panel.panel-left{margin-right:20px}@media (max-aspect-ratio: 1){#home .panel.panel-left{margin-right:0;order:3}}#home .panel.typo-panel{flex:0 0 400px;max-height:calc(400px - 2em);margin-top:2em;display:flex;flex-direction:column;align-items:normal;justify-content:flex-start;color:var(--COLOR_PANEL_TEXT)}#home .panel.typo-panel .panel-header.svelte-14yq9xv.svelte-14yq9xv{display:flex;justify-content:space-between;font-weight:600}#home .panel.typo-panel .panel-header.svelte-14yq9xv h2.svelte-14yq9xv{cursor:pointer}#home .panel.typo-panel .panel-header.svelte-14yq9xv h2.inactive.svelte-14yq9xv{opacity:.5}#home .panel.typo-panel .typo-panel-tab.svelte-14yq9xv.svelte-14yq9xv{margin-top:1rem;overflow:auto;flex-grow:1}#home .panel.typo-panel>div.svelte-14yq9xv.svelte-14yq9xv:empty{display:none}.typo-toolbar{grid-area:4/3/4/3;border-radius:3px;background-color:var(--COLOR_CHAT_BG_BASE);display:flex;align-items:center;justify-content:space-evenly}@media (max-aspect-ratio: 1){.typo-toolbar{display:none}}.typo-toolbar:empty{display:none}#game-canvas #game-rate.typo-icons :is(.like,.dislike){background-repeat:no-repeat;background-size:90%;background-position:center}#game-canvas #game-rate.typo-icons .like,#game-wrapper:has(#game-rate.typo-icons) .player-bubble .icon[style*=thumbsup]{background-image:var(--file-img-thumbsup-gif)!important}#game-canvas #game-rate.typo-icons .dislike,#game-wrapper:has(#game-rate.typo-icons) .player-bubble .icon[style*=thumbsdown]{background-image:var(--file-img-thumbsdown-gif)!important}@keyframes svelte-c1csua-bounceload{0%{transform:scale(.5)}to{transform:translate(-40%) scale(1.5)}}div.svelte-c1csua.svelte-c1csua{display:flex;justify-content:center;align-items:center;gap:.5em;padding:.8em}div.svelte-c1csua .icon.svelte-c1csua{display:inline-block;height:1.5em;aspect-ratio:1;background-image:url(/img/size.gif);background-size:1em;background-repeat:no-repeat;background-position:center;transform:scale(1.5);filter:drop-shadow(3px 3px 0 rgba(0,0,0,.3));animation:svelte-c1csua-bounceload .5s infinite;animation-direction:alternate;animation-timing-function:ease-in-out;transform-origin:center;margin-right:.5em;margin-left:.5em}div.svelte-c1csua span.svelte-c1csua{color:var(--COLOR_PANEL_TEXT);font-weight:700}.typo-icon-button.svelte-b0w31n.svelte-b0w31n{-webkit-user-select:none;user-select:none;display:block;cursor:pointer;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-icon-button.disabled.svelte-b0w31n.svelte-b0w31n{pointer-events:none;opacity:.5}.typo-icon-button.svelte-b0w31n img.svelte-b0w31n{aspect-ratio:1;transform:translateY(0);transition:transform 65ms ease-in-out}.typo-icon-button.svelte-b0w31n:hover img.effect.svelte-b0w31n{transform:translateY(-3px)}.typo-icon-button.greyscale.svelte-b0w31n img.svelte-b0w31n{filter:grayscale(.7);opacity:.7}.typo-icon-button.greyscale.svelte-b0w31n img.svelte-b0w31n:hover{filter:grayscale(0);opacity:1}@keyframes svelte-12e6hb5-slideIn{0%{transform:translateY(-50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-12e6hb5-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(-50vh);opacity:0}}.typo-toast.svelte-12e6hb5.svelte-12e6hb5{padding:1rem 3rem 1rem 1rem;background-color:var(--COLOR_PANEL_HI);border-radius:5px;color:var(--COLOR_PANEL_TEXT);filter:drop-shadow(0 5px 10px rgba(0,0,0,.3));min-width:clamp(20rem,20rem,80%);position:relative;animation:svelte-12e6hb5-slideIn .15s ease-out;display:flex;flex-direction:column;align-items:flex-start;white-space-collapse:preserve;gap:.5rem}.typo-toast.closing.svelte-12e6hb5.svelte-12e6hb5{animation:svelte-12e6hb5-slideOut .15s ease-out forwards}.typo-toast.loading.svelte-12e6hb5.svelte-12e6hb5{cursor:progress}.typo-toast.svelte-12e6hb5 form.svelte-12e6hb5{display:flex;width:100%}.typo-toast.svelte-12e6hb5 form input[type=submit].svelte-12e6hb5{display:none}.typo-toast.svelte-12e6hb5 .typo-toast-confirm.svelte-12e6hb5{width:100%;display:flex;flex-direction:row;gap:1rem}.typo-toast.svelte-12e6hb5 .typo-toast-confirm span.svelte-12e6hb5{display:flex;flex-direction:row;gap:.5rem;cursor:pointer;align-items:center}.typo-toast.svelte-12e6hb5 .close-toast.svelte-12e6hb5{position:absolute;right:.5rem;top:0;font-weight:900;opacity:.7;cursor:pointer;font-size:2rem}.typo-chat-message.svelte-1q3466u.svelte-1q3466u{display:flex;flex-direction:row;align-items:center}.typo-chat-message.svelte-1q3466u b.info.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_DRAWING)}.typo-chat-message.svelte-1q3466u b.error.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_LEAVE)}.typo-chat-message.svelte-1q3466u b.success.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_GUESSED)}.typo-chat-message.svelte-1q3466u b.normal.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_BASE)}.typo-chat-message.svelte-1q3466u span.svelte-1q3466u{white-space:preserve}.typo-avatar-container.svelte-ma71bf.svelte-ma71bf{width:var(--typo-avatar-container-size);aspect-ratio:1;position:relative;z-index:0}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.svelte-ma71bf{position:absolute}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.svelte-ma71bf:is(.color,.mouth,.eyes,.special){background-repeat:no-repeat}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.svelte-ma71bf:is(.color,.mouth,.eyes){top:0;right:0;bottom:0;left:0}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.color.svelte-ma71bf{z-index:0;background-image:url(https://skribbl.io/img/avatar/color_atlas.gif)}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.mouth.svelte-ma71bf{z-index:1;background-image:url(https://skribbl.io/img/avatar/mouth_atlas.gif)}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.eyes.svelte-ma71bf{z-index:2;background-image:url(https://skribbl.io/img/avatar/eyes_atlas.gif)}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.special.svelte-ma71bf{z-index:3;background-image:url(https://skribbl.io/img/avatar/special_atlas.gif);inset:calc(-1 * var(--typo-avatar-container-size) * 32 / 48 / 2)}@keyframes svelte-1lmlzvv-slideIn{0%{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:100}}@keyframes svelte-1lmlzvv-slideOut{0%{transform:scaleY(1);opacity:100}to{transform:scaleY(0);opacity:0}}.typo-area-flyout.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv{position:relative;color:var(--COLOR_PANEL_TEXT);z-index:1;border-radius:10px;padding:1em;animation:svelte-1lmlzvv-slideIn .08s ease-out;display:flex;gap:1rem;flex-direction:column;align-items:center}.typo-area-flyout.align-top.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv{align-self:start;transform-origin:top}.typo-area-flyout.align-bottom.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv{align-self:end;transform-origin:bottom}.typo-area-flyout.closing.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv{animation:svelte-1lmlzvv-slideOut .08s ease-out forwards}.typo-area-flyout.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv:after{animation:svelte-1lmlzvv-slideIn .08s ease-out;background:var(--COLOR_PANEL_BG);content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:10px;z-index:-1;transform:none!important;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}.typo-area-flyout.closing.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv:after{animation:svelte-1lmlzvv-slideOut .08s ease-out forwards}.typo-area-flyout.svelte-1lmlzvv .close-explicit.svelte-1lmlzvv.svelte-1lmlzvv{position:absolute;top:0;right:.5rem;font-size:1.5rem;font-weight:900;cursor:pointer;z-index:1}.typo-area-flyout.svelte-1lmlzvv>h3.svelte-1lmlzvv.svelte-1lmlzvv{display:flex;gap:1em;align-items:center}.typo-area-flyout.svelte-1lmlzvv>h3.svelte-1lmlzvv>img.svelte-1lmlzvv{-webkit-user-select:none;user-select:none;height:1.8em;width:1.8em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-area-flyout.svelte-1lmlzvv>.content.svelte-1lmlzvv.svelte-1lmlzvv{width:100%;overflow-y:auto}.typo-area-flyout.svelte-1lmlzvv>.content.padding.svelte-1lmlzvv.svelte-1lmlzvv{padding:0 1em}.typo-command-preview.svelte-19nsl5m.svelte-19nsl5m{display:flex;flex-direction:column;gap:1rem}.typo-command-preview.svelte-19nsl5m.svelte-19nsl5m:not(:has(.typo-command-result)){gap:.2rem}.typo-command-preview.svelte-19nsl5m .typo-command-result.svelte-19nsl5m{display:flex;flex-direction:column;gap:.2rem}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis.svelte-19nsl5m{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-arg.svelte-19nsl5m{background-color:var(--COLOR_PANEL_BG);padding:.2rem;border-radius:3px;opacity:.5}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-arg.current.svelte-19nsl5m{opacity:1}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-id.svelte-19nsl5m{padding:.2rem;border-radius:3px;font-weight:bolder}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-id.current.svelte-19nsl5m{background-color:var(--COLOR_PANEL_BG)}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-description .typo-command-result-param-type.svelte-19nsl5m{display:block;opacity:.7}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-state.svelte-19nsl5m{display:flex;gap:.5rem;align-items:center;margin-top:.3rem;opacity:.7}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-state img.svelte-19nsl5m{height:1.3rem}.chat-form:has(#typo-command-input) input:not(#typo-command-input){display:none}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container{display:inline-flex;flex-wrap:wrap;align-items:center;gap:1ex}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container .typo-emoji{background-image:var(--typo-emoji-url);color:transparent;overflow:hidden;width:1.5em;height:1.5em;background-size:contain;background-repeat:no-repeat;background-position:center;display:inline-block;image-rendering:auto}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container .typo-emoji::selection{background-color:transparent;color:transparent}.typo-command-preview.svelte-198xt5o.svelte-198xt5o{display:flex;flex-wrap:wrap;flex-direction:row;gap:.5ex;justify-content:space-evenly}.typo-command-preview.svelte-198xt5o .emoji-picker-candidate.svelte-198xt5o{height:2.5em;aspect-ratio:1;image-rendering:auto;cursor:pointer;transition:transform .1s}.typo-command-preview.svelte-198xt5o .emoji-picker-candidate.svelte-198xt5o:hover{transform:scale(.9)}.typo-emoji-picker-hint.svelte-198xt5o.svelte-198xt5o{text-align:center;margin-bottom:1em;font-weight:600;text-overflow:ellipsis;overflow:hidden}form.chat-form.typo-extended input{padding-right:2.5em}.typo-chat-profile-link{cursor:pointer}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq{padding:.5rem;border-radius:.5em;position:relative;-webkit-user-select:none;user-select:none;font-weight:700;text-shadow:1px 1px 0 rgba(0,0,0,.168627451)}.typo-flat-button.disabled.svelte-1nuwppq.svelte-1nuwppq{pointer-events:none;opacity:.5}.typo-flat-button.green.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_SUBMIT_BG);color:var(--COLOR_BUTTON_SUBMIT_TEXT)}.typo-flat-button.orange.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_DANGER_BG);color:var(--COLOR_BUTTON_DANGER_TEXT)}.typo-flat-button.blue.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_NORMAL_BG);color:var(--COLOR_BUTTON_NORMAL_TEXT)}.typo-flat-button.svelte-1nuwppq>span.svelte-1nuwppq{z-index:2;position:relative}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq:after{position:absolute;top:0;right:0;bottom:0;left:0;content:"";z-index:0;opacity:0;background:#000;transition:opacity .1s;border-radius:.5em}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq:hover:after{opacity:.1}.typo-quickreact-focus.svelte-yvtrmi.svelte-yvtrmi:focus{outline:none}.typo-quickreact-keys.svelte-yvtrmi.svelte-yvtrmi{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.typo-quickreact-keys.svelte-yvtrmi b.svelte-yvtrmi{grid-column:span 2;text-align:center}@keyframes svelte-lwvpkp-slideIn{0%{transform:translateY(50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-lwvpkp-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(50vh);opacity:0}}@keyframes svelte-lwvpkp-fadeIn{0%{opacity:0}to{opacity:100}}@keyframes svelte-lwvpkp-fadeOut{0%{opacity:100}to{opacity:0}}div.content.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:10vh;right:0;bottom:0;left:0;max-width:100vw;background:var(--COLOR_PANEL_BG);z-index:9999;animation:svelte-lwvpkp-slideIn .15s ease-out;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:flex;flex-direction:column;align-items:center;color:var(--COLOR_PANEL_TEXT)}div.content.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-slideOut .15s ease-out forwards}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp.svelte-lwvpkp{display:flex;justify-content:space-between;width:100%;align-items:center;padding-left:2em;padding-right:2em}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp>div.svelte-lwvpkp:last-child{-webkit-user-select:none;user-select:none;position:relative;top:-2vh;cursor:pointer;font-weight:700;font-size:2.5rem;opacity:.7}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp>div.svelte-lwvpkp:last-child:hover{opacity:1}div.content.svelte-lwvpkp .content-wrapper.svelte-lwvpkp.svelte-lwvpkp{overscroll-behavior:none;display:flex;flex-direction:column;overflow-y:scroll;width:100%;align-items:stretch;flex-grow:1;padding:0 .5rem}div.content-top.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:calc(7vh + 1px);z-index:9999;background:var(--COLOR_PANEL_BG);clip-path:polygon(100% 0,0% 100%,100% 100%);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:none;height:3vh;width:100vw;animation:svelte-lwvpkp-slideIn .15s ease-out}div.content-top.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-slideOut .15s ease-out forwards}div.backdrop.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:0;right:0;bottom:0;left:0;background:#00000080;z-index:9998;animation:svelte-lwvpkp-fadeIn .15s ease-out}div.backdrop.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-fadeOut .15s ease-out forwards}body:has(.typo-modal){overflow:hidden}@keyframes svelte-1n76u56-slideIn{0%{transform:translateY(50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-1n76u56-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(50vh);opacity:0}}@keyframes svelte-1n76u56-fadeIn{0%{opacity:0}to{opacity:100}}@keyframes svelte-1n76u56-fadeOut{0%{opacity:100}to{opacity:0}}div.content.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{background:var(--COLOR_PANEL_BG);animation:svelte-1n76u56-slideIn .15s ease-out;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);max-height:calc(100vh - 4rem);max-width:calc(100vh - 4rem);display:flex;flex-direction:column;align-items:center;color:var(--COLOR_PANEL_TEXT);padding:2rem;border-radius:3px}div.content.closing.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{animation:svelte-1n76u56-slideOut .15s ease-out forwards}div.content.svelte-1n76u56 .content-title.svelte-1n76u56.svelte-1n76u56{display:flex;justify-content:space-between;width:100%;align-items:center;padding-left:2em;padding-right:2em}div.content.svelte-1n76u56 .content-title.svelte-1n76u56>div.svelte-1n76u56:last-child{-webkit-user-select:none;user-select:none;position:relative;top:-2vh;right:-2rem;cursor:pointer;font-weight:700;font-size:2.5rem;opacity:.7}div.content.svelte-1n76u56 .content-title.svelte-1n76u56>div.svelte-1n76u56:last-child:hover{opacity:1}div.content.svelte-1n76u56 .content-wrapper.svelte-1n76u56.svelte-1n76u56{overscroll-behavior:none;display:flex;flex-direction:column;overflow-y:scroll;width:100%;flex-grow:1;align-items:stretch;padding:0 .5rem}div.backdrop.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{position:fixed;top:0;right:0;bottom:0;left:0;background:#00000080;z-index:9999;animation:svelte-1n76u56-fadeIn .15s ease-out;display:grid;place-content:center;padding:3rem}div.backdrop.closing.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{animation:svelte-1n76u56-fadeOut .15s ease-out forwards}.typo-gallery-grid.svelte-skb05m.svelte-skb05m.svelte-skb05m{display:grid;grid-template-columns:20rem auto;gap:2rem;width:100%;padding-left:2rem;padding-right:2rem;padding-top:2rem;flex-grow:1;overflow:hidden}.typo-gallery-grid.svelte-skb05m h3.svelte-skb05m.svelte-skb05m{text-align:center}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.svelte-skb05m.svelte-skb05m{display:flex;flex-direction:column;gap:.5rem;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);padding-right:2rem;margin-bottom:2rem;transition:opacity .06s;grid-area:1/1/1/1}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.svelte-skb05m>.svelte-skb05m:not(span,.navigate-page){margin-bottom:1rem}.typo-gallery-grid.svelte-skb05m .gallery-sidebar .navigate-page.svelte-skb05m.svelte-skb05m{width:100%;justify-content:space-between;display:flex;gap:1rem;align-items:center;margin-top:auto}.typo-gallery-grid.svelte-skb05m .gallery-sidebar .navigate-page span.svelte-skb05m.svelte-skb05m{font-weight:600;-webkit-user-select:none;user-select:none}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.present.svelte-skb05m.svelte-skb05m{opacity:0;pointer-events:none}.typo-gallery-grid.svelte-skb05m .gallery-results.svelte-skb05m.svelte-skb05m{height:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,20rem);gap:1rem;justify-content:space-between;margin-bottom:2rem;grid-area:1/2/1/2;transition:opacity .06s}.typo-gallery-grid.svelte-skb05m .gallery-results img.svelte-skb05m.svelte-skb05m{width:100%;cursor:pointer;border-radius:3px}.typo-gallery-grid.svelte-skb05m .gallery-results .loading.svelte-skb05m.svelte-skb05m{grid-column:1/-1;display:grid}.typo-gallery-grid.svelte-skb05m .gallery-results.present.svelte-skb05m.svelte-skb05m{opacity:0;pointer-events:none}.typo-gallery-grid.svelte-skb05m .present-image.svelte-skb05m.svelte-skb05m{grid-area:1/2/1/2;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;overflow:auto}.typo-gallery-grid.svelte-skb05m .present-image img.svelte-skb05m.svelte-skb05m{border-radius:3px}.typo-gallery-grid.svelte-skb05m .present-sidebar.svelte-skb05m.svelte-skb05m{display:flex;flex-direction:column;gap:.5rem;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);padding-right:2rem;margin-bottom:2rem;grid-area:1/1/1/1}.typo-gallery-grid.svelte-skb05m .present-sidebar .exit-present.svelte-skb05m.svelte-skb05m{cursor:pointer;display:flex;gap:1rem;justify-content:center;align-items:center;font-weight:600;margin-top:auto}.typo-themes-browser-header.svelte-17gbclg.svelte-17gbclg{padding-bottom:1rem;text-align:center}.typo-themes-browser-list.svelte-17gbclg.svelte-17gbclg{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap;justify-content:center}.typo-themes-browser-item.svelte-17gbclg.svelte-17gbclg{background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;gap:1rem;justify-content:start;align-items:center;width:clamp(min(100%,30em),min(100%,30em),max(100%,30em));display:grid;grid-template-columns:auto 1fr}.typo-themes-browser-item.svelte-17gbclg span.svelte-17gbclg{opacity:.5}.typo-themes-browser-item.svelte-17gbclg div.svelte-17gbclg{justify-self:end}.typo-themes-editor.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:column;height:100%}.typo-themes-editor-header.svelte-1gh1qig.svelte-1gh1qig{padding-bottom:1rem;text-align:center}.typo-themes-editor-content.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:column;gap:2rem;align-items:start;padding:0 2rem;overflow:auto}details.svelte-1gh1qig.svelte-1gh1qig{border-radius:3px;padding:.5rem 1rem}details[open].svelte-1gh1qig.svelte-1gh1qig{background-color:var(--COLOR_PANEL_HI)}details[open].svelte-1gh1qig summary.svelte-1gh1qig{margin-bottom:.5rem}summary.svelte-1gh1qig.svelte-1gh1qig{font-weight:700;cursor:pointer;-webkit-user-select:none;user-select:none;font-size:1.2rem}.typo-themes-editor-content-section.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:row;gap:3rem;flex-wrap:wrap;align-items:center;width:100%;padding-bottom:.5rem}.typo-themes-editor-content-section.svelte-1gh1qig .group.svelte-1gh1qig{display:flex;flex-direction:row;gap:1rem;align-items:center}.typo-themes-editor-content-section.svelte-1gh1qig .group.svelte-1gh1qig:vertical{flex-direction:column}.typo-themes-editor-content-section.svelte-1gh1qig .group input.svelte-1gh1qig{width:auto;box-sizing:border-box}.color-pickers.svelte-1gh1qig.svelte-1gh1qig,.style-hooks.svelte-1gh1qig.svelte-1gh1qig{display:grid;grid-template-columns:auto auto;grid-gap:.5rem 2rem}.typo-themes-list-header.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{padding-bottom:1rem;text-align:center}.typo-themes-list-list.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap;justify-content:center}.typo-themes-list-item.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;gap:1rem;justify-content:center;align-items:start;display:flex;flex-direction:column;width:clamp(min(100%,20em),min(100%,20em),max(100%,20em))}.typo-themes-list-item.svelte-wdh6rb .active-marker.svelte-wdh6rb.svelte-wdh6rb{display:flex;gap:.5rem;align-items:center}.typo-themes-list-item.svelte-wdh6rb .active-marker img.svelte-wdh6rb.svelte-wdh6rb{height:1.5rem;aspect-ratio:1}.typo-themes-list-item.svelte-wdh6rb>div.svelte-wdh6rb.svelte-wdh6rb{display:flex;flex-direction:row;gap:1rem;width:100%}.typo-themes-list-item.svelte-wdh6rb>div span.svelte-wdh6rb.svelte-wdh6rb{opacity:.5}.typo-themes-list-item.svelte-wdh6rb>div.svelte-wdh6rb>.svelte-wdh6rb:last-child:not(:first-child){flex-grow:1;text-align:end}.typo-themes-content.svelte-1ikbg14.svelte-1ikbg14{padding:1rem;width:100%;height:100%;display:flex;flex-direction:column;overflow:auto}.typo-themes-navigation.svelte-1ikbg14.svelte-1ikbg14{display:flex;align-items:center;justify-content:center;gap:2rem;margin-top:1rem;margin-bottom:2rem}.typo-themes-navigation.svelte-1ikbg14 h3.svelte-1ikbg14{opacity:.5;cursor:pointer}.typo-themes-navigation.svelte-1ikbg14 h3.selected.svelte-1ikbg14{opacity:1}.typo-themes-tab.svelte-1ikbg14.svelte-1ikbg14{overflow:auto}.typo-palette-builder-container.svelte-nspiqx.svelte-nspiqx{background-color:var(--COLOR_PANEL_HI);border-radius:3px;gap:2rem;padding:1rem;display:grid;grid-template-columns:auto auto;flex-direction:column}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-inputs.svelte-nspiqx{display:flex;flex-direction:column;gap:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-inputs b.svelte-nspiqx{margin-top:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-actions.svelte-nspiqx{display:flex;flex-direction:column;gap:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-colors.svelte-nspiqx{display:grid;gap:.2rem}.typo-color-palette-manage-list.svelte-vvz4gm{display:flex;flex-direction:row-reverse;gap:1rem;flex-wrap:wrap;justify-content:flex-end}#game-toolbar .typo-palette.colors.svelte-1mmx4c4.svelte-1mmx4c4{height:fit-content}.typo-palette-picker.svelte-1mmx4c4.svelte-1mmx4c4{display:grid;overflow:hidden;border-radius:var(--BORDER_RADIUS);max-width:calc(13 * var(--UNIT) / 2);overflow-x:auto}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4{aspect-ratio:1;height:calc(var(--UNIT) / 2);cursor:pointer;position:relative}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4:after{content:"";position:absolute;left:2px;top:2px;right:2px;bottom:2px;border-radius:3px}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4:hover:after{border-width:3px;border-style:solid;border-color:#0009}.color-tools.svelte-iqw7hb.svelte-iqw7hb{height:var(--UNIT);width:calc(var(--UNIT) / 2)}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb,.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb{height:50%;width:100%;color:var(--COLOR_TOOL_TEXT);background-color:var(--COLOR_TOOL_BASE);cursor:pointer;background-size:contain;background-position:center;background-repeat:no-repeat}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb:hover,.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb:hover{background-color:var(--COLOR_TOOL_HOVER)}.color-tools.svelte-iqw7hb .pipette.selected.svelte-iqw7hb{background-color:var(--COLOR_TOOL_ACTIVE)}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb{border-bottom:1px solid lightgray;background-image:var(--file-img-crosshair-gif);border-radius:var(--BORDER_RADIUS) var(--BORDER_RADIUS) 0 0}.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb{border-top:1px solid lightgray;background-image:var(--file-img-inspect-gif);border-radius:0 0 var(--BORDER_RADIUS) var(--BORDER_RADIUS)}canvas.svelte-18097wc{border-radius:3px;width:10rem}@keyframes svelte-15kb90n-drop-in{0%{transform:translateY(-50%);opacity:0}to{transform:translateY(0);opacity:1}}.typo-drop.svelte-15kb90n{position:absolute;bottom:5px;height:48px;aspect-ratio:1;background-size:cover;background-position:center;cursor:pointer;-webkit-user-select:none;user-select:none;animation:svelte-15kb90n-drop-in .05s ease-in forwards}.typo-drop-claims.svelte-qhyy9.svelte-qhyy9{display:flex;flex-direction:column;gap:.5rem}.typo-drop-claims.svelte-qhyy9 .typo-drop-claims-claim.svelte-qhyy9{display:flex;gap:.4rem}@keyframes svelte-dq3z80-warn-blink{0%{opacity:1}25%{opacity:0}50%{opacity:0}75%{opacity:1}to{opacity:1}}#game-word .hints{position:relative}.typo-hints-overlay.svelte-dq3z80.svelte-dq3z80{position:absolute;display:flex;gap:.08em;z-index:10}.typo-hints-overlay.warning.svelte-dq3z80.svelte-dq3z80{z-index:11;animation:svelte-dq3z80-warn-blink .7s infinite}.typo-hints-overlay.warning.svelte-dq3z80 .overlay-character.warning.svelte-dq3z80{opacity:1;color:red;background-color:var(--COLOR_CHAT_BG_BASE)}.typo-hints-overlay.warning.svelte-dq3z80 .overlay-character.svelte-dq3z80:not(.warning){opacity:0}.typo-hints-overlay.correct.svelte-dq3z80 .overlay-character.warning.svelte-dq3z80{opacity:0}.typo-hints-overlay.svelte-dq3z80 .overlay-character.svelte-dq3z80{width:1ch;color:inherit;opacity:.6}.typo-hints-overlay.svelte-dq3z80 .overlay-character.hidden.svelte-dq3z80{opacity:0}.agent-content.svelte-z5nxkg.svelte-z5nxkg{z-index:1;width:100%;display:flex;flex-direction:column;gap:1rem;position:relative}.agent-content.svelte-z5nxkg>img.svelte-z5nxkg{width:100%;border-radius:3px;cursor:pointer}.agent-inputs.svelte-z5nxkg.svelte-z5nxkg{display:flex;gap:1rem}.agent-inputs.svelte-z5nxkg input.svelte-z5nxkg{flex-grow:1}.status-info.svelte-1y63bp4.svelte-1y63bp4,.typo-lobby-status-settings.svelte-1y63bp4.svelte-1y63bp4{display:flex;flex-direction:column;gap:1rem}.typo-lobby-status-settings.svelte-1y63bp4 .status-settings.svelte-1y63bp4{display:flex;gap:1rem;flex-direction:column}.typo-cabin.svelte-10x5c2g.svelte-10x5c2g{height:100%;overflow:auto;position:relative}.typo-cabin.svelte-10x5c2g .typo-cabin-saving.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;display:none;place-content:center;z-index:2}.typo-cabin.loading.svelte-10x5c2g .typo-cabin-saving.svelte-10x5c2g{display:grid}.typo-cabin.loading.svelte-10x5c2g .typo-cabin-picker.svelte-10x5c2g{opacity:.2}.typo-cabin.svelte-10x5c2g .typo-cabin-scroll.svelte-10x5c2g{height:100%;overflow:auto;padding-right:.5rem}.typo-cabin-picker.svelte-10x5c2g.svelte-10x5c2g{display:grid;grid-template-columns:1fr 1fr 1fr;grid-gap:.5rem}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene.svelte-10x5c2g{order:0;grid-column:span 3;width:100%;aspect-ratio:3;background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;transition:transform .1s;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-thumb.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;opacity:1;transition:opacity .1s}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene.svelte-10x5c2g:hover{transform:scale(.95)}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene:hover .typo-cabin-scene-info.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene:hover .typo-cabin-scene-thumb.svelte-10x5c2g{opacity:.2}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-info.svelte-10x5c2g{opacity:0;text-align:center;font-size:.8rem;transition:opacity .1s;z-index:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-info.visible.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.svelte-10x5c2g{background-color:var(--COLOR_PANEL_BG);border-radius:5px;width:100%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;transition:transform .1s;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-thumb.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;opacity:1;transition:opacity .1s}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.svelte-10x5c2g:hover:not(.dragging){transform:scale(.9)}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot:hover:not(.dragging) .typo-cabin-slot-info.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot:hover:not(.dragging) .typo-cabin-slot-thumb.svelte-10x5c2g{opacity:.2}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-info.svelte-10x5c2g{opacity:0;text-align:center;font-size:.8rem;transition:opacity .1s;z-index:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-info.visible.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.locked.svelte-10x5c2g{cursor:not-allowed}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.locked .typo-cabin-slot-info.svelte-10x5c2g{opacity:.9}.typo-sprite-picker.svelte-1srogek.svelte-1srogek{display:flex;flex-direction:column;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list.svelte-1srogek{flex-grow:1;width:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:1rem;padding:0 2rem}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene.svelte-1srogek{background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;gap:.1rem;padding:.1rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene.svelte-1srogek:hover{transform:scale(.9)}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene .typo-sprite-picker-scene-thumb.svelte-1srogek{width:5rem;aspect-ratio:1;background-size:cover}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene span.svelte-1srogek{font-size:.9rem;opacity:.9;text-align:center}.typo-scene-picker.svelte-1s2xvs0.svelte-1s2xvs0{display:flex;flex-direction:column;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list.svelte-1s2xvs0{flex-grow:1;width:100%;overflow:auto;display:flex;align-items:center;flex-direction:column;gap:1rem;padding:0 2rem}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene.svelte-1s2xvs0{background-color:var(--COLOR_PANEL_BG);border-radius:3px;display:flex;flex-direction:column;gap:.1rem;padding:.4rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene.svelte-1s2xvs0:hover{transform:scale(.9)}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene .typo-scene-picker-scene-thumb.svelte-1s2xvs0{width:20rem;max-width:90%;aspect-ratio:3;background-size:cover;border-radius:3px}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.svelte-1s2xvs0{font-size:.9rem;opacity:.9;text-align:center}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.id.svelte-1s2xvs0{opacity:.5}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.name.svelte-1s2xvs0{font-weight:700}div.panel-changelog.svelte-eh7e5t.svelte-eh7e5t{display:flex;flex-direction:column;justify-content:center;padding:0 .5rem}div.panel-changelog.svelte-eh7e5t>.changelog.svelte-eh7e5t{white-space:pre;text-wrap:pretty}div.panel-changelog.svelte-eh7e5t>.changelog .change.svelte-eh7e5t{display:flex;flex-direction:column;gap:.5rem;padding:.5rem 0}div.panel-changelog.svelte-eh7e5t>.changelog .change.svelte-eh7e5t:has(.details){cursor:pointer}div.panel-changelog.svelte-eh7e5t>.changelog .change .details.svelte-eh7e5t{font-size:.8rem;opacity:.7}div.panel-changelog.svelte-eh7e5t>.changelog .change.svelte-eh7e5t:not(:last-child){border-bottom:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}div.panel-changelog.svelte-eh7e5t>.changelog .change .title.svelte-eh7e5t{display:flex;justify-content:space-between;gap:1rem;align-items:center}div.panel-changelog.svelte-eh7e5t>.changelog .change .title span.svelte-eh7e5t{font-size:.8rem;opacity:.7}div.panel-changelog.svelte-eh7e5t .typo-version.svelte-eh7e5t{font-size:.8rem;opacity:.7}.details.svelte-mkybs6{padding:0 1rem}.details.svelte-mkybs6 li{margin-left:1rem}.details.svelte-mkybs6 :is(p,ul,ol){margin-bottom:1.5rem}.info.svelte-mkybs6{display:flex;gap:1.5rem;justify-content:center;font-size:.8em;opacity:.8}.typo-lobbies-discord.svelte-tkvjrc.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-direction:column;gap:.5rem;padding-bottom:1rem;padding-right:.5rem}.typo-lobbies-discord.svelte-tkvjrc .typo-lobbies-discord-buttons.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-wrap:wrap;gap:.5rem}.typo-lobbies-discovered.svelte-tkvjrc.svelte-tkvjrc.svelte-tkvjrc{padding-top:1rem;display:flex;flex-direction:column;gap:.5rem;padding-right:.5rem;border-top:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-direction:column-reverse;gap:.5rem}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons.svelte-tkvjrc>div.svelte-tkvjrc{display:grid;grid-template-columns:auto auto;grid-template-rows:1fr 1fr;gap:1rem;row-gap:0;place-items:center;background-color:var(--COLOR_PANEL_BG);padding:.2rem;border-radius:3px;font-size:.9rem;cursor:pointer;-webkit-user-select:none;user-select:none}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons>div.svelte-tkvjrc b.svelte-tkvjrc{opacity:.7;justify-self:baseline}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons>div.svelte-tkvjrc span.svelte-tkvjrc{grid-column:2/2;grid-row:1/3}div.typo-news.svelte-1x3jcfi.svelte-1x3jcfi{display:flex;flex-direction:column;justify-content:center;padding:0 .5rem}div.typo-news.svelte-1x3jcfi>.news.svelte-1x3jcfi{white-space:pre;text-wrap:pretty;display:flex;flex-direction:column}div.typo-news.svelte-1x3jcfi>.news .announcement.svelte-1x3jcfi{display:flex;flex-direction:column;gap:.5rem;padding:.5rem 0}div.typo-news.svelte-1x3jcfi>.news .announcement.svelte-1x3jcfi:not(:last-child){border-bottom:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}div.typo-news.svelte-1x3jcfi>.news .announcement .title.svelte-1x3jcfi{display:flex;justify-content:space-between;gap:1rem;align-items:center}div.typo-news.svelte-1x3jcfi>.news .announcement .title span.svelte-1x3jcfi{font-size:.8rem;opacity:.7}@keyframes svelte-ffctjy-appear{0%{opacity:0;scale:0}to{opacity:1;scale:1}}.typo-tooltip.svelte-ffctjy.svelte-ffctjy{position:fixed;display:flex;z-index:10000;align-items:center;animation:svelte-ffctjy-appear .1s forwards ease-out;pointer-events:none;transform-origin:0 0}.typo-tooltip.svelte-ffctjy span.svelte-ffctjy{background-color:var(--COLOR_TOOL_TIP_BG);color:var(--COLOR_PANEL_TEXT);border-radius:var(--BORDER_RADIUS);padding:7px;text-shadow:1px 1px 0 rgba(0,0,0,.2196078431);text-align:center;font-size:13px;font-weight:700;white-space:pre}.typo-tooltip.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{height:0;width:0}.typo-tooltip.E.svelte-ffctjy.svelte-ffctjy{transform:translateY(-50%);flex-direction:row}.typo-tooltip.E.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-right:10px solid var(--COLOR_TOOL_TIP_BG);border-top:10px solid transparent;border-bottom:10px solid transparent}.typo-tooltip.S.svelte-ffctjy.svelte-ffctjy{transform:translate(-50%);flex-direction:column}.typo-tooltip.S.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-bottom:10px solid var(--COLOR_TOOL_TIP_BG);border-left:10px solid transparent;border-right:10px solid transparent}.typo-tooltip.N.svelte-ffctjy.svelte-ffctjy{flex-direction:column-reverse;transform:translate(-50%) translateY(-100%)}.typo-tooltip.N.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-top:10px solid var(--COLOR_TOOL_TIP_BG);border-left:10px solid transparent;border-right:10px solid transparent}.typo-tooltip.W.svelte-ffctjy.svelte-ffctjy{flex-direction:row-reverse;transform:translate(-100%) translateY(-50%)}.typo-tooltip.W.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-left:10px solid var(--COLOR_TOOL_TIP_BG);border-top:10px solid transparent;border-bottom:10px solid transparent}#home .panel.member-info.svelte-j680fu.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;flex-direction:column;gap:1em;padding:1em;width:100%;margin-bottom:10px;color:var(--COLOR_PANEL_TEXT)}#home .panel.member-info.svelte-j680fu img.typo-icon.svelte-j680fu.svelte-j680fu.svelte-j680fu{height:1.2em;image-rendering:auto;aspect-ratio:1;content:var(--file-img-typo-gif)}#home .panel.member-info.svelte-j680fu>.member-login.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;align-items:center;gap:1rem;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.7}#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;justify-content:space-between;align-items:center}#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu>span.svelte-j680fu.svelte-j680fu,#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu>a.svelte-j680fu.svelte-j680fu{display:flex;align-items:center;gap:.5em;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.7;color:inherit;text-decoration:none}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;justify-content:space-evenly}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu.svelte-j680fu{display:flex;gap:.2em}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>div.stat-icon.svelte-j680fu{height:1.5rem;aspect-ratio:1;background-position:center;background-size:cover;background-repeat:no-repeat}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>span.svelte-j680fu{font-weight:700}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>span.svelte-j680fu:nth-child(2){opacity:.8}@keyframes svelte-1593rkb-iconAppear{0%{opacity:.3;transform:scale(0) translateY(30px)}50%{opacity:1}to{opacity:0;transform:scale(1) translateY(-30px)}}.typo-onboarding-emote.svelte-1593rkb{height:30px;aspect-ratio:1;animation:svelte-1593rkb-iconAppear 2.5s forwards ease-out;position:absolute;-webkit-user-select:none;user-select:none}p.svelte-115f3km.svelte-115f3km,ul.svelte-115f3km.svelte-115f3km,h3.svelte-115f3km.svelte-115f3km,h4.svelte-115f3km.svelte-115f3km{margin-bottom:1rem}p.svelte-115f3km>.svelte-115f3km,ul.svelte-115f3km>.svelte-115f3km{text-align:start}a.svelte-115f3km.svelte-115f3km{cursor:pointer;font-weight:700}p.svelte-1d2n9p6,ul.svelte-1d2n9p6,h3.svelte-1d2n9p6,h4.svelte-1d2n9p6{margin-bottom:1rem}a.svelte-1d2n9p6{cursor:pointer;font-weight:700}.typo-onboarding-wrapper.svelte-bu1e3.svelte-bu1e3{display:flex;align-items:center;flex-direction:column;margin:1rem}.typo-onboarding-hero.svelte-bu1e3.svelte-bu1e3{display:grid;place-content:center;position:relative;padding:100px 300px;margin:40px 40px 2rem;transition:padding .4s,margin-top .4s}@media (max-aspect-ratio: 1){.typo-onboarding-hero.svelte-bu1e3.svelte-bu1e3{padding:4rem 0 0}}.typo-onboarding-hero.hidden.svelte-bu1e3.svelte-bu1e3{margin-top:0;padding:0}.typo-onboarding-hero.svelte-bu1e3>div.svelte-bu1e3{text-align:center;position:relative}.typo-onboarding-hero.svelte-bu1e3:hover:not(.hidden) .beta-credits.svelte-bu1e3{opacity:.5}.typo-onboarding-hero.svelte-bu1e3 .beta-credits.svelte-bu1e3{position:absolute;bottom:0;width:100%;opacity:0;-webkit-user-select:none;user-select:none;transition:opacity .4s;transition-delay:.5s;text-align:center;font-size:.8rem;z-index:10}.onboarding-tabs.svelte-bu1e3.svelte-bu1e3{display:flex;gap:1rem;justify-content:center}.onboarding-tabs.svelte-bu1e3 h4.svelte-bu1e3{cursor:pointer;padding:1rem;opacity:.5;-webkit-user-select:none;user-select:none;text-align:center}.onboarding-tabs.svelte-bu1e3 h4.active.svelte-bu1e3{opacity:1}.typo-onboarding-presets.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem;align-items:center}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3{position:relative;cursor:pointer;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;display:flex;flex-direction:column;gap:1rem;width:clamp(min(40em,100%),min(40em,100%),max(40em,100%));transition:transform .2s}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:hover{transform:translate(1rem)}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:hover:before{opacity:1}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:before{content:"";background-image:var(--file-img-arrow-right-gif);background-repeat:no-repeat;background-size:contain;width:2.5rem;background-position:center;position:absolute;top:0;bottom:0;left:-3.5rem;opacity:0;transition:opacity .2s;pointer-events:none}.typo-onboarding-checklist-wrapper.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:column;align-items:stretch}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:1rem}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.svelte-bu1e3{cursor:pointer;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;display:flex;flex-direction:column;gap:1rem;width:clamp(min(40em,100%),min(40em,100%),max(40em,100%))}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.done.svelte-bu1e3{cursor:auto}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.done .description.svelte-bu1e3{opacity:.5}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task .details.svelte-bu1e3{display:flex;gap:1rem}.typo-onboarding-extras.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:row;gap:3rem;align-self:stretch;padding:0 2rem 2rem}@media (max-aspect-ratio: 1){.typo-onboarding-extras.svelte-bu1e3.svelte-bu1e3{flex-direction:column}}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections b.svelte-bu1e3{cursor:pointer;opacity:.5;-webkit-user-select:none;user-select:none}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections b.active.svelte-bu1e3{opacity:1}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-content.svelte-bu1e3{flex-grow:1;display:flex;flex-direction:column;align-items:center}.typo-profiles.svelte-16buojm.svelte-16buojm{display:flex;flex-direction:column;gap:1rem;align-items:stretch;width:fit-content}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm{display:flex;position:relative;gap:1rem;cursor:pointer;border-radius:3px;padding:.5rem;align-items:center;background-color:var(--COLOR_PANEL_HI);transition:transform .2s;justify-content:space-between}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:hover{transform:translate(1rem)}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:hover:before{opacity:1}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:before{content:"";background-image:var(--file-img-arrow-right-gif);background-repeat:no-repeat;background-size:contain;width:2rem;background-position:center;position:absolute;top:0;bottom:0;left:-3rem;opacity:0;transition:opacity .2s;pointer-events:none}.typo-feature-settings-hotkey.svelte-10zlzgr.svelte-10zlzgr{background-color:var(--COLOR_PANEL_HI);display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:1fr 1fr;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem;align-items:center}.typo-feature-settings-hotkey.svelte-10zlzgr .inputs-disabled-hint.svelte-10zlzgr{font-size:.8rem;opacity:.7}.typo-feature-settings-hotkey.svelte-10zlzgr .button-container.svelte-10zlzgr{font-size:1em}.typo-feature-settings-command.svelte-lvvgs4.svelte-lvvgs4{background-color:var(--COLOR_PANEL_HI);display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:1fr 1fr;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem;align-items:center}.typo-feature-settings-command.svelte-lvvgs4 .button-container.svelte-lvvgs4{font-size:1em}.typo-feature-settings-title.svelte-1njssi3.svelte-1njssi3{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-hero.svelte-1njssi3{opacity:.7;font-weight:600;justify-self:start}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-back.svelte-1njssi3{cursor:pointer;opacity:.7;font-weight:600;justify-self:end}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-back.svelte-1njssi3:hover{opacity:1}.typo-feature-settings-title.svelte-1njssi3>h1.svelte-1njssi3{justify-self:center}.typo-feature-settings-summary.svelte-1njssi3.svelte-1njssi3{text-align:center}.typo-feature-settings-info.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-management.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-hotkeys.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-default.svelte-1njssi3.svelte-1njssi3{width:100%;display:flex;flex-direction:column}.typo-feature-settings-info.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-management.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-hotkeys.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-default.svelte-1njssi3 h2.svelte-1njssi3{margin-bottom:.5em}.typo-feature-settings-default.svelte-1njssi3 .typo-feature-settings-default-list.svelte-1njssi3{display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem}.typo-feature-settings-default.svelte-1njssi3 .typo-feature-settings-default-list .typo-feature-settings-default-item.svelte-1njssi3{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-feature-settings-hotkeys-list.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-commands-list.svelte-1njssi3.svelte-1njssi3{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap}.typo-feature-item.svelte-xje42n.svelte-xje42n{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-feature-item.hidden.svelte-xje42n.svelte-xje42n{display:none}.typo-feature-item.svelte-xje42n .feature-tags.svelte-xje42n{opacity:.5;font-size:.9rem;text-transform:lowercase}.typo-feature-item.devMode.svelte-xje42n .feature-id.svelte-xje42n{display:block;position:absolute;bottom:0;right:0;-webkit-user-select:none;user-select:none;opacity:.5;padding:.2rem}.typo-feature-item.svelte-xje42n .feature-id.svelte-xje42n{display:none}.typo-feature-item.svelte-xje42n .description.svelte-xje42n{flex-grow:1;display:flex;gap:1rem;align-items:center;-webkit-user-select:none;user-select:none}.typo-feature-item.svelte-xje42n .description[role=button].svelte-xje42n{cursor:pointer}.typo-feature-item.svelte-xje42n .description img.svelte-xje42n{filter:grayscale(100%);opacity:.7;width:1.5em;height:1.5em}.typo-feature-item.svelte-xje42n .description img.svelte-xje42n:hover{filter:grayscale(0%);opacity:1}.typo-feature-item.svelte-xje42n .name-toggle.svelte-xje42n{display:flex;align-items:center;gap:1rem;font-weight:700;font-size:1.2rem;cursor:pointer;-webkit-user-select:none;user-select:none}.typo-feature-item.svelte-xje42n .name-toggle.locked.svelte-xje42n{cursor:not-allowed}.typo-feature-item.svelte-xje42n .name-toggle.locked img.svelte-xje42n{filter:grayscale(100%);opacity:.7}.typo-feature-item.svelte-xje42n .name-toggle img.svelte-xje42n{width:1.5em;height:1.5em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-feature-item.svelte-xje42n .name-toggle span.svelte-xje42n:last-child{font-size:1rem;opacity:.5;margin-left:auto;text-transform:uppercase}.typo-features-container.svelte-1ly2c3r.svelte-1ly2c3r{position:relative;width:100%;flex-grow:1;overflow-x:hidden}.typo-features-info.svelte-1ly2c3r.svelte-1ly2c3r{max-width:clamp(40em,40em,100%);text-align:left;padding-bottom:2em}.typo-features-filter.svelte-1ly2c3r.svelte-1ly2c3r{display:grid;gap:1rem;grid-template-columns:auto auto;padding-bottom:2em;align-items:center}.typo-features-filter.svelte-1ly2c3r .filters.svelte-1ly2c3r{display:flex;flex-wrap:wrap;gap:1rem}.typo-features-filter.svelte-1ly2c3r .filter.svelte-1ly2c3r{text-transform:lowercase;cursor:pointer;padding:.3rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px;opacity:.6}.typo-features-filter.svelte-1ly2c3r .filter.selected.svelte-1ly2c3r{opacity:1}.typo-feature-settings.svelte-1ly2c3r.svelte-1ly2c3r{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;flex-direction:column;gap:2rem;margin:0 2em 2em;padding:2em;overflow:auto;transform:translate(-100vw);transition:transform .1s ease-in-out;border-radius:3px}.typo-feature-settings.settingsVisible.svelte-1ly2c3r.svelte-1ly2c3r{transform:translate(0)}.typo-features.svelte-1ly2c3r.svelte-1ly2c3r{display:flex;flex-direction:column;align-items:center;position:absolute;top:0;right:0;bottom:0;left:0;transform:translate(0);transition:transform .1s ease-in-out}.typo-features.settingsVisible.svelte-1ly2c3r.svelte-1ly2c3r{transform:translate(100vw)}.typo-features.svelte-1ly2c3r .typo-features-list.svelte-1ly2c3r{width:100%;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:2rem;margin:0 2rem;padding-bottom:2rem;overflow:auto}#game-toolbar:has(.typo-brush-lab-switch.expanded){grid-template-rows:max-content}#game-toolbar:not(:has(.typo-brush-lab-switch.expanded))>.typo-brush-lab-group{display:none}.typo-brush-lab-group.svelte-p5jc91.svelte-p5jc91{display:flex;flex-direction:row;align-items:center;gap:2rem;grid-row:2}.typo-brush-lab-group.svelte-p5jc91 .typo-brush-lab-mods.svelte-p5jc91,.typo-brush-lab-group.svelte-p5jc91 .typo-brush-lab-tools.svelte-p5jc91{display:flex;flex-direction:row;gap:.5rem}.item-selection.svelte-15vhuqn.svelte-15vhuqn{display:grid;grid-template-columns:auto 1fr;flex-grow:1;width:100%;padding:1rem 2rem;gap:2rem}.item-selection.svelte-15vhuqn .item-sidebar.svelte-15vhuqn{display:flex;flex-direction:column;gap:1rem;padding-right:2rem;height:100%;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);overflow:auto}.item-selection.svelte-15vhuqn .item-sidebar h3.svelte-15vhuqn{opacity:.5}.item-selection.svelte-15vhuqn .item-sidebar .item-sidebar-entry.svelte-15vhuqn{display:flex;gap:.5rem;align-items:center;cursor:pointer}.item-selection.svelte-15vhuqn .item-sidebar .item-sidebar-entry img.svelte-15vhuqn{height:2rem}.item-selection.svelte-15vhuqn .item-details.svelte-15vhuqn{display:flex;flex-direction:column;gap:1rem}.item-selection.svelte-15vhuqn .item-details .item-title.svelte-15vhuqn{display:flex;align-items:center;gap:2rem}.item-selection.svelte-15vhuqn .item-details .item-title b.svelte-15vhuqn{opacity:.5}.item-selection.svelte-15vhuqn .item-details .item-details-settings-list.svelte-15vhuqn{display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem}.item-selection.svelte-15vhuqn .item-details .item-details-settings-list .item-details-settings-item.svelte-15vhuqn{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-logs-export.svelte-oun24t.svelte-oun24t,.typo-logs-logger-list.svelte-oun24t.svelte-oun24t,.typo-logs-overwrite.svelte-oun24t.svelte-oun24t{display:flex;flex-direction:row;flex-wrap:wrap;gap:1rem;margin:1rem;align-items:center}.typo-logs-logger-list.svelte-oun24t .typo-logs-logger.svelte-oun24t{min-width:clamp(10em,auto,100%);max-width:clamp(10em,auto,100%);background-color:var(--COLOR_PANEL_HI);display:flex;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem}.typo-logs-logger-list.svelte-oun24t .typo-logs-logger.hidden.svelte-oun24t{display:none}.typo-lobby-filters.svelte-lqoucf.svelte-lqoucf{display:flex;flex-direction:column;overflow:auto;height:100%;gap:1rem}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-header.svelte-lqoucf{display:flex;justify-content:space-between;align-items:center}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list.svelte-lqoucf{flex-grow:1;display:flex;flex-wrap:wrap;gap:1rem;align-content:flex-start;overflow:auto}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item.svelte-lqoucf{display:flex;align-items:center;gap:.5rem;padding:.2rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item .typo-lobby-filters-item-remove.svelte-lqoucf{opacity:0;transition:opacity .1s}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item:hover .typo-lobby-filters-item-remove.svelte-lqoucf{opacity:1}.typo-filter-form.svelte-9ect24.svelte-9ect24{display:flex;flex-direction:column;gap:2rem}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs.svelte-9ect24{display:flex;flex-direction:column;gap:1rem}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row.svelte-9ect24{display:flex;gap:1rem;align-items:center}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row input[type=text].svelte-9ect24{width:auto;flex-grow:1}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row input[type=number].svelte-9ect24{width:5rem}.typo-filter-search.svelte-1apd7dj.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:column;gap:2rem;max-width:min(50vw,100%)}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:row;flex-wrap:wrap;gap:1rem;justify-content:center}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:column;gap:.5rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:.5rem}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.lobby.svelte-1apd7dj.svelte-1apd7dj{cursor:pointer}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.svelte-1apd7dj>b.svelte-1apd7dj{flex-grow:1;text-align:center}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item .typo-filter-search-list-item-description.svelte-1apd7dj.svelte-1apd7dj{white-space:preserve}#game-players .player .player-icons .typo-awards-icon.svelte-19i0k4m{height:20px;width:20px;align-self:flex-end}@keyframes svelte-aldc0m-award-presentation{0%{opacity:0;background-size:100%}25%{opacity:1;background-size:30px}50%{opacity:1;background-size:48px}to{opacity:0;background-size:48px}}.typo-awards-icon.svelte-aldc0m{position:absolute;top:60px;right:4px}.typo-awards-presentation.svelte-aldc0m{position:absolute;top:0;right:0;bottom:0;left:0;background-position:center;background-repeat:no-repeat;pointer-events:none;animation:svelte-aldc0m-award-presentation 3s ease-out forwards}.typo-award-picker.svelte-9q5vog.svelte-9q5vog{display:flex;flex-direction:column;height:100%;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-award-picker.svelte-9q5vog .typo-award-picker-list.svelte-9q5vog{flex-grow:1;width:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(6rem,1fr));gap:1rem;padding:0 2rem}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award.svelte-9q5vog{background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;gap:.1rem;padding:.1rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award.svelte-9q5vog:hover{transform:scale(.9)}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award .typo-award-picker-award-thumb.svelte-9q5vog{width:4rem;aspect-ratio:1;background-size:cover}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award span.svelte-9q5vog{font-size:.9rem;opacity:.9;text-align:center}.typo-player-scene.svelte-eg9tl1{position:absolute;top:0;right:0;bottom:0;left:0;background-repeat:no-repeat;background-size:cover;background-position:center;z-index:-1}.sprite-slot.svelte-1uuttlm{position:absolute;left:-33%;top:-33%;width:166%;height:166%;background-repeat:no-repeat;background-size:contain}.typo-toolbar-challenges-list.svelte-wy9tne.svelte-wy9tne{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1rem}.typo-toolbar-challenges-list.svelte-wy9tne .challenge.svelte-wy9tne{display:flex;flex-direction:column}.typo-toolbar-challenges-list.svelte-wy9tne .challenge span.svelte-wy9tne{padding-left:2rem}.typo-toolbar-imagelab-actions.svelte-1tv05w9.svelte-1tv05w9{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:.7rem}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .lockedHint.svelte-1tv05w9{display:flex;gap:1rem;align-items:center;margin-bottom:1rem;width:100%}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .lockedHint span.svelte-1tv05w9{flex-grow:1;-webkit-user-select:none;user-select:none;font-weight:600;opacity:.8}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.svelte-1tv05w9{display:flex;gap:1rem;align-items:center}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.locked.svelte-1tv05w9>:last-child{pointer-events:none;opacity:.5}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.svelte-1tv05w9>:last-child{flex-grow:1}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands .remove.svelte-1tv05w9{filter:grayscale(.7);transition:filter 60ms}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands .remove.svelte-1tv05w9:hover{filter:grayscale(0)}.typo-imagelab-position-picker.svelte-zwzp7f{display:flex;flex-direction:column;gap:.5rem}.typo-image-post.svelte-f411i0.svelte-f411i0{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1em}.typo-image-post.svelte-f411i0 img.svelte-f411i0{border-radius:3px}.typo-image-post.svelte-f411i0 .navigate-image.svelte-f411i0{display:flex;justify-content:space-between;align-items:center}.typo-image-post.svelte-f411i0 .not-logged-in.svelte-f411i0,.typo-image-post.svelte-f411i0 .typo-post-info.svelte-f411i0{font-weight:600;opacity:.7}.typo-toolbar-save-actions.svelte-1xyzs78{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1em}.lobby-navigation.svelte-yw7ztm.svelte-yw7ztm{gap:1rem;display:flex;position:absolute;width:fit-content;right:50px;padding-right:1rem;height:100%;align-items:center}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm,.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm{content:var(--file-img-arrow-small-gif);cursor:pointer;height:42px;aspect-ratio:1;transition:scale .1s ease-in-out}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm:hover,.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm:hover{scale:1.1}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm{filter:drop-shadow(rgba(0,0,0,.3) 3px 3px 0px) sepia(1) saturate(5) brightness(.8) hue-rotate(324deg)}.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm{transform:rotateY(180deg);filter:drop-shadow(rgba(0,0,0,.3) -3px 3px 0px) sepia(1) saturate(5) brightness(.7) hue-rotate(56deg)}h2,h3{margin-top:0}:root{--COLOR_BUTTON_DANGER_BG: hsl(44, 81%, 51%);--COLOR_BUTTON_SUBMIT_BG: hsl(110, 75%, 55%);--COLOR_BUTTON_NORMAL_BG: hsl(208, 80%, 54%);--COLOR_BUTTON_DANGER_TEXT: hsl(0, 0%, 100%);--COLOR_BUTTON_SUBMIT_TEXT: hsl(0, 0%, 100%);--COLOR_BUTTON_NORMAL_TEXT: hsl(0, 0%, 100%)}.color-scrollbar::-webkit-scrollbar,.color-scrollbar ::-webkit-scrollbar{width:14px;border-radius:7px;background-color:var(--COLOR_PANEL_LO)}.color-scrollbar::-webkit-scrollbar-thumb,.color-scrollbar ::-webkit-scrollbar-thumb{border-radius:7px;background-color:var(--COLOR_PANEL_HI)}input.typo[type=text]{border-radius:.5rem;font-weight:600;padding:.5rem}img{display:block}.tool[data-tooltip="No Tool"]{display:none}#game-players{z-index:1}html:not([data-typo_loading_screen_disabled=true]) body>*{opacity:0;transition:opacity .2s;transition-delay:.1s}html:not([data-typo_loading_screen_disabled=true]) body[data-typo_loaded=true]>*{opacity:1}html:not([data-typo_loading_screen_disabled=true]) body:after{display:grid;place-content:center;content:"";position:fixed;top:0;left:0;width:100vw;height:100vh;opacity:1;transition:opacity .2s;background-image:var(--file-img-wand-gif);background-size:10rem;background-repeat:no-repeat;background-position:center;pointer-events:none}html:not([data-typo_loading_screen_disabled=true]) body[data-typo_loaded=true]:after{opacity:0} ');
+(e=>{if(typeof GM_addStyle=="function"){GM_addStyle(e);return}const t=document.createElement("style");t.textContent=e,document.head.append(t)})(' div.svelte-kfudwd.svelte-kfudwd{display:flex;justify-content:flex-start;align-items:center;gap:.5em;cursor:pointer;padding:.2em}div.disabled.svelte-kfudwd.svelte-kfudwd{opacity:.5;pointer-events:none}div.svelte-kfudwd img.svelte-kfudwd{height:1.5em;aspect-ratio:1;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3));-webkit-user-select:none;user-select:none}div.svelte-kfudwd span.svelte-kfudwd{-webkit-user-select:none;user-select:none;font-weight:600}b.svelte-rvotkt{font-size:1.1rem}.typo-numeric-setting.svelte-i0zktq.svelte-i0zktq{display:grid;align-items:center;grid-template-columns:auto auto;grid-template-rows:auto auto auto}.typo-numeric-setting.svelte-i0zktq b.svelte-i0zktq{font-size:1.1rem}.typo-numeric-setting.svelte-i0zktq input.svelte-i0zktq:invalid{border-color:unset}.typo-numeric-setting.svelte-i0zktq input[type=number].svelte-i0zktq{width:10ex}.typo-numeric-setting.svelte-i0zktq input[type=range].svelte-i0zktq{grid-column:span 2}.typo-numeric-setting.svelte-zlhfg4.svelte-zlhfg4{display:flex;flex-direction:column;justify-items:stretch;gap:.5rem}.typo-numeric-setting.svelte-zlhfg4 b.svelte-zlhfg4{font-size:1.1rem}.typo-text-setting.svelte-xq58hp.svelte-xq58hp{display:grid;align-items:center;grid-template-columns:auto auto;grid-template-rows:auto auto}.typo-text-setting.svelte-xq58hp b.svelte-xq58hp{font-size:1.1rem}.typo-text-setting.svelte-xq58hp input.svelte-xq58hp:invalid{border-color:unset}.typo-text-setting.svelte-xq58hp input.svelte-xq58hp{grid-column:span 2}.color-picker.svelte-1x2m4l5.svelte-1x2m4l5.svelte-1x2m4l5{color:var(--COLOR_PANEL_TEXT);-webkit-user-select:none;user-select:none;display:flex;flex-direction:column;gap:.5rem;width:100%}.color-picker.svelte-1x2m4l5 .picker-header.svelte-1x2m4l5.svelte-1x2m4l5{display:flex;width:100%;flex-direction:row;gap:1rem;align-items:center;justify-content:center}.color-picker.svelte-1x2m4l5 .picker-header.svelte-1x2m4l5>img.svelte-1x2m4l5{-webkit-user-select:none;user-select:none;height:1.2rem;width:1.2rem;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.color-picker.svelte-1x2m4l5 .picker-header h3.svelte-1x2m4l5.svelte-1x2m4l5{margin-bottom:0}.color-picker.svelte-1x2m4l5 .color-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;aspect-ratio:1;position:relative;cursor:crosshair;border-radius:3px}.color-picker.svelte-1x2m4l5 .color-rect .color-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}.color-picker.svelte-1x2m4l5 .color-rect .color-thumb.listen.svelte-1x2m4l5.svelte-1x2m4l5{display:none}.color-picker.svelte-1x2m4l5 .hue-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;height:1rem;position:relative;cursor:pointer;border-radius:3px;background:linear-gradient(to right,#ff0400,#ffc300 12.5%,#fff200,#dcff00 18.75%,#7dff00,#1dff00 31.25%,#00ff13,#00ff42 37.5%,#00fdff,#003eff 62.5%,#000fff,#2100ff 68.75%,#8000ff,#e000ff 81.25%,#f0e,#ff00bf 87.5%,red)}.color-picker.svelte-1x2m4l5 .hue-rect .hue-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}.color-picker.svelte-1x2m4l5 .alpha-rect.svelte-1x2m4l5.svelte-1x2m4l5{width:100%;height:1rem;position:relative;cursor:pointer;border-radius:3px}.color-picker.svelte-1x2m4l5 .alpha-rect .alpha-thumb.svelte-1x2m4l5.svelte-1x2m4l5{position:absolute;width:1rem;height:1rem;border-radius:50%;background-color:#fff}@keyframes svelte-1bdf7g-slideIn{0%{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:100}}@keyframes svelte-1bdf7g-slideOut{0%{transform:scaleY(1);opacity:100}to{transform:scaleY(0);opacity:0}}.typo-color-picker-button.svelte-1bdf7g.svelte-1bdf7g{aspect-ratio:1;position:relative}.typo-color-picker-button.svelte-1bdf7g .color-picker-button-content.svelte-1bdf7g{position:absolute;top:0;right:0;bottom:0;left:0;cursor:pointer}.typo-color-picker-button.svelte-1bdf7g .color-picker-popout.svelte-1bdf7g{position:absolute;z-index:10;width:20em;border-radius:10px;padding:1rem;background-color:var(--COLOR_PANEL_HI);filter:drop-shadow(0 5px 10px rgba(0,0,0,.3));animation:svelte-1bdf7g-slideIn .08s ease-out}.typo-color-picker-button.svelte-1bdf7g .color-picker-popout.closing.svelte-1bdf7g{animation:svelte-1bdf7g-slideOut .08s ease-out forwards}.typo-text-setting.svelte-1pjx4sn.svelte-1pjx4sn{gap:.5rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start}.typo-text-setting.svelte-1pjx4sn b.svelte-1pjx4sn{font-size:1.1rem}.typo-chat-controls{grid-area:chat;display:flex;justify-items:center;justify-content:end;gap:.5rem;margin-top:.5rem;margin-right:.5rem;margin-left:auto;height:min-content;z-index:1;-webkit-user-select:none;user-select:none}.typo-controls.svelte-1c97t9h.svelte-1c97t9h{position:fixed;display:flex;align-items:center;gap:.5em;z-index:100}.typo-controls.topleft.svelte-1c97t9h.svelte-1c97t9h{left:.5em;top:.5em}.typo-controls.topright.svelte-1c97t9h.svelte-1c97t9h{right:.5em;top:.5em}.typo-controls.bottomright.svelte-1c97t9h.svelte-1c97t9h{right:.5em;bottom:.5em}.typo-controls.bottomleft.svelte-1c97t9h.svelte-1c97t9h{left:.5em;bottom:.5em}.typo-controls.vertical.svelte-1c97t9h.svelte-1c97t9h{flex-direction:column}.typo-controls.horizontal.svelte-1c97t9h.svelte-1c97t9h{flex-direction:row}@media (max-aspect-ratio: 1){.typo-controls.svelte-1c97t9h:not(.expanded)>:not(.typo-controls-mobile-expand){display:none}}.typo-controls.svelte-1c97t9h .typo-controls-mobile-expand.svelte-1c97t9h{display:none}@media (max-aspect-ratio: 1){.typo-controls.svelte-1c97t9h .typo-controls-mobile-expand.svelte-1c97t9h{display:grid;place-content:center;height:2rem;aspect-ratio:1;border-radius:100%;background-color:var(--COLOR_PANEL_HI);background-size:1.2rem;background-position:center;background-repeat:no-repeat;cursor:pointer;-webkit-user-select:none;user-select:none;opacity:.9}}.typo-customizer-actions.svelte-2foe7d{position:absolute;display:flex;flex-direction:column;gap:4px;top:40px;right:4px}@media (max-aspect-ratio: 1){.typo-customizer-actions.svelte-2foe7d{gap:1.25vh;top:7.5vh;right:1.25vh}}.typo-toast-container{position:fixed;left:0;right:0;top:0;height:0;overflow:visible;z-index:10000;display:flex;flex-direction:column;align-items:center;gap:1rem;padding-top:1rem}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(2)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(1){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(3)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(2){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(4)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(3){display:none}#home .panel.typo-panel:has(.typo-panel-tab:empty:nth-child(5)) .panel-header.svelte-14yq9xv .svelte-14yq9xv:nth-child(4){display:none}#home .panel.typo-panel:not(:has(.typo-panel-tab:not(:empty))){display:none}#home .panel.panel-right{margin-left:20px}@media (max-aspect-ratio: 1){#home .panel.panel-right{margin-left:0;order:2}}#home .panel.panel-left{margin-right:20px}@media (max-aspect-ratio: 1){#home .panel.panel-left{margin-right:0;order:3}}#home .panel.typo-panel{flex:0 0 400px;max-height:calc(400px - 2em);margin-top:2em;display:flex;flex-direction:column;align-items:normal;justify-content:flex-start;color:var(--COLOR_PANEL_TEXT)}#home .panel.typo-panel .panel-header.svelte-14yq9xv.svelte-14yq9xv{display:flex;justify-content:space-between;font-weight:600}#home .panel.typo-panel .panel-header.svelte-14yq9xv h2.svelte-14yq9xv{cursor:pointer}#home .panel.typo-panel .panel-header.svelte-14yq9xv h2.inactive.svelte-14yq9xv{opacity:.5}#home .panel.typo-panel .typo-panel-tab.svelte-14yq9xv.svelte-14yq9xv{margin-top:1rem;overflow:auto;flex-grow:1}#home .panel.typo-panel>div.svelte-14yq9xv.svelte-14yq9xv:empty{display:none}.typo-toolbar{grid-area:4/3/4/3;border-radius:3px;background-color:var(--COLOR_CHAT_BG_BASE);display:flex;align-items:center;justify-content:space-evenly}@media (max-aspect-ratio: 1){.typo-toolbar{display:none}}.typo-toolbar:empty{display:none}#game-canvas #game-rate.typo-icons :is(.like,.dislike){background-repeat:no-repeat;background-size:90%;background-position:center}#game-canvas #game-rate.typo-icons .like,#game-wrapper:has(#game-rate.typo-icons) .player-bubble .icon[style*=thumbsup]{background-image:var(--file-img-thumbsup-gif)!important}#game-canvas #game-rate.typo-icons .dislike,#game-wrapper:has(#game-rate.typo-icons) .player-bubble .icon[style*=thumbsdown]{background-image:var(--file-img-thumbsdown-gif)!important}@keyframes svelte-c1csua-bounceload{0%{transform:scale(.5)}to{transform:translate(-40%) scale(1.5)}}div.svelte-c1csua.svelte-c1csua{display:flex;justify-content:center;align-items:center;gap:.5em;padding:.8em}div.svelte-c1csua .icon.svelte-c1csua{display:inline-block;height:1.5em;aspect-ratio:1;background-image:url(/img/size.gif);background-size:1em;background-repeat:no-repeat;background-position:center;transform:scale(1.5);filter:drop-shadow(3px 3px 0 rgba(0,0,0,.3));animation:svelte-c1csua-bounceload .5s infinite;animation-direction:alternate;animation-timing-function:ease-in-out;transform-origin:center;margin-right:.5em;margin-left:.5em}div.svelte-c1csua span.svelte-c1csua{color:var(--COLOR_PANEL_TEXT);font-weight:700}.typo-icon-button.svelte-b0w31n.svelte-b0w31n{-webkit-user-select:none;user-select:none;display:block;cursor:pointer;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-icon-button.disabled.svelte-b0w31n.svelte-b0w31n{pointer-events:none;opacity:.5}.typo-icon-button.svelte-b0w31n img.svelte-b0w31n{aspect-ratio:1;transform:translateY(0);transition:transform 65ms ease-in-out}.typo-icon-button.svelte-b0w31n:hover img.effect.svelte-b0w31n{transform:translateY(-3px)}.typo-icon-button.greyscale.svelte-b0w31n img.svelte-b0w31n{filter:grayscale(.7);opacity:.7}.typo-icon-button.greyscale.svelte-b0w31n img.svelte-b0w31n:hover{filter:grayscale(0);opacity:1}@keyframes svelte-12e6hb5-slideIn{0%{transform:translateY(-50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-12e6hb5-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(-50vh);opacity:0}}.typo-toast.svelte-12e6hb5.svelte-12e6hb5{padding:1rem 3rem 1rem 1rem;background-color:var(--COLOR_PANEL_HI);border-radius:5px;color:var(--COLOR_PANEL_TEXT);filter:drop-shadow(0 5px 10px rgba(0,0,0,.3));min-width:clamp(20rem,20rem,80%);position:relative;animation:svelte-12e6hb5-slideIn .15s ease-out;display:flex;flex-direction:column;align-items:flex-start;white-space-collapse:preserve;gap:.5rem}.typo-toast.closing.svelte-12e6hb5.svelte-12e6hb5{animation:svelte-12e6hb5-slideOut .15s ease-out forwards}.typo-toast.loading.svelte-12e6hb5.svelte-12e6hb5{cursor:progress}.typo-toast.svelte-12e6hb5 form.svelte-12e6hb5{display:flex;width:100%}.typo-toast.svelte-12e6hb5 form input[type=submit].svelte-12e6hb5{display:none}.typo-toast.svelte-12e6hb5 .typo-toast-confirm.svelte-12e6hb5{width:100%;display:flex;flex-direction:row;gap:1rem}.typo-toast.svelte-12e6hb5 .typo-toast-confirm span.svelte-12e6hb5{display:flex;flex-direction:row;gap:.5rem;cursor:pointer;align-items:center}.typo-toast.svelte-12e6hb5 .close-toast.svelte-12e6hb5{position:absolute;right:.5rem;top:0;font-weight:900;opacity:.7;cursor:pointer;font-size:2rem}.typo-chat-message.svelte-1q3466u.svelte-1q3466u{display:flex;flex-direction:row;align-items:center}.typo-chat-message.svelte-1q3466u b.info.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_DRAWING)}.typo-chat-message.svelte-1q3466u b.error.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_LEAVE)}.typo-chat-message.svelte-1q3466u b.success.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_GUESSED)}.typo-chat-message.svelte-1q3466u b.normal.svelte-1q3466u{color:var(--COLOR_CHAT_TEXT_BASE)}.typo-chat-message.svelte-1q3466u span.svelte-1q3466u{white-space:preserve}.typo-avatar-container.svelte-ma71bf.svelte-ma71bf{width:var(--typo-avatar-container-size);aspect-ratio:1;position:relative;z-index:0}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.svelte-ma71bf{position:absolute}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.svelte-ma71bf:is(.color,.mouth,.eyes,.special){background-repeat:no-repeat}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.svelte-ma71bf:is(.color,.mouth,.eyes){top:0;right:0;bottom:0;left:0}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.color.svelte-ma71bf{z-index:0;background-image:url(https://skribbl.io/img/avatar/color_atlas.gif)}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.mouth.svelte-ma71bf{z-index:1;background-image:url(https://skribbl.io/img/avatar/mouth_atlas.gif)}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.eyes.svelte-ma71bf{z-index:2;background-image:url(https://skribbl.io/img/avatar/eyes_atlas.gif)}.typo-avatar-container.svelte-ma71bf .typo-avatar-layer.special.svelte-ma71bf{z-index:3;background-image:url(https://skribbl.io/img/avatar/special_atlas.gif);inset:calc(-1 * var(--typo-avatar-container-size) * 32 / 48 / 2)}@keyframes svelte-1lmlzvv-slideIn{0%{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:100}}@keyframes svelte-1lmlzvv-slideOut{0%{transform:scaleY(1);opacity:100}to{transform:scaleY(0);opacity:0}}.typo-area-flyout.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv{position:relative;color:var(--COLOR_PANEL_TEXT);z-index:1;border-radius:10px;padding:1em;animation:svelte-1lmlzvv-slideIn .08s ease-out;display:flex;gap:1rem;flex-direction:column;align-items:center}.typo-area-flyout.align-top.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv{align-self:start;transform-origin:top}.typo-area-flyout.align-bottom.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv{align-self:end;transform-origin:bottom}.typo-area-flyout.closing.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv{animation:svelte-1lmlzvv-slideOut .08s ease-out forwards}.typo-area-flyout.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv:after{animation:svelte-1lmlzvv-slideIn .08s ease-out;background:var(--COLOR_PANEL_BG);content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:10px;z-index:-1;transform:none!important;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}.typo-area-flyout.closing.svelte-1lmlzvv.svelte-1lmlzvv.svelte-1lmlzvv:after{animation:svelte-1lmlzvv-slideOut .08s ease-out forwards}.typo-area-flyout.svelte-1lmlzvv .close-explicit.svelte-1lmlzvv.svelte-1lmlzvv{position:absolute;top:0;right:.5rem;font-size:1.5rem;font-weight:900;cursor:pointer;z-index:1}.typo-area-flyout.svelte-1lmlzvv>h3.svelte-1lmlzvv.svelte-1lmlzvv{display:flex;gap:1em;align-items:center}.typo-area-flyout.svelte-1lmlzvv>h3.svelte-1lmlzvv>img.svelte-1lmlzvv{-webkit-user-select:none;user-select:none;height:1.8em;width:1.8em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-area-flyout.svelte-1lmlzvv>.content.svelte-1lmlzvv.svelte-1lmlzvv{width:100%;overflow-y:auto}.typo-area-flyout.svelte-1lmlzvv>.content.padding.svelte-1lmlzvv.svelte-1lmlzvv{padding:0 1em}.typo-command-preview.svelte-19nsl5m.svelte-19nsl5m{display:flex;flex-direction:column;gap:1rem}.typo-command-preview.svelte-19nsl5m.svelte-19nsl5m:not(:has(.typo-command-result)){gap:.2rem}.typo-command-preview.svelte-19nsl5m .typo-command-result.svelte-19nsl5m{display:flex;flex-direction:column;gap:.2rem}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis.svelte-19nsl5m{display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-arg.svelte-19nsl5m{background-color:var(--COLOR_PANEL_BG);padding:.2rem;border-radius:3px;opacity:.5}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-arg.current.svelte-19nsl5m{opacity:1}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-id.svelte-19nsl5m{padding:.2rem;border-radius:3px;font-weight:bolder}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-synopsis .typo-command-result-id.current.svelte-19nsl5m{background-color:var(--COLOR_PANEL_BG)}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-description .typo-command-result-param-type.svelte-19nsl5m{display:block;opacity:.7}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-state.svelte-19nsl5m{display:flex;gap:.5rem;align-items:center;margin-top:.3rem;opacity:.7}.typo-command-preview.svelte-19nsl5m .typo-command-result .typo-command-result-state img.svelte-19nsl5m{height:1.3rem}.chat-form:has(#typo-command-input) input:not(#typo-command-input){display:none}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container{display:inline-flex;flex-wrap:wrap;align-items:center;gap:1ex}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container .typo-emoji{background-image:var(--typo-emoji-url);color:transparent;overflow:hidden;width:1.5em;height:1.5em;background-size:contain;background-repeat:no-repeat;background-position:center;display:inline-block;image-rendering:auto}#game-chat:has(.typo-emojis-enabled) .typo-emoji-container .typo-emoji::selection{background-color:transparent;color:transparent}.typo-command-preview.svelte-198xt5o.svelte-198xt5o{display:flex;flex-wrap:wrap;flex-direction:row;gap:.5ex;justify-content:space-evenly}.typo-command-preview.svelte-198xt5o .emoji-picker-candidate.svelte-198xt5o{height:2.5em;aspect-ratio:1;image-rendering:auto;cursor:pointer;transition:transform .1s}.typo-command-preview.svelte-198xt5o .emoji-picker-candidate.svelte-198xt5o:hover{transform:scale(.9)}.typo-emoji-picker-hint.svelte-198xt5o.svelte-198xt5o{text-align:center;margin-bottom:1em;font-weight:600;text-overflow:ellipsis;overflow:hidden}form.chat-form.typo-extended input{padding-right:2.5em}.typo-ping-info.svelte-wetrhq{position:absolute;top:-1.2em;right:.2em;opacity:.5;font-weight:700;font-size:.8em}.typo-chat-profile-link{cursor:pointer}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq{padding:.5rem;border-radius:.5em;position:relative;-webkit-user-select:none;user-select:none;font-weight:700;text-shadow:1px 1px 0 rgba(0,0,0,.168627451)}.typo-flat-button.disabled.svelte-1nuwppq.svelte-1nuwppq{pointer-events:none;opacity:.5}.typo-flat-button.green.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_SUBMIT_BG);color:var(--COLOR_BUTTON_SUBMIT_TEXT)}.typo-flat-button.orange.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_DANGER_BG);color:var(--COLOR_BUTTON_DANGER_TEXT)}.typo-flat-button.blue.svelte-1nuwppq.svelte-1nuwppq{background-color:var(--COLOR_BUTTON_NORMAL_BG);color:var(--COLOR_BUTTON_NORMAL_TEXT)}.typo-flat-button.svelte-1nuwppq>span.svelte-1nuwppq{z-index:2;position:relative}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq:after{position:absolute;top:0;right:0;bottom:0;left:0;content:"";z-index:0;opacity:0;background:#000;transition:opacity .1s;border-radius:.5em}.typo-flat-button.svelte-1nuwppq.svelte-1nuwppq:hover:after{opacity:.1}.typo-quickreact-focus.svelte-yvtrmi.svelte-yvtrmi:focus{outline:none}.typo-quickreact-keys.svelte-yvtrmi.svelte-yvtrmi{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.typo-quickreact-keys.svelte-yvtrmi b.svelte-yvtrmi{grid-column:span 2;text-align:center}@keyframes svelte-lwvpkp-slideIn{0%{transform:translateY(50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-lwvpkp-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(50vh);opacity:0}}@keyframes svelte-lwvpkp-fadeIn{0%{opacity:0}to{opacity:100}}@keyframes svelte-lwvpkp-fadeOut{0%{opacity:100}to{opacity:0}}div.content.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:10vh;right:0;bottom:0;left:0;max-width:100vw;background:var(--COLOR_PANEL_BG);z-index:9999;animation:svelte-lwvpkp-slideIn .15s ease-out;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:flex;flex-direction:column;align-items:center;color:var(--COLOR_PANEL_TEXT)}div.content.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-slideOut .15s ease-out forwards}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp.svelte-lwvpkp{display:flex;justify-content:space-between;width:100%;align-items:center;padding-left:2em;padding-right:2em}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp>div.svelte-lwvpkp:last-child{-webkit-user-select:none;user-select:none;position:relative;top:-2vh;cursor:pointer;font-weight:700;font-size:2.5rem;opacity:.7}div.content.svelte-lwvpkp .content-title.svelte-lwvpkp>div.svelte-lwvpkp:last-child:hover{opacity:1}div.content.svelte-lwvpkp .content-wrapper.svelte-lwvpkp.svelte-lwvpkp{overscroll-behavior:none;display:flex;flex-direction:column;overflow-y:scroll;width:100%;align-items:stretch;flex-grow:1;padding:0 .5rem}div.content-top.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:calc(7vh + 1px);z-index:9999;background:var(--COLOR_PANEL_BG);clip-path:polygon(100% 0,0% 100%,100% 100%);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:none;height:3vh;width:100vw;animation:svelte-lwvpkp-slideIn .15s ease-out}div.content-top.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-slideOut .15s ease-out forwards}div.backdrop.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{position:fixed;top:0;right:0;bottom:0;left:0;background:#00000080;z-index:9998;animation:svelte-lwvpkp-fadeIn .15s ease-out}div.backdrop.closing.svelte-lwvpkp.svelte-lwvpkp.svelte-lwvpkp{animation:svelte-lwvpkp-fadeOut .15s ease-out forwards}body:has(.typo-modal){overflow:hidden}@keyframes svelte-1n76u56-slideIn{0%{transform:translateY(50vh);opacity:0}to{transform:translateY(0);opacity:100}}@keyframes svelte-1n76u56-slideOut{0%{transform:translateY(0);opacity:100}to{transform:translateY(50vh);opacity:0}}@keyframes svelte-1n76u56-fadeIn{0%{opacity:0}to{opacity:100}}@keyframes svelte-1n76u56-fadeOut{0%{opacity:100}to{opacity:0}}div.content.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{background:var(--COLOR_PANEL_BG);animation:svelte-1n76u56-slideIn .15s ease-out;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);max-height:calc(100vh - 4rem);max-width:calc(100vh - 4rem);display:flex;flex-direction:column;align-items:center;color:var(--COLOR_PANEL_TEXT);padding:2rem;border-radius:3px}div.content.closing.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{animation:svelte-1n76u56-slideOut .15s ease-out forwards}div.content.svelte-1n76u56 .content-title.svelte-1n76u56.svelte-1n76u56{display:flex;justify-content:space-between;width:100%;align-items:center;padding-left:2em;padding-right:2em}div.content.svelte-1n76u56 .content-title.svelte-1n76u56>div.svelte-1n76u56:last-child{-webkit-user-select:none;user-select:none;position:relative;top:-2vh;right:-2rem;cursor:pointer;font-weight:700;font-size:2.5rem;opacity:.7}div.content.svelte-1n76u56 .content-title.svelte-1n76u56>div.svelte-1n76u56:last-child:hover{opacity:1}div.content.svelte-1n76u56 .content-wrapper.svelte-1n76u56.svelte-1n76u56{overscroll-behavior:none;display:flex;flex-direction:column;overflow-y:scroll;width:100%;flex-grow:1;align-items:stretch;padding:0 .5rem}div.backdrop.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{position:fixed;top:0;right:0;bottom:0;left:0;background:#00000080;z-index:9999;animation:svelte-1n76u56-fadeIn .15s ease-out;display:grid;place-content:center;padding:3rem}div.backdrop.closing.svelte-1n76u56.svelte-1n76u56.svelte-1n76u56{animation:svelte-1n76u56-fadeOut .15s ease-out forwards}.typo-gallery-grid.svelte-skb05m.svelte-skb05m.svelte-skb05m{display:grid;grid-template-columns:20rem auto;gap:2rem;width:100%;padding-left:2rem;padding-right:2rem;padding-top:2rem;flex-grow:1;overflow:hidden}.typo-gallery-grid.svelte-skb05m h3.svelte-skb05m.svelte-skb05m{text-align:center}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.svelte-skb05m.svelte-skb05m{display:flex;flex-direction:column;gap:.5rem;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);padding-right:2rem;margin-bottom:2rem;transition:opacity .06s;grid-area:1/1/1/1}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.svelte-skb05m>.svelte-skb05m:not(span,.navigate-page){margin-bottom:1rem}.typo-gallery-grid.svelte-skb05m .gallery-sidebar .navigate-page.svelte-skb05m.svelte-skb05m{width:100%;justify-content:space-between;display:flex;gap:1rem;align-items:center;margin-top:auto}.typo-gallery-grid.svelte-skb05m .gallery-sidebar .navigate-page span.svelte-skb05m.svelte-skb05m{font-weight:600;-webkit-user-select:none;user-select:none}.typo-gallery-grid.svelte-skb05m .gallery-sidebar.present.svelte-skb05m.svelte-skb05m{opacity:0;pointer-events:none}.typo-gallery-grid.svelte-skb05m .gallery-results.svelte-skb05m.svelte-skb05m{height:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,20rem);gap:1rem;justify-content:space-between;margin-bottom:2rem;grid-area:1/2/1/2;transition:opacity .06s}.typo-gallery-grid.svelte-skb05m .gallery-results img.svelte-skb05m.svelte-skb05m{width:100%;cursor:pointer;border-radius:3px}.typo-gallery-grid.svelte-skb05m .gallery-results .loading.svelte-skb05m.svelte-skb05m{grid-column:1/-1;display:grid}.typo-gallery-grid.svelte-skb05m .gallery-results.present.svelte-skb05m.svelte-skb05m{opacity:0;pointer-events:none}.typo-gallery-grid.svelte-skb05m .present-image.svelte-skb05m.svelte-skb05m{grid-area:1/2/1/2;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;overflow:auto}.typo-gallery-grid.svelte-skb05m .present-image img.svelte-skb05m.svelte-skb05m{border-radius:3px}.typo-gallery-grid.svelte-skb05m .present-sidebar.svelte-skb05m.svelte-skb05m{display:flex;flex-direction:column;gap:.5rem;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);padding-right:2rem;margin-bottom:2rem;grid-area:1/1/1/1}.typo-gallery-grid.svelte-skb05m .present-sidebar .exit-present.svelte-skb05m.svelte-skb05m{cursor:pointer;display:flex;gap:1rem;justify-content:center;align-items:center;font-weight:600;margin-top:auto}.typo-themes-browser-header.svelte-17gbclg.svelte-17gbclg{padding-bottom:1rem;text-align:center}.typo-themes-browser-list.svelte-17gbclg.svelte-17gbclg{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap;justify-content:center}.typo-themes-browser-item.svelte-17gbclg.svelte-17gbclg{background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;gap:1rem;justify-content:start;align-items:center;width:clamp(min(100%,30em),min(100%,30em),max(100%,30em));display:grid;grid-template-columns:auto 1fr}.typo-themes-browser-item.svelte-17gbclg span.svelte-17gbclg{opacity:.5}.typo-themes-browser-item.svelte-17gbclg div.svelte-17gbclg{justify-self:end}.typo-themes-editor.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:column;height:100%}.typo-themes-editor-header.svelte-1gh1qig.svelte-1gh1qig{padding-bottom:1rem;text-align:center}.typo-themes-editor-content.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:column;gap:2rem;align-items:start;padding:0 2rem;overflow:auto}details.svelte-1gh1qig.svelte-1gh1qig{border-radius:3px;padding:.5rem 1rem}details[open].svelte-1gh1qig.svelte-1gh1qig{background-color:var(--COLOR_PANEL_HI)}details[open].svelte-1gh1qig summary.svelte-1gh1qig{margin-bottom:.5rem}summary.svelte-1gh1qig.svelte-1gh1qig{font-weight:700;cursor:pointer;-webkit-user-select:none;user-select:none;font-size:1.2rem}.typo-themes-editor-content-section.svelte-1gh1qig.svelte-1gh1qig{display:flex;flex-direction:row;gap:3rem;flex-wrap:wrap;align-items:center;width:100%;padding-bottom:.5rem}.typo-themes-editor-content-section.svelte-1gh1qig .group.svelte-1gh1qig{display:flex;flex-direction:row;gap:1rem;align-items:center}.typo-themes-editor-content-section.svelte-1gh1qig .group.svelte-1gh1qig:vertical{flex-direction:column}.typo-themes-editor-content-section.svelte-1gh1qig .group input.svelte-1gh1qig{width:auto;box-sizing:border-box}.color-pickers.svelte-1gh1qig.svelte-1gh1qig,.style-hooks.svelte-1gh1qig.svelte-1gh1qig{display:grid;grid-template-columns:auto auto;grid-gap:.5rem 2rem}.typo-themes-list-header.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{padding-bottom:1rem;text-align:center}.typo-themes-list-list.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap;justify-content:center}.typo-themes-list-item.svelte-wdh6rb.svelte-wdh6rb.svelte-wdh6rb{background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;gap:1rem;justify-content:center;align-items:start;display:flex;flex-direction:column;width:clamp(min(100%,20em),min(100%,20em),max(100%,20em))}.typo-themes-list-item.svelte-wdh6rb .active-marker.svelte-wdh6rb.svelte-wdh6rb{display:flex;gap:.5rem;align-items:center}.typo-themes-list-item.svelte-wdh6rb .active-marker img.svelte-wdh6rb.svelte-wdh6rb{height:1.5rem;aspect-ratio:1}.typo-themes-list-item.svelte-wdh6rb>div.svelte-wdh6rb.svelte-wdh6rb{display:flex;flex-direction:row;gap:1rem;width:100%}.typo-themes-list-item.svelte-wdh6rb>div span.svelte-wdh6rb.svelte-wdh6rb{opacity:.5}.typo-themes-list-item.svelte-wdh6rb>div.svelte-wdh6rb>.svelte-wdh6rb:last-child:not(:first-child){flex-grow:1;text-align:end}.typo-themes-content.svelte-1ikbg14.svelte-1ikbg14{padding:1rem;width:100%;height:100%;display:flex;flex-direction:column;overflow:auto}.typo-themes-navigation.svelte-1ikbg14.svelte-1ikbg14{display:flex;align-items:center;justify-content:center;gap:2rem;margin-top:1rem;margin-bottom:2rem}.typo-themes-navigation.svelte-1ikbg14 h3.svelte-1ikbg14{opacity:.5;cursor:pointer}.typo-themes-navigation.svelte-1ikbg14 h3.selected.svelte-1ikbg14{opacity:1}.typo-themes-tab.svelte-1ikbg14.svelte-1ikbg14{overflow:auto}.typo-palette-builder-container.svelte-nspiqx.svelte-nspiqx{background-color:var(--COLOR_PANEL_HI);border-radius:3px;gap:2rem;padding:1rem;display:grid;grid-template-columns:auto auto;flex-direction:column}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-inputs.svelte-nspiqx{display:flex;flex-direction:column;gap:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-inputs b.svelte-nspiqx{margin-top:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-actions.svelte-nspiqx{display:flex;flex-direction:column;gap:.5rem}.typo-palette-builder-container.svelte-nspiqx .typo-palette-builder-colors.svelte-nspiqx{display:grid;gap:.2rem}.typo-color-palette-manage-list.svelte-vvz4gm{display:flex;flex-direction:row-reverse;gap:1rem;flex-wrap:wrap;justify-content:flex-end}#game-toolbar .typo-palette.colors.svelte-1mmx4c4.svelte-1mmx4c4{height:fit-content}.typo-palette-picker.svelte-1mmx4c4.svelte-1mmx4c4{display:grid;overflow:hidden;border-radius:var(--BORDER_RADIUS);max-width:calc(13 * var(--UNIT) / 2);overflow-x:auto}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4{aspect-ratio:1;height:calc(var(--UNIT) / 2);cursor:pointer;position:relative}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4:after{content:"";position:absolute;left:2px;top:2px;right:2px;bottom:2px;border-radius:3px}.typo-palette-picker.svelte-1mmx4c4 .typo-palette-picker-item.svelte-1mmx4c4:hover:after{border-width:3px;border-style:solid;border-color:#0009}.color-tools.svelte-iqw7hb.svelte-iqw7hb{height:var(--UNIT);width:calc(var(--UNIT) / 2)}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb,.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb{height:50%;width:100%;color:var(--COLOR_TOOL_TEXT);background-color:var(--COLOR_TOOL_BASE);cursor:pointer;background-size:contain;background-position:center;background-repeat:no-repeat}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb:hover,.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb:hover{background-color:var(--COLOR_TOOL_HOVER)}.color-tools.svelte-iqw7hb .pipette.selected.svelte-iqw7hb{background-color:var(--COLOR_TOOL_ACTIVE)}.color-tools.svelte-iqw7hb .pipette.svelte-iqw7hb{border-bottom:1px solid lightgray;background-image:var(--file-img-crosshair-gif);border-radius:var(--BORDER_RADIUS) var(--BORDER_RADIUS) 0 0}.color-tools.svelte-iqw7hb .picker.svelte-iqw7hb{border-top:1px solid lightgray;background-image:var(--file-img-inspect-gif);border-radius:0 0 var(--BORDER_RADIUS) var(--BORDER_RADIUS)}canvas.svelte-18097wc{border-radius:3px;width:10rem}@keyframes svelte-15kb90n-drop-in{0%{transform:translateY(-50%);opacity:0}to{transform:translateY(0);opacity:1}}.typo-drop.svelte-15kb90n{position:absolute;bottom:5px;height:48px;aspect-ratio:1;background-size:cover;background-position:center;cursor:pointer;-webkit-user-select:none;user-select:none;animation:svelte-15kb90n-drop-in .05s ease-in forwards}.typo-drop-claims.svelte-qhyy9.svelte-qhyy9{display:flex;flex-direction:column;gap:.5rem}.typo-drop-claims.svelte-qhyy9 .typo-drop-claims-claim.svelte-qhyy9{display:flex;gap:.4rem}@keyframes svelte-dq3z80-warn-blink{0%{opacity:1}25%{opacity:0}50%{opacity:0}75%{opacity:1}to{opacity:1}}#game-word .hints{position:relative}.typo-hints-overlay.svelte-dq3z80.svelte-dq3z80{position:absolute;display:flex;gap:.08em;z-index:10}.typo-hints-overlay.warning.svelte-dq3z80.svelte-dq3z80{z-index:11;animation:svelte-dq3z80-warn-blink .7s infinite}.typo-hints-overlay.warning.svelte-dq3z80 .overlay-character.warning.svelte-dq3z80{opacity:1;color:red;background-color:var(--COLOR_CHAT_BG_BASE)}.typo-hints-overlay.warning.svelte-dq3z80 .overlay-character.svelte-dq3z80:not(.warning){opacity:0}.typo-hints-overlay.correct.svelte-dq3z80 .overlay-character.warning.svelte-dq3z80{opacity:0}.typo-hints-overlay.svelte-dq3z80 .overlay-character.svelte-dq3z80{width:1ch;color:inherit;opacity:.6}.typo-hints-overlay.svelte-dq3z80 .overlay-character.hidden.svelte-dq3z80{opacity:0}.agent-content.svelte-z5nxkg.svelte-z5nxkg{z-index:1;width:100%;display:flex;flex-direction:column;gap:1rem;position:relative}.agent-content.svelte-z5nxkg>img.svelte-z5nxkg{width:100%;border-radius:3px;cursor:pointer}.agent-inputs.svelte-z5nxkg.svelte-z5nxkg{display:flex;gap:1rem}.agent-inputs.svelte-z5nxkg input.svelte-z5nxkg{flex-grow:1}.status-info.svelte-1y63bp4.svelte-1y63bp4,.typo-lobby-status-settings.svelte-1y63bp4.svelte-1y63bp4{display:flex;flex-direction:column;gap:1rem}.typo-lobby-status-settings.svelte-1y63bp4 .status-settings.svelte-1y63bp4{display:flex;gap:1rem;flex-direction:column}.typo-cabin.svelte-10x5c2g.svelte-10x5c2g{height:100%;overflow:auto;position:relative}.typo-cabin.svelte-10x5c2g .typo-cabin-saving.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;display:none;place-content:center;z-index:2}.typo-cabin.loading.svelte-10x5c2g .typo-cabin-saving.svelte-10x5c2g{display:grid}.typo-cabin.loading.svelte-10x5c2g .typo-cabin-picker.svelte-10x5c2g{opacity:.2}.typo-cabin.svelte-10x5c2g .typo-cabin-scroll.svelte-10x5c2g{height:100%;overflow:auto;padding-right:.5rem}.typo-cabin-picker.svelte-10x5c2g.svelte-10x5c2g{display:grid;grid-template-columns:1fr 1fr 1fr;grid-gap:.5rem}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene.svelte-10x5c2g{order:0;grid-column:span 3;width:100%;aspect-ratio:3;background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;transition:transform .1s;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-thumb.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;opacity:1;transition:opacity .1s}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene.svelte-10x5c2g:hover{transform:scale(.95)}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene:hover .typo-cabin-scene-info.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene:hover .typo-cabin-scene-thumb.svelte-10x5c2g{opacity:.2}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-info.svelte-10x5c2g{opacity:0;text-align:center;font-size:.8rem;transition:opacity .1s;z-index:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-scene .typo-cabin-scene-info.visible.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.svelte-10x5c2g{background-color:var(--COLOR_PANEL_BG);border-radius:5px;width:100%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;transition:transform .1s;cursor:pointer;-webkit-user-select:none;user-select:none;position:relative}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-thumb.svelte-10x5c2g{position:absolute;top:0;right:0;bottom:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;opacity:1;transition:opacity .1s}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.svelte-10x5c2g:hover:not(.dragging){transform:scale(.9)}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot:hover:not(.dragging) .typo-cabin-slot-info.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot:hover:not(.dragging) .typo-cabin-slot-thumb.svelte-10x5c2g{opacity:.2}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-info.svelte-10x5c2g{opacity:0;text-align:center;font-size:.8rem;transition:opacity .1s;z-index:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot .typo-cabin-slot-info.visible.svelte-10x5c2g{opacity:1}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.locked.svelte-10x5c2g{cursor:not-allowed}.typo-cabin-picker.svelte-10x5c2g .typo-cabin-slot.locked .typo-cabin-slot-info.svelte-10x5c2g{opacity:.9}.typo-sprite-picker.svelte-1srogek.svelte-1srogek{display:flex;flex-direction:column;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list.svelte-1srogek{flex-grow:1;width:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:1rem;padding:0 2rem}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene.svelte-1srogek{background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;gap:.1rem;padding:.1rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene.svelte-1srogek:hover{transform:scale(.9)}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene .typo-sprite-picker-scene-thumb.svelte-1srogek{width:5rem;aspect-ratio:1;background-size:cover}.typo-sprite-picker.svelte-1srogek .typo-sprite-picker-list .typo-sprite-picker-scene span.svelte-1srogek{font-size:.9rem;opacity:.9;text-align:center}.typo-scene-picker.svelte-1s2xvs0.svelte-1s2xvs0{display:flex;flex-direction:column;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list.svelte-1s2xvs0{flex-grow:1;width:100%;overflow:auto;display:flex;align-items:center;flex-direction:column;gap:1rem;padding:0 2rem}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene.svelte-1s2xvs0{background-color:var(--COLOR_PANEL_BG);border-radius:3px;display:flex;flex-direction:column;gap:.1rem;padding:.4rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene.svelte-1s2xvs0:hover{transform:scale(.9)}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene .typo-scene-picker-scene-thumb.svelte-1s2xvs0{width:20rem;max-width:90%;aspect-ratio:3;background-size:cover;border-radius:3px}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.svelte-1s2xvs0{font-size:.9rem;opacity:.9;text-align:center}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.id.svelte-1s2xvs0{opacity:.5}.typo-scene-picker.svelte-1s2xvs0 .typo-scene-picker-list .typo-scene-picker-scene span.name.svelte-1s2xvs0{font-weight:700}div.panel-changelog.svelte-eh7e5t.svelte-eh7e5t{display:flex;flex-direction:column;justify-content:center;padding:0 .5rem}div.panel-changelog.svelte-eh7e5t>.changelog.svelte-eh7e5t{white-space:pre;text-wrap:pretty}div.panel-changelog.svelte-eh7e5t>.changelog .change.svelte-eh7e5t{display:flex;flex-direction:column;gap:.5rem;padding:.5rem 0}div.panel-changelog.svelte-eh7e5t>.changelog .change.svelte-eh7e5t:has(.details){cursor:pointer}div.panel-changelog.svelte-eh7e5t>.changelog .change .details.svelte-eh7e5t{font-size:.8rem;opacity:.7}div.panel-changelog.svelte-eh7e5t>.changelog .change.svelte-eh7e5t:not(:last-child){border-bottom:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}div.panel-changelog.svelte-eh7e5t>.changelog .change .title.svelte-eh7e5t{display:flex;justify-content:space-between;gap:1rem;align-items:center}div.panel-changelog.svelte-eh7e5t>.changelog .change .title span.svelte-eh7e5t{font-size:.8rem;opacity:.7}div.panel-changelog.svelte-eh7e5t .typo-version.svelte-eh7e5t{font-size:.8rem;opacity:.7}.details.svelte-mkybs6{padding:0 1rem}.details.svelte-mkybs6 li{margin-left:1rem}.details.svelte-mkybs6 :is(p,ul,ol){margin-bottom:1.5rem}.info.svelte-mkybs6{display:flex;gap:1.5rem;justify-content:center;font-size:.8em;opacity:.8}.typo-lobbies-discord.svelte-tkvjrc.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-direction:column;gap:.5rem;padding-bottom:1rem;padding-right:.5rem}.typo-lobbies-discord.svelte-tkvjrc .typo-lobbies-discord-buttons.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-wrap:wrap;gap:.5rem}.typo-lobbies-discovered.svelte-tkvjrc.svelte-tkvjrc.svelte-tkvjrc{padding-top:1rem;display:flex;flex-direction:column;gap:.5rem;padding-right:.5rem;border-top:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons.svelte-tkvjrc.svelte-tkvjrc{display:flex;flex-direction:column-reverse;gap:.5rem}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons.svelte-tkvjrc>div.svelte-tkvjrc{display:grid;grid-template-columns:auto auto;grid-template-rows:1fr 1fr;gap:1rem;row-gap:0;place-items:center;background-color:var(--COLOR_PANEL_BG);padding:.2rem;border-radius:3px;font-size:.9rem;cursor:pointer;-webkit-user-select:none;user-select:none}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons>div.svelte-tkvjrc b.svelte-tkvjrc{opacity:.7;justify-self:baseline}.typo-lobbies-discovered.svelte-tkvjrc .typo-lobbies-discovered-buttons>div.svelte-tkvjrc span.svelte-tkvjrc{grid-column:2/2;grid-row:1/3}div.typo-news.svelte-1x3jcfi.svelte-1x3jcfi{display:flex;flex-direction:column;justify-content:center;padding:0 .5rem}div.typo-news.svelte-1x3jcfi>.news.svelte-1x3jcfi{white-space:pre;text-wrap:pretty;display:flex;flex-direction:column}div.typo-news.svelte-1x3jcfi>.news .announcement.svelte-1x3jcfi{display:flex;flex-direction:column;gap:.5rem;padding:.5rem 0}div.typo-news.svelte-1x3jcfi>.news .announcement.svelte-1x3jcfi:not(:last-child){border-bottom:1px solid var(--COLOR_PANEL_BORDER_FOCUS)}div.typo-news.svelte-1x3jcfi>.news .announcement .title.svelte-1x3jcfi{display:flex;justify-content:space-between;gap:1rem;align-items:center}div.typo-news.svelte-1x3jcfi>.news .announcement .title span.svelte-1x3jcfi{font-size:.8rem;opacity:.7}@keyframes svelte-ffctjy-appear{0%{opacity:0;scale:0}to{opacity:1;scale:1}}.typo-tooltip.svelte-ffctjy.svelte-ffctjy{position:fixed;display:flex;z-index:10000;align-items:center;animation:svelte-ffctjy-appear .1s forwards ease-out;pointer-events:none;transform-origin:0 0}.typo-tooltip.svelte-ffctjy span.svelte-ffctjy{background-color:var(--COLOR_TOOL_TIP_BG);color:var(--COLOR_PANEL_TEXT);border-radius:var(--BORDER_RADIUS);padding:7px;text-shadow:1px 1px 0 rgba(0,0,0,.2196078431);text-align:center;font-size:13px;font-weight:700;white-space:pre}.typo-tooltip.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{height:0;width:0}.typo-tooltip.E.svelte-ffctjy.svelte-ffctjy{transform:translateY(-50%);flex-direction:row}.typo-tooltip.E.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-right:10px solid var(--COLOR_TOOL_TIP_BG);border-top:10px solid transparent;border-bottom:10px solid transparent}.typo-tooltip.S.svelte-ffctjy.svelte-ffctjy{transform:translate(-50%);flex-direction:column}.typo-tooltip.S.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-bottom:10px solid var(--COLOR_TOOL_TIP_BG);border-left:10px solid transparent;border-right:10px solid transparent}.typo-tooltip.N.svelte-ffctjy.svelte-ffctjy{flex-direction:column-reverse;transform:translate(-50%) translateY(-100%)}.typo-tooltip.N.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-top:10px solid var(--COLOR_TOOL_TIP_BG);border-left:10px solid transparent;border-right:10px solid transparent}.typo-tooltip.W.svelte-ffctjy.svelte-ffctjy{flex-direction:row-reverse;transform:translate(-100%) translateY(-50%)}.typo-tooltip.W.svelte-ffctjy .typo-tooltip-arrow.svelte-ffctjy{border-left:10px solid var(--COLOR_TOOL_TIP_BG);border-top:10px solid transparent;border-bottom:10px solid transparent}#home .panel.member-info.svelte-j680fu.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;flex-direction:column;gap:1em;padding:1em;width:100%;margin-bottom:10px;color:var(--COLOR_PANEL_TEXT)}#home .panel.member-info.svelte-j680fu img.typo-icon.svelte-j680fu.svelte-j680fu.svelte-j680fu{height:1.2em;image-rendering:auto;aspect-ratio:1;content:var(--file-img-typo-gif)}#home .panel.member-info.svelte-j680fu>.member-login.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;align-items:center;gap:1rem;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.7}#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;justify-content:space-between;align-items:center}#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu>span.svelte-j680fu.svelte-j680fu,#home .panel.member-info.svelte-j680fu>.member-info-header.svelte-j680fu>a.svelte-j680fu.svelte-j680fu{display:flex;align-items:center;gap:.5em;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.7;color:inherit;text-decoration:none}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu.svelte-j680fu.svelte-j680fu{display:flex;justify-content:space-evenly}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu.svelte-j680fu{display:flex;gap:.2em}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>div.stat-icon.svelte-j680fu{height:1.5rem;aspect-ratio:1;background-position:center;background-size:cover;background-repeat:no-repeat}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>span.svelte-j680fu{font-weight:700}#home .panel.member-info.svelte-j680fu>.member-info-stats.svelte-j680fu>div.svelte-j680fu>span.svelte-j680fu:nth-child(2){opacity:.8}@keyframes svelte-1593rkb-iconAppear{0%{opacity:.3;transform:scale(0) translateY(30px)}50%{opacity:1}to{opacity:0;transform:scale(1) translateY(-30px)}}.typo-onboarding-emote.svelte-1593rkb{height:30px;aspect-ratio:1;animation:svelte-1593rkb-iconAppear 2.5s forwards ease-out;position:absolute;-webkit-user-select:none;user-select:none}p.svelte-115f3km.svelte-115f3km,ul.svelte-115f3km.svelte-115f3km,h3.svelte-115f3km.svelte-115f3km,h4.svelte-115f3km.svelte-115f3km{margin-bottom:1rem}p.svelte-115f3km>.svelte-115f3km,ul.svelte-115f3km>.svelte-115f3km{text-align:start}a.svelte-115f3km.svelte-115f3km{cursor:pointer;font-weight:700}p.svelte-1d2n9p6,ul.svelte-1d2n9p6,h3.svelte-1d2n9p6,h4.svelte-1d2n9p6{margin-bottom:1rem}a.svelte-1d2n9p6{cursor:pointer;font-weight:700}.typo-onboarding-wrapper.svelte-bu1e3.svelte-bu1e3{display:flex;align-items:center;flex-direction:column;margin:1rem}.typo-onboarding-hero.svelte-bu1e3.svelte-bu1e3{display:grid;place-content:center;position:relative;padding:100px 300px;margin:40px 40px 2rem;transition:padding .4s,margin-top .4s}@media (max-aspect-ratio: 1){.typo-onboarding-hero.svelte-bu1e3.svelte-bu1e3{padding:4rem 0 0}}.typo-onboarding-hero.hidden.svelte-bu1e3.svelte-bu1e3{margin-top:0;padding:0}.typo-onboarding-hero.svelte-bu1e3>div.svelte-bu1e3{text-align:center;position:relative}.typo-onboarding-hero.svelte-bu1e3:hover:not(.hidden) .beta-credits.svelte-bu1e3{opacity:.5}.typo-onboarding-hero.svelte-bu1e3 .beta-credits.svelte-bu1e3{position:absolute;bottom:0;width:100%;opacity:0;-webkit-user-select:none;user-select:none;transition:opacity .4s;transition-delay:.5s;text-align:center;font-size:.8rem;z-index:10}.onboarding-tabs.svelte-bu1e3.svelte-bu1e3{display:flex;gap:1rem;justify-content:center}.onboarding-tabs.svelte-bu1e3 h4.svelte-bu1e3{cursor:pointer;padding:1rem;opacity:.5;-webkit-user-select:none;user-select:none;text-align:center}.onboarding-tabs.svelte-bu1e3 h4.active.svelte-bu1e3{opacity:1}.typo-onboarding-presets.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem;align-items:center}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3{position:relative;cursor:pointer;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;display:flex;flex-direction:column;gap:1rem;width:clamp(min(40em,100%),min(40em,100%),max(40em,100%));transition:transform .2s}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:hover{transform:translate(1rem)}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:hover:before{opacity:1}.typo-onboarding-presets.svelte-bu1e3 .typo-onboarding-preset.svelte-bu1e3:before{content:"";background-image:var(--file-img-arrow-right-gif);background-repeat:no-repeat;background-size:contain;width:2.5rem;background-position:center;position:absolute;top:0;bottom:0;left:-3.5rem;opacity:0;transition:opacity .2s;pointer-events:none}.typo-onboarding-checklist-wrapper.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:column;align-items:stretch}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:1rem}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.svelte-bu1e3{cursor:pointer;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:1rem;display:flex;flex-direction:column;gap:1rem;width:clamp(min(40em,100%),min(40em,100%),max(40em,100%))}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.done.svelte-bu1e3{cursor:auto}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task.done .description.svelte-bu1e3{opacity:.5}.typo-onboarding-checklist-wrapper.svelte-bu1e3 .typo-onboarding-checklist .typo-onboarding-task .details.svelte-bu1e3{display:flex;gap:1rem}.typo-onboarding-extras.svelte-bu1e3.svelte-bu1e3{display:flex;flex-direction:row;gap:3rem;align-self:stretch;padding:0 2rem 2rem}@media (max-aspect-ratio: 1){.typo-onboarding-extras.svelte-bu1e3.svelte-bu1e3{flex-direction:column}}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections.svelte-bu1e3{display:flex;flex-direction:column;gap:1rem}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections b.svelte-bu1e3{cursor:pointer;opacity:.5;-webkit-user-select:none;user-select:none}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-sections b.active.svelte-bu1e3{opacity:1}.typo-onboarding-extras.svelte-bu1e3 .typo-onboarding-extras-content.svelte-bu1e3{flex-grow:1;display:flex;flex-direction:column;align-items:center}.typo-profiles.svelte-16buojm.svelte-16buojm{display:flex;flex-direction:column;gap:1rem;align-items:stretch;width:fit-content}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm{display:flex;position:relative;gap:1rem;cursor:pointer;border-radius:3px;padding:.5rem;align-items:center;background-color:var(--COLOR_PANEL_HI);transition:transform .2s;justify-content:space-between}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:hover{transform:translate(1rem)}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:hover:before{opacity:1}.typo-profiles.svelte-16buojm .typo-profile.svelte-16buojm:before{content:"";background-image:var(--file-img-arrow-right-gif);background-repeat:no-repeat;background-size:contain;width:2rem;background-position:center;position:absolute;top:0;bottom:0;left:-3rem;opacity:0;transition:opacity .2s;pointer-events:none}.typo-feature-settings-hotkey.svelte-10zlzgr.svelte-10zlzgr{background-color:var(--COLOR_PANEL_HI);display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:1fr 1fr;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem;align-items:center}.typo-feature-settings-hotkey.svelte-10zlzgr .inputs-disabled-hint.svelte-10zlzgr{font-size:.8rem;opacity:.7}.typo-feature-settings-hotkey.svelte-10zlzgr .button-container.svelte-10zlzgr{font-size:1em}.typo-feature-settings-command.svelte-lvvgs4.svelte-lvvgs4{background-color:var(--COLOR_PANEL_HI);display:grid;grid-template-columns:auto auto auto auto;grid-template-rows:1fr 1fr;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem;align-items:center}.typo-feature-settings-command.svelte-lvvgs4 .button-container.svelte-lvvgs4{font-size:1em}.typo-feature-settings-title.svelte-1njssi3.svelte-1njssi3{width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-hero.svelte-1njssi3{opacity:.7;font-weight:600;justify-self:start}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-back.svelte-1njssi3{cursor:pointer;opacity:.7;font-weight:600;justify-self:end}.typo-feature-settings-title.svelte-1njssi3 .typo-feature-settings-back.svelte-1njssi3:hover{opacity:1}.typo-feature-settings-title.svelte-1njssi3>h1.svelte-1njssi3{justify-self:center}.typo-feature-settings-summary.svelte-1njssi3.svelte-1njssi3{text-align:center}.typo-feature-settings-info.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-management.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-hotkeys.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-default.svelte-1njssi3.svelte-1njssi3{width:100%;display:flex;flex-direction:column}.typo-feature-settings-info.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-management.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-hotkeys.svelte-1njssi3 h2.svelte-1njssi3,.typo-feature-settings-default.svelte-1njssi3 h2.svelte-1njssi3{margin-bottom:.5em}.typo-feature-settings-default.svelte-1njssi3 .typo-feature-settings-default-list.svelte-1njssi3{display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem}.typo-feature-settings-default.svelte-1njssi3 .typo-feature-settings-default-list .typo-feature-settings-default-item.svelte-1njssi3{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-feature-settings-hotkeys-list.svelte-1njssi3.svelte-1njssi3,.typo-feature-settings-commands-list.svelte-1njssi3.svelte-1njssi3{display:flex;flex-direction:row;gap:1rem;flex-wrap:wrap}.typo-feature-item.svelte-xje42n.svelte-xje42n{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-feature-item.hidden.svelte-xje42n.svelte-xje42n{display:none}.typo-feature-item.svelte-xje42n .feature-tags.svelte-xje42n{opacity:.5;font-size:.9rem;text-transform:lowercase}.typo-feature-item.devMode.svelte-xje42n .feature-id.svelte-xje42n{display:block;position:absolute;bottom:0;right:0;-webkit-user-select:none;user-select:none;opacity:.5;padding:.2rem}.typo-feature-item.svelte-xje42n .feature-id.svelte-xje42n{display:none}.typo-feature-item.svelte-xje42n .description.svelte-xje42n{flex-grow:1;display:flex;gap:1rem;align-items:center;-webkit-user-select:none;user-select:none}.typo-feature-item.svelte-xje42n .description[role=button].svelte-xje42n{cursor:pointer}.typo-feature-item.svelte-xje42n .description img.svelte-xje42n{filter:grayscale(100%);opacity:.7;width:1.5em;height:1.5em}.typo-feature-item.svelte-xje42n .description img.svelte-xje42n:hover{filter:grayscale(0%);opacity:1}.typo-feature-item.svelte-xje42n .name-toggle.svelte-xje42n{display:flex;align-items:center;gap:1rem;font-weight:700;font-size:1.2rem;cursor:pointer;-webkit-user-select:none;user-select:none}.typo-feature-item.svelte-xje42n .name-toggle.locked.svelte-xje42n{cursor:not-allowed}.typo-feature-item.svelte-xje42n .name-toggle.locked img.svelte-xje42n{filter:grayscale(100%);opacity:.7}.typo-feature-item.svelte-xje42n .name-toggle img.svelte-xje42n{width:1.5em;height:1.5em;filter:drop-shadow(3px 3px 0px rgba(0,0,0,.3))}.typo-feature-item.svelte-xje42n .name-toggle span.svelte-xje42n:last-child{font-size:1rem;opacity:.5;margin-left:auto;text-transform:uppercase}.typo-features-container.svelte-1ly2c3r.svelte-1ly2c3r{position:relative;width:100%;flex-grow:1;overflow-x:hidden}.typo-features-info.svelte-1ly2c3r.svelte-1ly2c3r{max-width:clamp(40em,40em,100%);text-align:left;padding-bottom:2em}.typo-features-filter.svelte-1ly2c3r.svelte-1ly2c3r{display:grid;gap:1rem;grid-template-columns:auto auto;padding-bottom:2em;align-items:center}.typo-features-filter.svelte-1ly2c3r .filters.svelte-1ly2c3r{display:flex;flex-wrap:wrap;gap:1rem}.typo-features-filter.svelte-1ly2c3r .filter.svelte-1ly2c3r{text-transform:lowercase;cursor:pointer;padding:.3rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px;opacity:.6}.typo-features-filter.svelte-1ly2c3r .filter.selected.svelte-1ly2c3r{opacity:1}.typo-feature-settings.svelte-1ly2c3r.svelte-1ly2c3r{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;flex-direction:column;gap:2rem;margin:0 2em 2em;padding:2em;overflow:auto;transform:translate(-100vw);transition:transform .1s ease-in-out;border-radius:3px}.typo-feature-settings.settingsVisible.svelte-1ly2c3r.svelte-1ly2c3r{transform:translate(0)}.typo-features.svelte-1ly2c3r.svelte-1ly2c3r{display:flex;flex-direction:column;align-items:center;position:absolute;top:0;right:0;bottom:0;left:0;transform:translate(0);transition:transform .1s ease-in-out}.typo-features.settingsVisible.svelte-1ly2c3r.svelte-1ly2c3r{transform:translate(100vw)}.typo-features.svelte-1ly2c3r .typo-features-list.svelte-1ly2c3r{width:100%;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:2rem;margin:0 2rem;padding-bottom:2rem;overflow:auto}#game-toolbar:has(.typo-brush-lab-switch.expanded){grid-template-rows:max-content}#game-toolbar:not(:has(.typo-brush-lab-switch.expanded))>.typo-brush-lab-group{display:none}.typo-brush-lab-group.svelte-p5jc91.svelte-p5jc91{display:flex;flex-direction:row;align-items:center;gap:2rem;grid-row:2}.typo-brush-lab-group.svelte-p5jc91 .typo-brush-lab-mods.svelte-p5jc91,.typo-brush-lab-group.svelte-p5jc91 .typo-brush-lab-tools.svelte-p5jc91{display:flex;flex-direction:row;gap:.5rem}.item-selection.svelte-15vhuqn.svelte-15vhuqn{display:grid;grid-template-columns:auto 1fr;flex-grow:1;width:100%;padding:1rem 2rem;gap:2rem}.item-selection.svelte-15vhuqn .item-sidebar.svelte-15vhuqn{display:flex;flex-direction:column;gap:1rem;padding-right:2rem;height:100%;border-right:1px solid var(--COLOR_PANEL_BORDER_FOCUS);overflow:auto}.item-selection.svelte-15vhuqn .item-sidebar h3.svelte-15vhuqn{opacity:.5}.item-selection.svelte-15vhuqn .item-sidebar .item-sidebar-entry.svelte-15vhuqn{display:flex;gap:.5rem;align-items:center;cursor:pointer}.item-selection.svelte-15vhuqn .item-sidebar .item-sidebar-entry img.svelte-15vhuqn{height:2rem}.item-selection.svelte-15vhuqn .item-details.svelte-15vhuqn{display:flex;flex-direction:column;gap:1rem}.item-selection.svelte-15vhuqn .item-details .item-title.svelte-15vhuqn{display:flex;align-items:center;gap:2rem}.item-selection.svelte-15vhuqn .item-details .item-title b.svelte-15vhuqn{opacity:.5}.item-selection.svelte-15vhuqn .item-details .item-details-settings-list.svelte-15vhuqn{display:flex;flex-direction:row;flex-wrap:wrap;gap:2rem}.item-selection.svelte-15vhuqn .item-details .item-details-settings-list .item-details-settings-item.svelte-15vhuqn{min-width:clamp(20em,20em,100%);max-width:clamp(20em,20em,100%);background-color:var(--COLOR_PANEL_HI);border-radius:3px;display:flex;flex-direction:column;gap:1rem;padding:1rem;flex:1 1 0px;position:relative}.typo-logs-export.svelte-oun24t.svelte-oun24t,.typo-logs-logger-list.svelte-oun24t.svelte-oun24t,.typo-logs-overwrite.svelte-oun24t.svelte-oun24t{display:flex;flex-direction:row;flex-wrap:wrap;gap:1rem;margin:1rem;align-items:center}.typo-logs-logger-list.svelte-oun24t .typo-logs-logger.svelte-oun24t{min-width:clamp(10em,auto,100%);max-width:clamp(10em,auto,100%);background-color:var(--COLOR_PANEL_HI);display:flex;flex-direction:column;border-radius:3px;gap:1rem;padding:1rem}.typo-logs-logger-list.svelte-oun24t .typo-logs-logger.hidden.svelte-oun24t{display:none}.typo-lobby-filters.svelte-lqoucf.svelte-lqoucf{display:flex;flex-direction:column;overflow:auto;height:100%;gap:1rem}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-header.svelte-lqoucf{display:flex;justify-content:space-between;align-items:center}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list.svelte-lqoucf{flex-grow:1;display:flex;flex-wrap:wrap;gap:1rem;align-content:flex-start;overflow:auto}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item.svelte-lqoucf{display:flex;align-items:center;gap:.5rem;padding:.2rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item .typo-lobby-filters-item-remove.svelte-lqoucf{opacity:0;transition:opacity .1s}.typo-lobby-filters.svelte-lqoucf .typo-lobby-filters-list .typo-lobby-filters-item:hover .typo-lobby-filters-item-remove.svelte-lqoucf{opacity:1}.typo-filter-form.svelte-9ect24.svelte-9ect24{display:flex;flex-direction:column;gap:2rem}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs.svelte-9ect24{display:flex;flex-direction:column;gap:1rem}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row.svelte-9ect24{display:flex;gap:1rem;align-items:center}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row input[type=text].svelte-9ect24{width:auto;flex-grow:1}.typo-filter-form.svelte-9ect24 .typo-filter-form-inputs .typo-filter-form-row input[type=number].svelte-9ect24{width:5rem}.typo-filter-search.svelte-1apd7dj.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:column;gap:2rem;max-width:min(50vw,100%)}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:row;flex-wrap:wrap;gap:1rem;justify-content:center}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.svelte-1apd7dj.svelte-1apd7dj{display:flex;flex-direction:column;gap:.5rem;background-color:var(--COLOR_PANEL_HI);border-radius:3px;padding:.5rem}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.lobby.svelte-1apd7dj.svelte-1apd7dj{cursor:pointer}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item.svelte-1apd7dj>b.svelte-1apd7dj{flex-grow:1;text-align:center}.typo-filter-search.svelte-1apd7dj .typo-filter-search-list .typo-filter-search-list-item .typo-filter-search-list-item-description.svelte-1apd7dj.svelte-1apd7dj{white-space:preserve}#game-players .player .player-icons .typo-awards-icon.svelte-19i0k4m{height:20px;width:20px;align-self:flex-end}@keyframes svelte-aldc0m-award-presentation{0%{opacity:0;background-size:100%}25%{opacity:1;background-size:30px}50%{opacity:1;background-size:48px}to{opacity:0;background-size:48px}}.typo-awards-icon.svelte-aldc0m{position:absolute;top:60px;right:4px}.typo-awards-presentation.svelte-aldc0m{position:absolute;top:0;right:0;bottom:0;left:0;background-position:center;background-repeat:no-repeat;pointer-events:none;animation:svelte-aldc0m-award-presentation 3s ease-out forwards}.typo-award-picker.svelte-9q5vog.svelte-9q5vog{display:flex;flex-direction:column;height:100%;width:100%;align-items:center;gap:2rem;margin-bottom:2rem;overflow:auto}.typo-award-picker.svelte-9q5vog .typo-award-picker-list.svelte-9q5vog{flex-grow:1;width:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(6rem,1fr));gap:1rem;padding:0 2rem}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award.svelte-9q5vog{background-color:var(--COLOR_PANEL_BG);border-radius:5px;display:flex;flex-direction:column;gap:.1rem;padding:.1rem;align-items:center;cursor:pointer;transition:transform .1s}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award.svelte-9q5vog:hover{transform:scale(.9)}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award .typo-award-picker-award-thumb.svelte-9q5vog{width:4rem;aspect-ratio:1;background-size:cover}.typo-award-picker.svelte-9q5vog .typo-award-picker-list .typo-award-picker-award span.svelte-9q5vog{font-size:.9rem;opacity:.9;text-align:center}.typo-player-scene.svelte-eg9tl1{position:absolute;top:0;right:0;bottom:0;left:0;background-repeat:no-repeat;background-size:cover;background-position:center;z-index:-1}.sprite-slot.svelte-1uuttlm{position:absolute;left:-33%;top:-33%;width:166%;height:166%;background-repeat:no-repeat;background-size:contain}.typo-toolbar-challenges-list.svelte-wy9tne.svelte-wy9tne{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1rem}.typo-toolbar-challenges-list.svelte-wy9tne .challenge.svelte-wy9tne{display:flex;flex-direction:column}.typo-toolbar-challenges-list.svelte-wy9tne .challenge span.svelte-wy9tne{padding-left:2rem}.typo-toolbar-imagelab-actions.svelte-1tv05w9.svelte-1tv05w9{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:.7rem}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .lockedHint.svelte-1tv05w9{display:flex;gap:1rem;align-items:center;margin-bottom:1rem;width:100%}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .lockedHint span.svelte-1tv05w9{flex-grow:1;-webkit-user-select:none;user-select:none;font-weight:600;opacity:.8}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.svelte-1tv05w9{display:flex;gap:1rem;align-items:center}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.locked.svelte-1tv05w9>:last-child{pointer-events:none;opacity:.5}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands.svelte-1tv05w9>:last-child{flex-grow:1}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands .remove.svelte-1tv05w9{filter:grayscale(.7);transition:filter 60ms}.typo-toolbar-imagelab-actions.svelte-1tv05w9 .saved-commands .remove.svelte-1tv05w9:hover{filter:grayscale(0)}.typo-imagelab-position-picker.svelte-zwzp7f{display:flex;flex-direction:column;gap:.5rem}.typo-image-post.svelte-f411i0.svelte-f411i0{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1em}.typo-image-post.svelte-f411i0 img.svelte-f411i0{border-radius:3px}.typo-image-post.svelte-f411i0 .navigate-image.svelte-f411i0{display:flex;justify-content:space-between;align-items:center}.typo-image-post.svelte-f411i0 .not-logged-in.svelte-f411i0,.typo-image-post.svelte-f411i0 .typo-post-info.svelte-f411i0{font-weight:600;opacity:.7}.typo-toolbar-save-actions.svelte-1xyzs78{display:flex;flex-direction:column;width:100%;align-items:stretch;gap:1em}.lobby-navigation.svelte-yw7ztm.svelte-yw7ztm{gap:1rem;display:flex;position:absolute;width:fit-content;right:50px;padding-right:1rem;height:100%;align-items:center}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm,.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm{content:var(--file-img-arrow-small-gif);cursor:pointer;height:42px;aspect-ratio:1;transition:scale .1s ease-in-out}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm:hover,.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm:hover{scale:1.1}.lobby-navigation.svelte-yw7ztm .lobby-exit.svelte-yw7ztm{filter:drop-shadow(rgba(0,0,0,.3) 3px 3px 0px) sepia(1) saturate(5) brightness(.8) hue-rotate(324deg)}.lobby-navigation.svelte-yw7ztm .lobby-next.svelte-yw7ztm{transform:rotateY(180deg);filter:drop-shadow(rgba(0,0,0,.3) -3px 3px 0px) sepia(1) saturate(5) brightness(.7) hue-rotate(56deg)}h2,h3{margin-top:0}:root{--COLOR_BUTTON_DANGER_BG: hsl(44, 81%, 51%);--COLOR_BUTTON_SUBMIT_BG: hsl(110, 75%, 55%);--COLOR_BUTTON_NORMAL_BG: hsl(208, 80%, 54%);--COLOR_BUTTON_DANGER_TEXT: hsl(0, 0%, 100%);--COLOR_BUTTON_SUBMIT_TEXT: hsl(0, 0%, 100%);--COLOR_BUTTON_NORMAL_TEXT: hsl(0, 0%, 100%)}.color-scrollbar::-webkit-scrollbar,.color-scrollbar ::-webkit-scrollbar{width:14px;border-radius:7px;background-color:var(--COLOR_PANEL_LO)}.color-scrollbar::-webkit-scrollbar-thumb,.color-scrollbar ::-webkit-scrollbar-thumb{border-radius:7px;background-color:var(--COLOR_PANEL_HI)}input.typo[type=text]{border-radius:.5rem;font-weight:600;padding:.5rem}img{display:block}.tool[data-tooltip="No Tool"]{display:none}#game-players{z-index:1}html:not([data-typo_loading_screen_disabled=true]) body>*{opacity:0;transition:opacity .2s;transition-delay:.1s}html:not([data-typo_loading_screen_disabled=true]) body[data-typo_loaded=true]>*{opacity:1}html:not([data-typo_loading_screen_disabled=true]) body:after{display:grid;place-content:center;content:"";position:fixed;top:0;left:0;width:100vw;height:100vh;opacity:1;transition:opacity .2s;background-image:var(--file-img-wand-gif);background-size:10rem;background-repeat:no-repeat;background-position:center;pointer-events:none}html:not([data-typo_loading_screen_disabled=true]) body[data-typo_loaded=true]:after{opacity:0} ');
 
 (function () {
   'use strict';
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 40e21a4", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 9ea394c", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -4980,8 +4980,14 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   }
   __name(timer, "timer");
   function interval(period, scheduler) {
+    if (period === void 0) {
+      period = 0;
+    }
     if (scheduler === void 0) {
       scheduler = asyncScheduler;
+    }
+    if (period < 0) {
+      period = 0;
     }
     return timer(period, period, scheduler);
   }
@@ -6531,7 +6537,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   __name(fromObservable, "fromObservable");
   if (typeof window !== "undefined")
     (window.__svelte || (window.__svelte = { v: /* @__PURE__ */ new Set() })).v.add(PUBLIC_VERSION);
-  function create_if_block$L(ctx) {
+  function create_if_block$M(ctx) {
     let span;
     let t;
     return {
@@ -6562,8 +6568,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$L, "create_if_block$L");
-  function create_fragment$1H(ctx) {
+  __name(create_if_block$M, "create_if_block$M");
+  function create_fragment$1I(ctx) {
     let div;
     let img;
     let img_src_value;
@@ -6572,7 +6578,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     let dispose;
     let if_block = (
       /*description*/
-      ctx[2] && create_if_block$L(ctx)
+      ctx[2] && create_if_block$M(ctx)
     );
     return {
       c() {
@@ -6643,7 +6649,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$L(ctx2);
+            if_block = create_if_block$M(ctx2);
             if_block.c();
             if_block.m(div, null);
           }
@@ -6682,8 +6688,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1H, "create_fragment$1H");
-  function instance$1x($$self, $$props, $$invalidate) {
+  __name(create_fragment$1I, "create_fragment$1I");
+  function instance$1y($$self, $$props, $$invalidate) {
     let { checked = false } = $$props;
     let { disabled = false } = $$props;
     let { description = "" } = $$props;
@@ -6715,16 +6721,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       keypress_handler
     ];
   }
-  __name(instance$1x, "instance$1x");
+  __name(instance$1y, "instance$1y");
   const _Checkbox = class _Checkbox extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1x, create_fragment$1H, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
+      init(this, options, instance$1y, create_fragment$1I, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
     }
   };
   __name(_Checkbox, "Checkbox");
   let Checkbox = _Checkbox;
-  function create_if_block$K(ctx) {
+  function create_if_block$L(ctx) {
     let b;
     let checkbox;
     let updating_checked;
@@ -6806,13 +6812,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$K, "create_if_block$K");
-  function create_fragment$1G(ctx) {
+  __name(create_if_block$L, "create_if_block$L");
+  function create_fragment$1H(ctx) {
     let if_block_anchor;
     let current;
     let if_block = (
       /*settingStore*/
-      ctx[1] && create_if_block$K(ctx)
+      ctx[1] && create_if_block$L(ctx)
     );
     return {
       c() {
@@ -6836,7 +6842,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
               transition_in(if_block, 1);
             }
           } else {
-            if_block = create_if_block$K(ctx2);
+            if_block = create_if_block$L(ctx2);
             if_block.c();
             transition_in(if_block, 1);
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -6866,8 +6872,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1G, "create_fragment$1G");
-  function instance$1w($$self, $$props, $$invalidate) {
+  __name(create_fragment$1H, "create_fragment$1H");
+  function instance$1x($$self, $$props, $$invalidate) {
     let $settingStore, $$unsubscribe_settingStore = noop, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
     $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
     let { setting } = $$props;
@@ -6890,16 +6896,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return [setting, settingStore, $settingStore, checkbox_checked_binding];
   }
-  __name(instance$1w, "instance$1w");
+  __name(instance$1x, "instance$1x");
   const _Boolean_setting_input = class _Boolean_setting_input extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1w, create_fragment$1G, safe_not_equal, { setting: 0 });
+      init(this, options, instance$1x, create_fragment$1H, safe_not_equal, { setting: 0 });
     }
   };
   __name(_Boolean_setting_input, "Boolean_setting_input");
   let Boolean_setting_input = _Boolean_setting_input;
-  function create_if_block$J(ctx) {
+  function create_if_block$K(ctx) {
     let div1;
     let b;
     let t0_value = (
@@ -7028,7 +7034,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$J, "create_if_block$J");
+  __name(create_if_block$K, "create_if_block$K");
   function create_if_block_1$m(ctx) {
     let input;
     let input_min_value;
@@ -7115,11 +7121,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_if_block_1$m, "create_if_block_1$m");
-  function create_fragment$1F(ctx) {
+  function create_fragment$1G(ctx) {
     let if_block_anchor;
     let if_block = (
       /*settingStore*/
-      ctx[3] && create_if_block$J(ctx)
+      ctx[3] && create_if_block$K(ctx)
     );
     return {
       c() {
@@ -7138,7 +7144,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$J(ctx2);
+            if_block = create_if_block$K(ctx2);
             if_block.c();
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
           }
@@ -7157,8 +7163,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1F, "create_fragment$1F");
-  function instance$1v($$self, $$props, $$invalidate) {
+  __name(create_fragment$1G, "create_fragment$1G");
+  function instance$1w($$self, $$props, $$invalidate) {
     let $settingStore, $$unsubscribe_settingStore = noop, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
     $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
     let { setting } = $$props;
@@ -7198,11 +7204,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       input_change_input_handler
     ];
   }
-  __name(instance$1v, "instance$1v");
+  __name(instance$1w, "instance$1w");
   const _Numeric_setting_input = class _Numeric_setting_input extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1v, create_fragment$1F, safe_not_equal, {
+      init(this, options, instance$1w, create_fragment$1G, safe_not_equal, {
         setting: 0,
         bounds: 1,
         withSliderAndSteps: 2
@@ -7218,7 +7224,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     return child_ctx;
   }
   __name(get_each_context$z, "get_each_context$z");
-  function create_if_block$I(ctx) {
+  function create_if_block$J(ctx) {
     let div1;
     let b;
     let t0_value = (
@@ -7346,7 +7352,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$I, "create_if_block$I");
+  __name(create_if_block$J, "create_if_block$J");
   function create_each_block$z(ctx) {
     let option;
     let t_value = (
@@ -7386,11 +7392,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_each_block$z, "create_each_block$z");
-  function create_fragment$1E(ctx) {
+  function create_fragment$1F(ctx) {
     let if_block_anchor;
     let if_block = (
       /*settingStore*/
-      ctx[2] && create_if_block$I(ctx)
+      ctx[2] && create_if_block$J(ctx)
     );
     return {
       c() {
@@ -7409,7 +7415,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$I(ctx2);
+            if_block = create_if_block$J(ctx2);
             if_block.c();
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
           }
@@ -7428,8 +7434,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1E, "create_fragment$1E");
-  function instance$1u($$self, $$props, $$invalidate) {
+  __name(create_fragment$1F, "create_fragment$1F");
+  function instance$1v($$self, $$props, $$invalidate) {
     let $settingStore, $$unsubscribe_settingStore = noop, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(3, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
     $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
     let { setting } = $$props;
@@ -7455,16 +7461,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return [setting, choices, settingStore, $settingStore, select_change_handler];
   }
-  __name(instance$1u, "instance$1u");
+  __name(instance$1v, "instance$1v");
   const _Choice_setting_input = class _Choice_setting_input extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1u, create_fragment$1E, safe_not_equal, { setting: 0, choices: 1 });
+      init(this, options, instance$1v, create_fragment$1F, safe_not_equal, { setting: 0, choices: 1 });
     }
   };
   __name(_Choice_setting_input, "Choice_setting_input");
   let Choice_setting_input = _Choice_setting_input;
-  function create_if_block$H(ctx) {
+  function create_if_block$I(ctx) {
     let div1;
     let b;
     let t0_value = (
@@ -7548,12 +7554,12 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$H, "create_if_block$H");
-  function create_fragment$1D(ctx) {
+  __name(create_if_block$I, "create_if_block$I");
+  function create_fragment$1E(ctx) {
     let if_block_anchor;
     let if_block = (
       /*settingStore*/
-      ctx[1] && create_if_block$H(ctx)
+      ctx[1] && create_if_block$I(ctx)
     );
     return {
       c() {
@@ -7572,7 +7578,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$H(ctx2);
+            if_block = create_if_block$I(ctx2);
             if_block.c();
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
           }
@@ -7591,8 +7597,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1D, "create_fragment$1D");
-  function instance$1t($$self, $$props, $$invalidate) {
+  __name(create_fragment$1E, "create_fragment$1E");
+  function instance$1u($$self, $$props, $$invalidate) {
     let $settingStore, $$unsubscribe_settingStore = noop, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
     $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
     let { setting } = $$props;
@@ -7615,11 +7621,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return [setting, settingStore, $settingStore, input_input_handler];
   }
-  __name(instance$1t, "instance$1t");
+  __name(instance$1u, "instance$1u");
   const _Text_setting_input = class _Text_setting_input extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1t, create_fragment$1D, safe_not_equal, { setting: 0 });
+      init(this, options, instance$1u, create_fragment$1E, safe_not_equal, { setting: 0 });
     }
   };
   __name(_Text_setting_input, "Text_setting_input");
@@ -7884,7 +7890,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_if_block_1$l, "create_if_block_1$l");
-  function create_if_block$G(ctx) {
+  function create_if_block$H(ctx) {
     let div1;
     let div0;
     let mounted;
@@ -7966,8 +7972,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$G, "create_if_block$G");
-  function create_fragment$1C(ctx) {
+  __name(create_if_block$H, "create_if_block$H");
+  function create_fragment$1D(ctx) {
     let div5;
     let div0;
     let t2;
@@ -7988,7 +7994,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     );
     let if_block1 = (
       /*allowAlpha*/
-      ctx[1] && create_if_block$G(ctx)
+      ctx[1] && create_if_block$H(ctx)
     );
     return {
       c() {
@@ -8172,7 +8178,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           if (if_block1) {
             if_block1.p(ctx2, dirty);
           } else {
-            if_block1 = create_if_block$G(ctx2);
+            if_block1 = create_if_block$H(ctx2);
             if_block1.c();
             if_block1.m(div5, t6);
           }
@@ -8203,8 +8209,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1C, "create_fragment$1C");
-  function instance$1s($$self, $$props, $$invalidate) {
+  __name(create_fragment$1D, "create_fragment$1D");
+  function instance$1t($$self, $$props, $$invalidate) {
     let { color = Color.fromHex("#45588d") } = $$props;
     let { allowAlpha = false } = $$props;
     let { description = "" } = $$props;
@@ -8300,16 +8306,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       change_handler
     ];
   }
-  __name(instance$1s, "instance$1s");
+  __name(instance$1t, "instance$1t");
   const _Color_picker = class _Color_picker extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1s, create_fragment$1C, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
+      init(this, options, instance$1t, create_fragment$1D, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
     }
   };
   __name(_Color_picker, "Color_picker");
   let Color_picker = _Color_picker;
-  function create_if_block$F(ctx) {
+  function create_if_block$G(ctx) {
     let div;
     let colorpicker;
     let updating_color;
@@ -8480,8 +8486,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$F, "create_if_block$F");
-  function create_fragment$1B(ctx) {
+  __name(create_if_block$G, "create_if_block$G");
+  function create_fragment$1C(ctx) {
     let div1;
     let div0;
     let t;
@@ -8491,7 +8497,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     let dispose;
     let if_block = (
       /*popupPosition*/
-      ctx[6] && create_if_block$F(ctx)
+      ctx[6] && create_if_block$G(ctx)
     );
     return {
       c() {
@@ -8574,7 +8580,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
               transition_in(if_block, 1);
             }
           } else {
-            if_block = create_if_block$F(ctx2);
+            if_block = create_if_block$G(ctx2);
             if_block.c();
             transition_in(if_block, 1);
             if_block.m(div1, null);
@@ -8620,9 +8626,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1B, "create_fragment$1B");
+  __name(create_fragment$1C, "create_fragment$1C");
   const click_handler = /* @__PURE__ */ __name((e) => e.stopImmediatePropagation(), "click_handler");
-  function instance$1r($$self, $$props, $$invalidate) {
+  function instance$1s($$self, $$props, $$invalidate) {
     let { color = Color.fromHex("#45588d") } = $$props;
     let { allowAlpha = false } = $$props;
     let { useBackground = true } = $$props;
@@ -8699,11 +8705,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       colorpicker_color_binding
     ];
   }
-  __name(instance$1r, "instance$1r");
+  __name(instance$1s, "instance$1s");
   const _Color_picker_button = class _Color_picker_button extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1r, create_fragment$1B, safe_not_equal, {
+      init(this, options, instance$1s, create_fragment$1C, safe_not_equal, {
         color: 0,
         allowAlpha: 1,
         useBackground: 2,
@@ -8716,7 +8722,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Color_picker_button, "Color_picker_button");
   let Color_picker_button = _Color_picker_button;
-  function create_if_block$E(ctx) {
+  function create_if_block$F(ctx) {
     let div2;
     let b;
     let t0_value = (
@@ -8810,13 +8816,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$E, "create_if_block$E");
-  function create_fragment$1A(ctx) {
+  __name(create_if_block$F, "create_if_block$F");
+  function create_fragment$1B(ctx) {
     let if_block_anchor;
     let current;
     let if_block = (
       /*settingStore*/
-      ctx[2] && create_if_block$E(ctx)
+      ctx[2] && create_if_block$F(ctx)
     );
     return {
       c() {
@@ -8840,7 +8846,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
               transition_in(if_block, 1);
             }
           } else {
-            if_block = create_if_block$E(ctx2);
+            if_block = create_if_block$F(ctx2);
             if_block.c();
             transition_in(if_block, 1);
             if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -8870,8 +8876,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1A, "create_fragment$1A");
-  function instance$1q($$self, $$props, $$invalidate) {
+  __name(create_fragment$1B, "create_fragment$1B");
+  function instance$1r($$self, $$props, $$invalidate) {
     let $settingStore, $$unsubscribe_settingStore = noop, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
     $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
     let { setting } = $$props;
@@ -8906,11 +8912,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return [setting, color, settingStore, colorpickerbutton_color_binding];
   }
-  __name(instance$1q, "instance$1q");
+  __name(instance$1r, "instance$1r");
   const _Color_hex_setting_input = class _Color_hex_setting_input extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1q, create_fragment$1A, safe_not_equal, { setting: 0 });
+      init(this, options, instance$1r, create_fragment$1B, safe_not_equal, { setting: 0 });
     }
   };
   __name(_Color_hex_setting_input, "Color_hex_setting_input");
@@ -11952,17 +11958,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   }
   __name(propertyEventDecorator, "propertyEventDecorator");
   var postConstruct = propertyEventDecorator(POST_CONSTRUCT, MULTIPLE_POST_CONSTRUCT_METHODS);
-  var __defProp$1$ = Object.defineProperty;
+  var __defProp$20 = Object.defineProperty;
   var __getOwnPropDesc$Z = Object.getOwnPropertyDescriptor;
-  var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$1$(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
-  var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$20(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
+  var __decorateClass$20 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Z(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1$(target, key2, result);
+    if (kind && result) __defProp$20(target, key2, result);
     return result;
-  }, "__decorateClass$1$");
+  }, "__decorateClass$20");
   var __publicField2 = /* @__PURE__ */ __name((obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value), "__publicField");
   let LoggingService = (_a = class {
     constructor() {
@@ -12035,7 +12041,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     error: "color: red; font-weight: bold;",
     date: "color: darkGrey; font-weight: light;"
   });
-  LoggingService = __decorateClass$1$([
+  LoggingService = __decorateClass$20([
     injectable()
   ], LoggingService);
   const _ApplicationEvent = class _ApplicationEvent {
@@ -12043,16 +12049,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   __name(_ApplicationEvent, "ApplicationEvent");
   let ApplicationEvent = _ApplicationEvent;
   const loggerFactory = Symbol("loggerFactory");
-  var __defProp$1_ = Object.defineProperty;
+  var __defProp$1$ = Object.defineProperty;
   var __getOwnPropDesc$Y = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Y(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1_(target, key2, result);
+    if (kind && result) __defProp$1$(target, key2, result);
     return result;
-  }, "__decorateClass$1_");
+  }, "__decorateClass$1$");
   var __decorateParam$u = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$u");
   let EventsService = (_b = class {
     constructor(loggerFactory2) {
@@ -12078,20 +12084,20 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._events$.next(event);
     }
   }, __name(_b, "EventsService"), _b);
-  EventsService = __decorateClass$1_([
+  EventsService = __decorateClass$1$([
     injectable(),
     __decorateParam$u(0, inject(loggerFactory))
   ], EventsService);
-  var __defProp$1Z = Object.defineProperty;
+  var __defProp$1_ = Object.defineProperty;
   var __getOwnPropDesc$X = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$X(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Z(target, key2, result);
+    if (kind && result) __defProp$1_(target, key2, result);
     return result;
-  }, "__decorateClass$1Z");
+  }, "__decorateClass$1_");
   var __decorateParam$t = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$t");
   let EventProcessor = (_c = class {
     constructor(loggerFactory2, _eventsService) {
@@ -12121,24 +12127,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return event instanceof this.eventType;
     }
   }, __name(_c, "EventProcessor"), _c);
-  __decorateClass$1Z([
+  __decorateClass$1_([
     postConstruct()
   ], EventProcessor.prototype, "start", 1);
-  EventProcessor = __decorateClass$1Z([
+  EventProcessor = __decorateClass$1_([
     injectable(),
     __decorateParam$t(0, inject(loggerFactory)),
     __decorateParam$t(1, inject(EventsService))
   ], EventProcessor);
-  var __defProp$1Y = Object.defineProperty;
+  var __defProp$1Z = Object.defineProperty;
   var __getOwnPropDesc$W = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$W(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Y(target, key2, result);
+    if (kind && result) __defProp$1Z(target, key2, result);
     return result;
-  }, "__decorateClass$1Y");
+  }, "__decorateClass$1Z");
   var __decorateParam$s = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$s");
   let EventListener = (_d = class {
     constructor(_eventsService, loggerFactory2) {
@@ -12161,21 +12167,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._events$;
     }
   }, __name(_d, "EventListener"), _d);
-  EventListener = __decorateClass$1Y([
+  EventListener = __decorateClass$1Z([
     injectable(),
     __decorateParam$s(0, inject(EventsService)),
     __decorateParam$s(1, inject(loggerFactory))
   ], EventListener);
-  var __defProp$1X = Object.defineProperty;
+  var __defProp$1Y = Object.defineProperty;
   var __getOwnPropDesc$V = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$V(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1X(target, key2, result);
+    if (kind && result) __defProp$1Y(target, key2, result);
     return result;
-  }, "__decorateClass$1X");
+  }, "__decorateClass$1Y");
   const _CanvasClearedEvent = class _CanvasClearedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -12198,7 +12204,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_e, "CanvasClearedEventProcessor"), _e);
-  CanvasClearedEventProcessor = __decorateClass$1X([
+  CanvasClearedEventProcessor = __decorateClass$1Y([
     injectable()
   ], CanvasClearedEventProcessor);
   let CanvasClearedEventListener = (_f = class extends EventListener {
@@ -12207,10 +12213,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_f, "CanvasClearedEventListener"), _f);
-  __decorateClass$1X([
+  __decorateClass$1Y([
     inject(CanvasClearedEventProcessor)
   ], CanvasClearedEventListener.prototype, "_processor", 2);
-  CanvasClearedEventListener = __decorateClass$1X([
+  CanvasClearedEventListener = __decorateClass$1Y([
     injectable()
   ], CanvasClearedEventListener);
   const canvasClearedEventRegistration = {
@@ -12463,16 +12469,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ExtensionCommand, "ExtensionCommand");
   let ExtensionCommand = _ExtensionCommand;
-  var __defProp$1W = Object.defineProperty;
+  var __defProp$1X = Object.defineProperty;
   var __getOwnPropDesc$U = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$U(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1W(target, key2, result);
+    if (kind && result) __defProp$1X(target, key2, result);
     return result;
-  }, "__decorateClass$1W");
+  }, "__decorateClass$1X");
   var __decorateParam$r = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$r");
   let CommandsService = (_g = class {
     constructor(loggerFactory2) {
@@ -12559,20 +12565,20 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       } else return result.result;
     }
   }, __name(_g, "CommandsService"), _g);
-  CommandsService = __decorateClass$1W([
+  CommandsService = __decorateClass$1X([
     injectable(),
     __decorateParam$r(0, inject(loggerFactory))
   ], CommandsService);
-  var __defProp$1V = Object.defineProperty;
+  var __defProp$1W = Object.defineProperty;
   var __getOwnPropDesc$T = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$T(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1V(target, key2, result);
+    if (kind && result) __defProp$1W(target, key2, result);
     return result;
-  }, "__decorateClass$1V");
+  }, "__decorateClass$1W");
   var __decorateParam$q = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$q");
   let HotkeysService = (_h = class {
     constructor(loggerFactory2) {
@@ -12644,20 +12650,20 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return [...hotkey.defaultCombo ?? []];
     }
   }, __name(_h, "HotkeysService"), _h);
-  HotkeysService = __decorateClass$1V([
+  HotkeysService = __decorateClass$1W([
     injectable(),
     __decorateParam$q(0, inject(loggerFactory))
   ], HotkeysService);
-  var __defProp$1U = Object.defineProperty;
+  var __defProp$1V = Object.defineProperty;
   var __getOwnPropDesc$S = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$S(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1U(target, key2, result);
+    if (kind && result) __defProp$1V(target, key2, result);
     return result;
-  }, "__decorateClass$1U");
+  }, "__decorateClass$1V");
   var __decorateParam$p = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$p");
   let TooltipsService = (_i = class {
     constructor(loggerFactory2) {
@@ -12738,20 +12744,20 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return tooltips;
     }
   }, __name(_i, "TooltipsService"), _i);
-  TooltipsService = __decorateClass$1U([
+  TooltipsService = __decorateClass$1V([
     injectable(),
     __decorateParam$p(0, inject(loggerFactory))
   ], TooltipsService);
-  var __defProp$1T = Object.defineProperty;
+  var __defProp$1U = Object.defineProperty;
   var __getOwnPropDesc$R = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$R(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1T(target, key2, result);
+    if (kind && result) __defProp$1U(target, key2, result);
     return result;
-  }, "__decorateClass$1T");
+  }, "__decorateClass$1U");
   var __decorateParam$o = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$o");
   let OnboardingService = (_j = class {
     constructor(loggerFactory2) {
@@ -12810,20 +12816,20 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._taskCompleted$.asObservable();
     }
   }, __name(_j, "OnboardingService"), _j);
-  OnboardingService = __decorateClass$1T([
+  OnboardingService = __decorateClass$1U([
     injectable(),
     __decorateParam$o(0, inject(loggerFactory))
   ], OnboardingService);
-  var __defProp$1S = Object.defineProperty;
+  var __defProp$1T = Object.defineProperty;
   var __getOwnPropDesc$Q = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Q(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1S(target, key2, result);
+    if (kind && result) __defProp$1T(target, key2, result);
     return result;
-  }, "__decorateClass$1S");
+  }, "__decorateClass$1T");
   var __decorateParam$n = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$n");
   let TypoFeature = (_k = class {
     constructor(loggerFactory2, _hotkeysService, _tooltipsService, _commandsService, _onboardingService) {
@@ -13015,10 +13021,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       };
     }
   }, __name(_k, "TypoFeature"), _k);
-  __decorateClass$1S([
+  __decorateClass$1T([
     postConstruct()
   ], TypoFeature.prototype, "init", 1);
-  TypoFeature = __decorateClass$1S([
+  TypoFeature = __decorateClass$1T([
     injectable(),
     __decorateParam$n(0, inject(loggerFactory)),
     __decorateParam$n(1, inject(HotkeysService)),
@@ -13026,16 +13032,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     __decorateParam$n(3, inject(CommandsService)),
     __decorateParam$n(4, inject(OnboardingService))
   ], TypoFeature);
-  var __defProp$1R = Object.defineProperty;
+  var __defProp$1S = Object.defineProperty;
   var __getOwnPropDesc$P = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$P(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1R(target, key2, result);
+    if (kind && result) __defProp$1S(target, key2, result);
     return result;
-  }, "__decorateClass$1R");
+  }, "__decorateClass$1S");
   let LoggerService = (_l = class {
     constructor() {
       __publicField(this, "_level", "debug");
@@ -13129,19 +13135,19 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_l, "LoggerService"), _l);
-  LoggerService = __decorateClass$1R([
+  LoggerService = __decorateClass$1S([
     injectable()
   ], LoggerService);
-  var __defProp$1Q = Object.defineProperty;
+  var __defProp$1R = Object.defineProperty;
   var __getOwnPropDesc$O = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$O(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Q(target, key2, result);
+    if (kind && result) __defProp$1R(target, key2, result);
     return result;
-  }, "__decorateClass$1Q");
+  }, "__decorateClass$1R");
   var __decorateParam$m = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$m");
   let Setup = (_m = class {
     constructor(loggerFactory2) {
@@ -13160,7 +13166,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._setupPromise;
     }
   }, __name(_m, "Setup"), _m);
-  Setup = __decorateClass$1Q([
+  Setup = __decorateClass$1R([
     injectable(),
     __decorateParam$m(0, inject(loggerFactory))
   ], Setup);
@@ -13184,16 +13190,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     return Reflect.getMetadata(decoratorSymbol, target);
   }
   __name(isEarlySetup, "isEarlySetup");
-  var __defProp$1P = Object.defineProperty;
+  var __defProp$1Q = Object.defineProperty;
   var __getOwnPropDesc$N = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$N(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1P(target, key2, result);
+    if (kind && result) __defProp$1Q(target, key2, result);
     return result;
-  }, "__decorateClass$1P");
+  }, "__decorateClass$1Q");
   let GamePatchReadySetup = (_n = class extends Setup {
     constructor() {
       super(...arguments);
@@ -13203,21 +13209,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return firstValueFrom(this._interceptor.patchLoaded$);
     }
   }, __name(_n, "GamePatchReadySetup"), _n);
-  __decorateClass$1P([
+  __decorateClass$1Q([
     inject(Interceptor)
   ], GamePatchReadySetup.prototype, "_interceptor", 2);
-  GamePatchReadySetup = __decorateClass$1P([
+  GamePatchReadySetup = __decorateClass$1Q([
     earlySetup()
   ], GamePatchReadySetup);
-  var __defProp$1O = Object.defineProperty;
-  var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1P = Object.defineProperty;
+  var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1O(target, key2, result);
+    if (result) __defProp$1P(target, key2, result);
     return result;
-  }, "__decorateClass$1O");
+  }, "__decorateClass$1P");
   const _ChatControlsSetup = class _ChatControlsSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13234,7 +13240,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatControlsSetup, "ChatControlsSetup");
   let ChatControlsSetup = _ChatControlsSetup;
-  __decorateClass$1O([
+  __decorateClass$1P([
     inject(GamePatchReadySetup)
   ], ChatControlsSetup.prototype, "_gameReadySetup");
   const _HotkeyAction = class _HotkeyAction {
@@ -13332,16 +13338,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_HotkeyAction, "HotkeyAction");
   let HotkeyAction = _HotkeyAction;
-  var __defProp$1N = Object.defineProperty;
+  var __defProp$1O = Object.defineProperty;
   var __getOwnPropDesc$M = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$M(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1N(target, key2, result);
+    if (kind && result) __defProp$1O(target, key2, result);
     return result;
-  }, "__decorateClass$1N");
+  }, "__decorateClass$1O");
   var __decorateParam$l = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$l");
   let GlobalSettingsService = (_o = class {
     constructor(loggerFactory2) {
@@ -13388,11 +13394,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return Object.values(this._settings);
     }
   }, __name(_o, "GlobalSettingsService"), _o);
-  GlobalSettingsService = __decorateClass$1N([
+  GlobalSettingsService = __decorateClass$1O([
     injectable(),
     __decorateParam$l(0, inject(loggerFactory))
   ], GlobalSettingsService);
-  function create_fragment$1z(ctx) {
+  function create_fragment$1A(ctx) {
     let div1;
     let div0;
     let div1_class_value;
@@ -13457,8 +13463,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1z, "create_fragment$1z");
-  function instance$1p($$self, $$props, $$invalidate) {
+  __name(create_fragment$1A, "create_fragment$1A");
+  function instance$1q($$self, $$props, $$invalidate) {
     let $position;
     let $direction;
     let elem;
@@ -13499,11 +13505,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       div1_binding
     ];
   }
-  __name(instance$1p, "instance$1p");
+  __name(instance$1q, "instance$1q");
   const _Controls = class _Controls extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1p, create_fragment$1z, safe_not_equal, { globalSettings: 6, element: 7 });
+      init(this, options, instance$1q, create_fragment$1A, safe_not_equal, { globalSettings: 6, element: 7 });
     }
     get element() {
       return this.$$.ctx[7];
@@ -13511,15 +13517,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Controls, "Controls");
   let Controls = _Controls;
-  var __defProp$1M = Object.defineProperty;
-  var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1N = Object.defineProperty;
+  var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1M(target, key2, result);
+    if (result) __defProp$1N(target, key2, result);
     return result;
-  }, "__decorateClass$1M");
+  }, "__decorateClass$1N");
   const _ControlsSetup = class _ControlsSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13539,13 +13545,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ControlsSetup, "ControlsSetup");
   let ControlsSetup = _ControlsSetup;
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(GamePatchReadySetup)
   ], ControlsSetup.prototype, "_gameReadySetup");
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(GlobalSettingsService)
   ], ControlsSetup.prototype, "_settingsService");
-  function create_fragment$1y(ctx) {
+  function create_fragment$1z(ctx) {
     let div;
     return {
       c() {
@@ -13567,8 +13573,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1y, "create_fragment$1y");
-  function instance$1o($$self, $$props, $$invalidate) {
+  __name(create_fragment$1z, "create_fragment$1z");
+  function instance$1p($$self, $$props, $$invalidate) {
     let elem;
     let resolve2;
     const element2 = new Promise((res) => {
@@ -13586,11 +13592,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     __name(div_binding, "div_binding");
     return [elem, element2, div_binding];
   }
-  __name(instance$1o, "instance$1o");
+  __name(instance$1p, "instance$1p");
   const _Customizer_actions = class _Customizer_actions extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1o, create_fragment$1y, safe_not_equal, { element: 1 });
+      init(this, options, instance$1p, create_fragment$1z, safe_not_equal, { element: 1 });
     }
     get element() {
       return this.$$.ctx[1];
@@ -13608,16 +13614,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CustomizerActionsSetup, "CustomizerActionsSetup");
   let CustomizerActionsSetup = _CustomizerActionsSetup;
-  var __defProp$1L = Object.defineProperty;
+  var __defProp$1M = Object.defineProperty;
   var __getOwnPropDesc$L = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$L(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1L(target, key2, result);
+    if (kind && result) __defProp$1M(target, key2, result);
     return result;
-  }, "__decorateClass$1L");
+  }, "__decorateClass$1M");
   let SkribblInitializedSetup = (_p = class extends Setup {
     async runSetup() {
       return new Promise((resolve2) => {
@@ -13626,7 +13632,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_p, "SkribblInitializedSetup"), _p);
-  SkribblInitializedSetup = __decorateClass$1L([
+  SkribblInitializedSetup = __decorateClass$1M([
     earlySetup()
   ], SkribblInitializedSetup);
   const _Toast_container = class _Toast_container extends SvelteComponent {
@@ -13637,15 +13643,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Toast_container, "Toast_container");
   let Toast_container = _Toast_container;
-  var __defProp$1K = Object.defineProperty;
-  var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1L = Object.defineProperty;
+  var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1K(target, key2, result);
+    if (result) __defProp$1L(target, key2, result);
     return result;
-  }, "__decorateClass$1K");
+  }, "__decorateClass$1L");
   const _ToastSetup = class _ToastSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13662,7 +13668,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ToastSetup, "ToastSetup");
   let ToastSetup = _ToastSetup;
-  __decorateClass$1K([
+  __decorateClass$1L([
     inject(GamePatchReadySetup)
   ], ToastSetup.prototype, "_gameReadySetup");
   function get_each_context$y(ctx, list, i) {
@@ -13795,7 +13801,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_each_block$y, "create_each_block$y");
-  function create_fragment$1x(ctx) {
+  function create_fragment$1y(ctx) {
     let div;
     let t;
     let each1_anchor;
@@ -13902,8 +13908,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1x, "create_fragment$1x");
-  function instance$1n($$self, $$props, $$invalidate) {
+  __name(create_fragment$1y, "create_fragment$1y");
+  function instance$1o($$self, $$props, $$invalidate) {
     let { tabs = [] } = $$props;
     let activeTab = tabs[0];
     const keydown_handler2 = /* @__PURE__ */ __name((tab) => $$invalidate(1, activeTab = tab), "keydown_handler");
@@ -13913,24 +13919,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return [tabs, activeTab, keydown_handler2, click_handler2];
   }
-  __name(instance$1n, "instance$1n");
+  __name(instance$1o, "instance$1o");
   const _Panel_tabs = class _Panel_tabs extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1n, create_fragment$1x, safe_not_equal, { tabs: 0 });
+      init(this, options, instance$1o, create_fragment$1y, safe_not_equal, { tabs: 0 });
     }
   };
   __name(_Panel_tabs, "Panel_tabs");
   let Panel_tabs = _Panel_tabs;
-  var __defProp$1J = Object.defineProperty;
-  var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1K = Object.defineProperty;
+  var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1J(target, key2, result);
+    if (result) __defProp$1K(target, key2, result);
     return result;
-  }, "__decorateClass$1J");
+  }, "__decorateClass$1K");
   const _PanelSetup = class _PanelSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13959,7 +13965,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_PanelSetup, "PanelSetup");
   let PanelSetup = _PanelSetup;
-  __decorateClass$1J([
+  __decorateClass$1K([
     inject(GamePatchReadySetup)
   ], PanelSetup.prototype, "_gameReadySetup");
   const _Toolbar = class _Toolbar extends SvelteComponent {
@@ -13970,15 +13976,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Toolbar, "Toolbar");
   let Toolbar = _Toolbar;
-  var __defProp$1I = Object.defineProperty;
-  var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1J = Object.defineProperty;
+  var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1I(target, key2, result);
+    if (result) __defProp$1J(target, key2, result);
     return result;
-  }, "__decorateClass$1I");
+  }, "__decorateClass$1J");
   const _ToolbarSetup = class _ToolbarSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13995,18 +14001,18 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ToolbarSetup, "ToolbarSetup");
   let ToolbarSetup = _ToolbarSetup;
-  __decorateClass$1I([
+  __decorateClass$1J([
     inject(GamePatchReadySetup)
   ], ToolbarSetup.prototype, "_gameReadySetup");
-  var __defProp$1H = Object.defineProperty;
-  var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1I = Object.defineProperty;
+  var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1H(target, key2, result);
+    if (result) __defProp$1I(target, key2, result);
     return result;
-  }, "__decorateClass$1H");
+  }, "__decorateClass$1I");
   function getElements$1(panels, toolbar, controls, toastContainer, chatControls, customizerActions) {
     return {
       panelContainer: requireElement(".panels"),
@@ -14079,37 +14085,37 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ElementsSetup, "ElementsSetup");
   let ElementsSetup = _ElementsSetup;
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(PanelSetup)
   ], ElementsSetup.prototype, "_panelSetup");
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(ToolbarSetup)
   ], ElementsSetup.prototype, "_toolbarSetup");
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(ControlsSetup)
   ], ElementsSetup.prototype, "_controlsSetup");
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(ChatControlsSetup)
   ], ElementsSetup.prototype, "_chatControlsSetup");
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(ToastSetup)
   ], ElementsSetup.prototype, "_toastSetup");
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(SkribblInitializedSetup)
   ], ElementsSetup.prototype, "_gameReadySetup");
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(CustomizerActionsSetup)
   ], ElementsSetup.prototype, "_customizerIconsSetup");
-  var __defProp$1G = Object.defineProperty;
+  var __defProp$1H = Object.defineProperty;
   var __getOwnPropDesc$K = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$K(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1G(target, key2, result);
+    if (kind && result) __defProp$1H(target, key2, result);
     return result;
-  }, "__decorateClass$1G");
+  }, "__decorateClass$1H");
   const _ChatTypedEvent = class _ChatTypedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14140,10 +14146,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_q, "ChatTypedEventProcessor"), _q);
-  __decorateClass$1G([
+  __decorateClass$1H([
     inject(ElementsSetup)
   ], ChatTypedEventProcessor.prototype, "_elementsSetup", 2);
-  ChatTypedEventProcessor = __decorateClass$1G([
+  ChatTypedEventProcessor = __decorateClass$1H([
     injectable()
   ], ChatTypedEventProcessor);
   let ChatTypedEventListener = (_r = class extends EventListener {
@@ -14152,26 +14158,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_r, "ChatTypedEventListener"), _r);
-  __decorateClass$1G([
+  __decorateClass$1H([
     inject(ChatTypedEventProcessor)
   ], ChatTypedEventListener.prototype, "_processor", 2);
-  ChatTypedEventListener = __decorateClass$1G([
+  ChatTypedEventListener = __decorateClass$1H([
     injectable()
   ], ChatTypedEventListener);
   const chatTypedEventRegistration = {
     listenerType: ChatTypedEventListener,
     processorType: ChatTypedEventProcessor
   };
-  var __defProp$1F = Object.defineProperty;
+  var __defProp$1G = Object.defineProperty;
   var __getOwnPropDesc$J = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$J(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1F(target, key2, result);
+    if (kind && result) __defProp$1G(target, key2, result);
     return result;
-  }, "__decorateClass$1F");
+  }, "__decorateClass$1G");
   const _ColorChangedEvent = class _ColorChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14196,7 +14202,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_s, "ColorChangedEventProcessor"), _s);
-  ColorChangedEventProcessor = __decorateClass$1F([
+  ColorChangedEventProcessor = __decorateClass$1G([
     injectable()
   ], ColorChangedEventProcessor);
   let ColorChangedEventListener = (_t = class extends EventListener {
@@ -14205,26 +14211,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_t, "ColorChangedEventListener"), _t);
-  __decorateClass$1F([
+  __decorateClass$1G([
     inject(ColorChangedEventProcessor)
   ], ColorChangedEventListener.prototype, "_processor", 2);
-  ColorChangedEventListener = __decorateClass$1F([
+  ColorChangedEventListener = __decorateClass$1G([
     injectable()
   ], ColorChangedEventListener);
   const colorChangedEventRegistration = {
     listenerType: ColorChangedEventListener,
     processorType: ColorChangedEventProcessor
   };
-  var __defProp$1E = Object.defineProperty;
+  var __defProp$1F = Object.defineProperty;
   var __getOwnPropDesc$I = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$I(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1E(target, key2, result);
+    if (kind && result) __defProp$1F(target, key2, result);
     return result;
-  }, "__decorateClass$1E");
+  }, "__decorateClass$1F");
   let SkribblEmitRelaySetup = (_u = class extends Setup {
     // eslint-disable-line @typescript-eslint/no-explicit-any
     async runSetup() {
@@ -14243,19 +14249,19 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_u, "SkribblEmitRelaySetup"), _u);
-  SkribblEmitRelaySetup = __decorateClass$1E([
+  SkribblEmitRelaySetup = __decorateClass$1F([
     earlySetup()
   ], SkribblEmitRelaySetup);
-  var __defProp$1D = Object.defineProperty;
+  var __defProp$1E = Object.defineProperty;
   var __getOwnPropDesc$H = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$H(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1D(target, key2, result);
+    if (kind && result) __defProp$1E(target, key2, result);
     return result;
-  }, "__decorateClass$1D");
+  }, "__decorateClass$1E");
   let SkribblMessageRelaySetup = (_v = class extends Setup {
     async runSetup() {
       return new Promise((resolve2) => {
@@ -14283,19 +14289,19 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_v, "SkribblMessageRelaySetup"), _v);
-  SkribblMessageRelaySetup = __decorateClass$1D([
+  SkribblMessageRelaySetup = __decorateClass$1E([
     earlySetup()
   ], SkribblMessageRelaySetup);
-  var __defProp$1C = Object.defineProperty;
+  var __defProp$1D = Object.defineProperty;
   var __getOwnPropDesc$G = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$G(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1C(target, key2, result);
+    if (kind && result) __defProp$1D(target, key2, result);
     return result;
-  }, "__decorateClass$1C");
+  }, "__decorateClass$1D");
   const _DrawEvent = class _DrawEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14344,13 +14350,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_w, "DrawEventProcessor"), _w);
-  __decorateClass$1C([
+  __decorateClass$1D([
     inject(SkribblMessageRelaySetup)
   ], DrawEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  __decorateClass$1C([
+  __decorateClass$1D([
     inject(SkribblEmitRelaySetup)
   ], DrawEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  DrawEventProcessor = __decorateClass$1C([
+  DrawEventProcessor = __decorateClass$1D([
     injectable()
   ], DrawEventProcessor);
   let DrawEventListener = (_x = class extends EventListener {
@@ -14359,26 +14365,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_x, "DrawEventListener"), _x);
-  __decorateClass$1C([
+  __decorateClass$1D([
     inject(DrawEventProcessor)
   ], DrawEventListener.prototype, "_processor", 2);
-  DrawEventListener = __decorateClass$1C([
+  DrawEventListener = __decorateClass$1D([
     injectable()
   ], DrawEventListener);
   const drawEventRegistration = {
     listenerType: DrawEventListener,
     processorType: DrawEventProcessor
   };
-  var __defProp$1B = Object.defineProperty;
+  var __defProp$1C = Object.defineProperty;
   var __getOwnPropDesc$F = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$F(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1B(target, key2, result);
+    if (kind && result) __defProp$1C(target, key2, result);
     return result;
-  }, "__decorateClass$1B");
+  }, "__decorateClass$1C");
   const _HintsAddedEvent = class _HintsAddedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14410,10 +14416,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_y, "HintsAddedEventProcessor"), _y);
-  __decorateClass$1B([
+  __decorateClass$1C([
     inject(SkribblMessageRelaySetup)
   ], HintsAddedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  HintsAddedEventProcessor = __decorateClass$1B([
+  HintsAddedEventProcessor = __decorateClass$1C([
     injectable()
   ], HintsAddedEventProcessor);
   let HintsAddedEventListener = (_z = class extends EventListener {
@@ -14422,26 +14428,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_z, "HintsAddedEventListener"), _z);
-  __decorateClass$1B([
+  __decorateClass$1C([
     inject(HintsAddedEventProcessor)
   ], HintsAddedEventListener.prototype, "_processor", 2);
-  HintsAddedEventListener = __decorateClass$1B([
+  HintsAddedEventListener = __decorateClass$1C([
     injectable()
   ], HintsAddedEventListener);
   const hintsAddedEventRegistration = {
     listenerType: HintsAddedEventListener,
     processorType: HintsAddedEventProcessor
   };
-  var __defProp$1A = Object.defineProperty;
+  var __defProp$1B = Object.defineProperty;
   var __getOwnPropDesc$E = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$E(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1A(target, key2, result);
+    if (kind && result) __defProp$1B(target, key2, result);
     return result;
-  }, "__decorateClass$1A");
+  }, "__decorateClass$1B");
   const _ImageResetEvent = class _ImageResetEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14480,13 +14486,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_A, "ImageResetEventProcessor"), _A);
-  __decorateClass$1A([
+  __decorateClass$1B([
     inject(SkribblMessageRelaySetup)
   ], ImageResetEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  __decorateClass$1A([
+  __decorateClass$1B([
     inject(SkribblEmitRelaySetup)
   ], ImageResetEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  ImageResetEventProcessor = __decorateClass$1A([
+  ImageResetEventProcessor = __decorateClass$1B([
     injectable()
   ], ImageResetEventProcessor);
   let ImageResetEventListener = (_B = class extends EventListener {
@@ -14495,10 +14501,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_B, "ImageResetEventListener"), _B);
-  __decorateClass$1A([
+  __decorateClass$1B([
     inject(ImageResetEventProcessor)
   ], ImageResetEventListener.prototype, "_processor", 2);
-  ImageResetEventListener = __decorateClass$1A([
+  ImageResetEventListener = __decorateClass$1B([
     injectable()
   ], ImageResetEventListener);
   const imageResetEventRegistration = {
@@ -14529,16 +14535,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
         };
     }
   }, "parseSkribblLobbyInteractedEvent");
-  var __defProp$1z = Object.defineProperty;
+  var __defProp$1A = Object.defineProperty;
   var __getOwnPropDesc$D = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$D(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1z(target, key2, result);
+    if (kind && result) __defProp$1A(target, key2, result);
     return result;
-  }, "__decorateClass$1z");
+  }, "__decorateClass$1A");
   const _LobbyInteractedEvent = class _LobbyInteractedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14563,10 +14569,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_C, "LobbyInteractedEventProcessor"), _C);
-  __decorateClass$1z([
+  __decorateClass$1A([
     inject(SkribblMessageRelaySetup)
   ], LobbyInteractedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyInteractedEventProcessor = __decorateClass$1z([
+  LobbyInteractedEventProcessor = __decorateClass$1A([
     injectable()
   ], LobbyInteractedEventProcessor);
   let LobbyInteractedEventListener = (_D = class extends EventListener {
@@ -14575,10 +14581,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_D, "LobbyInteractedEventListener"), _D);
-  __decorateClass$1z([
+  __decorateClass$1A([
     inject(LobbyInteractedEventProcessor)
   ], LobbyInteractedEventListener.prototype, "_processor", 2);
-  LobbyInteractedEventListener = __decorateClass$1z([
+  LobbyInteractedEventListener = __decorateClass$1A([
     injectable()
   ], LobbyInteractedEventListener);
   const lobbyInteractedEventRegistration = {
@@ -14598,16 +14604,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_GameSettingsSetup, "GameSettingsSetup");
   let GameSettingsSetup = _GameSettingsSetup;
-  var __defProp$1y = Object.defineProperty;
+  var __defProp$1z = Object.defineProperty;
   var __getOwnPropDesc$C = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$C(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1y(target, key2, result);
+    if (kind && result) __defProp$1z(target, key2, result);
     return result;
-  }, "__decorateClass$1y");
+  }, "__decorateClass$1z");
   const _LobbyJoinFailedEvent = class _LobbyJoinFailedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14631,13 +14637,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_E, "LobbyJoinFailedEventProcessor"), _E);
-  __decorateClass$1y([
+  __decorateClass$1z([
     inject(GameSettingsSetup)
   ], LobbyJoinFailedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1y([
+  __decorateClass$1z([
     inject(SkribblMessageRelaySetup)
   ], LobbyJoinFailedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyJoinFailedEventProcessor = __decorateClass$1y([
+  LobbyJoinFailedEventProcessor = __decorateClass$1z([
     injectable()
   ], LobbyJoinFailedEventProcessor);
   let LobbyJoinFailedListener = (_F = class extends EventListener {
@@ -14646,26 +14652,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_F, "LobbyJoinFailedListener"), _F);
-  __decorateClass$1y([
+  __decorateClass$1z([
     inject(LobbyJoinFailedEventProcessor)
   ], LobbyJoinFailedListener.prototype, "_processor", 2);
-  LobbyJoinFailedListener = __decorateClass$1y([
+  LobbyJoinFailedListener = __decorateClass$1z([
     injectable()
   ], LobbyJoinFailedListener);
   const lobbyJoinFailedEventRegistration = {
     listenerType: LobbyJoinFailedListener,
     processorType: LobbyJoinFailedEventProcessor
   };
-  var __defProp$1x = Object.defineProperty;
+  var __defProp$1y = Object.defineProperty;
   var __getOwnPropDesc$B = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$B(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1x(target, key2, result);
+    if (kind && result) __defProp$1y(target, key2, result);
     return result;
-  }, "__decorateClass$1x");
+  }, "__decorateClass$1y");
   const _LobbyPlayerChangedEvent = class _LobbyPlayerChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14704,10 +14710,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_G, "LobbyPlayerChangedEventProcessor"), _G);
-  __decorateClass$1x([
+  __decorateClass$1y([
     inject(SkribblMessageRelaySetup)
   ], LobbyPlayerChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyPlayerChangedEventProcessor = __decorateClass$1x([
+  LobbyPlayerChangedEventProcessor = __decorateClass$1y([
     injectable()
   ], LobbyPlayerChangedEventProcessor);
   let LobbyPlayerChangedEventListener = (_H = class extends EventListener {
@@ -14716,10 +14722,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_H, "LobbyPlayerChangedEventListener"), _H);
-  __decorateClass$1x([
+  __decorateClass$1y([
     inject(LobbyPlayerChangedEventProcessor)
   ], LobbyPlayerChangedEventListener.prototype, "_processor", 2);
-  LobbyPlayerChangedEventListener = __decorateClass$1x([
+  LobbyPlayerChangedEventListener = __decorateClass$1y([
     injectable()
   ], LobbyPlayerChangedEventListener);
   const lobbyPlayerChangedEventRegistration = {
@@ -14787,16 +14793,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     }
   }, "parseLobbyStateUpdate");
-  var __defProp$1w = Object.defineProperty;
+  var __defProp$1x = Object.defineProperty;
   var __getOwnPropDesc$A = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$A(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1w(target, key2, result);
+    if (kind && result) __defProp$1x(target, key2, result);
     return result;
-  }, "__decorateClass$1w");
+  }, "__decorateClass$1x");
   const _LobbyStateChangedEvent = class _LobbyStateChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14842,13 +14848,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_I, "LobbyStateChangedEventProcessor"), _I);
-  __decorateClass$1w([
+  __decorateClass$1x([
     inject(GameSettingsSetup)
   ], LobbyStateChangedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1w([
+  __decorateClass$1x([
     inject(SkribblMessageRelaySetup)
   ], LobbyStateChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyStateChangedEventProcessor = __decorateClass$1w([
+  LobbyStateChangedEventProcessor = __decorateClass$1x([
     injectable()
   ], LobbyStateChangedEventProcessor);
   let LobbyStateChangedEventListener = (_J = class extends EventListener {
@@ -14857,26 +14863,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_J, "LobbyStateChangedEventListener"), _J);
-  __decorateClass$1w([
+  __decorateClass$1x([
     inject(LobbyStateChangedEventProcessor)
   ], LobbyStateChangedEventListener.prototype, "_processor", 2);
-  LobbyStateChangedEventListener = __decorateClass$1w([
+  LobbyStateChangedEventListener = __decorateClass$1x([
     injectable()
   ], LobbyStateChangedEventListener);
   const lobbyStateChangedEventRegistration = {
     listenerType: LobbyStateChangedEventListener,
     processorType: LobbyStateChangedEventProcessor
   };
-  var __defProp$1v = Object.defineProperty;
+  var __defProp$1w = Object.defineProperty;
   var __getOwnPropDesc$z = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$z(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1v(target, key2, result);
+    if (kind && result) __defProp$1w(target, key2, result);
     return result;
-  }, "__decorateClass$1v");
+  }, "__decorateClass$1w");
   const _MessageReceivedEvent = class _MessageReceivedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14900,10 +14906,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_K, "MessageReceivedEventProcessor"), _K);
-  __decorateClass$1v([
+  __decorateClass$1w([
     inject(SkribblMessageRelaySetup)
   ], MessageReceivedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  MessageReceivedEventProcessor = __decorateClass$1v([
+  MessageReceivedEventProcessor = __decorateClass$1w([
     injectable()
   ], MessageReceivedEventProcessor);
   let MessageReceivedEventListener = (_L = class extends EventListener {
@@ -14912,26 +14918,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_L, "MessageReceivedEventListener"), _L);
-  __decorateClass$1v([
+  __decorateClass$1w([
     inject(MessageReceivedEventProcessor)
   ], MessageReceivedEventListener.prototype, "_processor", 2);
-  MessageReceivedEventListener = __decorateClass$1v([
+  MessageReceivedEventListener = __decorateClass$1w([
     injectable()
   ], MessageReceivedEventListener);
   const messageReceivedEventRegistration = {
     listenerType: MessageReceivedEventListener,
     processorType: MessageReceivedEventProcessor
   };
-  var __defProp$1u = Object.defineProperty;
+  var __defProp$1v = Object.defineProperty;
   var __getOwnPropDesc$y = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$y(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1u(target, key2, result);
+    if (kind && result) __defProp$1v(target, key2, result);
     return result;
-  }, "__decorateClass$1u");
+  }, "__decorateClass$1v");
   const _MessageSentEvent = class _MessageSentEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14954,10 +14960,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_M, "MessageSentEventProcessor"), _M);
-  __decorateClass$1u([
+  __decorateClass$1v([
     inject(SkribblEmitRelaySetup)
   ], MessageSentEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  MessageSentEventProcessor = __decorateClass$1u([
+  MessageSentEventProcessor = __decorateClass$1v([
     injectable()
   ], MessageSentEventProcessor);
   let MessageSentEventListener = (_N = class extends EventListener {
@@ -14966,26 +14972,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_N, "MessageSentEventListener"), _N);
-  __decorateClass$1u([
+  __decorateClass$1v([
     inject(MessageSentEventProcessor)
   ], MessageSentEventListener.prototype, "_processor", 2);
-  MessageSentEventListener = __decorateClass$1u([
+  MessageSentEventListener = __decorateClass$1v([
     injectable()
   ], MessageSentEventListener);
   const messageSentEventRegistration = {
     listenerType: MessageSentEventListener,
     processorType: MessageSentEventProcessor
   };
-  var __defProp$1t = Object.defineProperty;
+  var __defProp$1u = Object.defineProperty;
   var __getOwnPropDesc$x = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$x(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1t(target, key2, result);
+    if (kind && result) __defProp$1u(target, key2, result);
     return result;
-  }, "__decorateClass$1t");
+  }, "__decorateClass$1u");
   const _PlayerPopupVisibilityChangedEvent = class _PlayerPopupVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15015,10 +15021,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_O, "PlayerPopupVisibilityChangedEventProcessor"), _O);
-  __decorateClass$1t([
+  __decorateClass$1u([
     inject(ElementsSetup)
   ], PlayerPopupVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1t([
+  PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1u([
     injectable()
   ], PlayerPopupVisibilityChangedEventProcessor);
   let PlayerPopupVisibilityChangedEventListener = (_P = class extends EventListener {
@@ -15027,26 +15033,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_P, "PlayerPopupVisibilityChangedEventListener"), _P);
-  __decorateClass$1t([
+  __decorateClass$1u([
     inject(PlayerPopupVisibilityChangedEventProcessor)
   ], PlayerPopupVisibilityChangedEventListener.prototype, "_processor", 2);
-  PlayerPopupVisibilityChangedEventListener = __decorateClass$1t([
+  PlayerPopupVisibilityChangedEventListener = __decorateClass$1u([
     injectable()
   ], PlayerPopupVisibilityChangedEventListener);
   const playerPopupVisibilityChangedEventRegistration = {
     listenerType: PlayerPopupVisibilityChangedEventListener,
     processorType: PlayerPopupVisibilityChangedEventProcessor
   };
-  var __defProp$1s = Object.defineProperty;
+  var __defProp$1t = Object.defineProperty;
   var __getOwnPropDesc$w = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$w(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1s(target, key2, result);
+    if (kind && result) __defProp$1t(target, key2, result);
     return result;
-  }, "__decorateClass$1s");
+  }, "__decorateClass$1t");
   const _RoundStartedEvent = class _RoundStartedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15074,10 +15080,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_Q, "RoundStartedEventProcessor"), _Q);
-  __decorateClass$1s([
+  __decorateClass$1t([
     inject(SkribblMessageRelaySetup)
   ], RoundStartedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  RoundStartedEventProcessor = __decorateClass$1s([
+  RoundStartedEventProcessor = __decorateClass$1t([
     injectable()
   ], RoundStartedEventProcessor);
   let RoundStartedEventListener = (_R = class extends EventListener {
@@ -15086,26 +15092,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_R, "RoundStartedEventListener"), _R);
-  __decorateClass$1s([
+  __decorateClass$1t([
     inject(RoundStartedEventProcessor)
   ], RoundStartedEventListener.prototype, "_processor", 2);
-  RoundStartedEventListener = __decorateClass$1s([
+  RoundStartedEventListener = __decorateClass$1t([
     injectable()
   ], RoundStartedEventListener);
   const roundStartedEventRegistration = {
     listenerType: RoundStartedEventListener,
     processorType: RoundStartedEventProcessor
   };
-  var __defProp$1r = Object.defineProperty;
+  var __defProp$1s = Object.defineProperty;
   var __getOwnPropDesc$v = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$v(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1r(target, key2, result);
+    if (kind && result) __defProp$1s(target, key2, result);
     return result;
-  }, "__decorateClass$1r");
+  }, "__decorateClass$1s");
   const _ScoreboardVisibilityChangedEvent = class _ScoreboardVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15134,10 +15140,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_S, "ScoreboardVisibilityChangedEventProcessor"), _S);
-  __decorateClass$1r([
+  __decorateClass$1s([
     inject(ElementsSetup)
   ], ScoreboardVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  ScoreboardVisibilityChangedEventProcessor = __decorateClass$1r([
+  ScoreboardVisibilityChangedEventProcessor = __decorateClass$1s([
     injectable()
   ], ScoreboardVisibilityChangedEventProcessor);
   let ScoreboardVisibilityChangedEventListener = (_T = class extends EventListener {
@@ -15146,26 +15152,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_T, "ScoreboardVisibilityChangedEventListener"), _T);
-  __decorateClass$1r([
+  __decorateClass$1s([
     inject(ScoreboardVisibilityChangedEventProcessor)
   ], ScoreboardVisibilityChangedEventListener.prototype, "_processor", 2);
-  ScoreboardVisibilityChangedEventListener = __decorateClass$1r([
+  ScoreboardVisibilityChangedEventListener = __decorateClass$1s([
     injectable()
   ], ScoreboardVisibilityChangedEventListener);
   const scoreboardVisibilityChangedEventRegistration = {
     listenerType: ScoreboardVisibilityChangedEventListener,
     processorType: ScoreboardVisibilityChangedEventProcessor
   };
-  var __defProp$1q = Object.defineProperty;
+  var __defProp$1r = Object.defineProperty;
   var __getOwnPropDesc$u = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$u(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1q(target, key2, result);
+    if (kind && result) __defProp$1r(target, key2, result);
     return result;
-  }, "__decorateClass$1q");
+  }, "__decorateClass$1r");
   const _SizeChangedEvent = class _SizeChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15189,7 +15195,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_U, "SizeChangedEventProcessor"), _U);
-  SizeChangedEventProcessor = __decorateClass$1q([
+  SizeChangedEventProcessor = __decorateClass$1r([
     injectable()
   ], SizeChangedEventProcessor);
   let SizeChangedEventListener = (_V = class extends EventListener {
@@ -15198,26 +15204,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_V, "SizeChangedEventListener"), _V);
-  __decorateClass$1q([
+  __decorateClass$1r([
     inject(SizeChangedEventProcessor)
   ], SizeChangedEventListener.prototype, "_processor", 2);
-  SizeChangedEventListener = __decorateClass$1q([
+  SizeChangedEventListener = __decorateClass$1r([
     injectable()
   ], SizeChangedEventListener);
   const sizeChangedEventRegistration = {
     listenerType: SizeChangedEventListener,
     processorType: SizeChangedEventProcessor
   };
-  var __defProp$1p = Object.defineProperty;
+  var __defProp$1q = Object.defineProperty;
   var __getOwnPropDesc$t = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$t(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1p(target, key2, result);
+    if (kind && result) __defProp$1q(target, key2, result);
     return result;
-  }, "__decorateClass$1p");
+  }, "__decorateClass$1q");
   const _TextOverlayVisibilityChangedEvent = class _TextOverlayVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15247,10 +15253,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_W, "TextOverlayVisibilityChangedEventProcessor"), _W);
-  __decorateClass$1p([
+  __decorateClass$1q([
     inject(ElementsSetup)
   ], TextOverlayVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  TextOverlayVisibilityChangedEventProcessor = __decorateClass$1p([
+  TextOverlayVisibilityChangedEventProcessor = __decorateClass$1q([
     injectable()
   ], TextOverlayVisibilityChangedEventProcessor);
   let TextOverlayVisibilityChangedEventListener = (_X = class extends EventListener {
@@ -15259,26 +15265,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_X, "TextOverlayVisibilityChangedEventListener"), _X);
-  __decorateClass$1p([
+  __decorateClass$1q([
     inject(TextOverlayVisibilityChangedEventProcessor)
   ], TextOverlayVisibilityChangedEventListener.prototype, "_processor", 2);
-  TextOverlayVisibilityChangedEventListener = __decorateClass$1p([
+  TextOverlayVisibilityChangedEventListener = __decorateClass$1q([
     injectable()
   ], TextOverlayVisibilityChangedEventListener);
   const textOverlayVisibilityChangedEventRegistration = {
     listenerType: TextOverlayVisibilityChangedEventListener,
     processorType: TextOverlayVisibilityChangedEventProcessor
   };
-  var __defProp$1o = Object.defineProperty;
+  var __defProp$1p = Object.defineProperty;
   var __getOwnPropDesc$s = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$s(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1o(target, key2, result);
+    if (kind && result) __defProp$1p(target, key2, result);
     return result;
-  }, "__decorateClass$1o");
+  }, "__decorateClass$1p");
   var skribblTool = /* @__PURE__ */ ((skribblTool2) => {
     skribblTool2[skribblTool2["brush"] = 0] = "brush";
     skribblTool2[skribblTool2["fill"] = 1] = "fill";
@@ -15310,7 +15316,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_Y, "ToolChangedEventProcessor"), _Y);
-  ToolChangedEventProcessor = __decorateClass$1o([
+  ToolChangedEventProcessor = __decorateClass$1p([
     injectable()
   ], ToolChangedEventProcessor);
   let ToolChangedEventListener = (_Z = class extends EventListener {
@@ -15319,26 +15325,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_Z, "ToolChangedEventListener"), _Z);
-  __decorateClass$1o([
+  __decorateClass$1p([
     inject(ToolChangedEventProcessor)
   ], ToolChangedEventListener.prototype, "_processor", 2);
-  ToolChangedEventListener = __decorateClass$1o([
+  ToolChangedEventListener = __decorateClass$1p([
     injectable()
   ], ToolChangedEventListener);
   const toolChangedEventRegistration = {
     listenerType: ToolChangedEventListener,
     processorType: ToolChangedEventProcessor
   };
-  var __defProp$1n = Object.defineProperty;
+  var __defProp$1o = Object.defineProperty;
   var __getOwnPropDesc$r = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$r(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1n(target, key2, result);
+    if (kind && result) __defProp$1o(target, key2, result);
     return result;
-  }, "__decorateClass$1n");
+  }, "__decorateClass$1o");
   const _WordGuessedEvent = class _WordGuessedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15369,10 +15375,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(__, "WordGuessedEventProcessor"), __);
-  __decorateClass$1n([
+  __decorateClass$1o([
     inject(SkribblMessageRelaySetup)
   ], WordGuessedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  WordGuessedEventProcessor = __decorateClass$1n([
+  WordGuessedEventProcessor = __decorateClass$1o([
     injectable()
   ], WordGuessedEventProcessor);
   let WordGuessedEventListener = (_$ = class extends EventListener {
@@ -15381,10 +15387,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_$, "WordGuessedEventListener"), _$);
-  __decorateClass$1n([
+  __decorateClass$1o([
     inject(WordGuessedEventProcessor)
   ], WordGuessedEventListener.prototype, "_processor", 2);
-  WordGuessedEventListener = __decorateClass$1n([
+  WordGuessedEventListener = __decorateClass$1o([
     injectable()
   ], WordGuessedEventListener);
   const wordGuessedEventRegistration = {
@@ -15410,15 +15416,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Canvas_rate_icons, "Canvas_rate_icons");
   let Canvas_rate_icons = _Canvas_rate_icons;
-  var __defProp$1m = Object.defineProperty;
-  var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1n = Object.defineProperty;
+  var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1m(target, key2, result);
+    if (result) __defProp$1n(target, key2, result);
     return result;
-  }, "__decorateClass$1m");
+  }, "__decorateClass$1n");
   const _CanvasRateIconsFeature = class _CanvasRateIconsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -15448,19 +15454,19 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CanvasRateIconsFeature, "CanvasRateIconsFeature");
   let CanvasRateIconsFeature = _CanvasRateIconsFeature;
-  __decorateClass$1m([
+  __decorateClass$1n([
     inject(ElementsSetup)
   ], CanvasRateIconsFeature.prototype, "_elementsSetup");
-  var __defProp$1l = Object.defineProperty;
+  var __defProp$1m = Object.defineProperty;
   var __getOwnPropDesc$q = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$q(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1l(target, key2, result);
+    if (kind && result) __defProp$1m(target, key2, result);
     return result;
-  }, "__decorateClass$1l");
+  }, "__decorateClass$1m");
   const _LobbyLeftEvent = class _LobbyLeftEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15483,7 +15489,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_aa, "LobbyLeftEventProcessor"), _aa);
-  LobbyLeftEventProcessor = __decorateClass$1l([
+  LobbyLeftEventProcessor = __decorateClass$1m([
     injectable()
   ], LobbyLeftEventProcessor);
   let LobbyLeftEventListener = (_ba = class extends EventListener {
@@ -15492,10 +15498,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_ba, "LobbyLeftEventListener"), _ba);
-  __decorateClass$1l([
+  __decorateClass$1m([
     inject(LobbyLeftEventProcessor)
   ], LobbyLeftEventListener.prototype, "_processor", 2);
-  LobbyLeftEventListener = __decorateClass$1l([
+  LobbyLeftEventListener = __decorateClass$1m([
     injectable()
   ], LobbyLeftEventListener);
   const lobbyLeftEventRegistration = {
@@ -15519,16 +15525,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       players: data.users
     };
   }, "parseSkribblLobbyDataEvent");
-  var __defProp$1k = Object.defineProperty;
+  var __defProp$1l = Object.defineProperty;
   var __getOwnPropDesc$p = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$p(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1k(target, key2, result);
+    if (kind && result) __defProp$1l(target, key2, result);
     return result;
-  }, "__decorateClass$1k");
+  }, "__decorateClass$1l");
   const _LobbyJoinedEvent = class _LobbyJoinedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15567,13 +15573,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_ca, "LobbyJoinedEventProcessor"), _ca);
-  __decorateClass$1k([
+  __decorateClass$1l([
     inject(GameSettingsSetup)
   ], LobbyJoinedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1k([
+  __decorateClass$1l([
     inject(SkribblMessageRelaySetup)
   ], LobbyJoinedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyJoinedEventProcessor = __decorateClass$1k([
+  LobbyJoinedEventProcessor = __decorateClass$1l([
     injectable()
   ], LobbyJoinedEventProcessor);
   let LobbyJoinedEventListener = (_da = class extends EventListener {
@@ -15582,26 +15588,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_da, "LobbyJoinedEventListener"), _da);
-  __decorateClass$1k([
+  __decorateClass$1l([
     inject(LobbyJoinedEventProcessor)
   ], LobbyJoinedEventListener.prototype, "_processor", 2);
-  LobbyJoinedEventListener = __decorateClass$1k([
+  LobbyJoinedEventListener = __decorateClass$1l([
     injectable()
   ], LobbyJoinedEventListener);
   const lobbyJoinedEventRegistration = {
     listenerType: LobbyJoinedEventListener,
     processorType: LobbyJoinedEventProcessor
   };
-  var __defProp$1j = Object.defineProperty;
+  var __defProp$1k = Object.defineProperty;
   var __getOwnPropDesc$o = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$o(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1j(target, key2, result);
+    if (kind && result) __defProp$1k(target, key2, result);
     return result;
-  }, "__decorateClass$1j");
+  }, "__decorateClass$1k");
   var __decorateParam$k = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$k");
   let LobbyService = (_ea = class {
     constructor(loggerFactory2, lobbyJoined, lobbyLeft, lobbyPlayerChanged, lobbyStateChanged, roundStarted, wordGuessed, elementsSetup, lobbyJoinFailedListener) {
@@ -15716,7 +15722,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_ea, "LobbyService"), _ea);
-  LobbyService = __decorateClass$1j([
+  LobbyService = __decorateClass$1k([
     injectable(),
     __decorateParam$k(0, inject(loggerFactory)),
     __decorateParam$k(1, inject(LobbyJoinedEventListener)),
@@ -15728,7 +15734,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     __decorateParam$k(7, inject(ElementsSetup)),
     __decorateParam$k(8, inject(LobbyJoinFailedListener))
   ], LobbyService);
-  function create_fragment$1w(ctx) {
+  function create_fragment$1x(ctx) {
     let div1;
     let div0;
     let t0;
@@ -15772,24 +15778,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1w, "create_fragment$1w");
-  function instance$1m($$self, $$props, $$invalidate) {
+  __name(create_fragment$1x, "create_fragment$1x");
+  function instance$1n($$self, $$props, $$invalidate) {
     let { content: content2 = "Loading..." } = $$props;
     $$self.$$set = ($$props2) => {
       if ("content" in $$props2) $$invalidate(0, content2 = $$props2.content);
     };
     return [content2];
   }
-  __name(instance$1m, "instance$1m");
+  __name(instance$1n, "instance$1n");
   const _Bounceload = class _Bounceload extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1m, create_fragment$1w, safe_not_equal, { content: 0 });
+      init(this, options, instance$1n, create_fragment$1x, safe_not_equal, { content: 0 });
     }
   };
   __name(_Bounceload, "Bounceload");
   let Bounceload = _Bounceload;
-  function create_fragment$1v(ctx) {
+  function create_fragment$1w(ctx) {
     let div;
     let img;
     let img_src_value;
@@ -15980,8 +15986,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1v, "create_fragment$1v");
-  function instance$1l($$self, $$props, $$invalidate) {
+  __name(create_fragment$1w, "create_fragment$1w");
+  function instance$1m($$self, $$props, $$invalidate) {
     let { disabled = false } = $$props;
     let { icon } = $$props;
     let { name } = $$props;
@@ -16028,11 +16034,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       keypress_handler
     ];
   }
-  __name(instance$1l, "instance$1l");
+  __name(instance$1m, "instance$1m");
   const _Icon_button = class _Icon_button extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1l, create_fragment$1v, safe_not_equal, {
+      init(this, options, instance$1m, create_fragment$1w, safe_not_equal, {
         disabled: 0,
         icon: 1,
         name: 2,
@@ -16222,7 +16228,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_else_block$l, "create_else_block$l");
-  function create_if_block$D(ctx) {
+  function create_if_block$E(ctx) {
     let bounceload;
     let current;
     bounceload = new Bounceload({ props: { content: (
@@ -16258,7 +16264,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$D, "create_if_block$D");
+  __name(create_if_block$E, "create_if_block$E");
   function create_if_block_4$a(ctx) {
     let span;
     let mounted;
@@ -16526,7 +16532,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_if_block_1$k, "create_if_block_1$k");
-  function create_fragment$1u(ctx) {
+  function create_fragment$1v(ctx) {
     let div;
     let t;
     let current_block_type_index;
@@ -16536,7 +16542,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       /*title*/
       ctx[1] !== void 0 && create_if_block_5$6(ctx)
     );
-    const if_block_creators = [create_if_block$D, create_else_block$l];
+    const if_block_creators = [create_if_block$E, create_else_block$l];
     const if_blocks = [];
     function select_block_type(ctx2, dirty) {
       if (
@@ -16648,9 +16654,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1u, "create_fragment$1u");
+  __name(create_fragment$1v, "create_fragment$1v");
   const keydown_handler = /* @__PURE__ */ __name((e) => e.stopPropagation(), "keydown_handler");
-  function instance$1k($$self, $$props, $$invalidate) {
+  function instance$1l($$self, $$props, $$invalidate) {
     let { content: content2 } = $$props;
     let { title } = $$props;
     let { closeHandler } = $$props;
@@ -16709,11 +16715,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       click_handler_2
     ];
   }
-  __name(instance$1k, "instance$1k");
+  __name(instance$1l, "instance$1l");
   const _Toast = class _Toast extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1k, create_fragment$1u, safe_not_equal, {
+      init(this, options, instance$1l, create_fragment$1v, safe_not_equal, {
         content: 0,
         title: 1,
         closeHandler: 11,
@@ -16732,16 +16738,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Toast, "Toast");
   let Toast = _Toast;
-  var __defProp$1i = Object.defineProperty;
+  var __defProp$1j = Object.defineProperty;
   var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1i(target, key2, result);
+    if (kind && result) __defProp$1j(target, key2, result);
     return result;
-  }, "__decorateClass$1i");
+  }, "__decorateClass$1j");
   var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$j");
   let ToastService = (_fa = class {
     constructor(loggerFactory2, _elementsSetup) {
@@ -16900,21 +16906,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       };
     }
   }, __name(_fa, "ToastService"), _fa);
-  ToastService = __decorateClass$1i([
+  ToastService = __decorateClass$1j([
     injectable(),
     __decorateParam$j(0, inject(loggerFactory)),
     __decorateParam$j(1, inject(ElementsSetup))
   ], ToastService);
-  var __defProp$1h = Object.defineProperty;
+  var __defProp$1i = Object.defineProperty;
   var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1h(target, key2, result);
+    if (kind && result) __defProp$1i(target, key2, result);
     return result;
-  }, "__decorateClass$1h");
+  }, "__decorateClass$1i");
   let PrioritizedCanvasEventsSetup = (_ga = class extends Setup {
     constructor() {
       super(...arguments);
@@ -16924,10 +16930,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._interceptor.canvasPrioritizedEventsReady;
     }
   }, __name(_ga, "PrioritizedCanvasEventsSetup"), _ga);
-  __decorateClass$1h([
+  __decorateClass$1i([
     inject(Interceptor)
   ], PrioritizedCanvasEventsSetup.prototype, "_interceptor", 2);
-  PrioritizedCanvasEventsSetup = __decorateClass$1h([
+  PrioritizedCanvasEventsSetup = __decorateClass$1i([
     earlySetup()
   ], PrioritizedCanvasEventsSetup);
   const createStylesheet = /* @__PURE__ */ __name(() => {
@@ -16949,7 +16955,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return handle;
   }, "createStylesheet");
-  function create_fragment$1t(ctx) {
+  function create_fragment$1u(ctx) {
     let t0;
     let br0;
     let t1;
@@ -17008,24 +17014,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1t, "create_fragment$1t");
+  __name(create_fragment$1u, "create_fragment$1u");
   const _Canvas_zoom_info = class _Canvas_zoom_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, null, create_fragment$1t, safe_not_equal, {});
+      init(this, options, null, create_fragment$1u, safe_not_equal, {});
     }
   };
   __name(_Canvas_zoom_info, "Canvas_zoom_info");
   let Canvas_zoom_info = _Canvas_zoom_info;
-  var __defProp$1g = Object.defineProperty;
-  var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1h = Object.defineProperty;
+  var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1g(target, key2, result);
+    if (result) __defProp$1h(target, key2, result);
     return result;
-  }, "__decorateClass$1g");
+  }, "__decorateClass$1h");
   const _CanvasZoomFeature = class _CanvasZoomFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -17183,22 +17189,22 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CanvasZoomFeature, "CanvasZoomFeature");
   let CanvasZoomFeature = _CanvasZoomFeature;
-  __decorateClass$1g([
+  __decorateClass$1h([
     inject(ToastService)
   ], CanvasZoomFeature.prototype, "_toastService");
-  __decorateClass$1g([
+  __decorateClass$1h([
     inject(PrioritizedCanvasEventsSetup)
   ], CanvasZoomFeature.prototype, "_prioritizedCanvasEventsSetup");
-  __decorateClass$1g([
+  __decorateClass$1h([
     inject(LobbyStateChangedEventListener)
   ], CanvasZoomFeature.prototype, "_lobbyStateChangedEventListener");
-  __decorateClass$1g([
+  __decorateClass$1h([
     inject(LobbyLeftEventListener)
   ], CanvasZoomFeature.prototype, "_lobbyLeftEventListener");
-  __decorateClass$1g([
+  __decorateClass$1h([
     inject(ImageResetEventListener)
   ], CanvasZoomFeature.prototype, "_imageResetEventListener");
-  __decorateClass$1g([
+  __decorateClass$1h([
     inject(LobbyService)
   ], CanvasZoomFeature.prototype, "_lobbyService");
   const replaceOrAddCssRule = /* @__PURE__ */ __name((styleSheet, cssText, index) => {
@@ -20174,16 +20180,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ThemesApi, "ThemesApi");
   let ThemesApi = _ThemesApi;
-  var __defProp$1f = Object.defineProperty;
+  var __defProp$1g = Object.defineProperty;
   var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1f(target, key2, result);
+    if (kind && result) __defProp$1g(target, key2, result);
     return result;
-  }, "__decorateClass$1f");
+  }, "__decorateClass$1g");
   var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$i");
   let TokenService = (_ha = class {
     constructor(loggerFactory2) {
@@ -20230,20 +20236,20 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._token.next(null);
     }
   }, __name(_ha, "TokenService"), _ha);
-  TokenService = __decorateClass$1f([
+  TokenService = __decorateClass$1g([
     injectable(),
     __decorateParam$i(0, inject(loggerFactory))
   ], TokenService);
-  var __defProp$1e = Object.defineProperty;
+  var __defProp$1f = Object.defineProperty;
   var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1e(target, key2, result);
+    if (kind && result) __defProp$1f(target, key2, result);
     return result;
-  }, "__decorateClass$1e");
+  }, "__decorateClass$1f");
   var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$h");
   let ApiService = (_ia = class {
     constructor(loggerFactory2, tokenService) {
@@ -20285,21 +20291,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._baseUrl = url;
     }
   }, __name(_ia, "ApiService"), _ia);
-  ApiService = __decorateClass$1e([
+  ApiService = __decorateClass$1f([
     injectable(),
     __decorateParam$h(0, inject(loggerFactory)),
     __decorateParam$h(1, inject(TokenService))
   ], ApiService);
-  var __defProp$1d = Object.defineProperty;
+  var __defProp$1e = Object.defineProperty;
   var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1d(target, key2, result);
+    if (kind && result) __defProp$1e(target, key2, result);
     return result;
-  }, "__decorateClass$1d");
+  }, "__decorateClass$1e");
   var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$g");
   let MemberService = (_ja = class {
     constructor(loggerFactory2, _apiService, _tokenService, _onboardingService) {
@@ -20404,7 +20410,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this.loadMember();
     }
   }, __name(_ja, "MemberService"), _ja);
-  MemberService = __decorateClass$1d([
+  MemberService = __decorateClass$1e([
     injectable(),
     __decorateParam$g(0, inject(loggerFactory)),
     __decorateParam$g(1, inject(ApiService)),
@@ -20619,15 +20625,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_SkribblScoreboardRegularPlayer, "SkribblScoreboardRegularPlayer");
   let SkribblScoreboardRegularPlayer = _SkribblScoreboardRegularPlayer;
-  var __defProp$1c = Object.defineProperty;
-  var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1d = Object.defineProperty;
+  var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1c(target, key2, result);
+    if (result) __defProp$1d(target, key2, result);
     return result;
-  }, "__decorateClass$1c");
+  }, "__decorateClass$1d");
   const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -20648,13 +20654,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_LandingPlayerSetup, "LandingPlayerSetup");
   let LandingPlayerSetup = _LandingPlayerSetup;
-  __decorateClass$1c([
+  __decorateClass$1d([
     inject(ElementsSetup)
   ], LandingPlayerSetup.prototype, "_elementsSetup");
-  __decorateClass$1c([
+  __decorateClass$1d([
     inject(GlobalSettingsService)
   ], LandingPlayerSetup.prototype, "_globalSettingsService");
-  __decorateClass$1c([
+  __decorateClass$1d([
     inject(MemberService)
   ], LandingPlayerSetup.prototype, "_memberService");
   const calculateLobbyKey = /* @__PURE__ */ __name((key2) => {
@@ -20663,16 +20669,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     const newKey = hashed.join("");
     return newKey;
   }, "calculateLobbyKey");
-  var __defProp$1b = Object.defineProperty;
+  var __defProp$1c = Object.defineProperty;
   var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1b(target, key2, result);
+    if (kind && result) __defProp$1c(target, key2, result);
     return result;
-  }, "__decorateClass$1b");
+  }, "__decorateClass$1c");
   var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$f");
   let PlayersService = (_ka = class {
     constructor(loggerFactory2) {
@@ -20913,47 +20919,47 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._players$.asObservable();
     }
   }, __name(_ka, "PlayersService"), _ka);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(ElementsSetup)
   ], PlayersService.prototype, "_elementsSetup", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(LobbyJoinedEventListener)
   ], PlayersService.prototype, "_lobbyJoinedEvent", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(LobbyLeftEventListener)
   ], PlayersService.prototype, "_lobbyLeftEvent", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(LobbyStateChangedEventListener)
   ], PlayersService.prototype, "_lobbyStateChangedEvent", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(LobbyPlayerChangedEventListener)
   ], PlayersService.prototype, "_playerChangedEvent", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(ScoreboardVisibilityChangedEventListener)
   ], PlayersService.prototype, "_scoreboardVisibleEvent", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(TextOverlayVisibilityChangedEventListener)
   ], PlayersService.prototype, "_textOverlayVisibleEvent", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(PlayerPopupVisibilityChangedEventListener)
   ], PlayersService.prototype, "_popupVisibleEvent", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(MemberService)
   ], PlayersService.prototype, "_memberService", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(LobbyService)
   ], PlayersService.prototype, "_lobbyService", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(LandingPlayerSetup)
   ], PlayersService.prototype, "_landingPlayerSetup", 2);
-  __decorateClass$1b([
+  __decorateClass$1c([
     postConstruct()
   ], PlayersService.prototype, "postConstruct", 1);
-  PlayersService = __decorateClass$1b([
+  PlayersService = __decorateClass$1c([
     injectable(),
     __decorateParam$f(0, inject(loggerFactory))
   ], PlayersService);
-  function create_fragment$1s(ctx) {
+  function create_fragment$1t(ctx) {
     let p;
     let span1;
     let b;
@@ -21032,8 +21038,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1s, "create_fragment$1s");
-  function instance$1j($$self, $$props, $$invalidate) {
+  __name(create_fragment$1t, "create_fragment$1t");
+  function instance$1k($$self, $$props, $$invalidate) {
     let { content: content2 = "" } = $$props;
     let { title = "" } = $$props;
     let { style: style2 = "normal" } = $$props;
@@ -21101,11 +21107,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       p_binding
     ];
   }
-  __name(instance$1j, "instance$1j");
+  __name(instance$1k, "instance$1k");
   const _Message = class _Message extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1j, create_fragment$1s, safe_not_equal, {
+      init(this, options, instance$1k, create_fragment$1t, safe_not_equal, {
         content: 0,
         title: 1,
         style: 2,
@@ -21118,16 +21124,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Message, "Message");
   let Message = _Message;
-  var __defProp$1a = Object.defineProperty;
+  var __defProp$1b = Object.defineProperty;
   var __getOwnPropDesc$h = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$h(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1a(target, key2, result);
+    if (kind && result) __defProp$1b(target, key2, result);
     return result;
-  }, "__decorateClass$1a");
+  }, "__decorateClass$1b");
   var __decorateParam$e = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$e");
   let ChatService = (_la = class {
     constructor(loggerFactory2) {
@@ -21254,22 +21260,22 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return message;
     }
   }, __name(_la, "ChatService"), _la);
-  __decorateClass$1a([
+  __decorateClass$1b([
     inject(ElementsSetup)
   ], ChatService.prototype, "_elementsSetup", 2);
-  __decorateClass$1a([
+  __decorateClass$1b([
     inject(PlayersService)
   ], ChatService.prototype, "_lobbyPlayersService", 2);
-  __decorateClass$1a([
+  __decorateClass$1b([
     inject(MessageReceivedEventListener)
   ], ChatService.prototype, "_messageReceivedEventListener", 2);
-  __decorateClass$1a([
+  __decorateClass$1b([
     inject(SkribblMessageRelaySetup)
   ], ChatService.prototype, "_messageRelaySetup", 2);
-  __decorateClass$1a([
+  __decorateClass$1b([
     postConstruct()
   ], ChatService.prototype, "postConstruct", 1);
-  ChatService = __decorateClass$1a([
+  ChatService = __decorateClass$1b([
     injectable(),
     __decorateParam$e(0, inject(loggerFactory))
   ], ChatService);
@@ -21365,7 +21371,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     background-size: calc(${backgroundSize});
   `;
   }, "wrapOffsetAsStyle");
-  function create_if_block$C(ctx) {
+  function create_if_block$D(ctx) {
     let div;
     let div_style_value;
     return {
@@ -21398,8 +21404,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$C, "create_if_block$C");
-  function create_fragment$1r(ctx) {
+  __name(create_if_block$D, "create_if_block$D");
+  function create_fragment$1s(ctx) {
     let div3;
     let div0;
     let div0_style_value;
@@ -21413,7 +21419,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     let if_block = (
       /*avatar*/
       ctx[0][3] !== void 0 && /*avatar*/
-      ctx[0][3] >= 0 && create_if_block$C(ctx)
+      ctx[0][3] >= 0 && create_if_block$D(ctx)
     );
     return {
       c() {
@@ -21495,7 +21501,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$C(ctx2);
+            if_block = create_if_block$D(ctx2);
             if_block.c();
             if_block.m(div3, null);
           }
@@ -21524,8 +21530,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1r, "create_fragment$1r");
-  function instance$1i($$self, $$props, $$invalidate) {
+  __name(create_fragment$1s, "create_fragment$1s");
+  function instance$1j($$self, $$props, $$invalidate) {
     let { avatar } = $$props;
     let { size = "80px" } = $$props;
     let resolve2;
@@ -21547,11 +21553,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return [avatar, size, container, element2, div3_binding];
   }
-  __name(instance$1i, "instance$1i");
+  __name(instance$1j, "instance$1j");
   const _Skribbl_avatar = class _Skribbl_avatar extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1i, create_fragment$1r, safe_not_equal, { avatar: 0, size: 1, element: 3 });
+      init(this, options, instance$1j, create_fragment$1s, safe_not_equal, { avatar: 0, size: 1, element: 3 });
     }
     get element() {
       return this.$$.ctx[3];
@@ -21559,15 +21565,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Skribbl_avatar, "Skribbl_avatar");
   let Skribbl_avatar = _Skribbl_avatar;
-  var __defProp$19 = Object.defineProperty;
-  var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1a = Object.defineProperty;
+  var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$19(target, key2, result);
+    if (result) __defProp$1a(target, key2, result);
     return result;
-  }, "__decorateClass$19");
+  }, "__decorateClass$1a");
   const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -21652,27 +21658,27 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatAvatarsFeature, "ChatAvatarsFeature");
   let ChatAvatarsFeature = _ChatAvatarsFeature;
-  __decorateClass$19([
+  __decorateClass$1a([
     inject(ChatService)
   ], ChatAvatarsFeature.prototype, "_chatService");
-  __decorateClass$19([
+  __decorateClass$1a([
     inject(PlayersService)
   ], ChatAvatarsFeature.prototype, "_playersService");
-  __decorateClass$19([
+  __decorateClass$1a([
     inject(LobbyService)
   ], ChatAvatarsFeature.prototype, "_lobbyService");
-  __decorateClass$19([
+  __decorateClass$1a([
     inject(ElementsSetup)
   ], ChatAvatarsFeature.prototype, "_elementsSetup");
-  var __defProp$18 = Object.defineProperty;
-  var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$19 = Object.defineProperty;
+  var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$18(target, key2, result);
+    if (result) __defProp$19(target, key2, result);
     return result;
-  }, "__decorateClass$18");
+  }, "__decorateClass$19");
   const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -21733,10 +21739,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatClearFeature, "ChatClearFeature");
   let ChatClearFeature = _ChatClearFeature;
-  __decorateClass$18([
+  __decorateClass$19([
     inject(LobbyJoinedEventListener)
   ], ChatClearFeature.prototype, "_lobbyJoinedEventListener");
-  __decorateClass$18([
+  __decorateClass$19([
     inject(ChatService)
   ], ChatClearFeature.prototype, "_chatService");
   const _InterpretableEmptyRemainder = class _InterpretableEmptyRemainder extends InterpretableError {
@@ -21917,7 +21923,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_if_block_2$f, "create_if_block_2$f");
-  function create_if_block$B(ctx) {
+  function create_if_block$C(ctx) {
     let span;
     let mounted;
     let dispose;
@@ -21949,8 +21955,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$B, "create_if_block$B");
-  function create_fragment$1q(ctx) {
+  __name(create_if_block$C, "create_if_block$C");
+  function create_fragment$1r(ctx) {
     let div1;
     let t0;
     let div0;
@@ -21989,7 +21995,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     }
     let if_block1 = (
       /*closeStrategy*/
-      ctx[0] === "explicit" && create_if_block$B(ctx)
+      ctx[0] === "explicit" && create_if_block$C(ctx)
     );
     return {
       c() {
@@ -22122,7 +22128,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           if (if_block1) {
             if_block1.p(ctx2, dirty);
           } else {
-            if_block1 = create_if_block$B(ctx2);
+            if_block1 = create_if_block$C(ctx2);
             if_block1.c();
             if_block1.m(div1, null);
           }
@@ -22197,8 +22203,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1q, "create_fragment$1q");
-  function instance$1h($$self, $$props, $$invalidate) {
+  __name(create_fragment$1r, "create_fragment$1r");
+  function instance$1i($$self, $$props, $$invalidate) {
     let { closeStrategy = "implicit" } = $$props;
     let { alignment = "bottom" } = $$props;
     let { marginY = ".5em" } = $$props;
@@ -22286,11 +22292,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       div1_binding
     ];
   }
-  __name(instance$1h, "instance$1h");
+  __name(instance$1i, "instance$1i");
   const _Area_flyout = class _Area_flyout extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1h, create_fragment$1q, safe_not_equal, {
+      init(this, options, instance$1i, create_fragment$1r, safe_not_equal, {
         closeStrategy: 0,
         alignment: 1,
         marginY: 2,
@@ -22888,7 +22894,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_each_block_1$c, "create_each_block_1$c");
-  function create_if_block$A(ctx) {
+  function create_if_block$B(ctx) {
     let div;
     let t1;
     let each_1_anchor;
@@ -22954,7 +22960,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$A, "create_if_block$A");
+  __name(create_if_block$B, "create_if_block$B");
   function create_catch_block$5(ctx) {
     return { c: noop, m: noop, p: noop, d: noop };
   }
@@ -23046,7 +23052,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_each_block$x, "create_each_block$x");
-  function create_fragment$1p(ctx) {
+  function create_fragment$1q(ctx) {
     let div;
     let t;
     let show_if = (
@@ -23061,7 +23067,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     for (let i = 0; i < each_value_1.length; i += 1) {
       each_blocks[i] = create_each_block_1$c(get_each_context_1$c(ctx, each_value_1, i));
     }
-    let if_block = show_if && create_if_block$A(ctx);
+    let if_block = show_if && create_if_block$B(ctx);
     return {
       c() {
         div = element("div");
@@ -23112,7 +23118,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
           if (if_block) {
             if_block.p(ctx2, dirty);
           } else {
-            if_block = create_if_block$A(ctx2);
+            if_block = create_if_block$B(ctx2);
             if_block.c();
             if_block.m(div, null);
           }
@@ -23132,9 +23138,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1p, "create_fragment$1p");
+  __name(create_fragment$1q, "create_fragment$1q");
   const func$4 = /* @__PURE__ */ __name((result) => result.result === null, "func$4");
-  function instance$1g($$self, $$props, $$invalidate) {
+  function instance$1h($$self, $$props, $$invalidate) {
     let $currentCommands;
     let $combo;
     let { feature } = $$props;
@@ -23147,16 +23153,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return [feature, $currentCommands, $combo, currentCommands, combo];
   }
-  __name(instance$1g, "instance$1g");
+  __name(instance$1h, "instance$1h");
   const _Command_preview = class _Command_preview extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1g, create_fragment$1p, safe_not_equal, { feature: 0 });
+      init(this, options, instance$1h, create_fragment$1q, safe_not_equal, { feature: 0 });
     }
   };
   __name(_Command_preview, "Command_preview");
   let Command_preview = _Command_preview;
-  function create_fragment$1o(ctx) {
+  function create_fragment$1p(ctx) {
     let input;
     let mounted;
     let dispose;
@@ -23197,12 +23203,12 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1o, "create_fragment$1o");
+  __name(create_fragment$1p, "create_fragment$1p");
   const submit_handler = /* @__PURE__ */ __name((e) => {
     e.preventDefault();
     e.stopImmediatePropagation();
   }, "submit_handler");
-  function instance$1f($$self, $$props, $$invalidate) {
+  function instance$1g($$self, $$props, $$invalidate) {
     let { onInput } = $$props;
     const input_handler = /* @__PURE__ */ __name((e) => {
       onInput(e.currentTarget.value);
@@ -23212,24 +23218,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
     return [onInput, input_handler];
   }
-  __name(instance$1f, "instance$1f");
+  __name(instance$1g, "instance$1g");
   const _Command_input = class _Command_input extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1f, create_fragment$1o, safe_not_equal, { onInput: 0 });
+      init(this, options, instance$1g, create_fragment$1p, safe_not_equal, { onInput: 0 });
     }
   };
   __name(_Command_input, "Command_input");
   let Command_input = _Command_input;
-  var __defProp$17 = Object.defineProperty;
-  var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$18 = Object.defineProperty;
+  var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$17(target, key2, result);
+    if (result) __defProp$18(target, key2, result);
     return result;
-  }, "__decorateClass$17");
+  }, "__decorateClass$18");
   const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -23479,21 +23485,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatCommandsFeature, "ChatCommandsFeature");
   let ChatCommandsFeature = _ChatCommandsFeature;
-  __decorateClass$17([
+  __decorateClass$18([
     inject(ElementsSetup)
   ], ChatCommandsFeature.prototype, "_elements");
-  __decorateClass$17([
+  __decorateClass$18([
     inject(ToastService)
   ], ChatCommandsFeature.prototype, "_toastService");
-  var __defProp$16 = Object.defineProperty;
-  var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$17 = Object.defineProperty;
+  var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$16(target, key2, result);
+    if (result) __defProp$17(target, key2, result);
     return result;
-  }, "__decorateClass$16");
+  }, "__decorateClass$17");
   const _ChatCopyFormattedFeature = class _ChatCopyFormattedFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -23615,10 +23621,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatCopyFormattedFeature, "ChatCopyFormattedFeature");
   let ChatCopyFormattedFeature = _ChatCopyFormattedFeature;
-  __decorateClass$16([
+  __decorateClass$17([
     inject(ElementsSetup)
   ], ChatCopyFormattedFeature.prototype, "_elementsSetup");
-  __decorateClass$16([
+  __decorateClass$17([
     inject(ToastService)
   ], ChatCopyFormattedFeature.prototype, "_toastService");
   function promiseAllObject(obj) {
@@ -23627,15 +23633,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     ).then(Object.fromEntries);
   }
   __name(promiseAllObject, "promiseAllObject");
-  var __defProp$15 = Object.defineProperty;
-  var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$16 = Object.defineProperty;
+  var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$15(target, key2, result);
+    if (result) __defProp$16(target, key2, result);
     return result;
-  }, "__decorateClass$15");
+  }, "__decorateClass$16");
   function getData(spritesApi, scenesApi, eventsApi, emojisApi, announcementsApi, themesApi, awardsApi) {
     return {
       sprites: spritesApi.getAllSprites(),
@@ -23675,16 +23681,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ApiDataSetup, "ApiDataSetup");
   let ApiDataSetup = _ApiDataSetup;
-  __decorateClass$15([
+  __decorateClass$16([
     inject(ApiService)
   ], ApiDataSetup.prototype, "_apiService");
-  __decorateClass$15([
+  __decorateClass$16([
     inject(ToastService)
   ], ApiDataSetup.prototype, "_toastService");
-  __decorateClass$15([
+  __decorateClass$16([
     inject(loggerFactory)
   ], ApiDataSetup.prototype, "_loggerFactory");
-  function create_fragment$1n(ctx) {
+  function create_fragment$1o(ctx) {
     let div;
     return {
       c() {
@@ -23704,15 +23710,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1n, "create_fragment$1n");
-  function instance$1e($$self) {
+  __name(create_fragment$1o, "create_fragment$1o");
+  function instance$1f($$self) {
     return [];
   }
-  __name(instance$1e, "instance$1e");
+  __name(instance$1f, "instance$1f");
   const _Chat_emojis = class _Chat_emojis extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1e, create_fragment$1n, safe_not_equal, {});
+      init(this, options, instance$1f, create_fragment$1o, safe_not_equal, {});
     }
   };
   __name(_Chat_emojis, "Chat_emojis");
@@ -23775,7 +23781,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_if_block_1$h, "create_if_block_1$h");
-  function create_if_block$z(ctx) {
+  function create_if_block$A(ctx) {
     let t0;
     let br;
     let t1;
@@ -23800,7 +23806,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_if_block$z, "create_if_block$z");
+  __name(create_if_block$A, "create_if_block$A");
   function create_each_block$w(ctx) {
     let img;
     let img_src_value;
@@ -23869,7 +23875,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     };
   }
   __name(create_each_block$w, "create_each_block$w");
-  function create_fragment$1m(ctx) {
+  function create_fragment$1n(ctx) {
     let div0;
     let t;
     let div1;
@@ -23879,7 +23885,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       if (
         /*$emojiCandidates*/
         ctx2[2].length === 0
-      ) return create_if_block$z;
+      ) return create_if_block$A;
       if (
         /*hoverEmoji*/
         ctx2[1] !== void 0
@@ -23978,8 +23984,8 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1m, "create_fragment$1m");
-  function instance$1d($$self, $$props, $$invalidate) {
+  __name(create_fragment$1n, "create_fragment$1n");
+  function instance$1e($$self, $$props, $$invalidate) {
     let $emojiCandidates;
     let { feature } = $$props;
     let { onSelected = void 0 } = $$props;
@@ -24004,24 +24010,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       mouseleave_handler
     ];
   }
-  __name(instance$1d, "instance$1d");
+  __name(instance$1e, "instance$1e");
   const _Emoji_picker = class _Emoji_picker extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$1d, create_fragment$1m, safe_not_equal, { feature: 4, onSelected: 0 });
+      init(this, options, instance$1e, create_fragment$1n, safe_not_equal, { feature: 4, onSelected: 0 });
     }
   };
   __name(_Emoji_picker, "Emoji_picker");
   let Emoji_picker = _Emoji_picker;
-  var __defProp$14 = Object.defineProperty;
-  var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$15 = Object.defineProperty;
+  var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$14(target, key2, result);
+    if (result) __defProp$15(target, key2, result);
     return result;
-  }, "__decorateClass$14");
+  }, "__decorateClass$15");
   const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24196,19 +24202,19 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatEmojisFeature, "ChatEmojisFeature");
   let ChatEmojisFeature = _ChatEmojisFeature;
-  __decorateClass$14([
+  __decorateClass$15([
     inject(ElementsSetup)
   ], ChatEmojisFeature.prototype, "_elements");
-  __decorateClass$14([
+  __decorateClass$15([
     inject(ApiDataSetup)
   ], ChatEmojisFeature.prototype, "_apiDataSetup");
-  __decorateClass$14([
+  __decorateClass$15([
     inject(ChatService)
   ], ChatEmojisFeature.prototype, "_chatService");
-  __decorateClass$14([
+  __decorateClass$15([
     inject(LobbyService)
   ], ChatEmojisFeature.prototype, "_lobbyService");
-  function create_fragment$1l(ctx) {
+  function create_fragment$1m(ctx) {
     let t0;
     let br0;
     let t1;
@@ -24239,24 +24245,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     };
   }
-  __name(create_fragment$1l, "create_fragment$1l");
+  __name(create_fragment$1m, "create_fragment$1m");
   const _Chat_focus_info = class _Chat_focus_info extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, null, create_fragment$1l, safe_not_equal, {});
+      init(this, options, null, create_fragment$1m, safe_not_equal, {});
     }
   };
   __name(_Chat_focus_info, "Chat_focus_info");
   let Chat_focus_info = _Chat_focus_info;
-  var __defProp$13 = Object.defineProperty;
-  var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$14 = Object.defineProperty;
+  var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$13(target, key2, result);
+    if (result) __defProp$14(target, key2, result);
     return result;
-  }, "__decorateClass$13");
+  }, "__decorateClass$14");
   const _ChatFocusFeature = class _ChatFocusFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24305,10 +24311,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatFocusFeature, "ChatFocusFeature");
   let ChatFocusFeature = _ChatFocusFeature;
-  __decorateClass$13([
+  __decorateClass$14([
     inject(ElementsSetup)
   ], ChatFocusFeature.prototype, "elementsSetup");
-  __decorateClass$13([
+  __decorateClass$14([
     inject(LobbyStateChangedEventListener)
   ], ChatFocusFeature.prototype, "_lobbyStateChangedEventListener");
   const _Chat_message_splits = class _Chat_message_splits extends SvelteComponent {
@@ -24319,15 +24325,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Chat_message_splits, "Chat_message_splits");
   let Chat_message_splits = _Chat_message_splits;
-  var __defProp$12 = Object.defineProperty;
-  var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$13 = Object.defineProperty;
+  var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$12(target, key2, result);
+    if (result) __defProp$13(target, key2, result);
     return result;
-  }, "__decorateClass$12");
+  }, "__decorateClass$13");
   const _ChatMessageSplitsFeature = class _ChatMessageSplitsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24360,9 +24366,186 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatMessageSplitsFeature, "ChatMessageSplitsFeature");
   let ChatMessageSplitsFeature = _ChatMessageSplitsFeature;
-  __decorateClass$12([
+  __decorateClass$13([
     inject(ElementsSetup)
   ], ChatMessageSplitsFeature.prototype, "_elementsSetup");
+  function create_if_block$z(ctx) {
+    let div;
+    let t0;
+    let t1;
+    return {
+      c() {
+        div = element("div");
+        t0 = text(
+          /*$ping*/
+          ctx[0]
+        );
+        t1 = text("ms");
+        attr(div, "class", "typo-ping-info svelte-wetrhq");
+      },
+      m(target, anchor) {
+        insert(target, div, anchor);
+        append(div, t0);
+        append(div, t1);
+      },
+      p(ctx2, dirty) {
+        if (dirty & /*$ping*/
+        1) set_data(
+          t0,
+          /*$ping*/
+          ctx2[0]
+        );
+      },
+      d(detaching) {
+        if (detaching) {
+          detach(div);
+        }
+      }
+    };
+  }
+  __name(create_if_block$z, "create_if_block$z");
+  function create_fragment$1l(ctx) {
+    let if_block_anchor;
+    let if_block = (
+      /*$ping*/
+      ctx[0] !== void 0 && create_if_block$z(ctx)
+    );
+    return {
+      c() {
+        if (if_block) if_block.c();
+        if_block_anchor = empty();
+      },
+      m(target, anchor) {
+        if (if_block) if_block.m(target, anchor);
+        insert(target, if_block_anchor, anchor);
+      },
+      p(ctx2, [dirty]) {
+        if (
+          /*$ping*/
+          ctx2[0] !== void 0
+        ) {
+          if (if_block) {
+            if_block.p(ctx2, dirty);
+          } else {
+            if_block = create_if_block$z(ctx2);
+            if_block.c();
+            if_block.m(if_block_anchor.parentNode, if_block_anchor);
+          }
+        } else if (if_block) {
+          if_block.d(1);
+          if_block = null;
+        }
+      },
+      i: noop,
+      o: noop,
+      d(detaching) {
+        if (detaching) {
+          detach(if_block_anchor);
+        }
+        if (if_block) if_block.d(detaching);
+      }
+    };
+  }
+  __name(create_fragment$1l, "create_fragment$1l");
+  function instance$1d($$self, $$props, $$invalidate) {
+    let $ping;
+    let { feature } = $$props;
+    const ping = feature.pingStore;
+    component_subscribe($$self, ping, (value) => $$invalidate(0, $ping = value));
+    $$self.$$set = ($$props2) => {
+      if ("feature" in $$props2) $$invalidate(2, feature = $$props2.feature);
+    };
+    return [$ping, ping, feature];
+  }
+  __name(instance$1d, "instance$1d");
+  const _Chat_ping = class _Chat_ping extends SvelteComponent {
+    constructor(options) {
+      super();
+      init(this, options, instance$1d, create_fragment$1l, safe_not_equal, { feature: 2 });
+    }
+  };
+  __name(_Chat_ping, "Chat_ping");
+  let Chat_ping = _Chat_ping;
+  var __defProp$12 = Object.defineProperty;
+  var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key2, result) || result;
+    if (result) __defProp$12(target, key2, result);
+    return result;
+  }, "__decorateClass$12");
+  const _ChatPingFeature = class _ChatPingFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_elements");
+      __publicField(this, "_lobbyService");
+      __publicField(this, "name", "Ping Display");
+      __publicField(this, "description", "Shows a small box with the current skribbl game ping above the chat input");
+      __publicField(this, "tags", [FeatureTag.INFORMATION]);
+      __publicField(this, "featureId", 52);
+      __publicField(this, "featureEnabledDefault", false);
+      __publicField(this, "_currentPing$", new Subject$1());
+      __publicField(this, "_pingSubscription");
+      __publicField(this, "_pingElement");
+    }
+    async onActivate() {
+      const elements2 = await this._elements.complete();
+      this._pingElement = new Chat_ping({
+        target: elements2.chatForm,
+        props: {
+          feature: this
+        }
+      });
+      this._pingSubscription = this._lobbyService.lobby$.pipe(
+        map((lobby) => lobby != null),
+        distinctUntilChanged(),
+        switchMap(
+          (inLobby) => inLobby ? (
+            /* if in lobby, measure every 5s and accumulate to past 5 measurements */
+            interval(5e3).pipe(
+              exhaustMap(() => this.measurePing()),
+              scan((acc, curr) => [curr, ...acc.slice(0, 5)], [])
+            )
+          ) : (
+            /* if not, don't measure and reset */
+            of([])
+          )
+        ),
+        /* map to average time */
+        map(
+          (pings) => pings.length === 0 ? void 0 : Math.round(pings.reduce((a, b) => a + b, 0) / pings.length)
+        )
+      ).subscribe((ping) => this._currentPing$.next(ping));
+    }
+    async onDestroy() {
+      var _a2, _b2;
+      (_a2 = this._pingSubscription) == null ? void 0 : _a2.unsubscribe();
+      this._pingSubscription = void 0;
+      (_b2 = this._pingElement) == null ? void 0 : _b2.$destroy();
+      this._pingElement = void 0;
+    }
+    get pingStore() {
+      return fromObservable(
+        this._currentPing$,
+        0
+      );
+    }
+    async measurePing() {
+      this._logger.info("Measuring ping");
+      const now = performance.now();
+      await fetch("./credits?this_is_for_ping_measure&now=" + now, { cache: "no-store" });
+      return performance.now() - now;
+    }
+  };
+  __name(_ChatPingFeature, "ChatPingFeature");
+  let ChatPingFeature = _ChatPingFeature;
+  __decorateClass$12([
+    inject(ElementsSetup)
+  ], ChatPingFeature.prototype, "_elements");
+  __decorateClass$12([
+    inject(LobbyService)
+  ], ChatPingFeature.prototype, "_lobbyService");
   const _Chat_profile_link = class _Chat_profile_link extends SvelteComponent {
     constructor(options) {
       super();
@@ -69396,7 +69579,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     ControlsOnboardingFeature,
     ControlsProfilesFeature,
     ChatAvatarsFeature,
-    DrawingSizeHotkeysFeature
+    DrawingSizeHotkeysFeature,
+    ChatPingFeature
   );
   interceptor.triggerPatchInjection();
   const assets = { "img-arrow-left-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAOttGgAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MzY4MTg5MjdGN0ExMUVGOUYzNEJFMUNFMjc0Njc1RSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MzY4MTg5MzdGN0ExMUVGOUYzNEJFMUNFMjc0Njc1RSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzNjgxODkwN0Y3QTExRUY5RjM0QkUxQ0UyNzQ2NzVFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQzNjgxODkxN0Y3QTExRUY5RjM0QkUxQ0UyNzQ2NzVFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAApaUj6nL7Q+jnLTai7PevPsPhuJIYsEZlA2KqgoLuwccy3Rd3gHA5jcA7Il0wKLwQywadcwTJKkMNpurX1Q5pTKs1+sv+6J1x+QoLcwqq8nnBGwN7+Jm77idd0SI7/C5vs5X5veHEmhWOOi255XF9ASI1ej4CIknmVgFidmR1OJi5WkzKSMwSlq6qZJ6ytrq+gobKzurUQAAIfkEBRQAAgAsAAAAADAAMAAAApCUj6nL7Q+jnLTai7PevPsPhuJIZkFQPueaLuuLtgYMywJdpzit4wDwKvl+wN3uAiMqjcwJTblkGiNPaFSKUyWt3C4xy6h6x1aea0tOQ4Pnl/r9ZYXRcDK77a7b5Q2x/nrXR1eGZQbh91M4JYGoCOZE53iiIRZIUsXX0mQz88h5k/N5YClaanqKmqq6ytq6UAAAOw==", "img-arrow-left-gif"), "img-arrow-right-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAFhY8AAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3RDM1NjE4QTdGN0ExMUVGQUQ1MERCQkMxMEFENzI4NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3RDM1NjE4QjdGN0ExMUVGQUQ1MERCQkMxMEFENzI4NSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdEMzU2MTg4N0Y3QTExRUZBRDUwREJCQzEwQUQ3Mjg1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdEMzU2MTg5N0Y3QTExRUZBRDUwREJCQzEwQUQ3Mjg1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAApiUj6nL7Q+jnLTai7PevPsPhuJIcsEZlA+KqgsLuwgcywJduyyAp+oO4OFKwKCQNukpUcZmD7KMNp1DR3Q5nT4V12Mxq0VyYeCyOZw70M5ss3j2bcuNaQN5jveexsy8/A3X53cGmEAWN1hneKVUVtXAiJVVCBm5RqXYcRf0ONK3RXTCSSmyZHMDakOqw3Lq+gobKztLW7tRAAAh+QQFFAACACwAAAAAMAAwAAACk5SPqcvtD6OctNqLs968+w+G4kh2QVBC55oy64u2CAzLBl3LON2+ALDL7Ia/H84yTBaXOUlSuSzyVM9dNDpt4K7cLrO5oHnH3azCR05fzbOV+i0Ft0/wN3seqKePLrF+LRdW5VcWKDi4hWXYhwij+ILRSBcHWYIGtAjihlnZM2QjEAQammnJMoqaqrrK2ur6CjtRAAA7", "img-arrow-right-gif"), "img-arrow-small-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAKioqAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDNTJFRTk3MDdGNzkxMUVGQjZGNUUxMjE2NTEyMzA0MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDNTJFRTk3MTdGNzkxMUVGQjZGNUUxMjE2NTEyMzA0MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM1MkVFOTZFN0Y3OTExRUZCNkY1RTEyMTY1MTIzMDQxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM1MkVFOTZGN0Y3OTExRUZCNkY1RTEyMTY1MTIzMDQxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAApaUj6nL7Q+jnLTai7PevPsPhuJIYsEZlA2KqgoLuwccy3Rd3gHA5jcA7Il0wKLwQywadcwTJKkMNpurX1Q5pTKs1+sv+6J1x+QoLcwqq8nnBGwN7+Jm77idd0SI7/C5vs5X5veHEmhWOOi255XF9ASI1ej4CIknmVgFidmR1OJi5WkzKSMwSlq6qZJ6ytrq+gobKzurUQAAIfkEBRQAAgAsAAAAADAAMAAAApCUj6nL7Q+jnLTai7PevPsPhuJIZkFQPueaLuuLtgYMywJdpzit4wDwKvl+wN3uAiMqjcwJTblkGiNPaFSKUyWt3C4xy6h6x1aea0tOQ4Pnl/r9ZYXRcDK77a7b5Q2x/nrXR1eGZQbh91M4JYGoCOZE53iiIRZIUsXX0mQz88h5k/N5YClaanqKmqq6ytq6UAAAOw==", "img-arrow-small-gif"), "img-award-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAAD/zv/QAP///wAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOTNBRDQwRkVBNDAxMUVGOUEzMUMwREIwREMxNDhGRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOTNBRDQxMEVBNDAxMUVGOUEzMUMwREIwREMxNDhGRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE5M0FENDBERUE0MDExRUY5QTMxQzBEQjBEQzE0OEZGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE5M0FENDBFRUE0MDExRUY5QTMxQzBEQjBEQzE0OEZGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/9Iutz+MMpJq7046827/9sgjkNIjtV5NqijrtILEyojzw8p7LW8nDseCaILCm+oolEwzI2WR1IgIDsaW6xnNDqYTl9MJdamRXa932p5rFgPuGd0GigMsmmielgql6useyVkb25xfX10eYGDhG+Bh2gikWt2IoN6I5BefHN6e5dMlYaInFSKoUegV5KaKpunq4JtsEd+ZyMAmZ1QY1qxk5K4uqaOS720e68qALmsxJ7HjorDwrjNcZSpP9PSutYizHxF3JbbeeSs1szXypXa5o2it+qcbu+z5+jKA9fY9p9ZGhWr56rdHlEu8g0kOOwZoDt4usHxZ2icGyfdBJYi9cRFF0R7SRoCAyOECLoWG4ndAJhQIZYTIyPeiICE0bxys2RCxBeyZQ2TO+HJwtiEJs4YR40mBcG0qdOnUKNKnUq1qtWrExIAACH5BAkUAAQALAAAAAAwADAAAAP/SLrc/jDKSau9OOvNux4gyIWhRZ4DhpLTii5s48YPKgivcsLnje+1kM+3WxF6Q6LIQUoqZzbnrcQEPa2/U2B1HTyr3mxTPAiYkWQslae2CrXmc3PcTjHo4XQ5Hnc9szJ1XXyEW1FTXjRHbYOFhFyIYmxhWGKOl2hua3RXl30gn5U4iHaLeUMhnnKpq1Kbok+qKKGuS6a1e5ggAKCtTq+nsaGrALy5Qr+2yEmshqkhxb3OuGxKpKso0dLIlcCUmqDQxrvjtD+kpXjfe+LkzXikgevXzgPF2tuCgHfd6+zt77jVkfdNWD0SfJb1K6VDoL9QzeqR+iJvIr1VjxQOBGMNSp2sZVnicYyELldGdRSrdFxRiMuYfSPfpICDbYbIIIlywAECxRbOHA1d8JsJJEIRhkGL4jThE4IiD1CjSp1KtarVq1izat3KlUECADs=", "img-award-gif"), "img-challenge-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAOttGsfHxwAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0Mjc2QjBFQUVBNDAxMUVGODUzQTk0OUFGQ0MwRjE0NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0Mjc2QjBFQkVBNDAxMUVGODUzQTk0OUFGQ0MwRjE0NSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQyNzZCMEU4RUE0MDExRUY4NTNBOTQ5QUZDQzBGMTQ1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQyNzZCMEU5RUE0MDExRUY4NTNBOTQ5QUZDQzBGMTQ1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLRaJ7KQuuvqfU9IQmRnnl5zBoGIZe78hkk7w6xM5+tA6rl0DI2QpuIdiYvO0Rd81jYjo68XEipRVeUUa4UKxKnwd2iejtEZTtroQZq5Eac8Lr5T3XM8e/23x+dl96cnOJFVqHZ4YZCUF4hogcMo6XjjV2iDmbkVxtl5oPkZKrpZOvbTiQqIt0I3CCVmlTSJ8PGaamlbhAPaGggQO/qbChwCoMykwkbbmqEszayxnBUI5OQhbX1bPQ29p8I93Nb0DS6z+pjMzYSL3r1eHN/dJUBuSo9PLt/VX86cJ3f8/PmKBpBYtoIdCAqEh9CaQwUN29nzVDAgw4cq+0hMhOiwmkJ2IhpeLBbyxA5BKjKlo6KvTkyV+zCNLCGK0rucPHv69FkAACH5BAkUAAMALAAAAAAwADAAAAL/nI+py+0Po5y02oup2FzMDnpPGEZkuZzoqHbJGcQxZ26yvA7gfdMQx8OBdMCgUMQSGI+75WxTUzoDpCkV+iteg01hz5eUXsVj25fsymqL3fIZq0ZXmbxh1PzsvOtpSbur94b0EQiolQdX0UInmEEUwsg0iAGJyAfm+CgWKJl50MSJOJkBenjiaSh36liqamZ30Sr46tLHQFOIV8bZ0qAyNgssCovwK7xLK9UBAGBrsLgGgyzAzIz5zGFduaupvFzdnIhNDd4K1wIeLq6Z3ltM0n79+V1NkgISLz+/ka6+vk+unDOA/erpo5dvHcJwAsUh5GcQ08KHDiFqs+jvHcYQMBcnZeu4EcxHkKsInmg4ryEUewpO0RMJERaxFzKz9VERS2GObqM8dbvX0+c4oUILAAA7", "img-challenge-gif"), "img-cloud-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAP/uANzc3AAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkYyRDc4OTIzMjMzQTExRUY4RjE5RjQ0M0VDNEJFOUNCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkYyRDc4OTI0MjMzQTExRUY4RjE5RjQ0M0VDNEJFOUNCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjJENzg5MjEyMzNBMTFFRjhGMTlGNDQzRUM0QkU5Q0IiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjJENzg5MjIyMzNBMTFFRjhGMTlGNDQzRUM0QkU5Q0IiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAADACwAAAAAMAAwAAAC/5yPqcvtr4ScAtpFs977Ig6GlGeIJkhKwcq27ttm0AbXtuycZz09+q9a9XJAHWvYmNiWMcpRQgwymU4hNFIUWaXIQ3ZXDXRLX214PNBMYWox9+oNs6lV5TZhX0qfz2B+/Ldn5RLo91bxcfiyl+emcgZHJtA02dRHqASJGFe5ZcL2WIgnaLQYejja6SkA0Ooqt+XYCUgq4Xr7augYe5eoSoHbagugZifqKztMzLo8nLEL7ZiazAwM3FxpjIpsKDzhfftrOBuZVpsb7E3JO4JMGay8vA6N1ugY/u0tnj2OpbqFr1otfgT9YcqH69kleuXM7QOykIPBZKvqaCOIw509XjqW2GnAIAhUyHntGGwUqadflDUn+2Q0OdIUnY8+Yq5xWTIKh5vUNs0oE4KEQ6A0hSYRYTSp0qVMjRYAACH5BAUUAAMALAAAAAAwADAAAAL/nI+py+0Po5y0KoGz3rzb0YUiZ43mKHXByrbuu2rRSQuv/NQ6FmPQrusJFiGY8cYREoEbWDKQuTBNLI0SMT1VM9dD8+gUCW1QH5YLhqatZV47wS6HXW7huGtA2+nkvR8dddbn19NS9+cW6HXYZlint8emmMfYRoVkI2m2ODg2EpYJuEnJuAFwihq3FZo4CgLZhiqbWsqjOSTYZzoLgHGaJEo2+Wq72yvwm5HMFYxHzKp87Cu9XCzcisvZOR3N2+t4HQ4HO+0te9j8lsuHPNtOCx7pSsx+Xi4d34gjiEn7rtpsGCl29/zpCTjv2aodq+wIVGjJ061wErOtU0VIXrh9NevkYFqDjaM2kJ0+ipRSCQnJDTlgzQET4kfKNJhYyswiogJOFBR2xvzA4ATQoUSLGj2KFEEBADs=", "img-cloud-gif"), "img-coin-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAMWMCvHKBQAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxRjcxOTIzOTA0QjMxMUYwQTJDOEI0NTRDREE1NEVEMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxRjcxOTIzQTA0QjMxMUYwQTJDOEI0NTRDREE1NEVEMiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFGNzE5MjM3MDRCMzExRjBBMkM4QjQ1NENEQTU0RUQyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFGNzE5MjM4MDRCMzExRjBBMkM4QjQ1NENEQTU0RUQyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLTai7PenIkPhl+XiOYZcui6ZuwXxHLAVicNz7puTuYOnIFiIskvGBQRUxAl8BWSMR3RHdQpHVGrvGtOCNp+u0NyOatdYM3J9VTBtcbZ6DD8/FzXwe8DPn/EV2dXMoZ0g4RTVGiYGAgIQOj3l6jYWBeZNilQCcjZ9pEpcHepN4cpSvppxuIpAJCqKgflKjoq6/o4+NpncGq56hgCa6t2qldLLImg+8tKXGw8RzkLYru8iVxpAnvSgNK5NKy86LEizA1dLs3rlQ4d/W197dUdet10bw8F35KvL6ofQHI9IpwIqA5gDSPuGtpo+EIFRGwkKlq8iDFjxgIAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLTai7NuovcteeJIfmCJpualdkErWmhA1/aNUvPN92NY6uE8vN9jJ6yJfJ7jKFlcRleMJxQ2FTikSRhR2eS4oC/vmGZUfK9rMLccVp+7bdubtKgz9fSYXEAG99YXh8CXdWiXZjjHZkVIdZC4l1iS1xhIImT5BzjkSbnZAVAoqTfoBqo4WmraqPmpmkoaafCY+gW7KgBAq9WJ6YXo+5ugi4uENkJ8eSsYFOvhWwWtjInI2Qw7+cy6aKwS2M3b+82IFU1S7ic2SmzmHs9OLf3u1Uv7HrG8roKPn2Mfv3z/fBW0V0ygiHUH6wHEU8HfQ28BZcBTceIiRBAL5zBy/AgypEiOBQAAOw==", "img-coin-gif"), "img-connection-loading-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAAO+AHOJ2gAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4NDZCOUY0MUVBMTYxMUVGQjM4MzhFQjY5NUE1QUM2MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4NDZCOUY0MkVBMTYxMUVGQjM4MzhFQjY5NUE1QUM2MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg0NkI5RjNGRUExNjExRUZCMzgzOEVCNjk1QTVBQzYwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg0NkI5RjQwRUExNjExRUZCMzgzOEVCNjk1QTVBQzYwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAtGcj6nL7Q+jnLTai7MWvPvvaQhIliFmpiqVBu4LvysExvYdg3SNk3jweXxgqpLttPAQi8WlgNGRkYRG6VMRdQVZPCAHy7FeL7wOWKA1H5jfROnsbQ/YunV9dKeb7HI8svvzFvE39JNzx5VlGKiW6NQkVqGoN9k4GJbWl6Qk5Rg3RoXplbg1M5elGXrCxIckQchqgEhW+DhmiaLICCoii2li1esHidtLmSqydYZszHsmfOkKrSo9vTll7VDpnI132N2wDQ4lOL5cbN7Knc7e7k5RAAAh+QQJFAADACwAAAAAMAAwAAAC2pyPqcvtD6OctNqLs958iA+GosiN5jle6MqCERvE8jy3zkjnum425h47AQOkhYjWEuZCilAtCX0KEiAZCrJ6Uj/WIkVJnB6qQdcYiviF09zw5wxlsr0errwe7xlScLl6eLX3NmeGM4Sk51PohPgnNShBVhbVZfbS5nZHKFkW2UanyAn5cFLBuHbpZdOnSWqJtwr7anHEY9lKy2k7WiJaO9kh+IkyKdaRB6rB15S8McvMGyw9TW26XG1Uip0tAOD9vA3iPR4d/jH+bbw9R15unri+6R7fHG9/n1AAACH5BAkUAAMALAAAAAAwADAAAALbnI+py+0Po5y02ouzFrz772kISJYhZqYqlQbuC78rBMb2HYN0jZN48Hl8YKqS7bTwEIvFpYDRkZGERulTEXUFWTwgB8uxXi+8DligNR+Y30Tp7G0P2Lp1fXSnm+xyPLL78xbxN/STc8eVZRiolujUJFahqDfZOBiW1pekJOUYN0aF6ZW4NTOXpRl6wsSHJEHIaoBI9gFge7t1CorScev7aykiy2Frgpu6wVaMnEwp7ObqxywyPbz7DJWLvTO7vTnl7dC7fB2OB1xubn2crr6nnq0Nf1Y9b3+PX1EAACH5BAkUAAMALAAAAAAwADAAAALcnI+py+0Po5y02ouz3nyID4aiyI3mOV7oyoIRG8TyPLfOSOe6bjbmHjsBA6SFiNYS5kKKUC0JfQoSIBkKsnpSP9YiRUmcHqpB1xiK+IXT3PDnDGWyvR6uvB7vGVJwuQkAGCgIeLX3Nmc2Mrg4ePLgF7KIwkiH9SGYh3lnKRCotyXSKMZJuOkT6Tn6+CmBCnDIeWfTZ3pjZphEC6viKgpbW9FLedvRq5iquoG6UrqrnAeMwddUWeJMfd2hvc0tPd3NUAhudNk8Tt6peY4tus5u7o5Y7c4aT2uPn69QAAAh+QQJFAADACwAAAAAMAAwAAAC0ZyPqcvtD6OctNqLsxa8++9pCEiWIWamKpUC7gu/KwTG9h2DdI2TOPB5fGCqku208BCLxaWA0ZGRhEbpUxF1BVk8IAfLsV4vvA5YoDUfmN9E6extD9i6dX10p5vscjyy+/MW8Tf0k3PHlWUYqJbo1CRWoag32TgYltaXpCTlGDdGhemVuDUzl6UZesLEhyRByGqASFb4OGaJosgIKiKLaWLV6weJ20uZKrJ1hmzMeyZ86QqtKj29OWXtUOmcjXfY3bANDiU4vlxs3sqdzt7uTlEAACH5BAkUAAMALAAAAAAwADAAAALUnI+py+0Po5y02ouz3nyID4aiyI3mOV7oyoIRC8TyPLfOSOe6bjbmHjsBAaSFiNYS5kKKUC0JfQoSIBkKsnpSP9YiRUmcHqpB1xiK+IXT3PDnDGWyvR6uvB7vGVJwuXp4tfc2Z4YzhKTnU+iE+Cc1KEFWFtVl9tLmdkcoWRbZRqfICflwUsG4dull06dJaom3CvtqccRj2UrLaTtaIlo72SH4iTIp1pEHqsHXlLwxy8wbLD1NbbpcbVSKnS1QuQ2N+L3VrSU+523OiiuemM7qDh9/UAAAOw==", "img-connection-loading-gif"), "img-connection-open-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAP9VAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpERjRERTc2MkVBMTgxMUVGQjU3Q0FDQzFCMzQ0OUJBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpERjRERTc2M0VBMTgxMUVGQjU3Q0FDQzFCMzQ0OUJBMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRGNERFNzYwRUExODExRUZCNTdDQUNDMUIzNDQ5QkEwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkRGNERFNzYxRUExODExRUZCNTdDQUNDMUIzNDQ5QkEwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAtGUj6nL7Q+jnLTai7MOvPvvaQhIliFmpiqVAu4LvysExvYdg3SNkzjweXxgqpLttPAQi8VlgNGRkYRG6VMRdQVZPCAHy7FeL7wOOKA1H5jfROnsbQvYunV9dKeb7HI8svvzFvE39JNzx5VlGKiW6NQkVqGoN9k4GJbWl6Qk5Rg3RoXplbg1M5elGXrCxIckQchqgEhW+DhmiaLICCoii2li1esHidtLmSqydYZszHsmfOkKrSo9vTll7VDpnI132N2wDQ4lOL5cbN7Knc7e7k5RAAAh+QQJFAACACwAAAAAMAAwAAAC1JSPqcvtD6OctNqLs95chA+GosiN5jle6MqCEQvE8jy3zkjnum425h47AQGkhYjWEuZCilAtCX0GEiAZCrJ6Uj/WIkVJnB6qQdcYiviF09zw5wxlsr0errwe7xlScLl6eLX3NmeGM4Sk51PohPgnNShBVhbVZfbS5nZHKFkW2UanyAn5cFLBuHbpZdOnSWqJtwr7anHEY9lKy2k7WiJaO9kh+IkyKdaRB6rB15S8McvMGyw9TW26XG1Uip0dULkNjfi91a0lPudtzoornpjO6g4ff1AAADs=", "img-connection-open-gif"), "img-connection-paused-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAAO+AAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmViYzgzMDYyNywgMjAyNS8wMi8xNy0yMDo0MTozOCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowRTE5RTA5NDI4MTUxMUYwOENGOEIxMjc0Q0U3MERBQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowRTE5RTA5NTI4MTUxMUYwOENGOEIxMjc0Q0U3MERBQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBFMTlFMDkyMjgxNTExRjA4Q0Y4QjEyNzRDRTcwREFBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBFMTlFMDkzMjgxNTExRjA4Q0Y4QjEyNzRDRTcwREFBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAuyUj6nL7Q+jnLTai7MOvPvvaQhIliFmpiqVAu4LvysExvYdg3SNkzjweXxgqpLttPAQi8VlgNGRkYRG6VMRdQVZPCAHy7FeL7wOOKA1H5jfROnsbQvYunV9dKeb7HI8svvzFvE39JNzx5VlGKiW6NQkVqGoN9k4GJbWl6Qk5Rg3RoXplbg1M5elGXrCxIckQchqgEhW+DhmiaLICCoii2li1esHidtLmSqydYZszHsmfOnqKydNi6gzKyk4bRbF/Cpq6f00voG2hJd2qp5RCfpLfv4dfS0fz94+W16eXL0fNk8YNmXQNqmpVtBCAQAh+QQJFAACACwAAAAAMAAwAAAC8pSPqcvtD6OctNqLs95chA+GosiN5jle6MqCEQvE8jy3zkjnum425h47AQGkhYjWEuZCilAtCX0GEiAZCrJ6Uj/WIkVJnB6qQdcYiviF09zw5wxlsr0errwe7xlScLl6eLX3NmeGM4Sk51PohPgnNShBVhbVZfbS5nZHKFkW2UanyAn5cFLBuHbpZdOnSWqJtwr7anHEY9lKy2k7WiJaO9kh+IkyKdaRB6rB15S8McvMG5xrjCd9Q9JsuizsYhf9VXrWOayM+UpOjqE7ih7QqY75Ljjujgpf78ZGL68SPr+WLkMiYQCzgXuWYpu1TdwWaigAADs=", "img-connection-paused-gif"), "img-connection-secure-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAAO+AAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQzRFMzQ0MUYwNjIxMUVGQUJFMEU4QThEMDQ1NzY3MiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQzRFMzQ0MkYwNjIxMUVGQUJFMEU4QThEMDQ1NzY3MiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBDNEUzNDNGRjA2MjExRUZBQkUwRThBOEQwNDU3NjcyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBDNEUzNDQwRjA2MjExRUZBQkUwRThBOEQwNDU3NjcyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAuiUj6nL7Q+jnLTai7MOvPvvaQhIliFmpiqVAu4LvysExvYdg3SNkzjweXxgqpLttPAQi8VlgNGRkYRG6VMRdQVZPCAHy7FeL7wOOKA1H5jfROnsbQvYunV9dKeb7HI8svvzFvE39JNzx5VlGKiW6NQkVqGoN9k4GJbWl6Qk5Rg3RoXplbg1M5elGXrCxIckQchqgEhW+DhmiaLICCoii2li1esHidtLmSqydYbcKsl75jDr7NqgxHyJqMl5raoMixaXCx5+WkVOe+iLVlvsSV6Z+Tydp0stTm1tn6E8rC9c7e8fFYEEDRQAACH5BAkUAAIALAAAAAAwADAAAALtlI+py+0Po5y02ouz3lyED4aiyI3mOV7oyoIRC8TyPLfOSOe6bjbmHjsBAaSFiNYS5kKKUC0JfQYSIBkKsnpSP9YiRUmcHqpB1xiK+IXT3PDnDGWyvR6uvB7vGVJwuXp4tfc2Z4YzhKTnU+iE+Cc1KEFWFtVl9tLmdkcoWRbZRqfICflwUsG4dull06dJaom3CvtqccRj2UrLaTtaIlo72SH4iTIp1pEHqsHXlNz3xcsMzWocjDVc7RlglZEY2oURKDwHrIJ5SyIpnYoonDlMbYrZiVdMzm0+mK6duRF+yt8LVLhjuISpw6YIIbYCADs=", "img-connection-secure-gif"), "img-connection-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAAO+AAAAAP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmI3YzY0Y2NmOSwgMjAyNC8wNy8xNi0xMjozOTowNCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFDRkVGNDhGOUI2OTExRUY5NDQyRkJFMDQyMEQwNkJEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFDRkVGNDkwOUI2OTExRUY5NDQyRkJFMDQyMEQwNkJEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUNGRUY0OEQ5QjY5MTFFRjk0NDJGQkUwNDIwRDA2QkQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUNGRUY0OEU5QjY5MTFFRjk0NDJGQkUwNDIwRDA2QkQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAACACwAAAAAMAAwAAAC0ZSPqcvtD6OctNqLsw68++9pCEiWIWamKpUC7gu/KwTG9h2DdI2TOPB5fGCqku208BCLxWWA0ZGRhEbpUxF1BVk8IAfLsV4vvA44oDUfmN9E6extC9i6dX10p5vscjyy+/MW8Tf0k3PHlWUYqJbo1CRWoag32TgYltaXpCTlGDdGhemVuDUzl6UZesLEhyRByGqASFb4OGaJosgIKiKLaWLV6weJ20uZKrJ1hmzMeyZ86QqtKj29OWXtUOmcjXfY3bANDiU4vlxs3sqdzt7uTlEAACH5BAkUAAIALAAAAAAwADAAAALUlI+py+0Po5y02ouz3lyED4aiyI3mOV7oyoIRC8TyPLfOSOe6bjbmHjsBAaSFiNYS5kKKUC0JfQYSIBkKsnpSP9YiRUmcHqpB1xiK+IXT3PDnDGWyvR6uvB7vGVJwuXp4tfc2Z4YzhKTnU+iE+Cc1KEFWFtVl9tLmdkcoWRbZRqfICflwUsG4dull06dJaom3CvtqccRj2UrLaTtaIlo72SH4iTIp1pEHqsHXlLwxy8wbLD1NbbpcbVSKnR1QuQ2N+L3VrSU+523OiiuemM7qDh9/UAAAOw==", "img-connection-gif"), "img-crosshair-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhGAAYAIABAAAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU1NzZBRjAwMjAwOTExRUY4NzMzQzE2Njk3MUU1MDg5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU1NzZBRjAxMjAwOTExRUY4NzMzQzE2Njk3MUU1MDg5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTU3NkFFRkUyMDA5MTFFRjg3MzNDMTY2OTcxRTUwODkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTU3NkFFRkYyMDA5MTFFRjg3MzNDMTY2OTcxRTUwODkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAABACwAAAAAGAAYAAACSoyPAZDtuJ6Ei01Xc71667kZ0RFilniiT6mkremOVCOj7pvUrY7v3Q8MCjOkGHFGMdJ4OuZthyw+jz3biiijXoUXqbYrBV/F5EYBACH5BAUUAAEALAAAAAAYABgAAAJHjI+pu8CvgINU0ifzvEb7DX2OVlndlmHmiaTNGsAx2NKyfMBkXYv+PvsJbSAgK6KjzRjJBC63uimhqaiLOeScPlpeF/kNGwoAOw==", "img-crosshair-gif"), "img-disabled-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAP8AAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NjgwRDQ5NUVBNDAxMUVGQTBFQkNDQjM1MjgyM0Q0MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1NjgwRDQ5NkVBNDAxMUVGQTBFQkNDQjM1MjgyM0Q0MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU2ODBENDkzRUE0MDExRUZBMEVCQ0NCMzUyODIzRDQxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU2ODBENDk0RUE0MDExRUZBMEVCQ0NCMzUyODIzRDQxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAtCUj6nL7Q+jnLTai7PevPcABlIobiQInSGmrk1LUvC5zHEEAwB9tHqbUul+PN8Q6DgNlzTh8nh7hZ7MGbWKSiqvuSvRJd1SnVzewzieepFnNDawNuPc3qfqQq/v5Bay/m4iFhel4ZdGmGF4WMKhWJZVKPgHlkjyaIdYIQkFh0kps7mn9oa32cUJOWF6iso4Z/mWxxc2+rWy+knb2VqiOFtTK0rpm6sgCIhg+JsshswMK5yqy2asRD293GPjGuSMLT3iPf0BTutxjp6uvs7eXlEAACH5BAUUAAIALAAAAAAwADAAAALJlI+py+0Po5y02ouz3rzzAIZSGGwkCZ0lpqJMu1qwm8zxZNNCDlIwAFAZWsCgzvEr8gJFoyhCbDqj0mNDJVVSmyfcKQskgac9r3gMGpNlXzVYyG67tVbzeQ7PbN/dDxbd1/HH9yQ4mBVossdVFxcyR3ZzceiW55iGiMlYWEEZdkdX5iO3CRppZxr5WCqJ5GmTyemamkPY+nIoRBqKyvRJs/srOrtquWNqfMVTI9fSm7x0mYiQw+KsnHyZMu2xPdwNHi4+Tl5uvlAAADs=", "img-disabled-gif"), "img-discord-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAP///wAAAFhY8AAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5MjE5RThCOUNGNzAxMUVGQjk4REFDREU2MTE2NkRDNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5MjE5RThCQUNGNzAxMUVGQjk4REFDREU2MTE2NkRDNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjkyMTlFOEI3Q0Y3MDExRUZCOThEQUNERTYxMTY2REM0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjkyMTlFOEI4Q0Y3MDExRUZCOThEQUNERTYxMTY2REM0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAvOcj6nL7Q+jnLTai7PevNsAhmIgjWFpjk9qrqzovjAjz0ut0qLA87YS6gkFrRtoSMSZkL4T8IhULplJUmJHzWqZTkRwCwb/sOEytzv4ClPb6XAM7b20rLct3gwA9gB1NLRHVgVi4FfFF4i3BoJoOOOoh5hIxSip+HhZyWcoF9kYYEeYlunZp7ioyemkWpc1F1p42krnhhoLenZqlnu768s7ivs7XNVLPLyqy1m2nCyMqusq2Gk1PRj9t1wc/EwtVQvLTfk9Ii0qnvvd1gW+7aBddMCWZ/X+JWNUg4Kj8zLBHyMHBRYeCho8iDChwoUMGzo0UAAAIfkECRQAAwAsAAAAADAAMAAAAuycj6nL7Q+jnLTai7PevNcAhiIIjWZkpk6qNiy7vG0cCvZtyyLOi8zOy+mAQUHoVysSg0nlMbEsSqfOgKJJzWp9h6j2y3wOvCaw18iNvqisMGmMFQHmWPfIbliG5nwQO8AHUJcWBxgoGPB36IdDmNgIEljXY0jHeONIGYl4WVUG+TbZlpWCB/eoOTl1hmZ1igoWW5WnKiv7xGprFlqr+4Xb60v6duokjDZLC4vZudvc6lpstyxVqglFDT1knYqdrb39LBTddRZ+Z4rwCVoi3oqkJ+ayPS8jQQ//MmGPwuXxDzCgwIEECxo8iBBgAQA7", "img-discord-gif"), "img-dna-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAFhY8LcA/////wAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2RTI0REI4QUVBNDAxMUVGQkM5RDk4M0VEMjc0MzVDOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2RTI0REI4QkVBNDAxMUVGQkM5RDk4M0VEMjc0MzVDOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjZFMjREQjg4RUE0MDExRUZCQzlEOTgzRUQyNzQzNUM5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjZFMjREQjg5RUE0MDExRUZCQzlEOTgzRUQyNzQzNUM5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/9Iutz+MMoJh72Wao173mDjjUNojkEaYCboqfDVbphas/NUr2SZ6xeeRdD5AS2pi2BZNFaQSSWx6WTsosMpbiGbXYVZD3cbCto6S61s1DJjMekeoFuGgtFMD2D/qQ/OPnhqA3t8Pn6AgXgYhXOHR190PYSNfU89gFYklZYik3ZCBHKNjo+aHZx/iSOkhp0Keq1um62uprCMtaUxF7qFVGO9pb8dvBa6Yg6MeiTGqcmex5/Fq5OXrnk4V9NH2HHas2wclN7ZinZ0daRS5riqoW3HtgPfa+iv45Qj9dTwJ9P8QKXzYw+OuXf+4lkStG1gFVFwIjl82CzRw0sS8V2E6OYezkZlHT1+jAZD5MhTxjR+vAHs5CloLkGSiUmzpokEACH5BAkUAAQALAAAAAAwADAAAAP/SLrc/jDKCYe9NOvLuf5OJ2IgOAZo4JVbl74kS3Hpha6yRKtjnFc23kAg+k2CQgGxYwRaYBbl0tdU7IQXJbO6QGKzUwvX+rz1tCtcCdmLhkcyNqaDbg9YcjGB/h4AAFQZV2kcdX5/gQ9tNTF0HH+AehF2A1AkbZCJZJSVZpyHiJIMmKFlnnaQkaKbj6mlnaetrqp3o7KztJa4rmp7jx2vgxe7mVStn6ZCxEVdw7SfjBbFPQ3HblsusZQh0qVSW76mn06pYG+s0cw63c/fhLBCa8Mj7nPJmut29dmeeEwi+7zgy1crHBgRL+KNAfjGUkEuAK/0G9Osh0OK1filw5jRHgsWjraSxQJZMeGXhxwlqiPJiSQ3ai5fgotJs2aGBAA7", "img-dna-gif"), "img-drop-pink-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAPaD8oUAmeAA5AAAAP///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAzIDc5Ljk2OTBhODdmYywgMjAyNS8wMy8wNi0yMDo1MDoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjEwIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowRjdCNTI0RjkzMzMxMUYwOTNCNzgyN0VGRTUzRkMwMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowRjdCNTI1MDkzMzMxMUYwOTNCNzgyN0VGRTUzRkMwMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBGN0I1MjREOTMzMzExRjA5M0I3ODI3RUZFNTNGQzAzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBGN0I1MjRFOTMzMzExRjA5M0I3ODI3RUZFNTNGQzAzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA9VIutz+MMpJq6Vj3G1z5mDkaWHJjGZKjKTKsa17wbGMwXZH5xVd8w7fBwgZCVjEB0tw9CSDHmbT+VQsmcjqKiqd/ngsAECaTY7EYjKVGEar1+CzG4tie9Dp9zDXntPhMnJ+el8lfWNdf3suh4mENoJ5jmUqkY5ddYx3g4kBlIaWlwKemSahogGki6AZeKJMqaWsAwKSqKqFG0avXbGAIbu8sLiaGcLDxJVcwqnJKcGvzc6mIwG30rLA1dLc3NnaHt3in7Pb3TuBQuq54Ovk6e6rQO5aVQkAIfkECRQABAAsAAAAADAAMAAAA+lIutz+MMq5xqA4O2u1p1z3jU8okqjJoal6sZ97wpk801MomDhmCrtQL8cBBldDyA+oSpaKxuPNSdBFm1SFCQC4CrNVDpfrRVJD466Rd0aTo9JX0v0uT2l0NZw9zMOZXz1bY39xcnhihIVxfYl1f3wwg49wAZEtjnp/loEsk4tAnGaemaACAaJ3GpOam6mHI36mqKmSpbOonbFFlIW0ujFQpka/o7sWw8TFqjXCw7S1pMjJ0NGYA8mny8w+zovVl8EhAd/gwB4qqJXVr7DHFuzxWLbj8bkugi7m+I02Nm3+5gH0B+aJwA8JAAA7", "img-drop-pink-gif"), "img-drop-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAIPQ9gBImQCf5AAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBMTg4MjFEREQ2QTExMUVGQkYxM0RDOEQyMUQ1RUI5RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBMTg4MjFERUQ2QTExMUVGQkYxM0RDOEQyMUQ1RUI5RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkExODgyMURCRDZBMTExRUZCRjEzREM4RDIxRDVFQjlEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkExODgyMURDRDZBMTExRUZCRjEzREM4RDIxRDVFQjlEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA9VIutz+MMpJq6Vj3G1z5mDkaWHJjGZKjKTKsa17wbGMwXZH5xVd8w7fBwgZCVjEB0tw9CSDHmbT+VQsmcjqKiqd/ngsAECaTY7EYjKVGEar1+CzG4tie9Dp9zDXntPhMnJ+el8lfWNdf3suh4mENoJ5jmUqkY5ddYx3g4kBlIaWlwKemSahogGki6AZeKJMqaWsAwKSqKqFG0avXbGAIbu8sLiaGcLDxJVcwqnJKcGvzc6mIwG30rLA1dLc3NnaHt3in7Pb3TuBQuq54Ovk6e6rQO5aVQkAIfkECRQABAAsAAAAADAAMAAAA+lIutz+MMq5xqA4O2u1p1z3jU8okqjJoal6sZ97wpk801MomDhmCrtQL8cBBldDyA+oSpaKxuPNSdBFm1SFCQC4CrNVDpfrRVJD466Rd0aTo9JX0v0uT2l0NZw9zMOZXz1bY39xcnhihIVxfYl1f3wwg49wAZEtjnp/loEsk4tAnGaemaACAaJ3GpOam6mHI36mqKmSpbOonbFFlIW0ujFQpka/o7sWw8TFqjXCw7S1pMjJ0NGYA8mny8w+zovVl8EhAd/gwB4qqJXVr7DHFuzxWLbj8bkugi7m+I02Nm3+5gH0B+aJwA8JAAA7", "img-drop-gif"), "img-enabled-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAAPBAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4NTYyQ0QxNEVBNDAxMUVGODE5MENDQzhERUY5MUFDNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4NTYyQ0QxNUVBNDAxMUVGODE5MENDQzhERUY5MUFDNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg1NjJDRDEyRUE0MDExRUY4MTkwQ0NDOERFRjkxQUM0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg1NjJDRDEzRUE0MDExRUY4MTkwQ0NDOERFRjkxQUM0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAsOUj6nL7Q+jnLTai7PeJgSueR5oiSM5mSIaqSvruCbMuMBMIzJwv7lg4/FwOZVQSGQFj8MTzMg8+kDLaPODglqRzkZyUbV+E65YmDlVyLBg7TZNXrN1Zyn8IO923OL73nSlVxc4pyZiNzXY4/cX0HcyWGbm8TjCxzVmeBiVV6lXA8i55lk4SYm2g6pCcZaKmfkQJitZchlKWFox6/j6eaG4yFh7qyr8a7tK4xqcS5Ka/NPoCB0tTV0NRIutud3t/Q0OUwAAIfkEBRQAAgAsAAAAADAAMAAAArWUj6nL7Q+jnLTai7PevPsdhMFXiSMpmSf6qCHruC+8yCKduICKGyoA3N1wv6BwyNIZjyuScmlKFqFR59Tois0iTypSkYV0vducrHUllw+2tVm0DJ7BOh4dHme6fVc725Sn1/SGB+QnkCZ3eBcSZzdmuMiYx5MoOFhTqJYYJgZIKeMo2QAZ+Yk1qnWKqnl5Ubo6h1G62UFr+gViKesx1okSKtjTVjVM3IPQhpy5t+z8DB0tzVIAADs=", "img-enabled-gif"), "img-floppy-drive-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAMfHx1hY8P///wAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkI2MzAwMkVBNDAxMUVGODY3MUExN0FEMjIzM0NGQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkI2MzAwM0VBNDAxMUVGODY3MUExN0FEMjIzM0NGQiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk2QjYzMDAwRUE0MDExRUY4NjcxQTE3QUQyMjMzQ0ZCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk2QjYzMDAxRUE0MDExRUY4NjcxQTE3QUQyMjMzQ0ZCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/9Iutz+MMpJq724js27/2CmgGRJYmaqXmpbWl0QdEBt1xzOzZ+2ybzN7ZYDxIIdyk5GG+oGzwEQOVD+mEVn8YhNSpZI5zMqBfYi4KYWSp5Sv9eweOhxvyHp7Lxt9z7yLh92XVV/cVSBZX0ceIeJdYNBjYqEgZFdk5eam1OMhpScoW6eDmCip5ifqKuSqqOPh50bmbKwpqmljraQhLSVu4p+DaYdAsbHyMnGvMIMxBvK0cpczQvPA8kf0tSkw7rYyyrH3LOuXeHi6MHdzt/qJuOAhbmUHOrx9sjk89710NIABezzFSQgwIHmkOgjkU0ewWL4tC2MU22EPHACGUZcV44h3hUP+AIeOfMJWCA0Jl1YSWkCBTARMGPKnEmzps2bExIAACH5BAkUAAQALAAAAAAwADAAAAP/SLrc/jDKSWsdOOvNs4VdKGpfM55iqaAsV2pBoAF0DWR0FncWLOO2HEY42LkumNhvGLwxdcrjBLpsCmtUI2ma1Fqd2K5y6ZFQZ81nNrqNnIFfp3hMxrjF6LiPrrWD8HlWe3xkd0V9LYeEhX+KdSyLfYZjiWt0bQ6WkZuEmCZznKGXZQ+aoqGeDKanm6kLmpWRriuglRt8swRZthyjfqVzvL1sv5nBGQLJysvMAoO5uxjN08zRxZ+OyNTb1gOTxMki093fWuEtzsfXqurnLOnZpMbxA9Ti5I2U0tv26t754PiN81duSbMQy/ABo5dQnDKF8/TVe+jQncR/CyU21DZQJtEGQ104CqQY8mMjhCNJpjgprAWFlolUwAyhoqbNmzhz6tzJk0ICADs=", "img-floppy-drive-gif"), "img-fullscreen-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAOttGgAAAP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkM1QTUyQUNFMkU2NTExRUZBRjM2QTJBMTI1RDA0M0U3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkM1QTUyQUNGMkU2NTExRUZBRjM2QTJBMTI1RDA0M0U3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzVBNTJBQ0MyRTY1MTFFRkFGMzZBMkExMjVEMDQzRTciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzVBNTJBQ0QyRTY1MTFFRkFGMzZBMkExMjVEMDQzRTciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAACACwAAAAAMAAwAAACrZSPqcvtD6OctNqLs9ah+y154ggq44kG5ZG23+qOACCuQjvneQ17+q/j9TrAn9AmKu5eNkNSeUT6oEzpFBgtyZbLTvP2pD2znHDMeo2ptNtZDVWpgq9uJinuZYXreX0/xNMmJue0RhETRIaB2PUH4pLo+DhFd9e0FynJFkBFuMmJpThJFOr52ak5Ctr5NbeK+oVZJHohO3hyqQaXq9vql+K7kBpMXGx8jJysfFwAACH5BAUUAAIALAAAAAAwADAAAAKzlI+py+0Po5y02otr2DxbDoIeFJbduJggwJ7ooW7sDLivSuc2aua0+DKsfLrdKET8bYIIZLK2ZMKGPqBUyEkag85q9EqFBmbbY5a8KnvCsQD43Gozu+Kolce23idfLLzuduNCFzInQri31qakdrGI1ujYw9gnKANVFCl56aW5qZVoOdZZachJGXglEJaZajr6FKp4Cuoq+hTnyUebayIF16a7G1z66quqoIK8zNzs/AwNXQAAOw==", "img-fullscreen-gif"), "img-grid_cur-png": /* @__PURE__ */ __name(() => "data:text/plain;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABoUlEQVRYhe1ZSQ7DIAy0q/z/y+6hSkSJtzEgUqlzqhpsxisOYRGhIjxBriqNcIDrs9YJLSKNEL6RZf7m1EXLIj0UmVe0wNTMd93afx2iCIURzHq4nOiWjtY4pI4yHg5TAZHV5AF9qofrbUP3FKrPLdjewzNC70LzZjUllpMFIGTwMYsOyStPZuBgIlLSgxuF148K2dkQESaFcLkP74JKeDCMS2F6+KmkW8K3xN1F2spfou+iu9Z7yqyCzBhX6CI3AS0l9reID1QeVg5DpKve9ZZbD7y2tsPTHO0b9eGlpLvIpPaKCJsz7AKkWtLU8XICzr33jpeFyJg8pkxrlSkt0VlSB4dYBFbDMCB1cGxB1kn/aW013HuJlvTqvM46qCd8jnVDm6DGZQuOCL8MhAkUX0yh4Wf3eFkbfoo5G05bo7LlPqyENUUUyVcNqw4OxMtQRA5KdgURecQFi9kltNA94TA5iMyrfyYiCT4LnDBd30ZmhsEsc9yGfsuIZE1k25qndCSxYdlXIxT1Qe3ZiCElQ8+iywqjm0xvK48Z4LP4uXn4DcalnWAUAAtmAAAAAElFTkSuQmCC", "img-grid_cur-png"), "img-inspect-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhGAAYAIABAAAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQzNDgxODNEMjAwQTExRUZBMTU5RjY2MzMwMzJGQzMyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQzNDgxODNFMjAwQTExRUZBMTU5RjY2MzMwMzJGQzMyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RDM0ODE4M0IyMDBBMTFFRkExNTlGNjYzMzAzMkZDMzIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RDM0ODE4M0MyMDBBMTFFRkExNTlGNjYzMzAzMkZDMzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAABACwAAAAAGAAYAAACO4yPqcvtCWJ8S1p6rJ70Zu5IFTgCjcig5WmG7fiQkIyo653ahj5rO9/bAGsoX2x4pGE8GKJy+YQ2p9MCACH5BAUUAAEALAAAAAAYABgAAAI7jI+py+0PE5gURFOzhfnU9ykTOC6UUzKpuakt+yInGnsrLN55F4SNpiGVeMLLzijRXXzInnJZa0qniwIAOw==", "img-inspect-gif"), "img-letter-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDANHR0f///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBODk3REMxNEVBNDAxMUVGQkY3MTk3NTg3RjJGQjU0MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBODk3REMxNUVBNDAxMUVGQkY3MTk3NTg3RjJGQjU0MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkE4OTdEQzEyRUE0MDExRUZCRjcxOTc1ODdGMkZCNTQwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkE4OTdEQzEzRUE0MDExRUZCRjcxOTc1ODdGMkZCNTQwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAuCcj6nL7Q+jnLTai7PevPsPhiInlOaJpuoZre4LN/BMs4oa5PrO9726SPmGxJ8tgSsqjUfEagkNAG8lACpaPFlLwSpgW8L6tOCu4Pu9inOoNJd6RoPD2DbaZJa7T1D7/Y3kpTcnoESmhwc3+Gcy5IcI6CS4qLbzCCmQt8hIx3ZIGXlgsrnHt0KaGBgHWjMplyq5ill1ermn+fr4OTcIK+qaQto7mpupyCkrXCzoa0DMq7wZXKZoGz171jxweq28YrbbLZ0C7iqO2qTauo4iw/6u/QvfOlJvf4+fr7/P349fAAAh+QQJFAADACwAAAAAMAAwAAAC3pyPqcvtD6OctNqLs968+w+G4iaU5ommagqt7gs38EyfDBrk+s73fo664X7EIkuhKip5q8VquXQ5SwDACUpEWU1TQXVrwjJPXy6SWr6KA9q0oPutqrFtNzwOFtDJeHPChCc391MX54cAGJin51PYV3KnOLTj+Ph25qUoGKajogkWGZjEtqJ5eJAoSrMoCYmpSla6iWbo+kc7i+vIV3t5m+mG+xlsGVo5PNt7l4L8yXtqAHjcHJwJPSBL7Rxri8isjdyEmQo+rCJUky6Ort7uy+5OMzJPX29/j5+vv39fAAA7", "img-letter-gif"), "img-light-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDALCwsP/zFwAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBQ0M1MEExMzdFQkIxMUVGQTY5MEFENjlFQzhBNkEwNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBQ0M1MEExNDdFQkIxMUVGQTY5MEFENjlFQzhBNkEwNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkFDQzUwQTExN0VCQjExRUZBNjkwQUQ2OUVDOEE2QTA0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkFDQzUwQTEyN0VCQjExRUZBNjkwQUQ2OUVDOEE2QTA0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAuGcj6nL7Q+jnLTai5XYvOfZheHniOZIIufqpSwXxLFInvKNo5iJ9zK9C/mGAWBFSCTqKJ2ks3WEOZVQkPR2TVYlTaxIy7Egi6vhNjJmmcPRa7fbO0OQcLLAt+S+N15+XF5C5zeT9QPI8GXXN7goYCX0cpeT9xCZOEkZaAl2iLgBYIO50iYAADpm90JaavpluSEWYnr62ukpMlsLG8tBy+pr4tLrm2skPNwx65uSkFz8a8v7+dzKxnyQPH0KfK3Sq/3s2I09PVxtPZ5dnsks+2k8PvAar6FKX39y38Cu3++fUgAAIfkECRQAAwAsAAAAADAAMAAAAtqcj6nL7Q+jnLTai5HYvIsseaIHMuNJlge6BQGqDqdLu6cq1jo9lvkOFIE6wKKtkyEajUiMcllsWp7QnbRCrdauFOpoyQ1xeLMo5/JEFWXn6fg4flvDkbRg2wrSHx44PK8j1NXHcje3Z1L4E5gyoZhF1lj3aKgnCUHJ1OOoWDOAJ8jZ+fLo1gGAShkqNoIKoPphyvG64UpbmORxK+B6E6ObWmt7mStyO4woezob3BbDZiy8+6zRKkyMM3va60wNzXu8u+G9sly76q1KnlC6zs7ivgATT19vf69QAAA7", "img-light-gif"), "img-line-dash-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDQUEyMURDRUVBNDAxMUVGQUY1OUJGRjA1QTVDMTI0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDQUEyMURDRkVBNDAxMUVGQUY1OUJGRjA1QTVDMTI0RiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkNBQTIxRENDRUE0MDExRUZBRjU5QkZGMDVBNUMxMjRGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkNBQTIxRENERUE0MDExRUZBRjU5QkZGMDVBNUMxMjRGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAnaMj6nL7Q+jnLTai7PeF/jvcRNIfuJTpqeTkoi5Gi14uPFb1vadhPrOa6iCLCBxkTsKaUqGsfnzQXHMaaBlvWKzQ+7TKs2Ke2Fw0nyebtVd9vfYdlfRMHEcupbP9XXtW9M20wcIJDi4EWZ4GKNYppQ3Fik5GVMAACH5BAUUAAEALAAAAAAwADAAAAJ9jI+py+0Po5y02ouz3hr4z03fSIYOiYJICmBsur7Xi8ayRatH3prQ7XuwgpIa8Tc6RkrKE7O5MEIVsGmiarXpsgYpt5v8XnvZrTjg/WK5Q/Xa+i4/3eFzml2358V3+X5pJtLWAERBQ8XjUsjjkbGY2JEGudFIOHiGmakJVQAAOw==", "img-line-dash-gif"), "img-line-dot-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMEQzNjJCNEVBNDAxMUVGQjI4NzhCNURBRkFBOERFNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMEQzNjJCNUVBNDAxMUVGQjI4NzhCNURBRkFBOERFNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUwRDM2MkIyRUE0MDExRUZCMjg3OEI1REFGQUE4REU3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUwRDM2MkIzRUE0MDExRUZCMjg3OEI1REFGQUE4REU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAmuMj6nL7Q+jnLQigIHdKmcOBh4WcqNWWme6jd3HMvDlxtKJ2hCuR3y/8wCHxKLxWDsmfsoDsylaQQ1SopBGKlanW2i3+QXPpmTqlfwUh7Vp5Ro5Lsvnvrg3ycXfz+i4Xs0HaAf35xZIh2hRAAAh+QQFFAABACwAAAAAMAAwAAACeYyPqcvtD6OctNobgda4hw16FxgmpWiSHKKiKamogMvC70l/2yLnk+2T7ILEogNn5AGTtyGzuXrWllIDleZUzoit6kG29YK93y65R7Yiz9G0u9xmr59o+ZxZt4fd8fd0rwdYVXeH1ZXngzZWBLRo1OY4aKbnV2lJUwAAOw==", "img-line-dot-gif"), "img-line-grid-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGMkJCQkRFQkVBNDAxMUVGQTY2REY3QUMwRDE1RjA4MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMkJCQkRFQ0VBNDAxMUVGQTY2REY3QUMwRDE1RjA4MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkYyQkJCREU5RUE0MDExRUZBNjZERjdBQzBEMTVGMDgwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkYyQkJCREVBRUE0MDExRUZBNjZERjdBQzBEMTVGMDgwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAApmMj6nL7Q+jnLTai7PevPsAhMBHiSIpmSEaqaNzfi4cezOjWrexK3nlCtZ8Jp3wOPyVkEzhpQlFTqJUJbDafFqxK2Nx8Qtieghrx1z+ytQJMgfNg2vk7mkWLIdUiewl16n1R9UiOHhVKHbYFccVuMh3NNeXNnQ2eZA3dsn4aFlJ+UKSt5lRx4liCvK5kUpauprGIjtLW2tLUQAAIfkEBRQAAQAsAAAAADAAMAAAApGMj6nL7Q+jnLTai7PevHsDhMBHiSIpmaFzfurKqK7c0N1bmyQe69gLtAWEpaDxSGQhl8Yi89maQKeWKXPDWyQ1WcU28x2GL+Eup+zzmBHjKjp6+64rVFD6Z0WS83o3P4j3N+ckeHZndxQHl9DmB6N1aLjIFok1Sfk4k+l1abnJ2MkVKvYZB1GKkqq6ytrqSlIAADs=", "img-line-grid-gif"), "img-line-mandala-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowMzhFRjAwRUVBNDExMUVGODQ1QkY0RTQ2NkVDODhEMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowMzhFRjAwRkVBNDExMUVGODQ1QkY0RTQ2NkVDODhEMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAzOEVGMDBDRUE0MTExRUY4NDVCRjRFNDY2RUM4OEQzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAzOEVGMDBERUE0MTExRUY4NDVCRjRFNDY2RUM4OEQzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAqmMj6nL7Q+jnLTai7PevPs/ASJIiSYpmScKqWPkcnHjzpqN1Lq85vp/6xl+REDGVjQGasHXEnfYYVRR6kJqQQoVzIvWSduGhFZHuXQ+M9SpspbLbqWt6ric3JuL7+CnU69UAfXk82f3cFiVtwfDWBg42NYHtzg5ZtflF+gViZPItwX1CZqUMIqYVHdqlrqp6DpVtLZ6aTmUyTIbmftqy6v4Gyw8TFxsPFwAACH5BAUUAAEALAAAAAAwADAAAAKrjI+py+0Po5y02ouz3hd4jnkiaIkjSZkfOqkAK7lwrD5uHZrNzXf6wgv6ToigsPQ79Iq4SjNwYzxbSeg0cYU8s0wi1ctVVmlgr3Qc2ZqBaG21jV2nk81V154q28fh3ZtYB2fD9yIGKOjQJ2OAmIgYKDcXaUU36dYWxWh5iae52Md5uEhZqGE0Sgpyatb4dXRXyvEat4kUywY6Q1o7k6nryKsb/EtcbHyMTFIAADs=", "img-line-mandala-gif"), "img-line-noise-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOTdCQjFGNEVBNDExMUVGQTJDNThFNzA5RjhGRjYwMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOTdCQjFGNUVBNDExMUVGQTJDNThFNzA5RjhGRjYwMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE5N0JCMUYyRUE0MTExRUZBMkM1OEU3MDlGOEZGNjAxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE5N0JCMUYzRUE0MTExRUZBMkM1OEU3MDlGOEZGNjAxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAnqMj6nL7Q+jnLTai7OGoINdeWIHPuNJlgnKfmrQsmosvzDt2WusN2cPDO6EnBEj1asdRMHWMtd0Mok3HtVAu2JxV662ivpmu1aiceuinr9PKBuNfK/l7jcYURdOwWm9ex4VBwgUB1coNqj1Y8d3SJaotmgH+choeZlRAAAh+QQFFAABACwAAAAAMAAwAAACeIyPqcvtD6OctNqLs94cgv91EkiColGmaoitrqu9chnP62mfjar3vmjq0RhDYGpxxN0OPJ0s0BTaWD9orsp8YRPPLULrRYG3V+wxWUVbAV51WBx8Z0nyb7GOprbjUTMb3rcH89YVVkg4KLdUt0bHCPj3KDlJWXlSAAA7", "img-line-noise-gif"), "img-line-parallel-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyQTM1MzU2NUVBNDExMUVGOTNCMkM3OTdGMTIzRDE3OCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyQTM1MzU2NkVBNDExMUVGOTNCMkM3OTdGMTIzRDE3OCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjJBMzUzNTYzRUE0MTExRUY5M0IyQzc5N0YxMjNEMTc4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjJBMzUzNTY0RUE0MTExRUY5M0IyQzc5N0YxMjNEMTc4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAApGMj6nL7Q+jnLTai7PeFvgPcBNIfqJTpuaZqK7HHq8bM3NYP2oOpbxeOu0WQc6tRRLdcLKk8YgobpZRZ4zWBPGGBunV6/1qs+OajwzbWgNhVrgtXMOV8rW5zJ4/V2jmHX/2x9cV6IaXV0h3CDVlh4jVePiYiDH3ojhYRXmxqekX6fjTF6oGKUrIdTqqytrqGlEAACH5BAUUAAEALAAAAAAwADAAAAKWjI+py+0Po5y02ouzBLz7rznfSAKhUqbeiagum7gpLMomXc94PmZkVLq8eKuK7fGj2G6MoPLYSD5l0Z5GVS2GdCjtidsC0ZwxL0sa7uzIB+vY3Ra/4QH6mW7/otEwfn6L9+cTKDdnxqdXWAcGaLbIdqVowBjp+Gg5iIlYqbYgKETZiYO1k7VZOgmJmia52sXkGis7W1EAADs=", "img-line-parallel-gif"), "img-line-rainbow-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAFzJO/rlTNs0JAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozNkZFM0Q1NkVBNDExMUVGOTE5MTk1RkQ2OEM3N0IzRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozNkZFM0Q1N0VBNDExMUVGOTE5MTk1RkQ2OEM3N0IzRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM2RkUzRDU0RUE0MTExRUY5MTkxOTVGRDY4Qzc3QjNEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjM2RkUzRDU1RUE0MTExRUY5MTkxOTVGRDY4Qzc3QjNEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/RIutz+MMpJq7046827t0MojuT3kGgamoTqpt8rzHQ9i51q7za+pbwgzYcBCo9EEOlYCzifziQFxRRAr9GVcnTEegPSCJX3/Y4qS3LZrJ2kbesAYE6nhx1vWrnOr98bXHBefYRzfwt5VliFfDBigXpXjAAvbSciglCFlWePIZlOhJwlEJCRoX2jhwqmik+pjhqYTZqNpByttX63uLMzuna8vQOgtp0xn6eowatFyb/AKCymwJTHyM+ucruW2JnG3R6+0NvM4TnZruAsiOmv5gPsrOPvhtcm1MvWzRmmItznxKm6h28gv34G48lbyLChw4cQHyQAACH5BAUUAAQALAAAAAAwADAAAAP/SLrc/jDKSau9OOvNu49DOBBiaZafcq4surVwq8WiYN+4YGJx7v+iy+pHJAYrp6LSd5wkl7eAdBrANUEmJXXLlV4fT193vP06sjmymmpmhG1rKmBOp7cX6Ki6zuffSSViY32EdiFYIYJchYwAd3lwXY0sjodgNTiSfTQ7lwOKU5ucnQ2BmXKio4+YeqF+pGcusYmnUqmWHqaRroayHboCW6+4H8DCvSMpKrStAcPJyqy7znW+xczT1X8v2MG2yNDR3byVxOKftdrmKcbfc9bs0uTbHO3U5eHKgNi88PH832Dps/fO378SUwbgyzdQFcNznPRBiCjRE4uKGDNqhJAAADs=", "img-line-rainbow-gif"), "img-line-random-color-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEANs0JPrlTFzJOwAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0NjM4NUIzMkVFRDAxMUVGOTZGRDlDODk1MDYzQ0JDRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0NjM4NUIzM0VFRDAxMUVGOTZGRDlDODk1MDYzQ0JDRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ2Mzg1QjMwRUVEMDExRUY5NkZEOUM4OTUwNjNDQkNEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ2Mzg1QjMxRUVEMDExRUY5NkZEOUM4OTUwNjNDQkNEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/9Iutz+MMpJq704683f+F34jUO4kaR5oaw6sR8Auw4M3PdM23gvoy6Wb5gDcoTDEbGVQfpIxJ+R4kwql8xX9XnlZiOwbtSrk4Sh4yJKIBhRR4FAOApjs93aT1x+xoXtdyB5e4RndYCBJYOEhYYDiIB4ZnpxcI1riCN2kmCUfAOMlSSZo22Ck6CiqXyqj6Sapoqoe5a1sJG3nBCWoby3uK6xb6uMvh+QyLoevKGXyJDKNbbEzs/Aw6nM1aWvFdPNn4nHwLKzvZ6wmJvR0p606OPc4uWd2sbBySkWLI3v+K+n9vE7928ePYEoCAIMeCJhNYM7HJYqE9GRPhoMLLLD6AgOY54pHvOEHEmypMkJCQAAIfkEBRQABAAsAAAAADAAMAAAA/9Iutz+MMpJq704683f+EMngqSIkehnVmm7Ri0guy+TyjjQhmuc/7uODwf66VKbG7BoDFqUTWYUSRkuP1OaZIc1ermgKnjgJbYE6PAEFGhzczu0XKDeftru8XmeVq3veHh6H3xzdTCAgXlxhXyHEGyKgXuNhn52AwEkkpoklY6XiJmbnCCVnnShkHekkqaNqI8eiYqRr4WxqrOZpYC3oANysg62icXBn5Y8mJ3GvoTJwrrErJGu0NGpy6LNvNfI2qfTDdacgtiowGLe5ovS2H3D5OXn1eDp2vI2KLVsv7glnvCrNwqeMn2iWtUDGDBJin7g8iEUOLDZu4kZHnbTUoMVwCCMI8Z0/MNx5KqGJlOqXMmyZYcEADs=", "img-line-random-color-gif"), "img-line-sculpt-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAcHBwAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0NDNFODk1QUVBNDExMUVGQkY1NkVDQ0I5QjNDMjEzRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0NDNFODk1QkVBNDExMUVGQkY1NkVDQ0I5QjNDMjEzRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ0M0U4OTU4RUE0MTExRUZCRjU2RUNDQjlCM0MyMTNFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ0M0U4OTU5RUE0MTExRUZCRjU2RUNDQjlCM0MyMTNFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAnWMj6nL7Q+jnLTai7PeFXiOeSJoiSNJmScaqSYLuS/MyDOt2B+e63zv+x10O6GBCDAOkcojselEymhSG6xqJWGz2u2t6y2Cwt8NeWU+izXqdabtvsCT4zb4jFKz9HsyNYzj97fFA/izNgW1VKYYENcIGSkJUgAAIfkEBRQAAQAsAAAAADAAMAAAAnKMj6nL7Q+jnLTaizMFXGveeRcIihZZmhvKqg8Luw3cyguN2gqe6wdP8v2AKR+xqDuGjEqhoekMKGmuKdVkjdmySBUXkORuxbIvuGpGf73ms6jt9sDVZGyavaZny3m+lfknNBXFUEO4E3R4s6TY6Pj4WAAAOw==", "img-line-sculpt-gif"), "img-line-tilt-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAcHBwAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NDE5Njg4Q0VBNDExMUVGOUVCQTlDOTNBNkFGREFBNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1NDE5Njg4REVBNDExMUVGOUVCQTlDOTNBNkFGREFBNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU0MTk2ODhBRUE0MTExRUY5RUJBOUM5M0E2QUZEQUE0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU0MTk2ODhCRUE0MTExRUY5RUJBOUM5M0E2QUZEQUE0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAApyMj6nL7Q+jnLTai7PevPsPhuJIlubZAADKqG6qiu67zGtLS/at2Pis2/1iNSFkx0MYe0tH84Ac5mDAoo/5xFa1U2iWm0x8kWFr17sVf7nUcyB6vIKlxIecbXbPpfRy3v+WprSmJoimRzh4p1hXaPhHFxm3aLCWePhoSfnnB+fY6DQm+sgHaRqxGUiaShUKWsgSKztLW2t7i5srUgAAIfkEBRQAAQAsAAAAADAAMAAAAqOMj6nL7Q+jnLTai7PevPsPhuIIlGNUpueTmowbtnDSxjKwyOCNK/c7Q/18tVxRqCMeaUsHr8dsGoYQnlE6TbKsUSx1q0V8xeHGU+kdA8tZdkB9Tbvf864KfbdDnVzyHI4X1Jant7fG1qeHJMdIaAYHCFh4KEiHFVdp6XggqYhpyHn5SUkJ+rg5mNlpV9o6gRqaqSm7oll7i5uru8vb6/sLPFEAADs=", "img-line-tilt-gif"), "img-lock-restricted-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAA//M2lqagAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM5RDdBN0VBNDExMUVGQkNEMkJFRkVFMDBCNjUxMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM5RDdBOEVBNDExMUVGQkNEMkJFRkVFMDBCNjUxMiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0MzlEN0E1RUE0MTExRUZCQ0QyQkVGRUUwMEI2NTEyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzlEN0E2RUE0MTExRUZCQ0QyQkVGRUUwMEI2NTEyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLRCgbOwVvuPcQ5IfqJSptp5fMELx7B5evJ9r3UWp7Le4c1Ugl6IoxkSi6+MKNkEDkDRYwUqTWCdQUx10xAGuFfvd2QeWyliMqO9nsDB4bRbbo+j8nQ2/zGH9Fc3WMbkQWiWBbjUiBjhGHmXKNl44YKTiUODJqa5uTW55/mpZKOmN8pUapQBEMi42grqCvC6KqqVZiqLKmALXEj4g+kLbAvb2fp7W6Rx3Iybqitbi+xxfFp1WY2R/RwMpcRN7H3NfL67HZtjjR7du67cbh5O2sodb5yufxbbX6LUIlUAi9HKRU3dMoEDF5BglYlTvkopulAk8eTiIxYGHDt6dFAAACH5BAkUAAMALAAAAAAwADAAAAL/nI+py+0Po5y0PoGztlx7z0nfmIUOiWLmMgbu634r8sH2C86a7d3buoOReKVQEJdCFi0ZYaoZW1KOAdmgFlUxodUfLeidYpRaxVE64YbN42yn3S2z4GgRXT4XKN969+kuwLf31xcnGIf3BVUX8eQ4IvYoycgwaZnYgHWzuWl1QcXpA7ZWyRUq2oMY+Al36qRJytYax6kBcAu4SkhkmiVwi1sYm2Da4vsLXIxJnBus5wEMcEapqBT9cU01XE2WjBEtDbp90GuLC576qps5iwge3uvb2O7uHC8PAXqc3kmtWMiLX79lzO4dc5WDlUFX6tYppIeQRJpLkrZQhATkor8ZBhw7ejRQAAA7", "img-lock-restricted-gif"), "img-lock-unrestricted-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAP8ABGlqagAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3QUVGRjNGRUVBNDExMUVGOTlCRkY0Q0RFODg0NTY1NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3QUVGRjNGRkVBNDExMUVGOTlCRkY0Q0RFODg0NTY1NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdBRUZGM0ZDRUE0MTExRUY5OUJGRjRDREU4ODQ1NjU0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdBRUZGM0ZERUE0MTExRUY5OUJGRjRDREU4ODQ1NjU0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLRCgbOwVvuPcQ5IfqJSptp5fMELx7B5evJ9r3UWp7Le4c1Ugl6IoxkSi6+MKNkEDkDRYwUqTWCdQV5Wi1EiS6NwdQx6CAPc7rTNWMNZEbmVXjez7/iyft4Xt8WntmToIXGoCCi4qHjhgiOJQ+OnVwWFeYlYuKYpRGJEiOJZBQBAcorKJNZJmaHqEXu5t+H6ijEroMt6dpujEau62uvrNyk7TFxcC8ksujucKeo8WRutK8kI9owpfDpt3FCqhA0LXrqNQH7Na06r3pJ+vkxvN8pdfJ6UfG9r2SvUJzOVAEKjdY0VJ2c2rCFbyNBRii4SSTypCDGQxo0DJwoAACH5BAkUAAMALAAAAAAwADAAAAL+nI+py+0Po5y0PoGztlx7z0nfmIUOiWLmMgbu634r8sH2C86a7d3buoOReKVQEJdCFi0ZYaoZW1KOAdmgFlUxgzkaVzp5Mo5gEeqEUXY2v3E6u9Ze5ax3lT6DQO+CfNhe5lcHFaj3dGhlhrhYOMjI+Ed1M0nUhraXZZep2XUpUEnWooTnWAkA0KRxSmXppsl3iuoRu/o5amjrhBGryovZOjjZK0sryYdLOeyLmYmcvFtszNd38apLK2vdXJ1rWrvcvX0pDJ0tEN0NHOxtnrF8ixvuvjMbSlqqa98Dz/2KtZlOnYJ/WZ4FbDRwHyWDieI9OrTlIQkdEgUKuojRRAEAOw==", "img-lock-unrestricted-gif"), "img-mask-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAOMAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowODlFQjYwRkUyODMxMUVGOEJGMTlBRTFDMzk3ODVCNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowODlFQjYxMEUyODMxMUVGOEJGMTlBRTFDMzk3ODVCNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA4OUVCNjBERTI4MzExRUY4QkYxOUFFMUMzOTc4NUI3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjA4OUVCNjBFRTI4MzExRUY4QkYxOUFFMUMzOTc4NUI3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAs6Uj6nL7Q+jnLTai7PevPsPhuJIlk8QIKiZoKvgpiwcG7FL3q/O12ffswGDjCFQaOSpkkcaCsCMAqE4ZwCAzWqpzK2XK7t9v8Ox9naImb289dlnfbrnZvTStdXVxXl7XI7VQ9b2VoWkFjiVZVT4cshmiLcYKZloh9iYBgimuWm5UznpGAqHmWk1qNdI2Aca+mkKGysaNgvmSft6ykfHS8d5eDWn+gv3Jzwm2Gt8/Irmm8scHDVNvSA1iu3YYF3dRKGkYDRDXm5+jp6uvs5SAAAh+QQJFAACACwAAAAAMAAwAAACxZSPqcvtD6OctNqLs968+w+G4kgGZkAyp3CuqdHGcinXtgnd+r4nPA/4zVjCU1AGOBaXxqQtCY1KlcCp82bNPrPTFrHF7cbC0hhsTIaC01fvucmOl81vk3g9R95xB7R626aXh9KH9weItUf4ZTdYd1gYoOVmeEiI5/I16VIZ+Bjop8hopWMZujdKWjMIp4giyCrnennKVas6BIh7G2XjszrbuEv3m1hlSrywVFf00Bz5I8GjPI2RTF3zor3N3e39DR4u3lAAADs=", "img-mask-gif"), "img-nochallenge-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAFhY8MfHxwAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5Rjk2NjhBN0VBNDExMUVGOTY4MUQwQjkyNDQ4NUU3MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5Rjk2NjhBOEVBNDExMUVGOTY4MUQwQjkyNDQ4NUU3MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjlGOTY2OEE1RUE0MTExRUY5NjgxRDBCOTI0NDg1RTcxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjlGOTY2OEE2RUE0MTExRUY5NjgxRDBCOTI0NDg1RTcxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLRaJ7KQuuvqfU9IQmRnnl5zBoGIZe78hkk7w6xM5+tA6rl0DI2QpuIdiYvO0Rd81jYjo68XEipRVeUUa4UKxKnwd2iejtEZTtroQZq5Eac8Lr5T3XM8e/23x+dl96cnOJFVqHZ4YZCUF4hogcMo6XjjV2iDmbkVxtl5oPkZKrpZOvbTiQqIt0I3CCVmlTSJ8PGaamlbhAPaGggQO/qbChwCoMykwkbbmqEszayxnBUI5OQhbX1bPQ29p8I93Nb0DS6z+pjMzYSL3r1eHN/dJUBuSo9PLt/VX86cJ3f8/PmKBpBYtoIdCAqEh9CaQwUN29nzVDAgw4cq+0hMhOiwmkJ2IhpeLBbyxA5BKjKlo6KvTkyV+zCNLCGK0rucPHv69FkAACH5BAkUAAMALAAAAAAwADAAAAL/nI+py+0Po5y02oup2FzMDnpPGEZkuZzoqHbJGcQxZ26yvA7gfdMQx8OBdMCgUMQSGI+75WxTUzoDpCkV+iteg01hz5eUXsVj25fsymqL3fIZq0ZXmbxh1PzsvOtpSbur94b0EQiolQdX0UInmEEUwsg0iAGJyAfm+CgWKJl50MSJOJkBenjiaSh36liqamZ30Sr46tLHQFOIV8bZ0qAyNgssCovwK7xLK9UBAGBrsLgGgyzAzIz5zGFduaupvFzdnIhNDd4K1wIeLq6Z3ltM0n79+V1NkgISLz+/ka6+vk+unDOA/erpo5dvHcJwAsUh5GcQ08KHDiFqs+jvHcYQMBcnZeu4EcxHkKsInmg4ryEUewpO0RMJERaxFzKz9VERS2GObqM8dbvX0+c4oUILAAA7", "img-nochallenge-gif"), "img-palantir-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIFAOrK/4g8BFgAk5BIwAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1RTI4MTIxREYwNkExMUVGQTBBRDk1RTM4QTY4QkVEMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1RTI4MTIxRUYwNkExMUVGQTBBRDk1RTM4QTY4QkVEMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjVFMjgxMjFCRjA2QTExRUZBMEFEOTVFMzhBNjhCRUQwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjVFMjgxMjFDRjA2QTExRUZBMEFEOTVFMzhBNjhCRUQwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABQAsAAAAADAAMAAAA/9Yutz+MMpJq704Q8K7/1r1jSQXbmUKnovqriEpzPRg22r80bxw/4NSZtTjAY+jC7E4OzqDHsuO+azCIsti1dqhTKlVgBhpmkxvvbAYAIxKPDW00bke/7rvTlzefNbbZSh6ewOEdHY3bg9ffYU+W1yBDnBMjZBOipODYJdPmQ2UWnydiXiLm2l8j52fDKGpNrCQra4clUBzl6aCt7iWW7untpykd8Gaw73FOMegqJW/kQQiz42ymM3CyYTExpJmr6ux11C0gs8/0DNJGDJ70CRDL0wvSi/38dQcAQH4KvzfsHTgR9AfAYIIsznbh7Chw4cNFdY6CLGixX4BhV3c6FAgYosPHC9eETgiZMR8UkhszKHBYD0WLtmxWHhvpk0NCQAAIfkECRQABQAsAAAAADAAMAAAA/9Yutz+MMpJq7046827f0Qoip80nuhYKmnrEt47DvTboUKu03yfbiedoEcsojLBXXHJO15GwiFzOjg9RVGeklpTVbBRqZDbJFGgYVqWB2gvvSZwejBmtwFGc5wQ3m4Hd25EehFya1SBeTAThnVcd4pnIX1kXIQQjVKVU5cgjZtUnQ5of6CDIV+Tjqani4yqpUuxXaiSsHNEq2W1r7d9OVq6VaKefI6HdKVwtsbAwcfOu67MzbnIrdOptz2/mrS8FjjR3UJO2uLk5S3hMuQy2Zjv8iMBy4X0AfXzJ/n5xA34+vmTJ7DfPwYBCypcuPDggoQMIyq0Fw+iRIbm9ry4qG8U3bl98zSAfLeiwEh4JVOqXMlyQgIAOw==", "img-palantir-gif"), "img-palette-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAP///99xJgAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENTI3ODQ4NkUyODQxMUVGQTRCREZGRkQ3MkFFREFCNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENTI3ODQ4N0UyODQxMUVGQTRCREZGRkQ3MkFFREFCNSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ1Mjc4NDg0RTI4NDExRUZBNEJERkZGRDcyQUVEQUI1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ1Mjc4NDg1RTI4NDExRUZBNEJERkZGRDcyQUVEQUI1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jVKLai3OdTftvcQdIfmKJZpwWtO4Lw2qUxfbtYlCN97LewfiGrxlF+KsQY8AEr/hcBpqjC9MjzYWclmQFALBexdoNAlkWgMHkKQtqriq9a/bcjYWf261LPXznZ3eHt0eYpjYI99dVZihwA7JY14gn8IjzMblWeSF3aFOJyBnoacBnCQqXZ4mJKBqq2bd12imb+TYbN0AmiJpF1ftFqkpExWubSJz1ylWqrOiVcvTMeJhi6gypq9yGTav9ipZK4uB92/q4uzDOyi2ivZ0WmQ2PDOtjBD9urD8R1U/DiV/5BK7gt8TgP4QJ60nI1dAhDYhD/D2U1MPiwW8SHuyp47jO4z2Ql0Qy4GgyJbwCACH5BAkUAAMALAAAAAAwADAAAAL/nI+py+0Po5y0PoGz1vbuD2adEpbhOJjByrJlB7byHIDUR+fzJ+H679pAfKsYsChsEGulI5OzWJowskwVStJcM4AuwBoEhzFZbUvj7YpDY0GZuhWkv3DVk5zY7Lhe7aZvlXSgt6eCBkglaEBYaHSoFoi1aEbDhoSBWCeCQJkjNXXnNti5VGmnyNikc7o5uqbq6SiZYvbY6dSWV4uZJoZ7ice5K9cL92ujC/ZIJ3CMnKwpwgg8FQzdHPpZ3fqGne27zR1FWsozMh3aiDLpe6RogQ70Dn8r/3xTb38fUep+gt/O2TwP+XDN4mfk151z/X4cBNjwzMAK4V6sE1ZR3EVXCdU2IjTnMeSEAgA7", "img-palette-gif"), "img-pipette_cur-png": /* @__PURE__ */ __name(() => "data:text/plain;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE7mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0xMS0yMVQwMTo0NDo1NSswMTowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjQtMTEtMjFUMDI6MDA6MzQrMDE6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMTEtMjFUMDI6MDA6MzQrMDE6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjE5ZGJlZGNkLTAwNTktZjg0My04YzFiLTA4ZGY1NjFjY2Y4OSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOWRiZWRjZC0wMDU5LWY4NDMtOGMxYi0wOGRmNTYxY2NmODkiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxOWRiZWRjZC0wMDU5LWY4NDMtOGMxYi0wOGRmNTYxY2NmODkiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjE5ZGJlZGNkLTAwNTktZjg0My04YzFiLTA4ZGY1NjFjY2Y4OSIgc3RFdnQ6d2hlbj0iMjAyNC0xMS0yMVQwMTo0NDo1NSswMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Po5YI9IAAAJHSURBVFiFzZk9bsMwDIXJIFfokrt07R5kzZ6pp+nUzNmKIDfo0it07dClS4deoIA6JHIomqR+TCt9gAHHf/r0/ETLDoYQ4MYqAcC4spwRxFKVS4h4Xb+Bw2KDFAoAQOJCRPR22Oo98v0cUtrHwRfNaGPlblUxrCUvYJdcrTdbWG+2eiMhBPdBpzlHby0/xoJExORcD4eL3NU6IsFaHXB1OJfL1txSeQ66kXKZtPZpcgXWanoLmKZuT7r1Zgun42FYlxT3U7HBih4OJ8GkDUgA0vbT8aAey+WeYT6wKAh1Nm63QKWIzTroJEnQVCGEYZHkMfkZLmCVLSm3HFhhQXrdKQ4HyMDmqgMve0qHk160AmdvC4e1BhaHNmdxjZEwZ14SrKZ4rBUPmokW4CpYqtLSBaAD10aiGXa/eq1sijRKqkbNky47AX95+FRPXu6+RhAlU1EutzpsTgl3byIQr7dW/Y1CqadxGznZdPf3+T75/fP+MazfPY2drdR1wCHqkaiFpZBRDrAjVc3WOsGas/wcsPok4zGgKoBtfvVIBh27sGoJheXuzgkLIDisfHEZ1ntnlkuLhNlSI+z0N1AoqMM8uxIslwU79c25qkp8P67E7dTdEtgp0Cow/+IiwdbEwOObBEDDWzOHjJors6OLKiM5RIctZ4wqkJzk5S7A2WGzImhzDUPuMUguHvyK5aygUUupgUsfEC7REPZRdQEd2pjgcFfQqNKyJhL1BI1awBmGLsW6xX98k1+RekO7fG7tCa06/A/+0hX1B0kNQenek4JbAAAAAElFTkSuQmCC", "img-pipette_cur-png"), "img-settings-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhLQAtAPEAAAAAAGlqagAAAAAAACH5BAkUAAIAIf4RQ3JlYXRlZCB3aXRoIEdJTVAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAALQAtAAAC15SPqQftvqKc4llIc7xce2QF4oh9WjiKD9iYi5OqKzO7xhNbrG5XTRwo0QDBVg+Wqt1+RaMLSXIOZdIPlJrAYW1aKmDZFVqvTU6yOmZGLzn0qbsmKz1soH3Nhd+B87d6z9dHodemdvFEVsghlkF4tug2mPi4mFZnd5i3uMeDCMkp2HgJWNbjM3kXKoqKyZhGqvh1lDipuhr712QKFjfq+ur1BWcrSbQFZnysSTR39Uv3IzYcCd2JHLeLLDuUXJp9muVMbKo3Tv5n/a0A+ax+muk+AR9P/1EAACH5BAkUAAIAIf4RQ3JlYXRlZCB3aXRoIEdJTVAALAAAAAAtAC0AAALVlI+pCO2wopzmWUjzvFf7ZAViYH3fM6aP6TnpuB4Oq6BvXJV0DrzkzOjQbDCgzGU0uVRJXhGjbNyaxKZm+WwcsdYM8cfBgodiMGcKjfZ8ZzRZ6ouj09evPN7dhO54XL3Ml0VHsScnJvQHKBg2GMR4x6gTEblmOMOhF8kneXIRKPgG9ynC2Sk6WtqiuJnntQqptSMA6Okmexg2dyuqyRT7Bjp7SvrLguJn10qICTKsvJxa9gxd7OTbaExXSFwtWyM9vZPs5/19Sl5uzphOjcguEfYuT1MAADs=", "img-settings-gif"), "img-status-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODdhMAAwAHcAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJFAAAACwAAAAAMAAwAIAAAAD///8Ca4SPqcvtD6OctNqLs968+w+GVECWgdiYKoke61ui8HyCNP3dd6frXL/TAH2YYa9oDFqSxBFTOXk2JVJopIpzYl/L7arrNYHDrApZbD6XteeLupYmZ9pI78bOe8qALQSsDxgoOEhYaHiIKFIAACH5BAkUAAAALAgACQAeACAAgAAAAP///wJAhI8Wy5sPQZssWoqdPbmHLXndJXpQWSZoiqxs6IpwbNKpjef6zvf+DwwKhzQF0OhrJZW7R++k2+BAyBeVk9kUAAA7", "img-status-gif"), "img-tasks-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIFAISEhIaGht7e3v///wAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQzQ3NzU0NjA0NkQxMUYwODVGNUI5REE3NDZFMUQyMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQzQ3NzU0NzA0NkQxMUYwODVGNUI5REE3NDZFMUQyMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBDNDc3NTQ0MDQ2RDExRjA4NUY1QjlEQTc0NkUxRDIwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBDNDc3NTQ1MDQ2RDExRjA4NUY1QjlEQTc0NkUxRDIwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABQAsAAAAADAAMAAAA/9Yutz+MMpJq20ka6W7593FeGRpbiIZBCqrrSeRejDtZrV5dQLuCj3CzUcCoCo8ElCZzACMmZ1myaNmrIQg4XmkTIHgsHis5UaRX7JarDHL0Ne13Oq2pMPxeRn69ubBd2QDAx1mdlNxX39gg4RtUIdXSlgdjY5OkHCUWZsZlo+Zfpxao4KWl3WaemGnqHxwpautj10RVWyxjKe0ZxOBpGqzmLUQilm3Y8Jbr6JUWmoan7x9EsZ3JtLDvdWJgSW7mMy+ed6x4Muh47lzyk/p3Oty7YaquOvz77aLwMnn7sQPEI36BQRfvoCSEpbyYHCbvmMe8GAbBOqgA2t/rlzyRDFFnEUM5Ba1wgfw4p+RKLP9c1iMY8qXHdGVBEkAps02IeDYhKkD1s5GMWaaDEq0xIyiSFmqS1pUxIKeTqNKnUq1qtWrEhIAACH5BAkUAAUALAAAAAAwADAAAAP/WLrc/jDKR+q8ONatNi8e0XlZE55oSpagFwThe8opO8Munqt2jAsVmgBIoKFKHmLyNEzpRJllSLlpop7IKpVgrQyHg4Hvc0l+z2h0eGzBmNNw8HrXLmvPXnh4Xnzp3HddXGl7fH5/dl55gV2FG4dkElpMXyh7j36REGaUWx6GmXUad29njgSgRomDVnGFp32qE4xxAq+XmLKSebVft3yxiLuseMS/wJCim7yCgp/IoVDDRFSVltC6o1ydtrivOdnLg6Xdx2K5wtpdaubY6eK95cfg7xTM1nLm9Jr2xOtK89Dxc1Bl0qIQ3wQq6+eJ1TmE7gaaOPgGFqqICwnyqtjuSWEwiQwCVemIK1g9jf7ykUR3cqI/kgk/glxwB+atXCES2QxYY9XFncCO+PwJU8XMkEaTJs2itGnOHk6VspgVdarVq1izat2qNQEAOw==", "img-tasks-gif"), "img-themes-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAClrnOLi4gAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMDM1Qzc2QUVBNDExMUVGOTBDRUQ0Nzk3Q0E2QUZCRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCMDM1Qzc2QkVBNDExMUVGOTBDRUQ0Nzk3Q0E2QUZCRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkIwMzVDNzY4RUE0MTExRUY5MENFRDQ3OTdDQTZBRkJEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkIwMzVDNzY5RUE0MTExRUY5MENFRDQ3OTdDQTZBRkJEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAt+cj6nL7Q+jnDSKi0Vt+bKebQqIjaQmIieqlinUmewLe4lL17OB507P2/k+woGNszoOZcnY0thMDqPUVxOAzTZFyawXG6WQApiveSvpBNZlszdDBlng7Iv7fFnHQz96XXD3haG3B9QySNgWCOCnx7fQ+Ae4GCkJiUhYSImZ+XgokOmoKFhZWKQWCvKG2ul5U0oFmurKJNu6EiqpRMSZCJJrustbCnxLi/RbPCtXgau8khJbZSV98lRtODX9xN1i0s0rAy7+WtRtmM1Ne3yNTrJkXe7k837JHj0/rr/PL1EAACH5BAkUAAMALAAAAAAwADAAAALMnI+py+0Po5xUiotrw3lxrjHf5Y2hYybfGYFqx0LwMcco+Qp2iyP1LtIpesCi8YhMKmmjprIJXQGjVOmpirVOsoCuN7ulesfkKu8TCGDIbAAmDb290/BLe8yh113DvF69duc2p5eSI/BHx3HnlwhIxHTh+BjYNTKp5UP4lzVJKVTSyBnlaRi6OSqaaBqE5vn6CbnRBJvK+lCFaVaR1Qsa4ktVFPwz1btkJGugjPRT3Cz7fOTMPB3Nl4S9fGuTuc0NDD4gzuuNfI6ejlAAADs=", "img-themes-gif"), "img-thumbsdown-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAPEBAAAAAHMLC7EPD3MLCyH5BAkUAAMAIf4RQ3JlYXRlZCB3aXRoIEdJTVAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAMAAwAAAC/pyPqcvtD6OctNqLFdi898s13kgCUpmUqgetBynE8iywz1rSuhx8IjdT7YaCQG/jAOpGxKHRt1AuN83mE8mQVre0K1ZD5Yp53mx4LDYeTeAzeqsOtQHvdLkdqNuhr01eD7fGhsDxB2h1R+h3WBUn1wdgxEiktpbiZzg5U2mpGFmpSeY4aNDBqdaYqcP5WFro9akqirp52jqAs7hzysv6BbnitNbrSwqM5bErSAxb0bEqGGt7G/EMnWvjrBUDm5thvYn9C7LdmdFSbn6epJW4zk4XTv1+6eZOH2UviP8Tz73PL5++eQFxDRxX0FWkf+oSKpxmzKGpZg7njKhokQ/GBWMIHxQAACH5BAkUAAMAIf4RQ3JlYXRlZCB3aXRoIEdJTVAALAAAAAAwADAAAAL+nI+py+0Po5y02osR2Lz7yzXeSFIkoJ1qB62qAMeyMLauN+dywIqdfNIJBQFeiPHLJYfC4nHBYUqZzmciOs3mqijoRguOcZHfMHjsBZjDxk06sNairxt4fDpPAex3arurx9fX9KfAITg4U5RncJhIyAXYWIf4SLTYRrdXmYjJeOj56PlJObo4FCpmajXQgelRpGM6G6npwrlYStujt4L7tzlaYzi8tAN8IylhDBOZDMJ8maxcgXPMm+FTtoOdTbbdXOitrXbNOm57nIlObu7GnlYe3g1/gKV6Xt8KLv2ur8mH0b99e/D5GzhpU7+DCF3lYoiQ4EOIDU9EjEfPQQEAOw==", "img-thumbsdown-gif"), "img-thumbsup-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAPECAAAAADBzC0qxD0qxDyH5BAkUAAMAIf4RQ3JlYXRlZCB3aXRoIEdJTVAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAMAAwAAAC/pyPqcvtD6OcoFowc7tce8R1n3YJ5jWSlWkGgZVSK+vCcWTRdXVDZbvD9Bw5HWq4mQGPSMVP4Hrxmovi0kYFWaFSYfbwvHq/g3CQDN5yQ+zpJyxui1RKXVc+l9W5dwDrHzSmdcTxB3RnCHjnhLdn5KjYldAImWgZiWXwBHfZiemmqeY5ahmVWVZJqsp3Krq6agqK6vdayyc5aFsbK+uqe8nLCBDwqxoo7FLsySs4O6zcGSz8DJ0YhYtMbJ1se32aNqwdGfV6jT1ZwX1oLj7q/R0ars1rTmoOH8/eJ39tqM807R0bfQSlJaF0oSA7gFXkgEuoMM9BiQgd6plYsRmSB4poOnpcUAAAIfkECRQAAwAh/hFDcmVhdGVkIHdpdGggR0lNUAAsAAAAADAAMAAAAv6cj6nL7b+AlLDaMzO4nOnchcgklKDYZaUQTGgqrez5VuQatFRtx2Wu2/Aet1/ONXQUWcddMrJsOp8JlTEopI6iUm11yaR5B9arWFs2nqkaWRjpbcuAn3o2lFbb7Y26Ia+356cgCIaDBeC28vFVmKioB3l4liYneekmdUfmg+npSTfF+fhZChm6aWhaChTUuAp75bpFGsuq+Wp725WrC4rb63uJujkqjNkKRxtwLJks+ieR05xJDAUwfcoc+1wcjb0917rayksonS07/luuvAzEVC6vKG99Dd4+Ub8v706LrikDP35r/jnCN9Ben4MaEjLq8fAbQw0c/GGYCO3JxAYxHDtaKAAAOw==", "img-thumbsup-gif"), "img-trash-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAExMTAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCRjhBOTZGNEVBNDExMUVGQkNEREJDNjJBNzc1OTAwNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCRjhBOTZGNUVBNDExMUVGQkNEREJDNjJBNzc1OTAwNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkJGOEE5NkYyRUE0MTExRUZCQ0REQkM2MkE3NzU5MDA0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkJGOEE5NkYzRUE0MTExRUZCQ0REQkM2MkE3NzU5MDA0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAueUj6nL7Q+jnLTaO4PevHOseOLYgeQ5YugqVicAaPBMw20m1voel1HOC9J8EI/wOPMUjUih8jFqBp8NlNRGgrICuq1G6w1/HB2suNz7kjfJM7c2rrKd0R2RwbnyZObAcp52BRgnNwjYYzd3h4eGFgjHl6a2ltf2JjmkSEgZ+YhpaTkJ1llZ+Snp9+Noahi5yUnqqnkpSeH4WRqbimP6mJe74XI7ywUsqtpLjPv6p2uGlXkswQTtS8vcHPvcKo18mLmHnR0e3j192yTuTZsebAJ0pH7u5g4iQC/Pe2afQM//DzCgwIEKCgAAIfkEBRQAAgAsAAAAADAAMAAAAuGUj6nL7Q+jnLTai7NGofsPBlsSlqaonWp5re45vcBMz29U1vq+m1DICwpDv4/w2AMVPcimTekAOpvQxmmaJEZX2NX2BYZZw2QtQwooG9PVBSjI5bXPzFqnG6DN3eun/G6Xx/axBPhUdxgoaDaGeCiY+PiIUgg5aImYSYjTd6moB8j4ZegJCgq510g6GHg6SVmJSWpIm6paKxt5CcvZ57sYajuKa8p26tHyG8y6yxvzVnpXJ9xLbDy9iSG1mtWxgXZELQE+lJ0CHW6eQd7tvK7mPWIA7/5dJq8Qhr/P3++fUQAAOw==", "img-trash-gif"), "img-typo-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEABcrcJ2v8D5RlAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4N0U4OUJGN0U0QTYxMUVGQTU4QUFGRDdFRjZEQ0Q4RSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4N0U4OUJGOEU0QTYxMUVGQTU4QUFGRDdFRjZEQ0Q4RSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg3RTg5QkY1RTRBNjExRUZBNThBQUZEN0VGNkRDRDhFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg3RTg5QkY2RTRBNjExRUZBNThBQUZEN0VGNkRDRDhFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA+pIutz+MMpJq704692G/2AojmTolGiqesvqvqACz6tMAniu7zyP2h6BUNgrGosmAmjIbDqfzV5yCa1ambvpRxjoXr/OnDYo6JrN4Ks4ptyWz/BA+rn+AMnx8zyMG7v3YCUtK01eUC4MMENoTi8dioxNiA8vXIZDkxgilnJMSRwnVJECn6CPbqOlpomol6R2q5StnUJssacDnJ6wt6x4rra9d7qYvMJtv7SvLMfDb8rBwqLAxtKzu8zN09DVvdvYA83Oqd2338XZxyFvkuWx60/R3lSN7qsl6OnWjuIz4ncp/g0KKLCgwYO9EgAAIfkECRQABAAsAAAAADAAMAAAA/NIutz+MMpJq724js27/2A4RGJpnuOCriyntPBKgEJtC0Cu73zPg7PObegrGn8uz3DJbDKRm+DGSa0Sd0mOLcC1eq+57FTALQe+aJ14UDO7z2inOipsv7vx53ykvL3zeh5SfYA2LYModkwxLzBkcEMwDI5lS4cOLZWRHxkkSng3gp0Sn6A1oqMQpZCnLqmeWpqGrq8Pq5tRtbZCsq25ug23obTAKrymAh3FwcesycTLwrO/y4iPzsrVjbHIqNHNuNTF0r7iwHW9z9DnWtfhKdXo3dnx7ene4+1N+Ox1lvTfJGmLAa8eC22TZCBkVmKhw4epEgAAOw==", "img-typo-gif"), "img-wand-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAN9xJv/sWwAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkE3RTJCRDcyMjMzMzExRUZCQzQzRTYzQjk2NDc2NjUyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkE3RTJCRDczMjMzMzExRUZCQzQzRTYzQjk2NDc2NjUyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTdFMkJENzAyMzMzMTFFRkJDNDNFNjNCOTY0NzY2NTIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTdFMkJENzEyMzMzMTFFRkJDNDNFNjNCOTY0NzY2NTIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAADACwAAAAAMAAwAAACz5yPqcvtD6OctNqLs2ZCbN2FTuh9B0kqaGcaazq8bBt3QSDbcBve+Orb8QS+Xy84o9WISGZTeXIWiyKoyzalJpWkbHP76Xq/4Ix4rK2Cjuis0MKeYsdvCorcNpbgubN+ZSYDEJdD0wGASFg2JIA4OPdjddWYKKbGdeh4Z2QV4vh4d2lCoinSI7pBWlmFgpkJure0iOH5iVpj+LoqmaC6GivpC8sbpVsHJXycW/tLLEvZzCsMC4ysS13t+kntPGk72+nZ2l08Tl4O3n17zm5QAAAh+QQFFAADACwAAAAAMAAwAAACyJyPqcvtD6OctNqLjdi5jw0KTeglIWmeYqltQXC2IMyx7Uur7lvbM6/C5WwyYc44JH4ESGaz59shhSDl8jfNraLYaYzrzOK+nq6YWu2Yz2hoJZSVPt2UIHDd3lp0ujz5wicA0MVHBAKASEjHcpgId2d1hegIh2K4MTkYZMk1iaKj1Ei59VciqunGWYaZmRaJcIr6msJKOQt76nob0qr7yuvp+1uLqjebq2oFPGqsjCzsLNgLHSqafHxYenulvc296C0TPk5eblUAADs=", "img-wand-gif"), "img-wrench-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAGlqagAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0U0NDQxMUVBNDExMUVGOEI2RkMzMDI1RTNDQkVBRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0U0NDQxMkVBNDExMUVGOEI2RkMzMDI1RTNDQkVBRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkNDRTQ0NDBGRUE0MTExRUY4QjZGQzMwMjVFM0NCRUFEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkNDRTQ0NDEwRUE0MTExRUY4QjZGQzMwMjVFM0NCRUFEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAsGUj6nL7Q+jnLTai1fYfGfbhd4niSEZdcC6cuijskB3jK/BybOLn3cus/UCu5sA2BICeShkEbEUfpzSaOC3CY5CyevLuROxmM2sNtbFmsfo9Bes00kz3Hic9oZb55j62aS21mXiRSL2J2JIKOdTtvhndERIBGl0aIdnCcfIR0dpxxkJptfZJ3j5pEn5mBQpuepCVXphVXNamBeGe+uaRSbb2/jKhhsIdVvsOvQZpqyxlul8TCj9nFhtPYu9zd3t7VoAACH5BAkUAAIALAAAAAAwADAAAALKlI+py+0Po5y02otb2Dxk24XeN4khGXXACpyotrFy98IySxtcrcd33tuhVDjhgdPaDH0r4DFQHGWQUWkwSqI2gcSk9dI1db1Zrdc0U5ahP1H7Czbf5uc1kz43Ytz4t3of0ucHR8GXJqZXiDYoVoIodyKi+Mh2mAgSKHhGWJGp6WKnifUyJuj0Udp3OnW3WVlUYyb2RsqESLtUmQP5h4qkN3YZB/r0Kjx8Kdtbi+C5xclTehzNu8xTbGx9jW2yDdPozQAeTl5ufi5QAAA7", "img-wrench-gif") };

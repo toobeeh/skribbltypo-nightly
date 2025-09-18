@@ -2041,8 +2041,14 @@ function timer(dueTime, intervalOrScheduler, scheduler) {
 }
 __name(timer, "timer");
 function interval(period, scheduler) {
+  if (period === void 0) {
+    period = 0;
+  }
   if (scheduler === void 0) {
     scheduler = asyncScheduler;
+  }
+  if (period < 0) {
+    period = 0;
   }
   return timer(period, period, scheduler);
 }
@@ -2925,7 +2931,7 @@ function fromObservable(observable2, initialValue, onWrite, allowWriteBeforeEmit
   };
 }
 __name(fromObservable, "fromObservable");
-function create_if_block$L(ctx) {
+function create_if_block$M(ctx) {
   let span;
   let t;
   return {
@@ -2956,8 +2962,8 @@ function create_if_block$L(ctx) {
     }
   };
 }
-__name(create_if_block$L, "create_if_block$L");
-function create_fragment$1H(ctx) {
+__name(create_if_block$M, "create_if_block$M");
+function create_fragment$1I(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -2966,7 +2972,7 @@ function create_fragment$1H(ctx) {
   let dispose;
   let if_block = (
     /*description*/
-    ctx[2] && create_if_block$L(ctx)
+    ctx[2] && create_if_block$M(ctx)
   );
   return {
     c() {
@@ -3037,7 +3043,7 @@ function create_fragment$1H(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$L(ctx2);
+          if_block = create_if_block$M(ctx2);
           if_block.c();
           if_block.m(div, null);
         }
@@ -3076,8 +3082,8 @@ function create_fragment$1H(ctx) {
     }
   };
 }
-__name(create_fragment$1H, "create_fragment$1H");
-function instance$1x($$self, $$props, $$invalidate) {
+__name(create_fragment$1I, "create_fragment$1I");
+function instance$1y($$self, $$props, $$invalidate) {
   let { checked = false } = $$props;
   let { disabled = false } = $$props;
   let { description = "" } = $$props;
@@ -3109,16 +3115,16 @@ function instance$1x($$self, $$props, $$invalidate) {
     keypress_handler
   ];
 }
-__name(instance$1x, "instance$1x");
+__name(instance$1y, "instance$1y");
 const _Checkbox = class _Checkbox extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1x, create_fragment$1H, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
+    init(this, options, instance$1y, create_fragment$1I, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
   }
 };
 __name(_Checkbox, "Checkbox");
 let Checkbox = _Checkbox;
-function create_if_block$K(ctx) {
+function create_if_block$L(ctx) {
   let b;
   let checkbox;
   let updating_checked;
@@ -3200,13 +3206,13 @@ function create_if_block$K(ctx) {
     }
   };
 }
-__name(create_if_block$K, "create_if_block$K");
-function create_fragment$1G(ctx) {
+__name(create_if_block$L, "create_if_block$L");
+function create_fragment$1H(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*settingStore*/
-    ctx[1] && create_if_block$K(ctx)
+    ctx[1] && create_if_block$L(ctx)
   );
   return {
     c() {
@@ -3230,7 +3236,7 @@ function create_fragment$1G(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$K(ctx2);
+          if_block = create_if_block$L(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -3260,8 +3266,8 @@ function create_fragment$1G(ctx) {
     }
   };
 }
-__name(create_fragment$1G, "create_fragment$1G");
-function instance$1w($$self, $$props, $$invalidate) {
+__name(create_fragment$1H, "create_fragment$1H");
+function instance$1x($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3284,16 +3290,16 @@ function instance$1w($$self, $$props, $$invalidate) {
   };
   return [setting, settingStore, $settingStore, checkbox_checked_binding];
 }
-__name(instance$1w, "instance$1w");
+__name(instance$1x, "instance$1x");
 const _Boolean_setting_input = class _Boolean_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1w, create_fragment$1G, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1x, create_fragment$1H, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Boolean_setting_input, "Boolean_setting_input");
 let Boolean_setting_input = _Boolean_setting_input;
-function create_if_block$J(ctx) {
+function create_if_block$K(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3422,7 +3428,7 @@ function create_if_block$J(ctx) {
     }
   };
 }
-__name(create_if_block$J, "create_if_block$J");
+__name(create_if_block$K, "create_if_block$K");
 function create_if_block_1$m(ctx) {
   let input;
   let input_min_value;
@@ -3509,11 +3515,11 @@ function create_if_block_1$m(ctx) {
   };
 }
 __name(create_if_block_1$m, "create_if_block_1$m");
-function create_fragment$1F(ctx) {
+function create_fragment$1G(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[3] && create_if_block$J(ctx)
+    ctx[3] && create_if_block$K(ctx)
   );
   return {
     c() {
@@ -3532,7 +3538,7 @@ function create_fragment$1F(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$J(ctx2);
+          if_block = create_if_block$K(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3551,8 +3557,8 @@ function create_fragment$1F(ctx) {
     }
   };
 }
-__name(create_fragment$1F, "create_fragment$1F");
-function instance$1v($$self, $$props, $$invalidate) {
+__name(create_fragment$1G, "create_fragment$1G");
+function instance$1w($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3592,11 +3598,11 @@ function instance$1v($$self, $$props, $$invalidate) {
     input_change_input_handler
   ];
 }
-__name(instance$1v, "instance$1v");
+__name(instance$1w, "instance$1w");
 const _Numeric_setting_input = class _Numeric_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1v, create_fragment$1F, safe_not_equal, {
+    init(this, options, instance$1w, create_fragment$1G, safe_not_equal, {
       setting: 0,
       bounds: 1,
       withSliderAndSteps: 2
@@ -3612,7 +3618,7 @@ function get_each_context$z(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$z, "get_each_context$z");
-function create_if_block$I(ctx) {
+function create_if_block$J(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3740,7 +3746,7 @@ function create_if_block$I(ctx) {
     }
   };
 }
-__name(create_if_block$I, "create_if_block$I");
+__name(create_if_block$J, "create_if_block$J");
 function create_each_block$z(ctx) {
   let option;
   let t_value = (
@@ -3780,11 +3786,11 @@ function create_each_block$z(ctx) {
   };
 }
 __name(create_each_block$z, "create_each_block$z");
-function create_fragment$1E(ctx) {
+function create_fragment$1F(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[2] && create_if_block$I(ctx)
+    ctx[2] && create_if_block$J(ctx)
   );
   return {
     c() {
@@ -3803,7 +3809,7 @@ function create_fragment$1E(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$I(ctx2);
+          if_block = create_if_block$J(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3822,8 +3828,8 @@ function create_fragment$1E(ctx) {
     }
   };
 }
-__name(create_fragment$1E, "create_fragment$1E");
-function instance$1u($$self, $$props, $$invalidate) {
+__name(create_fragment$1F, "create_fragment$1F");
+function instance$1v($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(3, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3849,16 +3855,16 @@ function instance$1u($$self, $$props, $$invalidate) {
   };
   return [setting, choices, settingStore, $settingStore, select_change_handler];
 }
-__name(instance$1u, "instance$1u");
+__name(instance$1v, "instance$1v");
 const _Choice_setting_input = class _Choice_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1u, create_fragment$1E, safe_not_equal, { setting: 0, choices: 1 });
+    init(this, options, instance$1v, create_fragment$1F, safe_not_equal, { setting: 0, choices: 1 });
   }
 };
 __name(_Choice_setting_input, "Choice_setting_input");
 let Choice_setting_input = _Choice_setting_input;
-function create_if_block$H(ctx) {
+function create_if_block$I(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3942,12 +3948,12 @@ function create_if_block$H(ctx) {
     }
   };
 }
-__name(create_if_block$H, "create_if_block$H");
-function create_fragment$1D(ctx) {
+__name(create_if_block$I, "create_if_block$I");
+function create_fragment$1E(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[1] && create_if_block$H(ctx)
+    ctx[1] && create_if_block$I(ctx)
   );
   return {
     c() {
@@ -3966,7 +3972,7 @@ function create_fragment$1D(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$H(ctx2);
+          if_block = create_if_block$I(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3985,8 +3991,8 @@ function create_fragment$1D(ctx) {
     }
   };
 }
-__name(create_fragment$1D, "create_fragment$1D");
-function instance$1t($$self, $$props, $$invalidate) {
+__name(create_fragment$1E, "create_fragment$1E");
+function instance$1u($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -4009,11 +4015,11 @@ function instance$1t($$self, $$props, $$invalidate) {
   };
   return [setting, settingStore, $settingStore, input_input_handler];
 }
-__name(instance$1t, "instance$1t");
+__name(instance$1u, "instance$1u");
 const _Text_setting_input = class _Text_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1t, create_fragment$1D, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1u, create_fragment$1E, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Text_setting_input, "Text_setting_input");
@@ -4278,7 +4284,7 @@ function create_if_block_1$l(ctx) {
   };
 }
 __name(create_if_block_1$l, "create_if_block_1$l");
-function create_if_block$G(ctx) {
+function create_if_block$H(ctx) {
   let div1;
   let div0;
   let mounted;
@@ -4360,8 +4366,8 @@ function create_if_block$G(ctx) {
     }
   };
 }
-__name(create_if_block$G, "create_if_block$G");
-function create_fragment$1C(ctx) {
+__name(create_if_block$H, "create_if_block$H");
+function create_fragment$1D(ctx) {
   let div5;
   let div0;
   let t2;
@@ -4382,7 +4388,7 @@ function create_fragment$1C(ctx) {
   );
   let if_block1 = (
     /*allowAlpha*/
-    ctx[1] && create_if_block$G(ctx)
+    ctx[1] && create_if_block$H(ctx)
   );
   return {
     c() {
@@ -4566,7 +4572,7 @@ function create_fragment$1C(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$G(ctx2);
+          if_block1 = create_if_block$H(ctx2);
           if_block1.c();
           if_block1.m(div5, t6);
         }
@@ -4597,8 +4603,8 @@ function create_fragment$1C(ctx) {
     }
   };
 }
-__name(create_fragment$1C, "create_fragment$1C");
-function instance$1s($$self, $$props, $$invalidate) {
+__name(create_fragment$1D, "create_fragment$1D");
+function instance$1t($$self, $$props, $$invalidate) {
   let { color = Color.fromHex("#45588d") } = $$props;
   let { allowAlpha = false } = $$props;
   let { description = "" } = $$props;
@@ -4694,16 +4700,16 @@ function instance$1s($$self, $$props, $$invalidate) {
     change_handler
   ];
 }
-__name(instance$1s, "instance$1s");
+__name(instance$1t, "instance$1t");
 const _Color_picker = class _Color_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1s, create_fragment$1C, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
+    init(this, options, instance$1t, create_fragment$1D, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
   }
 };
 __name(_Color_picker, "Color_picker");
 let Color_picker = _Color_picker;
-function create_if_block$F(ctx) {
+function create_if_block$G(ctx) {
   let div;
   let colorpicker;
   let updating_color;
@@ -4874,8 +4880,8 @@ function create_if_block$F(ctx) {
     }
   };
 }
-__name(create_if_block$F, "create_if_block$F");
-function create_fragment$1B(ctx) {
+__name(create_if_block$G, "create_if_block$G");
+function create_fragment$1C(ctx) {
   let div1;
   let div0;
   let t;
@@ -4885,7 +4891,7 @@ function create_fragment$1B(ctx) {
   let dispose;
   let if_block = (
     /*popupPosition*/
-    ctx[6] && create_if_block$F(ctx)
+    ctx[6] && create_if_block$G(ctx)
   );
   return {
     c() {
@@ -4968,7 +4974,7 @@ function create_fragment$1B(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$F(ctx2);
+          if_block = create_if_block$G(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div1, null);
@@ -5014,9 +5020,9 @@ function create_fragment$1B(ctx) {
     }
   };
 }
-__name(create_fragment$1B, "create_fragment$1B");
+__name(create_fragment$1C, "create_fragment$1C");
 const click_handler = /* @__PURE__ */ __name((e) => e.stopImmediatePropagation(), "click_handler");
-function instance$1r($$self, $$props, $$invalidate) {
+function instance$1s($$self, $$props, $$invalidate) {
   let { color = Color.fromHex("#45588d") } = $$props;
   let { allowAlpha = false } = $$props;
   let { useBackground = true } = $$props;
@@ -5093,11 +5099,11 @@ function instance$1r($$self, $$props, $$invalidate) {
     colorpicker_color_binding
   ];
 }
-__name(instance$1r, "instance$1r");
+__name(instance$1s, "instance$1s");
 const _Color_picker_button = class _Color_picker_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1r, create_fragment$1B, safe_not_equal, {
+    init(this, options, instance$1s, create_fragment$1C, safe_not_equal, {
       color: 0,
       allowAlpha: 1,
       useBackground: 2,
@@ -5110,7 +5116,7 @@ const _Color_picker_button = class _Color_picker_button extends SvelteComponent 
 };
 __name(_Color_picker_button, "Color_picker_button");
 let Color_picker_button = _Color_picker_button;
-function create_if_block$E(ctx) {
+function create_if_block$F(ctx) {
   let div2;
   let b;
   let t0_value = (
@@ -5204,13 +5210,13 @@ function create_if_block$E(ctx) {
     }
   };
 }
-__name(create_if_block$E, "create_if_block$E");
-function create_fragment$1A(ctx) {
+__name(create_if_block$F, "create_if_block$F");
+function create_fragment$1B(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*settingStore*/
-    ctx[2] && create_if_block$E(ctx)
+    ctx[2] && create_if_block$F(ctx)
   );
   return {
     c() {
@@ -5234,7 +5240,7 @@ function create_fragment$1A(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$E(ctx2);
+          if_block = create_if_block$F(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -5264,8 +5270,8 @@ function create_fragment$1A(ctx) {
     }
   };
 }
-__name(create_fragment$1A, "create_fragment$1A");
-function instance$1q($$self, $$props, $$invalidate) {
+__name(create_fragment$1B, "create_fragment$1B");
+function instance$1r($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -5300,11 +5306,11 @@ function instance$1q($$self, $$props, $$invalidate) {
   };
   return [setting, color, settingStore, colorpickerbutton_color_binding];
 }
-__name(instance$1q, "instance$1q");
+__name(instance$1r, "instance$1r");
 const _Color_hex_setting_input = class _Color_hex_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1q, create_fragment$1A, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1r, create_fragment$1B, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Color_hex_setting_input, "Color_hex_setting_input");
@@ -8354,17 +8360,17 @@ function propertyEventDecorator(eventKey, errorMessage) {
 }
 __name(propertyEventDecorator, "propertyEventDecorator");
 var postConstruct = propertyEventDecorator(POST_CONSTRUCT, MULTIPLE_POST_CONSTRUCT_METHODS);
-var __defProp$1$ = Object.defineProperty;
+var __defProp$20 = Object.defineProperty;
 var __getOwnPropDesc$Z = Object.getOwnPropertyDescriptor;
-var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$1$(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
-var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$20(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
+var __decorateClass$20 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Z(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1$(target, key2, result);
+  if (kind && result) __defProp$20(target, key2, result);
   return result;
-}, "__decorateClass$1$");
+}, "__decorateClass$20");
 var __publicField2 = /* @__PURE__ */ __name((obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value), "__publicField");
 let LoggingService = (_a = class {
   constructor() {
@@ -8437,7 +8443,7 @@ __publicField2(LoggingService, "styles", {
   error: "color: red; font-weight: bold;",
   date: "color: darkGrey; font-weight: light;"
 });
-LoggingService = __decorateClass$1$([
+LoggingService = __decorateClass$20([
   injectable()
 ], LoggingService);
 const _ApplicationEvent = class _ApplicationEvent {
@@ -8445,16 +8451,16 @@ const _ApplicationEvent = class _ApplicationEvent {
 __name(_ApplicationEvent, "ApplicationEvent");
 let ApplicationEvent = _ApplicationEvent;
 const loggerFactory = Symbol("loggerFactory");
-var __defProp$1_ = Object.defineProperty;
+var __defProp$1$ = Object.defineProperty;
 var __getOwnPropDesc$Y = Object.getOwnPropertyDescriptor;
-var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Y(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1_(target, key2, result);
+  if (kind && result) __defProp$1$(target, key2, result);
   return result;
-}, "__decorateClass$1_");
+}, "__decorateClass$1$");
 var __decorateParam$u = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$u");
 let EventsService = (_b = class {
   constructor(loggerFactory2) {
@@ -8480,20 +8486,20 @@ let EventsService = (_b = class {
     this._events$.next(event);
   }
 }, __name(_b, "EventsService"), _b);
-EventsService = __decorateClass$1_([
+EventsService = __decorateClass$1$([
   injectable(),
   __decorateParam$u(0, inject(loggerFactory))
 ], EventsService);
-var __defProp$1Z = Object.defineProperty;
+var __defProp$1_ = Object.defineProperty;
 var __getOwnPropDesc$X = Object.getOwnPropertyDescriptor;
-var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$X(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1Z(target, key2, result);
+  if (kind && result) __defProp$1_(target, key2, result);
   return result;
-}, "__decorateClass$1Z");
+}, "__decorateClass$1_");
 var __decorateParam$t = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$t");
 let EventProcessor = (_c = class {
   constructor(loggerFactory2, _eventsService) {
@@ -8523,24 +8529,24 @@ let EventProcessor = (_c = class {
     return event instanceof this.eventType;
   }
 }, __name(_c, "EventProcessor"), _c);
-__decorateClass$1Z([
+__decorateClass$1_([
   postConstruct()
 ], EventProcessor.prototype, "start", 1);
-EventProcessor = __decorateClass$1Z([
+EventProcessor = __decorateClass$1_([
   injectable(),
   __decorateParam$t(0, inject(loggerFactory)),
   __decorateParam$t(1, inject(EventsService))
 ], EventProcessor);
-var __defProp$1Y = Object.defineProperty;
+var __defProp$1Z = Object.defineProperty;
 var __getOwnPropDesc$W = Object.getOwnPropertyDescriptor;
-var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$W(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1Y(target, key2, result);
+  if (kind && result) __defProp$1Z(target, key2, result);
   return result;
-}, "__decorateClass$1Y");
+}, "__decorateClass$1Z");
 var __decorateParam$s = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$s");
 let EventListener = (_d = class {
   constructor(_eventsService, loggerFactory2) {
@@ -8563,21 +8569,21 @@ let EventListener = (_d = class {
     return this._events$;
   }
 }, __name(_d, "EventListener"), _d);
-EventListener = __decorateClass$1Y([
+EventListener = __decorateClass$1Z([
   injectable(),
   __decorateParam$s(0, inject(EventsService)),
   __decorateParam$s(1, inject(loggerFactory))
 ], EventListener);
-var __defProp$1X = Object.defineProperty;
+var __defProp$1Y = Object.defineProperty;
 var __getOwnPropDesc$V = Object.getOwnPropertyDescriptor;
-var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$V(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1X(target, key2, result);
+  if (kind && result) __defProp$1Y(target, key2, result);
   return result;
-}, "__decorateClass$1X");
+}, "__decorateClass$1Y");
 const _CanvasClearedEvent = class _CanvasClearedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -8600,7 +8606,7 @@ let CanvasClearedEventProcessor = (_e = class extends EventProcessor {
     return events;
   }
 }, __name(_e, "CanvasClearedEventProcessor"), _e);
-CanvasClearedEventProcessor = __decorateClass$1X([
+CanvasClearedEventProcessor = __decorateClass$1Y([
   injectable()
 ], CanvasClearedEventProcessor);
 let CanvasClearedEventListener = (_f = class extends EventListener {
@@ -8609,10 +8615,10 @@ let CanvasClearedEventListener = (_f = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_f, "CanvasClearedEventListener"), _f);
-__decorateClass$1X([
+__decorateClass$1Y([
   inject(CanvasClearedEventProcessor)
 ], CanvasClearedEventListener.prototype, "_processor", 2);
-CanvasClearedEventListener = __decorateClass$1X([
+CanvasClearedEventListener = __decorateClass$1Y([
   injectable()
 ], CanvasClearedEventListener);
 const canvasClearedEventRegistration = {
@@ -8865,16 +8871,16 @@ const _ExtensionCommand = class _ExtensionCommand {
 };
 __name(_ExtensionCommand, "ExtensionCommand");
 let ExtensionCommand = _ExtensionCommand;
-var __defProp$1W = Object.defineProperty;
+var __defProp$1X = Object.defineProperty;
 var __getOwnPropDesc$U = Object.getOwnPropertyDescriptor;
-var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$U(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1W(target, key2, result);
+  if (kind && result) __defProp$1X(target, key2, result);
   return result;
-}, "__decorateClass$1W");
+}, "__decorateClass$1X");
 var __decorateParam$r = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$r");
 let CommandsService = (_g = class {
   constructor(loggerFactory2) {
@@ -8961,20 +8967,20 @@ let CommandsService = (_g = class {
     } else return result.result;
   }
 }, __name(_g, "CommandsService"), _g);
-CommandsService = __decorateClass$1W([
+CommandsService = __decorateClass$1X([
   injectable(),
   __decorateParam$r(0, inject(loggerFactory))
 ], CommandsService);
-var __defProp$1V = Object.defineProperty;
+var __defProp$1W = Object.defineProperty;
 var __getOwnPropDesc$T = Object.getOwnPropertyDescriptor;
-var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$T(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1V(target, key2, result);
+  if (kind && result) __defProp$1W(target, key2, result);
   return result;
-}, "__decorateClass$1V");
+}, "__decorateClass$1W");
 var __decorateParam$q = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$q");
 let HotkeysService = (_h = class {
   constructor(loggerFactory2) {
@@ -9046,20 +9052,20 @@ let HotkeysService = (_h = class {
     return [...hotkey.defaultCombo ?? []];
   }
 }, __name(_h, "HotkeysService"), _h);
-HotkeysService = __decorateClass$1V([
+HotkeysService = __decorateClass$1W([
   injectable(),
   __decorateParam$q(0, inject(loggerFactory))
 ], HotkeysService);
-var __defProp$1U = Object.defineProperty;
+var __defProp$1V = Object.defineProperty;
 var __getOwnPropDesc$S = Object.getOwnPropertyDescriptor;
-var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$S(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1U(target, key2, result);
+  if (kind && result) __defProp$1V(target, key2, result);
   return result;
-}, "__decorateClass$1U");
+}, "__decorateClass$1V");
 var __decorateParam$p = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$p");
 let TooltipsService = (_i = class {
   constructor(loggerFactory2) {
@@ -9140,20 +9146,20 @@ let TooltipsService = (_i = class {
     return tooltips;
   }
 }, __name(_i, "TooltipsService"), _i);
-TooltipsService = __decorateClass$1U([
+TooltipsService = __decorateClass$1V([
   injectable(),
   __decorateParam$p(0, inject(loggerFactory))
 ], TooltipsService);
-var __defProp$1T = Object.defineProperty;
+var __defProp$1U = Object.defineProperty;
 var __getOwnPropDesc$R = Object.getOwnPropertyDescriptor;
-var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$R(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1T(target, key2, result);
+  if (kind && result) __defProp$1U(target, key2, result);
   return result;
-}, "__decorateClass$1T");
+}, "__decorateClass$1U");
 var __decorateParam$o = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$o");
 let OnboardingService = (_j = class {
   constructor(loggerFactory2) {
@@ -9212,20 +9218,20 @@ let OnboardingService = (_j = class {
     return this._taskCompleted$.asObservable();
   }
 }, __name(_j, "OnboardingService"), _j);
-OnboardingService = __decorateClass$1T([
+OnboardingService = __decorateClass$1U([
   injectable(),
   __decorateParam$o(0, inject(loggerFactory))
 ], OnboardingService);
-var __defProp$1S = Object.defineProperty;
+var __defProp$1T = Object.defineProperty;
 var __getOwnPropDesc$Q = Object.getOwnPropertyDescriptor;
-var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Q(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1S(target, key2, result);
+  if (kind && result) __defProp$1T(target, key2, result);
   return result;
-}, "__decorateClass$1S");
+}, "__decorateClass$1T");
 var __decorateParam$n = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$n");
 let TypoFeature = (_k = class {
   constructor(loggerFactory2, _hotkeysService, _tooltipsService, _commandsService, _onboardingService) {
@@ -9417,10 +9423,10 @@ let TypoFeature = (_k = class {
     };
   }
 }, __name(_k, "TypoFeature"), _k);
-__decorateClass$1S([
+__decorateClass$1T([
   postConstruct()
 ], TypoFeature.prototype, "init", 1);
-TypoFeature = __decorateClass$1S([
+TypoFeature = __decorateClass$1T([
   injectable(),
   __decorateParam$n(0, inject(loggerFactory)),
   __decorateParam$n(1, inject(HotkeysService)),
@@ -9428,16 +9434,16 @@ TypoFeature = __decorateClass$1S([
   __decorateParam$n(3, inject(CommandsService)),
   __decorateParam$n(4, inject(OnboardingService))
 ], TypoFeature);
-var __defProp$1R = Object.defineProperty;
+var __defProp$1S = Object.defineProperty;
 var __getOwnPropDesc$P = Object.getOwnPropertyDescriptor;
-var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$P(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1R(target, key2, result);
+  if (kind && result) __defProp$1S(target, key2, result);
   return result;
-}, "__decorateClass$1R");
+}, "__decorateClass$1S");
 let LoggerService = (_l = class {
   constructor() {
     __publicField(this, "_level", "debug");
@@ -9531,19 +9537,19 @@ let LoggerService = (_l = class {
     });
   }
 }, __name(_l, "LoggerService"), _l);
-LoggerService = __decorateClass$1R([
+LoggerService = __decorateClass$1S([
   injectable()
 ], LoggerService);
-var __defProp$1Q = Object.defineProperty;
+var __defProp$1R = Object.defineProperty;
 var __getOwnPropDesc$O = Object.getOwnPropertyDescriptor;
-var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$O(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1Q(target, key2, result);
+  if (kind && result) __defProp$1R(target, key2, result);
   return result;
-}, "__decorateClass$1Q");
+}, "__decorateClass$1R");
 var __decorateParam$m = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$m");
 let Setup = (_m = class {
   constructor(loggerFactory2) {
@@ -9562,7 +9568,7 @@ let Setup = (_m = class {
     return this._setupPromise;
   }
 }, __name(_m, "Setup"), _m);
-Setup = __decorateClass$1Q([
+Setup = __decorateClass$1R([
   injectable(),
   __decorateParam$m(0, inject(loggerFactory))
 ], Setup);
@@ -9577,16 +9583,16 @@ function isEarlySetup(target) {
   return Reflect.getMetadata(decoratorSymbol, target);
 }
 __name(isEarlySetup, "isEarlySetup");
-var __defProp$1P = Object.defineProperty;
+var __defProp$1Q = Object.defineProperty;
 var __getOwnPropDesc$N = Object.getOwnPropertyDescriptor;
-var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$N(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1P(target, key2, result);
+  if (kind && result) __defProp$1Q(target, key2, result);
   return result;
-}, "__decorateClass$1P");
+}, "__decorateClass$1Q");
 let GamePatchReadySetup = (_n = class extends Setup {
   constructor() {
     super(...arguments);
@@ -9596,21 +9602,21 @@ let GamePatchReadySetup = (_n = class extends Setup {
     return firstValueFrom(this._interceptor.patchLoaded$);
   }
 }, __name(_n, "GamePatchReadySetup"), _n);
-__decorateClass$1P([
+__decorateClass$1Q([
   inject(Interceptor)
 ], GamePatchReadySetup.prototype, "_interceptor", 2);
-GamePatchReadySetup = __decorateClass$1P([
+GamePatchReadySetup = __decorateClass$1Q([
   earlySetup()
 ], GamePatchReadySetup);
-var __defProp$1O = Object.defineProperty;
-var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1P = Object.defineProperty;
+var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1O(target, key2, result);
+  if (result) __defProp$1P(target, key2, result);
   return result;
-}, "__decorateClass$1O");
+}, "__decorateClass$1P");
 const _ChatControlsSetup = class _ChatControlsSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -9627,7 +9633,7 @@ const _ChatControlsSetup = class _ChatControlsSetup extends Setup {
 };
 __name(_ChatControlsSetup, "ChatControlsSetup");
 let ChatControlsSetup = _ChatControlsSetup;
-__decorateClass$1O([
+__decorateClass$1P([
   inject(GamePatchReadySetup)
 ], ChatControlsSetup.prototype, "_gameReadySetup");
 const _HotkeyAction = class _HotkeyAction {
@@ -9725,16 +9731,16 @@ const _HotkeyAction = class _HotkeyAction {
 };
 __name(_HotkeyAction, "HotkeyAction");
 let HotkeyAction = _HotkeyAction;
-var __defProp$1N = Object.defineProperty;
+var __defProp$1O = Object.defineProperty;
 var __getOwnPropDesc$M = Object.getOwnPropertyDescriptor;
-var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$M(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1N(target, key2, result);
+  if (kind && result) __defProp$1O(target, key2, result);
   return result;
-}, "__decorateClass$1N");
+}, "__decorateClass$1O");
 var __decorateParam$l = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$l");
 let GlobalSettingsService = (_o = class {
   constructor(loggerFactory2) {
@@ -9781,11 +9787,11 @@ let GlobalSettingsService = (_o = class {
     return Object.values(this._settings);
   }
 }, __name(_o, "GlobalSettingsService"), _o);
-GlobalSettingsService = __decorateClass$1N([
+GlobalSettingsService = __decorateClass$1O([
   injectable(),
   __decorateParam$l(0, inject(loggerFactory))
 ], GlobalSettingsService);
-function create_fragment$1z(ctx) {
+function create_fragment$1A(ctx) {
   let div1;
   let div0;
   let div1_class_value;
@@ -9850,8 +9856,8 @@ function create_fragment$1z(ctx) {
     }
   };
 }
-__name(create_fragment$1z, "create_fragment$1z");
-function instance$1p($$self, $$props, $$invalidate) {
+__name(create_fragment$1A, "create_fragment$1A");
+function instance$1q($$self, $$props, $$invalidate) {
   let $position;
   let $direction;
   let elem;
@@ -9892,11 +9898,11 @@ function instance$1p($$self, $$props, $$invalidate) {
     div1_binding
   ];
 }
-__name(instance$1p, "instance$1p");
+__name(instance$1q, "instance$1q");
 const _Controls = class _Controls extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1p, create_fragment$1z, safe_not_equal, { globalSettings: 6, element: 7 });
+    init(this, options, instance$1q, create_fragment$1A, safe_not_equal, { globalSettings: 6, element: 7 });
   }
   get element() {
     return this.$$.ctx[7];
@@ -9904,15 +9910,15 @@ const _Controls = class _Controls extends SvelteComponent {
 };
 __name(_Controls, "Controls");
 let Controls = _Controls;
-var __defProp$1M = Object.defineProperty;
-var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1N = Object.defineProperty;
+var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1M(target, key2, result);
+  if (result) __defProp$1N(target, key2, result);
   return result;
-}, "__decorateClass$1M");
+}, "__decorateClass$1N");
 const _ControlsSetup = class _ControlsSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -9932,13 +9938,13 @@ const _ControlsSetup = class _ControlsSetup extends Setup {
 };
 __name(_ControlsSetup, "ControlsSetup");
 let ControlsSetup = _ControlsSetup;
-__decorateClass$1M([
+__decorateClass$1N([
   inject(GamePatchReadySetup)
 ], ControlsSetup.prototype, "_gameReadySetup");
-__decorateClass$1M([
+__decorateClass$1N([
   inject(GlobalSettingsService)
 ], ControlsSetup.prototype, "_settingsService");
-function create_fragment$1y(ctx) {
+function create_fragment$1z(ctx) {
   let div;
   return {
     c() {
@@ -9960,8 +9966,8 @@ function create_fragment$1y(ctx) {
     }
   };
 }
-__name(create_fragment$1y, "create_fragment$1y");
-function instance$1o($$self, $$props, $$invalidate) {
+__name(create_fragment$1z, "create_fragment$1z");
+function instance$1p($$self, $$props, $$invalidate) {
   let elem;
   let resolve2;
   const element2 = new Promise((res) => {
@@ -9979,11 +9985,11 @@ function instance$1o($$self, $$props, $$invalidate) {
   __name(div_binding, "div_binding");
   return [elem, element2, div_binding];
 }
-__name(instance$1o, "instance$1o");
+__name(instance$1p, "instance$1p");
 const _Customizer_actions = class _Customizer_actions extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1o, create_fragment$1y, safe_not_equal, { element: 1 });
+    init(this, options, instance$1p, create_fragment$1z, safe_not_equal, { element: 1 });
   }
   get element() {
     return this.$$.ctx[1];
@@ -10001,16 +10007,16 @@ const _CustomizerActionsSetup = class _CustomizerActionsSetup extends Setup {
 };
 __name(_CustomizerActionsSetup, "CustomizerActionsSetup");
 let CustomizerActionsSetup = _CustomizerActionsSetup;
-var __defProp$1L = Object.defineProperty;
+var __defProp$1M = Object.defineProperty;
 var __getOwnPropDesc$L = Object.getOwnPropertyDescriptor;
-var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$L(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1L(target, key2, result);
+  if (kind && result) __defProp$1M(target, key2, result);
   return result;
-}, "__decorateClass$1L");
+}, "__decorateClass$1M");
 let SkribblInitializedSetup = (_p = class extends Setup {
   async runSetup() {
     return new Promise((resolve2) => {
@@ -10019,7 +10025,7 @@ let SkribblInitializedSetup = (_p = class extends Setup {
     });
   }
 }, __name(_p, "SkribblInitializedSetup"), _p);
-SkribblInitializedSetup = __decorateClass$1L([
+SkribblInitializedSetup = __decorateClass$1M([
   earlySetup()
 ], SkribblInitializedSetup);
 const _Toast_container = class _Toast_container extends SvelteComponent {
@@ -10030,15 +10036,15 @@ const _Toast_container = class _Toast_container extends SvelteComponent {
 };
 __name(_Toast_container, "Toast_container");
 let Toast_container = _Toast_container;
-var __defProp$1K = Object.defineProperty;
-var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1L = Object.defineProperty;
+var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1K(target, key2, result);
+  if (result) __defProp$1L(target, key2, result);
   return result;
-}, "__decorateClass$1K");
+}, "__decorateClass$1L");
 const _ToastSetup = class _ToastSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -10055,7 +10061,7 @@ const _ToastSetup = class _ToastSetup extends Setup {
 };
 __name(_ToastSetup, "ToastSetup");
 let ToastSetup = _ToastSetup;
-__decorateClass$1K([
+__decorateClass$1L([
   inject(GamePatchReadySetup)
 ], ToastSetup.prototype, "_gameReadySetup");
 function get_each_context$y(ctx, list, i) {
@@ -10188,7 +10194,7 @@ function create_each_block$y(ctx) {
   };
 }
 __name(create_each_block$y, "create_each_block$y");
-function create_fragment$1x(ctx) {
+function create_fragment$1y(ctx) {
   let div;
   let t;
   let each1_anchor;
@@ -10295,8 +10301,8 @@ function create_fragment$1x(ctx) {
     }
   };
 }
-__name(create_fragment$1x, "create_fragment$1x");
-function instance$1n($$self, $$props, $$invalidate) {
+__name(create_fragment$1y, "create_fragment$1y");
+function instance$1o($$self, $$props, $$invalidate) {
   let { tabs = [] } = $$props;
   let activeTab = tabs[0];
   const keydown_handler2 = /* @__PURE__ */ __name((tab) => $$invalidate(1, activeTab = tab), "keydown_handler");
@@ -10306,24 +10312,24 @@ function instance$1n($$self, $$props, $$invalidate) {
   };
   return [tabs, activeTab, keydown_handler2, click_handler2];
 }
-__name(instance$1n, "instance$1n");
+__name(instance$1o, "instance$1o");
 const _Panel_tabs = class _Panel_tabs extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1n, create_fragment$1x, safe_not_equal, { tabs: 0 });
+    init(this, options, instance$1o, create_fragment$1y, safe_not_equal, { tabs: 0 });
   }
 };
 __name(_Panel_tabs, "Panel_tabs");
 let Panel_tabs = _Panel_tabs;
-var __defProp$1J = Object.defineProperty;
-var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1K = Object.defineProperty;
+var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1J(target, key2, result);
+  if (result) __defProp$1K(target, key2, result);
   return result;
-}, "__decorateClass$1J");
+}, "__decorateClass$1K");
 const _PanelSetup = class _PanelSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -10352,7 +10358,7 @@ const _PanelSetup = class _PanelSetup extends Setup {
 };
 __name(_PanelSetup, "PanelSetup");
 let PanelSetup = _PanelSetup;
-__decorateClass$1J([
+__decorateClass$1K([
   inject(GamePatchReadySetup)
 ], PanelSetup.prototype, "_gameReadySetup");
 const _Toolbar = class _Toolbar extends SvelteComponent {
@@ -10363,15 +10369,15 @@ const _Toolbar = class _Toolbar extends SvelteComponent {
 };
 __name(_Toolbar, "Toolbar");
 let Toolbar = _Toolbar;
-var __defProp$1I = Object.defineProperty;
-var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1J = Object.defineProperty;
+var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1I(target, key2, result);
+  if (result) __defProp$1J(target, key2, result);
   return result;
-}, "__decorateClass$1I");
+}, "__decorateClass$1J");
 const _ToolbarSetup = class _ToolbarSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -10388,18 +10394,18 @@ const _ToolbarSetup = class _ToolbarSetup extends Setup {
 };
 __name(_ToolbarSetup, "ToolbarSetup");
 let ToolbarSetup = _ToolbarSetup;
-__decorateClass$1I([
+__decorateClass$1J([
   inject(GamePatchReadySetup)
 ], ToolbarSetup.prototype, "_gameReadySetup");
-var __defProp$1H = Object.defineProperty;
-var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1I = Object.defineProperty;
+var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1H(target, key2, result);
+  if (result) __defProp$1I(target, key2, result);
   return result;
-}, "__decorateClass$1H");
+}, "__decorateClass$1I");
 function getElements$1(panels, toolbar, controls, toastContainer, chatControls, customizerActions) {
   return {
     panelContainer: requireElement(".panels"),
@@ -10472,37 +10478,37 @@ const _ElementsSetup = class _ElementsSetup extends Setup {
 };
 __name(_ElementsSetup, "ElementsSetup");
 let ElementsSetup = _ElementsSetup;
-__decorateClass$1H([
+__decorateClass$1I([
   inject(PanelSetup)
 ], ElementsSetup.prototype, "_panelSetup");
-__decorateClass$1H([
+__decorateClass$1I([
   inject(ToolbarSetup)
 ], ElementsSetup.prototype, "_toolbarSetup");
-__decorateClass$1H([
+__decorateClass$1I([
   inject(ControlsSetup)
 ], ElementsSetup.prototype, "_controlsSetup");
-__decorateClass$1H([
+__decorateClass$1I([
   inject(ChatControlsSetup)
 ], ElementsSetup.prototype, "_chatControlsSetup");
-__decorateClass$1H([
+__decorateClass$1I([
   inject(ToastSetup)
 ], ElementsSetup.prototype, "_toastSetup");
-__decorateClass$1H([
+__decorateClass$1I([
   inject(SkribblInitializedSetup)
 ], ElementsSetup.prototype, "_gameReadySetup");
-__decorateClass$1H([
+__decorateClass$1I([
   inject(CustomizerActionsSetup)
 ], ElementsSetup.prototype, "_customizerIconsSetup");
-var __defProp$1G = Object.defineProperty;
+var __defProp$1H = Object.defineProperty;
 var __getOwnPropDesc$K = Object.getOwnPropertyDescriptor;
-var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$K(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1G(target, key2, result);
+  if (kind && result) __defProp$1H(target, key2, result);
   return result;
-}, "__decorateClass$1G");
+}, "__decorateClass$1H");
 const _ChatTypedEvent = class _ChatTypedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10533,10 +10539,10 @@ let ChatTypedEventProcessor = (_q = class extends EventProcessor {
     );
   }
 }, __name(_q, "ChatTypedEventProcessor"), _q);
-__decorateClass$1G([
+__decorateClass$1H([
   inject(ElementsSetup)
 ], ChatTypedEventProcessor.prototype, "_elementsSetup", 2);
-ChatTypedEventProcessor = __decorateClass$1G([
+ChatTypedEventProcessor = __decorateClass$1H([
   injectable()
 ], ChatTypedEventProcessor);
 let ChatTypedEventListener = (_r = class extends EventListener {
@@ -10545,26 +10551,26 @@ let ChatTypedEventListener = (_r = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_r, "ChatTypedEventListener"), _r);
-__decorateClass$1G([
+__decorateClass$1H([
   inject(ChatTypedEventProcessor)
 ], ChatTypedEventListener.prototype, "_processor", 2);
-ChatTypedEventListener = __decorateClass$1G([
+ChatTypedEventListener = __decorateClass$1H([
   injectable()
 ], ChatTypedEventListener);
 const chatTypedEventRegistration = {
   listenerType: ChatTypedEventListener,
   processorType: ChatTypedEventProcessor
 };
-var __defProp$1F = Object.defineProperty;
+var __defProp$1G = Object.defineProperty;
 var __getOwnPropDesc$J = Object.getOwnPropertyDescriptor;
-var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$J(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1F(target, key2, result);
+  if (kind && result) __defProp$1G(target, key2, result);
   return result;
-}, "__decorateClass$1F");
+}, "__decorateClass$1G");
 const _ColorChangedEvent = class _ColorChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10589,7 +10595,7 @@ let ColorChangedEventProcessor = (_s = class extends EventProcessor {
     return events;
   }
 }, __name(_s, "ColorChangedEventProcessor"), _s);
-ColorChangedEventProcessor = __decorateClass$1F([
+ColorChangedEventProcessor = __decorateClass$1G([
   injectable()
 ], ColorChangedEventProcessor);
 let ColorChangedEventListener = (_t = class extends EventListener {
@@ -10598,26 +10604,26 @@ let ColorChangedEventListener = (_t = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_t, "ColorChangedEventListener"), _t);
-__decorateClass$1F([
+__decorateClass$1G([
   inject(ColorChangedEventProcessor)
 ], ColorChangedEventListener.prototype, "_processor", 2);
-ColorChangedEventListener = __decorateClass$1F([
+ColorChangedEventListener = __decorateClass$1G([
   injectable()
 ], ColorChangedEventListener);
 const colorChangedEventRegistration = {
   listenerType: ColorChangedEventListener,
   processorType: ColorChangedEventProcessor
 };
-var __defProp$1E = Object.defineProperty;
+var __defProp$1F = Object.defineProperty;
 var __getOwnPropDesc$I = Object.getOwnPropertyDescriptor;
-var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$I(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1E(target, key2, result);
+  if (kind && result) __defProp$1F(target, key2, result);
   return result;
-}, "__decorateClass$1E");
+}, "__decorateClass$1F");
 let SkribblEmitRelaySetup = (_u = class extends Setup {
   // eslint-disable-line @typescript-eslint/no-explicit-any
   async runSetup() {
@@ -10636,19 +10642,19 @@ let SkribblEmitRelaySetup = (_u = class extends Setup {
     });
   }
 }, __name(_u, "SkribblEmitRelaySetup"), _u);
-SkribblEmitRelaySetup = __decorateClass$1E([
+SkribblEmitRelaySetup = __decorateClass$1F([
   earlySetup()
 ], SkribblEmitRelaySetup);
-var __defProp$1D = Object.defineProperty;
+var __defProp$1E = Object.defineProperty;
 var __getOwnPropDesc$H = Object.getOwnPropertyDescriptor;
-var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$H(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1D(target, key2, result);
+  if (kind && result) __defProp$1E(target, key2, result);
   return result;
-}, "__decorateClass$1D");
+}, "__decorateClass$1E");
 let SkribblMessageRelaySetup = (_v = class extends Setup {
   async runSetup() {
     return new Promise((resolve2) => {
@@ -10676,19 +10682,19 @@ let SkribblMessageRelaySetup = (_v = class extends Setup {
     });
   }
 }, __name(_v, "SkribblMessageRelaySetup"), _v);
-SkribblMessageRelaySetup = __decorateClass$1D([
+SkribblMessageRelaySetup = __decorateClass$1E([
   earlySetup()
 ], SkribblMessageRelaySetup);
-var __defProp$1C = Object.defineProperty;
+var __defProp$1D = Object.defineProperty;
 var __getOwnPropDesc$G = Object.getOwnPropertyDescriptor;
-var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$G(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1C(target, key2, result);
+  if (kind && result) __defProp$1D(target, key2, result);
   return result;
-}, "__decorateClass$1C");
+}, "__decorateClass$1D");
 const _DrawEvent = class _DrawEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10737,13 +10743,13 @@ let DrawEventProcessor = (_w = class extends EventProcessor {
     return events;
   }
 }, __name(_w, "DrawEventProcessor"), _w);
-__decorateClass$1C([
+__decorateClass$1D([
   inject(SkribblMessageRelaySetup)
 ], DrawEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-__decorateClass$1C([
+__decorateClass$1D([
   inject(SkribblEmitRelaySetup)
 ], DrawEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-DrawEventProcessor = __decorateClass$1C([
+DrawEventProcessor = __decorateClass$1D([
   injectable()
 ], DrawEventProcessor);
 let DrawEventListener = (_x = class extends EventListener {
@@ -10752,26 +10758,26 @@ let DrawEventListener = (_x = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_x, "DrawEventListener"), _x);
-__decorateClass$1C([
+__decorateClass$1D([
   inject(DrawEventProcessor)
 ], DrawEventListener.prototype, "_processor", 2);
-DrawEventListener = __decorateClass$1C([
+DrawEventListener = __decorateClass$1D([
   injectable()
 ], DrawEventListener);
 const drawEventRegistration = {
   listenerType: DrawEventListener,
   processorType: DrawEventProcessor
 };
-var __defProp$1B = Object.defineProperty;
+var __defProp$1C = Object.defineProperty;
 var __getOwnPropDesc$F = Object.getOwnPropertyDescriptor;
-var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$F(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1B(target, key2, result);
+  if (kind && result) __defProp$1C(target, key2, result);
   return result;
-}, "__decorateClass$1B");
+}, "__decorateClass$1C");
 const _HintsAddedEvent = class _HintsAddedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10803,10 +10809,10 @@ let HintsAddedEventProcessor = (_y = class extends EventProcessor {
     return events;
   }
 }, __name(_y, "HintsAddedEventProcessor"), _y);
-__decorateClass$1B([
+__decorateClass$1C([
   inject(SkribblMessageRelaySetup)
 ], HintsAddedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-HintsAddedEventProcessor = __decorateClass$1B([
+HintsAddedEventProcessor = __decorateClass$1C([
   injectable()
 ], HintsAddedEventProcessor);
 let HintsAddedEventListener = (_z = class extends EventListener {
@@ -10815,26 +10821,26 @@ let HintsAddedEventListener = (_z = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_z, "HintsAddedEventListener"), _z);
-__decorateClass$1B([
+__decorateClass$1C([
   inject(HintsAddedEventProcessor)
 ], HintsAddedEventListener.prototype, "_processor", 2);
-HintsAddedEventListener = __decorateClass$1B([
+HintsAddedEventListener = __decorateClass$1C([
   injectable()
 ], HintsAddedEventListener);
 const hintsAddedEventRegistration = {
   listenerType: HintsAddedEventListener,
   processorType: HintsAddedEventProcessor
 };
-var __defProp$1A = Object.defineProperty;
+var __defProp$1B = Object.defineProperty;
 var __getOwnPropDesc$E = Object.getOwnPropertyDescriptor;
-var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$E(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1A(target, key2, result);
+  if (kind && result) __defProp$1B(target, key2, result);
   return result;
-}, "__decorateClass$1A");
+}, "__decorateClass$1B");
 const _ImageResetEvent = class _ImageResetEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10873,13 +10879,13 @@ let ImageResetEventProcessor = (_A = class extends EventProcessor {
     return events;
   }
 }, __name(_A, "ImageResetEventProcessor"), _A);
-__decorateClass$1A([
+__decorateClass$1B([
   inject(SkribblMessageRelaySetup)
 ], ImageResetEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-__decorateClass$1A([
+__decorateClass$1B([
   inject(SkribblEmitRelaySetup)
 ], ImageResetEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-ImageResetEventProcessor = __decorateClass$1A([
+ImageResetEventProcessor = __decorateClass$1B([
   injectable()
 ], ImageResetEventProcessor);
 let ImageResetEventListener = (_B = class extends EventListener {
@@ -10888,10 +10894,10 @@ let ImageResetEventListener = (_B = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_B, "ImageResetEventListener"), _B);
-__decorateClass$1A([
+__decorateClass$1B([
   inject(ImageResetEventProcessor)
 ], ImageResetEventListener.prototype, "_processor", 2);
-ImageResetEventListener = __decorateClass$1A([
+ImageResetEventListener = __decorateClass$1B([
   injectable()
 ], ImageResetEventListener);
 const imageResetEventRegistration = {
@@ -10922,16 +10928,16 @@ const parseSkribblLobbyInteractedEvent = /* @__PURE__ */ __name((data) => {
       };
   }
 }, "parseSkribblLobbyInteractedEvent");
-var __defProp$1z = Object.defineProperty;
+var __defProp$1A = Object.defineProperty;
 var __getOwnPropDesc$D = Object.getOwnPropertyDescriptor;
-var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$D(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1z(target, key2, result);
+  if (kind && result) __defProp$1A(target, key2, result);
   return result;
-}, "__decorateClass$1z");
+}, "__decorateClass$1A");
 const _LobbyInteractedEvent = class _LobbyInteractedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -10956,10 +10962,10 @@ let LobbyInteractedEventProcessor = (_C = class extends EventProcessor {
     );
   }
 }, __name(_C, "LobbyInteractedEventProcessor"), _C);
-__decorateClass$1z([
+__decorateClass$1A([
   inject(SkribblMessageRelaySetup)
 ], LobbyInteractedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyInteractedEventProcessor = __decorateClass$1z([
+LobbyInteractedEventProcessor = __decorateClass$1A([
   injectable()
 ], LobbyInteractedEventProcessor);
 let LobbyInteractedEventListener = (_D = class extends EventListener {
@@ -10968,10 +10974,10 @@ let LobbyInteractedEventListener = (_D = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_D, "LobbyInteractedEventListener"), _D);
-__decorateClass$1z([
+__decorateClass$1A([
   inject(LobbyInteractedEventProcessor)
 ], LobbyInteractedEventListener.prototype, "_processor", 2);
-LobbyInteractedEventListener = __decorateClass$1z([
+LobbyInteractedEventListener = __decorateClass$1A([
   injectable()
 ], LobbyInteractedEventListener);
 const lobbyInteractedEventRegistration = {
@@ -10991,16 +10997,16 @@ const _GameSettingsSetup = class _GameSettingsSetup extends Setup {
 };
 __name(_GameSettingsSetup, "GameSettingsSetup");
 let GameSettingsSetup = _GameSettingsSetup;
-var __defProp$1y = Object.defineProperty;
+var __defProp$1z = Object.defineProperty;
 var __getOwnPropDesc$C = Object.getOwnPropertyDescriptor;
-var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$C(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1y(target, key2, result);
+  if (kind && result) __defProp$1z(target, key2, result);
   return result;
-}, "__decorateClass$1y");
+}, "__decorateClass$1z");
 const _LobbyJoinFailedEvent = class _LobbyJoinFailedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11024,13 +11030,13 @@ let LobbyJoinFailedEventProcessor = (_E = class extends EventProcessor {
     return events;
   }
 }, __name(_E, "LobbyJoinFailedEventProcessor"), _E);
-__decorateClass$1y([
+__decorateClass$1z([
   inject(GameSettingsSetup)
 ], LobbyJoinFailedEventProcessor.prototype, "_gameSettingsSetup", 2);
-__decorateClass$1y([
+__decorateClass$1z([
   inject(SkribblMessageRelaySetup)
 ], LobbyJoinFailedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyJoinFailedEventProcessor = __decorateClass$1y([
+LobbyJoinFailedEventProcessor = __decorateClass$1z([
   injectable()
 ], LobbyJoinFailedEventProcessor);
 let LobbyJoinFailedListener = (_F = class extends EventListener {
@@ -11039,26 +11045,26 @@ let LobbyJoinFailedListener = (_F = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_F, "LobbyJoinFailedListener"), _F);
-__decorateClass$1y([
+__decorateClass$1z([
   inject(LobbyJoinFailedEventProcessor)
 ], LobbyJoinFailedListener.prototype, "_processor", 2);
-LobbyJoinFailedListener = __decorateClass$1y([
+LobbyJoinFailedListener = __decorateClass$1z([
   injectable()
 ], LobbyJoinFailedListener);
 const lobbyJoinFailedEventRegistration = {
   listenerType: LobbyJoinFailedListener,
   processorType: LobbyJoinFailedEventProcessor
 };
-var __defProp$1x = Object.defineProperty;
+var __defProp$1y = Object.defineProperty;
 var __getOwnPropDesc$B = Object.getOwnPropertyDescriptor;
-var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$B(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1x(target, key2, result);
+  if (kind && result) __defProp$1y(target, key2, result);
   return result;
-}, "__decorateClass$1x");
+}, "__decorateClass$1y");
 const _LobbyPlayerChangedEvent = class _LobbyPlayerChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11097,10 +11103,10 @@ let LobbyPlayerChangedEventProcessor = (_G = class extends EventProcessor {
     return events;
   }
 }, __name(_G, "LobbyPlayerChangedEventProcessor"), _G);
-__decorateClass$1x([
+__decorateClass$1y([
   inject(SkribblMessageRelaySetup)
 ], LobbyPlayerChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyPlayerChangedEventProcessor = __decorateClass$1x([
+LobbyPlayerChangedEventProcessor = __decorateClass$1y([
   injectable()
 ], LobbyPlayerChangedEventProcessor);
 let LobbyPlayerChangedEventListener = (_H = class extends EventListener {
@@ -11109,10 +11115,10 @@ let LobbyPlayerChangedEventListener = (_H = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_H, "LobbyPlayerChangedEventListener"), _H);
-__decorateClass$1x([
+__decorateClass$1y([
   inject(LobbyPlayerChangedEventProcessor)
 ], LobbyPlayerChangedEventListener.prototype, "_processor", 2);
-LobbyPlayerChangedEventListener = __decorateClass$1x([
+LobbyPlayerChangedEventListener = __decorateClass$1y([
   injectable()
 ], LobbyPlayerChangedEventListener);
 const lobbyPlayerChangedEventRegistration = {
@@ -11180,16 +11186,16 @@ const parseLobbyStateUpdate = /* @__PURE__ */ __name((data) => {
     }
   }
 }, "parseLobbyStateUpdate");
-var __defProp$1w = Object.defineProperty;
+var __defProp$1x = Object.defineProperty;
 var __getOwnPropDesc$A = Object.getOwnPropertyDescriptor;
-var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$A(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1w(target, key2, result);
+  if (kind && result) __defProp$1x(target, key2, result);
   return result;
-}, "__decorateClass$1w");
+}, "__decorateClass$1x");
 const _LobbyStateChangedEvent = class _LobbyStateChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11235,13 +11241,13 @@ let LobbyStateChangedEventProcessor = (_I = class extends EventProcessor {
     return events;
   }
 }, __name(_I, "LobbyStateChangedEventProcessor"), _I);
-__decorateClass$1w([
+__decorateClass$1x([
   inject(GameSettingsSetup)
 ], LobbyStateChangedEventProcessor.prototype, "_gameSettingsSetup", 2);
-__decorateClass$1w([
+__decorateClass$1x([
   inject(SkribblMessageRelaySetup)
 ], LobbyStateChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyStateChangedEventProcessor = __decorateClass$1w([
+LobbyStateChangedEventProcessor = __decorateClass$1x([
   injectable()
 ], LobbyStateChangedEventProcessor);
 let LobbyStateChangedEventListener = (_J = class extends EventListener {
@@ -11250,26 +11256,26 @@ let LobbyStateChangedEventListener = (_J = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_J, "LobbyStateChangedEventListener"), _J);
-__decorateClass$1w([
+__decorateClass$1x([
   inject(LobbyStateChangedEventProcessor)
 ], LobbyStateChangedEventListener.prototype, "_processor", 2);
-LobbyStateChangedEventListener = __decorateClass$1w([
+LobbyStateChangedEventListener = __decorateClass$1x([
   injectable()
 ], LobbyStateChangedEventListener);
 const lobbyStateChangedEventRegistration = {
   listenerType: LobbyStateChangedEventListener,
   processorType: LobbyStateChangedEventProcessor
 };
-var __defProp$1v = Object.defineProperty;
+var __defProp$1w = Object.defineProperty;
 var __getOwnPropDesc$z = Object.getOwnPropertyDescriptor;
-var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$z(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1v(target, key2, result);
+  if (kind && result) __defProp$1w(target, key2, result);
   return result;
-}, "__decorateClass$1v");
+}, "__decorateClass$1w");
 const _MessageReceivedEvent = class _MessageReceivedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11293,10 +11299,10 @@ let MessageReceivedEventProcessor = (_K = class extends EventProcessor {
     );
   }
 }, __name(_K, "MessageReceivedEventProcessor"), _K);
-__decorateClass$1v([
+__decorateClass$1w([
   inject(SkribblMessageRelaySetup)
 ], MessageReceivedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-MessageReceivedEventProcessor = __decorateClass$1v([
+MessageReceivedEventProcessor = __decorateClass$1w([
   injectable()
 ], MessageReceivedEventProcessor);
 let MessageReceivedEventListener = (_L = class extends EventListener {
@@ -11305,26 +11311,26 @@ let MessageReceivedEventListener = (_L = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_L, "MessageReceivedEventListener"), _L);
-__decorateClass$1v([
+__decorateClass$1w([
   inject(MessageReceivedEventProcessor)
 ], MessageReceivedEventListener.prototype, "_processor", 2);
-MessageReceivedEventListener = __decorateClass$1v([
+MessageReceivedEventListener = __decorateClass$1w([
   injectable()
 ], MessageReceivedEventListener);
 const messageReceivedEventRegistration = {
   listenerType: MessageReceivedEventListener,
   processorType: MessageReceivedEventProcessor
 };
-var __defProp$1u = Object.defineProperty;
+var __defProp$1v = Object.defineProperty;
 var __getOwnPropDesc$y = Object.getOwnPropertyDescriptor;
-var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$y(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1u(target, key2, result);
+  if (kind && result) __defProp$1v(target, key2, result);
   return result;
-}, "__decorateClass$1u");
+}, "__decorateClass$1v");
 const _MessageSentEvent = class _MessageSentEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11347,10 +11353,10 @@ let MessageSentEventProcessor = (_M = class extends EventProcessor {
     );
   }
 }, __name(_M, "MessageSentEventProcessor"), _M);
-__decorateClass$1u([
+__decorateClass$1v([
   inject(SkribblEmitRelaySetup)
 ], MessageSentEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-MessageSentEventProcessor = __decorateClass$1u([
+MessageSentEventProcessor = __decorateClass$1v([
   injectable()
 ], MessageSentEventProcessor);
 let MessageSentEventListener = (_N = class extends EventListener {
@@ -11359,26 +11365,26 @@ let MessageSentEventListener = (_N = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_N, "MessageSentEventListener"), _N);
-__decorateClass$1u([
+__decorateClass$1v([
   inject(MessageSentEventProcessor)
 ], MessageSentEventListener.prototype, "_processor", 2);
-MessageSentEventListener = __decorateClass$1u([
+MessageSentEventListener = __decorateClass$1v([
   injectable()
 ], MessageSentEventListener);
 const messageSentEventRegistration = {
   listenerType: MessageSentEventListener,
   processorType: MessageSentEventProcessor
 };
-var __defProp$1t = Object.defineProperty;
+var __defProp$1u = Object.defineProperty;
 var __getOwnPropDesc$x = Object.getOwnPropertyDescriptor;
-var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$x(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1t(target, key2, result);
+  if (kind && result) __defProp$1u(target, key2, result);
   return result;
-}, "__decorateClass$1t");
+}, "__decorateClass$1u");
 const _PlayerPopupVisibilityChangedEvent = class _PlayerPopupVisibilityChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11408,10 +11414,10 @@ let PlayerPopupVisibilityChangedEventProcessor = (_O = class extends EventProces
     );
   }
 }, __name(_O, "PlayerPopupVisibilityChangedEventProcessor"), _O);
-__decorateClass$1t([
+__decorateClass$1u([
   inject(ElementsSetup)
 ], PlayerPopupVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1t([
+PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1u([
   injectable()
 ], PlayerPopupVisibilityChangedEventProcessor);
 let PlayerPopupVisibilityChangedEventListener = (_P = class extends EventListener {
@@ -11420,26 +11426,26 @@ let PlayerPopupVisibilityChangedEventListener = (_P = class extends EventListene
     __publicField(this, "_processor");
   }
 }, __name(_P, "PlayerPopupVisibilityChangedEventListener"), _P);
-__decorateClass$1t([
+__decorateClass$1u([
   inject(PlayerPopupVisibilityChangedEventProcessor)
 ], PlayerPopupVisibilityChangedEventListener.prototype, "_processor", 2);
-PlayerPopupVisibilityChangedEventListener = __decorateClass$1t([
+PlayerPopupVisibilityChangedEventListener = __decorateClass$1u([
   injectable()
 ], PlayerPopupVisibilityChangedEventListener);
 const playerPopupVisibilityChangedEventRegistration = {
   listenerType: PlayerPopupVisibilityChangedEventListener,
   processorType: PlayerPopupVisibilityChangedEventProcessor
 };
-var __defProp$1s = Object.defineProperty;
+var __defProp$1t = Object.defineProperty;
 var __getOwnPropDesc$w = Object.getOwnPropertyDescriptor;
-var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$w(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1s(target, key2, result);
+  if (kind && result) __defProp$1t(target, key2, result);
   return result;
-}, "__decorateClass$1s");
+}, "__decorateClass$1t");
 const _RoundStartedEvent = class _RoundStartedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11467,10 +11473,10 @@ let RoundStartedEventProcessor = (_Q = class extends EventProcessor {
     return events;
   }
 }, __name(_Q, "RoundStartedEventProcessor"), _Q);
-__decorateClass$1s([
+__decorateClass$1t([
   inject(SkribblMessageRelaySetup)
 ], RoundStartedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-RoundStartedEventProcessor = __decorateClass$1s([
+RoundStartedEventProcessor = __decorateClass$1t([
   injectable()
 ], RoundStartedEventProcessor);
 let RoundStartedEventListener = (_R = class extends EventListener {
@@ -11479,26 +11485,26 @@ let RoundStartedEventListener = (_R = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_R, "RoundStartedEventListener"), _R);
-__decorateClass$1s([
+__decorateClass$1t([
   inject(RoundStartedEventProcessor)
 ], RoundStartedEventListener.prototype, "_processor", 2);
-RoundStartedEventListener = __decorateClass$1s([
+RoundStartedEventListener = __decorateClass$1t([
   injectable()
 ], RoundStartedEventListener);
 const roundStartedEventRegistration = {
   listenerType: RoundStartedEventListener,
   processorType: RoundStartedEventProcessor
 };
-var __defProp$1r = Object.defineProperty;
+var __defProp$1s = Object.defineProperty;
 var __getOwnPropDesc$v = Object.getOwnPropertyDescriptor;
-var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$v(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1r(target, key2, result);
+  if (kind && result) __defProp$1s(target, key2, result);
   return result;
-}, "__decorateClass$1r");
+}, "__decorateClass$1s");
 const _ScoreboardVisibilityChangedEvent = class _ScoreboardVisibilityChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11527,10 +11533,10 @@ let ScoreboardVisibilityChangedEventProcessor = (_S = class extends EventProcess
     );
   }
 }, __name(_S, "ScoreboardVisibilityChangedEventProcessor"), _S);
-__decorateClass$1r([
+__decorateClass$1s([
   inject(ElementsSetup)
 ], ScoreboardVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-ScoreboardVisibilityChangedEventProcessor = __decorateClass$1r([
+ScoreboardVisibilityChangedEventProcessor = __decorateClass$1s([
   injectable()
 ], ScoreboardVisibilityChangedEventProcessor);
 let ScoreboardVisibilityChangedEventListener = (_T = class extends EventListener {
@@ -11539,26 +11545,26 @@ let ScoreboardVisibilityChangedEventListener = (_T = class extends EventListener
     __publicField(this, "_processor");
   }
 }, __name(_T, "ScoreboardVisibilityChangedEventListener"), _T);
-__decorateClass$1r([
+__decorateClass$1s([
   inject(ScoreboardVisibilityChangedEventProcessor)
 ], ScoreboardVisibilityChangedEventListener.prototype, "_processor", 2);
-ScoreboardVisibilityChangedEventListener = __decorateClass$1r([
+ScoreboardVisibilityChangedEventListener = __decorateClass$1s([
   injectable()
 ], ScoreboardVisibilityChangedEventListener);
 const scoreboardVisibilityChangedEventRegistration = {
   listenerType: ScoreboardVisibilityChangedEventListener,
   processorType: ScoreboardVisibilityChangedEventProcessor
 };
-var __defProp$1q = Object.defineProperty;
+var __defProp$1r = Object.defineProperty;
 var __getOwnPropDesc$u = Object.getOwnPropertyDescriptor;
-var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$u(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1q(target, key2, result);
+  if (kind && result) __defProp$1r(target, key2, result);
   return result;
-}, "__decorateClass$1q");
+}, "__decorateClass$1r");
 const _SizeChangedEvent = class _SizeChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11582,7 +11588,7 @@ let SizeChangedEventProcessor = (_U = class extends EventProcessor {
     return events;
   }
 }, __name(_U, "SizeChangedEventProcessor"), _U);
-SizeChangedEventProcessor = __decorateClass$1q([
+SizeChangedEventProcessor = __decorateClass$1r([
   injectable()
 ], SizeChangedEventProcessor);
 let SizeChangedEventListener = (_V = class extends EventListener {
@@ -11591,26 +11597,26 @@ let SizeChangedEventListener = (_V = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_V, "SizeChangedEventListener"), _V);
-__decorateClass$1q([
+__decorateClass$1r([
   inject(SizeChangedEventProcessor)
 ], SizeChangedEventListener.prototype, "_processor", 2);
-SizeChangedEventListener = __decorateClass$1q([
+SizeChangedEventListener = __decorateClass$1r([
   injectable()
 ], SizeChangedEventListener);
 const sizeChangedEventRegistration = {
   listenerType: SizeChangedEventListener,
   processorType: SizeChangedEventProcessor
 };
-var __defProp$1p = Object.defineProperty;
+var __defProp$1q = Object.defineProperty;
 var __getOwnPropDesc$t = Object.getOwnPropertyDescriptor;
-var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$t(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1p(target, key2, result);
+  if (kind && result) __defProp$1q(target, key2, result);
   return result;
-}, "__decorateClass$1p");
+}, "__decorateClass$1q");
 const _TextOverlayVisibilityChangedEvent = class _TextOverlayVisibilityChangedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11640,10 +11646,10 @@ let TextOverlayVisibilityChangedEventProcessor = (_W = class extends EventProces
     );
   }
 }, __name(_W, "TextOverlayVisibilityChangedEventProcessor"), _W);
-__decorateClass$1p([
+__decorateClass$1q([
   inject(ElementsSetup)
 ], TextOverlayVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-TextOverlayVisibilityChangedEventProcessor = __decorateClass$1p([
+TextOverlayVisibilityChangedEventProcessor = __decorateClass$1q([
   injectable()
 ], TextOverlayVisibilityChangedEventProcessor);
 let TextOverlayVisibilityChangedEventListener = (_X = class extends EventListener {
@@ -11652,26 +11658,26 @@ let TextOverlayVisibilityChangedEventListener = (_X = class extends EventListene
     __publicField(this, "_processor");
   }
 }, __name(_X, "TextOverlayVisibilityChangedEventListener"), _X);
-__decorateClass$1p([
+__decorateClass$1q([
   inject(TextOverlayVisibilityChangedEventProcessor)
 ], TextOverlayVisibilityChangedEventListener.prototype, "_processor", 2);
-TextOverlayVisibilityChangedEventListener = __decorateClass$1p([
+TextOverlayVisibilityChangedEventListener = __decorateClass$1q([
   injectable()
 ], TextOverlayVisibilityChangedEventListener);
 const textOverlayVisibilityChangedEventRegistration = {
   listenerType: TextOverlayVisibilityChangedEventListener,
   processorType: TextOverlayVisibilityChangedEventProcessor
 };
-var __defProp$1o = Object.defineProperty;
+var __defProp$1p = Object.defineProperty;
 var __getOwnPropDesc$s = Object.getOwnPropertyDescriptor;
-var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$s(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1o(target, key2, result);
+  if (kind && result) __defProp$1p(target, key2, result);
   return result;
-}, "__decorateClass$1o");
+}, "__decorateClass$1p");
 var skribblTool = /* @__PURE__ */ ((skribblTool2) => {
   skribblTool2[skribblTool2["brush"] = 0] = "brush";
   skribblTool2[skribblTool2["fill"] = 1] = "fill";
@@ -11703,7 +11709,7 @@ let ToolChangedEventProcessor = (_Y = class extends EventProcessor {
     return events;
   }
 }, __name(_Y, "ToolChangedEventProcessor"), _Y);
-ToolChangedEventProcessor = __decorateClass$1o([
+ToolChangedEventProcessor = __decorateClass$1p([
   injectable()
 ], ToolChangedEventProcessor);
 let ToolChangedEventListener = (_Z = class extends EventListener {
@@ -11712,26 +11718,26 @@ let ToolChangedEventListener = (_Z = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_Z, "ToolChangedEventListener"), _Z);
-__decorateClass$1o([
+__decorateClass$1p([
   inject(ToolChangedEventProcessor)
 ], ToolChangedEventListener.prototype, "_processor", 2);
-ToolChangedEventListener = __decorateClass$1o([
+ToolChangedEventListener = __decorateClass$1p([
   injectable()
 ], ToolChangedEventListener);
 const toolChangedEventRegistration = {
   listenerType: ToolChangedEventListener,
   processorType: ToolChangedEventProcessor
 };
-var __defProp$1n = Object.defineProperty;
+var __defProp$1o = Object.defineProperty;
 var __getOwnPropDesc$r = Object.getOwnPropertyDescriptor;
-var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$r(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1n(target, key2, result);
+  if (kind && result) __defProp$1o(target, key2, result);
   return result;
-}, "__decorateClass$1n");
+}, "__decorateClass$1o");
 const _WordGuessedEvent = class _WordGuessedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11762,10 +11768,10 @@ let WordGuessedEventProcessor = (__ = class extends EventProcessor {
     return events;
   }
 }, __name(__, "WordGuessedEventProcessor"), __);
-__decorateClass$1n([
+__decorateClass$1o([
   inject(SkribblMessageRelaySetup)
 ], WordGuessedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-WordGuessedEventProcessor = __decorateClass$1n([
+WordGuessedEventProcessor = __decorateClass$1o([
   injectable()
 ], WordGuessedEventProcessor);
 let WordGuessedEventListener = (_$ = class extends EventListener {
@@ -11774,10 +11780,10 @@ let WordGuessedEventListener = (_$ = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_$, "WordGuessedEventListener"), _$);
-__decorateClass$1n([
+__decorateClass$1o([
   inject(WordGuessedEventProcessor)
 ], WordGuessedEventListener.prototype, "_processor", 2);
-WordGuessedEventListener = __decorateClass$1n([
+WordGuessedEventListener = __decorateClass$1o([
   injectable()
 ], WordGuessedEventListener);
 const wordGuessedEventRegistration = {
@@ -11803,15 +11809,15 @@ const _Canvas_rate_icons = class _Canvas_rate_icons extends SvelteComponent {
 };
 __name(_Canvas_rate_icons, "Canvas_rate_icons");
 let Canvas_rate_icons = _Canvas_rate_icons;
-var __defProp$1m = Object.defineProperty;
-var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1n = Object.defineProperty;
+var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1m(target, key2, result);
+  if (result) __defProp$1n(target, key2, result);
   return result;
-}, "__decorateClass$1m");
+}, "__decorateClass$1n");
 const _CanvasRateIconsFeature = class _CanvasRateIconsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -11841,19 +11847,19 @@ const _CanvasRateIconsFeature = class _CanvasRateIconsFeature extends TypoFeatur
 };
 __name(_CanvasRateIconsFeature, "CanvasRateIconsFeature");
 let CanvasRateIconsFeature = _CanvasRateIconsFeature;
-__decorateClass$1m([
+__decorateClass$1n([
   inject(ElementsSetup)
 ], CanvasRateIconsFeature.prototype, "_elementsSetup");
-var __defProp$1l = Object.defineProperty;
+var __defProp$1m = Object.defineProperty;
 var __getOwnPropDesc$q = Object.getOwnPropertyDescriptor;
-var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$q(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1l(target, key2, result);
+  if (kind && result) __defProp$1m(target, key2, result);
   return result;
-}, "__decorateClass$1l");
+}, "__decorateClass$1m");
 const _LobbyLeftEvent = class _LobbyLeftEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11876,7 +11882,7 @@ let LobbyLeftEventProcessor = (_aa = class extends EventProcessor {
     return events;
   }
 }, __name(_aa, "LobbyLeftEventProcessor"), _aa);
-LobbyLeftEventProcessor = __decorateClass$1l([
+LobbyLeftEventProcessor = __decorateClass$1m([
   injectable()
 ], LobbyLeftEventProcessor);
 let LobbyLeftEventListener = (_ba = class extends EventListener {
@@ -11885,10 +11891,10 @@ let LobbyLeftEventListener = (_ba = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_ba, "LobbyLeftEventListener"), _ba);
-__decorateClass$1l([
+__decorateClass$1m([
   inject(LobbyLeftEventProcessor)
 ], LobbyLeftEventListener.prototype, "_processor", 2);
-LobbyLeftEventListener = __decorateClass$1l([
+LobbyLeftEventListener = __decorateClass$1m([
   injectable()
 ], LobbyLeftEventListener);
 const lobbyLeftEventRegistration = {
@@ -11912,16 +11918,16 @@ const parseSkribblLobbyDataEvent = /* @__PURE__ */ __name((data, languages) => {
     players: data.users
   };
 }, "parseSkribblLobbyDataEvent");
-var __defProp$1k = Object.defineProperty;
+var __defProp$1l = Object.defineProperty;
 var __getOwnPropDesc$p = Object.getOwnPropertyDescriptor;
-var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$p(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1k(target, key2, result);
+  if (kind && result) __defProp$1l(target, key2, result);
   return result;
-}, "__decorateClass$1k");
+}, "__decorateClass$1l");
 const _LobbyJoinedEvent = class _LobbyJoinedEvent extends ApplicationEvent {
   constructor(data) {
     super();
@@ -11960,13 +11966,13 @@ let LobbyJoinedEventProcessor = (_ca = class extends EventProcessor {
     return events;
   }
 }, __name(_ca, "LobbyJoinedEventProcessor"), _ca);
-__decorateClass$1k([
+__decorateClass$1l([
   inject(GameSettingsSetup)
 ], LobbyJoinedEventProcessor.prototype, "_gameSettingsSetup", 2);
-__decorateClass$1k([
+__decorateClass$1l([
   inject(SkribblMessageRelaySetup)
 ], LobbyJoinedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-LobbyJoinedEventProcessor = __decorateClass$1k([
+LobbyJoinedEventProcessor = __decorateClass$1l([
   injectable()
 ], LobbyJoinedEventProcessor);
 let LobbyJoinedEventListener = (_da = class extends EventListener {
@@ -11975,26 +11981,26 @@ let LobbyJoinedEventListener = (_da = class extends EventListener {
     __publicField(this, "_processor");
   }
 }, __name(_da, "LobbyJoinedEventListener"), _da);
-__decorateClass$1k([
+__decorateClass$1l([
   inject(LobbyJoinedEventProcessor)
 ], LobbyJoinedEventListener.prototype, "_processor", 2);
-LobbyJoinedEventListener = __decorateClass$1k([
+LobbyJoinedEventListener = __decorateClass$1l([
   injectable()
 ], LobbyJoinedEventListener);
 const lobbyJoinedEventRegistration = {
   listenerType: LobbyJoinedEventListener,
   processorType: LobbyJoinedEventProcessor
 };
-var __defProp$1j = Object.defineProperty;
+var __defProp$1k = Object.defineProperty;
 var __getOwnPropDesc$o = Object.getOwnPropertyDescriptor;
-var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$o(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1j(target, key2, result);
+  if (kind && result) __defProp$1k(target, key2, result);
   return result;
-}, "__decorateClass$1j");
+}, "__decorateClass$1k");
 var __decorateParam$k = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$k");
 let LobbyService = (_ea = class {
   constructor(loggerFactory2, lobbyJoined, lobbyLeft, lobbyPlayerChanged, lobbyStateChanged, roundStarted, wordGuessed, elementsSetup, lobbyJoinFailedListener) {
@@ -12109,7 +12115,7 @@ let LobbyService = (_ea = class {
     );
   }
 }, __name(_ea, "LobbyService"), _ea);
-LobbyService = __decorateClass$1j([
+LobbyService = __decorateClass$1k([
   injectable(),
   __decorateParam$k(0, inject(loggerFactory)),
   __decorateParam$k(1, inject(LobbyJoinedEventListener)),
@@ -12121,7 +12127,7 @@ LobbyService = __decorateClass$1j([
   __decorateParam$k(7, inject(ElementsSetup)),
   __decorateParam$k(8, inject(LobbyJoinFailedListener))
 ], LobbyService);
-function create_fragment$1w(ctx) {
+function create_fragment$1x(ctx) {
   let div1;
   let div0;
   let t0;
@@ -12165,24 +12171,24 @@ function create_fragment$1w(ctx) {
     }
   };
 }
-__name(create_fragment$1w, "create_fragment$1w");
-function instance$1m($$self, $$props, $$invalidate) {
+__name(create_fragment$1x, "create_fragment$1x");
+function instance$1n($$self, $$props, $$invalidate) {
   let { content = "Loading..." } = $$props;
   $$self.$$set = ($$props2) => {
     if ("content" in $$props2) $$invalidate(0, content = $$props2.content);
   };
   return [content];
 }
-__name(instance$1m, "instance$1m");
+__name(instance$1n, "instance$1n");
 const _Bounceload = class _Bounceload extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1m, create_fragment$1w, safe_not_equal, { content: 0 });
+    init(this, options, instance$1n, create_fragment$1x, safe_not_equal, { content: 0 });
   }
 };
 __name(_Bounceload, "Bounceload");
 let Bounceload = _Bounceload;
-function create_fragment$1v(ctx) {
+function create_fragment$1w(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -12373,8 +12379,8 @@ function create_fragment$1v(ctx) {
     }
   };
 }
-__name(create_fragment$1v, "create_fragment$1v");
-function instance$1l($$self, $$props, $$invalidate) {
+__name(create_fragment$1w, "create_fragment$1w");
+function instance$1m($$self, $$props, $$invalidate) {
   let { disabled = false } = $$props;
   let { icon } = $$props;
   let { name } = $$props;
@@ -12421,11 +12427,11 @@ function instance$1l($$self, $$props, $$invalidate) {
     keypress_handler
   ];
 }
-__name(instance$1l, "instance$1l");
+__name(instance$1m, "instance$1m");
 const _Icon_button = class _Icon_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1l, create_fragment$1v, safe_not_equal, {
+    init(this, options, instance$1m, create_fragment$1w, safe_not_equal, {
       disabled: 0,
       icon: 1,
       name: 2,
@@ -12615,7 +12621,7 @@ function create_else_block$l(ctx) {
   };
 }
 __name(create_else_block$l, "create_else_block$l");
-function create_if_block$D(ctx) {
+function create_if_block$E(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({ props: { content: (
@@ -12651,7 +12657,7 @@ function create_if_block$D(ctx) {
     }
   };
 }
-__name(create_if_block$D, "create_if_block$D");
+__name(create_if_block$E, "create_if_block$E");
 function create_if_block_4$a(ctx) {
   let span;
   let mounted;
@@ -12919,7 +12925,7 @@ function create_if_block_1$k(ctx) {
   };
 }
 __name(create_if_block_1$k, "create_if_block_1$k");
-function create_fragment$1u(ctx) {
+function create_fragment$1v(ctx) {
   let div;
   let t;
   let current_block_type_index;
@@ -12929,7 +12935,7 @@ function create_fragment$1u(ctx) {
     /*title*/
     ctx[1] !== void 0 && create_if_block_5$6(ctx)
   );
-  const if_block_creators = [create_if_block$D, create_else_block$l];
+  const if_block_creators = [create_if_block$E, create_else_block$l];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -13041,9 +13047,9 @@ function create_fragment$1u(ctx) {
     }
   };
 }
-__name(create_fragment$1u, "create_fragment$1u");
+__name(create_fragment$1v, "create_fragment$1v");
 const keydown_handler = /* @__PURE__ */ __name((e) => e.stopPropagation(), "keydown_handler");
-function instance$1k($$self, $$props, $$invalidate) {
+function instance$1l($$self, $$props, $$invalidate) {
   let { content } = $$props;
   let { title } = $$props;
   let { closeHandler } = $$props;
@@ -13102,11 +13108,11 @@ function instance$1k($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$1k, "instance$1k");
+__name(instance$1l, "instance$1l");
 const _Toast = class _Toast extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1k, create_fragment$1u, safe_not_equal, {
+    init(this, options, instance$1l, create_fragment$1v, safe_not_equal, {
       content: 0,
       title: 1,
       closeHandler: 11,
@@ -13125,16 +13131,16 @@ const _Toast = class _Toast extends SvelteComponent {
 };
 __name(_Toast, "Toast");
 let Toast = _Toast;
-var __defProp$1i = Object.defineProperty;
+var __defProp$1j = Object.defineProperty;
 var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
-var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1i(target, key2, result);
+  if (kind && result) __defProp$1j(target, key2, result);
   return result;
-}, "__decorateClass$1i");
+}, "__decorateClass$1j");
 var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$j");
 let ToastService = (_fa = class {
   constructor(loggerFactory2, _elementsSetup) {
@@ -13293,21 +13299,21 @@ let ToastService = (_fa = class {
     };
   }
 }, __name(_fa, "ToastService"), _fa);
-ToastService = __decorateClass$1i([
+ToastService = __decorateClass$1j([
   injectable(),
   __decorateParam$j(0, inject(loggerFactory)),
   __decorateParam$j(1, inject(ElementsSetup))
 ], ToastService);
-var __defProp$1h = Object.defineProperty;
+var __defProp$1i = Object.defineProperty;
 var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
-var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1h(target, key2, result);
+  if (kind && result) __defProp$1i(target, key2, result);
   return result;
-}, "__decorateClass$1h");
+}, "__decorateClass$1i");
 let PrioritizedCanvasEventsSetup = (_ga = class extends Setup {
   constructor() {
     super(...arguments);
@@ -13317,10 +13323,10 @@ let PrioritizedCanvasEventsSetup = (_ga = class extends Setup {
     return this._interceptor.canvasPrioritizedEventsReady;
   }
 }, __name(_ga, "PrioritizedCanvasEventsSetup"), _ga);
-__decorateClass$1h([
+__decorateClass$1i([
   inject(Interceptor)
 ], PrioritizedCanvasEventsSetup.prototype, "_interceptor", 2);
-PrioritizedCanvasEventsSetup = __decorateClass$1h([
+PrioritizedCanvasEventsSetup = __decorateClass$1i([
   earlySetup()
 ], PrioritizedCanvasEventsSetup);
 const createStylesheet = /* @__PURE__ */ __name(() => {
@@ -13342,7 +13348,7 @@ const createStylesheet = /* @__PURE__ */ __name(() => {
   };
   return handle;
 }, "createStylesheet");
-function create_fragment$1t(ctx) {
+function create_fragment$1u(ctx) {
   let t0;
   let br0;
   let t1;
@@ -13401,24 +13407,24 @@ function create_fragment$1t(ctx) {
     }
   };
 }
-__name(create_fragment$1t, "create_fragment$1t");
+__name(create_fragment$1u, "create_fragment$1u");
 const _Canvas_zoom_info = class _Canvas_zoom_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$1t, safe_not_equal, {});
+    init(this, options, null, create_fragment$1u, safe_not_equal, {});
   }
 };
 __name(_Canvas_zoom_info, "Canvas_zoom_info");
 let Canvas_zoom_info = _Canvas_zoom_info;
-var __defProp$1g = Object.defineProperty;
-var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1h = Object.defineProperty;
+var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1g(target, key2, result);
+  if (result) __defProp$1h(target, key2, result);
   return result;
-}, "__decorateClass$1g");
+}, "__decorateClass$1h");
 const _CanvasZoomFeature = class _CanvasZoomFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -13576,22 +13582,22 @@ const _CanvasZoomFeature = class _CanvasZoomFeature extends TypoFeature {
 };
 __name(_CanvasZoomFeature, "CanvasZoomFeature");
 let CanvasZoomFeature = _CanvasZoomFeature;
-__decorateClass$1g([
+__decorateClass$1h([
   inject(ToastService)
 ], CanvasZoomFeature.prototype, "_toastService");
-__decorateClass$1g([
+__decorateClass$1h([
   inject(PrioritizedCanvasEventsSetup)
 ], CanvasZoomFeature.prototype, "_prioritizedCanvasEventsSetup");
-__decorateClass$1g([
+__decorateClass$1h([
   inject(LobbyStateChangedEventListener)
 ], CanvasZoomFeature.prototype, "_lobbyStateChangedEventListener");
-__decorateClass$1g([
+__decorateClass$1h([
   inject(LobbyLeftEventListener)
 ], CanvasZoomFeature.prototype, "_lobbyLeftEventListener");
-__decorateClass$1g([
+__decorateClass$1h([
   inject(ImageResetEventListener)
 ], CanvasZoomFeature.prototype, "_imageResetEventListener");
-__decorateClass$1g([
+__decorateClass$1h([
   inject(LobbyService)
 ], CanvasZoomFeature.prototype, "_lobbyService");
 const replaceOrAddCssRule = /* @__PURE__ */ __name((styleSheet, cssText, index) => {
@@ -16567,16 +16573,16 @@ const _ThemesApi = class _ThemesApi extends BaseAPI {
 };
 __name(_ThemesApi, "ThemesApi");
 let ThemesApi = _ThemesApi;
-var __defProp$1f = Object.defineProperty;
+var __defProp$1g = Object.defineProperty;
 var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
-var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1f(target, key2, result);
+  if (kind && result) __defProp$1g(target, key2, result);
   return result;
-}, "__decorateClass$1f");
+}, "__decorateClass$1g");
 var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$i");
 let TokenService = (_ha = class {
   constructor(loggerFactory2) {
@@ -16623,20 +16629,20 @@ let TokenService = (_ha = class {
     this._token.next(null);
   }
 }, __name(_ha, "TokenService"), _ha);
-TokenService = __decorateClass$1f([
+TokenService = __decorateClass$1g([
   injectable(),
   __decorateParam$i(0, inject(loggerFactory))
 ], TokenService);
-var __defProp$1e = Object.defineProperty;
+var __defProp$1f = Object.defineProperty;
 var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
-var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1e(target, key2, result);
+  if (kind && result) __defProp$1f(target, key2, result);
   return result;
-}, "__decorateClass$1e");
+}, "__decorateClass$1f");
 var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$h");
 let ApiService = (_ia = class {
   constructor(loggerFactory2, tokenService) {
@@ -16678,21 +16684,21 @@ let ApiService = (_ia = class {
     this._baseUrl = url;
   }
 }, __name(_ia, "ApiService"), _ia);
-ApiService = __decorateClass$1e([
+ApiService = __decorateClass$1f([
   injectable(),
   __decorateParam$h(0, inject(loggerFactory)),
   __decorateParam$h(1, inject(TokenService))
 ], ApiService);
-var __defProp$1d = Object.defineProperty;
+var __defProp$1e = Object.defineProperty;
 var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
-var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1d(target, key2, result);
+  if (kind && result) __defProp$1e(target, key2, result);
   return result;
-}, "__decorateClass$1d");
+}, "__decorateClass$1e");
 var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$g");
 let MemberService = (_ja = class {
   constructor(loggerFactory2, _apiService, _tokenService, _onboardingService) {
@@ -16797,7 +16803,7 @@ let MemberService = (_ja = class {
     return this.loadMember();
   }
 }, __name(_ja, "MemberService"), _ja);
-MemberService = __decorateClass$1d([
+MemberService = __decorateClass$1e([
   injectable(),
   __decorateParam$g(0, inject(loggerFactory)),
   __decorateParam$g(1, inject(ApiService)),
@@ -17012,15 +17018,15 @@ const _SkribblScoreboardRegularPlayer = class _SkribblScoreboardRegularPlayer {
 };
 __name(_SkribblScoreboardRegularPlayer, "SkribblScoreboardRegularPlayer");
 let SkribblScoreboardRegularPlayer = _SkribblScoreboardRegularPlayer;
-var __defProp$1c = Object.defineProperty;
-var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1d = Object.defineProperty;
+var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1c(target, key2, result);
+  if (result) __defProp$1d(target, key2, result);
   return result;
-}, "__decorateClass$1c");
+}, "__decorateClass$1d");
 const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -17041,13 +17047,13 @@ const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
 };
 __name(_LandingPlayerSetup, "LandingPlayerSetup");
 let LandingPlayerSetup = _LandingPlayerSetup;
-__decorateClass$1c([
+__decorateClass$1d([
   inject(ElementsSetup)
 ], LandingPlayerSetup.prototype, "_elementsSetup");
-__decorateClass$1c([
+__decorateClass$1d([
   inject(GlobalSettingsService)
 ], LandingPlayerSetup.prototype, "_globalSettingsService");
-__decorateClass$1c([
+__decorateClass$1d([
   inject(MemberService)
 ], LandingPlayerSetup.prototype, "_memberService");
 const calculateLobbyKey = /* @__PURE__ */ __name((key2) => {
@@ -17056,16 +17062,16 @@ const calculateLobbyKey = /* @__PURE__ */ __name((key2) => {
   const newKey = hashed.join("");
   return newKey;
 }, "calculateLobbyKey");
-var __defProp$1b = Object.defineProperty;
+var __defProp$1c = Object.defineProperty;
 var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
-var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1b(target, key2, result);
+  if (kind && result) __defProp$1c(target, key2, result);
   return result;
-}, "__decorateClass$1b");
+}, "__decorateClass$1c");
 var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$f");
 let PlayersService = (_ka = class {
   constructor(loggerFactory2) {
@@ -17306,47 +17312,47 @@ let PlayersService = (_ka = class {
     return this._players$.asObservable();
   }
 }, __name(_ka, "PlayersService"), _ka);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(ElementsSetup)
 ], PlayersService.prototype, "_elementsSetup", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(LobbyJoinedEventListener)
 ], PlayersService.prototype, "_lobbyJoinedEvent", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(LobbyLeftEventListener)
 ], PlayersService.prototype, "_lobbyLeftEvent", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(LobbyStateChangedEventListener)
 ], PlayersService.prototype, "_lobbyStateChangedEvent", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(LobbyPlayerChangedEventListener)
 ], PlayersService.prototype, "_playerChangedEvent", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(ScoreboardVisibilityChangedEventListener)
 ], PlayersService.prototype, "_scoreboardVisibleEvent", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(TextOverlayVisibilityChangedEventListener)
 ], PlayersService.prototype, "_textOverlayVisibleEvent", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(PlayerPopupVisibilityChangedEventListener)
 ], PlayersService.prototype, "_popupVisibleEvent", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(MemberService)
 ], PlayersService.prototype, "_memberService", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(LobbyService)
 ], PlayersService.prototype, "_lobbyService", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   inject(LandingPlayerSetup)
 ], PlayersService.prototype, "_landingPlayerSetup", 2);
-__decorateClass$1b([
+__decorateClass$1c([
   postConstruct()
 ], PlayersService.prototype, "postConstruct", 1);
-PlayersService = __decorateClass$1b([
+PlayersService = __decorateClass$1c([
   injectable(),
   __decorateParam$f(0, inject(loggerFactory))
 ], PlayersService);
-function create_fragment$1s(ctx) {
+function create_fragment$1t(ctx) {
   let p;
   let span1;
   let b;
@@ -17425,8 +17431,8 @@ function create_fragment$1s(ctx) {
     }
   };
 }
-__name(create_fragment$1s, "create_fragment$1s");
-function instance$1j($$self, $$props, $$invalidate) {
+__name(create_fragment$1t, "create_fragment$1t");
+function instance$1k($$self, $$props, $$invalidate) {
   let { content = "" } = $$props;
   let { title = "" } = $$props;
   let { style = "normal" } = $$props;
@@ -17494,11 +17500,11 @@ function instance$1j($$self, $$props, $$invalidate) {
     p_binding
   ];
 }
-__name(instance$1j, "instance$1j");
+__name(instance$1k, "instance$1k");
 const _Message = class _Message extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1j, create_fragment$1s, safe_not_equal, {
+    init(this, options, instance$1k, create_fragment$1t, safe_not_equal, {
       content: 0,
       title: 1,
       style: 2,
@@ -17511,16 +17517,16 @@ const _Message = class _Message extends SvelteComponent {
 };
 __name(_Message, "Message");
 let Message = _Message;
-var __defProp$1a = Object.defineProperty;
+var __defProp$1b = Object.defineProperty;
 var __getOwnPropDesc$h = Object.getOwnPropertyDescriptor;
-var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$h(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1a(target, key2, result);
+  if (kind && result) __defProp$1b(target, key2, result);
   return result;
-}, "__decorateClass$1a");
+}, "__decorateClass$1b");
 var __decorateParam$e = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$e");
 let ChatService = (_la = class {
   constructor(loggerFactory2) {
@@ -17647,22 +17653,22 @@ let ChatService = (_la = class {
     return message;
   }
 }, __name(_la, "ChatService"), _la);
-__decorateClass$1a([
+__decorateClass$1b([
   inject(ElementsSetup)
 ], ChatService.prototype, "_elementsSetup", 2);
-__decorateClass$1a([
+__decorateClass$1b([
   inject(PlayersService)
 ], ChatService.prototype, "_lobbyPlayersService", 2);
-__decorateClass$1a([
+__decorateClass$1b([
   inject(MessageReceivedEventListener)
 ], ChatService.prototype, "_messageReceivedEventListener", 2);
-__decorateClass$1a([
+__decorateClass$1b([
   inject(SkribblMessageRelaySetup)
 ], ChatService.prototype, "_messageRelaySetup", 2);
-__decorateClass$1a([
+__decorateClass$1b([
   postConstruct()
 ], ChatService.prototype, "postConstruct", 1);
-ChatService = __decorateClass$1a([
+ChatService = __decorateClass$1b([
   injectable(),
   __decorateParam$e(0, inject(loggerFactory))
 ], ChatService);
@@ -17758,7 +17764,7 @@ const wrapOffsetAsStyle = /* @__PURE__ */ __name((atlas, offset, containerSize) 
     background-size: calc(${backgroundSize});
   `;
 }, "wrapOffsetAsStyle");
-function create_if_block$C(ctx) {
+function create_if_block$D(ctx) {
   let div;
   let div_style_value;
   return {
@@ -17791,8 +17797,8 @@ function create_if_block$C(ctx) {
     }
   };
 }
-__name(create_if_block$C, "create_if_block$C");
-function create_fragment$1r(ctx) {
+__name(create_if_block$D, "create_if_block$D");
+function create_fragment$1s(ctx) {
   let div3;
   let div0;
   let div0_style_value;
@@ -17806,7 +17812,7 @@ function create_fragment$1r(ctx) {
   let if_block = (
     /*avatar*/
     ctx[0][3] !== void 0 && /*avatar*/
-    ctx[0][3] >= 0 && create_if_block$C(ctx)
+    ctx[0][3] >= 0 && create_if_block$D(ctx)
   );
   return {
     c() {
@@ -17888,7 +17894,7 @@ function create_fragment$1r(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$C(ctx2);
+          if_block = create_if_block$D(ctx2);
           if_block.c();
           if_block.m(div3, null);
         }
@@ -17917,8 +17923,8 @@ function create_fragment$1r(ctx) {
     }
   };
 }
-__name(create_fragment$1r, "create_fragment$1r");
-function instance$1i($$self, $$props, $$invalidate) {
+__name(create_fragment$1s, "create_fragment$1s");
+function instance$1j($$self, $$props, $$invalidate) {
   let { avatar } = $$props;
   let { size = "80px" } = $$props;
   let resolve2;
@@ -17940,11 +17946,11 @@ function instance$1i($$self, $$props, $$invalidate) {
   };
   return [avatar, size, container, element2, div3_binding];
 }
-__name(instance$1i, "instance$1i");
+__name(instance$1j, "instance$1j");
 const _Skribbl_avatar = class _Skribbl_avatar extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1i, create_fragment$1r, safe_not_equal, { avatar: 0, size: 1, element: 3 });
+    init(this, options, instance$1j, create_fragment$1s, safe_not_equal, { avatar: 0, size: 1, element: 3 });
   }
   get element() {
     return this.$$.ctx[3];
@@ -17952,15 +17958,15 @@ const _Skribbl_avatar = class _Skribbl_avatar extends SvelteComponent {
 };
 __name(_Skribbl_avatar, "Skribbl_avatar");
 let Skribbl_avatar = _Skribbl_avatar;
-var __defProp$19 = Object.defineProperty;
-var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1a = Object.defineProperty;
+var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$19(target, key2, result);
+  if (result) __defProp$1a(target, key2, result);
   return result;
-}, "__decorateClass$19");
+}, "__decorateClass$1a");
 const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -18045,27 +18051,27 @@ const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
 };
 __name(_ChatAvatarsFeature, "ChatAvatarsFeature");
 let ChatAvatarsFeature = _ChatAvatarsFeature;
-__decorateClass$19([
+__decorateClass$1a([
   inject(ChatService)
 ], ChatAvatarsFeature.prototype, "_chatService");
-__decorateClass$19([
+__decorateClass$1a([
   inject(PlayersService)
 ], ChatAvatarsFeature.prototype, "_playersService");
-__decorateClass$19([
+__decorateClass$1a([
   inject(LobbyService)
 ], ChatAvatarsFeature.prototype, "_lobbyService");
-__decorateClass$19([
+__decorateClass$1a([
   inject(ElementsSetup)
 ], ChatAvatarsFeature.prototype, "_elementsSetup");
-var __defProp$18 = Object.defineProperty;
-var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$19 = Object.defineProperty;
+var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$18(target, key2, result);
+  if (result) __defProp$19(target, key2, result);
   return result;
-}, "__decorateClass$18");
+}, "__decorateClass$19");
 const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -18126,10 +18132,10 @@ const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
 };
 __name(_ChatClearFeature, "ChatClearFeature");
 let ChatClearFeature = _ChatClearFeature;
-__decorateClass$18([
+__decorateClass$19([
   inject(LobbyJoinedEventListener)
 ], ChatClearFeature.prototype, "_lobbyJoinedEventListener");
-__decorateClass$18([
+__decorateClass$19([
   inject(ChatService)
 ], ChatClearFeature.prototype, "_chatService");
 const _InterpretableEmptyRemainder = class _InterpretableEmptyRemainder extends InterpretableError {
@@ -18310,7 +18316,7 @@ function create_if_block_2$f(ctx) {
   };
 }
 __name(create_if_block_2$f, "create_if_block_2$f");
-function create_if_block$B(ctx) {
+function create_if_block$C(ctx) {
   let span;
   let mounted;
   let dispose;
@@ -18342,8 +18348,8 @@ function create_if_block$B(ctx) {
     }
   };
 }
-__name(create_if_block$B, "create_if_block$B");
-function create_fragment$1q(ctx) {
+__name(create_if_block$C, "create_if_block$C");
+function create_fragment$1r(ctx) {
   let div1;
   let t0;
   let div0;
@@ -18382,7 +18388,7 @@ function create_fragment$1q(ctx) {
   }
   let if_block1 = (
     /*closeStrategy*/
-    ctx[0] === "explicit" && create_if_block$B(ctx)
+    ctx[0] === "explicit" && create_if_block$C(ctx)
   );
   return {
     c() {
@@ -18515,7 +18521,7 @@ function create_fragment$1q(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$B(ctx2);
+          if_block1 = create_if_block$C(ctx2);
           if_block1.c();
           if_block1.m(div1, null);
         }
@@ -18590,8 +18596,8 @@ function create_fragment$1q(ctx) {
     }
   };
 }
-__name(create_fragment$1q, "create_fragment$1q");
-function instance$1h($$self, $$props, $$invalidate) {
+__name(create_fragment$1r, "create_fragment$1r");
+function instance$1i($$self, $$props, $$invalidate) {
   let { closeStrategy = "implicit" } = $$props;
   let { alignment = "bottom" } = $$props;
   let { marginY = ".5em" } = $$props;
@@ -18679,11 +18685,11 @@ function instance$1h($$self, $$props, $$invalidate) {
     div1_binding
   ];
 }
-__name(instance$1h, "instance$1h");
+__name(instance$1i, "instance$1i");
 const _Area_flyout = class _Area_flyout extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1h, create_fragment$1q, safe_not_equal, {
+    init(this, options, instance$1i, create_fragment$1r, safe_not_equal, {
       closeStrategy: 0,
       alignment: 1,
       marginY: 2,
@@ -19281,7 +19287,7 @@ function create_each_block_1$c(ctx) {
   };
 }
 __name(create_each_block_1$c, "create_each_block_1$c");
-function create_if_block$A(ctx) {
+function create_if_block$B(ctx) {
   let div;
   let t1;
   let each_1_anchor;
@@ -19347,7 +19353,7 @@ function create_if_block$A(ctx) {
     }
   };
 }
-__name(create_if_block$A, "create_if_block$A");
+__name(create_if_block$B, "create_if_block$B");
 function create_catch_block$5(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
@@ -19439,7 +19445,7 @@ function create_each_block$x(ctx) {
   };
 }
 __name(create_each_block$x, "create_each_block$x");
-function create_fragment$1p(ctx) {
+function create_fragment$1q(ctx) {
   let div;
   let t;
   let show_if = (
@@ -19454,7 +19460,7 @@ function create_fragment$1p(ctx) {
   for (let i = 0; i < each_value_1.length; i += 1) {
     each_blocks[i] = create_each_block_1$c(get_each_context_1$c(ctx, each_value_1, i));
   }
-  let if_block = show_if && create_if_block$A(ctx);
+  let if_block = show_if && create_if_block$B(ctx);
   return {
     c() {
       div = element$1("div");
@@ -19505,7 +19511,7 @@ function create_fragment$1p(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$A(ctx2);
+          if_block = create_if_block$B(ctx2);
           if_block.c();
           if_block.m(div, null);
         }
@@ -19525,9 +19531,9 @@ function create_fragment$1p(ctx) {
     }
   };
 }
-__name(create_fragment$1p, "create_fragment$1p");
+__name(create_fragment$1q, "create_fragment$1q");
 const func$4 = /* @__PURE__ */ __name((result) => result.result === null, "func$4");
-function instance$1g($$self, $$props, $$invalidate) {
+function instance$1h($$self, $$props, $$invalidate) {
   let $currentCommands;
   let $combo;
   let { feature } = $$props;
@@ -19540,16 +19546,16 @@ function instance$1g($$self, $$props, $$invalidate) {
   };
   return [feature, $currentCommands, $combo, currentCommands, combo];
 }
-__name(instance$1g, "instance$1g");
+__name(instance$1h, "instance$1h");
 const _Command_preview = class _Command_preview extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1g, create_fragment$1p, safe_not_equal, { feature: 0 });
+    init(this, options, instance$1h, create_fragment$1q, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Command_preview, "Command_preview");
 let Command_preview = _Command_preview;
-function create_fragment$1o(ctx) {
+function create_fragment$1p(ctx) {
   let input;
   let mounted;
   let dispose;
@@ -19590,12 +19596,12 @@ function create_fragment$1o(ctx) {
     }
   };
 }
-__name(create_fragment$1o, "create_fragment$1o");
+__name(create_fragment$1p, "create_fragment$1p");
 const submit_handler = /* @__PURE__ */ __name((e) => {
   e.preventDefault();
   e.stopImmediatePropagation();
 }, "submit_handler");
-function instance$1f($$self, $$props, $$invalidate) {
+function instance$1g($$self, $$props, $$invalidate) {
   let { onInput } = $$props;
   const input_handler = /* @__PURE__ */ __name((e) => {
     onInput(e.currentTarget.value);
@@ -19605,24 +19611,24 @@ function instance$1f($$self, $$props, $$invalidate) {
   };
   return [onInput, input_handler];
 }
-__name(instance$1f, "instance$1f");
+__name(instance$1g, "instance$1g");
 const _Command_input = class _Command_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1f, create_fragment$1o, safe_not_equal, { onInput: 0 });
+    init(this, options, instance$1g, create_fragment$1p, safe_not_equal, { onInput: 0 });
   }
 };
 __name(_Command_input, "Command_input");
 let Command_input = _Command_input;
-var __defProp$17 = Object.defineProperty;
-var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$18 = Object.defineProperty;
+var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$17(target, key2, result);
+  if (result) __defProp$18(target, key2, result);
   return result;
-}, "__decorateClass$17");
+}, "__decorateClass$18");
 const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -19872,21 +19878,21 @@ const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
 };
 __name(_ChatCommandsFeature, "ChatCommandsFeature");
 let ChatCommandsFeature = _ChatCommandsFeature;
-__decorateClass$17([
+__decorateClass$18([
   inject(ElementsSetup)
 ], ChatCommandsFeature.prototype, "_elements");
-__decorateClass$17([
+__decorateClass$18([
   inject(ToastService)
 ], ChatCommandsFeature.prototype, "_toastService");
-var __defProp$16 = Object.defineProperty;
-var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$17 = Object.defineProperty;
+var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$16(target, key2, result);
+  if (result) __defProp$17(target, key2, result);
   return result;
-}, "__decorateClass$16");
+}, "__decorateClass$17");
 const _ChatCopyFormattedFeature = class _ChatCopyFormattedFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -20008,10 +20014,10 @@ const _ChatCopyFormattedFeature = class _ChatCopyFormattedFeature extends TypoFe
 };
 __name(_ChatCopyFormattedFeature, "ChatCopyFormattedFeature");
 let ChatCopyFormattedFeature = _ChatCopyFormattedFeature;
-__decorateClass$16([
+__decorateClass$17([
   inject(ElementsSetup)
 ], ChatCopyFormattedFeature.prototype, "_elementsSetup");
-__decorateClass$16([
+__decorateClass$17([
   inject(ToastService)
 ], ChatCopyFormattedFeature.prototype, "_toastService");
 function promiseAllObject(obj) {
@@ -20020,15 +20026,15 @@ function promiseAllObject(obj) {
   ).then(Object.fromEntries);
 }
 __name(promiseAllObject, "promiseAllObject");
-var __defProp$15 = Object.defineProperty;
-var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$16 = Object.defineProperty;
+var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$15(target, key2, result);
+  if (result) __defProp$16(target, key2, result);
   return result;
-}, "__decorateClass$15");
+}, "__decorateClass$16");
 function getData(spritesApi, scenesApi, eventsApi, emojisApi, announcementsApi, themesApi, awardsApi) {
   return {
     sprites: spritesApi.getAllSprites(),
@@ -20068,16 +20074,16 @@ const _ApiDataSetup = class _ApiDataSetup extends Setup {
 };
 __name(_ApiDataSetup, "ApiDataSetup");
 let ApiDataSetup = _ApiDataSetup;
-__decorateClass$15([
+__decorateClass$16([
   inject(ApiService)
 ], ApiDataSetup.prototype, "_apiService");
-__decorateClass$15([
+__decorateClass$16([
   inject(ToastService)
 ], ApiDataSetup.prototype, "_toastService");
-__decorateClass$15([
+__decorateClass$16([
   inject(loggerFactory)
 ], ApiDataSetup.prototype, "_loggerFactory");
-function create_fragment$1n(ctx) {
+function create_fragment$1o(ctx) {
   let div;
   return {
     c() {
@@ -20097,15 +20103,15 @@ function create_fragment$1n(ctx) {
     }
   };
 }
-__name(create_fragment$1n, "create_fragment$1n");
-function instance$1e($$self) {
+__name(create_fragment$1o, "create_fragment$1o");
+function instance$1f($$self) {
   return [];
 }
-__name(instance$1e, "instance$1e");
+__name(instance$1f, "instance$1f");
 const _Chat_emojis = class _Chat_emojis extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1e, create_fragment$1n, safe_not_equal, {});
+    init(this, options, instance$1f, create_fragment$1o, safe_not_equal, {});
   }
 };
 __name(_Chat_emojis, "Chat_emojis");
@@ -20168,7 +20174,7 @@ function create_if_block_1$h(ctx) {
   };
 }
 __name(create_if_block_1$h, "create_if_block_1$h");
-function create_if_block$z(ctx) {
+function create_if_block$A(ctx) {
   let t0;
   let br;
   let t1;
@@ -20193,7 +20199,7 @@ function create_if_block$z(ctx) {
     }
   };
 }
-__name(create_if_block$z, "create_if_block$z");
+__name(create_if_block$A, "create_if_block$A");
 function create_each_block$w(ctx) {
   let img;
   let img_src_value;
@@ -20262,7 +20268,7 @@ function create_each_block$w(ctx) {
   };
 }
 __name(create_each_block$w, "create_each_block$w");
-function create_fragment$1m(ctx) {
+function create_fragment$1n(ctx) {
   let div0;
   let t;
   let div1;
@@ -20272,7 +20278,7 @@ function create_fragment$1m(ctx) {
     if (
       /*$emojiCandidates*/
       ctx2[2].length === 0
-    ) return create_if_block$z;
+    ) return create_if_block$A;
     if (
       /*hoverEmoji*/
       ctx2[1] !== void 0
@@ -20371,8 +20377,8 @@ function create_fragment$1m(ctx) {
     }
   };
 }
-__name(create_fragment$1m, "create_fragment$1m");
-function instance$1d($$self, $$props, $$invalidate) {
+__name(create_fragment$1n, "create_fragment$1n");
+function instance$1e($$self, $$props, $$invalidate) {
   let $emojiCandidates;
   let { feature } = $$props;
   let { onSelected = void 0 } = $$props;
@@ -20397,24 +20403,24 @@ function instance$1d($$self, $$props, $$invalidate) {
     mouseleave_handler
   ];
 }
-__name(instance$1d, "instance$1d");
+__name(instance$1e, "instance$1e");
 const _Emoji_picker = class _Emoji_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1d, create_fragment$1m, safe_not_equal, { feature: 4, onSelected: 0 });
+    init(this, options, instance$1e, create_fragment$1n, safe_not_equal, { feature: 4, onSelected: 0 });
   }
 };
 __name(_Emoji_picker, "Emoji_picker");
 let Emoji_picker = _Emoji_picker;
-var __defProp$14 = Object.defineProperty;
-var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$15 = Object.defineProperty;
+var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$14(target, key2, result);
+  if (result) __defProp$15(target, key2, result);
   return result;
-}, "__decorateClass$14");
+}, "__decorateClass$15");
 const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -20589,19 +20595,19 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
 };
 __name(_ChatEmojisFeature, "ChatEmojisFeature");
 let ChatEmojisFeature = _ChatEmojisFeature;
-__decorateClass$14([
+__decorateClass$15([
   inject(ElementsSetup)
 ], ChatEmojisFeature.prototype, "_elements");
-__decorateClass$14([
+__decorateClass$15([
   inject(ApiDataSetup)
 ], ChatEmojisFeature.prototype, "_apiDataSetup");
-__decorateClass$14([
+__decorateClass$15([
   inject(ChatService)
 ], ChatEmojisFeature.prototype, "_chatService");
-__decorateClass$14([
+__decorateClass$15([
   inject(LobbyService)
 ], ChatEmojisFeature.prototype, "_lobbyService");
-function create_fragment$1l(ctx) {
+function create_fragment$1m(ctx) {
   let t0;
   let br0;
   let t1;
@@ -20632,24 +20638,24 @@ function create_fragment$1l(ctx) {
     }
   };
 }
-__name(create_fragment$1l, "create_fragment$1l");
+__name(create_fragment$1m, "create_fragment$1m");
 const _Chat_focus_info = class _Chat_focus_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$1l, safe_not_equal, {});
+    init(this, options, null, create_fragment$1m, safe_not_equal, {});
   }
 };
 __name(_Chat_focus_info, "Chat_focus_info");
 let Chat_focus_info = _Chat_focus_info;
-var __defProp$13 = Object.defineProperty;
-var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$14 = Object.defineProperty;
+var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$13(target, key2, result);
+  if (result) __defProp$14(target, key2, result);
   return result;
-}, "__decorateClass$13");
+}, "__decorateClass$14");
 const _ChatFocusFeature = class _ChatFocusFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -20698,10 +20704,10 @@ const _ChatFocusFeature = class _ChatFocusFeature extends TypoFeature {
 };
 __name(_ChatFocusFeature, "ChatFocusFeature");
 let ChatFocusFeature = _ChatFocusFeature;
-__decorateClass$13([
+__decorateClass$14([
   inject(ElementsSetup)
 ], ChatFocusFeature.prototype, "elementsSetup");
-__decorateClass$13([
+__decorateClass$14([
   inject(LobbyStateChangedEventListener)
 ], ChatFocusFeature.prototype, "_lobbyStateChangedEventListener");
 const _Chat_message_splits = class _Chat_message_splits extends SvelteComponent {
@@ -20712,15 +20718,15 @@ const _Chat_message_splits = class _Chat_message_splits extends SvelteComponent 
 };
 __name(_Chat_message_splits, "Chat_message_splits");
 let Chat_message_splits = _Chat_message_splits;
-var __defProp$12 = Object.defineProperty;
-var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$13 = Object.defineProperty;
+var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$12(target, key2, result);
+  if (result) __defProp$13(target, key2, result);
   return result;
-}, "__decorateClass$12");
+}, "__decorateClass$13");
 const _ChatMessageSplitsFeature = class _ChatMessageSplitsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -20753,9 +20759,186 @@ const _ChatMessageSplitsFeature = class _ChatMessageSplitsFeature extends TypoFe
 };
 __name(_ChatMessageSplitsFeature, "ChatMessageSplitsFeature");
 let ChatMessageSplitsFeature = _ChatMessageSplitsFeature;
-__decorateClass$12([
+__decorateClass$13([
   inject(ElementsSetup)
 ], ChatMessageSplitsFeature.prototype, "_elementsSetup");
+function create_if_block$z(ctx) {
+  let div;
+  let t0;
+  let t1;
+  return {
+    c() {
+      div = element$1("div");
+      t0 = text(
+        /*$ping*/
+        ctx[0]
+      );
+      t1 = text("ms");
+      attr(div, "class", "typo-ping-info svelte-wetrhq");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      append(div, t0);
+      append(div, t1);
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*$ping*/
+      1) set_data(
+        t0,
+        /*$ping*/
+        ctx2[0]
+      );
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+    }
+  };
+}
+__name(create_if_block$z, "create_if_block$z");
+function create_fragment$1l(ctx) {
+  let if_block_anchor;
+  let if_block = (
+    /*$ping*/
+    ctx[0] !== void 0 && create_if_block$z(ctx)
+  );
+  return {
+    c() {
+      if (if_block) if_block.c();
+      if_block_anchor = empty();
+    },
+    m(target, anchor) {
+      if (if_block) if_block.m(target, anchor);
+      insert(target, if_block_anchor, anchor);
+    },
+    p(ctx2, [dirty]) {
+      if (
+        /*$ping*/
+        ctx2[0] !== void 0
+      ) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+        } else {
+          if_block = create_if_block$z(ctx2);
+          if_block.c();
+          if_block.m(if_block_anchor.parentNode, if_block_anchor);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(if_block_anchor);
+      }
+      if (if_block) if_block.d(detaching);
+    }
+  };
+}
+__name(create_fragment$1l, "create_fragment$1l");
+function instance$1d($$self, $$props, $$invalidate) {
+  let $ping;
+  let { feature } = $$props;
+  const ping = feature.pingStore;
+  component_subscribe($$self, ping, (value) => $$invalidate(0, $ping = value));
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(2, feature = $$props2.feature);
+  };
+  return [$ping, ping, feature];
+}
+__name(instance$1d, "instance$1d");
+const _Chat_ping = class _Chat_ping extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$1d, create_fragment$1l, safe_not_equal, { feature: 2 });
+  }
+};
+__name(_Chat_ping, "Chat_ping");
+let Chat_ping = _Chat_ping;
+var __defProp$12 = Object.defineProperty;
+var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$12(target, key2, result);
+  return result;
+}, "__decorateClass$12");
+const _ChatPingFeature = class _ChatPingFeature extends TypoFeature {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_elements");
+    __publicField(this, "_lobbyService");
+    __publicField(this, "name", "Ping Display");
+    __publicField(this, "description", "Shows a small box with the current skribbl game ping above the chat input");
+    __publicField(this, "tags", [FeatureTag.INFORMATION]);
+    __publicField(this, "featureId", 52);
+    __publicField(this, "featureEnabledDefault", false);
+    __publicField(this, "_currentPing$", new Subject$1());
+    __publicField(this, "_pingSubscription");
+    __publicField(this, "_pingElement");
+  }
+  async onActivate() {
+    const elements2 = await this._elements.complete();
+    this._pingElement = new Chat_ping({
+      target: elements2.chatForm,
+      props: {
+        feature: this
+      }
+    });
+    this._pingSubscription = this._lobbyService.lobby$.pipe(
+      map((lobby) => lobby != null),
+      distinctUntilChanged(),
+      switchMap(
+        (inLobby) => inLobby ? (
+          /* if in lobby, measure every 5s and accumulate to past 5 measurements */
+          interval(5e3).pipe(
+            exhaustMap(() => this.measurePing()),
+            scan((acc, curr) => [curr, ...acc.slice(0, 5)], [])
+          )
+        ) : (
+          /* if not, don't measure and reset */
+          of([])
+        )
+      ),
+      /* map to average time */
+      map(
+        (pings) => pings.length === 0 ? void 0 : Math.round(pings.reduce((a, b) => a + b, 0) / pings.length)
+      )
+    ).subscribe((ping) => this._currentPing$.next(ping));
+  }
+  async onDestroy() {
+    var _a2, _b2;
+    (_a2 = this._pingSubscription) == null ? void 0 : _a2.unsubscribe();
+    this._pingSubscription = void 0;
+    (_b2 = this._pingElement) == null ? void 0 : _b2.$destroy();
+    this._pingElement = void 0;
+  }
+  get pingStore() {
+    return fromObservable(
+      this._currentPing$,
+      0
+    );
+  }
+  async measurePing() {
+    this._logger.info("Measuring ping");
+    const now = performance.now();
+    await fetch("./credits?this_is_for_ping_measure&now=" + now, { cache: "no-store" });
+    return performance.now() - now;
+  }
+};
+__name(_ChatPingFeature, "ChatPingFeature");
+let ChatPingFeature = _ChatPingFeature;
+__decorateClass$12([
+  inject(ElementsSetup)
+], ChatPingFeature.prototype, "_elements");
+__decorateClass$12([
+  inject(LobbyService)
+], ChatPingFeature.prototype, "_lobbyService");
 const _Chat_profile_link = class _Chat_profile_link extends SvelteComponent {
   constructor(options) {
     super();
@@ -65789,7 +65972,8 @@ new ExtensionContainer(interceptor).registerServices(
   ControlsOnboardingFeature,
   ControlsProfilesFeature,
   ChatAvatarsFeature,
-  DrawingSizeHotkeysFeature
+  DrawingSizeHotkeysFeature,
+  ChatPingFeature
 );
 interceptor.triggerPatchInjection();
 //# sourceMappingURL=app.ts.js.map
