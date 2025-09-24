@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 7124cd9
+// @version      27.1.3 beta-usc 8d597e9
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 7124cd9", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 8d597e9", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -61005,13 +61005,13 @@ ${content2}</tr>
   let Drawing_brush_lab_switch = _Drawing_brush_lab_switch;
   function get_each_context$a(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[6] = list[i];
+    child_ctx[8] = list[i];
     return child_ctx;
   }
   __name(get_each_context$a, "get_each_context$a");
   function get_each_context_1$2(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[9] = list[i];
+    child_ctx[11] = list[i];
     return child_ctx;
   }
   __name(get_each_context_1$2, "get_each_context_1$2");
@@ -61027,11 +61027,22 @@ ${content2}</tr>
         /*click_handler_1*/
         ctx[4](
           /*mod*/
-          ctx[9]
+          ctx[11]
         )
       );
     }
     __name(click_handler_1, "click_handler_1");
+    function contextmenu_handler2(...args) {
+      return (
+        /*contextmenu_handler*/
+        ctx[5](
+          /*mod*/
+          ctx[11],
+          ...args
+        )
+      );
+    }
+    __name(contextmenu_handler2, "contextmenu_handler");
     return {
       c() {
         div1 = element("div");
@@ -61042,14 +61053,14 @@ ${content2}</tr>
           div0,
           "background-image",
           /*mod*/
-          ctx[9].item.icon
+          ctx[11].item.icon
         );
         attr(div1, "class", "tool clickable");
         toggle_class(
           div1,
           "selected",
           /*mod*/
-          ctx[9].active
+          ctx[11].active
         );
       },
       m(target, anchor) {
@@ -61062,11 +61073,12 @@ ${content2}</tr>
             ctx[0].createTooltip(div1, {
               title: (
                 /*mod*/
-                ctx[9].item.name
+                ctx[11].item.name
               ),
               lock: "Y"
             })),
-            listen(div1, "click", click_handler_1)
+            listen(div1, "click", click_handler_1),
+            listen(div1, "contextmenu", contextmenu_handler2)
           ];
           mounted = true;
         }
@@ -61079,14 +61091,14 @@ ${content2}</tr>
             div0,
             "background-image",
             /*mod*/
-            ctx[9].item.icon
+            ctx[11].item.icon
           );
         }
         if (feature_createTooltip_action && is_function(feature_createTooltip_action.update) && dirty & /*$tools*/
         2) feature_createTooltip_action.update.call(null, {
           title: (
             /*mod*/
-            ctx[9].item.name
+            ctx[11].item.name
           ),
           lock: "Y"
         });
@@ -61096,7 +61108,7 @@ ${content2}</tr>
             div1,
             "selected",
             /*mod*/
-            ctx[9].active
+            ctx[11].active
           );
         }
       },
@@ -61120,13 +61132,24 @@ ${content2}</tr>
     function click_handler_2() {
       return (
         /*click_handler_2*/
-        ctx[5](
+        ctx[6](
           /*tool*/
-          ctx[6]
+          ctx[8]
         )
       );
     }
     __name(click_handler_2, "click_handler_2");
+    function contextmenu_handler_1(...args) {
+      return (
+        /*contextmenu_handler_1*/
+        ctx[7](
+          /*tool*/
+          ctx[8],
+          ...args
+        )
+      );
+    }
+    __name(contextmenu_handler_1, "contextmenu_handler_1");
     return {
       c() {
         div1 = element("div");
@@ -61137,14 +61160,14 @@ ${content2}</tr>
           div0,
           "background-image",
           /*tool*/
-          ctx[6].item.icon
+          ctx[8].item.icon
         );
         attr(div1, "class", "tool clickable");
         toggle_class(
           div1,
           "selected",
           /*tool*/
-          ctx[6].active
+          ctx[8].active
         );
       },
       m(target, anchor) {
@@ -61157,11 +61180,12 @@ ${content2}</tr>
             ctx[0].createTooltip(div1, {
               title: (
                 /*tool*/
-                ctx[6].item.name
+                ctx[8].item.name
               ),
               lock: "Y"
             })),
-            listen(div1, "click", click_handler_2)
+            listen(div1, "click", click_handler_2),
+            listen(div1, "contextmenu", contextmenu_handler_1)
           ];
           mounted = true;
         }
@@ -61174,14 +61198,14 @@ ${content2}</tr>
             div0,
             "background-image",
             /*tool*/
-            ctx[6].item.icon
+            ctx[8].item.icon
           );
         }
         if (feature_createTooltip_action && is_function(feature_createTooltip_action.update) && dirty & /*$tools*/
         2) feature_createTooltip_action.update.call(null, {
           title: (
             /*tool*/
-            ctx[6].item.name
+            ctx[8].item.name
           ),
           lock: "Y"
         });
@@ -61191,7 +61215,7 @@ ${content2}</tr>
             div1,
             "selected",
             /*tool*/
-            ctx[6].active
+            ctx[8].active
           );
         }
       },
@@ -61360,6 +61384,10 @@ ${content2}</tr>
         feature.removeMod(mod.item);
       }
     }, "click_handler_1");
+    const contextmenu_handler2 = /* @__PURE__ */ __name((mod, e) => {
+      e.preventDefault();
+      feature.openBrushLabSettings(mod.item);
+    }, "contextmenu_handler");
     const click_handler_2 = /* @__PURE__ */ __name((tool) => {
       if (!tool.active) {
         feature.activateTool(tool.item);
@@ -61367,10 +61395,23 @@ ${content2}</tr>
         feature.activateTool(skribblTool.brush);
       }
     }, "click_handler_2");
+    const contextmenu_handler_1 = /* @__PURE__ */ __name((tool, e) => {
+      e.preventDefault();
+      feature.openBrushLabSettings(tool.item);
+    }, "contextmenu_handler_1");
     $$self.$$set = ($$props2) => {
       if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
     };
-    return [feature, $tools, tools, click_handler2, click_handler_1, click_handler_2];
+    return [
+      feature,
+      $tools,
+      tools,
+      click_handler2,
+      click_handler_1,
+      contextmenu_handler2,
+      click_handler_2,
+      contextmenu_handler_1
+    ];
   }
   __name(instance$g, "instance$g");
   const _Drawing_brush_lab_group = class _Drawing_brush_lab_group extends SvelteComponent {
@@ -61383,25 +61424,25 @@ ${content2}</tr>
   let Drawing_brush_lab_group = _Drawing_brush_lab_group;
   function get_each_context$9(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[9] = list[i];
+    child_ctx[10] = list[i];
     return child_ctx;
   }
   __name(get_each_context$9, "get_each_context$9");
   function get_each_context_1$1(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[12] = list[i];
+    child_ctx[13] = list[i];
     return child_ctx;
   }
   __name(get_each_context_1$1, "get_each_context_1$1");
   function get_each_context_2(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[12] = list[i];
+    child_ctx[13] = list[i];
     return child_ctx;
   }
   __name(get_each_context_2, "get_each_context_2");
   function get_each_context_3(ctx, list, i) {
     const child_ctx = ctx.slice();
-    child_ctx[17] = list[i];
+    child_ctx[18] = list[i];
     return child_ctx;
   }
   __name(get_each_context_3, "get_each_context_3");
@@ -61413,7 +61454,7 @@ ${content2}</tr>
     let b;
     let t1_value = (
       /*tool*/
-      ctx[17].item.name + ""
+      ctx[18].item.name + ""
     );
     let t1;
     let mounted;
@@ -61421,9 +61462,9 @@ ${content2}</tr>
     function click_handler2() {
       return (
         /*click_handler*/
-        ctx[4](
+        ctx[5](
           /*tool*/
-          ctx[17]
+          ctx[18]
         )
       );
     }
@@ -61440,7 +61481,7 @@ ${content2}</tr>
           img,
           "content",
           /*tool*/
-          ctx[17].item.icon
+          ctx[18].item.icon
         );
         attr(img, "alt", "icon");
         attr(img, "class", "svelte-15vhuqn");
@@ -61466,12 +61507,12 @@ ${content2}</tr>
             img,
             "content",
             /*tool*/
-            ctx[17].item.icon
+            ctx[18].item.icon
           );
         }
         if (dirty & /*$items*/
         1 && t1_value !== (t1_value = /*tool*/
-        ctx[17].item.name + "")) set_data(t1, t1_value);
+        ctx[18].item.name + "")) set_data(t1, t1_value);
       },
       d(detaching) {
         if (detaching) {
@@ -61491,7 +61532,7 @@ ${content2}</tr>
     let b;
     let t1_value = (
       /*mod*/
-      ctx[12].item.name + ""
+      ctx[13].item.name + ""
     );
     let t1;
     let mounted;
@@ -61499,9 +61540,9 @@ ${content2}</tr>
     function click_handler_1() {
       return (
         /*click_handler_1*/
-        ctx[6](
+        ctx[7](
           /*mod*/
-          ctx[12]
+          ctx[13]
         )
       );
     }
@@ -61518,7 +61559,7 @@ ${content2}</tr>
           img,
           "content",
           /*mod*/
-          ctx[12].item.icon
+          ctx[13].item.icon
         );
         attr(img, "alt", "icon");
         attr(img, "class", "svelte-15vhuqn");
@@ -61544,12 +61585,12 @@ ${content2}</tr>
             img,
             "content",
             /*mod*/
-            ctx[12].item.icon
+            ctx[13].item.icon
           );
         }
         if (dirty & /*$items*/
         1 && t1_value !== (t1_value = /*mod*/
-        ctx[12].item.name + "")) set_data(t1, t1_value);
+        ctx[13].item.name + "")) set_data(t1, t1_value);
       },
       d(detaching) {
         if (detaching) {
@@ -61569,7 +61610,7 @@ ${content2}</tr>
     let b;
     let t1_value = (
       /*mod*/
-      ctx[12].item.name + ""
+      ctx[13].item.name + ""
     );
     let t1;
     let t2;
@@ -61578,9 +61619,9 @@ ${content2}</tr>
     function click_handler_2() {
       return (
         /*click_handler_2*/
-        ctx[8](
+        ctx[9](
           /*mod*/
-          ctx[12]
+          ctx[13]
         )
       );
     }
@@ -61598,7 +61639,7 @@ ${content2}</tr>
           img,
           "content",
           /*mod*/
-          ctx[12].item.icon
+          ctx[13].item.icon
         );
         attr(img, "alt", "icon");
         attr(img, "class", "svelte-15vhuqn");
@@ -61625,12 +61666,12 @@ ${content2}</tr>
             img,
             "content",
             /*mod*/
-            ctx[12].item.icon
+            ctx[13].item.icon
           );
         }
         if (dirty & /*$items*/
         1 && t1_value !== (t1_value = /*mod*/
-        ctx[12].item.name + "")) set_data(t1, t1_value);
+        ctx[13].item.name + "")) set_data(t1, t1_value);
       },
       d(detaching) {
         if (detaching) {
@@ -61730,11 +61771,11 @@ ${content2}</tr>
     let current;
     const switch_instance_spread_levels = [
       /*setting*/
-      ctx[9].componentData.props
+      ctx[10].componentData.props
     ];
     var switch_value = (
       /*setting*/
-      ctx[9].componentData.componentType
+      ctx[10].componentData.componentType
     );
     function switch_props(ctx2, dirty) {
       let switch_instance_props = {};
@@ -61745,7 +61786,7 @@ ${content2}</tr>
       2) {
         switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
           /*setting*/
-          ctx2[9].componentData.props
+          ctx2[10].componentData.props
         )]));
       }
       return { props: switch_instance_props };
@@ -61770,7 +61811,7 @@ ${content2}</tr>
       p(ctx2, dirty) {
         if (dirty & /*selectedItem*/
         2 && switch_value !== (switch_value = /*setting*/
-        ctx2[9].componentData.componentType)) {
+        ctx2[10].componentData.componentType)) {
           if (switch_instance) {
             group_outros();
             const old_component = switch_instance;
@@ -61791,7 +61832,7 @@ ${content2}</tr>
           const switch_instance_changes = dirty & /*selectedItem*/
           2 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
             /*setting*/
-            ctx2[9].componentData.props
+            ctx2[10].componentData.props
           )]) : {};
           switch_instance.$set(switch_instance_changes);
         }
@@ -61873,7 +61914,7 @@ ${content2}</tr>
       /*$items*/
       ctx[0].mods.filter(
         /*func*/
-        ctx[5]
+        ctx[6]
       )
     );
     let each_blocks_1 = [];
@@ -61884,7 +61925,7 @@ ${content2}</tr>
       /*$items*/
       ctx[0].mods.filter(
         /*func_1*/
-        ctx[7]
+        ctx[8]
       )
     );
     let each_blocks = [];
@@ -62038,7 +62079,7 @@ ${content2}</tr>
             /*$items*/
             ctx2[0].mods.filter(
               /*func*/
-              ctx2[5]
+              ctx2[6]
             )
           );
           let i;
@@ -62063,7 +62104,7 @@ ${content2}</tr>
             /*$items*/
             ctx2[0].mods.filter(
               /*func_1*/
-              ctx2[7]
+              ctx2[8]
             )
           );
           let i;
@@ -62154,9 +62195,10 @@ ${content2}</tr>
   function instance$f($$self, $$props, $$invalidate) {
     let $items;
     let { feature } = $$props;
+    let { initTool = void 0 } = $$props;
     const items = feature.toolbarItemsStore;
     component_subscribe($$self, items, (value) => $$invalidate(0, $items = value));
-    let selectedItem;
+    let selectedItem = initTool;
     const click_handler2 = /* @__PURE__ */ __name((tool) => $$invalidate(1, selectedItem = tool.item), "click_handler");
     const func2 = /* @__PURE__ */ __name((mod) => !(mod.item instanceof ConstantDrawMod), "func");
     const click_handler_1 = /* @__PURE__ */ __name((mod) => $$invalidate(1, selectedItem = mod.item), "click_handler_1");
@@ -62164,13 +62206,14 @@ ${content2}</tr>
     const click_handler_2 = /* @__PURE__ */ __name((mod) => $$invalidate(1, selectedItem = mod.item), "click_handler_2");
     $$self.$$set = ($$props2) => {
       if ("feature" in $$props2) $$invalidate(3, feature = $$props2.feature);
+      if ("initTool" in $$props2) $$invalidate(4, initTool = $$props2.initTool);
     };
     $$self.$$.update = () => {
       var _a2;
-      if ($$self.$$.dirty & /*$items*/
-      1) {
+      if ($$self.$$.dirty & /*initTool, $items*/
+      17) {
         {
-          $$invalidate(1, selectedItem = (_a2 = $items.tools.find((tool) => tool.active) ?? $items.mods.find((mod) => mod.active) ?? $items.tools[0]) == null ? void 0 : _a2.item);
+          $$invalidate(1, selectedItem = initTool ?? ((_a2 = $items.tools.find((tool) => tool.active) ?? $items.mods.find((mod) => mod.active) ?? $items.tools[0]) == null ? void 0 : _a2.item));
         }
       }
     };
@@ -62179,6 +62222,7 @@ ${content2}</tr>
       selectedItem,
       items,
       feature,
+      initTool,
       click_handler2,
       func2,
       click_handler_1,
@@ -62190,7 +62234,7 @@ ${content2}</tr>
   const _Drawing_brush_lab_manage = class _Drawing_brush_lab_manage extends SvelteComponent {
     constructor(options) {
       super();
-      init(this, options, instance$f, create_fragment$g, safe_not_equal, { feature: 3 });
+      init(this, options, instance$f, create_fragment$g, safe_not_equal, { feature: 3, initTool: 4 });
     }
   };
   __name(_Drawing_brush_lab_manage, "Drawing_brush_lab_manage");
@@ -62303,10 +62347,10 @@ ${content2}</tr>
     removeMod(mod) {
       this._toolsService.removeMod(mod);
     }
-    openBrushLabSettings() {
+    openBrushLabSettings(initTool) {
       const componentData = {
         componentType: Drawing_brush_lab_manage,
-        props: { feature: this }
+        props: { feature: this, initTool }
       };
       this._modalService.showModal(componentData.componentType, componentData.props, "Brush Laboratory");
     }
