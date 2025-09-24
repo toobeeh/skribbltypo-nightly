@@ -32424,6 +32424,7 @@ let ToolsService = (_ya = class {
     __publicField(this, "_activeBrushStyle$", new BehaviorSubject({ color: Color.fromHex("#000000").skribblCode, size: 1 }));
     __publicField(this, "_lastPointerDownPosition$", new BehaviorSubject(null));
     __publicField(this, "_canvasCursorStyle", document.createElement("style"));
+    __publicField(this, "_insertedStrokes$", new Subject$1());
     this._logger = loggerFactory2(this);
   }
   postConstruct() {
@@ -32476,6 +32477,7 @@ let ToolsService = (_ya = class {
       this._drawingService.disableCursorUpdates(isDrawing);
     });
     coordinateListener.strokes$.pipe(
+      mergeWith(this._insertedStrokes$),
       withLatestFrom(drawingMeta$)
     ).subscribe(([stroke, [style, tool, mods]]) => {
       this.processDrawCoordinates(stroke.from, stroke.to, stroke.cause, tool, mods, style, stroke.stroke);
@@ -32600,6 +32602,9 @@ let ToolsService = (_ya = class {
   }
   resolveModOrTool(tool) {
     return this._extensionContainer.resolveService(tool);
+  }
+  insertStroke(stroke) {
+    this._insertedStrokes$.next(stroke);
   }
 }, __name(_ya, "ToolsService"), _ya);
 __decorateClass$I([
@@ -38309,9 +38314,8 @@ const _LineToolFeature = class _LineToolFeature extends TypoFeature {
       startWith(["disabled", void 0, void 0])
     ).pipe(
       pairwise(),
-      tap((data) => this._logger.debug("Line accepted", data)),
-      withLatestFrom(this._toolsService.activeBrushStyle$)
-    ).subscribe(async ([[[, prevOrigin, prevTarget], [listening, origin, target]], style]) => {
+      tap((data) => this._logger.debug("Line accepted", data))
+    ).subscribe(async ([[, prevOrigin, prevTarget], [listening, origin, target]]) => {
       if (!origin || listening === "disabled") {
         return;
       }
@@ -38324,16 +38328,16 @@ const _LineToolFeature = class _LineToolFeature extends TypoFeature {
         );
         if (prevTarget) {
           this._logger.info("Connecting with last drag end", prevTarget);
-          await this.drawLine(prevTarget, origin, style);
+          await this.drawLine(prevTarget, origin);
         } else if (prevOrigin) {
           this._logger.info("Connecting with last click", prevOrigin);
-          await this.drawLine(prevOrigin, origin, style);
+          await this.drawLine(prevOrigin, origin);
         } else {
           this._logger.info("No previous line to connect to; waiting for next");
         }
         this._originCoordinates$.next(void 0);
       } else {
-        await this.drawLine(origin, target, style);
+        await this.drawLine(origin, target);
       }
     });
   }
@@ -38504,12 +38508,14 @@ const _LineToolFeature = class _LineToolFeature extends TypoFeature {
    * Draw a line and reset current selected coordinates
    * @param origin
    * @param target
-   * @param style
    * @private
    */
-  async drawLine(origin, target, style) {
+  async drawLine(origin, target) {
     if (!origin || !target) return;
-    await this._drawingService.drawLine([...origin, ...target], style.color, style.size);
+    const strokeId = Date.now();
+    this._toolsService.insertStroke({ from: origin, to: origin, stroke: strokeId, cause: "down" });
+    this._toolsService.insertStroke({ from: origin, to: target, stroke: strokeId, cause: "move" });
+    this._toolsService.insertStroke({ from: target, to: target, stroke: strokeId, cause: "up" });
     this._originCoordinates$.next(void 0);
     this._targetCoordinates$.next(void 0);
   }
@@ -40953,7 +40959,7 @@ __name(_Panel_cabin, "Panel_cabin");
 let Panel_cabin = _Panel_cabin;
 function get_each_context$k(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[7] = list[i];
+  child_ctx[11] = list[i];
   return child_ctx;
 }
 __name(get_each_context$k, "get_each_context$k");
@@ -40968,7 +40974,7 @@ function create_if_block$l(ctx) {
     /*spritesMap*/
     ((_a2 = ctx[2].get(
       /*sprite*/
-      ctx[7].spriteId
+      ctx[11].spriteId
     )) == null ? void 0 : _a2.id) + ""
   );
   let t2;
@@ -40978,7 +40984,7 @@ function create_if_block$l(ctx) {
     /*spritesMap*/
     ((_b2 = ctx[2].get(
       /*sprite*/
-      ctx[7].spriteId
+      ctx[11].spriteId
     )) == null ? void 0 : _b2.name) + ""
   );
   let t4;
@@ -40988,9 +40994,9 @@ function create_if_block$l(ctx) {
   function click_handler_1() {
     return (
       /*click_handler_1*/
-      ctx[6](
+      ctx[10](
         /*sprite*/
-        ctx[7]
+        ctx[11]
       )
     );
   }
@@ -41008,20 +41014,20 @@ function create_if_block$l(ctx) {
       span1 = element$1("span");
       t4 = text(t4_value);
       t5 = space();
-      attr(div0, "class", "typo-sprite-picker-scene-thumb svelte-1srogek");
+      attr(div0, "class", "typo-sprite-picker-sprite-thumb svelte-1bcvdme");
       set_style(div0, "background-image", "url(" + /*spritesMap*/
       ((_a3 = ctx[2].get(
         /*sprite*/
-        ctx[7].spriteId
+        ctx[11].spriteId
       )) == null ? void 0 : _a3.url) + ")");
-      attr(span0, "class", "svelte-1srogek");
-      attr(span1, "class", "svelte-1srogek");
-      attr(div1, "class", "typo-sprite-picker-scene svelte-1srogek");
+      attr(span0, "class", "svelte-1bcvdme");
+      attr(span1, "class", "svelte-1bcvdme");
+      attr(div1, "class", "typo-sprite-picker-sprite svelte-1bcvdme");
       set_style(
         div1,
         "order",
         /*sprite*/
-        ctx[7].spriteId
+        ctx[11].spriteId
       );
     },
     m(target, anchor) {
@@ -41048,20 +41054,20 @@ function create_if_block$l(ctx) {
         set_style(div0, "background-image", "url(" + /*spritesMap*/
         ((_a3 = ctx[2].get(
           /*sprite*/
-          ctx[7].spriteId
+          ctx[11].spriteId
         )) == null ? void 0 : _a3.url) + ")");
       }
       if (dirty & /*spritesMap, inventory*/
       6 && t2_value !== (t2_value = /*spritesMap*/
       ((_b3 = ctx[2].get(
         /*sprite*/
-        ctx[7].spriteId
+        ctx[11].spriteId
       )) == null ? void 0 : _b3.id) + "")) set_data(t2, t2_value);
       if (dirty & /*spritesMap, inventory*/
       6 && t4_value !== (t4_value = /*spritesMap*/
       ((_c2 = ctx[2].get(
         /*sprite*/
-        ctx[7].spriteId
+        ctx[11].spriteId
       )) == null ? void 0 : _c2.name) + "")) set_data(t4, t4_value);
       if (dirty & /*inventory*/
       2) {
@@ -41069,7 +41075,7 @@ function create_if_block$l(ctx) {
           div1,
           "order",
           /*sprite*/
-          ctx[7].spriteId
+          ctx[11].spriteId
         );
       }
     },
@@ -41084,11 +41090,21 @@ function create_if_block$l(ctx) {
 }
 __name(create_if_block$l, "create_if_block$l");
 function create_each_block$k(ctx) {
-  let if_block_anchor;
-  let if_block = (
+  let show_if = (
     /*sprite*/
-    ctx[7].slot === void 0 && create_if_block$l(ctx)
+    ctx[11].slot === void 0 && /*matchesFilter*/
+    ctx[5](
+      /*spritesMap*/
+      ctx[2].get(
+        /*sprite*/
+        ctx[11].spriteId
+      ),
+      /*$filter*/
+      ctx[3]
+    )
   );
+  let if_block_anchor;
+  let if_block = show_if && create_if_block$l(ctx);
   return {
     c() {
       if (if_block) if_block.c();
@@ -41099,10 +41115,19 @@ function create_each_block$k(ctx) {
       insert(target, if_block_anchor, anchor);
     },
     p(ctx2, dirty) {
-      if (
-        /*sprite*/
-        ctx2[7].slot === void 0
-      ) {
+      if (dirty & /*inventory, spritesMap, $filter*/
+      14) show_if = /*sprite*/
+      ctx2[11].slot === void 0 && /*matchesFilter*/
+      ctx2[5](
+        /*spritesMap*/
+        ctx2[2].get(
+          /*sprite*/
+          ctx2[11].spriteId
+        ),
+        /*$filter*/
+        ctx2[3]
+      );
+      if (show_if) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
@@ -41125,12 +41150,17 @@ function create_each_block$k(ctx) {
 }
 __name(create_each_block$k, "create_each_block$k");
 function create_fragment$Y(ctx) {
-  let div3;
+  let div4;
   let span0;
   let t2;
-  let div2;
-  let div1;
+  let div0;
+  let span1;
+  let t4;
+  let input;
   let t5;
+  let div3;
+  let div2;
+  let t8;
   let mounted;
   let dispose;
   let each_value = ensure_array_like(
@@ -41143,48 +41173,86 @@ function create_fragment$Y(ctx) {
   }
   return {
     c() {
-      div3 = element$1("div");
+      div4 = element$1("div");
       span0 = element$1("span");
       span0.innerHTML = `Choose a sprite from your inventory which will be used on the selected slot.<br/>
     You can only choose sprites that are not already in use.`;
       t2 = space();
-      div2 = element$1("div");
-      div1 = element$1("div");
-      div1.innerHTML = `<div class="typo-sprite-picker-scene-thumb svelte-1srogek"></div> <span class="svelte-1srogek">Empty</span>`;
+      div0 = element$1("div");
+      span1 = element$1("span");
+      span1.textContent = "Filter sprites:";
+      t4 = space();
+      input = element$1("input");
       t5 = space();
+      div3 = element$1("div");
+      div2 = element$1("div");
+      div2.innerHTML = `<div class="typo-sprite-picker-sprite-thumb svelte-1bcvdme"></div> <span class="svelte-1bcvdme">Empty</span>`;
+      t8 = space();
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
       }
-      attr(span0, "class", "svelte-1srogek");
-      attr(div1, "class", "typo-sprite-picker-scene svelte-1srogek");
-      attr(div2, "class", "typo-sprite-picker-list color-scrollbar svelte-1srogek");
-      attr(div3, "class", "typo-sprite-picker svelte-1srogek");
+      attr(span0, "class", "svelte-1bcvdme");
+      attr(span1, "class", "svelte-1bcvdme");
+      attr(input, "type", "text");
+      attr(input, "placeholder", "Search for ID or name");
+      attr(input, "class", "svelte-1bcvdme");
+      attr(div0, "class", "typo-sprite-picker-filter svelte-1bcvdme");
+      attr(div2, "class", "typo-sprite-picker-sprite svelte-1bcvdme");
+      attr(div3, "class", "typo-sprite-picker-list color-scrollbar svelte-1bcvdme");
+      attr(div4, "class", "typo-sprite-picker svelte-1bcvdme");
     },
     m(target, anchor) {
-      insert(target, div3, anchor);
-      append(div3, span0);
-      append(div3, t2);
+      insert(target, div4, anchor);
+      append(div4, span0);
+      append(div4, t2);
+      append(div4, div0);
+      append(div0, span1);
+      append(div0, t4);
+      append(div0, input);
+      set_input_value(
+        input,
+        /*$filter*/
+        ctx[3]
+      );
+      append(div4, t5);
+      append(div4, div3);
       append(div3, div2);
-      append(div2, div1);
-      append(div2, t5);
+      append(div3, t8);
       for (let i = 0; i < each_blocks.length; i += 1) {
         if (each_blocks[i]) {
-          each_blocks[i].m(div2, null);
+          each_blocks[i].m(div3, null);
         }
       }
       if (!mounted) {
-        dispose = listen(
-          div1,
-          "click",
-          /*click_handler*/
-          ctx[5]
-        );
+        dispose = [
+          listen(
+            input,
+            "input",
+            /*input_input_handler*/
+            ctx[8]
+          ),
+          listen(
+            div2,
+            "click",
+            /*click_handler*/
+            ctx[9]
+          )
+        ];
         mounted = true;
       }
     },
     p(ctx2, [dirty]) {
-      if (dirty & /*inventory, onPick, spritesMap, undefined*/
-      7) {
+      if (dirty & /*$filter*/
+      8 && input.value !== /*$filter*/
+      ctx2[3]) {
+        set_input_value(
+          input,
+          /*$filter*/
+          ctx2[3]
+        );
+      }
+      if (dirty & /*inventory, onPick, spritesMap, undefined, matchesFilter, $filter*/
+      47) {
         each_value = ensure_array_like(
           /*inventory*/
           ctx2[1]
@@ -41197,7 +41265,7 @@ function create_fragment$Y(ctx) {
           } else {
             each_blocks[i] = create_each_block$k(child_ctx);
             each_blocks[i].c();
-            each_blocks[i].m(div2, null);
+            each_blocks[i].m(div3, null);
           }
         }
         for (; i < each_blocks.length; i += 1) {
@@ -41210,32 +41278,45 @@ function create_fragment$Y(ctx) {
     o: noop$1,
     d(detaching) {
       if (detaching) {
-        detach(div3);
+        detach(div4);
       }
       destroy_each(each_blocks, detaching);
       mounted = false;
-      dispose();
+      run_all(dispose);
     }
   };
 }
 __name(create_fragment$Y, "create_fragment$Y");
 function instance$U($$self, $$props, $$invalidate) {
+  let $filter;
   let { feature } = $$props;
   let { onPick } = $$props;
   let { sprites } = $$props;
   let { inventory } = $$props;
+  let filter2 = writable("");
+  component_subscribe($$self, filter2, (value) => $$invalidate(3, $filter = value));
+  const matchesFilter = /* @__PURE__ */ __name((sprite, filter3) => {
+    if (!filter3 || sprite === void 0) return true;
+    const lowerFilter = filter3.toLowerCase();
+    return sprite.name.toLowerCase().includes(lowerFilter) || sprite.id.toString() === filter3;
+  }, "matchesFilter");
   let spritesMap = /* @__PURE__ */ new Map();
+  function input_input_handler() {
+    $filter = this.value;
+    filter2.set($filter);
+  }
+  __name(input_input_handler, "input_input_handler");
   const click_handler2 = /* @__PURE__ */ __name(() => onPick(null), "click_handler");
   const click_handler_1 = /* @__PURE__ */ __name((sprite) => onPick(spritesMap.get(sprite.spriteId)), "click_handler_1");
   $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(3, feature = $$props2.feature);
+    if ("feature" in $$props2) $$invalidate(6, feature = $$props2.feature);
     if ("onPick" in $$props2) $$invalidate(0, onPick = $$props2.onPick);
-    if ("sprites" in $$props2) $$invalidate(4, sprites = $$props2.sprites);
+    if ("sprites" in $$props2) $$invalidate(7, sprites = $$props2.sprites);
     if ("inventory" in $$props2) $$invalidate(1, inventory = $$props2.inventory);
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*sprites*/
-    16) {
+    128) {
       {
         $$invalidate(2, spritesMap = new Map(sprites.map((sprite) => [sprite.id, sprite])));
       }
@@ -41245,8 +41326,12 @@ function instance$U($$self, $$props, $$invalidate) {
     onPick,
     inventory,
     spritesMap,
+    $filter,
+    filter2,
+    matchesFilter,
     feature,
     sprites,
+    input_input_handler,
     click_handler2,
     click_handler_1
   ];
@@ -41256,9 +41341,9 @@ const _Panel_cabin_sprite_picker = class _Panel_cabin_sprite_picker extends Svel
   constructor(options) {
     super();
     init(this, options, instance$U, create_fragment$Y, safe_not_equal, {
-      feature: 3,
+      feature: 6,
       onPick: 0,
-      sprites: 4,
+      sprites: 7,
       inventory: 1
     });
   }
