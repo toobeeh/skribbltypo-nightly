@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 8d597e9
+// @version      27.1.3 beta-usc 2e7a752
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 8d597e9", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 2e7a752", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -60574,19 +60574,22 @@ ${content2}</tr>
       __publicField(this, "icon", "var(--file-img-line-rainbow-gif)");
       __publicField(this, "name", "Rainbow");
       __publicField(this, "_rainbowModeSetting", new ChoiceExtensionSetting("brushlab.rainbow.mode", "light").withName("Rainbow Colors").withDescription("Choose between the rainbow color shades").withChoices([{ choice: "light", name: "Light Colors" }, { choice: "dark", name: "Dark Colors" }]));
+      __publicField(this, "_strokeModeSetting", new BooleanExtensionSetting("brushlab.rainbow.strokeMode", false).withName("Change Per Stroke").withDescription("If enabled, the color will change per stroke instead of continuously."));
       __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.rainbow.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
       __publicField(this, "lastSwitch");
       __publicField(this, "settings", [
         this._rainbowModeSetting,
-        this._colorSwitchSetting
+        this._colorSwitchSetting,
+        this._strokeModeSetting
       ]);
     }
     async applyConstantEffect(line, pressure, style2, eventId, strokeId) {
       var _a2;
       const mode = await firstValueFrom(this._rainbowModeSetting.changes$);
+      const strokeMode = await firstValueFrom(this._strokeModeSetting.changes$);
       const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
       const colors = Color.skribblColors.filter((color, index) => index % 2 === 0 ? mode === "light" : mode === "dark");
-      if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style2.size / 10 * distance) {
+      if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || strokeMode == false && this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style2.size / 10 * distance) {
         let index = ((((_a2 = this.lastSwitch) == null ? void 0 : _a2.index) ?? -1) + 1) % (colors.length - 1);
         if (index < 2) index = 2;
         style2.color = index * 2 + (mode === "light" ? 0 : 1);
@@ -60624,16 +60627,19 @@ ${content2}</tr>
       __publicField(this, "description", "Switches colors of the current palette randomly while drawing.");
       __publicField(this, "icon", "var(--file-img-line-random-color-gif)");
       __publicField(this, "name", "Random Colors");
-      __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.rainbow.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
+      __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.randomcolor.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
+      __publicField(this, "_strokeModeSetting", new BooleanExtensionSetting("brushlab.randomcolor.strokeMode", false).withName("Change Per Stroke").withDescription("If enabled, the color will change per stroke instead of continuously."));
       __publicField(this, "lastSwitch");
       __publicField(this, "settings", [
-        this._colorSwitchSetting
+        this._colorSwitchSetting,
+        this._strokeModeSetting
       ]);
     }
     async applyConstantEffect(line, pressure, style2, eventId, strokeId) {
       const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
+      const strokeMode = await firstValueFrom(this._strokeModeSetting.changes$);
       const colors = await firstValueFrom(this._colorsService.pickerColors$) ?? defaultPalettes.skribblPalette;
-      if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style2.size / 10 * distance) {
+      if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || strokeMode === false && this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style2.size / 10 * distance) {
         const index = Math.floor(Math.random() * colors.colorHexCodes.length);
         const color = Color.fromHex(colors.colorHexCodes[index]);
         style2.color = color.typoCode;
