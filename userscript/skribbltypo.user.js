@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 9ea394c
+// @version      27.1.3 beta-usc ac9a93c
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 9ea394c", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc ac9a93c", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -23277,6 +23277,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_customPrefixSetting", this.useSetting(
         new TextExtensionSetting("custom_prefix", "", this).withName("Custom Command Prefix").withDescription("Set a custom prefix for chat commands that will trigger the command prompt, additionally to ' / '")
       ));
+      __publicField(this, "_muteResultsSetting", this.useSetting(
+        new BooleanExtensionSetting("mute_results", false, this).withName("Mute Command Results").withDescription("Don't show a toast message with the command result when a command has been executed")
+      ));
       __publicField(this, "_echoCommand", this.useCommand(
         new ExtensionCommand("echo", this, "Echo", "Echo a text :)")
       ).withParameters(
@@ -23316,9 +23319,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
         this._commandResults$.next(sorted);
       });
       this._submitSubscription = this._hotkeySubmitted$.pipe(
-        withLatestFrom(this._commandResults$, this._commandArgs$),
+        withLatestFrom(this._commandResults$, this._commandArgs$, this._muteResultsSetting.changes$),
         filter(([, , args]) => args.startsWith("/"))
-      ).subscribe(async ([, results]) => this.commandSubmitted(results));
+      ).subscribe(async ([, results, , silent]) => this.commandSubmitted(results, silent));
     }
     async onDestroy() {
       var _a2, _b2, _c2;
@@ -23372,7 +23375,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
      * Check interpretation results and run valid command
      * @param interpretationResults
      */
-    async commandSubmitted(interpretationResults) {
+    async commandSubmitted(interpretationResults, silent) {
       var _a2;
       this._logger.info("Commands submitted", interpretationResults);
       (_a2 = this._commandInput) == null ? void 0 : _a2.$destroy();
@@ -23380,13 +23383,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       const match = interpretationResults.find((result) => result.result instanceof InterpretableSuccess);
       if (match !== void 0 && match.result instanceof InterpretableSuccess) {
         if (match.result instanceof InterpretableDeferResult) {
-          const toast = await this._toastService.showLoadingToast(`Command: ${match.context.command.name}`);
+          const toast = silent ? void 0 : await this._toastService.showLoadingToast(`Command: ${match.context.command.name}`);
           const result = await match.result.run();
-          if (!(result instanceof InterpretableSilentSuccess)) toast.resolve(result.message);
-          else toast.close();
+          if (!(result instanceof InterpretableSilentSuccess)) toast == null ? void 0 : toast.resolve(result.message);
+          else toast == null ? void 0 : toast.close();
         } else {
-          if (match.result.message) await this._toastService.showToast(`${match.result.message}`);
-          else if (!(match.result instanceof InterpretableSilentSuccess)) await this._toastService.showToast(`${match.context.command.name}`);
+          if (match.result.message && !silent) await this._toastService.showToast(`${match.result.message}`);
+          else if (!(match.result instanceof InterpretableSilentSuccess) && !silent) await this._toastService.showToast(`${match.context.command.name}`);
         }
       } else {
         await this._toastService.showToast("No valid command entered");
