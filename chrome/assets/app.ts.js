@@ -22211,10 +22211,11 @@ let DrawingService = (_na = class {
   /**
    *
    * @param color the skribbl color code
+   * @param secondary whether the color should be set as secondary color (right click)
    */
-  setColor(color) {
+  setColor(color, secondary = false) {
     this._logger.debug("Setting color", color);
-    document.dispatchEvent(new CustomEvent("setColor", { detail: { code: color } }));
+    document.dispatchEvent(new CustomEvent("setColor", { detail: { code: color, secondary } }));
   }
   /**
    * Disable or enable cursor updates
@@ -31665,12 +31666,13 @@ function create_each_block$p(ctx) {
   let div;
   let mounted;
   let dispose;
-  function pointerdown_handler() {
+  function pointerdown_handler(...args) {
     return (
       /*pointerdown_handler*/
       ctx[2](
         /*color*/
-        ctx[3]
+        ctx[3],
+        ...args
       )
     );
   }
@@ -31821,7 +31823,11 @@ __name(create_fragment$18, "create_fragment$18");
 function instance$11($$self, $$props, $$invalidate) {
   let { colors } = $$props;
   let { feature } = $$props;
-  const pointerdown_handler = /* @__PURE__ */ __name((color) => feature.setColor(color), "pointerdown_handler");
+  const pointerdown_handler = /* @__PURE__ */ __name((color, e) => {
+    const secondary = e.button !== 0;
+    if (secondary) e.preventDefault();
+    feature.setColor(color, secondary);
+  }, "pointerdown_handler");
   $$self.$$set = ($$props2) => {
     if ("colors" in $$props2) $$invalidate(0, colors = $$props2.colors);
     if ("feature" in $$props2) $$invalidate(1, feature = $$props2.feature);
@@ -32066,11 +32072,12 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
   /**
    * Set the color of the skribbl tool
    * @param colorHex
+   * @param secondary
    */
-  setColor(colorHex) {
+  setColor(colorHex, secondary = false) {
     this._logger.info(`Setting color to ${colorHex}`);
     const color = Color.fromHex(colorHex);
-    this._drawingService.setColor(color.skribblCode);
+    this._drawingService.setColor(color.skribblCode, secondary);
   }
   get savedPalettesStore() {
     return this._colorsService.savedPalettesSetting.store;

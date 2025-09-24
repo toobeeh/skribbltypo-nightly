@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 2e7a752
+// @version      27.1.3 beta-usc 2849136
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 2e7a752", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 2849136", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -25818,10 +25818,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     /**
      *
      * @param color the skribbl color code
+     * @param secondary whether the color should be set as secondary color (right click)
      */
-    setColor(color) {
+    setColor(color, secondary = false) {
       this._logger.debug("Setting color", color);
-      document.dispatchEvent(new CustomEvent("setColor", { detail: { code: color } }));
+      document.dispatchEvent(new CustomEvent("setColor", { detail: { code: color, secondary } }));
     }
     /**
      * Disable or enable cursor updates
@@ -35272,12 +35273,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     let div;
     let mounted;
     let dispose;
-    function pointerdown_handler() {
+    function pointerdown_handler(...args) {
       return (
         /*pointerdown_handler*/
         ctx[2](
           /*color*/
-          ctx[3]
+          ctx[3],
+          ...args
         )
       );
     }
@@ -35428,7 +35430,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   function instance$11($$self, $$props, $$invalidate) {
     let { colors } = $$props;
     let { feature } = $$props;
-    const pointerdown_handler = /* @__PURE__ */ __name((color) => feature.setColor(color), "pointerdown_handler");
+    const pointerdown_handler = /* @__PURE__ */ __name((color, e) => {
+      const secondary = e.button !== 0;
+      if (secondary) e.preventDefault();
+      feature.setColor(color, secondary);
+    }, "pointerdown_handler");
     $$self.$$set = ($$props2) => {
       if ("colors" in $$props2) $$invalidate(0, colors = $$props2.colors);
       if ("feature" in $$props2) $$invalidate(1, feature = $$props2.feature);
@@ -35673,11 +35679,12 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     /**
      * Set the color of the skribbl tool
      * @param colorHex
+     * @param secondary
      */
-    setColor(colorHex) {
+    setColor(colorHex, secondary = false) {
       this._logger.info(`Setting color to ${colorHex}`);
       const color = Color.fromHex(colorHex);
-      this._drawingService.setColor(color.skribblCode);
+      this._drawingService.setColor(color.skribblCode, secondary);
     }
     get savedPalettesStore() {
       return this._colorsService.savedPalettesSetting.store;
