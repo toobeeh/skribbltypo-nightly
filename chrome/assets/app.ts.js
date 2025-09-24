@@ -22250,6 +22250,9 @@ let DrawingService = (_na = class {
     if (clipped === void 0) return;
     return [0, colorCode ?? 1, size ?? 4, ...clipped];
   }
+  createFillCommand(coordinates, colorCode = void 0) {
+    return [1, colorCode ?? 1, ...coordinates];
+  }
   async drawLine(coordinates, colorCode = void 0, size = void 0) {
     var _a2;
     this._logger.debug("Drawing line", coordinates, colorCode, size);
@@ -32108,10 +32111,11 @@ let TypoDrawMod = (_xa = class {
     /**
      * Indicator if this mod requires the skribbl sampling throttle to be disabled
      * Needs to be set true if the mod produces many draw commands in a short time
+     * TODO remove? seems unused
      */
     __publicField(this, "disableSkribblSamplingRate", false);
   }
-  noEffect(line, pressure, brushStyle) {
+  noLineEffect(line, pressure, brushStyle) {
     return { lines: [line], style: brushStyle };
   }
 }, __name(_xa, "TypoDrawMod"), _xa);
@@ -32353,7 +32357,7 @@ const _CoordinateListener = class _CoordinateListener {
     this._currentStroke = {
       canvasRect: rect,
       lastSampleDate: Date.now(),
-      pointerDownId: event.pointerId,
+      pointerDownId: performance.now(),
       lastCoordinates: coords
     };
     this._strokes$.next({ from: coords, to: coords, cause: "down", stroke: this._currentStroke.pointerDownId });
@@ -32458,8 +32462,7 @@ let ToolsService = (_ya = class {
       combineLatestWith(this._activeMods$, this._activeBrushStyle$),
       map(([tool, mods, style]) => {
         const typoMods = tool instanceof TypoDrawTool ? [tool, ...mods] : mods;
-        const typoTool = tool instanceof TypoDrawTool ? tool : void 0;
-        return [style, typoTool, typoMods];
+        return [style, tool, typoMods];
       })
     );
     this._activeMods$.pipe(
@@ -32481,13 +32484,13 @@ let ToolsService = (_ya = class {
     this._lobbyService.lobby$.pipe(
       map((lobby) => (lobby == null ? void 0 : lobby.meId) === (lobby == null ? void 0 : lobby.drawerId)),
       combineLatestWith(this._activeTool$, this._activeMods$),
-      map(([isDrawer, tool, mods]) => isDrawer && (tool instanceof TypoDrawTool || tool === skribblTool.brush && mods.length > 0))
+      map(([isDrawer, tool, mods]) => isDrawer && (tool instanceof TypoDrawTool || (tool === skribblTool.brush || tool == skribblTool.fill) && mods.length > 0))
     ).subscribe((enabled) => {
       coordinateListener.enabled = enabled;
     });
   }
   async processDrawCoordinates(start, end, cause, tool, mods, style, strokeId) {
-    var _a2, _b2;
+    var _a2, _b2, _c2;
     this._logger.debug("Activating tool and applying mods", start, end);
     const eventId = Date.now();
     let lines = [{ from: [start[0], start[1]], to: [end[0], end[1]] }];
@@ -32508,7 +32511,7 @@ let ToolsService = (_ya = class {
       this._drawingService.setColor(modStyle.color);
     }
     const commands = [];
-    if (tool !== void 0) {
+    if (tool instanceof TypoDrawTool) {
       for (let line of lines) {
         line = { from: [Math.floor(line.from[0]), Math.floor(line.from[1])], to: [Math.floor(line.to[0]), Math.floor(line.to[1])] };
         const lineCommands = await tool.createCommands(line, pressure, line.styleOverride ?? modStyle, eventId, strokeId, cause);
@@ -32519,7 +32522,7 @@ let ToolsService = (_ya = class {
           this._logger.debug("No draw commands created from tool", tool);
         }
       }
-    } else {
+    } else if (tool === skribblTool.brush) {
       for (const line of lines) {
         const lineCommand = this._drawingService.createLineCommand(
           [...line.from, ...line.to],
@@ -32528,6 +32531,16 @@ let ToolsService = (_ya = class {
           false
         );
         if (lineCommand !== void 0) commands.push(lineCommand);
+      }
+    } else if (tool === skribblTool.fill) {
+      if (cause === "down") {
+        for (const line of lines) {
+          const pointCommand = this._drawingService.createFillCommand(
+            [...line.from],
+            ((_c2 = line.styleOverride) == null ? void 0 : _c2.color) ?? modStyle.color
+          );
+          commands.push(pointCommand);
+        }
       }
     }
     this._logger.info("Pasting draw commands", commands);
@@ -56876,19 +56889,20 @@ const _RainbowMod = class _RainbowMod extends ConstantDrawMod {
       this._colorSwitchSetting
     ]);
   }
-  async applyConstantEffect(line, pressure, style, eventId) {
+  async applyConstantEffect(line, pressure, style, eventId, strokeId) {
     var _a2;
     const mode = await firstValueFrom(this._rainbowModeSetting.changes$);
     const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
     const colors = Color.skribblColors.filter((color, index) => index % 2 === 0 ? mode === "light" : mode === "dark");
-    if (this.lastSwitch === void 0 || this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style.size / 10 * distance) {
+    if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style.size / 10 * distance) {
       let index = ((((_a2 = this.lastSwitch) == null ? void 0 : _a2.index) ?? -1) + 1) % (colors.length - 1);
       if (index < 2) index = 2;
       style.color = index * 2 + (mode === "light" ? 0 : 1);
       this.lastSwitch = {
         eventId,
         position: line.from,
-        index
+        index,
+        strokeId
       };
     }
     return {
@@ -56924,16 +56938,17 @@ const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
       this._colorSwitchSetting
     ]);
   }
-  async applyConstantEffect(line, pressure, style, eventId) {
+  async applyConstantEffect(line, pressure, style, eventId, strokeId) {
     const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
     const colors = await firstValueFrom(this._colorsService.pickerColors$) ?? defaultPalettes.skribblPalette;
-    if (this.lastSwitch === void 0 || this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style.size / 10 * distance) {
+    if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style.size / 10 * distance) {
       const index = Math.floor(Math.random() * colors.colorHexCodes.length);
       const color = Color.fromHex(colors.colorHexCodes[index]);
       style.color = color.typoCode;
       this.lastSwitch = {
         eventId,
-        position: line.from
+        position: line.from,
+        strokeId
       };
     }
     return {
