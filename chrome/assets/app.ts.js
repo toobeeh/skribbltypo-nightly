@@ -2963,7 +2963,7 @@ function create_if_block$M(ctx) {
   };
 }
 __name(create_if_block$M, "create_if_block$M");
-function create_fragment$1I(ctx) {
+function create_fragment$1J(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -3082,8 +3082,8 @@ function create_fragment$1I(ctx) {
     }
   };
 }
-__name(create_fragment$1I, "create_fragment$1I");
-function instance$1y($$self, $$props, $$invalidate) {
+__name(create_fragment$1J, "create_fragment$1J");
+function instance$1z($$self, $$props, $$invalidate) {
   let { checked = false } = $$props;
   let { disabled = false } = $$props;
   let { description = "" } = $$props;
@@ -3115,11 +3115,11 @@ function instance$1y($$self, $$props, $$invalidate) {
     keypress_handler
   ];
 }
-__name(instance$1y, "instance$1y");
+__name(instance$1z, "instance$1z");
 const _Checkbox = class _Checkbox extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1y, create_fragment$1I, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
+    init(this, options, instance$1z, create_fragment$1J, safe_not_equal, { checked: 0, disabled: 1, description: 2 });
   }
 };
 __name(_Checkbox, "Checkbox");
@@ -3207,7 +3207,7 @@ function create_if_block$L(ctx) {
   };
 }
 __name(create_if_block$L, "create_if_block$L");
-function create_fragment$1H(ctx) {
+function create_fragment$1I(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
@@ -3266,8 +3266,8 @@ function create_fragment$1H(ctx) {
     }
   };
 }
-__name(create_fragment$1H, "create_fragment$1H");
-function instance$1x($$self, $$props, $$invalidate) {
+__name(create_fragment$1I, "create_fragment$1I");
+function instance$1y($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3290,11 +3290,11 @@ function instance$1x($$self, $$props, $$invalidate) {
   };
   return [setting, settingStore, $settingStore, checkbox_checked_binding];
 }
-__name(instance$1x, "instance$1x");
+__name(instance$1y, "instance$1y");
 const _Boolean_setting_input = class _Boolean_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1x, create_fragment$1H, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1y, create_fragment$1I, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Boolean_setting_input, "Boolean_setting_input");
@@ -3515,7 +3515,7 @@ function create_if_block_1$m(ctx) {
   };
 }
 __name(create_if_block_1$m, "create_if_block_1$m");
-function create_fragment$1G(ctx) {
+function create_fragment$1H(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
@@ -3557,8 +3557,8 @@ function create_fragment$1G(ctx) {
     }
   };
 }
-__name(create_fragment$1G, "create_fragment$1G");
-function instance$1w($$self, $$props, $$invalidate) {
+__name(create_fragment$1H, "create_fragment$1H");
+function instance$1x($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3598,11 +3598,11 @@ function instance$1w($$self, $$props, $$invalidate) {
     input_change_input_handler
   ];
 }
-__name(instance$1w, "instance$1w");
+__name(instance$1x, "instance$1x");
 const _Numeric_setting_input = class _Numeric_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1w, create_fragment$1G, safe_not_equal, {
+    init(this, options, instance$1x, create_fragment$1H, safe_not_equal, {
       setting: 0,
       bounds: 1,
       withSliderAndSteps: 2
@@ -3611,13 +3611,13 @@ const _Numeric_setting_input = class _Numeric_setting_input extends SvelteCompon
 };
 __name(_Numeric_setting_input, "Numeric_setting_input");
 let Numeric_setting_input = _Numeric_setting_input;
-function get_each_context$z(ctx, list, i) {
+function get_each_context$A(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i].choice;
   child_ctx[6] = list[i].name;
   return child_ctx;
 }
-__name(get_each_context$z, "get_each_context$z");
+__name(get_each_context$A, "get_each_context$A");
 function create_if_block$J(ctx) {
   let div1;
   let b;
@@ -3643,7 +3643,7 @@ function create_if_block$J(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$z(get_each_context$z(ctx, each_value, i));
+    each_blocks[i] = create_each_block$A(get_each_context$A(ctx, each_value, i));
   }
   return {
     c() {
@@ -3710,11 +3710,11 @@ function create_if_block$J(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$z(ctx2, each_value, i);
+          const child_ctx = get_each_context$A(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$z(child_ctx);
+            each_blocks[i] = create_each_block$A(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(select, null);
           }
@@ -3747,7 +3747,7 @@ function create_if_block$J(ctx) {
   };
 }
 __name(create_if_block$J, "create_if_block$J");
-function create_each_block$z(ctx) {
+function create_each_block$A(ctx) {
   let option;
   let t_value = (
     /*name*/
@@ -3785,8 +3785,8 @@ function create_each_block$z(ctx) {
     }
   };
 }
-__name(create_each_block$z, "create_each_block$z");
-function create_fragment$1F(ctx) {
+__name(create_each_block$A, "create_each_block$A");
+function create_fragment$1G(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
@@ -3828,8 +3828,8 @@ function create_fragment$1F(ctx) {
     }
   };
 }
-__name(create_fragment$1F, "create_fragment$1F");
-function instance$1v($$self, $$props, $$invalidate) {
+__name(create_fragment$1G, "create_fragment$1G");
+function instance$1w($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(3, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -3855,11 +3855,11 @@ function instance$1v($$self, $$props, $$invalidate) {
   };
   return [setting, choices, settingStore, $settingStore, select_change_handler];
 }
-__name(instance$1v, "instance$1v");
+__name(instance$1w, "instance$1w");
 const _Choice_setting_input = class _Choice_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1v, create_fragment$1F, safe_not_equal, { setting: 0, choices: 1 });
+    init(this, options, instance$1w, create_fragment$1G, safe_not_equal, { setting: 0, choices: 1 });
   }
 };
 __name(_Choice_setting_input, "Choice_setting_input");
@@ -3949,7 +3949,7 @@ function create_if_block$I(ctx) {
   };
 }
 __name(create_if_block$I, "create_if_block$I");
-function create_fragment$1E(ctx) {
+function create_fragment$1F(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
@@ -3991,8 +3991,8 @@ function create_fragment$1E(ctx) {
     }
   };
 }
-__name(create_fragment$1E, "create_fragment$1E");
-function instance$1u($$self, $$props, $$invalidate) {
+__name(create_fragment$1F, "create_fragment$1F");
+function instance$1v($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(2, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -4015,11 +4015,11 @@ function instance$1u($$self, $$props, $$invalidate) {
   };
   return [setting, settingStore, $settingStore, input_input_handler];
 }
-__name(instance$1u, "instance$1u");
+__name(instance$1v, "instance$1v");
 const _Text_setting_input = class _Text_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1u, create_fragment$1E, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1v, create_fragment$1F, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Text_setting_input, "Text_setting_input");
@@ -4367,7 +4367,7 @@ function create_if_block$H(ctx) {
   };
 }
 __name(create_if_block$H, "create_if_block$H");
-function create_fragment$1D(ctx) {
+function create_fragment$1E(ctx) {
   let div5;
   let div0;
   let t2;
@@ -4603,8 +4603,8 @@ function create_fragment$1D(ctx) {
     }
   };
 }
-__name(create_fragment$1D, "create_fragment$1D");
-function instance$1t($$self, $$props, $$invalidate) {
+__name(create_fragment$1E, "create_fragment$1E");
+function instance$1u($$self, $$props, $$invalidate) {
   let { color = Color.fromHex("#45588d") } = $$props;
   let { allowAlpha = false } = $$props;
   let { description = "" } = $$props;
@@ -4700,11 +4700,11 @@ function instance$1t($$self, $$props, $$invalidate) {
     change_handler
   ];
 }
-__name(instance$1t, "instance$1t");
+__name(instance$1u, "instance$1u");
 const _Color_picker = class _Color_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1t, create_fragment$1D, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
+    init(this, options, instance$1u, create_fragment$1E, safe_not_equal, { color: 0, allowAlpha: 1, description: 2 });
   }
 };
 __name(_Color_picker, "Color_picker");
@@ -4881,7 +4881,7 @@ function create_if_block$G(ctx) {
   };
 }
 __name(create_if_block$G, "create_if_block$G");
-function create_fragment$1C(ctx) {
+function create_fragment$1D(ctx) {
   let div1;
   let div0;
   let t;
@@ -5020,9 +5020,9 @@ function create_fragment$1C(ctx) {
     }
   };
 }
-__name(create_fragment$1C, "create_fragment$1C");
+__name(create_fragment$1D, "create_fragment$1D");
 const click_handler = /* @__PURE__ */ __name((e) => e.stopImmediatePropagation(), "click_handler");
-function instance$1s($$self, $$props, $$invalidate) {
+function instance$1t($$self, $$props, $$invalidate) {
   let { color = Color.fromHex("#45588d") } = $$props;
   let { allowAlpha = false } = $$props;
   let { useBackground = true } = $$props;
@@ -5099,11 +5099,11 @@ function instance$1s($$self, $$props, $$invalidate) {
     colorpicker_color_binding
   ];
 }
-__name(instance$1s, "instance$1s");
+__name(instance$1t, "instance$1t");
 const _Color_picker_button = class _Color_picker_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1s, create_fragment$1C, safe_not_equal, {
+    init(this, options, instance$1t, create_fragment$1D, safe_not_equal, {
       color: 0,
       allowAlpha: 1,
       useBackground: 2,
@@ -5211,7 +5211,7 @@ function create_if_block$F(ctx) {
   };
 }
 __name(create_if_block$F, "create_if_block$F");
-function create_fragment$1B(ctx) {
+function create_fragment$1C(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
@@ -5270,8 +5270,8 @@ function create_fragment$1B(ctx) {
     }
   };
 }
-__name(create_fragment$1B, "create_fragment$1B");
-function instance$1r($$self, $$props, $$invalidate) {
+__name(create_fragment$1C, "create_fragment$1C");
+function instance$1s($$self, $$props, $$invalidate) {
   let $settingStore, $$unsubscribe_settingStore = noop$1, $$subscribe_settingStore = /* @__PURE__ */ __name(() => ($$unsubscribe_settingStore(), $$unsubscribe_settingStore = subscribe(settingStore, ($$value) => $$invalidate(4, $settingStore = $$value)), settingStore), "$$subscribe_settingStore");
   $$self.$$.on_destroy.push(() => $$unsubscribe_settingStore());
   let { setting } = $$props;
@@ -5306,11 +5306,11 @@ function instance$1r($$self, $$props, $$invalidate) {
   };
   return [setting, color, settingStore, colorpickerbutton_color_binding];
 }
-__name(instance$1r, "instance$1r");
+__name(instance$1s, "instance$1s");
 const _Color_hex_setting_input = class _Color_hex_setting_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1r, create_fragment$1B, safe_not_equal, { setting: 0 });
+    init(this, options, instance$1s, create_fragment$1C, safe_not_equal, { setting: 0 });
   }
 };
 __name(_Color_hex_setting_input, "Color_hex_setting_input");
@@ -9791,7 +9791,7 @@ GlobalSettingsService = __decorateClass$1O([
   injectable(),
   __decorateParam$l(0, inject(loggerFactory))
 ], GlobalSettingsService);
-function create_fragment$1A(ctx) {
+function create_fragment$1B(ctx) {
   let div1;
   let div0;
   let div1_class_value;
@@ -9856,8 +9856,8 @@ function create_fragment$1A(ctx) {
     }
   };
 }
-__name(create_fragment$1A, "create_fragment$1A");
-function instance$1q($$self, $$props, $$invalidate) {
+__name(create_fragment$1B, "create_fragment$1B");
+function instance$1r($$self, $$props, $$invalidate) {
   let $position;
   let $direction;
   let elem;
@@ -9898,11 +9898,11 @@ function instance$1q($$self, $$props, $$invalidate) {
     div1_binding
   ];
 }
-__name(instance$1q, "instance$1q");
+__name(instance$1r, "instance$1r");
 const _Controls = class _Controls extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1q, create_fragment$1A, safe_not_equal, { globalSettings: 6, element: 7 });
+    init(this, options, instance$1r, create_fragment$1B, safe_not_equal, { globalSettings: 6, element: 7 });
   }
   get element() {
     return this.$$.ctx[7];
@@ -9944,7 +9944,7 @@ __decorateClass$1N([
 __decorateClass$1N([
   inject(GlobalSettingsService)
 ], ControlsSetup.prototype, "_settingsService");
-function create_fragment$1z(ctx) {
+function create_fragment$1A(ctx) {
   let div;
   return {
     c() {
@@ -9966,8 +9966,8 @@ function create_fragment$1z(ctx) {
     }
   };
 }
-__name(create_fragment$1z, "create_fragment$1z");
-function instance$1p($$self, $$props, $$invalidate) {
+__name(create_fragment$1A, "create_fragment$1A");
+function instance$1q($$self, $$props, $$invalidate) {
   let elem;
   let resolve2;
   const element2 = new Promise((res) => {
@@ -9985,11 +9985,11 @@ function instance$1p($$self, $$props, $$invalidate) {
   __name(div_binding, "div_binding");
   return [elem, element2, div_binding];
 }
-__name(instance$1p, "instance$1p");
+__name(instance$1q, "instance$1q");
 const _Customizer_actions = class _Customizer_actions extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1p, create_fragment$1z, safe_not_equal, { element: 1 });
+    init(this, options, instance$1q, create_fragment$1A, safe_not_equal, { element: 1 });
   }
   get element() {
     return this.$$.ctx[1];
@@ -10064,12 +10064,12 @@ let ToastSetup = _ToastSetup;
 __decorateClass$1L([
   inject(GamePatchReadySetup)
 ], ToastSetup.prototype, "_gameReadySetup");
-function get_each_context$y(ctx, list, i) {
+function get_each_context$z(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[4] = list[i];
   return child_ctx;
 }
-__name(get_each_context$y, "get_each_context$y");
+__name(get_each_context$z, "get_each_context$z");
 function get_each_context_1$d(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[4] = list[i];
@@ -10157,7 +10157,7 @@ function create_each_block_1$d(ctx) {
   };
 }
 __name(create_each_block_1$d, "create_each_block_1$d");
-function create_each_block$y(ctx) {
+function create_each_block$z(ctx) {
   let div;
   let div_class_value;
   let div_hidden_value;
@@ -10193,8 +10193,8 @@ function create_each_block$y(ctx) {
     }
   };
 }
-__name(create_each_block$y, "create_each_block$y");
-function create_fragment$1y(ctx) {
+__name(create_each_block$z, "create_each_block$z");
+function create_fragment$1z(ctx) {
   let div;
   let t;
   let each1_anchor;
@@ -10212,7 +10212,7 @@ function create_fragment$1y(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$y(get_each_context$y(ctx, each_value, i));
+    each_blocks[i] = create_each_block$z(get_each_context$z(ctx, each_value, i));
   }
   return {
     c() {
@@ -10273,11 +10273,11 @@ function create_fragment$1y(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$y(ctx2, each_value, i);
+          const child_ctx = get_each_context$z(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$y(child_ctx);
+            each_blocks[i] = create_each_block$z(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each1_anchor.parentNode, each1_anchor);
           }
@@ -10301,8 +10301,8 @@ function create_fragment$1y(ctx) {
     }
   };
 }
-__name(create_fragment$1y, "create_fragment$1y");
-function instance$1o($$self, $$props, $$invalidate) {
+__name(create_fragment$1z, "create_fragment$1z");
+function instance$1p($$self, $$props, $$invalidate) {
   let { tabs = [] } = $$props;
   let activeTab = tabs[0];
   const keydown_handler2 = /* @__PURE__ */ __name((tab) => $$invalidate(1, activeTab = tab), "keydown_handler");
@@ -10312,11 +10312,11 @@ function instance$1o($$self, $$props, $$invalidate) {
   };
   return [tabs, activeTab, keydown_handler2, click_handler2];
 }
-__name(instance$1o, "instance$1o");
+__name(instance$1p, "instance$1p");
 const _Panel_tabs = class _Panel_tabs extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1o, create_fragment$1y, safe_not_equal, { tabs: 0 });
+    init(this, options, instance$1p, create_fragment$1z, safe_not_equal, { tabs: 0 });
   }
 };
 __name(_Panel_tabs, "Panel_tabs");
@@ -12127,7 +12127,7 @@ LobbyService = __decorateClass$1k([
   __decorateParam$k(7, inject(ElementsSetup)),
   __decorateParam$k(8, inject(LobbyJoinFailedListener))
 ], LobbyService);
-function create_fragment$1x(ctx) {
+function create_fragment$1y(ctx) {
   let div1;
   let div0;
   let t0;
@@ -12171,24 +12171,24 @@ function create_fragment$1x(ctx) {
     }
   };
 }
-__name(create_fragment$1x, "create_fragment$1x");
-function instance$1n($$self, $$props, $$invalidate) {
+__name(create_fragment$1y, "create_fragment$1y");
+function instance$1o($$self, $$props, $$invalidate) {
   let { content = "Loading..." } = $$props;
   $$self.$$set = ($$props2) => {
     if ("content" in $$props2) $$invalidate(0, content = $$props2.content);
   };
   return [content];
 }
-__name(instance$1n, "instance$1n");
+__name(instance$1o, "instance$1o");
 const _Bounceload = class _Bounceload extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1n, create_fragment$1x, safe_not_equal, { content: 0 });
+    init(this, options, instance$1o, create_fragment$1y, safe_not_equal, { content: 0 });
   }
 };
 __name(_Bounceload, "Bounceload");
 let Bounceload = _Bounceload;
-function create_fragment$1w(ctx) {
+function create_fragment$1x(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -12379,8 +12379,8 @@ function create_fragment$1w(ctx) {
     }
   };
 }
-__name(create_fragment$1w, "create_fragment$1w");
-function instance$1m($$self, $$props, $$invalidate) {
+__name(create_fragment$1x, "create_fragment$1x");
+function instance$1n($$self, $$props, $$invalidate) {
   let { disabled = false } = $$props;
   let { icon } = $$props;
   let { name } = $$props;
@@ -12427,11 +12427,11 @@ function instance$1m($$self, $$props, $$invalidate) {
     keypress_handler
   ];
 }
-__name(instance$1m, "instance$1m");
+__name(instance$1n, "instance$1n");
 const _Icon_button = class _Icon_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1m, create_fragment$1w, safe_not_equal, {
+    init(this, options, instance$1n, create_fragment$1x, safe_not_equal, {
       disabled: 0,
       icon: 1,
       name: 2,
@@ -12925,7 +12925,7 @@ function create_if_block_1$k(ctx) {
   };
 }
 __name(create_if_block_1$k, "create_if_block_1$k");
-function create_fragment$1v(ctx) {
+function create_fragment$1w(ctx) {
   let div;
   let t;
   let current_block_type_index;
@@ -13047,9 +13047,9 @@ function create_fragment$1v(ctx) {
     }
   };
 }
-__name(create_fragment$1v, "create_fragment$1v");
+__name(create_fragment$1w, "create_fragment$1w");
 const keydown_handler = /* @__PURE__ */ __name((e) => e.stopPropagation(), "keydown_handler");
-function instance$1l($$self, $$props, $$invalidate) {
+function instance$1m($$self, $$props, $$invalidate) {
   let { content } = $$props;
   let { title } = $$props;
   let { closeHandler } = $$props;
@@ -13108,11 +13108,11 @@ function instance$1l($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$1l, "instance$1l");
+__name(instance$1m, "instance$1m");
 const _Toast = class _Toast extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1l, create_fragment$1v, safe_not_equal, {
+    init(this, options, instance$1m, create_fragment$1w, safe_not_equal, {
       content: 0,
       title: 1,
       closeHandler: 11,
@@ -13348,7 +13348,7 @@ const createStylesheet = /* @__PURE__ */ __name(() => {
   };
   return handle;
 }, "createStylesheet");
-function create_fragment$1u(ctx) {
+function create_fragment$1v(ctx) {
   let t0;
   let br0;
   let t1;
@@ -13407,11 +13407,11 @@ function create_fragment$1u(ctx) {
     }
   };
 }
-__name(create_fragment$1u, "create_fragment$1u");
+__name(create_fragment$1v, "create_fragment$1v");
 const _Canvas_zoom_info = class _Canvas_zoom_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$1u, safe_not_equal, {});
+    init(this, options, null, create_fragment$1v, safe_not_equal, {});
   }
 };
 __name(_Canvas_zoom_info, "Canvas_zoom_info");
@@ -17352,7 +17352,7 @@ PlayersService = __decorateClass$1c([
   injectable(),
   __decorateParam$f(0, inject(loggerFactory))
 ], PlayersService);
-function create_fragment$1t(ctx) {
+function create_fragment$1u(ctx) {
   let p;
   let span1;
   let b;
@@ -17431,8 +17431,8 @@ function create_fragment$1t(ctx) {
     }
   };
 }
-__name(create_fragment$1t, "create_fragment$1t");
-function instance$1k($$self, $$props, $$invalidate) {
+__name(create_fragment$1u, "create_fragment$1u");
+function instance$1l($$self, $$props, $$invalidate) {
   let { content = "" } = $$props;
   let { title = "" } = $$props;
   let { style = "normal" } = $$props;
@@ -17500,11 +17500,11 @@ function instance$1k($$self, $$props, $$invalidate) {
     p_binding
   ];
 }
-__name(instance$1k, "instance$1k");
+__name(instance$1l, "instance$1l");
 const _Message = class _Message extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1k, create_fragment$1t, safe_not_equal, {
+    init(this, options, instance$1l, create_fragment$1u, safe_not_equal, {
       content: 0,
       title: 1,
       style: 2,
@@ -17798,7 +17798,7 @@ function create_if_block$D(ctx) {
   };
 }
 __name(create_if_block$D, "create_if_block$D");
-function create_fragment$1s(ctx) {
+function create_fragment$1t(ctx) {
   let div3;
   let div0;
   let div0_style_value;
@@ -17923,8 +17923,8 @@ function create_fragment$1s(ctx) {
     }
   };
 }
-__name(create_fragment$1s, "create_fragment$1s");
-function instance$1j($$self, $$props, $$invalidate) {
+__name(create_fragment$1t, "create_fragment$1t");
+function instance$1k($$self, $$props, $$invalidate) {
   let { avatar } = $$props;
   let { size = "80px" } = $$props;
   let resolve2;
@@ -17946,11 +17946,11 @@ function instance$1j($$self, $$props, $$invalidate) {
   };
   return [avatar, size, container, element2, div3_binding];
 }
-__name(instance$1j, "instance$1j");
+__name(instance$1k, "instance$1k");
 const _Skribbl_avatar = class _Skribbl_avatar extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1j, create_fragment$1s, safe_not_equal, { avatar: 0, size: 1, element: 3 });
+    init(this, options, instance$1k, create_fragment$1t, safe_not_equal, { avatar: 0, size: 1, element: 3 });
   }
   get element() {
     return this.$$.ctx[3];
@@ -18349,7 +18349,7 @@ function create_if_block$C(ctx) {
   };
 }
 __name(create_if_block$C, "create_if_block$C");
-function create_fragment$1r(ctx) {
+function create_fragment$1s(ctx) {
   let div1;
   let t0;
   let div0;
@@ -18596,8 +18596,8 @@ function create_fragment$1r(ctx) {
     }
   };
 }
-__name(create_fragment$1r, "create_fragment$1r");
-function instance$1i($$self, $$props, $$invalidate) {
+__name(create_fragment$1s, "create_fragment$1s");
+function instance$1j($$self, $$props, $$invalidate) {
   let { closeStrategy = "implicit" } = $$props;
   let { alignment = "bottom" } = $$props;
   let { marginY = ".5em" } = $$props;
@@ -18685,11 +18685,11 @@ function instance$1i($$self, $$props, $$invalidate) {
     div1_binding
   ];
 }
-__name(instance$1i, "instance$1i");
+__name(instance$1j, "instance$1j");
 const _Area_flyout = class _Area_flyout extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1i, create_fragment$1r, safe_not_equal, {
+    init(this, options, instance$1j, create_fragment$1s, safe_not_equal, {
       closeStrategy: 0,
       alignment: 1,
       marginY: 2,
@@ -18714,12 +18714,12 @@ const _Area_flyout = class _Area_flyout extends SvelteComponent {
 };
 __name(_Area_flyout, "Area_flyout");
 let Area_flyout = _Area_flyout;
-function get_each_context$x(ctx, list, i) {
+function get_each_context$y(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i];
   return child_ctx;
 }
-__name(get_each_context$x, "get_each_context$x");
+__name(get_each_context$y, "get_each_context$y");
 function get_each_context_1$c(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i];
@@ -19297,7 +19297,7 @@ function create_if_block$B(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$x(get_each_context$x(ctx, each_value, i));
+    each_blocks[i] = create_each_block$y(get_each_context$y(ctx, each_value, i));
   }
   return {
     c() {
@@ -19328,11 +19328,11 @@ function create_if_block$B(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$x(ctx2, each_value, i);
+          const child_ctx = get_each_context$y(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$x(child_ctx);
+            each_blocks[i] = create_each_block$y(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -19388,7 +19388,7 @@ function create_pending_block$5(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
 __name(create_pending_block$5, "create_pending_block$5");
-function create_each_block$x(ctx) {
+function create_each_block$y(ctx) {
   let b;
   let t0;
   let promise;
@@ -19444,8 +19444,8 @@ function create_each_block$x(ctx) {
     }
   };
 }
-__name(create_each_block$x, "create_each_block$x");
-function create_fragment$1q(ctx) {
+__name(create_each_block$y, "create_each_block$y");
+function create_fragment$1r(ctx) {
   let div;
   let t;
   let show_if = (
@@ -19531,9 +19531,9 @@ function create_fragment$1q(ctx) {
     }
   };
 }
-__name(create_fragment$1q, "create_fragment$1q");
+__name(create_fragment$1r, "create_fragment$1r");
 const func$4 = /* @__PURE__ */ __name((result) => result.result === null, "func$4");
-function instance$1h($$self, $$props, $$invalidate) {
+function instance$1i($$self, $$props, $$invalidate) {
   let $currentCommands;
   let $combo;
   let { feature } = $$props;
@@ -19546,16 +19546,16 @@ function instance$1h($$self, $$props, $$invalidate) {
   };
   return [feature, $currentCommands, $combo, currentCommands, combo];
 }
-__name(instance$1h, "instance$1h");
+__name(instance$1i, "instance$1i");
 const _Command_preview = class _Command_preview extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1h, create_fragment$1q, safe_not_equal, { feature: 0 });
+    init(this, options, instance$1i, create_fragment$1r, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Command_preview, "Command_preview");
 let Command_preview = _Command_preview;
-function create_fragment$1p(ctx) {
+function create_fragment$1q(ctx) {
   let input;
   let mounted;
   let dispose;
@@ -19596,12 +19596,12 @@ function create_fragment$1p(ctx) {
     }
   };
 }
-__name(create_fragment$1p, "create_fragment$1p");
+__name(create_fragment$1q, "create_fragment$1q");
 const submit_handler = /* @__PURE__ */ __name((e) => {
   e.preventDefault();
   e.stopImmediatePropagation();
 }, "submit_handler");
-function instance$1g($$self, $$props, $$invalidate) {
+function instance$1h($$self, $$props, $$invalidate) {
   let { onInput } = $$props;
   const input_handler = /* @__PURE__ */ __name((e) => {
     onInput(e.currentTarget.value);
@@ -19611,11 +19611,11 @@ function instance$1g($$self, $$props, $$invalidate) {
   };
   return [onInput, input_handler];
 }
-__name(instance$1g, "instance$1g");
+__name(instance$1h, "instance$1h");
 const _Command_input = class _Command_input extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1g, create_fragment$1p, safe_not_equal, { onInput: 0 });
+    init(this, options, instance$1h, create_fragment$1q, safe_not_equal, { onInput: 0 });
   }
 };
 __name(_Command_input, "Command_input");
@@ -20086,7 +20086,7 @@ __decorateClass$16([
 __decorateClass$16([
   inject(loggerFactory)
 ], ApiDataSetup.prototype, "_loggerFactory");
-function create_fragment$1o(ctx) {
+function create_fragment$1p(ctx) {
   let div;
   return {
     c() {
@@ -20106,25 +20106,25 @@ function create_fragment$1o(ctx) {
     }
   };
 }
-__name(create_fragment$1o, "create_fragment$1o");
-function instance$1f($$self) {
+__name(create_fragment$1p, "create_fragment$1p");
+function instance$1g($$self) {
   return [];
 }
-__name(instance$1f, "instance$1f");
+__name(instance$1g, "instance$1g");
 const _Chat_emojis = class _Chat_emojis extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1f, create_fragment$1o, safe_not_equal, {});
+    init(this, options, instance$1g, create_fragment$1p, safe_not_equal, {});
   }
 };
 __name(_Chat_emojis, "Chat_emojis");
 let Chat_emojis = _Chat_emojis;
-function get_each_context$w(ctx, list, i) {
+function get_each_context$x(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[8] = list[i];
   return child_ctx;
 }
-__name(get_each_context$w, "get_each_context$w");
+__name(get_each_context$x, "get_each_context$x");
 function create_else_block$j(ctx) {
   let t;
   return {
@@ -20203,7 +20203,7 @@ function create_if_block$A(ctx) {
   };
 }
 __name(create_if_block$A, "create_if_block$A");
-function create_each_block$w(ctx) {
+function create_each_block$x(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -20270,8 +20270,8 @@ function create_each_block$w(ctx) {
     }
   };
 }
-__name(create_each_block$w, "create_each_block$w");
-function create_fragment$1n(ctx) {
+__name(create_each_block$x, "create_each_block$x");
+function create_fragment$1o(ctx) {
   let div0;
   let t;
   let div1;
@@ -20297,7 +20297,7 @@ function create_fragment$1n(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$w(get_each_context$w(ctx, each_value, i));
+    each_blocks[i] = create_each_block$x(get_each_context$x(ctx, each_value, i));
   }
   return {
     c() {
@@ -20350,11 +20350,11 @@ function create_fragment$1n(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$w(ctx2, each_value, i);
+          const child_ctx = get_each_context$x(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$w(child_ctx);
+            each_blocks[i] = create_each_block$x(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div1, null);
           }
@@ -20380,8 +20380,8 @@ function create_fragment$1n(ctx) {
     }
   };
 }
-__name(create_fragment$1n, "create_fragment$1n");
-function instance$1e($$self, $$props, $$invalidate) {
+__name(create_fragment$1o, "create_fragment$1o");
+function instance$1f($$self, $$props, $$invalidate) {
   let $emojiCandidates;
   let { feature } = $$props;
   let { onSelected = void 0 } = $$props;
@@ -20406,11 +20406,11 @@ function instance$1e($$self, $$props, $$invalidate) {
     mouseleave_handler
   ];
 }
-__name(instance$1e, "instance$1e");
+__name(instance$1f, "instance$1f");
 const _Emoji_picker = class _Emoji_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1e, create_fragment$1n, safe_not_equal, { feature: 4, onSelected: 0 });
+    init(this, options, instance$1f, create_fragment$1o, safe_not_equal, { feature: 4, onSelected: 0 });
   }
 };
 __name(_Emoji_picker, "Emoji_picker");
@@ -20610,7 +20610,7 @@ __decorateClass$15([
 __decorateClass$15([
   inject(LobbyService)
 ], ChatEmojisFeature.prototype, "_lobbyService");
-function create_fragment$1m(ctx) {
+function create_fragment$1n(ctx) {
   let t0;
   let br0;
   let t1;
@@ -20641,11 +20641,11 @@ function create_fragment$1m(ctx) {
     }
   };
 }
-__name(create_fragment$1m, "create_fragment$1m");
+__name(create_fragment$1n, "create_fragment$1n");
 const _Chat_focus_info = class _Chat_focus_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$1m, safe_not_equal, {});
+    init(this, options, null, create_fragment$1n, safe_not_equal, {});
   }
 };
 __name(_Chat_focus_info, "Chat_focus_info");
@@ -20800,7 +20800,7 @@ function create_if_block$z(ctx) {
   };
 }
 __name(create_if_block$z, "create_if_block$z");
-function create_fragment$1l(ctx) {
+function create_fragment$1m(ctx) {
   let if_block_anchor;
   let if_block = (
     /*$ping*/
@@ -20842,8 +20842,8 @@ function create_fragment$1l(ctx) {
     }
   };
 }
-__name(create_fragment$1l, "create_fragment$1l");
-function instance$1d($$self, $$props, $$invalidate) {
+__name(create_fragment$1m, "create_fragment$1m");
+function instance$1e($$self, $$props, $$invalidate) {
   let $ping;
   let { feature } = $$props;
   const ping = feature.pingStore;
@@ -20853,11 +20853,11 @@ function instance$1d($$self, $$props, $$invalidate) {
   };
   return [$ping, ping, feature];
 }
-__name(instance$1d, "instance$1d");
+__name(instance$1e, "instance$1e");
 const _Chat_ping = class _Chat_ping extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1d, create_fragment$1l, safe_not_equal, { feature: 2 });
+    init(this, options, instance$1e, create_fragment$1m, safe_not_equal, { feature: 2 });
   }
 };
 __name(_Chat_ping, "Chat_ping");
@@ -21178,7 +21178,7 @@ LobbyInteractionsService = __decorateClass$10([
   injectable(),
   __decorateParam$d(0, inject(loggerFactory))
 ], LobbyInteractionsService);
-function create_fragment$1k(ctx) {
+function create_fragment$1l(ctx) {
   let button;
   let span;
   let t;
@@ -21258,8 +21258,8 @@ function create_fragment$1k(ctx) {
     }
   };
 }
-__name(create_fragment$1k, "create_fragment$1k");
-function instance$1c($$self, $$props, $$invalidate) {
+__name(create_fragment$1l, "create_fragment$1l");
+function instance$1d($$self, $$props, $$invalidate) {
   let { content } = $$props;
   let { color } = $$props;
   let { disabled = false } = $$props;
@@ -21277,11 +21277,11 @@ function instance$1c($$self, $$props, $$invalidate) {
   };
   return [content, color, disabled, click, click$, click_handler2, click_handler_1];
 }
-__name(instance$1c, "instance$1c");
+__name(instance$1d, "instance$1d");
 const _Flat_button = class _Flat_button extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1c, create_fragment$1k, safe_not_equal, {
+    init(this, options, instance$1d, create_fragment$1l, safe_not_equal, {
       content: 0,
       color: 1,
       disabled: 2,
@@ -21455,7 +21455,7 @@ function create_if_block$y(ctx) {
   };
 }
 __name(create_if_block$y, "create_if_block$y");
-function create_fragment$1j(ctx) {
+function create_fragment$1k(ctx) {
   let div;
   let current_block_type_index;
   let if_block;
@@ -21539,8 +21539,8 @@ function create_fragment$1j(ctx) {
     }
   };
 }
-__name(create_fragment$1j, "create_fragment$1j");
-function instance$1b($$self, $$props, $$invalidate) {
+__name(create_fragment$1k, "create_fragment$1k");
+function instance$1c($$self, $$props, $$invalidate) {
   let $availableInteractions;
   let { feature } = $$props;
   let wrapper;
@@ -21597,11 +21597,11 @@ function instance$1b($$self, $$props, $$invalidate) {
     keydown_handler2
   ];
 }
-__name(instance$1b, "instance$1b");
+__name(instance$1c, "instance$1c");
 const _Quick_react = class _Quick_react extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1b, create_fragment$1j, safe_not_equal, { feature: 0 });
+    init(this, options, instance$1c, create_fragment$1k, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Quick_react, "Quick_react");
@@ -22584,7 +22584,7 @@ ImagePostService = __decorateClass$V([
   __decorateParam$8(0, inject(loggerFactory)),
   __decorateParam$8(1, inject(ImageFinishedService))
 ], ImagePostService);
-function create_fragment$1i(ctx) {
+function create_fragment$1j(ctx) {
   let div0;
   let t0;
   let div1;
@@ -22827,8 +22827,8 @@ function create_fragment$1i(ctx) {
     }
   };
 }
-__name(create_fragment$1i, "create_fragment$1i");
-function instance$1a($$self, $$props, $$invalidate) {
+__name(create_fragment$1j, "create_fragment$1j");
+function instance$1b($$self, $$props, $$invalidate) {
   let { componentData } = $$props;
   let { closeHandler } = $$props;
   let { title } = $$props;
@@ -22858,11 +22858,11 @@ function instance$1a($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$1a, "instance$1a");
+__name(instance$1b, "instance$1b");
 const _Modal_document = class _Modal_document extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1a, create_fragment$1i, safe_not_equal, {
+    init(this, options, instance$1b, create_fragment$1j, safe_not_equal, {
       componentData: 0,
       closeHandler: 4,
       title: 1
@@ -22871,7 +22871,7 @@ const _Modal_document = class _Modal_document extends SvelteComponent {
 };
 __name(_Modal_document, "Modal_document");
 let Modal_document = _Modal_document;
-function create_fragment$1h(ctx) {
+function create_fragment$1i(ctx) {
   let div5;
   let div4;
   let div2;
@@ -23078,8 +23078,8 @@ function create_fragment$1h(ctx) {
     }
   };
 }
-__name(create_fragment$1h, "create_fragment$1h");
-function instance$19($$self, $$props, $$invalidate) {
+__name(create_fragment$1i, "create_fragment$1i");
+function instance$1a($$self, $$props, $$invalidate) {
   let { componentData } = $$props;
   let { closeHandler } = $$props;
   let { title } = $$props;
@@ -23109,11 +23109,11 @@ function instance$19($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$19, "instance$19");
+__name(instance$1a, "instance$1a");
 const _Modal_card = class _Modal_card extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$19, create_fragment$1h, safe_not_equal, {
+    init(this, options, instance$1a, create_fragment$1i, safe_not_equal, {
       componentData: 0,
       closeHandler: 4,
       title: 1
@@ -23269,12 +23269,12 @@ const _TypedWorkerExecutor = class _TypedWorkerExecutor {
 __name(_TypedWorkerExecutor, "TypedWorkerExecutor");
 let TypedWorkerExecutor = _TypedWorkerExecutor;
 const gifRendererWorkerJs = '"use strict";(()=>{var hr=Object.create;var ir=Object.defineProperty;var dr=Object.getOwnPropertyDescriptor;var cr=Object.getOwnPropertyNames;var fr=Object.getPrototypeOf,gr=Object.prototype.hasOwnProperty;var vr=(e,r)=>()=>(r||e((r={exports:{}}).exports,r),r.exports);var mr=(e,r,n,o)=>{if(r&&typeof r=="object"||typeof r=="function")for(let t of cr(r))!gr.call(e,t)&&t!==n&&ir(e,t,{get:()=>r[t],enumerable:!(o=dr(r,t))||o.enumerable});return e};var pr=(e,r,n)=>(n=e!=null?hr(fr(e)):{},mr(r||!e||!e.__esModule?ir(n,"default",{value:e,enumerable:!0}):n,e));var or=vr(nr=>{"use strict";function ur(e,r,n,i){var t=0,i=i===void 0?{}:i,l=i.loop===void 0?null:i.loop,s=i.palette===void 0?null:i.palette;if(r<=0||n<=0||r>65535||n>65535)throw new Error("Width/Height invalid.");function a(u){var v=u.length;if(v<2||v>256||v&v-1)throw new Error("Invalid code/color length, must be power of 2 and 2 .. 256.");return v}e[t++]=71,e[t++]=73,e[t++]=70,e[t++]=56,e[t++]=57,e[t++]=97;var h=0,d=0;if(s!==null){for(var c=a(s);c>>=1;)++h;if(c=1<<h,--h,i.background!==void 0){if(d=i.background,d>=c)throw new Error("Background index out of range.");if(d===0)throw new Error("Background index explicitly passed as 0.")}}if(e[t++]=r&255,e[t++]=r>>8&255,e[t++]=n&255,e[t++]=n>>8&255,e[t++]=(s!==null?128:0)|h,e[t++]=d,e[t++]=0,s!==null)for(var f=0,g=s.length;f<g;++f){var m=s[f];e[t++]=m>>16&255,e[t++]=m>>8&255,e[t++]=m&255}if(l!==null){if(l<0||l>65535)throw new Error("Loop count invalid.");e[t++]=33,e[t++]=255,e[t++]=11,e[t++]=78,e[t++]=69,e[t++]=84,e[t++]=83,e[t++]=67,e[t++]=65,e[t++]=80,e[t++]=69,e[t++]=50,e[t++]=46,e[t++]=48,e[t++]=3,e[t++]=1,e[t++]=l&255,e[t++]=l>>8&255,e[t++]=0}var p=!1;this.addFrame=function(u,v,k,x,y,w){if(p===!0&&(--t,p=!1),w=w===void 0?{}:w,u<0||v<0||u>65535||v>65535)throw new Error("x/y invalid.");if(k<=0||x<=0||k>65535||x>65535)throw new Error("Width/Height invalid.");if(y.length<k*x)throw new Error("Not enough pixels for the frame size.");var I=!0,b=w.palette;if(b==null&&(I=!1,b=s),b==null)throw new Error("Must supply either a local or global palette.");for(var C=a(b),W=0;C>>=1;)++W;C=1<<W;var N=w.delay===void 0?0:w.delay,G=w.disposal===void 0?0:w.disposal;if(G<0||G>3)throw new Error("Disposal out of range.");var X=!1,D=0;if(w.transparent!==void 0&&w.transparent!==null&&(X=!0,D=w.transparent,D<0||D>=C))throw new Error("Transparent color index.");if((G!==0||X||N!==0)&&(e[t++]=33,e[t++]=249,e[t++]=4,e[t++]=G<<2|(X===!0?1:0),e[t++]=N&255,e[t++]=N>>8&255,e[t++]=D,e[t++]=0),e[t++]=44,e[t++]=u&255,e[t++]=u>>8&255,e[t++]=v&255,e[t++]=v>>8&255,e[t++]=k&255,e[t++]=k>>8&255,e[t++]=x&255,e[t++]=x>>8&255,e[t++]=I===!0?128|W-1:0,I===!0)for(var Y=0,Z=b.length;Y<Z;++Y){var S=b[Y];e[t++]=S>>16&255,e[t++]=S>>8&255,e[t++]=S&255}return t=xr(e,t,W<2?2:W,y),t},this.end=function(){return p===!1&&(e[t++]=59,p=!0),t},this.getOutputBuffer=function(){return e},this.setOutputBuffer=function(u){e=u},this.getOutputBufferPosition=function(){return t},this.setOutputBufferPosition=function(u){t=u}}function xr(e,r,n,o){e[r++]=n;var t=r++,i=1<<n,l=i-1,s=i+1,a=s+1,h=n+1,d=0,c=0;function f(w){for(;d>=w;)e[r++]=c&255,c>>=8,d-=8,r===t+256&&(e[t]=255,t=r++)}function g(w){c|=w<<d,d+=h,f(8)}var m=o[0]&l,p={};g(i);for(var u=1,v=o.length;u<v;++u){var k=o[u]&l,x=m<<8|k,y=p[x];if(y===void 0){for(c|=m<<d,d+=h;d>=8;)e[r++]=c&255,c>>=8,d-=8,r===t+256&&(e[t]=255,t=r++);a===4096?(g(i),a=s+1,h=n+1,p={}):(a>=1<<h&&++h,p[x]=a++),m=k}else m=y}return g(m),g(s),f(1),t+1===r?e[t]=0:(e[t]=r-t-1,e[r++]=0),r}function wr(e){var r=0;if(e[r++]!==71||e[r++]!==73||e[r++]!==70||e[r++]!==56||(e[r++]+1&253)!==56||e[r++]!==97)throw new Error("Invalid GIF 87a/89a header.");var n=e[r++]|e[r++]<<8,o=e[r++]|e[r++]<<8,t=e[r++],i=t>>7,l=t&7,s=1<<l+1,a=e[r++];e[r++];var h=null,d=null;i&&(h=r,d=s,r+=s*3);var c=!0,f=[],g=0,m=null,p=0,u=null;for(this.width=n,this.height=o;c&&r<e.length;)switch(e[r++]){case 33:switch(e[r++]){case 255:if(e[r]!==11||e[r+1]==78&&e[r+2]==69&&e[r+3]==84&&e[r+4]==83&&e[r+5]==67&&e[r+6]==65&&e[r+7]==80&&e[r+8]==69&&e[r+9]==50&&e[r+10]==46&&e[r+11]==48&&e[r+12]==3&&e[r+13]==1&&e[r+16]==0)r+=14,u=e[r++]|e[r++]<<8,r++;else for(r+=12;;){var v=e[r++];if(!(v>=0))throw Error("Invalid block size");if(v===0)break;r+=v}break;case 249:if(e[r++]!==4||e[r+4]!==0)throw new Error("Invalid graphics extension block.");var k=e[r++];g=e[r++]|e[r++]<<8,m=e[r++],(k&1)===0&&(m=null),p=k>>2&7,r++;break;case 254:for(;;){var v=e[r++];if(!(v>=0))throw Error("Invalid block size");if(v===0)break;r+=v}break;default:throw new Error("Unknown graphic control label: 0x"+e[r-1].toString(16))}break;case 44:var x=e[r++]|e[r++]<<8,y=e[r++]|e[r++]<<8,w=e[r++]|e[r++]<<8,I=e[r++]|e[r++]<<8,b=e[r++],C=b>>7,W=b>>6&1,N=b&7,G=1<<N+1,X=h,D=d,Y=!1;if(C){var Y=!0;X=r,D=G,r+=G*3}var Z=r;for(r++;;){var v=e[r++];if(!(v>=0))throw Error("Invalid block size");if(v===0)break;r+=v}f.push({x,y,width:w,height:I,has_local_palette:Y,palette_offset:X,palette_size:D,data_offset:Z,data_length:r-Z,transparent_index:m,interlaced:!!W,delay:g,disposal:p});break;case 59:c=!1;break;default:throw new Error("Unknown gif block: 0x"+e[r-1].toString(16))}this.numFrames=function(){return f.length},this.loopCount=function(){return u},this.frameInfo=function(S){if(S<0||S>=f.length)throw new Error("Frame index out of range.");return f[S]},this.decodeAndBlitFrameBGRA=function(S,T){var _=this.frameInfo(S),q=_.width*_.height,F=new Uint8Array(q);ar(e,_.data_offset,F,q);var A=_.palette_offset,B=_.transparent_index;B===null&&(B=256);var E=_.width,z=n-E,O=E,j=(_.y*n+_.x)*4,Q=((_.y+_.height)*n+_.x)*4,M=j,L=z*4;_.interlaced===!0&&(L+=n*4*7);for(var U=8,H=0,V=F.length;H<V;++H){var P=F[H];if(O===0&&(M+=L,O=E,M>=Q&&(L=z*4+n*4*(U-1),M=j+(E+z)*(U<<1),U>>=1)),P===B)M+=4;else{var rr=e[A+P*3],er=e[A+P*3+1],tr=e[A+P*3+2];T[M++]=tr,T[M++]=er,T[M++]=rr,T[M++]=255}--O}},this.decodeAndBlitFrameRGBA=function(S,T){var _=this.frameInfo(S),q=_.width*_.height,F=new Uint8Array(q);ar(e,_.data_offset,F,q);var A=_.palette_offset,B=_.transparent_index;B===null&&(B=256);var E=_.width,z=n-E,O=E,j=(_.y*n+_.x)*4,Q=((_.y+_.height)*n+_.x)*4,M=j,L=z*4;_.interlaced===!0&&(L+=n*4*7);for(var U=8,H=0,V=F.length;H<V;++H){var P=F[H];if(O===0&&(M+=L,O=E,M>=Q&&(L=z*4+n*4*(U-1),M=j+(E+z)*(U<<1),U>>=1)),P===B)M+=4;else{var rr=e[A+P*3],er=e[A+P*3+1],tr=e[A+P*3+2];T[M++]=rr,T[M++]=er,T[M++]=tr,T[M++]=255}--O}}}function ar(e,r,n,o){for(var t=e[r++],i=1<<t,l=i+1,s=l+1,a=t+1,h=(1<<a)-1,d=0,c=0,f=0,g=e[r++],m=new Int32Array(4096),p=null;;){for(;d<16&&g!==0;)c|=e[r++]<<d,d+=8,g===1?g=e[r++]:--g;if(d<a)break;var u=c&h;if(c>>=a,d-=a,u===i){s=l+1,a=t+1,h=(1<<a)-1,p=null;continue}else if(u===l)break;for(var v=u<s?u:p,k=0,x=v;x>i;)x=m[x]>>8,++k;var y=x,w=f+k+(v!==u?1:0);if(w>o){console.log("Warning, gif stream longer than expected.");return}n[f++]=y,f+=k;var I=f;for(v!==u&&(n[f++]=y),x=v;k--;)x=m[x],n[--I]=x&255,x>>=8;p!==null&&s<4096&&(m[s++]=p<<8|y,s>=h+1&&a<12&&(++a,h=h<<1|1)),p=u}return f!==o&&console.log("Warning, gif stream shorter than expected."),n}try{nr.GifWriter=ur,nr.GifReader=wr}catch{}});var R=class e{constructor(r,n,o,t){this._r=r;this._g=n;this._b=o;this._a=t}static skribblColors=[[255,255,255],[0,0,0],[193,193,193],[80,80,80],[239,19,11],[116,11,7],[255,113,0],[194,56,0],[255,228,0],[232,162,0],[0,204,0],[0,70,25],[0,255,145],[0,120,93],[0,178,255],[0,86,158],[35,31,211],[14,8,101],[163,0,186],[85,0,105],[223,105,167],[135,53,84],[255,172,142],[204,119,77],[160,82,45],[99,48,13]];get r(){return this._r}get g(){return this._g}get b(){return this._b}get rgbString(){return"rgb("+[this._r,this._g,this._b,this._a].filter(r=>r!==void 0).join(",")+")"}get rgbArray(){return this._a?[this._r,this._g,this._b,this._a]:[this._r,this._g,this._b]}get rgb(){return{r:this._r,g:this._g,b:this._b,a:this._a}}get hex(){return"#"+this._r.toString(16).padStart(2,"0")+this._g.toString(16).padStart(2,"0")+this._b.toString(16).padStart(2,"0")+(this._a?Math.floor(255*this._a).toString(16).padStart(2,"0"):"")}set hex(r){let n=e.fromHex(r);this._r=n._r,this._g=n._g,this._b=n._b,this._a=n._a}get skribblCode(){let r=e.skribblColors.findIndex(n=>n[0]===this._r&&n[1]===this._g&&n[2]===this._b);return r!==-1?r:this.typoCode}get typoCode(){let r=(this._r<<16|this._g<<8|this._b).toString(16).toUpperCase();return parseInt(r,16)+1e4}get hsl(){let r=this.r/255,n=this.g/255,o=this.b/255,t=Math.max(r,n,o),i=Math.min(r,n,o),l=0,s=0,a=(t+i)/2;if(t==i)l=s=0;else{let h=t-i;switch(s=a>.5?h/(2-t-i):h/(t+i),t){case r:l=(n-o)/h+(n<o?6:0);break;case n:l=(o-r)/h+2;break;case o:l=(r-n)/h+4;break}l/=6}return this._a!==void 0?[l*360,s*100,a*100,this._a]:[l*360,s*100,a*100]}get hsv(){let r=this.r/255,n=this.g/255,o=this.b/255,t=Math.max(r,n,o),i=Math.min(r,n,o),l=t-i,s=0,a=0,h=t;if(t!==0?a=l/t:(s=0,a=0),t!==i){switch(t){case r:s=(n-o)/l+(n<o?6:0);break;case n:s=(o-r)/l+2;break;case o:s=(r-n)/l+4;break}s/=6}return[s*360,a*100,h*100,this._a]}static fromRgb(r,n,o,t){return new e(Math.round(r),Math.round(n),Math.round(o),t?Math.round(t*100)/100:void 0)}static fromHex(r){r[0]=="#"&&(r=r.substring(1));let n=Math.round(parseInt("0x"+r.substring(0,2))),o=Math.round(parseInt("0x"+r.substring(2,4))),t=Math.round(parseInt("0x"+r.substring(4,6))),i=r.length>6?Math.round(parseInt("0x"+r.substring(6,8))):void 0;return new e(n,o,t,i)}static fromRgbString(r){let n=r.trim().replace(" ","").split(","),o=parseInt(n[0].replace(/[^\\d]/g,""),10),t=parseInt(n[1].replace(/[^\\d]/g,""),10),i=parseInt(n[2].replace(/[^\\d]/g,""),10),l=n.length>3?parseInt(n[4].replace(/[^\\d]/g,""),10):void 0;return new e(o,t,i,l)}static fromSkribblCode(r){if(r<1e4){let o=e.skribblColors[r];return e.fromRgb(o[0],o[1],o[2])}let n=(r-1e4).toString(16).padStart(6,"0");return e.fromHex(n)}static fromHsl(r,n,o,t){n/=100,o/=100;let i=c=>(c+r/30)%12,l=n*Math.min(o,1-o),s=c=>o-l*Math.max(-1,Math.min(i(c)-3,Math.min(9-i(c),1))),a=Math.round(s(0)*255),h=Math.round(s(8)*255),d=Math.round(s(4)*255);return new e(a,h,d,t)}static fromHsv(r,n,o,t){n/=100,o/=100;let i=o*n,l=i*(1-Math.abs(r/60%2-1)),s=o-i,a=0,h=0,d=0;return 0<=r&&r<60?(a=i,h=l,d=0):60<=r&&r<120?(a=l,h=i,d=0):120<=r&&r<180?(a=0,h=i,d=l):180<=r&&r<240?(a=0,h=l,d=i):240<=r&&r<300?(a=l,h=0,d=i):300<=r&&r<360&&(a=i,h=0,d=l),a=Math.round((a+s)*255),h=Math.round((h+s)*255),d=Math.round((d+s)*255),new e(a,h,d,t)}copy(){return new e(this._r,this._g,this._b,this._a)}withAlpha(r){return this._a=r,this}};var K=class{constructor(r){this._canvasContext=r;this._width=r.canvas.width,this._height=r.canvas.height,this._canvasContext.fillStyle="white",this._canvasContext.fillRect(0,0,this._width,this._height)}_width;_height;_thicknessMin=4;_thicknessMax=40;processDrawCommand(r){if(r.length<2)throw new Error("Invalid command length smaller than 2");switch(r[0]){case 0:if(r.length<7)throw new Error("Invalid brush command length smaller than 7");this.drawLine(r[3],r[4],r[5],r[6],r[1],r[2]);break;case 1:if(r.length<4)throw new Error("Invalid fill command length smaller than 4");this.floodFill(r[2],r[3],r[1]);break}}clear(){this._canvasContext.clearRect(0,0,this._width,this._height)}exportImage(){return this._canvasContext.getImageData(0,0,this._width,this._height).data}drawLine(r,n,o,t,i,l){l=l<this._thicknessMin?this._thicknessMin:l>this._thicknessMax?this._thicknessMax:Math.floor(l);let s=R.fromSkribblCode(i).rgb,a=Math.ceil(l/2),h=a*a,d=this.clamp(Math.floor(r),-a,this._width+a),c=this.clamp(Math.floor(n),-a,this._height+a),f=this.clamp(Math.floor(o),-a,this._width+a),g=this.clamp(Math.floor(t),-a,this._height+a),m=Math.min(d,f)-a,p=Math.min(c,g)-a,u=Math.max(d,f)+a,v=Math.max(c,g)+a;d-=m,c-=p,f-=m,g-=p;let k=this._canvasContext.getImageData(m,p,u-m,v-p),x=(y,w)=>{for(let I=-a;I<=a;I++)for(let b=-a;b<=a;b++)if(I*I+b*b<h){let C=4*((w+b)*k.width+y+I);this.setPixel(k,C,s.r,s.g,s.b)}};if(d===f&&c===g)x(d,c);else{x(d,c),x(f,g);let y=Math.abs(f-d),w=Math.abs(g-c),I=d<f?1:-1,b=c<g?1:-1,C=y-w;for(;d!==f||c!==g;){let W=C*2;W>-w&&(C-=w,d+=I),W<y&&(C+=y,c+=b),x(d,c)}}this._canvasContext.putImageData(k,m,p)}floodFill(r,n,o){let t=this._canvasContext.getImageData(0,0,this._width,this._height);r=this.clamp(Math.floor(r),0,this._width),n=this.clamp(Math.floor(n),0,this._height);let i=R.fromSkribblCode(o).rgb,l=[[r,n]],s=this.getPixel(t,r,n);if(i.r!==s[0]||i.g!==s[1]||i.b!==s[2]){let a=c=>{let f=t.data[c],g=t.data[c+1],m=t.data[c+2];return f===s[0]&&g===s[1]&&m===s[2]},h=t.width,d=t.height;for(;l.length>0;){let[c,f]=l.pop()??[-1,-1],g=4*(f*h+c);for(;f>=0&&a(g);)g-=4*h,f--;g+=4*h,f++;let m=!1,p=!1;for(;f<d&&a(g);)this.setPixel(t,g,i.r,i.g,i.b),c>0&&a(g-4)?m||(l.push([c-1,f]),m=!0):m&&(m=!1),c<h-1&&a(g+4)?p||(l.push([c+1,f]),p=!0):p&&(p=!1),g+=4*h,f++}this._canvasContext.putImageData(t,0,0)}}getPixel(r,n,o){let t=4*(o*r.width+n);return t<0||t>=r.data.length?[0,0,0]:[r.data[t],r.data[t+1],r.data[t+2]]}setPixel(r,n,o,t,i){n<0||n>=r.data.length||(r.data[n]=o,r.data[n+1]=t,r.data[n+2]=i,r.data[n+3]=255)}clamp(r,n,o){return Math.min(Math.max(r,n),o)}};var sr=pr(or(),1),$=class{width=800;height=600;buffer;gifWriter;frameCount=0;colors;constructor(r,n){this.buffer=new Uint8Array(this.width*this.height*5*n),this.gifWriter=new sr.GifWriter(this.buffer,this.width,this.height,{loop:1});let o=s=>s.rgbArray.slice(0,3).join(","),t=R.fromRgb(255,255,255);this.colors=new Map(r.values().map((s,a)=>[s.rgbArray.slice(0,3).toString(),{color:s,index:a}])),this.colors.has(o(t))||this.colors.set(o(t),{color:t,index:this.colors.size});let l=(s=>Math.pow(2,Math.ceil(Math.log2(s))))(this.colors.size);this.colors.size<l&&new Array(l-this.colors.size).fill(t).forEach((a,h)=>{this.colors.set(`fill-${h}`,{color:a,index:this.colors.size})})}get palette(){return[...this.colors.values()].map(r=>{let n=r.color.rgbArray;return n[2]|n[1]<<8|n[0]<<16})}mapToPaletteIndex(r){return this.colors.get(r.toString())?.index??0}addFrame(r,n){let o=this.palette,t=[];for(let i=0;i<r.length;i+=4){let l=[r[i],r[i+1],r[i+2]];t.push(this.mapToPaletteIndex(l))}this.gifWriter.addFrame(0,0,this.width,this.height,t,{delay:n/10,palette:o,disposal:2}),this.frameCount++}finalize(){if(this.frameCount===0)throw new Error("No frames added to the GIF.");let r=this.buffer.subarray(0,this.gifWriter.end());return new Blob([r],{type:"image/gif"})}};function lr(e,r,n,o,t,i){let l=new Set(r.map(h=>h[1]));if(l.size>256)throw new Error("Too many colors in the skribbl commands to render gif");let s=new Set(l.values().map(h=>R.fromSkribblCode(h))),a=new $(s,t);for(let h=0;h<r.length;h++)if(e.processDrawCommand(r[h]),h%n===0){let d=e.exportImage();a.addFrame(d,o),i?.(h,r.length)}return a.addFrame(e.exportImage(),2e3),a.finalize()}var J=class{constructor(r){this.worker=r;addEventListener("message",async n=>{let{methodName:o,args:t,messageId:i}=n.data,l=await this.worker[o](...t);postMessage({type:"result",messageId:i,result:l})})}send(r,...n){postMessage({type:"notification",methodName:r,args:n})}};var _r={renderGif(e,r){let o=new OffscreenCanvas(800,600).getContext("2d",{willReadFrequently:!0});if(!o)throw new Error("Failed to get 2d context");let t=new K(o),i=50,l=Math.ceil(r/i),s=Math.max(1,Math.floor(e.length/l));return lr(t,e,s,i,l,(h,d)=>kr.send("frameRendered",h,d))}},kr=new J(_r);})();\n';
-function get_each_context$v(ctx, list, i) {
+function get_each_context$w(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[33] = list[i];
   return child_ctx;
 }
-__name(get_each_context$v, "get_each_context$v");
+__name(get_each_context$w, "get_each_context$w");
 function create_if_block_2$d(ctx) {
   let flatbutton;
   let current;
@@ -23391,7 +23391,7 @@ function create_then_block$4(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$v(get_each_context$v(ctx, each_value, i));
+    each_blocks[i] = create_each_block$w(get_each_context$w(ctx, each_value, i));
   }
   return {
     c() {
@@ -23417,11 +23417,11 @@ function create_then_block$4(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$v(ctx2, each_value, i);
+          const child_ctx = get_each_context$w(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$v(child_ctx);
+            each_blocks[i] = create_each_block$w(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -23443,7 +23443,7 @@ function create_then_block$4(ctx) {
   };
 }
 __name(create_then_block$4, "create_then_block$4");
-function create_each_block$v(ctx) {
+function create_each_block$w(ctx) {
   let img;
   let img_src_value;
   let img_alt_value;
@@ -23518,7 +23518,7 @@ function create_each_block$v(ctx) {
     }
   };
 }
-__name(create_each_block$v, "create_each_block$v");
+__name(create_each_block$w, "create_each_block$w");
 function create_pending_block$4(ctx) {
   let div;
   let bounceload;
@@ -23844,7 +23844,7 @@ function create_if_block$x(ctx) {
   };
 }
 __name(create_if_block$x, "create_if_block$x");
-function create_fragment$1g(ctx) {
+function create_fragment$1h(ctx) {
   let div3;
   let div1;
   let h3;
@@ -24325,10 +24325,10 @@ function create_fragment$1g(ctx) {
     }
   };
 }
-__name(create_fragment$1g, "create_fragment$1g");
+__name(create_fragment$1h, "create_fragment$1h");
 const pageSize = 200;
 const click_handler_5 = /* @__PURE__ */ __name((e) => e.stopImmediatePropagation(), "click_handler_5");
-function instance$18($$self, $$props, $$invalidate) {
+function instance$19($$self, $$props, $$invalidate) {
   let $member;
   let { feature } = $$props;
   const member = feature.memberStore;
@@ -24470,11 +24470,11 @@ function instance$18($$self, $$props, $$invalidate) {
     click_handler_13
   ];
 }
-__name(instance$18, "instance$18");
+__name(instance$19, "instance$19");
 const _Controls_cloud = class _Controls_cloud extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$18, create_fragment$1g, safe_not_equal, { feature: 0 }, null, [-1, -1]);
+    init(this, options, instance$19, create_fragment$1h, safe_not_equal, { feature: 0 }, null, [-1, -1]);
   }
 };
 __name(_Controls_cloud, "Controls_cloud");
@@ -25421,12 +25421,12 @@ const generateThemeCustomHtmlElement = /* @__PURE__ */ __name((theme) => {
     createElement(`<div id='typo-theme-html-${theme.meta.id}'>${theme.misc.htmlText}</div>`)
   ] : [];
 }, "generateThemeCustomHtmlElement");
-function get_each_context$u(ctx, list, i) {
+function get_each_context$v(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[14] = list[i];
   return child_ctx;
 }
-__name(get_each_context$u, "get_each_context$u");
+__name(get_each_context$v, "get_each_context$v");
 function create_catch_block$3(ctx) {
   return {
     c: noop$1,
@@ -25447,7 +25447,7 @@ function create_then_block$3(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$u(get_each_context$u(ctx, each_value, i));
+    each_blocks[i] = create_each_block$v(get_each_context$v(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -25478,12 +25478,12 @@ function create_then_block$3(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$u(ctx2, each_value, i);
+          const child_ctx = get_each_context$v(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$u(child_ctx);
+            each_blocks[i] = create_each_block$v(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div, null);
@@ -25695,7 +25695,7 @@ function create_if_block$w(ctx) {
   };
 }
 __name(create_if_block$w, "create_if_block$w");
-function create_each_block$u(ctx) {
+function create_each_block$v(ctx) {
   let div2;
   let b;
   let t0_value = (
@@ -25860,7 +25860,7 @@ function create_each_block$u(ctx) {
     }
   };
 }
-__name(create_each_block$u, "create_each_block$u");
+__name(create_each_block$v, "create_each_block$v");
 function create_pending_block$3(ctx) {
   return {
     c: noop$1,
@@ -25872,7 +25872,7 @@ function create_pending_block$3(ctx) {
   };
 }
 __name(create_pending_block$3, "create_pending_block$3");
-function create_fragment$1f(ctx) {
+function create_fragment$1g(ctx) {
   let div;
   let t2;
   let await_block_anchor;
@@ -25944,8 +25944,8 @@ function create_fragment$1f(ctx) {
     }
   };
 }
-__name(create_fragment$1f, "create_fragment$1f");
-function instance$17($$self, $$props, $$invalidate) {
+__name(create_fragment$1g, "create_fragment$1g");
+function instance$18($$self, $$props, $$invalidate) {
   let $currentThemeId;
   let $savedThemes;
   let $loadedEditorTheme;
@@ -25996,23 +25996,23 @@ function instance$17($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$17, "instance$17");
+__name(instance$18, "instance$18");
 const _Themes_browser = class _Themes_browser extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$17, create_fragment$1f, safe_not_equal, { feature: 0 });
+    init(this, options, instance$18, create_fragment$1g, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Themes_browser, "Themes_browser");
 let Themes_browser = _Themes_browser;
-function get_each_context$t(ctx, list, i) {
+function get_each_context$u(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[61] = list[i];
   child_ctx[62] = list;
   child_ctx[63] = i;
   return child_ctx;
 }
-__name(get_each_context$t, "get_each_context$t");
+__name(get_each_context$u, "get_each_context$u");
 function get_each_context_1$b(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[61] = list[i];
@@ -26464,7 +26464,7 @@ function create_else_block$g(ctx) {
   ));
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$t(get_each_context$t(ctx, each_value, i));
+    each_blocks[i] = create_each_block$u(get_each_context$u(ctx, each_value, i));
   }
   return {
     c() {
@@ -27303,11 +27303,11 @@ function create_else_block$g(ctx) {
         ));
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$t(ctx2, each_value, i);
+          const child_ctx = get_each_context$u(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$t(child_ctx);
+            each_blocks[i] = create_each_block$u(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div39, null);
           }
@@ -27624,7 +27624,7 @@ function create_each_block_1$b(ctx) {
   };
 }
 __name(create_each_block_1$b, "create_each_block_1$b");
-function create_each_block$t(ctx) {
+function create_each_block$u(ctx) {
   let div;
   let abbr;
   let t0;
@@ -27731,8 +27731,8 @@ function create_each_block$t(ctx) {
     }
   };
 }
-__name(create_each_block$t, "create_each_block$t");
-function create_fragment$1e(ctx) {
+__name(create_each_block$u, "create_each_block$u");
+function create_fragment$1f(ctx) {
   let div;
   let current_block_type_index;
   let if_block;
@@ -27799,8 +27799,8 @@ function create_fragment$1e(ctx) {
     }
   };
 }
-__name(create_fragment$1e, "create_fragment$1e");
-function instance$16($$self, $$props, $$invalidate) {
+__name(create_fragment$1f, "create_fragment$1f");
+function instance$17($$self, $$props, $$invalidate) {
   let $loadedTheme;
   let $activeThemeTab;
   let schemePrimaryColor = Color.fromHex("#4197c5");
@@ -28084,21 +28084,21 @@ function instance$16($$self, $$props, $$invalidate) {
     change_handler_14
   ];
 }
-__name(instance$16, "instance$16");
+__name(instance$17, "instance$17");
 const _Themes_editor = class _Themes_editor extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$16, create_fragment$1e, safe_not_equal, { feature: 0, variableHooks: 1 }, null, [-1, -1, -1]);
+    init(this, options, instance$17, create_fragment$1f, safe_not_equal, { feature: 0, variableHooks: 1 }, null, [-1, -1, -1]);
   }
 };
 __name(_Themes_editor, "Themes_editor");
 let Themes_editor = _Themes_editor;
-function get_each_context$s(ctx, list, i) {
+function get_each_context$t(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context$s, "get_each_context$s");
+__name(get_each_context$t, "get_each_context$t");
 function create_else_block$f(ctx) {
   let div1;
   return {
@@ -28380,7 +28380,7 @@ function create_if_block$u(ctx) {
   };
 }
 __name(create_if_block$u, "create_if_block$u");
-function create_each_block$s(ctx) {
+function create_each_block$t(ctx) {
   let div5;
   let div0;
   let b;
@@ -28694,8 +28694,8 @@ function create_each_block$s(ctx) {
     }
   };
 }
-__name(create_each_block$s, "create_each_block$s");
-function create_fragment$1d(ctx) {
+__name(create_each_block$t, "create_each_block$t");
+function create_fragment$1e(ctx) {
   let div0;
   let t1;
   let div1;
@@ -28706,7 +28706,7 @@ function create_fragment$1d(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$s(get_each_context$s(ctx, each_value, i));
+    each_blocks[i] = create_each_block$t(get_each_context$t(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -28743,12 +28743,12 @@ function create_fragment$1d(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$s(ctx2, each_value, i);
+          const child_ctx = get_each_context$t(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$s(child_ctx);
+            each_blocks[i] = create_each_block$t(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div1, null);
@@ -28785,8 +28785,8 @@ function create_fragment$1d(ctx) {
     }
   };
 }
-__name(create_fragment$1d, "create_fragment$1d");
-function instance$15($$self, $$props, $$invalidate) {
+__name(create_fragment$1e, "create_fragment$1e");
+function instance$16($$self, $$props, $$invalidate) {
   let $savedThemes;
   let $currentThemeId;
   let $loadedEditorTheme;
@@ -28833,11 +28833,11 @@ function instance$15($$self, $$props, $$invalidate) {
     click_handler_3
   ];
 }
-__name(instance$15, "instance$15");
+__name(instance$16, "instance$16");
 const _Themes_list = class _Themes_list extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$15, create_fragment$1d, safe_not_equal, { feature: 0 });
+    init(this, options, instance$16, create_fragment$1e, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Themes_list, "Themes_list");
@@ -28964,7 +28964,7 @@ function create_if_block$t(ctx) {
   };
 }
 __name(create_if_block$t, "create_if_block$t");
-function create_fragment$1c(ctx) {
+function create_fragment$1d(ctx) {
   let div2;
   let div0;
   let h30;
@@ -29156,8 +29156,8 @@ function create_fragment$1c(ctx) {
     }
   };
 }
-__name(create_fragment$1c, "create_fragment$1c");
-function instance$14($$self, $$props, $$invalidate) {
+__name(create_fragment$1d, "create_fragment$1d");
+function instance$15($$self, $$props, $$invalidate) {
   let $selectedTab;
   let { feature } = $$props;
   let { variableHooks } = $$props;
@@ -29180,11 +29180,11 @@ function instance$14($$self, $$props, $$invalidate) {
     click_handler_2
   ];
 }
-__name(instance$14, "instance$14");
+__name(instance$15, "instance$15");
 const _Controls_themes = class _Controls_themes extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$14, create_fragment$1c, safe_not_equal, { feature: 0, variableHooks: 1 });
+    init(this, options, instance$15, create_fragment$1d, safe_not_equal, { feature: 0, variableHooks: 1 });
   }
 };
 __name(_Controls_themes, "Controls_themes");
@@ -29943,7 +29943,7 @@ ColorsService = __decorateClass$M([
   injectable(),
   __decorateParam$4(0, inject(loggerFactory))
 ], ColorsService);
-function create_fragment$1b(ctx) {
+function create_fragment$1c(ctx) {
   let t0;
   let br0;
   let t1;
@@ -30004,24 +30004,24 @@ function create_fragment$1b(ctx) {
     }
   };
 }
-__name(create_fragment$1b, "create_fragment$1b");
+__name(create_fragment$1c, "create_fragment$1c");
 const _Drawing_color_palettes_info = class _Drawing_color_palettes_info extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, null, create_fragment$1b, safe_not_equal, {});
+    init(this, options, null, create_fragment$1c, safe_not_equal, {});
   }
 };
 __name(_Drawing_color_palettes_info, "Drawing_color_palettes_info");
 let Drawing_color_palettes_info = _Drawing_color_palettes_info;
-function get_each_context$r(ctx, list, i) {
+function get_each_context$s(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[16] = list[i];
   child_ctx[17] = list;
   child_ctx[18] = i;
   return child_ctx;
 }
-__name(get_each_context$r, "get_each_context$r");
-function create_each_block$r(ctx) {
+__name(get_each_context$s, "get_each_context$s");
+function create_each_block$s(ctx) {
   let div;
   let colorpickerbutton;
   let updating_color;
@@ -30091,7 +30091,7 @@ function create_each_block$r(ctx) {
     }
   };
 }
-__name(create_each_block$r, "create_each_block$r");
+__name(create_each_block$s, "create_each_block$s");
 function create_if_block_4$7(ctx) {
   let flatbutton;
   let current;
@@ -30273,7 +30273,7 @@ function create_if_block$s(ctx) {
   };
 }
 __name(create_if_block$s, "create_if_block$s");
-function create_fragment$1a(ctx) {
+function create_fragment$1b(ctx) {
   let div3;
   let div1;
   let b0;
@@ -30306,7 +30306,7 @@ function create_fragment$1a(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$r(get_each_context$r(ctx, each_value, i));
+    each_blocks[i] = create_each_block$s(get_each_context$s(ctx, each_value, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -30489,12 +30489,12 @@ function create_fragment$1a(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$r(ctx2, each_value, i);
+          const child_ctx = get_each_context$s(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block$r(child_ctx);
+            each_blocks[i] = create_each_block$s(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div0, null);
@@ -30681,8 +30681,8 @@ function create_fragment$1a(ctx) {
     }
   };
 }
-__name(create_fragment$1a, "create_fragment$1a");
-function instance$13($$self, $$props, $$invalidate) {
+__name(create_fragment$1b, "create_fragment$1b");
+function instance$14($$self, $$props, $$invalidate) {
   let name = "new-palette";
   let colors = [];
   let columns = 10;
@@ -30752,11 +30752,11 @@ function instance$13($$self, $$props, $$invalidate) {
     click_handler_4
   ];
 }
-__name(instance$13, "instance$13");
+__name(instance$14, "instance$14");
 const _Color_palette_builder = class _Color_palette_builder extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$13, create_fragment$1a, safe_not_equal, {
+    init(this, options, instance$14, create_fragment$1b, safe_not_equal, {
       onPaletteSave: 0,
       onPaletteExport: 1,
       onPaletteDelete: 2,
@@ -30766,12 +30766,12 @@ const _Color_palette_builder = class _Color_palette_builder extends SvelteCompon
 };
 __name(_Color_palette_builder, "Color_palette_builder");
 let Color_palette_builder = _Color_palette_builder;
-function get_each_context$q(ctx, list, i) {
+function get_each_context$r(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context$q, "get_each_context$q");
+__name(get_each_context$r, "get_each_context$r");
 function get_each_context_1$a(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
@@ -31015,7 +31015,7 @@ function create_each_block_1$a(ctx) {
   };
 }
 __name(create_each_block_1$a, "create_each_block_1$a");
-function create_each_block$q(ctx) {
+function create_each_block$r(ctx) {
   let colorpalettebuilder;
   let current;
   function func_3() {
@@ -31066,8 +31066,8 @@ function create_each_block$q(ctx) {
     }
   };
 }
-__name(create_each_block$q, "create_each_block$q");
-function create_fragment$19(ctx) {
+__name(create_each_block$r, "create_each_block$r");
+function create_fragment$1a(ctx) {
   let h30;
   let t1;
   let br0;
@@ -31173,7 +31173,7 @@ function create_fragment$19(ctx) {
   ));
   let each_blocks = [];
   for (let i2 = 0; i2 < each_value.length; i2 += 1) {
-    each_blocks[i2] = create_each_block$q(get_each_context$q(ctx, each_value, i2));
+    each_blocks[i2] = create_each_block$r(get_each_context$r(ctx, each_value, i2));
   }
   const out_1 = /* @__PURE__ */ __name((i2) => transition_out(each_blocks[i2], 1, 1, () => {
     each_blocks[i2] = null;
@@ -31474,12 +31474,12 @@ function create_fragment$19(ctx) {
         ));
         let i2;
         for (i2 = 0; i2 < each_value.length; i2 += 1) {
-          const child_ctx = get_each_context$q(ctx2, each_value, i2);
+          const child_ctx = get_each_context$r(ctx2, each_value, i2);
           if (each_blocks[i2]) {
             each_blocks[i2].p(child_ctx, dirty);
             transition_in(each_blocks[i2], 1);
           } else {
-            each_blocks[i2] = create_each_block$q(child_ctx);
+            each_blocks[i2] = create_each_block$r(child_ctx);
             each_blocks[i2].c();
             transition_in(each_blocks[i2], 1);
             each_blocks[i2].m(div, null);
@@ -31594,8 +31594,8 @@ function create_fragment$19(ctx) {
     }
   };
 }
-__name(create_fragment$19, "create_fragment$19");
-function instance$12($$self, $$props, $$invalidate) {
+__name(create_fragment$1a, "create_fragment$1a");
+function instance$13($$self, $$props, $$invalidate) {
   let $activePalette;
   let $palettes;
   let { feature } = $$props;
@@ -31647,22 +31647,22 @@ function instance$12($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$12, "instance$12");
+__name(instance$13, "instance$13");
 const _Drawing_color_palettes_manage = class _Drawing_color_palettes_manage extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$12, create_fragment$19, safe_not_equal, { feature: 0 });
+    init(this, options, instance$13, create_fragment$1a, safe_not_equal, { feature: 0 });
   }
 };
 __name(_Drawing_color_palettes_manage, "Drawing_color_palettes_manage");
 let Drawing_color_palettes_manage = _Drawing_color_palettes_manage;
-function get_each_context$p(ctx, list, i) {
+function get_each_context$q(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[3] = list[i];
   return child_ctx;
 }
-__name(get_each_context$p, "get_each_context$p");
-function create_each_block$p(ctx) {
+__name(get_each_context$q, "get_each_context$q");
+function create_each_block$q(ctx) {
   let div;
   let mounted;
   let dispose;
@@ -31733,8 +31733,8 @@ function create_each_block$p(ctx) {
     }
   };
 }
-__name(create_each_block$p, "create_each_block$p");
-function create_fragment$18(ctx) {
+__name(create_each_block$q, "create_each_block$q");
+function create_fragment$19(ctx) {
   let div1;
   let div0;
   let mounted;
@@ -31745,7 +31745,7 @@ function create_fragment$18(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$p(get_each_context$p(ctx, each_value, i));
+    each_blocks[i] = create_each_block$q(get_each_context$q(ctx, each_value, i));
   }
   return {
     c() {
@@ -31787,11 +31787,11 @@ function create_fragment$18(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$p(ctx2, each_value, i);
+          const child_ctx = get_each_context$q(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$p(child_ctx);
+            each_blocks[i] = create_each_block$q(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div0, null);
           }
@@ -31819,8 +31819,8 @@ function create_fragment$18(ctx) {
     }
   };
 }
-__name(create_fragment$18, "create_fragment$18");
-function instance$11($$self, $$props, $$invalidate) {
+__name(create_fragment$19, "create_fragment$19");
+function instance$12($$self, $$props, $$invalidate) {
   let { colors } = $$props;
   let { feature } = $$props;
   const pointerdown_handler = /* @__PURE__ */ __name((color, e) => {
@@ -31834,15 +31834,167 @@ function instance$11($$self, $$props, $$invalidate) {
   };
   return [colors, feature, pointerdown_handler];
 }
-__name(instance$11, "instance$11");
+__name(instance$12, "instance$12");
 const _Color_palette_picker = class _Color_palette_picker extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$11, create_fragment$18, safe_not_equal, { colors: 0, feature: 1 });
+    init(this, options, instance$12, create_fragment$19, safe_not_equal, { colors: 0, feature: 1 });
   }
 };
 __name(_Color_palette_picker, "Color_palette_picker");
 let Color_palette_picker = _Color_palette_picker;
+function get_each_context$p(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[3] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$p, "get_each_context$p");
+function create_each_block$p(ctx) {
+  let span;
+  let t_value = (
+    /*palette*/
+    ctx[3] + ""
+  );
+  let t;
+  let mounted;
+  let dispose;
+  function click_handler2() {
+    return (
+      /*click_handler*/
+      ctx[2](
+        /*palette*/
+        ctx[3]
+      )
+    );
+  }
+  __name(click_handler2, "click_handler");
+  return {
+    c() {
+      span = element$1("span");
+      t = text(t_value);
+      attr(span, "class", "typo-palette-switcher-item svelte-144p318");
+    },
+    m(target, anchor) {
+      insert(target, span, anchor);
+      append(span, t);
+      if (!mounted) {
+        dispose = listen(span, "click", click_handler2);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty & /*palettes*/
+      1 && t_value !== (t_value = /*palette*/
+      ctx[3] + "")) set_data(t, t_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+      }
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block$p, "create_each_block$p");
+function create_fragment$18(ctx) {
+  let span;
+  let t2;
+  let br1;
+  let t3;
+  let div;
+  let each_value = ensure_array_like(
+    /*palettes*/
+    ctx[0]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$p(get_each_context$p(ctx, each_value, i));
+  }
+  return {
+    c() {
+      span = element$1("span");
+      span.innerHTML = `Select a custom palette for drawing.<br/>Please note that only typo players can see custom colors!`;
+      t2 = space();
+      br1 = element$1("br");
+      t3 = space();
+      div = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(div, "class", "typo-palette-switcher svelte-144p318");
+    },
+    m(target, anchor) {
+      insert(target, span, anchor);
+      insert(target, t2, anchor);
+      insert(target, br1, anchor);
+      insert(target, t3, anchor);
+      insert(target, div, anchor);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div, null);
+        }
+      }
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*onSubmit, palettes*/
+      3) {
+        each_value = ensure_array_like(
+          /*palettes*/
+          ctx2[0]
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$p(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+          } else {
+            each_blocks[i] = create_each_block$p(child_ctx);
+            each_blocks[i].c();
+            each_blocks[i].m(div, null);
+          }
+        }
+        for (; i < each_blocks.length; i += 1) {
+          each_blocks[i].d(1);
+        }
+        each_blocks.length = each_value.length;
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+        detach(t2);
+        detach(br1);
+        detach(t3);
+        detach(div);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_fragment$18, "create_fragment$18");
+function instance$11($$self, $$props, $$invalidate) {
+  let { palettes } = $$props;
+  let { onSubmit } = $$props;
+  const click_handler2 = /* @__PURE__ */ __name((palette) => onSubmit(palette), "click_handler");
+  $$self.$$set = ($$props2) => {
+    if ("palettes" in $$props2) $$invalidate(0, palettes = $$props2.palettes);
+    if ("onSubmit" in $$props2) $$invalidate(1, onSubmit = $$props2.onSubmit);
+  };
+  return [palettes, onSubmit, click_handler2];
+}
+__name(instance$11, "instance$11");
+const _Color_palette_quick_select = class _Color_palette_quick_select extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$11, create_fragment$18, safe_not_equal, { palettes: 0, onSubmit: 1 });
+  }
+};
+__name(_Color_palette_quick_select, "Color_palette_quick_select");
+let Color_palette_quick_select = _Color_palette_quick_select;
 var __defProp$L = Object.defineProperty;
 var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
@@ -31859,6 +32011,10 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
     __publicField(this, "_toastService");
     __publicField(this, "_drawingService");
     __publicField(this, "_colorsService");
+    __publicField(this, "_modalService");
+    __publicField(this, "_iconComponent");
+    __publicField(this, "_iconClickSubscription");
+    __publicField(this, "_quickAccessSettingSubscription");
     __publicField(this, "name", "Color Palettes");
     __publicField(this, "description", "Use custom color palettes instead of the default skribbl colors");
     __publicField(this, "tags", [FeatureTag.DRAWING]);
@@ -31872,6 +32028,9 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
       "imported_palettes",
       false,
       this
+    ));
+    __publicField(this, "_showQuickAccessSetting", this.useSetting(
+      new BooleanExtensionSetting("quick_access", false, this).withName("Palette Switcher Icon").withDescription("Show an icon in the controls tray to quickly switch between palettes")
     ));
     __publicField(this, "_activePaletteSubscription");
     __publicField(this, "_colorPalettePicker");
@@ -31902,13 +32061,61 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
       } catch {
       }
     }
+    this._quickAccessSettingSubscription = this._showQuickAccessSetting.changes$.subscribe((value) => {
+      if (value) this.addQuickSelectIcon();
+      else this.removeQuickSelectIcon();
+    });
   }
   async onDestroy() {
-    var _a2, _b2;
+    var _a2, _b2, _c2;
     this._hideOriginalPaletteStyle.remove();
     (_a2 = this._activePaletteSubscription) == null ? void 0 : _a2.unsubscribe();
     this._activePaletteSubscription = void 0;
     (_b2 = this._colorPalettePicker) == null ? void 0 : _b2.$destroy();
+    (_c2 = this._quickAccessSettingSubscription) == null ? void 0 : _c2.unsubscribe();
+    this._quickAccessSettingSubscription = void 0;
+  }
+  async addQuickSelectIcon() {
+    if (this._iconComponent !== void 0) return;
+    const elements2 = await this._elementsSetup.complete();
+    this._iconComponent = new Icon_button({
+      target: elements2.controls,
+      props: {
+        hoverMove: false,
+        size: "48px",
+        icon: "file-img-palette-gif",
+        name: "Palette Switcher",
+        order: 5,
+        tooltipAction: this.createTooltip
+      }
+    });
+    this._iconClickSubscription = this._iconComponent.click$.subscribe(async () => {
+      const palettes = [
+        ...Object.values(defaultPalettes),
+        ...await this._colorsService.savedPalettesSetting.getValue()
+      ].map((p) => p.name);
+      const pickerComponent = {
+        componentType: Color_palette_quick_select,
+        propsFactory: /* @__PURE__ */ __name((submit) => ({
+          palettes,
+          onSubmit: submit.bind(this)
+        }), "propsFactory")
+      };
+      const palette = await this._modalService.showPrompt(
+        pickerComponent.componentType,
+        pickerComponent.propsFactory,
+        "Switch Color Palette",
+        "card"
+      );
+      if (palette !== void 0) await this._colorsService.activePaletteSetting.setValue(palette);
+    });
+  }
+  removeQuickSelectIcon() {
+    var _a2, _b2;
+    (_a2 = this._iconClickSubscription) == null ? void 0 : _a2.unsubscribe();
+    this._iconClickSubscription = void 0;
+    (_b2 = this._iconComponent) == null ? void 0 : _b2.$destroy();
+    this._iconComponent = void 0;
   }
   /**
    * Change the visibility of the default palette or custom palette
@@ -32103,6 +32310,9 @@ __decorateClass$L([
 __decorateClass$L([
   inject(ColorsService)
 ], DrawingColorPalettesFeature.prototype, "_colorsService");
+__decorateClass$L([
+  inject(ModalService)
+], DrawingColorPalettesFeature.prototype, "_modalService");
 var __defProp$K = Object.defineProperty;
 var __getOwnPropDesc$5 = Object.getOwnPropertyDescriptor;
 var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
