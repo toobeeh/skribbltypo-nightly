@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 8a2b33d
+// @version      27.1.3 beta-usc 00a0f6b
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -25,7 +25,7 @@
   var __accessCheck = (obj, member, msg) => member.has(obj) || __typeError("Cannot " + msg);
   var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
   var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
-  var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _Z, __, _$, _aa, _ba, _ca, _da, _ea, _fa, _ga, _ha, _ia, _ja, _ka, _la, _ma, _na, _oa, _pa, _qa, _ra, _sa, _ta, _ua, _va, _wa, _xa, _ya, _za, _Aa, _Ba, _Ca, _Da, _Marked_instances, parseMarkdown_fn, onError_fn, _Ea, _Fa, _Ga, _Ha;
+  var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _Z, __, _$, _aa, _ba, _ca, _da, _ea, _fa, _ga, _ha, _ia, _ja, _ka, _la, _ma, _na, _oa, _pa, _qa, _ra, _sa, _ta, _ua, _va, _wa, _xa, _ya, _za, _Aa, _Ba, _Ca, _Da, _Marked_instances, parseMarkdown_fn, onError_fn, _Ea, _Fa, _Ga, _Ha, _Ia;
   const Metadata$1 = /* @__PURE__ */ new WeakMap();
   function decorateProperty(decorators, target, propertyKey, descriptor) {
     decorators.reverse().forEach((decorator) => {
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 8a2b33d", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 00a0f6b", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -482,394 +482,396 @@
       COMBINATION: 2
     }
 // TYPOMOD 
-                // desc: create re-useable functions
-                , typo = {
-                    /* mod sequence injection for custom draw commands */
-                    msi: {
-              
-                      reset: () => {
-                        typo.msi.mod.selected = undefined;
-                        typo.msi.mod.buffer = undefined;
-                        typo.msi.mod.apply = undefined
-                      },
-              
-                      /* incoming draw commands are part of an injected mod */
-                      mod: {
-                        selected: undefined, /* index of selected mod */
-                        buffer: undefined, /* buffer to construct mod */
-                        apply: undefined /* function to apply constructed mod */
-                      },
-              
-                      modes: [
-              
-                        /* custom color mode */
-                        (buffer) => {
-                          return (command) => {
-              
-                            /* skip if buffer empty */
-                            if(buffer.length === 0) return command;
-              
-                            /* if brush or fill */
-                            if(command[0] <= 1) {
-                              command[1] = buffer[0];
-                            }
-              
-                            return command;
-                          }
-                        }
-                      ],
-              
-                      fromSenaryDoubleDecimalBase: (senary, decimal1, decimal0) => {
-                        return decimal0 + decimal1 * 10 + Number.parseInt(senary.toString(), 6) * 100;
-                      },
-              
-                      fromOctalDoubleDecimalBase: (octal, decimal1, decimal0) => {
-                        return decimal0 + decimal1 * 10 + Number.parseInt(octal.toString(), 8) * 100;
-                      },
-              
-                      /* bases of data: width x height x width x height -> odd sdd odd sdd */
-                      parseInjectedSequence: (odd1, sdd1, odd0, sdd0) => {
-                        const parseDigits = (num) => {
-                          const str = num.toString().padStart(3, '0');
-                          return [str[0], str[1], str[2]].map(Number);
-                        };
-              
-                        const [sdd0_s, sdd0_d1, sdd0_d0] = parseDigits(sdd0);
-                        const [odd0_o, odd0_d1, odd0_d0] = parseDigits(odd0);
-                        const [sdd1_s, sdd1_d1, sdd1_d0] = parseDigits(sdd1);
-                        const [odd1_o, odd1_d1, odd1_d0] = parseDigits(odd1);
-              
-                        return typo.msi.fromSenaryDoubleDecimalBase(sdd0_s, sdd0_d1, sdd0_d0)
-                          + 600 * typo.msi.fromOctalDoubleDecimalBase(odd0_o, odd0_d1, odd0_d0)
-                          + 600 * 800 * typo.msi.fromSenaryDoubleDecimalBase(sdd1_s, sdd1_d1, sdd1_d0)
-                          + 600 * 800 * 600 * typo.msi.fromOctalDoubleDecimalBase(odd1_o, odd1_d1, odd1_d0);
-                      },
-              
-                      toSenaryDoubleDecimalBase: (number) => {
-                        const senary = Math.floor(number / 100);
-                        const decimal1 = Math.floor((number % 100) / 10);
-                        const decimal0 = number % 10;
-                        return [senary, decimal1, decimal0];
-                      },
-              
-                      toOctalDoubleDecimalBase: (number) => {
-                        const octal = Math.floor(number / 100);
-                        const decimal1 = Math.floor((number % 100) / 10);
-                        const decimal0 = number % 10;
-                        return [octal, decimal1, decimal0];
-                      },
-              
-                      toInjectedSequence: (number) => {
-                        const odd1 = Math.floor(number / (600 * 800 * 600));
-                        const sdd1 = Math.floor((number % (600 * 800 * 600)) / (600 * 800));
-                        const odd0 = Math.floor((number % (600 * 800)) / 600);
-                        const sdd0 = number % 600;
-              
-                        const sdd0Array = typo.msi.toSenaryDoubleDecimalBase(sdd0);
-                        const odd0Array = typo.msi.toOctalDoubleDecimalBase(odd0);
-                        const sdd1Array = typo.msi.toSenaryDoubleDecimalBase(sdd1);
-                        const odd1Array = typo.msi.toOctalDoubleDecimalBase(odd1);
-              
-                        return [
-                          odd1Array[0] * 100 + odd1Array[1] * 10 + odd1Array[2],
-                          sdd1Array[0] * 100 + sdd1Array[1] * 10 + sdd1Array[2],
-                          odd0Array[0] * 100 + odd0Array[1] * 10 + odd0Array[2],
-                          sdd0Array[0] * 100 + sdd0Array[1] * 10 + sdd0Array[2]
-                        ];
-                      },
-              
-                      /* if tool = 0 (brush), color 0, size 4, and all coords 0 -> MSI init/finish signal */
-                      isMSIInitSignal: (command) => {
-                        return (command[0] === 0 && command[1] === 0 && command[2] === 5 && command[3] === 0 && command[4] === 0 && command[5] === 0 && command[6] === 0);
-                      },
-              
-                      /* if tool = 0 (brush), color 0, size 40 and all coords 0 -> MSI reset signal */
-                      isResetSignal: (command) => {
-                        return (command[0] === 0 && command[1] === 0 && command[2] === 39 && command[3] === 0 && command[4] === 0 && command[5] === 0 && command[6] === 0);
-                      },
-              
-                      processIncomingCommand: (command) => {
-                        const msiInitSignal = typo.msi.isMSIInitSignal(command);
-                        const resetSignal = typo.msi.isResetSignal(command);
-                        const processingMode = typo.msi.mod.selected === undefined && Array.isArray(typo.msi.mod.buffer);
-                        const processingBuffer = typo.msi.mod.selected !== undefined && typo.msi.mod.apply === undefined && Array.isArray(typo.msi.mod.buffer);
-                        const mod = typo.msi.mod.apply;
-              
-                        if(resetSignal){
-                          /*console.log("MSI reset signal received.");*/
-                          typo.msi.mod.selected = undefined;
-                          typo.msi.mod.buffer = undefined;
-                          typo.msi.mod.apply = undefined;
-                          return undefined;
-                        }
-              
-                        if(msiInitSignal && !processingBuffer) {
-                          /*console.log("MSI init signal received.");*/
-                          typo.msi.mod.selected = undefined;
-                          typo.msi.mod.buffer = [];
-                          typo.msi.mod.apply = undefined;
-                          return undefined;
-                        }
-              
-                        if(msiInitSignal && processingBuffer) {
-                          /*console.log("MSI finish signal received.");*/
-                          typo.msi.mod.apply = typo.msi.mod.selected(typo.msi.mod.buffer);
-                          return undefined;
-                        }
-              
-                        if(processingMode){
-                          const mode = typo.msi.parseInjectedSequence(command[3], command[4], command[5], command[6]);
-                          /*console.log("MSI mode selection received.", mode);*/
-                          typo.msi.mod.selected = (typo.msi.modes[mode - 1] ?? (() => c => c));
-                          return undefined;
-                        }
-              
-                        if(processingBuffer){
-                          const packet = typo.msi.parseInjectedSequence(command[3], command[4], command[5], command[6]);
-                          /*console.log("MSI buffer processing.", packet);*/
-                          typo.msi.mod.buffer.push(packet);
-                          return undefined;
-                        }
-              
-                        if(mod){
-                          /*console.log("MSI mod applying.");*/
-                          return typo.msi.mod.apply(command);
-                        }
-              
-                        return command;
-                      }
-                    },
-              
-                    msiColorSwitch: {
-                      currentCode: undefined,
-                      closeColors: {},
-                      getClosestSkribblColor: code => {
-                        const existing = typo.msiColorSwitch.closeColors[code];
-                        if(existing !== undefined) return existing;
+    // desc: create re-useable functions
+    , typo = {
+      /* mod sequence injection for custom draw commands */
+      msi: {
 
-                        const rgb = typo.typoCodeToRgb(code);
-                        const lab = typo.rgbToLab(rgb);
-                        const distance = (c1, c2) =>
-                          Math.sqrt(
-                            Math.pow(c1[0] - c2[0], 2) +
-                            Math.pow(c1[1] - c2[1], 2) +
-                            Math.pow(c1[2] - c2[2], 2)
-                          );
+        reset: () => {
+          typo.msi.mod.selected = undefined;
+          typo.msi.mod.buffer = undefined;
+          typo.msi.mod.apply = undefined
+        },
 
-                        const colors = kt.map(c => typo.rgbToLab(c));
-                        const color = colors.reduce((closestIndex, color, index) =>
-                            distance(lab, color) < distance(lab, colors[closestIndex]) ? index : closestIndex
-                          , 0);
-                        typo.msiColorSwitch.closeColors[code] = color;
-                        return color;
-                      },
-                      ensureColorSequence: command => {
-                        const color = command[1];
-              
-                        /* sanitize color to black for non-typo users */
-                        if(color > 10000){
-                          command[1] = typo.msiColorSwitch.getClosestSkribblColor(color);
-                        }
-              
-                        /* if color is typo color and not already initiated */
-                        if(color > 10000 && color !== typo.msiColorSwitch.currentCode){
-                          typo.msiColorSwitch.currentCode = color;
-                          const codeData = typo.msi.toInjectedSequence(color);
-                          const sequence = [
-                            [0, 0, 5, 0,0,0,0],
-                            [0, 0, 5, 0,0,0,1],
-                            [0, 0, 5, ...codeData],
-                            [0, 0, 5, 0,0,0,0]
-                          ];
-                          return sequence;
-                        }
-              
-                        /* if color is original but typo color initiated */
-                        if(color < 10000 && typo.msiColorSwitch.currentCode !== undefined){
-                          typo.msiColorSwitch.currentCode = undefined;
-                          return [[0, 0, 39, 0,0,0,0]];
-                        }
-              
-                        return undefined;
-                      },
-                      insertColorSwitches: (commands) => {
-                        inserted = [];
-                        for (let i = 0; i < commands.length; i++) {
-                          const command = commands[i];
-                          const t = typo.msiColorSwitch.ensureColorSequence(command);
-                          if(t !== undefined) inserted.push(...t);
-                          inserted.push(command);
-                        }
-                  
-                        commands.splice(0, commands.length, ...inserted);
-                      }
-                    },
-                    messagePort: (()=>{
-                      const channel = new MessageChannel();
-                      window.postMessage("skribblMessagePort", "*", [channel.port2]);
-                      return channel.port1;
-                    })(),
-                    emitPort: (()=>{
-                      const channel = new MessageChannel();
-                      window.postMessage("skribblEmitPort", "*", [channel.port2]);
-                      return channel.port1;
-                    })(),
-                    joinLobby: undefined,
-                    createFakeUser: (id = 0, name = "", avatar = [], score = 0, guessed = false) => {
-                        // IDENTIFY x.value.split: #home .container-name-lang input -> Kn
-                        // IDENTIFY x.avatar: [Math.round(100 * Math.random()) % -> l
-                        return { 
-                            id: id, 
-                            name: name.length != 0 ? name : (Kn.value.split("#")[0] != "" ? Kn.value.split("#")[0] : "Player"), 
-                            avatar: avatar.length == 0 ? l.avatar : avatar, 
-                            score: score, 
-                            guessed: guessed 
-                        };
-                    },
-                    createFakeLobbyData: (
-                        settings = ["PRACTISE", "en", 1, 1, 80, 3, 3, 2, 0, false],
-                        id = null,
-                        me = 0,
-                        owner = 0,
-                        users = [],
-                        state = { id: 4, type: 0, time: 0, data: { id: 0, word: "Anything" } }) => {
-                        if (users.length == 0) users = [typo.createFakeUser()];
-                        return { 
-                            settings: settings, 
-                            id: id, 
-                            me: me, 
-                            owner: owner, 
-                            round: 0, 
-                            users: users, 
-                            state: state 
-                        };
-                    },
-                    disconnect: undefined,
-                    skipCursorUpdate: false,
-                    lastConnect: 0,
-                    initListeners: (() => {
-                        let abort = false; 
-                        document.addEventListener("selectSkribblTool", (event) => Tt(event.detail));
-                        document.addEventListener("selectSkribblSize", (event) => At(event.detail));
-                        document.addEventListener("clearDrawing", () => Ft());
-                        document.addEventListener("abortJoin", () => abort = true); 
-                        document.addEventListener("disableCursorUpdates", e => {
-                            typo.skipCursorUpdate = e.detail === true;
-                            if(e.detail === false) yt(); // update cursor when updates reenabled
-                        });
-                        document.addEventListener("joinLobby", (e) => {
-                            abort = false;
-                            let timeoutdiff = Date.now() - (typo.lastConnect == 0 ? Date.now() : typo.lastConnect);
-                            // Xn(true);
-                            setTimeout(() => {
-                                if (abort) return; 
-                                typo.lastConnect = Date.now();
-                                // Vn.dispatchEvent(new Event("click")); 
-                                // IDENTIFY x.dispatchEvent: querySelector("#home .panel .button-play") -> BTNPLAY
-                                // ##PRIVATELBBY## = !1 
-                                // IDENTIFY: x:  = !1   
-                                window.history.pushState({path: window.location.origin + '?' + (e.detail ?? "")}, '', window.location.origin + '?' + (e.detail ?? ""));
-                                // ##JOINLOBBY##(e.detail?.join ? e.detail.join : "");
-                                // IDENTIFY x(e.det..): ? "id=" + -> JOINLOBBY
-                                typo.joinLobby(); 
-                                window.history.pushState({path: window.location.origin}, '', window.location.origin);
-                                // Jn(false); 
-                                // IDENTIFY x(false): querySelector("#load").style.display -> LOADING
-                                document.dispatchEvent(new Event("joinedLobby"));
-                            }, timeoutdiff < 2000 ? 2000 - timeoutdiff : 0);
-                        });
-                        document.addEventListener("leaveLobby", () => {
-                            if (typo.disconnect) typo.disconnect();
-                            else ua() | document.dispatchEvent(new Event("leftLobby"));
-                            // IDENTIFY x(): querySelector("#home").style.display = "" -> GOHOME
-                        });
-                        document.addEventListener("setColor", (e) => {
-                            let rgb = e.detail.code < 10000 ? kt[e.detail.code] : typo.typoCodeToRgb(e.detail.code);
-                            let match = kt.findIndex(color => color[0] == rgb[0] && color[1] == rgb[1] && color[2] == rgb[2]);
-                            // IDENTIFY [0, 59, 120], -> COLORS
-                            let code = match >= 0 ? match : e.detail.code;
-                            if (e.detail.secondary) Wt(code); 
-                            // IDENTIFY x(e.detail.code): querySelector("#color-preview-secondary").style.fill -> SECFILL
-                            else Nt(code);
-                            // IDENTIFY x(e.detail.code): querySelector("#color-preview-primary").style.fill -> PRIMFILL
-                        });
-                        document.addEventListener("performDrawCommand", (e) => {
-                            v.push(e.detail); 
-                            pt.push(v.length); 
-                            // IDENTIFY x.push(e.detail): .getContext("2d"), x = [] -> PUSHCMD
-                            Gt(jt(e.detail)); 
-                            // IDENTIFY: x(y(e.detail)): bounds: AND Math.floor(Math.ceil -> PERFOUTER, PERFINNER
-                        });
-                        document.addEventListener("collapseUndoActions", (e) => {
-                            const shrinkCount = e.detail;
-                            const firstCollapsedIndex = pt.length - shrinkCount + 1;
-                            const collapsed = pt.slice(0, firstCollapsedIndex);
-                            const lastCollapsedIndex = collapsed.length === 0 ? 0 : collapsed.length - 1
-                            collapsed[lastCollapsedIndex] = pt[pt.length - 1];
-                            pt = collapsed;
-                        });
-                    })(),
-                    rgbToXyz: (R, G, B) => {
-                      let r = R / 255;
-                      let g = G / 255;
-                      let b = B / 255;
+        /* incoming draw commands are part of an injected mod */
+        mod: {
+          selected: undefined, /* index of selected mod */
+          buffer: undefined, /* buffer to construct mod */
+          apply: undefined /* function to apply constructed mod */
+        },
 
-                      r = (r > 0.04045) ? Math.pow((r + 0.055) / 1.055, 2.4) : (r / 12.92);
-                      g = (g > 0.04045) ? Math.pow((g + 0.055) / 1.055, 2.4) : (g / 12.92);
-                      b = (b > 0.04045) ? Math.pow((b + 0.055) / 1.055, 2.4) : (b / 12.92);
+        modes: [
 
-                      let x = r * 0.4124 + g * 0.3576 + b * 0.1805;
-                      let y = r * 0.2126 + g * 0.7152 + b * 0.0722;
-                      let z = r * 0.0193 + g * 0.1192 + b * 0.9505;
+          /* custom color mode */
+          (buffer) => {
+            return (command) => {
 
-                      return [x, y, z];
-                    },
-                    xyzToLab: (x, y, z) => {
-                      const REF_X = 0.95047;
-                      const REF_Y = 1.00000;
-                      const REF_Z = 1.08883;
-                    
-                      let fx = f(x / REF_X);
-                      let fy = f(y / REF_Y);
-                      let fz = f(z / REF_Z);
-                    
-                      let L = 116 * fy - 16;
-                      let a = 500 * (fx - fy);
-                      let b = 200 * (fy - fz);
-                    
-                      return [L, a, b];
-                    
-                      function f(value) {
-                        return (value > 0.008856)
-                          ? Math.pow(value, 1 / 3)
-                          : (7.787 * value) + (16 / 116);
-                      }
-                    },
-                    rgbToLab: ([R, G, B]) => {
-                      const [x, y, z] = typo.rgbToXyz(R, G, B);
-                      return typo.xyzToLab(x, y, z);
-                    },
-                    hexToRgb: (hex) => {
-                        let arrBuff = new ArrayBuffer(4);
-                        let vw = new DataView(arrBuff);
-                        vw.setUint32(0, parseInt(hex, 16), false);
-                        let arrByte = new Uint8Array(arrBuff);
-                        return [arrByte[1], arrByte[2], arrByte[3]];
-                    },
-                    rgbToHex: (r, g, b) => {
-                        return ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-                    },
-                    typoCodeToRgb: (code) => {
-                      const decimal = code - 10000;
-                      return [
-                          (decimal >> 16) & 255, // Red
-                          (decimal >> 8) & 255,  // Green
-                          decimal & 255          // Blue
-                      ];
-                    }
-                }
-                // TYPOEND,
-    ae = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+              /* skip if buffer empty */
+              if(buffer.length === 0) return command;
+
+              /* if brush or fill */
+              if(command[0] <= 1) {
+                command[1] = buffer[0];
+              }
+
+              return command;
+            }
+          }
+        ],
+
+        fromSenaryDoubleDecimalBase: (senary, decimal1, decimal0) => {
+          return decimal0 + decimal1 * 10 + Number.parseInt(senary.toString(), 6) * 100;
+        },
+
+        fromOctalDoubleDecimalBase: (octal, decimal1, decimal0) => {
+          return decimal0 + decimal1 * 10 + Number.parseInt(octal.toString(), 8) * 100;
+        },
+
+        /* bases of data: width x height x width x height -> odd sdd odd sdd */
+        parseInjectedSequence: (odd1, sdd1, odd0, sdd0) => {
+          const parseDigits = (num) => {
+            const str = num.toString().padStart(3, '0');
+            return [str[0], str[1], str[2]].map(Number);
+          };
+
+          const [sdd0_s, sdd0_d1, sdd0_d0] = parseDigits(sdd0);
+          const [odd0_o, odd0_d1, odd0_d0] = parseDigits(odd0);
+          const [sdd1_s, sdd1_d1, sdd1_d0] = parseDigits(sdd1);
+          const [odd1_o, odd1_d1, odd1_d0] = parseDigits(odd1);
+
+          return typo.msi.fromSenaryDoubleDecimalBase(sdd0_s, sdd0_d1, sdd0_d0)
+            + 600 * typo.msi.fromOctalDoubleDecimalBase(odd0_o, odd0_d1, odd0_d0)
+            + 600 * 800 * typo.msi.fromSenaryDoubleDecimalBase(sdd1_s, sdd1_d1, sdd1_d0)
+            + 600 * 800 * 600 * typo.msi.fromOctalDoubleDecimalBase(odd1_o, odd1_d1, odd1_d0);
+        },
+
+        toSenaryDoubleDecimalBase: (number) => {
+          const senary = Math.floor(number / 100);
+          const decimal1 = Math.floor((number % 100) / 10);
+          const decimal0 = number % 10;
+          return [senary, decimal1, decimal0];
+        },
+
+        toOctalDoubleDecimalBase: (number) => {
+          const octal = Math.floor(number / 100);
+          const decimal1 = Math.floor((number % 100) / 10);
+          const decimal0 = number % 10;
+          return [octal, decimal1, decimal0];
+        },
+
+        toInjectedSequence: (number) => {
+          const odd1 = Math.floor(number / (600 * 800 * 600));
+          const sdd1 = Math.floor((number % (600 * 800 * 600)) / (600 * 800));
+          const odd0 = Math.floor((number % (600 * 800)) / 600);
+          const sdd0 = number % 600;
+
+          const sdd0Array = typo.msi.toSenaryDoubleDecimalBase(sdd0);
+          const odd0Array = typo.msi.toOctalDoubleDecimalBase(odd0);
+          const sdd1Array = typo.msi.toSenaryDoubleDecimalBase(sdd1);
+          const odd1Array = typo.msi.toOctalDoubleDecimalBase(odd1);
+
+          return [
+            odd1Array[0] * 100 + odd1Array[1] * 10 + odd1Array[2],
+            sdd1Array[0] * 100 + sdd1Array[1] * 10 + sdd1Array[2],
+            odd0Array[0] * 100 + odd0Array[1] * 10 + odd0Array[2],
+            sdd0Array[0] * 100 + sdd0Array[1] * 10 + sdd0Array[2]
+          ];
+        },
+
+        /* if tool = 0 (brush), color 0, size 4, and all coords 0 -> MSI init/finish signal */
+        isMSIInitSignal: (command) => {
+          return (command[0] === 0 && command[1] === 0 && command[2] === 5 && command[3] === 0 && command[4] === 0 && command[5] === 0 && command[6] === 0);
+        },
+
+        /* if tool = 0 (brush), color 0, size 40 and all coords 0 -> MSI reset signal */
+        isResetSignal: (command) => {
+          return (command[0] === 0 && command[1] === 0 && command[2] === 39 && command[3] === 0 && command[4] === 0 && command[5] === 0 && command[6] === 0);
+        },
+
+        processIncomingCommand: (command) => {
+          const msiInitSignal = typo.msi.isMSIInitSignal(command);
+          const resetSignal = typo.msi.isResetSignal(command);
+          const processingMode = typo.msi.mod.selected === undefined && Array.isArray(typo.msi.mod.buffer);
+          const processingBuffer = typo.msi.mod.selected !== undefined && typo.msi.mod.apply === undefined && Array.isArray(typo.msi.mod.buffer);
+          const mod = typo.msi.mod.apply;
+
+          if(resetSignal){
+            /*console.log("MSI reset signal received.");*/
+            typo.msi.mod.selected = undefined;
+            typo.msi.mod.buffer = undefined;
+            typo.msi.mod.apply = undefined;
+            return undefined;
+          }
+
+          if(msiInitSignal && !processingBuffer) {
+            /*console.log("MSI init signal received.");*/
+            typo.msi.mod.selected = undefined;
+            typo.msi.mod.buffer = [];
+            typo.msi.mod.apply = undefined;
+            return undefined;
+          }
+
+          if(msiInitSignal && processingBuffer) {
+            /*console.log("MSI finish signal received.");*/
+            typo.msi.mod.apply = typo.msi.mod.selected(typo.msi.mod.buffer);
+            return undefined;
+          }
+
+          if(processingMode){
+            const mode = typo.msi.parseInjectedSequence(command[3], command[4], command[5], command[6]);
+            /*console.log("MSI mode selection received.", mode);*/
+            typo.msi.mod.selected = (typo.msi.modes[mode - 1] ?? (() => c => c));
+            return undefined;
+          }
+
+          if(processingBuffer){
+            const packet = typo.msi.parseInjectedSequence(command[3], command[4], command[5], command[6]);
+            /*console.log("MSI buffer processing.", packet);*/
+            typo.msi.mod.buffer.push(packet);
+            return undefined;
+          }
+
+          if(mod){
+            /*console.log("MSI mod applying.");*/
+            return typo.msi.mod.apply(command);
+          }
+
+          return command;
+        }
+      },
+
+      msiColorSwitch: {
+        currentCode: undefined,
+        closeColors: {},
+        getClosestSkribblColor: code => {
+          const existing = typo.msiColorSwitch.closeColors[code];
+          if(existing !== undefined) return existing;
+
+          const rgb = typo.typoCodeToRgb(code);
+          const lab = typo.rgbToLab(rgb);
+          const distance = (c1, c2) =>
+            Math.sqrt(
+              Math.pow(c1[0] - c2[0], 2) +
+              Math.pow(c1[1] - c2[1], 2) +
+              Math.pow(c1[2] - c2[2], 2)
+            );
+
+          const colors = kt.map(c => typo.rgbToLab(c));
+          const color = colors.reduce((closestIndex, color, index) =>
+              distance(lab, color) < distance(lab, colors[closestIndex]) ? index : closestIndex
+            , 0);
+          typo.msiColorSwitch.closeColors[code] = color;
+          return color;
+        },
+        ensureColorSequence: command => {
+          const color = command[1];
+
+          /* sanitize color to black for non-typo users */
+          if(color > 10000){
+            command[1] = typo.msiColorSwitch.getClosestSkribblColor(color);
+          }
+
+          /* if color is typo color and not already initiated */
+          if(color > 10000 && color !== typo.msiColorSwitch.currentCode){
+            typo.msiColorSwitch.currentCode = color;
+            const codeData = typo.msi.toInjectedSequence(color);
+            const sequence = [
+              [0, 0, 5, 0,0,0,0],
+              [0, 0, 5, 0,0,0,1],
+              [0, 0, 5, ...codeData],
+              [0, 0, 5, 0,0,0,0]
+            ];
+            return sequence;
+          }
+
+          /* if color is original but typo color initiated */
+          if(color < 10000 && typo.msiColorSwitch.currentCode !== undefined){
+            typo.msiColorSwitch.currentCode = undefined;
+            return [[0, 0, 39, 0,0,0,0]];
+          }
+
+          return undefined;
+        },
+        insertColorSwitches: (commands) => {
+          inserted = [];
+          for (let i = 0; i < commands.length; i++) {
+            const command = commands[i];
+            const t = typo.msiColorSwitch.ensureColorSequence(command);
+            if(t !== undefined) inserted.push(...t);
+            inserted.push(command);
+          }
+
+          commands.splice(0, commands.length, ...inserted);
+        }
+      },
+      messagePort: (()=>{
+        const channel = new MessageChannel();
+        window.postMessage("skribblMessagePort", "*", [channel.port2]);
+        return channel.port1;
+      })(),
+      emitPort: (()=>{
+        const channel = new MessageChannel();
+        window.postMessage("skribblEmitPort", "*", [channel.port2]);
+        return channel.port1;
+      })(),
+      joinLobby: undefined,
+      createFakeUser: (id = 0, name = "", avatar = [], score = 0, guessed = false) => {
+        // IDENTIFY x.value.split: #home .container-name-lang input -> Kn
+        // IDENTIFY x.avatar: [Math.round(100 * Math.random()) % -> l
+        return {
+          id: id,
+          name: name.length != 0 ? name : (Kn.value.split("#")[0] != "" ? Kn.value.split("#")[0] : "Player"),
+          avatar: avatar.length == 0 ? l.avatar : avatar,
+          score: score,
+          guessed: guessed
+        };
+      },
+      createFakeLobbyData: (
+        settings = ["PRACTISE", "en", 1, 1, 80, 3, 3, 2, 0, false],
+        id = null,
+        me = 0,
+        owner = 0,
+        users = [],
+        state = { id: 4, type: 0, time: 0, data: { id: 0, word: "Anything" } }) => {
+        if (users.length == 0) users = [typo.createFakeUser()];
+        return {
+          settings: settings,
+          id: id,
+          me: me,
+          owner: owner,
+          round: 0,
+          users: users,
+          state: state
+        };
+      },
+      disconnect: undefined,
+      skipCursorUpdate: false,
+      lockManualClear: false,
+      lastConnect: 0,
+      initListeners: (() => {
+        let abort = false;
+        document.addEventListener("lockManualClear", (event) => typo.lockManualClear = event.detail === true);
+        document.addEventListener("selectSkribblTool", (event) => Tt(event.detail));
+        document.addEventListener("selectSkribblSize", (event) => At(event.detail));
+        document.addEventListener("clearDrawing", () => Ft());
+        document.addEventListener("abortJoin", () => abort = true);
+        document.addEventListener("disableCursorUpdates", e => {
+          typo.skipCursorUpdate = e.detail === true;
+          if(e.detail === false) yt(); // update cursor when updates reenabled
+        });
+        document.addEventListener("joinLobby", (e) => {
+          abort = false;
+          let timeoutdiff = Date.now() - (typo.lastConnect == 0 ? Date.now() : typo.lastConnect);
+          // Xn(true);
+          setTimeout(() => {
+            if (abort) return;
+            typo.lastConnect = Date.now();
+            // Vn.dispatchEvent(new Event("click"));
+            // IDENTIFY x.dispatchEvent: querySelector("#home .panel .button-play") -> BTNPLAY
+            // ##PRIVATELBBY## = !1
+            // IDENTIFY: x:  = !1
+            window.history.pushState({path: window.location.origin + '?' + (e.detail ?? "")}, '', window.location.origin + '?' + (e.detail ?? ""));
+            // ##JOINLOBBY##(e.detail?.join ? e.detail.join : "");
+            // IDENTIFY x(e.det..): ? "id=" + -> JOINLOBBY
+            typo.joinLobby();
+            window.history.pushState({path: window.location.origin}, '', window.location.origin);
+            // Jn(false);
+            // IDENTIFY x(false): querySelector("#load").style.display -> LOADING
+            document.dispatchEvent(new Event("joinedLobby"));
+          }, timeoutdiff < 2000 ? 2000 - timeoutdiff : 0);
+        });
+        document.addEventListener("leaveLobby", () => {
+          if (typo.disconnect) typo.disconnect();
+          else ua() | document.dispatchEvent(new Event("leftLobby"));
+          // IDENTIFY x(): querySelector("#home").style.display = "" -> GOHOME
+        });
+        document.addEventListener("setColor", (e) => {
+          let rgb = e.detail.code < 10000 ? kt[e.detail.code] : typo.typoCodeToRgb(e.detail.code);
+          let match = kt.findIndex(color => color[0] == rgb[0] && color[1] == rgb[1] && color[2] == rgb[2]);
+          // IDENTIFY [0, 59, 120], -> COLORS
+          let code = match >= 0 ? match : e.detail.code;
+          if (e.detail.secondary) Wt(code);
+          // IDENTIFY x(e.detail.code): querySelector("#color-preview-secondary").style.fill -> SECFILL
+          else Nt(code);
+          // IDENTIFY x(e.detail.code): querySelector("#color-preview-primary").style.fill -> PRIMFILL
+        });
+        document.addEventListener("performDrawCommand", (e) => {
+          v.push(e.detail);
+          pt.push(v.length);
+          // IDENTIFY x.push(e.detail): .getContext("2d"), x = [] -> PUSHCMD
+          Gt(jt(e.detail));
+          // IDENTIFY: x(y(e.detail)): bounds: AND Math.floor(Math.ceil -> PERFOUTER, PERFINNER
+        });
+        document.addEventListener("collapseUndoActions", (e) => {
+          const shrinkCount = e.detail;
+          const firstCollapsedIndex = pt.length - shrinkCount + 1;
+          const collapsed = pt.slice(0, firstCollapsedIndex);
+          const lastCollapsedIndex = collapsed.length === 0 ? 0 : collapsed.length - 1
+          collapsed[lastCollapsedIndex] = pt[pt.length - 1];
+          pt = collapsed;
+        });
+      })(),
+      rgbToXyz: (R, G, B) => {
+        let r = R / 255;
+        let g = G / 255;
+        let b = B / 255;
+
+        r = (r > 0.04045) ? Math.pow((r + 0.055) / 1.055, 2.4) : (r / 12.92);
+        g = (g > 0.04045) ? Math.pow((g + 0.055) / 1.055, 2.4) : (g / 12.92);
+        b = (b > 0.04045) ? Math.pow((b + 0.055) / 1.055, 2.4) : (b / 12.92);
+
+        let x = r * 0.4124 + g * 0.3576 + b * 0.1805;
+        let y = r * 0.2126 + g * 0.7152 + b * 0.0722;
+        let z = r * 0.0193 + g * 0.1192 + b * 0.9505;
+
+        return [x, y, z];
+      },
+      xyzToLab: (x, y, z) => {
+        const REF_X = 0.95047;
+        const REF_Y = 1.00000;
+        const REF_Z = 1.08883;
+
+        let fx = f(x / REF_X);
+        let fy = f(y / REF_Y);
+        let fz = f(z / REF_Z);
+
+        let L = 116 * fy - 16;
+        let a = 500 * (fx - fy);
+        let b = 200 * (fy - fz);
+
+        return [L, a, b];
+
+        function f(value) {
+          return (value > 0.008856)
+            ? Math.pow(value, 1 / 3)
+            : (7.787 * value) + (16 / 116);
+        }
+      },
+      rgbToLab: ([R, G, B]) => {
+        const [x, y, z] = typo.rgbToXyz(R, G, B);
+        return typo.xyzToLab(x, y, z);
+      },
+      hexToRgb: (hex) => {
+        let arrBuff = new ArrayBuffer(4);
+        let vw = new DataView(arrBuff);
+        vw.setUint32(0, parseInt(hex, 16), false);
+        let arrByte = new Uint8Array(arrBuff);
+        return [arrByte[1], arrByte[2], arrByte[3]];
+      },
+      rgbToHex: (r, g, b) => {
+        return ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+      },
+      typoCodeToRgb: (code) => {
+        const decimal = code - 10000;
+        return [
+          (decimal >> 16) & 255, // Red
+          (decimal >> 8) & 255,  // Green
+          decimal & 255          // Blue
+        ];
+      }
+    }
+  // TYPOEND,
+  ae = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   if (h.localStorageAvailable = !1, void 0 !== d) try {
     d.setItem("feature_test", "yes"), "yes" === d.getItem("feature_test") && (d.removeItem("feature_test"), h.localStorageAvailable = !0)
   } catch (e) {}
@@ -1046,7 +1048,7 @@
           i = a.querySelector(".buttons"),
           r = (i.style.display = t.id == x || r ? "none" : "flex", i.querySelector(".button-pair").style.display = x == En || o ? "flex" : "none", i.querySelector("button.report").style.display = t.reported ? "none" : "", Ce(t.muted), a.querySelector(".report-menu").style.display = "none", a.querySelector(".invite").style.display = x == t.id ? "flex" : "none", we.querySelector(".player")),
           o = (r.style.display = "", ce(r), de(t.avatar))
-; /*id in popup*/ r.setAttribute("playerid", t.id);;
+        ; /*id in popup*/ r.setAttribute("playerid", t.id);;
         he(o, En == t.id), pe(o, Ya(t)), r.appendChild(o);
         break;
       case Se:
@@ -1304,13 +1306,13 @@
         var a = e.children[n].dataset.translate;
         Ve(e.children[n], null == a ? "text" : a)
       } else {
-        var o = "";
-        "text" == t && (o = e.textContent), 0 < (o = "placeholder" == t ? e.placeholder : o).length ? Ke.push({
-          key: o,
-          element: e,
-          type: t
-        }) : (console.log("Empty key passed to translate with!"), console.log(e))
-      }
+      var o = "";
+      "text" == t && (o = e.textContent), 0 < (o = "placeholder" == t ? e.placeholder : o).length ? Ke.push({
+        key: o,
+        element: e,
+        type: t
+      }) : (console.log("Empty key passed to translate with!"), console.log(e))
+    }
   }
   Ge.en = {}, Ge.de = {
     "You have been kicked!": "Du wurdest gekickt!",
@@ -1514,17 +1516,18 @@
       name: "Clear",
       keydef: "C",
       graphic: "clear.gif",
-      action: Ft
+      action:
+        () => typo.lockManualClear !== true && new /* this wicked way of function invoking lets me skip pathing in parentheses after the reference */ Ft
     })
-/*TYPOMOD DESC: add tool for deselect*/ 
-                ,
-                it(-1, {
-                    isAction: !1,
-                    name: "No Tool",
-                    graphic: "",
-                    keydef: "",
-                }) 
-                /*TYPOEND*/, c.querySelector("#game-canvas canvas")),
+      /*TYPOMOD DESC: add tool for deselect*/
+      ,
+      it(-1, {
+        isAction: !1,
+        name: "No Tool",
+        graphic: "",
+        keydef: "",
+      })
+      /*TYPOEND*/, c.querySelector("#game-canvas canvas")),
     ct = C.getContext("2d", {
       willReadFrequently: !0
     }),
@@ -1541,10 +1544,10 @@
     o = (ft.width = Qe + 2, ft.height = Qe + 2, ft.getContext("2d"));
 
   function yt() {
-    
+
 // TYPOMOD
 // desc: dont update cursor when typo updates if very frequently to avoid performance drop
-if(typo.skipCursorUpdate === true) return;var e = lt[vt].cursor;
+    if(typo.skipCursorUpdate === true) return;var e = lt[vt].cursor;
     if (L.id == j && M == x) {
       if (vt == Xe) {
         var t = ft.width,
@@ -1553,10 +1556,10 @@ if(typo.skipCursorUpdate === true) return;var e = lt[vt].cursor;
         o.clearRect(0, 0, t, t);
 // TYPOMOD
 // desc: cursor with custom color
-var a = bt < 10000 ? kt[bt] : typo.typoCodeToRgb(bt);
-// TYPOEND 
- 
-          a = [(a = 1 == l.dark ? [Math.floor(.75 * a[0]), Math.floor(.75 * a[1]), Math.floor(.75 * a[2])] : a)[0], a[1], a[2], .8];
+        var a = bt < 10000 ? kt[bt] : typo.typoCodeToRgb(bt);
+// TYPOEND
+
+        a = [(a = 1 == l.dark ? [Math.floor(.75 * a[0]), Math.floor(.75 * a[1]), Math.floor(.75 * a[2])] : a)[0], a[1], a[2], .8];
         o.fillStyle = "rgba(" + a[0] + "," + a[1] + "," + a[2] + "," + a[3] + ")", o.beginPath(), o.arc(t / 2, t / 2, n / 2 - 1, 0, 2 * Math.PI), o.fill(), o.strokeStyle = "#FFF", o.beginPath(), o.arc(t / 2, t / 2, n / 2 - 1, 0, 2 * Math.PI), o.stroke(), o.strokeStyle = "#000", o.beginPath(), o.arc(t / 2, t / 2, n / 2, 0, 2 * Math.PI), o.stroke();
         a = t / 2, e = "url(" + ft.toDataURL() + ")" + a + " " + a + ", default"
       }
@@ -1624,7 +1627,7 @@ var a = bt < 10000 ? kt[bt] : typo.typoCodeToRgb(bt);
       r <= n && (n = r, t = o, 0), o.element.classList.remove("selected")
     }
     t.element.classList.add("selected"), tt.querySelector(".size-preview .icon").style.backgroundSize = Mt(Ct) + "%",
-document.dispatchEvent(new CustomEvent("skribblSizeChanged", { detail: Ct })), yt()
+      document.dispatchEvent(new CustomEvent("skribblSizeChanged", { detail: Ct })), yt()
   }
 
   function It(e) {
@@ -1636,20 +1639,20 @@ document.dispatchEvent(new CustomEvent("skribblSizeChanged", { detail: Ct })), y
   }
 
   function Tt(e, t) {
-  
-/*toolidtarget*/ document.dispatchEvent(new CustomEvent("skribblToolChanged", {detail: e}));  It(lt[e].element), e == vt && !t || (lt[vt].element.classList.remove("selected"), lt[e].element.classList.add("selected"), vt = e, yt())
+
+    /*toolidtarget*/ document.dispatchEvent(new CustomEvent("skribblToolChanged", {detail: e}));  It(lt[e].element), e == vt && !t || (lt[vt].element.classList.remove("selected"), lt[e].element.classList.add("selected"), vt = e, yt())
   }
 
   function Nt(e) {
     var t =
-e > 10000 ? zt(typo.typoCodeToRgb(e)) : zt(kt[e]);
+      e > 10000 ? zt(typo.typoCodeToRgb(e)) : zt(kt[e]);
     bt = e, c.querySelector("#color-preview-primary").style.fill = t
-, document.dispatchEvent(new CustomEvent("skribblColorChanged", {detail: t})), c.querySelector("#game-toolbar .color-preview-mobile").style.backgroundColor = t, yt()
+      , document.dispatchEvent(new CustomEvent("skribblColorChanged", {detail: t})), c.querySelector("#game-toolbar .color-preview-mobile").style.backgroundColor = t, yt()
   }
 
   function Wt(e) {
     var t =
-e > 10000 ? zt(typo.typoCodeToRgb(e)) : zt(kt[e]);
+      e > 10000 ? zt(typo.typoCodeToRgb(e)) : zt(kt[e]);
     St = e, c.querySelector("#color-preview-secondary").style.fill = t, yt()
   }
 
@@ -1672,10 +1675,10 @@ e > 10000 ? zt(typo.typoCodeToRgb(e)) : zt(kt[e]);
   }
 
   function Bt(e) {
-/*TYPOMOD   
-desc: if color code > 1000 -> customcolor*/if(e < 1000)
-    e = q(e, 0, kt.length), e = kt[e];
-else e = typo.typoCodeToRgb(e);/* TYPOEND */
+    /*TYPOMOD
+    desc: if color code > 1000 -> customcolor*/if(e < 1000)
+      e = q(e, 0, kt.length), e = kt[e];
+    else e = typo.typoCodeToRgb(e);/* TYPOEND */
     return {
       r: e[0],
       g: e[1],
@@ -1759,11 +1762,11 @@ else e = typo.typoCodeToRgb(e);/* TYPOEND */
           p = ((e, t, n) => 0 <= (n = 4 * (n * e.width + t)) && n < e.data.length ? [e.data[n], e.data[1 + n], e.data[2 + n]] : [0, 0, 0])(u, i, a);
         if (s != p[0] || c != p[1] || d != p[2]) {
           for (var m, g, f, y, v, b, S = function(e) {
-              var t = u.data[e],
-                n = u.data[e + 1],
-                e = u.data[e + 2];
-              return (t != s || n != c || e != d) && (t = Math.abs(t - p[0]), n = Math.abs(n - p[1]), e = Math.abs(e - p[2]), t < 3) && n < 3 && e < 3
-            }, k = u.height, w = u.width; h.length;) {
+            var t = u.data[e],
+              n = u.data[e + 1],
+              e = u.data[e + 2];
+            return (t != s || n != c || e != d) && (t = Math.abs(t - p[0]), n = Math.abs(n - p[1]), e = Math.abs(e - p[2]), t < 3) && n < 3 && e < 3
+          }, k = u.height, w = u.width; h.length;) {
             for (m = h.pop(), g = m[0], y = 4 * ((f = m[1]) * w + g); 0 <= f-- && S(y);) y -= 4 * w;
             for (y += 4 * w, ++f, b = v = !1; f++ < k - 1 && S(y);) Zt(u, y, s, c, d), 0 < g && (S(y - 4) ? v || (h.push([g - 1, f]), v = !0) : v = v && !1), g < w - 1 && (S(y + 4) ? b || (h.push([g + 1, f]), b = !0) : b = b && !1), y += 4 * w
           }
@@ -1809,15 +1812,15 @@ else e = typo.typoCodeToRgb(e);/* TYPOEND */
   }
 
   function Jt() {
-/* TYPOMOD
-         desc: store data before clear */
-        const data = document.querySelector("#game-canvas canvas").toDataURL();
-/* TYPOEND */
+    /* TYPOMOD
+             desc: store data before clear */
+    const data = document.querySelector("#game-canvas canvas").toDataURL();
+    /* TYPOEND */
     ct.fillStyle = "#FFF", ct.fillRect(0, 0, C.width, C.height)
-/* TYPOMOD
-         desc: dispatch clear event */
-        ;document.dispatchEvent(new CustomEvent("logCanvasClear", { detail: data }));
-/* TYPOEND */
+    /* TYPOMOD
+             desc: dispatch clear event */
+    ;document.dispatchEvent(new CustomEvent("logCanvasClear", { detail: data }));
+    /* TYPOEND */
   }
 
   function Qt(e) {
@@ -1830,10 +1833,10 @@ else e = typo.typoCodeToRgb(e);/* TYPOEND */
             var i = kt[r];
             if (0 == i[0] - n && 0 == i[1] - a && 0 == i[2] - o) return r
           }
-/* TYPOMOD
-                     desc: if color is not in array, convert to custom color */
-                    return r = parseInt(typo.rgbToHex(n, a, o), 16) + 10000;
-                    /* TYPOEND */
+          /* TYPOMOD
+                               desc: if color is not in array, convert to custom color */
+          return r = parseInt(typo.rgbToHex(n, a, o), 16) + 10000;
+          /* TYPOEND */
           return r
         })(b[0], b[1]);
         if (1 == vt) {
@@ -1841,14 +1844,14 @@ else e = typo.typoCodeToRgb(e);/* TYPOEND */
           e = t, l = b[0], s = b[1], n = [Ze, e, l, s]
         }
       }
-      vt == Xe && (e = Ct, 0 <= gt && (e = (e - Je) * q(gt, 0, 1) + Je), 
-/* TYPOMOD use typo pressure */
-              (() => {
-                  if (0 <= gt && document.documentElement.dataset["typo_pressure_performance"]) {
-                      const pressure = eval(document.documentElement.dataset["typo_pressure_performance"])(gt);
-                      e = Math.max(4, Math.round(40 * pressure));
-                  }
-              })(),l = Math.ceil(.5 * e), s = q(Math.floor(mt[0]), -l, C.width + l), o = q(Math.floor(mt[1]), -l, C.height + l), r = q(Math.floor(b[0]), -l, C.width + l), i = q(Math.floor(b[1]), -l, C.height + l), t = t, e = e, a = s, o = o, r = r, i = i, n = [je, t, e, a, o, r, i]), null != n && Vt(n)
+      vt == Xe && (e = Ct, 0 <= gt && (e = (e - Je) * q(gt, 0, 1) + Je),
+        /* TYPOMOD use typo pressure */
+        (() => {
+          if (0 <= gt && document.documentElement.dataset["typo_pressure_performance"]) {
+            const pressure = eval(document.documentElement.dataset["typo_pressure_performance"])(gt);
+            e = Math.max(4, Math.round(40 * pressure));
+          }
+        })(),l = Math.ceil(.5 * e), s = q(Math.floor(mt[0]), -l, C.width + l), o = q(Math.floor(mt[1]), -l, C.height + l), r = q(Math.floor(b[0]), -l, C.width + l), i = q(Math.floor(b[1]), -l, C.height + l), t = t, e = e, a = s, o = o, r = r, i = i, n = [je, t, e, a, o, r, i]), null != n && Vt(n)
     }
     var a, o, r, i, l, s
   }
@@ -1908,7 +1911,7 @@ else e = typo.typoCodeToRgb(e);/* TYPOEND */
     on !== e.pointerId || (() => {
       var e = performance.now();
       if (
-document.body.dataset.bypassFps !== 'true' &&e - ln < 1e3 / rn) return 1;
+        document.body.dataset.bypassFps !== 'true' &&e - ln < 1e3 / rn) return 1;
       ln = e
     })() || (t = 1 == l.pressureSensitivity && "pen" == e.pointerType, n = -1, en(e.clientX, e.clientY, n = t ? (ae && e.pressure, e.pressure) : n, !1), Qt(!1))
   }), D(C, "pointerup pointercancel", function(e) {
@@ -1924,14 +1927,14 @@ document.body.dataset.bypassFps !== 'true' &&e - ln < 1e3 / rn) return 1;
   var S, ln = 0,
     sn = 0,
     cn = (setInterval(function() {
-      var e, t, n;
-      S && L.id == j && M == x && 0 < (e = v.length - dt) && (t = dt + 8, n = v.slice(dt, t), S.emit("data", {
-        id: Ia,
-        data: n
-      }), dt = Math.min(t, v.length), 
-false &&console.log(\`Sent \${n.length} commands. \${e} remaining.\`))
-    }, 
-document.body.dataset.bypassCommandRate === 'true' ? 0 :50), setInterval(function() {
+        var e, t, n;
+        S && L.id == j && M == x && 0 < (e = v.length - dt) && (t = dt + 8, n = v.slice(dt, t), S.emit("data", {
+          id: Ia,
+          data: n
+        }), dt = Math.min(t, v.length),
+        false &&console.log(\`Sent \${n.length} commands. \${e} remaining.\`))
+      },
+      document.body.dataset.bypassCommandRate === 'true' ? 0 :50), setInterval(function() {
       S && L.id == j && M != x && ut < v.length && (Gt(jt(v[ut]), v[ut]), ut++)
     }, 1), c.querySelector("#game-canvas .overlay")),
     dn = c.querySelector("#game-canvas .overlay-content"),
@@ -1960,25 +1963,25 @@ document.body.dataset.bypassCommandRate === 'true' ? 0 :50), setInterval(functio
   function vn(e) {
     e.classList.add("show")
   }
-/* TYPOMOD desc: add event handlers for typo features */
-                document.addEventListener("joinPractice", () => {
-                  const data = typo.createFakeLobbyData();
-                  typo.messagePort.postMessage({ id: 10, data });
-                  //document.dispatchEvent(new CustomEvent("practiceJoined", {detail: data}));
-                  aa(data);
-                
-                  S = new Proxy({},{
-                    emit: (...data) => typo.emitPort.postMessage(data),
-                    other: (...data) => void 0,
-                    get (target, prop) {
-                      if(prop === "emit"){
-                        return this.emit;
-                      }
-                      else return this.other;
-                    }
-                  });
-                });
-                /* TYPOEND */
+  /* TYPOMOD desc: add event handlers for typo features */
+  document.addEventListener("joinPractice", () => {
+    const data = typo.createFakeLobbyData();
+    typo.messagePort.postMessage({ id: 10, data });
+    //document.dispatchEvent(new CustomEvent("practiceJoined", {detail: data}));
+    aa(data);
+
+    S = new Proxy({},{
+      emit: (...data) => typo.emitPort.postMessage(data),
+      other: (...data) => void 0,
+      get (target, prop) {
+        if(prop === "emit"){
+          return this.emit;
+        }
+        else return this.other;
+      }
+    });
+  });
+  /* TYPOEND */
 
   function bn(e) {
     for (var t = 0; t < dn.children.length; t++) dn.children[t].classList.remove("show");
@@ -2033,11 +2036,11 @@ document.body.dataset.bypassCommandRate === 'true' ? 0 :50), setInterval(functio
         for (var d = [I.querySelector(".podest-1"), I.querySelector(".podest-2"), I.querySelector(".podest-3"), I.querySelector(".ranks")], o = 0; o < 4; o++) ce(d[o]);
         if (0 < e.data.length) {
           for (var u = [
-              [],
-              [],
-              [],
-              []
-            ], o = 0; o < e.data.length; o++)(s = {
+            [],
+            [],
+            [],
+            []
+          ], o = 0; o < e.data.length; o++)(s = {
             player: W(r = e.data[o][0]),
             rank: e.data[o][1],
             title: e.data[o][2]
@@ -2053,15 +2056,15 @@ document.body.dataset.bypassCommandRate === 'true' ? 0 :50), setInterval(functio
                 l = $("avatar-container"),
                 y = (f.appendChild(l), $("border"));
               y.appendChild($("rank-place", "#" + (h + 1))), y.appendChild($("rank-name", m)), y.appendChild($("rank-score", E("$ points", g))), f.appendChild(y), 0 == h && l.appendChild($("trophy"));
-              for (o = 0; o < p.length; o++) pe(b = de((s = p[o]).player.avatar, 0 == h), Ya(s.player)), b.style.left = 15 * -(p.length - 1) + 30 * o + "%", 
-b.setAttribute("playerid", s.player.id),0 == h && (b.classList.add("winner"), b.style.animationDelay = -2.35 * o + "s"), l.appendChild(b)
+              for (o = 0; o < p.length; o++) pe(b = de((s = p[o]).player.avatar, 0 == h), Ya(s.player)), b.style.left = 15 * -(p.length - 1) + 30 * o + "%",
+                b.setAttribute("playerid", s.player.id),0 == h && (b.classList.add("winner"), b.style.animationDelay = -2.35 * o + "s"), l.appendChild(b)
             }
           }
           for (var v = Math.min(5, u[3].length), o = 0; o < v; o++) {
             var b, s = u[3][o],
               f = $("rank");
             pe(b = de(s.player.avatar, !1), Ya(s.player)), f.appendChild(b), f.appendChild($("rank-place", "#" + (s.rank + 1))), f.appendChild($("rank-name", s.player.name)),
-f.setAttribute("playerid", s.player.id), /*elemanchor*/ f.appendChild($("rank-score", E("$ points", s.player.score))), d[3].appendChild(f)
+              f.setAttribute("playerid", s.player.id), /*elemanchor*/ f.appendChild($("rank-score", E("$ points", s.player.score))), d[3].appendChild(f)
           }
           0 < u[0].length ? (L = u[0].map(function(e) {
             return e.player.name
@@ -2096,7 +2099,7 @@ f.setAttribute("playerid", s.player.id), /*elemanchor*/ f.appendChild($("rank-sc
           vn(A);
           var L = (s = W(e.data.id)) ? s.name : E("User"),
             L = (A.textContent = "", A.appendChild(se("span", void 0, E("$ is choosing a word!", L))), de(s
-&& (A.setAttribute("playerid", s.id) || true) /*overlayanchor*/ ? s.avatar : [0, 0, 0, 0], e.data.id == En));
+            && (A.setAttribute("playerid", s.id) || true) /*overlayanchor*/ ? s.avatar : [0, 0, 0, 0], e.data.id == En));
           s && pe(L, Ya(s)), L.style.width = "2em", L.style.height = "2em", A.appendChild(L)
         }
     }
@@ -2201,8 +2204,8 @@ f.setAttribute("playerid", s.player.id), /*elemanchor*/ f.appendChild($("rank-sc
         default:
           a && qe(ye, E("An unknown error occurred ('$')", e) + "\\n\\r" + E("Please try again later!"))
       }
-     
-document.dispatchEvent(new CustomEvent("joinLobbyFailed")) & n({
+
+      document.dispatchEvent(new CustomEvent("joinLobbyFailed")) & n({
         success: !1,
         error: e
       })
@@ -2253,69 +2256,69 @@ document.dispatchEvent(new CustomEvent("joinLobbyFailed")) & n({
         closeOnBeforeunload: !1
       };
     "URL" in h && "127.0.0.1" != (a = new URL(e)).hostname && "localhost" != a.hostname && (r.path = "/" + a.port + "/", e = a.protocol + "//" + a.hostname), (S = O(e, r)).on("connect", function() {
-/* TYPOMOD
-                     desc: disconnect socket & leave lobby */
-                document.addEventListener('socketEmit', event => 
-                    S.emit('data', { id: event.detail.id, data: event.detail.data })
-                );
-                
-                typo.disconnect = () => {
-                    if (S) {
-                        S.typoDisconnect = true;
-                        S.on("disconnect", () => {
-                            typo.disconnect = undefined;
-                            document.dispatchEvent(new Event("leftLobby"));
-                        });
-                        S.off("data");
-                        S.reconnect = false;
-                        S.disconnect();
-                    } else {
-                        document.dispatchEvent(new Event("leftLobby"));
-                    }
-                }
-                S.on("data", data => typo.messagePort.postMessage(data));
-                typo.messagePort.onmessage = data => S.emit("data", data.data);
-                
-                const originalEmit = S.emit.bind(S);
-                S.emit = function(...event) {
-                  typo.emitPort.postMessage(event);
-   
-const {data, id} = event[1];
-    
-            if(id === Ia){
-              const events = [];
-              const buffer = [];
-              let sent = 0; /* to calculate correct undo offset */
-              
-              for(const command of data){
-                /* DO NOT edit reference as it's used in local cmd history */
-                const commandCopy = structuredClone(command);
-                const sequence = typo.msiColorSwitch.ensureColorSequence(commandCopy); 
-                if(sequence === undefined) buffer.push(commandCopy);
-                else {
-                  if(buffer.length > 0) events.push({id: Ia, data: buffer});
-                  events.push({id: Ia, data: sequence});
-                  events.push({id: Ta, data: dt + sent});
-                  buffer.push(commandCopy);
-                }
-              }
-    
-              if(buffer.length > 0) events.push({id: Ia, data: buffer});
-    
-              for(event of events){
-                originalEmit("data", event);
-              }
-            }
-    
+      /* TYPOMOD
+                           desc: disconnect socket & leave lobby */
+      document.addEventListener('socketEmit', event =>
+        S.emit('data', { id: event.detail.id, data: event.detail.data })
+      );
+
+      typo.disconnect = () => {
+        if (S) {
+          S.typoDisconnect = true;
+          S.on("disconnect", () => {
+            typo.disconnect = undefined;
+            document.dispatchEvent(new Event("leftLobby"));
+          });
+          S.off("data");
+          S.reconnect = false;
+          S.disconnect();
+        } else {
+          document.dispatchEvent(new Event("leftLobby"));
+        }
+      }
+      S.on("data", data => typo.messagePort.postMessage(data));
+      typo.messagePort.onmessage = data => S.emit("data", data.data);
+
+      const originalEmit = S.emit.bind(S);
+      S.emit = function(...event) {
+        typo.emitPort.postMessage(event);
+
+        const {data, id} = event[1];
+
+        if(id === Ia){
+          const events = [];
+          const buffer = [];
+          let sent = 0; /* to calculate correct undo offset */
+
+          for(const command of data){
+            /* DO NOT edit reference as it's used in local cmd history */
+            const commandCopy = structuredClone(command);
+            const sequence = typo.msiColorSwitch.ensureColorSequence(commandCopy);
+            if(sequence === undefined) buffer.push(commandCopy);
             else {
-              originalEmit(...event) /* replace recursion prevention */;
-            }                
-                };
-                /* TYPOEND */
+              if(buffer.length > 0) events.push({id: Ia, data: buffer});
+              events.push({id: Ia, data: sequence});
+              events.push({id: Ta, data: dt + sent});
+              buffer.push(commandCopy);
+            }
+          }
+
+          if(buffer.length > 0) events.push({id: Ia, data: buffer});
+
+          for(event of events){
+            originalEmit("data", event);
+          }
+        }
+
+        else {
+          originalEmit(...event) /* replace recursion prevention */;
+        }
+      };
+      /* TYPOEND */
       Jn(!1), S.on("joinerr", function(e) {
         ua(), qe(ye, (e => {
-          
-document.dispatchEvent(new CustomEvent("joinLobbyFailed"));switch (e) {
+
+          document.dispatchEvent(new CustomEvent("joinLobbyFailed"));switch (e) {
             case 1:
               return E("Room not found!");
             case 2:
@@ -2350,20 +2353,20 @@ document.dispatchEvent(new CustomEvent("joinLobbyFailed"));switch (e) {
     }), S.on("reason", function(e) {
       o = e
     }), S.on("disconnect", function(e) {
-/* TYPOMOD
-                 DESC: no msg if disconnect intentionally */
- document.dispatchEvent(new CustomEvent("leftLobby"));                if(!S.typoDisconnect)
-                /*TYPOEND*/
-      switch (console.log("socket disconnect: " + e), o) {
-        case Q:
-          qe(ve, E("You have been kicked!"));
-          break;
-        case ee:
-          qe(ve, E("You have been banned!"));
-          break;
-        default:
-          qe(ve, E("Connection lost!") + "\\n" + e)
-      }
+      /* TYPOMOD
+                       DESC: no msg if disconnect intentionally */
+      document.dispatchEvent(new CustomEvent("leftLobby"));                if(!S.typoDisconnect)
+        /*TYPOEND*/
+        switch (console.log("socket disconnect: " + e), o) {
+          case Q:
+            qe(ve, E("You have been kicked!"));
+            break;
+          case ee:
+            qe(ve, E("You have been banned!"));
+            break;
+          default:
+            qe(ve, E("Connection lost!") + "\\n" + e)
+        }
       ua()
     }), S.on("connect_error", function(e) {
       ua(), Jn(!1), qe(ye, e.message)
@@ -2415,26 +2418,26 @@ document.dispatchEvent(new CustomEvent("joinLobbyFailed"));switch (e) {
   function sa(e, t) {
     var n, a;
     if (n = L = e, null != fn && (h.cancelAnimationFrame(fn), fn = void 0), n.id == j ? yn({
-        top: -100,
-        opacity: 0
-      }, 600, function() {
-        cn.classList.remove("show")
-      }) : cn.classList.contains("show") ? yn({
-        top: -100,
-        opacity: 1
-      }, 600, function() {
-        bn(n), yn({
-          top: 0,
-          opacity: 1
-        }, 600)
-      }) : (cn.classList.add("show"), bn(n), yn({
+      top: -100,
+      opacity: 0
+    }, 600, function() {
+      cn.classList.remove("show")
+    }) : cn.classList.contains("show") ? yn({
+      top: -100,
+      opacity: 1
+    }, 600, function() {
+      bn(n), yn({
         top: 0,
         opacity: 1
-      }, 600)), a = e.time, oo(), ro(a), no = setInterval(function() {
-        ro(Math.max(0, ao - 1));
-        var e = -1;
-        L.id == j && (e = Qa), L.id == V && (e = eo), to.style.animationName = ao < e ? ao % 2 == 0 ? "rot_left" : "rot_right" : "none", ao < e && R.playSound(Mn), ao <= 0 && oo()
-      }, 1e3), Pn.classList.add("toolbar-hidden"), yt(), da(!1), e.id == J ? (la(), Pn.classList.add("room")) : Pn.classList.remove("room"), e.id == F && (ia(e.data), 0 == e.data) && la(), e.id == Z) {
+      }, 600)
+    }) : (cn.classList.add("show"), bn(n), yn({
+      top: 0,
+      opacity: 1
+    }, 600)), a = e.time, oo(), ro(a), no = setInterval(function() {
+      ro(Math.max(0, ao - 1));
+      var e = -1;
+      L.id == j && (e = Qa), L.id == V && (e = eo), to.style.animationName = ao < e ? ao % 2 == 0 ? "rot_left" : "rot_right" : "none", ao < e && R.playSound(Mn), ao <= 0 && oo()
+    }, 1e3), Pn.classList.add("toolbar-hidden"), yt(), da(!1), e.id == J ? (la(), Pn.classList.add("room")) : Pn.classList.remove("room"), e.id == F && (ia(e.data), 0 == e.data) && la(), e.id == Z) {
       x != M && ga(e.data.word);
       for (var o = 0; o < e.data.scores.length; o += 3) {
         var r = e.data.scores[o + 0],
@@ -2450,9 +2453,9 @@ document.dispatchEvent(new CustomEvent("joinLobbyFailed"));switch (e) {
         } l ? R.playSound(wn) : R.playSound(kn), y(E("The word was '$'", e.data.word), "", f($e), !0)
     } else e.id != j && (N[0].textContent = E("WAITING"), N[0].classList.add("waiting"), N[1].style.display = "none", N[2].style.display = "none");
     if (e.id == j) {
-      if (M = e.data.id, 
-typo.msi.reset(),
-            typo.msiColorSwitch.currentCode = undefined,R.playSound(Sn), Kt(!0), e.data.drawCommands && (v = e.data.drawCommands), y(E("$ is drawing now!", W(M).name), "", f(De), !0), !t)
+      if (M = e.data.id,
+        typo.msi.reset(),
+        typo.msiColorSwitch.currentCode = undefined,R.playSound(Sn), Kt(!0), e.data.drawCommands && (v = e.data.drawCommands), y(E("$ is drawing now!", W(M).name), "", f(De), !0), !t)
         for (o = 0; o < w.length; o++) Fa(w[o], !1);
       N[0].classList.remove("waiting"), M == x ? (a = e.data.word, N[0].textContent = E("DRAW THIS"), N[1].style.display = "", N[2].style.display = "none", N[1].textContent = a, Pn.classList.remove("toolbar-hidden"), yt()) : (da(!0), pa(e.data.word, !1), ma(e.data.hints))
     } else {
@@ -2634,7 +2637,7 @@ typo.msi.reset(),
         break;
       case Ia:
         for (var s = 0; s < n.length; s++)
-n[s] = typo.msi.processIncomingCommand(n[s]), n[s] !== undefined && Vt(n[s]);
+          n[s] = typo.msi.processIncomingCommand(n[s]), n[s] !== undefined && Vt(n[s]);
         break;
       case Ra:
         Kt(!0);
@@ -2691,17 +2694,17 @@ n[s] = typo.msi.processIncomingCommand(n[s]), n[s] !== undefined && Vt(n[s]);
       }), $("player-icons")),
       l = $("icon owner"),
       a = $("icon muted");
-/* TYPOMOD
-         desc: set ID to player to identify */
-        n.element.setAttribute("playerid", n.id);
-        /* TYPOEND */
+    /* TYPOMOD
+             desc: set ID to player to identify */
+    n.element.setAttribute("playerid", n.id);
+    /* TYPOEND */
     return e.appendChild(l), e.appendChild(a), n.element.appendChild(e), n.element.icons = [l, a], Fa(n, n.guessed), t && Ga(), n
   }
 
   function Ba(e, t) {
     var n, a, o;
     !e.muted && (o = ((a = W(x)).flags & k) == k, n = e.id == M || e.guessed, x == M || a.guessed || !n || o) && (a = (e.flags & k) == k, o = Me, n && (o = Ie), a && (o = Ee), Ua(e, $("text", t)), y(e.name, t, f(o), !1)
-.setAttribute("playerid", e.id))
+      .setAttribute("playerid", e.id))
   }
 
   function Ua(e, t) {
@@ -2814,15 +2817,15 @@ n[s] = typo.msi.processIncomingCommand(n[s]), n[s] !== undefined && Vt(n[s]);
     if (e.target == m) return xe(), e.preventDefault(), !1;
     Be.elements.main.contains(e.target) ? e.preventDefault() : ("1" == Ye.value && _n[1].blur(), c.querySelector("#game-toolbar .sizes").contains(e.target) || Pt(), e.target != c.querySelector("#game-toolbar .color-preview-mobile") && rt.classList.remove("open"))
   }), D([Kn, Fn], "change", le), D(Vn, "click",
-typo.joinLobby = function() {
-    var t, e, n, a, o;
-    n = h.location.href,
-typo.lastConnect = Date.now(), o = "", n = n.split("?"), t = o = 1 < n.length ? (o = "" + n[1]).substring(0, a) : o, Nn || (e = "" != t ? "id=" + t : "lang=" + Fn.value, xe(), Jn(!0), ta(function() {
-      Qn($n, e, function(e) {
-        Jn(!1), e.success && na(e.data, t)
-      }, !0)
-    }))
-  }), D(jn, "click", function() {
+    typo.joinLobby = function() {
+      var t, e, n, a, o;
+      n = h.location.href,
+        typo.lastConnect = Date.now(), o = "", n = n.split("?"), t = o = 1 < n.length ? (o = "" + n[1]).substring(0, a) : o, Nn || (e = "" != t ? "id=" + t : "lang=" + Fn.value, xe(), Jn(!0), ta(function() {
+        Qn($n, e, function(e) {
+          Jn(!1), e.success && na(e.data, t)
+        }, !0)
+      }))
+    }), D(jn, "click", function() {
     Nn || (xe(), Jn(!0), ta(function() {
       Qn($n, "lang=" + Fn.value, function(e) {
         e.success ? na(e.data, 0, 1) : Jn(!1)
@@ -2923,9 +2926,9 @@ typo.lastConnect = Date.now(), o = "", n = n.split("?"), t = o = 1 < n.length ? 
   }), D(_n, "input", function(e) {
     mo(this.parentNode, this.value.length)
   }), D(Hn, "submit", function(e) {
-const input = this.querySelector("input"); let rest = input.value.substring(100);
-        input.value = input.value.substring(0,100);
-        if(rest.length > 0) setTimeout(()=>{input.value = rest; this.requestSubmit();},180);
+    const input = this.querySelector("input"); let rest = input.value.substring(100);
+    input.value = input.value.substring(0,100);
+    if(rest.length > 0) setTimeout(()=>{input.value = rest; this.requestSubmit();},180);
     e.preventDefault();
     var e = this.querySelector("input");
     return e.value && (e = e.value, S && S.connected ? S.emit("data", {
@@ -2972,7 +2975,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     })
   }
   Xn && (c.documentElement.dataset.halloween = "")
-;document.dispatchEvent(new Event("skribblInitialized")); document.body.setAttribute("typo-skribbl-loaded", "true");
+  ;document.dispatchEvent(new Event("skribblInitialized")); document.body.setAttribute("typo-skribbl-loaded", "true");
 })(window, document, localStorage, io);`;
   const _PageRuntime = class _PageRuntime {
     constructor() {
@@ -5121,11 +5124,18 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       source.subscribe(createOperatorSubscriber(subscriber, function(value) {
         var i = index++;
         state = hasState ? accumulator(state, value, i) : (hasState = true, value);
-        subscriber.next(state);
-      }, emitBeforeComplete));
+        emitOnNext && subscriber.next(state);
+      }, emitBeforeComplete && function() {
+        hasState && subscriber.next(state);
+        subscriber.complete();
+      }));
     };
   }
   __name(scanInternals, "scanInternals");
+  function reduce(accumulator, seed) {
+    return operate(scanInternals(accumulator, seed, arguments.length >= 2, false, true));
+  }
+  __name(reduce, "reduce");
   function combineLatest() {
     var args = [];
     for (var _i2 = 0; _i2 < arguments.length; _i2++) {
@@ -5149,6 +5159,12 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     return isFunction(resultSelector) ? mergeMap(project, resultSelector, 1) : mergeMap(project, 1);
   }
   __name(concatMap, "concatMap");
+  function count(predicate) {
+    return reduce(function(total, value, i) {
+      return total + 1;
+    }, 0);
+  }
+  __name(count, "count");
   function debounce(durationSelector) {
     return operate(function(source, subscriber) {
       var hasValue = false;
@@ -5223,15 +5239,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     });
   }
   __name(debounceTime, "debounceTime");
-  function take(count) {
-    return count <= 0 ? function() {
+  function take(count2) {
+    return count2 <= 0 ? function() {
       return EMPTY;
     } : operate(function(source, subscriber) {
       var seen = 0;
       source.subscribe(createOperatorSubscriber(subscriber, function(value) {
-        if (++seen <= count) {
+        if (++seen <= count2) {
           subscriber.next(value);
-          if (count <= seen) {
+          if (count2 <= seen) {
             subscriber.complete();
           }
         }
@@ -5340,16 +5356,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   __name(pairwise, "pairwise");
   function repeat(countOrConfig) {
     var _a2;
-    var count = Infinity;
+    var count2 = Infinity;
     var delay2;
     if (countOrConfig != null) {
       if (typeof countOrConfig === "object") {
-        _a2 = countOrConfig.count, count = _a2 === void 0 ? Infinity : _a2, delay2 = countOrConfig.delay;
+        _a2 = countOrConfig.count, count2 = _a2 === void 0 ? Infinity : _a2, delay2 = countOrConfig.delay;
       } else {
-        count = countOrConfig;
+        count2 = countOrConfig;
       }
     }
-    return count <= 0 ? function() {
+    return count2 <= 0 ? function() {
       return EMPTY;
     } : operate(function(source, subscriber) {
       var soFar = 0;
@@ -5371,7 +5387,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       var subscribeToSource = /* @__PURE__ */ __name(function() {
         var syncUnsub = false;
         sourceSub = source.subscribe(createOperatorSubscriber(subscriber, void 0, function() {
-          if (++soFar < count) {
+          if (++soFar < count2) {
             if (sourceSub) {
               resubscribe();
             } else {
@@ -5393,9 +5409,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     return operate(scanInternals(accumulator, seed, arguments.length >= 2, true));
   }
   __name(scan, "scan");
-  function skip(count) {
+  function skip(count2) {
     return filter(function(_, index) {
-      return count <= index;
+      return count2 <= index;
     });
   }
   __name(skip, "skip");
@@ -12034,17 +12050,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   }
   __name(propertyEventDecorator, "propertyEventDecorator");
   var postConstruct = propertyEventDecorator(POST_CONSTRUCT, MULTIPLE_POST_CONSTRUCT_METHODS);
-  var __defProp$22 = Object.defineProperty;
-  var __getOwnPropDesc$_ = Object.getOwnPropertyDescriptor;
-  var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$22(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
-  var __decorateClass$22 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$_(target, key2) : target;
+  var __defProp$24 = Object.defineProperty;
+  var __getOwnPropDesc$$ = Object.getOwnPropertyDescriptor;
+  var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$24(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
+  var __decorateClass$24 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$$(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$22(target, key2, result);
+    if (kind && result) __defProp$24(target, key2, result);
     return result;
-  }, "__decorateClass$22");
+  }, "__decorateClass$24");
   var __publicField2 = /* @__PURE__ */ __name((obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value), "__publicField");
   let LoggingService = (_a = class {
     constructor() {
@@ -12117,7 +12133,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     error: "color: red; font-weight: bold;",
     date: "color: darkGrey; font-weight: light;"
   });
-  LoggingService = __decorateClass$22([
+  LoggingService = __decorateClass$24([
     injectable()
   ], LoggingService);
   const _ApplicationEvent = class _ApplicationEvent {
@@ -12125,17 +12141,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   __name(_ApplicationEvent, "ApplicationEvent");
   let ApplicationEvent = _ApplicationEvent;
   const loggerFactory = Symbol("loggerFactory");
-  var __defProp$21 = Object.defineProperty;
-  var __getOwnPropDesc$Z = Object.getOwnPropertyDescriptor;
-  var __decorateClass$21 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Z(target, key2) : target;
+  var __defProp$23 = Object.defineProperty;
+  var __getOwnPropDesc$_ = Object.getOwnPropertyDescriptor;
+  var __decorateClass$23 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$_(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$21(target, key2, result);
+    if (kind && result) __defProp$23(target, key2, result);
     return result;
-  }, "__decorateClass$21");
-  var __decorateParam$u = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$u");
+  }, "__decorateClass$23");
+  var __decorateParam$v = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$v");
   let EventsService = (_b = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -12160,21 +12176,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._events$.next(event);
     }
   }, __name(_b, "EventsService"), _b);
-  EventsService = __decorateClass$21([
+  EventsService = __decorateClass$23([
     injectable(),
-    __decorateParam$u(0, inject(loggerFactory))
+    __decorateParam$v(0, inject(loggerFactory))
   ], EventsService);
-  var __defProp$20 = Object.defineProperty;
-  var __getOwnPropDesc$Y = Object.getOwnPropertyDescriptor;
-  var __decorateClass$20 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Y(target, key2) : target;
+  var __defProp$22 = Object.defineProperty;
+  var __getOwnPropDesc$Z = Object.getOwnPropertyDescriptor;
+  var __decorateClass$22 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Z(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$20(target, key2, result);
+    if (kind && result) __defProp$22(target, key2, result);
     return result;
-  }, "__decorateClass$20");
-  var __decorateParam$t = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$t");
+  }, "__decorateClass$22");
+  var __decorateParam$u = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$u");
   let EventProcessor = (_c = class {
     constructor(loggerFactory2, _eventsService) {
       __publicField(this, "_logger");
@@ -12203,25 +12219,25 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return event instanceof this.eventType;
     }
   }, __name(_c, "EventProcessor"), _c);
-  __decorateClass$20([
+  __decorateClass$22([
     postConstruct()
   ], EventProcessor.prototype, "start", 1);
-  EventProcessor = __decorateClass$20([
+  EventProcessor = __decorateClass$22([
     injectable(),
-    __decorateParam$t(0, inject(loggerFactory)),
-    __decorateParam$t(1, inject(EventsService))
+    __decorateParam$u(0, inject(loggerFactory)),
+    __decorateParam$u(1, inject(EventsService))
   ], EventProcessor);
-  var __defProp$1$ = Object.defineProperty;
-  var __getOwnPropDesc$X = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$X(target, key2) : target;
+  var __defProp$21 = Object.defineProperty;
+  var __getOwnPropDesc$Y = Object.getOwnPropertyDescriptor;
+  var __decorateClass$21 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Y(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1$(target, key2, result);
+    if (kind && result) __defProp$21(target, key2, result);
     return result;
-  }, "__decorateClass$1$");
-  var __decorateParam$s = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$s");
+  }, "__decorateClass$21");
+  var __decorateParam$t = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$t");
   let EventListener = (_d = class {
     constructor(_eventsService, loggerFactory2) {
       /**
@@ -12243,21 +12259,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._events$;
     }
   }, __name(_d, "EventListener"), _d);
-  EventListener = __decorateClass$1$([
+  EventListener = __decorateClass$21([
     injectable(),
-    __decorateParam$s(0, inject(EventsService)),
-    __decorateParam$s(1, inject(loggerFactory))
+    __decorateParam$t(0, inject(EventsService)),
+    __decorateParam$t(1, inject(loggerFactory))
   ], EventListener);
-  var __defProp$1_ = Object.defineProperty;
-  var __getOwnPropDesc$W = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$W(target, key2) : target;
+  var __defProp$20 = Object.defineProperty;
+  var __getOwnPropDesc$X = Object.getOwnPropertyDescriptor;
+  var __decorateClass$20 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$X(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1_(target, key2, result);
+    if (kind && result) __defProp$20(target, key2, result);
     return result;
-  }, "__decorateClass$1_");
+  }, "__decorateClass$20");
   const _CanvasClearedEvent = class _CanvasClearedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -12280,7 +12296,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_e, "CanvasClearedEventProcessor"), _e);
-  CanvasClearedEventProcessor = __decorateClass$1_([
+  CanvasClearedEventProcessor = __decorateClass$20([
     injectable()
   ], CanvasClearedEventProcessor);
   let CanvasClearedEventListener = (_f = class extends EventListener {
@@ -12289,10 +12305,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_f, "CanvasClearedEventListener"), _f);
-  __decorateClass$1_([
+  __decorateClass$20([
     inject(CanvasClearedEventProcessor)
   ], CanvasClearedEventListener.prototype, "_processor", 2);
-  CanvasClearedEventListener = __decorateClass$1_([
+  CanvasClearedEventListener = __decorateClass$20([
     injectable()
   ], CanvasClearedEventListener);
   const canvasClearedEventRegistration = {
@@ -12545,17 +12561,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ExtensionCommand, "ExtensionCommand");
   let ExtensionCommand = _ExtensionCommand;
-  var __defProp$1Z = Object.defineProperty;
-  var __getOwnPropDesc$V = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$V(target, key2) : target;
+  var __defProp$1$ = Object.defineProperty;
+  var __getOwnPropDesc$W = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$W(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Z(target, key2, result);
+    if (kind && result) __defProp$1$(target, key2, result);
     return result;
-  }, "__decorateClass$1Z");
-  var __decorateParam$r = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$r");
+  }, "__decorateClass$1$");
+  var __decorateParam$s = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$s");
   let CommandsService = (_g = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -12641,21 +12657,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       } else return result.result;
     }
   }, __name(_g, "CommandsService"), _g);
-  CommandsService = __decorateClass$1Z([
+  CommandsService = __decorateClass$1$([
     injectable(),
-    __decorateParam$r(0, inject(loggerFactory))
+    __decorateParam$s(0, inject(loggerFactory))
   ], CommandsService);
-  var __defProp$1Y = Object.defineProperty;
-  var __getOwnPropDesc$U = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$U(target, key2) : target;
+  var __defProp$1_ = Object.defineProperty;
+  var __getOwnPropDesc$V = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$V(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Y(target, key2, result);
+    if (kind && result) __defProp$1_(target, key2, result);
     return result;
-  }, "__decorateClass$1Y");
-  var __decorateParam$q = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$q");
+  }, "__decorateClass$1_");
+  var __decorateParam$r = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$r");
   let HotkeysService = (_h = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -12726,21 +12742,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return [...hotkey.defaultCombo ?? []];
     }
   }, __name(_h, "HotkeysService"), _h);
-  HotkeysService = __decorateClass$1Y([
+  HotkeysService = __decorateClass$1_([
     injectable(),
-    __decorateParam$q(0, inject(loggerFactory))
+    __decorateParam$r(0, inject(loggerFactory))
   ], HotkeysService);
-  var __defProp$1X = Object.defineProperty;
-  var __getOwnPropDesc$T = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$T(target, key2) : target;
+  var __defProp$1Z = Object.defineProperty;
+  var __getOwnPropDesc$U = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$U(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1X(target, key2, result);
+    if (kind && result) __defProp$1Z(target, key2, result);
     return result;
-  }, "__decorateClass$1X");
-  var __decorateParam$p = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$p");
+  }, "__decorateClass$1Z");
+  var __decorateParam$q = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$q");
   let TooltipsService = (_i = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -12820,21 +12836,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return tooltips;
     }
   }, __name(_i, "TooltipsService"), _i);
-  TooltipsService = __decorateClass$1X([
+  TooltipsService = __decorateClass$1Z([
     injectable(),
-    __decorateParam$p(0, inject(loggerFactory))
+    __decorateParam$q(0, inject(loggerFactory))
   ], TooltipsService);
-  var __defProp$1W = Object.defineProperty;
-  var __getOwnPropDesc$S = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$S(target, key2) : target;
+  var __defProp$1Y = Object.defineProperty;
+  var __getOwnPropDesc$T = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$T(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1W(target, key2, result);
+    if (kind && result) __defProp$1Y(target, key2, result);
     return result;
-  }, "__decorateClass$1W");
-  var __decorateParam$o = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$o");
+  }, "__decorateClass$1Y");
+  var __decorateParam$p = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$p");
   let OnboardingService = (_j = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -12892,21 +12908,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._taskCompleted$.asObservable();
     }
   }, __name(_j, "OnboardingService"), _j);
-  OnboardingService = __decorateClass$1W([
+  OnboardingService = __decorateClass$1Y([
     injectable(),
-    __decorateParam$o(0, inject(loggerFactory))
+    __decorateParam$p(0, inject(loggerFactory))
   ], OnboardingService);
-  var __defProp$1V = Object.defineProperty;
-  var __getOwnPropDesc$R = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$R(target, key2) : target;
+  var __defProp$1X = Object.defineProperty;
+  var __getOwnPropDesc$S = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$S(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1V(target, key2, result);
+    if (kind && result) __defProp$1X(target, key2, result);
     return result;
-  }, "__decorateClass$1V");
-  var __decorateParam$n = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$n");
+  }, "__decorateClass$1X");
+  var __decorateParam$o = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$o");
   let TypoFeature = (_k = class {
     constructor(loggerFactory2, _hotkeysService, _tooltipsService, _commandsService, _onboardingService) {
       __publicField(this, "featureEnabledDefault", true);
@@ -13097,27 +13113,27 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       };
     }
   }, __name(_k, "TypoFeature"), _k);
-  __decorateClass$1V([
+  __decorateClass$1X([
     postConstruct()
   ], TypoFeature.prototype, "init", 1);
-  TypoFeature = __decorateClass$1V([
+  TypoFeature = __decorateClass$1X([
     injectable(),
-    __decorateParam$n(0, inject(loggerFactory)),
-    __decorateParam$n(1, inject(HotkeysService)),
-    __decorateParam$n(2, inject(TooltipsService)),
-    __decorateParam$n(3, inject(CommandsService)),
-    __decorateParam$n(4, inject(OnboardingService))
+    __decorateParam$o(0, inject(loggerFactory)),
+    __decorateParam$o(1, inject(HotkeysService)),
+    __decorateParam$o(2, inject(TooltipsService)),
+    __decorateParam$o(3, inject(CommandsService)),
+    __decorateParam$o(4, inject(OnboardingService))
   ], TypoFeature);
-  var __defProp$1U = Object.defineProperty;
-  var __getOwnPropDesc$Q = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Q(target, key2) : target;
+  var __defProp$1W = Object.defineProperty;
+  var __getOwnPropDesc$R = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$R(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1U(target, key2, result);
+    if (kind && result) __defProp$1W(target, key2, result);
     return result;
-  }, "__decorateClass$1U");
+  }, "__decorateClass$1W");
   let LoggerService = (_l = class {
     constructor() {
       __publicField(this, "_level", "debug");
@@ -13211,20 +13227,20 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_l, "LoggerService"), _l);
-  LoggerService = __decorateClass$1U([
+  LoggerService = __decorateClass$1W([
     injectable()
   ], LoggerService);
-  var __defProp$1T = Object.defineProperty;
-  var __getOwnPropDesc$P = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$P(target, key2) : target;
+  var __defProp$1V = Object.defineProperty;
+  var __getOwnPropDesc$Q = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Q(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1T(target, key2, result);
+    if (kind && result) __defProp$1V(target, key2, result);
     return result;
-  }, "__decorateClass$1T");
-  var __decorateParam$m = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$m");
+  }, "__decorateClass$1V");
+  var __decorateParam$n = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$n");
   let Setup = (_m = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -13242,9 +13258,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._setupPromise;
     }
   }, __name(_m, "Setup"), _m);
-  Setup = __decorateClass$1T([
+  Setup = __decorateClass$1V([
     injectable(),
-    __decorateParam$m(0, inject(loggerFactory))
+    __decorateParam$n(0, inject(loggerFactory))
   ], Setup);
   const appendElement = /* @__PURE__ */ __name((sourceElement, position, parentElement) => {
     parentElement.insertAdjacentElement(position, sourceElement);
@@ -13266,16 +13282,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     return Reflect.getMetadata(decoratorSymbol, target);
   }
   __name(isEarlySetup, "isEarlySetup");
-  var __defProp$1S = Object.defineProperty;
-  var __getOwnPropDesc$O = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$O(target, key2) : target;
+  var __defProp$1U = Object.defineProperty;
+  var __getOwnPropDesc$P = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$P(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1S(target, key2, result);
+    if (kind && result) __defProp$1U(target, key2, result);
     return result;
-  }, "__decorateClass$1S");
+  }, "__decorateClass$1U");
   let GamePatchReadySetup = (_n = class extends Setup {
     constructor() {
       super(...arguments);
@@ -13285,21 +13301,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return firstValueFrom(this._interceptor.patchLoaded$);
     }
   }, __name(_n, "GamePatchReadySetup"), _n);
-  __decorateClass$1S([
+  __decorateClass$1U([
     inject(Interceptor)
   ], GamePatchReadySetup.prototype, "_interceptor", 2);
-  GamePatchReadySetup = __decorateClass$1S([
+  GamePatchReadySetup = __decorateClass$1U([
     earlySetup()
   ], GamePatchReadySetup);
-  var __defProp$1R = Object.defineProperty;
-  var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1T = Object.defineProperty;
+  var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1R(target, key2, result);
+    if (result) __defProp$1T(target, key2, result);
     return result;
-  }, "__decorateClass$1R");
+  }, "__decorateClass$1T");
   const _ChatControlsSetup = class _ChatControlsSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13316,7 +13332,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatControlsSetup, "ChatControlsSetup");
   let ChatControlsSetup = _ChatControlsSetup;
-  __decorateClass$1R([
+  __decorateClass$1T([
     inject(GamePatchReadySetup)
   ], ChatControlsSetup.prototype, "_gameReadySetup");
   const _HotkeyAction = class _HotkeyAction {
@@ -13414,17 +13430,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_HotkeyAction, "HotkeyAction");
   let HotkeyAction = _HotkeyAction;
-  var __defProp$1Q = Object.defineProperty;
-  var __getOwnPropDesc$N = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$N(target, key2) : target;
+  var __defProp$1S = Object.defineProperty;
+  var __getOwnPropDesc$O = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$O(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Q(target, key2, result);
+    if (kind && result) __defProp$1S(target, key2, result);
     return result;
-  }, "__decorateClass$1Q");
-  var __decorateParam$l = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$l");
+  }, "__decorateClass$1S");
+  var __decorateParam$m = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$m");
   let GlobalSettingsService = (_o = class {
     constructor(loggerFactory2) {
       __publicField(this, "_globalHotkeysList", {
@@ -13470,9 +13486,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return Object.values(this._settings);
     }
   }, __name(_o, "GlobalSettingsService"), _o);
-  GlobalSettingsService = __decorateClass$1Q([
+  GlobalSettingsService = __decorateClass$1S([
     injectable(),
-    __decorateParam$l(0, inject(loggerFactory))
+    __decorateParam$m(0, inject(loggerFactory))
   ], GlobalSettingsService);
   function create_fragment$1E(ctx) {
     let div1;
@@ -13593,15 +13609,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Controls, "Controls");
   let Controls = _Controls;
-  var __defProp$1P = Object.defineProperty;
-  var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1R = Object.defineProperty;
+  var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1P(target, key2, result);
+    if (result) __defProp$1R(target, key2, result);
     return result;
-  }, "__decorateClass$1P");
+  }, "__decorateClass$1R");
   const _ControlsSetup = class _ControlsSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13621,10 +13637,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ControlsSetup, "ControlsSetup");
   let ControlsSetup = _ControlsSetup;
-  __decorateClass$1P([
+  __decorateClass$1R([
     inject(GamePatchReadySetup)
   ], ControlsSetup.prototype, "_gameReadySetup");
-  __decorateClass$1P([
+  __decorateClass$1R([
     inject(GlobalSettingsService)
   ], ControlsSetup.prototype, "_settingsService");
   function create_fragment$1D(ctx) {
@@ -13690,16 +13706,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CustomizerActionsSetup, "CustomizerActionsSetup");
   let CustomizerActionsSetup = _CustomizerActionsSetup;
-  var __defProp$1O = Object.defineProperty;
-  var __getOwnPropDesc$M = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$M(target, key2) : target;
+  var __defProp$1Q = Object.defineProperty;
+  var __getOwnPropDesc$N = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$N(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1O(target, key2, result);
+    if (kind && result) __defProp$1Q(target, key2, result);
     return result;
-  }, "__decorateClass$1O");
+  }, "__decorateClass$1Q");
   let SkribblInitializedSetup = (_p = class extends Setup {
     async runSetup() {
       return new Promise((resolve2) => {
@@ -13708,7 +13724,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_p, "SkribblInitializedSetup"), _p);
-  SkribblInitializedSetup = __decorateClass$1O([
+  SkribblInitializedSetup = __decorateClass$1Q([
     earlySetup()
   ], SkribblInitializedSetup);
   const _Toast_container = class _Toast_container extends SvelteComponent {
@@ -13719,15 +13735,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Toast_container, "Toast_container");
   let Toast_container = _Toast_container;
-  var __defProp$1N = Object.defineProperty;
-  var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1P = Object.defineProperty;
+  var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1N(target, key2, result);
+    if (result) __defProp$1P(target, key2, result);
     return result;
-  }, "__decorateClass$1N");
+  }, "__decorateClass$1P");
   const _ToastSetup = class _ToastSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13744,7 +13760,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ToastSetup, "ToastSetup");
   let ToastSetup = _ToastSetup;
-  __decorateClass$1N([
+  __decorateClass$1P([
     inject(GamePatchReadySetup)
   ], ToastSetup.prototype, "_gameReadySetup");
   function get_each_context$B(ctx, list, i) {
@@ -14004,15 +14020,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Panel_tabs, "Panel_tabs");
   let Panel_tabs = _Panel_tabs;
-  var __defProp$1M = Object.defineProperty;
-  var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1O = Object.defineProperty;
+  var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1M(target, key2, result);
+    if (result) __defProp$1O(target, key2, result);
     return result;
-  }, "__decorateClass$1M");
+  }, "__decorateClass$1O");
   const _PanelSetup = class _PanelSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -14041,7 +14057,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_PanelSetup, "PanelSetup");
   let PanelSetup = _PanelSetup;
-  __decorateClass$1M([
+  __decorateClass$1O([
     inject(GamePatchReadySetup)
   ], PanelSetup.prototype, "_gameReadySetup");
   const _Toolbar = class _Toolbar extends SvelteComponent {
@@ -14052,15 +14068,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Toolbar, "Toolbar");
   let Toolbar = _Toolbar;
-  var __defProp$1L = Object.defineProperty;
-  var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1N = Object.defineProperty;
+  var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1L(target, key2, result);
+    if (result) __defProp$1N(target, key2, result);
     return result;
-  }, "__decorateClass$1L");
+  }, "__decorateClass$1N");
   const _ToolbarSetup = class _ToolbarSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -14077,18 +14093,18 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ToolbarSetup, "ToolbarSetup");
   let ToolbarSetup = _ToolbarSetup;
-  __decorateClass$1L([
+  __decorateClass$1N([
     inject(GamePatchReadySetup)
   ], ToolbarSetup.prototype, "_gameReadySetup");
-  var __defProp$1K = Object.defineProperty;
-  var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1M = Object.defineProperty;
+  var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1K(target, key2, result);
+    if (result) __defProp$1M(target, key2, result);
     return result;
-  }, "__decorateClass$1K");
+  }, "__decorateClass$1M");
   function getElements$1(panels, toolbar, controls, toastContainer, chatControls, customizerActions) {
     return {
       panelContainer: requireElement(".panels"),
@@ -14100,6 +14116,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       filterTab: requireElement(".panel-tab-filter"),
       playButton: requireElement(".panel:not(.typo-panel) .button-play"),
       gameBar: requireElement("#game-bar"),
+      clearButton: requireElement('.tool[data-tooltip="Clear"]'),
       gameSettings: requireElement("#game-settings"),
       home: requireElement("#home"),
       game: requireElement("#game"),
@@ -14161,37 +14178,37 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ElementsSetup, "ElementsSetup");
   let ElementsSetup = _ElementsSetup;
-  __decorateClass$1K([
+  __decorateClass$1M([
     inject(PanelSetup)
   ], ElementsSetup.prototype, "_panelSetup");
-  __decorateClass$1K([
+  __decorateClass$1M([
     inject(ToolbarSetup)
   ], ElementsSetup.prototype, "_toolbarSetup");
-  __decorateClass$1K([
+  __decorateClass$1M([
     inject(ControlsSetup)
   ], ElementsSetup.prototype, "_controlsSetup");
-  __decorateClass$1K([
+  __decorateClass$1M([
     inject(ChatControlsSetup)
   ], ElementsSetup.prototype, "_chatControlsSetup");
-  __decorateClass$1K([
+  __decorateClass$1M([
     inject(ToastSetup)
   ], ElementsSetup.prototype, "_toastSetup");
-  __decorateClass$1K([
+  __decorateClass$1M([
     inject(SkribblInitializedSetup)
   ], ElementsSetup.prototype, "_gameReadySetup");
-  __decorateClass$1K([
+  __decorateClass$1M([
     inject(CustomizerActionsSetup)
   ], ElementsSetup.prototype, "_customizerIconsSetup");
-  var __defProp$1J = Object.defineProperty;
-  var __getOwnPropDesc$L = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$L(target, key2) : target;
+  var __defProp$1L = Object.defineProperty;
+  var __getOwnPropDesc$M = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$M(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1J(target, key2, result);
+    if (kind && result) __defProp$1L(target, key2, result);
     return result;
-  }, "__decorateClass$1J");
+  }, "__decorateClass$1L");
   const _ChatTypedEvent = class _ChatTypedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14222,10 +14239,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_q, "ChatTypedEventProcessor"), _q);
-  __decorateClass$1J([
+  __decorateClass$1L([
     inject(ElementsSetup)
   ], ChatTypedEventProcessor.prototype, "_elementsSetup", 2);
-  ChatTypedEventProcessor = __decorateClass$1J([
+  ChatTypedEventProcessor = __decorateClass$1L([
     injectable()
   ], ChatTypedEventProcessor);
   let ChatTypedEventListener = (_r = class extends EventListener {
@@ -14234,26 +14251,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_r, "ChatTypedEventListener"), _r);
-  __decorateClass$1J([
+  __decorateClass$1L([
     inject(ChatTypedEventProcessor)
   ], ChatTypedEventListener.prototype, "_processor", 2);
-  ChatTypedEventListener = __decorateClass$1J([
+  ChatTypedEventListener = __decorateClass$1L([
     injectable()
   ], ChatTypedEventListener);
   const chatTypedEventRegistration = {
     listenerType: ChatTypedEventListener,
     processorType: ChatTypedEventProcessor
   };
-  var __defProp$1I = Object.defineProperty;
-  var __getOwnPropDesc$K = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$K(target, key2) : target;
+  var __defProp$1K = Object.defineProperty;
+  var __getOwnPropDesc$L = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$L(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1I(target, key2, result);
+    if (kind && result) __defProp$1K(target, key2, result);
     return result;
-  }, "__decorateClass$1I");
+  }, "__decorateClass$1K");
   const _ColorChangedEvent = class _ColorChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14278,7 +14295,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_s, "ColorChangedEventProcessor"), _s);
-  ColorChangedEventProcessor = __decorateClass$1I([
+  ColorChangedEventProcessor = __decorateClass$1K([
     injectable()
   ], ColorChangedEventProcessor);
   let ColorChangedEventListener = (_t = class extends EventListener {
@@ -14287,26 +14304,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_t, "ColorChangedEventListener"), _t);
-  __decorateClass$1I([
+  __decorateClass$1K([
     inject(ColorChangedEventProcessor)
   ], ColorChangedEventListener.prototype, "_processor", 2);
-  ColorChangedEventListener = __decorateClass$1I([
+  ColorChangedEventListener = __decorateClass$1K([
     injectable()
   ], ColorChangedEventListener);
   const colorChangedEventRegistration = {
     listenerType: ColorChangedEventListener,
     processorType: ColorChangedEventProcessor
   };
-  var __defProp$1H = Object.defineProperty;
-  var __getOwnPropDesc$J = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$J(target, key2) : target;
+  var __defProp$1J = Object.defineProperty;
+  var __getOwnPropDesc$K = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$K(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1H(target, key2, result);
+    if (kind && result) __defProp$1J(target, key2, result);
     return result;
-  }, "__decorateClass$1H");
+  }, "__decorateClass$1J");
   let SkribblEmitRelaySetup = (_u = class extends Setup {
     // eslint-disable-line @typescript-eslint/no-explicit-any
     async runSetup() {
@@ -14325,19 +14342,19 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_u, "SkribblEmitRelaySetup"), _u);
-  SkribblEmitRelaySetup = __decorateClass$1H([
+  SkribblEmitRelaySetup = __decorateClass$1J([
     earlySetup()
   ], SkribblEmitRelaySetup);
-  var __defProp$1G = Object.defineProperty;
-  var __getOwnPropDesc$I = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$I(target, key2) : target;
+  var __defProp$1I = Object.defineProperty;
+  var __getOwnPropDesc$J = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$J(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1G(target, key2, result);
+    if (kind && result) __defProp$1I(target, key2, result);
     return result;
-  }, "__decorateClass$1G");
+  }, "__decorateClass$1I");
   let SkribblMessageRelaySetup = (_v = class extends Setup {
     async runSetup() {
       return new Promise((resolve2) => {
@@ -14365,19 +14382,19 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_v, "SkribblMessageRelaySetup"), _v);
-  SkribblMessageRelaySetup = __decorateClass$1G([
+  SkribblMessageRelaySetup = __decorateClass$1I([
     earlySetup()
   ], SkribblMessageRelaySetup);
-  var __defProp$1F = Object.defineProperty;
-  var __getOwnPropDesc$H = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$H(target, key2) : target;
+  var __defProp$1H = Object.defineProperty;
+  var __getOwnPropDesc$I = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$I(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1F(target, key2, result);
+    if (kind && result) __defProp$1H(target, key2, result);
     return result;
-  }, "__decorateClass$1F");
+  }, "__decorateClass$1H");
   const _DrawEvent = class _DrawEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14426,13 +14443,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_w, "DrawEventProcessor"), _w);
-  __decorateClass$1F([
+  __decorateClass$1H([
     inject(SkribblMessageRelaySetup)
   ], DrawEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  __decorateClass$1F([
+  __decorateClass$1H([
     inject(SkribblEmitRelaySetup)
   ], DrawEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  DrawEventProcessor = __decorateClass$1F([
+  DrawEventProcessor = __decorateClass$1H([
     injectable()
   ], DrawEventProcessor);
   let DrawEventListener = (_x = class extends EventListener {
@@ -14441,26 +14458,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_x, "DrawEventListener"), _x);
-  __decorateClass$1F([
+  __decorateClass$1H([
     inject(DrawEventProcessor)
   ], DrawEventListener.prototype, "_processor", 2);
-  DrawEventListener = __decorateClass$1F([
+  DrawEventListener = __decorateClass$1H([
     injectable()
   ], DrawEventListener);
   const drawEventRegistration = {
     listenerType: DrawEventListener,
     processorType: DrawEventProcessor
   };
-  var __defProp$1E = Object.defineProperty;
-  var __getOwnPropDesc$G = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$G(target, key2) : target;
+  var __defProp$1G = Object.defineProperty;
+  var __getOwnPropDesc$H = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$H(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1E(target, key2, result);
+    if (kind && result) __defProp$1G(target, key2, result);
     return result;
-  }, "__decorateClass$1E");
+  }, "__decorateClass$1G");
   const _HintsAddedEvent = class _HintsAddedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14492,10 +14509,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_y, "HintsAddedEventProcessor"), _y);
-  __decorateClass$1E([
+  __decorateClass$1G([
     inject(SkribblMessageRelaySetup)
   ], HintsAddedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  HintsAddedEventProcessor = __decorateClass$1E([
+  HintsAddedEventProcessor = __decorateClass$1G([
     injectable()
   ], HintsAddedEventProcessor);
   let HintsAddedEventListener = (_z = class extends EventListener {
@@ -14504,26 +14521,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_z, "HintsAddedEventListener"), _z);
-  __decorateClass$1E([
+  __decorateClass$1G([
     inject(HintsAddedEventProcessor)
   ], HintsAddedEventListener.prototype, "_processor", 2);
-  HintsAddedEventListener = __decorateClass$1E([
+  HintsAddedEventListener = __decorateClass$1G([
     injectable()
   ], HintsAddedEventListener);
   const hintsAddedEventRegistration = {
     listenerType: HintsAddedEventListener,
     processorType: HintsAddedEventProcessor
   };
-  var __defProp$1D = Object.defineProperty;
-  var __getOwnPropDesc$F = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$F(target, key2) : target;
+  var __defProp$1F = Object.defineProperty;
+  var __getOwnPropDesc$G = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$G(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1D(target, key2, result);
+    if (kind && result) __defProp$1F(target, key2, result);
     return result;
-  }, "__decorateClass$1D");
+  }, "__decorateClass$1F");
   const _ImageResetEvent = class _ImageResetEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14562,13 +14579,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_A, "ImageResetEventProcessor"), _A);
-  __decorateClass$1D([
+  __decorateClass$1F([
     inject(SkribblMessageRelaySetup)
   ], ImageResetEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  __decorateClass$1D([
+  __decorateClass$1F([
     inject(SkribblEmitRelaySetup)
   ], ImageResetEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  ImageResetEventProcessor = __decorateClass$1D([
+  ImageResetEventProcessor = __decorateClass$1F([
     injectable()
   ], ImageResetEventProcessor);
   let ImageResetEventListener = (_B = class extends EventListener {
@@ -14577,10 +14594,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_B, "ImageResetEventListener"), _B);
-  __decorateClass$1D([
+  __decorateClass$1F([
     inject(ImageResetEventProcessor)
   ], ImageResetEventListener.prototype, "_processor", 2);
-  ImageResetEventListener = __decorateClass$1D([
+  ImageResetEventListener = __decorateClass$1F([
     injectable()
   ], ImageResetEventListener);
   const imageResetEventRegistration = {
@@ -14611,16 +14628,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
         };
     }
   }, "parseSkribblLobbyInteractedEvent");
-  var __defProp$1C = Object.defineProperty;
-  var __getOwnPropDesc$E = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$E(target, key2) : target;
+  var __defProp$1E = Object.defineProperty;
+  var __getOwnPropDesc$F = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$F(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1C(target, key2, result);
+    if (kind && result) __defProp$1E(target, key2, result);
     return result;
-  }, "__decorateClass$1C");
+  }, "__decorateClass$1E");
   const _LobbyInteractedEvent = class _LobbyInteractedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14645,10 +14662,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_C, "LobbyInteractedEventProcessor"), _C);
-  __decorateClass$1C([
+  __decorateClass$1E([
     inject(SkribblMessageRelaySetup)
   ], LobbyInteractedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyInteractedEventProcessor = __decorateClass$1C([
+  LobbyInteractedEventProcessor = __decorateClass$1E([
     injectable()
   ], LobbyInteractedEventProcessor);
   let LobbyInteractedEventListener = (_D = class extends EventListener {
@@ -14657,10 +14674,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_D, "LobbyInteractedEventListener"), _D);
-  __decorateClass$1C([
+  __decorateClass$1E([
     inject(LobbyInteractedEventProcessor)
   ], LobbyInteractedEventListener.prototype, "_processor", 2);
-  LobbyInteractedEventListener = __decorateClass$1C([
+  LobbyInteractedEventListener = __decorateClass$1E([
     injectable()
   ], LobbyInteractedEventListener);
   const lobbyInteractedEventRegistration = {
@@ -14680,16 +14697,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_GameSettingsSetup, "GameSettingsSetup");
   let GameSettingsSetup = _GameSettingsSetup;
-  var __defProp$1B = Object.defineProperty;
-  var __getOwnPropDesc$D = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$D(target, key2) : target;
+  var __defProp$1D = Object.defineProperty;
+  var __getOwnPropDesc$E = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$E(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1B(target, key2, result);
+    if (kind && result) __defProp$1D(target, key2, result);
     return result;
-  }, "__decorateClass$1B");
+  }, "__decorateClass$1D");
   const _LobbyJoinFailedEvent = class _LobbyJoinFailedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14713,13 +14730,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_E, "LobbyJoinFailedEventProcessor"), _E);
-  __decorateClass$1B([
+  __decorateClass$1D([
     inject(GameSettingsSetup)
   ], LobbyJoinFailedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1B([
+  __decorateClass$1D([
     inject(SkribblMessageRelaySetup)
   ], LobbyJoinFailedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyJoinFailedEventProcessor = __decorateClass$1B([
+  LobbyJoinFailedEventProcessor = __decorateClass$1D([
     injectable()
   ], LobbyJoinFailedEventProcessor);
   let LobbyJoinFailedListener = (_F = class extends EventListener {
@@ -14728,26 +14745,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_F, "LobbyJoinFailedListener"), _F);
-  __decorateClass$1B([
+  __decorateClass$1D([
     inject(LobbyJoinFailedEventProcessor)
   ], LobbyJoinFailedListener.prototype, "_processor", 2);
-  LobbyJoinFailedListener = __decorateClass$1B([
+  LobbyJoinFailedListener = __decorateClass$1D([
     injectable()
   ], LobbyJoinFailedListener);
   const lobbyJoinFailedEventRegistration = {
     listenerType: LobbyJoinFailedListener,
     processorType: LobbyJoinFailedEventProcessor
   };
-  var __defProp$1A = Object.defineProperty;
-  var __getOwnPropDesc$C = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$C(target, key2) : target;
+  var __defProp$1C = Object.defineProperty;
+  var __getOwnPropDesc$D = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$D(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1A(target, key2, result);
+    if (kind && result) __defProp$1C(target, key2, result);
     return result;
-  }, "__decorateClass$1A");
+  }, "__decorateClass$1C");
   const _LobbyPlayerChangedEvent = class _LobbyPlayerChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14786,10 +14803,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_G, "LobbyPlayerChangedEventProcessor"), _G);
-  __decorateClass$1A([
+  __decorateClass$1C([
     inject(SkribblMessageRelaySetup)
   ], LobbyPlayerChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyPlayerChangedEventProcessor = __decorateClass$1A([
+  LobbyPlayerChangedEventProcessor = __decorateClass$1C([
     injectable()
   ], LobbyPlayerChangedEventProcessor);
   let LobbyPlayerChangedEventListener = (_H = class extends EventListener {
@@ -14798,10 +14815,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_H, "LobbyPlayerChangedEventListener"), _H);
-  __decorateClass$1A([
+  __decorateClass$1C([
     inject(LobbyPlayerChangedEventProcessor)
   ], LobbyPlayerChangedEventListener.prototype, "_processor", 2);
-  LobbyPlayerChangedEventListener = __decorateClass$1A([
+  LobbyPlayerChangedEventListener = __decorateClass$1C([
     injectable()
   ], LobbyPlayerChangedEventListener);
   const lobbyPlayerChangedEventRegistration = {
@@ -14869,16 +14886,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     }
   }, "parseLobbyStateUpdate");
-  var __defProp$1z = Object.defineProperty;
-  var __getOwnPropDesc$B = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$B(target, key2) : target;
+  var __defProp$1B = Object.defineProperty;
+  var __getOwnPropDesc$C = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$C(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1z(target, key2, result);
+    if (kind && result) __defProp$1B(target, key2, result);
     return result;
-  }, "__decorateClass$1z");
+  }, "__decorateClass$1B");
   const _LobbyStateChangedEvent = class _LobbyStateChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14924,13 +14941,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_I, "LobbyStateChangedEventProcessor"), _I);
-  __decorateClass$1z([
+  __decorateClass$1B([
     inject(GameSettingsSetup)
   ], LobbyStateChangedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1z([
+  __decorateClass$1B([
     inject(SkribblMessageRelaySetup)
   ], LobbyStateChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyStateChangedEventProcessor = __decorateClass$1z([
+  LobbyStateChangedEventProcessor = __decorateClass$1B([
     injectable()
   ], LobbyStateChangedEventProcessor);
   let LobbyStateChangedEventListener = (_J = class extends EventListener {
@@ -14939,26 +14956,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_J, "LobbyStateChangedEventListener"), _J);
-  __decorateClass$1z([
+  __decorateClass$1B([
     inject(LobbyStateChangedEventProcessor)
   ], LobbyStateChangedEventListener.prototype, "_processor", 2);
-  LobbyStateChangedEventListener = __decorateClass$1z([
+  LobbyStateChangedEventListener = __decorateClass$1B([
     injectable()
   ], LobbyStateChangedEventListener);
   const lobbyStateChangedEventRegistration = {
     listenerType: LobbyStateChangedEventListener,
     processorType: LobbyStateChangedEventProcessor
   };
-  var __defProp$1y = Object.defineProperty;
-  var __getOwnPropDesc$A = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$A(target, key2) : target;
+  var __defProp$1A = Object.defineProperty;
+  var __getOwnPropDesc$B = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$B(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1y(target, key2, result);
+    if (kind && result) __defProp$1A(target, key2, result);
     return result;
-  }, "__decorateClass$1y");
+  }, "__decorateClass$1A");
   const _MessageReceivedEvent = class _MessageReceivedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14982,10 +14999,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_K, "MessageReceivedEventProcessor"), _K);
-  __decorateClass$1y([
+  __decorateClass$1A([
     inject(SkribblMessageRelaySetup)
   ], MessageReceivedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  MessageReceivedEventProcessor = __decorateClass$1y([
+  MessageReceivedEventProcessor = __decorateClass$1A([
     injectable()
   ], MessageReceivedEventProcessor);
   let MessageReceivedEventListener = (_L = class extends EventListener {
@@ -14994,26 +15011,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_L, "MessageReceivedEventListener"), _L);
-  __decorateClass$1y([
+  __decorateClass$1A([
     inject(MessageReceivedEventProcessor)
   ], MessageReceivedEventListener.prototype, "_processor", 2);
-  MessageReceivedEventListener = __decorateClass$1y([
+  MessageReceivedEventListener = __decorateClass$1A([
     injectable()
   ], MessageReceivedEventListener);
   const messageReceivedEventRegistration = {
     listenerType: MessageReceivedEventListener,
     processorType: MessageReceivedEventProcessor
   };
-  var __defProp$1x = Object.defineProperty;
-  var __getOwnPropDesc$z = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$z(target, key2) : target;
+  var __defProp$1z = Object.defineProperty;
+  var __getOwnPropDesc$A = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$A(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1x(target, key2, result);
+    if (kind && result) __defProp$1z(target, key2, result);
     return result;
-  }, "__decorateClass$1x");
+  }, "__decorateClass$1z");
   const _MessageSentEvent = class _MessageSentEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15036,10 +15053,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_M, "MessageSentEventProcessor"), _M);
-  __decorateClass$1x([
+  __decorateClass$1z([
     inject(SkribblEmitRelaySetup)
   ], MessageSentEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  MessageSentEventProcessor = __decorateClass$1x([
+  MessageSentEventProcessor = __decorateClass$1z([
     injectable()
   ], MessageSentEventProcessor);
   let MessageSentEventListener = (_N = class extends EventListener {
@@ -15048,26 +15065,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_N, "MessageSentEventListener"), _N);
-  __decorateClass$1x([
+  __decorateClass$1z([
     inject(MessageSentEventProcessor)
   ], MessageSentEventListener.prototype, "_processor", 2);
-  MessageSentEventListener = __decorateClass$1x([
+  MessageSentEventListener = __decorateClass$1z([
     injectable()
   ], MessageSentEventListener);
   const messageSentEventRegistration = {
     listenerType: MessageSentEventListener,
     processorType: MessageSentEventProcessor
   };
-  var __defProp$1w = Object.defineProperty;
-  var __getOwnPropDesc$y = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$y(target, key2) : target;
+  var __defProp$1y = Object.defineProperty;
+  var __getOwnPropDesc$z = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$z(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1w(target, key2, result);
+    if (kind && result) __defProp$1y(target, key2, result);
     return result;
-  }, "__decorateClass$1w");
+  }, "__decorateClass$1y");
   const _PlayerPopupVisibilityChangedEvent = class _PlayerPopupVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15097,10 +15114,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_O, "PlayerPopupVisibilityChangedEventProcessor"), _O);
-  __decorateClass$1w([
+  __decorateClass$1y([
     inject(ElementsSetup)
   ], PlayerPopupVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1w([
+  PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1y([
     injectable()
   ], PlayerPopupVisibilityChangedEventProcessor);
   let PlayerPopupVisibilityChangedEventListener = (_P = class extends EventListener {
@@ -15109,26 +15126,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_P, "PlayerPopupVisibilityChangedEventListener"), _P);
-  __decorateClass$1w([
+  __decorateClass$1y([
     inject(PlayerPopupVisibilityChangedEventProcessor)
   ], PlayerPopupVisibilityChangedEventListener.prototype, "_processor", 2);
-  PlayerPopupVisibilityChangedEventListener = __decorateClass$1w([
+  PlayerPopupVisibilityChangedEventListener = __decorateClass$1y([
     injectable()
   ], PlayerPopupVisibilityChangedEventListener);
   const playerPopupVisibilityChangedEventRegistration = {
     listenerType: PlayerPopupVisibilityChangedEventListener,
     processorType: PlayerPopupVisibilityChangedEventProcessor
   };
-  var __defProp$1v = Object.defineProperty;
-  var __getOwnPropDesc$x = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$x(target, key2) : target;
+  var __defProp$1x = Object.defineProperty;
+  var __getOwnPropDesc$y = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$y(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1v(target, key2, result);
+    if (kind && result) __defProp$1x(target, key2, result);
     return result;
-  }, "__decorateClass$1v");
+  }, "__decorateClass$1x");
   const _RoundStartedEvent = class _RoundStartedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15156,10 +15173,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_Q, "RoundStartedEventProcessor"), _Q);
-  __decorateClass$1v([
+  __decorateClass$1x([
     inject(SkribblMessageRelaySetup)
   ], RoundStartedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  RoundStartedEventProcessor = __decorateClass$1v([
+  RoundStartedEventProcessor = __decorateClass$1x([
     injectable()
   ], RoundStartedEventProcessor);
   let RoundStartedEventListener = (_R = class extends EventListener {
@@ -15168,26 +15185,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_R, "RoundStartedEventListener"), _R);
-  __decorateClass$1v([
+  __decorateClass$1x([
     inject(RoundStartedEventProcessor)
   ], RoundStartedEventListener.prototype, "_processor", 2);
-  RoundStartedEventListener = __decorateClass$1v([
+  RoundStartedEventListener = __decorateClass$1x([
     injectable()
   ], RoundStartedEventListener);
   const roundStartedEventRegistration = {
     listenerType: RoundStartedEventListener,
     processorType: RoundStartedEventProcessor
   };
-  var __defProp$1u = Object.defineProperty;
-  var __getOwnPropDesc$w = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$w(target, key2) : target;
+  var __defProp$1w = Object.defineProperty;
+  var __getOwnPropDesc$x = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$x(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1u(target, key2, result);
+    if (kind && result) __defProp$1w(target, key2, result);
     return result;
-  }, "__decorateClass$1u");
+  }, "__decorateClass$1w");
   const _ScoreboardVisibilityChangedEvent = class _ScoreboardVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15216,10 +15233,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_S, "ScoreboardVisibilityChangedEventProcessor"), _S);
-  __decorateClass$1u([
+  __decorateClass$1w([
     inject(ElementsSetup)
   ], ScoreboardVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  ScoreboardVisibilityChangedEventProcessor = __decorateClass$1u([
+  ScoreboardVisibilityChangedEventProcessor = __decorateClass$1w([
     injectable()
   ], ScoreboardVisibilityChangedEventProcessor);
   let ScoreboardVisibilityChangedEventListener = (_T = class extends EventListener {
@@ -15228,26 +15245,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_T, "ScoreboardVisibilityChangedEventListener"), _T);
-  __decorateClass$1u([
+  __decorateClass$1w([
     inject(ScoreboardVisibilityChangedEventProcessor)
   ], ScoreboardVisibilityChangedEventListener.prototype, "_processor", 2);
-  ScoreboardVisibilityChangedEventListener = __decorateClass$1u([
+  ScoreboardVisibilityChangedEventListener = __decorateClass$1w([
     injectable()
   ], ScoreboardVisibilityChangedEventListener);
   const scoreboardVisibilityChangedEventRegistration = {
     listenerType: ScoreboardVisibilityChangedEventListener,
     processorType: ScoreboardVisibilityChangedEventProcessor
   };
-  var __defProp$1t = Object.defineProperty;
-  var __getOwnPropDesc$v = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$v(target, key2) : target;
+  var __defProp$1v = Object.defineProperty;
+  var __getOwnPropDesc$w = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$w(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1t(target, key2, result);
+    if (kind && result) __defProp$1v(target, key2, result);
     return result;
-  }, "__decorateClass$1t");
+  }, "__decorateClass$1v");
   const _SizeChangedEvent = class _SizeChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15271,7 +15288,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_U, "SizeChangedEventProcessor"), _U);
-  SizeChangedEventProcessor = __decorateClass$1t([
+  SizeChangedEventProcessor = __decorateClass$1v([
     injectable()
   ], SizeChangedEventProcessor);
   let SizeChangedEventListener = (_V = class extends EventListener {
@@ -15280,26 +15297,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_V, "SizeChangedEventListener"), _V);
-  __decorateClass$1t([
+  __decorateClass$1v([
     inject(SizeChangedEventProcessor)
   ], SizeChangedEventListener.prototype, "_processor", 2);
-  SizeChangedEventListener = __decorateClass$1t([
+  SizeChangedEventListener = __decorateClass$1v([
     injectable()
   ], SizeChangedEventListener);
   const sizeChangedEventRegistration = {
     listenerType: SizeChangedEventListener,
     processorType: SizeChangedEventProcessor
   };
-  var __defProp$1s = Object.defineProperty;
-  var __getOwnPropDesc$u = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$u(target, key2) : target;
+  var __defProp$1u = Object.defineProperty;
+  var __getOwnPropDesc$v = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$v(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1s(target, key2, result);
+    if (kind && result) __defProp$1u(target, key2, result);
     return result;
-  }, "__decorateClass$1s");
+  }, "__decorateClass$1u");
   const _TextOverlayVisibilityChangedEvent = class _TextOverlayVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15329,10 +15346,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_W, "TextOverlayVisibilityChangedEventProcessor"), _W);
-  __decorateClass$1s([
+  __decorateClass$1u([
     inject(ElementsSetup)
   ], TextOverlayVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  TextOverlayVisibilityChangedEventProcessor = __decorateClass$1s([
+  TextOverlayVisibilityChangedEventProcessor = __decorateClass$1u([
     injectable()
   ], TextOverlayVisibilityChangedEventProcessor);
   let TextOverlayVisibilityChangedEventListener = (_X = class extends EventListener {
@@ -15341,26 +15358,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_X, "TextOverlayVisibilityChangedEventListener"), _X);
-  __decorateClass$1s([
+  __decorateClass$1u([
     inject(TextOverlayVisibilityChangedEventProcessor)
   ], TextOverlayVisibilityChangedEventListener.prototype, "_processor", 2);
-  TextOverlayVisibilityChangedEventListener = __decorateClass$1s([
+  TextOverlayVisibilityChangedEventListener = __decorateClass$1u([
     injectable()
   ], TextOverlayVisibilityChangedEventListener);
   const textOverlayVisibilityChangedEventRegistration = {
     listenerType: TextOverlayVisibilityChangedEventListener,
     processorType: TextOverlayVisibilityChangedEventProcessor
   };
-  var __defProp$1r = Object.defineProperty;
-  var __getOwnPropDesc$t = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$t(target, key2) : target;
+  var __defProp$1t = Object.defineProperty;
+  var __getOwnPropDesc$u = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$u(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1r(target, key2, result);
+    if (kind && result) __defProp$1t(target, key2, result);
     return result;
-  }, "__decorateClass$1r");
+  }, "__decorateClass$1t");
   var skribblTool = /* @__PURE__ */ ((skribblTool2) => {
     skribblTool2[skribblTool2["brush"] = 0] = "brush";
     skribblTool2[skribblTool2["fill"] = 1] = "fill";
@@ -15392,7 +15409,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_Y, "ToolChangedEventProcessor"), _Y);
-  ToolChangedEventProcessor = __decorateClass$1r([
+  ToolChangedEventProcessor = __decorateClass$1t([
     injectable()
   ], ToolChangedEventProcessor);
   let ToolChangedEventListener = (_Z = class extends EventListener {
@@ -15401,26 +15418,26 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_Z, "ToolChangedEventListener"), _Z);
-  __decorateClass$1r([
+  __decorateClass$1t([
     inject(ToolChangedEventProcessor)
   ], ToolChangedEventListener.prototype, "_processor", 2);
-  ToolChangedEventListener = __decorateClass$1r([
+  ToolChangedEventListener = __decorateClass$1t([
     injectable()
   ], ToolChangedEventListener);
   const toolChangedEventRegistration = {
     listenerType: ToolChangedEventListener,
     processorType: ToolChangedEventProcessor
   };
-  var __defProp$1q = Object.defineProperty;
-  var __getOwnPropDesc$s = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$s(target, key2) : target;
+  var __defProp$1s = Object.defineProperty;
+  var __getOwnPropDesc$t = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$t(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1q(target, key2, result);
+    if (kind && result) __defProp$1s(target, key2, result);
     return result;
-  }, "__decorateClass$1q");
+  }, "__decorateClass$1s");
   const _WordGuessedEvent = class _WordGuessedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15451,10 +15468,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(__, "WordGuessedEventProcessor"), __);
-  __decorateClass$1q([
+  __decorateClass$1s([
     inject(SkribblMessageRelaySetup)
   ], WordGuessedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  WordGuessedEventProcessor = __decorateClass$1q([
+  WordGuessedEventProcessor = __decorateClass$1s([
     injectable()
   ], WordGuessedEventProcessor);
   let WordGuessedEventListener = (_$ = class extends EventListener {
@@ -15463,10 +15480,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_$, "WordGuessedEventListener"), _$);
-  __decorateClass$1q([
+  __decorateClass$1s([
     inject(WordGuessedEventProcessor)
   ], WordGuessedEventListener.prototype, "_processor", 2);
-  WordGuessedEventListener = __decorateClass$1q([
+  WordGuessedEventListener = __decorateClass$1s([
     injectable()
   ], WordGuessedEventListener);
   const wordGuessedEventRegistration = {
@@ -15492,15 +15509,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Canvas_rate_icons, "Canvas_rate_icons");
   let Canvas_rate_icons = _Canvas_rate_icons;
-  var __defProp$1p = Object.defineProperty;
-  var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1r = Object.defineProperty;
+  var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1p(target, key2, result);
+    if (result) __defProp$1r(target, key2, result);
     return result;
-  }, "__decorateClass$1p");
+  }, "__decorateClass$1r");
   const _CanvasRateIconsFeature = class _CanvasRateIconsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -15530,19 +15547,19 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CanvasRateIconsFeature, "CanvasRateIconsFeature");
   let CanvasRateIconsFeature = _CanvasRateIconsFeature;
-  __decorateClass$1p([
+  __decorateClass$1r([
     inject(ElementsSetup)
   ], CanvasRateIconsFeature.prototype, "_elementsSetup");
-  var __defProp$1o = Object.defineProperty;
-  var __getOwnPropDesc$r = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$r(target, key2) : target;
+  var __defProp$1q = Object.defineProperty;
+  var __getOwnPropDesc$s = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$s(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1o(target, key2, result);
+    if (kind && result) __defProp$1q(target, key2, result);
     return result;
-  }, "__decorateClass$1o");
+  }, "__decorateClass$1q");
   const _LobbyLeftEvent = class _LobbyLeftEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15565,7 +15582,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_aa, "LobbyLeftEventProcessor"), _aa);
-  LobbyLeftEventProcessor = __decorateClass$1o([
+  LobbyLeftEventProcessor = __decorateClass$1q([
     injectable()
   ], LobbyLeftEventProcessor);
   let LobbyLeftEventListener = (_ba = class extends EventListener {
@@ -15574,10 +15591,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_ba, "LobbyLeftEventListener"), _ba);
-  __decorateClass$1o([
+  __decorateClass$1q([
     inject(LobbyLeftEventProcessor)
   ], LobbyLeftEventListener.prototype, "_processor", 2);
-  LobbyLeftEventListener = __decorateClass$1o([
+  LobbyLeftEventListener = __decorateClass$1q([
     injectable()
   ], LobbyLeftEventListener);
   const lobbyLeftEventRegistration = {
@@ -15601,16 +15618,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       players: data.users
     };
   }, "parseSkribblLobbyDataEvent");
-  var __defProp$1n = Object.defineProperty;
-  var __getOwnPropDesc$q = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$q(target, key2) : target;
+  var __defProp$1p = Object.defineProperty;
+  var __getOwnPropDesc$r = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$r(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1n(target, key2, result);
+    if (kind && result) __defProp$1p(target, key2, result);
     return result;
-  }, "__decorateClass$1n");
+  }, "__decorateClass$1p");
   const _LobbyJoinedEvent = class _LobbyJoinedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15649,13 +15666,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return events;
     }
   }, __name(_ca, "LobbyJoinedEventProcessor"), _ca);
-  __decorateClass$1n([
+  __decorateClass$1p([
     inject(GameSettingsSetup)
   ], LobbyJoinedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1n([
+  __decorateClass$1p([
     inject(SkribblMessageRelaySetup)
   ], LobbyJoinedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyJoinedEventProcessor = __decorateClass$1n([
+  LobbyJoinedEventProcessor = __decorateClass$1p([
     injectable()
   ], LobbyJoinedEventProcessor);
   let LobbyJoinedEventListener = (_da = class extends EventListener {
@@ -15664,27 +15681,27 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_processor");
     }
   }, __name(_da, "LobbyJoinedEventListener"), _da);
-  __decorateClass$1n([
+  __decorateClass$1p([
     inject(LobbyJoinedEventProcessor)
   ], LobbyJoinedEventListener.prototype, "_processor", 2);
-  LobbyJoinedEventListener = __decorateClass$1n([
+  LobbyJoinedEventListener = __decorateClass$1p([
     injectable()
   ], LobbyJoinedEventListener);
   const lobbyJoinedEventRegistration = {
     listenerType: LobbyJoinedEventListener,
     processorType: LobbyJoinedEventProcessor
   };
-  var __defProp$1m = Object.defineProperty;
-  var __getOwnPropDesc$p = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$p(target, key2) : target;
+  var __defProp$1o = Object.defineProperty;
+  var __getOwnPropDesc$q = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$q(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1m(target, key2, result);
+    if (kind && result) __defProp$1o(target, key2, result);
     return result;
-  }, "__decorateClass$1m");
-  var __decorateParam$k = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$k");
+  }, "__decorateClass$1o");
+  var __decorateParam$l = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$l");
   let LobbyService = (_ea = class {
     constructor(loggerFactory2, lobbyJoined, lobbyLeft, lobbyPlayerChanged, lobbyStateChanged, roundStarted, wordGuessed, elementsSetup, lobbyJoinFailedListener) {
       __publicField(this, "_logger");
@@ -15798,17 +15815,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_ea, "LobbyService"), _ea);
-  LobbyService = __decorateClass$1m([
+  LobbyService = __decorateClass$1o([
     injectable(),
-    __decorateParam$k(0, inject(loggerFactory)),
-    __decorateParam$k(1, inject(LobbyJoinedEventListener)),
-    __decorateParam$k(2, inject(LobbyLeftEventListener)),
-    __decorateParam$k(3, inject(LobbyPlayerChangedEventListener)),
-    __decorateParam$k(4, inject(LobbyStateChangedEventListener)),
-    __decorateParam$k(5, inject(RoundStartedEventListener)),
-    __decorateParam$k(6, inject(WordGuessedEventListener)),
-    __decorateParam$k(7, inject(ElementsSetup)),
-    __decorateParam$k(8, inject(LobbyJoinFailedListener))
+    __decorateParam$l(0, inject(loggerFactory)),
+    __decorateParam$l(1, inject(LobbyJoinedEventListener)),
+    __decorateParam$l(2, inject(LobbyLeftEventListener)),
+    __decorateParam$l(3, inject(LobbyPlayerChangedEventListener)),
+    __decorateParam$l(4, inject(LobbyStateChangedEventListener)),
+    __decorateParam$l(5, inject(RoundStartedEventListener)),
+    __decorateParam$l(6, inject(WordGuessedEventListener)),
+    __decorateParam$l(7, inject(ElementsSetup)),
+    __decorateParam$l(8, inject(LobbyJoinFailedListener))
   ], LobbyService);
   function create_fragment$1B(ctx) {
     let div1;
@@ -16814,17 +16831,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Toast, "Toast");
   let Toast = _Toast;
-  var __defProp$1l = Object.defineProperty;
-  var __getOwnPropDesc$o = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$o(target, key2) : target;
+  var __defProp$1n = Object.defineProperty;
+  var __getOwnPropDesc$p = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$p(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1l(target, key2, result);
+    if (kind && result) __defProp$1n(target, key2, result);
     return result;
-  }, "__decorateClass$1l");
-  var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$j");
+  }, "__decorateClass$1n");
+  var __decorateParam$k = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$k");
   let ToastService = (_fa = class {
     constructor(loggerFactory2, _elementsSetup) {
       __publicField(this, "_logger");
@@ -16982,21 +16999,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       };
     }
   }, __name(_fa, "ToastService"), _fa);
-  ToastService = __decorateClass$1l([
+  ToastService = __decorateClass$1n([
     injectable(),
-    __decorateParam$j(0, inject(loggerFactory)),
-    __decorateParam$j(1, inject(ElementsSetup))
+    __decorateParam$k(0, inject(loggerFactory)),
+    __decorateParam$k(1, inject(ElementsSetup))
   ], ToastService);
-  var __defProp$1k = Object.defineProperty;
-  var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key2) : target;
+  var __defProp$1m = Object.defineProperty;
+  var __getOwnPropDesc$o = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$o(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1k(target, key2, result);
+    if (kind && result) __defProp$1m(target, key2, result);
     return result;
-  }, "__decorateClass$1k");
+  }, "__decorateClass$1m");
   let PrioritizedCanvasEventsSetup = (_ga = class extends Setup {
     constructor() {
       super(...arguments);
@@ -17006,10 +17023,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._interceptor.canvasPrioritizedEventsReady;
     }
   }, __name(_ga, "PrioritizedCanvasEventsSetup"), _ga);
-  __decorateClass$1k([
+  __decorateClass$1m([
     inject(Interceptor)
   ], PrioritizedCanvasEventsSetup.prototype, "_interceptor", 2);
-  PrioritizedCanvasEventsSetup = __decorateClass$1k([
+  PrioritizedCanvasEventsSetup = __decorateClass$1m([
     earlySetup()
   ], PrioritizedCanvasEventsSetup);
   const createStylesheet = /* @__PURE__ */ __name(() => {
@@ -17099,15 +17116,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Canvas_zoom_info, "Canvas_zoom_info");
   let Canvas_zoom_info = _Canvas_zoom_info;
-  var __defProp$1j = Object.defineProperty;
-  var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1l = Object.defineProperty;
+  var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1j(target, key2, result);
+    if (result) __defProp$1l(target, key2, result);
     return result;
-  }, "__decorateClass$1j");
+  }, "__decorateClass$1l");
   const _CanvasZoomFeature = class _CanvasZoomFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -17265,22 +17282,22 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CanvasZoomFeature, "CanvasZoomFeature");
   let CanvasZoomFeature = _CanvasZoomFeature;
-  __decorateClass$1j([
+  __decorateClass$1l([
     inject(ToastService)
   ], CanvasZoomFeature.prototype, "_toastService");
-  __decorateClass$1j([
+  __decorateClass$1l([
     inject(PrioritizedCanvasEventsSetup)
   ], CanvasZoomFeature.prototype, "_prioritizedCanvasEventsSetup");
-  __decorateClass$1j([
+  __decorateClass$1l([
     inject(LobbyStateChangedEventListener)
   ], CanvasZoomFeature.prototype, "_lobbyStateChangedEventListener");
-  __decorateClass$1j([
+  __decorateClass$1l([
     inject(LobbyLeftEventListener)
   ], CanvasZoomFeature.prototype, "_lobbyLeftEventListener");
-  __decorateClass$1j([
+  __decorateClass$1l([
     inject(ImageResetEventListener)
   ], CanvasZoomFeature.prototype, "_imageResetEventListener");
-  __decorateClass$1j([
+  __decorateClass$1l([
     inject(LobbyService)
   ], CanvasZoomFeature.prototype, "_lobbyService");
   const replaceOrAddCssRule = /* @__PURE__ */ __name((styleSheet, cssText, index) => {
@@ -20256,17 +20273,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ThemesApi, "ThemesApi");
   let ThemesApi = _ThemesApi;
-  var __defProp$1i = Object.defineProperty;
-  var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key2) : target;
+  var __defProp$1k = Object.defineProperty;
+  var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1i(target, key2, result);
+    if (kind && result) __defProp$1k(target, key2, result);
     return result;
-  }, "__decorateClass$1i");
-  var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$i");
+  }, "__decorateClass$1k");
+  var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$j");
   let TokenService = (_ha = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -20316,21 +20333,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._token.next(token);
     }
   }, __name(_ha, "TokenService"), _ha);
-  TokenService = __decorateClass$1i([
+  TokenService = __decorateClass$1k([
     injectable(),
-    __decorateParam$i(0, inject(loggerFactory))
+    __decorateParam$j(0, inject(loggerFactory))
   ], TokenService);
-  var __defProp$1h = Object.defineProperty;
-  var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key2) : target;
+  var __defProp$1j = Object.defineProperty;
+  var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1h(target, key2, result);
+    if (kind && result) __defProp$1j(target, key2, result);
     return result;
-  }, "__decorateClass$1h");
-  var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$h");
+  }, "__decorateClass$1j");
+  var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$i");
   let ApiService = (_ia = class {
     constructor(loggerFactory2, tokenService) {
       __publicField(this, "_logger");
@@ -20371,22 +20388,22 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._baseUrl = url;
     }
   }, __name(_ia, "ApiService"), _ia);
-  ApiService = __decorateClass$1h([
+  ApiService = __decorateClass$1j([
     injectable(),
-    __decorateParam$h(0, inject(loggerFactory)),
-    __decorateParam$h(1, inject(TokenService))
+    __decorateParam$i(0, inject(loggerFactory)),
+    __decorateParam$i(1, inject(TokenService))
   ], ApiService);
-  var __defProp$1g = Object.defineProperty;
-  var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key2) : target;
+  var __defProp$1i = Object.defineProperty;
+  var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1g(target, key2, result);
+    if (kind && result) __defProp$1i(target, key2, result);
     return result;
-  }, "__decorateClass$1g");
-  var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$g");
+  }, "__decorateClass$1i");
+  var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$h");
   let MemberService = (_ja = class {
     constructor(loggerFactory2, _apiService, _tokenService, _onboardingService) {
       __publicField(this, "_logger");
@@ -20490,12 +20507,12 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this.loadMember();
     }
   }, __name(_ja, "MemberService"), _ja);
-  MemberService = __decorateClass$1g([
+  MemberService = __decorateClass$1i([
     injectable(),
-    __decorateParam$g(0, inject(loggerFactory)),
-    __decorateParam$g(1, inject(ApiService)),
-    __decorateParam$g(2, inject(TokenService)),
-    __decorateParam$g(3, inject(OnboardingService))
+    __decorateParam$h(0, inject(loggerFactory)),
+    __decorateParam$h(1, inject(ApiService)),
+    __decorateParam$h(2, inject(TokenService)),
+    __decorateParam$h(3, inject(OnboardingService))
   ], MemberService);
   const _SkribblOverlayPlayer = class _SkribblOverlayPlayer {
     constructor(_player, _lobbyKey, _overlayContainer) {
@@ -20705,15 +20722,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_SkribblScoreboardRegularPlayer, "SkribblScoreboardRegularPlayer");
   let SkribblScoreboardRegularPlayer = _SkribblScoreboardRegularPlayer;
-  var __defProp$1f = Object.defineProperty;
-  var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1h = Object.defineProperty;
+  var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1f(target, key2, result);
+    if (result) __defProp$1h(target, key2, result);
     return result;
-  }, "__decorateClass$1f");
+  }, "__decorateClass$1h");
   const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -20734,13 +20751,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_LandingPlayerSetup, "LandingPlayerSetup");
   let LandingPlayerSetup = _LandingPlayerSetup;
-  __decorateClass$1f([
+  __decorateClass$1h([
     inject(ElementsSetup)
   ], LandingPlayerSetup.prototype, "_elementsSetup");
-  __decorateClass$1f([
+  __decorateClass$1h([
     inject(GlobalSettingsService)
   ], LandingPlayerSetup.prototype, "_globalSettingsService");
-  __decorateClass$1f([
+  __decorateClass$1h([
     inject(MemberService)
   ], LandingPlayerSetup.prototype, "_memberService");
   const calculateLobbyKey = /* @__PURE__ */ __name((key2) => {
@@ -20749,17 +20766,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     const newKey = hashed.join("");
     return newKey;
   }, "calculateLobbyKey");
-  var __defProp$1e = Object.defineProperty;
-  var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key2) : target;
+  var __defProp$1g = Object.defineProperty;
+  var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1e(target, key2, result);
+    if (kind && result) __defProp$1g(target, key2, result);
     return result;
-  }, "__decorateClass$1e");
-  var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$f");
+  }, "__decorateClass$1g");
+  var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$g");
   let PlayersService = (_ka = class {
     constructor(loggerFactory2) {
       __publicField(this, "_elementsSetup");
@@ -20999,56 +21016,56 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._players$.asObservable();
     }
   }, __name(_ka, "PlayersService"), _ka);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(ElementsSetup)
   ], PlayersService.prototype, "_elementsSetup", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(LobbyJoinedEventListener)
   ], PlayersService.prototype, "_lobbyJoinedEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(LobbyLeftEventListener)
   ], PlayersService.prototype, "_lobbyLeftEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(LobbyStateChangedEventListener)
   ], PlayersService.prototype, "_lobbyStateChangedEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(LobbyPlayerChangedEventListener)
   ], PlayersService.prototype, "_playerChangedEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(ScoreboardVisibilityChangedEventListener)
   ], PlayersService.prototype, "_scoreboardVisibleEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(TextOverlayVisibilityChangedEventListener)
   ], PlayersService.prototype, "_textOverlayVisibleEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(PlayerPopupVisibilityChangedEventListener)
   ], PlayersService.prototype, "_popupVisibleEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(MemberService)
   ], PlayersService.prototype, "_memberService", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(LobbyService)
   ], PlayersService.prototype, "_lobbyService", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     inject(LandingPlayerSetup)
   ], PlayersService.prototype, "_landingPlayerSetup", 2);
-  __decorateClass$1e([
+  __decorateClass$1g([
     postConstruct()
   ], PlayersService.prototype, "postConstruct", 1);
-  PlayersService = __decorateClass$1e([
+  PlayersService = __decorateClass$1g([
     injectable(),
-    __decorateParam$f(0, inject(loggerFactory))
+    __decorateParam$g(0, inject(loggerFactory))
   ], PlayersService);
-  var __defProp$1d = Object.defineProperty;
-  var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key2) : target;
+  var __defProp$1f = Object.defineProperty;
+  var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1d(target, key2, result);
+    if (kind && result) __defProp$1f(target, key2, result);
     return result;
-  }, "__decorateClass$1d");
+  }, "__decorateClass$1f");
   let PrioritizedChatboxEventsSetup = (_la = class extends Setup {
     constructor() {
       super(...arguments);
@@ -21058,10 +21075,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return this._interceptor.chatboxPrioritizedEventsReady;
     }
   }, __name(_la, "PrioritizedChatboxEventsSetup"), _la);
-  __decorateClass$1d([
+  __decorateClass$1f([
     inject(Interceptor)
   ], PrioritizedChatboxEventsSetup.prototype, "_interceptor", 2);
-  PrioritizedChatboxEventsSetup = __decorateClass$1d([
+  PrioritizedChatboxEventsSetup = __decorateClass$1f([
     earlySetup()
   ], PrioritizedChatboxEventsSetup);
   function create_fragment$1x(ctx) {
@@ -21229,17 +21246,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Message, "Message");
   let Message = _Message;
-  var __defProp$1c = Object.defineProperty;
-  var __getOwnPropDesc$h = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$h(target, key2) : target;
+  var __defProp$1e = Object.defineProperty;
+  var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1c(target, key2, result);
+    if (kind && result) __defProp$1e(target, key2, result);
     return result;
-  }, "__decorateClass$1c");
-  var __decorateParam$e = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$e");
+  }, "__decorateClass$1e");
+  var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$f");
   let ChatService = (_ma = class {
     constructor(loggerFactory2) {
       __publicField(this, "_elementsSetup");
@@ -21406,27 +21423,27 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._cancelChatboxEventsFilter = null;
     }
   }, __name(_ma, "ChatService"), _ma);
-  __decorateClass$1c([
+  __decorateClass$1e([
     inject(ElementsSetup)
   ], ChatService.prototype, "_elementsSetup", 2);
-  __decorateClass$1c([
+  __decorateClass$1e([
     inject(PrioritizedChatboxEventsSetup)
   ], ChatService.prototype, "_chatboxEventsSetup", 2);
-  __decorateClass$1c([
+  __decorateClass$1e([
     inject(PlayersService)
   ], ChatService.prototype, "_lobbyPlayersService", 2);
-  __decorateClass$1c([
+  __decorateClass$1e([
     inject(MessageReceivedEventListener)
   ], ChatService.prototype, "_messageReceivedEventListener", 2);
-  __decorateClass$1c([
+  __decorateClass$1e([
     inject(SkribblMessageRelaySetup)
   ], ChatService.prototype, "_messageRelaySetup", 2);
-  __decorateClass$1c([
+  __decorateClass$1e([
     postConstruct()
   ], ChatService.prototype, "postConstruct", 1);
-  ChatService = __decorateClass$1c([
+  ChatService = __decorateClass$1e([
     injectable(),
-    __decorateParam$e(0, inject(loggerFactory))
+    __decorateParam$f(0, inject(loggerFactory))
   ], ChatService);
   const _SkribblChatPlayer = class _SkribblChatPlayer {
     constructor(_player, _lobbyKey, _container) {
@@ -21714,15 +21731,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Skribbl_avatar, "Skribbl_avatar");
   let Skribbl_avatar = _Skribbl_avatar;
-  var __defProp$1b = Object.defineProperty;
-  var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1d = Object.defineProperty;
+  var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1b(target, key2, result);
+    if (result) __defProp$1d(target, key2, result);
     return result;
-  }, "__decorateClass$1b");
+  }, "__decorateClass$1d");
   const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -21807,27 +21824,27 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatAvatarsFeature, "ChatAvatarsFeature");
   let ChatAvatarsFeature = _ChatAvatarsFeature;
-  __decorateClass$1b([
+  __decorateClass$1d([
     inject(ChatService)
   ], ChatAvatarsFeature.prototype, "_chatService");
-  __decorateClass$1b([
+  __decorateClass$1d([
     inject(PlayersService)
   ], ChatAvatarsFeature.prototype, "_playersService");
-  __decorateClass$1b([
+  __decorateClass$1d([
     inject(LobbyService)
   ], ChatAvatarsFeature.prototype, "_lobbyService");
-  __decorateClass$1b([
+  __decorateClass$1d([
     inject(ElementsSetup)
   ], ChatAvatarsFeature.prototype, "_elementsSetup");
-  var __defProp$1a = Object.defineProperty;
-  var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1c = Object.defineProperty;
+  var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1a(target, key2, result);
+    if (result) __defProp$1c(target, key2, result);
     return result;
-  }, "__decorateClass$1a");
+  }, "__decorateClass$1c");
   const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -21888,10 +21905,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatClearFeature, "ChatClearFeature");
   let ChatClearFeature = _ChatClearFeature;
-  __decorateClass$1a([
+  __decorateClass$1c([
     inject(LobbyJoinedEventListener)
   ], ChatClearFeature.prototype, "_lobbyJoinedEventListener");
-  __decorateClass$1a([
+  __decorateClass$1c([
     inject(ChatService)
   ], ChatClearFeature.prototype, "_chatService");
   const _InterpretableEmptyRemainder = class _InterpretableEmptyRemainder extends InterpretableError {
@@ -23376,15 +23393,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Command_input, "Command_input");
   let Command_input = _Command_input;
-  var __defProp$19 = Object.defineProperty;
-  var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1b = Object.defineProperty;
+  var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$19(target, key2, result);
+    if (result) __defProp$1b(target, key2, result);
     return result;
-  }, "__decorateClass$19");
+  }, "__decorateClass$1b");
   const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -23637,21 +23654,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatCommandsFeature, "ChatCommandsFeature");
   let ChatCommandsFeature = _ChatCommandsFeature;
-  __decorateClass$19([
+  __decorateClass$1b([
     inject(ElementsSetup)
   ], ChatCommandsFeature.prototype, "_elements");
-  __decorateClass$19([
+  __decorateClass$1b([
     inject(ToastService)
   ], ChatCommandsFeature.prototype, "_toastService");
-  var __defProp$18 = Object.defineProperty;
-  var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1a = Object.defineProperty;
+  var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$18(target, key2, result);
+    if (result) __defProp$1a(target, key2, result);
     return result;
-  }, "__decorateClass$18");
+  }, "__decorateClass$1a");
   const _ChatCopyFormattedFeature = class _ChatCopyFormattedFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -23773,10 +23790,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatCopyFormattedFeature, "ChatCopyFormattedFeature");
   let ChatCopyFormattedFeature = _ChatCopyFormattedFeature;
-  __decorateClass$18([
+  __decorateClass$1a([
     inject(ElementsSetup)
   ], ChatCopyFormattedFeature.prototype, "_elementsSetup");
-  __decorateClass$18([
+  __decorateClass$1a([
     inject(ToastService)
   ], ChatCopyFormattedFeature.prototype, "_toastService");
   function promiseAllObject(obj) {
@@ -23785,15 +23802,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     ).then(Object.fromEntries);
   }
   __name(promiseAllObject, "promiseAllObject");
-  var __defProp$17 = Object.defineProperty;
-  var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$19 = Object.defineProperty;
+  var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$17(target, key2, result);
+    if (result) __defProp$19(target, key2, result);
     return result;
-  }, "__decorateClass$17");
+  }, "__decorateClass$19");
   function getData(spritesApi, scenesApi, eventsApi, emojisApi, announcementsApi, themesApi, awardsApi) {
     return {
       sprites: spritesApi.getAllSprites(),
@@ -23833,13 +23850,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ApiDataSetup, "ApiDataSetup");
   let ApiDataSetup = _ApiDataSetup;
-  __decorateClass$17([
+  __decorateClass$19([
     inject(ApiService)
   ], ApiDataSetup.prototype, "_apiService");
-  __decorateClass$17([
+  __decorateClass$19([
     inject(ToastService)
   ], ApiDataSetup.prototype, "_toastService");
-  __decorateClass$17([
+  __decorateClass$19([
     inject(loggerFactory)
   ], ApiDataSetup.prototype, "_loggerFactory");
   function create_fragment$1s(ctx) {
@@ -24171,15 +24188,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Emoji_picker, "Emoji_picker");
   let Emoji_picker = _Emoji_picker;
-  var __defProp$16 = Object.defineProperty;
-  var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$18 = Object.defineProperty;
+  var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$16(target, key2, result);
+    if (result) __defProp$18(target, key2, result);
     return result;
-  }, "__decorateClass$16");
+  }, "__decorateClass$18");
   const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24354,16 +24371,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatEmojisFeature, "ChatEmojisFeature");
   let ChatEmojisFeature = _ChatEmojisFeature;
-  __decorateClass$16([
+  __decorateClass$18([
     inject(ElementsSetup)
   ], ChatEmojisFeature.prototype, "_elements");
-  __decorateClass$16([
+  __decorateClass$18([
     inject(ApiDataSetup)
   ], ChatEmojisFeature.prototype, "_apiDataSetup");
-  __decorateClass$16([
+  __decorateClass$18([
     inject(ChatService)
   ], ChatEmojisFeature.prototype, "_chatService");
-  __decorateClass$16([
+  __decorateClass$18([
     inject(LobbyService)
   ], ChatEmojisFeature.prototype, "_lobbyService");
   function create_fragment$1q(ctx) {
@@ -24406,15 +24423,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Chat_focus_info, "Chat_focus_info");
   let Chat_focus_info = _Chat_focus_info;
-  var __defProp$15 = Object.defineProperty;
-  var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$17 = Object.defineProperty;
+  var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$15(target, key2, result);
+    if (result) __defProp$17(target, key2, result);
     return result;
-  }, "__decorateClass$15");
+  }, "__decorateClass$17");
   const _ChatFocusFeature = class _ChatFocusFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24463,10 +24480,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatFocusFeature, "ChatFocusFeature");
   let ChatFocusFeature = _ChatFocusFeature;
-  __decorateClass$15([
+  __decorateClass$17([
     inject(ElementsSetup)
   ], ChatFocusFeature.prototype, "elementsSetup");
-  __decorateClass$15([
+  __decorateClass$17([
     inject(LobbyStateChangedEventListener)
   ], ChatFocusFeature.prototype, "_lobbyStateChangedEventListener");
   const _Chat_message_splits = class _Chat_message_splits extends SvelteComponent {
@@ -24477,15 +24494,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Chat_message_splits, "Chat_message_splits");
   let Chat_message_splits = _Chat_message_splits;
-  var __defProp$14 = Object.defineProperty;
-  var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$16 = Object.defineProperty;
+  var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$14(target, key2, result);
+    if (result) __defProp$16(target, key2, result);
     return result;
-  }, "__decorateClass$14");
+  }, "__decorateClass$16");
   const _ChatMessageSplitsFeature = class _ChatMessageSplitsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24518,7 +24535,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatMessageSplitsFeature, "ChatMessageSplitsFeature");
   let ChatMessageSplitsFeature = _ChatMessageSplitsFeature;
-  __decorateClass$14([
+  __decorateClass$16([
     inject(ElementsSetup)
   ], ChatMessageSplitsFeature.prototype, "_elementsSetup");
   function create_if_block$B(ctx) {
@@ -24618,15 +24635,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Chat_ping, "Chat_ping");
   let Chat_ping = _Chat_ping;
-  var __defProp$13 = Object.defineProperty;
-  var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$15 = Object.defineProperty;
+  var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$13(target, key2, result);
+    if (result) __defProp$15(target, key2, result);
     return result;
-  }, "__decorateClass$13");
+  }, "__decorateClass$15");
   const _ChatPingFeature = class _ChatPingFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24692,10 +24709,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatPingFeature, "ChatPingFeature");
   let ChatPingFeature = _ChatPingFeature;
-  __decorateClass$13([
+  __decorateClass$15([
     inject(ElementsSetup)
   ], ChatPingFeature.prototype, "_elements");
-  __decorateClass$13([
+  __decorateClass$15([
     inject(LobbyService)
   ], ChatPingFeature.prototype, "_lobbyService");
   const _Chat_profile_link = class _Chat_profile_link extends SvelteComponent {
@@ -24706,15 +24723,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Chat_profile_link, "Chat_profile_link");
   let Chat_profile_link = _Chat_profile_link;
-  var __defProp$12 = Object.defineProperty;
-  var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$14 = Object.defineProperty;
+  var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$12(target, key2, result);
+    if (result) __defProp$14(target, key2, result);
     return result;
-  }, "__decorateClass$12");
+  }, "__decorateClass$14");
   const _ChatProfileLinkFeature = class _ChatProfileLinkFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24764,13 +24781,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatProfileLinkFeature, "ChatProfileLinkFeature");
   let ChatProfileLinkFeature = _ChatProfileLinkFeature;
-  __decorateClass$12([
+  __decorateClass$14([
     inject(ChatService)
   ], ChatProfileLinkFeature.prototype, "_chatService");
-  __decorateClass$12([
+  __decorateClass$14([
     inject(ToastService)
   ], ChatProfileLinkFeature.prototype, "_toastService");
-  __decorateClass$12([
+  __decorateClass$14([
     inject(ElementsSetup)
   ], ChatProfileLinkFeature.prototype, "_elementsSetup");
   const _NumericOptionalCommandParameter = class _NumericOptionalCommandParameter extends ExtensionCommandParameter {
@@ -24828,17 +24845,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_StringOptionalCommandParameter, "StringOptionalCommandParameter");
   let StringOptionalCommandParameter = _StringOptionalCommandParameter;
-  var __defProp$11 = Object.defineProperty;
-  var __getOwnPropDesc$g = Object.getOwnPropertyDescriptor;
-  var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$g(target, key2) : target;
+  var __defProp$13 = Object.defineProperty;
+  var __getOwnPropDesc$h = Object.getOwnPropertyDescriptor;
+  var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$h(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$11(target, key2, result);
+    if (kind && result) __defProp$13(target, key2, result);
     return result;
-  }, "__decorateClass$11");
-  var __decorateParam$d = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$d");
+  }, "__decorateClass$13");
+  var __decorateParam$e = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$e");
   let LobbyInteractionsService = (_na = class {
     constructor(loggerFactory2) {
       __publicField(this, "_lobbyService");
@@ -24915,24 +24932,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       relay.insertMessage({ data: id2, id: 5 });
     }
   }, __name(_na, "LobbyInteractionsService"), _na);
-  __decorateClass$11([
+  __decorateClass$13([
     inject(LobbyService)
   ], LobbyInteractionsService.prototype, "_lobbyService", 2);
-  __decorateClass$11([
+  __decorateClass$13([
     inject(LobbyInteractedEventListener)
   ], LobbyInteractionsService.prototype, "_lobbyInteractedEvent", 2);
-  __decorateClass$11([
+  __decorateClass$13([
     inject(LobbyStateChangedEventListener)
   ], LobbyInteractionsService.prototype, "_lobbyStateChangedEvent", 2);
-  __decorateClass$11([
+  __decorateClass$13([
     inject(SkribblMessageRelaySetup)
   ], LobbyInteractionsService.prototype, "_skribblMessageRelaySetup", 2);
-  __decorateClass$11([
+  __decorateClass$13([
     postConstruct()
   ], LobbyInteractionsService.prototype, "postConstruct", 1);
-  LobbyInteractionsService = __decorateClass$11([
+  LobbyInteractionsService = __decorateClass$13([
     injectable(),
-    __decorateParam$d(0, inject(loggerFactory))
+    __decorateParam$e(0, inject(loggerFactory))
   ], LobbyInteractionsService);
   function create_fragment$1o(ctx) {
     let button;
@@ -25362,15 +25379,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Quick_react, "Quick_react");
   let Quick_react = _Quick_react;
-  var __defProp$10 = Object.defineProperty;
-  var __decorateClass$10 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$12 = Object.defineProperty;
+  var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$10(target, key2, result);
+    if (result) __defProp$12(target, key2, result);
     return result;
-  }, "__decorateClass$10");
+  }, "__decorateClass$12");
   const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -25608,27 +25625,27 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatQuickReactFeature, "ChatQuickReactFeature");
   let ChatQuickReactFeature = _ChatQuickReactFeature;
-  __decorateClass$10([
+  __decorateClass$12([
     inject(ElementsSetup)
   ], ChatQuickReactFeature.prototype, "_elements");
-  __decorateClass$10([
+  __decorateClass$12([
     inject(LobbyInteractionsService)
   ], ChatQuickReactFeature.prototype, "_lobbyInteractionsService");
-  __decorateClass$10([
+  __decorateClass$12([
     inject(ToastService)
   ], ChatQuickReactFeature.prototype, "_toastService");
-  __decorateClass$10([
+  __decorateClass$12([
     inject(LobbyService)
   ], ChatQuickReactFeature.prototype, "_lobbyService");
-  var __defProp$$ = Object.defineProperty;
-  var __decorateClass$$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$11 = Object.defineProperty;
+  var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$$(target, key2, result);
+    if (result) __defProp$11(target, key2, result);
     return result;
-  }, "__decorateClass$$");
+  }, "__decorateClass$11");
   const _ChatRecallFeature = class _ChatRecallFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -25690,13 +25707,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ChatRecallFeature, "ChatRecallFeature");
   let ChatRecallFeature = _ChatRecallFeature;
-  __decorateClass$$([
+  __decorateClass$11([
     inject(ElementsSetup)
   ], ChatRecallFeature.prototype, "_elements");
-  __decorateClass$$([
+  __decorateClass$11([
     inject(MessageSentEventListener)
   ], ChatRecallFeature.prototype, "_messageSent");
-  __decorateClass$$([
+  __decorateClass$11([
     inject(ChatService)
   ], ChatRecallFeature.prototype, "_chatService");
   function createCrossCustomEvent(type, detail) {
@@ -25754,17 +25771,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ImageData, "ImageData");
   let ImageData = _ImageData;
-  var __defProp$_ = Object.defineProperty;
-  var __getOwnPropDesc$f = Object.getOwnPropertyDescriptor;
-  var __decorateClass$_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$f(target, key2) : target;
+  var __defProp$10 = Object.defineProperty;
+  var __getOwnPropDesc$g = Object.getOwnPropertyDescriptor;
+  var __decorateClass$10 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$g(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$_(target, key2, result);
+    if (kind && result) __defProp$10(target, key2, result);
     return result;
-  }, "__decorateClass$_");
-  var __decorateParam$c = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$c");
+  }, "__decorateClass$10");
+  var __decorateParam$d = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$d");
   let DrawingService = (_oa = class {
     /* [commands, scheduled] -> scheduled false when cancel/schedule skipped */
     constructor(loggerFactory2, lobbyLeft, lobbyChanged, hintsAdded, draw, wordGuessed, imageReset, elementsSetup, skribblMessages) {
@@ -25772,6 +25789,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       __publicField(this, "_currentImageState$", new BehaviorSubject(null));
       __publicField(this, "_currentCommands$", new BehaviorSubject([]));
       __publicField(this, "_drawingState$", new BehaviorSubject("idle"));
+      __publicField(this, "_lockManualClear", new Subject$1());
       __publicField(this, "_pasteInProgress$", new BehaviorSubject(false));
       __publicField(this, "_abortCommands$", new BehaviorSubject(Number.MAX_VALUE));
       __publicField(this, "_incomingDrawCommands$", new Subject$1());
@@ -25786,6 +25804,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._logger = loggerFactory2(this);
       this.listenDrawCommands();
       this.listenCurrentImageState();
+      this._lockManualClear.subscribe((state) => {
+        this._logger.info("Lock manual clear set to", state);
+        document.dispatchEvent(new CustomEvent("lockManualClear", { detail: state }));
+      });
       this.imageState$.subscribe((data) => {
         this._logger.debug("Image state updated", data);
       });
@@ -25821,9 +25843,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
         )),
         /* after 50ms of no commands, treat as action */
         debounceTime(50)
-      ).subscribe((count) => {
-        this._logger.debug("finished pasting", count);
-        if (count > 0) document.dispatchEvent(new CustomEvent("collapseUndoActions", { detail: count }));
+      ).subscribe((count2) => {
+        this._logger.debug("finished pasting", count2);
+        if (count2 > 0) document.dispatchEvent(new CustomEvent("collapseUndoActions", { detail: count2 }));
         this._pasteInProgress$.next(false);
         this._abortCommands$.next(Number.MAX_VALUE);
       });
@@ -26054,30 +26076,33 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       target = [Math.floor(target[0]), Math.floor(target[1])];
       return [origin, target];
     }
+    lockManualClear(state) {
+      this._lockManualClear.next(state);
+    }
   }, __name(_oa, "DrawingService"), _oa);
-  DrawingService = __decorateClass$_([
+  DrawingService = __decorateClass$10([
     injectable(),
-    __decorateParam$c(0, inject(loggerFactory)),
-    __decorateParam$c(1, inject(LobbyLeftEventListener)),
-    __decorateParam$c(2, inject(LobbyStateChangedEventListener)),
-    __decorateParam$c(3, inject(HintsAddedEventListener)),
-    __decorateParam$c(4, inject(DrawEventListener)),
-    __decorateParam$c(5, inject(WordGuessedEventListener)),
-    __decorateParam$c(6, inject(ImageResetEventListener)),
-    __decorateParam$c(7, inject(ElementsSetup)),
-    __decorateParam$c(8, inject(SkribblMessageRelaySetup))
+    __decorateParam$d(0, inject(loggerFactory)),
+    __decorateParam$d(1, inject(LobbyLeftEventListener)),
+    __decorateParam$d(2, inject(LobbyStateChangedEventListener)),
+    __decorateParam$d(3, inject(HintsAddedEventListener)),
+    __decorateParam$d(4, inject(DrawEventListener)),
+    __decorateParam$d(5, inject(WordGuessedEventListener)),
+    __decorateParam$d(6, inject(ImageResetEventListener)),
+    __decorateParam$d(7, inject(ElementsSetup)),
+    __decorateParam$d(8, inject(SkribblMessageRelaySetup))
   ], DrawingService);
-  var __defProp$Z = Object.defineProperty;
-  var __getOwnPropDesc$e = Object.getOwnPropertyDescriptor;
-  var __decorateClass$Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$e(target, key2) : target;
+  var __defProp$$ = Object.defineProperty;
+  var __getOwnPropDesc$f = Object.getOwnPropertyDescriptor;
+  var __decorateClass$$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$f(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$Z(target, key2, result);
+    if (kind && result) __defProp$$(target, key2, result);
     return result;
-  }, "__decorateClass$Z");
-  var __decorateParam$b = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$b");
+  }, "__decorateClass$$");
+  var __decorateParam$c = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$c");
   let ImageFinishedService = (_pa = class {
     constructor(loggerFactory2, _drawingService, _lobbyService) {
       __publicField(this, "_logger");
@@ -26151,23 +26176,23 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       );
     }
   }, __name(_pa, "ImageFinishedService"), _pa);
-  ImageFinishedService = __decorateClass$Z([
+  ImageFinishedService = __decorateClass$$([
     injectable(),
-    __decorateParam$b(0, inject(loggerFactory)),
-    __decorateParam$b(1, inject(DrawingService)),
-    __decorateParam$b(2, inject(LobbyService))
+    __decorateParam$c(0, inject(loggerFactory)),
+    __decorateParam$c(1, inject(DrawingService)),
+    __decorateParam$c(2, inject(LobbyService))
   ], ImageFinishedService);
-  var __defProp$Y = Object.defineProperty;
-  var __getOwnPropDesc$d = Object.getOwnPropertyDescriptor;
-  var __decorateClass$Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$d(target, key2) : target;
+  var __defProp$_ = Object.defineProperty;
+  var __getOwnPropDesc$e = Object.getOwnPropertyDescriptor;
+  var __decorateClass$_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$e(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$Y(target, key2, result);
+    if (kind && result) __defProp$_(target, key2, result);
     return result;
-  }, "__decorateClass$Y");
-  var __decorateParam$a = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$a");
+  }, "__decorateClass$_");
+  var __decorateParam$b = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$b");
   let CloudService = (_qa = class {
     constructor(loggerFactory2) {
       __publicField(this, "_apiService");
@@ -26208,12 +26233,12 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._pendingAwardInventoryIds.clear();
     }
   }, __name(_qa, "CloudService"), _qa);
-  __decorateClass$Y([
+  __decorateClass$_([
     inject(ApiService)
   ], CloudService.prototype, "_apiService", 2);
-  CloudService = __decorateClass$Y([
+  CloudService = __decorateClass$_([
     injectable(),
-    __decorateParam$a(0, inject(loggerFactory))
+    __decorateParam$b(0, inject(loggerFactory))
   ], CloudService);
   const convertOldSkd = /* @__PURE__ */ __name((oldSkd) => {
     const commands = oldSkd.flat();
@@ -26232,17 +26257,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     });
     return commands;
   }, "convertOldSkd");
-  var __defProp$X = Object.defineProperty;
-  var __getOwnPropDesc$c = Object.getOwnPropertyDescriptor;
-  var __decorateClass$X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$c(target, key2) : target;
+  var __defProp$Z = Object.defineProperty;
+  var __getOwnPropDesc$d = Object.getOwnPropertyDescriptor;
+  var __decorateClass$Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$d(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$X(target, key2, result);
+    if (kind && result) __defProp$Z(target, key2, result);
     return result;
-  }, "__decorateClass$X");
-  var __decorateParam$9 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$9");
+  }, "__decorateClass$Z");
+  var __decorateParam$a = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$a");
   let ImagelabService = (_ra = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -26284,21 +26309,21 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._savedDrawCommands$.next(this._savedDrawCommands$.value.filter((item, i) => i !== index));
     }
   }, __name(_ra, "ImagelabService"), _ra);
-  ImagelabService = __decorateClass$X([
+  ImagelabService = __decorateClass$Z([
     injectable(),
-    __decorateParam$9(0, inject(loggerFactory))
+    __decorateParam$a(0, inject(loggerFactory))
   ], ImagelabService);
-  var __defProp$W = Object.defineProperty;
-  var __getOwnPropDesc$b = Object.getOwnPropertyDescriptor;
-  var __decorateClass$W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$b(target, key2) : target;
+  var __defProp$Y = Object.defineProperty;
+  var __getOwnPropDesc$c = Object.getOwnPropertyDescriptor;
+  var __decorateClass$Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$c(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$W(target, key2, result);
+    if (kind && result) __defProp$Y(target, key2, result);
     return result;
-  }, "__decorateClass$W");
-  var __decorateParam$8 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$8");
+  }, "__decorateClass$Y");
+  var __decorateParam$9 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$9");
   let ImagePostService = (_sa = class {
     constructor(loggerFactory2, _imageFinishedService) {
       __publicField(this, "_logger");
@@ -26342,10 +26367,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._history$.next([...this._history$.value, image]);
     }
   }, __name(_sa, "ImagePostService"), _sa);
-  ImagePostService = __decorateClass$W([
+  ImagePostService = __decorateClass$Y([
     injectable(),
-    __decorateParam$8(0, inject(loggerFactory)),
-    __decorateParam$8(1, inject(ImageFinishedService))
+    __decorateParam$9(0, inject(loggerFactory)),
+    __decorateParam$9(1, inject(ImageFinishedService))
   ], ImagePostService);
   function create_fragment$1m(ctx) {
     let div0;
@@ -26885,17 +26910,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Modal_card, "Modal_card");
   let Modal_card = _Modal_card;
-  var __defProp$V = Object.defineProperty;
-  var __getOwnPropDesc$a = Object.getOwnPropertyDescriptor;
-  var __decorateClass$V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$a(target, key2) : target;
+  var __defProp$X = Object.defineProperty;
+  var __getOwnPropDesc$b = Object.getOwnPropertyDescriptor;
+  var __decorateClass$X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$b(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$V(target, key2, result);
+    if (kind && result) __defProp$X(target, key2, result);
     return result;
-  }, "__decorateClass$V");
-  var __decorateParam$7 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$7");
+  }, "__decorateClass$X");
+  var __decorateParam$8 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$8");
   let ModalService = (_ta = class {
     constructor(loggerFactory2, _globalSettingsService) {
       __publicField(this, "_logger");
@@ -26983,10 +27008,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return result;
     }
   }, __name(_ta, "ModalService"), _ta);
-  ModalService = __decorateClass$V([
+  ModalService = __decorateClass$X([
     injectable(),
-    __decorateParam$7(0, inject(loggerFactory)),
-    __decorateParam$7(1, inject(GlobalSettingsService))
+    __decorateParam$8(0, inject(loggerFactory)),
+    __decorateParam$8(1, inject(GlobalSettingsService))
   ], ModalService);
   const downloadBlob = /* @__PURE__ */ __name((blob, filename) => {
     const url = URL.createObjectURL(blob);
@@ -28242,15 +28267,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Controls_cloud, "Controls_cloud");
   let Controls_cloud = _Controls_cloud;
-  var __defProp$U = Object.defineProperty;
-  var __decorateClass$U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$W = Object.defineProperty;
+  var __decorateClass$W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$U(target, key2, result);
+    if (result) __defProp$W(target, key2, result);
     return result;
-  }, "__decorateClass$U");
+  }, "__decorateClass$W");
   const _ControlsCloudFeature = class _ControlsCloudFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -28432,44 +28457,44 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ControlsCloudFeature, "ControlsCloudFeature");
   let ControlsCloudFeature = _ControlsCloudFeature;
-  __decorateClass$U([
+  __decorateClass$W([
     inject(ElementsSetup)
   ], ControlsCloudFeature.prototype, "_elementsSetup");
-  __decorateClass$U([
+  __decorateClass$W([
     inject(ModalService)
   ], ControlsCloudFeature.prototype, "_modalService");
-  __decorateClass$U([
+  __decorateClass$W([
     inject(MemberService)
   ], ControlsCloudFeature.prototype, "_memberService");
-  __decorateClass$U([
+  __decorateClass$W([
     inject(CloudService)
   ], ControlsCloudFeature.prototype, "_cloudService");
-  __decorateClass$U([
+  __decorateClass$W([
     inject(ImagePostService)
   ], ControlsCloudFeature.prototype, "_imagePostService");
-  __decorateClass$U([
+  __decorateClass$W([
     inject(ImagelabService)
   ], ControlsCloudFeature.prototype, "_imageLabService");
-  __decorateClass$U([
+  __decorateClass$W([
     inject(ToastService)
   ], ControlsCloudFeature.prototype, "_toastService");
-  __decorateClass$U([
+  __decorateClass$W([
     inject(ApiService)
   ], ControlsCloudFeature.prototype, "_apiService");
-  __decorateClass$U([
+  __decorateClass$W([
     inject(ImageFinishedService)
   ], ControlsCloudFeature.prototype, "_imageFinishedService");
-  var __defProp$T = Object.defineProperty;
-  var __getOwnPropDesc$9 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$9(target, key2) : target;
+  var __defProp$V = Object.defineProperty;
+  var __getOwnPropDesc$a = Object.getOwnPropertyDescriptor;
+  var __decorateClass$V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$a(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$T(target, key2, result);
+    if (kind && result) __defProp$V(target, key2, result);
     return result;
-  }, "__decorateClass$T");
-  var __decorateParam$6 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$6");
+  }, "__decorateClass$V");
+  var __decorateParam$7 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$7");
   let FeaturesService = (_ua = class {
     constructor(loggerFactory2) {
       __publicField(this, "_logger");
@@ -28497,9 +28522,9 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return feature.activate();
     }
   }, __name(_ua, "FeaturesService"), _ua);
-  FeaturesService = __decorateClass$T([
+  FeaturesService = __decorateClass$V([
     injectable(),
-    __decorateParam$6(0, inject(loggerFactory))
+    __decorateParam$7(0, inject(loggerFactory))
   ], FeaturesService);
   const themeColors = Object.freeze({
     "--COLOR_PANEL_BG": [226, 85, 32, 0.75],
@@ -28664,17 +28689,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     theme.misc.cssText = css2;
   }
   __name(convertOldTheme, "convertOldTheme");
-  var __defProp$S = Object.defineProperty;
-  var __getOwnPropDesc$8 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$8(target, key2) : target;
+  var __defProp$U = Object.defineProperty;
+  var __getOwnPropDesc$9 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$9(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$S(target, key2, result);
+    if (kind && result) __defProp$U(target, key2, result);
     return result;
-  }, "__decorateClass$S");
-  var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$5");
+  }, "__decorateClass$U");
+  var __decorateParam$6 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$6");
   let ThemesService = (_va = class {
     constructor(loggerFactory2, _elementsSetup, _apiService) {
       __publicField(this, "_logger");
@@ -28925,11 +28950,11 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return savedTheme;
     }
   }, __name(_va, "ThemesService"), _va);
-  ThemesService = __decorateClass$S([
+  ThemesService = __decorateClass$U([
     injectable(),
-    __decorateParam$5(0, inject(loggerFactory)),
-    __decorateParam$5(1, inject(ElementsSetup)),
-    __decorateParam$5(2, inject(ApiService))
+    __decorateParam$6(0, inject(loggerFactory)),
+    __decorateParam$6(1, inject(ElementsSetup)),
+    __decorateParam$6(2, inject(ApiService))
   ], ThemesService);
   const getCssVariableSelectorHooks = /* @__PURE__ */ __name((cssText, colorVariables) => {
     var _a2;
@@ -28957,23 +28982,23 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     }
     return variableSelectors;
   }, "getCssVariableSelectorHooks");
-  var __defProp$R = Object.defineProperty;
-  var __getOwnPropDesc$7 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$7(target, key2) : target;
+  var __defProp$T = Object.defineProperty;
+  var __getOwnPropDesc$8 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$8(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$R(target, key2, result);
+    if (kind && result) __defProp$T(target, key2, result);
     return result;
-  }, "__decorateClass$R");
+  }, "__decorateClass$T");
   let CssColorVarSelectorsSetup = (_wa = class extends Setup {
     async runSetup() {
       const css2 = await (await fetch("/css/style.css")).text();
       return getCssVariableSelectorHooks(css2, Object.keys(themeColors));
     }
   }, __name(_wa, "CssColorVarSelectorsSetup"), _wa);
-  CssColorVarSelectorsSetup = __decorateClass$R([
+  CssColorVarSelectorsSetup = __decorateClass$T([
     earlySetup()
   ], CssColorVarSelectorsSetup);
   const generateColorScheme = /* @__PURE__ */ __name((mainColor, textColor, useIngame, useInputs, invertInputText) => {
@@ -32952,15 +32977,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Controls_themes, "Controls_themes");
   let Controls_themes = _Controls_themes;
-  var __defProp$Q = Object.defineProperty;
-  var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$S = Object.defineProperty;
+  var __decorateClass$S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$Q(target, key2, result);
+    if (result) __defProp$S(target, key2, result);
     return result;
-  }, "__decorateClass$Q");
+  }, "__decorateClass$S");
   const _ControlsThemesFeature = class _ControlsThemesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -33285,36 +33310,36 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ControlsThemesFeature, "ControlsThemesFeature");
   let ControlsThemesFeature = _ControlsThemesFeature;
-  __decorateClass$Q([
+  __decorateClass$S([
     inject(ElementsSetup)
   ], ControlsThemesFeature.prototype, "_elementsSetup");
-  __decorateClass$Q([
+  __decorateClass$S([
     inject(CssColorVarSelectorsSetup)
   ], ControlsThemesFeature.prototype, "_cssColorVarSelectorsSetup");
-  __decorateClass$Q([
+  __decorateClass$S([
     inject(ApiDataSetup)
   ], ControlsThemesFeature.prototype, "_apiDataSetup");
-  __decorateClass$Q([
+  __decorateClass$S([
     inject(ModalService)
   ], ControlsThemesFeature.prototype, "_modalService");
-  __decorateClass$Q([
+  __decorateClass$S([
     inject(ToastService)
   ], ControlsThemesFeature.prototype, "_toastService");
-  __decorateClass$Q([
+  __decorateClass$S([
     inject(ThemesService)
   ], ControlsThemesFeature.prototype, "_themesService");
-  __decorateClass$Q([
+  __decorateClass$S([
     inject(GlobalSettingsService)
   ], ControlsThemesFeature.prototype, "_globalSettingsService");
-  var __defProp$P = Object.defineProperty;
-  var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$R = Object.defineProperty;
+  var __decorateClass$R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$P(target, key2, result);
+    if (result) __defProp$R(target, key2, result);
     return result;
-  }, "__decorateClass$P");
+  }, "__decorateClass$R");
   const _CustomizerOutfitToggleFeature = class _CustomizerOutfitToggleFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -33373,24 +33398,24 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CustomizerOutfitToggleFeature, "CustomizerOutfitToggleFeature");
   let CustomizerOutfitToggleFeature = _CustomizerOutfitToggleFeature;
-  __decorateClass$P([
+  __decorateClass$R([
     inject(ElementsSetup)
   ], CustomizerOutfitToggleFeature.prototype, "_elementsSetup");
-  __decorateClass$P([
+  __decorateClass$R([
     inject(GlobalSettingsService)
   ], CustomizerOutfitToggleFeature.prototype, "_globalSettingsService");
-  __decorateClass$P([
+  __decorateClass$R([
     inject(MemberService)
   ], CustomizerOutfitToggleFeature.prototype, "_memberService");
-  var __defProp$O = Object.defineProperty;
-  var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$Q = Object.defineProperty;
+  var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$O(target, key2, result);
+    if (result) __defProp$Q(target, key2, result);
     return result;
-  }, "__decorateClass$O");
+  }, "__decorateClass$Q");
   const _CustomizerPracticeJoinFeature = class _CustomizerPracticeJoinFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -33440,7 +33465,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CustomizerPracticeJoinFeature, "CustomizerPracticeJoinFeature");
   let CustomizerPracticeJoinFeature = _CustomizerPracticeJoinFeature;
-  __decorateClass$O([
+  __decorateClass$Q([
     inject(ElementsSetup)
   ], CustomizerPracticeJoinFeature.prototype, "_elementsSetup");
   const defaultPalettes = {
@@ -33593,17 +33618,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       ]
     }
   };
-  var __defProp$N = Object.defineProperty;
-  var __getOwnPropDesc$6 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$6(target, key2) : target;
+  var __defProp$P = Object.defineProperty;
+  var __getOwnPropDesc$7 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$7(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$N(target, key2, result);
+    if (kind && result) __defProp$P(target, key2, result);
     return result;
-  }, "__decorateClass$N");
-  var __decorateParam$4 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$4");
+  }, "__decorateClass$P");
+  var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$5");
   let ColorsService = (_xa = class {
     constructor(loggerFactory2) {
       __publicField(this, "_toastService");
@@ -33696,15 +33721,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this.featureActive = false;
     }
   }, __name(_xa, "ColorsService"), _xa);
-  __decorateClass$N([
+  __decorateClass$P([
     inject(ToastService)
   ], ColorsService.prototype, "_toastService", 2);
-  __decorateClass$N([
+  __decorateClass$P([
     inject(FeaturesService)
   ], ColorsService.prototype, "_featuresService", 2);
-  ColorsService = __decorateClass$N([
+  ColorsService = __decorateClass$P([
     injectable(),
-    __decorateParam$4(0, inject(loggerFactory))
+    __decorateParam$5(0, inject(loggerFactory))
   ], ColorsService);
   function create_fragment$1f(ctx) {
     let t0;
@@ -35758,15 +35783,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Color_palette_quick_select, "Color_palette_quick_select");
   let Color_palette_quick_select = _Color_palette_quick_select;
-  var __defProp$M = Object.defineProperty;
-  var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$O = Object.defineProperty;
+  var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$M(target, key2, result);
+    if (result) __defProp$O(target, key2, result);
     return result;
-  }, "__decorateClass$M");
+  }, "__decorateClass$O");
   const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -36061,31 +36086,31 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_DrawingColorPalettesFeature, "DrawingColorPalettesFeature");
   let DrawingColorPalettesFeature = _DrawingColorPalettesFeature;
-  __decorateClass$M([
+  __decorateClass$O([
     inject(ElementsSetup)
   ], DrawingColorPalettesFeature.prototype, "_elementsSetup");
-  __decorateClass$M([
+  __decorateClass$O([
     inject(ToastService)
   ], DrawingColorPalettesFeature.prototype, "_toastService");
-  __decorateClass$M([
+  __decorateClass$O([
     inject(DrawingService)
   ], DrawingColorPalettesFeature.prototype, "_drawingService");
-  __decorateClass$M([
+  __decorateClass$O([
     inject(ColorsService)
   ], DrawingColorPalettesFeature.prototype, "_colorsService");
-  __decorateClass$M([
+  __decorateClass$O([
     inject(ModalService)
   ], DrawingColorPalettesFeature.prototype, "_modalService");
-  var __defProp$L = Object.defineProperty;
-  var __getOwnPropDesc$5 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$5(target, key2) : target;
+  var __defProp$N = Object.defineProperty;
+  var __getOwnPropDesc$6 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$6(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$L(target, key2, result);
+    if (kind && result) __defProp$N(target, key2, result);
     return result;
-  }, "__decorateClass$L");
+  }, "__decorateClass$N");
   let TypoDrawMod = (_ya = class {
     constructor() {
       /**
@@ -36099,7 +36124,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       return { lines: [line], style: brushStyle };
     }
   }, __name(_ya, "TypoDrawMod"), _ya);
-  TypoDrawMod = __decorateClass$L([
+  TypoDrawMod = __decorateClass$N([
     injectable()
   ], TypoDrawMod);
   const _ConstantDrawMod = class _ConstantDrawMod extends TypoDrawMod {
@@ -36171,15 +36196,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_TypoDrawTool, "TypoDrawTool");
   let TypoDrawTool = _TypoDrawTool;
-  var __defProp$K = Object.defineProperty;
-  var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$M = Object.defineProperty;
+  var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$K(target, key2, result);
+    if (result) __defProp$M(target, key2, result);
     return result;
-  }, "__decorateClass$K");
+  }, "__decorateClass$M");
   const _PipetteTool = class _PipetteTool extends TypoDrawTool {
     constructor() {
       super(...arguments);
@@ -36209,7 +36234,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_PipetteTool, "PipetteTool");
   let PipetteTool = _PipetteTool;
-  __decorateClass$K([
+  __decorateClass$M([
     inject(ElementsSetup)
   ], PipetteTool.prototype, "_elementsSetup");
   const _ExtensionContainer = class _ExtensionContainer {
@@ -36377,17 +36402,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_CoordinateListener, "CoordinateListener");
   let CoordinateListener = _CoordinateListener;
-  var __defProp$J = Object.defineProperty;
-  var __getOwnPropDesc$4 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$4(target, key2) : target;
+  var __defProp$L = Object.defineProperty;
+  var __getOwnPropDesc$5 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$5(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$J(target, key2, result);
+    if (kind && result) __defProp$L(target, key2, result);
     return result;
-  }, "__decorateClass$J");
-  var __decorateParam$3 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$3");
+  }, "__decorateClass$L");
+  var __decorateParam$4 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$4");
   let ToolsService = (_za = class {
     constructor(loggerFactory2) {
       __publicField(this, "_prioritizedCanvasEventsSetup");
@@ -36587,36 +36612,36 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       this._insertedStrokes$.next(stroke);
     }
   }, __name(_za, "ToolsService"), _za);
-  __decorateClass$J([
+  __decorateClass$L([
     inject(PrioritizedCanvasEventsSetup)
   ], ToolsService.prototype, "_prioritizedCanvasEventsSetup", 2);
-  __decorateClass$J([
+  __decorateClass$L([
     inject(DrawingService)
   ], ToolsService.prototype, "_drawingService", 2);
-  __decorateClass$J([
+  __decorateClass$L([
     inject(ToolChangedEventListener)
   ], ToolsService.prototype, "_toolChangedListener", 2);
-  __decorateClass$J([
+  __decorateClass$L([
     inject(ExtensionContainer)
   ], ToolsService.prototype, "_extensionContainer", 2);
-  __decorateClass$J([
+  __decorateClass$L([
     inject(LobbyService)
   ], ToolsService.prototype, "_lobbyService", 2);
-  __decorateClass$J([
+  __decorateClass$L([
     inject(SizeChangedEventListener)
   ], ToolsService.prototype, "_sizeChangedListener", 2);
-  __decorateClass$J([
+  __decorateClass$L([
     inject(ColorChangedEventListener)
   ], ToolsService.prototype, "_colorChangedListener", 2);
-  __decorateClass$J([
+  __decorateClass$L([
     inject(ElementsSetup)
   ], ToolsService.prototype, "_elementsSetup", 2);
-  __decorateClass$J([
+  __decorateClass$L([
     postConstruct()
   ], ToolsService.prototype, "postConstruct", 1);
-  ToolsService = __decorateClass$J([
+  ToolsService = __decorateClass$L([
     injectable(),
-    __decorateParam$3(0, inject(loggerFactory))
+    __decorateParam$4(0, inject(loggerFactory))
   ], ToolsService);
   function create_fragment$1a(ctx) {
     let t0;
@@ -36791,15 +36816,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Drawing_color_tools, "Drawing_color_tools");
   let Drawing_color_tools = _Drawing_color_tools;
-  var __defProp$I = Object.defineProperty;
-  var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$K = Object.defineProperty;
+  var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$I(target, key2, result);
+    if (result) __defProp$K(target, key2, result);
     return result;
-  }, "__decorateClass$I");
+  }, "__decorateClass$K");
   const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -36876,16 +36901,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_DrawingColorToolsFeature, "DrawingColorToolsFeature");
   let DrawingColorToolsFeature = _DrawingColorToolsFeature;
-  __decorateClass$I([
+  __decorateClass$K([
     inject(ElementsSetup)
   ], DrawingColorToolsFeature.prototype, "elementsSetup");
-  __decorateClass$I([
+  __decorateClass$K([
     inject(ToolsService)
   ], DrawingColorToolsFeature.prototype, "_toolsService");
-  __decorateClass$I([
+  __decorateClass$K([
     inject(DrawingService)
   ], DrawingColorToolsFeature.prototype, "_drawingService");
-  __decorateClass$I([
+  __decorateClass$K([
     inject(ColorChangedEventListener)
   ], DrawingColorToolsFeature.prototype, "_colorChangedListener");
   const calculatePressurePoint = /* @__PURE__ */ __name((p, s, b) => {
@@ -37084,15 +37109,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Drawing_pressure_info, "Drawing_pressure_info");
   let Drawing_pressure_info = _Drawing_pressure_info;
-  var __defProp$H = Object.defineProperty;
-  var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$J = Object.defineProperty;
+  var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$H(target, key2, result);
+    if (result) __defProp$J(target, key2, result);
     return result;
-  }, "__decorateClass$H");
+  }, "__decorateClass$J");
   const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -37192,10 +37217,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_DrawingPressureFeature, "DrawingPressureFeature");
   let DrawingPressureFeature = _DrawingPressureFeature;
-  __decorateClass$H([
+  __decorateClass$J([
     inject(ToolsService)
   ], DrawingPressureFeature.prototype, "_toolsService");
-  __decorateClass$H([
+  __decorateClass$J([
     inject(DrawingService)
   ], DrawingPressureFeature.prototype, "_drawingService");
   const _ReceiverMethodSubscription = class _ReceiverMethodSubscription {
@@ -40248,17 +40273,17 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     return logger.log !== void 0;
   }
   __name(isLogger, "isLogger");
-  var __defProp$G = Object.defineProperty;
-  var __getOwnPropDesc$3 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$3(target, key2) : target;
+  var __defProp$I = Object.defineProperty;
+  var __getOwnPropDesc$4 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$4(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$G(target, key2, result);
+    if (kind && result) __defProp$I(target, key2, result);
     return result;
-  }, "__decorateClass$G");
-  var __decorateParam$2 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$2");
+  }, "__decorateClass$I");
+  var __decorateParam$3 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$3");
   const hubTypeMap = {
     IGuildLobbiesHub: {
       url: "guildLobbies"
@@ -40330,22 +40355,22 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       });
     }
   }, __name(_Ba, "SocketService"), _Ba);
-  SocketService = __decorateClass$G([
+  SocketService = __decorateClass$I([
     injectable(),
-    __decorateParam$2(0, inject(loggerFactory)),
-    __decorateParam$2(1, inject(TokenService))
+    __decorateParam$3(0, inject(loggerFactory)),
+    __decorateParam$3(1, inject(TokenService))
   ], SocketService);
-  var __defProp$F = Object.defineProperty;
-  var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key2) : target;
+  var __defProp$H = Object.defineProperty;
+  var __getOwnPropDesc$3 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$3(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$F(target, key2, result);
+    if (kind && result) __defProp$H(target, key2, result);
     return result;
-  }, "__decorateClass$F");
-  var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$1");
+  }, "__decorateClass$H");
+  var __decorateParam$2 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$2");
   let LobbyConnectionService = (_Ca = class {
     constructor(loggerFactory2) {
       __publicField(this, "_socketService");
@@ -40501,12 +40526,12 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
       }
     }
   }, __name(_Ca, "LobbyConnectionService"), _Ca);
-  __decorateClass$F([
+  __decorateClass$H([
     inject(SocketService)
   ], LobbyConnectionService.prototype, "_socketService", 2);
-  LobbyConnectionService = __decorateClass$F([
+  LobbyConnectionService = __decorateClass$H([
     injectable(),
-    __decorateParam$1(0, inject(loggerFactory))
+    __decorateParam$2(0, inject(loggerFactory))
   ], LobbyConnectionService);
   const parseSignalRError = /* @__PURE__ */ __name((error) => {
     if (!(error instanceof Error)) throw error;
@@ -40928,15 +40953,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Drops_info, "Drops_info");
   let Drops_info = _Drops_info;
-  var __defProp$E = Object.defineProperty;
-  var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$G = Object.defineProperty;
+  var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$E(target, key2, result);
+    if (result) __defProp$G(target, key2, result);
     return result;
-  }, "__decorateClass$E");
+  }, "__decorateClass$G");
   const _DropsFeature = class _DropsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -41102,25 +41127,25 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_DropsFeature, "DropsFeature");
   let DropsFeature = _DropsFeature;
-  __decorateClass$E([
+  __decorateClass$G([
     inject(ElementsSetup)
   ], DropsFeature.prototype, "_elementsSetup");
-  __decorateClass$E([
+  __decorateClass$G([
     inject(ApiDataSetup)
   ], DropsFeature.prototype, "_apiDataSetup");
-  __decorateClass$E([
+  __decorateClass$G([
     inject(LobbyConnectionService)
   ], DropsFeature.prototype, "_lobbyConnectionService");
-  __decorateClass$E([
+  __decorateClass$G([
     inject(ChatService)
   ], DropsFeature.prototype, "_chatService");
-  __decorateClass$E([
+  __decorateClass$G([
     inject(ToastService)
   ], DropsFeature.prototype, "_toastService");
-  __decorateClass$E([
+  __decorateClass$G([
     inject(LobbyLeftEventListener)
   ], DropsFeature.prototype, "_lobbyLeftEventListener");
-  __decorateClass$E([
+  __decorateClass$G([
     inject(LobbyService)
   ], DropsFeature.prototype, "_lobbyService");
   const BLANK = "_";
@@ -41453,15 +41478,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Guess_check, "Guess_check");
   let Guess_check = _Guess_check;
-  var __defProp$D = Object.defineProperty;
-  var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$F = Object.defineProperty;
+  var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$D(target, key2, result);
+    if (result) __defProp$F(target, key2, result);
     return result;
-  }, "__decorateClass$D");
+  }, "__decorateClass$F");
   const _GuessCheckFeature = class _GuessCheckFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -41520,16 +41545,16 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_GuessCheckFeature, "GuessCheckFeature");
   let GuessCheckFeature = _GuessCheckFeature;
-  __decorateClass$D([
+  __decorateClass$F([
     inject(ElementsSetup)
   ], GuessCheckFeature.prototype, "_elementsSetup");
-  __decorateClass$D([
+  __decorateClass$F([
     inject(ChatTypedEventListener)
   ], GuessCheckFeature.prototype, "_chatTypedEventListener");
-  __decorateClass$D([
+  __decorateClass$F([
     inject(LobbyLeftEventListener)
   ], GuessCheckFeature.prototype, "_lobbyLeftEventListener");
-  __decorateClass$D([
+  __decorateClass$F([
     inject(DrawingService)
   ], GuessCheckFeature.prototype, "_drawingService");
   const _HotkeysFeature = class _HotkeysFeature extends TypoFeature {
@@ -41948,15 +41973,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Image_agent_flyout, "Image_agent_flyout");
   let Image_agent_flyout = _Image_agent_flyout;
-  var __defProp$C = Object.defineProperty;
-  var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$E = Object.defineProperty;
+  var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$C(target, key2, result);
+    if (result) __defProp$E(target, key2, result);
     return result;
-  }, "__decorateClass$C");
+  }, "__decorateClass$E");
   const _ImageAgentFeature = class _ImageAgentFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -42088,13 +42113,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_ImageAgentFeature, "ImageAgentFeature");
   let ImageAgentFeature = _ImageAgentFeature;
-  __decorateClass$C([
+  __decorateClass$E([
     inject(ElementsSetup)
   ], ImageAgentFeature.prototype, "_elementsSetup");
-  __decorateClass$C([
+  __decorateClass$E([
     inject(LobbyService)
   ], ImageAgentFeature.prototype, "_lobbyService");
-  __decorateClass$C([
+  __decorateClass$E([
     inject(DrawingService)
   ], ImageAgentFeature.prototype, "_drawingService");
   function create_fragment$13(ctx) {
@@ -42169,15 +42194,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Line_tool_info, "Line_tool_info");
   let Line_tool_info = _Line_tool_info;
-  var __defProp$B = Object.defineProperty;
-  var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$D = Object.defineProperty;
+  var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$B(target, key2, result);
+    if (result) __defProp$D(target, key2, result);
     return result;
-  }, "__decorateClass$B");
+  }, "__decorateClass$D");
   const _LineToolFeature = class _LineToolFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -42502,22 +42527,22 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_LineToolFeature, "LineToolFeature");
   let LineToolFeature = _LineToolFeature;
-  __decorateClass$B([
+  __decorateClass$D([
     inject(ToastService)
   ], LineToolFeature.prototype, "_toastService");
-  __decorateClass$B([
+  __decorateClass$D([
     inject(PrioritizedCanvasEventsSetup)
   ], LineToolFeature.prototype, "_prioritizedCanvasEventsSetup");
-  __decorateClass$B([
+  __decorateClass$D([
     inject(ElementsSetup)
   ], LineToolFeature.prototype, "_elementsSetup");
-  __decorateClass$B([
+  __decorateClass$D([
     inject(LobbyService)
   ], LineToolFeature.prototype, "_lobbyService");
-  __decorateClass$B([
+  __decorateClass$D([
     inject(DrawingService)
   ], LineToolFeature.prototype, "_drawingService");
-  __decorateClass$B([
+  __decorateClass$D([
     inject(ToolsService)
   ], LineToolFeature.prototype, "_toolsService");
   function repeatAfterDelay(source$, delayMs) {
@@ -43487,15 +43512,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Lobby_status, "Lobby_status");
   let Lobby_status = _Lobby_status;
-  var __defProp$A = Object.defineProperty;
-  var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$C = Object.defineProperty;
+  var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$A(target, key2, result);
+    if (result) __defProp$C(target, key2, result);
     return result;
-  }, "__decorateClass$A");
+  }, "__decorateClass$C");
   const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -43826,22 +43851,22 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_LobbyStatusFeature, "LobbyStatusFeature");
   let LobbyStatusFeature = _LobbyStatusFeature;
-  __decorateClass$A([
+  __decorateClass$C([
     inject(LobbyService)
   ], LobbyStatusFeature.prototype, "_lobbyService");
-  __decorateClass$A([
+  __decorateClass$C([
     inject(ElementsSetup)
   ], LobbyStatusFeature.prototype, "_elementsSetup");
-  __decorateClass$A([
+  __decorateClass$C([
     inject(MemberService)
   ], LobbyStatusFeature.prototype, "_memberService");
-  __decorateClass$A([
+  __decorateClass$C([
     inject(ToastService)
   ], LobbyStatusFeature.prototype, "_toastService");
-  __decorateClass$A([
+  __decorateClass$C([
     inject(GlobalSettingsService)
   ], LobbyStatusFeature.prototype, "_settingsService");
-  __decorateClass$A([
+  __decorateClass$C([
     inject(LobbyConnectionService)
   ], LobbyStatusFeature.prototype, "_lobbyConnectionService");
   function create_fragment$11(ctx) {
@@ -43876,15 +43901,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Lobby_time_visualizer_info, "Lobby_time_visualizer_info");
   let Lobby_time_visualizer_info = _Lobby_time_visualizer_info;
-  var __defProp$z = Object.defineProperty;
-  var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$B = Object.defineProperty;
+  var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$z(target, key2, result);
+    if (result) __defProp$B(target, key2, result);
     return result;
-  }, "__decorateClass$z");
+  }, "__decorateClass$B");
   const _LobbyTimeVisualizerFeature = class _LobbyTimeVisualizerFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -43996,13 +44021,13 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_LobbyTimeVisualizerFeature, "LobbyTimeVisualizerFeature");
   let LobbyTimeVisualizerFeature = _LobbyTimeVisualizerFeature;
-  __decorateClass$z([
+  __decorateClass$B([
     inject(LobbyStateChangedEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyStateChangedEventListener");
-  __decorateClass$z([
+  __decorateClass$B([
     inject(LobbyJoinedEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyJoinedEventListener");
-  __decorateClass$z([
+  __decorateClass$B([
     inject(LobbyLeftEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyLeftEventListener");
   function get_each_context$n(ctx, list, i) {
@@ -45811,15 +45836,15 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_Panel_cabin_scene_picker, "Panel_cabin_scene_picker");
   let Panel_cabin_scene_picker = _Panel_cabin_scene_picker;
-  var __defProp$y = Object.defineProperty;
-  var __decorateClass$y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$A = Object.defineProperty;
+  var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$y(target, key2, result);
+    if (result) __defProp$A(target, key2, result);
     return result;
-  }, "__decorateClass$y");
+  }, "__decorateClass$A");
   const _PanelCabinFeature = class _PanelCabinFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -45997,22 +46022,22 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   };
   __name(_PanelCabinFeature, "PanelCabinFeature");
   let PanelCabinFeature = _PanelCabinFeature;
-  __decorateClass$y([
+  __decorateClass$A([
     inject(ElementsSetup)
   ], PanelCabinFeature.prototype, "_elements");
-  __decorateClass$y([
+  __decorateClass$A([
     inject(ApiDataSetup)
   ], PanelCabinFeature.prototype, "_apiDataSetup");
-  __decorateClass$y([
+  __decorateClass$A([
     inject(MemberService)
   ], PanelCabinFeature.prototype, "_memberService");
-  __decorateClass$y([
+  __decorateClass$A([
     inject(ApiService)
   ], PanelCabinFeature.prototype, "_apiService");
-  __decorateClass$y([
+  __decorateClass$A([
     inject(ModalService)
   ], PanelCabinFeature.prototype, "_modalService");
-  __decorateClass$y([
+  __decorateClass$A([
     inject(ToastService)
   ], PanelCabinFeature.prototype, "_toastService");
   function get_each_context$k(ctx, list, i) {
@@ -48819,7 +48844,7 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
   __name(resolveUrl, "resolveUrl");
   const noopTest = { exec: /* @__PURE__ */ __name(function noopTest2() {
   }, "noopTest") };
-  function splitCells(tableRow, count) {
+  function splitCells(tableRow, count2) {
     const row = tableRow.replace(/\|/g, (match, offset, str) => {
       let escaped = false, curr = offset;
       while (--curr >= 0 && str[curr] === "\\") escaped = !escaped;
@@ -48836,10 +48861,10 @@ const input = this.querySelector("input"); let rest = input.value.substring(100)
     if (cells.length > 0 && !cells[cells.length - 1].trim()) {
       cells.pop();
     }
-    if (cells.length > count) {
-      cells.splice(count);
+    if (cells.length > count2) {
+      cells.splice(count2);
     } else {
-      while (cells.length < count) cells.push("");
+      while (cells.length < count2) cells.push("");
     }
     for (; i < cells.length; i++) {
       cells[i] = cells[i].trim().replace(/\\\|/g, "|");
@@ -53776,15 +53801,15 @@ ${content2}</tr>
   };
   __name(_Panel_changelog_details, "Panel_changelog_details");
   let Panel_changelog_details = _Panel_changelog_details;
-  var __defProp$x = Object.defineProperty;
-  var __decorateClass$x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$z = Object.defineProperty;
+  var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$x(target, key2, result);
+    if (result) __defProp$z(target, key2, result);
     return result;
-  }, "__decorateClass$x");
+  }, "__decorateClass$z");
   const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -53863,16 +53888,16 @@ ${content2}</tr>
   };
   __name(_PanelChangelogFeature, "PanelChangelogFeature");
   let PanelChangelogFeature = _PanelChangelogFeature;
-  __decorateClass$x([
+  __decorateClass$z([
     inject(ElementsSetup)
   ], PanelChangelogFeature.prototype, "_elements");
-  __decorateClass$x([
+  __decorateClass$z([
     inject(ApiDataSetup)
   ], PanelChangelogFeature.prototype, "_apiDataSetup");
-  __decorateClass$x([
+  __decorateClass$z([
     inject(GlobalSettingsService)
   ], PanelChangelogFeature.prototype, "_globalSettingsService");
-  __decorateClass$x([
+  __decorateClass$z([
     inject(ModalService)
   ], PanelChangelogFeature.prototype, "_modalService");
   function get_each_context$i(ctx, list, i) {
@@ -54509,15 +54534,15 @@ ${content2}</tr>
   };
   __name(_Panel_lobbies, "Panel_lobbies");
   let Panel_lobbies = _Panel_lobbies;
-  var __defProp$w = Object.defineProperty;
-  var __decorateClass$w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$y = Object.defineProperty;
+  var __decorateClass$y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$w(target, key2, result);
+    if (result) __defProp$y(target, key2, result);
     return result;
-  }, "__decorateClass$w");
+  }, "__decorateClass$y");
   const _PanelLobbiesFeature = class _PanelLobbiesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -54646,19 +54671,19 @@ ${content2}</tr>
   };
   __name(_PanelLobbiesFeature, "PanelLobbiesFeature");
   let PanelLobbiesFeature = _PanelLobbiesFeature;
-  __decorateClass$w([
+  __decorateClass$y([
     inject(ElementsSetup)
   ], PanelLobbiesFeature.prototype, "_elements");
-  __decorateClass$w([
+  __decorateClass$y([
     inject(SocketService)
   ], PanelLobbiesFeature.prototype, "_socketService");
-  __decorateClass$w([
+  __decorateClass$y([
     inject(MemberService)
   ], PanelLobbiesFeature.prototype, "_memberService");
-  __decorateClass$w([
+  __decorateClass$y([
     inject(LobbyService)
   ], PanelLobbiesFeature.prototype, "_lobbyService");
-  __decorateClass$w([
+  __decorateClass$y([
     inject(ToastService)
   ], PanelLobbiesFeature.prototype, "_toastService");
   function get_each_context$h(ctx, list, i) {
@@ -54920,15 +54945,15 @@ ${content2}</tr>
   };
   __name(_Panel_news, "Panel_news");
   let Panel_news = _Panel_news;
-  var __defProp$v = Object.defineProperty;
-  var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$x = Object.defineProperty;
+  var __decorateClass$x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$v(target, key2, result);
+    if (result) __defProp$x(target, key2, result);
     return result;
-  }, "__decorateClass$v");
+  }, "__decorateClass$x");
   const _PanelNewsFeature = class _PanelNewsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -54964,21 +54989,21 @@ ${content2}</tr>
   };
   __name(_PanelNewsFeature, "PanelNewsFeature");
   let PanelNewsFeature = _PanelNewsFeature;
-  __decorateClass$v([
+  __decorateClass$x([
     inject(ElementsSetup)
   ], PanelNewsFeature.prototype, "_elements");
-  __decorateClass$v([
+  __decorateClass$x([
     inject(ApiDataSetup)
   ], PanelNewsFeature.prototype, "_apiDataSetup");
-  var __defProp$u = Object.defineProperty;
-  var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$w = Object.defineProperty;
+  var __decorateClass$w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$u(target, key2, result);
+    if (result) __defProp$w(target, key2, result);
     return result;
-  }, "__decorateClass$u");
+  }, "__decorateClass$w");
   const _PlayerIdsFeature = class _PlayerIdsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -55019,7 +55044,7 @@ ${content2}</tr>
   };
   __name(_PlayerIdsFeature, "PlayerIdsFeature");
   let PlayerIdsFeature = _PlayerIdsFeature;
-  __decorateClass$u([
+  __decorateClass$w([
     inject(PlayersService)
   ], PlayerIdsFeature.prototype, "_playersService");
   function create_fragment$y(ctx) {
@@ -55860,15 +55885,15 @@ ${content2}</tr>
   };
   __name(_User_info_management, "User_info_management");
   let User_info_management = _User_info_management;
-  var __defProp$t = Object.defineProperty;
-  var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$v = Object.defineProperty;
+  var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$t(target, key2, result);
+    if (result) __defProp$v(target, key2, result);
     return result;
-  }, "__decorateClass$t");
+  }, "__decorateClass$v");
   const _UserInfoFeature = class _UserInfoFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -55922,19 +55947,19 @@ ${content2}</tr>
   };
   __name(_UserInfoFeature, "UserInfoFeature");
   let UserInfoFeature = _UserInfoFeature;
-  __decorateClass$t([
+  __decorateClass$v([
     inject(ElementsSetup)
   ], UserInfoFeature.prototype, "_elementsSetup");
-  __decorateClass$t([
+  __decorateClass$v([
     inject(MemberService)
   ], UserInfoFeature.prototype, "_memberService");
-  __decorateClass$t([
+  __decorateClass$v([
     inject(TokenService)
   ], UserInfoFeature.prototype, "_tokenService");
-  __decorateClass$t([
+  __decorateClass$v([
     inject(GlobalSettingsService)
   ], UserInfoFeature.prototype, "_globalSettingsService");
-  __decorateClass$t([
+  __decorateClass$v([
     inject(ToastService)
   ], UserInfoFeature.prototype, "_toastService");
   function create_fragment$v(ctx) {
@@ -57432,15 +57457,15 @@ ${content2}</tr>
   };
   __name(_Controls_onboarding, "Controls_onboarding");
   let Controls_onboarding = _Controls_onboarding;
-  var __defProp$s = Object.defineProperty;
-  var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$u = Object.defineProperty;
+  var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$s(target, key2, result);
+    if (result) __defProp$u(target, key2, result);
     return result;
-  }, "__decorateClass$s");
+  }, "__decorateClass$u");
   const _ControlsOnboardingFeature = (_Fa = class extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -57649,16 +57674,16 @@ ${content2}</tr>
       (await this._viewInfoTask).complete();
     }
   }, __name(_Fa, "_ControlsOnboardingFeature"), _Fa);
-  __decorateClass$s([
+  __decorateClass$u([
     inject(ElementsSetup)
   ], _ControlsOnboardingFeature.prototype, "_elementsSetup");
-  __decorateClass$s([
+  __decorateClass$u([
     inject(ModalService)
   ], _ControlsOnboardingFeature.prototype, "_modalService");
-  __decorateClass$s([
+  __decorateClass$u([
     inject(FeaturesService)
   ], _ControlsOnboardingFeature.prototype, "_featuresService");
-  __decorateClass$s([
+  __decorateClass$u([
     inject(ToastService)
   ], _ControlsOnboardingFeature.prototype, "_toastService");
   let ControlsOnboardingFeature = _ControlsOnboardingFeature;
@@ -58132,15 +58157,15 @@ ${content2}</tr>
   };
   __name(_Controls_profiles, "Controls_profiles");
   let Controls_profiles = _Controls_profiles;
-  var __defProp$r = Object.defineProperty;
-  var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$t = Object.defineProperty;
+  var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$r(target, key2, result);
+    if (result) __defProp$t(target, key2, result);
     return result;
-  }, "__decorateClass$r");
+  }, "__decorateClass$t");
   const _ControlsProfilesFeature = class _ControlsProfilesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -58219,10 +58244,10 @@ ${content2}</tr>
   };
   __name(_ControlsProfilesFeature, "ControlsProfilesFeature");
   let ControlsProfilesFeature = _ControlsProfilesFeature;
-  __decorateClass$r([
+  __decorateClass$t([
     inject(ElementsSetup)
   ], ControlsProfilesFeature.prototype, "_elementsSetup");
-  __decorateClass$r([
+  __decorateClass$t([
     inject(ToastService)
   ], ControlsProfilesFeature.prototype, "_toastService");
   function create_if_block$c(ctx) {
@@ -60754,15 +60779,15 @@ ${content2}</tr>
   };
   __name(_Controls_settings, "Controls_settings");
   let Controls_settings = _Controls_settings;
-  var __defProp$q = Object.defineProperty;
-  var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$s = Object.defineProperty;
+  var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$q(target, key2, result);
+    if (result) __defProp$s(target, key2, result);
     return result;
-  }, "__decorateClass$q");
+  }, "__decorateClass$s");
   const _ControlsSettingsFeature = class _ControlsSettingsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -60908,30 +60933,30 @@ ${content2}</tr>
   };
   __name(_ControlsSettingsFeature, "ControlsSettingsFeature");
   let ControlsSettingsFeature = _ControlsSettingsFeature;
-  __decorateClass$q([
+  __decorateClass$s([
     inject(ElementsSetup)
   ], ControlsSettingsFeature.prototype, "_elementsSetup");
-  __decorateClass$q([
+  __decorateClass$s([
     inject(ModalService)
   ], ControlsSettingsFeature.prototype, "_modalService");
-  __decorateClass$q([
+  __decorateClass$s([
     inject(ToastService)
   ], ControlsSettingsFeature.prototype, "_toastService");
-  __decorateClass$q([
+  __decorateClass$s([
     inject(FeaturesService)
   ], ControlsSettingsFeature.prototype, "_featuresService");
-  __decorateClass$q([
+  __decorateClass$s([
     inject(GlobalSettingsService)
   ], ControlsSettingsFeature.prototype, "_settingsService");
-  var __defProp$p = Object.defineProperty;
-  var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$r = Object.defineProperty;
+  var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$p(target, key2, result);
+    if (result) __defProp$r(target, key2, result);
     return result;
-  }, "__decorateClass$p");
+  }, "__decorateClass$r");
   const _MandalaMod = class _MandalaMod extends TypoDrawMod {
     constructor() {
       super(...arguments);
@@ -60988,7 +61013,7 @@ ${content2}</tr>
   };
   __name(_MandalaMod, "MandalaMod");
   let MandalaMod = _MandalaMod;
-  __decorateClass$p([
+  __decorateClass$r([
     inject(ToolsService)
   ], MandalaMod.prototype, "_toolsService");
   const _NoiseMod = class _NoiseMod extends ConstantDrawMod {
@@ -61056,7 +61081,7 @@ ${content2}</tr>
     async applyEffect(line, pressure, style2) {
       const distance = await firstValueFrom(this._distanceSetting.changes$);
       const angle = await firstValueFrom(this._angleSetting.changes$);
-      const count = await firstValueFrom(this._lineCountSetting.changes$);
+      const count2 = await firstValueFrom(this._lineCountSetting.changes$);
       const dependency = await firstValueFrom(this._distanceDependencySetting.changes$);
       const lines = [];
       const offset = this.getOffset(distance, angle);
@@ -61064,7 +61089,7 @@ ${content2}</tr>
         offset[0] *= style2.size / 40;
         offset[1] *= style2.size / 40;
       }
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < count2; i++) {
         const offsetLine = {
           from: [line.from[0] + offset[0] * (i + 1), line.from[1] + offset[1] * (i + 1)],
           to: [line.to[0] + offset[0] * (i + 1), line.to[1] + offset[1] * (i + 1)]
@@ -61129,15 +61154,15 @@ ${content2}</tr>
   };
   __name(_RainbowMod, "RainbowMod");
   let RainbowMod = _RainbowMod;
-  var __defProp$o = Object.defineProperty;
-  var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$q = Object.defineProperty;
+  var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$o(target, key2, result);
+    if (result) __defProp$q(target, key2, result);
     return result;
-  }, "__decorateClass$o");
+  }, "__decorateClass$q");
   const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
     constructor() {
       super(...arguments);
@@ -61178,18 +61203,18 @@ ${content2}</tr>
   };
   __name(_RandomColorMod, "RandomColorMod");
   let RandomColorMod = _RandomColorMod;
-  __decorateClass$o([
+  __decorateClass$q([
     inject(ColorsService)
   ], RandomColorMod.prototype, "_colorsService");
-  var __defProp$n = Object.defineProperty;
-  var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$p = Object.defineProperty;
+  var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$n(target, key2, result);
+    if (result) __defProp$p(target, key2, result);
     return result;
-  }, "__decorateClass$n");
+  }, "__decorateClass$p");
   const _SculptMod = class _SculptMod extends TypoDrawMod {
     constructor() {
       super(...arguments);
@@ -61235,7 +61260,7 @@ ${content2}</tr>
   };
   __name(_SculptMod, "SculptMod");
   let SculptMod = _SculptMod;
-  __decorateClass$n([
+  __decorateClass$p([
     inject(ToolsService)
   ], SculptMod.prototype, "_toolsService");
   const _TiltMod = class _TiltMod extends ConstantDrawMod {
@@ -61354,15 +61379,15 @@ ${content2}</tr>
   };
   __name(_DotTool, "DotTool");
   let DotTool = _DotTool;
-  var __defProp$m = Object.defineProperty;
-  var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$o = Object.defineProperty;
+  var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$m(target, key2, result);
+    if (result) __defProp$o(target, key2, result);
     return result;
-  }, "__decorateClass$m");
+  }, "__decorateClass$o");
   const _GridTool = class _GridTool extends TypoDrawTool {
     constructor() {
       super(...arguments);
@@ -61406,7 +61431,7 @@ ${content2}</tr>
   };
   __name(_GridTool, "GridTool");
   let GridTool = _GridTool;
-  __decorateClass$m([
+  __decorateClass$o([
     inject(ToolsService)
   ], GridTool.prototype, "_toolsService");
   function create_fragment$l(ctx) {
@@ -62763,15 +62788,15 @@ ${content2}</tr>
   };
   __name(_Drawing_brush_lab_manage, "Drawing_brush_lab_manage");
   let Drawing_brush_lab_manage = _Drawing_brush_lab_manage;
-  var __defProp$l = Object.defineProperty;
-  var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$n = Object.defineProperty;
+  var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$l(target, key2, result);
+    if (result) __defProp$n(target, key2, result);
     return result;
-  }, "__decorateClass$l");
+  }, "__decorateClass$n");
   const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -62881,15 +62906,301 @@ ${content2}</tr>
   };
   __name(_DrawingBrushLabFeature, "DrawingBrushLabFeature");
   let DrawingBrushLabFeature = _DrawingBrushLabFeature;
-  __decorateClass$l([
+  __decorateClass$n([
     inject(ToolsService)
   ], DrawingBrushLabFeature.prototype, "_toolsService");
-  __decorateClass$l([
+  __decorateClass$n([
     inject(ElementsSetup)
   ], DrawingBrushLabFeature.prototype, "_elementsSetup");
-  __decorateClass$l([
+  __decorateClass$n([
     inject(ModalService)
   ], DrawingBrushLabFeature.prototype, "_modalService");
+  var __defProp$m = Object.defineProperty;
+  var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key2) : target;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+    if (kind && result) __defProp$m(target, key2, result);
+    return result;
+  }, "__decorateClass$m");
+  var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$1");
+  let LobbyStatsService = (_Ga = class {
+    constructor(loggerFactory2) {
+      __publicField(this, "_lobbyService");
+      __publicField(this, "_lobbyInteractedEventListener");
+      __publicField(this, "_lobbyStateChangedEventListener");
+      __publicField(this, "_wordGuessedEventListener");
+      __publicField(this, "_logger");
+      __publicField(this, "_guessTimeStats$", new Subject$1());
+      __publicField(this, "_guessCountStats$", new Subject$1());
+      __publicField(this, "_guessMessageGapStats$", new Subject$1());
+      __publicField(this, "_guessScoreStats$", new Subject$1());
+      __publicField(this, "_guessAccuracyStats$", new Subject$1());
+      __publicField(this, "_guessStreakStats$", new Subject$1());
+      __publicField(this, "_guessRankStats$", new Subject$1());
+      __publicField(this, "_drawTimeStats$", new Subject$1());
+      __publicField(this, "_drawGuessedPlayersStats$", new Subject$1());
+      __publicField(this, "_drawScoreStats$", new Subject$1());
+      __publicField(this, "_drawLikesStats$", new Subject$1());
+      __publicField(this, "_turnStandingScoreStats$", new Subject$1());
+      this._logger = loggerFactory2(this);
+    }
+    postConstruct() {
+      this.processEvents();
+    }
+    /**
+     * Create the common part of a lobby stat event
+     * @param lobby
+     * @param turnPlayerId
+     * @param targetPlayerId
+     * @private
+     */
+    createEventSignature(lobby, turnPlayerId, targetPlayerId) {
+      if (lobby.id === null) throw new Error("lobbyId must be provided");
+      return {
+        lobbyId: lobby.id,
+        lobbyRound: lobby.round,
+        playerId: targetPlayerId,
+        turnPlayerId,
+        timestamp: Date.now()
+      };
+    }
+    /**
+     * Process events from various sources to produce lobby stats events
+     * this processes events nevertheless if features subscribe or not
+     * this could be changed by exposing the observables directly
+     * would have the downside that multiple subscribers would cause multiple processing
+     * @private
+     */
+    processEvents() {
+      const lobbySource$ = this._lobbyService.lobby$.pipe(
+        withLatestFrom(this._lobbyStateChangedEventListener.events$.pipe(
+          map((event) => {
+            var _a2;
+            return (_a2 = event.data.drawingStarted) == null ? void 0 : _a2.drawerId;
+          }),
+          filter((id2) => id2 !== void 0)
+        )),
+        map(
+          ([lobby, turnPlayerId]) => lobby === null || lobby.id === null ? null : { lobby, turnPlayerId }
+        )
+      );
+      const lobby$ = new Subject$1();
+      lobbySource$.subscribe(lobby$);
+      const roundStartedSource$ = this._lobbyStateChangedEventListener.events$.pipe(
+        map((event) => event.data.drawingStarted),
+        filter((event) => event !== void 0)
+      );
+      const roundStarted$ = new Subject$1();
+      roundStartedSource$.subscribe(roundStarted$);
+      roundStarted$.pipe(
+        /* count likes */
+        switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
+          filter((event) => event.data.likeInteraction !== void 0),
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          count(),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([likes, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+              likes
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._drawLikesStats$.next(event));
+      roundStarted$.pipe(
+        /* count guessed players */
+        switchMap(() => this._wordGuessedEventListener.events$.pipe(
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          count(),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([guessedPlayers, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+              guessedPlayers
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._drawGuessedPlayersStats$.next(event));
+      roundStarted$.pipe(
+        /* record draw start time */
+        map(() => Date.now()),
+        /* measure time until drawing revealed */
+        switchMap((startTimestamp) => this._lobbyStateChangedEventListener.events$.pipe(
+          filter((event) => event.data.drawingRevealed !== void 0),
+          take(1),
+          map(() => Date.now() - startTimestamp)
+        )),
+        /* create event data */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null),
+        map(([time, lobbyData]) => {
+          if (lobbyData === null) throw new Error("lobbyData must be provided");
+          const event = {
+            ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+            drawTimeMs: time
+          };
+          return event;
+        })
+      ).subscribe((event) => this._drawTimeStats$.next(event));
+      roundStarted$.pipe(
+        /* get score of next reveal */
+        switchMap(() => this._lobbyStateChangedEventListener.events$.pipe(
+          map((event) => event.data.drawingRevealed),
+          filter((event) => event !== void 0),
+          take(1),
+          /* map in lobby details */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null)
+        ))
+      ).subscribe(([reveal, lobby]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        for (const score of reveal.scores) {
+          const event = {
+            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
+            score: score.rewarded
+          };
+          if (score.playerId === lobby.turnPlayerId) {
+            this._drawScoreStats$.next(event);
+          } else {
+            this._guessScoreStats$.next(event);
+          }
+          const standingEvent = {
+            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
+            score: score.score
+          };
+          this._turnStandingScoreStats$.next(standingEvent);
+        }
+      });
+      roundStarted$.pipe(
+        /* record start time */
+        map(() => Date.now()),
+        switchMap((startTimestamp) => this._wordGuessedEventListener.events$.pipe(
+          /* measure time until each guess */
+          map((event) => ({
+            playerId: event.data.playerId,
+            guessTimeMs: Date.now() - startTimestamp
+          })),
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([guessData, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, guessData.playerId),
+              guessTimeMs: guessData.guessTimeMs
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._guessTimeStats$.next(event));
+      this._lobbyStateChangedEventListener.events$.pipe(
+        map((event) => event.data.drawingRevealed),
+        filter((event) => event !== void 0),
+        take(1),
+        /* map in lobby details */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null)
+      ).subscribe(([reveal, lobby]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        const players = reveal.scores.filter((score) => score.playerId !== lobby.turnPlayerId).sort((a, b) => b.rewarded - a.rewarded).map((score) => score.playerId);
+        for (const score of reveal.scores) {
+          const index = players.indexOf(score.playerId);
+          if (index === -1) continue;
+          const eventSignature = this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId);
+          const event = {
+            ...eventSignature,
+            rank: index + 1
+          };
+          this._guessRankStats$.next(event);
+        }
+      });
+      this._guessRankStats$.subscribe((event) => console.log(event));
+    }
+  }, __name(_Ga, "LobbyStatsService"), _Ga);
+  __decorateClass$m([
+    inject(LobbyService)
+  ], LobbyStatsService.prototype, "_lobbyService", 2);
+  __decorateClass$m([
+    inject(LobbyInteractedEventListener)
+  ], LobbyStatsService.prototype, "_lobbyInteractedEventListener", 2);
+  __decorateClass$m([
+    inject(LobbyStateChangedEventListener)
+  ], LobbyStatsService.prototype, "_lobbyStateChangedEventListener", 2);
+  __decorateClass$m([
+    inject(WordGuessedEventListener)
+  ], LobbyStatsService.prototype, "_wordGuessedEventListener", 2);
+  __decorateClass$m([
+    postConstruct()
+  ], LobbyStatsService.prototype, "postConstruct", 1);
+  LobbyStatsService = __decorateClass$m([
+    injectable(),
+    __decorateParam$1(0, inject(loggerFactory))
+  ], LobbyStatsService);
+  var __defProp$l = Object.defineProperty;
+  var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key2, result) || result;
+    if (result) __defProp$l(target, key2, result);
+    return result;
+  }, "__decorateClass$l");
+  const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_toastService");
+      __publicField(this, "_elementsSetup");
+      __publicField(this, "_drawingService");
+      __publicField(this, "_lobbyStatsService");
+      __publicField(this, "name", "Lock Clear");
+      __publicField(this, "description", "Asks for confirmation before clearing the canvas in practice mode, and optionally in lobbies.");
+      __publicField(this, "tags", [
+        FeatureTag.DRAWING
+      ]);
+      __publicField(this, "featureId", 53);
+    }
+    async onActivate() {
+      this._drawingService.lockManualClear(true);
+    }
+    async onDestroy() {
+      this._drawingService.lockManualClear(false);
+    }
+  };
+  __name(_DrawingClearLockFeature, "DrawingClearLockFeature");
+  let DrawingClearLockFeature = _DrawingClearLockFeature;
+  __decorateClass$l([
+    inject(ToastService)
+  ], DrawingClearLockFeature.prototype, "_toastService");
+  __decorateClass$l([
+    inject(ElementsSetup)
+  ], DrawingClearLockFeature.prototype, "_elementsSetup");
+  __decorateClass$l([
+    inject(DrawingService)
+  ], DrawingClearLockFeature.prototype, "_drawingService");
+  __decorateClass$l([
+    inject(LobbyStatsService)
+  ], DrawingClearLockFeature.prototype, "_lobbyStatsService");
   var __defProp$k = Object.defineProperty;
   var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
@@ -63510,7 +63821,7 @@ ${content2}</tr>
     return result;
   }, "__decorateClass$i");
   var __decorateParam = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam");
-  let LobbyItemsService = (_Ga = class {
+  let LobbyItemsService = (_Ha = class {
     constructor(loggerFactory2) {
       __publicField(this, "_socketService");
       __publicField(this, "_logger");
@@ -63536,7 +63847,7 @@ ${content2}</tr>
     get onlineItems$() {
       return this._onlineItems$.asObservable();
     }
-  }, __name(_Ga, "LobbyItemsService"), _Ga);
+  }, __name(_Ha, "LobbyItemsService"), _Ha);
   __decorateClass$i([
     inject(SocketService)
   ], LobbyItemsService.prototype, "_socketService", 2);
@@ -65900,7 +66211,7 @@ ${content2}</tr>
       __publicField(this, "name", "Chat Highlighting");
       __publicField(this, "description", "Mentions like in Discord and highlighting your and friends' messages.");
       __publicField(this, "tags", [FeatureTag.INTERFACE, FeatureTag.SOCIAL]);
-      __publicField(this, "featureId", 53);
+      __publicField(this, "featureId", 54);
       __publicField(this, "_enablePopover", this.useSetting(
         new BooleanExtensionSetting("ping_suggestions", true, this).withName("Ping Autocomplete").withDescription("Shows an keyboard-navigable autocomplete window for pings.")
       ));
@@ -67670,8 +67981,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     if (kind && result) __defProp$c(target, key2, result);
     return result;
   }, "__decorateClass$c");
-  let TypoChallenge = (_Ha = class {
-  }, __name(_Ha, "TypoChallenge"), _Ha);
+  let TypoChallenge = (_Ia = class {
+  }, __name(_Ia, "TypoChallenge"), _Ia);
   TypoChallenge = __decorateClass$c([
     injectable()
   ], TypoChallenge);
@@ -71212,7 +71523,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     { type: ThemesService, scope: "singleton" },
     { type: LobbyConnectionService, scope: "singleton" },
     { type: ColorsService, scope: "singleton" },
-    { type: OnboardingService, scope: "singleton" }
+    { type: OnboardingService, scope: "singleton" },
+    { type: LobbyStatsService, scope: "singleton" }
   ).registerSetups(
     /* register setup dependencies to the application */
     PanelSetup,
@@ -71307,6 +71619,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     ChatAvatarsFeature,
     DrawingSizeHotkeysFeature,
     ChatPingFeature,
+    DrawingClearLockFeature,
     ChatMessageHighlightingFeature
   );
   interceptor.triggerPatchInjection();
