@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 00a0f6b
+// @version      27.1.3 beta-usc 6ad90f2
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 00a0f6b", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 6ad90f2", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -25789,7 +25789,7 @@
       __publicField(this, "_currentImageState$", new BehaviorSubject(null));
       __publicField(this, "_currentCommands$", new BehaviorSubject([]));
       __publicField(this, "_drawingState$", new BehaviorSubject("idle"));
-      __publicField(this, "_lockManualClear", new Subject$1());
+      __publicField(this, "_lockManualClear", new BehaviorSubject(false));
       __publicField(this, "_pasteInProgress$", new BehaviorSubject(false));
       __publicField(this, "_abortCommands$", new BehaviorSubject(Number.MAX_VALUE));
       __publicField(this, "_incomingDrawCommands$", new Subject$1());
@@ -26078,6 +26078,9 @@
     }
     lockManualClear(state) {
       this._lockManualClear.next(state);
+    }
+    get manualClearLocked$() {
+      return this._lockManualClear.asObservable();
     }
   }, __name(_oa, "DrawingService"), _oa);
   DrawingService = __decorateClass$10([
@@ -62915,248 +62918,108 @@ ${content2}</tr>
   __decorateClass$n([
     inject(ModalService)
   ], DrawingBrushLabFeature.prototype, "_modalService");
+  const _DomEventSubscription = class _DomEventSubscription {
+    constructor(_element, _eventType) {
+      __publicField(this, "_events$", new Subject$1());
+      __publicField(this, "_eventListener", this.onEvent.bind(this));
+      this._element = _element;
+      this._eventType = _eventType;
+      _element.addEventListener(_eventType, this._eventListener);
+    }
+    onEvent(arg) {
+      this._events$.next(arg);
+    }
+    get events$() {
+      return this._events$.asObservable();
+    }
+    /**
+     * Unsubscribe from the event and complete the observable.
+     * All subscribers will receive a complete notification.
+     */
+    unsubscribe() {
+      this._element.removeEventListener(this._eventType, this._eventListener);
+      this._events$.complete();
+    }
+  };
+  __name(_DomEventSubscription, "DomEventSubscription");
+  let DomEventSubscription = _DomEventSubscription;
   var __defProp$m = Object.defineProperty;
-  var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
   var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key2) : target;
+    var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
-        result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$m(target, key2, result);
+        result = decorator(target, key2, result) || result;
+    if (result) __defProp$m(target, key2, result);
     return result;
   }, "__decorateClass$m");
-  var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$1");
-  let LobbyStatsService = (_Ga = class {
-    constructor(loggerFactory2) {
+  const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_toastService");
+      __publicField(this, "_elementsSetup");
+      __publicField(this, "_drawingService");
       __publicField(this, "_lobbyService");
-      __publicField(this, "_lobbyInteractedEventListener");
-      __publicField(this, "_lobbyStateChangedEventListener");
-      __publicField(this, "_wordGuessedEventListener");
-      __publicField(this, "_logger");
-      __publicField(this, "_guessTimeStats$", new Subject$1());
-      __publicField(this, "_guessCountStats$", new Subject$1());
-      __publicField(this, "_guessMessageGapStats$", new Subject$1());
-      __publicField(this, "_guessScoreStats$", new Subject$1());
-      __publicField(this, "_guessAccuracyStats$", new Subject$1());
-      __publicField(this, "_guessStreakStats$", new Subject$1());
-      __publicField(this, "_guessRankStats$", new Subject$1());
-      __publicField(this, "_drawTimeStats$", new Subject$1());
-      __publicField(this, "_drawGuessedPlayersStats$", new Subject$1());
-      __publicField(this, "_drawScoreStats$", new Subject$1());
-      __publicField(this, "_drawLikesStats$", new Subject$1());
-      __publicField(this, "_turnStandingScoreStats$", new Subject$1());
-      this._logger = loggerFactory2(this);
+      __publicField(this, "name", "Lock Clear");
+      __publicField(this, "description", "Asks for confirmation before clearing the canvas in practice mode, and optionally in lobbies.");
+      __publicField(this, "tags", [
+        FeatureTag.DRAWING
+      ]);
+      __publicField(this, "featureId", 53);
+      __publicField(this, "_onlyPracticeLobbies", this.useSetting(
+        new BooleanExtensionSetting("ping_suggestions", true, this).withName("Lock only for practice lobbies").withDescription("Clearing in public/private lobbies will be enabled.")
+      ));
+      __publicField(this, "_clearButtonSubscription");
+      __publicField(this, "_clearLockedSubscription");
     }
-    postConstruct() {
-      this.processEvents();
-    }
-    /**
-     * Create the common part of a lobby stat event
-     * @param lobby
-     * @param turnPlayerId
-     * @param targetPlayerId
-     * @private
-     */
-    createEventSignature(lobby, turnPlayerId, targetPlayerId) {
-      if (lobby.id === null) throw new Error("lobbyId must be provided");
-      return {
-        lobbyId: lobby.id,
-        lobbyRound: lobby.round,
-        playerId: targetPlayerId,
-        turnPlayerId,
-        timestamp: Date.now()
-      };
-    }
-    /**
-     * Process events from various sources to produce lobby stats events
-     * this processes events nevertheless if features subscribe or not
-     * this could be changed by exposing the observables directly
-     * would have the downside that multiple subscribers would cause multiple processing
-     * @private
-     */
-    processEvents() {
-      const lobbySource$ = this._lobbyService.lobby$.pipe(
-        withLatestFrom(this._lobbyStateChangedEventListener.events$.pipe(
-          map((event) => {
-            var _a2;
-            return (_a2 = event.data.drawingStarted) == null ? void 0 : _a2.drawerId;
-          }),
-          filter((id2) => id2 !== void 0)
-        )),
-        map(
-          ([lobby, turnPlayerId]) => lobby === null || lobby.id === null ? null : { lobby, turnPlayerId }
-        )
-      );
-      const lobby$ = new Subject$1();
-      lobbySource$.subscribe(lobby$);
-      const roundStartedSource$ = this._lobbyStateChangedEventListener.events$.pipe(
-        map((event) => event.data.drawingStarted),
-        filter((event) => event !== void 0)
-      );
-      const roundStarted$ = new Subject$1();
-      roundStartedSource$.subscribe(roundStarted$);
-      roundStarted$.pipe(
-        /* count likes */
-        switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
-          filter((event) => event.data.likeInteraction !== void 0),
-          /* until drawing ended */
-          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
-            filter((event) => event.data.drawingRevealed !== void 0)
-          )),
-          count(),
-          /* create event data */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null),
-          map(([likes, lobbyData]) => {
-            if (lobbyData === null) throw new Error("lobbyData must be provided");
-            const event = {
-              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
-              likes
-            };
-            return event;
-          })
-        ))
-      ).subscribe((event) => this._drawLikesStats$.next(event));
-      roundStarted$.pipe(
-        /* count guessed players */
-        switchMap(() => this._wordGuessedEventListener.events$.pipe(
-          /* until drawing ended */
-          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
-            filter((event) => event.data.drawingRevealed !== void 0)
-          )),
-          count(),
-          /* create event data */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null),
-          map(([guessedPlayers, lobbyData]) => {
-            if (lobbyData === null) throw new Error("lobbyData must be provided");
-            const event = {
-              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
-              guessedPlayers
-            };
-            return event;
-          })
-        ))
-      ).subscribe((event) => this._drawGuessedPlayersStats$.next(event));
-      roundStarted$.pipe(
-        /* record draw start time */
-        map(() => Date.now()),
-        /* measure time until drawing revealed */
-        switchMap((startTimestamp) => this._lobbyStateChangedEventListener.events$.pipe(
-          filter((event) => event.data.drawingRevealed !== void 0),
-          take(1),
-          map(() => Date.now() - startTimestamp)
-        )),
-        /* create event data */
-        withLatestFrom(lobby$),
-        filter(([, lobbyData]) => lobbyData !== null),
-        map(([time, lobbyData]) => {
-          if (lobbyData === null) throw new Error("lobbyData must be provided");
-          const event = {
-            ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
-            drawTimeMs: time
-          };
-          return event;
-        })
-      ).subscribe((event) => this._drawTimeStats$.next(event));
-      roundStarted$.pipe(
-        /* get score of next reveal */
-        switchMap(() => this._lobbyStateChangedEventListener.events$.pipe(
-          map((event) => event.data.drawingRevealed),
-          filter((event) => event !== void 0),
-          take(1),
-          /* map in lobby details */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null)
-        ))
-      ).subscribe(([reveal, lobby]) => {
-        if (lobby === null) throw new Error("lobby must be provided");
-        for (const score of reveal.scores) {
-          const event = {
-            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
-            score: score.rewarded
-          };
-          if (score.playerId === lobby.turnPlayerId) {
-            this._drawScoreStats$.next(event);
-          } else {
-            this._guessScoreStats$.next(event);
-          }
-          const standingEvent = {
-            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
-            score: score.score
-          };
-          this._turnStandingScoreStats$.next(standingEvent);
+    async onActivate() {
+      const elements2 = await this._elementsSetup.complete();
+      this._clearButtonSubscription = new DomEventSubscription(elements2.clearButton, "click");
+      this._clearLockedSubscription = this._onlyPracticeLobbies.changes$.pipe(
+        combineLatestWith(this._lobbyService.lobby$)
+      ).subscribe(([onlyPractice, lobby]) => {
+        if (lobby === null) {
+          this._drawingService.lockManualClear(false);
+          return;
+        }
+        if (onlyPractice) {
+          this._drawingService.lockManualClear(lobby.id === null);
+        } else {
+          this._drawingService.lockManualClear(true);
         }
       });
-      roundStarted$.pipe(
-        /* record start time */
-        map(() => Date.now()),
-        switchMap((startTimestamp) => this._wordGuessedEventListener.events$.pipe(
-          /* measure time until each guess */
-          map((event) => ({
-            playerId: event.data.playerId,
-            guessTimeMs: Date.now() - startTimestamp
-          })),
-          /* until drawing ended */
-          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
-            filter((event) => event.data.drawingRevealed !== void 0)
-          )),
-          /* create event data */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null),
-          map(([guessData, lobbyData]) => {
-            if (lobbyData === null) throw new Error("lobbyData must be provided");
-            const event = {
-              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, guessData.playerId),
-              guessTimeMs: guessData.guessTimeMs
-            };
-            return event;
-          })
-        ))
-      ).subscribe((event) => this._guessTimeStats$.next(event));
-      this._lobbyStateChangedEventListener.events$.pipe(
-        map((event) => event.data.drawingRevealed),
-        filter((event) => event !== void 0),
-        take(1),
-        /* map in lobby details */
-        withLatestFrom(lobby$),
-        filter(([, lobbyData]) => lobbyData !== null)
-      ).subscribe(([reveal, lobby]) => {
-        if (lobby === null) throw new Error("lobby must be provided");
-        const players = reveal.scores.filter((score) => score.playerId !== lobby.turnPlayerId).sort((a, b) => b.rewarded - a.rewarded).map((score) => score.playerId);
-        for (const score of reveal.scores) {
-          const index = players.indexOf(score.playerId);
-          if (index === -1) continue;
-          const eventSignature = this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId);
-          const event = {
-            ...eventSignature,
-            rank: index + 1
-          };
-          this._guessRankStats$.next(event);
-        }
-      });
-      this._guessRankStats$.subscribe((event) => console.log(event));
+      this._clearButtonSubscription.events$.pipe(
+        withLatestFrom(this._drawingService.manualClearLocked$),
+        filter(([, locked]) => locked === true),
+        switchMap(async () => {
+          const toast = this._toastService.showConfirmToast("Clear drawing?", "Clearing the drawing cannot be undone.", 1e4);
+          return (await toast).result;
+        }),
+        filter((result) => result === true)
+      ).subscribe(() => this._drawingService.clearImage());
     }
-  }, __name(_Ga, "LobbyStatsService"), _Ga);
+    async onDestroy() {
+      var _a2, _b2;
+      this._drawingService.lockManualClear(false);
+      (_a2 = this._clearButtonSubscription) == null ? void 0 : _a2.unsubscribe();
+      this._clearButtonSubscription = void 0;
+      (_b2 = this._clearLockedSubscription) == null ? void 0 : _b2.unsubscribe();
+      this._clearLockedSubscription = void 0;
+    }
+  };
+  __name(_DrawingClearLockFeature, "DrawingClearLockFeature");
+  let DrawingClearLockFeature = _DrawingClearLockFeature;
+  __decorateClass$m([
+    inject(ToastService)
+  ], DrawingClearLockFeature.prototype, "_toastService");
+  __decorateClass$m([
+    inject(ElementsSetup)
+  ], DrawingClearLockFeature.prototype, "_elementsSetup");
+  __decorateClass$m([
+    inject(DrawingService)
+  ], DrawingClearLockFeature.prototype, "_drawingService");
   __decorateClass$m([
     inject(LobbyService)
-  ], LobbyStatsService.prototype, "_lobbyService", 2);
-  __decorateClass$m([
-    inject(LobbyInteractedEventListener)
-  ], LobbyStatsService.prototype, "_lobbyInteractedEventListener", 2);
-  __decorateClass$m([
-    inject(LobbyStateChangedEventListener)
-  ], LobbyStatsService.prototype, "_lobbyStateChangedEventListener", 2);
-  __decorateClass$m([
-    inject(WordGuessedEventListener)
-  ], LobbyStatsService.prototype, "_wordGuessedEventListener", 2);
-  __decorateClass$m([
-    postConstruct()
-  ], LobbyStatsService.prototype, "postConstruct", 1);
-  LobbyStatsService = __decorateClass$m([
-    injectable(),
-    __decorateParam$1(0, inject(loggerFactory))
-  ], LobbyStatsService);
+  ], DrawingClearLockFeature.prototype, "_lobbyService");
   var __defProp$l = Object.defineProperty;
   var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
@@ -63166,50 +63029,6 @@ ${content2}</tr>
     if (result) __defProp$l(target, key2, result);
     return result;
   }, "__decorateClass$l");
-  const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_toastService");
-      __publicField(this, "_elementsSetup");
-      __publicField(this, "_drawingService");
-      __publicField(this, "_lobbyStatsService");
-      __publicField(this, "name", "Lock Clear");
-      __publicField(this, "description", "Asks for confirmation before clearing the canvas in practice mode, and optionally in lobbies.");
-      __publicField(this, "tags", [
-        FeatureTag.DRAWING
-      ]);
-      __publicField(this, "featureId", 53);
-    }
-    async onActivate() {
-      this._drawingService.lockManualClear(true);
-    }
-    async onDestroy() {
-      this._drawingService.lockManualClear(false);
-    }
-  };
-  __name(_DrawingClearLockFeature, "DrawingClearLockFeature");
-  let DrawingClearLockFeature = _DrawingClearLockFeature;
-  __decorateClass$l([
-    inject(ToastService)
-  ], DrawingClearLockFeature.prototype, "_toastService");
-  __decorateClass$l([
-    inject(ElementsSetup)
-  ], DrawingClearLockFeature.prototype, "_elementsSetup");
-  __decorateClass$l([
-    inject(DrawingService)
-  ], DrawingClearLockFeature.prototype, "_drawingService");
-  __decorateClass$l([
-    inject(LobbyStatsService)
-  ], DrawingClearLockFeature.prototype, "_lobbyStatsService");
-  var __defProp$k = Object.defineProperty;
-  var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key2, result) || result;
-    if (result) __defProp$k(target, key2, result);
-    return result;
-  }, "__decorateClass$k");
   const _DrawingSizeHotkeysFeature = class _DrawingSizeHotkeysFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -63233,7 +63052,7 @@ ${content2}</tr>
   };
   __name(_DrawingSizeHotkeysFeature, "DrawingSizeHotkeysFeature");
   let DrawingSizeHotkeysFeature = _DrawingSizeHotkeysFeature;
-  __decorateClass$k([
+  __decorateClass$l([
     inject(DrawingService)
   ], DrawingSizeHotkeysFeature.prototype, "_drawingService");
   function get_each_context$a(ctx, list, i) {
@@ -63726,15 +63545,15 @@ ${content2}</tr>
   };
   __name(_Logging_info, "Logging_info");
   let Logging_info = _Logging_info;
-  var __defProp$j = Object.defineProperty;
-  var __decorateClass$j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$k = Object.defineProperty;
+  var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$j(target, key2, result);
+    if (result) __defProp$k(target, key2, result);
     return result;
-  }, "__decorateClass$j");
+  }, "__decorateClass$k");
   const _LoggingFeature = class _LoggingFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -63804,24 +63623,24 @@ ${content2}</tr>
   };
   __name(_LoggingFeature, "LoggingFeature");
   let LoggingFeature = _LoggingFeature;
-  __decorateClass$j([
+  __decorateClass$k([
     inject(LoggingService)
   ], LoggingFeature.prototype, "_loggingService");
-  __decorateClass$j([
+  __decorateClass$k([
     inject(ToastService)
   ], LoggingFeature.prototype, "_toastService");
-  var __defProp$i = Object.defineProperty;
-  var __getOwnPropDesc$1 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$1(target, key2) : target;
+  var __defProp$j = Object.defineProperty;
+  var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$i(target, key2, result);
+    if (kind && result) __defProp$j(target, key2, result);
     return result;
-  }, "__decorateClass$i");
-  var __decorateParam = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam");
-  let LobbyItemsService = (_Ha = class {
+  }, "__decorateClass$j");
+  var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$1");
+  let LobbyItemsService = (_Ga = class {
     constructor(loggerFactory2) {
       __publicField(this, "_socketService");
       __publicField(this, "_logger");
@@ -63847,16 +63666,16 @@ ${content2}</tr>
     get onlineItems$() {
       return this._onlineItems$.asObservable();
     }
-  }, __name(_Ha, "LobbyItemsService"), _Ha);
-  __decorateClass$i([
+  }, __name(_Ga, "LobbyItemsService"), _Ga);
+  __decorateClass$j([
     inject(SocketService)
   ], LobbyItemsService.prototype, "_socketService", 2);
-  __decorateClass$i([
+  __decorateClass$j([
     postConstruct()
   ], LobbyItemsService.prototype, "postConstruct", 1);
-  LobbyItemsService = __decorateClass$i([
+  LobbyItemsService = __decorateClass$j([
     injectable(),
-    __decorateParam(0, inject(loggerFactory))
+    __decorateParam$1(0, inject(loggerFactory))
   ], LobbyItemsService);
   function get_each_context$9(ctx, list, i) {
     const child_ctx = ctx.slice();
@@ -65112,15 +64931,15 @@ ${content2}</tr>
   };
   __name(_Filter_search, "Filter_search");
   let Filter_search = _Filter_search;
-  var __defProp$h = Object.defineProperty;
-  var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$i = Object.defineProperty;
+  var __decorateClass$i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$h(target, key2, result);
+    if (result) __defProp$i(target, key2, result);
     return result;
-  }, "__decorateClass$h");
+  }, "__decorateClass$i");
   const _PanelFiltersFeature = class _PanelFiltersFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -65430,46 +65249,21 @@ ${content2}</tr>
   };
   __name(_PanelFiltersFeature, "PanelFiltersFeature");
   let PanelFiltersFeature = _PanelFiltersFeature;
-  __decorateClass$h([
+  __decorateClass$i([
     inject(ElementsSetup)
   ], PanelFiltersFeature.prototype, "_elements");
-  __decorateClass$h([
+  __decorateClass$i([
     inject(LobbyService)
   ], PanelFiltersFeature.prototype, "_lobbyService");
-  __decorateClass$h([
+  __decorateClass$i([
     inject(ModalService)
   ], PanelFiltersFeature.prototype, "_modalService");
-  __decorateClass$h([
+  __decorateClass$i([
     inject(ToastService)
   ], PanelFiltersFeature.prototype, "_toastService");
-  __decorateClass$h([
+  __decorateClass$i([
     inject(LobbyItemsService)
   ], PanelFiltersFeature.prototype, "_lobbyItemsService");
-  const _DomEventSubscription = class _DomEventSubscription {
-    constructor(_element, _eventType) {
-      __publicField(this, "_events$", new Subject$1());
-      __publicField(this, "_eventListener", this.onEvent.bind(this));
-      this._element = _element;
-      this._eventType = _eventType;
-      _element.addEventListener(_eventType, this._eventListener);
-    }
-    onEvent(arg) {
-      this._events$.next(arg);
-    }
-    get events$() {
-      return this._events$.asObservable();
-    }
-    /**
-     * Unsubscribe from the event and complete the observable.
-     * All subscribers will receive a complete notification.
-     */
-    unsubscribe() {
-      this._element.removeEventListener(this._eventType, this._eventListener);
-      this._events$.complete();
-    }
-  };
-  __name(_DomEventSubscription, "DomEventSubscription");
-  let DomEventSubscription = _DomEventSubscription;
   function get_each_context$7(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[6] = list[i];
@@ -66193,15 +65987,15 @@ ${content2}</tr>
   };
   __name(_Vip_players_manage, "Vip_players_manage");
   let Vip_players_manage = _Vip_players_manage;
-  var __defProp$g = Object.defineProperty;
-  var __decorateClass$g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$h = Object.defineProperty;
+  var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$g(target, key2, result);
+    if (result) __defProp$h(target, key2, result);
     return result;
-  }, "__decorateClass$g");
+  }, "__decorateClass$h");
   const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -66490,13 +66284,13 @@ ${content2}</tr>
   };
   __name(_ChatMessageHighlightingFeature, "ChatMessageHighlightingFeature");
   let ChatMessageHighlightingFeature = _ChatMessageHighlightingFeature;
-  __decorateClass$g([
+  __decorateClass$h([
     inject(ElementsSetup)
   ], ChatMessageHighlightingFeature.prototype, "_elements");
-  __decorateClass$g([
+  __decorateClass$h([
     inject(LobbyService)
   ], ChatMessageHighlightingFeature.prototype, "_lobbySvc");
-  __decorateClass$g([
+  __decorateClass$h([
     inject(ChatService)
   ], ChatMessageHighlightingFeature.prototype, "_chatSvc");
   const isAnonymousPlayerIdentification = /* @__PURE__ */ __name((value) => {
@@ -67122,15 +66916,15 @@ ${content2}</tr>
   };
   __name(_Player_awards_award_picker, "Player_awards_award_picker");
   let Player_awards_award_picker = _Player_awards_award_picker;
-  var __defProp$f = Object.defineProperty;
-  var __decorateClass$f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$g = Object.defineProperty;
+  var __decorateClass$g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$f(target, key2, result);
+    if (result) __defProp$g(target, key2, result);
     return result;
-  }, "__decorateClass$f");
+  }, "__decorateClass$g");
   const _PlayerAwardsFeature = class _PlayerAwardsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -67346,43 +67140,43 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerAwardsFeature, "PlayerAwardsFeature");
   let PlayerAwardsFeature = _PlayerAwardsFeature;
-  __decorateClass$f([
+  __decorateClass$g([
     inject(ElementsSetup)
   ], PlayerAwardsFeature.prototype, "_elementsSetup");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(ApiDataSetup)
   ], PlayerAwardsFeature.prototype, "_apiDataSetup");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(LobbyConnectionService)
   ], PlayerAwardsFeature.prototype, "_lobbyConnectionService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(ChatService)
   ], PlayerAwardsFeature.prototype, "_chatService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(ToastService)
   ], PlayerAwardsFeature.prototype, "_toastService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(LobbyItemsService)
   ], PlayerAwardsFeature.prototype, "_lobbyItemsService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(LobbyService)
   ], PlayerAwardsFeature.prototype, "_lobbyService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(PlayersService)
   ], PlayerAwardsFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(MemberService)
   ], PlayerAwardsFeature.prototype, "_memberService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(ApiService)
   ], PlayerAwardsFeature.prototype, "_apiService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(ModalService)
   ], PlayerAwardsFeature.prototype, "_modalService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(CloudService)
   ], PlayerAwardsFeature.prototype, "_cloudService");
-  __decorateClass$f([
+  __decorateClass$g([
     inject(LobbyLeftEventListener)
   ], PlayerAwardsFeature.prototype, "_lobbyLeftEventListener");
   function create_if_block$3(ctx) {
@@ -67499,15 +67293,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Scene_container, "Scene_container");
   let Scene_container = _Scene_container;
-  var __defProp$e = Object.defineProperty;
-  var __decorateClass$e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$f = Object.defineProperty;
+  var __decorateClass$f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$e(target, key2, result);
+    if (result) __defProp$f(target, key2, result);
     return result;
-  }, "__decorateClass$e");
+  }, "__decorateClass$f");
   const _PlayerScenesFeature = class _PlayerScenesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -67647,16 +67441,16 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerScenesFeature, "PlayerScenesFeature");
   let PlayerScenesFeature = _PlayerScenesFeature;
-  __decorateClass$e([
+  __decorateClass$f([
     inject(ApiDataSetup)
   ], PlayerScenesFeature.prototype, "_apiDataSetup");
-  __decorateClass$e([
+  __decorateClass$f([
     inject(LobbyItemsService)
   ], PlayerScenesFeature.prototype, "_lobbyItemsService");
-  __decorateClass$e([
+  __decorateClass$f([
     inject(PlayersService)
   ], PlayerScenesFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$e([
+  __decorateClass$f([
     inject(MemberService)
   ], PlayerScenesFeature.prototype, "_memberService");
   function get_each_context$3(ctx, list, i) {
@@ -67814,15 +67608,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Sprite_container, "Sprite_container");
   let Sprite_container = _Sprite_container;
-  var __defProp$d = Object.defineProperty;
-  var __decorateClass$d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$e = Object.defineProperty;
+  var __decorateClass$e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$d(target, key2, result);
+    if (result) __defProp$e(target, key2, result);
     return result;
-  }, "__decorateClass$d");
+  }, "__decorateClass$e");
   const _PlayerSpritesFeature = class _PlayerSpritesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -67959,42 +67753,42 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerSpritesFeature, "PlayerSpritesFeature");
   let PlayerSpritesFeature = _PlayerSpritesFeature;
-  __decorateClass$d([
+  __decorateClass$e([
     inject(ApiDataSetup)
   ], PlayerSpritesFeature.prototype, "_apiDataSetup");
-  __decorateClass$d([
+  __decorateClass$e([
     inject(LobbyItemsService)
   ], PlayerSpritesFeature.prototype, "_lobbyItemsService");
-  __decorateClass$d([
+  __decorateClass$e([
     inject(PlayersService)
   ], PlayerSpritesFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$d([
+  __decorateClass$e([
     inject(MemberService)
   ], PlayerSpritesFeature.prototype, "_memberService");
-  var __defProp$c = Object.defineProperty;
-  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-  var __decorateClass$c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key2) : target;
+  var __defProp$d = Object.defineProperty;
+  var __getOwnPropDesc$1 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$1(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$c(target, key2, result);
+    if (kind && result) __defProp$d(target, key2, result);
     return result;
-  }, "__decorateClass$c");
-  let TypoChallenge = (_Ia = class {
-  }, __name(_Ia, "TypoChallenge"), _Ia);
-  TypoChallenge = __decorateClass$c([
+  }, "__decorateClass$d");
+  let TypoChallenge = (_Ha = class {
+  }, __name(_Ha, "TypoChallenge"), _Ha);
+  TypoChallenge = __decorateClass$d([
     injectable()
   ], TypoChallenge);
-  var __defProp$b = Object.defineProperty;
-  var __decorateClass$b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$c = Object.defineProperty;
+  var __decorateClass$c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$b(target, key2, result);
+    if (result) __defProp$c(target, key2, result);
     return result;
-  }, "__decorateClass$b");
+  }, "__decorateClass$c");
   const _BlindGuessChallenge = class _BlindGuessChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68028,24 +67822,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_BlindGuessChallenge, "BlindGuessChallenge");
   let BlindGuessChallenge = _BlindGuessChallenge;
-  __decorateClass$b([
+  __decorateClass$c([
     inject(LobbyService)
   ], BlindGuessChallenge.prototype, "_lobbyService");
-  __decorateClass$b([
+  __decorateClass$c([
     inject(DrawingService)
   ], BlindGuessChallenge.prototype, "_drawingService");
-  __decorateClass$b([
+  __decorateClass$c([
     inject(ElementsSetup)
   ], BlindGuessChallenge.prototype, "_elementsSetup");
-  var __defProp$a = Object.defineProperty;
-  var __decorateClass$a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$b = Object.defineProperty;
+  var __decorateClass$b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$a(target, key2, result);
+    if (result) __defProp$b(target, key2, result);
     return result;
-  }, "__decorateClass$a");
+  }, "__decorateClass$b");
   const _DeafGuessChallenge = class _DeafGuessChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68101,24 +67895,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DeafGuessChallenge, "DeafGuessChallenge");
   let DeafGuessChallenge = _DeafGuessChallenge;
-  __decorateClass$a([
+  __decorateClass$b([
     inject(LobbyService)
   ], DeafGuessChallenge.prototype, "_lobbyService");
-  __decorateClass$a([
+  __decorateClass$b([
     inject(DrawingService)
   ], DeafGuessChallenge.prototype, "_drawingService");
-  __decorateClass$a([
+  __decorateClass$b([
     inject(ChatService)
   ], DeafGuessChallenge.prototype, "_chatService");
-  var __defProp$9 = Object.defineProperty;
-  var __decorateClass$9 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$a = Object.defineProperty;
+  var __decorateClass$a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$9(target, key2, result);
+    if (result) __defProp$a(target, key2, result);
     return result;
-  }, "__decorateClass$9");
+  }, "__decorateClass$a");
   const _DontClearChallenge = class _DontClearChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68153,24 +67947,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DontClearChallenge, "DontClearChallenge");
   let DontClearChallenge = _DontClearChallenge;
-  __decorateClass$9([
+  __decorateClass$a([
     inject(CanvasClearedEventListener)
   ], DontClearChallenge.prototype, "_canvasClearedEvent");
-  __decorateClass$9([
+  __decorateClass$a([
     inject(DrawingService)
   ], DontClearChallenge.prototype, "_drawingService");
-  __decorateClass$9([
+  __decorateClass$a([
     inject(ToastService)
   ], DontClearChallenge.prototype, "_toastService");
-  var __defProp$8 = Object.defineProperty;
-  var __decorateClass$8 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$9 = Object.defineProperty;
+  var __decorateClass$9 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$8(target, key2, result);
+    if (result) __defProp$9(target, key2, result);
     return result;
-  }, "__decorateClass$8");
+  }, "__decorateClass$9");
   const _DrunkVisionChallenge = class _DrunkVisionChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68216,24 +68010,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DrunkVisionChallenge, "DrunkVisionChallenge");
   let DrunkVisionChallenge = _DrunkVisionChallenge;
-  __decorateClass$8([
+  __decorateClass$9([
     inject(LobbyService)
   ], DrunkVisionChallenge.prototype, "_lobbyService");
-  __decorateClass$8([
+  __decorateClass$9([
     inject(DrawingService)
   ], DrunkVisionChallenge.prototype, "_drawingService");
-  __decorateClass$8([
+  __decorateClass$9([
     inject(ElementsSetup)
   ], DrunkVisionChallenge.prototype, "_elementsSetup");
-  var __defProp$7 = Object.defineProperty;
-  var __decorateClass$7 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$8 = Object.defineProperty;
+  var __decorateClass$8 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$7(target, key2, result);
+    if (result) __defProp$8(target, key2, result);
     return result;
-  }, "__decorateClass$7");
+  }, "__decorateClass$8");
   const _MonochromeChallenge = class _MonochromeChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68271,24 +68065,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_MonochromeChallenge, "MonochromeChallenge");
   let MonochromeChallenge = _MonochromeChallenge;
-  __decorateClass$7([
+  __decorateClass$8([
     inject(LobbyService)
   ], MonochromeChallenge.prototype, "_lobbyService");
-  __decorateClass$7([
+  __decorateClass$8([
     inject(DrawingService)
   ], MonochromeChallenge.prototype, "_drawingService");
-  __decorateClass$7([
+  __decorateClass$8([
     inject(ColorsService)
   ], MonochromeChallenge.prototype, "_colorsService");
-  var __defProp$6 = Object.defineProperty;
-  var __decorateClass$6 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$7 = Object.defineProperty;
+  var __decorateClass$7 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$6(target, key2, result);
+    if (result) __defProp$7(target, key2, result);
     return result;
-  }, "__decorateClass$6");
+  }, "__decorateClass$7");
   const _OneShotChallenge = class _OneShotChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68334,13 +68128,13 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_OneShotChallenge, "OneShotChallenge");
   let OneShotChallenge = _OneShotChallenge;
-  __decorateClass$6([
+  __decorateClass$7([
     inject(LobbyService)
   ], OneShotChallenge.prototype, "_lobbyService");
-  __decorateClass$6([
+  __decorateClass$7([
     inject(DrawingService)
   ], OneShotChallenge.prototype, "_drawingService");
-  __decorateClass$6([
+  __decorateClass$7([
     inject(MessageSentEventListener)
   ], OneShotChallenge.prototype, "_messageSentEventListener");
   function get_each_context$2(ctx, list, i) {
@@ -68537,15 +68331,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Toolbar_challenges, "Toolbar_challenges");
   let Toolbar_challenges = _Toolbar_challenges;
-  var __defProp$5 = Object.defineProperty;
-  var __decorateClass$5 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$6 = Object.defineProperty;
+  var __decorateClass$6 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$5(target, key2, result);
+    if (result) __defProp$6(target, key2, result);
     return result;
-  }, "__decorateClass$5");
+  }, "__decorateClass$6");
   const _ToolbarChallengesFeature = class _ToolbarChallengesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -68706,21 +68500,21 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarChallengesFeature, "ToolbarChallengesFeature");
   let ToolbarChallengesFeature = _ToolbarChallengesFeature;
-  __decorateClass$5([
+  __decorateClass$6([
     inject(ElementsSetup)
   ], ToolbarChallengesFeature.prototype, "_elementsSetup");
-  __decorateClass$5([
+  __decorateClass$6([
     inject(ExtensionContainer)
   ], ToolbarChallengesFeature.prototype, "_container");
-  var __defProp$4 = Object.defineProperty;
-  var __decorateClass$4 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$5 = Object.defineProperty;
+  var __decorateClass$5 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$4(target, key2, result);
+    if (result) __defProp$5(target, key2, result);
     return result;
-  }, "__decorateClass$4");
+  }, "__decorateClass$5");
   const _ToolbarFullscreenFeature = class _ToolbarFullscreenFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -68776,7 +68570,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarFullscreenFeature, "ToolbarFullscreenFeature");
   let ToolbarFullscreenFeature = _ToolbarFullscreenFeature;
-  __decorateClass$4([
+  __decorateClass$5([
     inject(ElementsSetup)
   ], ToolbarFullscreenFeature.prototype, "_elementsSetup");
   const chooseFile = /* @__PURE__ */ __name(async (accept, multiple) => {
@@ -69517,15 +69311,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Imagelab_position_picker, "Imagelab_position_picker");
   let Imagelab_position_picker = _Imagelab_position_picker;
-  var __defProp$3 = Object.defineProperty;
-  var __decorateClass$3 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$4 = Object.defineProperty;
+  var __decorateClass$4 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$3(target, key2, result);
+    if (result) __defProp$4(target, key2, result);
     return result;
-  }, "__decorateClass$3");
+  }, "__decorateClass$4");
   const _ToolbarImageLabFeature = class _ToolbarImageLabFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -69833,28 +69627,28 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarImageLabFeature, "ToolbarImageLabFeature");
   let ToolbarImageLabFeature = _ToolbarImageLabFeature;
-  __decorateClass$3([
+  __decorateClass$4([
     inject(ElementsSetup)
   ], ToolbarImageLabFeature.prototype, "_elementsSetup");
-  __decorateClass$3([
+  __decorateClass$4([
     inject(DrawingService)
   ], ToolbarImageLabFeature.prototype, "_drawingService");
-  __decorateClass$3([
+  __decorateClass$4([
     inject(ImagelabService)
   ], ToolbarImageLabFeature.prototype, "_drawCommandsService");
-  __decorateClass$3([
+  __decorateClass$4([
     inject(ToastService)
   ], ToolbarImageLabFeature.prototype, "_toastService");
-  __decorateClass$3([
+  __decorateClass$4([
     inject(ModalService)
   ], ToolbarImageLabFeature.prototype, "_modalService");
-  __decorateClass$3([
+  __decorateClass$4([
     inject(PrioritizedCanvasEventsSetup)
   ], ToolbarImageLabFeature.prototype, "_canvasEventsSetup");
-  __decorateClass$3([
+  __decorateClass$4([
     inject(LobbyService)
   ], ToolbarImageLabFeature.prototype, "_lobbyService");
-  __decorateClass$3([
+  __decorateClass$4([
     inject(GlobalSettingsService)
   ], ToolbarImageLabFeature.prototype, "_globalSettingsService");
   function get_each_context(ctx, list, i) {
@@ -70522,15 +70316,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Toolbar_imagepost, "Toolbar_imagepost");
   let Toolbar_imagepost = _Toolbar_imagepost;
-  var __defProp$2 = Object.defineProperty;
-  var __decorateClass$2 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$3 = Object.defineProperty;
+  var __decorateClass$3 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$2(target, key2, result);
+    if (result) __defProp$3(target, key2, result);
     return result;
-  }, "__decorateClass$2");
+  }, "__decorateClass$3");
   const _ToolbarImagePostFeature = class _ToolbarImagePostFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -70665,25 +70459,25 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarImagePostFeature, "ToolbarImagePostFeature");
   let ToolbarImagePostFeature = _ToolbarImagePostFeature;
-  __decorateClass$2([
+  __decorateClass$3([
     inject(ElementsSetup)
   ], ToolbarImagePostFeature.prototype, "_elementsSetup");
-  __decorateClass$2([
+  __decorateClass$3([
     inject(ImagePostService)
   ], ToolbarImagePostFeature.prototype, "_imagePostService");
-  __decorateClass$2([
+  __decorateClass$3([
     inject(ImageFinishedService)
   ], ToolbarImagePostFeature.prototype, "_imageFinishedService");
-  __decorateClass$2([
+  __decorateClass$3([
     inject(DrawingService)
   ], ToolbarImagePostFeature.prototype, "_drawingService");
-  __decorateClass$2([
+  __decorateClass$3([
     inject(MemberService)
   ], ToolbarImagePostFeature.prototype, "_memberService");
-  __decorateClass$2([
+  __decorateClass$3([
     inject(ApiService)
   ], ToolbarImagePostFeature.prototype, "_apiService");
-  __decorateClass$2([
+  __decorateClass$3([
     inject(ToastService)
   ], ToolbarImagePostFeature.prototype, "_toastService");
   const copyBlobToClipboard = /* @__PURE__ */ __name(async (blob) => {
@@ -70878,15 +70672,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Toolbar_save, "Toolbar_save");
   let Toolbar_save = _Toolbar_save;
-  var __defProp$1 = Object.defineProperty;
-  var __decorateClass$1 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$2 = Object.defineProperty;
+  var __decorateClass$2 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1(target, key2, result);
+    if (result) __defProp$2(target, key2, result);
     return result;
-  }, "__decorateClass$1");
+  }, "__decorateClass$2");
   const _ToolbarSaveFeature = class _ToolbarSaveFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -71153,27 +70947,269 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarSaveFeature, "ToolbarSaveFeature");
   let ToolbarSaveFeature = _ToolbarSaveFeature;
-  __decorateClass$1([
+  __decorateClass$2([
     inject(ElementsSetup)
   ], ToolbarSaveFeature.prototype, "_elementsSetup");
-  __decorateClass$1([
+  __decorateClass$2([
     inject(DrawingService)
   ], ToolbarSaveFeature.prototype, "_drawingService");
-  __decorateClass$1([
+  __decorateClass$2([
     inject(LobbyService)
   ], ToolbarSaveFeature.prototype, "_lobbyService");
-  __decorateClass$1([
+  __decorateClass$2([
     inject(ToastService)
   ], ToolbarSaveFeature.prototype, "_toastService");
-  __decorateClass$1([
+  __decorateClass$2([
     inject(CloudService)
   ], ToolbarSaveFeature.prototype, "_cloudService");
-  __decorateClass$1([
+  __decorateClass$2([
     inject(MemberService)
   ], ToolbarSaveFeature.prototype, "_memberService");
-  __decorateClass$1([
+  __decorateClass$2([
     inject(ImageFinishedService)
   ], ToolbarSaveFeature.prototype, "_imageFinishedService");
+  var __defProp$1 = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __decorateClass$1 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key2) : target;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+    if (kind && result) __defProp$1(target, key2, result);
+    return result;
+  }, "__decorateClass$1");
+  var __decorateParam = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam");
+  let LobbyStatsService = (_Ia = class {
+    constructor(loggerFactory2) {
+      __publicField(this, "_lobbyService");
+      __publicField(this, "_lobbyInteractedEventListener");
+      __publicField(this, "_lobbyStateChangedEventListener");
+      __publicField(this, "_wordGuessedEventListener");
+      __publicField(this, "_logger");
+      __publicField(this, "_guessTimeStats$", new Subject$1());
+      __publicField(this, "_guessCountStats$", new Subject$1());
+      __publicField(this, "_guessMessageGapStats$", new Subject$1());
+      __publicField(this, "_guessScoreStats$", new Subject$1());
+      __publicField(this, "_guessAccuracyStats$", new Subject$1());
+      __publicField(this, "_guessStreakStats$", new Subject$1());
+      __publicField(this, "_guessRankStats$", new Subject$1());
+      __publicField(this, "_drawTimeStats$", new Subject$1());
+      __publicField(this, "_drawGuessedPlayersStats$", new Subject$1());
+      __publicField(this, "_drawScoreStats$", new Subject$1());
+      __publicField(this, "_drawLikesStats$", new Subject$1());
+      __publicField(this, "_turnStandingScoreStats$", new Subject$1());
+      this._logger = loggerFactory2(this);
+    }
+    postConstruct() {
+      this.processEvents();
+    }
+    /**
+     * Create the common part of a lobby stat event
+     * @param lobby
+     * @param turnPlayerId
+     * @param targetPlayerId
+     * @private
+     */
+    createEventSignature(lobby, turnPlayerId, targetPlayerId) {
+      if (lobby.id === null) throw new Error("lobbyId must be provided");
+      return {
+        lobbyId: lobby.id,
+        lobbyRound: lobby.round,
+        playerId: targetPlayerId,
+        turnPlayerId,
+        timestamp: Date.now()
+      };
+    }
+    /**
+     * Process events from various sources to produce lobby stats events
+     * this processes events nevertheless if features subscribe or not
+     * this could be changed by exposing the observables directly
+     * would have the downside that multiple subscribers would cause multiple processing
+     * @private
+     */
+    processEvents() {
+      const lobbySource$ = this._lobbyService.lobby$.pipe(
+        withLatestFrom(this._lobbyStateChangedEventListener.events$.pipe(
+          map((event) => {
+            var _a2;
+            return (_a2 = event.data.drawingStarted) == null ? void 0 : _a2.drawerId;
+          }),
+          filter((id2) => id2 !== void 0)
+        )),
+        map(
+          ([lobby, turnPlayerId]) => lobby === null || lobby.id === null ? null : { lobby, turnPlayerId }
+        )
+      );
+      const lobby$ = new Subject$1();
+      lobbySource$.subscribe(lobby$);
+      const roundStartedSource$ = this._lobbyStateChangedEventListener.events$.pipe(
+        map((event) => event.data.drawingStarted),
+        filter((event) => event !== void 0)
+      );
+      const roundStarted$ = new Subject$1();
+      roundStartedSource$.subscribe(roundStarted$);
+      roundStarted$.pipe(
+        /* count likes */
+        switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
+          filter((event) => event.data.likeInteraction !== void 0),
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          count(),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([likes, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+              likes
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._drawLikesStats$.next(event));
+      roundStarted$.pipe(
+        /* count guessed players */
+        switchMap(() => this._wordGuessedEventListener.events$.pipe(
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          count(),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([guessedPlayers, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+              guessedPlayers
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._drawGuessedPlayersStats$.next(event));
+      roundStarted$.pipe(
+        /* record draw start time */
+        map(() => Date.now()),
+        /* measure time until drawing revealed */
+        switchMap((startTimestamp) => this._lobbyStateChangedEventListener.events$.pipe(
+          filter((event) => event.data.drawingRevealed !== void 0),
+          take(1),
+          map(() => Date.now() - startTimestamp)
+        )),
+        /* create event data */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null),
+        map(([time, lobbyData]) => {
+          if (lobbyData === null) throw new Error("lobbyData must be provided");
+          const event = {
+            ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+            drawTimeMs: time
+          };
+          return event;
+        })
+      ).subscribe((event) => this._drawTimeStats$.next(event));
+      roundStarted$.pipe(
+        /* get score of next reveal */
+        switchMap(() => this._lobbyStateChangedEventListener.events$.pipe(
+          map((event) => event.data.drawingRevealed),
+          filter((event) => event !== void 0),
+          take(1),
+          /* map in lobby details */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null)
+        ))
+      ).subscribe(([reveal, lobby]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        for (const score of reveal.scores) {
+          const event = {
+            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
+            score: score.rewarded
+          };
+          if (score.playerId === lobby.turnPlayerId) {
+            this._drawScoreStats$.next(event);
+          } else {
+            this._guessScoreStats$.next(event);
+          }
+          const standingEvent = {
+            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
+            score: score.score
+          };
+          this._turnStandingScoreStats$.next(standingEvent);
+        }
+      });
+      roundStarted$.pipe(
+        /* record start time */
+        map(() => Date.now()),
+        switchMap((startTimestamp) => this._wordGuessedEventListener.events$.pipe(
+          /* measure time until each guess */
+          map((event) => ({
+            playerId: event.data.playerId,
+            guessTimeMs: Date.now() - startTimestamp
+          })),
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([guessData, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, guessData.playerId),
+              guessTimeMs: guessData.guessTimeMs
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._guessTimeStats$.next(event));
+      this._lobbyStateChangedEventListener.events$.pipe(
+        map((event) => event.data.drawingRevealed),
+        filter((event) => event !== void 0),
+        take(1),
+        /* map in lobby details */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null)
+      ).subscribe(([reveal, lobby]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        const players = reveal.scores.filter((score) => score.playerId !== lobby.turnPlayerId).sort((a, b) => b.rewarded - a.rewarded).map((score) => score.playerId);
+        for (const score of reveal.scores) {
+          const index = players.indexOf(score.playerId);
+          if (index === -1) continue;
+          const eventSignature = this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId);
+          const event = {
+            ...eventSignature,
+            rank: index + 1
+          };
+          this._guessRankStats$.next(event);
+        }
+      });
+      this._guessRankStats$.subscribe((event) => console.log(event));
+    }
+  }, __name(_Ia, "LobbyStatsService"), _Ia);
+  __decorateClass$1([
+    inject(LobbyService)
+  ], LobbyStatsService.prototype, "_lobbyService", 2);
+  __decorateClass$1([
+    inject(LobbyInteractedEventListener)
+  ], LobbyStatsService.prototype, "_lobbyInteractedEventListener", 2);
+  __decorateClass$1([
+    inject(LobbyStateChangedEventListener)
+  ], LobbyStatsService.prototype, "_lobbyStateChangedEventListener", 2);
+  __decorateClass$1([
+    inject(WordGuessedEventListener)
+  ], LobbyStatsService.prototype, "_wordGuessedEventListener", 2);
+  __decorateClass$1([
+    postConstruct()
+  ], LobbyStatsService.prototype, "postConstruct", 1);
+  LobbyStatsService = __decorateClass$1([
+    injectable(),
+    __decorateParam(0, inject(loggerFactory))
+  ], LobbyStatsService);
   function create_else_block(ctx) {
     let img0;
     let img0_src_value;
