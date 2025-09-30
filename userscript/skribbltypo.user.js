@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 6ad90f2
+// @version      27.1.3 beta-usc d56a4ec
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 6ad90f2", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc d56a4ec", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -21287,7 +21287,6 @@
       }, "filter2");
       events.add("keyup", filter2);
       events.add("keydown", filter2);
-      events.add("click", () => console.log("click event on chatbox"));
     }
     /**
      * Setup the message observer to link chat messages with lobby players
@@ -25395,6 +25394,7 @@
       __publicField(this, "_lobbyInteractionsService");
       __publicField(this, "_toastService");
       __publicField(this, "_lobbyService");
+      __publicField(this, "_wordGuessedListener");
       __publicField(this, "name", "Quick React");
       __publicField(this, "description", "Adds accessibility to kick, like, and dislike via keyboard by pressing CTRL in the chat box.");
       __publicField(this, "tags", [
@@ -25500,11 +25500,15 @@
       __publicField(this, "_muteActionToastsSetting", this.useSetting(
         new BooleanExtensionSetting("mute_action_toasts", false, this).withName("Mute Info Toasts").withDescription("Mute the info toasts when liking/disliking/votekicking a player")
       ));
+      __publicField(this, "_likeAfterGuessSetting", this.useSetting(
+        new BooleanExtensionSetting("like_after_guess", false, this).withName("Like Drawing After Guess").withDescription("Automatically likes the drawing after you have guessed the word")
+      ));
       __publicField(this, "_subscription");
       __publicField(this, "_flyoutComponent");
       __publicField(this, "_flyoutSubscription");
       __publicField(this, "_rateInteractionsStyle", createElement("<style>.typo-hide-rate-interactions { display: none !important }</style>"));
       __publicField(this, "_interactionUpdateSubscription");
+      __publicField(this, "_guessedSubscription");
     }
     async onActivate() {
       document.body.appendChild(this._rateInteractionsStyle);
@@ -25512,9 +25516,19 @@
       this._interactionUpdateSubscription = this._lobbyInteractionsService.availableInteractions$.subscribe((interactions) => {
         elements2.gameRate.classList.toggle("typo-hide-rate-interactions", (interactions == null ? void 0 : interactions.rateAvailable) !== true);
       });
+      this._wordGuessedListener.events$.pipe(
+        filter((event) => event.data.word !== void 0),
+        /* word is only set if own guess */
+        withLatestFrom(this._likeAfterGuessSetting.changes$),
+        filter(([, likeAfterGuess]) => likeAfterGuess === true),
+        withLatestFrom(this._lobbyInteractionsService.availableInteractions$),
+        filter(([[,], interactions]) => (interactions == null ? void 0 : interactions.rateAvailable) === true)
+      ).subscribe(() => {
+        this._lobbyInteractionsService.likePlayer();
+      });
     }
     async onDestroy() {
-      var _a2, _b2, _c2, _d2;
+      var _a2, _b2, _c2, _d2, _e2;
       (_a2 = this._subscription) == null ? void 0 : _a2.unsubscribe();
       this._subscription = void 0;
       (_b2 = this._flyoutSubscription) == null ? void 0 : _b2.unsubscribe();
@@ -25524,6 +25538,8 @@
       (_d2 = this._interactionUpdateSubscription) == null ? void 0 : _d2.unsubscribe();
       this._interactionUpdateSubscription = void 0;
       this._rateInteractionsStyle.remove();
+      (_e2 = this._guessedSubscription) == null ? void 0 : _e2.unsubscribe();
+      this._guessedSubscription = void 0;
     }
     async hideGameRate() {
       const elements2 = await this._elements.complete();
@@ -25637,6 +25653,9 @@
   __decorateClass$12([
     inject(LobbyService)
   ], ChatQuickReactFeature.prototype, "_lobbyService");
+  __decorateClass$12([
+    inject(WordGuessedEventListener)
+  ], ChatQuickReactFeature.prototype, "_wordGuessedListener");
   var __defProp$11 = Object.defineProperty;
   var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
