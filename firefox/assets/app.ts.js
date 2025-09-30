@@ -13690,6 +13690,398 @@ __decorateClass$1l([
 __decorateClass$1l([
   inject(LobbyService)
 ], CanvasZoomFeature.prototype, "_lobbyService");
+var __defProp$1k = Object.defineProperty;
+var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
+var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key2) : target;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1k(target, key2, result);
+  return result;
+}, "__decorateClass$1k");
+let PrioritizedChatboxEventsSetup = (_ha = class extends Setup {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_interceptor");
+  }
+  async runSetup() {
+    return this._interceptor.chatboxPrioritizedEventsReady;
+  }
+}, __name(_ha, "PrioritizedChatboxEventsSetup"), _ha);
+__decorateClass$1k([
+  inject(Interceptor)
+], PrioritizedChatboxEventsSetup.prototype, "_interceptor", 2);
+PrioritizedChatboxEventsSetup = __decorateClass$1k([
+  earlySetup()
+], PrioritizedChatboxEventsSetup);
+function create_fragment$1x(ctx) {
+  let p;
+  let span1;
+  let b;
+  let t0;
+  let b_class_value;
+  let t1;
+  let span0;
+  let t2;
+  return {
+    c() {
+      p = element$1("p");
+      span1 = element$1("span");
+      b = element$1("b");
+      t0 = text(
+        /*title*/
+        ctx[1]
+      );
+      t1 = space();
+      span0 = element$1("span");
+      t2 = text(
+        /*content*/
+        ctx[0]
+      );
+      attr(b, "class", b_class_value = null_to_empty(
+        /*style*/
+        ctx[2]
+      ) + " svelte-1q3466u");
+      attr(span0, "class", "svelte-1q3466u");
+      attr(span1, "class", "svelte-1q3466u");
+      attr(p, "class", "typo-chat-message svelte-1q3466u");
+    },
+    m(target, anchor) {
+      insert(target, p, anchor);
+      append(p, span1);
+      append(span1, b);
+      append(b, t0);
+      ctx[8](b);
+      append(span1, t1);
+      append(span1, span0);
+      append(span0, t2);
+      ctx[9](span0);
+      ctx[10](span1);
+      ctx[11](p);
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*title*/
+      2) set_data(
+        t0,
+        /*title*/
+        ctx2[1]
+      );
+      if (dirty & /*style*/
+      4 && b_class_value !== (b_class_value = null_to_empty(
+        /*style*/
+        ctx2[2]
+      ) + " svelte-1q3466u")) {
+        attr(b, "class", b_class_value);
+      }
+      if (dirty & /*content*/
+      1) set_data(
+        t2,
+        /*content*/
+        ctx2[0]
+      );
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(p);
+      }
+      ctx[8](null);
+      ctx[9](null);
+      ctx[10](null);
+      ctx[11](null);
+    }
+  };
+}
+__name(create_fragment$1x, "create_fragment$1x");
+function instance$1o($$self, $$props, $$invalidate) {
+  let { content = "" } = $$props;
+  let { title = "" } = $$props;
+  let { style = "normal" } = $$props;
+  let resolve2;
+  const message = new Promise((res) => resolve2 = res);
+  let messageElement;
+  let titleElement;
+  let contentElement;
+  let wrapperElement;
+  onMount(() => {
+    resolve2({
+      element: messageElement,
+      title,
+      content,
+      contentElement,
+      titleElement,
+      wrapperElement
+    });
+  });
+  function b_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      titleElement = $$value;
+      $$invalidate(4, titleElement);
+    });
+  }
+  __name(b_binding, "b_binding");
+  function span0_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      contentElement = $$value;
+      $$invalidate(5, contentElement);
+    });
+  }
+  __name(span0_binding, "span0_binding");
+  function span1_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      messageElement = $$value;
+      $$invalidate(3, messageElement);
+    });
+  }
+  __name(span1_binding, "span1_binding");
+  function p_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      wrapperElement = $$value;
+      $$invalidate(6, wrapperElement);
+    });
+  }
+  __name(p_binding, "p_binding");
+  $$self.$$set = ($$props2) => {
+    if ("content" in $$props2) $$invalidate(0, content = $$props2.content);
+    if ("title" in $$props2) $$invalidate(1, title = $$props2.title);
+    if ("style" in $$props2) $$invalidate(2, style = $$props2.style);
+  };
+  return [
+    content,
+    title,
+    style,
+    messageElement,
+    titleElement,
+    contentElement,
+    wrapperElement,
+    message,
+    b_binding,
+    span0_binding,
+    span1_binding,
+    p_binding
+  ];
+}
+__name(instance$1o, "instance$1o");
+const _Message = class _Message extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$1o, create_fragment$1x, safe_not_equal, {
+      content: 0,
+      title: 1,
+      style: 2,
+      message: 7
+    });
+  }
+  get message() {
+    return this.$$.ctx[7];
+  }
+};
+__name(_Message, "Message");
+let Message = _Message;
+var __defProp$1j = Object.defineProperty;
+var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
+var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key2) : target;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+  if (kind && result) __defProp$1j(target, key2, result);
+  return result;
+}, "__decorateClass$1j");
+var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$j");
+let ChatService = (_ia = class {
+  constructor(loggerFactory2) {
+    __publicField(this, "_elementsSetup");
+    __publicField(this, "_chatboxEventsSetup");
+    __publicField(this, "_messageReceivedEventListener");
+    __publicField(this, "_messageRelaySetup");
+    __publicField(this, "lobbyService");
+    __publicField(this, "_logger");
+    __publicField(this, "_elementDiscovered$", new Subject$1());
+    __publicField(this, "_messageDiscovered$", new Subject$1());
+    __publicField(this, "_playerMessageReceived$", new Subject$1());
+    __publicField(this, "_lockedChatboxFeature", null);
+    __publicField(this, "_cancelChatboxEventsFilter", null);
+    this._logger = loggerFactory2(this);
+  }
+  postConstruct() {
+    this._logger.debug("Initializing chat service");
+    this.setupMessageObserver();
+    this.setupChatboxCancelEventFilter();
+  }
+  async setupChatboxCancelEventFilter() {
+    const events = await this._chatboxEventsSetup.complete();
+    const filter2 = /* @__PURE__ */ __name((e) => {
+      if (this._cancelChatboxEventsFilter === null) return;
+      const filter3 = this._cancelChatboxEventsFilter(e);
+      if (filter3 === "preventDefault" || filter3 === "both") e.preventDefault();
+      if (filter3 === "stopPropagation" || filter3 === "both") e.stopImmediatePropagation();
+    }, "filter2");
+    events.add("keyup", filter2);
+    events.add("keydown", filter2);
+  }
+  /**
+   * Setup the message observer to link chat messages with lobby players
+   * @private
+   */
+  async setupMessageObserver() {
+    const elements2 = await this._elementsSetup.complete();
+    const elementObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length > 0) {
+          const addedNode = mutation.addedNodes[0];
+          if (addedNode.tagName !== "P" || addedNode.children.length != 2) return;
+          const title = addedNode.children[0];
+          const content = addedNode.children[1];
+          if (title.tagName !== "B" || content.tagName !== "SPAN") return;
+          this._elementDiscovered$.next({
+            title: title.textContent ?? "",
+            content: content.textContent ?? "",
+            element: addedNode,
+            titleElement: addedNode.children[0],
+            contentElement: addedNode.children[1]
+          });
+        }
+      });
+    });
+    elementObserver.observe(elements2.chatContent, { childList: true, subtree: false });
+    this._messageReceivedEventListener.events$.pipe(
+      withLatestFrom(this.lobbyService.lobby$),
+      map(([event, lobby]) => {
+        if (lobby === null) {
+          this._logger.warn("Message received but no lobby present", event.data);
+          return;
+        }
+        const player = lobby.players.find((p) => p.id === event.data.senderId);
+        if (!player) {
+          this._logger.warn("Player not found for message", event.data);
+          return;
+        }
+        return { player, content: event.data.message };
+      }),
+      filter((data) => data !== void 0)
+    ).subscribe((data) => this._messageDiscovered$.next(data));
+    const pendingMessages = [];
+    const pendingElements = [];
+    this._messageDiscovered$.pipe(
+      map((data) => pendingMessages.push(data)),
+      mergeWith(
+        this._elementDiscovered$.pipe(
+          filter((element2) => element2.content.length !== 0),
+          map((data) => pendingElements.push(data))
+        )
+      )
+    ).subscribe(() => {
+      const matches = this.findMessageMatches(pendingMessages, pendingElements);
+      for (const match of matches) {
+        this._playerMessageReceived$.next(match);
+        this._logger.debug("Message match found", match);
+      }
+    });
+  }
+  /**
+   * Find matches between recorded messages and chat elements
+   * @param messages
+   * @param elements
+   * @private
+   */
+  findMessageMatches(messages, elements2) {
+    const matches = [];
+    for (const message of messages) {
+      for (const element2 of elements2) {
+        if (`${message.player.name}: ` === element2.title && message.content === element2.content) {
+          matches.push({ ...message, ...element2 });
+          messages.splice(messages.indexOf(message), 1);
+          elements2.splice(elements2.indexOf(element2), 1);
+          break;
+        }
+      }
+    }
+    return matches;
+  }
+  get chatMessageAdded$() {
+    return this._elementDiscovered$.asObservable();
+  }
+  get playerMessageReceived$() {
+    return this._playerMessageReceived$.asObservable();
+  }
+  /**
+   * Sends a chat message over socket.io as the player
+   */
+  async sendChatMessage(content) {
+    this._logger.debug("Sending chat message", content);
+    const relay = await this._messageRelaySetup.complete();
+    relay.insertMessage({ id: 30, data: { msg: content } });
+  }
+  /**
+   * Add a chat message to the local chat history
+   * @param content
+   * @param title
+   * @param style
+   */
+  async addChatMessage(content, title, style = "normal") {
+    const elements2 = await this._elementsSetup.complete();
+    const container = elements2.chatContent;
+    const isScrolledDown = container.scrollHeight - container.scrollTop - container.clientHeight < 50;
+    const message = new Message({
+      target: container,
+      props: { title: title ?? "", content, style }
+    });
+    const chatMessage = await message.message;
+    if (isScrolledDown) container.scrollTo({ top: container.scrollHeight, behavior: "instant" });
+    this._elementDiscovered$.next(chatMessage);
+    return message;
+  }
+  replaceChatboxContent(content, requestingFeature) {
+    if (this._lockedChatboxFeature && this._lockedChatboxFeature !== requestingFeature) {
+      this._logger.warn("Chatbox content replacement denied - chatbox locked by other feature", this._lockedChatboxFeature.name);
+      return false;
+    }
+    this._elementsSetup.complete().then((elements2) => elements2.chatInput.value = content);
+    return true;
+  }
+  requestChatboxLock(feature, cancelEventFilter = null) {
+    if (this._lockedChatboxFeature && this._lockedChatboxFeature !== feature) {
+      this._logger.warn("Chatbox lock request denied for feature - already locked by other feature", feature.name);
+      return false;
+    }
+    this._lockedChatboxFeature = feature;
+    this._cancelChatboxEventsFilter = cancelEventFilter;
+    return true;
+  }
+  releaseChatboxLock(feature) {
+    if (this._lockedChatboxFeature !== feature) {
+      this._logger.error("Chatbox lock release denied for feature - feature does not have lock", feature.name);
+      return;
+    }
+    this._lockedChatboxFeature = null;
+    this._cancelChatboxEventsFilter = null;
+  }
+}, __name(_ia, "ChatService"), _ia);
+__decorateClass$1j([
+  inject(ElementsSetup)
+], ChatService.prototype, "_elementsSetup", 2);
+__decorateClass$1j([
+  inject(PrioritizedChatboxEventsSetup)
+], ChatService.prototype, "_chatboxEventsSetup", 2);
+__decorateClass$1j([
+  inject(MessageReceivedEventListener)
+], ChatService.prototype, "_messageReceivedEventListener", 2);
+__decorateClass$1j([
+  inject(SkribblMessageRelaySetup)
+], ChatService.prototype, "_messageRelaySetup", 2);
+__decorateClass$1j([
+  inject(LobbyService)
+], ChatService.prototype, "lobbyService", 2);
+__decorateClass$1j([
+  postConstruct()
+], ChatService.prototype, "postConstruct", 1);
+ChatService = __decorateClass$1j([
+  injectable(),
+  __decorateParam$j(0, inject(loggerFactory))
+], ChatService);
 const replaceOrAddCssRule = /* @__PURE__ */ __name((styleSheet, cssText, index) => {
   var _a2, _b2, _c2, _d2, _e2, _f2, _g2, _h2;
   if (cssText === void 0) {
@@ -16663,18 +17055,18 @@ const _ThemesApi = class _ThemesApi extends BaseAPI {
 };
 __name(_ThemesApi, "ThemesApi");
 let ThemesApi = _ThemesApi;
-var __defProp$1k = Object.defineProperty;
-var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
-var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key2) : target;
+var __defProp$1i = Object.defineProperty;
+var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
+var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1k(target, key2, result);
+  if (kind && result) __defProp$1i(target, key2, result);
   return result;
-}, "__decorateClass$1k");
-var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$j");
-let TokenService = (_ha = class {
+}, "__decorateClass$1i");
+var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$i");
+let TokenService = (_ja = class {
   constructor(loggerFactory2) {
     __publicField(this, "_logger");
     __publicField(this, "_token", new BehaviorSubject(void 0));
@@ -16722,23 +17114,23 @@ let TokenService = (_ha = class {
     await typoRuntime.setToken(token);
     this._token.next(token);
   }
-}, __name(_ha, "TokenService"), _ha);
-TokenService = __decorateClass$1k([
+}, __name(_ja, "TokenService"), _ja);
+TokenService = __decorateClass$1i([
   injectable(),
-  __decorateParam$j(0, inject(loggerFactory))
+  __decorateParam$i(0, inject(loggerFactory))
 ], TokenService);
-var __defProp$1j = Object.defineProperty;
-var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
-var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key2) : target;
+var __defProp$1h = Object.defineProperty;
+var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
+var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1j(target, key2, result);
+  if (kind && result) __defProp$1h(target, key2, result);
   return result;
-}, "__decorateClass$1j");
-var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$i");
-let ApiService = (_ia = class {
+}, "__decorateClass$1h");
+var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$h");
+let ApiService = (_ka = class {
   constructor(loggerFactory2, tokenService) {
     __publicField(this, "_logger");
     __publicField(this, "_baseUrl", "https://api.typo.rip");
@@ -16777,24 +17169,24 @@ let ApiService = (_ia = class {
   set baseUrl(url) {
     this._baseUrl = url;
   }
-}, __name(_ia, "ApiService"), _ia);
-ApiService = __decorateClass$1j([
+}, __name(_ka, "ApiService"), _ka);
+ApiService = __decorateClass$1h([
   injectable(),
-  __decorateParam$i(0, inject(loggerFactory)),
-  __decorateParam$i(1, inject(TokenService))
+  __decorateParam$h(0, inject(loggerFactory)),
+  __decorateParam$h(1, inject(TokenService))
 ], ApiService);
-var __defProp$1i = Object.defineProperty;
-var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
-var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key2) : target;
+var __defProp$1g = Object.defineProperty;
+var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
+var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1i(target, key2, result);
+  if (kind && result) __defProp$1g(target, key2, result);
   return result;
-}, "__decorateClass$1i");
-var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$h");
-let MemberService = (_ja = class {
+}, "__decorateClass$1g");
+var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$g");
+let MemberService = (_la = class {
   constructor(loggerFactory2, _apiService, _tokenService, _onboardingService) {
     __publicField(this, "_logger");
     __publicField(this, "_member$", new BehaviorSubject(void 0));
@@ -16896,13 +17288,13 @@ let MemberService = (_ja = class {
   async refreshMember() {
     return this.loadMember();
   }
-}, __name(_ja, "MemberService"), _ja);
-MemberService = __decorateClass$1i([
+}, __name(_la, "MemberService"), _la);
+MemberService = __decorateClass$1g([
   injectable(),
-  __decorateParam$h(0, inject(loggerFactory)),
-  __decorateParam$h(1, inject(ApiService)),
-  __decorateParam$h(2, inject(TokenService)),
-  __decorateParam$h(3, inject(OnboardingService))
+  __decorateParam$g(0, inject(loggerFactory)),
+  __decorateParam$g(1, inject(ApiService)),
+  __decorateParam$g(2, inject(TokenService)),
+  __decorateParam$g(3, inject(OnboardingService))
 ], MemberService);
 const _SkribblOverlayPlayer = class _SkribblOverlayPlayer {
   constructor(_player, _lobbyKey, _overlayContainer) {
@@ -17112,15 +17504,15 @@ const _SkribblScoreboardRegularPlayer = class _SkribblScoreboardRegularPlayer {
 };
 __name(_SkribblScoreboardRegularPlayer, "SkribblScoreboardRegularPlayer");
 let SkribblScoreboardRegularPlayer = _SkribblScoreboardRegularPlayer;
-var __defProp$1h = Object.defineProperty;
-var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$1f = Object.defineProperty;
+var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$1h(target, key2, result);
+  if (result) __defProp$1f(target, key2, result);
   return result;
-}, "__decorateClass$1h");
+}, "__decorateClass$1f");
 const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
   constructor() {
     super(...arguments);
@@ -17141,13 +17533,13 @@ const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
 };
 __name(_LandingPlayerSetup, "LandingPlayerSetup");
 let LandingPlayerSetup = _LandingPlayerSetup;
-__decorateClass$1h([
+__decorateClass$1f([
   inject(ElementsSetup)
 ], LandingPlayerSetup.prototype, "_elementsSetup");
-__decorateClass$1h([
+__decorateClass$1f([
   inject(GlobalSettingsService)
 ], LandingPlayerSetup.prototype, "_globalSettingsService");
-__decorateClass$1h([
+__decorateClass$1f([
   inject(MemberService)
 ], LandingPlayerSetup.prototype, "_memberService");
 const calculateLobbyKey = /* @__PURE__ */ __name((key2) => {
@@ -17156,18 +17548,18 @@ const calculateLobbyKey = /* @__PURE__ */ __name((key2) => {
   const newKey = hashed.join("");
   return newKey;
 }, "calculateLobbyKey");
-var __defProp$1g = Object.defineProperty;
-var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
-var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key2) : target;
+var __defProp$1e = Object.defineProperty;
+var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
+var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1g(target, key2, result);
+  if (kind && result) __defProp$1e(target, key2, result);
   return result;
-}, "__decorateClass$1g");
-var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$g");
-let PlayersService = (_ka = class {
+}, "__decorateClass$1e");
+var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$f");
+let PlayersService = (_ma = class {
   constructor(loggerFactory2) {
     __publicField(this, "_elementsSetup");
     __publicField(this, "_lobbyJoinedEvent");
@@ -17405,435 +17797,47 @@ let PlayersService = (_ka = class {
   get players$() {
     return this._players$.asObservable();
   }
-}, __name(_ka, "PlayersService"), _ka);
-__decorateClass$1g([
+}, __name(_ma, "PlayersService"), _ma);
+__decorateClass$1e([
   inject(ElementsSetup)
 ], PlayersService.prototype, "_elementsSetup", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(LobbyJoinedEventListener)
 ], PlayersService.prototype, "_lobbyJoinedEvent", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(LobbyLeftEventListener)
 ], PlayersService.prototype, "_lobbyLeftEvent", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(LobbyStateChangedEventListener)
 ], PlayersService.prototype, "_lobbyStateChangedEvent", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(LobbyPlayerChangedEventListener)
 ], PlayersService.prototype, "_playerChangedEvent", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(ScoreboardVisibilityChangedEventListener)
 ], PlayersService.prototype, "_scoreboardVisibleEvent", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(TextOverlayVisibilityChangedEventListener)
 ], PlayersService.prototype, "_textOverlayVisibleEvent", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(PlayerPopupVisibilityChangedEventListener)
 ], PlayersService.prototype, "_popupVisibleEvent", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(MemberService)
 ], PlayersService.prototype, "_memberService", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(LobbyService)
 ], PlayersService.prototype, "_lobbyService", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   inject(LandingPlayerSetup)
 ], PlayersService.prototype, "_landingPlayerSetup", 2);
-__decorateClass$1g([
+__decorateClass$1e([
   postConstruct()
 ], PlayersService.prototype, "postConstruct", 1);
-PlayersService = __decorateClass$1g([
-  injectable(),
-  __decorateParam$g(0, inject(loggerFactory))
-], PlayersService);
-var __defProp$1f = Object.defineProperty;
-var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
-var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key2) : target;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1f(target, key2, result);
-  return result;
-}, "__decorateClass$1f");
-let PrioritizedChatboxEventsSetup = (_la = class extends Setup {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_interceptor");
-  }
-  async runSetup() {
-    return this._interceptor.chatboxPrioritizedEventsReady;
-  }
-}, __name(_la, "PrioritizedChatboxEventsSetup"), _la);
-__decorateClass$1f([
-  inject(Interceptor)
-], PrioritizedChatboxEventsSetup.prototype, "_interceptor", 2);
-PrioritizedChatboxEventsSetup = __decorateClass$1f([
-  earlySetup()
-], PrioritizedChatboxEventsSetup);
-function create_fragment$1x(ctx) {
-  let p;
-  let span1;
-  let b;
-  let t0;
-  let b_class_value;
-  let t1;
-  let span0;
-  let t2;
-  return {
-    c() {
-      p = element$1("p");
-      span1 = element$1("span");
-      b = element$1("b");
-      t0 = text(
-        /*title*/
-        ctx[1]
-      );
-      t1 = space();
-      span0 = element$1("span");
-      t2 = text(
-        /*content*/
-        ctx[0]
-      );
-      attr(b, "class", b_class_value = null_to_empty(
-        /*style*/
-        ctx[2]
-      ) + " svelte-1q3466u");
-      attr(span0, "class", "svelte-1q3466u");
-      attr(span1, "class", "svelte-1q3466u");
-      attr(p, "class", "typo-chat-message svelte-1q3466u");
-    },
-    m(target, anchor) {
-      insert(target, p, anchor);
-      append(p, span1);
-      append(span1, b);
-      append(b, t0);
-      ctx[8](b);
-      append(span1, t1);
-      append(span1, span0);
-      append(span0, t2);
-      ctx[9](span0);
-      ctx[10](span1);
-      ctx[11](p);
-    },
-    p(ctx2, [dirty]) {
-      if (dirty & /*title*/
-      2) set_data(
-        t0,
-        /*title*/
-        ctx2[1]
-      );
-      if (dirty & /*style*/
-      4 && b_class_value !== (b_class_value = null_to_empty(
-        /*style*/
-        ctx2[2]
-      ) + " svelte-1q3466u")) {
-        attr(b, "class", b_class_value);
-      }
-      if (dirty & /*content*/
-      1) set_data(
-        t2,
-        /*content*/
-        ctx2[0]
-      );
-    },
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(p);
-      }
-      ctx[8](null);
-      ctx[9](null);
-      ctx[10](null);
-      ctx[11](null);
-    }
-  };
-}
-__name(create_fragment$1x, "create_fragment$1x");
-function instance$1o($$self, $$props, $$invalidate) {
-  let { content = "" } = $$props;
-  let { title = "" } = $$props;
-  let { style = "normal" } = $$props;
-  let resolve2;
-  const message = new Promise((res) => resolve2 = res);
-  let messageElement;
-  let titleElement;
-  let contentElement;
-  let wrapperElement;
-  onMount(() => {
-    resolve2({
-      element: messageElement,
-      title,
-      content,
-      contentElement,
-      titleElement,
-      wrapperElement
-    });
-  });
-  function b_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      titleElement = $$value;
-      $$invalidate(4, titleElement);
-    });
-  }
-  __name(b_binding, "b_binding");
-  function span0_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      contentElement = $$value;
-      $$invalidate(5, contentElement);
-    });
-  }
-  __name(span0_binding, "span0_binding");
-  function span1_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      messageElement = $$value;
-      $$invalidate(3, messageElement);
-    });
-  }
-  __name(span1_binding, "span1_binding");
-  function p_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      wrapperElement = $$value;
-      $$invalidate(6, wrapperElement);
-    });
-  }
-  __name(p_binding, "p_binding");
-  $$self.$$set = ($$props2) => {
-    if ("content" in $$props2) $$invalidate(0, content = $$props2.content);
-    if ("title" in $$props2) $$invalidate(1, title = $$props2.title);
-    if ("style" in $$props2) $$invalidate(2, style = $$props2.style);
-  };
-  return [
-    content,
-    title,
-    style,
-    messageElement,
-    titleElement,
-    contentElement,
-    wrapperElement,
-    message,
-    b_binding,
-    span0_binding,
-    span1_binding,
-    p_binding
-  ];
-}
-__name(instance$1o, "instance$1o");
-const _Message = class _Message extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$1o, create_fragment$1x, safe_not_equal, {
-      content: 0,
-      title: 1,
-      style: 2,
-      message: 7
-    });
-  }
-  get message() {
-    return this.$$.ctx[7];
-  }
-};
-__name(_Message, "Message");
-let Message = _Message;
-var __defProp$1e = Object.defineProperty;
-var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
-var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key2) : target;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$1e(target, key2, result);
-  return result;
-}, "__decorateClass$1e");
-var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$f");
-let ChatService = (_ma = class {
-  constructor(loggerFactory2) {
-    __publicField(this, "_elementsSetup");
-    __publicField(this, "_chatboxEventsSetup");
-    __publicField(this, "_lobbyPlayersService");
-    __publicField(this, "_messageReceivedEventListener");
-    __publicField(this, "_messageRelaySetup");
-    __publicField(this, "_logger");
-    __publicField(this, "_elementDiscovered$", new Subject$1());
-    __publicField(this, "_messageDiscovered$", new Subject$1());
-    __publicField(this, "_playerMessageReceived$", new Subject$1());
-    __publicField(this, "_lockedChatboxFeature", null);
-    __publicField(this, "_cancelChatboxEventsFilter", null);
-    this._logger = loggerFactory2(this);
-  }
-  postConstruct() {
-    this._logger.debug("Initializing chat service");
-    this.setupMessageObserver();
-    this.setupChatboxCancelEventFilter();
-  }
-  async setupChatboxCancelEventFilter() {
-    const events = await this._chatboxEventsSetup.complete();
-    const filter2 = /* @__PURE__ */ __name((e) => {
-      if (this._cancelChatboxEventsFilter === null) return;
-      const filter3 = this._cancelChatboxEventsFilter(e);
-      if (filter3 === "preventDefault" || filter3 === "both") e.preventDefault();
-      if (filter3 === "stopPropagation" || filter3 === "both") e.stopImmediatePropagation();
-    }, "filter2");
-    events.add("keyup", filter2);
-    events.add("keydown", filter2);
-  }
-  /**
-   * Setup the message observer to link chat messages with lobby players
-   * @private
-   */
-  async setupMessageObserver() {
-    const elements2 = await this._elementsSetup.complete();
-    const elementObserver = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.addedNodes.length > 0) {
-          const addedNode = mutation.addedNodes[0];
-          if (addedNode.tagName !== "P" || addedNode.children.length != 2) return;
-          const title = addedNode.children[0];
-          const content = addedNode.children[1];
-          if (title.tagName !== "B" || content.tagName !== "SPAN") return;
-          this._elementDiscovered$.next({
-            title: title.textContent ?? "",
-            content: content.textContent ?? "",
-            element: addedNode,
-            titleElement: addedNode.children[0],
-            contentElement: addedNode.children[1]
-          });
-        }
-      });
-    });
-    elementObserver.observe(elements2.chatContent, { childList: true, subtree: false });
-    this._messageReceivedEventListener.events$.pipe(
-      withLatestFrom(this._lobbyPlayersService.lobbyPlayers$),
-      map(([event, players]) => {
-        const player = players.find((p) => p.lobbyPlayerId === event.data.senderId);
-        if (!player) {
-          this._logger.warn("Player not found for message", event.data);
-          return;
-        }
-        return { player, content: event.data.message };
-      }),
-      filter((data) => data !== void 0)
-    ).subscribe((data) => this._messageDiscovered$.next(data));
-    const pendingMessages = [];
-    const pendingElements = [];
-    this._messageDiscovered$.pipe(
-      map((data) => pendingMessages.push(data)),
-      mergeWith(
-        this._elementDiscovered$.pipe(
-          filter((element2) => element2.content.length !== 0),
-          map((data) => pendingElements.push(data))
-        )
-      )
-    ).subscribe(() => {
-      const matches = this.findMessageMatches(pendingMessages, pendingElements);
-      for (const match of matches) {
-        this._playerMessageReceived$.next(match);
-        this._logger.debug("Message match found", match);
-      }
-    });
-  }
-  /**
-   * Find matches between recorded messages and chat elements
-   * @param messages
-   * @param elements
-   * @private
-   */
-  findMessageMatches(messages, elements2) {
-    const matches = [];
-    for (const message of messages) {
-      for (const element2 of elements2) {
-        if (`${message.player.name}: ` === element2.title && message.content === element2.content) {
-          matches.push({ ...message, ...element2 });
-          messages.splice(messages.indexOf(message), 1);
-          elements2.splice(elements2.indexOf(element2), 1);
-          break;
-        }
-      }
-    }
-    return matches;
-  }
-  get chatMessageAdded$() {
-    return this._elementDiscovered$.asObservable();
-  }
-  get playerMessageReceived$() {
-    return this._playerMessageReceived$.asObservable();
-  }
-  /**
-   * Sends a chat message over socket.io as the player
-   */
-  async sendChatMessage(content) {
-    this._logger.debug("Sending chat message", content);
-    const relay = await this._messageRelaySetup.complete();
-    relay.insertMessage({ id: 30, data: { msg: content } });
-  }
-  /**
-   * Add a chat message to the local chat history
-   * @param content
-   * @param title
-   * @param style
-   */
-  async addChatMessage(content, title, style = "normal") {
-    const elements2 = await this._elementsSetup.complete();
-    const container = elements2.chatContent;
-    const isScrolledDown = container.scrollHeight - container.scrollTop - container.clientHeight < 50;
-    const message = new Message({
-      target: container,
-      props: { title: title ?? "", content, style }
-    });
-    const chatMessage = await message.message;
-    if (isScrolledDown) container.scrollTo({ top: container.scrollHeight, behavior: "instant" });
-    this._elementDiscovered$.next(chatMessage);
-    return message;
-  }
-  replaceChatboxContent(content, requestingFeature) {
-    if (this._lockedChatboxFeature && this._lockedChatboxFeature !== requestingFeature) {
-      this._logger.warn("Chatbox content replacement denied - chatbox locked by other feature", this._lockedChatboxFeature.name);
-      return false;
-    }
-    this._elementsSetup.complete().then((elements2) => elements2.chatInput.value = content);
-    return true;
-  }
-  requestChatboxLock(feature, cancelEventFilter = null) {
-    if (this._lockedChatboxFeature && this._lockedChatboxFeature !== feature) {
-      this._logger.warn("Chatbox lock request denied for feature - already locked by other feature", feature.name);
-      return false;
-    }
-    this._lockedChatboxFeature = feature;
-    this._cancelChatboxEventsFilter = cancelEventFilter;
-    return true;
-  }
-  releaseChatboxLock(feature) {
-    if (this._lockedChatboxFeature !== feature) {
-      this._logger.error("Chatbox lock release denied for feature - feature does not have lock", feature.name);
-      return;
-    }
-    this._lockedChatboxFeature = null;
-    this._cancelChatboxEventsFilter = null;
-  }
-}, __name(_ma, "ChatService"), _ma);
-__decorateClass$1e([
-  inject(ElementsSetup)
-], ChatService.prototype, "_elementsSetup", 2);
-__decorateClass$1e([
-  inject(PrioritizedChatboxEventsSetup)
-], ChatService.prototype, "_chatboxEventsSetup", 2);
-__decorateClass$1e([
-  inject(PlayersService)
-], ChatService.prototype, "_lobbyPlayersService", 2);
-__decorateClass$1e([
-  inject(MessageReceivedEventListener)
-], ChatService.prototype, "_messageReceivedEventListener", 2);
-__decorateClass$1e([
-  inject(SkribblMessageRelaySetup)
-], ChatService.prototype, "_messageRelaySetup", 2);
-__decorateClass$1e([
-  postConstruct()
-], ChatService.prototype, "postConstruct", 1);
-ChatService = __decorateClass$1e([
+PlayersService = __decorateClass$1e([
   injectable(),
   __decorateParam$f(0, inject(loggerFactory))
-], ChatService);
+], PlayersService);
 const _SkribblChatPlayer = class _SkribblChatPlayer {
   constructor(_player, _lobbyKey, _container) {
     __publicField(this, "_elementId");
@@ -18174,7 +18178,7 @@ const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
       this._logger.warn("No lobby key found for chat message", message);
       return;
     }
-    const skribblPlayer = message.player.player;
+    const skribblPlayer = message.player;
     const container = createElement(`<div
         style="display: inline-flex; align-items: center; height: 0; vertical-align: middle; margin-right: .5rem"
       ></div>`);
@@ -20617,7 +20621,7 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
     this._subscription = this._chatService.playerMessageReceived$.pipe(
       withLatestFrom(this._lobbyService.lobby$)
     ).subscribe(([{ contentElement, player }, lobby]) => {
-      const isMyMessage = player.lobbyPlayerId === (lobby == null ? void 0 : lobby.meId);
+      const isMyMessage = player.id === (lobby == null ? void 0 : lobby.meId);
       this.processAddedMessage(contentElement, emojis, isMyMessage);
     });
     this._component = new Chat_emojis({ target: elements2.chatArea });
@@ -21127,6 +21131,7 @@ const _ChatProfileLinkFeature = class _ChatProfileLinkFeature extends TypoFeatur
     __publicField(this, "_chatService");
     __publicField(this, "_toastService");
     __publicField(this, "_elementsSetup");
+    __publicField(this, "_playersService");
     __publicField(this, "name", "Chat Profile Link");
     __publicField(this, "description", "Open player profiles by clicking their name in the chat.");
     __publicField(this, "tags", [
@@ -21142,9 +21147,16 @@ const _ChatProfileLinkFeature = class _ChatProfileLinkFeature extends TypoFeatur
   async onActivate() {
     const elements2 = await this._elementsSetup.complete();
     this._component = new Chat_profile_link({ target: elements2.chatContent });
-    this._subscription = this._chatService.playerMessageReceived$.subscribe(({ titleElement, player }) => {
+    this._subscription = this._chatService.playerMessageReceived$.pipe(
+      withLatestFrom(this._playersService.lobbyPlayers$)
+    ).subscribe(([{ titleElement, player }, lobbyPlayers]) => {
+      const lobbyPlayer = lobbyPlayers.find((p) => p.lobbyPlayerId === player.id);
+      if (lobbyPlayer === void 0) {
+        this._logger.warn("Player for chat message not found", player, lobbyPlayers);
+        return;
+      }
       titleElement.classList.add("typo-chat-profile-link");
-      this._addedElements.push({ titleElement, player });
+      this._addedElements.push({ titleElement, player: lobbyPlayer });
     });
     elements2.chatContent.addEventListener("click", this._clickHandler);
   }
@@ -21179,6 +21191,9 @@ __decorateClass$14([
 __decorateClass$14([
   inject(ElementsSetup)
 ], ChatProfileLinkFeature.prototype, "_elementsSetup");
+__decorateClass$14([
+  inject(PlayersService)
+], ChatProfileLinkFeature.prototype, "_playersService");
 const _NumericOptionalCommandParameter = class _NumericOptionalCommandParameter extends ExtensionCommandParameter {
   constructor(name, description, _mapping) {
     super(name, description);
@@ -36852,9 +36867,9 @@ let LobbyConnectionService = (_Ca = class {
   async setupConnection(lobbyId, lobby, playerId, member) {
     var _a2;
     if (await this._pausedSetting.getValue()) {
-      this._logger.warn("Tried to connect, but Connection is paused");
+      this._logger.debug("Tried to connect, but connection is paused");
       this._connection$.next("paused");
-      return "failed";
+      return "paused";
     }
     const claim = (_a2 = this._existingTypoLobbyStates.get(lobbyId)) == null ? void 0 : _a2.ownershipClaimToken;
     const connection = this._socketService.createConnection("ILobbyHub");
@@ -37630,6 +37645,27 @@ function guessCorrectHint(character, index, hints) {
   return hints[index] === character && hints[index] !== BLANK;
 }
 __name(guessCorrectHint, "guessCorrectHint");
+function getGuessAccuracy(guess, hints, matchOnlyLength = false) {
+  let correct = 0;
+  guess = guess.replaceAll(" ", "").replaceAll("-", "");
+  hints = hints.replaceAll(" ", "").replaceAll("-", "");
+  for (let i = 0; i < Math.max(guess.length, hints.length); i++) {
+    const guessChar = guess.charAt(i);
+    const hintChar = hints.charAt(i);
+    if (guessChar.length !== hintChar.length) continue;
+    if (matchOnlyLength) {
+      correct++;
+      continue;
+    }
+    const sanitizedGuessChar = DIACRITICS[guessChar.toLowerCase()] ?? guessChar.toLowerCase();
+    const sanitizedHintChar = DIACRITICS[hintChar.toLowerCase()] ?? hintChar.toLowerCase();
+    if (sanitizedGuessChar === sanitizedHintChar || hintChar === BLANK) {
+      correct++;
+    }
+  }
+  return correct / Math.max(guess.length, hints.length);
+}
+__name(getGuessAccuracy, "getGuessAccuracy");
 function get_each_context$p(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[3] = list[i];
@@ -40138,6 +40174,10 @@ const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
       );
       if (result === "failed") {
         this._logger.error("Failed to setup connection, retrying in next update cycle");
+        return;
+      }
+      if (result === "paused") {
+        this._logger.debug("Connection is paused, not connecting");
         return;
       }
       const { typoLobbyState, hub } = this._lobbyConnectionService.connection;
@@ -67394,6 +67434,9 @@ let LobbyStatsService = (_Ia = class {
     __publicField(this, "_lobbyInteractedEventListener");
     __publicField(this, "_lobbyStateChangedEventListener");
     __publicField(this, "_wordGuessedEventListener");
+    __publicField(this, "_chatService");
+    __publicField(this, "_drawingService");
+    __publicField(this, "_lobbyJoinedEventListener");
     __publicField(this, "_logger");
     __publicField(this, "_guessTimeStats$", new Subject$1());
     __publicField(this, "_guessCountStats$", new Subject$1());
@@ -67406,6 +67449,7 @@ let LobbyStatsService = (_Ia = class {
     __publicField(this, "_drawGuessedPlayersStats$", new Subject$1());
     __publicField(this, "_drawScoreStats$", new Subject$1());
     __publicField(this, "_drawLikesStats$", new Subject$1());
+    __publicField(this, "_drawDislikesStats$", new Subject$1());
     __publicField(this, "_turnStandingScoreStats$", new Subject$1());
     this._logger = loggerFactory2(this);
   }
@@ -67455,9 +67499,9 @@ let LobbyStatsService = (_Ia = class {
       map((event) => event.data.drawingStarted),
       filter((event) => event !== void 0)
     );
-    const roundStarted$ = new Subject$1();
-    roundStartedSource$.subscribe(roundStarted$);
-    roundStarted$.pipe(
+    const turnStarted$ = new Subject$1();
+    roundStartedSource$.subscribe(turnStarted$);
+    turnStarted$.pipe(
       /* count likes */
       switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
         filter((event) => event.data.likeInteraction !== void 0),
@@ -67479,7 +67523,29 @@ let LobbyStatsService = (_Ia = class {
         })
       ))
     ).subscribe((event) => this._drawLikesStats$.next(event));
-    roundStarted$.pipe(
+    turnStarted$.pipe(
+      /* count likes */
+      switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
+        filter((event) => event.data.dislikeInteraction !== void 0),
+        /* until drawing ended */
+        takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+          filter((event) => event.data.drawingRevealed !== void 0)
+        )),
+        count(),
+        /* create event data */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null),
+        map(([likes, lobbyData]) => {
+          if (lobbyData === null) throw new Error("lobbyData must be provided");
+          const event = {
+            ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+            dislikes: likes
+          };
+          return event;
+        })
+      ))
+    ).subscribe((event) => this._drawDislikesStats$.next(event));
+    turnStarted$.pipe(
       /* count guessed players */
       switchMap(() => this._wordGuessedEventListener.events$.pipe(
         /* until drawing ended */
@@ -67500,7 +67566,7 @@ let LobbyStatsService = (_Ia = class {
         })
       ))
     ).subscribe((event) => this._drawGuessedPlayersStats$.next(event));
-    roundStarted$.pipe(
+    turnStarted$.pipe(
       /* record draw start time */
       map(() => Date.now()),
       /* measure time until drawing revealed */
@@ -67521,7 +67587,7 @@ let LobbyStatsService = (_Ia = class {
         return event;
       })
     ).subscribe((event) => this._drawTimeStats$.next(event));
-    roundStarted$.pipe(
+    turnStarted$.pipe(
       /* get score of next reveal */
       switchMap(() => this._lobbyStateChangedEventListener.events$.pipe(
         map((event) => event.data.drawingRevealed),
@@ -67550,7 +67616,7 @@ let LobbyStatsService = (_Ia = class {
         this._turnStandingScoreStats$.next(standingEvent);
       }
     });
-    roundStarted$.pipe(
+    turnStarted$.pipe(
       /* record start time */
       map(() => Date.now()),
       switchMap((startTimestamp) => this._wordGuessedEventListener.events$.pipe(
@@ -67597,7 +67663,132 @@ let LobbyStatsService = (_Ia = class {
         this._guessRankStats$.next(event);
       }
     });
-    this._guessRankStats$.subscribe((event) => console.log(event));
+    this._wordGuessedEventListener.events$.pipe(
+      withLatestFrom(
+        turnStarted$.pipe(
+          map(() => /* @__PURE__ */ new Map()),
+          /* count messages of players that did not guess yet */
+          switchMap((guessCounts) => {
+            return this._chatService.playerMessageReceived$.pipe(
+              filter((msg) => !msg.player.guessed),
+              tap((msg) => {
+                const count2 = guessCounts.get(msg.player.id) ?? 0;
+                guessCounts.set(msg.player.id, count2 + 1);
+              }),
+              map(() => guessCounts)
+            );
+          })
+        )
+      ),
+      map(([guessEvent, guessCounts]) => ({
+        playerId: guessEvent.data.playerId,
+        count: (guessCounts.get(guessEvent.data.playerId) ?? 0) + 1
+        // include current guess
+      })),
+      /* map in lobby details */
+      withLatestFrom(lobby$),
+      filter(([, lobbyData]) => lobbyData !== null)
+    ).subscribe(([guessData, lobby]) => {
+      if (lobby === null) throw new Error("lobby must be provided");
+      const event = {
+        ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, guessData.playerId),
+        guessCount: guessData.count
+      };
+      this._guessCountStats$.next(event);
+    });
+    this._chatService.playerMessageReceived$.pipe(
+      /* merge chat messages and actual guesses */
+      filter((msg) => !msg.player.guessed),
+      map((msg) => ({ message: msg.content, playerId: msg.player.id })),
+      mergeWith(
+        this._wordGuessedEventListener.events$.pipe(
+          map(
+            (guessed) => ({ message: void 0, playerId: guessed.data.playerId })
+          )
+        )
+      ),
+      /* create new last-msg map per turn */
+      withLatestFrom(turnStarted$.pipe(
+        map(() => ({ guesses: /* @__PURE__ */ new Map(), turnStart: Date.now() }))
+      ), this._lobbyService.lobby$, this._lobbyStateChangedEventListener.events$.pipe(
+        filter((event) => event.data.timerSet === void 0)
+        /* filter out timer set events which disrupt state */
+      )),
+      filter(([, , , state]) => state.data.drawingStarted !== void 0),
+      /* only while drawing: last state update was start drawing */
+      map(([msgData, turnData]) => {
+        const lastGuess = turnData.guesses.get(msgData.playerId) ?? turnData.turnStart;
+        turnData.guesses.set(msgData.playerId, Date.now());
+        return {
+          playerId: msgData.playerId,
+          gapTimeMs: Date.now() - lastGuess,
+          message: msgData.message
+        };
+      }),
+      /* map in lobby details, filter out drawing user messages*/
+      withLatestFrom(lobby$, this._drawingService.imageState$),
+      filter(([gap, lobbyData]) => lobbyData !== null && lobbyData.turnPlayerId !== gap.playerId)
+    ).subscribe(([gap, lobby, drawing]) => {
+      if (lobby === null) throw new Error("lobby must be provided");
+      if (drawing === null || drawing.word === void 0) throw new Error("drawing must be provided");
+      const gapEvent = {
+        ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, gap.playerId),
+        gapTimeMs: gap.gapTimeMs,
+        message: gap.message,
+        hints: drawing.word.hints
+      };
+      this._guessMessageGapStats$.next(gapEvent);
+      const accuracy = gap.message === void 0 ? 1 : getGuessAccuracy(gap.message, drawing.word.hints, true);
+      const accuracyEvent = {
+        ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, gap.playerId),
+        accuracy,
+        message: gap.message,
+        hints: drawing.word.hints
+      };
+      this._guessAccuracyStats$.next(accuracyEvent);
+    });
+    this._lobbyStateChangedEventListener.events$.pipe(
+      /* init empty map every game */
+      filter((event) => event.data.gameEnded !== void 0),
+      mergeWith(this._lobbyJoinedEventListener.events$),
+      map(() => /* @__PURE__ */ new Map()),
+      /* update map each guess */
+      switchMap((streakMap) => {
+        return this._wordGuessedEventListener.events$.pipe(
+          /* guesses increase streak */
+          map((event) => {
+            const currentStreak = streakMap.get(event.data.playerId) ?? 0;
+            streakMap.set(event.data.playerId, currentStreak + 1);
+            return { streak: currentStreak + 1, playerId: event.data.playerId };
+          }),
+          /* score 0 resets streak for non-drawers */
+          mergeWith(this._lobbyStateChangedEventListener.events$.pipe(
+            withLatestFrom(this._lobbyService.lobby$),
+            switchMap(([event, lobby]) => {
+              var _a2;
+              const events = [];
+              (_a2 = event.data.drawingRevealed) == null ? void 0 : _a2.scores.forEach((score) => {
+                if (score.rewarded === 0 && score.playerId !== (lobby == null ? void 0 : lobby.drawerId)) {
+                  streakMap.set(score.playerId, 0);
+                  events.push({ streak: 0, playerId: score.playerId });
+                }
+              });
+              return from(events);
+            })
+          ))
+        );
+      }),
+      /* map in lobby details */
+      withLatestFrom(lobby$),
+      filter(([, lobbyData]) => lobbyData !== null)
+    ).subscribe(([event, lobby]) => {
+      if (lobby === null) throw new Error("lobby must be provided");
+      const streakEvent = {
+        ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, event.playerId),
+        streak: event.streak
+      };
+      this._guessStreakStats$.next(streakEvent);
+    });
   }
 }, __name(_Ia, "LobbyStatsService"), _Ia);
 __decorateClass$1([
@@ -67612,6 +67803,15 @@ __decorateClass$1([
 __decorateClass$1([
   inject(WordGuessedEventListener)
 ], LobbyStatsService.prototype, "_wordGuessedEventListener", 2);
+__decorateClass$1([
+  inject(ChatService)
+], LobbyStatsService.prototype, "_chatService", 2);
+__decorateClass$1([
+  inject(DrawingService)
+], LobbyStatsService.prototype, "_drawingService", 2);
+__decorateClass$1([
+  inject(LobbyJoinedEventListener)
+], LobbyStatsService.prototype, "_lobbyJoinedEventListener", 2);
 __decorateClass$1([
   postConstruct()
 ], LobbyStatsService.prototype, "postConstruct", 1);
