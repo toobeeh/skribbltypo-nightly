@@ -3020,7 +3020,7 @@ function fromObservable(observable2, initialValue, onWrite, allowWriteBeforeEmit
   };
 }
 __name(fromObservable, "fromObservable");
-function create_if_block$O(ctx) {
+function create_if_block$P(ctx) {
   let span;
   let t;
   return {
@@ -3051,7 +3051,7 @@ function create_if_block$O(ctx) {
     }
   };
 }
-__name(create_if_block$O, "create_if_block$O");
+__name(create_if_block$P, "create_if_block$P");
 function create_fragment$1M(ctx) {
   let div;
   let img;
@@ -3061,7 +3061,7 @@ function create_fragment$1M(ctx) {
   let dispose;
   let if_block = (
     /*description*/
-    ctx[2] && create_if_block$O(ctx)
+    ctx[2] && create_if_block$P(ctx)
   );
   return {
     c() {
@@ -3132,7 +3132,7 @@ function create_fragment$1M(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$O(ctx2);
+          if_block = create_if_block$P(ctx2);
           if_block.c();
           if_block.m(div, null);
         }
@@ -3213,7 +3213,7 @@ const _Checkbox = class _Checkbox extends SvelteComponent {
 };
 __name(_Checkbox, "Checkbox");
 let Checkbox = _Checkbox;
-function create_if_block$N(ctx) {
+function create_if_block$O(ctx) {
   let b;
   let checkbox;
   let updating_checked;
@@ -3295,13 +3295,13 @@ function create_if_block$N(ctx) {
     }
   };
 }
-__name(create_if_block$N, "create_if_block$N");
+__name(create_if_block$O, "create_if_block$O");
 function create_fragment$1L(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*settingStore*/
-    ctx[1] && create_if_block$N(ctx)
+    ctx[1] && create_if_block$O(ctx)
   );
   return {
     c() {
@@ -3325,7 +3325,7 @@ function create_fragment$1L(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$N(ctx2);
+          if_block = create_if_block$O(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -3388,7 +3388,7 @@ const _Boolean_setting_input = class _Boolean_setting_input extends SvelteCompon
 };
 __name(_Boolean_setting_input, "Boolean_setting_input");
 let Boolean_setting_input = _Boolean_setting_input;
-function create_if_block$M(ctx) {
+function create_if_block$N(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3517,7 +3517,7 @@ function create_if_block$M(ctx) {
     }
   };
 }
-__name(create_if_block$M, "create_if_block$M");
+__name(create_if_block$N, "create_if_block$N");
 function create_if_block_1$m(ctx) {
   let input;
   let input_min_value;
@@ -3608,7 +3608,7 @@ function create_fragment$1K(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[3] && create_if_block$M(ctx)
+    ctx[3] && create_if_block$N(ctx)
   );
   return {
     c() {
@@ -3627,7 +3627,7 @@ function create_fragment$1K(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$M(ctx2);
+          if_block = create_if_block$N(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3707,7 +3707,7 @@ function get_each_context$C(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$C, "get_each_context$C");
-function create_if_block$L(ctx) {
+function create_if_block$M(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3835,7 +3835,7 @@ function create_if_block$L(ctx) {
     }
   };
 }
-__name(create_if_block$L, "create_if_block$L");
+__name(create_if_block$M, "create_if_block$M");
 function create_each_block$C(ctx) {
   let option;
   let t_value = (
@@ -3879,7 +3879,7 @@ function create_fragment$1J(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[2] && create_if_block$L(ctx)
+    ctx[2] && create_if_block$M(ctx)
   );
   return {
     c() {
@@ -3898,7 +3898,7 @@ function create_fragment$1J(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$L(ctx2);
+          if_block = create_if_block$M(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3953,7 +3953,7 @@ const _Choice_setting_input = class _Choice_setting_input extends SvelteComponen
 };
 __name(_Choice_setting_input, "Choice_setting_input");
 let Choice_setting_input = _Choice_setting_input;
-function create_if_block$K(ctx) {
+function create_if_block$L(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -4037,12 +4037,12 @@ function create_if_block$K(ctx) {
     }
   };
 }
-__name(create_if_block$K, "create_if_block$K");
+__name(create_if_block$L, "create_if_block$L");
 function create_fragment$1I(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[1] && create_if_block$K(ctx)
+    ctx[1] && create_if_block$L(ctx)
   );
   return {
     c() {
@@ -4061,7 +4061,7 @@ function create_fragment$1I(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$K(ctx2);
+          if_block = create_if_block$L(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -4373,7 +4373,7 @@ function create_if_block_1$l(ctx) {
   };
 }
 __name(create_if_block_1$l, "create_if_block_1$l");
-function create_if_block$J(ctx) {
+function create_if_block$K(ctx) {
   let div1;
   let div0;
   let mounted;
@@ -4455,7 +4455,7 @@ function create_if_block$J(ctx) {
     }
   };
 }
-__name(create_if_block$J, "create_if_block$J");
+__name(create_if_block$K, "create_if_block$K");
 function create_fragment$1H(ctx) {
   let div5;
   let div0;
@@ -4477,7 +4477,7 @@ function create_fragment$1H(ctx) {
   );
   let if_block1 = (
     /*allowAlpha*/
-    ctx[1] && create_if_block$J(ctx)
+    ctx[1] && create_if_block$K(ctx)
   );
   return {
     c() {
@@ -4661,7 +4661,7 @@ function create_fragment$1H(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$J(ctx2);
+          if_block1 = create_if_block$K(ctx2);
           if_block1.c();
           if_block1.m(div5, t6);
         }
@@ -4798,7 +4798,7 @@ const _Color_picker = class _Color_picker extends SvelteComponent {
 };
 __name(_Color_picker, "Color_picker");
 let Color_picker = _Color_picker;
-function create_if_block$I(ctx) {
+function create_if_block$J(ctx) {
   let div;
   let colorpicker;
   let updating_color;
@@ -4969,7 +4969,7 @@ function create_if_block$I(ctx) {
     }
   };
 }
-__name(create_if_block$I, "create_if_block$I");
+__name(create_if_block$J, "create_if_block$J");
 function create_fragment$1G(ctx) {
   let div1;
   let div0;
@@ -4980,7 +4980,7 @@ function create_fragment$1G(ctx) {
   let dispose;
   let if_block = (
     /*popupPosition*/
-    ctx[6] && create_if_block$I(ctx)
+    ctx[6] && create_if_block$J(ctx)
   );
   return {
     c() {
@@ -5063,7 +5063,7 @@ function create_fragment$1G(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$I(ctx2);
+          if_block = create_if_block$J(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div1, null);
@@ -5205,7 +5205,7 @@ const _Color_picker_button = class _Color_picker_button extends SvelteComponent 
 };
 __name(_Color_picker_button, "Color_picker_button");
 let Color_picker_button = _Color_picker_button;
-function create_if_block$H(ctx) {
+function create_if_block$I(ctx) {
   let div2;
   let b;
   let t0_value = (
@@ -5299,13 +5299,13 @@ function create_if_block$H(ctx) {
     }
   };
 }
-__name(create_if_block$H, "create_if_block$H");
+__name(create_if_block$I, "create_if_block$I");
 function create_fragment$1F(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*settingStore*/
-    ctx[2] && create_if_block$H(ctx)
+    ctx[2] && create_if_block$I(ctx)
   );
   return {
     c() {
@@ -5329,7 +5329,7 @@ function create_fragment$1F(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$H(ctx2);
+          if_block = create_if_block$I(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -12571,7 +12571,7 @@ function create_if_block_5$6(ctx) {
   };
 }
 __name(create_if_block_5$6, "create_if_block_5$6");
-function create_else_block$n(ctx) {
+function create_else_block$o(ctx) {
   let t0;
   let t1;
   let t2;
@@ -12710,8 +12710,8 @@ function create_else_block$n(ctx) {
     }
   };
 }
-__name(create_else_block$n, "create_else_block$n");
-function create_if_block$G(ctx) {
+__name(create_else_block$o, "create_else_block$o");
+function create_if_block$H(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({ props: { content: (
@@ -12747,7 +12747,7 @@ function create_if_block$G(ctx) {
     }
   };
 }
-__name(create_if_block$G, "create_if_block$G");
+__name(create_if_block$H, "create_if_block$H");
 function create_if_block_4$a(ctx) {
   let span;
   let mounted;
@@ -13025,7 +13025,7 @@ function create_fragment$1z(ctx) {
     /*title*/
     ctx[1] !== void 0 && create_if_block_5$6(ctx)
   );
-  const if_block_creators = [create_if_block$G, create_else_block$n];
+  const if_block_creators = [create_if_block$H, create_else_block$o];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -17938,7 +17938,7 @@ const wrapOffsetAsStyle = /* @__PURE__ */ __name((atlas, offset, containerSize) 
     background-size: calc(${backgroundSize});
   `;
 }, "wrapOffsetAsStyle");
-function create_if_block$F(ctx) {
+function create_if_block$G(ctx) {
   let div;
   let div_style_value;
   return {
@@ -17971,7 +17971,7 @@ function create_if_block$F(ctx) {
     }
   };
 }
-__name(create_if_block$F, "create_if_block$F");
+__name(create_if_block$G, "create_if_block$G");
 function create_fragment$1w(ctx) {
   let div3;
   let div0;
@@ -17986,7 +17986,7 @@ function create_fragment$1w(ctx) {
   let if_block = (
     /*avatar*/
     ctx[0][3] !== void 0 && /*avatar*/
-    ctx[0][3] >= 0 && create_if_block$F(ctx)
+    ctx[0][3] >= 0 && create_if_block$G(ctx)
   );
   return {
     c() {
@@ -18068,7 +18068,7 @@ function create_fragment$1w(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$F(ctx2);
+          if_block = create_if_block$G(ctx2);
           if_block.c();
           if_block.m(div3, null);
         }
@@ -18490,7 +18490,7 @@ function create_if_block_2$f(ctx) {
   };
 }
 __name(create_if_block_2$f, "create_if_block_2$f");
-function create_if_block$E(ctx) {
+function create_if_block$F(ctx) {
   let span;
   let mounted;
   let dispose;
@@ -18522,7 +18522,7 @@ function create_if_block$E(ctx) {
     }
   };
 }
-__name(create_if_block$E, "create_if_block$E");
+__name(create_if_block$F, "create_if_block$F");
 function create_fragment$1v(ctx) {
   let div1;
   let t0;
@@ -18562,7 +18562,7 @@ function create_fragment$1v(ctx) {
   }
   let if_block1 = (
     /*closeStrategy*/
-    ctx[0] === "explicit" && create_if_block$E(ctx)
+    ctx[0] === "explicit" && create_if_block$F(ctx)
   );
   return {
     c() {
@@ -18695,7 +18695,7 @@ function create_fragment$1v(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$E(ctx2);
+          if_block1 = create_if_block$F(ctx2);
           if_block1.c();
           if_block1.m(div1, null);
         }
@@ -19301,7 +19301,7 @@ function create_if_block_2$e(ctx) {
       ctx2[1]
     );
     if (show_if) return create_if_block_3$9;
-    return create_else_block$m;
+    return create_else_block$n;
   }
   __name(select_block_type_1, "select_block_type_1");
   let current_block_type = select_block_type_1(ctx, -1);
@@ -19337,7 +19337,7 @@ function create_if_block_2$e(ctx) {
   };
 }
 __name(create_if_block_2$e, "create_if_block_2$e");
-function create_else_block$m(ctx) {
+function create_else_block$n(ctx) {
   let img;
   let img_src_value;
   let t0;
@@ -19400,7 +19400,7 @@ function create_else_block$m(ctx) {
     }
   };
 }
-__name(create_else_block$m, "create_else_block$m");
+__name(create_else_block$n, "create_else_block$n");
 function create_if_block_3$9(ctx) {
   let span;
   return {
@@ -19461,7 +19461,7 @@ function create_each_block_1$c(ctx) {
   };
 }
 __name(create_each_block_1$c, "create_each_block_1$c");
-function create_if_block$D(ctx) {
+function create_if_block$E(ctx) {
   let div;
   let t1;
   let each_1_anchor;
@@ -19527,7 +19527,7 @@ function create_if_block$D(ctx) {
     }
   };
 }
-__name(create_if_block$D, "create_if_block$D");
+__name(create_if_block$E, "create_if_block$E");
 function create_catch_block$5(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
@@ -19634,7 +19634,7 @@ function create_fragment$1u(ctx) {
   for (let i = 0; i < each_value_1.length; i += 1) {
     each_blocks[i] = create_each_block_1$c(get_each_context_1$c(ctx, each_value_1, i));
   }
-  let if_block = show_if && create_if_block$D(ctx);
+  let if_block = show_if && create_if_block$E(ctx);
   return {
     c() {
       div = element$1("div");
@@ -19685,7 +19685,7 @@ function create_fragment$1u(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$D(ctx2);
+          if_block = create_if_block$E(ctx2);
           if_block.c();
           if_block.m(div, null);
         }
@@ -20299,7 +20299,7 @@ function get_each_context$z(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$z, "get_each_context$z");
-function create_else_block$l(ctx) {
+function create_else_block$m(ctx) {
   let t;
   return {
     c() {
@@ -20316,7 +20316,7 @@ function create_else_block$l(ctx) {
     }
   };
 }
-__name(create_else_block$l, "create_else_block$l");
+__name(create_else_block$m, "create_else_block$m");
 function create_if_block_1$h(ctx) {
   let t0;
   let t1_value = (
@@ -20351,7 +20351,7 @@ function create_if_block_1$h(ctx) {
   };
 }
 __name(create_if_block_1$h, "create_if_block_1$h");
-function create_if_block$C(ctx) {
+function create_if_block$D(ctx) {
   let t0;
   let br;
   let t1;
@@ -20376,7 +20376,7 @@ function create_if_block$C(ctx) {
     }
   };
 }
-__name(create_if_block$C, "create_if_block$C");
+__name(create_if_block$D, "create_if_block$D");
 function create_each_block$z(ctx) {
   let img;
   let img_src_value;
@@ -20393,12 +20393,13 @@ function create_each_block$z(ctx) {
     );
   }
   __name(mouseenter_handler, "mouseenter_handler");
-  function click_handler2() {
+  function click_handler2(...args) {
     return (
       /*click_handler*/
       ctx[6](
         /*emoji*/
-        ctx[8]
+        ctx[8],
+        ...args
       )
     );
   }
@@ -20455,12 +20456,12 @@ function create_fragment$1r(ctx) {
     if (
       /*$emojiCandidates*/
       ctx2[2].length === 0
-    ) return create_if_block$C;
+    ) return create_if_block$D;
     if (
       /*hoverEmoji*/
       ctx2[1] !== void 0
     ) return create_if_block_1$h;
-    return create_else_block$l;
+    return create_else_block$m;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -20563,7 +20564,7 @@ function instance$1i($$self, $$props, $$invalidate) {
   const emojiCandidates = feature.emojiCandidatesStore;
   component_subscribe($$self, emojiCandidates, (value) => $$invalidate(2, $emojiCandidates = value));
   const mouseenter_handler = /* @__PURE__ */ __name((emoji) => $$invalidate(1, hoverEmoji = emoji), "mouseenter_handler");
-  const click_handler2 = /* @__PURE__ */ __name((emoji) => onSelected == null ? void 0 : onSelected(emoji), "click_handler");
+  const click_handler2 = /* @__PURE__ */ __name((emoji, e) => onSelected == null ? void 0 : onSelected(emoji, e.shiftKey), "click_handler");
   const mouseleave_handler = /* @__PURE__ */ __name(() => $$invalidate(1, hoverEmoji = void 0), "mouseleave_handler");
   $$self.$$set = ($$props2) => {
     if ("feature" in $$props2) $$invalidate(4, feature = $$props2.feature);
@@ -20659,7 +20660,7 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
     this._emojiScores[usedEmoji] += this.boostAmount;
     this._emojiScoresSetting.setValue(this._emojiScores);
   }
-  async handleInputEvent() {
+  async handleInputEvent(event) {
     const emojis = (await this._apiDataSetup.complete()).emojis;
     const elements2 = await this._elements.complete();
     this._logger.debug("Finding emoji candidates for: ", elements2.chatInput.value);
@@ -20670,17 +20671,16 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
       return scoreB - scoreA;
     }) : [];
     this._emojiCandidates$.next(emojiCandidates);
+    if (emojiHead !== void 0 && emojiCandidates.length > 0 && event.key === "Tab") {
+      this.insertEmoji(emojiCandidates[0], elements2.chatInput);
+    }
     if (emojiHead !== void 0 && this._flyoutComponent === void 0) {
       const flyoutContent = {
         componentType: Emoji_picker,
         props: {
           feature: this,
-          onSelected: /* @__PURE__ */ __name((emoji) => {
-            var _a2;
-            const text2 = elements2.chatInput.value;
-            elements2.chatInput.value = text2.slice(0, text2.lastIndexOf(":")) + `:${this.getEmojiId(emoji)}:`;
-            (_a2 = this._flyoutComponent) == null ? void 0 : _a2.close();
-            elements2.chatInput.focus();
+          onSelected: /* @__PURE__ */ __name((emoji, keepOpen) => {
+            this.insertEmoji(emoji, elements2.chatInput, keepOpen);
           }, "onSelected")
         }
       };
@@ -20707,6 +20707,17 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
       this._flyoutComponent.close();
     }
   }
+  insertEmoji(emoji, chatInput, keepOpen = false) {
+    var _a2;
+    const text2 = chatInput.value;
+    chatInput.value = text2.slice(0, text2.lastIndexOf(":")) + `:${this.getEmojiId(emoji)}:`;
+    if (keepOpen) {
+      chatInput.value = chatInput.value + text2.slice(text2.lastIndexOf(":"));
+    } else {
+      (_a2 = this._flyoutComponent) == null ? void 0 : _a2.close();
+    }
+    chatInput.focus();
+  }
   processAddedMessage(message, emojis, isMyMessage) {
     const textNodes = Array.from(message.childNodes).filter((node) => node.nodeType === Node.TEXT_NODE);
     textNodes.forEach((node) => {
@@ -20727,7 +20738,16 @@ const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
             emojiElement.style.setProperty("--typo-emoji-name", emojiDto.name);
             emojiElement.classList.add("typo-emoji");
             newTextNode.appendChild(emojiElement);
-            this.createTooltip(emojiElement, { title: emoji, lock: "Y" });
+            const tooltipWrap = document.createElement("div");
+            const tooltipImg = document.createElement("img");
+            tooltipImg.src = emojiDto.url;
+            tooltipImg.alt = emojiDto.name;
+            tooltipImg.className = "typo-emoji-tooltip-img";
+            const tooltipNewline = document.createElement("br");
+            const tooltipName = document.createElement("span");
+            tooltipName.textContent = `:${emojiDto.name}:`;
+            tooltipWrap.append(tooltipImg, tooltipNewline, tooltipName);
+            this.createTooltip(emojiElement, { title: "", htmlTitle: tooltipWrap.innerHTML, lock: "Y" });
             if (isMyMessage) {
               this.updateScores(this.getEmojiId(emojiDto));
             }
@@ -20939,7 +20959,7 @@ let ChatMessageSplitsFeature = _ChatMessageSplitsFeature;
 __decorateClass$16([
   inject(ElementsSetup)
 ], ChatMessageSplitsFeature.prototype, "_elementsSetup");
-function create_if_block$B(ctx) {
+function create_if_block$C(ctx) {
   let div;
   let t0;
   let t1;
@@ -20973,12 +20993,12 @@ function create_if_block$B(ctx) {
     }
   };
 }
-__name(create_if_block$B, "create_if_block$B");
+__name(create_if_block$C, "create_if_block$C");
 function create_fragment$1p(ctx) {
   let if_block_anchor;
   let if_block = (
     /*$ping*/
-    ctx[0] !== void 0 && create_if_block$B(ctx)
+    ctx[0] !== void 0 && create_if_block$C(ctx)
   );
   return {
     c() {
@@ -20997,7 +21017,7 @@ function create_fragment$1p(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$B(ctx2);
+          if_block = create_if_block$C(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -21479,7 +21499,7 @@ const _Flat_button = class _Flat_button extends SvelteComponent {
 };
 __name(_Flat_button, "Flat_button");
 let Flat_button = _Flat_button;
-function create_else_block$k(ctx) {
+function create_else_block$l(ctx) {
   let div;
   return {
     c() {
@@ -21500,8 +21520,8 @@ function create_else_block$k(ctx) {
     }
   };
 }
-__name(create_else_block$k, "create_else_block$k");
-function create_if_block$A(ctx) {
+__name(create_else_block$l, "create_else_block$l");
+function create_if_block$B(ctx) {
   let div;
   let b;
   let t0;
@@ -21639,7 +21659,7 @@ function create_if_block$A(ctx) {
     }
   };
 }
-__name(create_if_block$A, "create_if_block$A");
+__name(create_if_block$B, "create_if_block$B");
 function create_fragment$1n(ctx) {
   let div;
   let current_block_type_index;
@@ -21647,7 +21667,7 @@ function create_fragment$1n(ctx) {
   let current;
   let mounted;
   let dispose;
-  const if_block_creators = [create_if_block$A, create_else_block$k];
+  const if_block_creators = [create_if_block$B, create_else_block$l];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -23777,7 +23797,7 @@ function create_pending_block$4(ctx) {
   };
 }
 __name(create_pending_block$4, "create_pending_block$4");
-function create_if_block$z(ctx) {
+function create_if_block$A(ctx) {
   let div0;
   let img;
   let img_src_value;
@@ -24066,7 +24086,7 @@ function create_if_block$z(ctx) {
     }
   };
 }
-__name(create_if_block$z, "create_if_block$z");
+__name(create_if_block$A, "create_if_block$A");
 function create_fragment$1k(ctx) {
   let div3;
   let div1;
@@ -24184,7 +24204,7 @@ function create_fragment$1k(ctx) {
   );
   let if_block2 = (
     /*selectedImage*/
-    ctx[10] !== null && create_if_block$z(ctx)
+    ctx[10] !== null && create_if_block$A(ctx)
   );
   return {
     c() {
@@ -24498,7 +24518,7 @@ function create_fragment$1k(ctx) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block$z(ctx2);
+          if_block2 = create_if_block$A(ctx2);
           if_block2.c();
           transition_in(if_block2, 1);
           if_block2.m(div3, null);
@@ -25808,7 +25828,7 @@ function create_if_block_1$f(ctx) {
   };
 }
 __name(create_if_block_1$f, "create_if_block_1$f");
-function create_else_block$j(ctx) {
+function create_else_block$k(ctx) {
   let flatbutton;
   let current;
   function click_handler_1() {
@@ -25850,8 +25870,8 @@ function create_else_block$j(ctx) {
     }
   };
 }
-__name(create_else_block$j, "create_else_block$j");
-function create_if_block$y(ctx) {
+__name(create_else_block$k, "create_else_block$k");
+function create_if_block$z(ctx) {
   var _a2, _b2, _c2, _d2;
   let flatbutton;
   let current;
@@ -25917,7 +25937,7 @@ function create_if_block$y(ctx) {
     }
   };
 }
-__name(create_if_block$y, "create_if_block$y");
+__name(create_if_block$z, "create_if_block$z");
 function create_each_block$x(ctx) {
   let div2;
   let b;
@@ -25964,7 +25984,7 @@ function create_each_block$x(ctx) {
     /*$devmode*/
     ctx[3] && create_if_block_1$f(ctx)
   );
-  const if_block_creators = [create_if_block$y, create_else_block$j];
+  const if_block_creators = [create_if_block$z, create_else_block$k];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (dirty & /*$savedThemes, feature*/
@@ -26242,7 +26262,7 @@ function get_each_context_1$b(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$b, "get_each_context_1$b");
-function create_else_block$i(ctx) {
+function create_else_block$j(ctx) {
   let div0;
   let h3;
   let t0;
@@ -27616,8 +27636,8 @@ function create_else_block$i(ctx) {
     }
   };
 }
-__name(create_else_block$i, "create_else_block$i");
-function create_if_block$x(ctx) {
+__name(create_else_block$j, "create_else_block$j");
+function create_if_block$y(ctx) {
   let div0;
   let t0;
   let br0;
@@ -27766,7 +27786,7 @@ function create_if_block$x(ctx) {
     }
   };
 }
-__name(create_if_block$x, "create_if_block$x");
+__name(create_if_block$y, "create_if_block$y");
 function create_each_block_1$b(ctx) {
   let div;
   let t0_value = (
@@ -27960,7 +27980,7 @@ function create_fragment$1i(ctx) {
   let current_block_type_index;
   let if_block;
   let current;
-  const if_block_creators = [create_if_block$x, create_else_block$i];
+  const if_block_creators = [create_if_block$y, create_else_block$j];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -28322,7 +28342,7 @@ function get_each_context$v(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$v, "get_each_context$v");
-function create_else_block$h(ctx) {
+function create_else_block$i(ctx) {
   let div1;
   return {
     c() {
@@ -28340,7 +28360,7 @@ function create_else_block$h(ctx) {
     }
   };
 }
-__name(create_else_block$h, "create_else_block$h");
+__name(create_else_block$i, "create_else_block$i");
 function create_if_block_5$4(ctx) {
   let div1;
   return {
@@ -28544,7 +28564,7 @@ function create_if_block_1$e(ctx) {
   };
 }
 __name(create_if_block_1$e, "create_if_block_1$e");
-function create_if_block$w(ctx) {
+function create_if_block$x(ctx) {
   var _a2;
   let flatbutton;
   let current;
@@ -28602,7 +28622,7 @@ function create_if_block$w(ctx) {
     }
   };
 }
-__name(create_if_block$w, "create_if_block$w");
+__name(create_if_block$x, "create_if_block$x");
 function create_each_block$v(ctx) {
   let div5;
   let div0;
@@ -28652,7 +28672,7 @@ function create_each_block$v(ctx) {
       ((_a2 = ctx2[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
       ctx2[15].theme.meta.id
     ) return create_if_block_5$4;
-    return create_else_block$h;
+    return create_else_block$i;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -28701,7 +28721,7 @@ function create_each_block$v(ctx) {
   );
   let if_block4 = (
     /*theme*/
-    ctx[15].enableManage === true && create_if_block$w(ctx)
+    ctx[15].enableManage === true && create_if_block$x(ctx)
   );
   return {
     c() {
@@ -28876,7 +28896,7 @@ function create_each_block$v(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block$w(ctx);
+          if_block4 = create_if_block$x(ctx);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(div4, null);
@@ -29150,7 +29170,7 @@ function create_if_block_1$d(ctx) {
   };
 }
 __name(create_if_block_1$d, "create_if_block_1$d");
-function create_if_block$v(ctx) {
+function create_if_block$w(ctx) {
   let themeslist;
   let current;
   themeslist = new Themes_list({ props: { feature: (
@@ -29186,7 +29206,7 @@ function create_if_block$v(ctx) {
     }
   };
 }
-__name(create_if_block$v, "create_if_block$v");
+__name(create_if_block$w, "create_if_block$w");
 function create_fragment$1g(ctx) {
   let div2;
   let div0;
@@ -29202,7 +29222,7 @@ function create_fragment$1g(ctx) {
   let current;
   let mounted;
   let dispose;
-  const if_block_creators = [create_if_block$v, create_if_block_1$d, create_if_block_2$b];
+  const if_block_creators = [create_if_block$w, create_if_block_1$d, create_if_block_2$b];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -30461,7 +30481,7 @@ function create_if_block_1$c(ctx) {
   };
 }
 __name(create_if_block_1$c, "create_if_block_1$c");
-function create_if_block$u(ctx) {
+function create_if_block$v(ctx) {
   let flatbutton;
   let current;
   flatbutton = new Flat_button({
@@ -30495,7 +30515,7 @@ function create_if_block$u(ctx) {
     }
   };
 }
-__name(create_if_block$u, "create_if_block$u");
+__name(create_if_block$v, "create_if_block$v");
 function create_fragment$1e(ctx) {
   let div3;
   let div1;
@@ -30552,7 +30572,7 @@ function create_fragment$1e(ctx) {
   );
   let if_block4 = (
     /*onPaletteSave*/
-    ctx[0] && create_if_block$u(ctx)
+    ctx[0] && create_if_block$v(ctx)
   );
   return {
     c() {
@@ -30852,7 +30872,7 @@ function create_fragment$1e(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block$u(ctx2);
+          if_block4 = create_if_block$v(ctx2);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(div2, null);
@@ -36981,7 +37001,7 @@ const parseSignalRError = /* @__PURE__ */ __name((error) => {
     };
   } else throw error;
 }, "parseSignalRError");
-function create_if_block$t(ctx) {
+function create_if_block$u(ctx) {
   let div;
   let mounted;
   let dispose;
@@ -37045,13 +37065,13 @@ function create_if_block$t(ctx) {
     }
   };
 }
-__name(create_if_block$t, "create_if_block$t");
+__name(create_if_block$u, "create_if_block$u");
 function create_fragment$17(ctx) {
   let if_block_anchor;
   let if_block = (
     /*$currentDrop*/
     ctx[1] !== void 0 && /*$currentDrop*/
-    ctx[1].ownClaimed === false && create_if_block$t(ctx)
+    ctx[1].ownClaimed === false && create_if_block$u(ctx)
   );
   return {
     c() {
@@ -37071,7 +37091,7 @@ function create_fragment$17(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$t(ctx2);
+          if_block = create_if_block$u(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -37239,7 +37259,7 @@ function create_each_block$q(ctx) {
   };
 }
 __name(create_each_block$q, "create_each_block$q");
-function create_if_block$s(ctx) {
+function create_if_block$t(ctx) {
   let p;
   return {
     c() {
@@ -37256,7 +37276,7 @@ function create_if_block$s(ctx) {
     }
   };
 }
-__name(create_if_block$s, "create_if_block$s");
+__name(create_if_block$t, "create_if_block$t");
 function create_fragment$16(ctx) {
   let h3;
   let t1;
@@ -37276,7 +37296,7 @@ function create_fragment$16(ctx) {
   }
   let if_block = (
     /*$claims*/
-    ctx[0].length === 0 && create_if_block$s()
+    ctx[0].length === 0 && create_if_block$t()
   );
   return {
     c() {
@@ -37342,7 +37362,7 @@ function create_fragment$16(ctx) {
       ) {
         if (if_block) ;
         else {
-          if_block = create_if_block$s();
+          if_block = create_if_block$t();
           if_block.c();
           if_block.m(div, null);
         }
@@ -37687,7 +37707,7 @@ function get_each_context_1$9(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$9, "get_each_context_1$9");
-function create_if_block$r(ctx) {
+function create_if_block$s(ctx) {
   let each_1_anchor;
   let each_value_1 = ensure_array_like(
     /*$guess*/
@@ -37744,7 +37764,7 @@ function create_if_block$r(ctx) {
     }
   };
 }
-__name(create_if_block$r, "create_if_block$r");
+__name(create_if_block$s, "create_if_block$s");
 function create_each_block_1$9(ctx) {
   let span;
   let t0_value = (
@@ -37821,7 +37841,7 @@ function create_each_block$p(ctx) {
   let t;
   let if_block = (
     /*$guess*/
-    ctx[0] !== null && create_if_block$r(ctx)
+    ctx[0] !== null && create_if_block$s(ctx)
   );
   return {
     c() {
@@ -37844,7 +37864,7 @@ function create_each_block$p(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$r(ctx2);
+          if_block = create_if_block$s(ctx2);
           if_block.c();
           if_block.m(div, t);
         }
@@ -38131,7 +38151,7 @@ function create_then_block$2(ctx) {
   let if_block = (
     /*imageIndex*/
     ctx[1] !== void 0 && /*images*/
-    ctx[2].length > 0 && create_if_block$q(ctx)
+    ctx[2].length > 0 && create_if_block$r(ctx)
   );
   return {
     c() {
@@ -38151,7 +38171,7 @@ function create_then_block$2(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$q(ctx2);
+          if_block = create_if_block$r(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -38171,7 +38191,7 @@ function create_then_block$2(ctx) {
   };
 }
 __name(create_then_block$2, "create_then_block$2");
-function create_if_block$q(ctx) {
+function create_if_block$r(ctx) {
   let img;
   let img_src_value;
   let mounted;
@@ -38230,7 +38250,7 @@ function create_if_block$q(ctx) {
     }
   };
 }
-__name(create_if_block$q, "create_if_block$q");
+__name(create_if_block$r, "create_if_block$r");
 function create_pending_block$2(ctx) {
   let bounceload;
   let current;
@@ -39018,7 +39038,7 @@ function get_each_context$o(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$o, "get_each_context$o");
-function create_else_block$g(ctx) {
+function create_else_block$h(ctx) {
   let flatbutton;
   let t0;
   let span;
@@ -39066,7 +39086,7 @@ function create_else_block$g(ctx) {
     }
   };
 }
-__name(create_else_block$g, "create_else_block$g");
+__name(create_else_block$h, "create_else_block$h");
 function create_if_block_6(ctx) {
   let flatbutton;
   let t0;
@@ -39551,7 +39571,7 @@ function create_if_block_2$9(ctx) {
   };
 }
 __name(create_if_block_2$9, "create_if_block_2$9");
-function create_if_block$p(ctx) {
+function create_if_block$q(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -39703,7 +39723,7 @@ function create_if_block$p(ctx) {
     }
   };
 }
-__name(create_if_block$p, "create_if_block$p");
+__name(create_if_block$q, "create_if_block$q");
 function create_fragment$12(ctx) {
   let div1;
   let div0;
@@ -39713,7 +39733,7 @@ function create_fragment$12(ctx) {
   let t1;
   let t2;
   let current;
-  const if_block_creators = [create_if_block_4$6, create_if_block_5$3, create_if_block_6, create_else_block$g];
+  const if_block_creators = [create_if_block_4$6, create_if_block_5$3, create_if_block_6, create_else_block$h];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -39749,7 +39769,7 @@ function create_fragment$12(ctx) {
   );
   let if_block3 = (
     /*$devmode*/
-    ctx[5] === true && create_if_block$p(ctx)
+    ctx[5] === true && create_if_block$q(ctx)
   );
   return {
     c() {
@@ -39853,7 +39873,7 @@ function create_fragment$12(ctx) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block$p(ctx2);
+          if_block3 = create_if_block$q(ctx2);
           if_block3.c();
           transition_in(if_block3, 1);
           if_block3.m(div1, null);
@@ -40504,7 +40524,7 @@ function get_each_context_1$8(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$8, "get_each_context_1$8");
-function create_else_block$f(ctx) {
+function create_else_block$g(ctx) {
   let div1;
   let div0;
   let t0;
@@ -40641,7 +40661,7 @@ function create_else_block$f(ctx) {
     }
   };
 }
-__name(create_else_block$f, "create_else_block$f");
+__name(create_else_block$g, "create_else_block$g");
 function create_if_block_1$a(ctx) {
   let div;
   return {
@@ -40663,7 +40683,7 @@ function create_if_block_1$a(ctx) {
   };
 }
 __name(create_if_block_1$a, "create_if_block_1$a");
-function create_if_block$o(ctx) {
+function create_if_block$p(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({
@@ -40692,7 +40712,7 @@ function create_if_block$o(ctx) {
     }
   };
 }
-__name(create_if_block$o, "create_if_block$o");
+__name(create_if_block$p, "create_if_block$p");
 function create_if_block_3$5(ctx) {
   let div;
   let mounted;
@@ -41236,7 +41256,7 @@ function create_fragment$10(ctx) {
   let if_block;
   let current;
   bounceload = new Bounceload({ props: { content: "Saving.." } });
-  const if_block_creators = [create_if_block$o, create_if_block_1$a, create_else_block$f];
+  const if_block_creators = [create_if_block$p, create_if_block_1$a, create_else_block$g];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -41428,7 +41448,7 @@ function get_each_context$m(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$m, "get_each_context$m");
-function create_if_block$n(ctx) {
+function create_if_block$o(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -41553,7 +41573,7 @@ function create_if_block$n(ctx) {
     }
   };
 }
-__name(create_if_block$n, "create_if_block$n");
+__name(create_if_block$o, "create_if_block$o");
 function create_each_block$m(ctx) {
   let show_if = (
     /*sprite*/
@@ -41569,7 +41589,7 @@ function create_each_block$m(ctx) {
     )
   );
   let if_block_anchor;
-  let if_block = show_if && create_if_block$n(ctx);
+  let if_block = show_if && create_if_block$o(ctx);
   return {
     c() {
       if (if_block) if_block.c();
@@ -41596,7 +41616,7 @@ function create_each_block$m(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$n(ctx2);
+          if_block = create_if_block$o(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -41821,7 +41841,7 @@ function get_each_context$l(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$l, "get_each_context$l");
-function create_else_block$e(ctx) {
+function create_else_block$f(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -41946,8 +41966,8 @@ function create_else_block$e(ctx) {
     }
   };
 }
-__name(create_else_block$e, "create_else_block$e");
-function create_if_block$m(ctx) {
+__name(create_else_block$f, "create_else_block$f");
+function create_if_block$n(ctx) {
   var _a2, _b2, _c2;
   let div1;
   let div0;
@@ -42109,15 +42129,15 @@ function create_if_block$m(ctx) {
     }
   };
 }
-__name(create_if_block$m, "create_if_block$m");
+__name(create_if_block$n, "create_if_block$n");
 function create_each_block$l(ctx) {
   let if_block_anchor;
   function select_block_type(ctx2, dirty) {
     if (
       /*scene*/
       ctx2[9].sceneShift
-    ) return create_if_block$m;
-    return create_else_block$e;
+    ) return create_if_block$n;
+    return create_else_block$f;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -42539,7 +42559,7 @@ function create_if_block_2$7(ctx) {
   };
 }
 __name(create_if_block_2$7, "create_if_block_2$7");
-function create_else_block$d(ctx) {
+function create_else_block$e(ctx) {
   let each_1_anchor;
   let each_value = ensure_array_like(
     /*changes*/
@@ -42598,8 +42618,8 @@ function create_else_block$d(ctx) {
     }
   };
 }
-__name(create_else_block$d, "create_else_block$d");
-function create_if_block$l(ctx) {
+__name(create_else_block$e, "create_else_block$e");
+function create_if_block$m(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({
@@ -42628,7 +42648,7 @@ function create_if_block$l(ctx) {
     }
   };
 }
-__name(create_if_block$l, "create_if_block$l");
+__name(create_if_block$m, "create_if_block$m");
 function create_if_block_1$9(ctx) {
   let span;
   return {
@@ -42793,7 +42813,7 @@ function create_fragment$Z(ctx) {
     /*$devmode*/
     ctx[2] && create_if_block_2$7(ctx)
   );
-  const if_block_creators = [create_if_block$l, create_else_block$d];
+  const if_block_creators = [create_if_block$m, create_else_block$e];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -43024,7 +43044,7 @@ function create_if_block_1$8(ctx) {
   };
 }
 __name(create_if_block_1$8, "create_if_block_1$8");
-function create_if_block$k(ctx) {
+function create_if_block$l(ctx) {
   let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
@@ -43103,7 +43123,7 @@ function create_if_block$k(ctx) {
     }
   };
 }
-__name(create_if_block$k, "create_if_block$k");
+__name(create_if_block$l, "create_if_block$l");
 function create_else_block_1$1(ctx) {
   let switch_instance;
   let switch_instance_anchor;
@@ -43209,7 +43229,7 @@ function create_if_block_3$4(ctx) {
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block_4$4, create_else_block$c];
+  const if_block_creators = [create_if_block_4$4, create_else_block$d];
   const if_blocks = [];
   function select_block_type_2(ctx2, dirty) {
     if (
@@ -43491,7 +43511,7 @@ function create_default_slot_11(ctx) {
   };
 }
 __name(create_default_slot_11, "create_default_slot_11");
-function create_else_block$c(ctx) {
+function create_else_block$d(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -43604,7 +43624,7 @@ function create_else_block$c(ctx) {
     }
   };
 }
-__name(create_else_block$c, "create_else_block$c");
+__name(create_else_block$d, "create_else_block$d");
 function create_if_block_4$4(ctx) {
   let switch_instance;
   let switch_instance_anchor;
@@ -45047,7 +45067,7 @@ function create_fragment$Y(ctx) {
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block$k, create_if_block_1$8];
+  const if_block_creators = [create_if_block$l, create_if_block_1$8];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (!/*type*/
@@ -47406,7 +47426,7 @@ marked.parseInline;
 Parser.parse;
 Lexer.lex;
 const key = {};
-function create_else_block$b(ctx) {
+function create_else_block$c(ctx) {
   let t;
   return {
     c() {
@@ -47435,7 +47455,7 @@ function create_else_block$b(ctx) {
     }
   };
 }
-__name(create_else_block$b, "create_else_block$b");
+__name(create_else_block$c, "create_else_block$c");
 function create_if_block_5$1(ctx) {
   let h6;
   let current;
@@ -47856,7 +47876,7 @@ function create_if_block_1$7(ctx) {
   };
 }
 __name(create_if_block_1$7, "create_if_block_1$7");
-function create_if_block$j(ctx) {
+function create_if_block$k(ctx) {
   let h1;
   let current;
   const default_slot_template = (
@@ -47939,20 +47959,20 @@ function create_if_block$j(ctx) {
     }
   };
 }
-__name(create_if_block$j, "create_if_block$j");
+__name(create_if_block$k, "create_if_block$k");
 function create_fragment$X(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
   const if_block_creators = [
-    create_if_block$j,
+    create_if_block$k,
     create_if_block_1$7,
     create_if_block_2$5,
     create_if_block_3$3,
     create_if_block_4$3,
     create_if_block_5$1,
-    create_else_block$b
+    create_else_block$c
   ];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
@@ -49072,7 +49092,7 @@ const _TableRow = class _TableRow extends SvelteComponent {
 };
 __name(_TableRow, "TableRow");
 let TableRow = _TableRow;
-function create_else_block$a(ctx) {
+function create_else_block$b(ctx) {
   let td;
   let current;
   const default_slot_template = (
@@ -49155,8 +49175,8 @@ function create_else_block$a(ctx) {
     }
   };
 }
-__name(create_else_block$a, "create_else_block$a");
-function create_if_block$i(ctx) {
+__name(create_else_block$b, "create_else_block$b");
+function create_if_block$j(ctx) {
   let th;
   let current;
   const default_slot_template = (
@@ -49239,13 +49259,13 @@ function create_if_block$i(ctx) {
     }
   };
 }
-__name(create_if_block$i, "create_if_block$i");
+__name(create_if_block$j, "create_if_block$j");
 function create_fragment$K(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block$i, create_else_block$a];
+  const if_block_creators = [create_if_block$j, create_else_block$b];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -49327,7 +49347,7 @@ const _TableCell = class _TableCell extends SvelteComponent {
 };
 __name(_TableCell, "TableCell");
 let TableCell = _TableCell;
-function create_else_block$9(ctx) {
+function create_else_block$a(ctx) {
   let ul;
   let current;
   const default_slot_template = (
@@ -49395,8 +49415,8 @@ function create_else_block$9(ctx) {
     }
   };
 }
-__name(create_else_block$9, "create_else_block$9");
-function create_if_block$h(ctx) {
+__name(create_else_block$a, "create_else_block$a");
+function create_if_block$i(ctx) {
   let ol;
   let current;
   const default_slot_template = (
@@ -49479,13 +49499,13 @@ function create_if_block$h(ctx) {
     }
   };
 }
-__name(create_if_block$h, "create_if_block$h");
+__name(create_if_block$i, "create_if_block$i");
 function create_fragment$J(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block$h, create_else_block$9];
+  const if_block_creators = [create_if_block$i, create_else_block$a];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -50372,7 +50392,7 @@ function get_each_context_1$6(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$6, "get_each_context_1$6");
-function create_else_block$8(ctx) {
+function create_else_block$9(ctx) {
   let div;
   let t;
   let current;
@@ -50476,7 +50496,7 @@ function create_else_block$8(ctx) {
     }
   };
 }
-__name(create_else_block$8, "create_else_block$8");
+__name(create_else_block$9, "create_else_block$9");
 function create_if_block_3$2(ctx) {
   let bounceload;
   let current;
@@ -50644,7 +50664,7 @@ function create_if_block_4$2(ctx) {
   };
 }
 __name(create_if_block_4$2, "create_if_block_4$2");
-function create_if_block$g(ctx) {
+function create_if_block$h(ctx) {
   let div1;
   let b;
   let t1;
@@ -50738,7 +50758,7 @@ function create_if_block$g(ctx) {
     }
   };
 }
-__name(create_if_block$g, "create_if_block$g");
+__name(create_if_block$h, "create_if_block$h");
 function create_if_block_1$6(ctx) {
   let div;
   return {
@@ -50856,7 +50876,7 @@ function create_fragment$A(ctx) {
   let if_block0;
   let t2;
   let current;
-  const if_block_creators = [create_if_block_2$4, create_if_block_3$2, create_else_block$8];
+  const if_block_creators = [create_if_block_2$4, create_if_block_3$2, create_else_block$9];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -50874,7 +50894,7 @@ function create_fragment$A(ctx) {
   if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
   let if_block1 = (
     /*$showDiscovered*/
-    ctx[2] && create_if_block$g(ctx)
+    ctx[2] && create_if_block$h(ctx)
   );
   return {
     c() {
@@ -50928,7 +50948,7 @@ function create_fragment$A(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$g(ctx2);
+          if_block1 = create_if_block$h(ctx2);
           if_block1.c();
           if_block1.m(div1, null);
         }
@@ -51152,7 +51172,7 @@ function get_each_context$h(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$h, "get_each_context$h");
-function create_else_block$7(ctx) {
+function create_else_block$8(ctx) {
   let each_1_anchor;
   let each_value = ensure_array_like(
     /*announcements*/
@@ -51211,8 +51231,8 @@ function create_else_block$7(ctx) {
     }
   };
 }
-__name(create_else_block$7, "create_else_block$7");
-function create_if_block$f(ctx) {
+__name(create_else_block$8, "create_else_block$8");
+function create_if_block$g(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({ props: { content: "Loading news.." } });
@@ -51239,7 +51259,7 @@ function create_if_block$f(ctx) {
     }
   };
 }
-__name(create_if_block$f, "create_if_block$f");
+__name(create_if_block$g, "create_if_block$g");
 function create_each_block$h(ctx) {
   let div1;
   let div0;
@@ -51321,7 +51341,7 @@ function create_fragment$z(ctx) {
   let current_block_type_index;
   let if_block;
   let current;
-  const if_block_creators = [create_if_block$f, create_else_block$7];
+  const if_block_creators = [create_if_block$g, create_else_block$8];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -51507,75 +51527,147 @@ let PlayerIdsFeature = _PlayerIdsFeature;
 __decorateClass$w([
   inject(PlayersService)
 ], PlayerIdsFeature.prototype, "_playersService");
-function create_fragment$y(ctx) {
-  let div1;
-  let div0;
-  let t0;
-  let span;
-  let t1;
-  let div1_class_value;
+function create_else_block$7(ctx) {
+  let t;
   return {
     c() {
-      div1 = element$1("div");
-      div0 = element$1("div");
-      t0 = space();
-      span = element$1("span");
-      t1 = text(
+      t = text(
         /*title*/
         ctx[0]
       );
-      attr(div0, "class", "typo-tooltip-arrow svelte-ffctjy");
-      attr(span, "class", "svelte-ffctjy");
-      attr(div1, "class", div1_class_value = "typo-tooltip " + /*direction*/
-      ctx[1] + " svelte-ffctjy");
-      set_style(
-        div1,
-        "top",
-        /*anchorY*/
-        ctx[3] + "px"
-      );
-      set_style(
-        div1,
-        "left",
-        /*anchorX*/
-        ctx[2] + "px"
-      );
     },
     m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, div0);
-      append(div1, t0);
-      append(div1, span);
-      append(span, t1);
+      insert(target, t, anchor);
     },
-    p(ctx2, [dirty]) {
+    p(ctx2, dirty) {
       if (dirty & /*title*/
       1) set_data(
-        t1,
+        t,
         /*title*/
         ctx2[0]
       );
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t);
+      }
+    }
+  };
+}
+__name(create_else_block$7, "create_else_block$7");
+function create_if_block$f(ctx) {
+  let html_tag;
+  let html_anchor;
+  return {
+    c() {
+      html_tag = new HtmlTag(false);
+      html_anchor = empty();
+      html_tag.a = html_anchor;
+    },
+    m(target, anchor) {
+      html_tag.m(
+        /*htmlTitle*/
+        ctx[1],
+        target,
+        anchor
+      );
+      insert(target, html_anchor, anchor);
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*htmlTitle*/
+      2) html_tag.p(
+        /*htmlTitle*/
+        ctx2[1]
+      );
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(html_anchor);
+        html_tag.d();
+      }
+    }
+  };
+}
+__name(create_if_block$f, "create_if_block$f");
+function create_fragment$y(ctx) {
+  let div2;
+  let div0;
+  let t;
+  let div1;
+  let div2_class_value;
+  function select_block_type(ctx2, dirty) {
+    if (
+      /*htmlTitle*/
+      ctx2[1]
+    ) return create_if_block$f;
+    return create_else_block$7;
+  }
+  __name(select_block_type, "select_block_type");
+  let current_block_type = select_block_type(ctx);
+  let if_block = current_block_type(ctx);
+  return {
+    c() {
+      div2 = element$1("div");
+      div0 = element$1("div");
+      t = space();
+      div1 = element$1("div");
+      if_block.c();
+      attr(div0, "class", "typo-tooltip-arrow svelte-1s7wcc7");
+      attr(div1, "class", "typo-tooltip-title svelte-1s7wcc7");
+      attr(div2, "class", div2_class_value = "typo-tooltip " + /*direction*/
+      ctx[2] + " svelte-1s7wcc7");
+      set_style(
+        div2,
+        "top",
+        /*anchorY*/
+        ctx[4] + "px"
+      );
+      set_style(
+        div2,
+        "left",
+        /*anchorX*/
+        ctx[3] + "px"
+      );
+    },
+    m(target, anchor) {
+      insert(target, div2, anchor);
+      append(div2, div0);
+      append(div2, t);
+      append(div2, div1);
+      if_block.m(div1, null);
+    },
+    p(ctx2, [dirty]) {
+      if (current_block_type === (current_block_type = select_block_type(ctx2)) && if_block) {
+        if_block.p(ctx2, dirty);
+      } else {
+        if_block.d(1);
+        if_block = current_block_type(ctx2);
+        if (if_block) {
+          if_block.c();
+          if_block.m(div1, null);
+        }
+      }
       if (dirty & /*direction*/
-      2 && div1_class_value !== (div1_class_value = "typo-tooltip " + /*direction*/
-      ctx2[1] + " svelte-ffctjy")) {
-        attr(div1, "class", div1_class_value);
+      4 && div2_class_value !== (div2_class_value = "typo-tooltip " + /*direction*/
+      ctx2[2] + " svelte-1s7wcc7")) {
+        attr(div2, "class", div2_class_value);
       }
       if (dirty & /*anchorY*/
-      8) {
+      16) {
         set_style(
-          div1,
+          div2,
           "top",
           /*anchorY*/
-          ctx2[3] + "px"
+          ctx2[4] + "px"
         );
       }
       if (dirty & /*anchorX*/
-      4) {
+      8) {
         set_style(
-          div1,
+          div2,
           "left",
           /*anchorX*/
-          ctx2[2] + "px"
+          ctx2[3] + "px"
         );
       }
     },
@@ -51583,24 +51675,27 @@ function create_fragment$y(ctx) {
     o: noop$1,
     d(detaching) {
       if (detaching) {
-        detach(div1);
+        detach(div2);
       }
+      if_block.d();
     }
   };
 }
 __name(create_fragment$y, "create_fragment$y");
 function instance$v($$self, $$props, $$invalidate) {
   let { title } = $$props;
+  let { htmlTitle } = $$props;
   let { direction } = $$props;
   let { anchorX } = $$props;
   let { anchorY } = $$props;
   $$self.$$set = ($$props2) => {
     if ("title" in $$props2) $$invalidate(0, title = $$props2.title);
-    if ("direction" in $$props2) $$invalidate(1, direction = $$props2.direction);
-    if ("anchorX" in $$props2) $$invalidate(2, anchorX = $$props2.anchorX);
-    if ("anchorY" in $$props2) $$invalidate(3, anchorY = $$props2.anchorY);
+    if ("htmlTitle" in $$props2) $$invalidate(1, htmlTitle = $$props2.htmlTitle);
+    if ("direction" in $$props2) $$invalidate(2, direction = $$props2.direction);
+    if ("anchorX" in $$props2) $$invalidate(3, anchorX = $$props2.anchorX);
+    if ("anchorY" in $$props2) $$invalidate(4, anchorY = $$props2.anchorY);
   };
-  return [title, direction, anchorX, anchorY];
+  return [title, htmlTitle, direction, anchorX, anchorY];
 }
 __name(instance$v, "instance$v");
 const _Tooltip = class _Tooltip extends SvelteComponent {
@@ -51608,9 +51703,10 @@ const _Tooltip = class _Tooltip extends SvelteComponent {
     super();
     init(this, options, instance$v, create_fragment$y, safe_not_equal, {
       title: 0,
-      direction: 1,
-      anchorX: 2,
-      anchorY: 3
+      htmlTitle: 1,
+      direction: 2,
+      anchorX: 3,
+      anchorY: 4
     });
   }
 };
@@ -51722,6 +51818,7 @@ const _TooltipsFeature = class _TooltipsFeature extends TypoFeature {
       target: document.body,
       props: {
         title: tooltip.title,
+        htmlTitle: tooltip.htmlTitle,
         anchorX,
         anchorY,
         direction
@@ -62476,6 +62573,7 @@ const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature ex
     __publicField(this, "_elements");
     __publicField(this, "_lobbySvc");
     __publicField(this, "_chatSvc");
+    __publicField(this, "_lobbyJoinedListener");
     __publicField(this, "name", "Chat Highlighting");
     __publicField(this, "description", "Mentions like in Discord and highlighting your and friends' messages.");
     __publicField(this, "tags", [FeatureTag.INTERFACE, FeatureTag.SOCIAL]);
@@ -62527,8 +62625,9 @@ const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature ex
     this._keyupEvents = new DomEventSubscription(elements2.chatInput, "keyup");
     this._keydownEvents = new DomEventSubscription(elements2.chatInput, "keydown");
     this._keyupEvents.events$.pipe(
-      withLatestFrom(mentionData$.pipe(filter((data) => data !== void 0)))
-    ).subscribe(([, data]) => this.onChatInput(data.players));
+      mergeWith(this._lobbyJoinedListener.events$),
+      withLatestFrom(mentionData$.pipe(map((data) => data === void 0 ? [] : data.players)))
+    ).subscribe(([, data]) => this.onChatInput(data));
     this._keydownEvents.events$.pipe(
       withLatestFrom(this._playerCandidates$)
     ).subscribe(([event, candidates]) => this.specialKeyboardHandling(event, candidates));
@@ -62779,6 +62878,9 @@ __decorateClass$h([
 __decorateClass$h([
   inject(ChatService)
 ], ChatMessageHighlightingFeature.prototype, "_chatSvc");
+__decorateClass$h([
+  inject(LobbyJoinedEventListener)
+], ChatMessageHighlightingFeature.prototype, "_lobbyJoinedListener");
 const isAnonymousPlayerIdentification = /* @__PURE__ */ __name((value) => {
   return value.lobbyKey !== void 0 && value.lobbyPlayerId !== void 0;
 }, "isAnonymousPlayerIdentification");
