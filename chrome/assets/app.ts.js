@@ -62453,6 +62453,18 @@ var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key2, kind) 
   if (result) __defProp$h(target, key2, result);
   return result;
 }, "__decorateClass$h");
+const replaceMultiple = /* @__PURE__ */ __name((element2, children) => {
+  const parent = element2.parentNode;
+  if (parent === null) throw new Error("trying to replace element with no parent.");
+  const lastChild = children.pop();
+  if (lastChild === void 0) throw new Error("provide at least one child");
+  parent.replaceChild(lastChild, element2);
+  let prev = lastChild;
+  for (const newChild of children.toReversed()) {
+    parent.insertBefore(newChild, prev);
+    prev = newChild;
+  }
+}, "replaceMultiple");
 const beginIntersect = /* @__PURE__ */ __name((s1, s2) => {
   const loopFor = Math.min(s1.length, s2.length);
   for (let index = 0; index < loopFor; index++) if (s1[index] !== s2[index]) return index;
@@ -62597,41 +62609,41 @@ const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature ex
   }
   async onMessage(element2, senderName, content, myName, players) {
     var _a2, _b2;
-    const newElement = document.createElement("span");
-    const textSplit = content.split("@");
-    for (const [index, text2] of textSplit.entries()) {
-      const ele = document.createElement("span");
-      if (index == 0) {
-        ele.innerText = text2;
-        newElement.append(ele);
-        continue;
+    const eleParent = element2.parentElement;
+    if (eleParent === null) return this._logger.warn("why doesn't the parent exist");
+    const walker = document.createTreeWalker(element2, NodeFilter.SHOW_TEXT);
+    let currentNode;
+    while (currentNode = walker.nextNode()) {
+      if ((_a2 = currentNode.parentElement) == null ? void 0 : _a2.classList.contains("typo-emoji")) continue;
+      const textSplit = ((_b2 = currentNode.textContent) == null ? void 0 : _b2.split("@")) || [];
+      if (textSplit.length <= 1) continue;
+      const elements2 = [];
+      for (const [index, text2] of textSplit.entries()) {
+        if (index === 0) {
+          elements2.push(document.createTextNode(text2));
+          continue;
+        }
+        let foundPlayer = null;
+        for (const player of players) {
+          if (!text2.startsWith(player)) continue;
+          if (player.length > ((foundPlayer == null ? void 0 : foundPlayer.length) || -1)) foundPlayer = player;
+        }
+        if (!foundPlayer) {
+          elements2.push(document.createTextNode(`@${text2}`));
+          continue;
+        }
+        const bolden = document.createElement("b");
+        bolden.innerText = `@${foundPlayer}`;
+        elements2.push(bolden);
+        elements2.push(document.createTextNode(text2.slice(foundPlayer.length)));
       }
-      let foundPlayer = null;
-      for (const player of players) {
-        if (!text2.startsWith(player)) continue;
-        if (player.length > ((foundPlayer == null ? void 0 : foundPlayer.length) || -1)) foundPlayer = player;
-      }
-      if (!foundPlayer) {
-        ele.innerText = `@${text2}`;
-        newElement.append(ele);
-        continue;
-      }
-      const bolden = document.createElement("b");
-      bolden.innerText = `@${foundPlayer}`;
-      ele.append(bolden);
-      ele.append(document.createTextNode(text2.slice(foundPlayer.length)));
-      newElement.append(ele);
+      replaceMultiple(currentNode, elements2);
     }
-    (_a2 = element2.parentElement) == null ? void 0 : _a2.append(newElement);
-    element2.remove();
-    if (newElement.parentElement !== null)
-      this.addMouseoverListenerToMessage(newElement.parentElement);
+    this.addMouseoverListenerToMessage(eleParent);
     const vipPlayers = await this._vipPlayersSetting.getValue();
     for (const player of vipPlayers) {
       if (player.name !== senderName) continue;
-      const parent = newElement.parentElement;
-      if (!parent) return this._logger.warn("could not get parent element");
-      newElement.parentElement.style.backgroundColor = player.color + "88";
+      eleParent.style.backgroundColor = player.color + "88";
       return;
     }
     const selfHl = await this._enableSelfHighlighting.getValue();
@@ -62639,7 +62651,7 @@ const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature ex
     const isPingingMe = (content + " ").includes(lookFor);
     const shouldHighlightSelf = selfHl && myName === senderName;
     this._logger.debug(vipPlayers);
-    if (isPingingMe || shouldHighlightSelf) (_b2 = newElement.parentElement) == null ? void 0 : _b2.classList.add("guessed");
+    if (isPingingMe || shouldHighlightSelf) eleParent.classList.add("guessed");
   }
   specialKeyboardHandling(evt, candidates) {
     var _a2;
