@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc a0e4400
+// @version      27.1.3 beta-usc 493b1ab
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc a0e4400", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 493b1ab", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -66071,6 +66071,9 @@ ${content2}</tr>
       __publicField(this, "_enableSelfHighlighting", this.useSetting(
         new BooleanExtensionSetting("highlight_my_messages", false, this).withName("Highlight My Messages").withDescription("Highlights your own messages.")
       ));
+      __publicField(this, "_enableReplyButton", this.useSetting(
+        new BooleanExtensionSetting("enable_reply_button", true, this).withName("Reply Button").withDescription("Add a reply button to ping people from their messages.")
+      ));
       __publicField(this, "chatSubscription");
       __publicField(this, "_flyoutComponent");
       __publicField(this, "_flyoutSubscription");
@@ -66117,8 +66120,10 @@ ${content2}</tr>
       this._messagePointeroverEvents = new DomEventSubscription(elements2.chatContent, "pointerover");
       this._messagePointerleaveEvents = new DomEventSubscription(elements2.chatContent, "pointerleave");
       this._messagePointeroverEvents.events$.pipe(
-        combineLatestWith(this._registeredMessageElements$)
-      ).subscribe(([event, registeredElements]) => {
+        combineLatestWith(this._registeredMessageElements$),
+        withLatestFrom(this._enableReplyButton.changes$)
+      ).subscribe(([[event, registeredElements], replyBtnEnabled]) => {
+        if (!replyBtnEnabled) return;
         const hovered = event.target;
         for (const element2 of registeredElements) {
           if (element2.contains(hovered)) {
@@ -66163,10 +66168,14 @@ ${content2}</tr>
     async createReplyButton() {
       const input = (await this._elements.complete()).chatInput;
       const button = createElement(`
-      <button style="position:absolute; right:0; bottom:0;">
+      <button type="button">
         <img src="/img/undo.gif" width="25" height="25" />
       </button>
     `);
+      button.style.position = "absolute";
+      button.style.right = "0";
+      button.style.bottom = "0";
+      button.style.backgroundColor = "transparent";
       this._replyButton = button;
       this._replyButton.onclick = () => {
         var _a2;

@@ -57,7 +57,7 @@
   "permissions": [
     "activeTab"
   ],
-  "version_name": "27.1.3 beta-ffx a0e4400",
+  "version_name": "27.1.3 beta-ffx 493b1ab",
   "browser_specific_settings": {
     "gecko": {
       "id": "{0b67dc2f-1517-451c-b5cb-8b28270b03e6}",
