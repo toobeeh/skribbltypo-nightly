@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 493b1ab
+// @version      27.1.3 beta-usc 723a3e9
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 493b1ab", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 723a3e9", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -17650,6 +17650,14 @@
         return false;
       }
       this._elementsSetup.complete().then((elements2) => elements2.chatInput.value = content2);
+      return true;
+    }
+    moveChatboxCursor(pos, requestingFeature) {
+      if (this._lockedChatboxFeature && this._lockedChatboxFeature !== requestingFeature) {
+        this._logger.warn("Chatbox cursor movement denied - chatbox locked by other feature", this._lockedChatboxFeature.name);
+        return false;
+      }
+      this._elementsSetup.complete().then((elements2) => elements2.chatInput.setSelectionRange(pos, pos));
       return true;
     }
     requestChatboxLock(feature, cancelEventFilter = null) {
@@ -66055,6 +66063,11 @@ ${content2}</tr>
     if (result) __defProp$h(target, key2, result);
     return result;
   }, "__decorateClass$h");
+  const beginIntersect = /* @__PURE__ */ __name((s1, s2) => {
+    const loopFor = Math.min(s1.length, s2.length);
+    for (let index = 0; index < loopFor; index++) if (s1[index] !== s2[index]) return index;
+    return loopFor;
+  }, "beginIntersect");
   const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -66268,30 +66281,29 @@ ${content2}</tr>
       }
     }
     async onChatInput(players) {
-      var _a2, _b2;
       const input = (await this._elements.complete()).chatInput;
       const value = input.value.toLowerCase();
-      if (value.indexOf("@") == -1) return;
-      const toComplete = value.split("@").at(-1);
-      if (toComplete === void 0) {
-        (_a2 = this._flyoutComponent) == null ? void 0 : _a2.close();
-        this._flyoutComponent = void 0;
-        return;
-      }
+      if (input.selectionStart !== input.selectionEnd) return this.hideAutocomplete();
+      const userSelection = input.selectionStart;
+      if (!userSelection) return this.hideAutocomplete();
+      const startIndex = value.lastIndexOf("@", userSelection) + 1;
+      if (startIndex > userSelection) return this.hideAutocomplete();
+      const toComplete = value.slice(startIndex, userSelection);
       const matches = players.filter(
         (person) => person.toLowerCase().startsWith(toComplete) && person != toComplete
       );
-      if (matches.length == 0) {
-        (_b2 = this._flyoutComponent) == null ? void 0 : _b2.close();
-        this._flyoutComponent = void 0;
-        return;
-      }
+      if (matches.length == 0) return this.hideAutocomplete();
       this._logger.debug("matches:", matches);
       this._playerCandidates$.next(matches);
       await this.showAutocomplete();
     }
     filterChatboxEvents(event) {
       if (event.key === "Tab" || event.key === "Enter" || event.key === "ArrowUp" || event.key === "ArrowDown") return "preventDefault";
+    }
+    hideAutocomplete() {
+      var _a2;
+      (_a2 = this._flyoutComponent) == null ? void 0 : _a2.close();
+      this._flyoutComponent = void 0;
     }
     async showAutocomplete() {
       if (!await this._enablePopover.getValue()) return;
@@ -66331,11 +66343,15 @@ ${content2}</tr>
       var _a2;
       const input = (await this._elements.complete()).chatInput;
       const val = input.value;
-      const atIndex = val.lastIndexOf("@");
+      const atIndex = val.lastIndexOf("@", input.selectionStart ?? 0);
       if (atIndex === -1) return;
-      const strip = val.slice(0, atIndex);
-      const newval = `${strip}@${name} `;
-      this._chatSvc.replaceChatboxContent(newval, this);
+      const insert2 = `@${name} `;
+      const start = val.slice(0, atIndex);
+      const ogEnd = val.slice(atIndex + 1);
+      const deleteFromEnd = beginIntersect(ogEnd, name);
+      const end = ogEnd.slice(deleteFromEnd);
+      this._chatSvc.replaceChatboxContent(start + insert2 + end, this);
+      this._chatSvc.moveChatboxCursor(atIndex + insert2.length, this);
       (_a2 = this._flyoutComponent) == null ? void 0 : _a2.close();
       input.focus();
       this._kbSelectedPlayerIndex$.next(0);
