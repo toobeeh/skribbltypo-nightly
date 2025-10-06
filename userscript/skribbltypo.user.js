@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc e32cb6a
+// @version      27.1.3 beta-usc cfa8c8a
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc e32cb6a", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc cfa8c8a", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -66184,7 +66184,7 @@ ${content2}</tr>
       __publicField(this, "_lobbySvc");
       __publicField(this, "_chatSvc");
       __publicField(this, "_lobbyJoinedListener");
-      __publicField(this, "name", "Chat Highlighting");
+      __publicField(this, "name", "Mentions & Highlighting");
       __publicField(this, "description", "Mentions like in Discord and highlighting your and friends' messages.");
       __publicField(this, "tags", [FeatureTag.INTERFACE, FeatureTag.SOCIAL]);
       __publicField(this, "featureId", 54);
@@ -66397,6 +66397,7 @@ ${content2}</tr>
       if (input.selectionStart !== input.selectionEnd) return this.hideAutocomplete();
       const userSelection = input.selectionStart;
       if (!userSelection) return this.hideAutocomplete();
+      if (!value.includes("@")) return this.hideAutocomplete();
       const startIndex = value.lastIndexOf("@", userSelection) + 1;
       if (startIndex > userSelection) return this.hideAutocomplete();
       const toComplete = value.slice(startIndex, userSelection);

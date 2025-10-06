@@ -62574,7 +62574,7 @@ const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature ex
     __publicField(this, "_lobbySvc");
     __publicField(this, "_chatSvc");
     __publicField(this, "_lobbyJoinedListener");
-    __publicField(this, "name", "Chat Highlighting");
+    __publicField(this, "name", "Mentions & Highlighting");
     __publicField(this, "description", "Mentions like in Discord and highlighting your and friends' messages.");
     __publicField(this, "tags", [FeatureTag.INTERFACE, FeatureTag.SOCIAL]);
     __publicField(this, "featureId", 54);
@@ -62787,6 +62787,7 @@ const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature ex
     if (input.selectionStart !== input.selectionEnd) return this.hideAutocomplete();
     const userSelection = input.selectionStart;
     if (!userSelection) return this.hideAutocomplete();
+    if (!value.includes("@")) return this.hideAutocomplete();
     const startIndex = value.lastIndexOf("@", userSelection) + 1;
     if (startIndex > userSelection) return this.hideAutocomplete();
     const toComplete = value.slice(startIndex, userSelection);
