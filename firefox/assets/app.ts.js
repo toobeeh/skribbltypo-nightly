@@ -59653,6 +59653,9 @@ const _MetricView = class _MetricView {
     this.description = description;
     this._valueSelector = _valueSelector;
   }
+  get datasetMode() {
+    return this._aggregation === "single" ? "line" : "bar";
+  }
   withAggregation(aggregation) {
     this._aggregation = aggregation;
     return this;
@@ -59689,7 +59692,8 @@ const _MetricView = class _MetricView {
       title: this.name,
       description: this.description,
       xUnit: this._metricTemporalUnit,
-      yUnit: this._metricUnit
+      yUnit: this._metricUnit,
+      mode: this.datasetMode
     });
   }
   /**
@@ -60348,19 +60352,11 @@ const _Chart = class _Chart {
     this.drawTitle(config2.title);
     this.drawDescription(config2.description);
     this.drawGridlines(properties, config2);
-    this.drawGraph(data, properties);
+    if (config2.mode === "bar") this.drawBars(data, properties, config2);
+    else if (config2.mode === "line") this.drawLines(data, properties, config2);
     this.drawAxis();
     this.drawAxisLabels(properties, config2);
     this.drawLegend(data);
-  }
-  /**
-   * Determines the chart mode based on the dataset.
-   * If all datasets have only one data point, it's a bar chart, otherwise a line chart.
-   * @param dataset
-   * @private
-   */
-  getChartMode(dataset) {
-    return dataset.every((d) => d.data.length === 1) ? "bar" : "line";
   }
   getChartDataProperties(data) {
     const flatX = data.flatMap((d) => d.data.map((p) => p.x));
@@ -60496,33 +60492,23 @@ const _Chart = class _Chart {
     return;
   }
   /**
-   * Draws the graph based on the determined chart mode (bar or line).
-   * @param data
-   * @param properties
-   * @private
-   */
-  drawGraph(data, properties) {
-    const mode = this.getChartMode(data);
-    if (mode === "bar") this.drawBars(data, properties);
-    else if (mode === "line") this.drawLines(data, properties);
-    return;
-  }
-  /**
    * Draws bars for each dataset, ignoring x values and aligning bars evenly within the chart area.
    * Bars have a max width of 50 px and are spaced evenly within the chart area
    * @param data
    * @param properties
+   * @param config
    * @private
    */
-  drawBars(data, properties) {
-    const padding = 20;
+  drawBars(data, properties, config2) {
+    const padding = this._chartLayout.barPadding;
     const totalBarSpace = this._chartArea.width - padding * 2;
     const barWidth = Math.min(50, totalBarSpace / data.length + (data.length - 1) * padding);
     data.forEach((dataset, datasetIndex) => {
       this._context.fillStyle = dataset.color + "80";
       this._context.strokeStyle = dataset.color;
       this._context.lineWidth = 2;
-      dataset.data.forEach((point) => {
+      if (dataset.data.length === 0) throw new Error("Dataset has no data points");
+      dataset.data.slice(0, 1).forEach((point) => {
         const x = this._chartArea.x + padding + datasetIndex * (barWidth + padding);
         const y = this.chartToCanvasY(point.y, properties);
         const height = this._chartArea.y + this._chartArea.height - y;
@@ -60534,6 +60520,13 @@ const _Chart = class _Chart {
           this._context.textBaseline = "bottom";
           this._context.textAlign = "center";
           this._context.fillText(point.label, x + barWidth / 2, y - 5);
+        } else {
+          this._context.font = "15px Nunito, monospace";
+          this._context.fillStyle = "#000";
+          this._context.textBaseline = "bottom";
+          this._context.textAlign = "center";
+          this._context.fillText(`${dataset.label}`, x + barWidth / 2, y - 30);
+          this._context.fillText(`${point.y}${config2.yUnit ?? ""}`, x + barWidth / 2, y - 5);
         }
       });
     });
@@ -60542,9 +60535,10 @@ const _Chart = class _Chart {
    * Draws lines for each dataset, connecting points based on their x and y values.
    * @param data
    * @param properties
+   * @param config
    * @private
    */
-  drawLines(data, properties) {
+  drawLines(data, properties, config2) {
     data.forEach((dataset) => {
       this._context.strokeStyle = dataset.color;
       this._context.lineWidth = 3;
@@ -60558,11 +60552,26 @@ const _Chart = class _Chart {
           this._context.font = "15px Nunito, monospace";
           this._context.fillStyle = "#000";
           this._context.textBaseline = "bottom";
-          this._context.textAlign = "left";
+          this._context.textAlign = index === 0 || index != dataset.data.length - 1 ? "left" : "center";
           this._context.fillText(point.label, x, y - 5);
+        } else if (index === dataset.data.length - 1 && point.y > 0) {
+          this._context.font = "15px Nunito, monospace";
+          this._context.fillStyle = "#000";
+          this._context.textBaseline = "bottom";
+          this._context.textAlign = index === 0 ? "left" : "center";
+          this._context.fillText(`${dataset.label} (${point.y}${config2.yUnit})`, x + 5, y - 5);
         }
       });
       this._context.stroke();
+      dataset.data.forEach((point) => {
+        if (point.y === 0) return;
+        const x = this.chartToCanvasX(point.x, properties);
+        const y = this.chartToCanvasY(point.y, properties);
+        this._context.fillStyle = dataset.color;
+        this._context.beginPath();
+        this._context.arc(x, y, 4, 0, Math.PI * 2);
+        this._context.fill();
+      });
     });
   }
   /**
@@ -60571,9 +60580,9 @@ const _Chart = class _Chart {
    * @private
    */
   drawLegend(data) {
-    for (let i = 0; i < data.length; i++) {
-      const dataset = data[i];
-      const x = this._chartArea.x + i * 150;
+    let nextX = this._chartArea.x;
+    for (const dataset of data) {
+      const x = nextX;
       const y = this._chartLayout.height - 50;
       this._context.fillStyle = dataset.color;
       this._context.beginPath();
@@ -60584,6 +60593,8 @@ const _Chart = class _Chart {
       this._context.textBaseline = "middle";
       this._context.textAlign = "left";
       this._context.fillText(dataset.label, x + 20, y);
+      const textWidth = this._context.measureText(dataset.label).width;
+      nextX += 60 + textWidth;
     }
   }
   /**
@@ -60593,6 +60604,7 @@ const _Chart = class _Chart {
    * @private
    */
   chartToCanvasX(x, properties) {
+    if (properties.maxX === 0) return this._chartArea.x;
     return this._chartArea.x + x / properties.maxX * this._chartArea.width;
   }
   /**
@@ -60679,9 +60691,9 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
         x: 200,
         y: 200,
         width: 1600,
-        height: 600
+        height: 700
       },
-      barPadding: 50,
+      barPadding: 30,
       barMaxWidth: 100,
       yGridGap: 50
     });
