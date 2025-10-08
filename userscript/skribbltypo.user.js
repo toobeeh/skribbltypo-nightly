@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc cfa8c8a
+// @version      27.1.3 beta-usc b53badc
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc cfa8c8a", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc b53badc", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -12050,17 +12050,17 @@
   }
   __name(propertyEventDecorator, "propertyEventDecorator");
   var postConstruct = propertyEventDecorator(POST_CONSTRUCT, MULTIPLE_POST_CONSTRUCT_METHODS);
-  var __defProp$24 = Object.defineProperty;
+  var __defProp$25 = Object.defineProperty;
   var __getOwnPropDesc$$ = Object.getOwnPropertyDescriptor;
-  var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$24(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
-  var __decorateClass$24 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defNormalProp2 = /* @__PURE__ */ __name((obj, key2, value) => key2 in obj ? __defProp$25(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value, "__defNormalProp");
+  var __decorateClass$25 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$$(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$24(target, key2, result);
+    if (kind && result) __defProp$25(target, key2, result);
     return result;
-  }, "__decorateClass$24");
+  }, "__decorateClass$25");
   var __publicField2 = /* @__PURE__ */ __name((obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value), "__publicField");
   let LoggingService = (_a = class {
     constructor() {
@@ -12133,7 +12133,7 @@
     error: "color: red; font-weight: bold;",
     date: "color: darkGrey; font-weight: light;"
   });
-  LoggingService = __decorateClass$24([
+  LoggingService = __decorateClass$25([
     injectable()
   ], LoggingService);
   const _ApplicationEvent = class _ApplicationEvent {
@@ -12141,16 +12141,16 @@
   __name(_ApplicationEvent, "ApplicationEvent");
   let ApplicationEvent = _ApplicationEvent;
   const loggerFactory = Symbol("loggerFactory");
-  var __defProp$23 = Object.defineProperty;
+  var __defProp$24 = Object.defineProperty;
   var __getOwnPropDesc$_ = Object.getOwnPropertyDescriptor;
-  var __decorateClass$23 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$24 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$_(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$23(target, key2, result);
+    if (kind && result) __defProp$24(target, key2, result);
     return result;
-  }, "__decorateClass$23");
+  }, "__decorateClass$24");
   var __decorateParam$v = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$v");
   let EventsService = (_b = class {
     constructor(loggerFactory2) {
@@ -12176,20 +12176,20 @@
       this._events$.next(event);
     }
   }, __name(_b, "EventsService"), _b);
-  EventsService = __decorateClass$23([
+  EventsService = __decorateClass$24([
     injectable(),
     __decorateParam$v(0, inject(loggerFactory))
   ], EventsService);
-  var __defProp$22 = Object.defineProperty;
+  var __defProp$23 = Object.defineProperty;
   var __getOwnPropDesc$Z = Object.getOwnPropertyDescriptor;
-  var __decorateClass$22 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$23 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Z(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$22(target, key2, result);
+    if (kind && result) __defProp$23(target, key2, result);
     return result;
-  }, "__decorateClass$22");
+  }, "__decorateClass$23");
   var __decorateParam$u = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$u");
   let EventProcessor = (_c = class {
     constructor(loggerFactory2, _eventsService) {
@@ -12219,24 +12219,24 @@
       return event instanceof this.eventType;
     }
   }, __name(_c, "EventProcessor"), _c);
-  __decorateClass$22([
+  __decorateClass$23([
     postConstruct()
   ], EventProcessor.prototype, "start", 1);
-  EventProcessor = __decorateClass$22([
+  EventProcessor = __decorateClass$23([
     injectable(),
     __decorateParam$u(0, inject(loggerFactory)),
     __decorateParam$u(1, inject(EventsService))
   ], EventProcessor);
-  var __defProp$21 = Object.defineProperty;
+  var __defProp$22 = Object.defineProperty;
   var __getOwnPropDesc$Y = Object.getOwnPropertyDescriptor;
-  var __decorateClass$21 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$22 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Y(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$21(target, key2, result);
+    if (kind && result) __defProp$22(target, key2, result);
     return result;
-  }, "__decorateClass$21");
+  }, "__decorateClass$22");
   var __decorateParam$t = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$t");
   let EventListener = (_d = class {
     constructor(_eventsService, loggerFactory2) {
@@ -12259,21 +12259,21 @@
       return this._events$;
     }
   }, __name(_d, "EventListener"), _d);
-  EventListener = __decorateClass$21([
+  EventListener = __decorateClass$22([
     injectable(),
     __decorateParam$t(0, inject(EventsService)),
     __decorateParam$t(1, inject(loggerFactory))
   ], EventListener);
-  var __defProp$20 = Object.defineProperty;
+  var __defProp$21 = Object.defineProperty;
   var __getOwnPropDesc$X = Object.getOwnPropertyDescriptor;
-  var __decorateClass$20 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$21 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$X(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$20(target, key2, result);
+    if (kind && result) __defProp$21(target, key2, result);
     return result;
-  }, "__decorateClass$20");
+  }, "__decorateClass$21");
   const _CanvasClearedEvent = class _CanvasClearedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -12296,7 +12296,7 @@
       return events;
     }
   }, __name(_e, "CanvasClearedEventProcessor"), _e);
-  CanvasClearedEventProcessor = __decorateClass$20([
+  CanvasClearedEventProcessor = __decorateClass$21([
     injectable()
   ], CanvasClearedEventProcessor);
   let CanvasClearedEventListener = (_f = class extends EventListener {
@@ -12305,10 +12305,10 @@
       __publicField(this, "_processor");
     }
   }, __name(_f, "CanvasClearedEventListener"), _f);
-  __decorateClass$20([
+  __decorateClass$21([
     inject(CanvasClearedEventProcessor)
   ], CanvasClearedEventListener.prototype, "_processor", 2);
-  CanvasClearedEventListener = __decorateClass$20([
+  CanvasClearedEventListener = __decorateClass$21([
     injectable()
   ], CanvasClearedEventListener);
   const canvasClearedEventRegistration = {
@@ -12561,16 +12561,16 @@
   };
   __name(_ExtensionCommand, "ExtensionCommand");
   let ExtensionCommand = _ExtensionCommand;
-  var __defProp$1$ = Object.defineProperty;
+  var __defProp$20 = Object.defineProperty;
   var __getOwnPropDesc$W = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$20 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$W(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1$(target, key2, result);
+    if (kind && result) __defProp$20(target, key2, result);
     return result;
-  }, "__decorateClass$1$");
+  }, "__decorateClass$20");
   var __decorateParam$s = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$s");
   let CommandsService = (_g = class {
     constructor(loggerFactory2) {
@@ -12657,20 +12657,20 @@
       } else return result.result;
     }
   }, __name(_g, "CommandsService"), _g);
-  CommandsService = __decorateClass$1$([
+  CommandsService = __decorateClass$20([
     injectable(),
     __decorateParam$s(0, inject(loggerFactory))
   ], CommandsService);
-  var __defProp$1_ = Object.defineProperty;
+  var __defProp$1$ = Object.defineProperty;
   var __getOwnPropDesc$V = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$V(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1_(target, key2, result);
+    if (kind && result) __defProp$1$(target, key2, result);
     return result;
-  }, "__decorateClass$1_");
+  }, "__decorateClass$1$");
   var __decorateParam$r = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$r");
   let HotkeysService = (_h = class {
     constructor(loggerFactory2) {
@@ -12742,20 +12742,20 @@
       return [...hotkey.defaultCombo ?? []];
     }
   }, __name(_h, "HotkeysService"), _h);
-  HotkeysService = __decorateClass$1_([
+  HotkeysService = __decorateClass$1$([
     injectable(),
     __decorateParam$r(0, inject(loggerFactory))
   ], HotkeysService);
-  var __defProp$1Z = Object.defineProperty;
+  var __defProp$1_ = Object.defineProperty;
   var __getOwnPropDesc$U = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$U(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Z(target, key2, result);
+    if (kind && result) __defProp$1_(target, key2, result);
     return result;
-  }, "__decorateClass$1Z");
+  }, "__decorateClass$1_");
   var __decorateParam$q = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$q");
   let TooltipsService = (_i = class {
     constructor(loggerFactory2) {
@@ -12836,20 +12836,20 @@
       return tooltips;
     }
   }, __name(_i, "TooltipsService"), _i);
-  TooltipsService = __decorateClass$1Z([
+  TooltipsService = __decorateClass$1_([
     injectable(),
     __decorateParam$q(0, inject(loggerFactory))
   ], TooltipsService);
-  var __defProp$1Y = Object.defineProperty;
+  var __defProp$1Z = Object.defineProperty;
   var __getOwnPropDesc$T = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$T(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Y(target, key2, result);
+    if (kind && result) __defProp$1Z(target, key2, result);
     return result;
-  }, "__decorateClass$1Y");
+  }, "__decorateClass$1Z");
   var __decorateParam$p = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$p");
   let OnboardingService = (_j = class {
     constructor(loggerFactory2) {
@@ -12908,20 +12908,20 @@
       return this._taskCompleted$.asObservable();
     }
   }, __name(_j, "OnboardingService"), _j);
-  OnboardingService = __decorateClass$1Y([
+  OnboardingService = __decorateClass$1Z([
     injectable(),
     __decorateParam$p(0, inject(loggerFactory))
   ], OnboardingService);
-  var __defProp$1X = Object.defineProperty;
+  var __defProp$1Y = Object.defineProperty;
   var __getOwnPropDesc$S = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$S(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1X(target, key2, result);
+    if (kind && result) __defProp$1Y(target, key2, result);
     return result;
-  }, "__decorateClass$1X");
+  }, "__decorateClass$1Y");
   var __decorateParam$o = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$o");
   let TypoFeature = (_k = class {
     constructor(loggerFactory2, _hotkeysService, _tooltipsService, _commandsService, _onboardingService) {
@@ -13113,10 +13113,10 @@
       };
     }
   }, __name(_k, "TypoFeature"), _k);
-  __decorateClass$1X([
+  __decorateClass$1Y([
     postConstruct()
   ], TypoFeature.prototype, "init", 1);
-  TypoFeature = __decorateClass$1X([
+  TypoFeature = __decorateClass$1Y([
     injectable(),
     __decorateParam$o(0, inject(loggerFactory)),
     __decorateParam$o(1, inject(HotkeysService)),
@@ -13124,16 +13124,16 @@
     __decorateParam$o(3, inject(CommandsService)),
     __decorateParam$o(4, inject(OnboardingService))
   ], TypoFeature);
-  var __defProp$1W = Object.defineProperty;
+  var __defProp$1X = Object.defineProperty;
   var __getOwnPropDesc$R = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$R(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1W(target, key2, result);
+    if (kind && result) __defProp$1X(target, key2, result);
     return result;
-  }, "__decorateClass$1W");
+  }, "__decorateClass$1X");
   let LoggerService = (_l = class {
     constructor() {
       __publicField(this, "_level", "debug");
@@ -13227,19 +13227,19 @@
       });
     }
   }, __name(_l, "LoggerService"), _l);
-  LoggerService = __decorateClass$1W([
+  LoggerService = __decorateClass$1X([
     injectable()
   ], LoggerService);
-  var __defProp$1V = Object.defineProperty;
+  var __defProp$1W = Object.defineProperty;
   var __getOwnPropDesc$Q = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$Q(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1V(target, key2, result);
+    if (kind && result) __defProp$1W(target, key2, result);
     return result;
-  }, "__decorateClass$1V");
+  }, "__decorateClass$1W");
   var __decorateParam$n = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$n");
   let Setup = (_m = class {
     constructor(loggerFactory2) {
@@ -13258,7 +13258,7 @@
       return this._setupPromise;
     }
   }, __name(_m, "Setup"), _m);
-  Setup = __decorateClass$1V([
+  Setup = __decorateClass$1W([
     injectable(),
     __decorateParam$n(0, inject(loggerFactory))
   ], Setup);
@@ -13282,16 +13282,16 @@
     return Reflect.getMetadata(decoratorSymbol, target);
   }
   __name(isEarlySetup, "isEarlySetup");
-  var __defProp$1U = Object.defineProperty;
+  var __defProp$1V = Object.defineProperty;
   var __getOwnPropDesc$P = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$P(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1U(target, key2, result);
+    if (kind && result) __defProp$1V(target, key2, result);
     return result;
-  }, "__decorateClass$1U");
+  }, "__decorateClass$1V");
   let GamePatchReadySetup = (_n = class extends Setup {
     constructor() {
       super(...arguments);
@@ -13301,21 +13301,21 @@
       return firstValueFrom(this._interceptor.patchLoaded$);
     }
   }, __name(_n, "GamePatchReadySetup"), _n);
-  __decorateClass$1U([
+  __decorateClass$1V([
     inject(Interceptor)
   ], GamePatchReadySetup.prototype, "_interceptor", 2);
-  GamePatchReadySetup = __decorateClass$1U([
+  GamePatchReadySetup = __decorateClass$1V([
     earlySetup()
   ], GamePatchReadySetup);
-  var __defProp$1T = Object.defineProperty;
-  var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1U = Object.defineProperty;
+  var __decorateClass$1U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1T(target, key2, result);
+    if (result) __defProp$1U(target, key2, result);
     return result;
-  }, "__decorateClass$1T");
+  }, "__decorateClass$1U");
   const _ChatControlsSetup = class _ChatControlsSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13332,7 +13332,7 @@
   };
   __name(_ChatControlsSetup, "ChatControlsSetup");
   let ChatControlsSetup = _ChatControlsSetup;
-  __decorateClass$1T([
+  __decorateClass$1U([
     inject(GamePatchReadySetup)
   ], ChatControlsSetup.prototype, "_gameReadySetup");
   const _HotkeyAction = class _HotkeyAction {
@@ -13430,16 +13430,16 @@
   };
   __name(_HotkeyAction, "HotkeyAction");
   let HotkeyAction = _HotkeyAction;
-  var __defProp$1S = Object.defineProperty;
+  var __defProp$1T = Object.defineProperty;
   var __getOwnPropDesc$O = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$O(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1S(target, key2, result);
+    if (kind && result) __defProp$1T(target, key2, result);
     return result;
-  }, "__decorateClass$1S");
+  }, "__decorateClass$1T");
   var __decorateParam$m = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$m");
   let GlobalSettingsService = (_o = class {
     constructor(loggerFactory2) {
@@ -13486,7 +13486,7 @@
       return Object.values(this._settings);
     }
   }, __name(_o, "GlobalSettingsService"), _o);
-  GlobalSettingsService = __decorateClass$1S([
+  GlobalSettingsService = __decorateClass$1T([
     injectable(),
     __decorateParam$m(0, inject(loggerFactory))
   ], GlobalSettingsService);
@@ -13609,15 +13609,15 @@
   };
   __name(_Controls, "Controls");
   let Controls = _Controls;
-  var __defProp$1R = Object.defineProperty;
-  var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1S = Object.defineProperty;
+  var __decorateClass$1S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1R(target, key2, result);
+    if (result) __defProp$1S(target, key2, result);
     return result;
-  }, "__decorateClass$1R");
+  }, "__decorateClass$1S");
   const _ControlsSetup = class _ControlsSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13637,10 +13637,10 @@
   };
   __name(_ControlsSetup, "ControlsSetup");
   let ControlsSetup = _ControlsSetup;
-  __decorateClass$1R([
+  __decorateClass$1S([
     inject(GamePatchReadySetup)
   ], ControlsSetup.prototype, "_gameReadySetup");
-  __decorateClass$1R([
+  __decorateClass$1S([
     inject(GlobalSettingsService)
   ], ControlsSetup.prototype, "_settingsService");
   function create_fragment$1D(ctx) {
@@ -13706,16 +13706,16 @@
   };
   __name(_CustomizerActionsSetup, "CustomizerActionsSetup");
   let CustomizerActionsSetup = _CustomizerActionsSetup;
-  var __defProp$1Q = Object.defineProperty;
+  var __defProp$1R = Object.defineProperty;
   var __getOwnPropDesc$N = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$N(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1Q(target, key2, result);
+    if (kind && result) __defProp$1R(target, key2, result);
     return result;
-  }, "__decorateClass$1Q");
+  }, "__decorateClass$1R");
   let SkribblInitializedSetup = (_p = class extends Setup {
     async runSetup() {
       return new Promise((resolve2) => {
@@ -13724,7 +13724,7 @@
       });
     }
   }, __name(_p, "SkribblInitializedSetup"), _p);
-  SkribblInitializedSetup = __decorateClass$1Q([
+  SkribblInitializedSetup = __decorateClass$1R([
     earlySetup()
   ], SkribblInitializedSetup);
   const _Toast_container = class _Toast_container extends SvelteComponent {
@@ -13735,15 +13735,15 @@
   };
   __name(_Toast_container, "Toast_container");
   let Toast_container = _Toast_container;
-  var __defProp$1P = Object.defineProperty;
-  var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1Q = Object.defineProperty;
+  var __decorateClass$1Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1P(target, key2, result);
+    if (result) __defProp$1Q(target, key2, result);
     return result;
-  }, "__decorateClass$1P");
+  }, "__decorateClass$1Q");
   const _ToastSetup = class _ToastSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -13760,7 +13760,7 @@
   };
   __name(_ToastSetup, "ToastSetup");
   let ToastSetup = _ToastSetup;
-  __decorateClass$1P([
+  __decorateClass$1Q([
     inject(GamePatchReadySetup)
   ], ToastSetup.prototype, "_gameReadySetup");
   function get_each_context$B(ctx, list, i) {
@@ -14020,15 +14020,15 @@
   };
   __name(_Panel_tabs, "Panel_tabs");
   let Panel_tabs = _Panel_tabs;
-  var __defProp$1O = Object.defineProperty;
-  var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1P = Object.defineProperty;
+  var __decorateClass$1P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1O(target, key2, result);
+    if (result) __defProp$1P(target, key2, result);
     return result;
-  }, "__decorateClass$1O");
+  }, "__decorateClass$1P");
   const _PanelSetup = class _PanelSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -14057,7 +14057,7 @@
   };
   __name(_PanelSetup, "PanelSetup");
   let PanelSetup = _PanelSetup;
-  __decorateClass$1O([
+  __decorateClass$1P([
     inject(GamePatchReadySetup)
   ], PanelSetup.prototype, "_gameReadySetup");
   const _Toolbar = class _Toolbar extends SvelteComponent {
@@ -14068,15 +14068,15 @@
   };
   __name(_Toolbar, "Toolbar");
   let Toolbar = _Toolbar;
-  var __defProp$1N = Object.defineProperty;
-  var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1O = Object.defineProperty;
+  var __decorateClass$1O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1N(target, key2, result);
+    if (result) __defProp$1O(target, key2, result);
     return result;
-  }, "__decorateClass$1N");
+  }, "__decorateClass$1O");
   const _ToolbarSetup = class _ToolbarSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -14093,18 +14093,18 @@
   };
   __name(_ToolbarSetup, "ToolbarSetup");
   let ToolbarSetup = _ToolbarSetup;
-  __decorateClass$1N([
+  __decorateClass$1O([
     inject(GamePatchReadySetup)
   ], ToolbarSetup.prototype, "_gameReadySetup");
-  var __defProp$1M = Object.defineProperty;
-  var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1N = Object.defineProperty;
+  var __decorateClass$1N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1M(target, key2, result);
+    if (result) __defProp$1N(target, key2, result);
     return result;
-  }, "__decorateClass$1M");
+  }, "__decorateClass$1N");
   function getElements$1(panels, toolbar, controls, toastContainer, chatControls, customizerActions) {
     return {
       panelContainer: requireElement(".panels"),
@@ -14178,37 +14178,37 @@
   };
   __name(_ElementsSetup, "ElementsSetup");
   let ElementsSetup = _ElementsSetup;
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(PanelSetup)
   ], ElementsSetup.prototype, "_panelSetup");
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(ToolbarSetup)
   ], ElementsSetup.prototype, "_toolbarSetup");
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(ControlsSetup)
   ], ElementsSetup.prototype, "_controlsSetup");
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(ChatControlsSetup)
   ], ElementsSetup.prototype, "_chatControlsSetup");
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(ToastSetup)
   ], ElementsSetup.prototype, "_toastSetup");
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(SkribblInitializedSetup)
   ], ElementsSetup.prototype, "_gameReadySetup");
-  __decorateClass$1M([
+  __decorateClass$1N([
     inject(CustomizerActionsSetup)
   ], ElementsSetup.prototype, "_customizerIconsSetup");
-  var __defProp$1L = Object.defineProperty;
+  var __defProp$1M = Object.defineProperty;
   var __getOwnPropDesc$M = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$M(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1L(target, key2, result);
+    if (kind && result) __defProp$1M(target, key2, result);
     return result;
-  }, "__decorateClass$1L");
+  }, "__decorateClass$1M");
   const _ChatTypedEvent = class _ChatTypedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14239,10 +14239,10 @@
       );
     }
   }, __name(_q, "ChatTypedEventProcessor"), _q);
-  __decorateClass$1L([
+  __decorateClass$1M([
     inject(ElementsSetup)
   ], ChatTypedEventProcessor.prototype, "_elementsSetup", 2);
-  ChatTypedEventProcessor = __decorateClass$1L([
+  ChatTypedEventProcessor = __decorateClass$1M([
     injectable()
   ], ChatTypedEventProcessor);
   let ChatTypedEventListener = (_r = class extends EventListener {
@@ -14251,26 +14251,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_r, "ChatTypedEventListener"), _r);
-  __decorateClass$1L([
+  __decorateClass$1M([
     inject(ChatTypedEventProcessor)
   ], ChatTypedEventListener.prototype, "_processor", 2);
-  ChatTypedEventListener = __decorateClass$1L([
+  ChatTypedEventListener = __decorateClass$1M([
     injectable()
   ], ChatTypedEventListener);
   const chatTypedEventRegistration = {
     listenerType: ChatTypedEventListener,
     processorType: ChatTypedEventProcessor
   };
-  var __defProp$1K = Object.defineProperty;
+  var __defProp$1L = Object.defineProperty;
   var __getOwnPropDesc$L = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$L(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1K(target, key2, result);
+    if (kind && result) __defProp$1L(target, key2, result);
     return result;
-  }, "__decorateClass$1K");
+  }, "__decorateClass$1L");
   const _ColorChangedEvent = class _ColorChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14295,7 +14295,7 @@
       return events;
     }
   }, __name(_s, "ColorChangedEventProcessor"), _s);
-  ColorChangedEventProcessor = __decorateClass$1K([
+  ColorChangedEventProcessor = __decorateClass$1L([
     injectable()
   ], ColorChangedEventProcessor);
   let ColorChangedEventListener = (_t = class extends EventListener {
@@ -14304,26 +14304,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_t, "ColorChangedEventListener"), _t);
-  __decorateClass$1K([
+  __decorateClass$1L([
     inject(ColorChangedEventProcessor)
   ], ColorChangedEventListener.prototype, "_processor", 2);
-  ColorChangedEventListener = __decorateClass$1K([
+  ColorChangedEventListener = __decorateClass$1L([
     injectable()
   ], ColorChangedEventListener);
   const colorChangedEventRegistration = {
     listenerType: ColorChangedEventListener,
     processorType: ColorChangedEventProcessor
   };
-  var __defProp$1J = Object.defineProperty;
+  var __defProp$1K = Object.defineProperty;
   var __getOwnPropDesc$K = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$K(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1J(target, key2, result);
+    if (kind && result) __defProp$1K(target, key2, result);
     return result;
-  }, "__decorateClass$1J");
+  }, "__decorateClass$1K");
   let SkribblEmitRelaySetup = (_u = class extends Setup {
     // eslint-disable-line @typescript-eslint/no-explicit-any
     async runSetup() {
@@ -14342,19 +14342,19 @@
       });
     }
   }, __name(_u, "SkribblEmitRelaySetup"), _u);
-  SkribblEmitRelaySetup = __decorateClass$1J([
+  SkribblEmitRelaySetup = __decorateClass$1K([
     earlySetup()
   ], SkribblEmitRelaySetup);
-  var __defProp$1I = Object.defineProperty;
+  var __defProp$1J = Object.defineProperty;
   var __getOwnPropDesc$J = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$J(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1I(target, key2, result);
+    if (kind && result) __defProp$1J(target, key2, result);
     return result;
-  }, "__decorateClass$1I");
+  }, "__decorateClass$1J");
   let SkribblMessageRelaySetup = (_v = class extends Setup {
     async runSetup() {
       return new Promise((resolve2) => {
@@ -14382,19 +14382,19 @@
       });
     }
   }, __name(_v, "SkribblMessageRelaySetup"), _v);
-  SkribblMessageRelaySetup = __decorateClass$1I([
+  SkribblMessageRelaySetup = __decorateClass$1J([
     earlySetup()
   ], SkribblMessageRelaySetup);
-  var __defProp$1H = Object.defineProperty;
+  var __defProp$1I = Object.defineProperty;
   var __getOwnPropDesc$I = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$I(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1H(target, key2, result);
+    if (kind && result) __defProp$1I(target, key2, result);
     return result;
-  }, "__decorateClass$1H");
+  }, "__decorateClass$1I");
   const _DrawEvent = class _DrawEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14443,13 +14443,13 @@
       return events;
     }
   }, __name(_w, "DrawEventProcessor"), _w);
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(SkribblMessageRelaySetup)
   ], DrawEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(SkribblEmitRelaySetup)
   ], DrawEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  DrawEventProcessor = __decorateClass$1H([
+  DrawEventProcessor = __decorateClass$1I([
     injectable()
   ], DrawEventProcessor);
   let DrawEventListener = (_x = class extends EventListener {
@@ -14458,26 +14458,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_x, "DrawEventListener"), _x);
-  __decorateClass$1H([
+  __decorateClass$1I([
     inject(DrawEventProcessor)
   ], DrawEventListener.prototype, "_processor", 2);
-  DrawEventListener = __decorateClass$1H([
+  DrawEventListener = __decorateClass$1I([
     injectable()
   ], DrawEventListener);
   const drawEventRegistration = {
     listenerType: DrawEventListener,
     processorType: DrawEventProcessor
   };
-  var __defProp$1G = Object.defineProperty;
+  var __defProp$1H = Object.defineProperty;
   var __getOwnPropDesc$H = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$H(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1G(target, key2, result);
+    if (kind && result) __defProp$1H(target, key2, result);
     return result;
-  }, "__decorateClass$1G");
+  }, "__decorateClass$1H");
   const _HintsAddedEvent = class _HintsAddedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14509,10 +14509,10 @@
       return events;
     }
   }, __name(_y, "HintsAddedEventProcessor"), _y);
-  __decorateClass$1G([
+  __decorateClass$1H([
     inject(SkribblMessageRelaySetup)
   ], HintsAddedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  HintsAddedEventProcessor = __decorateClass$1G([
+  HintsAddedEventProcessor = __decorateClass$1H([
     injectable()
   ], HintsAddedEventProcessor);
   let HintsAddedEventListener = (_z = class extends EventListener {
@@ -14521,26 +14521,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_z, "HintsAddedEventListener"), _z);
-  __decorateClass$1G([
+  __decorateClass$1H([
     inject(HintsAddedEventProcessor)
   ], HintsAddedEventListener.prototype, "_processor", 2);
-  HintsAddedEventListener = __decorateClass$1G([
+  HintsAddedEventListener = __decorateClass$1H([
     injectable()
   ], HintsAddedEventListener);
   const hintsAddedEventRegistration = {
     listenerType: HintsAddedEventListener,
     processorType: HintsAddedEventProcessor
   };
-  var __defProp$1F = Object.defineProperty;
+  var __defProp$1G = Object.defineProperty;
   var __getOwnPropDesc$G = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$G(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1F(target, key2, result);
+    if (kind && result) __defProp$1G(target, key2, result);
     return result;
-  }, "__decorateClass$1F");
+  }, "__decorateClass$1G");
   const _ImageResetEvent = class _ImageResetEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14579,13 +14579,13 @@
       return events;
     }
   }, __name(_A, "ImageResetEventProcessor"), _A);
-  __decorateClass$1F([
+  __decorateClass$1G([
     inject(SkribblMessageRelaySetup)
   ], ImageResetEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  __decorateClass$1F([
+  __decorateClass$1G([
     inject(SkribblEmitRelaySetup)
   ], ImageResetEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  ImageResetEventProcessor = __decorateClass$1F([
+  ImageResetEventProcessor = __decorateClass$1G([
     injectable()
   ], ImageResetEventProcessor);
   let ImageResetEventListener = (_B = class extends EventListener {
@@ -14594,10 +14594,10 @@
       __publicField(this, "_processor");
     }
   }, __name(_B, "ImageResetEventListener"), _B);
-  __decorateClass$1F([
+  __decorateClass$1G([
     inject(ImageResetEventProcessor)
   ], ImageResetEventListener.prototype, "_processor", 2);
-  ImageResetEventListener = __decorateClass$1F([
+  ImageResetEventListener = __decorateClass$1G([
     injectable()
   ], ImageResetEventListener);
   const imageResetEventRegistration = {
@@ -14628,16 +14628,16 @@
         };
     }
   }, "parseSkribblLobbyInteractedEvent");
-  var __defProp$1E = Object.defineProperty;
+  var __defProp$1F = Object.defineProperty;
   var __getOwnPropDesc$F = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$F(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1E(target, key2, result);
+    if (kind && result) __defProp$1F(target, key2, result);
     return result;
-  }, "__decorateClass$1E");
+  }, "__decorateClass$1F");
   const _LobbyInteractedEvent = class _LobbyInteractedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14662,10 +14662,10 @@
       );
     }
   }, __name(_C, "LobbyInteractedEventProcessor"), _C);
-  __decorateClass$1E([
+  __decorateClass$1F([
     inject(SkribblMessageRelaySetup)
   ], LobbyInteractedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyInteractedEventProcessor = __decorateClass$1E([
+  LobbyInteractedEventProcessor = __decorateClass$1F([
     injectable()
   ], LobbyInteractedEventProcessor);
   let LobbyInteractedEventListener = (_D = class extends EventListener {
@@ -14674,10 +14674,10 @@
       __publicField(this, "_processor");
     }
   }, __name(_D, "LobbyInteractedEventListener"), _D);
-  __decorateClass$1E([
+  __decorateClass$1F([
     inject(LobbyInteractedEventProcessor)
   ], LobbyInteractedEventListener.prototype, "_processor", 2);
-  LobbyInteractedEventListener = __decorateClass$1E([
+  LobbyInteractedEventListener = __decorateClass$1F([
     injectable()
   ], LobbyInteractedEventListener);
   const lobbyInteractedEventRegistration = {
@@ -14697,16 +14697,16 @@
   };
   __name(_GameSettingsSetup, "GameSettingsSetup");
   let GameSettingsSetup = _GameSettingsSetup;
-  var __defProp$1D = Object.defineProperty;
+  var __defProp$1E = Object.defineProperty;
   var __getOwnPropDesc$E = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$E(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1D(target, key2, result);
+    if (kind && result) __defProp$1E(target, key2, result);
     return result;
-  }, "__decorateClass$1D");
+  }, "__decorateClass$1E");
   const _LobbyJoinFailedEvent = class _LobbyJoinFailedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14730,13 +14730,13 @@
       return events;
     }
   }, __name(_E, "LobbyJoinFailedEventProcessor"), _E);
-  __decorateClass$1D([
+  __decorateClass$1E([
     inject(GameSettingsSetup)
   ], LobbyJoinFailedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1D([
+  __decorateClass$1E([
     inject(SkribblMessageRelaySetup)
   ], LobbyJoinFailedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyJoinFailedEventProcessor = __decorateClass$1D([
+  LobbyJoinFailedEventProcessor = __decorateClass$1E([
     injectable()
   ], LobbyJoinFailedEventProcessor);
   let LobbyJoinFailedListener = (_F = class extends EventListener {
@@ -14745,26 +14745,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_F, "LobbyJoinFailedListener"), _F);
-  __decorateClass$1D([
+  __decorateClass$1E([
     inject(LobbyJoinFailedEventProcessor)
   ], LobbyJoinFailedListener.prototype, "_processor", 2);
-  LobbyJoinFailedListener = __decorateClass$1D([
+  LobbyJoinFailedListener = __decorateClass$1E([
     injectable()
   ], LobbyJoinFailedListener);
   const lobbyJoinFailedEventRegistration = {
     listenerType: LobbyJoinFailedListener,
     processorType: LobbyJoinFailedEventProcessor
   };
-  var __defProp$1C = Object.defineProperty;
+  var __defProp$1D = Object.defineProperty;
   var __getOwnPropDesc$D = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$D(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1C(target, key2, result);
+    if (kind && result) __defProp$1D(target, key2, result);
     return result;
-  }, "__decorateClass$1C");
+  }, "__decorateClass$1D");
   const _LobbyPlayerChangedEvent = class _LobbyPlayerChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14803,10 +14803,10 @@
       return events;
     }
   }, __name(_G, "LobbyPlayerChangedEventProcessor"), _G);
-  __decorateClass$1C([
+  __decorateClass$1D([
     inject(SkribblMessageRelaySetup)
   ], LobbyPlayerChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyPlayerChangedEventProcessor = __decorateClass$1C([
+  LobbyPlayerChangedEventProcessor = __decorateClass$1D([
     injectable()
   ], LobbyPlayerChangedEventProcessor);
   let LobbyPlayerChangedEventListener = (_H = class extends EventListener {
@@ -14815,10 +14815,10 @@
       __publicField(this, "_processor");
     }
   }, __name(_H, "LobbyPlayerChangedEventListener"), _H);
-  __decorateClass$1C([
+  __decorateClass$1D([
     inject(LobbyPlayerChangedEventProcessor)
   ], LobbyPlayerChangedEventListener.prototype, "_processor", 2);
-  LobbyPlayerChangedEventListener = __decorateClass$1C([
+  LobbyPlayerChangedEventListener = __decorateClass$1D([
     injectable()
   ], LobbyPlayerChangedEventListener);
   const lobbyPlayerChangedEventRegistration = {
@@ -14886,16 +14886,16 @@
       }
     }
   }, "parseLobbyStateUpdate");
-  var __defProp$1B = Object.defineProperty;
+  var __defProp$1C = Object.defineProperty;
   var __getOwnPropDesc$C = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$C(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1B(target, key2, result);
+    if (kind && result) __defProp$1C(target, key2, result);
     return result;
-  }, "__decorateClass$1B");
+  }, "__decorateClass$1C");
   const _LobbyStateChangedEvent = class _LobbyStateChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14941,13 +14941,13 @@
       return events;
     }
   }, __name(_I, "LobbyStateChangedEventProcessor"), _I);
-  __decorateClass$1B([
+  __decorateClass$1C([
     inject(GameSettingsSetup)
   ], LobbyStateChangedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1B([
+  __decorateClass$1C([
     inject(SkribblMessageRelaySetup)
   ], LobbyStateChangedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyStateChangedEventProcessor = __decorateClass$1B([
+  LobbyStateChangedEventProcessor = __decorateClass$1C([
     injectable()
   ], LobbyStateChangedEventProcessor);
   let LobbyStateChangedEventListener = (_J = class extends EventListener {
@@ -14956,26 +14956,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_J, "LobbyStateChangedEventListener"), _J);
-  __decorateClass$1B([
+  __decorateClass$1C([
     inject(LobbyStateChangedEventProcessor)
   ], LobbyStateChangedEventListener.prototype, "_processor", 2);
-  LobbyStateChangedEventListener = __decorateClass$1B([
+  LobbyStateChangedEventListener = __decorateClass$1C([
     injectable()
   ], LobbyStateChangedEventListener);
   const lobbyStateChangedEventRegistration = {
     listenerType: LobbyStateChangedEventListener,
     processorType: LobbyStateChangedEventProcessor
   };
-  var __defProp$1A = Object.defineProperty;
+  var __defProp$1B = Object.defineProperty;
   var __getOwnPropDesc$B = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$B(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1A(target, key2, result);
+    if (kind && result) __defProp$1B(target, key2, result);
     return result;
-  }, "__decorateClass$1A");
+  }, "__decorateClass$1B");
   const _MessageReceivedEvent = class _MessageReceivedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -14999,10 +14999,10 @@
       );
     }
   }, __name(_K, "MessageReceivedEventProcessor"), _K);
-  __decorateClass$1A([
+  __decorateClass$1B([
     inject(SkribblMessageRelaySetup)
   ], MessageReceivedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  MessageReceivedEventProcessor = __decorateClass$1A([
+  MessageReceivedEventProcessor = __decorateClass$1B([
     injectable()
   ], MessageReceivedEventProcessor);
   let MessageReceivedEventListener = (_L = class extends EventListener {
@@ -15011,26 +15011,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_L, "MessageReceivedEventListener"), _L);
-  __decorateClass$1A([
+  __decorateClass$1B([
     inject(MessageReceivedEventProcessor)
   ], MessageReceivedEventListener.prototype, "_processor", 2);
-  MessageReceivedEventListener = __decorateClass$1A([
+  MessageReceivedEventListener = __decorateClass$1B([
     injectable()
   ], MessageReceivedEventListener);
   const messageReceivedEventRegistration = {
     listenerType: MessageReceivedEventListener,
     processorType: MessageReceivedEventProcessor
   };
-  var __defProp$1z = Object.defineProperty;
+  var __defProp$1A = Object.defineProperty;
   var __getOwnPropDesc$A = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$A(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1z(target, key2, result);
+    if (kind && result) __defProp$1A(target, key2, result);
     return result;
-  }, "__decorateClass$1z");
+  }, "__decorateClass$1A");
   const _MessageSentEvent = class _MessageSentEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15053,10 +15053,10 @@
       );
     }
   }, __name(_M, "MessageSentEventProcessor"), _M);
-  __decorateClass$1z([
+  __decorateClass$1A([
     inject(SkribblEmitRelaySetup)
   ], MessageSentEventProcessor.prototype, "_skribblEmitRelaySetup", 2);
-  MessageSentEventProcessor = __decorateClass$1z([
+  MessageSentEventProcessor = __decorateClass$1A([
     injectable()
   ], MessageSentEventProcessor);
   let MessageSentEventListener = (_N = class extends EventListener {
@@ -15065,26 +15065,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_N, "MessageSentEventListener"), _N);
-  __decorateClass$1z([
+  __decorateClass$1A([
     inject(MessageSentEventProcessor)
   ], MessageSentEventListener.prototype, "_processor", 2);
-  MessageSentEventListener = __decorateClass$1z([
+  MessageSentEventListener = __decorateClass$1A([
     injectable()
   ], MessageSentEventListener);
   const messageSentEventRegistration = {
     listenerType: MessageSentEventListener,
     processorType: MessageSentEventProcessor
   };
-  var __defProp$1y = Object.defineProperty;
+  var __defProp$1z = Object.defineProperty;
   var __getOwnPropDesc$z = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$z(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1y(target, key2, result);
+    if (kind && result) __defProp$1z(target, key2, result);
     return result;
-  }, "__decorateClass$1y");
+  }, "__decorateClass$1z");
   const _PlayerPopupVisibilityChangedEvent = class _PlayerPopupVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15114,10 +15114,10 @@
       );
     }
   }, __name(_O, "PlayerPopupVisibilityChangedEventProcessor"), _O);
-  __decorateClass$1y([
+  __decorateClass$1z([
     inject(ElementsSetup)
   ], PlayerPopupVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1y([
+  PlayerPopupVisibilityChangedEventProcessor = __decorateClass$1z([
     injectable()
   ], PlayerPopupVisibilityChangedEventProcessor);
   let PlayerPopupVisibilityChangedEventListener = (_P = class extends EventListener {
@@ -15126,26 +15126,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_P, "PlayerPopupVisibilityChangedEventListener"), _P);
-  __decorateClass$1y([
+  __decorateClass$1z([
     inject(PlayerPopupVisibilityChangedEventProcessor)
   ], PlayerPopupVisibilityChangedEventListener.prototype, "_processor", 2);
-  PlayerPopupVisibilityChangedEventListener = __decorateClass$1y([
+  PlayerPopupVisibilityChangedEventListener = __decorateClass$1z([
     injectable()
   ], PlayerPopupVisibilityChangedEventListener);
   const playerPopupVisibilityChangedEventRegistration = {
     listenerType: PlayerPopupVisibilityChangedEventListener,
     processorType: PlayerPopupVisibilityChangedEventProcessor
   };
-  var __defProp$1x = Object.defineProperty;
+  var __defProp$1y = Object.defineProperty;
   var __getOwnPropDesc$y = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$y(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1x(target, key2, result);
+    if (kind && result) __defProp$1y(target, key2, result);
     return result;
-  }, "__decorateClass$1x");
+  }, "__decorateClass$1y");
   const _RoundStartedEvent = class _RoundStartedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15173,10 +15173,10 @@
       return events;
     }
   }, __name(_Q, "RoundStartedEventProcessor"), _Q);
-  __decorateClass$1x([
+  __decorateClass$1y([
     inject(SkribblMessageRelaySetup)
   ], RoundStartedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  RoundStartedEventProcessor = __decorateClass$1x([
+  RoundStartedEventProcessor = __decorateClass$1y([
     injectable()
   ], RoundStartedEventProcessor);
   let RoundStartedEventListener = (_R = class extends EventListener {
@@ -15185,26 +15185,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_R, "RoundStartedEventListener"), _R);
-  __decorateClass$1x([
+  __decorateClass$1y([
     inject(RoundStartedEventProcessor)
   ], RoundStartedEventListener.prototype, "_processor", 2);
-  RoundStartedEventListener = __decorateClass$1x([
+  RoundStartedEventListener = __decorateClass$1y([
     injectable()
   ], RoundStartedEventListener);
   const roundStartedEventRegistration = {
     listenerType: RoundStartedEventListener,
     processorType: RoundStartedEventProcessor
   };
-  var __defProp$1w = Object.defineProperty;
+  var __defProp$1x = Object.defineProperty;
   var __getOwnPropDesc$x = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$x(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1w(target, key2, result);
+    if (kind && result) __defProp$1x(target, key2, result);
     return result;
-  }, "__decorateClass$1w");
+  }, "__decorateClass$1x");
   const _ScoreboardVisibilityChangedEvent = class _ScoreboardVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15233,10 +15233,10 @@
       );
     }
   }, __name(_S, "ScoreboardVisibilityChangedEventProcessor"), _S);
-  __decorateClass$1w([
+  __decorateClass$1x([
     inject(ElementsSetup)
   ], ScoreboardVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  ScoreboardVisibilityChangedEventProcessor = __decorateClass$1w([
+  ScoreboardVisibilityChangedEventProcessor = __decorateClass$1x([
     injectable()
   ], ScoreboardVisibilityChangedEventProcessor);
   let ScoreboardVisibilityChangedEventListener = (_T = class extends EventListener {
@@ -15245,26 +15245,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_T, "ScoreboardVisibilityChangedEventListener"), _T);
-  __decorateClass$1w([
+  __decorateClass$1x([
     inject(ScoreboardVisibilityChangedEventProcessor)
   ], ScoreboardVisibilityChangedEventListener.prototype, "_processor", 2);
-  ScoreboardVisibilityChangedEventListener = __decorateClass$1w([
+  ScoreboardVisibilityChangedEventListener = __decorateClass$1x([
     injectable()
   ], ScoreboardVisibilityChangedEventListener);
   const scoreboardVisibilityChangedEventRegistration = {
     listenerType: ScoreboardVisibilityChangedEventListener,
     processorType: ScoreboardVisibilityChangedEventProcessor
   };
-  var __defProp$1v = Object.defineProperty;
+  var __defProp$1w = Object.defineProperty;
   var __getOwnPropDesc$w = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$w(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1v(target, key2, result);
+    if (kind && result) __defProp$1w(target, key2, result);
     return result;
-  }, "__decorateClass$1v");
+  }, "__decorateClass$1w");
   const _SizeChangedEvent = class _SizeChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15288,7 +15288,7 @@
       return events;
     }
   }, __name(_U, "SizeChangedEventProcessor"), _U);
-  SizeChangedEventProcessor = __decorateClass$1v([
+  SizeChangedEventProcessor = __decorateClass$1w([
     injectable()
   ], SizeChangedEventProcessor);
   let SizeChangedEventListener = (_V = class extends EventListener {
@@ -15297,26 +15297,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_V, "SizeChangedEventListener"), _V);
-  __decorateClass$1v([
+  __decorateClass$1w([
     inject(SizeChangedEventProcessor)
   ], SizeChangedEventListener.prototype, "_processor", 2);
-  SizeChangedEventListener = __decorateClass$1v([
+  SizeChangedEventListener = __decorateClass$1w([
     injectable()
   ], SizeChangedEventListener);
   const sizeChangedEventRegistration = {
     listenerType: SizeChangedEventListener,
     processorType: SizeChangedEventProcessor
   };
-  var __defProp$1u = Object.defineProperty;
+  var __defProp$1v = Object.defineProperty;
   var __getOwnPropDesc$v = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$v(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1u(target, key2, result);
+    if (kind && result) __defProp$1v(target, key2, result);
     return result;
-  }, "__decorateClass$1u");
+  }, "__decorateClass$1v");
   const _TextOverlayVisibilityChangedEvent = class _TextOverlayVisibilityChangedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15346,10 +15346,10 @@
       );
     }
   }, __name(_W, "TextOverlayVisibilityChangedEventProcessor"), _W);
-  __decorateClass$1u([
+  __decorateClass$1v([
     inject(ElementsSetup)
   ], TextOverlayVisibilityChangedEventProcessor.prototype, "_elementsSetup", 2);
-  TextOverlayVisibilityChangedEventProcessor = __decorateClass$1u([
+  TextOverlayVisibilityChangedEventProcessor = __decorateClass$1v([
     injectable()
   ], TextOverlayVisibilityChangedEventProcessor);
   let TextOverlayVisibilityChangedEventListener = (_X = class extends EventListener {
@@ -15358,26 +15358,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_X, "TextOverlayVisibilityChangedEventListener"), _X);
-  __decorateClass$1u([
+  __decorateClass$1v([
     inject(TextOverlayVisibilityChangedEventProcessor)
   ], TextOverlayVisibilityChangedEventListener.prototype, "_processor", 2);
-  TextOverlayVisibilityChangedEventListener = __decorateClass$1u([
+  TextOverlayVisibilityChangedEventListener = __decorateClass$1v([
     injectable()
   ], TextOverlayVisibilityChangedEventListener);
   const textOverlayVisibilityChangedEventRegistration = {
     listenerType: TextOverlayVisibilityChangedEventListener,
     processorType: TextOverlayVisibilityChangedEventProcessor
   };
-  var __defProp$1t = Object.defineProperty;
+  var __defProp$1u = Object.defineProperty;
   var __getOwnPropDesc$u = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$u(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1t(target, key2, result);
+    if (kind && result) __defProp$1u(target, key2, result);
     return result;
-  }, "__decorateClass$1t");
+  }, "__decorateClass$1u");
   var skribblTool = /* @__PURE__ */ ((skribblTool2) => {
     skribblTool2[skribblTool2["brush"] = 0] = "brush";
     skribblTool2[skribblTool2["fill"] = 1] = "fill";
@@ -15409,7 +15409,7 @@
       return events;
     }
   }, __name(_Y, "ToolChangedEventProcessor"), _Y);
-  ToolChangedEventProcessor = __decorateClass$1t([
+  ToolChangedEventProcessor = __decorateClass$1u([
     injectable()
   ], ToolChangedEventProcessor);
   let ToolChangedEventListener = (_Z = class extends EventListener {
@@ -15418,26 +15418,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_Z, "ToolChangedEventListener"), _Z);
-  __decorateClass$1t([
+  __decorateClass$1u([
     inject(ToolChangedEventProcessor)
   ], ToolChangedEventListener.prototype, "_processor", 2);
-  ToolChangedEventListener = __decorateClass$1t([
+  ToolChangedEventListener = __decorateClass$1u([
     injectable()
   ], ToolChangedEventListener);
   const toolChangedEventRegistration = {
     listenerType: ToolChangedEventListener,
     processorType: ToolChangedEventProcessor
   };
-  var __defProp$1s = Object.defineProperty;
+  var __defProp$1t = Object.defineProperty;
   var __getOwnPropDesc$t = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$t(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1s(target, key2, result);
+    if (kind && result) __defProp$1t(target, key2, result);
     return result;
-  }, "__decorateClass$1s");
+  }, "__decorateClass$1t");
   const _WordGuessedEvent = class _WordGuessedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15468,10 +15468,10 @@
       return events;
     }
   }, __name(__, "WordGuessedEventProcessor"), __);
-  __decorateClass$1s([
+  __decorateClass$1t([
     inject(SkribblMessageRelaySetup)
   ], WordGuessedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  WordGuessedEventProcessor = __decorateClass$1s([
+  WordGuessedEventProcessor = __decorateClass$1t([
     injectable()
   ], WordGuessedEventProcessor);
   let WordGuessedEventListener = (_$ = class extends EventListener {
@@ -15480,10 +15480,10 @@
       __publicField(this, "_processor");
     }
   }, __name(_$, "WordGuessedEventListener"), _$);
-  __decorateClass$1s([
+  __decorateClass$1t([
     inject(WordGuessedEventProcessor)
   ], WordGuessedEventListener.prototype, "_processor", 2);
-  WordGuessedEventListener = __decorateClass$1s([
+  WordGuessedEventListener = __decorateClass$1t([
     injectable()
   ], WordGuessedEventListener);
   const wordGuessedEventRegistration = {
@@ -15509,15 +15509,15 @@
   };
   __name(_Canvas_rate_icons, "Canvas_rate_icons");
   let Canvas_rate_icons = _Canvas_rate_icons;
-  var __defProp$1r = Object.defineProperty;
-  var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1s = Object.defineProperty;
+  var __decorateClass$1s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1r(target, key2, result);
+    if (result) __defProp$1s(target, key2, result);
     return result;
-  }, "__decorateClass$1r");
+  }, "__decorateClass$1s");
   const _CanvasRateIconsFeature = class _CanvasRateIconsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -15547,19 +15547,19 @@
   };
   __name(_CanvasRateIconsFeature, "CanvasRateIconsFeature");
   let CanvasRateIconsFeature = _CanvasRateIconsFeature;
-  __decorateClass$1r([
+  __decorateClass$1s([
     inject(ElementsSetup)
   ], CanvasRateIconsFeature.prototype, "_elementsSetup");
-  var __defProp$1q = Object.defineProperty;
+  var __defProp$1r = Object.defineProperty;
   var __getOwnPropDesc$s = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$s(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1q(target, key2, result);
+    if (kind && result) __defProp$1r(target, key2, result);
     return result;
-  }, "__decorateClass$1q");
+  }, "__decorateClass$1r");
   const _LobbyLeftEvent = class _LobbyLeftEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15582,7 +15582,7 @@
       return events;
     }
   }, __name(_aa, "LobbyLeftEventProcessor"), _aa);
-  LobbyLeftEventProcessor = __decorateClass$1q([
+  LobbyLeftEventProcessor = __decorateClass$1r([
     injectable()
   ], LobbyLeftEventProcessor);
   let LobbyLeftEventListener = (_ba = class extends EventListener {
@@ -15591,10 +15591,10 @@
       __publicField(this, "_processor");
     }
   }, __name(_ba, "LobbyLeftEventListener"), _ba);
-  __decorateClass$1q([
+  __decorateClass$1r([
     inject(LobbyLeftEventProcessor)
   ], LobbyLeftEventListener.prototype, "_processor", 2);
-  LobbyLeftEventListener = __decorateClass$1q([
+  LobbyLeftEventListener = __decorateClass$1r([
     injectable()
   ], LobbyLeftEventListener);
   const lobbyLeftEventRegistration = {
@@ -15618,16 +15618,16 @@
       players: data.users
     };
   }, "parseSkribblLobbyDataEvent");
-  var __defProp$1p = Object.defineProperty;
+  var __defProp$1q = Object.defineProperty;
   var __getOwnPropDesc$r = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$r(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1p(target, key2, result);
+    if (kind && result) __defProp$1q(target, key2, result);
     return result;
-  }, "__decorateClass$1p");
+  }, "__decorateClass$1q");
   const _LobbyJoinedEvent = class _LobbyJoinedEvent extends ApplicationEvent {
     constructor(data) {
       super();
@@ -15666,13 +15666,13 @@
       return events;
     }
   }, __name(_ca, "LobbyJoinedEventProcessor"), _ca);
-  __decorateClass$1p([
+  __decorateClass$1q([
     inject(GameSettingsSetup)
   ], LobbyJoinedEventProcessor.prototype, "_gameSettingsSetup", 2);
-  __decorateClass$1p([
+  __decorateClass$1q([
     inject(SkribblMessageRelaySetup)
   ], LobbyJoinedEventProcessor.prototype, "_skribblMessageRelaySetup", 2);
-  LobbyJoinedEventProcessor = __decorateClass$1p([
+  LobbyJoinedEventProcessor = __decorateClass$1q([
     injectable()
   ], LobbyJoinedEventProcessor);
   let LobbyJoinedEventListener = (_da = class extends EventListener {
@@ -15681,26 +15681,26 @@
       __publicField(this, "_processor");
     }
   }, __name(_da, "LobbyJoinedEventListener"), _da);
-  __decorateClass$1p([
+  __decorateClass$1q([
     inject(LobbyJoinedEventProcessor)
   ], LobbyJoinedEventListener.prototype, "_processor", 2);
-  LobbyJoinedEventListener = __decorateClass$1p([
+  LobbyJoinedEventListener = __decorateClass$1q([
     injectable()
   ], LobbyJoinedEventListener);
   const lobbyJoinedEventRegistration = {
     listenerType: LobbyJoinedEventListener,
     processorType: LobbyJoinedEventProcessor
   };
-  var __defProp$1o = Object.defineProperty;
+  var __defProp$1p = Object.defineProperty;
   var __getOwnPropDesc$q = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$q(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1o(target, key2, result);
+    if (kind && result) __defProp$1p(target, key2, result);
     return result;
-  }, "__decorateClass$1o");
+  }, "__decorateClass$1p");
   var __decorateParam$l = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$l");
   let LobbyService = (_ea = class {
     constructor(loggerFactory2, lobbyJoined, lobbyLeft, lobbyPlayerChanged, lobbyStateChanged, roundStarted, wordGuessed, elementsSetup, lobbyJoinFailedListener) {
@@ -15815,7 +15815,7 @@
       );
     }
   }, __name(_ea, "LobbyService"), _ea);
-  LobbyService = __decorateClass$1o([
+  LobbyService = __decorateClass$1p([
     injectable(),
     __decorateParam$l(0, inject(loggerFactory)),
     __decorateParam$l(1, inject(LobbyJoinedEventListener)),
@@ -16831,16 +16831,16 @@
   };
   __name(_Toast, "Toast");
   let Toast = _Toast;
-  var __defProp$1n = Object.defineProperty;
+  var __defProp$1o = Object.defineProperty;
   var __getOwnPropDesc$p = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$p(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1n(target, key2, result);
+    if (kind && result) __defProp$1o(target, key2, result);
     return result;
-  }, "__decorateClass$1n");
+  }, "__decorateClass$1o");
   var __decorateParam$k = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$k");
   let ToastService = (_fa = class {
     constructor(loggerFactory2, _elementsSetup) {
@@ -16999,21 +16999,21 @@
       };
     }
   }, __name(_fa, "ToastService"), _fa);
-  ToastService = __decorateClass$1n([
+  ToastService = __decorateClass$1o([
     injectable(),
     __decorateParam$k(0, inject(loggerFactory)),
     __decorateParam$k(1, inject(ElementsSetup))
   ], ToastService);
-  var __defProp$1m = Object.defineProperty;
+  var __defProp$1n = Object.defineProperty;
   var __getOwnPropDesc$o = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$o(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1m(target, key2, result);
+    if (kind && result) __defProp$1n(target, key2, result);
     return result;
-  }, "__decorateClass$1m");
+  }, "__decorateClass$1n");
   let PrioritizedCanvasEventsSetup = (_ga = class extends Setup {
     constructor() {
       super(...arguments);
@@ -17023,10 +17023,10 @@
       return this._interceptor.canvasPrioritizedEventsReady;
     }
   }, __name(_ga, "PrioritizedCanvasEventsSetup"), _ga);
-  __decorateClass$1m([
+  __decorateClass$1n([
     inject(Interceptor)
   ], PrioritizedCanvasEventsSetup.prototype, "_interceptor", 2);
-  PrioritizedCanvasEventsSetup = __decorateClass$1m([
+  PrioritizedCanvasEventsSetup = __decorateClass$1n([
     earlySetup()
   ], PrioritizedCanvasEventsSetup);
   const createStylesheet = /* @__PURE__ */ __name(() => {
@@ -17116,15 +17116,15 @@
   };
   __name(_Canvas_zoom_info, "Canvas_zoom_info");
   let Canvas_zoom_info = _Canvas_zoom_info;
-  var __defProp$1l = Object.defineProperty;
-  var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1m = Object.defineProperty;
+  var __decorateClass$1m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1l(target, key2, result);
+    if (result) __defProp$1m(target, key2, result);
     return result;
-  }, "__decorateClass$1l");
+  }, "__decorateClass$1m");
   const _CanvasZoomFeature = class _CanvasZoomFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -17282,34 +17282,34 @@
   };
   __name(_CanvasZoomFeature, "CanvasZoomFeature");
   let CanvasZoomFeature = _CanvasZoomFeature;
-  __decorateClass$1l([
+  __decorateClass$1m([
     inject(ToastService)
   ], CanvasZoomFeature.prototype, "_toastService");
-  __decorateClass$1l([
+  __decorateClass$1m([
     inject(PrioritizedCanvasEventsSetup)
   ], CanvasZoomFeature.prototype, "_prioritizedCanvasEventsSetup");
-  __decorateClass$1l([
+  __decorateClass$1m([
     inject(LobbyStateChangedEventListener)
   ], CanvasZoomFeature.prototype, "_lobbyStateChangedEventListener");
-  __decorateClass$1l([
+  __decorateClass$1m([
     inject(LobbyLeftEventListener)
   ], CanvasZoomFeature.prototype, "_lobbyLeftEventListener");
-  __decorateClass$1l([
+  __decorateClass$1m([
     inject(ImageResetEventListener)
   ], CanvasZoomFeature.prototype, "_imageResetEventListener");
-  __decorateClass$1l([
+  __decorateClass$1m([
     inject(LobbyService)
   ], CanvasZoomFeature.prototype, "_lobbyService");
-  var __defProp$1k = Object.defineProperty;
+  var __defProp$1l = Object.defineProperty;
   var __getOwnPropDesc$n = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$n(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1k(target, key2, result);
+    if (kind && result) __defProp$1l(target, key2, result);
     return result;
-  }, "__decorateClass$1k");
+  }, "__decorateClass$1l");
   let PrioritizedChatboxEventsSetup = (_ha = class extends Setup {
     constructor() {
       super(...arguments);
@@ -17319,10 +17319,10 @@
       return this._interceptor.chatboxPrioritizedEventsReady;
     }
   }, __name(_ha, "PrioritizedChatboxEventsSetup"), _ha);
-  __decorateClass$1k([
+  __decorateClass$1l([
     inject(Interceptor)
   ], PrioritizedChatboxEventsSetup.prototype, "_interceptor", 2);
-  PrioritizedChatboxEventsSetup = __decorateClass$1k([
+  PrioritizedChatboxEventsSetup = __decorateClass$1l([
     earlySetup()
   ], PrioritizedChatboxEventsSetup);
   function create_fragment$1x(ctx) {
@@ -17490,16 +17490,16 @@
   };
   __name(_Message, "Message");
   let Message = _Message;
-  var __defProp$1j = Object.defineProperty;
+  var __defProp$1k = Object.defineProperty;
   var __getOwnPropDesc$m = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$m(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1j(target, key2, result);
+    if (kind && result) __defProp$1k(target, key2, result);
     return result;
-  }, "__decorateClass$1j");
+  }, "__decorateClass$1k");
   var __decorateParam$j = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$j");
   let ChatService = (_ia = class {
     constructor(loggerFactory2) {
@@ -17678,25 +17678,25 @@
       this._cancelChatboxEventsFilter = null;
     }
   }, __name(_ia, "ChatService"), _ia);
-  __decorateClass$1j([
+  __decorateClass$1k([
     inject(ElementsSetup)
   ], ChatService.prototype, "_elementsSetup", 2);
-  __decorateClass$1j([
+  __decorateClass$1k([
     inject(PrioritizedChatboxEventsSetup)
   ], ChatService.prototype, "_chatboxEventsSetup", 2);
-  __decorateClass$1j([
+  __decorateClass$1k([
     inject(MessageReceivedEventListener)
   ], ChatService.prototype, "_messageReceivedEventListener", 2);
-  __decorateClass$1j([
+  __decorateClass$1k([
     inject(SkribblMessageRelaySetup)
   ], ChatService.prototype, "_messageRelaySetup", 2);
-  __decorateClass$1j([
+  __decorateClass$1k([
     inject(LobbyService)
   ], ChatService.prototype, "lobbyService", 2);
-  __decorateClass$1j([
+  __decorateClass$1k([
     postConstruct()
   ], ChatService.prototype, "postConstruct", 1);
-  ChatService = __decorateClass$1j([
+  ChatService = __decorateClass$1k([
     injectable(),
     __decorateParam$j(0, inject(loggerFactory))
   ], ChatService);
@@ -20673,16 +20673,16 @@
   };
   __name(_ThemesApi, "ThemesApi");
   let ThemesApi = _ThemesApi;
-  var __defProp$1i = Object.defineProperty;
+  var __defProp$1j = Object.defineProperty;
   var __getOwnPropDesc$l = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$l(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1i(target, key2, result);
+    if (kind && result) __defProp$1j(target, key2, result);
     return result;
-  }, "__decorateClass$1i");
+  }, "__decorateClass$1j");
   var __decorateParam$i = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$i");
   let TokenService = (_ja = class {
     constructor(loggerFactory2) {
@@ -20733,20 +20733,20 @@
       this._token.next(token);
     }
   }, __name(_ja, "TokenService"), _ja);
-  TokenService = __decorateClass$1i([
+  TokenService = __decorateClass$1j([
     injectable(),
     __decorateParam$i(0, inject(loggerFactory))
   ], TokenService);
-  var __defProp$1h = Object.defineProperty;
+  var __defProp$1i = Object.defineProperty;
   var __getOwnPropDesc$k = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$k(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1h(target, key2, result);
+    if (kind && result) __defProp$1i(target, key2, result);
     return result;
-  }, "__decorateClass$1h");
+  }, "__decorateClass$1i");
   var __decorateParam$h = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$h");
   let ApiService = (_ka = class {
     constructor(loggerFactory2, tokenService) {
@@ -20788,21 +20788,21 @@
       this._baseUrl = url;
     }
   }, __name(_ka, "ApiService"), _ka);
-  ApiService = __decorateClass$1h([
+  ApiService = __decorateClass$1i([
     injectable(),
     __decorateParam$h(0, inject(loggerFactory)),
     __decorateParam$h(1, inject(TokenService))
   ], ApiService);
-  var __defProp$1g = Object.defineProperty;
+  var __defProp$1h = Object.defineProperty;
   var __getOwnPropDesc$j = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$j(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1g(target, key2, result);
+    if (kind && result) __defProp$1h(target, key2, result);
     return result;
-  }, "__decorateClass$1g");
+  }, "__decorateClass$1h");
   var __decorateParam$g = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$g");
   let MemberService = (_la = class {
     constructor(loggerFactory2, _apiService, _tokenService, _onboardingService) {
@@ -20907,7 +20907,7 @@
       return this.loadMember();
     }
   }, __name(_la, "MemberService"), _la);
-  MemberService = __decorateClass$1g([
+  MemberService = __decorateClass$1h([
     injectable(),
     __decorateParam$g(0, inject(loggerFactory)),
     __decorateParam$g(1, inject(ApiService)),
@@ -21122,15 +21122,15 @@
   };
   __name(_SkribblScoreboardRegularPlayer, "SkribblScoreboardRegularPlayer");
   let SkribblScoreboardRegularPlayer = _SkribblScoreboardRegularPlayer;
-  var __defProp$1f = Object.defineProperty;
-  var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1g = Object.defineProperty;
+  var __decorateClass$1g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1f(target, key2, result);
+    if (result) __defProp$1g(target, key2, result);
     return result;
-  }, "__decorateClass$1f");
+  }, "__decorateClass$1g");
   const _LandingPlayerSetup = class _LandingPlayerSetup extends Setup {
     constructor() {
       super(...arguments);
@@ -21151,13 +21151,13 @@
   };
   __name(_LandingPlayerSetup, "LandingPlayerSetup");
   let LandingPlayerSetup = _LandingPlayerSetup;
-  __decorateClass$1f([
+  __decorateClass$1g([
     inject(ElementsSetup)
   ], LandingPlayerSetup.prototype, "_elementsSetup");
-  __decorateClass$1f([
+  __decorateClass$1g([
     inject(GlobalSettingsService)
   ], LandingPlayerSetup.prototype, "_globalSettingsService");
-  __decorateClass$1f([
+  __decorateClass$1g([
     inject(MemberService)
   ], LandingPlayerSetup.prototype, "_memberService");
   const calculateLobbyKey = /* @__PURE__ */ __name((key2) => {
@@ -21166,16 +21166,16 @@
     const newKey = hashed.join("");
     return newKey;
   }, "calculateLobbyKey");
-  var __defProp$1e = Object.defineProperty;
+  var __defProp$1f = Object.defineProperty;
   var __getOwnPropDesc$i = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$1f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$i(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1e(target, key2, result);
+    if (kind && result) __defProp$1f(target, key2, result);
     return result;
-  }, "__decorateClass$1e");
+  }, "__decorateClass$1f");
   var __decorateParam$f = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$f");
   let PlayersService = (_ma = class {
     constructor(loggerFactory2) {
@@ -21416,43 +21416,43 @@
       return this._players$.asObservable();
     }
   }, __name(_ma, "PlayersService"), _ma);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(ElementsSetup)
   ], PlayersService.prototype, "_elementsSetup", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(LobbyJoinedEventListener)
   ], PlayersService.prototype, "_lobbyJoinedEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(LobbyLeftEventListener)
   ], PlayersService.prototype, "_lobbyLeftEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(LobbyStateChangedEventListener)
   ], PlayersService.prototype, "_lobbyStateChangedEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(LobbyPlayerChangedEventListener)
   ], PlayersService.prototype, "_playerChangedEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(ScoreboardVisibilityChangedEventListener)
   ], PlayersService.prototype, "_scoreboardVisibleEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(TextOverlayVisibilityChangedEventListener)
   ], PlayersService.prototype, "_textOverlayVisibleEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(PlayerPopupVisibilityChangedEventListener)
   ], PlayersService.prototype, "_popupVisibleEvent", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(MemberService)
   ], PlayersService.prototype, "_memberService", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(LobbyService)
   ], PlayersService.prototype, "_lobbyService", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     inject(LandingPlayerSetup)
   ], PlayersService.prototype, "_landingPlayerSetup", 2);
-  __decorateClass$1e([
+  __decorateClass$1f([
     postConstruct()
   ], PlayersService.prototype, "postConstruct", 1);
-  PlayersService = __decorateClass$1e([
+  PlayersService = __decorateClass$1f([
     injectable(),
     __decorateParam$f(0, inject(loggerFactory))
   ], PlayersService);
@@ -21742,15 +21742,15 @@
   };
   __name(_Skribbl_avatar, "Skribbl_avatar");
   let Skribbl_avatar = _Skribbl_avatar;
-  var __defProp$1d = Object.defineProperty;
-  var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1e = Object.defineProperty;
+  var __decorateClass$1e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1d(target, key2, result);
+    if (result) __defProp$1e(target, key2, result);
     return result;
-  }, "__decorateClass$1d");
+  }, "__decorateClass$1e");
   const _ChatAvatarsFeature = class _ChatAvatarsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -21835,27 +21835,27 @@
   };
   __name(_ChatAvatarsFeature, "ChatAvatarsFeature");
   let ChatAvatarsFeature = _ChatAvatarsFeature;
-  __decorateClass$1d([
+  __decorateClass$1e([
     inject(ChatService)
   ], ChatAvatarsFeature.prototype, "_chatService");
-  __decorateClass$1d([
+  __decorateClass$1e([
     inject(PlayersService)
   ], ChatAvatarsFeature.prototype, "_playersService");
-  __decorateClass$1d([
+  __decorateClass$1e([
     inject(LobbyService)
   ], ChatAvatarsFeature.prototype, "_lobbyService");
-  __decorateClass$1d([
+  __decorateClass$1e([
     inject(ElementsSetup)
   ], ChatAvatarsFeature.prototype, "_elementsSetup");
-  var __defProp$1c = Object.defineProperty;
-  var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1d = Object.defineProperty;
+  var __decorateClass$1d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1c(target, key2, result);
+    if (result) __defProp$1d(target, key2, result);
     return result;
-  }, "__decorateClass$1c");
+  }, "__decorateClass$1d");
   const _ChatClearFeature = class _ChatClearFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -21916,10 +21916,10 @@
   };
   __name(_ChatClearFeature, "ChatClearFeature");
   let ChatClearFeature = _ChatClearFeature;
-  __decorateClass$1c([
+  __decorateClass$1d([
     inject(LobbyJoinedEventListener)
   ], ChatClearFeature.prototype, "_lobbyJoinedEventListener");
-  __decorateClass$1c([
+  __decorateClass$1d([
     inject(ChatService)
   ], ChatClearFeature.prototype, "_chatService");
   const _InterpretableEmptyRemainder = class _InterpretableEmptyRemainder extends InterpretableError {
@@ -23404,15 +23404,15 @@
   };
   __name(_Command_input, "Command_input");
   let Command_input = _Command_input;
-  var __defProp$1b = Object.defineProperty;
-  var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1c = Object.defineProperty;
+  var __decorateClass$1c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1b(target, key2, result);
+    if (result) __defProp$1c(target, key2, result);
     return result;
-  }, "__decorateClass$1b");
+  }, "__decorateClass$1c");
   const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -23665,21 +23665,21 @@
   };
   __name(_ChatCommandsFeature, "ChatCommandsFeature");
   let ChatCommandsFeature = _ChatCommandsFeature;
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(ElementsSetup)
   ], ChatCommandsFeature.prototype, "_elements");
-  __decorateClass$1b([
+  __decorateClass$1c([
     inject(ToastService)
   ], ChatCommandsFeature.prototype, "_toastService");
-  var __defProp$1a = Object.defineProperty;
-  var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1b = Object.defineProperty;
+  var __decorateClass$1b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$1a(target, key2, result);
+    if (result) __defProp$1b(target, key2, result);
     return result;
-  }, "__decorateClass$1a");
+  }, "__decorateClass$1b");
   const _ChatCopyFormattedFeature = class _ChatCopyFormattedFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -23801,10 +23801,10 @@
   };
   __name(_ChatCopyFormattedFeature, "ChatCopyFormattedFeature");
   let ChatCopyFormattedFeature = _ChatCopyFormattedFeature;
-  __decorateClass$1a([
+  __decorateClass$1b([
     inject(ElementsSetup)
   ], ChatCopyFormattedFeature.prototype, "_elementsSetup");
-  __decorateClass$1a([
+  __decorateClass$1b([
     inject(ToastService)
   ], ChatCopyFormattedFeature.prototype, "_toastService");
   function promiseAllObject(obj) {
@@ -23813,15 +23813,15 @@
     ).then(Object.fromEntries);
   }
   __name(promiseAllObject, "promiseAllObject");
-  var __defProp$19 = Object.defineProperty;
-  var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1a = Object.defineProperty;
+  var __decorateClass$1a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$19(target, key2, result);
+    if (result) __defProp$1a(target, key2, result);
     return result;
-  }, "__decorateClass$19");
+  }, "__decorateClass$1a");
   function getData(spritesApi, scenesApi, eventsApi, emojisApi, announcementsApi, themesApi, awardsApi) {
     return {
       sprites: spritesApi.getAllSprites(),
@@ -23861,13 +23861,13 @@
   };
   __name(_ApiDataSetup, "ApiDataSetup");
   let ApiDataSetup = _ApiDataSetup;
-  __decorateClass$19([
+  __decorateClass$1a([
     inject(ApiService)
   ], ApiDataSetup.prototype, "_apiService");
-  __decorateClass$19([
+  __decorateClass$1a([
     inject(ToastService)
   ], ApiDataSetup.prototype, "_toastService");
-  __decorateClass$19([
+  __decorateClass$1a([
     inject(loggerFactory)
   ], ApiDataSetup.prototype, "_loggerFactory");
   function create_fragment$1s(ctx) {
@@ -24200,15 +24200,15 @@
   };
   __name(_Emoji_picker, "Emoji_picker");
   let Emoji_picker = _Emoji_picker;
-  var __defProp$18 = Object.defineProperty;
-  var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$19 = Object.defineProperty;
+  var __decorateClass$19 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$18(target, key2, result);
+    if (result) __defProp$19(target, key2, result);
     return result;
-  }, "__decorateClass$18");
+  }, "__decorateClass$19");
   const _ChatEmojisFeature = class _ChatEmojisFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24402,16 +24402,16 @@
   };
   __name(_ChatEmojisFeature, "ChatEmojisFeature");
   let ChatEmojisFeature = _ChatEmojisFeature;
-  __decorateClass$18([
+  __decorateClass$19([
     inject(ElementsSetup)
   ], ChatEmojisFeature.prototype, "_elements");
-  __decorateClass$18([
+  __decorateClass$19([
     inject(ApiDataSetup)
   ], ChatEmojisFeature.prototype, "_apiDataSetup");
-  __decorateClass$18([
+  __decorateClass$19([
     inject(ChatService)
   ], ChatEmojisFeature.prototype, "_chatService");
-  __decorateClass$18([
+  __decorateClass$19([
     inject(LobbyService)
   ], ChatEmojisFeature.prototype, "_lobbyService");
   function create_fragment$1q(ctx) {
@@ -24454,15 +24454,15 @@
   };
   __name(_Chat_focus_info, "Chat_focus_info");
   let Chat_focus_info = _Chat_focus_info;
-  var __defProp$17 = Object.defineProperty;
-  var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$18 = Object.defineProperty;
+  var __decorateClass$18 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$17(target, key2, result);
+    if (result) __defProp$18(target, key2, result);
     return result;
-  }, "__decorateClass$17");
+  }, "__decorateClass$18");
   const _ChatFocusFeature = class _ChatFocusFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24511,10 +24511,10 @@
   };
   __name(_ChatFocusFeature, "ChatFocusFeature");
   let ChatFocusFeature = _ChatFocusFeature;
-  __decorateClass$17([
+  __decorateClass$18([
     inject(ElementsSetup)
   ], ChatFocusFeature.prototype, "elementsSetup");
-  __decorateClass$17([
+  __decorateClass$18([
     inject(LobbyStateChangedEventListener)
   ], ChatFocusFeature.prototype, "_lobbyStateChangedEventListener");
   const _Chat_message_splits = class _Chat_message_splits extends SvelteComponent {
@@ -24525,15 +24525,15 @@
   };
   __name(_Chat_message_splits, "Chat_message_splits");
   let Chat_message_splits = _Chat_message_splits;
-  var __defProp$16 = Object.defineProperty;
-  var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$17 = Object.defineProperty;
+  var __decorateClass$17 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$16(target, key2, result);
+    if (result) __defProp$17(target, key2, result);
     return result;
-  }, "__decorateClass$16");
+  }, "__decorateClass$17");
   const _ChatMessageSplitsFeature = class _ChatMessageSplitsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24566,7 +24566,7 @@
   };
   __name(_ChatMessageSplitsFeature, "ChatMessageSplitsFeature");
   let ChatMessageSplitsFeature = _ChatMessageSplitsFeature;
-  __decorateClass$16([
+  __decorateClass$17([
     inject(ElementsSetup)
   ], ChatMessageSplitsFeature.prototype, "_elementsSetup");
   function create_if_block$C(ctx) {
@@ -24666,15 +24666,15 @@
   };
   __name(_Chat_ping, "Chat_ping");
   let Chat_ping = _Chat_ping;
-  var __defProp$15 = Object.defineProperty;
-  var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$16 = Object.defineProperty;
+  var __decorateClass$16 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$15(target, key2, result);
+    if (result) __defProp$16(target, key2, result);
     return result;
-  }, "__decorateClass$15");
+  }, "__decorateClass$16");
   const _ChatPingFeature = class _ChatPingFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24740,10 +24740,10 @@
   };
   __name(_ChatPingFeature, "ChatPingFeature");
   let ChatPingFeature = _ChatPingFeature;
-  __decorateClass$15([
+  __decorateClass$16([
     inject(ElementsSetup)
   ], ChatPingFeature.prototype, "_elements");
-  __decorateClass$15([
+  __decorateClass$16([
     inject(LobbyService)
   ], ChatPingFeature.prototype, "_lobbyService");
   const _Chat_profile_link = class _Chat_profile_link extends SvelteComponent {
@@ -24754,15 +24754,15 @@
   };
   __name(_Chat_profile_link, "Chat_profile_link");
   let Chat_profile_link = _Chat_profile_link;
-  var __defProp$14 = Object.defineProperty;
-  var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$15 = Object.defineProperty;
+  var __decorateClass$15 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$14(target, key2, result);
+    if (result) __defProp$15(target, key2, result);
     return result;
-  }, "__decorateClass$14");
+  }, "__decorateClass$15");
   const _ChatProfileLinkFeature = class _ChatProfileLinkFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -24820,16 +24820,16 @@
   };
   __name(_ChatProfileLinkFeature, "ChatProfileLinkFeature");
   let ChatProfileLinkFeature = _ChatProfileLinkFeature;
-  __decorateClass$14([
+  __decorateClass$15([
     inject(ChatService)
   ], ChatProfileLinkFeature.prototype, "_chatService");
-  __decorateClass$14([
+  __decorateClass$15([
     inject(ToastService)
   ], ChatProfileLinkFeature.prototype, "_toastService");
-  __decorateClass$14([
+  __decorateClass$15([
     inject(ElementsSetup)
   ], ChatProfileLinkFeature.prototype, "_elementsSetup");
-  __decorateClass$14([
+  __decorateClass$15([
     inject(PlayersService)
   ], ChatProfileLinkFeature.prototype, "_playersService");
   const _NumericOptionalCommandParameter = class _NumericOptionalCommandParameter extends ExtensionCommandParameter {
@@ -24887,16 +24887,16 @@
   };
   __name(_StringOptionalCommandParameter, "StringOptionalCommandParameter");
   let StringOptionalCommandParameter = _StringOptionalCommandParameter;
-  var __defProp$13 = Object.defineProperty;
+  var __defProp$14 = Object.defineProperty;
   var __getOwnPropDesc$h = Object.getOwnPropertyDescriptor;
-  var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$14 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$h(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$13(target, key2, result);
+    if (kind && result) __defProp$14(target, key2, result);
     return result;
-  }, "__decorateClass$13");
+  }, "__decorateClass$14");
   var __decorateParam$e = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$e");
   let LobbyInteractionsService = (_na = class {
     constructor(loggerFactory2) {
@@ -24974,22 +24974,22 @@
       relay.insertMessage({ data: id2, id: 5 });
     }
   }, __name(_na, "LobbyInteractionsService"), _na);
-  __decorateClass$13([
+  __decorateClass$14([
     inject(LobbyService)
   ], LobbyInteractionsService.prototype, "_lobbyService", 2);
-  __decorateClass$13([
+  __decorateClass$14([
     inject(LobbyInteractedEventListener)
   ], LobbyInteractionsService.prototype, "_lobbyInteractedEvent", 2);
-  __decorateClass$13([
+  __decorateClass$14([
     inject(LobbyStateChangedEventListener)
   ], LobbyInteractionsService.prototype, "_lobbyStateChangedEvent", 2);
-  __decorateClass$13([
+  __decorateClass$14([
     inject(SkribblMessageRelaySetup)
   ], LobbyInteractionsService.prototype, "_skribblMessageRelaySetup", 2);
-  __decorateClass$13([
+  __decorateClass$14([
     postConstruct()
   ], LobbyInteractionsService.prototype, "postConstruct", 1);
-  LobbyInteractionsService = __decorateClass$13([
+  LobbyInteractionsService = __decorateClass$14([
     injectable(),
     __decorateParam$e(0, inject(loggerFactory))
   ], LobbyInteractionsService);
@@ -25421,15 +25421,15 @@
   };
   __name(_Quick_react, "Quick_react");
   let Quick_react = _Quick_react;
-  var __defProp$12 = Object.defineProperty;
-  var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$13 = Object.defineProperty;
+  var __decorateClass$13 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$12(target, key2, result);
+    if (result) __defProp$13(target, key2, result);
     return result;
-  }, "__decorateClass$12");
+  }, "__decorateClass$13");
   const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -25684,30 +25684,30 @@
   };
   __name(_ChatQuickReactFeature, "ChatQuickReactFeature");
   let ChatQuickReactFeature = _ChatQuickReactFeature;
-  __decorateClass$12([
+  __decorateClass$13([
     inject(ElementsSetup)
   ], ChatQuickReactFeature.prototype, "_elements");
-  __decorateClass$12([
+  __decorateClass$13([
     inject(LobbyInteractionsService)
   ], ChatQuickReactFeature.prototype, "_lobbyInteractionsService");
-  __decorateClass$12([
+  __decorateClass$13([
     inject(ToastService)
   ], ChatQuickReactFeature.prototype, "_toastService");
-  __decorateClass$12([
+  __decorateClass$13([
     inject(LobbyService)
   ], ChatQuickReactFeature.prototype, "_lobbyService");
-  __decorateClass$12([
+  __decorateClass$13([
     inject(WordGuessedEventListener)
   ], ChatQuickReactFeature.prototype, "_wordGuessedListener");
-  var __defProp$11 = Object.defineProperty;
-  var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$12 = Object.defineProperty;
+  var __decorateClass$12 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$11(target, key2, result);
+    if (result) __defProp$12(target, key2, result);
     return result;
-  }, "__decorateClass$11");
+  }, "__decorateClass$12");
   const _ChatRecallFeature = class _ChatRecallFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -25769,13 +25769,13 @@
   };
   __name(_ChatRecallFeature, "ChatRecallFeature");
   let ChatRecallFeature = _ChatRecallFeature;
-  __decorateClass$11([
+  __decorateClass$12([
     inject(ElementsSetup)
   ], ChatRecallFeature.prototype, "_elements");
-  __decorateClass$11([
+  __decorateClass$12([
     inject(MessageSentEventListener)
   ], ChatRecallFeature.prototype, "_messageSent");
-  __decorateClass$11([
+  __decorateClass$12([
     inject(ChatService)
   ], ChatRecallFeature.prototype, "_chatService");
   function createCrossCustomEvent(type, detail) {
@@ -25833,16 +25833,16 @@
   };
   __name(_ImageData, "ImageData");
   let ImageData = _ImageData;
-  var __defProp$10 = Object.defineProperty;
+  var __defProp$11 = Object.defineProperty;
   var __getOwnPropDesc$g = Object.getOwnPropertyDescriptor;
-  var __decorateClass$10 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$11 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$g(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$10(target, key2, result);
+    if (kind && result) __defProp$11(target, key2, result);
     return result;
-  }, "__decorateClass$10");
+  }, "__decorateClass$11");
   var __decorateParam$d = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$d");
   let DrawingService = (_oa = class {
     /* [commands, scheduled] -> scheduled false when cancel/schedule skipped */
@@ -26145,7 +26145,7 @@
       return this._lockManualClear.asObservable();
     }
   }, __name(_oa, "DrawingService"), _oa);
-  DrawingService = __decorateClass$10([
+  DrawingService = __decorateClass$11([
     injectable(),
     __decorateParam$d(0, inject(loggerFactory)),
     __decorateParam$d(1, inject(LobbyLeftEventListener)),
@@ -26157,16 +26157,16 @@
     __decorateParam$d(7, inject(ElementsSetup)),
     __decorateParam$d(8, inject(SkribblMessageRelaySetup))
   ], DrawingService);
-  var __defProp$$ = Object.defineProperty;
+  var __defProp$10 = Object.defineProperty;
   var __getOwnPropDesc$f = Object.getOwnPropertyDescriptor;
-  var __decorateClass$$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$10 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$f(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$$(target, key2, result);
+    if (kind && result) __defProp$10(target, key2, result);
     return result;
-  }, "__decorateClass$$");
+  }, "__decorateClass$10");
   var __decorateParam$c = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$c");
   let ImageFinishedService = (_pa = class {
     constructor(loggerFactory2, _drawingService, _lobbyService) {
@@ -26241,22 +26241,22 @@
       );
     }
   }, __name(_pa, "ImageFinishedService"), _pa);
-  ImageFinishedService = __decorateClass$$([
+  ImageFinishedService = __decorateClass$10([
     injectable(),
     __decorateParam$c(0, inject(loggerFactory)),
     __decorateParam$c(1, inject(DrawingService)),
     __decorateParam$c(2, inject(LobbyService))
   ], ImageFinishedService);
-  var __defProp$_ = Object.defineProperty;
+  var __defProp$$ = Object.defineProperty;
   var __getOwnPropDesc$e = Object.getOwnPropertyDescriptor;
-  var __decorateClass$_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$$ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$e(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$_(target, key2, result);
+    if (kind && result) __defProp$$(target, key2, result);
     return result;
-  }, "__decorateClass$_");
+  }, "__decorateClass$$");
   var __decorateParam$b = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$b");
   let CloudService = (_qa = class {
     constructor(loggerFactory2) {
@@ -26298,10 +26298,10 @@
       this._pendingAwardInventoryIds.clear();
     }
   }, __name(_qa, "CloudService"), _qa);
-  __decorateClass$_([
+  __decorateClass$$([
     inject(ApiService)
   ], CloudService.prototype, "_apiService", 2);
-  CloudService = __decorateClass$_([
+  CloudService = __decorateClass$$([
     injectable(),
     __decorateParam$b(0, inject(loggerFactory))
   ], CloudService);
@@ -26322,16 +26322,16 @@
     });
     return commands;
   }, "convertOldSkd");
-  var __defProp$Z = Object.defineProperty;
+  var __defProp$_ = Object.defineProperty;
   var __getOwnPropDesc$d = Object.getOwnPropertyDescriptor;
-  var __decorateClass$Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$_ = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$d(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$Z(target, key2, result);
+    if (kind && result) __defProp$_(target, key2, result);
     return result;
-  }, "__decorateClass$Z");
+  }, "__decorateClass$_");
   var __decorateParam$a = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$a");
   let ImagelabService = (_ra = class {
     constructor(loggerFactory2) {
@@ -26374,20 +26374,20 @@
       this._savedDrawCommands$.next(this._savedDrawCommands$.value.filter((item, i) => i !== index));
     }
   }, __name(_ra, "ImagelabService"), _ra);
-  ImagelabService = __decorateClass$Z([
+  ImagelabService = __decorateClass$_([
     injectable(),
     __decorateParam$a(0, inject(loggerFactory))
   ], ImagelabService);
-  var __defProp$Y = Object.defineProperty;
+  var __defProp$Z = Object.defineProperty;
   var __getOwnPropDesc$c = Object.getOwnPropertyDescriptor;
-  var __decorateClass$Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$Z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$c(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$Y(target, key2, result);
+    if (kind && result) __defProp$Z(target, key2, result);
     return result;
-  }, "__decorateClass$Y");
+  }, "__decorateClass$Z");
   var __decorateParam$9 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$9");
   let ImagePostService = (_sa = class {
     constructor(loggerFactory2, _imageFinishedService) {
@@ -26432,7 +26432,7 @@
       this._history$.next([...this._history$.value, image]);
     }
   }, __name(_sa, "ImagePostService"), _sa);
-  ImagePostService = __decorateClass$Y([
+  ImagePostService = __decorateClass$Z([
     injectable(),
     __decorateParam$9(0, inject(loggerFactory)),
     __decorateParam$9(1, inject(ImageFinishedService))
@@ -26975,16 +26975,16 @@
   };
   __name(_Modal_card, "Modal_card");
   let Modal_card = _Modal_card;
-  var __defProp$X = Object.defineProperty;
+  var __defProp$Y = Object.defineProperty;
   var __getOwnPropDesc$b = Object.getOwnPropertyDescriptor;
-  var __decorateClass$X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$Y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$b(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$X(target, key2, result);
+    if (kind && result) __defProp$Y(target, key2, result);
     return result;
-  }, "__decorateClass$X");
+  }, "__decorateClass$Y");
   var __decorateParam$8 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$8");
   let ModalService = (_ta = class {
     constructor(loggerFactory2, _globalSettingsService) {
@@ -27073,7 +27073,7 @@
       return result;
     }
   }, __name(_ta, "ModalService"), _ta);
-  ModalService = __decorateClass$X([
+  ModalService = __decorateClass$Y([
     injectable(),
     __decorateParam$8(0, inject(loggerFactory)),
     __decorateParam$8(1, inject(GlobalSettingsService))
@@ -28332,15 +28332,15 @@
   };
   __name(_Controls_cloud, "Controls_cloud");
   let Controls_cloud = _Controls_cloud;
-  var __defProp$W = Object.defineProperty;
-  var __decorateClass$W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$X = Object.defineProperty;
+  var __decorateClass$X = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$W(target, key2, result);
+    if (result) __defProp$X(target, key2, result);
     return result;
-  }, "__decorateClass$W");
+  }, "__decorateClass$X");
   const _ControlsCloudFeature = class _ControlsCloudFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -28522,43 +28522,43 @@
   };
   __name(_ControlsCloudFeature, "ControlsCloudFeature");
   let ControlsCloudFeature = _ControlsCloudFeature;
-  __decorateClass$W([
+  __decorateClass$X([
     inject(ElementsSetup)
   ], ControlsCloudFeature.prototype, "_elementsSetup");
-  __decorateClass$W([
+  __decorateClass$X([
     inject(ModalService)
   ], ControlsCloudFeature.prototype, "_modalService");
-  __decorateClass$W([
+  __decorateClass$X([
     inject(MemberService)
   ], ControlsCloudFeature.prototype, "_memberService");
-  __decorateClass$W([
+  __decorateClass$X([
     inject(CloudService)
   ], ControlsCloudFeature.prototype, "_cloudService");
-  __decorateClass$W([
+  __decorateClass$X([
     inject(ImagePostService)
   ], ControlsCloudFeature.prototype, "_imagePostService");
-  __decorateClass$W([
+  __decorateClass$X([
     inject(ImagelabService)
   ], ControlsCloudFeature.prototype, "_imageLabService");
-  __decorateClass$W([
+  __decorateClass$X([
     inject(ToastService)
   ], ControlsCloudFeature.prototype, "_toastService");
-  __decorateClass$W([
+  __decorateClass$X([
     inject(ApiService)
   ], ControlsCloudFeature.prototype, "_apiService");
-  __decorateClass$W([
+  __decorateClass$X([
     inject(ImageFinishedService)
   ], ControlsCloudFeature.prototype, "_imageFinishedService");
-  var __defProp$V = Object.defineProperty;
+  var __defProp$W = Object.defineProperty;
   var __getOwnPropDesc$a = Object.getOwnPropertyDescriptor;
-  var __decorateClass$V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$W = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$a(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$V(target, key2, result);
+    if (kind && result) __defProp$W(target, key2, result);
     return result;
-  }, "__decorateClass$V");
+  }, "__decorateClass$W");
   var __decorateParam$7 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$7");
   let FeaturesService = (_ua = class {
     constructor(loggerFactory2) {
@@ -28587,7 +28587,7 @@
       return feature.activate();
     }
   }, __name(_ua, "FeaturesService"), _ua);
-  FeaturesService = __decorateClass$V([
+  FeaturesService = __decorateClass$W([
     injectable(),
     __decorateParam$7(0, inject(loggerFactory))
   ], FeaturesService);
@@ -28754,16 +28754,16 @@
     theme.misc.cssText = css2;
   }
   __name(convertOldTheme, "convertOldTheme");
-  var __defProp$U = Object.defineProperty;
+  var __defProp$V = Object.defineProperty;
   var __getOwnPropDesc$9 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$V = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$9(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$U(target, key2, result);
+    if (kind && result) __defProp$V(target, key2, result);
     return result;
-  }, "__decorateClass$U");
+  }, "__decorateClass$V");
   var __decorateParam$6 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$6");
   let ThemesService = (_va = class {
     constructor(loggerFactory2, _elementsSetup, _apiService) {
@@ -29015,7 +29015,7 @@
       return savedTheme;
     }
   }, __name(_va, "ThemesService"), _va);
-  ThemesService = __decorateClass$U([
+  ThemesService = __decorateClass$V([
     injectable(),
     __decorateParam$6(0, inject(loggerFactory)),
     __decorateParam$6(1, inject(ElementsSetup)),
@@ -29047,23 +29047,23 @@
     }
     return variableSelectors;
   }, "getCssVariableSelectorHooks");
-  var __defProp$T = Object.defineProperty;
+  var __defProp$U = Object.defineProperty;
   var __getOwnPropDesc$8 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$U = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$8(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$T(target, key2, result);
+    if (kind && result) __defProp$U(target, key2, result);
     return result;
-  }, "__decorateClass$T");
+  }, "__decorateClass$U");
   let CssColorVarSelectorsSetup = (_wa = class extends Setup {
     async runSetup() {
       const css2 = await (await fetch("/css/style.css")).text();
       return getCssVariableSelectorHooks(css2, Object.keys(themeColors));
     }
   }, __name(_wa, "CssColorVarSelectorsSetup"), _wa);
-  CssColorVarSelectorsSetup = __decorateClass$T([
+  CssColorVarSelectorsSetup = __decorateClass$U([
     earlySetup()
   ], CssColorVarSelectorsSetup);
   const generateColorScheme = /* @__PURE__ */ __name((mainColor, textColor, useIngame, useInputs, invertInputText) => {
@@ -33042,15 +33042,15 @@
   };
   __name(_Controls_themes, "Controls_themes");
   let Controls_themes = _Controls_themes;
-  var __defProp$S = Object.defineProperty;
-  var __decorateClass$S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$T = Object.defineProperty;
+  var __decorateClass$T = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$S(target, key2, result);
+    if (result) __defProp$T(target, key2, result);
     return result;
-  }, "__decorateClass$S");
+  }, "__decorateClass$T");
   const _ControlsThemesFeature = class _ControlsThemesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -33375,36 +33375,36 @@
   };
   __name(_ControlsThemesFeature, "ControlsThemesFeature");
   let ControlsThemesFeature = _ControlsThemesFeature;
-  __decorateClass$S([
+  __decorateClass$T([
     inject(ElementsSetup)
   ], ControlsThemesFeature.prototype, "_elementsSetup");
-  __decorateClass$S([
+  __decorateClass$T([
     inject(CssColorVarSelectorsSetup)
   ], ControlsThemesFeature.prototype, "_cssColorVarSelectorsSetup");
-  __decorateClass$S([
+  __decorateClass$T([
     inject(ApiDataSetup)
   ], ControlsThemesFeature.prototype, "_apiDataSetup");
-  __decorateClass$S([
+  __decorateClass$T([
     inject(ModalService)
   ], ControlsThemesFeature.prototype, "_modalService");
-  __decorateClass$S([
+  __decorateClass$T([
     inject(ToastService)
   ], ControlsThemesFeature.prototype, "_toastService");
-  __decorateClass$S([
+  __decorateClass$T([
     inject(ThemesService)
   ], ControlsThemesFeature.prototype, "_themesService");
-  __decorateClass$S([
+  __decorateClass$T([
     inject(GlobalSettingsService)
   ], ControlsThemesFeature.prototype, "_globalSettingsService");
-  var __defProp$R = Object.defineProperty;
-  var __decorateClass$R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$S = Object.defineProperty;
+  var __decorateClass$S = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$R(target, key2, result);
+    if (result) __defProp$S(target, key2, result);
     return result;
-  }, "__decorateClass$R");
+  }, "__decorateClass$S");
   const _CustomizerOutfitToggleFeature = class _CustomizerOutfitToggleFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -33463,24 +33463,24 @@
   };
   __name(_CustomizerOutfitToggleFeature, "CustomizerOutfitToggleFeature");
   let CustomizerOutfitToggleFeature = _CustomizerOutfitToggleFeature;
-  __decorateClass$R([
+  __decorateClass$S([
     inject(ElementsSetup)
   ], CustomizerOutfitToggleFeature.prototype, "_elementsSetup");
-  __decorateClass$R([
+  __decorateClass$S([
     inject(GlobalSettingsService)
   ], CustomizerOutfitToggleFeature.prototype, "_globalSettingsService");
-  __decorateClass$R([
+  __decorateClass$S([
     inject(MemberService)
   ], CustomizerOutfitToggleFeature.prototype, "_memberService");
-  var __defProp$Q = Object.defineProperty;
-  var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$R = Object.defineProperty;
+  var __decorateClass$R = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$Q(target, key2, result);
+    if (result) __defProp$R(target, key2, result);
     return result;
-  }, "__decorateClass$Q");
+  }, "__decorateClass$R");
   const _CustomizerPracticeJoinFeature = class _CustomizerPracticeJoinFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -33530,7 +33530,7 @@
   };
   __name(_CustomizerPracticeJoinFeature, "CustomizerPracticeJoinFeature");
   let CustomizerPracticeJoinFeature = _CustomizerPracticeJoinFeature;
-  __decorateClass$Q([
+  __decorateClass$R([
     inject(ElementsSetup)
   ], CustomizerPracticeJoinFeature.prototype, "_elementsSetup");
   const defaultPalettes = {
@@ -33683,16 +33683,16 @@
       ]
     }
   };
-  var __defProp$P = Object.defineProperty;
+  var __defProp$Q = Object.defineProperty;
   var __getOwnPropDesc$7 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$Q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$7(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$P(target, key2, result);
+    if (kind && result) __defProp$Q(target, key2, result);
     return result;
-  }, "__decorateClass$P");
+  }, "__decorateClass$Q");
   var __decorateParam$5 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$5");
   let ColorsService = (_xa = class {
     constructor(loggerFactory2) {
@@ -33786,13 +33786,13 @@
       this.featureActive = false;
     }
   }, __name(_xa, "ColorsService"), _xa);
-  __decorateClass$P([
+  __decorateClass$Q([
     inject(ToastService)
   ], ColorsService.prototype, "_toastService", 2);
-  __decorateClass$P([
+  __decorateClass$Q([
     inject(FeaturesService)
   ], ColorsService.prototype, "_featuresService", 2);
-  ColorsService = __decorateClass$P([
+  ColorsService = __decorateClass$Q([
     injectable(),
     __decorateParam$5(0, inject(loggerFactory))
   ], ColorsService);
@@ -35848,15 +35848,15 @@
   };
   __name(_Color_palette_quick_select, "Color_palette_quick_select");
   let Color_palette_quick_select = _Color_palette_quick_select;
-  var __defProp$O = Object.defineProperty;
-  var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$P = Object.defineProperty;
+  var __decorateClass$P = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$O(target, key2, result);
+    if (result) __defProp$P(target, key2, result);
     return result;
-  }, "__decorateClass$O");
+  }, "__decorateClass$P");
   const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -36151,31 +36151,31 @@
   };
   __name(_DrawingColorPalettesFeature, "DrawingColorPalettesFeature");
   let DrawingColorPalettesFeature = _DrawingColorPalettesFeature;
-  __decorateClass$O([
+  __decorateClass$P([
     inject(ElementsSetup)
   ], DrawingColorPalettesFeature.prototype, "_elementsSetup");
-  __decorateClass$O([
+  __decorateClass$P([
     inject(ToastService)
   ], DrawingColorPalettesFeature.prototype, "_toastService");
-  __decorateClass$O([
+  __decorateClass$P([
     inject(DrawingService)
   ], DrawingColorPalettesFeature.prototype, "_drawingService");
-  __decorateClass$O([
+  __decorateClass$P([
     inject(ColorsService)
   ], DrawingColorPalettesFeature.prototype, "_colorsService");
-  __decorateClass$O([
+  __decorateClass$P([
     inject(ModalService)
   ], DrawingColorPalettesFeature.prototype, "_modalService");
-  var __defProp$N = Object.defineProperty;
+  var __defProp$O = Object.defineProperty;
   var __getOwnPropDesc$6 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$6(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$N(target, key2, result);
+    if (kind && result) __defProp$O(target, key2, result);
     return result;
-  }, "__decorateClass$N");
+  }, "__decorateClass$O");
   let TypoDrawMod = (_ya = class {
     constructor() {
       /**
@@ -36189,7 +36189,7 @@
       return { lines: [line], style: brushStyle };
     }
   }, __name(_ya, "TypoDrawMod"), _ya);
-  TypoDrawMod = __decorateClass$N([
+  TypoDrawMod = __decorateClass$O([
     injectable()
   ], TypoDrawMod);
   const _ConstantDrawMod = class _ConstantDrawMod extends TypoDrawMod {
@@ -36261,15 +36261,15 @@
   };
   __name(_TypoDrawTool, "TypoDrawTool");
   let TypoDrawTool = _TypoDrawTool;
-  var __defProp$M = Object.defineProperty;
-  var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$N = Object.defineProperty;
+  var __decorateClass$N = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$M(target, key2, result);
+    if (result) __defProp$N(target, key2, result);
     return result;
-  }, "__decorateClass$M");
+  }, "__decorateClass$N");
   const _PipetteTool = class _PipetteTool extends TypoDrawTool {
     constructor() {
       super(...arguments);
@@ -36299,7 +36299,7 @@
   };
   __name(_PipetteTool, "PipetteTool");
   let PipetteTool = _PipetteTool;
-  __decorateClass$M([
+  __decorateClass$N([
     inject(ElementsSetup)
   ], PipetteTool.prototype, "_elementsSetup");
   const _ExtensionContainer = class _ExtensionContainer {
@@ -36467,16 +36467,16 @@
   };
   __name(_CoordinateListener, "CoordinateListener");
   let CoordinateListener = _CoordinateListener;
-  var __defProp$L = Object.defineProperty;
+  var __defProp$M = Object.defineProperty;
   var __getOwnPropDesc$5 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$M = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$5(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$L(target, key2, result);
+    if (kind && result) __defProp$M(target, key2, result);
     return result;
-  }, "__decorateClass$L");
+  }, "__decorateClass$M");
   var __decorateParam$4 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$4");
   let ToolsService = (_za = class {
     constructor(loggerFactory2) {
@@ -36677,34 +36677,34 @@
       this._insertedStrokes$.next(stroke);
     }
   }, __name(_za, "ToolsService"), _za);
-  __decorateClass$L([
+  __decorateClass$M([
     inject(PrioritizedCanvasEventsSetup)
   ], ToolsService.prototype, "_prioritizedCanvasEventsSetup", 2);
-  __decorateClass$L([
+  __decorateClass$M([
     inject(DrawingService)
   ], ToolsService.prototype, "_drawingService", 2);
-  __decorateClass$L([
+  __decorateClass$M([
     inject(ToolChangedEventListener)
   ], ToolsService.prototype, "_toolChangedListener", 2);
-  __decorateClass$L([
+  __decorateClass$M([
     inject(ExtensionContainer)
   ], ToolsService.prototype, "_extensionContainer", 2);
-  __decorateClass$L([
+  __decorateClass$M([
     inject(LobbyService)
   ], ToolsService.prototype, "_lobbyService", 2);
-  __decorateClass$L([
+  __decorateClass$M([
     inject(SizeChangedEventListener)
   ], ToolsService.prototype, "_sizeChangedListener", 2);
-  __decorateClass$L([
+  __decorateClass$M([
     inject(ColorChangedEventListener)
   ], ToolsService.prototype, "_colorChangedListener", 2);
-  __decorateClass$L([
+  __decorateClass$M([
     inject(ElementsSetup)
   ], ToolsService.prototype, "_elementsSetup", 2);
-  __decorateClass$L([
+  __decorateClass$M([
     postConstruct()
   ], ToolsService.prototype, "postConstruct", 1);
-  ToolsService = __decorateClass$L([
+  ToolsService = __decorateClass$M([
     injectable(),
     __decorateParam$4(0, inject(loggerFactory))
   ], ToolsService);
@@ -36881,15 +36881,15 @@
   };
   __name(_Drawing_color_tools, "Drawing_color_tools");
   let Drawing_color_tools = _Drawing_color_tools;
-  var __defProp$K = Object.defineProperty;
-  var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$L = Object.defineProperty;
+  var __decorateClass$L = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$K(target, key2, result);
+    if (result) __defProp$L(target, key2, result);
     return result;
-  }, "__decorateClass$K");
+  }, "__decorateClass$L");
   const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -36966,16 +36966,16 @@
   };
   __name(_DrawingColorToolsFeature, "DrawingColorToolsFeature");
   let DrawingColorToolsFeature = _DrawingColorToolsFeature;
-  __decorateClass$K([
+  __decorateClass$L([
     inject(ElementsSetup)
   ], DrawingColorToolsFeature.prototype, "elementsSetup");
-  __decorateClass$K([
+  __decorateClass$L([
     inject(ToolsService)
   ], DrawingColorToolsFeature.prototype, "_toolsService");
-  __decorateClass$K([
+  __decorateClass$L([
     inject(DrawingService)
   ], DrawingColorToolsFeature.prototype, "_drawingService");
-  __decorateClass$K([
+  __decorateClass$L([
     inject(ColorChangedEventListener)
   ], DrawingColorToolsFeature.prototype, "_colorChangedListener");
   const calculatePressurePoint = /* @__PURE__ */ __name((p, s, b) => {
@@ -37174,15 +37174,15 @@
   };
   __name(_Drawing_pressure_info, "Drawing_pressure_info");
   let Drawing_pressure_info = _Drawing_pressure_info;
-  var __defProp$J = Object.defineProperty;
-  var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$K = Object.defineProperty;
+  var __decorateClass$K = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$J(target, key2, result);
+    if (result) __defProp$K(target, key2, result);
     return result;
-  }, "__decorateClass$J");
+  }, "__decorateClass$K");
   const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -37282,10 +37282,10 @@
   };
   __name(_DrawingPressureFeature, "DrawingPressureFeature");
   let DrawingPressureFeature = _DrawingPressureFeature;
-  __decorateClass$J([
+  __decorateClass$K([
     inject(ToolsService)
   ], DrawingPressureFeature.prototype, "_toolsService");
-  __decorateClass$J([
+  __decorateClass$K([
     inject(DrawingService)
   ], DrawingPressureFeature.prototype, "_drawingService");
   const _ReceiverMethodSubscription = class _ReceiverMethodSubscription {
@@ -40338,16 +40338,16 @@
     return logger.log !== void 0;
   }
   __name(isLogger, "isLogger");
-  var __defProp$I = Object.defineProperty;
+  var __defProp$J = Object.defineProperty;
   var __getOwnPropDesc$4 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$J = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$4(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$I(target, key2, result);
+    if (kind && result) __defProp$J(target, key2, result);
     return result;
-  }, "__decorateClass$I");
+  }, "__decorateClass$J");
   var __decorateParam$3 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$3");
   const hubTypeMap = {
     IGuildLobbiesHub: {
@@ -40420,21 +40420,21 @@
       });
     }
   }, __name(_Ba, "SocketService"), _Ba);
-  SocketService = __decorateClass$I([
+  SocketService = __decorateClass$J([
     injectable(),
     __decorateParam$3(0, inject(loggerFactory)),
     __decorateParam$3(1, inject(TokenService))
   ], SocketService);
-  var __defProp$H = Object.defineProperty;
+  var __defProp$I = Object.defineProperty;
   var __getOwnPropDesc$3 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __decorateClass$I = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$3(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$H(target, key2, result);
+    if (kind && result) __defProp$I(target, key2, result);
     return result;
-  }, "__decorateClass$H");
+  }, "__decorateClass$I");
   var __decorateParam$2 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$2");
   let LobbyConnectionService = (_Ca = class {
     constructor(loggerFactory2) {
@@ -40591,10 +40591,10 @@
       }
     }
   }, __name(_Ca, "LobbyConnectionService"), _Ca);
-  __decorateClass$H([
+  __decorateClass$I([
     inject(SocketService)
   ], LobbyConnectionService.prototype, "_socketService", 2);
-  LobbyConnectionService = __decorateClass$H([
+  LobbyConnectionService = __decorateClass$I([
     injectable(),
     __decorateParam$2(0, inject(loggerFactory))
   ], LobbyConnectionService);
@@ -41018,15 +41018,15 @@
   };
   __name(_Drops_info, "Drops_info");
   let Drops_info = _Drops_info;
-  var __defProp$G = Object.defineProperty;
-  var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$H = Object.defineProperty;
+  var __decorateClass$H = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$G(target, key2, result);
+    if (result) __defProp$H(target, key2, result);
     return result;
-  }, "__decorateClass$G");
+  }, "__decorateClass$H");
   const _DropsFeature = class _DropsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -41192,25 +41192,25 @@
   };
   __name(_DropsFeature, "DropsFeature");
   let DropsFeature = _DropsFeature;
-  __decorateClass$G([
+  __decorateClass$H([
     inject(ElementsSetup)
   ], DropsFeature.prototype, "_elementsSetup");
-  __decorateClass$G([
+  __decorateClass$H([
     inject(ApiDataSetup)
   ], DropsFeature.prototype, "_apiDataSetup");
-  __decorateClass$G([
+  __decorateClass$H([
     inject(LobbyConnectionService)
   ], DropsFeature.prototype, "_lobbyConnectionService");
-  __decorateClass$G([
+  __decorateClass$H([
     inject(ChatService)
   ], DropsFeature.prototype, "_chatService");
-  __decorateClass$G([
+  __decorateClass$H([
     inject(ToastService)
   ], DropsFeature.prototype, "_toastService");
-  __decorateClass$G([
+  __decorateClass$H([
     inject(LobbyLeftEventListener)
   ], DropsFeature.prototype, "_lobbyLeftEventListener");
-  __decorateClass$G([
+  __decorateClass$H([
     inject(LobbyService)
   ], DropsFeature.prototype, "_lobbyService");
   const BLANK = "_";
@@ -41564,15 +41564,15 @@
   };
   __name(_Guess_check, "Guess_check");
   let Guess_check = _Guess_check;
-  var __defProp$F = Object.defineProperty;
-  var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$G = Object.defineProperty;
+  var __decorateClass$G = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$F(target, key2, result);
+    if (result) __defProp$G(target, key2, result);
     return result;
-  }, "__decorateClass$F");
+  }, "__decorateClass$G");
   const _GuessCheckFeature = class _GuessCheckFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -41631,16 +41631,16 @@
   };
   __name(_GuessCheckFeature, "GuessCheckFeature");
   let GuessCheckFeature = _GuessCheckFeature;
-  __decorateClass$F([
+  __decorateClass$G([
     inject(ElementsSetup)
   ], GuessCheckFeature.prototype, "_elementsSetup");
-  __decorateClass$F([
+  __decorateClass$G([
     inject(ChatTypedEventListener)
   ], GuessCheckFeature.prototype, "_chatTypedEventListener");
-  __decorateClass$F([
+  __decorateClass$G([
     inject(LobbyLeftEventListener)
   ], GuessCheckFeature.prototype, "_lobbyLeftEventListener");
-  __decorateClass$F([
+  __decorateClass$G([
     inject(DrawingService)
   ], GuessCheckFeature.prototype, "_drawingService");
   const _HotkeysFeature = class _HotkeysFeature extends TypoFeature {
@@ -42059,15 +42059,15 @@
   };
   __name(_Image_agent_flyout, "Image_agent_flyout");
   let Image_agent_flyout = _Image_agent_flyout;
-  var __defProp$E = Object.defineProperty;
-  var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$F = Object.defineProperty;
+  var __decorateClass$F = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$E(target, key2, result);
+    if (result) __defProp$F(target, key2, result);
     return result;
-  }, "__decorateClass$E");
+  }, "__decorateClass$F");
   const _ImageAgentFeature = class _ImageAgentFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -42199,13 +42199,13 @@
   };
   __name(_ImageAgentFeature, "ImageAgentFeature");
   let ImageAgentFeature = _ImageAgentFeature;
-  __decorateClass$E([
+  __decorateClass$F([
     inject(ElementsSetup)
   ], ImageAgentFeature.prototype, "_elementsSetup");
-  __decorateClass$E([
+  __decorateClass$F([
     inject(LobbyService)
   ], ImageAgentFeature.prototype, "_lobbyService");
-  __decorateClass$E([
+  __decorateClass$F([
     inject(DrawingService)
   ], ImageAgentFeature.prototype, "_drawingService");
   function create_fragment$13(ctx) {
@@ -42280,15 +42280,15 @@
   };
   __name(_Line_tool_info, "Line_tool_info");
   let Line_tool_info = _Line_tool_info;
-  var __defProp$D = Object.defineProperty;
-  var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$E = Object.defineProperty;
+  var __decorateClass$E = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$D(target, key2, result);
+    if (result) __defProp$E(target, key2, result);
     return result;
-  }, "__decorateClass$D");
+  }, "__decorateClass$E");
   const _LineToolFeature = class _LineToolFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -42613,22 +42613,22 @@
   };
   __name(_LineToolFeature, "LineToolFeature");
   let LineToolFeature = _LineToolFeature;
-  __decorateClass$D([
+  __decorateClass$E([
     inject(ToastService)
   ], LineToolFeature.prototype, "_toastService");
-  __decorateClass$D([
+  __decorateClass$E([
     inject(PrioritizedCanvasEventsSetup)
   ], LineToolFeature.prototype, "_prioritizedCanvasEventsSetup");
-  __decorateClass$D([
+  __decorateClass$E([
     inject(ElementsSetup)
   ], LineToolFeature.prototype, "_elementsSetup");
-  __decorateClass$D([
+  __decorateClass$E([
     inject(LobbyService)
   ], LineToolFeature.prototype, "_lobbyService");
-  __decorateClass$D([
+  __decorateClass$E([
     inject(DrawingService)
   ], LineToolFeature.prototype, "_drawingService");
-  __decorateClass$D([
+  __decorateClass$E([
     inject(ToolsService)
   ], LineToolFeature.prototype, "_toolsService");
   function repeatAfterDelay(source$, delayMs) {
@@ -43598,15 +43598,15 @@
   };
   __name(_Lobby_status, "Lobby_status");
   let Lobby_status = _Lobby_status;
-  var __defProp$C = Object.defineProperty;
-  var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$D = Object.defineProperty;
+  var __decorateClass$D = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$C(target, key2, result);
+    if (result) __defProp$D(target, key2, result);
     return result;
-  }, "__decorateClass$C");
+  }, "__decorateClass$D");
   const _LobbyStatusFeature = class _LobbyStatusFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -43941,22 +43941,22 @@
   };
   __name(_LobbyStatusFeature, "LobbyStatusFeature");
   let LobbyStatusFeature = _LobbyStatusFeature;
-  __decorateClass$C([
+  __decorateClass$D([
     inject(LobbyService)
   ], LobbyStatusFeature.prototype, "_lobbyService");
-  __decorateClass$C([
+  __decorateClass$D([
     inject(ElementsSetup)
   ], LobbyStatusFeature.prototype, "_elementsSetup");
-  __decorateClass$C([
+  __decorateClass$D([
     inject(MemberService)
   ], LobbyStatusFeature.prototype, "_memberService");
-  __decorateClass$C([
+  __decorateClass$D([
     inject(ToastService)
   ], LobbyStatusFeature.prototype, "_toastService");
-  __decorateClass$C([
+  __decorateClass$D([
     inject(GlobalSettingsService)
   ], LobbyStatusFeature.prototype, "_settingsService");
-  __decorateClass$C([
+  __decorateClass$D([
     inject(LobbyConnectionService)
   ], LobbyStatusFeature.prototype, "_lobbyConnectionService");
   function create_fragment$11(ctx) {
@@ -43991,15 +43991,15 @@
   };
   __name(_Lobby_time_visualizer_info, "Lobby_time_visualizer_info");
   let Lobby_time_visualizer_info = _Lobby_time_visualizer_info;
-  var __defProp$B = Object.defineProperty;
-  var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$C = Object.defineProperty;
+  var __decorateClass$C = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$B(target, key2, result);
+    if (result) __defProp$C(target, key2, result);
     return result;
-  }, "__decorateClass$B");
+  }, "__decorateClass$C");
   const _LobbyTimeVisualizerFeature = class _LobbyTimeVisualizerFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -44111,13 +44111,13 @@
   };
   __name(_LobbyTimeVisualizerFeature, "LobbyTimeVisualizerFeature");
   let LobbyTimeVisualizerFeature = _LobbyTimeVisualizerFeature;
-  __decorateClass$B([
+  __decorateClass$C([
     inject(LobbyStateChangedEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyStateChangedEventListener");
-  __decorateClass$B([
+  __decorateClass$C([
     inject(LobbyJoinedEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyJoinedEventListener");
-  __decorateClass$B([
+  __decorateClass$C([
     inject(LobbyLeftEventListener)
   ], LobbyTimeVisualizerFeature.prototype, "_lobbyLeftEventListener");
   function get_each_context$n(ctx, list, i) {
@@ -45926,15 +45926,15 @@
   };
   __name(_Panel_cabin_scene_picker, "Panel_cabin_scene_picker");
   let Panel_cabin_scene_picker = _Panel_cabin_scene_picker;
-  var __defProp$A = Object.defineProperty;
-  var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$B = Object.defineProperty;
+  var __decorateClass$B = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$A(target, key2, result);
+    if (result) __defProp$B(target, key2, result);
     return result;
-  }, "__decorateClass$A");
+  }, "__decorateClass$B");
   const _PanelCabinFeature = class _PanelCabinFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -46112,22 +46112,22 @@
   };
   __name(_PanelCabinFeature, "PanelCabinFeature");
   let PanelCabinFeature = _PanelCabinFeature;
-  __decorateClass$A([
+  __decorateClass$B([
     inject(ElementsSetup)
   ], PanelCabinFeature.prototype, "_elements");
-  __decorateClass$A([
+  __decorateClass$B([
     inject(ApiDataSetup)
   ], PanelCabinFeature.prototype, "_apiDataSetup");
-  __decorateClass$A([
+  __decorateClass$B([
     inject(MemberService)
   ], PanelCabinFeature.prototype, "_memberService");
-  __decorateClass$A([
+  __decorateClass$B([
     inject(ApiService)
   ], PanelCabinFeature.prototype, "_apiService");
-  __decorateClass$A([
+  __decorateClass$B([
     inject(ModalService)
   ], PanelCabinFeature.prototype, "_modalService");
-  __decorateClass$A([
+  __decorateClass$B([
     inject(ToastService)
   ], PanelCabinFeature.prototype, "_toastService");
   function get_each_context$k(ctx, list, i) {
@@ -53891,15 +53891,15 @@ ${content2}</tr>
   };
   __name(_Panel_changelog_details, "Panel_changelog_details");
   let Panel_changelog_details = _Panel_changelog_details;
-  var __defProp$z = Object.defineProperty;
-  var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$A = Object.defineProperty;
+  var __decorateClass$A = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$z(target, key2, result);
+    if (result) __defProp$A(target, key2, result);
     return result;
-  }, "__decorateClass$z");
+  }, "__decorateClass$A");
   const _PanelChangelogFeature = class _PanelChangelogFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -53978,16 +53978,16 @@ ${content2}</tr>
   };
   __name(_PanelChangelogFeature, "PanelChangelogFeature");
   let PanelChangelogFeature = _PanelChangelogFeature;
-  __decorateClass$z([
+  __decorateClass$A([
     inject(ElementsSetup)
   ], PanelChangelogFeature.prototype, "_elements");
-  __decorateClass$z([
+  __decorateClass$A([
     inject(ApiDataSetup)
   ], PanelChangelogFeature.prototype, "_apiDataSetup");
-  __decorateClass$z([
+  __decorateClass$A([
     inject(GlobalSettingsService)
   ], PanelChangelogFeature.prototype, "_globalSettingsService");
-  __decorateClass$z([
+  __decorateClass$A([
     inject(ModalService)
   ], PanelChangelogFeature.prototype, "_modalService");
   function get_each_context$i(ctx, list, i) {
@@ -54624,15 +54624,15 @@ ${content2}</tr>
   };
   __name(_Panel_lobbies, "Panel_lobbies");
   let Panel_lobbies = _Panel_lobbies;
-  var __defProp$y = Object.defineProperty;
-  var __decorateClass$y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$z = Object.defineProperty;
+  var __decorateClass$z = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$y(target, key2, result);
+    if (result) __defProp$z(target, key2, result);
     return result;
-  }, "__decorateClass$y");
+  }, "__decorateClass$z");
   const _PanelLobbiesFeature = class _PanelLobbiesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -54761,19 +54761,19 @@ ${content2}</tr>
   };
   __name(_PanelLobbiesFeature, "PanelLobbiesFeature");
   let PanelLobbiesFeature = _PanelLobbiesFeature;
-  __decorateClass$y([
+  __decorateClass$z([
     inject(ElementsSetup)
   ], PanelLobbiesFeature.prototype, "_elements");
-  __decorateClass$y([
+  __decorateClass$z([
     inject(SocketService)
   ], PanelLobbiesFeature.prototype, "_socketService");
-  __decorateClass$y([
+  __decorateClass$z([
     inject(MemberService)
   ], PanelLobbiesFeature.prototype, "_memberService");
-  __decorateClass$y([
+  __decorateClass$z([
     inject(LobbyService)
   ], PanelLobbiesFeature.prototype, "_lobbyService");
-  __decorateClass$y([
+  __decorateClass$z([
     inject(ToastService)
   ], PanelLobbiesFeature.prototype, "_toastService");
   function get_each_context$h(ctx, list, i) {
@@ -55035,15 +55035,15 @@ ${content2}</tr>
   };
   __name(_Panel_news, "Panel_news");
   let Panel_news = _Panel_news;
-  var __defProp$x = Object.defineProperty;
-  var __decorateClass$x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$y = Object.defineProperty;
+  var __decorateClass$y = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$x(target, key2, result);
+    if (result) __defProp$y(target, key2, result);
     return result;
-  }, "__decorateClass$x");
+  }, "__decorateClass$y");
   const _PanelNewsFeature = class _PanelNewsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -55079,21 +55079,21 @@ ${content2}</tr>
   };
   __name(_PanelNewsFeature, "PanelNewsFeature");
   let PanelNewsFeature = _PanelNewsFeature;
-  __decorateClass$x([
+  __decorateClass$y([
     inject(ElementsSetup)
   ], PanelNewsFeature.prototype, "_elements");
-  __decorateClass$x([
+  __decorateClass$y([
     inject(ApiDataSetup)
   ], PanelNewsFeature.prototype, "_apiDataSetup");
-  var __defProp$w = Object.defineProperty;
-  var __decorateClass$w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$x = Object.defineProperty;
+  var __decorateClass$x = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$w(target, key2, result);
+    if (result) __defProp$x(target, key2, result);
     return result;
-  }, "__decorateClass$w");
+  }, "__decorateClass$x");
   const _PlayerIdsFeature = class _PlayerIdsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -55134,7 +55134,7 @@ ${content2}</tr>
   };
   __name(_PlayerIdsFeature, "PlayerIdsFeature");
   let PlayerIdsFeature = _PlayerIdsFeature;
-  __decorateClass$w([
+  __decorateClass$x([
     inject(PlayersService)
   ], PlayerIdsFeature.prototype, "_playersService");
   function create_else_block$7(ctx) {
@@ -56052,15 +56052,15 @@ ${content2}</tr>
   };
   __name(_User_info_management, "User_info_management");
   let User_info_management = _User_info_management;
-  var __defProp$v = Object.defineProperty;
-  var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$w = Object.defineProperty;
+  var __decorateClass$w = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$v(target, key2, result);
+    if (result) __defProp$w(target, key2, result);
     return result;
-  }, "__decorateClass$v");
+  }, "__decorateClass$w");
   const _UserInfoFeature = class _UserInfoFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -56114,19 +56114,19 @@ ${content2}</tr>
   };
   __name(_UserInfoFeature, "UserInfoFeature");
   let UserInfoFeature = _UserInfoFeature;
-  __decorateClass$v([
+  __decorateClass$w([
     inject(ElementsSetup)
   ], UserInfoFeature.prototype, "_elementsSetup");
-  __decorateClass$v([
+  __decorateClass$w([
     inject(MemberService)
   ], UserInfoFeature.prototype, "_memberService");
-  __decorateClass$v([
+  __decorateClass$w([
     inject(TokenService)
   ], UserInfoFeature.prototype, "_tokenService");
-  __decorateClass$v([
+  __decorateClass$w([
     inject(GlobalSettingsService)
   ], UserInfoFeature.prototype, "_globalSettingsService");
-  __decorateClass$v([
+  __decorateClass$w([
     inject(ToastService)
   ], UserInfoFeature.prototype, "_toastService");
   function create_fragment$v(ctx) {
@@ -57624,15 +57624,15 @@ ${content2}</tr>
   };
   __name(_Controls_onboarding, "Controls_onboarding");
   let Controls_onboarding = _Controls_onboarding;
-  var __defProp$u = Object.defineProperty;
-  var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$v = Object.defineProperty;
+  var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$u(target, key2, result);
+    if (result) __defProp$v(target, key2, result);
     return result;
-  }, "__decorateClass$u");
+  }, "__decorateClass$v");
   const _ControlsOnboardingFeature = (_Fa = class extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -57841,16 +57841,16 @@ ${content2}</tr>
       (await this._viewInfoTask).complete();
     }
   }, __name(_Fa, "_ControlsOnboardingFeature"), _Fa);
-  __decorateClass$u([
+  __decorateClass$v([
     inject(ElementsSetup)
   ], _ControlsOnboardingFeature.prototype, "_elementsSetup");
-  __decorateClass$u([
+  __decorateClass$v([
     inject(ModalService)
   ], _ControlsOnboardingFeature.prototype, "_modalService");
-  __decorateClass$u([
+  __decorateClass$v([
     inject(FeaturesService)
   ], _ControlsOnboardingFeature.prototype, "_featuresService");
-  __decorateClass$u([
+  __decorateClass$v([
     inject(ToastService)
   ], _ControlsOnboardingFeature.prototype, "_toastService");
   let ControlsOnboardingFeature = _ControlsOnboardingFeature;
@@ -58324,15 +58324,15 @@ ${content2}</tr>
   };
   __name(_Controls_profiles, "Controls_profiles");
   let Controls_profiles = _Controls_profiles;
-  var __defProp$t = Object.defineProperty;
-  var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$u = Object.defineProperty;
+  var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$t(target, key2, result);
+    if (result) __defProp$u(target, key2, result);
     return result;
-  }, "__decorateClass$t");
+  }, "__decorateClass$u");
   const _ControlsProfilesFeature = class _ControlsProfilesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -58411,10 +58411,10 @@ ${content2}</tr>
   };
   __name(_ControlsProfilesFeature, "ControlsProfilesFeature");
   let ControlsProfilesFeature = _ControlsProfilesFeature;
-  __decorateClass$t([
+  __decorateClass$u([
     inject(ElementsSetup)
   ], ControlsProfilesFeature.prototype, "_elementsSetup");
-  __decorateClass$t([
+  __decorateClass$u([
     inject(ToastService)
   ], ControlsProfilesFeature.prototype, "_toastService");
   function create_if_block$c(ctx) {
@@ -60946,15 +60946,15 @@ ${content2}</tr>
   };
   __name(_Controls_settings, "Controls_settings");
   let Controls_settings = _Controls_settings;
-  var __defProp$s = Object.defineProperty;
-  var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$t = Object.defineProperty;
+  var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$s(target, key2, result);
+    if (result) __defProp$t(target, key2, result);
     return result;
-  }, "__decorateClass$s");
+  }, "__decorateClass$t");
   const _ControlsSettingsFeature = class _ControlsSettingsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -61100,30 +61100,30 @@ ${content2}</tr>
   };
   __name(_ControlsSettingsFeature, "ControlsSettingsFeature");
   let ControlsSettingsFeature = _ControlsSettingsFeature;
-  __decorateClass$s([
+  __decorateClass$t([
     inject(ElementsSetup)
   ], ControlsSettingsFeature.prototype, "_elementsSetup");
-  __decorateClass$s([
+  __decorateClass$t([
     inject(ModalService)
   ], ControlsSettingsFeature.prototype, "_modalService");
-  __decorateClass$s([
+  __decorateClass$t([
     inject(ToastService)
   ], ControlsSettingsFeature.prototype, "_toastService");
-  __decorateClass$s([
+  __decorateClass$t([
     inject(FeaturesService)
   ], ControlsSettingsFeature.prototype, "_featuresService");
-  __decorateClass$s([
+  __decorateClass$t([
     inject(GlobalSettingsService)
   ], ControlsSettingsFeature.prototype, "_settingsService");
-  var __defProp$r = Object.defineProperty;
-  var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$s = Object.defineProperty;
+  var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$r(target, key2, result);
+    if (result) __defProp$s(target, key2, result);
     return result;
-  }, "__decorateClass$r");
+  }, "__decorateClass$s");
   const _MandalaMod = class _MandalaMod extends TypoDrawMod {
     constructor() {
       super(...arguments);
@@ -61180,7 +61180,7 @@ ${content2}</tr>
   };
   __name(_MandalaMod, "MandalaMod");
   let MandalaMod = _MandalaMod;
-  __decorateClass$r([
+  __decorateClass$s([
     inject(ToolsService)
   ], MandalaMod.prototype, "_toolsService");
   const _NoiseMod = class _NoiseMod extends ConstantDrawMod {
@@ -61321,15 +61321,15 @@ ${content2}</tr>
   };
   __name(_RainbowMod, "RainbowMod");
   let RainbowMod = _RainbowMod;
-  var __defProp$q = Object.defineProperty;
-  var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$r = Object.defineProperty;
+  var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$q(target, key2, result);
+    if (result) __defProp$r(target, key2, result);
     return result;
-  }, "__decorateClass$q");
+  }, "__decorateClass$r");
   const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
     constructor() {
       super(...arguments);
@@ -61370,18 +61370,18 @@ ${content2}</tr>
   };
   __name(_RandomColorMod, "RandomColorMod");
   let RandomColorMod = _RandomColorMod;
-  __decorateClass$q([
+  __decorateClass$r([
     inject(ColorsService)
   ], RandomColorMod.prototype, "_colorsService");
-  var __defProp$p = Object.defineProperty;
-  var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$q = Object.defineProperty;
+  var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$p(target, key2, result);
+    if (result) __defProp$q(target, key2, result);
     return result;
-  }, "__decorateClass$p");
+  }, "__decorateClass$q");
   const _SculptMod = class _SculptMod extends TypoDrawMod {
     constructor() {
       super(...arguments);
@@ -61427,7 +61427,7 @@ ${content2}</tr>
   };
   __name(_SculptMod, "SculptMod");
   let SculptMod = _SculptMod;
-  __decorateClass$p([
+  __decorateClass$q([
     inject(ToolsService)
   ], SculptMod.prototype, "_toolsService");
   const _TiltMod = class _TiltMod extends ConstantDrawMod {
@@ -61546,15 +61546,15 @@ ${content2}</tr>
   };
   __name(_DotTool, "DotTool");
   let DotTool = _DotTool;
-  var __defProp$o = Object.defineProperty;
-  var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$p = Object.defineProperty;
+  var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$o(target, key2, result);
+    if (result) __defProp$p(target, key2, result);
     return result;
-  }, "__decorateClass$o");
+  }, "__decorateClass$p");
   const _GridTool = class _GridTool extends TypoDrawTool {
     constructor() {
       super(...arguments);
@@ -61598,7 +61598,7 @@ ${content2}</tr>
   };
   __name(_GridTool, "GridTool");
   let GridTool = _GridTool;
-  __decorateClass$o([
+  __decorateClass$p([
     inject(ToolsService)
   ], GridTool.prototype, "_toolsService");
   function create_fragment$l(ctx) {
@@ -62955,15 +62955,15 @@ ${content2}</tr>
   };
   __name(_Drawing_brush_lab_manage, "Drawing_brush_lab_manage");
   let Drawing_brush_lab_manage = _Drawing_brush_lab_manage;
-  var __defProp$n = Object.defineProperty;
-  var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$o = Object.defineProperty;
+  var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$n(target, key2, result);
+    if (result) __defProp$o(target, key2, result);
     return result;
-  }, "__decorateClass$n");
+  }, "__decorateClass$o");
   const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -63073,13 +63073,13 @@ ${content2}</tr>
   };
   __name(_DrawingBrushLabFeature, "DrawingBrushLabFeature");
   let DrawingBrushLabFeature = _DrawingBrushLabFeature;
-  __decorateClass$n([
+  __decorateClass$o([
     inject(ToolsService)
   ], DrawingBrushLabFeature.prototype, "_toolsService");
-  __decorateClass$n([
+  __decorateClass$o([
     inject(ElementsSetup)
   ], DrawingBrushLabFeature.prototype, "_elementsSetup");
-  __decorateClass$n([
+  __decorateClass$o([
     inject(ModalService)
   ], DrawingBrushLabFeature.prototype, "_modalService");
   const _DomEventSubscription = class _DomEventSubscription {
@@ -63107,15 +63107,15 @@ ${content2}</tr>
   };
   __name(_DomEventSubscription, "DomEventSubscription");
   let DomEventSubscription = _DomEventSubscription;
-  var __defProp$m = Object.defineProperty;
-  var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$n = Object.defineProperty;
+  var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$m(target, key2, result);
+    if (result) __defProp$n(target, key2, result);
     return result;
-  }, "__decorateClass$m");
+  }, "__decorateClass$n");
   const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -63172,27 +63172,27 @@ ${content2}</tr>
   };
   __name(_DrawingClearLockFeature, "DrawingClearLockFeature");
   let DrawingClearLockFeature = _DrawingClearLockFeature;
-  __decorateClass$m([
+  __decorateClass$n([
     inject(ToastService)
   ], DrawingClearLockFeature.prototype, "_toastService");
-  __decorateClass$m([
+  __decorateClass$n([
     inject(ElementsSetup)
   ], DrawingClearLockFeature.prototype, "_elementsSetup");
-  __decorateClass$m([
+  __decorateClass$n([
     inject(DrawingService)
   ], DrawingClearLockFeature.prototype, "_drawingService");
-  __decorateClass$m([
+  __decorateClass$n([
     inject(LobbyService)
   ], DrawingClearLockFeature.prototype, "_lobbyService");
-  var __defProp$l = Object.defineProperty;
-  var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$m = Object.defineProperty;
+  var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$l(target, key2, result);
+    if (result) __defProp$m(target, key2, result);
     return result;
-  }, "__decorateClass$l");
+  }, "__decorateClass$m");
   const _DrawingSizeHotkeysFeature = class _DrawingSizeHotkeysFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -63216,9 +63216,1165 @@ ${content2}</tr>
   };
   __name(_DrawingSizeHotkeysFeature, "DrawingSizeHotkeysFeature");
   let DrawingSizeHotkeysFeature = _DrawingSizeHotkeysFeature;
-  __decorateClass$l([
+  __decorateClass$m([
     inject(DrawingService)
   ], DrawingSizeHotkeysFeature.prototype, "_drawingService");
+  const avatarColors = [
+    "#ed2b34",
+    "#ff7b00",
+    "#ffff1b",
+    "#67dc14",
+    "#00f2fe",
+    "#4058f6",
+    "#a805fc",
+    "#ff75dc",
+    "#01eda2",
+    "#fd7b7b",
+    "#847f86",
+    "#413f42",
+    "#8f563b",
+    "#663a31",
+    "#eec399",
+    "#ed3036",
+    "#ffd50e",
+    "#4f9500",
+    "#3dbffd",
+    "#465af7",
+    "#de2fff",
+    "#88828e",
+    "#683d34",
+    "#e8a26f",
+    "#00ae85",
+    "#ff7c80",
+    "#a5b0b6",
+    /* white avatar */
+    "#a5b0b6"
+    /* white striped avatar*/
+  ];
+  const _MetricView = class _MetricView {
+    constructor(name, description, _valueSelector) {
+      __publicField(this, "_events", []);
+      __publicField(this, "_archive", /* @__PURE__ */ new Map());
+      __publicField(this, "_aggregation", "single");
+      __publicField(this, "_ordering", "time");
+      __publicField(this, "_metricUnit");
+      __publicField(this, "_metricTemporalUnit");
+      this.name = name;
+      this.description = description;
+      this._valueSelector = _valueSelector;
+    }
+    withAggregation(aggregation) {
+      this._aggregation = aggregation;
+      return this;
+    }
+    withOrdering(ordering) {
+      this._ordering = ordering;
+      return this;
+    }
+    withMetricUnit(unit) {
+      this._metricUnit = unit;
+      return this;
+    }
+    withMetricTemporalUnit(unit) {
+      this._metricTemporalUnit = unit;
+      return this;
+    }
+    addEvent(event) {
+      this._events.push(event);
+    }
+    archiveEvents(key2) {
+      this._archive.set(key2, this._events);
+      this._events = [];
+    }
+    clearEvents() {
+      this._events = [];
+    }
+    drawChart(players, chart, archiveKey) {
+      const events = archiveKey ? this._archive.get(archiveKey) ?? [] : this._events;
+      const datasets = this.getDatasetForPlayers(players, events);
+      if (datasets.length === 0) {
+        throw new Error("No dataset found for players");
+      }
+      chart.setDataset(datasets, {
+        title: this.name,
+        description: this.description,
+        xUnit: this._metricTemporalUnit,
+        yUnit: this._metricUnit
+      });
+    }
+    /**
+     * TODO actually improve usability of exported data
+     * @param players
+     * @param archiveKey
+     */
+    generateCsv(players, archiveKey) {
+      const events = archiveKey ? this._archive.get(archiveKey) ?? [] : this._events;
+      const datasets = this.getDatasetForPlayers(players, events);
+      if (datasets.length === 0) {
+        throw new Error("No dataset found for players");
+      }
+      const header = ["Player", this._aggregation === "single" ? "Time" : this._aggregation === "cumulative" ? "Total" : "Average"];
+      const rows = datasets.map((dataset) => {
+        return dataset.data.map((point) => [
+          dataset.label,
+          point.y.toString()
+        ].join(",")).join("\n");
+      }).join("\n");
+      return [header.join(","), rows].join("\n");
+    }
+    getDatasetForPlayers(players, events) {
+      const temporalLookup = this.buildTemporalLookup(events);
+      const datasets = players.map((player) => {
+        const playerEvents = events.filter((e) => e.playerId === player.id);
+        if (playerEvents.length === 0) return void 0;
+        let dataPoints = [];
+        if (this._aggregation === "single") {
+          dataPoints = playerEvents.map((e) => ({
+            x: temporalLookup.get(this.buildTemporalKey(e.lobbyRound, e.turnPlayerId)) ?? 0,
+            y: this._valueSelector(e)
+          }));
+        } else if (this._aggregation === "cumulative") {
+          const sum = playerEvents.map((e) => this._valueSelector(e)).reduce((a, b) => a + b, 0);
+          dataPoints = [{
+            y: sum,
+            x: 0
+          }];
+        } else if (this._aggregation === "average") {
+          const average = playerEvents.map((e) => this._valueSelector(e)).reduce((a, b) => a + b, 0) / playerEvents.length;
+          dataPoints = [{
+            y: average,
+            x: 0
+          }];
+        } else if (this._aggregation === "ranking") {
+          if (this._ordering === "minValue") {
+            const minEvent = playerEvents.reduce((prev, curr) => this._valueSelector(prev) < this._valueSelector(curr) ? prev : curr);
+            dataPoints = [{
+              y: this._valueSelector(minEvent),
+              x: 0
+            }];
+          } else if (this._ordering === "maxValue") {
+            const maxEvent = playerEvents.reduce((prev, curr) => this._valueSelector(prev) > this._valueSelector(curr) ? prev : curr);
+            dataPoints = [{
+              y: this._valueSelector(maxEvent),
+              x: 0
+            }];
+          }
+        }
+        return {
+          label: player.name,
+          color: avatarColors[player.avatar[0]],
+          data: dataPoints
+        };
+      });
+      const successfulDatasets = datasets.filter((d) => d !== void 0 && d.data.length > 0);
+      if (this._aggregation === "single") {
+        return successfulDatasets;
+      }
+      if (this._ordering === "minValue") {
+        return successfulDatasets.sort((a, b) => {
+          const aMin = Math.min(...a.data.map((d) => d.y));
+          const bMin = Math.min(...b.data.map((d) => d.y));
+          return aMin - bMin;
+        });
+      } else if (this._ordering === "maxValue") {
+        return successfulDatasets.sort((a, b) => {
+          const aMax = Math.max(...a.data.map((d) => d.y));
+          const bMax = Math.max(...b.data.map((d) => d.y));
+          return bMax - aMax;
+        });
+      }
+      return successfulDatasets;
+    }
+    buildTemporalLookup(events) {
+      const allTurns = /* @__PURE__ */ new Set();
+      events.forEach((e) => allTurns.add(this.buildTemporalKey(e.lobbyRound, e.turnPlayerId)));
+      const distinctTurns = Array.from(allTurns).map((key2) => key2.split("_")).map(([round, turn]) => ({ round: Number(round), turn: Number(turn) }));
+      const orderedTurns = distinctTurns.map((event) => ({ round: event.round, turn: event.turn })).sort((b, a) => {
+        if (a.round === b.round) {
+          return a.turn - b.turn;
+        }
+        return b.round - a.round;
+      }).map((t, i) => ({
+        key: this.buildTemporalKey(t.round, t.turn),
+        index: i
+      }));
+      const temporalLookup = /* @__PURE__ */ new Map();
+      orderedTurns.forEach((t) => temporalLookup.set(t.key, t.index));
+      return temporalLookup;
+    }
+    buildTemporalKey(round, turnId) {
+      return `${round}_${turnId}`;
+    }
+  };
+  __name(_MetricView, "MetricView");
+  let MetricView = _MetricView;
+  const millisAsSeconds = /* @__PURE__ */ __name((ms) => Math.round(ms / 100) / 10, "millisAsSeconds");
+  const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
+    averageGuessTime: new MetricView(
+      "Average Guess Time",
+      "The average time a player needed to guess a word",
+      (event) => millisAsSeconds(event.guessTimeMs)
+    ).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
+    totalScore: new MetricView(
+      "Score Ranking",
+      "The total ranking, progressing over time",
+      (event) => event.score
+    ).withMetricUnit("pts"),
+    finalStandings: new MetricView(
+      "Final Score Ranking",
+      "The final ranking",
+      (event) => event.score
+    ).withMetricUnit("pts").withAggregation("ranking").withOrdering("maxValue"),
+    averageNeededGuesses: new MetricView(
+      "Average Guesses Needed",
+      "The average number of guesses a player needed to guess a word",
+      (event) => event.guessCount
+    ).withAggregation("average").withOrdering("minValue"),
+    averageGuessSpeed: new MetricView(
+      "Average Guess Speed",
+      "The average time between guesses a player sent",
+      (event) => millisAsSeconds(event.gapTimeMs)
+    ).withMetricUnit("s").withAggregation("average"),
+    fastestGuess: new MetricView(
+      "Fastest Guess",
+      "The fastest correct guess for a word",
+      (event) => millisAsSeconds(event.guessTimeMs)
+    ).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
+    averageGuessScore: new MetricView(
+      "Average Guess Score",
+      "The average score a player got per correct guess",
+      (event) => event.score
+    ).withMetricUnit("pts").withAggregation("average").withOrdering("maxValue"),
+    averageGuessAccuracy: new MetricView(
+      "Average Guess Accuracy",
+      "The average letter count accuracy of player guesses",
+      (event) => event.accuracy
+    ).withAggregation("average").withOrdering("maxValue"),
+    longestGuessStreak: new MetricView(
+      "Longest Guess Streak",
+      "The longest streak of correct guesses in a row",
+      (event) => event.streak
+    ).withAggregation("ranking").withOrdering("maxValue"),
+    averageGuessRank: new MetricView(
+      "Average Guess Rank",
+      "The average rank of player's correct guess",
+      (event) => event.rank
+    ).withAggregation("average").withOrdering("minValue"),
+    averageDrawTime: new MetricView(
+      "Average Draw Time",
+      "The average draw time of a player",
+      (event) => millisAsSeconds(event.drawTimeMs)
+    ).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
+    fastestDrawTime: new MetricView(
+      "Fastest Draw Time",
+      "The fastest draw time of a player",
+      (event) => millisAsSeconds(event.drawTimeMs)
+    ).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
+    averageDrawScore: new MetricView(
+      "Average Draw Score",
+      "The average score for a player's drawing",
+      (event) => event.score
+    ).withAggregation("average").withOrdering("maxValue").withMetricUnit("pts"),
+    averageDrawLikes: new MetricView(
+      "Average Draw Likes",
+      "The average likes for player drawings",
+      (event) => event.likes
+    ).withAggregation("average").withOrdering("maxValue"),
+    mostDrawDislikes: new MetricView(
+      "Most Draw Dislikes",
+      "The most dislikes a player received for a drawing",
+      (event) => event.dislikes
+    ).withAggregation("ranking").withOrdering("maxValue")
+  }), "createMetricViews");
+  var __defProp$l = Object.defineProperty;
+  var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key2) : target;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
+    if (kind && result) __defProp$l(target, key2, result);
+    return result;
+  }, "__decorateClass$l");
+  var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$1");
+  let LobbyStatsService = (_Ga = class {
+    constructor(loggerFactory2) {
+      __publicField(this, "_lobbyService");
+      __publicField(this, "_lobbyInteractedEventListener");
+      __publicField(this, "_lobbyStateChangedEventListener");
+      __publicField(this, "_wordGuessedEventListener");
+      __publicField(this, "_chatService");
+      __publicField(this, "_drawingService");
+      __publicField(this, "_lobbyJoinedEventListener");
+      __publicField(this, "_logger");
+      __publicField(this, "_guessTimeStats$", new Subject$1());
+      __publicField(this, "_guessCountStats$", new Subject$1());
+      __publicField(this, "_guessMessageGapStats$", new Subject$1());
+      __publicField(this, "_guessScoreStats$", new Subject$1());
+      __publicField(this, "_guessAccuracyStats$", new Subject$1());
+      __publicField(this, "_guessStreakStats$", new Subject$1());
+      __publicField(this, "_guessRankStats$", new Subject$1());
+      __publicField(this, "_drawTimeStats$", new Subject$1());
+      __publicField(this, "_drawGuessedPlayersStats$", new Subject$1());
+      __publicField(this, "_drawScoreStats$", new Subject$1());
+      __publicField(this, "_drawLikesStats$", new Subject$1());
+      __publicField(this, "_drawDislikesStats$", new Subject$1());
+      __publicField(this, "_turnStandingScoreStats$", new Subject$1());
+      this._logger = loggerFactory2(this);
+    }
+    get guessTimeStats$() {
+      return this._guessTimeStats$.asObservable();
+    }
+    get guessCountStats$() {
+      return this._guessCountStats$.asObservable();
+    }
+    get guessMessageGapStats$() {
+      return this._guessMessageGapStats$.asObservable();
+    }
+    get guessScoreStats$() {
+      return this._guessScoreStats$.asObservable();
+    }
+    get guessAccuracyStats$() {
+      return this._guessAccuracyStats$.asObservable();
+    }
+    get guessStreakStats$() {
+      return this._guessStreakStats$.asObservable();
+    }
+    get guessRankStats$() {
+      return this._guessRankStats$.asObservable();
+    }
+    get drawTimeStats$() {
+      return this._drawTimeStats$.asObservable();
+    }
+    get drawGuessedPlayersStats$() {
+      return this._drawGuessedPlayersStats$.asObservable();
+    }
+    get drawScoreStats$() {
+      return this._drawScoreStats$.asObservable();
+    }
+    get drawLikesStats$() {
+      return this._drawLikesStats$.asObservable();
+    }
+    get drawDislikesStats$() {
+      return this._drawDislikesStats$.asObservable();
+    }
+    get turnStandingScoreStats$() {
+      return this._turnStandingScoreStats$.asObservable();
+    }
+    postConstruct() {
+      this.processEvents();
+    }
+    /**
+     * Create the common part of a lobby stat event
+     * @param lobby
+     * @param turnPlayerId
+     * @param targetPlayerId
+     * @private
+     */
+    createEventSignature(lobby, turnPlayerId, targetPlayerId) {
+      if (lobby.id === null) throw new Error("lobbyId must be provided");
+      return {
+        lobbyId: lobby.id,
+        lobbyRound: lobby.round,
+        playerId: targetPlayerId,
+        turnPlayerId,
+        timestamp: Date.now()
+      };
+    }
+    /**
+     * Process events from various sources to produce lobby stats events
+     * this processes events nevertheless if features subscribe or not
+     * this could be changed by exposing the observables directly
+     * would have the downside that multiple subscribers would cause multiple processing
+     * @private
+     */
+    processEvents() {
+      const lobbySource$ = this._lobbyService.lobby$.pipe(
+        withLatestFrom(this._lobbyStateChangedEventListener.events$.pipe(
+          map((event) => {
+            var _a2;
+            return (_a2 = event.data.drawingStarted) == null ? void 0 : _a2.drawerId;
+          }),
+          filter((id2) => id2 !== void 0)
+        )),
+        map(
+          ([lobby, turnPlayerId]) => lobby === null || lobby.id === null ? null : { lobby, turnPlayerId }
+        )
+      );
+      const lobby$ = new Subject$1();
+      lobbySource$.subscribe(lobby$);
+      const roundStartedSource$ = this._lobbyStateChangedEventListener.events$.pipe(
+        map((event) => event.data.drawingStarted),
+        filter((event) => event !== void 0)
+      );
+      const turnStarted$ = new Subject$1();
+      roundStartedSource$.subscribe(turnStarted$);
+      turnStarted$.pipe(
+        /* count likes */
+        switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
+          filter((event) => event.data.likeInteraction !== void 0),
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          count(),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([likes, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+              likes
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._drawLikesStats$.next(event));
+      turnStarted$.pipe(
+        /* count likes */
+        switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
+          filter((event) => event.data.dislikeInteraction !== void 0),
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          count(),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([likes, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+              dislikes: likes
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._drawDislikesStats$.next(event));
+      turnStarted$.pipe(
+        /* count guessed players */
+        switchMap(() => this._wordGuessedEventListener.events$.pipe(
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          count(),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([guessedPlayers, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+              guessedPlayers
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._drawGuessedPlayersStats$.next(event));
+      turnStarted$.pipe(
+        /* record draw start time */
+        map(() => Date.now()),
+        /* measure time until drawing revealed */
+        switchMap((startTimestamp) => this._lobbyStateChangedEventListener.events$.pipe(
+          filter((event) => event.data.drawingRevealed !== void 0),
+          take(1),
+          map(() => Date.now() - startTimestamp)
+        )),
+        /* create event data */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null),
+        map(([time, lobbyData]) => {
+          if (lobbyData === null) throw new Error("lobbyData must be provided");
+          const event = {
+            ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
+            drawTimeMs: time
+          };
+          return event;
+        })
+      ).subscribe((event) => this._drawTimeStats$.next(event));
+      turnStarted$.pipe(
+        /* get score of next reveal */
+        switchMap(() => this._lobbyStateChangedEventListener.events$.pipe(
+          map((event) => event.data.drawingRevealed),
+          filter((event) => event !== void 0),
+          take(1),
+          /* map in lobby details */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null)
+        ))
+      ).subscribe(([reveal, lobby]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        for (const score of reveal.scores) {
+          const event = {
+            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
+            score: score.rewarded
+          };
+          if (score.playerId === lobby.turnPlayerId) {
+            this._drawScoreStats$.next(event);
+          } else {
+            this._guessScoreStats$.next(event);
+          }
+          const standingEvent = {
+            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
+            score: score.score
+          };
+          this._turnStandingScoreStats$.next(standingEvent);
+        }
+      });
+      turnStarted$.pipe(
+        /* record start time */
+        map(() => Date.now()),
+        switchMap((startTimestamp) => this._wordGuessedEventListener.events$.pipe(
+          /* measure time until each guess */
+          map((event) => ({
+            playerId: event.data.playerId,
+            guessTimeMs: Date.now() - startTimestamp
+          })),
+          /* until drawing ended */
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          /* create event data */
+          withLatestFrom(lobby$),
+          filter(([, lobbyData]) => lobbyData !== null),
+          map(([guessData, lobbyData]) => {
+            if (lobbyData === null) throw new Error("lobbyData must be provided");
+            const event = {
+              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, guessData.playerId),
+              guessTimeMs: guessData.guessTimeMs
+            };
+            return event;
+          })
+        ))
+      ).subscribe((event) => this._guessTimeStats$.next(event));
+      this._lobbyStateChangedEventListener.events$.pipe(
+        map((event) => event.data.drawingRevealed),
+        filter((event) => event !== void 0),
+        take(1),
+        /* map in lobby details */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null)
+      ).subscribe(([reveal, lobby]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        const players = reveal.scores.filter((score) => score.playerId !== lobby.turnPlayerId).sort((a, b) => b.rewarded - a.rewarded).map((score) => score.playerId);
+        for (const score of reveal.scores) {
+          const index = players.indexOf(score.playerId);
+          if (index === -1) continue;
+          const eventSignature = this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId);
+          const event = {
+            ...eventSignature,
+            rank: index + 1
+          };
+          this._guessRankStats$.next(event);
+        }
+      });
+      this._wordGuessedEventListener.events$.pipe(
+        withLatestFrom(
+          turnStarted$.pipe(
+            map(() => /* @__PURE__ */ new Map()),
+            /* count messages of players that did not guess yet */
+            switchMap((guessCounts) => {
+              return this._chatService.playerMessageReceived$.pipe(
+                filter((msg) => !msg.player.guessed),
+                tap((msg) => {
+                  const count2 = guessCounts.get(msg.player.id) ?? 0;
+                  guessCounts.set(msg.player.id, count2 + 1);
+                }),
+                map(() => guessCounts)
+              );
+            })
+          )
+        ),
+        map(([guessEvent, guessCounts]) => ({
+          playerId: guessEvent.data.playerId,
+          count: (guessCounts.get(guessEvent.data.playerId) ?? 0) + 1
+          // include current guess
+        })),
+        /* map in lobby details */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null)
+      ).subscribe(([guessData, lobby]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        const event = {
+          ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, guessData.playerId),
+          guessCount: guessData.count
+        };
+        this._guessCountStats$.next(event);
+      });
+      this._chatService.playerMessageReceived$.pipe(
+        /* merge chat messages and actual guesses */
+        filter((msg) => !msg.player.guessed),
+        map((msg) => ({ message: msg.content, playerId: msg.player.id })),
+        mergeWith(
+          this._wordGuessedEventListener.events$.pipe(
+            map(
+              (guessed) => ({ message: void 0, playerId: guessed.data.playerId })
+            )
+          )
+        ),
+        /* create new last-msg map per turn */
+        withLatestFrom(turnStarted$.pipe(
+          map(() => ({ guesses: /* @__PURE__ */ new Map(), turnStart: Date.now() }))
+        ), this._lobbyService.lobby$, this._lobbyStateChangedEventListener.events$.pipe(
+          filter((event) => event.data.timerSet === void 0)
+          /* filter out timer set events which disrupt state */
+        )),
+        filter(([, , , state]) => state.data.drawingStarted !== void 0),
+        /* only while drawing: last state update was start drawing */
+        map(([msgData, turnData]) => {
+          const lastGuess = turnData.guesses.get(msgData.playerId) ?? turnData.turnStart;
+          turnData.guesses.set(msgData.playerId, Date.now());
+          return {
+            playerId: msgData.playerId,
+            gapTimeMs: Date.now() - lastGuess,
+            message: msgData.message
+          };
+        }),
+        /* map in lobby details, filter out drawing user messages*/
+        withLatestFrom(lobby$, this._drawingService.imageState$),
+        filter(([gap, lobbyData]) => lobbyData !== null && lobbyData.turnPlayerId !== gap.playerId)
+      ).subscribe(([gap, lobby, drawing]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        if (drawing === null || drawing.word === void 0) throw new Error("drawing must be provided");
+        const gapEvent = {
+          ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, gap.playerId),
+          gapTimeMs: gap.gapTimeMs,
+          message: gap.message,
+          hints: drawing.word.hints
+        };
+        this._guessMessageGapStats$.next(gapEvent);
+        const accuracy = gap.message === void 0 ? 1 : getGuessAccuracy(gap.message, drawing.word.hints, true);
+        const accuracyEvent = {
+          ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, gap.playerId),
+          accuracy,
+          message: gap.message,
+          hints: drawing.word.hints
+        };
+        this._guessAccuracyStats$.next(accuracyEvent);
+      });
+      this._lobbyStateChangedEventListener.events$.pipe(
+        /* init empty map every game */
+        filter((event) => event.data.gameEnded !== void 0),
+        mergeWith(this._lobbyJoinedEventListener.events$),
+        map(() => /* @__PURE__ */ new Map()),
+        /* update map each guess */
+        switchMap((streakMap) => {
+          return this._wordGuessedEventListener.events$.pipe(
+            /* guesses increase streak */
+            map((event) => {
+              const currentStreak = streakMap.get(event.data.playerId) ?? 0;
+              streakMap.set(event.data.playerId, currentStreak + 1);
+              return { streak: currentStreak + 1, playerId: event.data.playerId };
+            }),
+            /* score 0 resets streak for non-drawers */
+            mergeWith(this._lobbyStateChangedEventListener.events$.pipe(
+              withLatestFrom(this._lobbyService.lobby$),
+              switchMap(([event, lobby]) => {
+                var _a2;
+                const events = [];
+                (_a2 = event.data.drawingRevealed) == null ? void 0 : _a2.scores.forEach((score) => {
+                  if (score.rewarded === 0 && score.playerId !== (lobby == null ? void 0 : lobby.drawerId)) {
+                    streakMap.set(score.playerId, 0);
+                    events.push({ streak: 0, playerId: score.playerId });
+                  }
+                });
+                return from(events);
+              })
+            ))
+          );
+        }),
+        /* map in lobby details */
+        withLatestFrom(lobby$),
+        filter(([, lobbyData]) => lobbyData !== null)
+      ).subscribe(([event, lobby]) => {
+        if (lobby === null) throw new Error("lobby must be provided");
+        const streakEvent = {
+          ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, event.playerId),
+          streak: event.streak
+        };
+        this._guessStreakStats$.next(streakEvent);
+      });
+    }
+  }, __name(_Ga, "LobbyStatsService"), _Ga);
+  __decorateClass$l([
+    inject(LobbyService)
+  ], LobbyStatsService.prototype, "_lobbyService", 2);
+  __decorateClass$l([
+    inject(LobbyInteractedEventListener)
+  ], LobbyStatsService.prototype, "_lobbyInteractedEventListener", 2);
+  __decorateClass$l([
+    inject(LobbyStateChangedEventListener)
+  ], LobbyStatsService.prototype, "_lobbyStateChangedEventListener", 2);
+  __decorateClass$l([
+    inject(WordGuessedEventListener)
+  ], LobbyStatsService.prototype, "_wordGuessedEventListener", 2);
+  __decorateClass$l([
+    inject(ChatService)
+  ], LobbyStatsService.prototype, "_chatService", 2);
+  __decorateClass$l([
+    inject(DrawingService)
+  ], LobbyStatsService.prototype, "_drawingService", 2);
+  __decorateClass$l([
+    inject(LobbyJoinedEventListener)
+  ], LobbyStatsService.prototype, "_lobbyJoinedEventListener", 2);
+  __decorateClass$l([
+    postConstruct()
+  ], LobbyStatsService.prototype, "postConstruct", 1);
+  LobbyStatsService = __decorateClass$l([
+    injectable(),
+    __decorateParam$1(0, inject(loggerFactory))
+  ], LobbyStatsService);
+  const _Chart = class _Chart {
+    constructor(_chartLayout) {
+      __publicField(this, "_canvas");
+      __publicField(this, "_context");
+      __publicField(this, "_chartArea");
+      this._chartLayout = _chartLayout;
+      this._canvas = document.createElement("canvas");
+      this._canvas.width = this._chartLayout.width;
+      this._canvas.height = this._chartLayout.height;
+      this._chartArea = this._chartLayout.chartArea;
+      const context = this._canvas.getContext("2d");
+      if (!context) throw new Error("Could not get 2D context from canvas");
+      this._context = context;
+      this._canvas.style.imageRendering = "auto";
+      this._canvas.style.width = "100%";
+      this.clear();
+    }
+    get canvas() {
+      return this._canvas;
+    }
+    /**
+     * Sets the dataset and config for the chart and draws it.
+     * @param data
+     * @param config
+     */
+    setDataset(data, config2) {
+      this.clear();
+      const properties = this.getChartDataProperties(data);
+      this.drawTitle(config2.title);
+      this.drawDescription(config2.description);
+      this.drawGridlines(properties, config2);
+      this.drawGraph(data, properties);
+      this.drawAxis();
+      this.drawAxisLabels(properties, config2);
+      this.drawLegend(data);
+    }
+    /**
+     * Determines the chart mode based on the dataset.
+     * If all datasets have only one data point, it's a bar chart, otherwise a line chart.
+     * @param dataset
+     * @private
+     */
+    getChartMode(dataset) {
+      return dataset.every((d) => d.data.length === 1) ? "bar" : "line";
+    }
+    getChartDataProperties(data) {
+      const flatX = data.flatMap((d) => d.data.map((p) => p.x));
+      const flatY = data.flatMap((d) => d.data.map((p) => p.y));
+      return {
+        minX: Math.min(...flatX),
+        maxX: Math.max(...flatX),
+        minY: Math.min(...flatY),
+        maxY: Math.max(...flatY),
+        datasets: data.length
+      };
+    }
+    /**
+     * Clears the canvas.
+     * @private
+     */
+    clear() {
+      this._context.clearRect(0, 0, this._chartLayout.width, this._chartLayout.height);
+      this._context.fillStyle = "#FFF";
+      this._context.fillRect(0, 0, this._chartLayout.width, this._chartLayout.height);
+    }
+    /**
+     * Draws a title at the top center of the canvas.
+     * @param title
+     * @private
+     */
+    drawTitle(title) {
+      this._context.font = "bold 40px Nunito, monospace";
+      this._context.fillStyle = "#000";
+      this._context.textBaseline = "top";
+      this._context.textAlign = "center";
+      this._context.fillText(title, this._chartLayout.width / 2, 30);
+    }
+    /**
+     * Draws a description below the title.
+     * @param description
+     * @private
+     */
+    drawDescription(description) {
+      this._context.font = "25px Nunito, monospace";
+      this._context.fillStyle = "#000";
+      this._context.textBaseline = "top";
+      this._context.textAlign = "center";
+      this._context.fillText(description, this._chartLayout.width / 2, 80);
+    }
+    /**
+     * Draws a typo icon at the top right corner of the canvas.
+     * @private
+     */
+    drawTypoIcon() {
+      return;
+    }
+    /**
+     * Draws the X and Y axis based on the chart area.
+     * @private
+     */
+    drawAxis() {
+      this._context.strokeStyle = "#000";
+      this._context.lineWidth = 2;
+      this._context.beginPath();
+      this._context.moveTo(this._chartArea.x, this._chartArea.y);
+      this._context.lineTo(this._chartArea.x, this._chartArea.y + this._chartArea.height);
+      this._context.lineTo(this._chartArea.x + this._chartArea.width, this._chartArea.y + this._chartArea.height);
+      this._context.stroke();
+      return;
+    }
+    /**
+     * Draws gridlines based on the chart area and layout.
+     * If yLabels are provided in the config, draws horizontal lines at those y values.
+     * If xLabels are provided in the config, draws vertical lines at those x values.
+     * @param properties
+     * @param config
+     * @private
+     */
+    drawGridlines(properties, config2) {
+      const yLines = Math.floor(this._chartArea.height / this._chartLayout.yGridGap);
+      this._context.strokeStyle = "#0002";
+      this._context.lineWidth = 1;
+      this._context.beginPath();
+      if (config2.yLabels) {
+        config2.yLabels.forEach((label) => {
+          const y = this.chartToCanvasY(label.y, properties);
+          this._context.moveTo(this._chartArea.x, y);
+          this._context.lineTo(this._chartArea.x + this._chartArea.width, y);
+        });
+      } else {
+        for (let i = 0; i <= yLines; i++) {
+          const y = this._chartArea.y + i * this._chartLayout.yGridGap;
+          this._context.moveTo(this._chartArea.x, y);
+          this._context.lineTo(this._chartArea.x + this._chartArea.width, y);
+        }
+      }
+      if (config2.xLabels) {
+        config2.xLabels.forEach((label) => {
+          const x = this.chartToCanvasX(label.x, properties);
+          this._context.moveTo(x, this._chartArea.y);
+          this._context.lineTo(x, this._chartArea.y + this._chartArea.height);
+        });
+      }
+      this._context.stroke();
+      return;
+    }
+    /***
+    * Draws the axis labels based on the chart area and layout.
+    * If yLabels are provided in the config, uses those, otherwise calculates them based on yGridGap.
+    * @param properties
+    * @param config
+    * @private
+    */
+    drawAxisLabels(properties, config2) {
+      if (config2.yLabels) {
+        this._context.font = "20px Nunito, monospace";
+        this._context.fillStyle = "#000";
+        this._context.textBaseline = "middle";
+        this._context.textAlign = "right";
+        config2.yLabels.forEach((label) => {
+          const y = this.chartToCanvasY(label.y, properties);
+          this._context.fillText(label.label + (config2.yUnit ?? ""), this._chartArea.x - 10, y);
+        });
+      } else {
+        const yLines = Math.floor(this._chartArea.height / this._chartLayout.yGridGap);
+        const yStep = properties.maxY / yLines;
+        this._context.font = "20px Nunito, monospace";
+        this._context.fillStyle = "#000";
+        this._context.textBaseline = "middle";
+        this._context.textAlign = "right";
+        for (let i = 0; i <= yLines; i++) {
+          const yValue = i * yStep;
+          const y = this._chartArea.y + this._chartArea.height - i * this._chartLayout.yGridGap;
+          this._context.fillText(yValue.toFixed(0) + (config2.yUnit ?? ""), this._chartArea.x - 10, y);
+        }
+      }
+      return;
+    }
+    /**
+     * Draws the graph based on the determined chart mode (bar or line).
+     * @param data
+     * @param properties
+     * @private
+     */
+    drawGraph(data, properties) {
+      const mode = this.getChartMode(data);
+      if (mode === "bar") this.drawBars(data, properties);
+      else if (mode === "line") this.drawLines(data, properties);
+      return;
+    }
+    /**
+     * Draws bars for each dataset, ignoring x values and aligning bars evenly within the chart area.
+     * Bars have a max width of 50 px and are spaced evenly within the chart area
+     * @param data
+     * @param properties
+     * @private
+     */
+    drawBars(data, properties) {
+      const padding = 20;
+      const totalBarSpace = this._chartArea.width - padding * 2;
+      const barWidth = Math.min(50, totalBarSpace / data.length + (data.length - 1) * padding);
+      data.forEach((dataset, datasetIndex) => {
+        this._context.fillStyle = dataset.color + "80";
+        this._context.strokeStyle = dataset.color;
+        this._context.lineWidth = 2;
+        dataset.data.forEach((point) => {
+          const x = this._chartArea.x + padding + datasetIndex * (barWidth + padding);
+          const y = this.chartToCanvasY(point.y, properties);
+          const height = this._chartArea.y + this._chartArea.height - y;
+          this._context.fillRect(x, y, barWidth, height);
+          this._context.strokeRect(x, y, barWidth, height);
+          if (point.label) {
+            this._context.font = "15px Nunito, monospace";
+            this._context.fillStyle = "#000";
+            this._context.textBaseline = "bottom";
+            this._context.textAlign = "center";
+            this._context.fillText(point.label, x + barWidth / 2, y - 5);
+          }
+        });
+      });
+    }
+    /**
+     * Draws lines for each dataset, connecting points based on their x and y values.
+     * @param data
+     * @param properties
+     * @private
+     */
+    drawLines(data, properties) {
+      data.forEach((dataset) => {
+        this._context.strokeStyle = dataset.color;
+        this._context.lineWidth = 3;
+        this._context.beginPath();
+        dataset.data.forEach((point, index) => {
+          const x = this.chartToCanvasX(point.x, properties);
+          const y = this.chartToCanvasY(point.y, properties);
+          if (index === 0) this._context.moveTo(x, y);
+          else this._context.lineTo(x, y);
+          if (point.label) {
+            this._context.font = "15px Nunito, monospace";
+            this._context.fillStyle = "#000";
+            this._context.textBaseline = "bottom";
+            this._context.textAlign = "left";
+            this._context.fillText(point.label, x, y - 5);
+          }
+        });
+        this._context.stroke();
+      });
+    }
+    /**
+     * Draws a legend at the bottom of the canvas, with colored circles and dataset labels.
+     * @param data
+     * @private
+     */
+    drawLegend(data) {
+      for (let i = 0; i < data.length; i++) {
+        const dataset = data[i];
+        const x = this._chartArea.x + i * 150;
+        const y = this._chartLayout.height - 50;
+        this._context.fillStyle = dataset.color;
+        this._context.beginPath();
+        this._context.arc(x, y, 10, 0, Math.PI * 2);
+        this._context.fill();
+        this._context.font = "20px Nunito, monospace";
+        this._context.fillStyle = "#000";
+        this._context.textBaseline = "middle";
+        this._context.textAlign = "left";
+        this._context.fillText(dataset.label, x + 20, y);
+      }
+    }
+    /**
+     * Converts a chart x value to a canvas x value based on the chart area and data properties.
+     * @param x
+     * @param properties
+     * @private
+     */
+    chartToCanvasX(x, properties) {
+      return this._chartArea.x + x / properties.maxX * this._chartArea.width;
+    }
+    /**
+     * Converts a chart y value to a canvas y value based on the chart area and data properties.
+     * @param y
+     * @param properties
+     * @private
+     */
+    chartToCanvasY(y, properties) {
+      return this._chartArea.y + this._chartArea.height - y / properties.maxY * this._chartArea.height;
+    }
+  };
+  __name(_Chart, "Chart");
+  let Chart = _Chart;
+  var __defProp$k = Object.defineProperty;
+  var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key2, result) || result;
+    if (result) __defProp$k(target, key2, result);
+    return result;
+  }, "__decorateClass$k");
+  const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_toastService");
+      __publicField(this, "_lobbyStatsService");
+      __publicField(this, "_lobbyService");
+      __publicField(this, "_lobbyLeftEventListener");
+      __publicField(this, "_roundStartedEventListener");
+      __publicField(this, "_lobbyStateChangedEventListener");
+      __publicField(this, "_elementsSetup");
+      __publicField(this, "name", "Game Stats");
+      __publicField(this, "description", "Collects and visualizes competitive game statistics of lobbies.");
+      __publicField(this, "tags", [
+        FeatureTag.GAMEPLAY,
+        FeatureTag.SOCIAL
+      ]);
+      __publicField(this, "featureId", 55);
+      __publicField(this, "_metricViews", createMetricViews());
+      __publicField(this, "_statsSubscriptions", []);
+      __publicField(this, "_statArchive", new BehaviorSubject(/* @__PURE__ */ new Map()));
+      __publicField(this, "_switchStatCommand", this.useCommand(
+        new ExtensionCommand("stats", this, "Show game stats", "Show a stat screen above the lobby chat")
+      ).withParameters(
+        (params) => params.addParam(new StringOptionalCommandParameter("Category Name", "The name of the category to show", (category) => ({ category }))).run(async (args, command) => {
+          const categories = Object.keys(this._metricViews);
+          if (args.category !== void 0 && !categories.includes(args.category)) {
+            return new InterpretableError(command, `Unknown category '${args.category}'. Use the stat list command to list available categories.`);
+          }
+          await this._statViewSetting.setValue(args.category);
+          return new InterpretableSuccess(command, `Showing stats for category ${args.category ?? "none (hides stats)"}.`);
+        })
+      ));
+      __publicField(this, "_statListCommand", this.useCommand(
+        new ExtensionCommand("statls", this, "List game stat categories", "Show a list of available categories for the stats command")
+      ).run(async (command) => {
+        const categories = Object.entries(this._metricViews).map(([key2, view]) => `- [${key2}] ${view.name}: ${view.description}`).join("\n");
+        if (categories.length === 0) return new InterpretableError(command, "No stat categories available.");
+        return new InterpretableSuccess(command, categories);
+      }));
+      __publicField(this, "_statViewSetting", new ExtensionSetting("stat_view", void 0, this));
+    }
+    async onActivate() {
+      this.subscribeMetric(this._lobbyStatsService.guessTimeStats$, this._metricViews.averageGuessTime);
+      this.subscribeMetric(this._lobbyStatsService.turnStandingScoreStats$, this._metricViews.totalScore);
+      this.subscribeMetric(this._lobbyStatsService.guessCountStats$, this._metricViews.averageNeededGuesses);
+      this.subscribeMetric(this._lobbyStatsService.guessMessageGapStats$, this._metricViews.averageGuessSpeed);
+      this.subscribeMetric(this._lobbyStatsService.guessTimeStats$, this._metricViews.fastestGuess);
+      this.subscribeMetric(this._lobbyStatsService.guessScoreStats$, this._metricViews.averageGuessScore);
+      this.subscribeMetric(this._lobbyStatsService.guessAccuracyStats$, this._metricViews.averageGuessAccuracy);
+      this.subscribeMetric(this._lobbyStatsService.guessStreakStats$, this._metricViews.longestGuessStreak);
+      this.subscribeMetric(this._lobbyStatsService.guessRankStats$, this._metricViews.averageGuessRank);
+      this.subscribeMetric(this._lobbyStatsService.drawTimeStats$, this._metricViews.averageDrawTime);
+      this.subscribeMetric(this._lobbyStatsService.drawTimeStats$, this._metricViews.fastestDrawTime);
+      this.subscribeMetric(this._lobbyStatsService.drawScoreStats$, this._metricViews.averageDrawScore);
+      this.subscribeMetric(this._lobbyStatsService.drawLikesStats$, this._metricViews.averageDrawLikes);
+      this.subscribeMetric(this._lobbyStatsService.drawDislikesStats$, this._metricViews.mostDrawDislikes);
+      const chart = new Chart({
+        width: 2e3,
+        height: 1e3,
+        chartArea: {
+          x: 200,
+          y: 200,
+          width: 1600,
+          height: 600
+        },
+        barPadding: 50,
+        barMaxWidth: 100,
+        yGridGap: 50
+      });
+      const elements2 = await this._elementsSetup.complete();
+      const chartUpdateSub = this._lobbyService.lobby$.pipe(
+        debounceTime(1e3),
+        combineLatestWith(this._statViewSetting.changes$)
+      ).subscribe(([lobby, stat]) => {
+        if (lobby === null) return;
+        const players = lobby.players;
+        let chartVisible = false;
+        const matchingStat = stat ? Object.entries(this._metricViews).find(([key2]) => key2 === stat) : void 0;
+        if (matchingStat === void 0) chart.clear();
+        else {
+          try {
+            matchingStat[1].drawChart(players, chart);
+            chartVisible = true;
+          } catch (e) {
+            this._logger.warn("could not plot chart", e);
+            chart.clear();
+          }
+        }
+        if (chartVisible && chart.canvas.parentElement === null) {
+          elements2.chatArea.insertAdjacentElement("afterbegin", chart.canvas);
+        }
+        if (!chartVisible && chart.canvas.parentElement !== null) {
+          chart.canvas.remove();
+        }
+      });
+      const metricResetSub = this._lobbyLeftEventListener.events$.pipe(
+        mergeWith(this._roundStartedEventListener.events$.pipe(
+          filter((event) => event.data === 1)
+        ))
+      ).subscribe(() => this.resetMetrics());
+      const metricArchiveSub = this._lobbyStateChangedEventListener.events$.pipe(
+        filter((event) => event.data.gameEnded !== void 0),
+        withLatestFrom(this._lobbyService.lobby$, this._statArchive)
+      ).subscribe(([, lobby, archive]) => {
+        if (lobby === null) return;
+        const date = (/* @__PURE__ */ new Date()).toISOString();
+        const key2 = `${lobby.id}-${Date.now()}`;
+        Object.values(this._metricViews).forEach((metricView) => metricView.archiveEvents(key2));
+        archive.set(key2, date);
+        this._statArchive.next(archive);
+      });
+      this._statsSubscriptions.push(metricResetSub, metricArchiveSub, chartUpdateSub);
+    }
+    async onDestroy() {
+      this._statsSubscriptions.forEach((subscriber) => subscriber.unsubscribe());
+      this._statsSubscriptions = [];
+      this.resetMetrics();
+    }
+    subscribeMetric(source, metricView) {
+      const sub = source.subscribe((entry) => metricView.addEvent(entry));
+      this._statsSubscriptions.push(sub);
+    }
+    resetMetrics() {
+      Object.values(this._metricViews).forEach((metricView) => metricView.clearEvents());
+    }
+  };
+  __name(_LobbyStatisticsFeature, "LobbyStatisticsFeature");
+  let LobbyStatisticsFeature = _LobbyStatisticsFeature;
+  __decorateClass$k([
+    inject(ToastService)
+  ], LobbyStatisticsFeature.prototype, "_toastService");
+  __decorateClass$k([
+    inject(LobbyStatsService)
+  ], LobbyStatisticsFeature.prototype, "_lobbyStatsService");
+  __decorateClass$k([
+    inject(LobbyService)
+  ], LobbyStatisticsFeature.prototype, "_lobbyService");
+  __decorateClass$k([
+    inject(LobbyLeftEventListener)
+  ], LobbyStatisticsFeature.prototype, "_lobbyLeftEventListener");
+  __decorateClass$k([
+    inject(RoundStartedEventListener)
+  ], LobbyStatisticsFeature.prototype, "_roundStartedEventListener");
+  __decorateClass$k([
+    inject(LobbyStateChangedEventListener)
+  ], LobbyStatisticsFeature.prototype, "_lobbyStateChangedEventListener");
+  __decorateClass$k([
+    inject(ElementsSetup)
+  ], LobbyStatisticsFeature.prototype, "_elementsSetup");
   function get_each_context$a(ctx, list, i) {
     const child_ctx = ctx.slice();
     child_ctx[10] = list[i];
@@ -63709,15 +64865,15 @@ ${content2}</tr>
   };
   __name(_Logging_info, "Logging_info");
   let Logging_info = _Logging_info;
-  var __defProp$k = Object.defineProperty;
-  var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$j = Object.defineProperty;
+  var __decorateClass$j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$k(target, key2, result);
+    if (result) __defProp$j(target, key2, result);
     return result;
-  }, "__decorateClass$k");
+  }, "__decorateClass$j");
   const _LoggingFeature = class _LoggingFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -63787,24 +64943,24 @@ ${content2}</tr>
   };
   __name(_LoggingFeature, "LoggingFeature");
   let LoggingFeature = _LoggingFeature;
-  __decorateClass$k([
+  __decorateClass$j([
     inject(LoggingService)
   ], LoggingFeature.prototype, "_loggingService");
-  __decorateClass$k([
+  __decorateClass$j([
     inject(ToastService)
   ], LoggingFeature.prototype, "_toastService");
-  var __defProp$j = Object.defineProperty;
-  var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$j = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key2) : target;
+  var __defProp$i = Object.defineProperty;
+  var __getOwnPropDesc$1 = Object.getOwnPropertyDescriptor;
+  var __decorateClass$i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$1(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$j(target, key2, result);
+    if (kind && result) __defProp$i(target, key2, result);
     return result;
-  }, "__decorateClass$j");
-  var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$1");
-  let LobbyItemsService = (_Ga = class {
+  }, "__decorateClass$i");
+  var __decorateParam = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam");
+  let LobbyItemsService = (_Ha = class {
     constructor(loggerFactory2) {
       __publicField(this, "_socketService");
       __publicField(this, "_logger");
@@ -63830,16 +64986,16 @@ ${content2}</tr>
     get onlineItems$() {
       return this._onlineItems$.asObservable();
     }
-  }, __name(_Ga, "LobbyItemsService"), _Ga);
-  __decorateClass$j([
+  }, __name(_Ha, "LobbyItemsService"), _Ha);
+  __decorateClass$i([
     inject(SocketService)
   ], LobbyItemsService.prototype, "_socketService", 2);
-  __decorateClass$j([
+  __decorateClass$i([
     postConstruct()
   ], LobbyItemsService.prototype, "postConstruct", 1);
-  LobbyItemsService = __decorateClass$j([
+  LobbyItemsService = __decorateClass$i([
     injectable(),
-    __decorateParam$1(0, inject(loggerFactory))
+    __decorateParam(0, inject(loggerFactory))
   ], LobbyItemsService);
   function get_each_context$9(ctx, list, i) {
     const child_ctx = ctx.slice();
@@ -65095,15 +66251,15 @@ ${content2}</tr>
   };
   __name(_Filter_search, "Filter_search");
   let Filter_search = _Filter_search;
-  var __defProp$i = Object.defineProperty;
-  var __decorateClass$i = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$h = Object.defineProperty;
+  var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$i(target, key2, result);
+    if (result) __defProp$h(target, key2, result);
     return result;
-  }, "__decorateClass$i");
+  }, "__decorateClass$h");
   const _PanelFiltersFeature = class _PanelFiltersFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -65413,19 +66569,19 @@ ${content2}</tr>
   };
   __name(_PanelFiltersFeature, "PanelFiltersFeature");
   let PanelFiltersFeature = _PanelFiltersFeature;
-  __decorateClass$i([
+  __decorateClass$h([
     inject(ElementsSetup)
   ], PanelFiltersFeature.prototype, "_elements");
-  __decorateClass$i([
+  __decorateClass$h([
     inject(LobbyService)
   ], PanelFiltersFeature.prototype, "_lobbyService");
-  __decorateClass$i([
+  __decorateClass$h([
     inject(ModalService)
   ], PanelFiltersFeature.prototype, "_modalService");
-  __decorateClass$i([
+  __decorateClass$h([
     inject(ToastService)
   ], PanelFiltersFeature.prototype, "_toastService");
-  __decorateClass$i([
+  __decorateClass$h([
     inject(LobbyItemsService)
   ], PanelFiltersFeature.prototype, "_lobbyItemsService");
   function get_each_context$7(ctx, list, i) {
@@ -66151,15 +67307,15 @@ ${content2}</tr>
   };
   __name(_Vip_players_manage, "Vip_players_manage");
   let Vip_players_manage = _Vip_players_manage;
-  var __defProp$h = Object.defineProperty;
-  var __decorateClass$h = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$g = Object.defineProperty;
+  var __decorateClass$g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$h(target, key2, result);
+    if (result) __defProp$g(target, key2, result);
     return result;
-  }, "__decorateClass$h");
+  }, "__decorateClass$g");
   const replaceMultiple = /* @__PURE__ */ __name((element2, children2) => {
     const parent = element2.parentNode;
     if (parent === null) throw new Error("trying to replace element with no parent.");
@@ -66480,16 +67636,16 @@ ${content2}</tr>
   };
   __name(_ChatMessageHighlightingFeature, "ChatMessageHighlightingFeature");
   let ChatMessageHighlightingFeature = _ChatMessageHighlightingFeature;
-  __decorateClass$h([
+  __decorateClass$g([
     inject(ElementsSetup)
   ], ChatMessageHighlightingFeature.prototype, "_elements");
-  __decorateClass$h([
+  __decorateClass$g([
     inject(LobbyService)
   ], ChatMessageHighlightingFeature.prototype, "_lobbySvc");
-  __decorateClass$h([
+  __decorateClass$g([
     inject(ChatService)
   ], ChatMessageHighlightingFeature.prototype, "_chatSvc");
-  __decorateClass$h([
+  __decorateClass$g([
     inject(LobbyJoinedEventListener)
   ], ChatMessageHighlightingFeature.prototype, "_lobbyJoinedListener");
   const isAnonymousPlayerIdentification = /* @__PURE__ */ __name((value) => {
@@ -67115,15 +68271,15 @@ ${content2}</tr>
   };
   __name(_Player_awards_award_picker, "Player_awards_award_picker");
   let Player_awards_award_picker = _Player_awards_award_picker;
-  var __defProp$g = Object.defineProperty;
-  var __decorateClass$g = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$f = Object.defineProperty;
+  var __decorateClass$f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$g(target, key2, result);
+    if (result) __defProp$f(target, key2, result);
     return result;
-  }, "__decorateClass$g");
+  }, "__decorateClass$f");
   const _PlayerAwardsFeature = class _PlayerAwardsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -67339,43 +68495,43 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerAwardsFeature, "PlayerAwardsFeature");
   let PlayerAwardsFeature = _PlayerAwardsFeature;
-  __decorateClass$g([
+  __decorateClass$f([
     inject(ElementsSetup)
   ], PlayerAwardsFeature.prototype, "_elementsSetup");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(ApiDataSetup)
   ], PlayerAwardsFeature.prototype, "_apiDataSetup");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(LobbyConnectionService)
   ], PlayerAwardsFeature.prototype, "_lobbyConnectionService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(ChatService)
   ], PlayerAwardsFeature.prototype, "_chatService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(ToastService)
   ], PlayerAwardsFeature.prototype, "_toastService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(LobbyItemsService)
   ], PlayerAwardsFeature.prototype, "_lobbyItemsService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(LobbyService)
   ], PlayerAwardsFeature.prototype, "_lobbyService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(PlayersService)
   ], PlayerAwardsFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(MemberService)
   ], PlayerAwardsFeature.prototype, "_memberService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(ApiService)
   ], PlayerAwardsFeature.prototype, "_apiService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(ModalService)
   ], PlayerAwardsFeature.prototype, "_modalService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(CloudService)
   ], PlayerAwardsFeature.prototype, "_cloudService");
-  __decorateClass$g([
+  __decorateClass$f([
     inject(LobbyLeftEventListener)
   ], PlayerAwardsFeature.prototype, "_lobbyLeftEventListener");
   function create_if_block$3(ctx) {
@@ -67492,15 +68648,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Scene_container, "Scene_container");
   let Scene_container = _Scene_container;
-  var __defProp$f = Object.defineProperty;
-  var __decorateClass$f = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$e = Object.defineProperty;
+  var __decorateClass$e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$f(target, key2, result);
+    if (result) __defProp$e(target, key2, result);
     return result;
-  }, "__decorateClass$f");
+  }, "__decorateClass$e");
   const _PlayerScenesFeature = class _PlayerScenesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -67640,16 +68796,16 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerScenesFeature, "PlayerScenesFeature");
   let PlayerScenesFeature = _PlayerScenesFeature;
-  __decorateClass$f([
+  __decorateClass$e([
     inject(ApiDataSetup)
   ], PlayerScenesFeature.prototype, "_apiDataSetup");
-  __decorateClass$f([
+  __decorateClass$e([
     inject(LobbyItemsService)
   ], PlayerScenesFeature.prototype, "_lobbyItemsService");
-  __decorateClass$f([
+  __decorateClass$e([
     inject(PlayersService)
   ], PlayerScenesFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$f([
+  __decorateClass$e([
     inject(MemberService)
   ], PlayerScenesFeature.prototype, "_memberService");
   function get_each_context$3(ctx, list, i) {
@@ -67807,15 +68963,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Sprite_container, "Sprite_container");
   let Sprite_container = _Sprite_container;
-  var __defProp$e = Object.defineProperty;
-  var __decorateClass$e = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$d = Object.defineProperty;
+  var __decorateClass$d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$e(target, key2, result);
+    if (result) __defProp$d(target, key2, result);
     return result;
-  }, "__decorateClass$e");
+  }, "__decorateClass$d");
   const _PlayerSpritesFeature = class _PlayerSpritesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -67952,42 +69108,42 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_PlayerSpritesFeature, "PlayerSpritesFeature");
   let PlayerSpritesFeature = _PlayerSpritesFeature;
-  __decorateClass$e([
+  __decorateClass$d([
     inject(ApiDataSetup)
   ], PlayerSpritesFeature.prototype, "_apiDataSetup");
-  __decorateClass$e([
+  __decorateClass$d([
     inject(LobbyItemsService)
   ], PlayerSpritesFeature.prototype, "_lobbyItemsService");
-  __decorateClass$e([
+  __decorateClass$d([
     inject(PlayersService)
   ], PlayerSpritesFeature.prototype, "_lobbyPlayersService");
-  __decorateClass$e([
+  __decorateClass$d([
     inject(MemberService)
   ], PlayerSpritesFeature.prototype, "_memberService");
-  var __defProp$d = Object.defineProperty;
-  var __getOwnPropDesc$1 = Object.getOwnPropertyDescriptor;
-  var __decorateClass$d = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$1(target, key2) : target;
+  var __defProp$c = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __decorateClass$c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key2) : target;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$d(target, key2, result);
+    if (kind && result) __defProp$c(target, key2, result);
     return result;
-  }, "__decorateClass$d");
-  let TypoChallenge = (_Ha = class {
-  }, __name(_Ha, "TypoChallenge"), _Ha);
-  TypoChallenge = __decorateClass$d([
+  }, "__decorateClass$c");
+  let TypoChallenge = (_Ia = class {
+  }, __name(_Ia, "TypoChallenge"), _Ia);
+  TypoChallenge = __decorateClass$c([
     injectable()
   ], TypoChallenge);
-  var __defProp$c = Object.defineProperty;
-  var __decorateClass$c = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$b = Object.defineProperty;
+  var __decorateClass$b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$c(target, key2, result);
+    if (result) __defProp$b(target, key2, result);
     return result;
-  }, "__decorateClass$c");
+  }, "__decorateClass$b");
   const _BlindGuessChallenge = class _BlindGuessChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68021,24 +69177,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_BlindGuessChallenge, "BlindGuessChallenge");
   let BlindGuessChallenge = _BlindGuessChallenge;
-  __decorateClass$c([
+  __decorateClass$b([
     inject(LobbyService)
   ], BlindGuessChallenge.prototype, "_lobbyService");
-  __decorateClass$c([
+  __decorateClass$b([
     inject(DrawingService)
   ], BlindGuessChallenge.prototype, "_drawingService");
-  __decorateClass$c([
+  __decorateClass$b([
     inject(ElementsSetup)
   ], BlindGuessChallenge.prototype, "_elementsSetup");
-  var __defProp$b = Object.defineProperty;
-  var __decorateClass$b = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$a = Object.defineProperty;
+  var __decorateClass$a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$b(target, key2, result);
+    if (result) __defProp$a(target, key2, result);
     return result;
-  }, "__decorateClass$b");
+  }, "__decorateClass$a");
   const _DeafGuessChallenge = class _DeafGuessChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68094,24 +69250,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DeafGuessChallenge, "DeafGuessChallenge");
   let DeafGuessChallenge = _DeafGuessChallenge;
-  __decorateClass$b([
+  __decorateClass$a([
     inject(LobbyService)
   ], DeafGuessChallenge.prototype, "_lobbyService");
-  __decorateClass$b([
+  __decorateClass$a([
     inject(DrawingService)
   ], DeafGuessChallenge.prototype, "_drawingService");
-  __decorateClass$b([
+  __decorateClass$a([
     inject(ChatService)
   ], DeafGuessChallenge.prototype, "_chatService");
-  var __defProp$a = Object.defineProperty;
-  var __decorateClass$a = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$9 = Object.defineProperty;
+  var __decorateClass$9 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$a(target, key2, result);
+    if (result) __defProp$9(target, key2, result);
     return result;
-  }, "__decorateClass$a");
+  }, "__decorateClass$9");
   const _DontClearChallenge = class _DontClearChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68146,24 +69302,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DontClearChallenge, "DontClearChallenge");
   let DontClearChallenge = _DontClearChallenge;
-  __decorateClass$a([
+  __decorateClass$9([
     inject(CanvasClearedEventListener)
   ], DontClearChallenge.prototype, "_canvasClearedEvent");
-  __decorateClass$a([
+  __decorateClass$9([
     inject(DrawingService)
   ], DontClearChallenge.prototype, "_drawingService");
-  __decorateClass$a([
+  __decorateClass$9([
     inject(ToastService)
   ], DontClearChallenge.prototype, "_toastService");
-  var __defProp$9 = Object.defineProperty;
-  var __decorateClass$9 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$8 = Object.defineProperty;
+  var __decorateClass$8 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$9(target, key2, result);
+    if (result) __defProp$8(target, key2, result);
     return result;
-  }, "__decorateClass$9");
+  }, "__decorateClass$8");
   const _DrunkVisionChallenge = class _DrunkVisionChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68209,24 +69365,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_DrunkVisionChallenge, "DrunkVisionChallenge");
   let DrunkVisionChallenge = _DrunkVisionChallenge;
-  __decorateClass$9([
+  __decorateClass$8([
     inject(LobbyService)
   ], DrunkVisionChallenge.prototype, "_lobbyService");
-  __decorateClass$9([
+  __decorateClass$8([
     inject(DrawingService)
   ], DrunkVisionChallenge.prototype, "_drawingService");
-  __decorateClass$9([
+  __decorateClass$8([
     inject(ElementsSetup)
   ], DrunkVisionChallenge.prototype, "_elementsSetup");
-  var __defProp$8 = Object.defineProperty;
-  var __decorateClass$8 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$7 = Object.defineProperty;
+  var __decorateClass$7 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$8(target, key2, result);
+    if (result) __defProp$7(target, key2, result);
     return result;
-  }, "__decorateClass$8");
+  }, "__decorateClass$7");
   const _MonochromeChallenge = class _MonochromeChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68264,24 +69420,24 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_MonochromeChallenge, "MonochromeChallenge");
   let MonochromeChallenge = _MonochromeChallenge;
-  __decorateClass$8([
+  __decorateClass$7([
     inject(LobbyService)
   ], MonochromeChallenge.prototype, "_lobbyService");
-  __decorateClass$8([
+  __decorateClass$7([
     inject(DrawingService)
   ], MonochromeChallenge.prototype, "_drawingService");
-  __decorateClass$8([
+  __decorateClass$7([
     inject(ColorsService)
   ], MonochromeChallenge.prototype, "_colorsService");
-  var __defProp$7 = Object.defineProperty;
-  var __decorateClass$7 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$6 = Object.defineProperty;
+  var __decorateClass$6 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$7(target, key2, result);
+    if (result) __defProp$6(target, key2, result);
     return result;
-  }, "__decorateClass$7");
+  }, "__decorateClass$6");
   const _OneShotChallenge = class _OneShotChallenge extends TypoChallenge {
     constructor() {
       super(...arguments);
@@ -68327,13 +69483,13 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_OneShotChallenge, "OneShotChallenge");
   let OneShotChallenge = _OneShotChallenge;
-  __decorateClass$7([
+  __decorateClass$6([
     inject(LobbyService)
   ], OneShotChallenge.prototype, "_lobbyService");
-  __decorateClass$7([
+  __decorateClass$6([
     inject(DrawingService)
   ], OneShotChallenge.prototype, "_drawingService");
-  __decorateClass$7([
+  __decorateClass$6([
     inject(MessageSentEventListener)
   ], OneShotChallenge.prototype, "_messageSentEventListener");
   function get_each_context$2(ctx, list, i) {
@@ -68530,15 +69686,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Toolbar_challenges, "Toolbar_challenges");
   let Toolbar_challenges = _Toolbar_challenges;
-  var __defProp$6 = Object.defineProperty;
-  var __decorateClass$6 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$5 = Object.defineProperty;
+  var __decorateClass$5 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$6(target, key2, result);
+    if (result) __defProp$5(target, key2, result);
     return result;
-  }, "__decorateClass$6");
+  }, "__decorateClass$5");
   const _ToolbarChallengesFeature = class _ToolbarChallengesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -68699,21 +69855,21 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarChallengesFeature, "ToolbarChallengesFeature");
   let ToolbarChallengesFeature = _ToolbarChallengesFeature;
-  __decorateClass$6([
+  __decorateClass$5([
     inject(ElementsSetup)
   ], ToolbarChallengesFeature.prototype, "_elementsSetup");
-  __decorateClass$6([
+  __decorateClass$5([
     inject(ExtensionContainer)
   ], ToolbarChallengesFeature.prototype, "_container");
-  var __defProp$5 = Object.defineProperty;
-  var __decorateClass$5 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$4 = Object.defineProperty;
+  var __decorateClass$4 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$5(target, key2, result);
+    if (result) __defProp$4(target, key2, result);
     return result;
-  }, "__decorateClass$5");
+  }, "__decorateClass$4");
   const _ToolbarFullscreenFeature = class _ToolbarFullscreenFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -68769,7 +69925,7 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarFullscreenFeature, "ToolbarFullscreenFeature");
   let ToolbarFullscreenFeature = _ToolbarFullscreenFeature;
-  __decorateClass$5([
+  __decorateClass$4([
     inject(ElementsSetup)
   ], ToolbarFullscreenFeature.prototype, "_elementsSetup");
   const chooseFile = /* @__PURE__ */ __name(async (accept, multiple) => {
@@ -69510,15 +70666,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Imagelab_position_picker, "Imagelab_position_picker");
   let Imagelab_position_picker = _Imagelab_position_picker;
-  var __defProp$4 = Object.defineProperty;
-  var __decorateClass$4 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$3 = Object.defineProperty;
+  var __decorateClass$3 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$4(target, key2, result);
+    if (result) __defProp$3(target, key2, result);
     return result;
-  }, "__decorateClass$4");
+  }, "__decorateClass$3");
   const _ToolbarImageLabFeature = class _ToolbarImageLabFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -69826,28 +70982,28 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarImageLabFeature, "ToolbarImageLabFeature");
   let ToolbarImageLabFeature = _ToolbarImageLabFeature;
-  __decorateClass$4([
+  __decorateClass$3([
     inject(ElementsSetup)
   ], ToolbarImageLabFeature.prototype, "_elementsSetup");
-  __decorateClass$4([
+  __decorateClass$3([
     inject(DrawingService)
   ], ToolbarImageLabFeature.prototype, "_drawingService");
-  __decorateClass$4([
+  __decorateClass$3([
     inject(ImagelabService)
   ], ToolbarImageLabFeature.prototype, "_drawCommandsService");
-  __decorateClass$4([
+  __decorateClass$3([
     inject(ToastService)
   ], ToolbarImageLabFeature.prototype, "_toastService");
-  __decorateClass$4([
+  __decorateClass$3([
     inject(ModalService)
   ], ToolbarImageLabFeature.prototype, "_modalService");
-  __decorateClass$4([
+  __decorateClass$3([
     inject(PrioritizedCanvasEventsSetup)
   ], ToolbarImageLabFeature.prototype, "_canvasEventsSetup");
-  __decorateClass$4([
+  __decorateClass$3([
     inject(LobbyService)
   ], ToolbarImageLabFeature.prototype, "_lobbyService");
-  __decorateClass$4([
+  __decorateClass$3([
     inject(GlobalSettingsService)
   ], ToolbarImageLabFeature.prototype, "_globalSettingsService");
   function get_each_context(ctx, list, i) {
@@ -70515,15 +71671,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Toolbar_imagepost, "Toolbar_imagepost");
   let Toolbar_imagepost = _Toolbar_imagepost;
-  var __defProp$3 = Object.defineProperty;
-  var __decorateClass$3 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$2 = Object.defineProperty;
+  var __decorateClass$2 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$3(target, key2, result);
+    if (result) __defProp$2(target, key2, result);
     return result;
-  }, "__decorateClass$3");
+  }, "__decorateClass$2");
   const _ToolbarImagePostFeature = class _ToolbarImagePostFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -70658,25 +71814,25 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarImagePostFeature, "ToolbarImagePostFeature");
   let ToolbarImagePostFeature = _ToolbarImagePostFeature;
-  __decorateClass$3([
+  __decorateClass$2([
     inject(ElementsSetup)
   ], ToolbarImagePostFeature.prototype, "_elementsSetup");
-  __decorateClass$3([
+  __decorateClass$2([
     inject(ImagePostService)
   ], ToolbarImagePostFeature.prototype, "_imagePostService");
-  __decorateClass$3([
+  __decorateClass$2([
     inject(ImageFinishedService)
   ], ToolbarImagePostFeature.prototype, "_imageFinishedService");
-  __decorateClass$3([
+  __decorateClass$2([
     inject(DrawingService)
   ], ToolbarImagePostFeature.prototype, "_drawingService");
-  __decorateClass$3([
+  __decorateClass$2([
     inject(MemberService)
   ], ToolbarImagePostFeature.prototype, "_memberService");
-  __decorateClass$3([
+  __decorateClass$2([
     inject(ApiService)
   ], ToolbarImagePostFeature.prototype, "_apiService");
-  __decorateClass$3([
+  __decorateClass$2([
     inject(ToastService)
   ], ToolbarImagePostFeature.prototype, "_toastService");
   const copyBlobToClipboard = /* @__PURE__ */ __name(async (blob) => {
@@ -70871,15 +72027,15 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_Toolbar_save, "Toolbar_save");
   let Toolbar_save = _Toolbar_save;
-  var __defProp$2 = Object.defineProperty;
-  var __decorateClass$2 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$1 = Object.defineProperty;
+  var __decorateClass$1 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$2(target, key2, result);
+    if (result) __defProp$1(target, key2, result);
     return result;
-  }, "__decorateClass$2");
+  }, "__decorateClass$1");
   const _ToolbarSaveFeature = class _ToolbarSaveFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -71146,429 +72302,27 @@ ${awardDto == null ? void 0 : awardDto.description}`;
   };
   __name(_ToolbarSaveFeature, "ToolbarSaveFeature");
   let ToolbarSaveFeature = _ToolbarSaveFeature;
-  __decorateClass$2([
+  __decorateClass$1([
     inject(ElementsSetup)
   ], ToolbarSaveFeature.prototype, "_elementsSetup");
-  __decorateClass$2([
+  __decorateClass$1([
     inject(DrawingService)
   ], ToolbarSaveFeature.prototype, "_drawingService");
-  __decorateClass$2([
+  __decorateClass$1([
     inject(LobbyService)
   ], ToolbarSaveFeature.prototype, "_lobbyService");
-  __decorateClass$2([
+  __decorateClass$1([
     inject(ToastService)
   ], ToolbarSaveFeature.prototype, "_toastService");
-  __decorateClass$2([
+  __decorateClass$1([
     inject(CloudService)
   ], ToolbarSaveFeature.prototype, "_cloudService");
-  __decorateClass$2([
+  __decorateClass$1([
     inject(MemberService)
   ], ToolbarSaveFeature.prototype, "_memberService");
-  __decorateClass$2([
+  __decorateClass$1([
     inject(ImageFinishedService)
   ], ToolbarSaveFeature.prototype, "_imageFinishedService");
-  var __defProp$1 = Object.defineProperty;
-  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-  var __decorateClass$1 = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key2) : target;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-    if (kind && result) __defProp$1(target, key2, result);
-    return result;
-  }, "__decorateClass$1");
-  var __decorateParam = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam");
-  let LobbyStatsService = (_Ia = class {
-    constructor(loggerFactory2) {
-      __publicField(this, "_lobbyService");
-      __publicField(this, "_lobbyInteractedEventListener");
-      __publicField(this, "_lobbyStateChangedEventListener");
-      __publicField(this, "_wordGuessedEventListener");
-      __publicField(this, "_chatService");
-      __publicField(this, "_drawingService");
-      __publicField(this, "_lobbyJoinedEventListener");
-      __publicField(this, "_logger");
-      __publicField(this, "_guessTimeStats$", new Subject$1());
-      __publicField(this, "_guessCountStats$", new Subject$1());
-      __publicField(this, "_guessMessageGapStats$", new Subject$1());
-      __publicField(this, "_guessScoreStats$", new Subject$1());
-      __publicField(this, "_guessAccuracyStats$", new Subject$1());
-      __publicField(this, "_guessStreakStats$", new Subject$1());
-      __publicField(this, "_guessRankStats$", new Subject$1());
-      __publicField(this, "_drawTimeStats$", new Subject$1());
-      __publicField(this, "_drawGuessedPlayersStats$", new Subject$1());
-      __publicField(this, "_drawScoreStats$", new Subject$1());
-      __publicField(this, "_drawLikesStats$", new Subject$1());
-      __publicField(this, "_drawDislikesStats$", new Subject$1());
-      __publicField(this, "_turnStandingScoreStats$", new Subject$1());
-      this._logger = loggerFactory2(this);
-    }
-    postConstruct() {
-      this.processEvents();
-    }
-    /**
-     * Create the common part of a lobby stat event
-     * @param lobby
-     * @param turnPlayerId
-     * @param targetPlayerId
-     * @private
-     */
-    createEventSignature(lobby, turnPlayerId, targetPlayerId) {
-      if (lobby.id === null) throw new Error("lobbyId must be provided");
-      return {
-        lobbyId: lobby.id,
-        lobbyRound: lobby.round,
-        playerId: targetPlayerId,
-        turnPlayerId,
-        timestamp: Date.now()
-      };
-    }
-    /**
-     * Process events from various sources to produce lobby stats events
-     * this processes events nevertheless if features subscribe or not
-     * this could be changed by exposing the observables directly
-     * would have the downside that multiple subscribers would cause multiple processing
-     * @private
-     */
-    processEvents() {
-      const lobbySource$ = this._lobbyService.lobby$.pipe(
-        withLatestFrom(this._lobbyStateChangedEventListener.events$.pipe(
-          map((event) => {
-            var _a2;
-            return (_a2 = event.data.drawingStarted) == null ? void 0 : _a2.drawerId;
-          }),
-          filter((id2) => id2 !== void 0)
-        )),
-        map(
-          ([lobby, turnPlayerId]) => lobby === null || lobby.id === null ? null : { lobby, turnPlayerId }
-        )
-      );
-      const lobby$ = new Subject$1();
-      lobbySource$.subscribe(lobby$);
-      const roundStartedSource$ = this._lobbyStateChangedEventListener.events$.pipe(
-        map((event) => event.data.drawingStarted),
-        filter((event) => event !== void 0)
-      );
-      const turnStarted$ = new Subject$1();
-      roundStartedSource$.subscribe(turnStarted$);
-      turnStarted$.pipe(
-        /* count likes */
-        switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
-          filter((event) => event.data.likeInteraction !== void 0),
-          /* until drawing ended */
-          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
-            filter((event) => event.data.drawingRevealed !== void 0)
-          )),
-          count(),
-          /* create event data */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null),
-          map(([likes, lobbyData]) => {
-            if (lobbyData === null) throw new Error("lobbyData must be provided");
-            const event = {
-              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
-              likes
-            };
-            return event;
-          })
-        ))
-      ).subscribe((event) => this._drawLikesStats$.next(event));
-      turnStarted$.pipe(
-        /* count likes */
-        switchMap(() => this._lobbyInteractedEventListener.events$.pipe(
-          filter((event) => event.data.dislikeInteraction !== void 0),
-          /* until drawing ended */
-          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
-            filter((event) => event.data.drawingRevealed !== void 0)
-          )),
-          count(),
-          /* create event data */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null),
-          map(([likes, lobbyData]) => {
-            if (lobbyData === null) throw new Error("lobbyData must be provided");
-            const event = {
-              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
-              dislikes: likes
-            };
-            return event;
-          })
-        ))
-      ).subscribe((event) => this._drawDislikesStats$.next(event));
-      turnStarted$.pipe(
-        /* count guessed players */
-        switchMap(() => this._wordGuessedEventListener.events$.pipe(
-          /* until drawing ended */
-          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
-            filter((event) => event.data.drawingRevealed !== void 0)
-          )),
-          count(),
-          /* create event data */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null),
-          map(([guessedPlayers, lobbyData]) => {
-            if (lobbyData === null) throw new Error("lobbyData must be provided");
-            const event = {
-              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
-              guessedPlayers
-            };
-            return event;
-          })
-        ))
-      ).subscribe((event) => this._drawGuessedPlayersStats$.next(event));
-      turnStarted$.pipe(
-        /* record draw start time */
-        map(() => Date.now()),
-        /* measure time until drawing revealed */
-        switchMap((startTimestamp) => this._lobbyStateChangedEventListener.events$.pipe(
-          filter((event) => event.data.drawingRevealed !== void 0),
-          take(1),
-          map(() => Date.now() - startTimestamp)
-        )),
-        /* create event data */
-        withLatestFrom(lobby$),
-        filter(([, lobbyData]) => lobbyData !== null),
-        map(([time, lobbyData]) => {
-          if (lobbyData === null) throw new Error("lobbyData must be provided");
-          const event = {
-            ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, lobbyData.turnPlayerId),
-            drawTimeMs: time
-          };
-          return event;
-        })
-      ).subscribe((event) => this._drawTimeStats$.next(event));
-      turnStarted$.pipe(
-        /* get score of next reveal */
-        switchMap(() => this._lobbyStateChangedEventListener.events$.pipe(
-          map((event) => event.data.drawingRevealed),
-          filter((event) => event !== void 0),
-          take(1),
-          /* map in lobby details */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null)
-        ))
-      ).subscribe(([reveal, lobby]) => {
-        if (lobby === null) throw new Error("lobby must be provided");
-        for (const score of reveal.scores) {
-          const event = {
-            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
-            score: score.rewarded
-          };
-          if (score.playerId === lobby.turnPlayerId) {
-            this._drawScoreStats$.next(event);
-          } else {
-            this._guessScoreStats$.next(event);
-          }
-          const standingEvent = {
-            ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId),
-            score: score.score
-          };
-          this._turnStandingScoreStats$.next(standingEvent);
-        }
-      });
-      turnStarted$.pipe(
-        /* record start time */
-        map(() => Date.now()),
-        switchMap((startTimestamp) => this._wordGuessedEventListener.events$.pipe(
-          /* measure time until each guess */
-          map((event) => ({
-            playerId: event.data.playerId,
-            guessTimeMs: Date.now() - startTimestamp
-          })),
-          /* until drawing ended */
-          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
-            filter((event) => event.data.drawingRevealed !== void 0)
-          )),
-          /* create event data */
-          withLatestFrom(lobby$),
-          filter(([, lobbyData]) => lobbyData !== null),
-          map(([guessData, lobbyData]) => {
-            if (lobbyData === null) throw new Error("lobbyData must be provided");
-            const event = {
-              ...this.createEventSignature(lobbyData.lobby, lobbyData.turnPlayerId, guessData.playerId),
-              guessTimeMs: guessData.guessTimeMs
-            };
-            return event;
-          })
-        ))
-      ).subscribe((event) => this._guessTimeStats$.next(event));
-      this._lobbyStateChangedEventListener.events$.pipe(
-        map((event) => event.data.drawingRevealed),
-        filter((event) => event !== void 0),
-        take(1),
-        /* map in lobby details */
-        withLatestFrom(lobby$),
-        filter(([, lobbyData]) => lobbyData !== null)
-      ).subscribe(([reveal, lobby]) => {
-        if (lobby === null) throw new Error("lobby must be provided");
-        const players = reveal.scores.filter((score) => score.playerId !== lobby.turnPlayerId).sort((a, b) => b.rewarded - a.rewarded).map((score) => score.playerId);
-        for (const score of reveal.scores) {
-          const index = players.indexOf(score.playerId);
-          if (index === -1) continue;
-          const eventSignature = this.createEventSignature(lobby.lobby, lobby.turnPlayerId, score.playerId);
-          const event = {
-            ...eventSignature,
-            rank: index + 1
-          };
-          this._guessRankStats$.next(event);
-        }
-      });
-      this._wordGuessedEventListener.events$.pipe(
-        withLatestFrom(
-          turnStarted$.pipe(
-            map(() => /* @__PURE__ */ new Map()),
-            /* count messages of players that did not guess yet */
-            switchMap((guessCounts) => {
-              return this._chatService.playerMessageReceived$.pipe(
-                filter((msg) => !msg.player.guessed),
-                tap((msg) => {
-                  const count2 = guessCounts.get(msg.player.id) ?? 0;
-                  guessCounts.set(msg.player.id, count2 + 1);
-                }),
-                map(() => guessCounts)
-              );
-            })
-          )
-        ),
-        map(([guessEvent, guessCounts]) => ({
-          playerId: guessEvent.data.playerId,
-          count: (guessCounts.get(guessEvent.data.playerId) ?? 0) + 1
-          // include current guess
-        })),
-        /* map in lobby details */
-        withLatestFrom(lobby$),
-        filter(([, lobbyData]) => lobbyData !== null)
-      ).subscribe(([guessData, lobby]) => {
-        if (lobby === null) throw new Error("lobby must be provided");
-        const event = {
-          ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, guessData.playerId),
-          guessCount: guessData.count
-        };
-        this._guessCountStats$.next(event);
-      });
-      this._chatService.playerMessageReceived$.pipe(
-        /* merge chat messages and actual guesses */
-        filter((msg) => !msg.player.guessed),
-        map((msg) => ({ message: msg.content, playerId: msg.player.id })),
-        mergeWith(
-          this._wordGuessedEventListener.events$.pipe(
-            map(
-              (guessed) => ({ message: void 0, playerId: guessed.data.playerId })
-            )
-          )
-        ),
-        /* create new last-msg map per turn */
-        withLatestFrom(turnStarted$.pipe(
-          map(() => ({ guesses: /* @__PURE__ */ new Map(), turnStart: Date.now() }))
-        ), this._lobbyService.lobby$, this._lobbyStateChangedEventListener.events$.pipe(
-          filter((event) => event.data.timerSet === void 0)
-          /* filter out timer set events which disrupt state */
-        )),
-        filter(([, , , state]) => state.data.drawingStarted !== void 0),
-        /* only while drawing: last state update was start drawing */
-        map(([msgData, turnData]) => {
-          const lastGuess = turnData.guesses.get(msgData.playerId) ?? turnData.turnStart;
-          turnData.guesses.set(msgData.playerId, Date.now());
-          return {
-            playerId: msgData.playerId,
-            gapTimeMs: Date.now() - lastGuess,
-            message: msgData.message
-          };
-        }),
-        /* map in lobby details, filter out drawing user messages*/
-        withLatestFrom(lobby$, this._drawingService.imageState$),
-        filter(([gap, lobbyData]) => lobbyData !== null && lobbyData.turnPlayerId !== gap.playerId)
-      ).subscribe(([gap, lobby, drawing]) => {
-        if (lobby === null) throw new Error("lobby must be provided");
-        if (drawing === null || drawing.word === void 0) throw new Error("drawing must be provided");
-        const gapEvent = {
-          ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, gap.playerId),
-          gapTimeMs: gap.gapTimeMs,
-          message: gap.message,
-          hints: drawing.word.hints
-        };
-        this._guessMessageGapStats$.next(gapEvent);
-        const accuracy = gap.message === void 0 ? 1 : getGuessAccuracy(gap.message, drawing.word.hints, true);
-        const accuracyEvent = {
-          ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, gap.playerId),
-          accuracy,
-          message: gap.message,
-          hints: drawing.word.hints
-        };
-        this._guessAccuracyStats$.next(accuracyEvent);
-      });
-      this._lobbyStateChangedEventListener.events$.pipe(
-        /* init empty map every game */
-        filter((event) => event.data.gameEnded !== void 0),
-        mergeWith(this._lobbyJoinedEventListener.events$),
-        map(() => /* @__PURE__ */ new Map()),
-        /* update map each guess */
-        switchMap((streakMap) => {
-          return this._wordGuessedEventListener.events$.pipe(
-            /* guesses increase streak */
-            map((event) => {
-              const currentStreak = streakMap.get(event.data.playerId) ?? 0;
-              streakMap.set(event.data.playerId, currentStreak + 1);
-              return { streak: currentStreak + 1, playerId: event.data.playerId };
-            }),
-            /* score 0 resets streak for non-drawers */
-            mergeWith(this._lobbyStateChangedEventListener.events$.pipe(
-              withLatestFrom(this._lobbyService.lobby$),
-              switchMap(([event, lobby]) => {
-                var _a2;
-                const events = [];
-                (_a2 = event.data.drawingRevealed) == null ? void 0 : _a2.scores.forEach((score) => {
-                  if (score.rewarded === 0 && score.playerId !== (lobby == null ? void 0 : lobby.drawerId)) {
-                    streakMap.set(score.playerId, 0);
-                    events.push({ streak: 0, playerId: score.playerId });
-                  }
-                });
-                return from(events);
-              })
-            ))
-          );
-        }),
-        /* map in lobby details */
-        withLatestFrom(lobby$),
-        filter(([, lobbyData]) => lobbyData !== null)
-      ).subscribe(([event, lobby]) => {
-        if (lobby === null) throw new Error("lobby must be provided");
-        const streakEvent = {
-          ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, event.playerId),
-          streak: event.streak
-        };
-        this._guessStreakStats$.next(streakEvent);
-      });
-    }
-  }, __name(_Ia, "LobbyStatsService"), _Ia);
-  __decorateClass$1([
-    inject(LobbyService)
-  ], LobbyStatsService.prototype, "_lobbyService", 2);
-  __decorateClass$1([
-    inject(LobbyInteractedEventListener)
-  ], LobbyStatsService.prototype, "_lobbyInteractedEventListener", 2);
-  __decorateClass$1([
-    inject(LobbyStateChangedEventListener)
-  ], LobbyStatsService.prototype, "_lobbyStateChangedEventListener", 2);
-  __decorateClass$1([
-    inject(WordGuessedEventListener)
-  ], LobbyStatsService.prototype, "_wordGuessedEventListener", 2);
-  __decorateClass$1([
-    inject(ChatService)
-  ], LobbyStatsService.prototype, "_chatService", 2);
-  __decorateClass$1([
-    inject(DrawingService)
-  ], LobbyStatsService.prototype, "_drawingService", 2);
-  __decorateClass$1([
-    inject(LobbyJoinedEventListener)
-  ], LobbyStatsService.prototype, "_lobbyJoinedEventListener", 2);
-  __decorateClass$1([
-    postConstruct()
-  ], LobbyStatsService.prototype, "postConstruct", 1);
-  LobbyStatsService = __decorateClass$1([
-    injectable(),
-    __decorateParam(0, inject(loggerFactory))
-  ], LobbyStatsService);
   function create_else_block(ctx) {
     let img0;
     let img0_src_value;
@@ -72015,7 +72769,8 @@ ${awardDto == null ? void 0 : awardDto.description}`;
     DrawingSizeHotkeysFeature,
     ChatPingFeature,
     DrawingClearLockFeature,
-    ChatMessageHighlightingFeature
+    ChatMessageHighlightingFeature,
+    LobbyStatisticsFeature
   );
   interceptor.triggerPatchInjection();
   const assets = { "img-arrow-left-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAOttGgAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MzY4MTg5MjdGN0ExMUVGOUYzNEJFMUNFMjc0Njc1RSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0MzY4MTg5MzdGN0ExMUVGOUYzNEJFMUNFMjc0Njc1RSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQzNjgxODkwN0Y3QTExRUY5RjM0QkUxQ0UyNzQ2NzVFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQzNjgxODkxN0Y3QTExRUY5RjM0QkUxQ0UyNzQ2NzVFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAApaUj6nL7Q+jnLTai7PevPsPhuJIYsEZlA2KqgoLuwccy3Rd3gHA5jcA7Il0wKLwQywadcwTJKkMNpurX1Q5pTKs1+sv+6J1x+QoLcwqq8nnBGwN7+Jm77idd0SI7/C5vs5X5veHEmhWOOi255XF9ASI1ej4CIknmVgFidmR1OJi5WkzKSMwSlq6qZJ6ytrq+gobKzurUQAAIfkEBRQAAgAsAAAAADAAMAAAApCUj6nL7Q+jnLTai7PevPsPhuJIZkFQPueaLuuLtgYMywJdpzit4wDwKvl+wN3uAiMqjcwJTblkGiNPaFSKUyWt3C4xy6h6x1aea0tOQ4Pnl/r9ZYXRcDK77a7b5Q2x/nrXR1eGZQbh91M4JYGoCOZE53iiIRZIUsXX0mQz88h5k/N5YClaanqKmqq6ytq6UAAAOw==", "img-arrow-left-gif"), "img-arrow-right-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAFhY8AAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3RDM1NjE4QTdGN0ExMUVGQUQ1MERCQkMxMEFENzI4NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3RDM1NjE4QjdGN0ExMUVGQUQ1MERCQkMxMEFENzI4NSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdEMzU2MTg4N0Y3QTExRUZBRDUwREJCQzEwQUQ3Mjg1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdEMzU2MTg5N0Y3QTExRUZBRDUwREJCQzEwQUQ3Mjg1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAApiUj6nL7Q+jnLTai7PevPsPhuJIcsEZlA+KqgsLuwgcywJduyyAp+oO4OFKwKCQNukpUcZmD7KMNp1DR3Q5nT4V12Mxq0VyYeCyOZw70M5ss3j2bcuNaQN5jveexsy8/A3X53cGmEAWN1hneKVUVtXAiJVVCBm5RqXYcRf0ONK3RXTCSSmyZHMDakOqw3Lq+gobKztLW7tRAAAh+QQFFAACACwAAAAAMAAwAAACk5SPqcvtD6OctNqLs968+w+G4kh2QVBC55oy64u2CAzLBl3LON2+ALDL7Ia/H84yTBaXOUlSuSzyVM9dNDpt4K7cLrO5oHnH3azCR05fzbOV+i0Ft0/wN3seqKePLrF+LRdW5VcWKDi4hWXYhwij+ILRSBcHWYIGtAjihlnZM2QjEAQammnJMoqaqrrK2ur6CjtRAAA7", "img-arrow-right-gif"), "img-arrow-small-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAKioqAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDNTJFRTk3MDdGNzkxMUVGQjZGNUUxMjE2NTEyMzA0MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDNTJFRTk3MTdGNzkxMUVGQjZGNUUxMjE2NTEyMzA0MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM1MkVFOTZFN0Y3OTExRUZCNkY1RTEyMTY1MTIzMDQxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM1MkVFOTZGN0Y3OTExRUZCNkY1RTEyMTY1MTIzMDQxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAApaUj6nL7Q+jnLTai7PevPsPhuJIYsEZlA2KqgoLuwccy3Rd3gHA5jcA7Il0wKLwQywadcwTJKkMNpurX1Q5pTKs1+sv+6J1x+QoLcwqq8nnBGwN7+Jm77idd0SI7/C5vs5X5veHEmhWOOi255XF9ASI1ej4CIknmVgFidmR1OJi5WkzKSMwSlq6qZJ6ytrq+gobKzurUQAAIfkEBRQAAgAsAAAAADAAMAAAApCUj6nL7Q+jnLTai7PevPsPhuJIZkFQPueaLuuLtgYMywJdpzit4wDwKvl+wN3uAiMqjcwJTblkGiNPaFSKUyWt3C4xy6h6x1aea0tOQ4Pnl/r9ZYXRcDK77a7b5Q2x/nrXR1eGZQbh91M4JYGoCOZE53iiIRZIUsXX0mQz88h5k/N5YClaanqKmqq6ytq6UAAAOw==", "img-arrow-small-gif"), "img-award-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAAD/zv/QAP///wAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOTNBRDQwRkVBNDAxMUVGOUEzMUMwREIwREMxNDhGRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOTNBRDQxMEVBNDAxMUVGOUEzMUMwREIwREMxNDhGRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE5M0FENDBERUE0MDExRUY5QTMxQzBEQjBEQzE0OEZGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE5M0FENDBFRUE0MDExRUY5QTMxQzBEQjBEQzE0OEZGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/9Iutz+MMpJq7046827/9sgjkNIjtV5NqijrtILEyojzw8p7LW8nDseCaILCm+oolEwzI2WR1IgIDsaW6xnNDqYTl9MJdamRXa932p5rFgPuGd0GigMsmmielgql6useyVkb25xfX10eYGDhG+Bh2gikWt2IoN6I5BefHN6e5dMlYaInFSKoUegV5KaKpunq4JtsEd+ZyMAmZ1QY1qxk5K4uqaOS720e68qALmsxJ7HjorDwrjNcZSpP9PSutYizHxF3JbbeeSs1szXypXa5o2it+qcbu+z5+jKA9fY9p9ZGhWr56rdHlEu8g0kOOwZoDt4usHxZ2icGyfdBJYi9cRFF0R7SRoCAyOECLoWG4ndAJhQIZYTIyPeiICE0bxys2RCxBeyZQ2TO+HJwtiEJs4YR40mBcG0qdOnUKNKnUq1qtWrExIAACH5BAkUAAQALAAAAAAwADAAAAP/SLrc/jDKSau9OOvNux4gyIWhRZ4DhpLTii5s48YPKgivcsLnje+1kM+3WxF6Q6LIQUoqZzbnrcQEPa2/U2B1HTyr3mxTPAiYkWQslae2CrXmc3PcTjHo4XQ5Hnc9szJ1XXyEW1FTXjRHbYOFhFyIYmxhWGKOl2hua3RXl30gn5U4iHaLeUMhnnKpq1Kbok+qKKGuS6a1e5ggAKCtTq+nsaGrALy5Qr+2yEmshqkhxb3OuGxKpKso0dLIlcCUmqDQxrvjtD+kpXjfe+LkzXikgevXzgPF2tuCgHfd6+zt77jVkfdNWD0SfJb1K6VDoL9QzeqR+iJvIr1VjxQOBGMNSp2sZVnicYyELldGdRSrdFxRiMuYfSPfpICDbYbIIIlywAECxRbOHA1d8JsJJEIRhkGL4jThE4IiD1CjSp1KtarVq1izat3KlUECADs=", "img-award-gif"), "img-challenge-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAOttGsfHxwAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0Mjc2QjBFQUVBNDAxMUVGODUzQTk0OUFGQ0MwRjE0NSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0Mjc2QjBFQkVBNDAxMUVGODUzQTk0OUFGQ0MwRjE0NSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQyNzZCMEU4RUE0MDExRUY4NTNBOTQ5QUZDQzBGMTQ1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQyNzZCMEU5RUE0MDExRUY4NTNBOTQ5QUZDQzBGMTQ1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLRaJ7KQuuvqfU9IQmRnnl5zBoGIZe78hkk7w6xM5+tA6rl0DI2QpuIdiYvO0Rd81jYjo68XEipRVeUUa4UKxKnwd2iejtEZTtroQZq5Eac8Lr5T3XM8e/23x+dl96cnOJFVqHZ4YZCUF4hogcMo6XjjV2iDmbkVxtl5oPkZKrpZOvbTiQqIt0I3CCVmlTSJ8PGaamlbhAPaGggQO/qbChwCoMykwkbbmqEszayxnBUI5OQhbX1bPQ29p8I93Nb0DS6z+pjMzYSL3r1eHN/dJUBuSo9PLt/VX86cJ3f8/PmKBpBYtoIdCAqEh9CaQwUN29nzVDAgw4cq+0hMhOiwmkJ2IhpeLBbyxA5BKjKlo6KvTkyV+zCNLCGK0rucPHv69FkAACH5BAkUAAMALAAAAAAwADAAAAL/nI+py+0Po5y02oup2FzMDnpPGEZkuZzoqHbJGcQxZ26yvA7gfdMQx8OBdMCgUMQSGI+75WxTUzoDpCkV+iteg01hz5eUXsVj25fsymqL3fIZq0ZXmbxh1PzsvOtpSbur94b0EQiolQdX0UInmEEUwsg0iAGJyAfm+CgWKJl50MSJOJkBenjiaSh36liqamZ30Sr46tLHQFOIV8bZ0qAyNgssCovwK7xLK9UBAGBrsLgGgyzAzIz5zGFduaupvFzdnIhNDd4K1wIeLq6Z3ltM0n79+V1NkgISLz+/ka6+vk+unDOA/erpo5dvHcJwAsUh5GcQ08KHDiFqs+jvHcYQMBcnZeu4EcxHkKsInmg4ryEUewpO0RMJERaxFzKz9VERS2GObqM8dbvX0+c4oUILAAA7", "img-challenge-gif"), "img-cloud-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAP/uANzc3AAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkYyRDc4OTIzMjMzQTExRUY4RjE5RjQ0M0VDNEJFOUNCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkYyRDc4OTI0MjMzQTExRUY4RjE5RjQ0M0VDNEJFOUNCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjJENzg5MjEyMzNBMTFFRjhGMTlGNDQzRUM0QkU5Q0IiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjJENzg5MjIyMzNBMTFFRjhGMTlGNDQzRUM0QkU5Q0IiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAADACwAAAAAMAAwAAAC/5yPqcvtr4ScAtpFs977Ig6GlGeIJkhKwcq27ttm0AbXtuycZz09+q9a9XJAHWvYmNiWMcpRQgwymU4hNFIUWaXIQ3ZXDXRLX214PNBMYWox9+oNs6lV5TZhX0qfz2B+/Ldn5RLo91bxcfiyl+emcgZHJtA02dRHqASJGFe5ZcL2WIgnaLQYejja6SkA0Ooqt+XYCUgq4Xr7augYe5eoSoHbagugZifqKztMzLo8nLEL7ZiazAwM3FxpjIpsKDzhfftrOBuZVpsb7E3JO4JMGay8vA6N1ugY/u0tnj2OpbqFr1otfgT9YcqH69kleuXM7QOykIPBZKvqaCOIw509XjqW2GnAIAhUyHntGGwUqadflDUn+2Q0OdIUnY8+Yq5xWTIKh5vUNs0oE4KEQ6A0hSYRYTSp0qVMjRYAACH5BAUUAAMALAAAAAAwADAAAAL/nI+py+0Po5y0KoGz3rzb0YUiZ43mKHXByrbuu2rRSQuv/NQ6FmPQrusJFiGY8cYREoEbWDKQuTBNLI0SMT1VM9dD8+gUCW1QH5YLhqatZV47wS6HXW7huGtA2+nkvR8dddbn19NS9+cW6HXYZlint8emmMfYRoVkI2m2ODg2EpYJuEnJuAFwihq3FZo4CgLZhiqbWsqjOSTYZzoLgHGaJEo2+Wq72yvwm5HMFYxHzKp87Cu9XCzcisvZOR3N2+t4HQ4HO+0te9j8lsuHPNtOCx7pSsx+Xi4d34gjiEn7rtpsGCl29/zpCTjv2aodq+wIVGjJ061wErOtU0VIXrh9NevkYFqDjaM2kJ0+ipRSCQnJDTlgzQET4kfKNJhYyswiogJOFBR2xvzA4ATQoUSLGj2KFEEBADs=", "img-cloud-gif"), "img-coin-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAMWMCvHKBQAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxRjcxOTIzOTA0QjMxMUYwQTJDOEI0NTRDREE1NEVEMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxRjcxOTIzQTA0QjMxMUYwQTJDOEI0NTRDREE1NEVEMiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFGNzE5MjM3MDRCMzExRjBBMkM4QjQ1NENEQTU0RUQyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFGNzE5MjM4MDRCMzExRjBBMkM4QjQ1NENEQTU0RUQyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLTai7PenIkPhl+XiOYZcui6ZuwXxHLAVicNz7puTuYOnIFiIskvGBQRUxAl8BWSMR3RHdQpHVGrvGtOCNp+u0NyOatdYM3J9VTBtcbZ6DD8/FzXwe8DPn/EV2dXMoZ0g4RTVGiYGAgIQOj3l6jYWBeZNilQCcjZ9pEpcHepN4cpSvppxuIpAJCqKgflKjoq6/o4+NpncGq56hgCa6t2qldLLImg+8tKXGw8RzkLYru8iVxpAnvSgNK5NKy86LEizA1dLs3rlQ4d/W197dUdet10bw8F35KvL6ofQHI9IpwIqA5gDSPuGtpo+EIFRGwkKlq8iDFjxgIAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLTai7NuovcteeJIfmCJpualdkErWmhA1/aNUvPN92NY6uE8vN9jJ6yJfJ7jKFlcRleMJxQ2FTikSRhR2eS4oC/vmGZUfK9rMLccVp+7bdubtKgz9fSYXEAG99YXh8CXdWiXZjjHZkVIdZC4l1iS1xhIImT5BzjkSbnZAVAoqTfoBqo4WmraqPmpmkoaafCY+gW7KgBAq9WJ6YXo+5ugi4uENkJ8eSsYFOvhWwWtjInI2Qw7+cy6aKwS2M3b+82IFU1S7ic2SmzmHs9OLf3u1Uv7HrG8roKPn2Mfv3z/fBW0V0ygiHUH6wHEU8HfQ28BZcBTceIiRBAL5zBy/AgypEiOBQAAOw==", "img-coin-gif"), "img-connection-loading-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAAO+AHOJ2gAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4NDZCOUY0MUVBMTYxMUVGQjM4MzhFQjY5NUE1QUM2MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4NDZCOUY0MkVBMTYxMUVGQjM4MzhFQjY5NUE1QUM2MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg0NkI5RjNGRUExNjExRUZCMzgzOEVCNjk1QTVBQzYwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg0NkI5RjQwRUExNjExRUZCMzgzOEVCNjk1QTVBQzYwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAtGcj6nL7Q+jnLTai7MWvPvvaQhIliFmpiqVBu4LvysExvYdg3SNk3jweXxgqpLttPAQi8WlgNGRkYRG6VMRdQVZPCAHy7FeL7wOWKA1H5jfROnsbQ/YunV9dKeb7HI8svvzFvE39JNzx5VlGKiW6NQkVqGoN9k4GJbWl6Qk5Rg3RoXplbg1M5elGXrCxIckQchqgEhW+DhmiaLICCoii2li1esHidtLmSqydYZszHsmfOkKrSo9vTll7VDpnI132N2wDQ4lOL5cbN7Knc7e7k5RAAAh+QQJFAADACwAAAAAMAAwAAAC2pyPqcvtD6OctNqLs958iA+GosiN5jle6MqCERvE8jy3zkjnum425h47AQOkhYjWEuZCilAtCX0KEiAZCrJ6Uj/WIkVJnB6qQdcYiviF09zw5wxlsr0errwe7xlScLl6eLX3NmeGM4Sk51PohPgnNShBVhbVZfbS5nZHKFkW2UanyAn5cFLBuHbpZdOnSWqJtwr7anHEY9lKy2k7WiJaO9kh+IkyKdaRB6rB15S8McvMGyw9TW26XG1Uip0tAOD9vA3iPR4d/jH+bbw9R15unri+6R7fHG9/n1AAACH5BAkUAAMALAAAAAAwADAAAALbnI+py+0Po5y02ouzFrz772kISJYhZqYqlQbuC78rBMb2HYN0jZN48Hl8YKqS7bTwEIvFpYDRkZGERulTEXUFWTwgB8uxXi+8DligNR+Y30Tp7G0P2Lp1fXSnm+xyPLL78xbxN/STc8eVZRiolujUJFahqDfZOBiW1pekJOUYN0aF6ZW4NTOXpRl6wsSHJEHIaoBI9gFge7t1CorScev7aykiy2Frgpu6wVaMnEwp7ObqxywyPbz7DJWLvTO7vTnl7dC7fB2OB1xubn2crr6nnq0Nf1Y9b3+PX1EAACH5BAkUAAMALAAAAAAwADAAAALcnI+py+0Po5y02ouz3nyID4aiyI3mOV7oyoIRG8TyPLfOSOe6bjbmHjsBA6SFiNYS5kKKUC0JfQoSIBkKsnpSP9YiRUmcHqpB1xiK+IXT3PDnDGWyvR6uvB7vGVJwuQkAGCgIeLX3Nmc2Mrg4ePLgF7KIwkiH9SGYh3lnKRCotyXSKMZJuOkT6Tn6+CmBCnDIeWfTZ3pjZphEC6viKgpbW9FLedvRq5iquoG6UrqrnAeMwddUWeJMfd2hvc0tPd3NUAhudNk8Tt6peY4tus5u7o5Y7c4aT2uPn69QAAAh+QQJFAADACwAAAAAMAAwAAAC0ZyPqcvtD6OctNqLsxa8++9pCEiWIWamKpUC7gu/KwTG9h2DdI2TOPB5fGCqku208BCLxaWA0ZGRhEbpUxF1BVk8IAfLsV4vvA5YoDUfmN9E6extD9i6dX10p5vscjyy+/MW8Tf0k3PHlWUYqJbo1CRWoag32TgYltaXpCTlGDdGhemVuDUzl6UZesLEhyRByGqASFb4OGaJosgIKiKLaWLV6weJ20uZKrJ1hmzMeyZ86QqtKj29OWXtUOmcjXfY3bANDiU4vlxs3sqdzt7uTlEAACH5BAkUAAMALAAAAAAwADAAAALUnI+py+0Po5y02ouz3nyID4aiyI3mOV7oyoIRC8TyPLfOSOe6bjbmHjsBAaSFiNYS5kKKUC0JfQoSIBkKsnpSP9YiRUmcHqpB1xiK+IXT3PDnDGWyvR6uvB7vGVJwuXp4tfc2Z4YzhKTnU+iE+Cc1KEFWFtVl9tLmdkcoWRbZRqfICflwUsG4dull06dJaom3CvtqccRj2UrLaTtaIlo72SH4iTIp1pEHqsHXlLwxy8wbLD1NbbpcbVSKnS1QuQ2N+L3VrSU+523OiiuemM7qDh9/UAAAOw==", "img-connection-loading-gif"), "img-connection-open-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAP9VAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpERjRERTc2MkVBMTgxMUVGQjU3Q0FDQzFCMzQ0OUJBMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpERjRERTc2M0VBMTgxMUVGQjU3Q0FDQzFCMzQ0OUJBMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRGNERFNzYwRUExODExRUZCNTdDQUNDMUIzNDQ5QkEwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkRGNERFNzYxRUExODExRUZCNTdDQUNDMUIzNDQ5QkEwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAtGUj6nL7Q+jnLTai7MOvPvvaQhIliFmpiqVAu4LvysExvYdg3SNkzjweXxgqpLttPAQi8VlgNGRkYRG6VMRdQVZPCAHy7FeL7wOOKA1H5jfROnsbQvYunV9dKeb7HI8svvzFvE39JNzx5VlGKiW6NQkVqGoN9k4GJbWl6Qk5Rg3RoXplbg1M5elGXrCxIckQchqgEhW+DhmiaLICCoii2li1esHidtLmSqydYZszHsmfOkKrSo9vTll7VDpnI132N2wDQ4lOL5cbN7Knc7e7k5RAAAh+QQJFAACACwAAAAAMAAwAAAC1JSPqcvtD6OctNqLs95chA+GosiN5jle6MqCEQvE8jy3zkjnum425h47AQGkhYjWEuZCilAtCX0GEiAZCrJ6Uj/WIkVJnB6qQdcYiviF09zw5wxlsr0errwe7xlScLl6eLX3NmeGM4Sk51PohPgnNShBVhbVZfbS5nZHKFkW2UanyAn5cFLBuHbpZdOnSWqJtwr7anHEY9lKy2k7WiJaO9kh+IkyKdaRB6rB15S8McvMGyw9TW26XG1Uip0dULkNjfi91a0lPudtzoornpjO6g4ff1AAADs=", "img-connection-open-gif"), "img-connection-paused-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAAO+AAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmViYzgzMDYyNywgMjAyNS8wMi8xNy0yMDo0MTozOCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowRTE5RTA5NDI4MTUxMUYwOENGOEIxMjc0Q0U3MERBQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowRTE5RTA5NTI4MTUxMUYwOENGOEIxMjc0Q0U3MERBQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBFMTlFMDkyMjgxNTExRjA4Q0Y4QjEyNzRDRTcwREFBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBFMTlFMDkzMjgxNTExRjA4Q0Y4QjEyNzRDRTcwREFBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAuyUj6nL7Q+jnLTai7MOvPvvaQhIliFmpiqVAu4LvysExvYdg3SNkzjweXxgqpLttPAQi8VlgNGRkYRG6VMRdQVZPCAHy7FeL7wOOKA1H5jfROnsbQvYunV9dKeb7HI8svvzFvE39JNzx5VlGKiW6NQkVqGoN9k4GJbWl6Qk5Rg3RoXplbg1M5elGXrCxIckQchqgEhW+DhmiaLICCoii2li1esHidtLmSqydYZszHsmfOnqKydNi6gzKyk4bRbF/Cpq6f00voG2hJd2qp5RCfpLfv4dfS0fz94+W16eXL0fNk8YNmXQNqmpVtBCAQAh+QQJFAACACwAAAAAMAAwAAAC8pSPqcvtD6OctNqLs95chA+GosiN5jle6MqCEQvE8jy3zkjnum425h47AQGkhYjWEuZCilAtCX0GEiAZCrJ6Uj/WIkVJnB6qQdcYiviF09zw5wxlsr0errwe7xlScLl6eLX3NmeGM4Sk51PohPgnNShBVhbVZfbS5nZHKFkW2UanyAn5cFLBuHbpZdOnSWqJtwr7anHEY9lKy2k7WiJaO9kh+IkyKdaRB6rB15S8McvMG5xrjCd9Q9JsuizsYhf9VXrWOayM+UpOjqE7ih7QqY75Ljjujgpf78ZGL68SPr+WLkMiYQCzgXuWYpu1TdwWaigAADs=", "img-connection-paused-gif"), "img-connection-secure-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAAO+AAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQzRFMzQ0MUYwNjIxMUVGQUJFMEU4QThEMDQ1NzY3MiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQzRFMzQ0MkYwNjIxMUVGQUJFMEU4QThEMDQ1NzY3MiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBDNEUzNDNGRjA2MjExRUZBQkUwRThBOEQwNDU3NjcyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBDNEUzNDQwRjA2MjExRUZBQkUwRThBOEQwNDU3NjcyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAuiUj6nL7Q+jnLTai7MOvPvvaQhIliFmpiqVAu4LvysExvYdg3SNkzjweXxgqpLttPAQi8VlgNGRkYRG6VMRdQVZPCAHy7FeL7wOOKA1H5jfROnsbQvYunV9dKeb7HI8svvzFvE39JNzx5VlGKiW6NQkVqGoN9k4GJbWl6Qk5Rg3RoXplbg1M5elGXrCxIckQchqgEhW+DhmiaLICCoii2li1esHidtLmSqydYbcKsl75jDr7NqgxHyJqMl5raoMixaXCx5+WkVOe+iLVlvsSV6Z+Tydp0stTm1tn6E8rC9c7e8fFYEEDRQAACH5BAkUAAIALAAAAAAwADAAAALtlI+py+0Po5y02ouz3lyED4aiyI3mOV7oyoIRC8TyPLfOSOe6bjbmHjsBAaSFiNYS5kKKUC0JfQYSIBkKsnpSP9YiRUmcHqpB1xiK+IXT3PDnDGWyvR6uvB7vGVJwuXp4tfc2Z4YzhKTnU+iE+Cc1KEFWFtVl9tLmdkcoWRbZRqfICflwUsG4dull06dJaom3CvtqccRj2UrLaTtaIlo72SH4iTIp1pEHqsHXlNz3xcsMzWocjDVc7RlglZEY2oURKDwHrIJ5SyIpnYoonDlMbYrZiVdMzm0+mK6duRF+yt8LVLhjuISpw6YIIbYCADs=", "img-connection-secure-gif"), "img-connection-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAAO+AAAAAP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmI3YzY0Y2NmOSwgMjAyNC8wNy8xNi0xMjozOTowNCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFDRkVGNDhGOUI2OTExRUY5NDQyRkJFMDQyMEQwNkJEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFDRkVGNDkwOUI2OTExRUY5NDQyRkJFMDQyMEQwNkJEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUNGRUY0OEQ5QjY5MTFFRjk0NDJGQkUwNDIwRDA2QkQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUNGRUY0OEU5QjY5MTFFRjk0NDJGQkUwNDIwRDA2QkQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAACACwAAAAAMAAwAAAC0ZSPqcvtD6OctNqLsw68++9pCEiWIWamKpUC7gu/KwTG9h2DdI2TOPB5fGCqku208BCLxWWA0ZGRhEbpUxF1BVk8IAfLsV4vvA44oDUfmN9E6extC9i6dX10p5vscjyy+/MW8Tf0k3PHlWUYqJbo1CRWoag32TgYltaXpCTlGDdGhemVuDUzl6UZesLEhyRByGqASFb4OGaJosgIKiKLaWLV6weJ20uZKrJ1hmzMeyZ86QqtKj29OWXtUOmcjXfY3bANDiU4vlxs3sqdzt7uTlEAACH5BAkUAAIALAAAAAAwADAAAALUlI+py+0Po5y02ouz3lyED4aiyI3mOV7oyoIRC8TyPLfOSOe6bjbmHjsBAaSFiNYS5kKKUC0JfQYSIBkKsnpSP9YiRUmcHqpB1xiK+IXT3PDnDGWyvR6uvB7vGVJwuXp4tfc2Z4YzhKTnU+iE+Cc1KEFWFtVl9tLmdkcoWRbZRqfICflwUsG4dull06dJaom3CvtqccRj2UrLaTtaIlo72SH4iTIp1pEHqsHXlLwxy8wbLD1NbbpcbVSKnR1QuQ2N+L3VrSU+523OiiuemM7qDh9/UAAAOw==", "img-connection-gif"), "img-crosshair-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhGAAYAIABAAAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU1NzZBRjAwMjAwOTExRUY4NzMzQzE2Njk3MUU1MDg5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU1NzZBRjAxMjAwOTExRUY4NzMzQzE2Njk3MUU1MDg5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTU3NkFFRkUyMDA5MTFFRjg3MzNDMTY2OTcxRTUwODkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTU3NkFFRkYyMDA5MTFFRjg3MzNDMTY2OTcxRTUwODkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAABACwAAAAAGAAYAAACSoyPAZDtuJ6Ei01Xc71667kZ0RFilniiT6mkremOVCOj7pvUrY7v3Q8MCjOkGHFGMdJ4OuZthyw+jz3biiijXoUXqbYrBV/F5EYBACH5BAUUAAEALAAAAAAYABgAAAJHjI+pu8CvgINU0ifzvEb7DX2OVlndlmHmiaTNGsAx2NKyfMBkXYv+PvsJbSAgK6KjzRjJBC63uimhqaiLOeScPlpeF/kNGwoAOw==", "img-crosshair-gif"), "img-disabled-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAP8AAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NjgwRDQ5NUVBNDAxMUVGQTBFQkNDQjM1MjgyM0Q0MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1NjgwRDQ5NkVBNDAxMUVGQTBFQkNDQjM1MjgyM0Q0MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU2ODBENDkzRUE0MDExRUZBMEVCQ0NCMzUyODIzRDQxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU2ODBENDk0RUE0MDExRUZBMEVCQ0NCMzUyODIzRDQxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAtCUj6nL7Q+jnLTai7PevPcABlIobiQInSGmrk1LUvC5zHEEAwB9tHqbUul+PN8Q6DgNlzTh8nh7hZ7MGbWKSiqvuSvRJd1SnVzewzieepFnNDawNuPc3qfqQq/v5Bay/m4iFhel4ZdGmGF4WMKhWJZVKPgHlkjyaIdYIQkFh0kps7mn9oa32cUJOWF6iso4Z/mWxxc2+rWy+knb2VqiOFtTK0rpm6sgCIhg+JsshswMK5yqy2asRD293GPjGuSMLT3iPf0BTutxjp6uvs7eXlEAACH5BAUUAAIALAAAAAAwADAAAALJlI+py+0Po5y02ouz3rzzAIZSGGwkCZ0lpqJMu1qwm8zxZNNCDlIwAFAZWsCgzvEr8gJFoyhCbDqj0mNDJVVSmyfcKQskgac9r3gMGpNlXzVYyG67tVbzeQ7PbN/dDxbd1/HH9yQ4mBVossdVFxcyR3ZzceiW55iGiMlYWEEZdkdX5iO3CRppZxr5WCqJ5GmTyemamkPY+nIoRBqKyvRJs/srOrtquWNqfMVTI9fSm7x0mYiQw+KsnHyZMu2xPdwNHi4+Tl5uvlAAADs=", "img-disabled-gif"), "img-discord-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAP///wAAAFhY8AAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5MjE5RThCOUNGNzAxMUVGQjk4REFDREU2MTE2NkRDNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5MjE5RThCQUNGNzAxMUVGQjk4REFDREU2MTE2NkRDNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjkyMTlFOEI3Q0Y3MDExRUZCOThEQUNERTYxMTY2REM0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjkyMTlFOEI4Q0Y3MDExRUZCOThEQUNERTYxMTY2REM0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAvOcj6nL7Q+jnLTai7PevNsAhmIgjWFpjk9qrqzovjAjz0ut0qLA87YS6gkFrRtoSMSZkL4T8IhULplJUmJHzWqZTkRwCwb/sOEytzv4ClPb6XAM7b20rLct3gwA9gB1NLRHVgVi4FfFF4i3BoJoOOOoh5hIxSip+HhZyWcoF9kYYEeYlunZp7ioyemkWpc1F1p42krnhhoLenZqlnu768s7ivs7XNVLPLyqy1m2nCyMqusq2Gk1PRj9t1wc/EwtVQvLTfk9Ii0qnvvd1gW+7aBddMCWZ/X+JWNUg4Kj8zLBHyMHBRYeCho8iDChwoUMGzo0UAAAIfkECRQAAwAsAAAAADAAMAAAAuycj6nL7Q+jnLTai7PevNcAhiIIjWZkpk6qNiy7vG0cCvZtyyLOi8zOy+mAQUHoVysSg0nlMbEsSqfOgKJJzWp9h6j2y3wOvCaw18iNvqisMGmMFQHmWPfIbliG5nwQO8AHUJcWBxgoGPB36IdDmNgIEljXY0jHeONIGYl4WVUG+TbZlpWCB/eoOTl1hmZ1igoWW5WnKiv7xGprFlqr+4Xb60v6duokjDZLC4vZudvc6lpstyxVqglFDT1knYqdrb39LBTddRZ+Z4rwCVoi3oqkJ+ayPS8jQQ//MmGPwuXxDzCgwIEECxo8iBBgAQA7", "img-discord-gif"), "img-dna-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAFhY8LcA/////wAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2RTI0REI4QUVBNDAxMUVGQkM5RDk4M0VEMjc0MzVDOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2RTI0REI4QkVBNDAxMUVGQkM5RDk4M0VEMjc0MzVDOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjZFMjREQjg4RUE0MDExRUZCQzlEOTgzRUQyNzQzNUM5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjZFMjREQjg5RUE0MDExRUZCQzlEOTgzRUQyNzQzNUM5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/9Iutz+MMoJh72Wao173mDjjUNojkEaYCboqfDVbphas/NUr2SZ6xeeRdD5AS2pi2BZNFaQSSWx6WTsosMpbiGbXYVZD3cbCto6S61s1DJjMekeoFuGgtFMD2D/qQ/OPnhqA3t8Pn6AgXgYhXOHR190PYSNfU89gFYklZYik3ZCBHKNjo+aHZx/iSOkhp0Keq1um62uprCMtaUxF7qFVGO9pb8dvBa6Yg6MeiTGqcmex5/Fq5OXrnk4V9NH2HHas2wclN7ZinZ0daRS5riqoW3HtgPfa+iv45Qj9dTwJ9P8QKXzYw+OuXf+4lkStG1gFVFwIjl82CzRw0sS8V2E6OYezkZlHT1+jAZD5MhTxjR+vAHs5CloLkGSiUmzpokEACH5BAkUAAQALAAAAAAwADAAAAP/SLrc/jDKCYe9NOvLuf5OJ2IgOAZo4JVbl74kS3Hpha6yRKtjnFc23kAg+k2CQgGxYwRaYBbl0tdU7IQXJbO6QGKzUwvX+rz1tCtcCdmLhkcyNqaDbg9YcjGB/h4AAFQZV2kcdX5/gQ9tNTF0HH+AehF2A1AkbZCJZJSVZpyHiJIMmKFlnnaQkaKbj6mlnaetrqp3o7KztJa4rmp7jx2vgxe7mVStn6ZCxEVdw7SfjBbFPQ3HblsusZQh0qVSW76mn06pYG+s0cw63c/fhLBCa8Mj7nPJmut29dmeeEwi+7zgy1crHBgRL+KNAfjGUkEuAK/0G9Osh0OK1filw5jRHgsWjraSxQJZMeGXhxwlqiPJiSQ3ai5fgotJs2aGBAA7", "img-dna-gif"), "img-drop-pink-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAPaD8oUAmeAA5AAAAP///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAzIDc5Ljk2OTBhODdmYywgMjAyNS8wMy8wNi0yMDo1MDoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjEwIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowRjdCNTI0RjkzMzMxMUYwOTNCNzgyN0VGRTUzRkMwMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowRjdCNTI1MDkzMzMxMUYwOTNCNzgyN0VGRTUzRkMwMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBGN0I1MjREOTMzMzExRjA5M0I3ODI3RUZFNTNGQzAzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBGN0I1MjRFOTMzMzExRjA5M0I3ODI3RUZFNTNGQzAzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA9VIutz+MMpJq6Vj3G1z5mDkaWHJjGZKjKTKsa17wbGMwXZH5xVd8w7fBwgZCVjEB0tw9CSDHmbT+VQsmcjqKiqd/ngsAECaTY7EYjKVGEar1+CzG4tie9Dp9zDXntPhMnJ+el8lfWNdf3suh4mENoJ5jmUqkY5ddYx3g4kBlIaWlwKemSahogGki6AZeKJMqaWsAwKSqKqFG0avXbGAIbu8sLiaGcLDxJVcwqnJKcGvzc6mIwG30rLA1dLc3NnaHt3in7Pb3TuBQuq54Ovk6e6rQO5aVQkAIfkECRQABAAsAAAAADAAMAAAA+lIutz+MMq5xqA4O2u1p1z3jU8okqjJoal6sZ97wpk801MomDhmCrtQL8cBBldDyA+oSpaKxuPNSdBFm1SFCQC4CrNVDpfrRVJD466Rd0aTo9JX0v0uT2l0NZw9zMOZXz1bY39xcnhihIVxfYl1f3wwg49wAZEtjnp/loEsk4tAnGaemaACAaJ3GpOam6mHI36mqKmSpbOonbFFlIW0ujFQpka/o7sWw8TFqjXCw7S1pMjJ0NGYA8mny8w+zovVl8EhAd/gwB4qqJXVr7DHFuzxWLbj8bkugi7m+I02Nm3+5gH0B+aJwA8JAAA7", "img-drop-pink-gif"), "img-drop-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAIPQ9gBImQCf5AAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBMTg4MjFEREQ2QTExMUVGQkYxM0RDOEQyMUQ1RUI5RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBMTg4MjFERUQ2QTExMUVGQkYxM0RDOEQyMUQ1RUI5RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkExODgyMURCRDZBMTExRUZCRjEzREM4RDIxRDVFQjlEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkExODgyMURDRDZBMTExRUZCRjEzREM4RDIxRDVFQjlEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA9VIutz+MMpJq6Vj3G1z5mDkaWHJjGZKjKTKsa17wbGMwXZH5xVd8w7fBwgZCVjEB0tw9CSDHmbT+VQsmcjqKiqd/ngsAECaTY7EYjKVGEar1+CzG4tie9Dp9zDXntPhMnJ+el8lfWNdf3suh4mENoJ5jmUqkY5ddYx3g4kBlIaWlwKemSahogGki6AZeKJMqaWsAwKSqKqFG0avXbGAIbu8sLiaGcLDxJVcwqnJKcGvzc6mIwG30rLA1dLc3NnaHt3in7Pb3TuBQuq54Ovk6e6rQO5aVQkAIfkECRQABAAsAAAAADAAMAAAA+lIutz+MMq5xqA4O2u1p1z3jU8okqjJoal6sZ97wpk801MomDhmCrtQL8cBBldDyA+oSpaKxuPNSdBFm1SFCQC4CrNVDpfrRVJD466Rd0aTo9JX0v0uT2l0NZw9zMOZXz1bY39xcnhihIVxfYl1f3wwg49wAZEtjnp/loEsk4tAnGaemaACAaJ3GpOam6mHI36mqKmSpbOonbFFlIW0ujFQpka/o7sWw8TFqjXCw7S1pMjJ0NGYA8mny8w+zovVl8EhAd/gwB4qqJXVr7DHFuzxWLbj8bkugi7m+I02Nm3+5gH0B+aJwA8JAAA7", "img-drop-gif"), "img-enabled-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAAPBAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4NTYyQ0QxNEVBNDAxMUVGODE5MENDQzhERUY5MUFDNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4NTYyQ0QxNUVBNDAxMUVGODE5MENDQzhERUY5MUFDNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg1NjJDRDEyRUE0MDExRUY4MTkwQ0NDOERFRjkxQUM0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg1NjJDRDEzRUE0MDExRUY4MTkwQ0NDOERFRjkxQUM0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAsOUj6nL7Q+jnLTai7PeJgSueR5oiSM5mSIaqSvruCbMuMBMIzJwv7lg4/FwOZVQSGQFj8MTzMg8+kDLaPODglqRzkZyUbV+E65YmDlVyLBg7TZNXrN1Zyn8IO923OL73nSlVxc4pyZiNzXY4/cX0HcyWGbm8TjCxzVmeBiVV6lXA8i55lk4SYm2g6pCcZaKmfkQJitZchlKWFox6/j6eaG4yFh7qyr8a7tK4xqcS5Ka/NPoCB0tTV0NRIutud3t/Q0OUwAAIfkEBRQAAgAsAAAAADAAMAAAArWUj6nL7Q+jnLTai7PevPsdhMFXiSMpmSf6qCHruC+8yCKduICKGyoA3N1wv6BwyNIZjyuScmlKFqFR59Tois0iTypSkYV0vducrHUllw+2tVm0DJ7BOh4dHme6fVc725Sn1/SGB+QnkCZ3eBcSZzdmuMiYx5MoOFhTqJYYJgZIKeMo2QAZ+Yk1qnWKqnl5Ubo6h1G62UFr+gViKesx1okSKtjTVjVM3IPQhpy5t+z8DB0tzVIAADs=", "img-enabled-gif"), "img-floppy-drive-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAMfHx1hY8P///wAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NkI2MzAwMkVBNDAxMUVGODY3MUExN0FEMjIzM0NGQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NkI2MzAwM0VBNDAxMUVGODY3MUExN0FEMjIzM0NGQiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk2QjYzMDAwRUE0MDExRUY4NjcxQTE3QUQyMjMzQ0ZCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk2QjYzMDAxRUE0MDExRUY4NjcxQTE3QUQyMjMzQ0ZCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/9Iutz+MMpJq724js27/2CmgGRJYmaqXmpbWl0QdEBt1xzOzZ+2ybzN7ZYDxIIdyk5GG+oGzwEQOVD+mEVn8YhNSpZI5zMqBfYi4KYWSp5Sv9eweOhxvyHp7Lxt9z7yLh92XVV/cVSBZX0ceIeJdYNBjYqEgZFdk5eam1OMhpScoW6eDmCip5ifqKuSqqOPh50bmbKwpqmljraQhLSVu4p+DaYdAsbHyMnGvMIMxBvK0cpczQvPA8kf0tSkw7rYyyrH3LOuXeHi6MHdzt/qJuOAhbmUHOrx9sjk89710NIABezzFSQgwIHmkOgjkU0ewWL4tC2MU22EPHACGUZcV44h3hUP+AIeOfMJWCA0Jl1YSWkCBTARMGPKnEmzps2bExIAACH5BAkUAAQALAAAAAAwADAAAAP/SLrc/jDKSWsdOOvNs4VdKGpfM55iqaAsV2pBoAF0DWR0FncWLOO2HEY42LkumNhvGLwxdcrjBLpsCmtUI2ma1Fqd2K5y6ZFQZ81nNrqNnIFfp3hMxrjF6LiPrrWD8HlWe3xkd0V9LYeEhX+KdSyLfYZjiWt0bQ6WkZuEmCZznKGXZQ+aoqGeDKanm6kLmpWRriuglRt8swRZthyjfqVzvL1sv5nBGQLJysvMAoO5uxjN08zRxZ+OyNTb1gOTxMki093fWuEtzsfXqurnLOnZpMbxA9Ti5I2U0tv26t754PiN81duSbMQy/ABo5dQnDKF8/TVe+jQncR/CyU21DZQJtEGQ104CqQY8mMjhCNJpjgprAWFlolUwAyhoqbNmzhz6tzJk0ICADs=", "img-floppy-drive-gif"), "img-fullscreen-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAOttGgAAAP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkM1QTUyQUNFMkU2NTExRUZBRjM2QTJBMTI1RDA0M0U3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkM1QTUyQUNGMkU2NTExRUZBRjM2QTJBMTI1RDA0M0U3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzVBNTJBQ0MyRTY1MTFFRkFGMzZBMkExMjVEMDQzRTciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzVBNTJBQ0QyRTY1MTFFRkFGMzZBMkExMjVEMDQzRTciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAACACwAAAAAMAAwAAACrZSPqcvtD6OctNqLs9ah+y154ggq44kG5ZG23+qOACCuQjvneQ17+q/j9TrAn9AmKu5eNkNSeUT6oEzpFBgtyZbLTvP2pD2znHDMeo2ptNtZDVWpgq9uJinuZYXreX0/xNMmJue0RhETRIaB2PUH4pLo+DhFd9e0FynJFkBFuMmJpThJFOr52ak5Ctr5NbeK+oVZJHohO3hyqQaXq9vql+K7kBpMXGx8jJysfFwAACH5BAUUAAIALAAAAAAwADAAAAKzlI+py+0Po5y02otr2DxbDoIeFJbduJggwJ7ooW7sDLivSuc2aua0+DKsfLrdKET8bYIIZLK2ZMKGPqBUyEkag85q9EqFBmbbY5a8KnvCsQD43Gozu+Kolce23idfLLzuduNCFzInQri31qakdrGI1ujYw9gnKANVFCl56aW5qZVoOdZZachJGXglEJaZajr6FKp4Cuoq+hTnyUebayIF16a7G1z66quqoIK8zNzs/AwNXQAAOw==", "img-fullscreen-gif"), "img-grid_cur-png": /* @__PURE__ */ __name(() => "data:text/plain;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABoUlEQVRYhe1ZSQ7DIAy0q/z/y+6hSkSJtzEgUqlzqhpsxisOYRGhIjxBriqNcIDrs9YJLSKNEL6RZf7m1EXLIj0UmVe0wNTMd93afx2iCIURzHq4nOiWjtY4pI4yHg5TAZHV5AF9qofrbUP3FKrPLdjewzNC70LzZjUllpMFIGTwMYsOyStPZuBgIlLSgxuF148K2dkQESaFcLkP74JKeDCMS2F6+KmkW8K3xN1F2spfou+iu9Z7yqyCzBhX6CI3AS0l9reID1QeVg5DpKve9ZZbD7y2tsPTHO0b9eGlpLvIpPaKCJsz7AKkWtLU8XICzr33jpeFyJg8pkxrlSkt0VlSB4dYBFbDMCB1cGxB1kn/aW013HuJlvTqvM46qCd8jnVDm6DGZQuOCL8MhAkUX0yh4Wf3eFkbfoo5G05bo7LlPqyENUUUyVcNqw4OxMtQRA5KdgURecQFi9kltNA94TA5iMyrfyYiCT4LnDBd30ZmhsEsc9yGfsuIZE1k25qndCSxYdlXIxT1Qe3ZiCElQ8+iywqjm0xvK48Z4LP4uXn4DcalnWAUAAtmAAAAAElFTkSuQmCC", "img-grid_cur-png"), "img-inspect-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhGAAYAIABAAAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQzNDgxODNEMjAwQTExRUZBMTU5RjY2MzMwMzJGQzMyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQzNDgxODNFMjAwQTExRUZBMTU5RjY2MzMwMzJGQzMyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RDM0ODE4M0IyMDBBMTFFRkExNTlGNjYzMzAzMkZDMzIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RDM0ODE4M0MyMDBBMTFFRkExNTlGNjYzMzAzMkZDMzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAABACwAAAAAGAAYAAACO4yPqcvtCWJ8S1p6rJ70Zu5IFTgCjcig5WmG7fiQkIyo653ahj5rO9/bAGsoX2x4pGE8GKJy+YQ2p9MCACH5BAUUAAEALAAAAAAYABgAAAI7jI+py+0PE5gURFOzhfnU9ykTOC6UUzKpuakt+yInGnsrLN55F4SNpiGVeMLLzijRXXzInnJZa0qniwIAOw==", "img-inspect-gif"), "img-letter-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDANHR0f///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBODk3REMxNEVBNDAxMUVGQkY3MTk3NTg3RjJGQjU0MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBODk3REMxNUVBNDAxMUVGQkY3MTk3NTg3RjJGQjU0MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkE4OTdEQzEyRUE0MDExRUZCRjcxOTc1ODdGMkZCNTQwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkE4OTdEQzEzRUE0MDExRUZCRjcxOTc1ODdGMkZCNTQwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAuCcj6nL7Q+jnLTai7PevPsPhiInlOaJpuoZre4LN/BMs4oa5PrO9726SPmGxJ8tgSsqjUfEagkNAG8lACpaPFlLwSpgW8L6tOCu4Pu9inOoNJd6RoPD2DbaZJa7T1D7/Y3kpTcnoESmhwc3+Gcy5IcI6CS4qLbzCCmQt8hIx3ZIGXlgsrnHt0KaGBgHWjMplyq5ill1ermn+fr4OTcIK+qaQto7mpupyCkrXCzoa0DMq7wZXKZoGz171jxweq28YrbbLZ0C7iqO2qTauo4iw/6u/QvfOlJvf4+fr7/P349fAAAh+QQJFAADACwAAAAAMAAwAAAC3pyPqcvtD6OctNqLs968+w+G4iaU5ommagqt7gs38EyfDBrk+s73fo664X7EIkuhKip5q8VquXQ5SwDACUpEWU1TQXVrwjJPXy6SWr6KA9q0oPutqrFtNzwOFtDJeHPChCc391MX54cAGJin51PYV3KnOLTj+Ph25qUoGKajogkWGZjEtqJ5eJAoSrMoCYmpSla6iWbo+kc7i+vIV3t5m+mG+xlsGVo5PNt7l4L8yXtqAHjcHJwJPSBL7Rxri8isjdyEmQo+rCJUky6Ort7uy+5OMzJPX29/j5+vv39fAAA7", "img-letter-gif"), "img-light-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDALCwsP/zFwAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBQ0M1MEExMzdFQkIxMUVGQTY5MEFENjlFQzhBNkEwNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBQ0M1MEExNDdFQkIxMUVGQTY5MEFENjlFQzhBNkEwNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkFDQzUwQTExN0VCQjExRUZBNjkwQUQ2OUVDOEE2QTA0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkFDQzUwQTEyN0VCQjExRUZBNjkwQUQ2OUVDOEE2QTA0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAuGcj6nL7Q+jnLTai5XYvOfZheHniOZIIufqpSwXxLFInvKNo5iJ9zK9C/mGAWBFSCTqKJ2ks3WEOZVQkPR2TVYlTaxIy7Egi6vhNjJmmcPRa7fbO0OQcLLAt+S+N15+XF5C5zeT9QPI8GXXN7goYCX0cpeT9xCZOEkZaAl2iLgBYIO50iYAADpm90JaavpluSEWYnr62ukpMlsLG8tBy+pr4tLrm2skPNwx65uSkFz8a8v7+dzKxnyQPH0KfK3Sq/3s2I09PVxtPZ5dnsks+2k8PvAar6FKX39y38Cu3++fUgAAIfkECRQAAwAsAAAAADAAMAAAAtqcj6nL7Q+jnLTai5HYvIsseaIHMuNJlge6BQGqDqdLu6cq1jo9lvkOFIE6wKKtkyEajUiMcllsWp7QnbRCrdauFOpoyQ1xeLMo5/JEFWXn6fg4flvDkbRg2wrSHx44PK8j1NXHcje3Z1L4E5gyoZhF1lj3aKgnCUHJ1OOoWDOAJ8jZ+fLo1gGAShkqNoIKoPphyvG64UpbmORxK+B6E6ObWmt7mStyO4woezob3BbDZiy8+6zRKkyMM3va60wNzXu8u+G9sly76q1KnlC6zs7ivgATT19vf69QAAA7", "img-light-gif"), "img-line-dash-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDQUEyMURDRUVBNDAxMUVGQUY1OUJGRjA1QTVDMTI0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDQUEyMURDRkVBNDAxMUVGQUY1OUJGRjA1QTVDMTI0RiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkNBQTIxRENDRUE0MDExRUZBRjU5QkZGMDVBNUMxMjRGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkNBQTIxRENERUE0MDExRUZBRjU5QkZGMDVBNUMxMjRGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAnaMj6nL7Q+jnLTai7PeF/jvcRNIfuJTpqeTkoi5Gi14uPFb1vadhPrOa6iCLCBxkTsKaUqGsfnzQXHMaaBlvWKzQ+7TKs2Ke2Fw0nyebtVd9vfYdlfRMHEcupbP9XXtW9M20wcIJDi4EWZ4GKNYppQ3Fik5GVMAACH5BAUUAAEALAAAAAAwADAAAAJ9jI+py+0Po5y02ouz3hr4z03fSIYOiYJICmBsur7Xi8ayRatH3prQ7XuwgpIa8Tc6RkrKE7O5MEIVsGmiarXpsgYpt5v8XnvZrTjg/WK5Q/Xa+i4/3eFzml2358V3+X5pJtLWAERBQ8XjUsjjkbGY2JEGudFIOHiGmakJVQAAOw==", "img-line-dash-gif"), "img-line-dot-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMEQzNjJCNEVBNDAxMUVGQjI4NzhCNURBRkFBOERFNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMEQzNjJCNUVBNDAxMUVGQjI4NzhCNURBRkFBOERFNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUwRDM2MkIyRUE0MDExRUZCMjg3OEI1REFGQUE4REU3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUwRDM2MkIzRUE0MDExRUZCMjg3OEI1REFGQUE4REU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAmuMj6nL7Q+jnLQigIHdKmcOBh4WcqNWWme6jd3HMvDlxtKJ2hCuR3y/8wCHxKLxWDsmfsoDsylaQQ1SopBGKlanW2i3+QXPpmTqlfwUh7Vp5Ro5Lsvnvrg3ycXfz+i4Xs0HaAf35xZIh2hRAAAh+QQFFAABACwAAAAAMAAwAAACeYyPqcvtD6OctNobgda4hw16FxgmpWiSHKKiKamogMvC70l/2yLnk+2T7ILEogNn5AGTtyGzuXrWllIDleZUzoit6kG29YK93y65R7Yiz9G0u9xmr59o+ZxZt4fd8fd0rwdYVXeH1ZXngzZWBLRo1OY4aKbnV2lJUwAAOw==", "img-line-dot-gif"), "img-line-grid-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGMkJCQkRFQkVBNDAxMUVGQTY2REY3QUMwRDE1RjA4MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMkJCQkRFQ0VBNDAxMUVGQTY2REY3QUMwRDE1RjA4MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkYyQkJCREU5RUE0MDExRUZBNjZERjdBQzBEMTVGMDgwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkYyQkJCREVBRUE0MDExRUZBNjZERjdBQzBEMTVGMDgwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAApmMj6nL7Q+jnLTai7PevPsAhMBHiSIpmSEaqaNzfi4cezOjWrexK3nlCtZ8Jp3wOPyVkEzhpQlFTqJUJbDafFqxK2Nx8Qtieghrx1z+ytQJMgfNg2vk7mkWLIdUiewl16n1R9UiOHhVKHbYFccVuMh3NNeXNnQ2eZA3dsn4aFlJ+UKSt5lRx4liCvK5kUpauprGIjtLW2tLUQAAIfkEBRQAAQAsAAAAADAAMAAAApGMj6nL7Q+jnLTai7PevHsDhMBHiSIpmaFzfurKqK7c0N1bmyQe69gLtAWEpaDxSGQhl8Yi89maQKeWKXPDWyQ1WcU28x2GL+Eup+zzmBHjKjp6+64rVFD6Z0WS83o3P4j3N+ckeHZndxQHl9DmB6N1aLjIFok1Sfk4k+l1abnJ2MkVKvYZB1GKkqq6ytrqSlIAADs=", "img-line-grid-gif"), "img-line-mandala-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowMzhFRjAwRUVBNDExMUVGODQ1QkY0RTQ2NkVDODhEMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowMzhFRjAwRkVBNDExMUVGODQ1QkY0RTQ2NkVDODhEMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAzOEVGMDBDRUE0MTExRUY4NDVCRjRFNDY2RUM4OEQzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAzOEVGMDBERUE0MTExRUY4NDVCRjRFNDY2RUM4OEQzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAqmMj6nL7Q+jnLTai7PevPs/ASJIiSYpmScKqWPkcnHjzpqN1Lq85vp/6xl+REDGVjQGasHXEnfYYVRR6kJqQQoVzIvWSduGhFZHuXQ+M9SpspbLbqWt6ric3JuL7+CnU69UAfXk82f3cFiVtwfDWBg42NYHtzg5ZtflF+gViZPItwX1CZqUMIqYVHdqlrqp6DpVtLZ6aTmUyTIbmftqy6v4Gyw8TFxsPFwAACH5BAUUAAEALAAAAAAwADAAAAKrjI+py+0Po5y02ouz3hd4jnkiaIkjSZkfOqkAK7lwrD5uHZrNzXf6wgv6ToigsPQ79Iq4SjNwYzxbSeg0cYU8s0wi1ctVVmlgr3Qc2ZqBaG21jV2nk81V154q28fh3ZtYB2fD9yIGKOjQJ2OAmIgYKDcXaUU36dYWxWh5iae52Md5uEhZqGE0Sgpyatb4dXRXyvEat4kUywY6Q1o7k6nryKsb/EtcbHyMTFIAADs=", "img-line-mandala-gif"), "img-line-noise-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOTdCQjFGNEVBNDExMUVGQTJDNThFNzA5RjhGRjYwMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOTdCQjFGNUVBNDExMUVGQTJDNThFNzA5RjhGRjYwMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE5N0JCMUYyRUE0MTExRUZBMkM1OEU3MDlGOEZGNjAxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE5N0JCMUYzRUE0MTExRUZBMkM1OEU3MDlGOEZGNjAxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAnqMj6nL7Q+jnLTai7OGoINdeWIHPuNJlgnKfmrQsmosvzDt2WusN2cPDO6EnBEj1asdRMHWMtd0Mok3HtVAu2JxV662ivpmu1aiceuinr9PKBuNfK/l7jcYURdOwWm9ex4VBwgUB1coNqj1Y8d3SJaotmgH+choeZlRAAAh+QQFFAABACwAAAAAMAAwAAACeIyPqcvtD6OctNqLs94cgv91EkiColGmaoitrqu9chnP62mfjar3vmjq0RhDYGpxxN0OPJ0s0BTaWD9orsp8YRPPLULrRYG3V+wxWUVbAV51WBx8Z0nyb7GOprbjUTMb3rcH89YVVkg4KLdUt0bHCPj3KDlJWXlSAAA7", "img-line-noise-gif"), "img-line-parallel-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyQTM1MzU2NUVBNDExMUVGOTNCMkM3OTdGMTIzRDE3OCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyQTM1MzU2NkVBNDExMUVGOTNCMkM3OTdGMTIzRDE3OCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjJBMzUzNTYzRUE0MTExRUY5M0IyQzc5N0YxMjNEMTc4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjJBMzUzNTY0RUE0MTExRUY5M0IyQzc5N0YxMjNEMTc4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAApGMj6nL7Q+jnLTai7PeFvgPcBNIfqJTpuaZqK7HHq8bM3NYP2oOpbxeOu0WQc6tRRLdcLKk8YgobpZRZ4zWBPGGBunV6/1qs+OajwzbWgNhVrgtXMOV8rW5zJ4/V2jmHX/2x9cV6IaXV0h3CDVlh4jVePiYiDH3ojhYRXmxqekX6fjTF6oGKUrIdTqqytrqGlEAACH5BAUUAAEALAAAAAAwADAAAAKWjI+py+0Po5y02ouzBLz7rznfSAKhUqbeiagum7gpLMomXc94PmZkVLq8eKuK7fGj2G6MoPLYSD5l0Z5GVS2GdCjtidsC0ZwxL0sa7uzIB+vY3Ra/4QH6mW7/otEwfn6L9+cTKDdnxqdXWAcGaLbIdqVowBjp+Gg5iIlYqbYgKETZiYO1k7VZOgmJmia52sXkGis7W1EAADs=", "img-line-parallel-gif"), "img-line-rainbow-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEAFzJO/rlTNs0JAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozNkZFM0Q1NkVBNDExMUVGOTE5MTk1RkQ2OEM3N0IzRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozNkZFM0Q1N0VBNDExMUVGOTE5MTk1RkQ2OEM3N0IzRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM2RkUzRDU0RUE0MTExRUY5MTkxOTVGRDY4Qzc3QjNEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjM2RkUzRDU1RUE0MTExRUY5MTkxOTVGRDY4Qzc3QjNEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/RIutz+MMpJq7046827t0MojuT3kGgamoTqpt8rzHQ9i51q7za+pbwgzYcBCo9EEOlYCzifziQFxRRAr9GVcnTEegPSCJX3/Y4qS3LZrJ2kbesAYE6nhx1vWrnOr98bXHBefYRzfwt5VliFfDBigXpXjAAvbSciglCFlWePIZlOhJwlEJCRoX2jhwqmik+pjhqYTZqNpByttX63uLMzuna8vQOgtp0xn6eowatFyb/AKCymwJTHyM+ucruW2JnG3R6+0NvM4TnZruAsiOmv5gPsrOPvhtcm1MvWzRmmItznxKm6h28gv34G48lbyLChw4cQHyQAACH5BAUUAAQALAAAAAAwADAAAAP/SLrc/jDKSau9OOvNu49DOBBiaZafcq4surVwq8WiYN+4YGJx7v+iy+pHJAYrp6LSd5wkl7eAdBrANUEmJXXLlV4fT193vP06sjmymmpmhG1rKmBOp7cX6Ki6zuffSSViY32EdiFYIYJchYwAd3lwXY0sjodgNTiSfTQ7lwOKU5ucnQ2BmXKio4+YeqF+pGcusYmnUqmWHqaRroayHboCW6+4H8DCvSMpKrStAcPJyqy7znW+xczT1X8v2MG2yNDR3byVxOKftdrmKcbfc9bs0uTbHO3U5eHKgNi88PH832Dps/fO378SUwbgyzdQFcNznPRBiCjRE4uKGDNqhJAAADs=", "img-line-rainbow-gif"), "img-line-random-color-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEANs0JPrlTFzJOwAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0NjM4NUIzMkVFRDAxMUVGOTZGRDlDODk1MDYzQ0JDRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0NjM4NUIzM0VFRDAxMUVGOTZGRDlDODk1MDYzQ0JDRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ2Mzg1QjMwRUVEMDExRUY5NkZEOUM4OTUwNjNDQkNEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ2Mzg1QjMxRUVEMDExRUY5NkZEOUM4OTUwNjNDQkNEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA/9Iutz+MMpJq704683f+F34jUO4kaR5oaw6sR8Auw4M3PdM23gvoy6Wb5gDcoTDEbGVQfpIxJ+R4kwql8xX9XnlZiOwbtSrk4Sh4yJKIBhRR4FAOApjs93aT1x+xoXtdyB5e4RndYCBJYOEhYYDiIB4ZnpxcI1riCN2kmCUfAOMlSSZo22Ck6CiqXyqj6Sapoqoe5a1sJG3nBCWoby3uK6xb6uMvh+QyLoevKGXyJDKNbbEzs/Aw6nM1aWvFdPNn4nHwLKzvZ6wmJvR0p606OPc4uWd2sbBySkWLI3v+K+n9vE7928ePYEoCAIMeCJhNYM7HJYqE9GRPhoMLLLD6AgOY54pHvOEHEmypMkJCQAAIfkEBRQABAAsAAAAADAAMAAAA/9Iutz+MMpJq704683f+EMngqSIkehnVmm7Ri0guy+TyjjQhmuc/7uODwf66VKbG7BoDFqUTWYUSRkuP1OaZIc1ermgKnjgJbYE6PAEFGhzczu0XKDeftru8XmeVq3veHh6H3xzdTCAgXlxhXyHEGyKgXuNhn52AwEkkpoklY6XiJmbnCCVnnShkHekkqaNqI8eiYqRr4WxqrOZpYC3oANysg62icXBn5Y8mJ3GvoTJwrrErJGu0NGpy6LNvNfI2qfTDdacgtiowGLe5ovS2H3D5OXn1eDp2vI2KLVsv7glnvCrNwqeMn2iWtUDGDBJin7g8iEUOLDZu4kZHnbTUoMVwCCMI8Z0/MNx5KqGJlOqXMmyZYcEADs=", "img-line-random-color-gif"), "img-line-sculpt-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAcHBwAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0NDNFODk1QUVBNDExMUVGQkY1NkVDQ0I5QjNDMjEzRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0NDNFODk1QkVBNDExMUVGQkY1NkVDQ0I5QjNDMjEzRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ0M0U4OTU4RUE0MTExRUZCRjU2RUNDQjlCM0MyMTNFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ0M0U4OTU5RUE0MTExRUZCRjU2RUNDQjlCM0MyMTNFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAAnWMj6nL7Q+jnLTai7PeFXiOeSJoiSNJmScaqSYLuS/MyDOt2B+e63zv+x10O6GBCDAOkcojselEymhSG6xqJWGz2u2t6y2Cwt8NeWU+izXqdabtvsCT4zb4jFKz9HsyNYzj97fFA/izNgW1VKYYENcIGSkJUgAAIfkEBRQAAQAsAAAAADAAMAAAAnKMj6nL7Q+jnLTaizMFXGveeRcIihZZmhvKqg8Luw3cyguN2gqe6wdP8v2AKR+xqDuGjEqhoekMKGmuKdVkjdmySBUXkORuxbIvuGpGf73ms6jt9sDVZGyavaZny3m+lfknNBXFUEO4E3R4s6TY6Pj4WAAAOw==", "img-line-sculpt-gif"), "img-line-tilt-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAIABAAcHBwAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NDE5Njg4Q0VBNDExMUVGOUVCQTlDOTNBNkFGREFBNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1NDE5Njg4REVBNDExMUVGOUVCQTlDOTNBNkFGREFBNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU0MTk2ODhBRUE0MTExRUY5RUJBOUM5M0E2QUZEQUE0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU0MTk2ODhCRUE0MTExRUY5RUJBOUM5M0E2QUZEQUE0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAQAsAAAAADAAMAAAApyMj6nL7Q+jnLTai7PevPsPhuJIlubZAADKqG6qiu67zGtLS/at2Pis2/1iNSFkx0MYe0tH84Ac5mDAoo/5xFa1U2iWm0x8kWFr17sVf7nUcyB6vIKlxIecbXbPpfRy3v+WprSmJoimRzh4p1hXaPhHFxm3aLCWePhoSfnnB+fY6DQm+sgHaRqxGUiaShUKWsgSKztLW2t7i5srUgAAIfkEBRQAAQAsAAAAADAAMAAAAqOMj6nL7Q+jnLTai7PevPsPhuIIlGNUpueTmowbtnDSxjKwyOCNK/c7Q/18tVxRqCMeaUsHr8dsGoYQnlE6TbKsUSx1q0V8xeHGU+kdA8tZdkB9Tbvf864KfbdDnVzyHI4X1Jant7fG1qeHJMdIaAYHCFh4KEiHFVdp6XggqYhpyHn5SUkJ+rg5mNlpV9o6gRqaqSm7oll7i5uru8vb6/sLPFEAADs=", "img-line-tilt-gif"), "img-lock-restricted-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAA//M2lqagAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM5RDdBN0VBNDExMUVGQkNEMkJFRkVFMDBCNjUxMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM5RDdBOEVBNDExMUVGQkNEMkJFRkVFMDBCNjUxMiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0MzlEN0E1RUE0MTExRUZCQ0QyQkVGRUUwMEI2NTEyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzlEN0E2RUE0MTExRUZCQ0QyQkVGRUUwMEI2NTEyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLRCgbOwVvuPcQ5IfqJSptp5fMELx7B5evJ9r3UWp7Le4c1Ugl6IoxkSi6+MKNkEDkDRYwUqTWCdQUx10xAGuFfvd2QeWyliMqO9nsDB4bRbbo+j8nQ2/zGH9Fc3WMbkQWiWBbjUiBjhGHmXKNl44YKTiUODJqa5uTW55/mpZKOmN8pUapQBEMi42grqCvC6KqqVZiqLKmALXEj4g+kLbAvb2fp7W6Rx3Iybqitbi+xxfFp1WY2R/RwMpcRN7H3NfL67HZtjjR7du67cbh5O2sodb5yufxbbX6LUIlUAi9HKRU3dMoEDF5BglYlTvkopulAk8eTiIxYGHDt6dFAAACH5BAkUAAMALAAAAAAwADAAAAL/nI+py+0Po5y0PoGztlx7z0nfmIUOiWLmMgbu634r8sH2C86a7d3buoOReKVQEJdCFi0ZYaoZW1KOAdmgFlUxodUfLeidYpRaxVE64YbN42yn3S2z4GgRXT4XKN969+kuwLf31xcnGIf3BVUX8eQ4IvYoycgwaZnYgHWzuWl1QcXpA7ZWyRUq2oMY+Al36qRJytYax6kBcAu4SkhkmiVwi1sYm2Da4vsLXIxJnBus5wEMcEapqBT9cU01XE2WjBEtDbp90GuLC576qps5iwge3uvb2O7uHC8PAXqc3kmtWMiLX79lzO4dc5WDlUFX6tYppIeQRJpLkrZQhATkor8ZBhw7ejRQAAA7", "img-lock-restricted-gif"), "img-lock-unrestricted-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAP8ABGlqagAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3QUVGRjNGRUVBNDExMUVGOTlCRkY0Q0RFODg0NTY1NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3QUVGRjNGRkVBNDExMUVGOTlCRkY0Q0RFODg0NTY1NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdBRUZGM0ZDRUE0MTExRUY5OUJGRjRDREU4ODQ1NjU0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdBRUZGM0ZERUE0MTExRUY5OUJGRjRDREU4ODQ1NjU0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLRCgbOwVvuPcQ5IfqJSptp5fMELx7B5evJ9r3UWp7Le4c1Ugl6IoxkSi6+MKNkEDkDRYwUqTWCdQV5Wi1EiS6NwdQx6CAPc7rTNWMNZEbmVXjez7/iyft4Xt8WntmToIXGoCCi4qHjhgiOJQ+OnVwWFeYlYuKYpRGJEiOJZBQBAcorKJNZJmaHqEXu5t+H6ijEroMt6dpujEau62uvrNyk7TFxcC8ksujucKeo8WRutK8kI9owpfDpt3FCqhA0LXrqNQH7Na06r3pJ+vkxvN8pdfJ6UfG9r2SvUJzOVAEKjdY0VJ2c2rCFbyNBRii4SSTypCDGQxo0DJwoAACH5BAkUAAMALAAAAAAwADAAAAL+nI+py+0Po5y0PoGztlx7z0nfmIUOiWLmMgbu634r8sH2C86a7d3buoOReKVQEJdCFi0ZYaoZW1KOAdmgFlUxgzkaVzp5Mo5gEeqEUXY2v3E6u9Ze5ax3lT6DQO+CfNhe5lcHFaj3dGhlhrhYOMjI+Ed1M0nUhraXZZep2XUpUEnWooTnWAkA0KRxSmXppsl3iuoRu/o5amjrhBGryovZOjjZK0sryYdLOeyLmYmcvFtszNd38apLK2vdXJ1rWrvcvX0pDJ0tEN0NHOxtnrF8ixvuvjMbSlqqa98Dz/2KtZlOnYJ/WZ4FbDRwHyWDieI9OrTlIQkdEgUKuojRRAEAOw==", "img-lock-unrestricted-gif"), "img-mask-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAOMAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowODlFQjYwRkUyODMxMUVGOEJGMTlBRTFDMzk3ODVCNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowODlFQjYxMEUyODMxMUVGOEJGMTlBRTFDMzk3ODVCNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA4OUVCNjBERTI4MzExRUY4QkYxOUFFMUMzOTc4NUI3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjA4OUVCNjBFRTI4MzExRUY4QkYxOUFFMUMzOTc4NUI3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAs6Uj6nL7Q+jnLTai7PevPsPhuJIlk8QIKiZoKvgpiwcG7FL3q/O12ffswGDjCFQaOSpkkcaCsCMAqE4ZwCAzWqpzK2XK7t9v8Ox9naImb289dlnfbrnZvTStdXVxXl7XI7VQ9b2VoWkFjiVZVT4cshmiLcYKZloh9iYBgimuWm5UznpGAqHmWk1qNdI2Aca+mkKGysaNgvmSft6ykfHS8d5eDWn+gv3Jzwm2Gt8/Irmm8scHDVNvSA1iu3YYF3dRKGkYDRDXm5+jp6uvs5SAAAh+QQJFAACACwAAAAAMAAwAAACxZSPqcvtD6OctNqLs968+w+G4kgGZkAyp3CuqdHGcinXtgnd+r4nPA/4zVjCU1AGOBaXxqQtCY1KlcCp82bNPrPTFrHF7cbC0hhsTIaC01fvucmOl81vk3g9R95xB7R626aXh9KH9weItUf4ZTdYd1gYoOVmeEiI5/I16VIZ+Bjop8hopWMZujdKWjMIp4giyCrnennKVas6BIh7G2XjszrbuEv3m1hlSrywVFf00Bz5I8GjPI2RTF3zor3N3e39DR4u3lAAADs=", "img-mask-gif"), "img-nochallenge-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAFhY8MfHxwAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5Rjk2NjhBN0VBNDExMUVGOTY4MUQwQjkyNDQ4NUU3MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5Rjk2NjhBOEVBNDExMUVGOTY4MUQwQjkyNDQ4NUU3MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjlGOTY2OEE1RUE0MTExRUY5NjgxRDBCOTI0NDg1RTcxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjlGOTY2OEE2RUE0MTExRUY5NjgxRDBCOTI0NDg1RTcxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLRaJ7KQuuvqfU9IQmRnnl5zBoGIZe78hkk7w6xM5+tA6rl0DI2QpuIdiYvO0Rd81jYjo68XEipRVeUUa4UKxKnwd2iejtEZTtroQZq5Eac8Lr5T3XM8e/23x+dl96cnOJFVqHZ4YZCUF4hogcMo6XjjV2iDmbkVxtl5oPkZKrpZOvbTiQqIt0I3CCVmlTSJ8PGaamlbhAPaGggQO/qbChwCoMykwkbbmqEszayxnBUI5OQhbX1bPQ29p8I93Nb0DS6z+pjMzYSL3r1eHN/dJUBuSo9PLt/VX86cJ3f8/PmKBpBYtoIdCAqEh9CaQwUN29nzVDAgw4cq+0hMhOiwmkJ2IhpeLBbyxA5BKjKlo6KvTkyV+zCNLCGK0rucPHv69FkAACH5BAkUAAMALAAAAAAwADAAAAL/nI+py+0Po5y02oup2FzMDnpPGEZkuZzoqHbJGcQxZ26yvA7gfdMQx8OBdMCgUMQSGI+75WxTUzoDpCkV+iteg01hz5eUXsVj25fsymqL3fIZq0ZXmbxh1PzsvOtpSbur94b0EQiolQdX0UInmEEUwsg0iAGJyAfm+CgWKJl50MSJOJkBenjiaSh36liqamZ30Sr46tLHQFOIV8bZ0qAyNgssCovwK7xLK9UBAGBrsLgGgyzAzIz5zGFduaupvFzdnIhNDd4K1wIeLq6Z3ltM0n79+V1NkgISLz+/ka6+vk+unDOA/erpo5dvHcJwAsUh5GcQ08KHDiFqs+jvHcYQMBcnZeu4EcxHkKsInmg4ryEUewpO0RMJERaxFzKz9VERS2GObqM8dbvX0+c4oUILAAA7", "img-nochallenge-gif"), "img-palantir-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIFAOrK/4g8BFgAk5BIwAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1RTI4MTIxREYwNkExMUVGQTBBRDk1RTM4QTY4QkVEMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1RTI4MTIxRUYwNkExMUVGQTBBRDk1RTM4QTY4QkVEMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjVFMjgxMjFCRjA2QTExRUZBMEFEOTVFMzhBNjhCRUQwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjVFMjgxMjFDRjA2QTExRUZBMEFEOTVFMzhBNjhCRUQwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABQAsAAAAADAAMAAAA/9Yutz+MMpJq704Q8K7/1r1jSQXbmUKnovqriEpzPRg22r80bxw/4NSZtTjAY+jC7E4OzqDHsuO+azCIsti1dqhTKlVgBhpmkxvvbAYAIxKPDW00bke/7rvTlzefNbbZSh6ewOEdHY3bg9ffYU+W1yBDnBMjZBOipODYJdPmQ2UWnydiXiLm2l8j52fDKGpNrCQra4clUBzl6aCt7iWW7untpykd8Gaw73FOMegqJW/kQQiz42ymM3CyYTExpJmr6ux11C0gs8/0DNJGDJ70CRDL0wvSi/38dQcAQH4KvzfsHTgR9AfAYIIsznbh7Chw4cNFdY6CLGixX4BhV3c6FAgYosPHC9eETgiZMR8UkhszKHBYD0WLtmxWHhvpk0NCQAAIfkECRQABQAsAAAAADAAMAAAA/9Yutz+MMpJq7046827f0Qoip80nuhYKmnrEt47DvTboUKu03yfbiedoEcsojLBXXHJO15GwiFzOjg9RVGeklpTVbBRqZDbJFGgYVqWB2gvvSZwejBmtwFGc5wQ3m4Hd25EehFya1SBeTAThnVcd4pnIX1kXIQQjVKVU5cgjZtUnQ5of6CDIV+Tjqani4yqpUuxXaiSsHNEq2W1r7d9OVq6VaKefI6HdKVwtsbAwcfOu67MzbnIrdOptz2/mrS8FjjR3UJO2uLk5S3hMuQy2Zjv8iMBy4X0AfXzJ/n5xA34+vmTJ7DfPwYBCypcuPDggoQMIyq0Fw+iRIbm9ry4qG8U3bl98zSAfLeiwEh4JVOqXMlyQgIAOw==", "img-palantir-gif"), "img-palette-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAP///99xJgAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmViYzgzMDYyNywgMjAyNS8wMi8xNy0yMDo0MTozOCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4MTk4QjlCMDk5NjIxMUYwQUFBRThCMjM4NDUyOTRBMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4MTk4QjlCMTk5NjIxMUYwQUFBRThCMjM4NDUyOTRBMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjgxOThCOUFFOTk2MjExRjBBQUFFOEIyMzg0NTI5NEEzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgxOThCOUFGOTk2MjExRjBBQUFFOEIyMzg0NTI5NEEzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAv+cj6nL7Q+jnLQqgbPe3DIOhpp3iGZInurmccELxzLcUduM5wEr3fpP4z18wGKt4YppijLhIhkkMp2JZRQDAGRw0l3mY31pstnt1XwFY5oZcllwDosxT7kX617P8Vr9vu53RhbYNkhId4GmFLIokOc3khjYKFX4BrcnIDk5o3jHBxmJYPeJySWStknpyQaSWoWGquP6OhoLymokChvqaGjKVKoJaGrZByx8gnTre7mq4hBmKbfyFc1Mm2kSQc0YxYsIUQn1R1Jil/tpfp5+am3e9QOyHi8/b0E+dWRTD0Q1kc/fvx4BZw0k6C3HvhTVRKxj13DXwwERJU40EPGixo0FHDteLAAAIfkECRQAAwAsAAAAADAAMAAAAu+cj6nL7Q+jnLTai7NmovvfbRxIloJ4mCq5qcELvyoGxvYdg1aN97Y+4cmEvgAQQnQVjR/kJ7eCCn4eZ4fqAWg9MCIz1PB+tNvrUNgMP6UCMoD7JZ1Pang3W76O89P0whtX8uX25KcAOGeH91ZYNWLWkxRliICGeGcy92imhKPk+LcWFSkXV8fZQba2hEUXCpdKCMmqeTrF5MZ4S8tieya7W1TywNMkuQLqG7iKTKm8HNybcTxrKnJ5czS9uqS9bdctfYGdPTxO3uosge7pTSFIW/sNLpw8z11uf9+srsHvjsIAv4ARzBE8iDChwgoFAAA7", "img-palette-gif"), "img-pipette_cur-png": /* @__PURE__ */ __name(() => "data:text/plain;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE7mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYjdjNjRjYywgMjAyNC8wNy8xNi0wNzo1OTo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyNC0xMS0yMVQwMTo0NDo1NSswMTowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjQtMTEtMjFUMDI6MDA6MzQrMDE6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMTEtMjFUMDI6MDA6MzQrMDE6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjE5ZGJlZGNkLTAwNTktZjg0My04YzFiLTA4ZGY1NjFjY2Y4OSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOWRiZWRjZC0wMDU5LWY4NDMtOGMxYi0wOGRmNTYxY2NmODkiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxOWRiZWRjZC0wMDU5LWY4NDMtOGMxYi0wOGRmNTYxY2NmODkiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjE5ZGJlZGNkLTAwNTktZjg0My04YzFiLTA4ZGY1NjFjY2Y4OSIgc3RFdnQ6d2hlbj0iMjAyNC0xMS0yMVQwMTo0NDo1NSswMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI2LjAgKFdpbmRvd3MpIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Po5YI9IAAAJHSURBVFiFzZk9bsMwDIXJIFfokrt07R5kzZ6pp+nUzNmKIDfo0it07dClS4deoIA6JHIomqR+TCt9gAHHf/r0/ETLDoYQ4MYqAcC4spwRxFKVS4h4Xb+Bw2KDFAoAQOJCRPR22Oo98v0cUtrHwRfNaGPlblUxrCUvYJdcrTdbWG+2eiMhBPdBpzlHby0/xoJExORcD4eL3NU6IsFaHXB1OJfL1txSeQ66kXKZtPZpcgXWanoLmKZuT7r1Zgun42FYlxT3U7HBih4OJ8GkDUgA0vbT8aAey+WeYT6wKAh1Nm63QKWIzTroJEnQVCGEYZHkMfkZLmCVLSm3HFhhQXrdKQ4HyMDmqgMve0qHk160AmdvC4e1BhaHNmdxjZEwZ14SrKZ4rBUPmokW4CpYqtLSBaAD10aiGXa/eq1sijRKqkbNky47AX95+FRPXu6+RhAlU1EutzpsTgl3byIQr7dW/Y1CqadxGznZdPf3+T75/fP+MazfPY2drdR1wCHqkaiFpZBRDrAjVc3WOsGas/wcsPok4zGgKoBtfvVIBh27sGoJheXuzgkLIDisfHEZ1ntnlkuLhNlSI+z0N1AoqMM8uxIslwU79c25qkp8P67E7dTdEtgp0Cow/+IiwdbEwOObBEDDWzOHjJors6OLKiM5RIctZ4wqkJzk5S7A2WGzImhzDUPuMUguHvyK5aygUUupgUsfEC7REPZRdQEd2pjgcFfQqNKyJhL1BI1awBmGLsW6xX98k1+RekO7fG7tCa06/A/+0hX1B0kNQenek4JbAAAAAElFTkSuQmCC", "img-pipette_cur-png"), "img-settings-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhLQAtAPEAAAAAAGlqagAAAAAAACH5BAkUAAIAIf4RQ3JlYXRlZCB3aXRoIEdJTVAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAALQAtAAAC15SPqQftvqKc4llIc7xce2QF4oh9WjiKD9iYi5OqKzO7xhNbrG5XTRwo0QDBVg+Wqt1+RaMLSXIOZdIPlJrAYW1aKmDZFVqvTU6yOmZGLzn0qbsmKz1soH3Nhd+B87d6z9dHodemdvFEVsghlkF4tug2mPi4mFZnd5i3uMeDCMkp2HgJWNbjM3kXKoqKyZhGqvh1lDipuhr712QKFjfq+ur1BWcrSbQFZnysSTR39Uv3IzYcCd2JHLeLLDuUXJp9muVMbKo3Tv5n/a0A+ax+muk+AR9P/1EAACH5BAkUAAIAIf4RQ3JlYXRlZCB3aXRoIEdJTVAALAAAAAAtAC0AAALVlI+pCO2wopzmWUjzvFf7ZAViYH3fM6aP6TnpuB4Oq6BvXJV0DrzkzOjQbDCgzGU0uVRJXhGjbNyaxKZm+WwcsdYM8cfBgodiMGcKjfZ8ZzRZ6ouj09evPN7dhO54XL3Ml0VHsScnJvQHKBg2GMR4x6gTEblmOMOhF8kneXIRKPgG9ynC2Sk6WtqiuJnntQqptSMA6Okmexg2dyuqyRT7Bjp7SvrLguJn10qICTKsvJxa9gxd7OTbaExXSFwtWyM9vZPs5/19Sl5uzphOjcguEfYuT1MAADs=", "img-settings-gif"), "img-status-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODdhMAAwAHcAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJFAAAACwAAAAAMAAwAIAAAAD///8Ca4SPqcvtD6OctNqLs968+w+GVECWgdiYKoke61ui8HyCNP3dd6frXL/TAH2YYa9oDFqSxBFTOXk2JVJopIpzYl/L7arrNYHDrApZbD6XteeLupYmZ9pI78bOe8qALQSsDxgoOEhYaHiIKFIAACH5BAkUAAAALAgACQAeACAAgAAAAP///wJAhI8Wy5sPQZssWoqdPbmHLXndJXpQWSZoiqxs6IpwbNKpjef6zvf+DwwKhzQF0OhrJZW7R++k2+BAyBeVk9kUAAA7", "img-status-gif"), "img-tasks-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIFAISEhIaGht7e3v///wAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowQzQ3NzU0NjA0NkQxMUYwODVGNUI5REE3NDZFMUQyMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowQzQ3NzU0NzA0NkQxMUYwODVGNUI5REE3NDZFMUQyMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBDNDc3NTQ0MDQ2RDExRjA4NUY1QjlEQTc0NkUxRDIwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBDNDc3NTQ1MDQ2RDExRjA4NUY1QjlEQTc0NkUxRDIwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABQAsAAAAADAAMAAAA/9Yutz+MMpJq20ka6W7593FeGRpbiIZBCqrrSeRejDtZrV5dQLuCj3CzUcCoCo8ElCZzACMmZ1myaNmrIQg4XmkTIHgsHis5UaRX7JarDHL0Ne13Oq2pMPxeRn69ubBd2QDAx1mdlNxX39gg4RtUIdXSlgdjY5OkHCUWZsZlo+Zfpxao4KWl3WaemGnqHxwpautj10RVWyxjKe0ZxOBpGqzmLUQilm3Y8Jbr6JUWmoan7x9EsZ3JtLDvdWJgSW7mMy+ed6x4Muh47lzyk/p3Oty7YaquOvz77aLwMnn7sQPEI36BQRfvoCSEpbyYHCbvmMe8GAbBOqgA2t/rlzyRDFFnEUM5Ba1wgfw4p+RKLP9c1iMY8qXHdGVBEkAps02IeDYhKkD1s5GMWaaDEq0xIyiSFmqS1pUxIKeTqNKnUq1qtWrEhIAACH5BAkUAAUALAAAAAAwADAAAAP/WLrc/jDKR+q8ONatNi8e0XlZE55oSpagFwThe8opO8Munqt2jAsVmgBIoKFKHmLyNEzpRJllSLlpop7IKpVgrQyHg4Hvc0l+z2h0eGzBmNNw8HrXLmvPXnh4Xnzp3HddXGl7fH5/dl55gV2FG4dkElpMXyh7j36REGaUWx6GmXUad29njgSgRomDVnGFp32qE4xxAq+XmLKSebVft3yxiLuseMS/wJCim7yCgp/IoVDDRFSVltC6o1ydtrivOdnLg6Xdx2K5wtpdaubY6eK95cfg7xTM1nLm9Jr2xOtK89Dxc1Bl0qIQ3wQq6+eJ1TmE7gaaOPgGFqqICwnyqtjuSWEwiQwCVemIK1g9jf7ykUR3cqI/kgk/glxwB+atXCES2QxYY9XFncCO+PwJU8XMkEaTJs2itGnOHk6VspgVdarVq1izat2qNQEAOw==", "img-tasks-gif"), "img-themes-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAClrnOLi4gAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCMDM1Qzc2QUVBNDExMUVGOTBDRUQ0Nzk3Q0E2QUZCRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCMDM1Qzc2QkVBNDExMUVGOTBDRUQ0Nzk3Q0E2QUZCRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkIwMzVDNzY4RUE0MTExRUY5MENFRDQ3OTdDQTZBRkJEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkIwMzVDNzY5RUE0MTExRUY5MENFRDQ3OTdDQTZBRkJEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAwAsAAAAADAAMAAAAt+cj6nL7Q+jnDSKi0Vt+bKebQqIjaQmIieqlinUmewLe4lL17OB507P2/k+woGNszoOZcnY0thMDqPUVxOAzTZFyawXG6WQApiveSvpBNZlszdDBlng7Iv7fFnHQz96XXD3haG3B9QySNgWCOCnx7fQ+Ae4GCkJiUhYSImZ+XgokOmoKFhZWKQWCvKG2ul5U0oFmurKJNu6EiqpRMSZCJJrustbCnxLi/RbPCtXgau8khJbZSV98lRtODX9xN1i0s0rAy7+WtRtmM1Ne3yNTrJkXe7k837JHj0/rr/PL1EAACH5BAkUAAMALAAAAAAwADAAAALMnI+py+0Po5xUiotrw3lxrjHf5Y2hYybfGYFqx0LwMcco+Qp2iyP1LtIpesCi8YhMKmmjprIJXQGjVOmpirVOsoCuN7ulesfkKu8TCGDIbAAmDb290/BLe8yh113DvF69duc2p5eSI/BHx3HnlwhIxHTh+BjYNTKp5UP4lzVJKVTSyBnlaRi6OSqaaBqE5vn6CbnRBJvK+lCFaVaR1Qsa4ktVFPwz1btkJGugjPRT3Cz7fOTMPB3Nl4S9fGuTuc0NDD4gzuuNfI6ejlAAADs=", "img-themes-gif"), "img-thumbsdown-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAPEBAAAAAHMLC7EPD3MLCyH5BAkUAAMAIf4RQ3JlYXRlZCB3aXRoIEdJTVAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAMAAwAAAC/pyPqcvtD6OctNqLFdi898s13kgCUpmUqgetBynE8iywz1rSuhx8IjdT7YaCQG/jAOpGxKHRt1AuN83mE8mQVre0K1ZD5Yp53mx4LDYeTeAzeqsOtQHvdLkdqNuhr01eD7fGhsDxB2h1R+h3WBUn1wdgxEiktpbiZzg5U2mpGFmpSeY4aNDBqdaYqcP5WFro9akqirp52jqAs7hzysv6BbnitNbrSwqM5bErSAxb0bEqGGt7G/EMnWvjrBUDm5thvYn9C7LdmdFSbn6epJW4zk4XTv1+6eZOH2UviP8Tz73PL5++eQFxDRxX0FWkf+oSKpxmzKGpZg7njKhokQ/GBWMIHxQAACH5BAkUAAMAIf4RQ3JlYXRlZCB3aXRoIEdJTVAALAAAAAAwADAAAAL+nI+py+0Po5y02osR2Lz7yzXeSFIkoJ1qB62qAMeyMLauN+dywIqdfNIJBQFeiPHLJYfC4nHBYUqZzmciOs3mqijoRguOcZHfMHjsBZjDxk06sNairxt4fDpPAex3arurx9fX9KfAITg4U5RncJhIyAXYWIf4SLTYRrdXmYjJeOj56PlJObo4FCpmajXQgelRpGM6G6npwrlYStujt4L7tzlaYzi8tAN8IylhDBOZDMJ8maxcgXPMm+FTtoOdTbbdXOitrXbNOm57nIlObu7GnlYe3g1/gKV6Xt8KLv2ur8mH0b99e/D5GzhpU7+DCF3lYoiQ4EOIDU9EjEfPQQEAOw==", "img-thumbsdown-gif"), "img-thumbsup-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAPECAAAAADBzC0qxD0qxDyH5BAkUAAMAIf4RQ3JlYXRlZCB3aXRoIEdJTVAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAMAAwAAAC/pyPqcvtD6OcoFowc7tce8R1n3YJ5jWSlWkGgZVSK+vCcWTRdXVDZbvD9Bw5HWq4mQGPSMVP4Hrxmovi0kYFWaFSYfbwvHq/g3CQDN5yQ+zpJyxui1RKXVc+l9W5dwDrHzSmdcTxB3RnCHjnhLdn5KjYldAImWgZiWXwBHfZiemmqeY5ahmVWVZJqsp3Krq6agqK6vdayyc5aFsbK+uqe8nLCBDwqxoo7FLsySs4O6zcGSz8DJ0YhYtMbJ1se32aNqwdGfV6jT1ZwX1oLj7q/R0ars1rTmoOH8/eJ39tqM807R0bfQSlJaF0oSA7gFXkgEuoMM9BiQgd6plYsRmSB4poOnpcUAAAIfkECRQAAwAh/hFDcmVhdGVkIHdpdGggR0lNUAAsAAAAADAAMAAAAv6cj6nL7b+AlLDaMzO4nOnchcgklKDYZaUQTGgqrez5VuQatFRtx2Wu2/Aet1/ONXQUWcddMrJsOp8JlTEopI6iUm11yaR5B9arWFs2nqkaWRjpbcuAn3o2lFbb7Y26Ia+356cgCIaDBeC28vFVmKioB3l4liYneekmdUfmg+npSTfF+fhZChm6aWhaChTUuAp75bpFGsuq+Wp725WrC4rb63uJujkqjNkKRxtwLJks+ieR05xJDAUwfcoc+1wcjb0917rayksonS07/luuvAzEVC6vKG99Dd4+Ub8v706LrikDP35r/jnCN9Ben4MaEjLq8fAbQw0c/GGYCO3JxAYxHDtaKAAAOw==", "img-thumbsup-gif"), "img-trash-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAExMTAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCRjhBOTZGNEVBNDExMUVGQkNEREJDNjJBNzc1OTAwNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCRjhBOTZGNUVBNDExMUVGQkNEREJDNjJBNzc1OTAwNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkJGOEE5NkYyRUE0MTExRUZCQ0REQkM2MkE3NzU5MDA0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkJGOEE5NkYzRUE0MTExRUZCQ0REQkM2MkE3NzU5MDA0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAueUj6nL7Q+jnLTaO4PevHOseOLYgeQ5YugqVicAaPBMw20m1voel1HOC9J8EI/wOPMUjUih8jFqBp8NlNRGgrICuq1G6w1/HB2suNz7kjfJM7c2rrKd0R2RwbnyZObAcp52BRgnNwjYYzd3h4eGFgjHl6a2ltf2JjmkSEgZ+YhpaTkJ1llZ+Snp9+Noahi5yUnqqnkpSeH4WRqbimP6mJe74XI7ywUsqtpLjPv6p2uGlXkswQTtS8vcHPvcKo18mLmHnR0e3j192yTuTZsebAJ0pH7u5g4iQC/Pe2afQM//DzCgwIEKCgAAIfkEBRQAAgAsAAAAADAAMAAAAuGUj6nL7Q+jnLTai7NGofsPBlsSlqaonWp5re45vcBMz29U1vq+m1DICwpDv4/w2AMVPcimTekAOpvQxmmaJEZX2NX2BYZZw2QtQwooG9PVBSjI5bXPzFqnG6DN3eun/G6Xx/axBPhUdxgoaDaGeCiY+PiIUgg5aImYSYjTd6moB8j4ZegJCgq510g6GHg6SVmJSWpIm6paKxt5CcvZ57sYajuKa8p26tHyG8y6yxvzVnpXJ9xLbDy9iSG1mtWxgXZELQE+lJ0CHW6eQd7tvK7mPWIA7/5dJq8Qhr/P3++fUQAAOw==", "img-trash-gif"), "img-typo-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAKIEABcrcJ2v8D5RlAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4N0U4OUJGN0U0QTYxMUVGQTU4QUFGRDdFRjZEQ0Q4RSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4N0U4OUJGOEU0QTYxMUVGQTU4QUFGRDdFRjZEQ0Q4RSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg3RTg5QkY1RTRBNjExRUZBNThBQUZEN0VGNkRDRDhFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg3RTg5QkY2RTRBNjExRUZBNThBQUZEN0VGNkRDRDhFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQABAAsAAAAADAAMAAAA+pIutz+MMpJq704692G/2AojmTolGiqesvqvqACz6tMAniu7zyP2h6BUNgrGosmAmjIbDqfzV5yCa1ambvpRxjoXr/OnDYo6JrN4Ks4ptyWz/BA+rn+AMnx8zyMG7v3YCUtK01eUC4MMENoTi8dioxNiA8vXIZDkxgilnJMSRwnVJECn6CPbqOlpomol6R2q5StnUJssacDnJ6wt6x4rra9d7qYvMJtv7SvLMfDb8rBwqLAxtKzu8zN09DVvdvYA83Oqd2338XZxyFvkuWx60/R3lSN7qsl6OnWjuIz4ncp/g0KKLCgwYO9EgAAIfkECRQABAAsAAAAADAAMAAAA/NIutz+MMpJq724js27/2A4RGJpnuOCriyntPBKgEJtC0Cu73zPg7PObegrGn8uz3DJbDKRm+DGSa0Sd0mOLcC1eq+57FTALQe+aJ14UDO7z2inOipsv7vx53ykvL3zeh5SfYA2LYModkwxLzBkcEMwDI5lS4cOLZWRHxkkSng3gp0Sn6A1oqMQpZCnLqmeWpqGrq8Pq5tRtbZCsq25ug23obTAKrymAh3FwcesycTLwrO/y4iPzsrVjbHIqNHNuNTF0r7iwHW9z9DnWtfhKdXo3dnx7ene4+1N+Ox1lvTfJGmLAa8eC22TZCBkVmKhw4epEgAAOw==", "img-typo-gif"), "img-wand-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJEDAN9xJv/sWwAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkE3RTJCRDcyMjMzMzExRUZCQzQzRTYzQjk2NDc2NjUyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkE3RTJCRDczMjMzMzExRUZCQzQzRTYzQjk2NDc2NjUyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTdFMkJENzAyMzMzMTFFRkJDNDNFNjNCOTY0NzY2NTIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTdFMkJENzEyMzMzMTFFRkJDNDNFNjNCOTY0NzY2NTIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQJFAADACwAAAAAMAAwAAACz5yPqcvtD6OctNqLs2ZCbN2FTuh9B0kqaGcaazq8bBt3QSDbcBve+Orb8QS+Xy84o9WISGZTeXIWiyKoyzalJpWkbHP76Xq/4Ix4rK2Cjuis0MKeYsdvCorcNpbgubN+ZSYDEJdD0wGASFg2JIA4OPdjddWYKKbGdeh4Z2QV4vh4d2lCoinSI7pBWlmFgpkJure0iOH5iVpj+LoqmaC6GivpC8sbpVsHJXycW/tLLEvZzCsMC4ysS13t+kntPGk72+nZ2l08Tl4O3n17zm5QAAAh+QQFFAADACwAAAAAMAAwAAACyJyPqcvtD6OctNqLjdi5jw0KTeglIWmeYqltQXC2IMyx7Uur7lvbM6/C5WwyYc44JH4ESGaz59shhSDl8jfNraLYaYzrzOK+nq6YWu2Yz2hoJZSVPt2UIHDd3lp0ujz5wicA0MVHBAKASEjHcpgId2d1hegIh2K4MTkYZMk1iaKj1Ei59VciqunGWYaZmRaJcIr6msJKOQt76nob0qr7yuvp+1uLqjebq2oFPGqsjCzsLNgLHSqafHxYenulvc296C0TPk5eblUAADs=", "img-wand-gif"), "img-wrench-gif": /* @__PURE__ */ __name(() => "data:text/plain;base64,R0lGODlhMAAwAJECAGlqagAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDkuMS1jMDAyIDc5LmE2YTYzOTY4YSwgMjAyNC8wMy8wNi0xMTo1MjowNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDI1LjEyIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0U0NDQxMUVBNDExMUVGOEI2RkMzMDI1RTNDQkVBRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0U0NDQxMkVBNDExMUVGOEI2RkMzMDI1RTNDQkVBRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkNDRTQ0NDBGRUE0MTExRUY4QjZGQzMwMjVFM0NCRUFEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkNDRTQ0NDEwRUE0MTExRUY4QjZGQzMwMjVFM0NCRUFEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECRQAAgAsAAAAADAAMAAAAsGUj6nL7Q+jnLTai1fYfGfbhd4niSEZdcC6cuijskB3jK/BybOLn3cus/UCu5sA2BICeShkEbEUfpzSaOC3CY5CyevLuROxmM2sNtbFmsfo9Bes00kz3Hic9oZb55j62aS21mXiRSL2J2JIKOdTtvhndERIBGl0aIdnCcfIR0dpxxkJptfZJ3j5pEn5mBQpuepCVXphVXNamBeGe+uaRSbb2/jKhhsIdVvsOvQZpqyxlul8TCj9nFhtPYu9zd3t7VoAACH5BAkUAAIALAAAAAAwADAAAALKlI+py+0Po5y02otb2Dxk24XeN4khGXXACpyotrFy98IySxtcrcd33tuhVDjhgdPaDH0r4DFQHGWQUWkwSqI2gcSk9dI1db1Zrdc0U5ahP1H7Czbf5uc1kz43Ytz4t3of0ucHR8GXJqZXiDYoVoIodyKi+Mh2mAgSKHhGWJGp6WKnifUyJuj0Udp3OnW3WVlUYyb2RsqESLtUmQP5h4qkN3YZB/r0Kjx8Kdtbi+C5xclTehzNu8xTbGx9jW2yDdPozQAeTl5ufi5QAAA7", "img-wrench-gif") };
