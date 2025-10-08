@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 1e52292
+// @version      27.1.3 beta-usc 5d6bf8d
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 1e52292", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 5d6bf8d", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -67342,7 +67342,9 @@ ${content2}</tr>
   }, "replaceMultiple");
   const beginIntersect = /* @__PURE__ */ __name((s1, s2) => {
     const loopFor = Math.min(s1.length, s2.length);
-    for (let index = 0; index < loopFor; index++) if (s1[index] !== s2[index]) return index;
+    const lower1 = s1.toLowerCase();
+    const lower2 = s2.toLowerCase();
+    for (let index = 0; index < loopFor; index++) if (lower1[index] !== lower2[index]) return index;
     return loopFor;
   }, "beginIntersect");
   const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature extends TypoFeature {

@@ -63732,7 +63732,9 @@ const replaceMultiple = /* @__PURE__ */ __name((element2, children) => {
 }, "replaceMultiple");
 const beginIntersect = /* @__PURE__ */ __name((s1, s2) => {
   const loopFor = Math.min(s1.length, s2.length);
-  for (let index = 0; index < loopFor; index++) if (s1[index] !== s2[index]) return index;
+  const lower1 = s1.toLowerCase();
+  const lower2 = s2.toLowerCase();
+  for (let index = 0; index < loopFor; index++) if (lower1[index] !== lower2[index]) return index;
   return loopFor;
 }, "beginIntersect");
 const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature extends TypoFeature {
