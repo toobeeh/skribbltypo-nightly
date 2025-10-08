@@ -59842,7 +59842,7 @@ const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
   averageGuessAccuracy: new MetricView(
     "Average Guess Accuracy",
     "The average letter count accuracy of player guesses",
-    (event) => event.accuracy
+    (event) => event.accuracy * 100
   ).withAggregation("average").withOrdering("maxValue"),
   longestGuessStreak: new MetricView(
     "Longest Guess Streak",
@@ -60483,10 +60483,11 @@ const _Chart = class _Chart {
       this._context.fillStyle = "#000";
       this._context.textBaseline = "middle";
       this._context.textAlign = "right";
+      const decimals = properties.maxY / yLines < 10 ? 1 : 0;
       for (let i = 0; i <= yLines; i++) {
         const yValue = i * yStep;
         const y = this._chartArea.y + this._chartArea.height - i * this._chartLayout.yGridGap;
-        this._context.fillText(yValue.toFixed(0) + (config2.yUnit ?? ""), this._chartArea.x - 10, y);
+        this._context.fillText(yValue.toFixed(decimals) + (config2.yUnit ?? ""), this._chartArea.x - 10, y);
       }
     }
     return;
@@ -60526,7 +60527,8 @@ const _Chart = class _Chart {
           this._context.textBaseline = "bottom";
           this._context.textAlign = "center";
           this._context.fillText(`${dataset.label}`, x + barWidth / 2, y - 30);
-          this._context.fillText(`${point.y}${config2.yUnit ?? ""}`, x + barWidth / 2, y - 5);
+          const decimals = point.y < 10 ? 2 : point.y < 100 ? 1 : 0;
+          this._context.fillText(`${point.y.toFixed(decimals)}${config2.yUnit ?? ""}`, x + barWidth / 2, y - 5);
         }
       });
     });
@@ -60559,7 +60561,8 @@ const _Chart = class _Chart {
           this._context.fillStyle = "#000";
           this._context.textBaseline = "bottom";
           this._context.textAlign = index === 0 ? "left" : "center";
-          this._context.fillText(`${dataset.label} (${point.y}${config2.yUnit})`, x + 5, y - 5);
+          const decimals = point.y < 10 ? 2 : point.y < 100 ? 1 : 0;
+          this._context.fillText(`${dataset.label} (${point.y.toFixed(decimals)}${config2.yUnit})`, x + 5, y - 5);
         }
       });
       this._context.stroke();

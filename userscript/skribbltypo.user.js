@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 5d6bf8d
+// @version      27.1.3 beta-usc cdc912f
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 5d6bf8d", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc cdc912f", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -63452,7 +63452,7 @@ ${content2}</tr>
     averageGuessAccuracy: new MetricView(
       "Average Guess Accuracy",
       "The average letter count accuracy of player guesses",
-      (event) => event.accuracy
+      (event) => event.accuracy * 100
     ).withAggregation("average").withOrdering("maxValue"),
     longestGuessStreak: new MetricView(
       "Longest Guess Streak",
@@ -64093,10 +64093,11 @@ ${content2}</tr>
         this._context.fillStyle = "#000";
         this._context.textBaseline = "middle";
         this._context.textAlign = "right";
+        const decimals = properties.maxY / yLines < 10 ? 1 : 0;
         for (let i = 0; i <= yLines; i++) {
           const yValue = i * yStep;
           const y = this._chartArea.y + this._chartArea.height - i * this._chartLayout.yGridGap;
-          this._context.fillText(yValue.toFixed(0) + (config2.yUnit ?? ""), this._chartArea.x - 10, y);
+          this._context.fillText(yValue.toFixed(decimals) + (config2.yUnit ?? ""), this._chartArea.x - 10, y);
         }
       }
       return;
@@ -64136,7 +64137,8 @@ ${content2}</tr>
             this._context.textBaseline = "bottom";
             this._context.textAlign = "center";
             this._context.fillText(`${dataset.label}`, x + barWidth / 2, y - 30);
-            this._context.fillText(`${point.y}${config2.yUnit ?? ""}`, x + barWidth / 2, y - 5);
+            const decimals = point.y < 10 ? 2 : point.y < 100 ? 1 : 0;
+            this._context.fillText(`${point.y.toFixed(decimals)}${config2.yUnit ?? ""}`, x + barWidth / 2, y - 5);
           }
         });
       });
@@ -64169,7 +64171,8 @@ ${content2}</tr>
             this._context.fillStyle = "#000";
             this._context.textBaseline = "bottom";
             this._context.textAlign = index === 0 ? "left" : "center";
-            this._context.fillText(`${dataset.label} (${point.y}${config2.yUnit})`, x + 5, y - 5);
+            const decimals = point.y < 10 ? 2 : point.y < 100 ? 1 : 0;
+            this._context.fillText(`${dataset.label} (${point.y.toFixed(decimals)}${config2.yUnit})`, x + 5, y - 5);
           }
         });
         this._context.stroke();
