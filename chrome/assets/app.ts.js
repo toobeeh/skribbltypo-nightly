@@ -10159,13 +10159,13 @@ function get_each_context$C(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$C, "get_each_context$C");
-function get_each_context_1$d(ctx, list, i) {
+function get_each_context_1$e(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[4] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$d, "get_each_context_1$d");
-function create_each_block_1$d(ctx) {
+__name(get_each_context_1$e, "get_each_context_1$e");
+function create_each_block_1$e(ctx) {
   let h2;
   let t_value = (
     /*tab*/
@@ -10245,7 +10245,7 @@ function create_each_block_1$d(ctx) {
     }
   };
 }
-__name(create_each_block_1$d, "create_each_block_1$d");
+__name(create_each_block_1$e, "create_each_block_1$e");
 function create_each_block$C(ctx) {
   let div;
   let div_class_value;
@@ -10293,7 +10293,7 @@ function create_fragment$1D(ctx) {
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$d(get_each_context_1$d(ctx, each_value_1, i));
+    each_blocks_1[i] = create_each_block_1$e(get_each_context_1$e(ctx, each_value_1, i));
   }
   let each_value = ensure_array_like(
     /*tabs*/
@@ -10340,11 +10340,11 @@ function create_fragment$1D(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$d(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$e(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_1$d(child_ctx);
+            each_blocks_1[i] = create_each_block_1$e(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(div, null);
           }
@@ -18894,12 +18894,12 @@ function get_each_context$B(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$B, "get_each_context$B");
-function get_each_context_1$c(ctx, list, i) {
+function get_each_context_1$d(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[5] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$c, "get_each_context_1$c");
+__name(get_each_context_1$d, "get_each_context_1$d");
 function get_each_context_2$5(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[11] = list[i];
@@ -19420,7 +19420,7 @@ function create_if_block_3$9(ctx) {
   };
 }
 __name(create_if_block_3$9, "create_if_block_3$9");
-function create_each_block_1$c(ctx) {
+function create_each_block_1$d(ctx) {
   let if_block_anchor;
   let if_block = (
     /*result*/
@@ -19460,7 +19460,7 @@ function create_each_block_1$c(ctx) {
     }
   };
 }
-__name(create_each_block_1$c, "create_each_block_1$c");
+__name(create_each_block_1$d, "create_each_block_1$d");
 function create_if_block$E(ctx) {
   let div;
   let t1;
@@ -19632,7 +19632,7 @@ function create_fragment$1v(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$c(get_each_context_1$c(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$d(get_each_context_1$d(ctx, each_value_1, i));
   }
   let if_block = show_if && create_if_block$E(ctx);
   return {
@@ -19664,11 +19664,11 @@ function create_fragment$1v(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$c(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$d(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_1$c(child_ctx);
+            each_blocks[i] = create_each_block_1$d(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div, t);
           }
@@ -26256,12 +26256,12 @@ function get_each_context$x(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$x, "get_each_context$x");
-function get_each_context_1$b(ctx, list, i) {
+function get_each_context_1$c(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[61] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$b, "get_each_context_1$b");
+__name(get_each_context_1$c, "get_each_context_1$c");
 function create_else_block$j(ctx) {
   let div0;
   let h3;
@@ -26616,7 +26616,7 @@ function create_else_block$j(ctx) {
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$b(get_each_context_1$b(ctx, each_value_1, i));
+    each_blocks_1[i] = create_each_block_1$c(get_each_context_1$c(ctx, each_value_1, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks_1[i], 1, 1, () => {
     each_blocks_1[i] = null;
@@ -27449,12 +27449,12 @@ function create_else_block$j(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$b(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$c(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
             transition_in(each_blocks_1[i], 1);
           } else {
-            each_blocks_1[i] = create_each_block_1$b(child_ctx);
+            each_blocks_1[i] = create_each_block_1$c(child_ctx);
             each_blocks_1[i].c();
             transition_in(each_blocks_1[i], 1);
             each_blocks_1[i].m(div25, null);
@@ -27787,7 +27787,7 @@ function create_if_block$y(ctx) {
   };
 }
 __name(create_if_block$y, "create_if_block$y");
-function create_each_block_1$b(ctx) {
+function create_each_block_1$c(ctx) {
   let div;
   let t0_value = (
     /*color*/
@@ -27866,7 +27866,7 @@ function create_each_block_1$b(ctx) {
     }
   };
 }
-__name(create_each_block_1$b, "create_each_block_1$b");
+__name(create_each_block_1$c, "create_each_block_1$c");
 function create_each_block$x(ctx) {
   let div;
   let abbr;
@@ -31015,12 +31015,12 @@ function get_each_context$u(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$u, "get_each_context$u");
-function get_each_context_1$a(ctx, list, i) {
+function get_each_context_1$b(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$a, "get_each_context_1$a");
+__name(get_each_context_1$b, "get_each_context_1$b");
 function get_each_context_2$4(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
@@ -31207,7 +31207,7 @@ function create_key_block$1(ctx) {
   };
 }
 __name(create_key_block$1, "create_key_block$1");
-function create_each_block_1$a(ctx) {
+function create_each_block_1$b(ctx) {
   let previous_key = (
     /*palette*/
     ctx[15]
@@ -31257,7 +31257,7 @@ function create_each_block_1$a(ctx) {
     }
   };
 }
-__name(create_each_block_1$a, "create_each_block_1$a");
+__name(create_each_block_1$b, "create_each_block_1$b");
 function create_each_block$u(ctx) {
   let colorpalettebuilder;
   let current;
@@ -31405,7 +31405,7 @@ function create_fragment$1e(ctx) {
   );
   let each_blocks_1 = [];
   for (let i2 = 0; i2 < each_value_1.length; i2 += 1) {
-    each_blocks_1[i2] = create_each_block_1$a(get_each_context_1$a(ctx, each_value_1, i2));
+    each_blocks_1[i2] = create_each_block_1$b(get_each_context_1$b(ctx, each_value_1, i2));
   }
   const out = /* @__PURE__ */ __name((i2) => transition_out(each_blocks_1[i2], 1, 1, () => {
     each_blocks_1[i2] = null;
@@ -31692,12 +31692,12 @@ function create_fragment$1e(ctx) {
         );
         let i2;
         for (i2 = 0; i2 < each_value_1.length; i2 += 1) {
-          const child_ctx = get_each_context_1$a(ctx2, each_value_1, i2);
+          const child_ctx = get_each_context_1$b(ctx2, each_value_1, i2);
           if (each_blocks_1[i2]) {
             each_blocks_1[i2].p(child_ctx, dirty);
             transition_in(each_blocks_1[i2], 1);
           } else {
-            each_blocks_1[i2] = create_each_block_1$a(child_ctx);
+            each_blocks_1[i2] = create_each_block_1$b(child_ctx);
             each_blocks_1[i2].c();
             transition_in(each_blocks_1[i2], 1);
             each_blocks_1[i2].m(div, t17);
@@ -37700,13 +37700,13 @@ function get_each_context$q(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$q, "get_each_context$q");
-function get_each_context_1$9(ctx, list, i) {
+function get_each_context_1$a(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[6] = list[i];
   child_ctx[8] = i;
   return child_ctx;
 }
-__name(get_each_context_1$9, "get_each_context_1$9");
+__name(get_each_context_1$a, "get_each_context_1$a");
 function create_if_block$s(ctx) {
   let each_1_anchor;
   let each_value_1 = ensure_array_like(
@@ -37715,7 +37715,7 @@ function create_if_block$s(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$9(get_each_context_1$9(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$a(get_each_context_1$a(ctx, each_value_1, i));
   }
   return {
     c() {
@@ -37741,11 +37741,11 @@ function create_if_block$s(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$9(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$a(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_1$9(child_ctx);
+            each_blocks[i] = create_each_block_1$a(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
           }
@@ -37765,7 +37765,7 @@ function create_if_block$s(ctx) {
   };
 }
 __name(create_if_block$s, "create_if_block$s");
-function create_each_block_1$9(ctx) {
+function create_each_block_1$a(ctx) {
   let span;
   let t0_value = (
     /*guessCharacter*/
@@ -37835,7 +37835,7 @@ function create_each_block_1$9(ctx) {
     }
   };
 }
-__name(create_each_block_1$9, "create_each_block_1$9");
+__name(create_each_block_1$a, "create_each_block_1$a");
 function create_each_block$q(ctx) {
   let div;
   let t;
@@ -40517,13 +40517,13 @@ function get_each_context$o(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$o, "get_each_context$o");
-function get_each_context_1$8(ctx, list, i) {
+function get_each_context_1$9(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   child_ctx[17] = i;
   return child_ctx;
 }
-__name(get_each_context_1$8, "get_each_context_1$8");
+__name(get_each_context_1$9, "get_each_context_1$9");
 function create_else_block$g(ctx) {
   let div1;
   let div0;
@@ -40541,7 +40541,7 @@ function create_else_block$g(ctx) {
   });
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$8(get_each_context_1$8(ctx, each_value_1, i));
+    each_blocks_1[i] = create_each_block_1$9(get_each_context_1$9(ctx, each_value_1, i));
   }
   let each_value = ensure_array_like({
     length: Math.max(9 - /*$memberStore*/
@@ -40611,11 +40611,11 @@ function create_else_block$g(ctx) {
         });
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$8(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$9(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_1$8(child_ctx);
+            each_blocks_1[i] = create_each_block_1$9(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(div0, t1);
           }
@@ -41011,7 +41011,7 @@ function create_if_block_2$8(ctx) {
   };
 }
 __name(create_if_block_2$8, "create_if_block_2$8");
-function create_each_block_1$8(ctx) {
+function create_each_block_1$9(ctx) {
   let div;
   let show_if;
   let t;
@@ -41179,7 +41179,7 @@ function create_each_block_1$8(ctx) {
     }
   };
 }
-__name(create_each_block_1$8, "create_each_block_1$8");
+__name(create_each_block_1$9, "create_each_block_1$9");
 function create_each_block$o(ctx) {
   let div2;
   let div0;
@@ -42947,12 +42947,12 @@ function get_each_context_4(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_4, "get_each_context_4");
-function get_each_context_1$7(ctx, list, i) {
+function get_each_context_1$8(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[10] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$7, "get_each_context_1$7");
+__name(get_each_context_1$8, "get_each_context_1$8");
 function get_each_context_2$3(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[13] = list[i];
@@ -44720,7 +44720,7 @@ function create_default_slot_2(ctx) {
   };
 }
 __name(create_default_slot_2, "create_default_slot_2");
-function create_each_block_1$7(ctx) {
+function create_each_block_1$8(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -44796,7 +44796,7 @@ function create_each_block_1$7(ctx) {
     }
   };
 }
-__name(create_each_block_1$7, "create_each_block_1$7");
+__name(create_each_block_1$8, "create_each_block_1$8");
 function create_default_slot_1(ctx) {
   let each_1_anchor;
   let current;
@@ -44806,7 +44806,7 @@ function create_default_slot_1(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$7(get_each_context_1$7(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$8(get_each_context_1$8(ctx, each_value_1, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -44836,12 +44836,12 @@ function create_default_slot_1(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$7(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$8(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_1$7(child_ctx);
+            each_blocks[i] = create_each_block_1$8(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
@@ -50386,12 +50386,12 @@ function get_each_context$j(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$j, "get_each_context$j");
-function get_each_context_1$6(ctx, list, i) {
+function get_each_context_1$7(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[9] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$6, "get_each_context_1$6");
+__name(get_each_context_1$7, "get_each_context_1$7");
 function create_else_block$9(ctx) {
   let div;
   let t;
@@ -50402,7 +50402,7 @@ function create_else_block$9(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$6(get_each_context_1$6(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$7(get_each_context_1$7(ctx, each_value_1, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -50441,12 +50441,12 @@ function create_else_block$9(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$6(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$7(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_1$6(child_ctx);
+            each_blocks[i] = create_each_block_1$7(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div, t);
@@ -50549,7 +50549,7 @@ function create_if_block_2$4(ctx) {
   };
 }
 __name(create_if_block_2$4, "create_if_block_2$4");
-function create_each_block_1$6(ctx) {
+function create_each_block_1$7(ctx) {
   let div;
   let flatbutton;
   let feature_createTooltip_action;
@@ -50644,7 +50644,7 @@ function create_each_block_1$6(ctx) {
     }
   };
 }
-__name(create_each_block_1$6, "create_each_block_1$6");
+__name(create_each_block_1$7, "create_each_block_1$7");
 function create_if_block_4$2(ctx) {
   let span;
   return {
@@ -52731,12 +52731,12 @@ function get_each_context$h(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$h, "get_each_context$h");
-function get_each_context_1$5(ctx, list, i) {
+function get_each_context_1$6(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[34] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$5, "get_each_context_1$5");
+__name(get_each_context_1$6, "get_each_context_1$6");
 function get_each_context_2$2(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[34] = list[i];
@@ -52962,7 +52962,7 @@ function create_then_block$1(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$6(get_each_context_1$6(ctx, each_value_1, i));
   }
   return {
     c() {
@@ -53039,11 +53039,11 @@ function create_then_block$1(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$5(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$6(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_1$5(child_ctx);
+            each_blocks[i] = create_each_block_1$6(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div1, null);
           }
@@ -53256,7 +53256,7 @@ function create_if_block_2$2(ctx) {
   };
 }
 __name(create_if_block_2$2, "create_if_block_2$2");
-function create_each_block_1$5(ctx) {
+function create_each_block_1$6(ctx) {
   let div2;
   let h4;
   let t0_value = (
@@ -53351,7 +53351,7 @@ function create_each_block_1$5(ctx) {
     }
   };
 }
-__name(create_each_block_1$5, "create_each_block_1$5");
+__name(create_each_block_1$6, "create_each_block_1$6");
 function create_pending_block$1(ctx) {
   let bounceload;
   let current;
@@ -55399,12 +55399,12 @@ function get_each_context$f(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$f, "get_each_context$f");
-function get_each_context_1$4(ctx, list, i) {
+function get_each_context_1$5(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[12] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$4, "get_each_context_1$4");
+__name(get_each_context_1$5, "get_each_context_1$5");
 function get_each_context_2$1(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
@@ -55812,7 +55812,7 @@ function create_if_block_1$3(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$4(get_each_context_1$4(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -55867,12 +55867,12 @@ function create_if_block_1$3(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$4(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$5(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_1$4(child_ctx);
+            each_blocks[i] = create_each_block_1$5(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div0, null);
@@ -55928,7 +55928,7 @@ function create_if_block_2$1(ctx) {
   };
 }
 __name(create_if_block_2$1, "create_if_block_2$1");
-function create_each_block_1$4(ctx) {
+function create_each_block_1$5(ctx) {
   let controlssettingshotkey;
   let current;
   controlssettingshotkey = new Controls_settings_hotkey({
@@ -55975,7 +55975,7 @@ function create_each_block_1$4(ctx) {
     }
   };
 }
-__name(create_each_block_1$4, "create_each_block_1$4");
+__name(create_each_block_1$5, "create_each_block_1$5");
 function create_if_block$b(ctx) {
   let div1;
   let h2;
@@ -56829,13 +56829,13 @@ function get_each_context$e(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$e, "get_each_context$e");
-function get_each_context_1$3(ctx, list, i) {
+function get_each_context_1$4(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[14] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$3, "get_each_context_1$3");
-function create_each_block_1$3(ctx) {
+__name(get_each_context_1$4, "get_each_context_1$4");
+function create_each_block_1$4(ctx) {
   let span;
   let mounted;
   let dispose;
@@ -56896,7 +56896,7 @@ function create_each_block_1$3(ctx) {
     }
   };
 }
-__name(create_each_block_1$3, "create_each_block_1$3");
+__name(create_each_block_1$4, "create_each_block_1$4");
 function create_each_block$e(ctx) {
   let controlssettingsfeatureitem;
   let current;
@@ -57037,7 +57037,7 @@ function create_fragment$n(ctx) {
   let each_value_1 = ensure_array_like(featureTags);
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
+    each_blocks_1[i] = create_each_block_1$4(get_each_context_1$4(ctx, each_value_1, i));
   }
   let each_value = ensure_array_like(
     /*feature*/
@@ -57163,11 +57163,11 @@ function create_fragment$n(ctx) {
         each_value_1 = ensure_array_like(featureTags);
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$3(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$4(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_1$3(child_ctx);
+            each_blocks_1[i] = create_each_block_1$4(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(div1, null);
           }
@@ -58115,13 +58115,13 @@ function get_each_context$d(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$d, "get_each_context$d");
-function get_each_context_1$2(ctx, list, i) {
+function get_each_context_1$3(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[11] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$2, "get_each_context_1$2");
-function create_each_block_1$2(ctx) {
+__name(get_each_context_1$3, "get_each_context_1$3");
+function create_each_block_1$3(ctx) {
   let div1;
   let div0;
   let t;
@@ -58227,7 +58227,7 @@ function create_each_block_1$2(ctx) {
     }
   };
 }
-__name(create_each_block_1$2, "create_each_block_1$2");
+__name(create_each_block_1$3, "create_each_block_1$3");
 function create_each_block$d(ctx) {
   let div1;
   let div0;
@@ -58351,7 +58351,7 @@ function create_fragment$k(ctx) {
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
+    each_blocks_1[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
   }
   let each_value = ensure_array_like(
     /*$tools*/
@@ -58426,11 +58426,11 @@ function create_fragment$k(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$2(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$3(ctx2, each_value_1, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_1$2(child_ctx);
+            each_blocks_1[i] = create_each_block_1$3(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(div3, null);
           }
@@ -58534,12 +58534,12 @@ function get_each_context$c(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$c, "get_each_context$c");
-function get_each_context_1$1(ctx, list, i) {
+function get_each_context_1$2(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[13] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$1, "get_each_context_1$1");
+__name(get_each_context_1$2, "get_each_context_1$2");
 function get_each_context_2(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[13] = list[i];
@@ -58708,7 +58708,7 @@ function create_each_block_2(ctx) {
   };
 }
 __name(create_each_block_2, "create_each_block_2");
-function create_each_block_1$1(ctx) {
+function create_each_block_1$2(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -58788,7 +58788,7 @@ function create_each_block_1$1(ctx) {
     }
   };
 }
-__name(create_each_block_1$1, "create_each_block_1$1");
+__name(create_each_block_1$2, "create_each_block_1$2");
 function create_if_block$8(ctx) {
   let div;
   let current;
@@ -59036,7 +59036,7 @@ function create_fragment$j(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
   }
   let if_block = (
     /*selectedItem*/
@@ -59215,11 +59215,11 @@ function create_fragment$j(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$1(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$2(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_1$1(child_ctx);
+            each_blocks[i] = create_each_block_1$2(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div0, null);
           }
@@ -59685,8 +59685,11 @@ const _MetricView = class _MetricView {
     this._archive.set(key2, this._events);
     this._events = [];
   }
-  clearEvents() {
+  clearEvents(clearArchive = false) {
     this._events = [];
+    if (clearArchive) {
+      this._archive.clear();
+    }
   }
   drawChart(players, chart, archiveKey) {
     const events = archiveKey ? this._archive.get(archiveKey) ?? [] : this._events;
@@ -59810,11 +59813,6 @@ __name(_MetricView, "MetricView");
 let MetricView = _MetricView;
 const millisAsSeconds = /* @__PURE__ */ __name((ms) => Math.round(ms / 100) / 10, "millisAsSeconds");
 const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
-  averageGuessTime: new MetricView(
-    "Average Guess Time",
-    "The average time a player needed to guess a word",
-    (event) => millisAsSeconds(event.guessTimeMs)
-  ).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
   totalScore: new MetricView(
     "Score Ranking",
     "The total ranking, progressing over time",
@@ -59825,36 +59823,41 @@ const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
     "The final ranking",
     (event) => event.score
   ).withMetricUnit("pts").withAggregation("ranking").withOrdering("maxValue"),
-  averageNeededGuesses: new MetricView(
-    "Average Guesses Needed",
-    "The average number of guesses a player needed to guess a word",
-    (event) => event.guessCount
-  ).withAggregation("average").withOrdering("minValue"),
-  averageGuessSpeed: new MetricView(
-    "Average Guess Speed",
-    "The average time between guesses a player sent",
-    (event) => millisAsSeconds(event.gapTimeMs)
-  ).withMetricUnit("s").withAggregation("average"),
-  fastestGuess: new MetricView(
-    "Fastest Guess",
-    "The fastest correct guess for a word",
+  averageGuessTime: new MetricView(
+    "Average Guess Time",
+    "The average time a player needed to guess a word",
     (event) => millisAsSeconds(event.guessTimeMs)
-  ).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
+  ).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
   averageGuessScore: new MetricView(
     "Average Guess Score",
     "The average score a player got per correct guess",
     (event) => event.score
   ).withMetricUnit("pts").withAggregation("average").withOrdering("maxValue"),
-  averageGuessAccuracy: new MetricView(
-    "Average Guess Accuracy",
-    "The average letter count accuracy of player guesses",
-    (event) => event.accuracy * 100
-  ).withAggregation("average").withOrdering("maxValue"),
+  averageGuessSpeed: new MetricView(
+    "Average Guess Speed",
+    "The average time between guesses a player sent",
+    (event) => millisAsSeconds(event.gapTimeMs)
+  ).withMetricUnit("s").withAggregation("average"),
+  averageNeededGuesses: new MetricView(
+    "Average Guesses Needed",
+    "The average number of guesses a player needed to guess a word",
+    (event) => event.guessCount
+  ).withAggregation("average").withOrdering("minValue"),
+  fastestGuess: new MetricView(
+    "Fastest Guess",
+    "The fastest correct guess for a word",
+    (event) => millisAsSeconds(event.guessTimeMs)
+  ).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
   longestGuessStreak: new MetricView(
     "Longest Guess Streak",
     "The longest streak of correct guesses in a row",
     (event) => event.streak
   ).withAggregation("ranking").withOrdering("maxValue"),
+  averageGuessAccuracy: new MetricView(
+    "Average Guess Accuracy",
+    "The average letter count accuracy of player guesses",
+    (event) => event.accuracy * 100
+  ).withAggregation("average").withOrdering("maxValue"),
   averageGuessRank: new MetricView(
     "Average Guess Rank",
     "The average rank of player's correct guess",
@@ -59865,16 +59868,16 @@ const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
     "The average draw time of a player",
     (event) => millisAsSeconds(event.drawTimeMs)
   ).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
-  averageGuessedPlayers: new MetricView(
-    "Average Guessed Players",
-    "The average amount of players that guessed a player's drawing",
-    (event) => event.guessedPlayers
-  ).withAggregation("average").withOrdering("maxValue"),
   fastestDrawTime: new MetricView(
     "Fastest Draw Time",
     "The fastest draw time of a player",
     (event) => millisAsSeconds(event.drawTimeMs)
   ).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
+  averageGuessedPlayers: new MetricView(
+    "Average Guessed Players",
+    "The average amount of players that guessed a player's drawing",
+    (event) => event.guessedPlayers
+  ).withAggregation("average").withOrdering("maxValue"),
   averageDrawScore: new MetricView(
     "Average Draw Score",
     "The average score for a player's drawing",
@@ -60635,16 +60638,74 @@ __name(_Chart, "Chart");
 let Chart = _Chart;
 function get_each_context$b(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[12] = list[i];
-  child_ctx[14] = i;
+  child_ctx[18] = list[i];
+  child_ctx[20] = i;
   return child_ctx;
 }
 __name(get_each_context$b, "get_each_context$b");
+function get_each_context_1$1(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[21] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_1$1, "get_each_context_1$1");
+function create_each_block_1$1(ctx) {
+  let option;
+  let t0_value = (
+    /*key*/
+    ctx[21][1].name + ""
+  );
+  let t0;
+  let t1;
+  let option_value_value;
+  let option_selected_value;
+  return {
+    c() {
+      option = element$1("option");
+      t0 = text(t0_value);
+      t1 = space();
+      option.__value = option_value_value = /*key*/
+      ctx[21][0];
+      set_input_value(option, option.__value);
+      option.selected = option_selected_value = /*key*/
+      ctx[21][0] === /*selectedArchiveKey*/
+      ctx[2];
+    },
+    m(target, anchor) {
+      insert(target, option, anchor);
+      append(option, t0);
+      append(option, t1);
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*$archive*/
+      8 && t0_value !== (t0_value = /*key*/
+      ctx2[21][1].name + "")) set_data(t0, t0_value);
+      if (dirty & /*$archive*/
+      8 && option_value_value !== (option_value_value = /*key*/
+      ctx2[21][0])) {
+        option.__value = option_value_value;
+        set_input_value(option, option.__value);
+      }
+      if (dirty & /*$archive, selectedArchiveKey*/
+      12 && option_selected_value !== (option_selected_value = /*key*/
+      ctx2[21][0] === /*selectedArchiveKey*/
+      ctx2[2])) {
+        option.selected = option_selected_value;
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(option);
+      }
+    }
+  };
+}
+__name(create_each_block_1$1, "create_each_block_1$1");
 function create_each_block$b(ctx) {
   let option;
   let t0_value = (
     /*view*/
-    ctx[12].name + ""
+    ctx[18].name + ""
   );
   let t0;
   let t1;
@@ -60655,11 +60716,11 @@ function create_each_block$b(ctx) {
       t0 = text(t0_value);
       t1 = space();
       option.__value = /*index*/
-      ctx[14];
+      ctx[20];
       set_input_value(option, option.__value);
       option.selected = option_selected_value = /*view*/
-      ctx[12] === /*views*/
-      ctx[2][
+      ctx[18] === /*views*/
+      ctx[4][
         /*selectedViewIndex*/
         ctx[1]
       ];
@@ -60672,8 +60733,8 @@ function create_each_block$b(ctx) {
     p(ctx2, dirty) {
       if (dirty & /*selectedViewIndex*/
       2 && option_selected_value !== (option_selected_value = /*view*/
-      ctx2[12] === /*views*/
-      ctx2[2][
+      ctx2[18] === /*views*/
+      ctx2[4][
         /*selectedViewIndex*/
         ctx2[1]
       ])) {
@@ -60690,17 +60751,34 @@ function create_each_block$b(ctx) {
 __name(create_each_block$b, "create_each_block$b");
 function create_fragment$i(ctx) {
   let div1;
-  let div0;
-  let label;
+  let span;
   let t1;
-  let select;
-  let t2;
+  let div0;
+  let label0;
+  let t3;
+  let select0;
+  let option;
+  let t4;
+  let option_selected_value;
+  let t5;
+  let label1;
+  let t7;
+  let select1;
+  let t8;
   let canvas_1;
   let mounted;
   let dispose;
+  let each_value_1 = ensure_array_like(
+    /*$archive*/
+    ctx[3]
+  );
+  let each_blocks_1 = [];
+  for (let i = 0; i < each_value_1.length; i += 1) {
+    each_blocks_1[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+  }
   let each_value = ensure_array_like(
     /*views*/
-    ctx[2]
+    ctx[4]
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
@@ -60709,72 +60787,167 @@ function create_fragment$i(ctx) {
   return {
     c() {
       div1 = element$1("div");
-      div0 = element$1("div");
-      label = element$1("label");
-      label.textContent = "Select view:";
+      span = element$1("span");
+      span.textContent = "View statistics of this or previous recorded lobby rounds";
       t1 = space();
-      select = element$1("select");
+      div0 = element$1("div");
+      label0 = element$1("label");
+      label0.textContent = "Select round:";
+      t3 = space();
+      select0 = element$1("select");
+      option = element$1("option");
+      t4 = text("Current Round\n      ");
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        each_blocks_1[i].c();
+      }
+      t5 = space();
+      label1 = element$1("label");
+      label1.textContent = "Select view:";
+      t7 = space();
+      select1 = element$1("select");
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
       }
-      t2 = space();
+      t8 = space();
       canvas_1 = element$1("canvas");
-      attr(label, "for", "typo-stats-view");
-      attr(select, "id", "typo-stats-view");
+      attr(span, "class", "typo-stats-chart-caption svelte-gptfs3");
+      attr(label0, "for", "typo-stats-archive");
+      attr(label0, "class", "svelte-gptfs3");
+      option.__value = "";
+      set_input_value(option, option.__value);
+      option.selected = option_selected_value = /*selectedArchiveKey*/
+      ctx[2].length === 0;
+      attr(select0, "id", "typo-stats-archive");
+      if (
+        /*selectedArchiveKey*/
+        ctx[2] === void 0
+      ) add_render_callback(() => (
+        /*select0_change_handler*/
+        ctx[10].call(select0)
+      ));
+      attr(label1, "for", "typo-stats-view");
+      attr(label1, "class", "svelte-gptfs3");
+      attr(select1, "id", "typo-stats-view");
       if (
         /*selectedViewIndex*/
         ctx[1] === void 0
       ) add_render_callback(() => (
-        /*select_change_handler*/
-        ctx[6].call(select)
+        /*select1_change_handler*/
+        ctx[12].call(select1)
       ));
-      attr(div0, "class", "typo-stats-chart-selection");
-      attr(div1, "class", "typo-stats-chart");
+      attr(div0, "class", "typo-stats-chart-selection svelte-gptfs3");
+      attr(div1, "class", "typo-stats-chart svelte-gptfs3");
     },
     m(target, anchor) {
       insert(target, div1, anchor);
+      append(div1, span);
+      append(div1, t1);
       append(div1, div0);
-      append(div0, label);
-      append(div0, t1);
-      append(div0, select);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(select, null);
+      append(div0, label0);
+      append(div0, t3);
+      append(div0, select0);
+      append(select0, option);
+      append(option, t4);
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        if (each_blocks_1[i]) {
+          each_blocks_1[i].m(select0, null);
         }
       }
       select_option(
-        select,
+        select0,
+        /*selectedArchiveKey*/
+        ctx[2],
+        true
+      );
+      append(div0, t5);
+      append(div0, label1);
+      append(div0, t7);
+      append(div0, select1);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(select1, null);
+        }
+      }
+      select_option(
+        select1,
         /*selectedViewIndex*/
         ctx[1],
         true
       );
-      append(div1, t2);
+      append(div1, t8);
       append(div1, canvas_1);
-      ctx[8](canvas_1);
+      ctx[14](canvas_1);
       if (!mounted) {
         dispose = [
           listen(
-            select,
+            select0,
             "change",
-            /*select_change_handler*/
-            ctx[6]
+            /*select0_change_handler*/
+            ctx[10]
           ),
           listen(
-            select,
+            select0,
             "change",
             /*change_handler*/
-            ctx[7]
+            ctx[11]
+          ),
+          listen(
+            select1,
+            "change",
+            /*select1_change_handler*/
+            ctx[12]
+          ),
+          listen(
+            select1,
+            "change",
+            /*change_handler_1*/
+            ctx[13]
           )
         ];
         mounted = true;
       }
     },
     p(ctx2, [dirty]) {
+      if (dirty & /*selectedArchiveKey, $archive*/
+      12 && option_selected_value !== (option_selected_value = /*selectedArchiveKey*/
+      ctx2[2].length === 0)) {
+        option.selected = option_selected_value;
+      }
+      if (dirty & /*$archive, selectedArchiveKey*/
+      12) {
+        each_value_1 = ensure_array_like(
+          /*$archive*/
+          ctx2[3]
+        );
+        let i;
+        for (i = 0; i < each_value_1.length; i += 1) {
+          const child_ctx = get_each_context_1$1(ctx2, each_value_1, i);
+          if (each_blocks_1[i]) {
+            each_blocks_1[i].p(child_ctx, dirty);
+          } else {
+            each_blocks_1[i] = create_each_block_1$1(child_ctx);
+            each_blocks_1[i].c();
+            each_blocks_1[i].m(select0, null);
+          }
+        }
+        for (; i < each_blocks_1.length; i += 1) {
+          each_blocks_1[i].d(1);
+        }
+        each_blocks_1.length = each_value_1.length;
+      }
+      if (dirty & /*selectedArchiveKey, $archive*/
+      12) {
+        select_option(
+          select0,
+          /*selectedArchiveKey*/
+          ctx2[2]
+        );
+      }
       if (dirty & /*views, selectedViewIndex*/
-      6) {
+      18) {
         each_value = ensure_array_like(
           /*views*/
-          ctx2[2]
+          ctx2[4]
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
@@ -60784,7 +60957,7 @@ function create_fragment$i(ctx) {
           } else {
             each_blocks[i] = create_each_block$b(child_ctx);
             each_blocks[i].c();
-            each_blocks[i].m(select, null);
+            each_blocks[i].m(select1, null);
           }
         }
         for (; i < each_blocks.length; i += 1) {
@@ -60795,7 +60968,7 @@ function create_fragment$i(ctx) {
       if (dirty & /*selectedViewIndex*/
       2) {
         select_option(
-          select,
+          select1,
           /*selectedViewIndex*/
           ctx2[1]
         );
@@ -60807,43 +60980,75 @@ function create_fragment$i(ctx) {
       if (detaching) {
         detach(div1);
       }
+      destroy_each(each_blocks_1, detaching);
       destroy_each(each_blocks, detaching);
-      ctx[8](null);
+      ctx[14](null);
       mounted = false;
       run_all(dispose);
     }
   };
 }
 __name(create_fragment$i, "create_fragment$i");
-let selectedArchiveKey = "";
 function instance$h($$self, $$props, $$invalidate) {
   let $lobby;
+  let $seenPlayers;
+  let $archive;
   let { feature } = $$props;
   let canvas;
   let chart;
   const views = feature.getViews();
   const lobby = feature.lobbyStore;
-  component_subscribe($$self, lobby, (value) => $$invalidate(10, $lobby = value));
-  feature.archiveStore;
+  component_subscribe($$self, lobby, (value) => $$invalidate(16, $lobby = value));
+  const archive = feature.archiveStore;
+  component_subscribe($$self, archive, (value) => $$invalidate(3, $archive = value));
+  const seenPlayers = feature.seenPlayersStore;
+  component_subscribe($$self, seenPlayers, (value) => $$invalidate(17, $seenPlayers = value));
   let selectedViewIndex = 0;
+  let selectedArchiveKey = "";
   onMount(() => {
     if (canvas === void 0) throw new Error("canvas is undefined");
     chart = feature.createChart(canvas);
     updateChart();
   });
   function updateChart() {
+    var _a2;
     const view = views[selectedViewIndex];
-    if (chart === void 0) throw new Error("chart is undefined");
-    if ($lobby === null) throw new Error("lobby is null");
-    view.drawChart($lobby.players, chart, selectedArchiveKey.length === 0 ? void 0 : selectedArchiveKey);
+    if (chart === void 0 || $lobby === null || $lobby.id === null) {
+      console.log("Chart or lobby is undefined");
+      chart == null ? void 0 : chart.clear();
+      return;
+    }
+    const archiveEntry = selectedArchiveKey.length > 0 ? $archive.get(selectedArchiveKey) : void 0;
+    if (archiveEntry === void 0) {
+      const players = [...((_a2 = $seenPlayers.get($lobby.id)) == null ? void 0 : _a2.values()) ?? []];
+      try {
+        view.drawChart(players, chart);
+      } catch (e) {
+        console.error("Error drawing chart:", e);
+        chart.clear();
+      }
+    } else {
+      try {
+        view.drawChart(archiveEntry.players, chart, archiveEntry.key);
+      } catch (e) {
+        console.error("Error drawing chart:", e);
+        chart.clear();
+      }
+    }
   }
   __name(updateChart, "updateChart");
-  function select_change_handler() {
+  function select0_change_handler() {
+    selectedArchiveKey = select_value(this);
+    $$invalidate(2, selectedArchiveKey);
+  }
+  __name(select0_change_handler, "select0_change_handler");
+  const change_handler = /* @__PURE__ */ __name(() => updateChart(), "change_handler");
+  function select1_change_handler() {
     selectedViewIndex = select_value(this);
     $$invalidate(1, selectedViewIndex);
   }
-  __name(select_change_handler, "select_change_handler");
-  const change_handler = /* @__PURE__ */ __name(() => updateChart(), "change_handler");
+  __name(select1_change_handler, "select1_change_handler");
+  const change_handler_1 = /* @__PURE__ */ __name(() => updateChart(), "change_handler_1");
   function canvas_1_binding($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
       canvas = $$value;
@@ -60852,17 +61057,23 @@ function instance$h($$self, $$props, $$invalidate) {
   }
   __name(canvas_1_binding, "canvas_1_binding");
   $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(5, feature = $$props2.feature);
+    if ("feature" in $$props2) $$invalidate(9, feature = $$props2.feature);
   };
   return [
     canvas,
     selectedViewIndex,
+    selectedArchiveKey,
+    $archive,
     views,
     lobby,
+    archive,
+    seenPlayers,
     updateChart,
     feature,
-    select_change_handler,
+    select0_change_handler,
     change_handler,
+    select1_change_handler,
+    change_handler_1,
     canvas_1_binding
   ];
 }
@@ -60870,7 +61081,7 @@ __name(instance$h, "instance$h");
 const _Charts = class _Charts extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$h, create_fragment$i, safe_not_equal, { feature: 5 });
+    init(this, options, instance$h, create_fragment$i, safe_not_equal, { feature: 9 });
   }
 };
 __name(_Charts, "Charts");
@@ -60903,10 +61114,11 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
     ]);
     __publicField(this, "featureId", 55);
     __publicField(this, "_metricViews", createMetricViews());
+    __publicField(this, "_statArchive$", new BehaviorSubject(/* @__PURE__ */ new Map()));
+    __publicField(this, "_seenLobbyPlayers$", new BehaviorSubject(/* @__PURE__ */ new Map()));
     __publicField(this, "_statsSubscriptions", []);
-    __publicField(this, "_statArchive", new BehaviorSubject(/* @__PURE__ */ new Map()));
     __publicField(this, "_switchStatCommand", this.useCommand(
-      new ExtensionCommand("stats", this, "Show game stats", "Show a stat screen above the lobby chat")
+      new ExtensionCommand("stat chat", this, "Show game stats", "Show a stat screen above the lobby chat")
     ).withParameters(
       (params) => params.addParam(new StringOptionalCommandParameter("Category Name", "The name of the category to show", (category) => ({ category }))).run(async (args, command) => {
         const categories = Object.keys(this._metricViews);
@@ -60918,14 +61130,14 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
       })
     ));
     __publicField(this, "_statListCommand", this.useCommand(
-      new ExtensionCommand("statls", this, "List game stat categories", "Show a list of available categories for the stats command")
+      new ExtensionCommand("stat ls", this, "List game stat categories", "Show a list of available categories for the stats command")
     ).run(async (command) => {
       const categories = Object.entries(this._metricViews).map(([key2, view]) => `- [${key2}] ${view.name}: ${view.description}`).join("\n");
       if (categories.length === 0) return new InterpretableError(command, "No stat categories available.");
       return new InterpretableSuccess(command, categories);
     }));
     __publicField(this, "_statViewCommand", this.useCommand(
-      new ExtensionCommand("statvw", this, "View stats in popup", "Opens a popup with detailed statistics")
+      new ExtensionCommand("stat vw", this, "View stats in popup", "Opens a popup with detailed statistics")
     ).run(async (command) => {
       const popupComponent = {
         componentType: Charts,
@@ -61000,28 +61212,58 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
     ).subscribe(() => this.resetMetrics());
     const metricArchiveSub = this._lobbyStateChangedEventListener.events$.pipe(
       filter((event) => event.data.gameEnded !== void 0),
-      withLatestFrom(this._lobbyService.lobby$, this._statArchive)
-    ).subscribe(([, lobby, archive]) => {
-      if (lobby === null) return;
-      const date = (/* @__PURE__ */ new Date()).toISOString();
+      withLatestFrom(this._lobbyService.lobby$, this._statArchive$, this._seenLobbyPlayers$)
+    ).subscribe(([, lobby, archive, seenPlayers]) => {
+      var _a2;
+      if (lobby === null || lobby.id === null) return;
+      const date = (/* @__PURE__ */ new Date()).toLocaleTimeString();
       const key2 = `${lobby.id}-${Date.now()}`;
       Object.values(this._metricViews).forEach((metricView) => metricView.archiveEvents(key2));
-      archive.set(key2, date);
-      this._statArchive.next(archive);
+      const winner = lobby.players.sort((a, b) => b.score - a.score)[0];
+      const entry = {
+        key: key2,
+        lobbyId: lobby.id,
+        date,
+        name: `${lobby.id}, ${date} - ${winner.name} ${winner.score}pts`,
+        players: Array.from(((_a2 = seenPlayers.get(lobby.id)) == null ? void 0 : _a2.entries().map(([, value]) => value)) ?? [])
+      };
+      archive.set(key2, entry);
+      this._statArchive$.next(archive);
     });
-    this._statsSubscriptions.push(metricResetSub, metricArchiveSub, chartUpdateSub);
+    const playersSub = this._lobbyService.lobby$.pipe(
+      filter((lobby) => lobby !== null),
+      map((event) => ({ players: (event == null ? void 0 : event.players) ?? [], lobbyId: event.id ?? "" })),
+      distinctUntilChanged(
+        (curr, prev) => curr.players.map((p) => p.id).join(",") === prev.players.map((p) => p.id).join(",")
+      ),
+      withLatestFrom(this._seenLobbyPlayers$)
+    ).subscribe(([{ players, lobbyId }, seenPlayers]) => {
+      const lobbySeen = seenPlayers.get(lobbyId) ?? /* @__PURE__ */ new Map();
+      let changed = false;
+      players.forEach((player) => {
+        if (!lobbySeen.has(player.id)) {
+          lobbySeen.set(player.id, player);
+          changed = true;
+        }
+      });
+      if (changed) {
+        seenPlayers.set(lobbyId, lobbySeen);
+        this._seenLobbyPlayers$.next(seenPlayers);
+      }
+    });
+    this._statsSubscriptions.push(metricResetSub, metricArchiveSub, chartUpdateSub, playersSub);
   }
   async onDestroy() {
     this._statsSubscriptions.forEach((subscriber) => subscriber.unsubscribe());
     this._statsSubscriptions = [];
-    this.resetMetrics();
+    this.resetMetrics(true);
   }
   subscribeMetric(source, metricView) {
     const sub = source.subscribe((entry) => metricView.addEvent(entry));
     this._statsSubscriptions.push(sub);
   }
-  resetMetrics() {
-    Object.values(this._metricViews).forEach((metricView) => metricView.clearEvents());
+  resetMetrics(clearArchive = false) {
+    Object.values(this._metricViews).forEach((metricView) => metricView.clearEvents(clearArchive));
   }
   createChart(canvas) {
     const chart = new Chart({
@@ -61046,7 +61288,10 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
     return fromObservable(this._lobbyService.lobby$, null);
   }
   get archiveStore() {
-    return fromObservable(this._statArchive.asObservable(), /* @__PURE__ */ new Map());
+    return fromObservable(this._statArchive$.asObservable(), this._statArchive$.value);
+  }
+  get seenPlayersStore() {
+    return fromObservable(this._seenLobbyPlayers$.asObservable(), this._seenLobbyPlayers$.value);
   }
 };
 __name(_LobbyStatisticsFeature, "LobbyStatisticsFeature");
