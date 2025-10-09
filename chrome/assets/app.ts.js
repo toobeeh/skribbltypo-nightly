@@ -3020,7 +3020,7 @@ function fromObservable(observable2, initialValue, onWrite, allowWriteBeforeEmit
   };
 }
 __name(fromObservable, "fromObservable");
-function create_if_block$P(ctx) {
+function create_if_block$Q(ctx) {
   let span;
   let t;
   return {
@@ -3051,7 +3051,7 @@ function create_if_block$P(ctx) {
     }
   };
 }
-__name(create_if_block$P, "create_if_block$P");
+__name(create_if_block$Q, "create_if_block$Q");
 function create_fragment$1N(ctx) {
   let div;
   let img;
@@ -3061,7 +3061,7 @@ function create_fragment$1N(ctx) {
   let dispose;
   let if_block = (
     /*description*/
-    ctx[2] && create_if_block$P(ctx)
+    ctx[2] && create_if_block$Q(ctx)
   );
   return {
     c() {
@@ -3132,7 +3132,7 @@ function create_fragment$1N(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$P(ctx2);
+          if_block = create_if_block$Q(ctx2);
           if_block.c();
           if_block.m(div, null);
         }
@@ -3213,7 +3213,7 @@ const _Checkbox = class _Checkbox extends SvelteComponent {
 };
 __name(_Checkbox, "Checkbox");
 let Checkbox = _Checkbox;
-function create_if_block$O(ctx) {
+function create_if_block$P(ctx) {
   let b;
   let checkbox;
   let updating_checked;
@@ -3295,13 +3295,13 @@ function create_if_block$O(ctx) {
     }
   };
 }
-__name(create_if_block$O, "create_if_block$O");
+__name(create_if_block$P, "create_if_block$P");
 function create_fragment$1M(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*settingStore*/
-    ctx[1] && create_if_block$O(ctx)
+    ctx[1] && create_if_block$P(ctx)
   );
   return {
     c() {
@@ -3325,7 +3325,7 @@ function create_fragment$1M(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$O(ctx2);
+          if_block = create_if_block$P(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -3388,7 +3388,7 @@ const _Boolean_setting_input = class _Boolean_setting_input extends SvelteCompon
 };
 __name(_Boolean_setting_input, "Boolean_setting_input");
 let Boolean_setting_input = _Boolean_setting_input;
-function create_if_block$N(ctx) {
+function create_if_block$O(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3517,7 +3517,7 @@ function create_if_block$N(ctx) {
     }
   };
 }
-__name(create_if_block$N, "create_if_block$N");
+__name(create_if_block$O, "create_if_block$O");
 function create_if_block_1$m(ctx) {
   let input;
   let input_min_value;
@@ -3608,7 +3608,7 @@ function create_fragment$1L(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[3] && create_if_block$N(ctx)
+    ctx[3] && create_if_block$O(ctx)
   );
   return {
     c() {
@@ -3627,7 +3627,7 @@ function create_fragment$1L(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$N(ctx2);
+          if_block = create_if_block$O(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3707,7 +3707,7 @@ function get_each_context$D(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$D, "get_each_context$D");
-function create_if_block$M(ctx) {
+function create_if_block$N(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -3835,7 +3835,7 @@ function create_if_block$M(ctx) {
     }
   };
 }
-__name(create_if_block$M, "create_if_block$M");
+__name(create_if_block$N, "create_if_block$N");
 function create_each_block$D(ctx) {
   let option;
   let t_value = (
@@ -3879,7 +3879,7 @@ function create_fragment$1K(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[2] && create_if_block$M(ctx)
+    ctx[2] && create_if_block$N(ctx)
   );
   return {
     c() {
@@ -3898,7 +3898,7 @@ function create_fragment$1K(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$M(ctx2);
+          if_block = create_if_block$N(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -3953,7 +3953,7 @@ const _Choice_setting_input = class _Choice_setting_input extends SvelteComponen
 };
 __name(_Choice_setting_input, "Choice_setting_input");
 let Choice_setting_input = _Choice_setting_input;
-function create_if_block$L(ctx) {
+function create_if_block$M(ctx) {
   let div1;
   let b;
   let t0_value = (
@@ -4037,12 +4037,12 @@ function create_if_block$L(ctx) {
     }
   };
 }
-__name(create_if_block$L, "create_if_block$L");
+__name(create_if_block$M, "create_if_block$M");
 function create_fragment$1J(ctx) {
   let if_block_anchor;
   let if_block = (
     /*settingStore*/
-    ctx[1] && create_if_block$L(ctx)
+    ctx[1] && create_if_block$M(ctx)
   );
   return {
     c() {
@@ -4061,7 +4061,7 @@ function create_fragment$1J(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$L(ctx2);
+          if_block = create_if_block$M(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -4373,7 +4373,7 @@ function create_if_block_1$l(ctx) {
   };
 }
 __name(create_if_block_1$l, "create_if_block_1$l");
-function create_if_block$K(ctx) {
+function create_if_block$L(ctx) {
   let div1;
   let div0;
   let mounted;
@@ -4455,7 +4455,7 @@ function create_if_block$K(ctx) {
     }
   };
 }
-__name(create_if_block$K, "create_if_block$K");
+__name(create_if_block$L, "create_if_block$L");
 function create_fragment$1I(ctx) {
   let div5;
   let div0;
@@ -4477,7 +4477,7 @@ function create_fragment$1I(ctx) {
   );
   let if_block1 = (
     /*allowAlpha*/
-    ctx[1] && create_if_block$K(ctx)
+    ctx[1] && create_if_block$L(ctx)
   );
   return {
     c() {
@@ -4661,7 +4661,7 @@ function create_fragment$1I(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$K(ctx2);
+          if_block1 = create_if_block$L(ctx2);
           if_block1.c();
           if_block1.m(div5, t6);
         }
@@ -4798,7 +4798,7 @@ const _Color_picker = class _Color_picker extends SvelteComponent {
 };
 __name(_Color_picker, "Color_picker");
 let Color_picker = _Color_picker;
-function create_if_block$J(ctx) {
+function create_if_block$K(ctx) {
   let div;
   let colorpicker;
   let updating_color;
@@ -4969,7 +4969,7 @@ function create_if_block$J(ctx) {
     }
   };
 }
-__name(create_if_block$J, "create_if_block$J");
+__name(create_if_block$K, "create_if_block$K");
 function create_fragment$1H(ctx) {
   let div1;
   let div0;
@@ -4980,7 +4980,7 @@ function create_fragment$1H(ctx) {
   let dispose;
   let if_block = (
     /*popupPosition*/
-    ctx[6] && create_if_block$J(ctx)
+    ctx[6] && create_if_block$K(ctx)
   );
   return {
     c() {
@@ -5063,7 +5063,7 @@ function create_fragment$1H(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$J(ctx2);
+          if_block = create_if_block$K(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div1, null);
@@ -5205,7 +5205,7 @@ const _Color_picker_button = class _Color_picker_button extends SvelteComponent 
 };
 __name(_Color_picker_button, "Color_picker_button");
 let Color_picker_button = _Color_picker_button;
-function create_if_block$I(ctx) {
+function create_if_block$J(ctx) {
   let div2;
   let b;
   let t0_value = (
@@ -5299,13 +5299,13 @@ function create_if_block$I(ctx) {
     }
   };
 }
-__name(create_if_block$I, "create_if_block$I");
+__name(create_if_block$J, "create_if_block$J");
 function create_fragment$1G(ctx) {
   let if_block_anchor;
   let current;
   let if_block = (
     /*settingStore*/
-    ctx[2] && create_if_block$I(ctx)
+    ctx[2] && create_if_block$J(ctx)
   );
   return {
     c() {
@@ -5329,7 +5329,7 @@ function create_fragment$1G(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$I(ctx2);
+          if_block = create_if_block$J(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
@@ -12571,7 +12571,7 @@ function create_if_block_5$6(ctx) {
   };
 }
 __name(create_if_block_5$6, "create_if_block_5$6");
-function create_else_block$o(ctx) {
+function create_else_block$p(ctx) {
   let t0;
   let t1;
   let t2;
@@ -12710,8 +12710,8 @@ function create_else_block$o(ctx) {
     }
   };
 }
-__name(create_else_block$o, "create_else_block$o");
-function create_if_block$H(ctx) {
+__name(create_else_block$p, "create_else_block$p");
+function create_if_block$I(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({ props: { content: (
@@ -12747,7 +12747,7 @@ function create_if_block$H(ctx) {
     }
   };
 }
-__name(create_if_block$H, "create_if_block$H");
+__name(create_if_block$I, "create_if_block$I");
 function create_if_block_4$a(ctx) {
   let span;
   let mounted;
@@ -13025,7 +13025,7 @@ function create_fragment$1A(ctx) {
     /*title*/
     ctx[1] !== void 0 && create_if_block_5$6(ctx)
   );
-  const if_block_creators = [create_if_block$H, create_else_block$o];
+  const if_block_creators = [create_if_block$I, create_else_block$p];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -17938,7 +17938,7 @@ const wrapOffsetAsStyle = /* @__PURE__ */ __name((atlas, offset, containerSize) 
     background-size: calc(${backgroundSize});
   `;
 }, "wrapOffsetAsStyle");
-function create_if_block$G(ctx) {
+function create_if_block$H(ctx) {
   let div;
   let div_style_value;
   return {
@@ -17971,7 +17971,7 @@ function create_if_block$G(ctx) {
     }
   };
 }
-__name(create_if_block$G, "create_if_block$G");
+__name(create_if_block$H, "create_if_block$H");
 function create_fragment$1x(ctx) {
   let div3;
   let div0;
@@ -17986,7 +17986,7 @@ function create_fragment$1x(ctx) {
   let if_block = (
     /*avatar*/
     ctx[0][3] !== void 0 && /*avatar*/
-    ctx[0][3] >= 0 && create_if_block$G(ctx)
+    ctx[0][3] >= 0 && create_if_block$H(ctx)
   );
   return {
     c() {
@@ -18068,7 +18068,7 @@ function create_fragment$1x(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$G(ctx2);
+          if_block = create_if_block$H(ctx2);
           if_block.c();
           if_block.m(div3, null);
         }
@@ -18490,7 +18490,7 @@ function create_if_block_2$f(ctx) {
   };
 }
 __name(create_if_block_2$f, "create_if_block_2$f");
-function create_if_block$F(ctx) {
+function create_if_block$G(ctx) {
   let span;
   let mounted;
   let dispose;
@@ -18522,7 +18522,7 @@ function create_if_block$F(ctx) {
     }
   };
 }
-__name(create_if_block$F, "create_if_block$F");
+__name(create_if_block$G, "create_if_block$G");
 function create_fragment$1w(ctx) {
   let div1;
   let t0;
@@ -18562,7 +18562,7 @@ function create_fragment$1w(ctx) {
   }
   let if_block1 = (
     /*closeStrategy*/
-    ctx[0] === "explicit" && create_if_block$F(ctx)
+    ctx[0] === "explicit" && create_if_block$G(ctx)
   );
   return {
     c() {
@@ -18695,7 +18695,7 @@ function create_fragment$1w(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$F(ctx2);
+          if_block1 = create_if_block$G(ctx2);
           if_block1.c();
           if_block1.m(div1, null);
         }
@@ -18900,12 +18900,12 @@ function get_each_context_1$d(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$d, "get_each_context_1$d");
-function get_each_context_2$5(ctx, list, i) {
+function get_each_context_2$6(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[11] = list[i];
   return child_ctx;
 }
-__name(get_each_context_2$5, "get_each_context_2$5");
+__name(get_each_context_2$6, "get_each_context_2$6");
 function create_if_block_1$i(ctx) {
   let div3;
   let div1;
@@ -18937,7 +18937,7 @@ function create_if_block_1$i(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks[i] = create_each_block_2$5(get_each_context_2$5(ctx, each_value_2, i));
+    each_blocks[i] = create_each_block_2$6(get_each_context_2$6(ctx, each_value_2, i));
   }
   function select_block_type(ctx2, dirty) {
     if (dirty & /*feature, $currentCommands*/
@@ -19041,11 +19041,11 @@ function create_if_block_1$i(ctx) {
         );
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2$5(ctx, each_value_2, i);
+          const child_ctx = get_each_context_2$6(ctx, each_value_2, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_2$5(child_ctx);
+            each_blocks[i] = create_each_block_2$6(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(div1, null);
           }
@@ -19129,7 +19129,7 @@ function create_pending_block_1(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
 __name(create_pending_block_1, "create_pending_block_1");
-function create_each_block_2$5(ctx) {
+function create_each_block_2$6(ctx) {
   let div;
   let t0_value = (
     /*param*/
@@ -19186,7 +19186,7 @@ function create_each_block_2$5(ctx) {
     }
   };
 }
-__name(create_each_block_2$5, "create_each_block_2$5");
+__name(create_each_block_2$6, "create_each_block_2$6");
 function create_if_block_5$5(ctx) {
   let b0;
   let t0_value = (
@@ -19301,7 +19301,7 @@ function create_if_block_2$e(ctx) {
       ctx2[1]
     );
     if (show_if) return create_if_block_3$9;
-    return create_else_block$n;
+    return create_else_block$o;
   }
   __name(select_block_type_1, "select_block_type_1");
   let current_block_type = select_block_type_1(ctx, -1);
@@ -19337,7 +19337,7 @@ function create_if_block_2$e(ctx) {
   };
 }
 __name(create_if_block_2$e, "create_if_block_2$e");
-function create_else_block$n(ctx) {
+function create_else_block$o(ctx) {
   let img;
   let img_src_value;
   let t0;
@@ -19400,7 +19400,7 @@ function create_else_block$n(ctx) {
     }
   };
 }
-__name(create_else_block$n, "create_else_block$n");
+__name(create_else_block$o, "create_else_block$o");
 function create_if_block_3$9(ctx) {
   let span;
   return {
@@ -19461,7 +19461,7 @@ function create_each_block_1$d(ctx) {
   };
 }
 __name(create_each_block_1$d, "create_each_block_1$d");
-function create_if_block$E(ctx) {
+function create_if_block$F(ctx) {
   let div;
   let t1;
   let each_1_anchor;
@@ -19527,7 +19527,7 @@ function create_if_block$E(ctx) {
     }
   };
 }
-__name(create_if_block$E, "create_if_block$E");
+__name(create_if_block$F, "create_if_block$F");
 function create_catch_block$5(ctx) {
   return { c: noop$1, m: noop$1, p: noop$1, d: noop$1 };
 }
@@ -19634,7 +19634,7 @@ function create_fragment$1v(ctx) {
   for (let i = 0; i < each_value_1.length; i += 1) {
     each_blocks[i] = create_each_block_1$d(get_each_context_1$d(ctx, each_value_1, i));
   }
-  let if_block = show_if && create_if_block$E(ctx);
+  let if_block = show_if && create_if_block$F(ctx);
   return {
     c() {
       div = element$1("div");
@@ -19685,7 +19685,7 @@ function create_fragment$1v(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$E(ctx2);
+          if_block = create_if_block$F(ctx2);
           if_block.c();
           if_block.m(div, null);
         }
@@ -20299,7 +20299,7 @@ function get_each_context$A(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$A, "get_each_context$A");
-function create_else_block$m(ctx) {
+function create_else_block$n(ctx) {
   let t;
   return {
     c() {
@@ -20316,7 +20316,7 @@ function create_else_block$m(ctx) {
     }
   };
 }
-__name(create_else_block$m, "create_else_block$m");
+__name(create_else_block$n, "create_else_block$n");
 function create_if_block_1$h(ctx) {
   let t0;
   let t1_value = (
@@ -20351,7 +20351,7 @@ function create_if_block_1$h(ctx) {
   };
 }
 __name(create_if_block_1$h, "create_if_block_1$h");
-function create_if_block$D(ctx) {
+function create_if_block$E(ctx) {
   let t0;
   let br;
   let t1;
@@ -20376,7 +20376,7 @@ function create_if_block$D(ctx) {
     }
   };
 }
-__name(create_if_block$D, "create_if_block$D");
+__name(create_if_block$E, "create_if_block$E");
 function create_each_block$A(ctx) {
   let img;
   let img_src_value;
@@ -20456,12 +20456,12 @@ function create_fragment$1s(ctx) {
     if (
       /*$emojiCandidates*/
       ctx2[2].length === 0
-    ) return create_if_block$D;
+    ) return create_if_block$E;
     if (
       /*hoverEmoji*/
       ctx2[1] !== void 0
     ) return create_if_block_1$h;
-    return create_else_block$m;
+    return create_else_block$n;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -20959,7 +20959,7 @@ let ChatMessageSplitsFeature = _ChatMessageSplitsFeature;
 __decorateClass$17([
   inject(ElementsSetup)
 ], ChatMessageSplitsFeature.prototype, "_elementsSetup");
-function create_if_block$C(ctx) {
+function create_if_block$D(ctx) {
   let div;
   let t0;
   let t1;
@@ -20993,12 +20993,12 @@ function create_if_block$C(ctx) {
     }
   };
 }
-__name(create_if_block$C, "create_if_block$C");
+__name(create_if_block$D, "create_if_block$D");
 function create_fragment$1q(ctx) {
   let if_block_anchor;
   let if_block = (
     /*$ping*/
-    ctx[0] !== void 0 && create_if_block$C(ctx)
+    ctx[0] !== void 0 && create_if_block$D(ctx)
   );
   return {
     c() {
@@ -21017,7 +21017,7 @@ function create_fragment$1q(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$C(ctx2);
+          if_block = create_if_block$D(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -21499,7 +21499,7 @@ const _Flat_button = class _Flat_button extends SvelteComponent {
 };
 __name(_Flat_button, "Flat_button");
 let Flat_button = _Flat_button;
-function create_else_block$l(ctx) {
+function create_else_block$m(ctx) {
   let div;
   return {
     c() {
@@ -21520,8 +21520,8 @@ function create_else_block$l(ctx) {
     }
   };
 }
-__name(create_else_block$l, "create_else_block$l");
-function create_if_block$B(ctx) {
+__name(create_else_block$m, "create_else_block$m");
+function create_if_block$C(ctx) {
   let div;
   let b;
   let t0;
@@ -21659,7 +21659,7 @@ function create_if_block$B(ctx) {
     }
   };
 }
-__name(create_if_block$B, "create_if_block$B");
+__name(create_if_block$C, "create_if_block$C");
 function create_fragment$1o(ctx) {
   let div;
   let current_block_type_index;
@@ -21667,7 +21667,7 @@ function create_fragment$1o(ctx) {
   let current;
   let mounted;
   let dispose;
-  const if_block_creators = [create_if_block$B, create_else_block$l];
+  const if_block_creators = [create_if_block$C, create_else_block$m];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -23797,7 +23797,7 @@ function create_pending_block$4(ctx) {
   };
 }
 __name(create_pending_block$4, "create_pending_block$4");
-function create_if_block$A(ctx) {
+function create_if_block$B(ctx) {
   let div0;
   let img;
   let img_src_value;
@@ -24086,7 +24086,7 @@ function create_if_block$A(ctx) {
     }
   };
 }
-__name(create_if_block$A, "create_if_block$A");
+__name(create_if_block$B, "create_if_block$B");
 function create_fragment$1l(ctx) {
   let div3;
   let div1;
@@ -24204,7 +24204,7 @@ function create_fragment$1l(ctx) {
   );
   let if_block2 = (
     /*selectedImage*/
-    ctx[10] !== null && create_if_block$A(ctx)
+    ctx[10] !== null && create_if_block$B(ctx)
   );
   return {
     c() {
@@ -24518,7 +24518,7 @@ function create_fragment$1l(ctx) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block$A(ctx2);
+          if_block2 = create_if_block$B(ctx2);
           if_block2.c();
           transition_in(if_block2, 1);
           if_block2.m(div3, null);
@@ -25828,7 +25828,7 @@ function create_if_block_1$f(ctx) {
   };
 }
 __name(create_if_block_1$f, "create_if_block_1$f");
-function create_else_block$k(ctx) {
+function create_else_block$l(ctx) {
   let flatbutton;
   let current;
   function click_handler_1() {
@@ -25870,8 +25870,8 @@ function create_else_block$k(ctx) {
     }
   };
 }
-__name(create_else_block$k, "create_else_block$k");
-function create_if_block$z(ctx) {
+__name(create_else_block$l, "create_else_block$l");
+function create_if_block$A(ctx) {
   var _a2, _b2, _c2, _d2;
   let flatbutton;
   let current;
@@ -25937,7 +25937,7 @@ function create_if_block$z(ctx) {
     }
   };
 }
-__name(create_if_block$z, "create_if_block$z");
+__name(create_if_block$A, "create_if_block$A");
 function create_each_block$y(ctx) {
   let div2;
   let b;
@@ -25984,7 +25984,7 @@ function create_each_block$y(ctx) {
     /*$devmode*/
     ctx[3] && create_if_block_1$f(ctx)
   );
-  const if_block_creators = [create_if_block$z, create_else_block$k];
+  const if_block_creators = [create_if_block$A, create_else_block$l];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (dirty & /*$savedThemes, feature*/
@@ -26262,7 +26262,7 @@ function get_each_context_1$c(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$c, "get_each_context_1$c");
-function create_else_block$j(ctx) {
+function create_else_block$k(ctx) {
   let div0;
   let h3;
   let t0;
@@ -27636,8 +27636,8 @@ function create_else_block$j(ctx) {
     }
   };
 }
-__name(create_else_block$j, "create_else_block$j");
-function create_if_block$y(ctx) {
+__name(create_else_block$k, "create_else_block$k");
+function create_if_block$z(ctx) {
   let div0;
   let t0;
   let br0;
@@ -27786,7 +27786,7 @@ function create_if_block$y(ctx) {
     }
   };
 }
-__name(create_if_block$y, "create_if_block$y");
+__name(create_if_block$z, "create_if_block$z");
 function create_each_block_1$c(ctx) {
   let div;
   let t0_value = (
@@ -27980,7 +27980,7 @@ function create_fragment$1j(ctx) {
   let current_block_type_index;
   let if_block;
   let current;
-  const if_block_creators = [create_if_block$y, create_else_block$j];
+  const if_block_creators = [create_if_block$z, create_else_block$k];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -28342,7 +28342,7 @@ function get_each_context$w(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$w, "get_each_context$w");
-function create_else_block$i(ctx) {
+function create_else_block$j(ctx) {
   let div1;
   return {
     c() {
@@ -28360,7 +28360,7 @@ function create_else_block$i(ctx) {
     }
   };
 }
-__name(create_else_block$i, "create_else_block$i");
+__name(create_else_block$j, "create_else_block$j");
 function create_if_block_5$4(ctx) {
   let div1;
   return {
@@ -28564,7 +28564,7 @@ function create_if_block_1$e(ctx) {
   };
 }
 __name(create_if_block_1$e, "create_if_block_1$e");
-function create_if_block$x(ctx) {
+function create_if_block$y(ctx) {
   var _a2;
   let flatbutton;
   let current;
@@ -28622,7 +28622,7 @@ function create_if_block$x(ctx) {
     }
   };
 }
-__name(create_if_block$x, "create_if_block$x");
+__name(create_if_block$y, "create_if_block$y");
 function create_each_block$w(ctx) {
   let div5;
   let div0;
@@ -28672,7 +28672,7 @@ function create_each_block$w(ctx) {
       ((_a2 = ctx2[3]) == null ? void 0 : _a2.theme.meta.id) === /*theme*/
       ctx2[15].theme.meta.id
     ) return create_if_block_5$4;
-    return create_else_block$i;
+    return create_else_block$j;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -28721,7 +28721,7 @@ function create_each_block$w(ctx) {
   );
   let if_block4 = (
     /*theme*/
-    ctx[15].enableManage === true && create_if_block$x(ctx)
+    ctx[15].enableManage === true && create_if_block$y(ctx)
   );
   return {
     c() {
@@ -28896,7 +28896,7 @@ function create_each_block$w(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block$x(ctx);
+          if_block4 = create_if_block$y(ctx);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(div4, null);
@@ -29170,7 +29170,7 @@ function create_if_block_1$d(ctx) {
   };
 }
 __name(create_if_block_1$d, "create_if_block_1$d");
-function create_if_block$w(ctx) {
+function create_if_block$x(ctx) {
   let themeslist;
   let current;
   themeslist = new Themes_list({ props: { feature: (
@@ -29206,7 +29206,7 @@ function create_if_block$w(ctx) {
     }
   };
 }
-__name(create_if_block$w, "create_if_block$w");
+__name(create_if_block$x, "create_if_block$x");
 function create_fragment$1h(ctx) {
   let div2;
   let div0;
@@ -29222,7 +29222,7 @@ function create_fragment$1h(ctx) {
   let current;
   let mounted;
   let dispose;
-  const if_block_creators = [create_if_block$w, create_if_block_1$d, create_if_block_2$b];
+  const if_block_creators = [create_if_block$x, create_if_block_1$d, create_if_block_2$b];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -30481,7 +30481,7 @@ function create_if_block_1$c(ctx) {
   };
 }
 __name(create_if_block_1$c, "create_if_block_1$c");
-function create_if_block$v(ctx) {
+function create_if_block$w(ctx) {
   let flatbutton;
   let current;
   flatbutton = new Flat_button({
@@ -30515,7 +30515,7 @@ function create_if_block$v(ctx) {
     }
   };
 }
-__name(create_if_block$v, "create_if_block$v");
+__name(create_if_block$w, "create_if_block$w");
 function create_fragment$1f(ctx) {
   let div3;
   let div1;
@@ -30572,7 +30572,7 @@ function create_fragment$1f(ctx) {
   );
   let if_block4 = (
     /*onPaletteSave*/
-    ctx[0] && create_if_block$v(ctx)
+    ctx[0] && create_if_block$w(ctx)
   );
   return {
     c() {
@@ -30872,7 +30872,7 @@ function create_fragment$1f(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block$v(ctx2);
+          if_block4 = create_if_block$w(ctx2);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(div2, null);
@@ -31021,19 +31021,19 @@ function get_each_context_1$b(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$b, "get_each_context_1$b");
-function get_each_context_2$4(ctx, list, i) {
+function get_each_context_2$5(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context_2$4, "get_each_context_2$4");
-function get_each_context_3$2(ctx, list, i) {
+__name(get_each_context_2$5, "get_each_context_2$5");
+function get_each_context_3$3(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context_3$2, "get_each_context_3$2");
-function create_each_block_3$2(ctx) {
+__name(get_each_context_3$3, "get_each_context_3$3");
+function create_each_block_3$3(ctx) {
   let option;
   let t_value = (
     /*palette*/
@@ -31081,8 +31081,8 @@ function create_each_block_3$2(ctx) {
     }
   };
 }
-__name(create_each_block_3$2, "create_each_block_3$2");
-function create_each_block_2$4(ctx) {
+__name(create_each_block_3$3, "create_each_block_3$3");
+function create_each_block_2$5(ctx) {
   let option;
   let t_value = (
     /*palette*/
@@ -31130,7 +31130,7 @@ function create_each_block_2$4(ctx) {
     }
   };
 }
-__name(create_each_block_2$4, "create_each_block_2$4");
+__name(create_each_block_2$5, "create_each_block_2$5");
 function create_key_block$1(ctx) {
   let colorpalettebuilder;
   let current;
@@ -31378,7 +31378,7 @@ function create_fragment$1e(ctx) {
   ));
   let each_blocks_3 = [];
   for (let i2 = 0; i2 < each_value_3.length; i2 += 1) {
-    each_blocks_3[i2] = create_each_block_3$2(get_each_context_3$2(ctx, each_value_3, i2));
+    each_blocks_3[i2] = create_each_block_3$3(get_each_context_3$3(ctx, each_value_3, i2));
   }
   let each_value_2 = ensure_array_like(
     /*$palettes*/
@@ -31386,7 +31386,7 @@ function create_fragment$1e(ctx) {
   );
   let each_blocks_2 = [];
   for (let i2 = 0; i2 < each_value_2.length; i2 += 1) {
-    each_blocks_2[i2] = create_each_block_2$4(get_each_context_2$4(ctx, each_value_2, i2));
+    each_blocks_2[i2] = create_each_block_2$5(get_each_context_2$5(ctx, each_value_2, i2));
   }
   flatbutton0 = new Flat_button({
     props: {
@@ -31640,11 +31640,11 @@ function create_fragment$1e(ctx) {
         ));
         let i2;
         for (i2 = 0; i2 < each_value_3.length; i2 += 1) {
-          const child_ctx = get_each_context_3$2(ctx2, each_value_3, i2);
+          const child_ctx = get_each_context_3$3(ctx2, each_value_3, i2);
           if (each_blocks_3[i2]) {
             each_blocks_3[i2].p(child_ctx, dirty);
           } else {
-            each_blocks_3[i2] = create_each_block_3$2(child_ctx);
+            each_blocks_3[i2] = create_each_block_3$3(child_ctx);
             each_blocks_3[i2].c();
             each_blocks_3[i2].m(select, each0_anchor);
           }
@@ -31662,11 +31662,11 @@ function create_fragment$1e(ctx) {
         );
         let i2;
         for (i2 = 0; i2 < each_value_2.length; i2 += 1) {
-          const child_ctx = get_each_context_2$4(ctx2, each_value_2, i2);
+          const child_ctx = get_each_context_2$5(ctx2, each_value_2, i2);
           if (each_blocks_2[i2]) {
             each_blocks_2[i2].p(child_ctx, dirty);
           } else {
-            each_blocks_2[i2] = create_each_block_2$4(child_ctx);
+            each_blocks_2[i2] = create_each_block_2$5(child_ctx);
             each_blocks_2[i2].c();
             each_blocks_2[i2].m(select, null);
           }
@@ -32317,6 +32317,7 @@ const _DrawingColorPalettesFeature = class _DrawingColorPalettesFeature extends 
     (_b2 = this._colorPalettePicker) == null ? void 0 : _b2.$destroy();
     (_c2 = this._quickAccessSettingSubscription) == null ? void 0 : _c2.unsubscribe();
     this._quickAccessSettingSubscription = void 0;
+    this.removeQuickSelectIcon();
   }
   async addQuickSelectIcon() {
     if (this._iconComponent !== void 0) return;
@@ -37001,7 +37002,7 @@ const parseSignalRError = /* @__PURE__ */ __name((error) => {
     };
   } else throw error;
 }, "parseSignalRError");
-function create_if_block$u(ctx) {
+function create_if_block$v(ctx) {
   let div;
   let mounted;
   let dispose;
@@ -37065,13 +37066,13 @@ function create_if_block$u(ctx) {
     }
   };
 }
-__name(create_if_block$u, "create_if_block$u");
+__name(create_if_block$v, "create_if_block$v");
 function create_fragment$18(ctx) {
   let if_block_anchor;
   let if_block = (
     /*$currentDrop*/
     ctx[1] !== void 0 && /*$currentDrop*/
-    ctx[1].ownClaimed === false && create_if_block$u(ctx)
+    ctx[1].ownClaimed === false && create_if_block$v(ctx)
   );
   return {
     c() {
@@ -37091,7 +37092,7 @@ function create_fragment$18(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$u(ctx2);
+          if_block = create_if_block$v(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -37259,7 +37260,7 @@ function create_each_block$r(ctx) {
   };
 }
 __name(create_each_block$r, "create_each_block$r");
-function create_if_block$t(ctx) {
+function create_if_block$u(ctx) {
   let p;
   return {
     c() {
@@ -37276,7 +37277,7 @@ function create_if_block$t(ctx) {
     }
   };
 }
-__name(create_if_block$t, "create_if_block$t");
+__name(create_if_block$u, "create_if_block$u");
 function create_fragment$17(ctx) {
   let h3;
   let t1;
@@ -37296,7 +37297,7 @@ function create_fragment$17(ctx) {
   }
   let if_block = (
     /*$claims*/
-    ctx[0].length === 0 && create_if_block$t()
+    ctx[0].length === 0 && create_if_block$u()
   );
   return {
     c() {
@@ -37362,7 +37363,7 @@ function create_fragment$17(ctx) {
       ) {
         if (if_block) ;
         else {
-          if_block = create_if_block$t();
+          if_block = create_if_block$u();
           if_block.c();
           if_block.m(div, null);
         }
@@ -37707,7 +37708,7 @@ function get_each_context_1$a(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$a, "get_each_context_1$a");
-function create_if_block$s(ctx) {
+function create_if_block$t(ctx) {
   let each_1_anchor;
   let each_value_1 = ensure_array_like(
     /*$guess*/
@@ -37764,7 +37765,7 @@ function create_if_block$s(ctx) {
     }
   };
 }
-__name(create_if_block$s, "create_if_block$s");
+__name(create_if_block$t, "create_if_block$t");
 function create_each_block_1$a(ctx) {
   let span;
   let t0_value = (
@@ -37841,7 +37842,7 @@ function create_each_block$q(ctx) {
   let t;
   let if_block = (
     /*$guess*/
-    ctx[0] !== null && create_if_block$s(ctx)
+    ctx[0] !== null && create_if_block$t(ctx)
   );
   return {
     c() {
@@ -37864,7 +37865,7 @@ function create_each_block$q(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$s(ctx2);
+          if_block = create_if_block$t(ctx2);
           if_block.c();
           if_block.m(div, t);
         }
@@ -38151,7 +38152,7 @@ function create_then_block$2(ctx) {
   let if_block = (
     /*imageIndex*/
     ctx[1] !== void 0 && /*images*/
-    ctx[2].length > 0 && create_if_block$r(ctx)
+    ctx[2].length > 0 && create_if_block$s(ctx)
   );
   return {
     c() {
@@ -38171,7 +38172,7 @@ function create_then_block$2(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$r(ctx2);
+          if_block = create_if_block$s(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -38191,7 +38192,7 @@ function create_then_block$2(ctx) {
   };
 }
 __name(create_then_block$2, "create_then_block$2");
-function create_if_block$r(ctx) {
+function create_if_block$s(ctx) {
   let img;
   let img_src_value;
   let mounted;
@@ -38250,7 +38251,7 @@ function create_if_block$r(ctx) {
     }
   };
 }
-__name(create_if_block$r, "create_if_block$r");
+__name(create_if_block$s, "create_if_block$s");
 function create_pending_block$2(ctx) {
   let bounceload;
   let current;
@@ -39038,7 +39039,7 @@ function get_each_context$p(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$p, "get_each_context$p");
-function create_else_block$h(ctx) {
+function create_else_block$i(ctx) {
   let flatbutton;
   let t0;
   let span;
@@ -39086,7 +39087,7 @@ function create_else_block$h(ctx) {
     }
   };
 }
-__name(create_else_block$h, "create_else_block$h");
+__name(create_else_block$i, "create_else_block$i");
 function create_if_block_6(ctx) {
   let flatbutton;
   let t0;
@@ -39571,7 +39572,7 @@ function create_if_block_2$9(ctx) {
   };
 }
 __name(create_if_block_2$9, "create_if_block_2$9");
-function create_if_block$q(ctx) {
+function create_if_block$r(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -39723,7 +39724,7 @@ function create_if_block$q(ctx) {
     }
   };
 }
-__name(create_if_block$q, "create_if_block$q");
+__name(create_if_block$r, "create_if_block$r");
 function create_fragment$13(ctx) {
   let div1;
   let div0;
@@ -39733,7 +39734,7 @@ function create_fragment$13(ctx) {
   let t1;
   let t2;
   let current;
-  const if_block_creators = [create_if_block_4$6, create_if_block_5$3, create_if_block_6, create_else_block$h];
+  const if_block_creators = [create_if_block_4$6, create_if_block_5$3, create_if_block_6, create_else_block$i];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -39769,7 +39770,7 @@ function create_fragment$13(ctx) {
   );
   let if_block3 = (
     /*$devmode*/
-    ctx[5] === true && create_if_block$q(ctx)
+    ctx[5] === true && create_if_block$r(ctx)
   );
   return {
     c() {
@@ -39873,7 +39874,7 @@ function create_fragment$13(ctx) {
             transition_in(if_block3, 1);
           }
         } else {
-          if_block3 = create_if_block$q(ctx2);
+          if_block3 = create_if_block$r(ctx2);
           if_block3.c();
           transition_in(if_block3, 1);
           if_block3.m(div1, null);
@@ -40524,7 +40525,7 @@ function get_each_context_1$9(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$9, "get_each_context_1$9");
-function create_else_block$g(ctx) {
+function create_else_block$h(ctx) {
   let div1;
   let div0;
   let t0;
@@ -40661,7 +40662,7 @@ function create_else_block$g(ctx) {
     }
   };
 }
-__name(create_else_block$g, "create_else_block$g");
+__name(create_else_block$h, "create_else_block$h");
 function create_if_block_1$a(ctx) {
   let div;
   return {
@@ -40683,7 +40684,7 @@ function create_if_block_1$a(ctx) {
   };
 }
 __name(create_if_block_1$a, "create_if_block_1$a");
-function create_if_block$p(ctx) {
+function create_if_block$q(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({
@@ -40712,7 +40713,7 @@ function create_if_block$p(ctx) {
     }
   };
 }
-__name(create_if_block$p, "create_if_block$p");
+__name(create_if_block$q, "create_if_block$q");
 function create_if_block_3$5(ctx) {
   let div;
   let mounted;
@@ -41256,7 +41257,7 @@ function create_fragment$11(ctx) {
   let if_block;
   let current;
   bounceload = new Bounceload({ props: { content: "Saving.." } });
-  const if_block_creators = [create_if_block$p, create_if_block_1$a, create_else_block$g];
+  const if_block_creators = [create_if_block$q, create_if_block_1$a, create_else_block$h];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -41448,7 +41449,7 @@ function get_each_context$n(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$n, "get_each_context$n");
-function create_if_block$o(ctx) {
+function create_if_block$p(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -41573,7 +41574,7 @@ function create_if_block$o(ctx) {
     }
   };
 }
-__name(create_if_block$o, "create_if_block$o");
+__name(create_if_block$p, "create_if_block$p");
 function create_each_block$n(ctx) {
   let show_if = (
     /*sprite*/
@@ -41589,7 +41590,7 @@ function create_each_block$n(ctx) {
     )
   );
   let if_block_anchor;
-  let if_block = show_if && create_if_block$o(ctx);
+  let if_block = show_if && create_if_block$p(ctx);
   return {
     c() {
       if (if_block) if_block.c();
@@ -41616,7 +41617,7 @@ function create_each_block$n(ctx) {
         if (if_block) {
           if_block.p(ctx2, dirty);
         } else {
-          if_block = create_if_block$o(ctx2);
+          if_block = create_if_block$p(ctx2);
           if_block.c();
           if_block.m(if_block_anchor.parentNode, if_block_anchor);
         }
@@ -41841,7 +41842,7 @@ function get_each_context$m(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$m, "get_each_context$m");
-function create_else_block$f(ctx) {
+function create_else_block$g(ctx) {
   var _a2, _b2;
   let div1;
   let div0;
@@ -41966,8 +41967,8 @@ function create_else_block$f(ctx) {
     }
   };
 }
-__name(create_else_block$f, "create_else_block$f");
-function create_if_block$n(ctx) {
+__name(create_else_block$g, "create_else_block$g");
+function create_if_block$o(ctx) {
   var _a2, _b2, _c2;
   let div1;
   let div0;
@@ -42129,15 +42130,15 @@ function create_if_block$n(ctx) {
     }
   };
 }
-__name(create_if_block$n, "create_if_block$n");
+__name(create_if_block$o, "create_if_block$o");
 function create_each_block$m(ctx) {
   let if_block_anchor;
   function select_block_type(ctx2, dirty) {
     if (
       /*scene*/
       ctx2[9].sceneShift
-    ) return create_if_block$n;
-    return create_else_block$f;
+    ) return create_if_block$o;
+    return create_else_block$g;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -42559,7 +42560,7 @@ function create_if_block_2$7(ctx) {
   };
 }
 __name(create_if_block_2$7, "create_if_block_2$7");
-function create_else_block$e(ctx) {
+function create_else_block$f(ctx) {
   let each_1_anchor;
   let each_value = ensure_array_like(
     /*changes*/
@@ -42618,8 +42619,8 @@ function create_else_block$e(ctx) {
     }
   };
 }
-__name(create_else_block$e, "create_else_block$e");
-function create_if_block$m(ctx) {
+__name(create_else_block$f, "create_else_block$f");
+function create_if_block$n(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({
@@ -42648,7 +42649,7 @@ function create_if_block$m(ctx) {
     }
   };
 }
-__name(create_if_block$m, "create_if_block$m");
+__name(create_if_block$n, "create_if_block$n");
 function create_if_block_1$9(ctx) {
   let span;
   return {
@@ -42813,7 +42814,7 @@ function create_fragment$_(ctx) {
     /*$devmode*/
     ctx[2] && create_if_block_2$7(ctx)
   );
-  const if_block_creators = [create_if_block$m, create_else_block$e];
+  const if_block_creators = [create_if_block$n, create_else_block$f];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -42935,38 +42936,38 @@ function supressWarnings() {
   });
 }
 __name(supressWarnings, "supressWarnings");
-function get_each_context_5(ctx, list, i) {
+function get_each_context_5$1(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[18] = list[i];
   return child_ctx;
 }
-__name(get_each_context_5, "get_each_context_5");
-function get_each_context_4(ctx, list, i) {
+__name(get_each_context_5$1, "get_each_context_5$1");
+function get_each_context_4$1(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[18] = list[i];
   return child_ctx;
 }
-__name(get_each_context_4, "get_each_context_4");
+__name(get_each_context_4$1, "get_each_context_4$1");
 function get_each_context_1$8(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[10] = list[i];
   return child_ctx;
 }
 __name(get_each_context_1$8, "get_each_context_1$8");
-function get_each_context_2$3(ctx, list, i) {
+function get_each_context_2$4(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[13] = list[i];
   child_ctx[15] = i;
   return child_ctx;
 }
-__name(get_each_context_2$3, "get_each_context_2$3");
-function get_each_context_3$1(ctx, list, i) {
+__name(get_each_context_2$4, "get_each_context_2$4");
+function get_each_context_3$2(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[16] = list[i];
   child_ctx[15] = i;
   return child_ctx;
 }
-__name(get_each_context_3$1, "get_each_context_3$1");
+__name(get_each_context_3$2, "get_each_context_3$2");
 function get_each_context$k(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[7] = list[i];
@@ -43044,7 +43045,7 @@ function create_if_block_1$8(ctx) {
   };
 }
 __name(create_if_block_1$8, "create_if_block_1$8");
-function create_if_block$l(ctx) {
+function create_if_block$m(ctx) {
   let each_1_anchor;
   let current;
   let each_value = ensure_array_like(
@@ -43123,7 +43124,7 @@ function create_if_block$l(ctx) {
     }
   };
 }
-__name(create_if_block$l, "create_if_block$l");
+__name(create_if_block$m, "create_if_block$m");
 function create_else_block_1$1(ctx) {
   let switch_instance;
   let switch_instance_anchor;
@@ -43229,7 +43230,7 @@ function create_if_block_3$4(ctx) {
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block_4$4, create_else_block$d];
+  const if_block_creators = [create_if_block_4$4, create_else_block$e];
   const if_blocks = [];
   function select_block_type_2(ctx2, dirty) {
     if (
@@ -43511,7 +43512,7 @@ function create_default_slot_11(ctx) {
   };
 }
 __name(create_default_slot_11, "create_default_slot_11");
-function create_else_block$d(ctx) {
+function create_else_block$e(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -43624,7 +43625,7 @@ function create_else_block$d(ctx) {
     }
   };
 }
-__name(create_else_block$d, "create_else_block$d");
+__name(create_else_block$e, "create_else_block$e");
 function create_if_block_4$4(ctx) {
   let switch_instance;
   let switch_instance_anchor;
@@ -43793,7 +43794,7 @@ function create_default_slot_10(ctx) {
   };
 }
 __name(create_default_slot_10, "create_default_slot_10");
-function create_each_block_5(ctx) {
+function create_each_block_5$1(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -43888,7 +43889,7 @@ function create_each_block_5(ctx) {
     }
   };
 }
-__name(create_each_block_5, "create_each_block_5");
+__name(create_each_block_5$1, "create_each_block_5$1");
 function create_default_slot_9(ctx) {
   let each_1_anchor;
   let current;
@@ -43898,7 +43899,7 @@ function create_default_slot_9(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_5.length; i += 1) {
-    each_blocks[i] = create_each_block_5(get_each_context_5(ctx, each_value_5, i));
+    each_blocks[i] = create_each_block_5$1(get_each_context_5$1(ctx, each_value_5, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -43928,12 +43929,12 @@ function create_default_slot_9(ctx) {
         );
         let i;
         for (i = 0; i < each_value_5.length; i += 1) {
-          const child_ctx = get_each_context_5(ctx2, each_value_5, i);
+          const child_ctx = get_each_context_5$1(ctx2, each_value_5, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_5(child_ctx);
+            each_blocks[i] = create_each_block_5$1(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
@@ -44023,7 +44024,7 @@ function create_default_slot_8(ctx) {
   };
 }
 __name(create_default_slot_8, "create_default_slot_8");
-function create_each_block_4(ctx) {
+function create_each_block_4$1(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -44118,7 +44119,7 @@ function create_each_block_4(ctx) {
     }
   };
 }
-__name(create_each_block_4, "create_each_block_4");
+__name(create_each_block_4$1, "create_each_block_4$1");
 function create_default_slot_7(ctx) {
   let each_1_anchor;
   let current;
@@ -44128,7 +44129,7 @@ function create_default_slot_7(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_4.length; i += 1) {
-    each_blocks[i] = create_each_block_4(get_each_context_4(ctx, each_value_4, i));
+    each_blocks[i] = create_each_block_4$1(get_each_context_4$1(ctx, each_value_4, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -44158,12 +44159,12 @@ function create_default_slot_7(ctx) {
         );
         let i;
         for (i = 0; i < each_value_4.length; i += 1) {
-          const child_ctx = get_each_context_4(ctx2, each_value_4, i);
+          const child_ctx = get_each_context_4$1(ctx2, each_value_4, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_4(child_ctx);
+            each_blocks[i] = create_each_block_4$1(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
@@ -44253,7 +44254,7 @@ function create_default_slot_6(ctx) {
   };
 }
 __name(create_default_slot_6, "create_default_slot_6");
-function create_each_block_3$1(ctx) {
+function create_each_block_3$2(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -44343,7 +44344,7 @@ function create_each_block_3$1(ctx) {
     }
   };
 }
-__name(create_each_block_3$1, "create_each_block_3$1");
+__name(create_each_block_3$2, "create_each_block_3$2");
 function create_default_slot_5(ctx) {
   let each_1_anchor;
   let current;
@@ -44353,7 +44354,7 @@ function create_default_slot_5(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_3.length; i += 1) {
-    each_blocks[i] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i));
+    each_blocks[i] = create_each_block_3$2(get_each_context_3$2(ctx, each_value_3, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -44383,12 +44384,12 @@ function create_default_slot_5(ctx) {
         );
         let i;
         for (i = 0; i < each_value_3.length; i += 1) {
-          const child_ctx = get_each_context_3$1(ctx2, each_value_3, i);
+          const child_ctx = get_each_context_3$2(ctx2, each_value_3, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_3$1(child_ctx);
+            each_blocks[i] = create_each_block_3$2(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
@@ -44549,7 +44550,7 @@ function create_default_slot_3(ctx) {
   };
 }
 __name(create_default_slot_3, "create_default_slot_3");
-function create_each_block_2$3(ctx) {
+function create_each_block_2$4(ctx) {
   let switch_instance;
   let switch_instance_anchor;
   let current;
@@ -44639,7 +44640,7 @@ function create_each_block_2$3(ctx) {
     }
   };
 }
-__name(create_each_block_2$3, "create_each_block_2$3");
+__name(create_each_block_2$4, "create_each_block_2$4");
 function create_default_slot_2(ctx) {
   let t;
   let current;
@@ -44649,7 +44650,7 @@ function create_default_slot_2(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks[i] = create_each_block_2$3(get_each_context_2$3(ctx, each_value_2, i));
+    each_blocks[i] = create_each_block_2$4(get_each_context_2$4(ctx, each_value_2, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -44679,12 +44680,12 @@ function create_default_slot_2(ctx) {
         );
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2$3(ctx2, each_value_2, i);
+          const child_ctx = get_each_context_2$4(ctx2, each_value_2, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_2$3(child_ctx);
+            each_blocks[i] = create_each_block_2$4(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(t.parentNode, t);
@@ -45067,7 +45068,7 @@ function create_fragment$Z(ctx) {
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block$l, create_if_block_1$8];
+  const if_block_creators = [create_if_block$m, create_if_block_1$8];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (!/*type*/
@@ -47426,7 +47427,7 @@ marked.parseInline;
 Parser.parse;
 Lexer.lex;
 const key = {};
-function create_else_block$c(ctx) {
+function create_else_block$d(ctx) {
   let t;
   return {
     c() {
@@ -47455,7 +47456,7 @@ function create_else_block$c(ctx) {
     }
   };
 }
-__name(create_else_block$c, "create_else_block$c");
+__name(create_else_block$d, "create_else_block$d");
 function create_if_block_5$1(ctx) {
   let h6;
   let current;
@@ -47876,7 +47877,7 @@ function create_if_block_1$7(ctx) {
   };
 }
 __name(create_if_block_1$7, "create_if_block_1$7");
-function create_if_block$k(ctx) {
+function create_if_block$l(ctx) {
   let h1;
   let current;
   const default_slot_template = (
@@ -47959,20 +47960,20 @@ function create_if_block$k(ctx) {
     }
   };
 }
-__name(create_if_block$k, "create_if_block$k");
+__name(create_if_block$l, "create_if_block$l");
 function create_fragment$Y(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
   const if_block_creators = [
-    create_if_block$k,
+    create_if_block$l,
     create_if_block_1$7,
     create_if_block_2$5,
     create_if_block_3$3,
     create_if_block_4$3,
     create_if_block_5$1,
-    create_else_block$c
+    create_else_block$d
   ];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
@@ -49092,7 +49093,7 @@ const _TableRow = class _TableRow extends SvelteComponent {
 };
 __name(_TableRow, "TableRow");
 let TableRow = _TableRow;
-function create_else_block$b(ctx) {
+function create_else_block$c(ctx) {
   let td;
   let current;
   const default_slot_template = (
@@ -49175,8 +49176,8 @@ function create_else_block$b(ctx) {
     }
   };
 }
-__name(create_else_block$b, "create_else_block$b");
-function create_if_block$j(ctx) {
+__name(create_else_block$c, "create_else_block$c");
+function create_if_block$k(ctx) {
   let th;
   let current;
   const default_slot_template = (
@@ -49259,13 +49260,13 @@ function create_if_block$j(ctx) {
     }
   };
 }
-__name(create_if_block$j, "create_if_block$j");
+__name(create_if_block$k, "create_if_block$k");
 function create_fragment$L(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block$j, create_else_block$b];
+  const if_block_creators = [create_if_block$k, create_else_block$c];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -49347,7 +49348,7 @@ const _TableCell = class _TableCell extends SvelteComponent {
 };
 __name(_TableCell, "TableCell");
 let TableCell = _TableCell;
-function create_else_block$a(ctx) {
+function create_else_block$b(ctx) {
   let ul;
   let current;
   const default_slot_template = (
@@ -49415,8 +49416,8 @@ function create_else_block$a(ctx) {
     }
   };
 }
-__name(create_else_block$a, "create_else_block$a");
-function create_if_block$i(ctx) {
+__name(create_else_block$b, "create_else_block$b");
+function create_if_block$j(ctx) {
   let ol;
   let current;
   const default_slot_template = (
@@ -49499,13 +49500,13 @@ function create_if_block$i(ctx) {
     }
   };
 }
-__name(create_if_block$i, "create_if_block$i");
+__name(create_if_block$j, "create_if_block$j");
 function create_fragment$K(ctx) {
   let current_block_type_index;
   let if_block;
   let if_block_anchor;
   let current;
-  const if_block_creators = [create_if_block$i, create_else_block$a];
+  const if_block_creators = [create_if_block$j, create_else_block$b];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -50392,7 +50393,7 @@ function get_each_context_1$7(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$7, "get_each_context_1$7");
-function create_else_block$9(ctx) {
+function create_else_block$a(ctx) {
   let div;
   let t;
   let current;
@@ -50496,7 +50497,7 @@ function create_else_block$9(ctx) {
     }
   };
 }
-__name(create_else_block$9, "create_else_block$9");
+__name(create_else_block$a, "create_else_block$a");
 function create_if_block_3$2(ctx) {
   let bounceload;
   let current;
@@ -50664,7 +50665,7 @@ function create_if_block_4$2(ctx) {
   };
 }
 __name(create_if_block_4$2, "create_if_block_4$2");
-function create_if_block$h(ctx) {
+function create_if_block$i(ctx) {
   let div1;
   let b;
   let t1;
@@ -50758,7 +50759,7 @@ function create_if_block$h(ctx) {
     }
   };
 }
-__name(create_if_block$h, "create_if_block$h");
+__name(create_if_block$i, "create_if_block$i");
 function create_if_block_1$6(ctx) {
   let div;
   return {
@@ -50876,7 +50877,7 @@ function create_fragment$B(ctx) {
   let if_block0;
   let t2;
   let current;
-  const if_block_creators = [create_if_block_2$4, create_if_block_3$2, create_else_block$9];
+  const if_block_creators = [create_if_block_2$4, create_if_block_3$2, create_else_block$a];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -50894,7 +50895,7 @@ function create_fragment$B(ctx) {
   if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
   let if_block1 = (
     /*$showDiscovered*/
-    ctx[2] && create_if_block$h(ctx)
+    ctx[2] && create_if_block$i(ctx)
   );
   return {
     c() {
@@ -50948,7 +50949,7 @@ function create_fragment$B(ctx) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
         } else {
-          if_block1 = create_if_block$h(ctx2);
+          if_block1 = create_if_block$i(ctx2);
           if_block1.c();
           if_block1.m(div1, null);
         }
@@ -51172,7 +51173,7 @@ function get_each_context$i(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context$i, "get_each_context$i");
-function create_else_block$8(ctx) {
+function create_else_block$9(ctx) {
   let each_1_anchor;
   let each_value = ensure_array_like(
     /*announcements*/
@@ -51231,8 +51232,8 @@ function create_else_block$8(ctx) {
     }
   };
 }
-__name(create_else_block$8, "create_else_block$8");
-function create_if_block$g(ctx) {
+__name(create_else_block$9, "create_else_block$9");
+function create_if_block$h(ctx) {
   let bounceload;
   let current;
   bounceload = new Bounceload({ props: { content: "Loading news.." } });
@@ -51259,7 +51260,7 @@ function create_if_block$g(ctx) {
     }
   };
 }
-__name(create_if_block$g, "create_if_block$g");
+__name(create_if_block$h, "create_if_block$h");
 function create_each_block$i(ctx) {
   let div1;
   let div0;
@@ -51341,7 +51342,7 @@ function create_fragment$A(ctx) {
   let current_block_type_index;
   let if_block;
   let current;
-  const if_block_creators = [create_if_block$g, create_else_block$8];
+  const if_block_creators = [create_if_block$h, create_else_block$9];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -51527,7 +51528,7 @@ let PlayerIdsFeature = _PlayerIdsFeature;
 __decorateClass$x([
   inject(PlayersService)
 ], PlayerIdsFeature.prototype, "_playersService");
-function create_else_block$7(ctx) {
+function create_else_block$8(ctx) {
   let t;
   return {
     c() {
@@ -51554,8 +51555,8 @@ function create_else_block$7(ctx) {
     }
   };
 }
-__name(create_else_block$7, "create_else_block$7");
-function create_if_block$f(ctx) {
+__name(create_else_block$8, "create_else_block$8");
+function create_if_block$g(ctx) {
   let html_tag;
   let html_anchor;
   return {
@@ -51588,7 +51589,7 @@ function create_if_block$f(ctx) {
     }
   };
 }
-__name(create_if_block$f, "create_if_block$f");
+__name(create_if_block$g, "create_if_block$g");
 function create_fragment$z(ctx) {
   let div2;
   let div0;
@@ -51599,8 +51600,8 @@ function create_fragment$z(ctx) {
     if (
       /*htmlTitle*/
       ctx2[1]
-    ) return create_if_block$f;
-    return create_else_block$7;
+    ) return create_if_block$g;
+    return create_else_block$8;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -51878,7 +51879,7 @@ const _TooltipsFeature = class _TooltipsFeature extends TypoFeature {
 };
 __name(_TooltipsFeature, "TooltipsFeature");
 let TooltipsFeature = _TooltipsFeature;
-function create_else_block$6(ctx) {
+function create_else_block$7(ctx) {
   let div0;
   let a0;
   let img;
@@ -52064,7 +52065,7 @@ function create_else_block$6(ctx) {
     }
   };
 }
-__name(create_else_block$6, "create_else_block$6");
+__name(create_else_block$7, "create_else_block$7");
 function create_if_block_1$5(ctx) {
   let div;
   let bounceload;
@@ -52099,7 +52100,7 @@ function create_if_block_1$5(ctx) {
   };
 }
 __name(create_if_block_1$5, "create_if_block_1$5");
-function create_if_block$e(ctx) {
+function create_if_block$f(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -52156,7 +52157,7 @@ function create_if_block$e(ctx) {
     }
   };
 }
-__name(create_if_block$e, "create_if_block$e");
+__name(create_if_block$f, "create_if_block$f");
 function create_if_block_2$3(ctx) {
   let div1;
   let div0;
@@ -52209,7 +52210,7 @@ function create_fragment$y(ctx) {
   let current_block_type_index;
   let if_block;
   let current;
-  const if_block_creators = [create_if_block$e, create_if_block_1$5, create_else_block$6];
+  const if_block_creators = [create_if_block$f, create_if_block_1$5, create_else_block$7];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -52737,12 +52738,12 @@ function get_each_context_1$6(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$6, "get_each_context_1$6");
-function get_each_context_2$2(ctx, list, i) {
+function get_each_context_2$3(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[34] = list[i];
   return child_ctx;
 }
-__name(get_each_context_2$2, "get_each_context_2$2");
+__name(get_each_context_2$3, "get_each_context_2$3");
 function create_if_block_4$1(ctx) {
   let p;
   let t2;
@@ -52954,7 +52955,7 @@ function create_then_block$1(ctx) {
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks_1[i] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i));
+    each_blocks_1[i] = create_each_block_2$3(get_each_context_2$3(ctx, each_value_2, i));
   }
   let each_value_1 = ensure_array_like(
     /*checklist*/
@@ -53017,11 +53018,11 @@ function create_then_block$1(ctx) {
         );
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2$2(ctx2, each_value_2, i);
+          const child_ctx = get_each_context_2$3(ctx2, each_value_2, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_2$2(child_ctx);
+            each_blocks_1[i] = create_each_block_2$3(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(div0, null);
           }
@@ -53104,7 +53105,7 @@ function create_if_block_3$1(ctx) {
   };
 }
 __name(create_if_block_3$1, "create_if_block_3$1");
-function create_each_block_2$2(ctx) {
+function create_each_block_2$3(ctx) {
   let div2;
   let h4;
   let t0_value = (
@@ -53204,8 +53205,8 @@ function create_each_block_2$2(ctx) {
     }
   };
 }
-__name(create_each_block_2$2, "create_each_block_2$2");
-function create_else_block$5(ctx) {
+__name(create_each_block_2$3, "create_each_block_2$3");
+function create_else_block$6(ctx) {
   let img;
   let img_src_value;
   return {
@@ -53225,7 +53226,7 @@ function create_else_block$5(ctx) {
     }
   };
 }
-__name(create_else_block$5, "create_else_block$5");
+__name(create_else_block$6, "create_else_block$6");
 function create_if_block_2$2(ctx) {
   let img;
   let img_src_value;
@@ -53279,7 +53280,7 @@ function create_each_block_1$6(ctx) {
       /*task*/
       ctx2[34].completed
     ) return create_if_block_2$2;
-    return create_else_block$5;
+    return create_else_block$6;
   }
   __name(select_block_type_1, "select_block_type_1");
   let current_block_type = select_block_type_1(ctx);
@@ -53382,7 +53383,7 @@ function create_pending_block$1(ctx) {
   };
 }
 __name(create_pending_block$1, "create_pending_block$1");
-function create_if_block$d(ctx) {
+function create_if_block$e(ctx) {
   let div2;
   let div0;
   let t;
@@ -53497,7 +53498,7 @@ function create_if_block$d(ctx) {
     }
   };
 }
-__name(create_if_block$d, "create_if_block$d");
+__name(create_if_block$e, "create_if_block$e");
 function create_each_block$h(ctx) {
   let b;
   let mounted;
@@ -53597,7 +53598,7 @@ function create_fragment$t(ctx) {
   );
   let if_block2 = (
     /*activeTab*/
-    ctx[4] === "extras" && create_if_block$d(ctx)
+    ctx[4] === "extras" && create_if_block$e(ctx)
   );
   return {
     c() {
@@ -53803,7 +53804,7 @@ function create_fragment$t(ctx) {
             transition_in(if_block2, 1);
           }
         } else {
-          if_block2 = create_if_block$d(ctx2);
+          if_block2 = create_if_block$e(ctx2);
           if_block2.c();
           transition_in(if_block2, 1);
           if_block2.m(div4, null);
@@ -54807,7 +54808,7 @@ __decorateClass$u([
 __decorateClass$u([
   inject(ToastService)
 ], ControlsProfilesFeature.prototype, "_toastService");
-function create_if_block$c(ctx) {
+function create_if_block$d(ctx) {
   let br;
   let span;
   return {
@@ -54829,7 +54830,7 @@ function create_if_block$c(ctx) {
     }
   };
 }
-__name(create_if_block$c, "create_if_block$c");
+__name(create_if_block$d, "create_if_block$d");
 function create_fragment$r(ctx) {
   let div5;
   let h3;
@@ -54865,7 +54866,7 @@ function create_fragment$r(ctx) {
   let dispose;
   let if_block = (
     /*hotkey*/
-    ctx[0].disabledOnInputs && create_if_block$c()
+    ctx[0].disabledOnInputs && create_if_block$d()
   );
   flatbutton0 = new Flat_button({
     props: {
@@ -54994,7 +54995,7 @@ function create_fragment$r(ctx) {
       ) {
         if (if_block) ;
         else {
-          if_block = create_if_block$c();
+          if_block = create_if_block$d();
           if_block.c();
           if_block.m(div0, null);
         }
@@ -55405,12 +55406,12 @@ function get_each_context_1$5(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$5, "get_each_context_1$5");
-function get_each_context_2$1(ctx, list, i) {
+function get_each_context_2$2(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[15] = list[i];
   return child_ctx;
 }
-__name(get_each_context_2$1, "get_each_context_2$1");
+__name(get_each_context_2$2, "get_each_context_2$2");
 function create_if_block_5(ctx) {
   let div1;
   let h2;
@@ -55522,7 +55523,7 @@ function create_if_block_4(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
+    each_blocks[i] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
@@ -55562,12 +55563,12 @@ function create_if_block_4(ctx) {
         );
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2$1(ctx2, each_value_2, i);
+          const child_ctx = get_each_context_2$2(ctx2, each_value_2, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_2$1(child_ctx);
+            each_blocks[i] = create_each_block_2$2(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div0, null);
@@ -55603,7 +55604,7 @@ function create_if_block_4(ctx) {
   };
 }
 __name(create_if_block_4, "create_if_block_4");
-function create_each_block_2$1(ctx) {
+function create_each_block_2$2(ctx) {
   let div;
   let switch_instance;
   let t;
@@ -55693,7 +55694,7 @@ function create_each_block_2$1(ctx) {
     }
   };
 }
-__name(create_each_block_2$1, "create_each_block_2$1");
+__name(create_each_block_2$2, "create_each_block_2$2");
 function create_if_block_3(ctx) {
   let div1;
   let h2;
@@ -55976,7 +55977,7 @@ function create_each_block_1$5(ctx) {
   };
 }
 __name(create_each_block_1$5, "create_each_block_1$5");
-function create_if_block$b(ctx) {
+function create_if_block$c(ctx) {
   let div1;
   let h2;
   let t1;
@@ -56083,7 +56084,7 @@ function create_if_block$b(ctx) {
     }
   };
 }
-__name(create_if_block$b, "create_if_block$b");
+__name(create_if_block$c, "create_if_block$c");
 function create_each_block$f(ctx) {
   let controlssettingscommand;
   let current;
@@ -56178,7 +56179,7 @@ function create_fragment$p(ctx) {
   );
   let if_block4 = (
     /*featureCommands*/
-    ctx[6].length > 0 && create_if_block$b(ctx)
+    ctx[6].length > 0 && create_if_block$c(ctx)
   );
   return {
     c() {
@@ -56354,7 +56355,7 @@ function create_fragment$p(ctx) {
             transition_in(if_block4, 1);
           }
         } else {
-          if_block4 = create_if_block$b(ctx2);
+          if_block4 = create_if_block$c(ctx2);
           if_block4.c();
           transition_in(if_block4, 1);
           if_block4.m(if_block4_anchor.parentNode, if_block4_anchor);
@@ -56460,7 +56461,7 @@ const _Controls_settings_details = class _Controls_settings_details extends Svel
 };
 __name(_Controls_settings_details, "Controls_settings_details");
 let Controls_settings_details = _Controls_settings_details;
-function create_else_block$4(ctx) {
+function create_else_block$5(ctx) {
   let div;
   let t_value = (
     /*feature*/
@@ -56489,8 +56490,8 @@ function create_else_block$4(ctx) {
     }
   };
 }
-__name(create_else_block$4, "create_else_block$4");
-function create_if_block$a(ctx) {
+__name(create_else_block$5, "create_else_block$5");
+function create_if_block$b(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -56555,7 +56556,7 @@ function create_if_block$a(ctx) {
     }
   };
 }
-__name(create_if_block$a, "create_if_block$a");
+__name(create_if_block$b, "create_if_block$b");
 function create_fragment$o(ctx) {
   let div3;
   let div0;
@@ -56598,8 +56599,8 @@ function create_fragment$o(ctx) {
     if (
       /*feature*/
       ctx2[0].hasDetailComponents
-    ) return create_if_block$a;
-    return create_else_block$4;
+    ) return create_if_block$b;
+    return create_else_block$5;
   }
   __name(select_block_type, "select_block_type");
   let current_block_type = select_block_type(ctx);
@@ -56959,7 +56960,7 @@ function create_each_block$e(ctx) {
   };
 }
 __name(create_each_block$e, "create_each_block$e");
-function create_if_block$9(ctx) {
+function create_if_block$a(ctx) {
   let controlssettingsdetails;
   let current;
   controlssettingsdetails = new Controls_settings_details({
@@ -57013,7 +57014,7 @@ function create_if_block$9(ctx) {
     }
   };
 }
-__name(create_if_block$9, "create_if_block$9");
+__name(create_if_block$a, "create_if_block$a");
 function create_fragment$n(ctx) {
   let div6;
   let div4;
@@ -57059,7 +57060,7 @@ function create_fragment$n(ctx) {
   }), "out");
   let if_block = (
     /*selectedDetailsFeature*/
-    ctx[1] && create_if_block$9(ctx)
+    ctx[1] && create_if_block$a(ctx)
   );
   return {
     c() {
@@ -57238,7 +57239,7 @@ function create_fragment$n(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$9(ctx2);
+          if_block = create_if_block$a(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div5, null);
@@ -58540,19 +58541,19 @@ function get_each_context_1$2(ctx, list, i) {
   return child_ctx;
 }
 __name(get_each_context_1$2, "get_each_context_1$2");
-function get_each_context_2(ctx, list, i) {
+function get_each_context_2$1(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[13] = list[i];
   return child_ctx;
 }
-__name(get_each_context_2, "get_each_context_2");
-function get_each_context_3(ctx, list, i) {
+__name(get_each_context_2$1, "get_each_context_2$1");
+function get_each_context_3$1(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[18] = list[i];
   return child_ctx;
 }
-__name(get_each_context_3, "get_each_context_3");
-function create_each_block_3(ctx) {
+__name(get_each_context_3$1, "get_each_context_3$1");
+function create_each_block_3$1(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -58629,8 +58630,8 @@ function create_each_block_3(ctx) {
     }
   };
 }
-__name(create_each_block_3, "create_each_block_3");
-function create_each_block_2(ctx) {
+__name(create_each_block_3$1, "create_each_block_3$1");
+function create_each_block_2$1(ctx) {
   let div;
   let img;
   let img_src_value;
@@ -58707,7 +58708,7 @@ function create_each_block_2(ctx) {
     }
   };
 }
-__name(create_each_block_2, "create_each_block_2");
+__name(create_each_block_2$1, "create_each_block_2$1");
 function create_each_block_1$2(ctx) {
   let div;
   let img;
@@ -58789,7 +58790,7 @@ function create_each_block_1$2(ctx) {
   };
 }
 __name(create_each_block_1$2, "create_each_block_1$2");
-function create_if_block$8(ctx) {
+function create_if_block$9(ctx) {
   let div;
   let current;
   let each_value = ensure_array_like(
@@ -58869,7 +58870,7 @@ function create_if_block$8(ctx) {
     }
   };
 }
-__name(create_if_block$8, "create_if_block$8");
+__name(create_if_block$9, "create_if_block$9");
 function create_each_block$c(ctx) {
   let div;
   let switch_instance;
@@ -59014,7 +59015,7 @@ function create_fragment$j(ctx) {
   );
   let each_blocks_2 = [];
   for (let i = 0; i < each_value_3.length; i += 1) {
-    each_blocks_2[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
+    each_blocks_2[i] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i));
   }
   let each_value_2 = ensure_array_like(
     /*$items*/
@@ -59025,7 +59026,7 @@ function create_fragment$j(ctx) {
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    each_blocks_1[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
   }
   let each_value_1 = ensure_array_like(
     /*$items*/
@@ -59041,7 +59042,7 @@ function create_fragment$j(ctx) {
   let if_block = (
     /*selectedItem*/
     ctx[1] !== void 0 && /*selectedItem*/
-    ctx[1].settings.length > 0 && create_if_block$8(ctx)
+    ctx[1].settings.length > 0 && create_if_block$9(ctx)
   );
   return {
     c() {
@@ -59165,11 +59166,11 @@ function create_fragment$j(ctx) {
         );
         let i;
         for (i = 0; i < each_value_3.length; i += 1) {
-          const child_ctx = get_each_context_3(ctx2, each_value_3, i);
+          const child_ctx = get_each_context_3$1(ctx2, each_value_3, i);
           if (each_blocks_2[i]) {
             each_blocks_2[i].p(child_ctx, dirty);
           } else {
-            each_blocks_2[i] = create_each_block_3(child_ctx);
+            each_blocks_2[i] = create_each_block_3$1(child_ctx);
             each_blocks_2[i].c();
             each_blocks_2[i].m(div0, t6);
           }
@@ -59190,11 +59191,11 @@ function create_fragment$j(ctx) {
         );
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2(ctx2, each_value_2, i);
+          const child_ctx = get_each_context_2$1(ctx2, each_value_2, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_2(child_ctx);
+            each_blocks_1[i] = create_each_block_2$1(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(div0, t9);
           }
@@ -59262,7 +59263,7 @@ function create_fragment$j(ctx) {
             transition_in(if_block, 1);
           }
         } else {
-          if_block = create_if_block$8(ctx2);
+          if_block = create_if_block$9(ctx2);
           if_block.c();
           transition_in(if_block, 1);
           if_block.m(div2, null);
@@ -59649,6 +59650,8 @@ const _MetricView = class _MetricView {
     __publicField(this, "_ordering", "time");
     __publicField(this, "_metricUnit");
     __publicField(this, "_metricTemporalUnit");
+    __publicField(this, "_yLabels");
+    __publicField(this, "_xLabels");
     this._name = _name;
     this._description = _description;
     this._valueSelector = _valueSelector;
@@ -59678,6 +59681,14 @@ const _MetricView = class _MetricView {
     this._metricTemporalUnit = unit;
     return this;
   }
+  withYLabels(labels) {
+    this._yLabels = labels;
+    return this;
+  }
+  withXLabels(labels) {
+    this._xLabels = labels;
+    return this;
+  }
   addEvent(event) {
     this._events.push(event);
   }
@@ -59702,28 +59713,41 @@ const _MetricView = class _MetricView {
       description: this._description,
       xUnit: this._metricTemporalUnit,
       yUnit: this._metricUnit,
+      yLabels: this._yLabels,
+      xLabels: this._xLabels,
       mode: this.datasetMode
     });
   }
+  filterPlayersWithData(players, archiveKey) {
+    const events = archiveKey ? this._archive.get(archiveKey) ?? [] : this._events;
+    return players.filter((player) => events.some((e) => e.playerId === player.id));
+  }
   /**
-   * TODO actually improve usability of exported data
+   * Generate a table representation of the metric data for the given players.
    * @param players
    * @param archiveKey
    */
-  generateCsv(players, archiveKey) {
+  generateTable(players, archiveKey) {
     const events = archiveKey ? this._archive.get(archiveKey) ?? [] : this._events;
     const datasets = this.getDatasetForPlayers(players, events);
     if (datasets.length === 0) {
       throw new Error("No dataset found for players");
     }
-    const header = ["Player", this._aggregation === "single" ? "Time" : this._aggregation === "cumulative" ? "Total" : "Average"];
-    const rows = datasets.map((dataset) => {
-      return dataset.data.map((point) => [
-        dataset.label,
-        point.y.toString()
-      ].join(",")).join("\n");
-    }).join("\n");
-    return [header.join(","), rows].join("\n");
+    const header = ["Name", "Id", "Time", "Round", "Turn", this.name];
+    const rows = [header];
+    datasets.forEach((dataset) => {
+      dataset.data.forEach((point) => {
+        rows.push([
+          dataset.label,
+          point.originalEvent ? point.originalEvent.playerId.toString() : "-",
+          point.originalEvent ? new Date(point.originalEvent.timestamp).toISOString() : "-",
+          point.originalEvent ? `${point.originalEvent.lobbyRound}` : "-",
+          point.originalEvent ? `${point.originalEvent.turnPlayerId}` : "-",
+          point.y.toString()
+        ]);
+      });
+    });
+    return rows;
   }
   getDatasetForPlayers(players, events) {
     const temporalLookup = this.buildTemporalLookup(events);
@@ -59734,7 +59758,8 @@ const _MetricView = class _MetricView {
       if (this._aggregation === "single") {
         dataPoints = playerEvents.map((e) => ({
           x: temporalLookup.get(this.buildTemporalKey(e.lobbyRound, e.turnPlayerId)) ?? 0,
-          y: this._valueSelector(e)
+          y: this._valueSelector(e),
+          originalEvent: e
         }));
       } else if (this._aggregation === "cumulative") {
         const sum = playerEvents.map((e) => this._valueSelector(e)).reduce((a, b) => a + b, 0);
@@ -59812,87 +59837,97 @@ const _MetricView = class _MetricView {
 __name(_MetricView, "MetricView");
 let MetricView = _MetricView;
 const millisAsSeconds = /* @__PURE__ */ __name((ms) => Math.round(ms / 100) / 10, "millisAsSeconds");
+const yLabelIncrements = /* @__PURE__ */ __name((increment, unit) => {
+  return (props) => {
+    const labels = [];
+    for (let y = 0; y <= props.maxY; y += increment) {
+      const decimals = increment < 1 ? 1 : 0;
+      labels.push({ y, label: y.toFixed(decimals) + (unit ? ` ${unit}` : "") });
+    }
+    return labels;
+  };
+}, "yLabelIncrements");
 const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
   totalScore: new MetricView(
     "Score Ranking",
     "The total ranking, progressing over time",
     (event) => event.score
-  ).withMetricUnit("pts"),
+  ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts"),
   finalStandings: new MetricView(
     "Final Score Ranking",
     "The final ranking",
     (event) => event.score
-  ).withMetricUnit("pts").withAggregation("ranking").withOrdering("maxValue"),
+  ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts").withAggregation("ranking").withOrdering("maxValue"),
   averageGuessTime: new MetricView(
     "Average Guess Time",
     "The average time a player needed to guess a word",
     (event) => millisAsSeconds(event.guessTimeMs)
-  ).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
+  ).withYLabels(yLabelIncrements(2, "s")).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
   averageGuessScore: new MetricView(
     "Average Guess Score",
     "The average score a player got per correct guess",
     (event) => event.score
-  ).withMetricUnit("pts").withAggregation("average").withOrdering("maxValue"),
+  ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts").withAggregation("average").withOrdering("maxValue"),
   averageGuessSpeed: new MetricView(
     "Average Guess Speed",
     "The average time between guesses a player sent",
     (event) => millisAsSeconds(event.gapTimeMs)
-  ).withMetricUnit("s").withAggregation("average"),
+  ).withYLabels(yLabelIncrements(2, "s")).withMetricUnit("s").withAggregation("average"),
   averageNeededGuesses: new MetricView(
     "Average Guesses Needed",
     "The average number of guesses a player needed to guess a word",
     (event) => event.guessCount
-  ).withAggregation("average").withOrdering("minValue"),
+  ).withYLabels(yLabelIncrements(1)).withAggregation("average").withOrdering("minValue"),
   fastestGuess: new MetricView(
     "Fastest Guess",
     "The fastest correct guess for a word",
     (event) => millisAsSeconds(event.guessTimeMs)
-  ).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
+  ).withYLabels(yLabelIncrements(2, "s")).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
   longestGuessStreak: new MetricView(
     "Longest Guess Streak",
     "The longest streak of correct guesses in a row",
     (event) => event.streak
-  ).withAggregation("ranking").withOrdering("maxValue"),
+  ).withYLabels(yLabelIncrements(1)).withAggregation("ranking").withOrdering("maxValue"),
   averageGuessAccuracy: new MetricView(
     "Average Guess Accuracy",
     "The average letter count accuracy of player guesses",
     (event) => event.accuracy * 100
-  ).withAggregation("average").withOrdering("maxValue"),
+  ).withYLabels(yLabelIncrements(10)).withAggregation("average").withOrdering("maxValue"),
   averageGuessRank: new MetricView(
     "Average Guess Rank",
     "The average rank of player's correct guess",
     (event) => event.rank
-  ).withAggregation("average").withOrdering("minValue"),
+  ).withYLabels(yLabelIncrements(1)).withAggregation("average").withOrdering("minValue"),
   averageDrawTime: new MetricView(
     "Average Draw Time",
     "The average draw time of a player",
     (event) => millisAsSeconds(event.drawTimeMs)
-  ).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
+  ).withMetricUnit("s").withAggregation("average").withYLabels(yLabelIncrements(5, "s")).withOrdering("minValue"),
   fastestDrawTime: new MetricView(
     "Fastest Draw Time",
     "The fastest draw time of a player",
     (event) => millisAsSeconds(event.drawTimeMs)
-  ).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
+  ).withYLabels(yLabelIncrements(2, "s")).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
   averageGuessedPlayers: new MetricView(
     "Average Guessed Players",
     "The average amount of players that guessed a player's drawing",
     (event) => event.guessedPlayers
-  ).withAggregation("average").withOrdering("maxValue"),
+  ).withYLabels(yLabelIncrements(1)).withAggregation("average").withOrdering("maxValue"),
   averageDrawScore: new MetricView(
     "Average Draw Score",
     "The average score for a player's drawing",
     (event) => event.score
-  ).withAggregation("average").withOrdering("maxValue").withMetricUnit("pts"),
+  ).withYLabels(yLabelIncrements(500, "pts")).withAggregation("average").withOrdering("maxValue").withMetricUnit("pts"),
   averageDrawLikes: new MetricView(
     "Average Draw Likes",
     "The average likes for player drawings",
     (event) => event.likes
-  ).withAggregation("average").withOrdering("maxValue"),
+  ).withYLabels(yLabelIncrements(1)).withAggregation("average").withOrdering("maxValue"),
   mostDrawDislikes: new MetricView(
     "Most Draw Dislikes",
     "The most dislikes a player received for a drawing",
     (event) => event.dislikes
-  ).withAggregation("ranking").withOrdering("maxValue")
+  ).withYLabels(yLabelIncrements(1)).withAggregation("ranking").withOrdering("maxValue")
 }), "createMetricViews");
 var __defProp$l = Object.defineProperty;
 var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
@@ -60451,7 +60486,7 @@ const _Chart = class _Chart {
     this._context.lineWidth = 1;
     this._context.beginPath();
     if (config2.yLabels) {
-      config2.yLabels.forEach((label) => {
+      config2.yLabels(properties).forEach((label) => {
         const y = this.chartToCanvasY(label.y, properties);
         this._context.moveTo(this._chartArea.x, y);
         this._context.lineTo(this._chartArea.x + this._chartArea.width, y);
@@ -60464,7 +60499,7 @@ const _Chart = class _Chart {
       }
     }
     if (config2.xLabels) {
-      config2.xLabels.forEach((label) => {
+      config2.xLabels(properties).forEach((label) => {
         const x = this.chartToCanvasX(label.x, properties);
         this._context.moveTo(x, this._chartArea.y);
         this._context.lineTo(x, this._chartArea.y + this._chartArea.height);
@@ -60486,9 +60521,9 @@ const _Chart = class _Chart {
       this._context.fillStyle = "#000";
       this._context.textBaseline = "middle";
       this._context.textAlign = "right";
-      config2.yLabels.forEach((label) => {
+      config2.yLabels(properties).forEach((label) => {
         const y = this.chartToCanvasY(label.y, properties);
-        this._context.fillText(label.label + (config2.yUnit ?? ""), this._chartArea.x - 10, y);
+        this._context.fillText(label.label, this._chartArea.x - 10, y);
       });
     } else {
       const yLines = Math.floor(this._chartArea.height / this._chartLayout.yGridGap);
@@ -60503,6 +60538,16 @@ const _Chart = class _Chart {
         const y = this._chartArea.y + this._chartArea.height - i * this._chartLayout.yGridGap;
         this._context.fillText(yValue.toFixed(decimals) + (config2.yUnit ?? ""), this._chartArea.x - 10, y);
       }
+    }
+    if (config2.xLabels) {
+      this._context.font = "20px Nunito, monospace";
+      this._context.fillStyle = "#000";
+      this._context.textBaseline = "top";
+      this._context.textAlign = "center";
+      config2.xLabels(properties).forEach((label) => {
+        const x = this.chartToCanvasX(label.x, properties);
+        this._context.fillText(label.label, x, this._chartArea.y + this._chartArea.height + 10);
+      });
     }
     return;
   }
@@ -60638,22 +60683,48 @@ __name(_Chart, "Chart");
 let Chart = _Chart;
 function get_each_context$b(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[18] = list[i];
-  child_ctx[20] = i;
+  child_ctx[26] = list[i];
   return child_ctx;
 }
 __name(get_each_context$b, "get_each_context$b");
 function get_each_context_1$1(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[21] = list[i];
+  child_ctx[29] = list[i];
   return child_ctx;
 }
 __name(get_each_context_1$1, "get_each_context_1$1");
-function create_each_block_1$1(ctx) {
+function get_each_context_2(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[32] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_2, "get_each_context_2");
+function get_each_context_3(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[35] = list[i];
+  child_ctx[36] = list;
+  child_ctx[37] = i;
+  return child_ctx;
+}
+__name(get_each_context_3, "get_each_context_3");
+function get_each_context_4(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[38] = list[i];
+  child_ctx[40] = i;
+  return child_ctx;
+}
+__name(get_each_context_4, "get_each_context_4");
+function get_each_context_5(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[41] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_5, "get_each_context_5");
+function create_each_block_5(ctx) {
   let option;
   let t0_value = (
     /*key*/
-    ctx[21][1].name + ""
+    ctx[41][1].name + ""
   );
   let t0;
   let t1;
@@ -60665,11 +60736,11 @@ function create_each_block_1$1(ctx) {
       t0 = text(t0_value);
       t1 = space();
       option.__value = option_value_value = /*key*/
-      ctx[21][0];
+      ctx[41][0];
       set_input_value(option, option.__value);
       option.selected = option_selected_value = /*key*/
-      ctx[21][0] === /*selectedArchiveKey*/
-      ctx[2];
+      ctx[41][0] === /*selectedArchiveKey*/
+      ctx[3];
     },
     m(target, anchor) {
       insert(target, option, anchor);
@@ -60677,19 +60748,19 @@ function create_each_block_1$1(ctx) {
       append(option, t1);
     },
     p(ctx2, dirty) {
-      if (dirty & /*$archive*/
-      8 && t0_value !== (t0_value = /*key*/
-      ctx2[21][1].name + "")) set_data(t0, t0_value);
-      if (dirty & /*$archive*/
-      8 && option_value_value !== (option_value_value = /*key*/
-      ctx2[21][0])) {
+      if (dirty[0] & /*$archive*/
+      128 && t0_value !== (t0_value = /*key*/
+      ctx2[41][1].name + "")) set_data(t0, t0_value);
+      if (dirty[0] & /*$archive*/
+      128 && option_value_value !== (option_value_value = /*key*/
+      ctx2[41][0])) {
         option.__value = option_value_value;
         set_input_value(option, option.__value);
       }
-      if (dirty & /*$archive, selectedArchiveKey*/
-      12 && option_selected_value !== (option_selected_value = /*key*/
-      ctx2[21][0] === /*selectedArchiveKey*/
-      ctx2[2])) {
+      if (dirty[0] & /*$archive, selectedArchiveKey*/
+      136 && option_selected_value !== (option_selected_value = /*key*/
+      ctx2[41][0] === /*selectedArchiveKey*/
+      ctx2[3])) {
         option.selected = option_selected_value;
       }
     },
@@ -60700,12 +60771,12 @@ function create_each_block_1$1(ctx) {
     }
   };
 }
-__name(create_each_block_1$1, "create_each_block_1$1");
-function create_each_block$b(ctx) {
+__name(create_each_block_5, "create_each_block_5");
+function create_each_block_4(ctx) {
   let option;
   let t0_value = (
     /*view*/
-    ctx[18].name + ""
+    ctx[38].name + ""
   );
   let t0;
   let t1;
@@ -60716,13 +60787,13 @@ function create_each_block$b(ctx) {
       t0 = text(t0_value);
       t1 = space();
       option.__value = /*index*/
-      ctx[20];
+      ctx[40];
       set_input_value(option, option.__value);
       option.selected = option_selected_value = /*view*/
-      ctx[18] === /*views*/
-      ctx[4][
+      ctx[38] === /*views*/
+      ctx[8][
         /*selectedViewIndex*/
-        ctx[1]
+        ctx[2]
       ];
     },
     m(target, anchor) {
@@ -60731,12 +60802,12 @@ function create_each_block$b(ctx) {
       append(option, t1);
     },
     p(ctx2, dirty) {
-      if (dirty & /*selectedViewIndex*/
-      2 && option_selected_value !== (option_selected_value = /*view*/
-      ctx2[18] === /*views*/
-      ctx2[4][
+      if (dirty[0] & /*selectedViewIndex*/
+      4 && option_selected_value !== (option_selected_value = /*view*/
+      ctx2[38] === /*views*/
+      ctx2[8][
         /*selectedViewIndex*/
-        ctx2[1]
+        ctx2[2]
       ])) {
         option.selected = option_selected_value;
       }
@@ -60748,9 +60819,408 @@ function create_each_block$b(ctx) {
     }
   };
 }
+__name(create_each_block_4, "create_each_block_4");
+function create_each_block_3(ctx) {
+  let checkbox;
+  let updating_checked;
+  let current;
+  function checkbox_checked_binding(value) {
+    ctx[19](
+      value,
+      /*player*/
+      ctx[35]
+    );
+  }
+  __name(checkbox_checked_binding, "checkbox_checked_binding");
+  let checkbox_props = {
+    description: (
+      /*player*/
+      ctx[35].name + " (#" + /*player*/
+      ctx[35].id + ")"
+    )
+  };
+  if (
+    /*selectedPlayers*/
+    ctx[5][
+      /*player*/
+      ctx[35].id
+    ] !== void 0
+  ) {
+    checkbox_props.checked = /*selectedPlayers*/
+    ctx[5][
+      /*player*/
+      ctx[35].id
+    ];
+  }
+  checkbox = new Checkbox({ props: checkbox_props });
+  binding_callbacks.push(() => bind$1(checkbox, "checked", checkbox_checked_binding));
+  checkbox.$on(
+    "change",
+    /*change_handler_2*/
+    ctx[20]
+  );
+  return {
+    c() {
+      create_component(checkbox.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(checkbox, target, anchor);
+      current = true;
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      const checkbox_changes = {};
+      if (dirty[0] & /*availablePlayers*/
+      16) checkbox_changes.description = /*player*/
+      ctx[35].name + " (#" + /*player*/
+      ctx[35].id + ")";
+      if (!updating_checked && dirty[0] & /*selectedPlayers, availablePlayers*/
+      48) {
+        updating_checked = true;
+        checkbox_changes.checked = /*selectedPlayers*/
+        ctx[5][
+          /*player*/
+          ctx[35].id
+        ];
+        add_flush_callback(() => updating_checked = false);
+      }
+      checkbox.$set(checkbox_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(checkbox.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(checkbox.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(checkbox, detaching);
+    }
+  };
+}
+__name(create_each_block_3, "create_each_block_3");
+function create_else_block$4(ctx) {
+  let p;
+  return {
+    c() {
+      p = element$1("p");
+      p.textContent = "No data available for the selected players and view.";
+    },
+    m(target, anchor) {
+      insert(target, p, anchor);
+    },
+    p: noop$1,
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(p);
+      }
+    }
+  };
+}
+__name(create_else_block$4, "create_else_block$4");
+function create_if_block$8(ctx) {
+  let h3;
+  let t1;
+  let div;
+  let flatbutton0;
+  let t2;
+  let flatbutton1;
+  let t3;
+  let table;
+  let thead;
+  let tr;
+  let t4;
+  let tbody;
+  let current;
+  flatbutton0 = new Flat_button({
+    props: {
+      color: "green",
+      content: "Download as CSV"
+    }
+  });
+  flatbutton0.$on(
+    "click",
+    /*click_handler*/
+    ctx[21]
+  );
+  flatbutton1 = new Flat_button({
+    props: {
+      color: "green",
+      content: "Download Chart"
+    }
+  });
+  flatbutton1.$on(
+    "click",
+    /*click_handler_1*/
+    ctx[22]
+  );
+  let each_value_2 = ensure_array_like(
+    /*selectedTableData*/
+    ctx[6][0]
+  );
+  let each_blocks_1 = [];
+  for (let i = 0; i < each_value_2.length; i += 1) {
+    each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+  }
+  let each_value = ensure_array_like(
+    /*selectedTableData*/
+    ctx[6].slice(1)
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$b(get_each_context$b(ctx, each_value, i));
+  }
+  return {
+    c() {
+      h3 = element$1("h3");
+      h3.textContent = "Chart Data";
+      t1 = space();
+      div = element$1("div");
+      create_component(flatbutton0.$$.fragment);
+      t2 = space();
+      create_component(flatbutton1.$$.fragment);
+      t3 = space();
+      table = element$1("table");
+      thead = element$1("thead");
+      tr = element$1("tr");
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        each_blocks_1[i].c();
+      }
+      t4 = space();
+      tbody = element$1("tbody");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(div, "class", "typo-stats-chart-table-download");
+      attr(tr, "class", "svelte-10kahpp");
+      attr(table, "class", "svelte-10kahpp");
+    },
+    m(target, anchor) {
+      insert(target, h3, anchor);
+      insert(target, t1, anchor);
+      insert(target, div, anchor);
+      mount_component(flatbutton0, div, null);
+      append(div, t2);
+      mount_component(flatbutton1, div, null);
+      insert(target, t3, anchor);
+      insert(target, table, anchor);
+      append(table, thead);
+      append(thead, tr);
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        if (each_blocks_1[i]) {
+          each_blocks_1[i].m(tr, null);
+        }
+      }
+      append(table, t4);
+      append(table, tbody);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(tbody, null);
+        }
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty[0] & /*selectedTableData*/
+      64) {
+        each_value_2 = ensure_array_like(
+          /*selectedTableData*/
+          ctx2[6][0]
+        );
+        let i;
+        for (i = 0; i < each_value_2.length; i += 1) {
+          const child_ctx = get_each_context_2(ctx2, each_value_2, i);
+          if (each_blocks_1[i]) {
+            each_blocks_1[i].p(child_ctx, dirty);
+          } else {
+            each_blocks_1[i] = create_each_block_2(child_ctx);
+            each_blocks_1[i].c();
+            each_blocks_1[i].m(tr, null);
+          }
+        }
+        for (; i < each_blocks_1.length; i += 1) {
+          each_blocks_1[i].d(1);
+        }
+        each_blocks_1.length = each_value_2.length;
+      }
+      if (dirty[0] & /*selectedTableData*/
+      64) {
+        each_value = ensure_array_like(
+          /*selectedTableData*/
+          ctx2[6].slice(1)
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$b(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+          } else {
+            each_blocks[i] = create_each_block$b(child_ctx);
+            each_blocks[i].c();
+            each_blocks[i].m(tbody, null);
+          }
+        }
+        for (; i < each_blocks.length; i += 1) {
+          each_blocks[i].d(1);
+        }
+        each_blocks.length = each_value.length;
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(flatbutton0.$$.fragment, local);
+      transition_in(flatbutton1.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(flatbutton0.$$.fragment, local);
+      transition_out(flatbutton1.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h3);
+        detach(t1);
+        detach(div);
+        detach(t3);
+        detach(table);
+      }
+      destroy_component(flatbutton0);
+      destroy_component(flatbutton1);
+      destroy_each(each_blocks_1, detaching);
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_if_block$8, "create_if_block$8");
+function create_each_block_2(ctx) {
+  let th;
+  let t_value = (
+    /*header*/
+    ctx[32] + ""
+  );
+  let t;
+  return {
+    c() {
+      th = element$1("th");
+      t = text(t_value);
+      attr(th, "class", "svelte-10kahpp");
+    },
+    m(target, anchor) {
+      insert(target, th, anchor);
+      append(th, t);
+    },
+    p(ctx2, dirty) {
+      if (dirty[0] & /*selectedTableData*/
+      64 && t_value !== (t_value = /*header*/
+      ctx2[32] + "")) set_data(t, t_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(th);
+      }
+    }
+  };
+}
+__name(create_each_block_2, "create_each_block_2");
+function create_each_block_1$1(ctx) {
+  let td;
+  let t_value = (
+    /*cell*/
+    ctx[29] + ""
+  );
+  let t;
+  return {
+    c() {
+      td = element$1("td");
+      t = text(t_value);
+      attr(td, "class", "svelte-10kahpp");
+    },
+    m(target, anchor) {
+      insert(target, td, anchor);
+      append(td, t);
+    },
+    p(ctx2, dirty) {
+      if (dirty[0] & /*selectedTableData*/
+      64 && t_value !== (t_value = /*cell*/
+      ctx2[29] + "")) set_data(t, t_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(td);
+      }
+    }
+  };
+}
+__name(create_each_block_1$1, "create_each_block_1$1");
+function create_each_block$b(ctx) {
+  let tr;
+  let t;
+  let each_value_1 = ensure_array_like(
+    /*row*/
+    ctx[26]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_1.length; i += 1) {
+    each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+  }
+  return {
+    c() {
+      tr = element$1("tr");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      t = space();
+      attr(tr, "class", "svelte-10kahpp");
+    },
+    m(target, anchor) {
+      insert(target, tr, anchor);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(tr, null);
+        }
+      }
+      append(tr, t);
+    },
+    p(ctx2, dirty) {
+      if (dirty[0] & /*selectedTableData*/
+      64) {
+        each_value_1 = ensure_array_like(
+          /*row*/
+          ctx2[26]
+        );
+        let i;
+        for (i = 0; i < each_value_1.length; i += 1) {
+          const child_ctx = get_each_context_1$1(ctx2, each_value_1, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+          } else {
+            each_blocks[i] = create_each_block_1$1(child_ctx);
+            each_blocks[i].c();
+            each_blocks[i].m(tr, t);
+          }
+        }
+        for (; i < each_blocks.length; i += 1) {
+          each_blocks[i].d(1);
+        }
+        each_blocks.length = each_value_1.length;
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(tr);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
 __name(create_each_block$b, "create_each_block$b");
 function create_fragment$i(ctx) {
-  let div1;
+  let div3;
   let span;
   let t1;
   let div0;
@@ -60766,27 +61236,57 @@ function create_fragment$i(ctx) {
   let select1;
   let t8;
   let canvas_1;
+  let t9;
+  let div1;
+  let t10;
+  let div2;
+  let current_block_type_index;
+  let if_block;
+  let current;
   let mounted;
   let dispose;
-  let each_value_1 = ensure_array_like(
+  let each_value_5 = ensure_array_like(
     /*$archive*/
-    ctx[3]
+    ctx[7]
+  );
+  let each_blocks_2 = [];
+  for (let i = 0; i < each_value_5.length; i += 1) {
+    each_blocks_2[i] = create_each_block_5(get_each_context_5(ctx, each_value_5, i));
+  }
+  let each_value_4 = ensure_array_like(
+    /*views*/
+    ctx[8]
   );
   let each_blocks_1 = [];
-  for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+  for (let i = 0; i < each_value_4.length; i += 1) {
+    each_blocks_1[i] = create_each_block_4(get_each_context_4(ctx, each_value_4, i));
   }
-  let each_value = ensure_array_like(
-    /*views*/
+  let each_value_3 = ensure_array_like(
+    /*availablePlayers*/
     ctx[4]
   );
   let each_blocks = [];
-  for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$b(get_each_context$b(ctx, each_value, i));
+  for (let i = 0; i < each_value_3.length; i += 1) {
+    each_blocks[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
   }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  const if_block_creators = [create_if_block$8, create_else_block$4];
+  const if_blocks = [];
+  function select_block_type(ctx2, dirty) {
+    if (
+      /*selectedTableData*/
+      ctx2[6].length > 0
+    ) return 0;
+    return 1;
+  }
+  __name(select_block_type, "select_block_type");
+  current_block_type_index = select_block_type(ctx);
+  if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
   return {
     c() {
-      div1 = element$1("div");
+      div3 = element$1("div");
       span = element$1("span");
       span.textContent = "View statistics of this or previous recorded lobby rounds";
       t1 = space();
@@ -60797,192 +61297,290 @@ function create_fragment$i(ctx) {
       select0 = element$1("select");
       option = element$1("option");
       t4 = text("Current Round\n      ");
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        each_blocks_1[i].c();
+      for (let i = 0; i < each_blocks_2.length; i += 1) {
+        each_blocks_2[i].c();
       }
       t5 = space();
       label1 = element$1("label");
       label1.textContent = "Select view:";
       t7 = space();
       select1 = element$1("select");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        each_blocks_1[i].c();
       }
       t8 = space();
       canvas_1 = element$1("canvas");
-      attr(span, "class", "typo-stats-chart-caption svelte-gptfs3");
+      t9 = space();
+      div1 = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      t10 = space();
+      div2 = element$1("div");
+      if_block.c();
+      attr(span, "class", "typo-stats-chart-caption svelte-10kahpp");
       attr(label0, "for", "typo-stats-archive");
-      attr(label0, "class", "svelte-gptfs3");
+      attr(label0, "class", "svelte-10kahpp");
       option.__value = "";
       set_input_value(option, option.__value);
       option.selected = option_selected_value = /*selectedArchiveKey*/
-      ctx[2].length === 0;
+      ctx[3].length === 0;
       attr(select0, "id", "typo-stats-archive");
       if (
         /*selectedArchiveKey*/
-        ctx[2] === void 0
+        ctx[3] === void 0
       ) add_render_callback(() => (
         /*select0_change_handler*/
-        ctx[10].call(select0)
+        ctx[14].call(select0)
       ));
       attr(label1, "for", "typo-stats-view");
-      attr(label1, "class", "svelte-gptfs3");
+      attr(label1, "class", "svelte-10kahpp");
       attr(select1, "id", "typo-stats-view");
       if (
         /*selectedViewIndex*/
-        ctx[1] === void 0
+        ctx[2] === void 0
       ) add_render_callback(() => (
         /*select1_change_handler*/
-        ctx[12].call(select1)
+        ctx[16].call(select1)
       ));
-      attr(div0, "class", "typo-stats-chart-selection svelte-gptfs3");
-      attr(div1, "class", "typo-stats-chart svelte-gptfs3");
+      attr(div0, "class", "typo-stats-chart-selection svelte-10kahpp");
+      attr(canvas_1, "class", "svelte-10kahpp");
+      toggle_class(
+        canvas_1,
+        "hidden",
+        /*selectedTableData*/
+        ctx[6].length === 0
+      );
+      attr(div1, "class", "typo-stats-chart-players svelte-10kahpp");
+      attr(div2, "class", "typo-stats-chart-table svelte-10kahpp");
+      attr(div3, "class", "typo-stats-chart svelte-10kahpp");
     },
     m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, span);
-      append(div1, t1);
-      append(div1, div0);
+      insert(target, div3, anchor);
+      append(div3, span);
+      append(div3, t1);
+      append(div3, div0);
       append(div0, label0);
       append(div0, t3);
       append(div0, select0);
       append(select0, option);
       append(option, t4);
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        if (each_blocks_1[i]) {
-          each_blocks_1[i].m(select0, null);
+      for (let i = 0; i < each_blocks_2.length; i += 1) {
+        if (each_blocks_2[i]) {
+          each_blocks_2[i].m(select0, null);
         }
       }
       select_option(
         select0,
         /*selectedArchiveKey*/
-        ctx[2],
+        ctx[3],
         true
       );
       append(div0, t5);
       append(div0, label1);
       append(div0, t7);
       append(div0, select1);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(select1, null);
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        if (each_blocks_1[i]) {
+          each_blocks_1[i].m(select1, null);
         }
       }
       select_option(
         select1,
         /*selectedViewIndex*/
-        ctx[1],
+        ctx[2],
         true
       );
-      append(div1, t8);
-      append(div1, canvas_1);
-      ctx[14](canvas_1);
+      append(div3, t8);
+      append(div3, canvas_1);
+      ctx[18](canvas_1);
+      append(div3, t9);
+      append(div3, div1);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div1, null);
+        }
+      }
+      append(div3, t10);
+      append(div3, div2);
+      if_blocks[current_block_type_index].m(div2, null);
+      current = true;
       if (!mounted) {
         dispose = [
           listen(
             select0,
             "change",
             /*select0_change_handler*/
-            ctx[10]
+            ctx[14]
           ),
           listen(
             select0,
             "change",
             /*change_handler*/
-            ctx[11]
+            ctx[15]
           ),
           listen(
             select1,
             "change",
             /*select1_change_handler*/
-            ctx[12]
+            ctx[16]
           ),
           listen(
             select1,
             "change",
             /*change_handler_1*/
-            ctx[13]
+            ctx[17]
           )
         ];
         mounted = true;
       }
     },
-    p(ctx2, [dirty]) {
-      if (dirty & /*selectedArchiveKey, $archive*/
-      12 && option_selected_value !== (option_selected_value = /*selectedArchiveKey*/
-      ctx2[2].length === 0)) {
+    p(ctx2, dirty) {
+      if (!current || dirty[0] & /*selectedArchiveKey, $archive*/
+      136 && option_selected_value !== (option_selected_value = /*selectedArchiveKey*/
+      ctx2[3].length === 0)) {
         option.selected = option_selected_value;
       }
-      if (dirty & /*$archive, selectedArchiveKey*/
-      12) {
-        each_value_1 = ensure_array_like(
+      if (dirty[0] & /*$archive, selectedArchiveKey*/
+      136) {
+        each_value_5 = ensure_array_like(
           /*$archive*/
-          ctx2[3]
+          ctx2[7]
         );
         let i;
-        for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$1(ctx2, each_value_1, i);
+        for (i = 0; i < each_value_5.length; i += 1) {
+          const child_ctx = get_each_context_5(ctx2, each_value_5, i);
+          if (each_blocks_2[i]) {
+            each_blocks_2[i].p(child_ctx, dirty);
+          } else {
+            each_blocks_2[i] = create_each_block_5(child_ctx);
+            each_blocks_2[i].c();
+            each_blocks_2[i].m(select0, null);
+          }
+        }
+        for (; i < each_blocks_2.length; i += 1) {
+          each_blocks_2[i].d(1);
+        }
+        each_blocks_2.length = each_value_5.length;
+      }
+      if (dirty[0] & /*selectedArchiveKey, $archive*/
+      136) {
+        select_option(
+          select0,
+          /*selectedArchiveKey*/
+          ctx2[3]
+        );
+      }
+      if (dirty[0] & /*views, selectedViewIndex*/
+      260) {
+        each_value_4 = ensure_array_like(
+          /*views*/
+          ctx2[8]
+        );
+        let i;
+        for (i = 0; i < each_value_4.length; i += 1) {
+          const child_ctx = get_each_context_4(ctx2, each_value_4, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_1$1(child_ctx);
+            each_blocks_1[i] = create_each_block_4(child_ctx);
             each_blocks_1[i].c();
-            each_blocks_1[i].m(select0, null);
+            each_blocks_1[i].m(select1, null);
           }
         }
         for (; i < each_blocks_1.length; i += 1) {
           each_blocks_1[i].d(1);
         }
-        each_blocks_1.length = each_value_1.length;
+        each_blocks_1.length = each_value_4.length;
       }
-      if (dirty & /*selectedArchiveKey, $archive*/
-      12) {
-        select_option(
-          select0,
-          /*selectedArchiveKey*/
-          ctx2[2]
-        );
-      }
-      if (dirty & /*views, selectedViewIndex*/
-      18) {
-        each_value = ensure_array_like(
-          /*views*/
-          ctx2[4]
-        );
-        let i;
-        for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$b(ctx2, each_value, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-          } else {
-            each_blocks[i] = create_each_block$b(child_ctx);
-            each_blocks[i].c();
-            each_blocks[i].m(select1, null);
-          }
-        }
-        for (; i < each_blocks.length; i += 1) {
-          each_blocks[i].d(1);
-        }
-        each_blocks.length = each_value.length;
-      }
-      if (dirty & /*selectedViewIndex*/
-      2) {
+      if (dirty[0] & /*selectedViewIndex*/
+      4) {
         select_option(
           select1,
           /*selectedViewIndex*/
-          ctx2[1]
+          ctx2[2]
         );
       }
+      if (!current || dirty[0] & /*selectedTableData*/
+      64) {
+        toggle_class(
+          canvas_1,
+          "hidden",
+          /*selectedTableData*/
+          ctx2[6].length === 0
+        );
+      }
+      if (dirty[0] & /*availablePlayers, selectedPlayers, updateChart*/
+      8240) {
+        each_value_3 = ensure_array_like(
+          /*availablePlayers*/
+          ctx2[4]
+        );
+        let i;
+        for (i = 0; i < each_value_3.length; i += 1) {
+          const child_ctx = get_each_context_3(ctx2, each_value_3, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block_3(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(div1, null);
+          }
+        }
+        group_outros();
+        for (i = each_value_3.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+      let previous_block_index = current_block_type_index;
+      current_block_type_index = select_block_type(ctx2);
+      if (current_block_type_index === previous_block_index) {
+        if_blocks[current_block_type_index].p(ctx2, dirty);
+      } else {
+        group_outros();
+        transition_out(if_blocks[previous_block_index], 1, 1, () => {
+          if_blocks[previous_block_index] = null;
+        });
+        check_outros();
+        if_block = if_blocks[current_block_type_index];
+        if (!if_block) {
+          if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx2);
+          if_block.c();
+        } else {
+          if_block.p(ctx2, dirty);
+        }
+        transition_in(if_block, 1);
+        if_block.m(div2, null);
+      }
     },
-    i: noop$1,
-    o: noop$1,
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value_3.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      transition_out(if_block);
+      current = false;
+    },
     d(detaching) {
       if (detaching) {
-        detach(div1);
+        detach(div3);
       }
+      destroy_each(each_blocks_2, detaching);
       destroy_each(each_blocks_1, detaching);
+      ctx[18](null);
       destroy_each(each_blocks, detaching);
-      ctx[14](null);
+      if_blocks[current_block_type_index].d();
       mounted = false;
       run_all(dispose);
     }
@@ -60990,98 +61588,155 @@ function create_fragment$i(ctx) {
 }
 __name(create_fragment$i, "create_fragment$i");
 function instance$h($$self, $$props, $$invalidate) {
+  let $archive;
   let $lobby;
   let $seenPlayers;
-  let $archive;
   let { feature } = $$props;
   let canvas;
   let chart;
   const views = feature.getViews();
   const lobby = feature.lobbyStore;
-  component_subscribe($$self, lobby, (value) => $$invalidate(16, $lobby = value));
+  component_subscribe($$self, lobby, (value) => $$invalidate(24, $lobby = value));
   const archive = feature.archiveStore;
-  component_subscribe($$self, archive, (value) => $$invalidate(3, $archive = value));
+  component_subscribe($$self, archive, (value) => $$invalidate(7, $archive = value));
   const seenPlayers = feature.seenPlayersStore;
-  component_subscribe($$self, seenPlayers, (value) => $$invalidate(17, $seenPlayers = value));
+  component_subscribe($$self, seenPlayers, (value) => $$invalidate(25, $seenPlayers = value));
   let selectedViewIndex = 0;
   let selectedArchiveKey = "";
+  let availablePlayers = [];
+  let selectedPlayers = {};
+  let selectedTableData = [];
   onMount(() => {
     if (canvas === void 0) throw new Error("canvas is undefined");
     chart = feature.createChart(canvas);
+    updatePlayerSelection();
     updateChart();
   });
-  function updateChart() {
+  function updatePlayerSelection() {
     var _a2;
+    let players = [];
+    if (selectedArchiveKey.length === 0) {
+      if ($lobby === null || $lobby.id === null) {
+        console.log("Lobby is null but required for current round stats");
+        $$invalidate(4, availablePlayers = []);
+        $$invalidate(5, selectedPlayers = {});
+        return;
+      }
+      players = [...((_a2 = $seenPlayers.get($lobby.id)) == null ? void 0 : _a2.values()) ?? []];
+    } else {
+      const archiveEntry = $archive.get(selectedArchiveKey);
+      if (archiveEntry === void 0) {
+        console.log("Archive entry is undefined but required for selected archive stats");
+        $$invalidate(4, availablePlayers = []);
+        $$invalidate(5, selectedPlayers = {});
+        return;
+      }
+      players = archiveEntry.players;
+    }
     const view = views[selectedViewIndex];
-    if (chart === void 0 || $lobby === null || $lobby.id === null) {
-      console.log("Chart or lobby is undefined");
-      chart == null ? void 0 : chart.clear();
+    $$invalidate(4, availablePlayers = view.filterPlayersWithData(players, selectedArchiveKey));
+    $$invalidate(5, selectedPlayers = {});
+    for (const player of players) {
+      $$invalidate(5, selectedPlayers[player.id] = true, selectedPlayers);
+    }
+  }
+  __name(updatePlayerSelection, "updatePlayerSelection");
+  function updateChart() {
+    const view = views[selectedViewIndex];
+    if (chart === void 0) {
+      console.log("Chart is undefined");
+      $$invalidate(6, selectedTableData = []);
       return;
     }
     const archiveEntry = selectedArchiveKey.length > 0 ? $archive.get(selectedArchiveKey) : void 0;
-    if (archiveEntry === void 0) {
-      const players = [...((_a2 = $seenPlayers.get($lobby.id)) == null ? void 0 : _a2.values()) ?? []];
-      try {
-        view.drawChart(players, chart);
-      } catch (e) {
-        console.error("Error drawing chart:", e);
-        chart.clear();
-      }
-    } else {
-      try {
-        view.drawChart(archiveEntry.players, chart, archiveEntry.key);
-      } catch (e) {
-        console.error("Error drawing chart:", e);
-        chart.clear();
-      }
+    const players = availablePlayers.filter((p) => selectedPlayers[p.id]);
+    try {
+      view.drawChart(players, chart, archiveEntry == null ? void 0 : archiveEntry.key);
+      $$invalidate(6, selectedTableData = view.generateTable(players, archiveEntry == null ? void 0 : archiveEntry.key));
+    } catch (e) {
+      console.error("Error drawing chart:", e);
+      chart.clear();
+      $$invalidate(6, selectedTableData = []);
     }
   }
   __name(updateChart, "updateChart");
   function select0_change_handler() {
     selectedArchiveKey = select_value(this);
-    $$invalidate(2, selectedArchiveKey);
+    $$invalidate(3, selectedArchiveKey);
   }
   __name(select0_change_handler, "select0_change_handler");
-  const change_handler = /* @__PURE__ */ __name(() => updateChart(), "change_handler");
+  const change_handler = /* @__PURE__ */ __name(() => {
+    updatePlayerSelection();
+    updateChart();
+  }, "change_handler");
   function select1_change_handler() {
     selectedViewIndex = select_value(this);
-    $$invalidate(1, selectedViewIndex);
+    $$invalidate(2, selectedViewIndex);
   }
   __name(select1_change_handler, "select1_change_handler");
   const change_handler_1 = /* @__PURE__ */ __name(() => updateChart(), "change_handler_1");
   function canvas_1_binding($$value) {
     binding_callbacks[$$value ? "unshift" : "push"](() => {
       canvas = $$value;
-      $$invalidate(0, canvas);
+      $$invalidate(1, canvas);
     });
   }
   __name(canvas_1_binding, "canvas_1_binding");
+  function checkbox_checked_binding(value, player) {
+    if ($$self.$$.not_equal(selectedPlayers[player.id], value)) {
+      selectedPlayers[player.id] = value;
+      $$invalidate(5, selectedPlayers);
+    }
+  }
+  __name(checkbox_checked_binding, "checkbox_checked_binding");
+  const change_handler_2 = /* @__PURE__ */ __name(() => {
+    updateChart();
+  }, "change_handler_2");
+  const click_handler2 = /* @__PURE__ */ __name(() => {
+    var _a2;
+    return feature.downloadCsv(selectedTableData, views[selectedViewIndex].name, selectedArchiveKey.length === 0 ? "current" : ((_a2 = $archive.get(selectedArchiveKey)) == null ? void 0 : _a2.name) ?? "archive");
+  }, "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name(() => {
+    var _a2;
+    if (canvas === void 0) {
+      throw new Error("Can't download Chart");
+    }
+    feature.downloadChart(canvas, views[selectedViewIndex].name, selectedArchiveKey.length === 0 ? "current" : ((_a2 = $archive.get(selectedArchiveKey)) == null ? void 0 : _a2.name) ?? "archive");
+  }, "click_handler_1");
   $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(9, feature = $$props2.feature);
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
   };
   return [
+    feature,
     canvas,
     selectedViewIndex,
     selectedArchiveKey,
+    availablePlayers,
+    selectedPlayers,
+    selectedTableData,
     $archive,
     views,
     lobby,
     archive,
     seenPlayers,
+    updatePlayerSelection,
     updateChart,
-    feature,
     select0_change_handler,
     change_handler,
     select1_change_handler,
     change_handler_1,
-    canvas_1_binding
+    canvas_1_binding,
+    checkbox_checked_binding,
+    change_handler_2,
+    click_handler2,
+    click_handler_1
   ];
 }
 __name(instance$h, "instance$h");
 const _Charts = class _Charts extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$h, create_fragment$i, safe_not_equal, { feature: 9 });
+    init(this, options, instance$h, create_fragment$i, safe_not_equal, { feature: 0 }, null, [-1, -1]);
   }
 };
 __name(_Charts, "Charts");
@@ -61098,7 +61753,6 @@ var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) 
 const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
-    __publicField(this, "_toastService");
     __publicField(this, "_lobbyStatsService");
     __publicField(this, "_lobbyService");
     __publicField(this, "_lobbyLeftEventListener");
@@ -61117,6 +61771,9 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
     __publicField(this, "_statArchive$", new BehaviorSubject(/* @__PURE__ */ new Map()));
     __publicField(this, "_seenLobbyPlayers$", new BehaviorSubject(/* @__PURE__ */ new Map()));
     __publicField(this, "_statsSubscriptions", []);
+    __publicField(this, "_iconComponent");
+    __publicField(this, "_iconClickSubscription");
+    __publicField(this, "_quickAccessSettingSubscription");
     __publicField(this, "_switchStatCommand", this.useCommand(
       new ExtensionCommand("stat chat", this, "Show game stats", "Show a stat screen above the lobby chat")
     ).withParameters(
@@ -61149,6 +61806,9 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
       return new InterpretableSilentSuccess(command);
     }));
     __publicField(this, "_statViewSetting", new ExtensionSetting("stat_view", void 0, this));
+    __publicField(this, "_showQuickAccessSetting", this.useSetting(
+      new BooleanExtensionSetting("quick_access", true, this).withName("Stats View Access").withDescription("Show an icon in the controls tray to quickly access the stats view.")
+    ));
   }
   async onActivate() {
     this.subscribeMetric(this._lobbyStatsService.guessTimeStats$, this._metricViews.averageGuessTime);
@@ -61252,11 +61912,50 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
       }
     });
     this._statsSubscriptions.push(metricResetSub, metricArchiveSub, chartUpdateSub, playersSub);
+    this._quickAccessSettingSubscription = this._showQuickAccessSetting.changes$.subscribe((value) => {
+      if (value) this.addQuickAccessIcon();
+      else this.removeQuickAccessIcon();
+    });
   }
   async onDestroy() {
+    var _a2;
     this._statsSubscriptions.forEach((subscriber) => subscriber.unsubscribe());
     this._statsSubscriptions = [];
     this.resetMetrics(true);
+    (_a2 = this._quickAccessSettingSubscription) == null ? void 0 : _a2.unsubscribe();
+    this._quickAccessSettingSubscription = void 0;
+    this.removeQuickAccessIcon();
+  }
+  async addQuickAccessIcon() {
+    if (this._iconComponent !== void 0) return;
+    const elements2 = await this._elementsSetup.complete();
+    this._iconComponent = new Icon_button({
+      target: elements2.controls,
+      props: {
+        hoverMove: false,
+        size: "48px",
+        icon: "file-img-chart-gif",
+        name: "Lobby Statistics",
+        order: 6,
+        tooltipAction: this.createTooltip
+      }
+    });
+    this._iconClickSubscription = this._iconComponent.click$.subscribe(async () => {
+      const popupComponent = {
+        componentType: Charts,
+        props: {
+          feature: this
+        }
+      };
+      this._modalService.showModal(popupComponent.componentType, popupComponent.props, "Lobby Statistics", "card");
+    });
+  }
+  removeQuickAccessIcon() {
+    var _a2, _b2;
+    (_a2 = this._iconClickSubscription) == null ? void 0 : _a2.unsubscribe();
+    this._iconClickSubscription = void 0;
+    (_b2 = this._iconComponent) == null ? void 0 : _b2.$destroy();
+    this._iconComponent = void 0;
   }
   subscribeMetric(source, metricView) {
     const sub = source.subscribe((entry) => metricView.addEvent(entry));
@@ -61281,6 +61980,16 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
     }, canvas);
     return chart;
   }
+  downloadCsv(data, viewName, roundName) {
+    const csv = data.map((row) => row.join(",")).join("\n");
+    const filename = `typo-stats-${viewName}-${roundName}.csv`.replaceAll(" ", "_");
+    downloadText(csv, filename);
+  }
+  async downloadChart(canvas, viewName, roundName) {
+    const filename = `typo-stats-${viewName}-${roundName}.png`.replaceAll(" ", "_");
+    const imageData = await ImageData.fromImageUrl(canvas.toDataURL("image/png"));
+    downloadBlob(imageData.blob, filename);
+  }
   getViews() {
     return Object.values(this._metricViews);
   }
@@ -61296,9 +62005,6 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
 };
 __name(_LobbyStatisticsFeature, "LobbyStatisticsFeature");
 let LobbyStatisticsFeature = _LobbyStatisticsFeature;
-__decorateClass$k([
-  inject(ToastService)
-], LobbyStatisticsFeature.prototype, "_toastService");
 __decorateClass$k([
   inject(LobbyStatsService)
 ], LobbyStatisticsFeature.prototype, "_lobbyStatsService");
