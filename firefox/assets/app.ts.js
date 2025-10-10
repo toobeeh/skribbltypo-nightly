@@ -19830,7 +19830,7 @@ const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
         "When pressed, the currently typed command will be submitted",
         this,
         async () => {
-          if (!this._flyoutComponent) return;
+          if (!this._commandInput) return;
           const elements2 = await this._elements.complete();
           elements2.chatInput.value = "";
           this._hotkeySubmitted$.next(void 0);
@@ -19846,6 +19846,9 @@ const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
     ));
     __publicField(this, "_muteResultsSetting", this.useSetting(
       new BooleanExtensionSetting("mute_results", false, this).withName("Mute Command Results").withDescription("Don't show a toast message with the command result when a command has been executed")
+    ));
+    __publicField(this, "_hideFlyoutSetting", this.useSetting(
+      new BooleanExtensionSetting("hide_flyout", false, this).withName("Hide Command Preview").withDescription("Hide the command preview flyout that shows possible commands and their parameters")
     ));
     __publicField(this, "_echoCommand", this.useCommand(
       new ExtensionCommand("echo", this, "Echo", "Echo a text :)")
@@ -19873,10 +19876,11 @@ const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
           elements2.chatInput.focus();
           return [];
         }
-      })
-    ).subscribe((results) => {
+      }),
+      withLatestFrom(this._hideFlyoutSetting.changes$)
+    ).subscribe(([results, hideFlyout]) => {
       this._logger.debug("Command results changed", results);
-      this.setFlyoutState(results.length > 0, elements2);
+      this.setFlyoutState(!hideFlyout && results.length > 0, elements2);
       const sorted = [...results].sort((a, b) => {
         const aIsSuccess = a.result instanceof InterpretableSuccess;
         const bIsSuccess = b.result instanceof InterpretableSuccess;
@@ -19941,6 +19945,7 @@ const _ChatCommandsFeature = class _ChatCommandsFeature extends TypoFeature {
    * Callback when the command submit hotkey has been pressed
    * Check interpretation results and run valid command
    * @param interpretationResults
+   * @param silent
    */
   async commandSubmitted(interpretationResults, silent) {
     var _a2;
