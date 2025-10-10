@@ -59909,6 +59909,11 @@ const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
     "The final ranking of the lobby leaderboard",
     (event) => event.score
   ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts").withAggregation("ranking").withOrdering("maxValue"),
+  averageCompletionTime: new MetricView(
+    "Average Completion Time",
+    "The average time a player needed to guess the word, or until everyone guessed the drawing",
+    (event) => millisAsSeconds(event.completionTimeMs)
+  ).withYLabels(yLabelIncrements(10, "s")).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
   averageGuessTime: new MetricView(
     "Average Guess Time",
     "The average time a player needed to guess a word",
@@ -60002,6 +60007,7 @@ let LobbyStatsService = (_Ga = class {
     __publicField(this, "_lobbyJoinedEventListener");
     __publicField(this, "_logger");
     __publicField(this, "_guessTimeStats$", new Subject$1());
+    __publicField(this, "_completionTimeStats$", new Subject$1());
     __publicField(this, "_guessCountStats$", new Subject$1());
     __publicField(this, "_guessMessageGapStats$", new Subject$1());
     __publicField(this, "_guessScoreStats$", new Subject$1());
@@ -60018,6 +60024,9 @@ let LobbyStatsService = (_Ga = class {
   }
   get guessTimeStats$() {
     return this._guessTimeStats$.asObservable();
+  }
+  get completionTimeStats$() {
+    return this._completionTimeStats$.asObservable();
   }
   get guessCountStats$() {
     return this._guessCountStats$.asObservable();
@@ -60401,6 +60410,12 @@ let LobbyStatsService = (_Ga = class {
       };
       this._guessStreakStats$.next(streakEvent);
     });
+    this._guessTimeStats$.pipe(
+      map((event) => ({ ...event, completionTimeMs: event.guessTimeMs })),
+      mergeWith(this._drawTimeStats$.pipe(
+        map((event) => ({ ...event, completionTimeMs: event.drawTimeMs }))
+      ))
+    ).subscribe((event) => this._completionTimeStats$.next(event));
   }
 }, __name(_Ga, "LobbyStatsService"), _Ga);
 __decorateClass$l([
@@ -61868,6 +61883,7 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
     this.subscribeMetric(this._lobbyStatsService.drawGuessedPlayersStats$, this._metricViews.averageGuessedPlayers);
     this.subscribeMetric(this._lobbyStatsService.drawLikesStats$, this._metricViews.averageDrawLikes);
     this.subscribeMetric(this._lobbyStatsService.drawDislikesStats$, this._metricViews.mostDrawDislikes);
+    this.subscribeMetric(this._lobbyStatsService.completionTimeStats$, this._metricViews.averageCompletionTime);
     const metricResetSub = this._lobbyLeftEventListener.events$.pipe(
       mergeWith(this._roundStartedEventListener.events$.pipe(
         filter((event) => event.data === 1)

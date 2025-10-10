@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc b101306
+// @version      27.1.3 beta-usc 02b761b
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc b101306", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 02b761b", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -63520,6 +63520,11 @@ ${content2}</tr>
       "The final ranking of the lobby leaderboard",
       (event) => event.score
     ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts").withAggregation("ranking").withOrdering("maxValue"),
+    averageCompletionTime: new MetricView(
+      "Average Completion Time",
+      "The average time a player needed to guess the word, or until everyone guessed the drawing",
+      (event) => millisAsSeconds(event.completionTimeMs)
+    ).withYLabels(yLabelIncrements(10, "s")).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
     averageGuessTime: new MetricView(
       "Average Guess Time",
       "The average time a player needed to guess a word",
@@ -63613,6 +63618,7 @@ ${content2}</tr>
       __publicField(this, "_lobbyJoinedEventListener");
       __publicField(this, "_logger");
       __publicField(this, "_guessTimeStats$", new Subject$1());
+      __publicField(this, "_completionTimeStats$", new Subject$1());
       __publicField(this, "_guessCountStats$", new Subject$1());
       __publicField(this, "_guessMessageGapStats$", new Subject$1());
       __publicField(this, "_guessScoreStats$", new Subject$1());
@@ -63629,6 +63635,9 @@ ${content2}</tr>
     }
     get guessTimeStats$() {
       return this._guessTimeStats$.asObservable();
+    }
+    get completionTimeStats$() {
+      return this._completionTimeStats$.asObservable();
     }
     get guessCountStats$() {
       return this._guessCountStats$.asObservable();
@@ -64012,6 +64021,12 @@ ${content2}</tr>
         };
         this._guessStreakStats$.next(streakEvent);
       });
+      this._guessTimeStats$.pipe(
+        map((event) => ({ ...event, completionTimeMs: event.guessTimeMs })),
+        mergeWith(this._drawTimeStats$.pipe(
+          map((event) => ({ ...event, completionTimeMs: event.drawTimeMs }))
+        ))
+      ).subscribe((event) => this._completionTimeStats$.next(event));
     }
   }, __name(_Ga, "LobbyStatsService"), _Ga);
   __decorateClass$l([
@@ -65479,6 +65494,7 @@ ${content2}</tr>
       this.subscribeMetric(this._lobbyStatsService.drawGuessedPlayersStats$, this._metricViews.averageGuessedPlayers);
       this.subscribeMetric(this._lobbyStatsService.drawLikesStats$, this._metricViews.averageDrawLikes);
       this.subscribeMetric(this._lobbyStatsService.drawDislikesStats$, this._metricViews.mostDrawDislikes);
+      this.subscribeMetric(this._lobbyStatsService.completionTimeStats$, this._metricViews.averageCompletionTime);
       const metricResetSub = this._lobbyLeftEventListener.events$.pipe(
         mergeWith(this._roundStartedEventListener.events$.pipe(
           filter((event) => event.data === 1)
