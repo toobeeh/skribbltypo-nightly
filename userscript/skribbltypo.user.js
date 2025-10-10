@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc a26c512
+// @version      27.1.3 beta-usc dd9ab66
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc a26c512", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc dd9ab66", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -21037,7 +21037,7 @@
       this._playerContainer = requireElement(
         `.overlay-content .result.show .podests > div:has(.avatar[playerid='${this._player.id}'])`
       );
-      this._avatarContainer = requireElement(".avatar", this._playerContainer);
+      this._avatarContainer = requireElement(`.avatar[playerid='${this._player.id}']`, this._playerContainer);
       this._placeholderBackgroundContainer = createElement('<div style="display: none;"></div>');
       this._playerContainer.appendChild(this._placeholderBackgroundContainer);
     }
