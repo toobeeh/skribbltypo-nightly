@@ -10679,8 +10679,14 @@ let ColorChangedEventProcessor = (_s = class extends EventProcessor {
     document.addEventListener("skribblColorChanged", (event) => {
       const rgb = event.detail;
       const color = Color.fromRgbString(rgb);
-      events.next(new ColorChangedEvent(color));
-      this._logger.info("Color changed", color);
+      events.next(new ColorChangedEvent({ color, target: "primary" }));
+      this._logger.info("prim Color changed", color);
+    });
+    document.addEventListener("skribblSecondaryColorChanged", (event) => {
+      const rgb = event.detail;
+      const color = Color.fromRgbString(rgb);
+      events.next(new ColorChangedEvent({ color, target: "secondary" }));
+      this._logger.info("sec Color changed", color);
     });
     return events;
   }
@@ -32584,6 +32590,16 @@ let TypoDrawMod = (_ya = class {
   noLineEffect(line, pressure, brushStyle) {
     return { lines: [line], style: brushStyle };
   }
+  /**
+   * Get the selected color, considering whether secondary mode is active and any style override
+   * @param styleOverride
+   * @param brushStyle
+   * @param secondaryActive
+   * @private
+   */
+  getSelectedColor(styleOverride, brushStyle, secondaryActive) {
+    return secondaryActive ? (styleOverride == null ? void 0 : styleOverride.secondaryColor) ?? brushStyle.secondaryColor : (styleOverride == null ? void 0 : styleOverride.color) ?? brushStyle.color;
+  }
 }, __name(_ya, "TypoDrawMod"), _ya);
 TypoDrawMod = __decorateClass$O([
   injectable()
@@ -32596,9 +32612,10 @@ const _ConstantDrawMod = class _ConstantDrawMod extends TypoDrawMod {
    * @param eventId
    * @param strokeId
    * @param strokeCause
+   * @param secondaryActive
    */
-  async applyEffect(line, pressure, brushStyle, eventId, strokeId, strokeCause) {
-    const effect = this.applyConstantEffect(line, pressure, brushStyle, eventId, strokeId, strokeCause);
+  async applyEffect(line, pressure, brushStyle, eventId, strokeId, strokeCause, secondaryActive) {
+    const effect = this.applyConstantEffect(line, pressure, brushStyle, eventId, strokeId, strokeCause, secondaryActive);
     const awaited = effect instanceof Promise ? await effect : effect;
     return {
       lines: [awaited.line],
@@ -32679,18 +32696,23 @@ const _PipetteTool = class _PipetteTool extends TypoDrawTool {
    * Get the pixel color of the canvas at a certain position
    * @param line
    * @param pressure
-   * @param style
+   * @param brushStyle
+   * @param eventId
+   * @param strokeId
+   * @param strokeCause
+   * @param secondaryActive
    */
-  async applyConstantEffect(line, pressure, style) {
+  async applyConstantEffect(line, pressure, brushStyle, eventId, strokeId, strokeCause, secondaryActive) {
     const elements2 = await this._elementsSetup.complete();
     const canvas = elements2.canvas;
     const ctx = canvas.getContext("2d");
     if (ctx !== null) {
       const imageData = ctx.getImageData(line.to[0], line.to[1], 1, 1);
       const rgb = imageData.data.slice(0, 3);
-      style.color = Color.fromRgb(rgb[0], rgb[1], rgb[2]).skribblCode;
+      if (!secondaryActive) brushStyle.color = Color.fromRgb(rgb[0], rgb[1], rgb[2]).skribblCode;
+      else brushStyle.secondaryColor = Color.fromRgb(rgb[0], rgb[1], rgb[2]).skribblCode;
     }
-    return this.noConstantEffect(line, pressure, style);
+    return this.noConstantEffect(line, pressure, brushStyle);
   }
 };
 __name(_PipetteTool, "PipetteTool");
@@ -32824,9 +32846,10 @@ const _CoordinateListener = class _CoordinateListener {
       canvasRect: rect,
       lastSampleDate: Date.now(),
       pointerDownId: performance.now(),
-      lastCoordinates: coords
+      lastCoordinates: coords,
+      secondaryActive: (event.buttons & 2) === 2
     };
-    this._strokes$.next({ from: coords, to: coords, cause: "down", stroke: this._currentStroke.pointerDownId });
+    this._strokes$.next({ from: coords, to: coords, cause: "down", stroke: this._currentStroke.pointerDownId, secondaryActive: this._currentStroke.secondaryActive });
     this._pointerDown$.next(event);
   }
   onCanvasPointerMove(event) {
@@ -32841,7 +32864,7 @@ const _CoordinateListener = class _CoordinateListener {
       this._canvas,
       this._currentStroke.canvasRect
     );
-    this._strokes$.next({ from: this._currentStroke.lastCoordinates, to: coords, cause: "move", stroke: this._currentStroke.pointerDownId });
+    this._strokes$.next({ from: this._currentStroke.lastCoordinates, to: coords, cause: "move", stroke: this._currentStroke.pointerDownId, secondaryActive: this._currentStroke.secondaryActive });
     this._currentStroke.lastCoordinates = coords;
   }
   onDocumentPointerUp(event) {
@@ -32851,7 +32874,7 @@ const _CoordinateListener = class _CoordinateListener {
       this._canvas,
       this._currentStroke.canvasRect
     );
-    this._strokes$.next({ from: this._currentStroke.lastCoordinates, to: coords, cause: "up", stroke: this._currentStroke.pointerDownId });
+    this._strokes$.next({ from: this._currentStroke.lastCoordinates, to: coords, cause: "up", stroke: this._currentStroke.pointerDownId, secondaryActive: this._currentStroke.secondaryActive });
     this._pointerUp$.next(event);
     this._currentStroke = void 0;
   }
@@ -32887,7 +32910,7 @@ let ToolsService = (_za = class {
     __publicField(this, "_logger");
     __publicField(this, "_activeTool$", new BehaviorSubject(skribblTool.brush));
     __publicField(this, "_activeMods$", new BehaviorSubject([]));
-    __publicField(this, "_activeBrushStyle$", new BehaviorSubject({ color: Color.fromHex("#000000").skribblCode, size: 1 }));
+    __publicField(this, "_activeBrushStyle$", new BehaviorSubject({ color: Color.fromHex("#000000").skribblCode, secondaryColor: Color.fromHex("#FFFFFF").skribblCode, size: 1 }));
     __publicField(this, "_lastPointerDownPosition$", new BehaviorSubject(null));
     __publicField(this, "_canvasCursorStyle", document.createElement("style"));
     __publicField(this, "_insertedStrokes$", new Subject$1());
@@ -32919,7 +32942,14 @@ let ToolsService = (_za = class {
     });
     this._sizeChangedListener.events$.pipe(
       combineLatestWith(this._colorChangedListener.events$),
-      map(([size, color]) => ({ size: size.data, color: color.data.skribblCode }))
+      withLatestFrom(this._activeBrushStyle$),
+      map(([[size, color], current]) => {
+        const newStyle = { ...current };
+        newStyle.size = size.data;
+        if (color.data.target === "primary") newStyle.color = color.data.color.skribblCode;
+        else newStyle.secondaryColor = color.data.color.skribblCode;
+        return newStyle;
+      })
     ).subscribe((style) => this._activeBrushStyle$.next(style));
     const coordinateListener = new CoordinateListener(elements2.canvas);
     listeners.add("draw")("pointerdown", coordinateListener.onCanvasPointerDown.bind(coordinateListener));
@@ -32946,7 +32976,7 @@ let ToolsService = (_za = class {
       mergeWith(this._insertedStrokes$),
       withLatestFrom(drawingMeta$)
     ).subscribe(([stroke, [style, tool, mods]]) => {
-      this.processDrawCoordinates(stroke.from, stroke.to, stroke.cause, tool, mods, style, stroke.stroke);
+      this.processDrawCoordinates(stroke.from, stroke.to, stroke.cause, tool, mods, style, stroke.stroke, stroke.secondaryActive);
     });
     coordinateListener.pointerDown$.subscribe((position) => this._lastPointerDownPosition$.next(position));
     this._lobbyService.lobby$.pipe(
@@ -32957,8 +32987,8 @@ let ToolsService = (_za = class {
       coordinateListener.enabled = enabled;
     });
   }
-  async processDrawCoordinates(start, end, cause, tool, mods, style, strokeId) {
-    var _a2, _b2, _c2;
+  async processDrawCoordinates(start, end, cause, tool, mods, style, strokeId, secondaryActive) {
+    var _a2, _b2, _c2, _d2;
     this._logger.debug("Activating tool and applying mods", start, end);
     const eventId = Date.now();
     let lines = [{ from: [start[0], start[1]], to: [end[0], end[1]] }];
@@ -32967,7 +32997,7 @@ let ToolsService = (_za = class {
     for (const mod of mods) {
       const modLines = [];
       for (const line of lines) {
-        const effect = await mod.applyEffect(line, pressure, line.styleOverride ?? modStyle, eventId, strokeId, cause);
+        const effect = await mod.applyEffect(line, pressure, line.styleOverride ?? modStyle, eventId, strokeId, cause, secondaryActive);
         modLines.push(...effect.lines);
         modStyle = effect.style;
         this._logger.debug("Mod applied", mod);
@@ -32978,11 +33008,15 @@ let ToolsService = (_za = class {
       this._logger.debug("Brush color changed by mods", modStyle.color);
       this._drawingService.setColor(modStyle.color);
     }
+    if (modStyle.secondaryColor !== style.secondaryColor) {
+      this._logger.debug("Brush secondary color changed by mods", modStyle.secondaryColor);
+      this._drawingService.setColor(modStyle.secondaryColor, true);
+    }
     const commands = [];
     if (tool instanceof TypoDrawTool) {
       for (let line of lines) {
         line = { from: [Math.floor(line.from[0]), Math.floor(line.from[1])], to: [Math.floor(line.to[0]), Math.floor(line.to[1])] };
-        const lineCommands = await tool.createCommands(line, pressure, line.styleOverride ?? modStyle, eventId, strokeId, cause);
+        const lineCommands = await tool.createCommands(line, pressure, line.styleOverride ?? modStyle, eventId, strokeId, cause, secondaryActive);
         if (lineCommands.length > 0) {
           commands.push(...lineCommands);
           this._logger.debug("Adding commands created by tool", tool, commands);
@@ -32992,10 +33026,11 @@ let ToolsService = (_za = class {
       }
     } else if (tool === skribblTool.brush) {
       for (const line of lines) {
+        const color = secondaryActive ? ((_a2 = line.styleOverride) == null ? void 0 : _a2.secondaryColor) ?? modStyle.secondaryColor : ((_b2 = line.styleOverride) == null ? void 0 : _b2.color) ?? modStyle.color;
         const lineCommand = this._drawingService.createLineCommand(
           [...line.from, ...line.to],
-          ((_a2 = line.styleOverride) == null ? void 0 : _a2.color) ?? modStyle.color,
-          ((_b2 = line.styleOverride) == null ? void 0 : _b2.size) ?? modStyle.size,
+          color,
+          ((_c2 = line.styleOverride) == null ? void 0 : _c2.size) ?? modStyle.size,
           false
         );
         if (lineCommand !== void 0) commands.push(lineCommand);
@@ -33005,7 +33040,7 @@ let ToolsService = (_za = class {
         for (const line of lines) {
           const pointCommand = this._drawingService.createFillCommand(
             [...line.from],
-            ((_c2 = line.styleOverride) == null ? void 0 : _c2.color) ?? modStyle.color
+            ((_d2 = line.styleOverride) == null ? void 0 : _d2.color) ?? modStyle.color
           );
           commands.push(pointCommand);
         }
@@ -33035,8 +33070,8 @@ let ToolsService = (_za = class {
       this.setSkribblTool(tool);
     }
     this._activeTool$.next(tool);
-    if (tool instanceof TypoDrawMod) tool.applyEffect({ from: [0, 0], to: [0, 0] }, void 0, { color: Color.fromHex("#000000").skribblCode, size: 1 }, 0, 0, "down");
-    if (tool instanceof TypoDrawTool) tool.createCommands({ from: [0, 0], to: [0, 0] }, void 0, { color: Color.fromHex("#000000").skribblCode, size: 1 }, 0, 0, "down");
+    if (tool instanceof TypoDrawMod) tool.applyEffect({ from: [0, 0], to: [0, 0] }, void 0, { color: Color.fromHex("#000000").skribblCode, secondaryColor: Color.fromHex("#000000").skribblCode, size: 1 }, 0, 0, "down", false);
+    if (tool instanceof TypoDrawTool) tool.createCommands({ from: [0, 0], to: [0, 0] }, void 0, { color: Color.fromHex("#000000").skribblCode, secondaryColor: Color.fromHex("#000000").skribblCode, size: 1 }, 0, 0, "down", false);
   }
   activateMod(mod) {
     this._logger.debug("Activating mod", mod);
@@ -33157,7 +33192,7 @@ function create_fragment$1a(ctx) {
     props: {
       color: (
         /*$color*/
-        ctx[2]
+        ctx[2].primary
       ),
       allowAlpha: false,
       useBackground: false,
@@ -33227,7 +33262,7 @@ function create_fragment$1a(ctx) {
       const colorpickerbutton_changes = {};
       if (dirty & /*$color*/
       4) colorpickerbutton_changes.color = /*$color*/
-      ctx2[2];
+      ctx2[2].primary;
       if (dirty & /*feature*/
       1) colorpickerbutton_changes.colorChanged = /*func*/
       ctx2[6];
@@ -33310,7 +33345,7 @@ const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFe
     __publicField(this, "_component");
     __publicField(this, "_pipetteTool");
     __publicField(this, "_colorChangeSubscription");
-    __publicField(this, "_currentColor$", new Subject$1());
+    __publicField(this, "_currentColor$", new BehaviorSubject({ primary: Color.fromHex("#000000"), secondary: Color.fromHex("#ffffff") }));
   }
   get featureInfoComponent() {
     return { componentType: Drawing_color_tools_info, props: {} };
@@ -33319,11 +33354,15 @@ const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFe
     const elements2 = await this.elementsSetup.complete();
     this._pipetteTool = this._toolsService.resolveModOrTool(PipetteTool);
     this._colorChangedListener.events$.pipe(
-      withLatestFrom(this._currentColor$.pipe(startWith(new Color(0, 0, 0)))),
-      filter(([event, currentColor]) => event.data.hex !== currentColor.hex),
-      map(([event]) => event)
-    ).subscribe((event) => {
-      this._currentColor$.next(event.data);
+      withLatestFrom(this._currentColor$),
+      filter(
+        ([event, currentColor]) => event.data.target === "primary" ? event.data.color.hex !== currentColor.primary.hex : event.data.color.hex !== currentColor.secondary.hex
+      )
+    ).subscribe(([event, active]) => {
+      const color = { ...active };
+      if (event.data.target === "primary") color.primary = event.data.color;
+      else color.secondary = event.data.color;
+      this._currentColor$.next(color);
     });
     this._component = new Drawing_color_tools({
       target: elements2.skribblTools,
@@ -33353,7 +33392,7 @@ const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFe
     return fromObservable(this._toolsService.activeTool$, skribblTool.brush);
   }
   get colorStore() {
-    return fromObservable(this._currentColor$, new Color(0, 0, 0));
+    return fromObservable(this._currentColor$, this._currentColor$.value);
   }
   updatePickedColor(color) {
     this._logger.info("Color picked", color);
@@ -39000,9 +39039,9 @@ const _LineToolFeature = class _LineToolFeature extends TypoFeature {
   async drawLine(origin, target) {
     if (!origin || !target) return;
     const strokeId = Date.now();
-    this._toolsService.insertStroke({ from: origin, to: origin, stroke: strokeId, cause: "down" });
-    this._toolsService.insertStroke({ from: origin, to: target, stroke: strokeId, cause: "move" });
-    this._toolsService.insertStroke({ from: target, to: target, stroke: strokeId, cause: "up" });
+    this._toolsService.insertStroke({ from: origin, to: origin, stroke: strokeId, cause: "down", secondaryActive: false });
+    this._toolsService.insertStroke({ from: origin, to: target, stroke: strokeId, cause: "move", secondaryActive: false });
+    this._toolsService.insertStroke({ from: target, to: target, stroke: strokeId, cause: "up", secondaryActive: false });
     this._originCoordinates$.next(void 0);
     this._targetCoordinates$.next(void 0);
   }
@@ -57887,7 +57926,7 @@ const _DashTool = class _DashTool extends TypoDrawTool {
   createCursor(style) {
     return this.createSkribblLikeCursor(style);
   }
-  async createCommands(line, pressure, style, eventId) {
+  async createCommands(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
     const interval2 = await firstValueFrom(this._intervalSetting.changes$);
     const blankSize = await firstValueFrom(this._blankSizeSetting.changes$);
     const now = Date.now();
@@ -57905,7 +57944,8 @@ const _DashTool = class _DashTool extends TypoDrawTool {
     if (this.lineStart === void 0) {
       this.lineStart = { eventId, time: now };
     }
-    return [[0, style.color, style.size, ...line.from, ...line.to]];
+    const color = this.getSelectedColor(line.styleOverride, style, secondaryActive);
+    return [[0, color, style.size, ...line.from, ...line.to]];
   }
   getDistance(from2, to) {
     return Math.sqrt(Math.pow(to[0] - from2[0], 2) + Math.pow(to[1] - from2[1], 2));
@@ -57927,15 +57967,16 @@ const _DotTool = class _DotTool extends TypoDrawTool {
   createCursor(style) {
     return this.createSkribblLikeCursor(style);
   }
-  async createCommands(line, pressure, style, eventId) {
+  async createCommands(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
     const interval2 = await firstValueFrom(this._intervalSetting.changes$);
     const now = Date.now();
+    const color = this.getSelectedColor(line.styleOverride, style, secondaryActive);
     if (this.lastDown.eventId === eventId) {
-      return [[0, style.color, style.size, ...line.to, ...line.to]];
+      return [[0, color, style.size, ...line.to, ...line.to]];
     } else if (now - this.lastDown.time > interval2) {
       this.lastDown.time = now;
       this.lastDown.eventId = eventId;
-      return [[0, style.color, style.size, ...line.to, ...line.to]];
+      return [[0, color, style.size, ...line.to, ...line.to]];
     }
     return [];
   }
