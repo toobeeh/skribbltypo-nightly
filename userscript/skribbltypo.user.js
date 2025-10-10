@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 3f243c5
+// @version      27.1.3 beta-usc 4c51640
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 3f243c5", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 4c51640", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -63465,7 +63465,7 @@ ${content2}</tr>
     ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts"),
     finalStandings: new MetricView(
       "Final Score Ranking",
-      "The final ranking",
+      "The final ranking of the lobby leaderboard",
       (event) => event.score
     ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts").withAggregation("ranking").withOrdering("maxValue"),
     averageGuessTime: new MetricView(
@@ -63477,12 +63477,12 @@ ${content2}</tr>
       "Average Guess Score",
       "The average score a player got per correct guess",
       (event) => event.score
-    ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts").withAggregation("average").withOrdering("maxValue"),
+    ).withYLabels(yLabelIncrements(50, "pts")).withMetricUnit("pts").withAggregation("average").withOrdering("maxValue"),
     averageGuessSpeed: new MetricView(
       "Average Guess Speed",
       "The average time between guesses a player sent",
       (event) => millisAsSeconds(event.gapTimeMs)
-    ).withYLabels(yLabelIncrements(2, "s")).withMetricUnit("s").withAggregation("average"),
+    ).withYLabels(yLabelIncrements(5, "s")).withMetricUnit("s").withAggregation("average"),
     averageNeededGuesses: new MetricView(
       "Average Guesses Needed",
       "The average number of guesses a player needed to guess a word",
@@ -63789,6 +63789,15 @@ ${content2}</tr>
           /* until drawing ended */
           takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
             filter((event) => event.data.drawingRevealed !== void 0)
+          )),
+          mergeWith(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0),
+            switchMap((event) => {
+              var _a2;
+              const guessTimeMs = Date.now() - startTimestamp;
+              const notGuessedPlayers = ((_a2 = event.data.drawingRevealed) == null ? void 0 : _a2.scores.filter((score) => score.rewarded === 0).map((score) => ({ playerId: score.playerId, guessTimeMs }))) ?? [];
+              return from(notGuessedPlayers);
+            })
           )),
           /* create event data */
           withLatestFrom(lobby$),
@@ -65384,27 +65393,8 @@ ${content2}</tr>
       __publicField(this, "_iconComponent");
       __publicField(this, "_iconClickSubscription");
       __publicField(this, "_quickAccessSettingSubscription");
-      __publicField(this, "_switchStatCommand", this.useCommand(
-        new ExtensionCommand("stat chat", this, "Show game stats", "Show a stat screen above the lobby chat")
-      ).withParameters(
-        (params) => params.addParam(new StringOptionalCommandParameter("Category Name", "The name of the category to show", (category) => ({ category }))).run(async (args, command) => {
-          const categories = Object.keys(this._metricViews);
-          if (args.category !== void 0 && !categories.includes(args.category)) {
-            return new InterpretableError(command, `Unknown category '${args.category}'. Use the stat list command to list available categories.`);
-          }
-          await this._statViewSetting.setValue(args.category);
-          return new InterpretableSuccess(command, `Showing stats for category ${args.category ?? "none (hides stats)"}.`);
-        })
-      ));
-      __publicField(this, "_statListCommand", this.useCommand(
-        new ExtensionCommand("stat ls", this, "List game stat categories", "Show a list of available categories for the stats command")
-      ).run(async (command) => {
-        const categories = Object.entries(this._metricViews).map(([key2, view]) => `- [${key2}] ${view.name}: ${view.description}`).join("\n");
-        if (categories.length === 0) return new InterpretableError(command, "No stat categories available.");
-        return new InterpretableSuccess(command, categories);
-      }));
       __publicField(this, "_statViewCommand", this.useCommand(
-        new ExtensionCommand("stat vw", this, "View stats in popup", "Opens a popup with detailed statistics")
+        new ExtensionCommand("stat", this, "View stats in popup", "Opens a popup with detailed lobby statistics")
       ).run(async (command) => {
         const popupComponent = {
           componentType: Charts,
@@ -65415,7 +65405,6 @@ ${content2}</tr>
         this._modalService.showModal(popupComponent.componentType, popupComponent.props, "Lobby Statistics", "card");
         return new InterpretableSilentSuccess(command);
       }));
-      __publicField(this, "_statViewSetting", new ExtensionSetting("stat_view", void 0, this));
       __publicField(this, "_showQuickAccessSetting", this.useSetting(
         new BooleanExtensionSetting("quick_access", true, this).withName("Stats View Access").withDescription("Show an icon in the controls tray to quickly access the stats view.")
       ));
@@ -65423,6 +65412,7 @@ ${content2}</tr>
     async onActivate() {
       this.subscribeMetric(this._lobbyStatsService.guessTimeStats$, this._metricViews.averageGuessTime);
       this.subscribeMetric(this._lobbyStatsService.turnStandingScoreStats$, this._metricViews.totalScore);
+      this.subscribeMetric(this._lobbyStatsService.turnStandingScoreStats$, this._metricViews.finalStandings);
       this.subscribeMetric(this._lobbyStatsService.guessCountStats$, this._metricViews.averageNeededGuesses);
       this.subscribeMetric(this._lobbyStatsService.guessMessageGapStats$, this._metricViews.averageGuessSpeed);
       this.subscribeMetric(this._lobbyStatsService.guessTimeStats$, this._metricViews.fastestGuess);
@@ -65436,45 +65426,6 @@ ${content2}</tr>
       this.subscribeMetric(this._lobbyStatsService.drawGuessedPlayersStats$, this._metricViews.averageGuessedPlayers);
       this.subscribeMetric(this._lobbyStatsService.drawLikesStats$, this._metricViews.averageDrawLikes);
       this.subscribeMetric(this._lobbyStatsService.drawDislikesStats$, this._metricViews.mostDrawDislikes);
-      const chart = new Chart({
-        width: 2e3,
-        height: 1e3,
-        chartArea: {
-          x: 200,
-          y: 200,
-          width: 1600,
-          height: 700
-        },
-        barPadding: 30,
-        barMaxWidth: 100,
-        yGridGap: 50
-      });
-      const elements2 = await this._elementsSetup.complete();
-      const chartUpdateSub = this._lobbyService.lobby$.pipe(
-        debounceTime(1e3),
-        combineLatestWith(this._statViewSetting.changes$)
-      ).subscribe(([lobby, stat]) => {
-        if (lobby === null) return;
-        const players = lobby.players;
-        let chartVisible = false;
-        const matchingStat = stat ? Object.entries(this._metricViews).find(([key2]) => key2 === stat) : void 0;
-        if (matchingStat === void 0) chart.clear();
-        else {
-          try {
-            matchingStat[1].drawChart(players, chart);
-            chartVisible = true;
-          } catch (e) {
-            this._logger.warn("could not plot chart", e);
-            chart.clear();
-          }
-        }
-        if (chartVisible && chart.canvas.parentElement === null) {
-          elements2.chatArea.insertAdjacentElement("afterbegin", chart.canvas);
-        }
-        if (!chartVisible && chart.canvas.parentElement !== null) {
-          chart.canvas.remove();
-        }
-      });
       const metricResetSub = this._lobbyLeftEventListener.events$.pipe(
         mergeWith(this._roundStartedEventListener.events$.pipe(
           filter((event) => event.data === 1)
@@ -65521,7 +65472,7 @@ ${content2}</tr>
           this._seenLobbyPlayers$.next(seenPlayers);
         }
       });
-      this._statsSubscriptions.push(metricResetSub, metricArchiveSub, chartUpdateSub, playersSub);
+      this._statsSubscriptions.push(metricResetSub, metricArchiveSub, playersSub);
       this._quickAccessSettingSubscription = this._showQuickAccessSetting.changes$.subscribe((value) => {
         if (value) this.addQuickAccessIcon();
         else this.removeQuickAccessIcon();
