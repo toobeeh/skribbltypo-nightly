@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 02b761b
+// @version      27.1.3 beta-usc 044bf58
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 02b761b", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 044bf58", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -63524,7 +63524,12 @@ ${content2}</tr>
       "Average Completion Time",
       "The average time a player needed to guess the word, or until everyone guessed the drawing",
       (event) => millisAsSeconds(event.completionTimeMs)
-    ).withYLabels(yLabelIncrements(10, "s")).withMetricUnit("s").withAggregation("ranking").withOrdering("minValue"),
+    ).withYLabels(yLabelIncrements(10, "s")).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
+    completionTime: new MetricView(
+      "Completion Time",
+      "The time a player needed to guess the word, or until everyone guessed the drawing, progressing over time",
+      (event) => millisAsSeconds(event.completionTimeMs)
+    ).withYLabels(yLabelIncrements(10, "s")).withMetricUnit("s").withAggregation("single"),
     averageGuessTime: new MetricView(
       "Average Guess Time",
       "The average time a player needed to guess a word",
@@ -64021,11 +64026,32 @@ ${content2}</tr>
         };
         this._guessStreakStats$.next(streakEvent);
       });
-      this._guessTimeStats$.pipe(
-        map((event) => ({ ...event, completionTimeMs: event.guessTimeMs })),
-        mergeWith(this._drawTimeStats$.pipe(
-          map((event) => ({ ...event, completionTimeMs: event.drawTimeMs }))
-        ))
+      turnStarted$.pipe(
+        /* average guess time for drawer */
+        switchMap(() => this._guessTimeStats$.pipe(
+          takeUntil(this._lobbyStateChangedEventListener.events$.pipe(
+            filter((event) => event.data.drawingRevealed !== void 0),
+            delay(50)
+            /* delay to let non-guess-time events come in (timed also by lobbystatechange event) */
+          )),
+          map((event) => event.guessTimeMs),
+          reduce((acc, value) => ({ sum: acc.sum + value, count: acc.count + 1 }), { sum: 0, count: 0 }),
+          map((acc) => acc.count === 0 ? 0 : acc.sum / acc.count),
+          withLatestFrom(lobby$),
+          map(([avg, lobby]) => {
+            if (lobby === null) throw new Error("lobby must be provided");
+            const event = {
+              ...this.createEventSignature(lobby.lobby, lobby.turnPlayerId, lobby.turnPlayerId),
+              completionTimeMs: avg
+            };
+            return event;
+          })
+        )),
+        /* guess times for guessers */
+        mergeWith(this._guessTimeStats$.pipe(
+          map((event) => ({ ...event, completionTimeMs: event.guessTimeMs }))
+        )),
+        tap((e) => console.log("completion time", e.playerId, e.completionTimeMs))
       ).subscribe((event) => this._completionTimeStats$.next(event));
     }
   }, __name(_Ga, "LobbyStatsService"), _Ga);
@@ -65495,6 +65521,7 @@ ${content2}</tr>
       this.subscribeMetric(this._lobbyStatsService.drawLikesStats$, this._metricViews.averageDrawLikes);
       this.subscribeMetric(this._lobbyStatsService.drawDislikesStats$, this._metricViews.mostDrawDislikes);
       this.subscribeMetric(this._lobbyStatsService.completionTimeStats$, this._metricViews.averageCompletionTime);
+      this.subscribeMetric(this._lobbyStatsService.completionTimeStats$, this._metricViews.completionTime);
       const metricResetSub = this._lobbyLeftEventListener.events$.pipe(
         mergeWith(this._roundStartedEventListener.events$.pipe(
           filter((event) => event.data === 1)
