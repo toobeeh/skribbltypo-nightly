@@ -17704,18 +17704,21 @@ let PlayersService = (_ma = class {
     });
   }
   setupScoreboardPlayers() {
-    this._lobbyStateChangedEvent.events$.pipe(
-      combineLatestWith(this._lobbyService.lobby$, this._scoreboardVisibleEvent.events$),
-      filter((data) => data[2].data === true),
-      /* wait until scoreboard visible */
-      map((data) => data[1] === null || data[0].data.gameEnded === void 0 ? void 0 : data),
+    this._scoreboardVisibleEvent.events$.pipe(
+      combineLatestWith(this._lobbyStateChangedEvent.events$),
+      withLatestFrom(this._lobbyService.lobby$),
+      map(([[scoreboardVisibleEvent, lobbyStateChangeEvent], lobby]) => lobby === null || lobbyStateChangeEvent.data.gameEnded === void 0 ? void 0 : {
+        visible: scoreboardVisibleEvent.data,
+        lobby,
+        stateChange: lobbyStateChangeEvent.data.gameEnded
+      }),
       distinctUntilChanged()
     ).subscribe((data) => {
-      var _a2;
-      const event = (_a2 = data == null ? void 0 : data[0].data) == null ? void 0 : _a2.gameEnded;
-      const lobby = (data == null ? void 0 : data[1]) ?? void 0;
+      const event = data == null ? void 0 : data.stateChange;
+      const lobby = data == null ? void 0 : data.lobby;
       const lobbyId = (lobby == null ? void 0 : lobby.id) ?? null;
-      if (event === void 0 || lobby === void 0 || lobbyId === null) {
+      const visible = (data == null ? void 0 : data.visible) ?? false;
+      if (event === void 0 || lobby === void 0 || lobbyId === null || !visible) {
         this._logger.info("Lobby changed, no scoreboard data");
         this._scoreboardPlayers$.next([]);
         return;
@@ -17765,7 +17768,7 @@ let PlayersService = (_ma = class {
         return;
       }
       const playerId = elements2.textOverlay.getAttribute("playerid") ?? void 0;
-      if (element(".avatar", elements2.textOverlay) === void 0 || playerId === void 0) {
+      if (element(".avatar", elements2.textOverlay) === null || playerId === void 0) {
         this._logger.info("No player or playerid in overlay, probably not a choosing info");
         this._overlayPlayer$.next(void 0);
         return;
