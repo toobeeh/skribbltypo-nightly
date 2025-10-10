@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 4c51640
+// @version      27.1.3 beta-usc c2ea867
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 4c51640", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc c2ea867", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -63792,6 +63792,7 @@ ${content2}</tr>
           )),
           mergeWith(this._lobbyStateChangedEventListener.events$.pipe(
             filter((event) => event.data.drawingRevealed !== void 0),
+            take(1),
             switchMap((event) => {
               var _a2;
               const guessTimeMs = Date.now() - startTimestamp;

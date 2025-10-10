@@ -60182,6 +60182,7 @@ let LobbyStatsService = (_Ga = class {
         )),
         mergeWith(this._lobbyStateChangedEventListener.events$.pipe(
           filter((event) => event.data.drawingRevealed !== void 0),
+          take(1),
           switchMap((event) => {
             var _a2;
             const guessTimeMs = Date.now() - startTimestamp;
