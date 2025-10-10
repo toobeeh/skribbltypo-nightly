@@ -11732,11 +11732,12 @@ let TextOverlayVisibilityChangedEventProcessor = (_W = class extends EventProces
     const events = new Subject$1();
     const elements2 = await this._elementsSetup.complete();
     const observer = new MutationObserver(() => {
-      if (elements2.canvasOverlay.style.top !== "100%" && elements2.textOverlay.classList.contains("show")) {
+      if (elements2.canvasOverlay.style.top.trim() !== "-100%" && elements2.textOverlay.classList.contains("show")) {
         events.next(new TextOverlayVisibilityChangedEvent(true));
       } else events.next(new TextOverlayVisibilityChangedEvent(false));
     });
     observer.observe(elements2.textOverlay, { attributes: true });
+    observer.observe(elements2.canvasOverlay, { attributes: true });
     return events.pipe(
       distinctUntilChanged(),
       debounceTime(50)
@@ -17761,8 +17762,8 @@ let PlayersService = (_ma = class {
   setupOverlayPlayer() {
     this._textOverlayVisibleEvent.events$.pipe(
       withLatestFrom(this._lobbyService.lobby$, this._elementsSetup.complete())
-    ).subscribe(([visible, lobby, elements2]) => {
-      if (!visible || lobby === null || lobby.id === null) {
+    ).subscribe(([visibleEvent, lobby, elements2]) => {
+      if (!visibleEvent.data || lobby === null || lobby.id === null) {
         this._logger.info("Overlay player hidden");
         this._overlayPlayer$.next(void 0);
         return;
