@@ -11504,6 +11504,7 @@ let PlayerPopupVisibilityChangedEventProcessor = (_O = class extends EventProces
       } else events.next(new PlayerPopupVisibilityChangedEvent(false));
     });
     observer.observe(elements2.playerPopup, { attributes: true });
+    observer.observe(elements2.skribblModal, { attributes: true });
     return events.pipe(
       distinctUntilChanged(),
       debounceTime(50)
@@ -17729,9 +17730,9 @@ let PlayersService = (_ma = class {
   setupPopupPlayer() {
     this._popupVisibleEvent.events$.pipe(
       withLatestFrom(this._memberService.member$, this._lobbyService.lobby$, this._elementsSetup.complete())
-    ).subscribe(([visible, member, lobby, elements2]) => {
+    ).subscribe(([visibleEvent, member, lobby, elements2]) => {
       var _a2;
-      if (!visible || lobby === null) {
+      if (!visibleEvent.data || lobby === null) {
         this._logger.info("Popup player hidden");
         this._popupPlayer$.next(void 0);
         return;
@@ -17766,18 +17767,18 @@ let PlayersService = (_ma = class {
       const playerId = elements2.textOverlay.getAttribute("playerid") ?? void 0;
       if (element(".avatar", elements2.textOverlay) === void 0 || playerId === void 0) {
         this._logger.info("No player or playerid in overlay, probably not a choosing info");
-        this._popupPlayer$.next(void 0);
+        this._overlayPlayer$.next(void 0);
         return;
       }
       const player = lobby.players.find((p) => p.id === Number(playerId));
       if (player === void 0) {
         this._logger.error("Player not found in lobby", playerId);
-        this._popupPlayer$.next(void 0);
+        this._overlayPlayer$.next(void 0);
         return;
       }
       const lobbyKey = calculateLobbyKey(lobby.id);
       const playerDisplay = new SkribblOverlayPlayer(player, lobbyKey, elements2.textOverlay);
-      this._popupPlayer$.next(playerDisplay);
+      this._overlayPlayer$.next(playerDisplay);
       this._logger.info("Overlay player visible", playerDisplay);
     });
   }

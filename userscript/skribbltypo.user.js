@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 36ad779
+// @version      27.1.3 beta-usc a26c512
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 36ad779", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc a26c512", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -15115,6 +15115,7 @@
         } else events.next(new PlayerPopupVisibilityChangedEvent(false));
       });
       observer.observe(elements2.playerPopup, { attributes: true });
+      observer.observe(elements2.skribblModal, { attributes: true });
       return events.pipe(
         distinctUntilChanged(),
         debounceTime(50)
@@ -21340,9 +21341,9 @@
     setupPopupPlayer() {
       this._popupVisibleEvent.events$.pipe(
         withLatestFrom(this._memberService.member$, this._lobbyService.lobby$, this._elementsSetup.complete())
-      ).subscribe(([visible, member, lobby, elements2]) => {
+      ).subscribe(([visibleEvent, member, lobby, elements2]) => {
         var _a2;
-        if (!visible || lobby === null) {
+        if (!visibleEvent.data || lobby === null) {
           this._logger.info("Popup player hidden");
           this._popupPlayer$.next(void 0);
           return;
@@ -21377,18 +21378,18 @@
         const playerId = elements2.textOverlay.getAttribute("playerid") ?? void 0;
         if (element$1(".avatar", elements2.textOverlay) === void 0 || playerId === void 0) {
           this._logger.info("No player or playerid in overlay, probably not a choosing info");
-          this._popupPlayer$.next(void 0);
+          this._overlayPlayer$.next(void 0);
           return;
         }
         const player = lobby.players.find((p) => p.id === Number(playerId));
         if (player === void 0) {
           this._logger.error("Player not found in lobby", playerId);
-          this._popupPlayer$.next(void 0);
+          this._overlayPlayer$.next(void 0);
           return;
         }
         const lobbyKey = calculateLobbyKey(lobby.id);
         const playerDisplay = new SkribblOverlayPlayer(player, lobbyKey, elements2.textOverlay);
-        this._popupPlayer$.next(playerDisplay);
+        this._overlayPlayer$.next(playerDisplay);
         this._logger.info("Overlay player visible", playerDisplay);
       });
     }
