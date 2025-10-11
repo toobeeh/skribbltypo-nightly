@@ -52569,6961 +52569,6 @@ __decorateClass$w([
 __decorateClass$w([
   inject(ToastService)
 ], UserInfoFeature.prototype, "_toastService");
-function create_fragment$w(ctx) {
-  let img;
-  let img_src_value;
-  return {
-    c() {
-      img = element$1("img");
-      attr(img, "class", "typo-onboarding-emote svelte-1593rkb");
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      set_style(
-        img,
-        "top",
-        /*y*/
-        ctx[1] + "px"
-      );
-      set_style(
-        img,
-        "left",
-        /*x*/
-        ctx[0] + "px"
-      );
-      set_style(img, "content", "var(--" + /*src*/
-      ctx[2] + ")");
-    },
-    m(target, anchor) {
-      insert(target, img, anchor);
-    },
-    p(ctx2, [dirty]) {
-      if (dirty & /*y*/
-      2) {
-        set_style(
-          img,
-          "top",
-          /*y*/
-          ctx2[1] + "px"
-        );
-      }
-      if (dirty & /*x*/
-      1) {
-        set_style(
-          img,
-          "left",
-          /*x*/
-          ctx2[0] + "px"
-        );
-      }
-      if (dirty & /*src*/
-      4) {
-        set_style(img, "content", "var(--" + /*src*/
-        ctx2[2] + ")");
-      }
-    },
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(img);
-      }
-    }
-  };
-}
-__name(create_fragment$w, "create_fragment$w");
-function instance$t($$self, $$props, $$invalidate) {
-  let { x } = $$props;
-  let { y } = $$props;
-  let { src } = $$props;
-  const hasEnoughDistance = /* @__PURE__ */ __name((x1, y1) => {
-    const center = [x + 15, y + 15];
-    const center1 = [x1 + 15, y1 + 15];
-    const distance = Math.sqrt((center[0] - center1[0]) ** 2 + (center[1] - center1[1]) ** 2);
-    return distance > 60;
-  }, "hasEnoughDistance");
-  $$self.$$set = ($$props2) => {
-    if ("x" in $$props2) $$invalidate(0, x = $$props2.x);
-    if ("y" in $$props2) $$invalidate(1, y = $$props2.y);
-    if ("src" in $$props2) $$invalidate(2, src = $$props2.src);
-  };
-  return [x, y, src, hasEnoughDistance];
-}
-__name(instance$t, "instance$t");
-const _Controls_onboarding_emoji = class _Controls_onboarding_emoji extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$t, create_fragment$w, safe_not_equal, { x: 0, y: 1, src: 2, hasEnoughDistance: 3 });
-  }
-  get hasEnoughDistance() {
-    return this.$$.ctx[3];
-  }
-};
-__name(_Controls_onboarding_emoji, "Controls_onboarding_emoji");
-let Controls_onboarding_emoji = _Controls_onboarding_emoji;
-function create_fragment$v(ctx) {
-  let h3;
-  let t1;
-  let div;
-  return {
-    c() {
-      h3 = element$1("h3");
-      h3.textContent = "Introducing the new Typo";
-      t1 = space();
-      div = element$1("div");
-      div.innerHTML = `<p class="svelte-115f3km">Starting in April 2025, Typo is receiving its biggest update so far.<br class="svelte-115f3km"/>
-    Typo still has the same features, but makes them much more user-friendly, accessible and customizable.<br class="svelte-115f3km"/>
-    So far, Typo provided the tools, but now it&#39;s the whole workshop!</p> <h4 class="svelte-115f3km">A quick-start guide</h4> <p class="svelte-115f3km">All Typo features can now be customized, so you don&#39;t have anything that messes with your optimal skribbl experience.<br class="svelte-115f3km"/>
-    To set up Typo to your preferences, click the wrench icon at the top left (unless customized to somewhere else ;).<br class="svelte-115f3km"/>
-    There, you can:</p> <ul class="svelte-115f3km"><li class="svelte-115f3km">Enable or disable every feature</li> <li class="svelte-115f3km">Adjust feature settings to your likes</li> <li class="svelte-115f3km">Change and toggle hotkeys and chat commands of features</li> <li class="svelte-115f3km">View some extra info &amp; hints about features</li></ul> <p class="svelte-115f3km">To get started, you can browse through the list of features and view their details.<br class="svelte-115f3km"/>
-    Features are also categorized by tags so you can easily find what you are looking for.<br class="svelte-115f3km"/>
-    While you might see many features that you already know of, you could discover some that were newly added or features that you didn&#39;t notice yet!<br class="svelte-115f3km"/>
-    To change general Typo settings, choose the &quot;Typo Settings&quot; feature in the Typo Features view.<br class="svelte-115f3km"/>
-    You can reset all data or switch between profiles in the &quot;Typo Profiles&quot; feature.<br class="svelte-115f3km"/>
-    If you have any questions or feedback, join the community on <a href="https://discord.com/invite/pAapmUmWAM" class="svelte-115f3km">Discord</a>!</p> <br/> <h4 class="svelte-115f3km">The most important changes</h4> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Typo Settings</b><br class="svelte-115f3km"/>
-    Typo settings are now located directly on skribbl (read the quick-start-guide ;) instead of the extension popup menu.<br class="svelte-115f3km"/>
-    You can customize everything that you&#39;re used to from the popup menu, now found in the respective feature dialog.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Typo Pen Pressure</b><br class="svelte-115f3km"/>
-    Typo pressure has now an improved adjustment system which allows more precise control.<br class="svelte-115f3km"/>
-    You will notice that your previous setting has been reset.<br class="svelte-115f3km"/>
-    To adjust the sensitivity, go to the &quot;Typo Settings&quot;, choose the &quot;Pressure&quot; feature, and adjust the sliders to your liking.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Lobby Privacy</b><br class="svelte-115f3km"/>
-    Instead of the lock icon at the very left side, a connection icon is displayed at the top-right corner of the chat.<br class="svelte-115f3km"/>
-    An icon with a checkmark means that the lobby has privacy settings active (not visible to everyone).<br class="svelte-115f3km"/>
-    If you&#39;re the lobby owner (first Typo player to join), you can change lobby settings there.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Filter Search</b><br class="svelte-115f3km"/>
-    To start a lobby search with filters, you need to use the &quot;Start Search&quot; button in the &quot;Filters&quot; tab on the home screen.<br class="svelte-115f3km"/>
-    Clicking &quot;Play&quot; will always just join the next public/private lobby.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Chat Commands</b><br class="svelte-115f3km"/>
-    Chat commands received a massive facelift!<br class="svelte-115f3km"/>
-    To start using commands, type a &quot;/&quot; in the chat box. <br class="svelte-115f3km"/>
-    A popout with available commands will open; you can continue typing the command and arguments and submit the command with &quot;Enter&quot;.<br class="svelte-115f3km"/>
-    You can also customize the &quot;/&quot; prefix to another character in the settings of the &quot;Chat Commands&quot; feature.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ QuickReact and Hotkeys</b><br class="svelte-115f3km"/>
-    Hotkeys are now individually customizable for every feature and have changed here and there.<br class="svelte-115f3km"/>
-    As an example, QuickReact now uses the right-hand side Ctrl key, exclusively.<br class="svelte-115f3km"/>
-    To change hotkeys for any feature or check the current configuration, open its feature settings.<br class="svelte-115f3km"/>
-    Hotkeys can also consist of combinations.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Zoom Drawing</b><br class="svelte-115f3km"/>
-    Zooming still uses the Ctrl hotkey, but now starts immediately at the last cursor position without clicking on the canvas.<br class="svelte-115f3km"/>
-    To exit zoom, click Ctrl again.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Custom Colors</b><br class="svelte-115f3km"/>
-    When you use custom colors in public lobbies, Typo will now show the closest skribbl color for non-Typo users.<br class="svelte-115f3km"/>
-    It is still recommended that you use custom colors only in lobbies with Typo players, because fill behavior might appear differently for non-Typo-users.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Practice Lobby</b><br class="svelte-115f3km"/>
-    Instead of clicking your avatar on the home screen, you can enter the offline free draw mode using the palette icon next to your avatar.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Drop Catch Reports</b><br class="svelte-115f3km"/>
-    When someone catches drops suspiciously fast, you could report the catch by revealing the drop ID in the drop message.<br class="svelte-115f3km"/>
-    To report drops in the new Typo, open the &quot;Drops&quot; feature in the Typo setting, where you will find a log of all drop catches.<br class="svelte-115f3km"/>
-    To report a drop, you can copy its ID and the catch time and send it on the Typo discord server.<br class="svelte-115f3km"/></p>`;
-      attr(h3, "class", "svelte-115f3km");
-    },
-    m(target, anchor) {
-      insert(target, h3, anchor);
-      insert(target, t1, anchor);
-      insert(target, div, anchor);
-    },
-    p: noop$1,
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(h3);
-        detach(t1);
-        detach(div);
-      }
-    }
-  };
-}
-__name(create_fragment$v, "create_fragment$v");
-const _Old_typo_onboarding = class _Old_typo_onboarding extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, null, create_fragment$v, safe_not_equal, {});
-  }
-};
-__name(_Old_typo_onboarding, "Old_typo_onboarding");
-let Old_typo_onboarding = _Old_typo_onboarding;
-function create_fragment$u(ctx) {
-  let h3;
-  let t1;
-  let div;
-  return {
-    c() {
-      h3 = element$1("h3");
-      h3.textContent = "Credits & Imprint";
-      t1 = space();
-      div = element$1("div");
-      div.innerHTML = `<p class="svelte-1d2n9p6">Glad to see you using Typo!<br/><br/>
-    This extension grew with me and my coding skills over the years from a small script to a complex project.<br/>
-    The awesome skribbl.io community (&amp; game ;) was my main drive to keep improving adding more and more features.<br/>
-    Thanks so much to every user, beta tester and developer for making this passion of mine more than a hobby.<br/></p> <h4 class="svelte-1d2n9p6">Helpful links</h4> <ul class="svelte-1d2n9p6"><li><a href="https://typo.rip" class="svelte-1d2n9p6">typo.rip</a> - The official website with a bunch of tools and infos</li> <li><a href="https://discord.com/invite/pAapmUmWAM" class="svelte-1d2n9p6">Discord</a> - Join the community, talk about Typo &amp; skribbl or ask for feature support</li> <li><a href="https://www.patreon.com/skribbltypo" class="svelte-1d2n9p6">Patreon</a> - Feed the developer 💖</li> <li><a href="https://github.com/toobeeh/skribbltypo" class="svelte-1d2n9p6">GitHub</a> - Contribute to the project, view the sourcecode or report issues &amp; improvements</li></ul> <h4 class="svelte-1d2n9p6">Legal stuff &amp; rules</h4> <ul class="svelte-1d2n9p6"><li><a href="https://typo.rip/privacy" class="svelte-1d2n9p6">Privacy Policy</a> - How Typo handles your data</li> <li><a href="https://typo.rip/help/rules" class="svelte-1d2n9p6">Rules &amp; Fair Play</a> - How to behave using Typo</li> <li>I prefer to stay anonymous though :] - enjoy, tobeh</li></ul>`;
-      attr(h3, "class", "svelte-1d2n9p6");
-    },
-    m(target, anchor) {
-      insert(target, h3, anchor);
-      insert(target, t1, anchor);
-      insert(target, div, anchor);
-    },
-    p: noop$1,
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(h3);
-        detach(t1);
-        detach(div);
-      }
-    }
-  };
-}
-__name(create_fragment$u, "create_fragment$u");
-const _Typo_credits_onboarding = class _Typo_credits_onboarding extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, null, create_fragment$u, safe_not_equal, {});
-  }
-};
-__name(_Typo_credits_onboarding, "Typo_credits_onboarding");
-let Typo_credits_onboarding = _Typo_credits_onboarding;
-function get_each_context$h(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[30] = list[i];
-  return child_ctx;
-}
-__name(get_each_context$h, "get_each_context$h");
-function get_each_context_1$6(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[34] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_1$6, "get_each_context_1$6");
-function get_each_context_2$3(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[34] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_2$3, "get_each_context_2$3");
-function create_if_block_4$1(ctx) {
-  let p;
-  let t2;
-  let br1;
-  let t3;
-  let div10;
-  let div1;
-  let t7;
-  let div3;
-  let t11;
-  let div5;
-  let t15;
-  let div7;
-  let t19;
-  let div9;
-  let mounted;
-  let dispose;
-  return {
-    c() {
-      p = element$1("p");
-      p.innerHTML = `To customize your experience, you can select from a variety of feature presets below.<br/>
-      You can always activate, deactivate, or customize features in the settings (the wrench icon), or come back to this page (magic wand icon).`;
-      t2 = space();
-      br1 = element$1("br");
-      t3 = space();
-      div10 = element$1("div");
-      div1 = element$1("div");
-      div1.innerHTML = `<h3>Recommended</h3> <div>A set of the most popular typo features that will enhance your skribbl.io experience.</div>`;
-      t7 = space();
-      div3 = element$1("div");
-      div3.innerHTML = `<h3>Phone</h3> <div>Activates only features that will - probably - work on mobile devices. Limited support!</div>`;
-      t11 = space();
-      div5 = element$1("div");
-      div5.innerHTML = `<h3>Minimal</h3> <div>Skribbl looks as close to original as possible, but essential features are still present.</div>`;
-      t15 = space();
-      div7 = element$1("div");
-      div7.innerHTML = `<h3>Everything</h3> <div>The full package; all nifty tools that Typo has to offer!</div>`;
-      t19 = space();
-      div9 = element$1("div");
-      div9.innerHTML = `<h3>Nothing</h3> <div>Vanilla skribbl.io experience. You will only notice the settings button.</div>`;
-      set_style(p, "text-align", "center");
-      attr(div1, "class", "typo-onboarding-preset svelte-bu1e3");
-      attr(div3, "class", "typo-onboarding-preset svelte-bu1e3");
-      attr(div5, "class", "typo-onboarding-preset svelte-bu1e3");
-      attr(div7, "class", "typo-onboarding-preset svelte-bu1e3");
-      attr(div9, "class", "typo-onboarding-preset svelte-bu1e3");
-      attr(div10, "class", "typo-onboarding-presets svelte-bu1e3");
-    },
-    m(target, anchor) {
-      insert(target, p, anchor);
-      insert(target, t2, anchor);
-      insert(target, br1, anchor);
-      insert(target, t3, anchor);
-      insert(target, div10, anchor);
-      append(div10, div1);
-      append(div10, t7);
-      append(div10, div3);
-      append(div10, t11);
-      append(div10, div5);
-      append(div10, t15);
-      append(div10, div7);
-      append(div10, t19);
-      append(div10, div9);
-      if (!mounted) {
-        dispose = [
-          listen(
-            div1,
-            "click",
-            /*click_handler_4*/
-            ctx[16]
-          ),
-          listen(
-            div3,
-            "click",
-            /*click_handler_5*/
-            ctx[17]
-          ),
-          listen(
-            div5,
-            "click",
-            /*click_handler_6*/
-            ctx[18]
-          ),
-          listen(
-            div7,
-            "click",
-            /*click_handler_7*/
-            ctx[19]
-          ),
-          listen(
-            div9,
-            "click",
-            /*click_handler_8*/
-            ctx[20]
-          )
-        ];
-        mounted = true;
-      }
-    },
-    p: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(p);
-        detach(t2);
-        detach(br1);
-        detach(t3);
-        detach(div10);
-      }
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-__name(create_if_block_4$1, "create_if_block_4$1");
-function create_if_block_1$4(ctx) {
-  let await_block_anchor;
-  let promise;
-  let current;
-  let info = {
-    ctx,
-    current: null,
-    token: null,
-    hasCatch: false,
-    pending: create_pending_block$1,
-    then: create_then_block$1,
-    catch: create_catch_block$1,
-    value: 33,
-    blocks: [, , ,]
-  };
-  handle_promise(promise = /*feature*/
-  ctx[0].getChecklist(), info);
-  return {
-    c() {
-      await_block_anchor = empty();
-      info.block.c();
-    },
-    m(target, anchor) {
-      insert(target, await_block_anchor, anchor);
-      info.block.m(target, info.anchor = anchor);
-      info.mount = () => await_block_anchor.parentNode;
-      info.anchor = await_block_anchor;
-      current = true;
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      info.ctx = ctx;
-      if (dirty[0] & /*feature*/
-      1 && promise !== (promise = /*feature*/
-      ctx[0].getChecklist()) && handle_promise(promise, info)) ;
-      else {
-        update_await_block_branch(info, ctx, dirty);
-      }
-    },
-    i(local) {
-      if (current) return;
-      transition_in(info.block);
-      current = true;
-    },
-    o(local) {
-      for (let i = 0; i < 3; i += 1) {
-        const block2 = info.blocks[i];
-        transition_out(block2);
-      }
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(await_block_anchor);
-      }
-      info.block.d(detaching);
-      info.token = null;
-      info = null;
-    }
-  };
-}
-__name(create_if_block_1$4, "create_if_block_1$4");
-function create_catch_block$1(ctx) {
-  return {
-    c: noop$1,
-    m: noop$1,
-    p: noop$1,
-    i: noop$1,
-    o: noop$1,
-    d: noop$1
-  };
-}
-__name(create_catch_block$1, "create_catch_block$1");
-function create_then_block$1(ctx) {
-  let show_if;
-  let t0;
-  let div2;
-  let div0;
-  let t1;
-  let div1;
-  function select_block_type(ctx2, dirty) {
-    if (dirty[0] & /*feature*/
-    1) show_if = null;
-    if (show_if == null) show_if = !!/*checklist*/
-    ctx2[33].every(func$2);
-    if (show_if) return create_if_block_3$1;
-    return create_else_block_1;
-  }
-  __name(select_block_type, "select_block_type");
-  let current_block_type = select_block_type(ctx, [-1, -1]);
-  let if_block = current_block_type(ctx);
-  let each_value_2 = ensure_array_like(
-    /*checklist*/
-    ctx[33].filter(func_1)
-  );
-  let each_blocks_1 = [];
-  for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks_1[i] = create_each_block_2$3(get_each_context_2$3(ctx, each_value_2, i));
-  }
-  let each_value_1 = ensure_array_like(
-    /*checklist*/
-    ctx[33].filter(func_2$1)
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$6(get_each_context_1$6(ctx, each_value_1, i));
-  }
-  return {
-    c() {
-      if_block.c();
-      t0 = space();
-      div2 = element$1("div");
-      div0 = element$1("div");
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        each_blocks_1[i].c();
-      }
-      t1 = space();
-      div1 = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      attr(div0, "class", "typo-onboarding-checklist svelte-bu1e3");
-      attr(div1, "class", "typo-onboarding-checklist svelte-bu1e3");
-      attr(div2, "class", "typo-onboarding-checklist-wrapper svelte-bu1e3");
-    },
-    m(target, anchor) {
-      if_block.m(target, anchor);
-      insert(target, t0, anchor);
-      insert(target, div2, anchor);
-      append(div2, div0);
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        if (each_blocks_1[i]) {
-          each_blocks_1[i].m(div0, null);
-        }
-      }
-      append(div2, t1);
-      append(div2, div1);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div1, null);
-        }
-      }
-    },
-    p(ctx2, dirty) {
-      if (current_block_type !== (current_block_type = select_block_type(ctx2, dirty))) {
-        if_block.d(1);
-        if_block = current_block_type(ctx2);
-        if (if_block) {
-          if_block.c();
-          if_block.m(t0.parentNode, t0);
-        }
-      }
-      if (dirty[0] & /*feature*/
-      1) {
-        each_value_2 = ensure_array_like(
-          /*checklist*/
-          ctx2[33].filter(func_1)
-        );
-        let i;
-        for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2$3(ctx2, each_value_2, i);
-          if (each_blocks_1[i]) {
-            each_blocks_1[i].p(child_ctx, dirty);
-          } else {
-            each_blocks_1[i] = create_each_block_2$3(child_ctx);
-            each_blocks_1[i].c();
-            each_blocks_1[i].m(div0, null);
-          }
-        }
-        for (; i < each_blocks_1.length; i += 1) {
-          each_blocks_1[i].d(1);
-        }
-        each_blocks_1.length = each_value_2.length;
-      }
-      if (dirty[0] & /*feature*/
-      1) {
-        each_value_1 = ensure_array_like(
-          /*checklist*/
-          ctx2[33].filter(func_2$1)
-        );
-        let i;
-        for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$6(ctx2, each_value_1, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-          } else {
-            each_blocks[i] = create_each_block_1$6(child_ctx);
-            each_blocks[i].c();
-            each_blocks[i].m(div1, null);
-          }
-        }
-        for (; i < each_blocks.length; i += 1) {
-          each_blocks[i].d(1);
-        }
-        each_blocks.length = each_value_1.length;
-      }
-    },
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(t0);
-        detach(div2);
-      }
-      if_block.d(detaching);
-      destroy_each(each_blocks_1, detaching);
-      destroy_each(each_blocks, detaching);
-    }
-  };
-}
-__name(create_then_block$1, "create_then_block$1");
-function create_else_block_1(ctx) {
-  let span;
-  return {
-    c() {
-      span = element$1("span");
-      span.textContent = "You can complete following tasks to familiarize yourself with Typo:";
-    },
-    m(target, anchor) {
-      insert(target, span, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-    }
-  };
-}
-__name(create_else_block_1, "create_else_block_1");
-function create_if_block_3$1(ctx) {
-  let span;
-  return {
-    c() {
-      span = element$1("span");
-      span.textContent = "Congrats, you have completed all tasks!";
-    },
-    m(target, anchor) {
-      insert(target, span, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-    }
-  };
-}
-__name(create_if_block_3$1, "create_if_block_3$1");
-function create_each_block_2$3(ctx) {
-  let div2;
-  let h4;
-  let t0_value = (
-    /*task*/
-    ctx[34].name + ""
-  );
-  let t0;
-  let t1;
-  let div1;
-  let img;
-  let img_src_value;
-  let t2;
-  let div0;
-  let t3_value = (
-    /*task*/
-    ctx[34].description + ""
-  );
-  let t3;
-  let t4;
-  let mounted;
-  let dispose;
-  function click_handler_9() {
-    return (
-      /*click_handler_9*/
-      ctx[21](
-        /*task*/
-        ctx[34]
-      )
-    );
-  }
-  __name(click_handler_9, "click_handler_9");
-  return {
-    c() {
-      div2 = element$1("div");
-      h4 = element$1("h4");
-      t0 = text(t0_value);
-      t1 = space();
-      div1 = element$1("div");
-      img = element$1("img");
-      t2 = space();
-      div0 = element$1("div");
-      t3 = text(t3_value);
-      t4 = space();
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      set_style(img, "content", "var(--file-img-arrow-right-gif)");
-      set_style(img, "height", "1.5rem");
-      attr(div0, "class", "description svelte-bu1e3");
-      attr(div1, "class", "details svelte-bu1e3");
-      attr(div2, "class", "typo-onboarding-task svelte-bu1e3");
-      set_style(
-        div2,
-        "order",
-        /*task*/
-        ctx[34].priority
-      );
-    },
-    m(target, anchor) {
-      insert(target, div2, anchor);
-      append(div2, h4);
-      append(h4, t0);
-      append(div2, t1);
-      append(div2, div1);
-      append(div1, img);
-      append(div1, t2);
-      append(div1, div0);
-      append(div0, t3);
-      append(div2, t4);
-      if (!mounted) {
-        dispose = listen(div2, "click", click_handler_9);
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if (dirty[0] & /*feature*/
-      1 && t0_value !== (t0_value = /*task*/
-      ctx[34].name + "")) set_data(t0, t0_value);
-      if (dirty[0] & /*feature*/
-      1 && t3_value !== (t3_value = /*task*/
-      ctx[34].description + "")) set_data(t3, t3_value);
-      if (dirty[0] & /*feature*/
-      1) {
-        set_style(
-          div2,
-          "order",
-          /*task*/
-          ctx[34].priority
-        );
-      }
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div2);
-      }
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_each_block_2$3, "create_each_block_2$3");
-function create_else_block$6(ctx) {
-  let img;
-  let img_src_value;
-  return {
-    c() {
-      img = element$1("img");
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      set_style(img, "content", "var(--file-img-arrow-right-gif)");
-      set_style(img, "height", "1.5rem");
-    },
-    m(target, anchor) {
-      insert(target, img, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(img);
-      }
-    }
-  };
-}
-__name(create_else_block$6, "create_else_block$6");
-function create_if_block_2$2(ctx) {
-  let img;
-  let img_src_value;
-  let t0;
-  let b;
-  return {
-    c() {
-      img = element$1("img");
-      t0 = space();
-      b = element$1("b");
-      b.textContent = "Done";
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      set_style(img, "content", "var(--file-img-enabled-gif)");
-      set_style(img, "height", "1.5rem");
-    },
-    m(target, anchor) {
-      insert(target, img, anchor);
-      insert(target, t0, anchor);
-      insert(target, b, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(img);
-        detach(t0);
-        detach(b);
-      }
-    }
-  };
-}
-__name(create_if_block_2$2, "create_if_block_2$2");
-function create_each_block_1$6(ctx) {
-  let div2;
-  let h4;
-  let t0_value = (
-    /*task*/
-    ctx[34].name + ""
-  );
-  let t0;
-  let t1;
-  let div1;
-  let t2;
-  let div0;
-  let t3_value = (
-    /*task*/
-    ctx[34].description + ""
-  );
-  let t3;
-  let t4;
-  function select_block_type_1(ctx2, dirty) {
-    if (
-      /*task*/
-      ctx2[34].completed
-    ) return create_if_block_2$2;
-    return create_else_block$6;
-  }
-  __name(select_block_type_1, "select_block_type_1");
-  let current_block_type = select_block_type_1(ctx);
-  let if_block = current_block_type(ctx);
-  return {
-    c() {
-      div2 = element$1("div");
-      h4 = element$1("h4");
-      t0 = text(t0_value);
-      t1 = space();
-      div1 = element$1("div");
-      if_block.c();
-      t2 = space();
-      div0 = element$1("div");
-      t3 = text(t3_value);
-      t4 = space();
-      attr(div0, "class", "description svelte-bu1e3");
-      attr(div1, "class", "details svelte-bu1e3");
-      attr(div2, "class", "typo-onboarding-task done svelte-bu1e3");
-      set_style(
-        div2,
-        "order",
-        /*task*/
-        ctx[34].priority
-      );
-    },
-    m(target, anchor) {
-      insert(target, div2, anchor);
-      append(div2, h4);
-      append(h4, t0);
-      append(div2, t1);
-      append(div2, div1);
-      if_block.m(div1, null);
-      append(div1, t2);
-      append(div1, div0);
-      append(div0, t3);
-      append(div2, t4);
-    },
-    p(ctx2, dirty) {
-      if (dirty[0] & /*feature*/
-      1 && t0_value !== (t0_value = /*task*/
-      ctx2[34].name + "")) set_data(t0, t0_value);
-      if (current_block_type !== (current_block_type = select_block_type_1(ctx2))) {
-        if_block.d(1);
-        if_block = current_block_type(ctx2);
-        if (if_block) {
-          if_block.c();
-          if_block.m(div1, t2);
-        }
-      }
-      if (dirty[0] & /*feature*/
-      1 && t3_value !== (t3_value = /*task*/
-      ctx2[34].description + "")) set_data(t3, t3_value);
-      if (dirty[0] & /*feature*/
-      1) {
-        set_style(
-          div2,
-          "order",
-          /*task*/
-          ctx2[34].priority
-        );
-      }
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div2);
-      }
-      if_block.d();
-    }
-  };
-}
-__name(create_each_block_1$6, "create_each_block_1$6");
-function create_pending_block$1(ctx) {
-  let bounceload;
-  let current;
-  bounceload = new Bounceload({
-    props: { content: "Loading checklist.." }
-  });
-  return {
-    c() {
-      create_component(bounceload.$$.fragment);
-    },
-    m(target, anchor) {
-      mount_component(bounceload, target, anchor);
-      current = true;
-    },
-    p: noop$1,
-    i(local) {
-      if (current) return;
-      transition_in(bounceload.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(bounceload.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(bounceload, detaching);
-    }
-  };
-}
-__name(create_pending_block$1, "create_pending_block$1");
-function create_if_block$e(ctx) {
-  let div2;
-  let div0;
-  let t;
-  let div1;
-  let switch_instance;
-  let current;
-  let each_value = ensure_array_like(
-    /*extraSections*/
-    ctx[9]
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$h(get_each_context$h(ctx, each_value, i));
-  }
-  var switch_value = (
-    /*activeSection*/
-    ctx[6].component
-  );
-  function switch_props(ctx2, dirty) {
-    return {};
-  }
-  __name(switch_props, "switch_props");
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props());
-  }
-  return {
-    c() {
-      div2 = element$1("div");
-      div0 = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      t = space();
-      div1 = element$1("div");
-      if (switch_instance) create_component(switch_instance.$$.fragment);
-      attr(div0, "class", "typo-onboarding-extras-sections svelte-bu1e3");
-      attr(div1, "class", "typo-onboarding-extras-content svelte-bu1e3");
-      attr(div2, "class", "typo-onboarding-extras svelte-bu1e3");
-    },
-    m(target, anchor) {
-      insert(target, div2, anchor);
-      append(div2, div0);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div0, null);
-        }
-      }
-      append(div2, t);
-      append(div2, div1);
-      if (switch_instance) mount_component(switch_instance, div1, null);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty[0] & /*activeSection, extraSections*/
-      576) {
-        each_value = ensure_array_like(
-          /*extraSections*/
-          ctx2[9]
-        );
-        let i;
-        for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$h(ctx2, each_value, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-          } else {
-            each_blocks[i] = create_each_block$h(child_ctx);
-            each_blocks[i].c();
-            each_blocks[i].m(div0, null);
-          }
-        }
-        for (; i < each_blocks.length; i += 1) {
-          each_blocks[i].d(1);
-        }
-        each_blocks.length = each_value.length;
-      }
-      if (dirty[0] & /*activeSection*/
-      64 && switch_value !== (switch_value = /*activeSection*/
-      ctx2[6].component)) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props());
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, div1, null);
-        } else {
-          switch_instance = null;
-        }
-      }
-    },
-    i(local) {
-      if (current) return;
-      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div2);
-      }
-      destroy_each(each_blocks, detaching);
-      if (switch_instance) destroy_component(switch_instance);
-    }
-  };
-}
-__name(create_if_block$e, "create_if_block$e");
-function create_each_block$h(ctx) {
-  let b;
-  let mounted;
-  let dispose;
-  function click_handler_10() {
-    return (
-      /*click_handler_10*/
-      ctx[22](
-        /*section*/
-        ctx[30]
-      )
-    );
-  }
-  __name(click_handler_10, "click_handler_10");
-  return {
-    c() {
-      b = element$1("b");
-      b.textContent = `${/*section*/
-      ctx[30].name}`;
-      attr(b, "class", "svelte-bu1e3");
-      toggle_class(
-        b,
-        "active",
-        /*activeSection*/
-        ctx[6] === /*section*/
-        ctx[30]
-      );
-    },
-    m(target, anchor) {
-      insert(target, b, anchor);
-      if (!mounted) {
-        dispose = listen(b, "click", click_handler_10);
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if (dirty[0] & /*activeSection, extraSections*/
-      576) {
-        toggle_class(
-          b,
-          "active",
-          /*activeSection*/
-          ctx[6] === /*section*/
-          ctx[30]
-        );
-      }
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(b);
-      }
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_each_block$h, "create_each_block$h");
-function create_fragment$t(ctx) {
-  let div4;
-  let div2;
-  let div0;
-  let h2;
-  let t0_value = (
-    /*firstLoad*/
-    ctx[1] ? "Welcome to" : "Thanks for using"
-  );
-  let t0;
-  let t1;
-  let t2;
-  let b;
-  let t4;
-  let div1;
-  let div2_class_value;
-  let t7;
-  let div3;
-  let h40;
-  let t9;
-  let h41;
-  let t11;
-  let h42;
-  let t13;
-  let br1;
-  let t14;
-  let t15;
-  let t16;
-  let current;
-  let mounted;
-  let dispose;
-  let if_block0 = (
-    /*activeTab*/
-    ctx[4] === "presets" && create_if_block_4$1(ctx)
-  );
-  let if_block1 = (
-    /*activeTab*/
-    ctx[4] === "tasks" && create_if_block_1$4(ctx)
-  );
-  let if_block2 = (
-    /*activeTab*/
-    ctx[4] === "extras" && create_if_block$e(ctx)
-  );
-  return {
-    c() {
-      div4 = element$1("div");
-      div2 = element$1("div");
-      div0 = element$1("div");
-      h2 = element$1("h2");
-      t0 = text(t0_value);
-      t1 = text(" typo ✨");
-      t2 = space();
-      b = element$1("b");
-      b.textContent = "Typo is the toolbox for everything you need on skribbl.io";
-      t4 = space();
-      div1 = element$1("div");
-      div1.innerHTML = `XOXO to all beta testers &lt;3<br/>Alpha, Foley, Hex, hunt3r, ibot, Max, Oivoo, shawty, Tuc, ShortM, XVIdevilIVX`;
-      t7 = space();
-      div3 = element$1("div");
-      h40 = element$1("h4");
-      h40.textContent = "Feature Presets";
-      t9 = space();
-      h41 = element$1("h4");
-      h41.textContent = "Onboarding Tasks";
-      t11 = space();
-      h42 = element$1("h4");
-      h42.textContent = "More Info";
-      t13 = space();
-      br1 = element$1("br");
-      t14 = space();
-      if (if_block0) if_block0.c();
-      t15 = space();
-      if (if_block1) if_block1.c();
-      t16 = space();
-      if (if_block2) if_block2.c();
-      attr(div0, "class", "svelte-bu1e3");
-      attr(div1, "class", "beta-credits svelte-bu1e3");
-      attr(div2, "class", div2_class_value = "typo-onboarding-hero " + /*hideHero*/
-      (ctx[5] ? "hidden" : "") + " svelte-bu1e3");
-      attr(h40, "class", "svelte-bu1e3");
-      toggle_class(
-        h40,
-        "active",
-        /*activeTab*/
-        ctx[4] === "presets"
-      );
-      attr(h41, "class", "svelte-bu1e3");
-      toggle_class(
-        h41,
-        "active",
-        /*activeTab*/
-        ctx[4] === "tasks"
-      );
-      attr(h42, "class", "svelte-bu1e3");
-      toggle_class(
-        h42,
-        "active",
-        /*activeTab*/
-        ctx[4] === "extras"
-      );
-      attr(div3, "class", "onboarding-tabs svelte-bu1e3");
-      attr(div4, "class", "typo-onboarding-wrapper color-scrollbar svelte-bu1e3");
-    },
-    m(target, anchor) {
-      insert(target, div4, anchor);
-      append(div4, div2);
-      append(div2, div0);
-      append(div0, h2);
-      append(h2, t0);
-      append(h2, t1);
-      append(div0, t2);
-      append(div0, b);
-      ctx[10](div0);
-      append(div2, t4);
-      append(div2, div1);
-      ctx[11](div2);
-      append(div4, t7);
-      append(div4, div3);
-      append(div3, h40);
-      append(div3, t9);
-      append(div3, h41);
-      append(div3, t11);
-      append(div3, h42);
-      append(div4, t13);
-      append(div4, br1);
-      append(div4, t14);
-      if (if_block0) if_block0.m(div4, null);
-      append(div4, t15);
-      if (if_block1) if_block1.m(div4, null);
-      append(div4, t16);
-      if (if_block2) if_block2.m(div4, null);
-      current = true;
-      if (!mounted) {
-        dispose = [
-          listen(
-            div2,
-            "click",
-            /*click_handler*/
-            ctx[12]
-          ),
-          listen(
-            h40,
-            "click",
-            /*click_handler_1*/
-            ctx[13]
-          ),
-          listen(
-            h41,
-            "click",
-            /*click_handler_2*/
-            ctx[14]
-          ),
-          listen(
-            h42,
-            "click",
-            /*click_handler_3*/
-            ctx[15]
-          )
-        ];
-        mounted = true;
-      }
-    },
-    p(ctx2, dirty) {
-      if ((!current || dirty[0] & /*firstLoad*/
-      2) && t0_value !== (t0_value = /*firstLoad*/
-      ctx2[1] ? "Welcome to" : "Thanks for using")) set_data(t0, t0_value);
-      if (!current || dirty[0] & /*hideHero*/
-      32 && div2_class_value !== (div2_class_value = "typo-onboarding-hero " + /*hideHero*/
-      (ctx2[5] ? "hidden" : "") + " svelte-bu1e3")) {
-        attr(div2, "class", div2_class_value);
-      }
-      if (!current || dirty[0] & /*activeTab*/
-      16) {
-        toggle_class(
-          h40,
-          "active",
-          /*activeTab*/
-          ctx2[4] === "presets"
-        );
-      }
-      if (!current || dirty[0] & /*activeTab*/
-      16) {
-        toggle_class(
-          h41,
-          "active",
-          /*activeTab*/
-          ctx2[4] === "tasks"
-        );
-      }
-      if (!current || dirty[0] & /*activeTab*/
-      16) {
-        toggle_class(
-          h42,
-          "active",
-          /*activeTab*/
-          ctx2[4] === "extras"
-        );
-      }
-      if (
-        /*activeTab*/
-        ctx2[4] === "presets"
-      ) {
-        if (if_block0) {
-          if_block0.p(ctx2, dirty);
-        } else {
-          if_block0 = create_if_block_4$1(ctx2);
-          if_block0.c();
-          if_block0.m(div4, t15);
-        }
-      } else if (if_block0) {
-        if_block0.d(1);
-        if_block0 = null;
-      }
-      if (
-        /*activeTab*/
-        ctx2[4] === "tasks"
-      ) {
-        if (if_block1) {
-          if_block1.p(ctx2, dirty);
-          if (dirty[0] & /*activeTab*/
-          16) {
-            transition_in(if_block1, 1);
-          }
-        } else {
-          if_block1 = create_if_block_1$4(ctx2);
-          if_block1.c();
-          transition_in(if_block1, 1);
-          if_block1.m(div4, t16);
-        }
-      } else if (if_block1) {
-        group_outros();
-        transition_out(if_block1, 1, 1, () => {
-          if_block1 = null;
-        });
-        check_outros();
-      }
-      if (
-        /*activeTab*/
-        ctx2[4] === "extras"
-      ) {
-        if (if_block2) {
-          if_block2.p(ctx2, dirty);
-          if (dirty[0] & /*activeTab*/
-          16) {
-            transition_in(if_block2, 1);
-          }
-        } else {
-          if_block2 = create_if_block$e(ctx2);
-          if_block2.c();
-          transition_in(if_block2, 1);
-          if_block2.m(div4, null);
-        }
-      } else if (if_block2) {
-        group_outros();
-        transition_out(if_block2, 1, 1, () => {
-          if_block2 = null;
-        });
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current) return;
-      transition_in(if_block1);
-      transition_in(if_block2);
-      current = true;
-    },
-    o(local) {
-      transition_out(if_block1);
-      transition_out(if_block2);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div4);
-      }
-      ctx[10](null);
-      ctx[11](null);
-      if (if_block0) if_block0.d();
-      if (if_block1) if_block1.d();
-      if (if_block2) if_block2.d();
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-__name(create_fragment$t, "create_fragment$t");
-const func$2 = /* @__PURE__ */ __name((task) => task.completed, "func$2");
-const func_1 = /* @__PURE__ */ __name((task) => !task.completed, "func_1");
-const func_2$1 = /* @__PURE__ */ __name((task) => task.completed, "func_2$1");
-function instance$s($$self, $$props, $$invalidate) {
-  let { feature } = $$props;
-  let { firstLoad } = $$props;
-  let hero;
-  let heading;
-  const icons = [
-    "file-img-challenge-gif",
-    "file-img-light-gif",
-    "file-img-letter-gif",
-    "file-img-line-rainbow-gif",
-    "file-img-cloud-gif",
-    "file-img-award-gif",
-    "file-img-wand-gif",
-    "file-img-wrench-gif",
-    "file-img-floppy-drive-gif",
-    "file-img-palantir-gif",
-    "file-img-mask-gif",
-    "file-img-palette-gif",
-    "file-img-typo-gif",
-    "file-img-trash-gif",
-    "file-img-line-random-color-gif",
-    "file-img-discord-gif",
-    "file-img-connection-gif",
-    "file-img-tasks-gif",
-    "file-img-coin-gif"
-  ];
-  let shuffledArray = icons.sort(() => Math.random() - 0.5);
-  let currentIndex = 0;
-  let currentIcons = [];
-  let interval2;
-  const addIcon = /* @__PURE__ */ __name(() => {
-    const randomIcon = shuffledArray[currentIndex];
-    currentIndex = (currentIndex + 1) % shuffledArray.length;
-    const heroRect = hero.getBoundingClientRect();
-    const headingRect = heading.getBoundingClientRect();
-    const noSpawnX = headingRect.width + 50;
-    const noSpawnY = headingRect.height + 50;
-    let x = heroRect.width / 2;
-    let y = heroRect.height / 2;
-    let tries = 0;
-    while (x > (heroRect.width - noSpawnX) / 2 && x < heroRect.width / 2 + noSpawnX && y > (heroRect.height - noSpawnY) / 2 && y < heroRect.height / 2 + noSpawnY || currentIcons.some((icon2) => !icon2.hasEnoughDistance(x, y))) {
-      if (tries++ > 20) return;
-      x = Math.random() * heroRect.width;
-      y = Math.random() * heroRect.height;
-    }
-    const icon = new Controls_onboarding_emoji({
-      target: hero,
-      props: { x, y, src: randomIcon }
-    });
-    currentIcons.push(icon);
-    setTimeout(
-      () => {
-        icon.$destroy();
-        currentIcons = currentIcons.filter((i) => i !== icon);
-      },
-      3e3
-    );
-  }, "addIcon");
-  const activateFeaturePreset = /* @__PURE__ */ __name((preset) => {
-    feature.activateFeaturePreset(preset);
-    if (firstLoad) useTab("tasks");
-    else feature.closeOnboardingIfOpen();
-  }, "activateFeaturePreset");
-  let activeTab = firstLoad ? "presets" : "tasks";
-  const activeTabFocus = feature.tabFocusRequestsStore;
-  activeTabFocus.subscribe((v) => {
-    if (v !== void 0) {
-      useTab(v);
-    }
-  });
-  let hideHero = false;
-  const useTab = /* @__PURE__ */ __name((tab) => {
-    $$invalidate(5, hideHero = true);
-    $$invalidate(4, activeTab = tab);
-    currentIcons.forEach((icon) => icon.$destroy());
-    if (tab === "extras") feature.completeInfoTask();
-  }, "useTab");
-  let extraSections = [
-    {
-      name: "Introducing the new Typo",
-      component: Old_typo_onboarding
-    },
-    {
-      name: "Credits & Imprint",
-      component: Typo_credits_onboarding
-    }
-  ];
-  let activeSection = extraSections[0];
-  onMount(() => {
-    interval2 = setInterval(
-      () => {
-        addIcon();
-      },
-      250
-    );
-    for (let i = 0; i < 5; i++) {
-      addIcon();
-    }
-  });
-  onDestroy(() => {
-    clearInterval(interval2);
-  });
-  function div0_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      heading = $$value;
-      $$invalidate(3, heading);
-    });
-  }
-  __name(div0_binding, "div0_binding");
-  function div2_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      hero = $$value;
-      $$invalidate(2, hero);
-    });
-  }
-  __name(div2_binding, "div2_binding");
-  const click_handler2 = /* @__PURE__ */ __name(() => useTab(activeTab), "click_handler");
-  const click_handler_1 = /* @__PURE__ */ __name(() => useTab("presets"), "click_handler_1");
-  const click_handler_2 = /* @__PURE__ */ __name(() => useTab("tasks"), "click_handler_2");
-  const click_handler_3 = /* @__PURE__ */ __name(() => useTab("extras"), "click_handler_3");
-  const click_handler_4 = /* @__PURE__ */ __name(() => activateFeaturePreset("recommended"), "click_handler_4");
-  const click_handler_52 = /* @__PURE__ */ __name(() => activateFeaturePreset("mobile"), "click_handler_5");
-  const click_handler_6 = /* @__PURE__ */ __name(() => activateFeaturePreset("minimal"), "click_handler_6");
-  const click_handler_7 = /* @__PURE__ */ __name(() => activateFeaturePreset("all"), "click_handler_7");
-  const click_handler_8 = /* @__PURE__ */ __name(() => activateFeaturePreset("none"), "click_handler_8");
-  const click_handler_9 = /* @__PURE__ */ __name(async (task) => {
-    const close = await task.start();
-    if (close !== false) feature.closeOnboardingIfOpen();
-  }, "click_handler_9");
-  const click_handler_10 = /* @__PURE__ */ __name((section) => $$invalidate(6, activeSection = section), "click_handler_10");
-  $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-    if ("firstLoad" in $$props2) $$invalidate(1, firstLoad = $$props2.firstLoad);
-  };
-  return [
-    feature,
-    firstLoad,
-    hero,
-    heading,
-    activeTab,
-    hideHero,
-    activeSection,
-    activateFeaturePreset,
-    useTab,
-    extraSections,
-    div0_binding,
-    div2_binding,
-    click_handler2,
-    click_handler_1,
-    click_handler_2,
-    click_handler_3,
-    click_handler_4,
-    click_handler_52,
-    click_handler_6,
-    click_handler_7,
-    click_handler_8,
-    click_handler_9,
-    click_handler_10
-  ];
-}
-__name(instance$s, "instance$s");
-const _Controls_onboarding = class _Controls_onboarding extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$s, create_fragment$t, safe_not_equal, { feature: 0, firstLoad: 1 }, null, [-1, -1]);
-  }
-};
-__name(_Controls_onboarding, "Controls_onboarding");
-let Controls_onboarding = _Controls_onboarding;
-var __defProp$v = Object.defineProperty;
-var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$v(target, key2, result);
-  return result;
-}, "__decorateClass$v");
-const _ControlsOnboardingFeature = (_Fa = class extends TypoFeature {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_elementsSetup");
-    __publicField(this, "_modalService");
-    __publicField(this, "_featuresService");
-    __publicField(this, "_toastService");
-    __publicField(this, "name", "Get Started");
-    __publicField(this, "description", "Quickly set up typo to your likes");
-    __publicField(this, "tags", [
-      FeatureTag.INTERFACE,
-      FeatureTag.INFORMATION
-    ]);
-    __publicField(this, "featureId", 47);
-    __publicField(this, "_firstLoadSetting", new BooleanExtensionSetting("first_load", true, this));
-    __publicField(this, "_finishOnboardingTask", this.useOnboardingTask({
-      key: "finalize_onboarding",
-      name: "Finish Onboarding",
-      description: "Choose whether to disable 'Get Started'. This should be your last task! ;)",
-      start: /* @__PURE__ */ __name(() => this.finalizeOnboarding(), "start"),
-      priority: Number.MAX_SAFE_INTEGER
-    }));
-    __publicField(this, "_viewInfoTask", this.useOnboardingTask({
-      key: "info_opened",
-      name: "Read about the new typo",
-      description: "Open the 'more info' tab to read an intro and changes of the new typo.",
-      start: /* @__PURE__ */ __name(async () => {
-        this._tabFocusRequests$.next("extras");
-        return false;
-      }, "start"),
-      priority: 1
-    }));
-    __publicField(this, "_featurePresets", {
-      recommended: {
-        mode: "blacklist",
-        features: [
-          PlayerIdsFeature,
-          DrawingColorPalettesFeature,
-          ImageAgentFeature
-        ]
-      },
-      minimal: {
-        mode: "whitelist",
-        features: [
-          ChatRecallFeature,
-          GuessCheckFeature,
-          LobbyStatusFeature,
-          ControlsCloudFeature,
-          ChatEmojisFeature,
-          ChatProfileLinkFeature,
-          HotkeysFeature,
-          CanvasZoomFeature,
-          LineToolFeature,
-          ChatFocusFeature,
-          PlayerIdsFeature,
-          LobbyTimeVisualizerFeature,
-          DrawingColorPalettesFeature,
-          ChatQuickReactFeature,
-          ChatCopyFormattedFeature,
-          DrawingPressureFeature,
-          ChatCommandsFeature,
-          DropsFeature,
-          ChatClearFeature,
-          ChatMessageSplitsFeature,
-          CustomizerPracticeJoinFeature,
-          CustomizerOutfitToggleFeature,
-          _Fa,
-          TooltipsFeature
-        ]
-      },
-      none: {
-        mode: "whitelist",
-        features: []
-      },
-      all: {
-        mode: "blacklist",
-        features: []
-      },
-      mobile: {
-        mode: "whitelist",
-        features: [
-          LobbyStatusFeature,
-          ChatEmojisFeature,
-          ChatProfileLinkFeature,
-          LobbyTimeVisualizerFeature,
-          DrawingPressureFeature,
-          ChatClearFeature,
-          CustomizerPracticeJoinFeature,
-          CustomizerOutfitToggleFeature,
-          _Fa,
-          TooltipsFeature,
-          ControlsThemesFeature,
-          UserInfoFeature,
-          PanelLobbiesFeature,
-          PanelCabinFeature,
-          PanelNewsFeature,
-          PanelChangelogFeature,
-          DrawingColorToolsFeature,
-          CanvasRateIconsFeature
-        ]
-      }
-    });
-    __publicField(this, "_iconComponent");
-    __publicField(this, "_iconClickSubscription");
-    __publicField(this, "_currentModal");
-    __publicField(this, "_taskCompletedSubscription");
-    __publicField(this, "_tabFocusRequests$", new Subject$1());
-  }
-  async onActivate() {
-    const elements2 = await this._elementsSetup.complete();
-    this._iconComponent = new Icon_button({
-      target: elements2.controls,
-      props: {
-        hoverMove: false,
-        size: "48px",
-        icon: "file-img-tasks-gif",
-        name: "Get Started",
-        order: 4,
-        tooltipAction: this.createTooltip
-      }
-    });
-    this._iconClickSubscription = this._iconComponent.click$.subscribe(() => {
-      this.showOnboarding();
-    });
-    const firstLoad = await this._firstLoadSetting.getValue();
-    if (firstLoad) {
-      this.showOnboarding(true);
-      await this._firstLoadSetting.setValue(false);
-    }
-    this._taskCompletedSubscription = this._onboardingService.taskCompleted$.subscribe((task) => {
-      this._toastService.showToast("🎉 Congrats!", `You have completed the onboarding task "${task.name}"!`);
-    });
-  }
-  async onDestroy() {
-    var _a2, _b2, _c2;
-    (_a2 = this._iconComponent) == null ? void 0 : _a2.$destroy();
-    (_b2 = this._iconClickSubscription) == null ? void 0 : _b2.unsubscribe();
-    this._iconClickSubscription = void 0;
-    (_c2 = this._taskCompletedSubscription) == null ? void 0 : _c2.unsubscribe();
-    this._taskCompletedSubscription = void 0;
-  }
-  get tabFocusRequestsStore() {
-    return fromObservable(this._tabFocusRequests$, void 0);
-  }
-  showOnboarding(firstLoad = false) {
-    var _a2;
-    (_a2 = this._currentModal) == null ? void 0 : _a2.close();
-    const onboardingComponent = {
-      componentType: Controls_onboarding,
-      props: {
-        feature: this,
-        firstLoad
-      }
-    };
-    this._currentModal = this._modalService.showModal(onboardingComponent.componentType, onboardingComponent.props, firstLoad ? "" : "Get Started");
-  }
-  async activateFeaturePreset(preset) {
-    this._logger.debug("Activating preset", preset);
-    const toast = await this._toastService.showLoadingToast("Activating preset...");
-    const presetData = this._featurePresets[preset];
-    const availableFeatures = this._featuresService.features;
-    const presetFeatures = presetData.mode === "blacklist" ? availableFeatures.filter((f) => !f.toggleEnabled || !presetData.features.some((disabled) => f instanceof disabled)) : availableFeatures.filter((f) => !f.toggleEnabled || presetData.features.some((disabled) => f instanceof disabled));
-    const toggles = availableFeatures.map(async (feature) => {
-      const enabled = await firstValueFrom(feature.activated$);
-      const presetEnabled = presetFeatures.includes(feature);
-      if (enabled && !presetEnabled) {
-        await feature.destroy();
-      }
-      if (!enabled && presetEnabled) {
-        await feature.activate();
-      }
-    });
-    try {
-      await Promise.all(toggles);
-      toast.resolve("Preset activated");
-    } catch (e) {
-      this._logger.error("Failed to activate preset", e);
-      toast.reject("Failed to activate preset");
-      return;
-    }
-  }
-  async getChecklist() {
-    return this._onboardingService.getOnboardingTasks();
-  }
-  closeOnboardingIfOpen() {
-    var _a2;
-    (_a2 = this._currentModal) == null ? void 0 : _a2.close();
-  }
-  async finalizeOnboarding() {
-    const task = await this._finishOnboardingTask;
-    const tasks = await this._onboardingService.getOnboardingTasks();
-    const allOtherCompleted = tasks.every((t) => t.completed || t.key === task.task.key);
-    const title = allOtherCompleted ? "✨ You have completed all onboarding tasks!" : "Not all tasks completed yet!";
-    const description = allOtherCompleted ? "Do you want to remove the onboarding icon?\nYou can always enable it again in the settings to read guides or select presets." : "You have not completed all onboarding tasks yet.\nDo you still want to disable onboarding?\nYou can always enable it again in the settings to read guides or select presets.";
-    const confirm = await this._toastService.showConfirmToast(title, description, 3e4, { confirm: "Disable onboarding", cancel: "Keep enabled" });
-    const result = await confirm.result;
-    if (allOtherCompleted) {
-      task.complete();
-    }
-    if (result) {
-      this.destroy();
-    }
-    return false;
-  }
-  async completeInfoTask() {
-    (await this._viewInfoTask).complete();
-  }
-}, __name(_Fa, "_ControlsOnboardingFeature"), _Fa);
-__decorateClass$v([
-  inject(ElementsSetup)
-], _ControlsOnboardingFeature.prototype, "_elementsSetup");
-__decorateClass$v([
-  inject(ModalService)
-], _ControlsOnboardingFeature.prototype, "_modalService");
-__decorateClass$v([
-  inject(FeaturesService)
-], _ControlsOnboardingFeature.prototype, "_featuresService");
-__decorateClass$v([
-  inject(ToastService)
-], _ControlsOnboardingFeature.prototype, "_toastService");
-let ControlsOnboardingFeature = _ControlsOnboardingFeature;
-function get_each_context$g(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[6] = list[i];
-  return child_ctx;
-}
-__name(get_each_context$g, "get_each_context$g");
-function create_catch_block(ctx) {
-  return {
-    c: noop$1,
-    m: noop$1,
-    p: noop$1,
-    i: noop$1,
-    o: noop$1,
-    d: noop$1
-  };
-}
-__name(create_catch_block, "create_catch_block");
-function create_then_block(ctx) {
-  let h3;
-  let t1;
-  let p;
-  let t4;
-  let br1;
-  let t5;
-  let div;
-  let current;
-  let each_value = ensure_array_like(
-    /*profiles*/
-    ctx[5]
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$g(get_each_context$g(ctx, each_value, i));
-  }
-  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-    each_blocks[i] = null;
-  }), "out");
-  return {
-    c() {
-      h3 = element$1("h3");
-      h3.textContent = "Saved Profiles";
-      t1 = space();
-      p = element$1("p");
-      p.innerHTML = `Typo profiles let you save and switch the entire data of typo.<br/>
-    Switching to a profile or deleting a profile will reload the page.`;
-      t4 = space();
-      br1 = element$1("br");
-      t5 = space();
-      div = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      attr(div, "class", "typo-profiles svelte-16buojm");
-    },
-    m(target, anchor) {
-      insert(target, h3, anchor);
-      insert(target, t1, anchor);
-      insert(target, p, anchor);
-      insert(target, t4, anchor);
-      insert(target, br1, anchor);
-      insert(target, t5, anchor);
-      insert(target, div, anchor);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div, null);
-        }
-      }
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*feature*/
-      1) {
-        each_value = ensure_array_like(
-          /*profiles*/
-          ctx2[5]
-        );
-        let i;
-        for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$g(ctx2, each_value, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-            transition_in(each_blocks[i], 1);
-          } else {
-            each_blocks[i] = create_each_block$g(child_ctx);
-            each_blocks[i].c();
-            transition_in(each_blocks[i], 1);
-            each_blocks[i].m(div, null);
-          }
-        }
-        group_outros();
-        for (i = each_value.length; i < each_blocks.length; i += 1) {
-          out(i);
-        }
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current) return;
-      for (let i = 0; i < each_value.length; i += 1) {
-        transition_in(each_blocks[i]);
-      }
-      current = true;
-    },
-    o(local) {
-      each_blocks = each_blocks.filter(Boolean);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        transition_out(each_blocks[i]);
-      }
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(h3);
-        detach(t1);
-        detach(p);
-        detach(t4);
-        detach(br1);
-        detach(t5);
-        detach(div);
-      }
-      destroy_each(each_blocks, detaching);
-    }
-  };
-}
-__name(create_then_block, "create_then_block");
-function create_each_block$g(ctx) {
-  let div;
-  let span;
-  let t0_value = (
-    /*profile*/
-    ctx[6].name + ""
-  );
-  let t0;
-  let t1;
-  let iconbutton;
-  let t2;
-  let current;
-  let mounted;
-  let dispose;
-  function click_handler2(...args) {
-    return (
-      /*click_handler*/
-      ctx[1](
-        /*profile*/
-        ctx[6],
-        ...args
-      )
-    );
-  }
-  __name(click_handler2, "click_handler");
-  iconbutton = new Icon_button({
-    props: {
-      size: "1.5rem",
-      icon: (
-        /*profile*/
-        ctx[6].active ? "file-img-enabled-gif" : "file-img-trash-gif"
-      ),
-      name: "Delete",
-      hoverMove: false,
-      greyscaleInactive: true
-    }
-  });
-  iconbutton.$on("click", click_handler2);
-  function click_handler_1() {
-    return (
-      /*click_handler_1*/
-      ctx[2](
-        /*profile*/
-        ctx[6]
-      )
-    );
-  }
-  __name(click_handler_1, "click_handler_1");
-  return {
-    c() {
-      div = element$1("div");
-      span = element$1("span");
-      t0 = text(t0_value);
-      t1 = space();
-      create_component(iconbutton.$$.fragment);
-      t2 = space();
-      attr(div, "class", "typo-profile svelte-16buojm");
-      toggle_class(
-        div,
-        "active",
-        /*profile*/
-        ctx[6].active
-      );
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      append(div, span);
-      append(span, t0);
-      append(div, t1);
-      mount_component(iconbutton, div, null);
-      append(div, t2);
-      current = true;
-      if (!mounted) {
-        dispose = listen(div, "click", click_handler_1);
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if ((!current || dirty & /*feature*/
-      1) && t0_value !== (t0_value = /*profile*/
-      ctx[6].name + "")) set_data(t0, t0_value);
-      const iconbutton_changes = {};
-      if (dirty & /*feature*/
-      1) iconbutton_changes.icon = /*profile*/
-      ctx[6].active ? "file-img-enabled-gif" : "file-img-trash-gif";
-      iconbutton.$set(iconbutton_changes);
-      if (!current || dirty & /*feature*/
-      1) {
-        toggle_class(
-          div,
-          "active",
-          /*profile*/
-          ctx[6].active
-        );
-      }
-    },
-    i(local) {
-      if (current) return;
-      transition_in(iconbutton.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(iconbutton.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      destroy_component(iconbutton);
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_each_block$g, "create_each_block$g");
-function create_pending_block(ctx) {
-  let bounceload;
-  let current;
-  bounceload = new Bounceload({ props: { content: "Loading Profiles" } });
-  return {
-    c() {
-      create_component(bounceload.$$.fragment);
-    },
-    m(target, anchor) {
-      mount_component(bounceload, target, anchor);
-      current = true;
-    },
-    p: noop$1,
-    i(local) {
-      if (current) return;
-      transition_in(bounceload.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(bounceload.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(bounceload, detaching);
-    }
-  };
-}
-__name(create_pending_block, "create_pending_block");
-function create_fragment$s(ctx) {
-  let promise;
-  let t0;
-  let br0;
-  let t1;
-  let h30;
-  let t3;
-  let p0;
-  let t6;
-  let br2;
-  let t7;
-  let flatbutton0;
-  let t8;
-  let br3;
-  let t9;
-  let br4;
-  let t10;
-  let h31;
-  let t12;
-  let p1;
-  let t15;
-  let br6;
-  let t16;
-  let flatbutton1;
-  let current;
-  let info = {
-    ctx,
-    current: null,
-    token: null,
-    hasCatch: false,
-    pending: create_pending_block,
-    then: create_then_block,
-    catch: create_catch_block,
-    value: 5,
-    blocks: [, , ,]
-  };
-  handle_promise(promise = /*feature*/
-  ctx[0].getProfiles(), info);
-  flatbutton0 = new Flat_button({
-    props: {
-      content: "Create profile",
-      color: "green"
-    }
-  });
-  flatbutton0.$on(
-    "click",
-    /*click_handler_2*/
-    ctx[3]
-  );
-  flatbutton1 = new Flat_button({
-    props: { content: "Reset typo", color: "orange" }
-  });
-  flatbutton1.$on(
-    "click",
-    /*click_handler_3*/
-    ctx[4]
-  );
-  return {
-    c() {
-      info.block.c();
-      t0 = space();
-      br0 = element$1("br");
-      t1 = space();
-      h30 = element$1("h3");
-      h30.textContent = "Create new profile";
-      t3 = space();
-      p0 = element$1("p");
-      p0.innerHTML = `A new empty profile will be added.<br/>
-  This will reload the page.`;
-      t6 = space();
-      br2 = element$1("br");
-      t7 = space();
-      create_component(flatbutton0.$$.fragment);
-      t8 = space();
-      br3 = element$1("br");
-      t9 = space();
-      br4 = element$1("br");
-      t10 = space();
-      h31 = element$1("h3");
-      h31.textContent = "Reset typo";
-      t12 = space();
-      p1 = element$1("p");
-      p1.innerHTML = `Resetting typo will erase all data. Typo will behave like after a fresh installation.<br/>
-  This is irreversible and will reload the page.`;
-      t15 = space();
-      br6 = element$1("br");
-      t16 = space();
-      create_component(flatbutton1.$$.fragment);
-    },
-    m(target, anchor) {
-      info.block.m(target, info.anchor = anchor);
-      info.mount = () => t0.parentNode;
-      info.anchor = t0;
-      insert(target, t0, anchor);
-      insert(target, br0, anchor);
-      insert(target, t1, anchor);
-      insert(target, h30, anchor);
-      insert(target, t3, anchor);
-      insert(target, p0, anchor);
-      insert(target, t6, anchor);
-      insert(target, br2, anchor);
-      insert(target, t7, anchor);
-      mount_component(flatbutton0, target, anchor);
-      insert(target, t8, anchor);
-      insert(target, br3, anchor);
-      insert(target, t9, anchor);
-      insert(target, br4, anchor);
-      insert(target, t10, anchor);
-      insert(target, h31, anchor);
-      insert(target, t12, anchor);
-      insert(target, p1, anchor);
-      insert(target, t15, anchor);
-      insert(target, br6, anchor);
-      insert(target, t16, anchor);
-      mount_component(flatbutton1, target, anchor);
-      current = true;
-    },
-    p(new_ctx, [dirty]) {
-      ctx = new_ctx;
-      info.ctx = ctx;
-      if (dirty & /*feature*/
-      1 && promise !== (promise = /*feature*/
-      ctx[0].getProfiles()) && handle_promise(promise, info)) ;
-      else {
-        update_await_block_branch(info, ctx, dirty);
-      }
-    },
-    i(local) {
-      if (current) return;
-      transition_in(info.block);
-      transition_in(flatbutton0.$$.fragment, local);
-      transition_in(flatbutton1.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      for (let i = 0; i < 3; i += 1) {
-        const block2 = info.blocks[i];
-        transition_out(block2);
-      }
-      transition_out(flatbutton0.$$.fragment, local);
-      transition_out(flatbutton1.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(t0);
-        detach(br0);
-        detach(t1);
-        detach(h30);
-        detach(t3);
-        detach(p0);
-        detach(t6);
-        detach(br2);
-        detach(t7);
-        detach(t8);
-        detach(br3);
-        detach(t9);
-        detach(br4);
-        detach(t10);
-        detach(h31);
-        detach(t12);
-        detach(p1);
-        detach(t15);
-        detach(br6);
-        detach(t16);
-      }
-      info.block.d(detaching);
-      info.token = null;
-      info = null;
-      destroy_component(flatbutton0, detaching);
-      destroy_component(flatbutton1, detaching);
-    }
-  };
-}
-__name(create_fragment$s, "create_fragment$s");
-function instance$r($$self, $$props, $$invalidate) {
-  let { feature } = $$props;
-  const click_handler2 = /* @__PURE__ */ __name((profile, e) => {
-    e.stopImmediatePropagation();
-    if (!profile.active) feature.deleteProfile(profile.name);
-  }, "click_handler");
-  const click_handler_1 = /* @__PURE__ */ __name((profile) => {
-    if (!profile.active) feature.switchToProfile(profile.name);
-  }, "click_handler_1");
-  const click_handler_2 = /* @__PURE__ */ __name(() => feature.createProfile(), "click_handler_2");
-  const click_handler_3 = /* @__PURE__ */ __name(() => feature.resetTypo(), "click_handler_3");
-  $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-  };
-  return [feature, click_handler2, click_handler_1, click_handler_2, click_handler_3];
-}
-__name(instance$r, "instance$r");
-const _Controls_profiles = class _Controls_profiles extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$r, create_fragment$s, safe_not_equal, { feature: 0 });
-  }
-};
-__name(_Controls_profiles, "Controls_profiles");
-let Controls_profiles = _Controls_profiles;
-var __defProp$u = Object.defineProperty;
-var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$u(target, key2, result);
-  return result;
-}, "__decorateClass$u");
-const _ControlsProfilesFeature = class _ControlsProfilesFeature extends TypoFeature {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_elementsSetup");
-    __publicField(this, "_toastService");
-    __publicField(this, "name", "Typo Profiles");
-    __publicField(this, "description", "Switch between different typo profiles.");
-    __publicField(this, "tags", [
-      FeatureTag.DEVELOPMENT
-    ]);
-    __publicField(this, "featureId", 48);
-    __publicField(this, "toggleEnabled", false);
-  }
-  get featureManagementComponent() {
-    return { componentType: Controls_profiles, props: { feature: this } };
-  }
-  async getProfiles() {
-    const currentProfile = await typoRuntime.currentProfile();
-    return (await typoRuntime.getProfiles()).map((profile) => ({ name: profile, active: profile === currentProfile }));
-  }
-  async deleteProfile(profile) {
-    const currentProfile = await typoRuntime.currentProfile();
-    if (profile === currentProfile) {
-      this._logger.error("Cannot delete the current profile.");
-      await this._toastService.showToast("Cannot delete the current profile " + profile);
-      return;
-    }
-    const toast = await this._toastService.showConfirmToast(
-      `Delete profile ${profile}?`,
-      "Deleting a profile will reload the page.",
-      1e4,
-      { confirm: "Delete profile", cancel: "Cancel deletion" }
-    );
-    const result = await toast.result;
-    if (!result) return;
-    await typoRuntime.deleteProfile(profile);
-    window.location.reload();
-  }
-  async switchToProfile(profile) {
-    const toast = await this._toastService.showConfirmToast(
-      `Switch to profile ${profile}?`,
-      "Switching a profile will reload the page.",
-      1e4,
-      { confirm: "Switch now", cancel: "Cancel switch" }
-    );
-    const result = await toast.result;
-    if (!result) return;
-    await typoRuntime.switchToProfile(profile);
-    window.location.reload();
-  }
-  async createProfile() {
-    const toast = await this._toastService.showPromptToast("Create and activate profile", "Enter a name for the new profile");
-    const result = await toast.result;
-    if (result === null || result.length === 0) return;
-    const profiles = await typoRuntime.getProfiles();
-    if (profiles.includes(result)) {
-      this._logger.error("Profile already exists");
-      await this._toastService.showToast("Profile already exists", "A profile with the name " + result + " already exists.\nPlease choose a different name.");
-      return;
-    }
-    await typoRuntime.createAndSwitchToProfile(result);
-    window.location.reload();
-  }
-  async resetTypo() {
-    const toast = await this._toastService.showConfirmToast(
-      "Reset Typo?",
-      "This will delete ALL saved data (themes, palettes, login, profiles, filters..) and reload the page.",
-      1e4,
-      { confirm: "Reset typo (think twice)", cancel: "Cancel reset (panic!)" }
-    );
-    const result = await toast.result;
-    if (!result) return;
-    await typoRuntime.resetTypo();
-    window.location.reload();
-  }
-};
-__name(_ControlsProfilesFeature, "ControlsProfilesFeature");
-let ControlsProfilesFeature = _ControlsProfilesFeature;
-__decorateClass$u([
-  inject(ElementsSetup)
-], ControlsProfilesFeature.prototype, "_elementsSetup");
-__decorateClass$u([
-  inject(ToastService)
-], ControlsProfilesFeature.prototype, "_toastService");
-function create_if_block$d(ctx) {
-  let br;
-  let span;
-  return {
-    c() {
-      br = element$1("br");
-      span = element$1("span");
-      span.textContent = "Disabled in text inputs";
-      attr(span, "class", "inputs-disabled-hint svelte-10zlzgr");
-    },
-    m(target, anchor) {
-      insert(target, br, anchor);
-      insert(target, span, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(br);
-        detach(span);
-      }
-    }
-  };
-}
-__name(create_if_block$d, "create_if_block$d");
-function create_fragment$r(ctx) {
-  let div5;
-  let h3;
-  let t0_value = (
-    /*hotkey*/
-    ctx[0].name + ""
-  );
-  let t0;
-  let t1;
-  let div0;
-  let t2_value = (
-    /*hotkey*/
-    ctx[0].description + ""
-  );
-  let t2;
-  let t3;
-  let t4;
-  let div1;
-  let flatbutton0;
-  let t5;
-  let div2;
-  let flatbutton1;
-  let t6;
-  let div3;
-  let checkbox;
-  let updating_checked;
-  let t7;
-  let div4;
-  let input;
-  let input_value_value;
-  let current;
-  let mounted;
-  let dispose;
-  let if_block = (
-    /*hotkey*/
-    ctx[0].disabledOnInputs && create_if_block$d()
-  );
-  flatbutton0 = new Flat_button({
-    props: {
-      content: "Reset to default",
-      color: "orange"
-    }
-  });
-  flatbutton0.$on(
-    "click",
-    /*click_handler*/
-    ctx[9]
-  );
-  flatbutton1 = new Flat_button({
-    props: { content: "Save combo", color: "green" }
-  });
-  flatbutton1.$on(
-    "click",
-    /*click_handler_1*/
-    ctx[10]
-  );
-  function checkbox_checked_binding(value) {
-    ctx[11](value);
-  }
-  __name(checkbox_checked_binding, "checkbox_checked_binding");
-  let checkbox_props = {
-    disabled: (
-      /*$comboStore*/
-      ctx[2].length === 0
-    ),
-    description: (
-      /*$enabledStore*/
-      ctx[5] ? "Enabled" : "Disabled"
-    )
-  };
-  if (
-    /*$enabledStore*/
-    ctx[5] !== void 0
-  ) {
-    checkbox_props.checked = /*$enabledStore*/
-    ctx[5];
-  }
-  checkbox = new Checkbox({ props: checkbox_props });
-  binding_callbacks.push(() => bind$1(checkbox, "checked", checkbox_checked_binding));
-  return {
-    c() {
-      div5 = element$1("div");
-      h3 = element$1("h3");
-      t0 = text(t0_value);
-      t1 = space();
-      div0 = element$1("div");
-      t2 = text(t2_value);
-      t3 = space();
-      if (if_block) if_block.c();
-      t4 = space();
-      div1 = element$1("div");
-      create_component(flatbutton0.$$.fragment);
-      t5 = space();
-      div2 = element$1("div");
-      create_component(flatbutton1.$$.fragment);
-      t6 = space();
-      div3 = element$1("div");
-      create_component(checkbox.$$.fragment);
-      t7 = space();
-      div4 = element$1("div");
-      input = element$1("input");
-      attr(div1, "class", "button-container svelte-10zlzgr");
-      attr(div2, "class", "button-container svelte-10zlzgr");
-      input.value = input_value_value = /*recordedKeys*/
-      ctx[4].join(" + ");
-      attr(input, "type", "text");
-      attr(input, "placeholder", "Press Keys");
-      set_style(div4, "grid-column", "2 / span 3");
-      attr(div5, "class", "typo-feature-settings-hotkey svelte-10zlzgr");
-    },
-    m(target, anchor) {
-      insert(target, div5, anchor);
-      append(div5, h3);
-      append(h3, t0);
-      append(div5, t1);
-      append(div5, div0);
-      append(div0, t2);
-      append(div0, t3);
-      if (if_block) if_block.m(div0, null);
-      append(div5, t4);
-      append(div5, div1);
-      mount_component(flatbutton0, div1, null);
-      append(div5, t5);
-      append(div5, div2);
-      mount_component(flatbutton1, div2, null);
-      append(div5, t6);
-      append(div5, div3);
-      mount_component(checkbox, div3, null);
-      append(div5, t7);
-      append(div5, div4);
-      append(div4, input);
-      ctx[12](input);
-      current = true;
-      if (!mounted) {
-        dispose = [
-          listen(
-            input,
-            "click",
-            /*click_handler_2*/
-            ctx[13]
-          ),
-          listen(
-            input,
-            "keydown",
-            /*keydown_handler*/
-            ctx[14]
-          )
-        ];
-        mounted = true;
-      }
-    },
-    p(ctx2, [dirty]) {
-      if ((!current || dirty & /*hotkey*/
-      1) && t0_value !== (t0_value = /*hotkey*/
-      ctx2[0].name + "")) set_data(t0, t0_value);
-      if ((!current || dirty & /*hotkey*/
-      1) && t2_value !== (t2_value = /*hotkey*/
-      ctx2[0].description + "")) set_data(t2, t2_value);
-      if (
-        /*hotkey*/
-        ctx2[0].disabledOnInputs
-      ) {
-        if (if_block) ;
-        else {
-          if_block = create_if_block$d();
-          if_block.c();
-          if_block.m(div0, null);
-        }
-      } else if (if_block) {
-        if_block.d(1);
-        if_block = null;
-      }
-      const checkbox_changes = {};
-      if (dirty & /*$comboStore*/
-      4) checkbox_changes.disabled = /*$comboStore*/
-      ctx2[2].length === 0;
-      if (dirty & /*$enabledStore*/
-      32) checkbox_changes.description = /*$enabledStore*/
-      ctx2[5] ? "Enabled" : "Disabled";
-      if (!updating_checked && dirty & /*$enabledStore*/
-      32) {
-        updating_checked = true;
-        checkbox_changes.checked = /*$enabledStore*/
-        ctx2[5];
-        add_flush_callback(() => updating_checked = false);
-      }
-      checkbox.$set(checkbox_changes);
-      if (!current || dirty & /*recordedKeys*/
-      16 && input_value_value !== (input_value_value = /*recordedKeys*/
-      ctx2[4].join(" + ")) && input.value !== input_value_value) {
-        input.value = input_value_value;
-      }
-    },
-    i(local) {
-      if (current) return;
-      transition_in(flatbutton0.$$.fragment, local);
-      transition_in(flatbutton1.$$.fragment, local);
-      transition_in(checkbox.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(flatbutton0.$$.fragment, local);
-      transition_out(flatbutton1.$$.fragment, local);
-      transition_out(checkbox.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div5);
-      }
-      if (if_block) if_block.d();
-      destroy_component(flatbutton0);
-      destroy_component(flatbutton1);
-      destroy_component(checkbox);
-      ctx[12](null);
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-__name(create_fragment$r, "create_fragment$r");
-function instance$q($$self, $$props, $$invalidate) {
-  let $comboStore;
-  let $enabledStore;
-  let { hotkey } = $$props;
-  let { feature } = $$props;
-  const enabledStore = hotkey.enabledSetting.store;
-  component_subscribe($$self, enabledStore, (value) => $$invalidate(5, $enabledStore = value));
-  const comboStore = hotkey.comboSetting.store;
-  component_subscribe($$self, comboStore, (value) => $$invalidate(2, $comboStore = value));
-  let recordingElement;
-  let recordedKeys;
-  const getHotkeyComboHumanReadable = /* @__PURE__ */ __name(async (combo) => {
-    var _a2;
-    if ((_a2 = navigator == null ? void 0 : navigator.keyboard) == null ? void 0 : _a2.getLayoutMap) {
-      const layoutMap = await navigator.keyboard.getLayoutMap();
-      return combo.map((key2) => layoutMap.get(key2) || key2).join(" + ");
-    } else {
-      return combo.join(" + ");
-    }
-  }, "getHotkeyComboHumanReadable");
-  const click_handler2 = /* @__PURE__ */ __name(async () => {
-    const update = await feature.resetHotkeyCombo(hotkey);
-    if (update) {
-      $$invalidate(4, recordedKeys = update);
-      $$invalidate(3, recordingElement.value = await getHotkeyComboHumanReadable(recordedKeys), recordingElement);
-    }
-  }, "click_handler");
-  const click_handler_1 = /* @__PURE__ */ __name(() => {
-    feature.setHotkeyCombo(hotkey, recordedKeys);
-    if (recordedKeys.length > 0) {
-      set_store_value(enabledStore, $enabledStore = true, $enabledStore);
-    }
-  }, "click_handler_1");
-  function checkbox_checked_binding(value) {
-    $enabledStore = value;
-    enabledStore.set($enabledStore);
-  }
-  __name(checkbox_checked_binding, "checkbox_checked_binding");
-  function input_binding($$value) {
-    binding_callbacks[$$value ? "unshift" : "push"](() => {
-      recordingElement = $$value;
-      $$invalidate(3, recordingElement);
-    });
-  }
-  __name(input_binding, "input_binding");
-  const click_handler_2 = /* @__PURE__ */ __name(() => {
-    $$invalidate(4, recordedKeys = []);
-    $$invalidate(3, recordingElement.value = "", recordingElement);
-  }, "click_handler_2");
-  const keydown_handler2 = /* @__PURE__ */ __name(async (event) => {
-    event.preventDefault();
-    if (!recordedKeys.includes(event.code)) {
-      recordedKeys.push(event.code);
-      $$invalidate(3, recordingElement.value = await getHotkeyComboHumanReadable(recordedKeys), recordingElement);
-    } else {
-      $$invalidate(4, recordedKeys = recordedKeys.filter((key2) => key2 !== event.code));
-      $$invalidate(3, recordingElement.value = await getHotkeyComboHumanReadable(recordedKeys), recordingElement);
-    }
-  }, "keydown_handler");
-  $$self.$$set = ($$props2) => {
-    if ("hotkey" in $$props2) $$invalidate(0, hotkey = $$props2.hotkey);
-    if ("feature" in $$props2) $$invalidate(1, feature = $$props2.feature);
-  };
-  $$self.$$.update = () => {
-    if ($$self.$$.dirty & /*$comboStore*/
-    4) {
-      {
-        $$invalidate(4, recordedKeys = [...$comboStore]);
-      }
-    }
-  };
-  return [
-    hotkey,
-    feature,
-    $comboStore,
-    recordingElement,
-    recordedKeys,
-    $enabledStore,
-    enabledStore,
-    comboStore,
-    getHotkeyComboHumanReadable,
-    click_handler2,
-    click_handler_1,
-    checkbox_checked_binding,
-    input_binding,
-    click_handler_2,
-    keydown_handler2
-  ];
-}
-__name(instance$q, "instance$q");
-const _Controls_settings_hotkey = class _Controls_settings_hotkey extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$q, create_fragment$r, safe_not_equal, { hotkey: 0, feature: 1 });
-  }
-};
-__name(_Controls_settings_hotkey, "Controls_settings_hotkey");
-let Controls_settings_hotkey = _Controls_settings_hotkey;
-function create_fragment$q(ctx) {
-  let div5;
-  let h3;
-  let t0_value = (
-    /*command*/
-    ctx[0].name + ""
-  );
-  let t0;
-  let t1;
-  let div0;
-  let t2_value = (
-    /*command*/
-    ctx[0].description + ""
-  );
-  let t2;
-  let t3;
-  let div1;
-  let flatbutton0;
-  let t4;
-  let div2;
-  let flatbutton1;
-  let t5;
-  let div3;
-  let checkbox;
-  let updating_checked;
-  let t6;
-  let div4;
-  let input;
-  let current;
-  let mounted;
-  let dispose;
-  flatbutton0 = new Flat_button({
-    props: { content: "Reset name", color: "orange" }
-  });
-  flatbutton0.$on(
-    "click",
-    /*click_handler*/
-    ctx[7]
-  );
-  flatbutton1 = new Flat_button({
-    props: { content: "Save name", color: "green" }
-  });
-  flatbutton1.$on(
-    "click",
-    /*click_handler_1*/
-    ctx[8]
-  );
-  function checkbox_checked_binding(value) {
-    ctx[9](value);
-  }
-  __name(checkbox_checked_binding, "checkbox_checked_binding");
-  let checkbox_props = {
-    description: (
-      /*$enabledStore*/
-      ctx[3] ? "Enabled" : "Disabled"
-    )
-  };
-  if (
-    /*$enabledStore*/
-    ctx[3] !== void 0
-  ) {
-    checkbox_props.checked = /*$enabledStore*/
-    ctx[3];
-  }
-  checkbox = new Checkbox({ props: checkbox_props });
-  binding_callbacks.push(() => bind$1(checkbox, "checked", checkbox_checked_binding));
-  return {
-    c() {
-      div5 = element$1("div");
-      h3 = element$1("h3");
-      t0 = text(t0_value);
-      t1 = space();
-      div0 = element$1("div");
-      t2 = text(t2_value);
-      t3 = space();
-      div1 = element$1("div");
-      create_component(flatbutton0.$$.fragment);
-      t4 = space();
-      div2 = element$1("div");
-      create_component(flatbutton1.$$.fragment);
-      t5 = space();
-      div3 = element$1("div");
-      create_component(checkbox.$$.fragment);
-      t6 = space();
-      div4 = element$1("div");
-      input = element$1("input");
-      attr(div1, "class", "button-container svelte-lvvgs4");
-      attr(div2, "class", "button-container svelte-lvvgs4");
-      attr(input, "type", "text");
-      attr(input, "placeholder", "Enter command name");
-      set_style(div4, "grid-column", "2 / span 3");
-      attr(div5, "class", "typo-feature-settings-command svelte-lvvgs4");
-    },
-    m(target, anchor) {
-      insert(target, div5, anchor);
-      append(div5, h3);
-      append(h3, t0);
-      append(div5, t1);
-      append(div5, div0);
-      append(div0, t2);
-      append(div5, t3);
-      append(div5, div1);
-      mount_component(flatbutton0, div1, null);
-      append(div5, t4);
-      append(div5, div2);
-      mount_component(flatbutton1, div2, null);
-      append(div5, t5);
-      append(div5, div3);
-      mount_component(checkbox, div3, null);
-      append(div5, t6);
-      append(div5, div4);
-      append(div4, input);
-      set_input_value(
-        input,
-        /*idInput*/
-        ctx[2]
-      );
-      current = true;
-      if (!mounted) {
-        dispose = listen(
-          input,
-          "input",
-          /*input_input_handler*/
-          ctx[10]
-        );
-        mounted = true;
-      }
-    },
-    p(ctx2, [dirty]) {
-      if ((!current || dirty & /*command*/
-      1) && t0_value !== (t0_value = /*command*/
-      ctx2[0].name + "")) set_data(t0, t0_value);
-      if ((!current || dirty & /*command*/
-      1) && t2_value !== (t2_value = /*command*/
-      ctx2[0].description + "")) set_data(t2, t2_value);
-      const checkbox_changes = {};
-      if (dirty & /*$enabledStore*/
-      8) checkbox_changes.description = /*$enabledStore*/
-      ctx2[3] ? "Enabled" : "Disabled";
-      if (!updating_checked && dirty & /*$enabledStore*/
-      8) {
-        updating_checked = true;
-        checkbox_changes.checked = /*$enabledStore*/
-        ctx2[3];
-        add_flush_callback(() => updating_checked = false);
-      }
-      checkbox.$set(checkbox_changes);
-      if (dirty & /*idInput*/
-      4 && input.value !== /*idInput*/
-      ctx2[2]) {
-        set_input_value(
-          input,
-          /*idInput*/
-          ctx2[2]
-        );
-      }
-    },
-    i(local) {
-      if (current) return;
-      transition_in(flatbutton0.$$.fragment, local);
-      transition_in(flatbutton1.$$.fragment, local);
-      transition_in(checkbox.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(flatbutton0.$$.fragment, local);
-      transition_out(flatbutton1.$$.fragment, local);
-      transition_out(checkbox.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div5);
-      }
-      destroy_component(flatbutton0);
-      destroy_component(flatbutton1);
-      destroy_component(checkbox);
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_fragment$q, "create_fragment$q");
-function instance$p($$self, $$props, $$invalidate) {
-  let $idStore;
-  let $enabledStore;
-  let { command } = $$props;
-  let { feature } = $$props;
-  const enabledStore = command.enabledSetting.store;
-  component_subscribe($$self, enabledStore, (value) => $$invalidate(3, $enabledStore = value));
-  const idStore = command.idSetting.store;
-  component_subscribe($$self, idStore, (value) => $$invalidate(1, $idStore = value));
-  let idInput = "";
-  const click_handler2 = /* @__PURE__ */ __name(() => {
-    set_store_value(idStore, $idStore = command.defaultId, $idStore);
-  }, "click_handler");
-  const click_handler_1 = /* @__PURE__ */ __name(() => {
-    set_store_value(idStore, $idStore = idInput.length === 0 ? command.defaultId : idInput, $idStore);
-  }, "click_handler_1");
-  function checkbox_checked_binding(value) {
-    $enabledStore = value;
-    enabledStore.set($enabledStore);
-  }
-  __name(checkbox_checked_binding, "checkbox_checked_binding");
-  function input_input_handler() {
-    idInput = this.value;
-    $$invalidate(2, idInput), $$invalidate(1, $idStore);
-  }
-  __name(input_input_handler, "input_input_handler");
-  $$self.$$set = ($$props2) => {
-    if ("command" in $$props2) $$invalidate(0, command = $$props2.command);
-    if ("feature" in $$props2) $$invalidate(6, feature = $$props2.feature);
-  };
-  $$self.$$.update = () => {
-    if ($$self.$$.dirty & /*$idStore*/
-    2) {
-      {
-        $$invalidate(2, idInput = $idStore);
-      }
-    }
-  };
-  return [
-    command,
-    $idStore,
-    idInput,
-    $enabledStore,
-    enabledStore,
-    idStore,
-    feature,
-    click_handler2,
-    click_handler_1,
-    checkbox_checked_binding,
-    input_input_handler
-  ];
-}
-__name(instance$p, "instance$p");
-const _Controls_settings_command = class _Controls_settings_command extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$p, create_fragment$q, safe_not_equal, { command: 0, feature: 6 });
-  }
-};
-__name(_Controls_settings_command, "Controls_settings_command");
-let Controls_settings_command = _Controls_settings_command;
-function get_each_context$f(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[9] = list[i];
-  return child_ctx;
-}
-__name(get_each_context$f, "get_each_context$f");
-function get_each_context_1$5(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[12] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_1$5, "get_each_context_1$5");
-function get_each_context_2$2(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[15] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_2$2, "get_each_context_2$2");
-function create_if_block_5(ctx) {
-  let div1;
-  let h2;
-  let t1;
-  let div0;
-  let switch_instance;
-  let current;
-  const switch_instance_spread_levels = [
-    /*infoComponent*/
-    ctx[4].props
-  ];
-  var switch_value = (
-    /*infoComponent*/
-    ctx[4].componentType
-  );
-  function switch_props(ctx2, dirty) {
-    let switch_instance_props = {};
-    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
-      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
-    }
-    if (dirty !== void 0 && dirty & /*infoComponent*/
-    16) {
-      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
-        /*infoComponent*/
-        ctx2[4].props
-      )]));
-    }
-    return { props: switch_instance_props };
-  }
-  __name(switch_props, "switch_props");
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-  }
-  return {
-    c() {
-      div1 = element$1("div");
-      h2 = element$1("h2");
-      h2.textContent = "Feature Information";
-      t1 = space();
-      div0 = element$1("div");
-      if (switch_instance) create_component(switch_instance.$$.fragment);
-      attr(h2, "class", "svelte-1njssi3");
-      attr(div1, "class", "typo-feature-settings-info svelte-1njssi3");
-    },
-    m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, h2);
-      append(div1, t1);
-      append(div1, div0);
-      if (switch_instance) mount_component(switch_instance, div0, null);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*infoComponent*/
-      16 && switch_value !== (switch_value = /*infoComponent*/
-      ctx2[4].componentType)) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, div0, null);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        const switch_instance_changes = dirty & /*infoComponent*/
-        16 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
-          /*infoComponent*/
-          ctx2[4].props
-        )]) : {};
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current) return;
-      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      if (switch_instance) destroy_component(switch_instance);
-    }
-  };
-}
-__name(create_if_block_5, "create_if_block_5");
-function create_if_block_4(ctx) {
-  let div1;
-  let h2;
-  let t1;
-  let div0;
-  let current;
-  let each_value_2 = ensure_array_like(
-    /*feature*/
-    ctx[1].settings
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks[i] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i));
-  }
-  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-    each_blocks[i] = null;
-  }), "out");
-  return {
-    c() {
-      div1 = element$1("div");
-      h2 = element$1("h2");
-      h2.textContent = "Feature Settings";
-      t1 = space();
-      div0 = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      attr(h2, "class", "svelte-1njssi3");
-      attr(div0, "class", "typo-feature-settings-default-list svelte-1njssi3");
-      attr(div1, "class", "typo-feature-settings-default svelte-1njssi3");
-    },
-    m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, h2);
-      append(div1, t1);
-      append(div1, div0);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div0, null);
-        }
-      }
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*feature*/
-      2) {
-        each_value_2 = ensure_array_like(
-          /*feature*/
-          ctx2[1].settings
-        );
-        let i;
-        for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2$2(ctx2, each_value_2, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-            transition_in(each_blocks[i], 1);
-          } else {
-            each_blocks[i] = create_each_block_2$2(child_ctx);
-            each_blocks[i].c();
-            transition_in(each_blocks[i], 1);
-            each_blocks[i].m(div0, null);
-          }
-        }
-        group_outros();
-        for (i = each_value_2.length; i < each_blocks.length; i += 1) {
-          out(i);
-        }
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current) return;
-      for (let i = 0; i < each_value_2.length; i += 1) {
-        transition_in(each_blocks[i]);
-      }
-      current = true;
-    },
-    o(local) {
-      each_blocks = each_blocks.filter(Boolean);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        transition_out(each_blocks[i]);
-      }
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      destroy_each(each_blocks, detaching);
-    }
-  };
-}
-__name(create_if_block_4, "create_if_block_4");
-function create_each_block_2$2(ctx) {
-  let div;
-  let switch_instance;
-  let t;
-  let current;
-  const switch_instance_spread_levels = [
-    /*setting*/
-    ctx[15].componentData.props
-  ];
-  var switch_value = (
-    /*setting*/
-    ctx[15].componentData.componentType
-  );
-  function switch_props(ctx2, dirty) {
-    let switch_instance_props = {};
-    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
-      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
-    }
-    if (dirty !== void 0 && dirty & /*feature*/
-    2) {
-      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
-        /*setting*/
-        ctx2[15].componentData.props
-      )]));
-    }
-    return { props: switch_instance_props };
-  }
-  __name(switch_props, "switch_props");
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-  }
-  return {
-    c() {
-      div = element$1("div");
-      if (switch_instance) create_component(switch_instance.$$.fragment);
-      t = space();
-      attr(div, "class", "typo-feature-settings-default-item svelte-1njssi3");
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      if (switch_instance) mount_component(switch_instance, div, null);
-      append(div, t);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*feature*/
-      2 && switch_value !== (switch_value = /*setting*/
-      ctx2[15].componentData.componentType)) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, div, t);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        const switch_instance_changes = dirty & /*feature*/
-        2 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
-          /*setting*/
-          ctx2[15].componentData.props
-        )]) : {};
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current) return;
-      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      if (switch_instance) destroy_component(switch_instance);
-    }
-  };
-}
-__name(create_each_block_2$2, "create_each_block_2$2");
-function create_if_block_3(ctx) {
-  let div1;
-  let h2;
-  let t1;
-  let div0;
-  let switch_instance;
-  let current;
-  const switch_instance_spread_levels = [
-    /*settingsComponent*/
-    ctx[3].props
-  ];
-  var switch_value = (
-    /*settingsComponent*/
-    ctx[3].componentType
-  );
-  function switch_props(ctx2, dirty) {
-    let switch_instance_props = {};
-    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
-      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
-    }
-    if (dirty !== void 0 && dirty & /*settingsComponent*/
-    8) {
-      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
-        /*settingsComponent*/
-        ctx2[3].props
-      )]));
-    }
-    return { props: switch_instance_props };
-  }
-  __name(switch_props, "switch_props");
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-  }
-  return {
-    c() {
-      div1 = element$1("div");
-      h2 = element$1("h2");
-      h2.textContent = "Feature Management";
-      t1 = space();
-      div0 = element$1("div");
-      if (switch_instance) create_component(switch_instance.$$.fragment);
-      attr(h2, "class", "svelte-1njssi3");
-      attr(div1, "class", "typo-feature-settings-management svelte-1njssi3");
-    },
-    m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, h2);
-      append(div1, t1);
-      append(div1, div0);
-      if (switch_instance) mount_component(switch_instance, div0, null);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*settingsComponent*/
-      8 && switch_value !== (switch_value = /*settingsComponent*/
-      ctx2[3].componentType)) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, div0, null);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        const switch_instance_changes = dirty & /*settingsComponent*/
-        8 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
-          /*settingsComponent*/
-          ctx2[3].props
-        )]) : {};
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current) return;
-      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      if (switch_instance) destroy_component(switch_instance);
-    }
-  };
-}
-__name(create_if_block_3, "create_if_block_3");
-function create_if_block_1$3(ctx) {
-  let div1;
-  let h2;
-  let t1;
-  let p;
-  let t5;
-  let t6;
-  let br2;
-  let t7;
-  let div0;
-  let current;
-  let if_block = !/*supportskeyboardLayout*/
-  ctx[7] && create_if_block_2$1();
-  let each_value_1 = ensure_array_like(
-    /*featureHotkeys*/
-    ctx[5]
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
-  }
-  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-    each_blocks[i] = null;
-  }), "out");
-  return {
-    c() {
-      div1 = element$1("div");
-      h2 = element$1("h2");
-      h2.textContent = "Feature Hotkeys";
-      t1 = space();
-      p = element$1("p");
-      p.innerHTML = `Hotkeys are key combinations to quickly access feature functions. You can disable hotkeys that you don&#39;t need.<br/>
-      To change a hotkey, click in the input field and press the desired key combination. To remove a key from the combination, press it again.<br/>
-      Empty combinations will be disabled automatically.`;
-      t5 = space();
-      if (if_block) if_block.c();
-      t6 = space();
-      br2 = element$1("br");
-      t7 = space();
-      div0 = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      attr(h2, "class", "svelte-1njssi3");
-      attr(div0, "class", "typo-feature-settings-hotkeys-list svelte-1njssi3");
-      attr(div1, "class", "typo-feature-settings-hotkeys svelte-1njssi3");
-    },
-    m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, h2);
-      append(div1, t1);
-      append(div1, p);
-      append(div1, t5);
-      if (if_block) if_block.m(div1, null);
-      append(div1, t6);
-      append(div1, br2);
-      append(div1, t7);
-      append(div1, div0);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div0, null);
-        }
-      }
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*featureHotkeys, settingsFeature*/
-      36) {
-        each_value_1 = ensure_array_like(
-          /*featureHotkeys*/
-          ctx2[5]
-        );
-        let i;
-        for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$5(ctx2, each_value_1, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-            transition_in(each_blocks[i], 1);
-          } else {
-            each_blocks[i] = create_each_block_1$5(child_ctx);
-            each_blocks[i].c();
-            transition_in(each_blocks[i], 1);
-            each_blocks[i].m(div0, null);
-          }
-        }
-        group_outros();
-        for (i = each_value_1.length; i < each_blocks.length; i += 1) {
-          out(i);
-        }
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current) return;
-      for (let i = 0; i < each_value_1.length; i += 1) {
-        transition_in(each_blocks[i]);
-      }
-      current = true;
-    },
-    o(local) {
-      each_blocks = each_blocks.filter(Boolean);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        transition_out(each_blocks[i]);
-      }
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      if (if_block) if_block.d();
-      destroy_each(each_blocks, detaching);
-    }
-  };
-}
-__name(create_if_block_1$3, "create_if_block_1$3");
-function create_if_block_2$1(ctx) {
-  let p;
-  return {
-    c() {
-      p = element$1("p");
-      p.innerHTML = `Your browser does not support localized key names. Hotkeys will use US keyboard layout names.<br/>
-        Switch to any Chrome-based browser to see the real key names.`;
-    },
-    m(target, anchor) {
-      insert(target, p, anchor);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(p);
-      }
-    }
-  };
-}
-__name(create_if_block_2$1, "create_if_block_2$1");
-function create_each_block_1$5(ctx) {
-  let controlssettingshotkey;
-  let current;
-  controlssettingshotkey = new Controls_settings_hotkey({
-    props: {
-      hotkey: (
-        /*hotkey*/
-        ctx[12]
-      ),
-      feature: (
-        /*settingsFeature*/
-        ctx[2]
-      )
-    }
-  });
-  return {
-    c() {
-      create_component(controlssettingshotkey.$$.fragment);
-    },
-    m(target, anchor) {
-      mount_component(controlssettingshotkey, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const controlssettingshotkey_changes = {};
-      if (dirty & /*featureHotkeys*/
-      32) controlssettingshotkey_changes.hotkey = /*hotkey*/
-      ctx2[12];
-      if (dirty & /*settingsFeature*/
-      4) controlssettingshotkey_changes.feature = /*settingsFeature*/
-      ctx2[2];
-      controlssettingshotkey.$set(controlssettingshotkey_changes);
-    },
-    i(local) {
-      if (current) return;
-      transition_in(controlssettingshotkey.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(controlssettingshotkey.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(controlssettingshotkey, detaching);
-    }
-  };
-}
-__name(create_each_block_1$5, "create_each_block_1$5");
-function create_if_block$c(ctx) {
-  let div1;
-  let h2;
-  let t1;
-  let p;
-  let t5;
-  let br2;
-  let t6;
-  let div0;
-  let current;
-  let each_value = ensure_array_like(
-    /*featureCommands*/
-    ctx[6]
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$f(get_each_context$f(ctx, each_value, i));
-  }
-  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-    each_blocks[i] = null;
-  }), "out");
-  return {
-    c() {
-      div1 = element$1("div");
-      h2 = element$1("h2");
-      h2.textContent = "Feature Commands";
-      t1 = space();
-      p = element$1("p");
-      p.innerHTML = `Commands are a quick way to execute actions of a feature from the chat.<br/>
-      Here, you can toggle commands on or off and customize the command name.<br/>
-      To use a command, type &quot;/&quot; and continue with the command name.`;
-      t5 = space();
-      br2 = element$1("br");
-      t6 = space();
-      div0 = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      attr(h2, "class", "svelte-1njssi3");
-      attr(div0, "class", "typo-feature-settings-commands-list svelte-1njssi3");
-      attr(div1, "class", "typo-feature-settings-hotkeys svelte-1njssi3");
-    },
-    m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, h2);
-      append(div1, t1);
-      append(div1, p);
-      append(div1, t5);
-      append(div1, br2);
-      append(div1, t6);
-      append(div1, div0);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div0, null);
-        }
-      }
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*featureCommands, settingsFeature*/
-      68) {
-        each_value = ensure_array_like(
-          /*featureCommands*/
-          ctx2[6]
-        );
-        let i;
-        for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$f(ctx2, each_value, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-            transition_in(each_blocks[i], 1);
-          } else {
-            each_blocks[i] = create_each_block$f(child_ctx);
-            each_blocks[i].c();
-            transition_in(each_blocks[i], 1);
-            each_blocks[i].m(div0, null);
-          }
-        }
-        group_outros();
-        for (i = each_value.length; i < each_blocks.length; i += 1) {
-          out(i);
-        }
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current) return;
-      for (let i = 0; i < each_value.length; i += 1) {
-        transition_in(each_blocks[i]);
-      }
-      current = true;
-    },
-    o(local) {
-      each_blocks = each_blocks.filter(Boolean);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        transition_out(each_blocks[i]);
-      }
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      destroy_each(each_blocks, detaching);
-    }
-  };
-}
-__name(create_if_block$c, "create_if_block$c");
-function create_each_block$f(ctx) {
-  let controlssettingscommand;
-  let current;
-  controlssettingscommand = new Controls_settings_command({
-    props: {
-      command: (
-        /*command*/
-        ctx[9]
-      ),
-      feature: (
-        /*settingsFeature*/
-        ctx[2]
-      )
-    }
-  });
-  return {
-    c() {
-      create_component(controlssettingscommand.$$.fragment);
-    },
-    m(target, anchor) {
-      mount_component(controlssettingscommand, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const controlssettingscommand_changes = {};
-      if (dirty & /*featureCommands*/
-      64) controlssettingscommand_changes.command = /*command*/
-      ctx2[9];
-      if (dirty & /*settingsFeature*/
-      4) controlssettingscommand_changes.feature = /*settingsFeature*/
-      ctx2[2];
-      controlssettingscommand.$set(controlssettingscommand_changes);
-    },
-    i(local) {
-      if (current) return;
-      transition_in(controlssettingscommand.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(controlssettingscommand.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(controlssettingscommand, detaching);
-    }
-  };
-}
-__name(create_each_block$f, "create_each_block$f");
-function create_fragment$p(ctx) {
-  let div2;
-  let div0;
-  let t1;
-  let h1;
-  let t2_value = (
-    /*feature*/
-    ctx[1].name + ""
-  );
-  let t2;
-  let t3;
-  let div1;
-  let t5;
-  let div3;
-  let t6_value = (
-    /*feature*/
-    ctx[1].description + ""
-  );
-  let t6;
-  let t7;
-  let t8;
-  let t9;
-  let t10;
-  let t11;
-  let if_block4_anchor;
-  let current;
-  let mounted;
-  let dispose;
-  let if_block0 = (
-    /*infoComponent*/
-    ctx[4] && create_if_block_5(ctx)
-  );
-  let if_block1 = (
-    /*feature*/
-    ctx[1].settings.length > 0 && create_if_block_4(ctx)
-  );
-  let if_block2 = (
-    /*settingsComponent*/
-    ctx[3] && create_if_block_3(ctx)
-  );
-  let if_block3 = (
-    /*featureHotkeys*/
-    ctx[5].length > 0 && create_if_block_1$3(ctx)
-  );
-  let if_block4 = (
-    /*featureCommands*/
-    ctx[6].length > 0 && create_if_block$c(ctx)
-  );
-  return {
-    c() {
-      div2 = element$1("div");
-      div0 = element$1("div");
-      div0.textContent = "Feature Details";
-      t1 = space();
-      h1 = element$1("h1");
-      t2 = text(t2_value);
-      t3 = space();
-      div1 = element$1("div");
-      div1.textContent = "Back to Features ➜";
-      t5 = space();
-      div3 = element$1("div");
-      t6 = text(t6_value);
-      t7 = space();
-      if (if_block0) if_block0.c();
-      t8 = space();
-      if (if_block1) if_block1.c();
-      t9 = space();
-      if (if_block2) if_block2.c();
-      t10 = space();
-      if (if_block3) if_block3.c();
-      t11 = space();
-      if (if_block4) if_block4.c();
-      if_block4_anchor = empty();
-      attr(div0, "class", "typo-feature-settings-hero svelte-1njssi3");
-      attr(h1, "class", "svelte-1njssi3");
-      attr(div1, "class", "typo-feature-settings-back svelte-1njssi3");
-      attr(div2, "class", "typo-feature-settings-title svelte-1njssi3");
-      attr(div3, "class", "typo-feature-settings-summary svelte-1njssi3");
-    },
-    m(target, anchor) {
-      insert(target, div2, anchor);
-      append(div2, div0);
-      append(div2, t1);
-      append(div2, h1);
-      append(h1, t2);
-      append(div2, t3);
-      append(div2, div1);
-      insert(target, t5, anchor);
-      insert(target, div3, anchor);
-      append(div3, t6);
-      insert(target, t7, anchor);
-      if (if_block0) if_block0.m(target, anchor);
-      insert(target, t8, anchor);
-      if (if_block1) if_block1.m(target, anchor);
-      insert(target, t9, anchor);
-      if (if_block2) if_block2.m(target, anchor);
-      insert(target, t10, anchor);
-      if (if_block3) if_block3.m(target, anchor);
-      insert(target, t11, anchor);
-      if (if_block4) if_block4.m(target, anchor);
-      insert(target, if_block4_anchor, anchor);
-      current = true;
-      if (!mounted) {
-        dispose = listen(
-          div1,
-          "click",
-          /*click_handler*/
-          ctx[8]
-        );
-        mounted = true;
-      }
-    },
-    p(ctx2, [dirty]) {
-      if ((!current || dirty & /*feature*/
-      2) && t2_value !== (t2_value = /*feature*/
-      ctx2[1].name + "")) set_data(t2, t2_value);
-      if ((!current || dirty & /*feature*/
-      2) && t6_value !== (t6_value = /*feature*/
-      ctx2[1].description + "")) set_data(t6, t6_value);
-      if (
-        /*infoComponent*/
-        ctx2[4]
-      ) {
-        if (if_block0) {
-          if_block0.p(ctx2, dirty);
-          if (dirty & /*infoComponent*/
-          16) {
-            transition_in(if_block0, 1);
-          }
-        } else {
-          if_block0 = create_if_block_5(ctx2);
-          if_block0.c();
-          transition_in(if_block0, 1);
-          if_block0.m(t8.parentNode, t8);
-        }
-      } else if (if_block0) {
-        group_outros();
-        transition_out(if_block0, 1, 1, () => {
-          if_block0 = null;
-        });
-        check_outros();
-      }
-      if (
-        /*feature*/
-        ctx2[1].settings.length > 0
-      ) {
-        if (if_block1) {
-          if_block1.p(ctx2, dirty);
-          if (dirty & /*feature*/
-          2) {
-            transition_in(if_block1, 1);
-          }
-        } else {
-          if_block1 = create_if_block_4(ctx2);
-          if_block1.c();
-          transition_in(if_block1, 1);
-          if_block1.m(t9.parentNode, t9);
-        }
-      } else if (if_block1) {
-        group_outros();
-        transition_out(if_block1, 1, 1, () => {
-          if_block1 = null;
-        });
-        check_outros();
-      }
-      if (
-        /*settingsComponent*/
-        ctx2[3]
-      ) {
-        if (if_block2) {
-          if_block2.p(ctx2, dirty);
-          if (dirty & /*settingsComponent*/
-          8) {
-            transition_in(if_block2, 1);
-          }
-        } else {
-          if_block2 = create_if_block_3(ctx2);
-          if_block2.c();
-          transition_in(if_block2, 1);
-          if_block2.m(t10.parentNode, t10);
-        }
-      } else if (if_block2) {
-        group_outros();
-        transition_out(if_block2, 1, 1, () => {
-          if_block2 = null;
-        });
-        check_outros();
-      }
-      if (
-        /*featureHotkeys*/
-        ctx2[5].length > 0
-      ) {
-        if (if_block3) {
-          if_block3.p(ctx2, dirty);
-          if (dirty & /*featureHotkeys*/
-          32) {
-            transition_in(if_block3, 1);
-          }
-        } else {
-          if_block3 = create_if_block_1$3(ctx2);
-          if_block3.c();
-          transition_in(if_block3, 1);
-          if_block3.m(t11.parentNode, t11);
-        }
-      } else if (if_block3) {
-        group_outros();
-        transition_out(if_block3, 1, 1, () => {
-          if_block3 = null;
-        });
-        check_outros();
-      }
-      if (
-        /*featureCommands*/
-        ctx2[6].length > 0
-      ) {
-        if (if_block4) {
-          if_block4.p(ctx2, dirty);
-          if (dirty & /*featureCommands*/
-          64) {
-            transition_in(if_block4, 1);
-          }
-        } else {
-          if_block4 = create_if_block$c(ctx2);
-          if_block4.c();
-          transition_in(if_block4, 1);
-          if_block4.m(if_block4_anchor.parentNode, if_block4_anchor);
-        }
-      } else if (if_block4) {
-        group_outros();
-        transition_out(if_block4, 1, 1, () => {
-          if_block4 = null;
-        });
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current) return;
-      transition_in(if_block0);
-      transition_in(if_block1);
-      transition_in(if_block2);
-      transition_in(if_block3);
-      transition_in(if_block4);
-      current = true;
-    },
-    o(local) {
-      transition_out(if_block0);
-      transition_out(if_block1);
-      transition_out(if_block2);
-      transition_out(if_block3);
-      transition_out(if_block4);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div2);
-        detach(t5);
-        detach(div3);
-        detach(t7);
-        detach(t8);
-        detach(t9);
-        detach(t10);
-        detach(t11);
-        detach(if_block4_anchor);
-      }
-      if (if_block0) if_block0.d(detaching);
-      if (if_block1) if_block1.d(detaching);
-      if (if_block2) if_block2.d(detaching);
-      if (if_block3) if_block3.d(detaching);
-      if (if_block4) if_block4.d(detaching);
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_fragment$p, "create_fragment$p");
-function instance$o($$self, $$props, $$invalidate) {
-  var _a2;
-  let { detailsClosed } = $$props;
-  let { feature } = $$props;
-  let { settingsFeature } = $$props;
-  settingsFeature.completeOnboardingTask();
-  let settingsComponent;
-  let infoComponent;
-  let featureHotkeys = [];
-  let featureCommands = [];
-  const supportskeyboardLayout = ((_a2 = navigator == null ? void 0 : navigator.keyboard) == null ? void 0 : _a2.getLayoutMap) !== void 0;
-  const click_handler2 = /* @__PURE__ */ __name(() => detailsClosed(), "click_handler");
-  $$self.$$set = ($$props2) => {
-    if ("detailsClosed" in $$props2) $$invalidate(0, detailsClosed = $$props2.detailsClosed);
-    if ("feature" in $$props2) $$invalidate(1, feature = $$props2.feature);
-    if ("settingsFeature" in $$props2) $$invalidate(2, settingsFeature = $$props2.settingsFeature);
-  };
-  $$self.$$.update = () => {
-    if ($$self.$$.dirty & /*feature*/
-    2) {
-      {
-        $$invalidate(5, featureHotkeys = [...feature.hotkeys]);
-        $$invalidate(6, featureCommands = [...feature.commands]);
-        $$invalidate(3, settingsComponent = feature.featureManagementComponent);
-        $$invalidate(4, infoComponent = feature.featureInfoComponent);
-      }
-    }
-  };
-  return [
-    detailsClosed,
-    feature,
-    settingsFeature,
-    settingsComponent,
-    infoComponent,
-    featureHotkeys,
-    featureCommands,
-    supportskeyboardLayout,
-    click_handler2
-  ];
-}
-__name(instance$o, "instance$o");
-const _Controls_settings_details = class _Controls_settings_details extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$o, create_fragment$p, safe_not_equal, {
-      detailsClosed: 0,
-      feature: 1,
-      settingsFeature: 2
-    });
-  }
-};
-__name(_Controls_settings_details, "Controls_settings_details");
-let Controls_settings_details = _Controls_settings_details;
-function create_else_block$5(ctx) {
-  let div;
-  let t_value = (
-    /*feature*/
-    ctx[0].description + ""
-  );
-  let t;
-  return {
-    c() {
-      div = element$1("div");
-      t = text(t_value);
-      attr(div, "class", "description svelte-xje42n");
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      append(div, t);
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*feature*/
-      1 && t_value !== (t_value = /*feature*/
-      ctx2[0].description + "")) set_data(t, t_value);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-    }
-  };
-}
-__name(create_else_block$5, "create_else_block$5");
-function create_if_block$b(ctx) {
-  let div;
-  let img;
-  let img_src_value;
-  let img_alt_value;
-  let t0;
-  let span;
-  let t1_value = (
-    /*feature*/
-    ctx[0].description + ""
-  );
-  let t1;
-  let mounted;
-  let dispose;
-  return {
-    c() {
-      div = element$1("div");
-      img = element$1("img");
-      t0 = space();
-      span = element$1("span");
-      t1 = text(t1_value);
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      attr(img, "alt", img_alt_value = /*$featureState*/
-      ctx[4] ? "enabled" : "disabled");
-      set_style(img, "content", "var(--file-img-wrench-gif)");
-      attr(img, "class", "svelte-xje42n");
-      attr(span, "class", "svelte-xje42n");
-      attr(div, "class", "description svelte-xje42n");
-      attr(div, "role", "button");
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      append(div, img);
-      append(div, t0);
-      append(div, span);
-      append(span, t1);
-      if (!mounted) {
-        dispose = listen(
-          div,
-          "click",
-          /*click_handler_1*/
-          ctx[8]
-        );
-        mounted = true;
-      }
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*$featureState*/
-      16 && img_alt_value !== (img_alt_value = /*$featureState*/
-      ctx2[4] ? "enabled" : "disabled")) {
-        attr(img, "alt", img_alt_value);
-      }
-      if (dirty & /*feature*/
-      1 && t1_value !== (t1_value = /*feature*/
-      ctx2[0].description + "")) set_data(t1, t1_value);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_if_block$b, "create_if_block$b");
-function create_fragment$o(ctx) {
-  let div3;
-  let div0;
-  let img;
-  let img_src_value;
-  let img_alt_value;
-  let t0;
-  let span0;
-  let t1_value = (
-    /*feature*/
-    ctx[0].name + ""
-  );
-  let t1;
-  let t2;
-  let span1;
-  let t3_value = (
-    /*$featureState*/
-    ctx[4] ? "enabled" : "disabled"
-  );
-  let t3;
-  let t4;
-  let t5;
-  let div1;
-  let t6_value = (
-    /*feature*/
-    ctx[0].tags.map(func$1).join(" ") + ""
-  );
-  let t6;
-  let t7;
-  let div2;
-  let t8;
-  let t9_value = (
-    /*feature*/
-    ctx[0].featureId + ""
-  );
-  let t9;
-  let mounted;
-  let dispose;
-  function select_block_type(ctx2, dirty) {
-    if (
-      /*feature*/
-      ctx2[0].hasDetailComponents
-    ) return create_if_block$b;
-    return create_else_block$5;
-  }
-  __name(select_block_type, "select_block_type");
-  let current_block_type = select_block_type(ctx);
-  let if_block = current_block_type(ctx);
-  return {
-    c() {
-      div3 = element$1("div");
-      div0 = element$1("div");
-      img = element$1("img");
-      t0 = space();
-      span0 = element$1("span");
-      t1 = text(t1_value);
-      t2 = space();
-      span1 = element$1("span");
-      t3 = text(t3_value);
-      t4 = space();
-      if_block.c();
-      t5 = space();
-      div1 = element$1("div");
-      t6 = text(t6_value);
-      t7 = space();
-      div2 = element$1("div");
-      t8 = text("#");
-      t9 = text(t9_value);
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      attr(img, "alt", img_alt_value = /*$featureState*/
-      ctx[4] ? "enabled" : "disabled");
-      set_style(img, "content", "var(--" + /*$featureState*/
-      (ctx[4] ? "file-img-enabled-gif" : "file-img-disabled-gif") + ")");
-      attr(img, "class", "svelte-xje42n");
-      attr(span0, "class", "svelte-xje42n");
-      attr(span1, "class", "svelte-xje42n");
-      attr(div0, "class", "name-toggle svelte-xje42n");
-      attr(div0, "role", "button");
-      attr(div0, "tabindex", "0");
-      toggle_class(div0, "locked", !/*feature*/
-      ctx[0].toggleEnabled);
-      attr(div1, "class", "feature-tags svelte-xje42n");
-      attr(div2, "class", "feature-id svelte-xje42n");
-      attr(div3, "class", "typo-feature-item svelte-xje42n");
-      toggle_class(
-        div3,
-        "devMode",
-        /*devmodeEnabled*/
-        ctx[1]
-      );
-      toggle_class(
-        div3,
-        "hidden",
-        /*feature*/
-        ctx[0].developerFeature && !/*devmodeEnabled*/
-        ctx[1]
-      );
-    },
-    m(target, anchor) {
-      insert(target, div3, anchor);
-      append(div3, div0);
-      append(div0, img);
-      append(div0, t0);
-      append(div0, span0);
-      append(span0, t1);
-      append(div0, t2);
-      append(div0, span1);
-      append(span1, t3);
-      append(div3, t4);
-      if_block.m(div3, null);
-      append(div3, t5);
-      append(div3, div1);
-      append(div1, t6);
-      append(div3, t7);
-      append(div3, div2);
-      append(div2, t8);
-      append(div2, t9);
-      if (!mounted) {
-        dispose = [
-          listen(
-            div0,
-            "click",
-            /*click_handler*/
-            ctx[6]
-          ),
-          listen(
-            div0,
-            "keypress",
-            /*keypress_handler*/
-            ctx[7]
-          )
-        ];
-        mounted = true;
-      }
-    },
-    p(ctx2, [dirty]) {
-      if (dirty & /*$featureState*/
-      16 && img_alt_value !== (img_alt_value = /*$featureState*/
-      ctx2[4] ? "enabled" : "disabled")) {
-        attr(img, "alt", img_alt_value);
-      }
-      if (dirty & /*$featureState*/
-      16) {
-        set_style(img, "content", "var(--" + /*$featureState*/
-        (ctx2[4] ? "file-img-enabled-gif" : "file-img-disabled-gif") + ")");
-      }
-      if (dirty & /*feature*/
-      1 && t1_value !== (t1_value = /*feature*/
-      ctx2[0].name + "")) set_data(t1, t1_value);
-      if (dirty & /*$featureState*/
-      16 && t3_value !== (t3_value = /*$featureState*/
-      ctx2[4] ? "enabled" : "disabled")) set_data(t3, t3_value);
-      if (dirty & /*feature*/
-      1) {
-        toggle_class(div0, "locked", !/*feature*/
-        ctx2[0].toggleEnabled);
-      }
-      if (current_block_type === (current_block_type = select_block_type(ctx2)) && if_block) {
-        if_block.p(ctx2, dirty);
-      } else {
-        if_block.d(1);
-        if_block = current_block_type(ctx2);
-        if (if_block) {
-          if_block.c();
-          if_block.m(div3, t5);
-        }
-      }
-      if (dirty & /*feature*/
-      1 && t6_value !== (t6_value = /*feature*/
-      ctx2[0].tags.map(func$1).join(" ") + "")) set_data(t6, t6_value);
-      if (dirty & /*feature*/
-      1 && t9_value !== (t9_value = /*feature*/
-      ctx2[0].featureId + "")) set_data(t9, t9_value);
-      if (dirty & /*devmodeEnabled*/
-      2) {
-        toggle_class(
-          div3,
-          "devMode",
-          /*devmodeEnabled*/
-          ctx2[1]
-        );
-      }
-      if (dirty & /*feature, devmodeEnabled*/
-      3) {
-        toggle_class(
-          div3,
-          "hidden",
-          /*feature*/
-          ctx2[0].developerFeature && !/*devmodeEnabled*/
-          ctx2[1]
-        );
-      }
-    },
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(div3);
-      }
-      if_block.d();
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-__name(create_fragment$o, "create_fragment$o");
-const func$1 = /* @__PURE__ */ __name((t) => "#" + t, "func$1");
-function instance$n($$self, $$props, $$invalidate) {
-  let $featureState, $$unsubscribe_featureState = noop$1, $$subscribe_featureState = /* @__PURE__ */ __name(() => ($$unsubscribe_featureState(), $$unsubscribe_featureState = subscribe(featureState, ($$value) => $$invalidate(4, $featureState = $$value)), featureState), "$$subscribe_featureState");
-  $$self.$$.on_destroy.push(() => $$unsubscribe_featureState());
-  let { devmodeEnabled } = $$props;
-  let { feature } = $$props;
-  let { featureSettingsClicked } = $$props;
-  const toggleFeature = /* @__PURE__ */ __name(async (feature2) => {
-    if (feature2.toggleEnabled === false) return feature2;
-    const state = await firstValueFrom(feature2.activated$);
-    if (!state) {
-      await feature2.activate();
-    } else {
-      await feature2.destroy();
-    }
-    return feature2;
-  }, "toggleFeature");
-  let featureState;
-  const click_handler2 = /* @__PURE__ */ __name(async () => $$invalidate(0, feature = await toggleFeature(feature)), "click_handler");
-  const keypress_handler = /* @__PURE__ */ __name(async (key2) => {
-    if (key2.key === "Enter") $$invalidate(0, feature = await toggleFeature(feature));
-  }, "keypress_handler");
-  const click_handler_1 = /* @__PURE__ */ __name(() => featureSettingsClicked(), "click_handler_1");
-  $$self.$$set = ($$props2) => {
-    if ("devmodeEnabled" in $$props2) $$invalidate(1, devmodeEnabled = $$props2.devmodeEnabled);
-    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-    if ("featureSettingsClicked" in $$props2) $$invalidate(2, featureSettingsClicked = $$props2.featureSettingsClicked);
-  };
-  $$self.$$.update = () => {
-    if ($$self.$$.dirty & /*feature*/
-    1) {
-      {
-        $$subscribe_featureState($$invalidate(3, featureState = fromObservable(feature.activated$, false)));
-      }
-    }
-  };
-  return [
-    feature,
-    devmodeEnabled,
-    featureSettingsClicked,
-    featureState,
-    $featureState,
-    toggleFeature,
-    click_handler2,
-    keypress_handler,
-    click_handler_1
-  ];
-}
-__name(instance$n, "instance$n");
-const _Controls_settings_feature = class _Controls_settings_feature extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$n, create_fragment$o, safe_not_equal, {
-      devmodeEnabled: 1,
-      feature: 0,
-      featureSettingsClicked: 2
-    });
-  }
-};
-__name(_Controls_settings_feature, "Controls_settings_feature");
-let Controls_settings_feature = _Controls_settings_feature;
-function get_each_context$e(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[11] = list[i];
-  return child_ctx;
-}
-__name(get_each_context$e, "get_each_context$e");
-function get_each_context_1$4(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[14] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_1$4, "get_each_context_1$4");
-function create_each_block_1$4(ctx) {
-  let span;
-  let mounted;
-  let dispose;
-  function click_handler2() {
-    return (
-      /*click_handler*/
-      ctx[6](
-        /*tag*/
-        ctx[14]
-      )
-    );
-  }
-  __name(click_handler2, "click_handler");
-  return {
-    c() {
-      span = element$1("span");
-      span.textContent = `#${/*tag*/
-      ctx[14]}`;
-      attr(span, "class", "filter svelte-1ly2c3r");
-      toggle_class(
-        span,
-        "selected",
-        /*filterTags*/
-        ctx[2].includes(
-          /*tag*/
-          ctx[14]
-        )
-      );
-    },
-    m(target, anchor) {
-      insert(target, span, anchor);
-      if (!mounted) {
-        dispose = listen(span, "click", click_handler2);
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if (dirty & /*filterTags*/
-      4) {
-        toggle_class(
-          span,
-          "selected",
-          /*filterTags*/
-          ctx[2].includes(
-            /*tag*/
-            ctx[14]
-          )
-        );
-      }
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(span);
-      }
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_each_block_1$4, "create_each_block_1$4");
-function create_each_block$e(ctx) {
-  let controlssettingsfeatureitem;
-  let current;
-  function func2() {
-    return (
-      /*func*/
-      ctx[8](
-        /*feat*/
-        ctx[11]
-      )
-    );
-  }
-  __name(func2, "func");
-  controlssettingsfeatureitem = new Controls_settings_feature({
-    props: {
-      feature: (
-        /*feat*/
-        ctx[11]
-      ),
-      devmodeEnabled: (
-        /*$devMode*/
-        ctx[4]
-      ),
-      featureSettingsClicked: func2
-    }
-  });
-  return {
-    c() {
-      create_component(controlssettingsfeatureitem.$$.fragment);
-    },
-    m(target, anchor) {
-      mount_component(controlssettingsfeatureitem, target, anchor);
-      current = true;
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      const controlssettingsfeatureitem_changes = {};
-      if (dirty & /*feature, filterTags, filterContent*/
-      13) controlssettingsfeatureitem_changes.feature = /*feat*/
-      ctx[11];
-      if (dirty & /*$devMode*/
-      16) controlssettingsfeatureitem_changes.devmodeEnabled = /*$devMode*/
-      ctx[4];
-      if (dirty & /*selectedDetailsFeature, feature, filterTags, filterContent*/
-      15) controlssettingsfeatureitem_changes.featureSettingsClicked = func2;
-      controlssettingsfeatureitem.$set(controlssettingsfeatureitem_changes);
-    },
-    i(local) {
-      if (current) return;
-      transition_in(controlssettingsfeatureitem.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(controlssettingsfeatureitem.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(controlssettingsfeatureitem, detaching);
-    }
-  };
-}
-__name(create_each_block$e, "create_each_block$e");
-function create_if_block$a(ctx) {
-  let controlssettingsdetails;
-  let current;
-  controlssettingsdetails = new Controls_settings_details({
-    props: {
-      feature: (
-        /*selectedDetailsFeature*/
-        ctx[1]
-      ),
-      detailsClosed: (
-        /*func_1*/
-        ctx[9]
-      ),
-      settingsFeature: (
-        /*feature*/
-        ctx[0]
-      )
-    }
-  });
-  return {
-    c() {
-      create_component(controlssettingsdetails.$$.fragment);
-    },
-    m(target, anchor) {
-      mount_component(controlssettingsdetails, target, anchor);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      const controlssettingsdetails_changes = {};
-      if (dirty & /*selectedDetailsFeature*/
-      2) controlssettingsdetails_changes.feature = /*selectedDetailsFeature*/
-      ctx2[1];
-      if (dirty & /*selectedDetailsFeature*/
-      2) controlssettingsdetails_changes.detailsClosed = /*func_1*/
-      ctx2[9];
-      if (dirty & /*feature*/
-      1) controlssettingsdetails_changes.settingsFeature = /*feature*/
-      ctx2[0];
-      controlssettingsdetails.$set(controlssettingsdetails_changes);
-    },
-    i(local) {
-      if (current) return;
-      transition_in(controlssettingsdetails.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      transition_out(controlssettingsdetails.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      destroy_component(controlssettingsdetails, detaching);
-    }
-  };
-}
-__name(create_if_block$a, "create_if_block$a");
-function create_fragment$n(ctx) {
-  let div6;
-  let div4;
-  let div0;
-  let t3;
-  let div2;
-  let h30;
-  let t5;
-  let div1;
-  let t6;
-  let h31;
-  let t8;
-  let input;
-  let t9;
-  let div3;
-  let t10;
-  let div5;
-  let current;
-  let mounted;
-  let dispose;
-  let each_value_1 = ensure_array_like(featureTags);
-  let each_blocks_1 = [];
-  for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$4(get_each_context_1$4(ctx, each_value_1, i));
-  }
-  let each_value = ensure_array_like(
-    /*feature*/
-    ctx[0].searchFeatures(
-      /*feature*/
-      ctx[0].features,
-      /*filterTags*/
-      ctx[2],
-      /*filterContent*/
-      ctx[3]
-    )
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$e(get_each_context$e(ctx, each_value, i));
-  }
-  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-    each_blocks[i] = null;
-  }), "out");
-  let if_block = (
-    /*selectedDetailsFeature*/
-    ctx[1] && create_if_block$a(ctx)
-  );
-  return {
-    c() {
-      div6 = element$1("div");
-      div4 = element$1("div");
-      div0 = element$1("div");
-      div0.innerHTML = `All features of skribbltypo can be managed here.<br/>
-      You can click on a feature name to toggle it. To open feature settings, click the settings icon.<br/>
-      If you are unsure how a feature works, you can have a look at the typo website or join the typo discord server and get help there!`;
-      t3 = space();
-      div2 = element$1("div");
-      h30 = element$1("h3");
-      h30.textContent = "Filter by tags:";
-      t5 = space();
-      div1 = element$1("div");
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        each_blocks_1[i].c();
-      }
-      t6 = space();
-      h31 = element$1("h3");
-      h31.textContent = "Filter by text:";
-      t8 = space();
-      input = element$1("input");
-      t9 = space();
-      div3 = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      t10 = space();
-      div5 = element$1("div");
-      if (if_block) if_block.c();
-      attr(div0, "class", "typo-features-info svelte-1ly2c3r");
-      attr(div1, "class", "filters svelte-1ly2c3r");
-      attr(input, "type", "text");
-      attr(input, "placeholder", "Search for feature/hotkey/command/setting name or description");
-      attr(div2, "class", "typo-features-filter svelte-1ly2c3r");
-      attr(div3, "class", "typo-features-list color-scrollbar svelte-1ly2c3r");
-      attr(div4, "class", "typo-features svelte-1ly2c3r");
-      toggle_class(
-        div4,
-        "settingsVisible",
-        /*selectedDetailsFeature*/
-        ctx[1] !== void 0
-      );
-      attr(div5, "class", "typo-feature-settings color-scrollbar svelte-1ly2c3r");
-      toggle_class(
-        div5,
-        "settingsVisible",
-        /*selectedDetailsFeature*/
-        ctx[1] !== void 0
-      );
-      attr(div6, "class", "typo-features-container svelte-1ly2c3r");
-    },
-    m(target, anchor) {
-      insert(target, div6, anchor);
-      append(div6, div4);
-      append(div4, div0);
-      append(div4, t3);
-      append(div4, div2);
-      append(div2, h30);
-      append(div2, t5);
-      append(div2, div1);
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        if (each_blocks_1[i]) {
-          each_blocks_1[i].m(div1, null);
-        }
-      }
-      append(div2, t6);
-      append(div2, h31);
-      append(div2, t8);
-      append(div2, input);
-      set_input_value(
-        input,
-        /*filterContent*/
-        ctx[3]
-      );
-      append(div4, t9);
-      append(div4, div3);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div3, null);
-        }
-      }
-      append(div6, t10);
-      append(div6, div5);
-      if (if_block) if_block.m(div5, null);
-      current = true;
-      if (!mounted) {
-        dispose = listen(
-          input,
-          "input",
-          /*input_input_handler*/
-          ctx[7]
-        );
-        mounted = true;
-      }
-    },
-    p(ctx2, [dirty]) {
-      if (dirty & /*filterTags*/
-      4) {
-        each_value_1 = ensure_array_like(featureTags);
-        let i;
-        for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$4(ctx2, each_value_1, i);
-          if (each_blocks_1[i]) {
-            each_blocks_1[i].p(child_ctx, dirty);
-          } else {
-            each_blocks_1[i] = create_each_block_1$4(child_ctx);
-            each_blocks_1[i].c();
-            each_blocks_1[i].m(div1, null);
-          }
-        }
-        for (; i < each_blocks_1.length; i += 1) {
-          each_blocks_1[i].d(1);
-        }
-        each_blocks_1.length = each_value_1.length;
-      }
-      if (dirty & /*filterContent*/
-      8 && input.value !== /*filterContent*/
-      ctx2[3]) {
-        set_input_value(
-          input,
-          /*filterContent*/
-          ctx2[3]
-        );
-      }
-      if (dirty & /*feature, filterTags, filterContent, $devMode, selectedDetailsFeature*/
-      31) {
-        each_value = ensure_array_like(
-          /*feature*/
-          ctx2[0].searchFeatures(
-            /*feature*/
-            ctx2[0].features,
-            /*filterTags*/
-            ctx2[2],
-            /*filterContent*/
-            ctx2[3]
-          )
-        );
-        let i;
-        for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$e(ctx2, each_value, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-            transition_in(each_blocks[i], 1);
-          } else {
-            each_blocks[i] = create_each_block$e(child_ctx);
-            each_blocks[i].c();
-            transition_in(each_blocks[i], 1);
-            each_blocks[i].m(div3, null);
-          }
-        }
-        group_outros();
-        for (i = each_value.length; i < each_blocks.length; i += 1) {
-          out(i);
-        }
-        check_outros();
-      }
-      if (!current || dirty & /*selectedDetailsFeature, undefined*/
-      2) {
-        toggle_class(
-          div4,
-          "settingsVisible",
-          /*selectedDetailsFeature*/
-          ctx2[1] !== void 0
-        );
-      }
-      if (
-        /*selectedDetailsFeature*/
-        ctx2[1]
-      ) {
-        if (if_block) {
-          if_block.p(ctx2, dirty);
-          if (dirty & /*selectedDetailsFeature*/
-          2) {
-            transition_in(if_block, 1);
-          }
-        } else {
-          if_block = create_if_block$a(ctx2);
-          if_block.c();
-          transition_in(if_block, 1);
-          if_block.m(div5, null);
-        }
-      } else if (if_block) {
-        group_outros();
-        transition_out(if_block, 1, 1, () => {
-          if_block = null;
-        });
-        check_outros();
-      }
-      if (!current || dirty & /*selectedDetailsFeature, undefined*/
-      2) {
-        toggle_class(
-          div5,
-          "settingsVisible",
-          /*selectedDetailsFeature*/
-          ctx2[1] !== void 0
-        );
-      }
-    },
-    i(local) {
-      if (current) return;
-      for (let i = 0; i < each_value.length; i += 1) {
-        transition_in(each_blocks[i]);
-      }
-      transition_in(if_block);
-      current = true;
-    },
-    o(local) {
-      each_blocks = each_blocks.filter(Boolean);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        transition_out(each_blocks[i]);
-      }
-      transition_out(if_block);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div6);
-      }
-      destroy_each(each_blocks_1, detaching);
-      destroy_each(each_blocks, detaching);
-      if (if_block) if_block.d();
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_fragment$n, "create_fragment$n");
-function instance$m($$self, $$props, $$invalidate) {
-  let $devMode;
-  let { feature } = $$props;
-  const devMode = feature.devModeStore;
-  component_subscribe($$self, devMode, (value) => $$invalidate(4, $devMode = value));
-  let selectedDetailsFeature;
-  let filterTags = [];
-  let filterContent = "";
-  const click_handler2 = /* @__PURE__ */ __name((tag) => {
-    if (filterTags.includes(tag)) {
-      $$invalidate(2, filterTags = filterTags.filter((t) => t !== tag));
-    } else {
-      $$invalidate(2, filterTags = [...filterTags, tag]);
-    }
-  }, "click_handler");
-  function input_input_handler() {
-    filterContent = this.value;
-    $$invalidate(3, filterContent);
-  }
-  __name(input_input_handler, "input_input_handler");
-  const func2 = /* @__PURE__ */ __name((feat) => $$invalidate(1, selectedDetailsFeature = feat), "func");
-  const func_12 = /* @__PURE__ */ __name(() => $$invalidate(1, selectedDetailsFeature = void 0), "func_1");
-  $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-  };
-  return [
-    feature,
-    selectedDetailsFeature,
-    filterTags,
-    filterContent,
-    $devMode,
-    devMode,
-    click_handler2,
-    input_input_handler,
-    func2,
-    func_12
-  ];
-}
-__name(instance$m, "instance$m");
-const _Controls_settings = class _Controls_settings extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$m, create_fragment$n, safe_not_equal, { feature: 0 });
-  }
-};
-__name(_Controls_settings, "Controls_settings");
-let Controls_settings = _Controls_settings;
-var __defProp$t = Object.defineProperty;
-var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$t(target, key2, result);
-  return result;
-}, "__decorateClass$t");
-const _ControlsSettingsFeature = class _ControlsSettingsFeature extends TypoFeature {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_elementsSetup");
-    __publicField(this, "_modalService");
-    __publicField(this, "_toastService");
-    __publicField(this, "_featuresService");
-    __publicField(this, "_settingsService");
-    __publicField(this, "name", "Typo Settings");
-    __publicField(this, "description", "Customize Typo to your liking");
-    __publicField(this, "tags", [
-      FeatureTag.INFORMATION,
-      FeatureTag.DEVELOPMENT
-    ]);
-    __publicField(this, "toggleEnabled", false);
-    __publicField(this, "featureId", 1);
-    __publicField(this, "_onboardingTask", this.useOnboardingTask({
-      key: "feature_opened",
-      name: "Open settings of a feature",
-      description: "Click the wrench icon and open the settings of a typo feature to adjust it to your liking.",
-      start: /* @__PURE__ */ __name(() => this.openSettingsPopup(), "start"),
-      priority: 2
-    }));
-    __publicField(this, "_iconComponent");
-    __publicField(this, "_iconClickSubscription");
-  }
-  async onActivate() {
-    const elements2 = await this._elementsSetup.complete();
-    this._iconComponent = new Icon_button({
-      target: elements2.controls,
-      props: {
-        hoverMove: false,
-        size: "48px",
-        icon: "file-img-wrench-gif",
-        name: "Typo Features",
-        order: 1,
-        tooltipAction: this.createTooltip
-      }
-    });
-    this._iconClickSubscription = this._iconComponent.click$.subscribe(() => {
-      this.openSettingsPopup();
-    });
-  }
-  openSettingsPopup() {
-    const settingsComponent = {
-      componentType: Controls_settings,
-      props: {
-        feature: this
-      }
-    };
-    this._modalService.showModal(
-      settingsComponent.componentType,
-      settingsComponent.props,
-      "Typo Features"
-    );
-  }
-  postConstruct() {
-    this._settingsService.globalHotkeysList.forEach((hotkey) => this.useHotkey(hotkey));
-    this.useSetting(this._settingsService.settings.devMode);
-    this.useSetting(this._settingsService.settings.controlsPosition);
-    this.useSetting(this._settingsService.settings.controlsDirection);
-    this.useSetting(this._settingsService.settings.showLandingOutfit);
-  }
-  onDestroy() {
-    var _a2, _b2;
-    (_a2 = this._iconClickSubscription) == null ? void 0 : _a2.unsubscribe();
-    (_b2 = this._iconComponent) == null ? void 0 : _b2.$destroy();
-  }
-  get hotkeys() {
-    return this._settingsService.globalHotkeysList;
-  }
-  get features() {
-    return this._featuresService.features;
-  }
-  get devModeStore() {
-    return fromObservable(this._settingsService.settings.devMode.changes$, false);
-  }
-  /**
-   * Set the hotkey combo for a hotkey action
-   * @param hotkey
-   * @param value
-   */
-  async setHotkeyCombo(hotkey, value) {
-    const toast = await this._toastService.showLoadingToast(
-      `Updating hotkey ${hotkey.name} to ${value.join(" + ")}`
-    );
-    try {
-      await this._hotkeysService.setHotkeyCombo(hotkey, value);
-    } catch {
-      toast.reject();
-      return;
-    }
-    toast.resolve();
-  }
-  /**
-   * Resets the hotkey combo to the default value
-   * @param hotkey
-   */
-  async resetHotkeyCombo(hotkey) {
-    var _a2;
-    const toast = await this._toastService.showLoadingToast(
-      `Resetting hotkey ${hotkey.name} to default ${((_a2 = hotkey.defaultCombo) == null ? void 0 : _a2.join(" + ")) ?? "(disabled)"}`
-    );
-    let newCombo;
-    try {
-      newCombo = await this._hotkeysService.resetHotkeyCombo(hotkey);
-    } catch {
-      toast.reject();
-      return;
-    }
-    toast.resolve();
-    return newCombo;
-  }
-  featureImportance(tags) {
-    if (tags.includes(FeatureTag.DRAWING)) return 7;
-    if (tags.includes(FeatureTag.GAMEPLAY)) return 6;
-    if (tags.includes(FeatureTag.INTERFACE)) return 6;
-    if (tags.includes(FeatureTag.SOCIAL)) return 4;
-    if (tags.includes(FeatureTag.PALANTIR)) return 3;
-    if (tags.includes(FeatureTag.INFORMATION)) return 2;
-    if (tags.includes(FeatureTag.DEVELOPMENT)) return 1;
-    return 0;
-  }
-  featureContainsText(feature, content) {
-    const search = content.toLowerCase();
-    return feature.name.toLowerCase().includes(search) || feature.description.toLowerCase().includes(search) || feature.settings.some((s) => {
-      var _a2, _b2;
-      return ((_a2 = s.name) == null ? void 0 : _a2.toLowerCase().includes(search)) || ((_b2 = s.description) == null ? void 0 : _b2.toLowerCase().includes(search));
-    }) || feature.commands.some((c) => {
-      var _a2, _b2;
-      return ((_a2 = c.name) == null ? void 0 : _a2.toLowerCase().includes(search)) || ((_b2 = c.description) == null ? void 0 : _b2.toLowerCase().includes(search));
-    }) || feature.hotkeys.some((h) => {
-      var _a2, _b2;
-      return ((_a2 = h.name) == null ? void 0 : _a2.toLowerCase().includes(search)) || ((_b2 = h.description) == null ? void 0 : _b2.toLowerCase().includes(search));
-    });
-  }
-  searchFeatures(features, filterTags, content) {
-    return features.filter((f) => filterTags.length === 0 || f.tags.some((t) => filterTags.includes(t))).filter((f) => content.length === 0 || this.featureContainsText(f, content)).sort((a, b) => this.featureImportance(b.tags) - this.featureImportance(a.tags));
-  }
-  async completeOnboardingTask() {
-    (await this._onboardingTask).complete();
-  }
-};
-__name(_ControlsSettingsFeature, "ControlsSettingsFeature");
-let ControlsSettingsFeature = _ControlsSettingsFeature;
-__decorateClass$t([
-  inject(ElementsSetup)
-], ControlsSettingsFeature.prototype, "_elementsSetup");
-__decorateClass$t([
-  inject(ModalService)
-], ControlsSettingsFeature.prototype, "_modalService");
-__decorateClass$t([
-  inject(ToastService)
-], ControlsSettingsFeature.prototype, "_toastService");
-__decorateClass$t([
-  inject(FeaturesService)
-], ControlsSettingsFeature.prototype, "_featuresService");
-__decorateClass$t([
-  inject(GlobalSettingsService)
-], ControlsSettingsFeature.prototype, "_settingsService");
-var __defProp$s = Object.defineProperty;
-var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$s(target, key2, result);
-  return result;
-}, "__decorateClass$s");
-const _MandalaMod = class _MandalaMod extends TypoDrawMod {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_toolsService");
-    __publicField(this, "description", "Draws an additional mirrored line to create a mandala effect.");
-    __publicField(this, "icon", "var(--file-img-line-mandala-gif)");
-    __publicField(this, "name", "Mandala");
-    __publicField(this, "_mirrorCenterSetting", new ChoiceExtensionSetting("brushlab.mandala.center", "center").withName("Mandala Mirror Center").withDescription("The center of the mandala mirroring effect").withChoices([{ choice: "click", name: "At last click" }, { choice: "center", name: "At canvas center" }]));
-    __publicField(this, "_axisSetting", new ChoiceExtensionSetting("brushlab.mandala.axis", "xy").withName("Mandala Mirror Axis").withDescription("The axis where the mandala line will be mirrored on").withChoices([{ choice: "x", name: "Horizontal" }, { choice: "y", name: "Vertical" }, { choice: "xy", name: "Both" }]));
-    __publicField(this, "settings", [
-      this._mirrorCenterSetting,
-      this._axisSetting
-    ]);
-  }
-  /**
-   * Set the brush size depending on the pressure
-   * @param line
-   * @param pressure
-   * @param style
-   */
-  async applyEffect(line, pressure, style) {
-    const axis = await firstValueFrom(this._axisSetting.changes$);
-    const mirrorCenter = await firstValueFrom(this._mirrorCenterSetting.changes$);
-    let center = [400, 300];
-    if (mirrorCenter === "click") {
-      const event = await firstValueFrom(this._toolsService.lastPointerDownPosition$);
-      if (!event) center = line.from;
-      else center = [event.offsetX, event.offsetY];
-    }
-    const mirrored = this.calculateMirroredLine(axis, center, line.from, line.to);
-    return {
-      style,
-      lines: [line, mirrored]
-    };
-  }
-  calculateMirroredLine(axis, center, from2, to) {
-    if (axis === "y") {
-      return {
-        from: [center[0] - (from2[0] - center[0]), from2[1]],
-        to: [center[0] - (to[0] - center[0]), to[1]]
-      };
-    } else if (axis === "x") {
-      return {
-        from: [from2[0], center[1] - (from2[1] - center[1])],
-        to: [to[0], center[1] - (to[1] - center[1])]
-      };
-    } else {
-      return {
-        from: [center[0] - (from2[0] - center[0]), center[1] - (from2[1] - center[1])],
-        to: [center[0] - (to[0] - center[0]), center[1] - (to[1] - center[1])]
-      };
-    }
-  }
-};
-__name(_MandalaMod, "MandalaMod");
-let MandalaMod = _MandalaMod;
-__decorateClass$s([
-  inject(ToolsService)
-], MandalaMod.prototype, "_toolsService");
-const _NoiseMod = class _NoiseMod extends ConstantDrawMod {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "description", "Randomly adds noise to drawn lines.");
-    __publicField(this, "icon", "var(--file-img-line-noise-gif)");
-    __publicField(this, "name", "Noise");
-    __publicField(this, "_scaleSetting", new NumericExtensionSetting("brushlab.noise.scale", 5).withName("Noise Scale").withDescription("Select how much noise is added to the line").withSlider(1).withBounds(1, 100));
-    __publicField(this, "settings", [
-      this._scaleSetting
-    ]);
-  }
-  async applyConstantEffect(line, pressure, style) {
-    const scale = await firstValueFrom(this._scaleSetting.changes$);
-    const randomRotate = (Math.random() - 0.5) * Math.PI;
-    const randomScale = 1 + (Math.random() - 0.5) * scale * style.size / 40;
-    const centerX = (line.from[0] + line.to[0]) / 2;
-    const centerY = (line.from[1] + line.to[1]) / 2;
-    const rotatePoint = /* @__PURE__ */ __name((x, y, angle) => {
-      const cos = Math.cos(angle);
-      const sin = Math.sin(angle);
-      return [
-        cos * (x - centerX) - sin * (y - centerY) + centerX,
-        sin * (x - centerX) + cos * (y - centerY) + centerY
-      ];
-    }, "rotatePoint");
-    const from2 = rotatePoint(line.from[0], line.from[1], randomRotate);
-    const to = rotatePoint(line.to[0], line.to[1], randomRotate);
-    from2[0] = centerX + (from2[0] - centerX) * randomScale;
-    from2[1] = centerY + (from2[1] - centerY) * randomScale;
-    to[0] = centerX + (to[0] - centerX) * randomScale;
-    to[1] = centerY + (to[1] - centerY) * randomScale;
-    return {
-      style,
-      line: { from: from2, to }
-    };
-  }
-};
-__name(_NoiseMod, "NoiseMod");
-let NoiseMod = _NoiseMod;
-const _ParallelLineMod = class _ParallelLineMod extends TypoDrawMod {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "description", "Draws additional parallel lines in a angle and distance. In public lobbies, a max of 1 parallel line should be used.");
-    __publicField(this, "icon", "var(--file-img-line-parallel-gif)");
-    __publicField(this, "name", "Parallel");
-    __publicField(this, "_distanceSetting", new NumericExtensionSetting("brushlab.parallel.distance", 20).withName("Line Distance").withDescription("The distance between the lines").withSlider(1).withBounds(1, 100));
-    __publicField(this, "_distanceDependencySetting", new BooleanExtensionSetting("brushlab.parallel.dependency", false).withName("Size Dependency").withDescription("Make line distance proportionally dependent on brush size"));
-    __publicField(this, "_angleSetting", new NumericExtensionSetting("brushlab.parallel.angle", 180).withName("Line Angle").withDescription("The clockwise angle where the parallel lines are drawn with the distance offset").withSlider(1).withBounds(1, 360));
-    __publicField(this, "_lineCountSetting", new NumericExtensionSetting("brushlab.parallel.count", 1).withName("Line Count").withDescription("The amount of parallel lines drawn").withSlider(1).withBounds(1, 4));
-    __publicField(this, "settings", [
-      this._distanceSetting,
-      this._distanceDependencySetting,
-      this._angleSetting,
-      this._lineCountSetting
-    ]);
-  }
-  /**
-   * Set the brush size depending on the pressure
-   * @param line
-   * @param pressure
-   * @param style
-   */
-  async applyEffect(line, pressure, style) {
-    const distance = await firstValueFrom(this._distanceSetting.changes$);
-    const angle = await firstValueFrom(this._angleSetting.changes$);
-    const count2 = await firstValueFrom(this._lineCountSetting.changes$);
-    const dependency = await firstValueFrom(this._distanceDependencySetting.changes$);
-    const lines = [];
-    const offset = this.getOffset(distance, angle);
-    if (dependency) {
-      offset[0] *= style.size / 40;
-      offset[1] *= style.size / 40;
-    }
-    for (let i = 0; i < count2; i++) {
-      const offsetLine = {
-        from: [line.from[0] + offset[0] * (i + 1), line.from[1] + offset[1] * (i + 1)],
-        to: [line.to[0] + offset[0] * (i + 1), line.to[1] + offset[1] * (i + 1)]
-      };
-      lines.push(offsetLine);
-    }
-    return {
-      style,
-      lines: [line, ...lines]
-    };
-  }
-  getOffset(distance, angle) {
-    const angleRad = angle * Math.PI / 180;
-    const x = Math.cos(angleRad) * distance;
-    const y = Math.sin(angleRad) * distance;
-    return [x, y];
-  }
-};
-__name(_ParallelLineMod, "ParallelLineMod");
-let ParallelLineMod = _ParallelLineMod;
-const _RainbowMod = class _RainbowMod extends ConstantDrawMod {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "description", "Switches colors while drawing to create a rainbow effect.");
-    __publicField(this, "icon", "var(--file-img-line-rainbow-gif)");
-    __publicField(this, "name", "Rainbow");
-    __publicField(this, "_rainbowModeSetting", new ChoiceExtensionSetting("brushlab.rainbow.mode", "light").withName("Rainbow Colors").withDescription("Choose between the rainbow color shades").withChoices([{ choice: "light", name: "Light Colors" }, { choice: "dark", name: "Dark Colors" }]));
-    __publicField(this, "_strokeModeSetting", new BooleanExtensionSetting("brushlab.rainbow.strokeMode", false).withName("Change Per Stroke").withDescription("If enabled, the color will change per stroke instead of continuously."));
-    __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.rainbow.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
-    __publicField(this, "lastSwitch");
-    __publicField(this, "settings", [
-      this._rainbowModeSetting,
-      this._colorSwitchSetting,
-      this._strokeModeSetting
-    ]);
-  }
-  async applyConstantEffect(line, pressure, style, eventId, strokeId) {
-    var _a2;
-    const mode = await firstValueFrom(this._rainbowModeSetting.changes$);
-    const strokeMode = await firstValueFrom(this._strokeModeSetting.changes$);
-    const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
-    const colors = Color.skribblColors.filter((color, index) => index % 2 === 0 ? mode === "light" : mode === "dark");
-    if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || strokeMode == false && this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style.size / 10 * distance) {
-      let index = ((((_a2 = this.lastSwitch) == null ? void 0 : _a2.index) ?? -1) + 1) % (colors.length - 1);
-      if (index < 2) index = 2;
-      style.color = index * 2 + (mode === "light" ? 0 : 1);
-      this.lastSwitch = {
-        eventId,
-        position: line.from,
-        index,
-        strokeId
-      };
-    }
-    return {
-      style,
-      line
-    };
-  }
-  getDistance(from2, to) {
-    return Math.sqrt(Math.pow(to[0] - from2[0], 2) + Math.pow(to[1] - from2[1], 2));
-  }
-};
-__name(_RainbowMod, "RainbowMod");
-let RainbowMod = _RainbowMod;
-var __defProp$r = Object.defineProperty;
-var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$r(target, key2, result);
-  return result;
-}, "__decorateClass$r");
-const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_colorsService");
-    __publicField(this, "description", "Switches colors of the current palette randomly while drawing.");
-    __publicField(this, "icon", "var(--file-img-line-random-color-gif)");
-    __publicField(this, "name", "Random Colors");
-    __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.randomcolor.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
-    __publicField(this, "_strokeModeSetting", new BooleanExtensionSetting("brushlab.randomcolor.strokeMode", false).withName("Change Per Stroke").withDescription("If enabled, the color will change per stroke instead of continuously."));
-    __publicField(this, "lastSwitch");
-    __publicField(this, "settings", [
-      this._colorSwitchSetting,
-      this._strokeModeSetting
-    ]);
-  }
-  async applyConstantEffect(line, pressure, style, eventId, strokeId) {
-    const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
-    const strokeMode = await firstValueFrom(this._strokeModeSetting.changes$);
-    const colors = await firstValueFrom(this._colorsService.pickerColors$) ?? defaultPalettes.skribblPalette;
-    if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || strokeMode === false && this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style.size / 10 * distance) {
-      const index = Math.floor(Math.random() * colors.colorHexCodes.length);
-      const color = Color.fromHex(colors.colorHexCodes[index]);
-      style.color = color.typoCode;
-      this.lastSwitch = {
-        eventId,
-        position: line.from,
-        strokeId
-      };
-    }
-    return {
-      style,
-      line
-    };
-  }
-  getDistance(from2, to) {
-    return Math.sqrt(Math.pow(to[0] - from2[0], 2) + Math.pow(to[1] - from2[1], 2));
-  }
-};
-__name(_RandomColorMod, "RandomColorMod");
-let RandomColorMod = _RandomColorMod;
-__decorateClass$r([
-  inject(ColorsService)
-], RandomColorMod.prototype, "_colorsService");
-var __defProp$q = Object.defineProperty;
-var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$q(target, key2, result);
-  return result;
-}, "__decorateClass$q");
-const _SculptMod = class _SculptMod extends TypoDrawMod {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_toolsService");
-    __publicField(this, "description", "Creates a figure by mirroring and connecting the line on a axis.");
-    __publicField(this, "icon", "var(--file-img-line-sculpt-gif)");
-    __publicField(this, "name", "Sculpt");
-    __publicField(this, "_mirrorCenterSetting", new ChoiceExtensionSetting("brushlab.sculpt.center", "center").withName("Sculpt Mirror Center").withDescription("The center of the sculpt figure mirroring effect").withChoices([{ choice: "click", name: "At last click" }, { choice: "center", name: "At canvas center" }]));
-    __publicField(this, "_axisSetting", new ChoiceExtensionSetting("brushlab.sculpt.axis", "xy").withName("Sculpt Mirror Axis").withDescription("The axis where the sculpt figure will be mirrored on").withChoices([{ choice: "x", name: "Horizontal" }, { choice: "y", name: "Vertical" }, { choice: "xy", name: "Both" }]));
-    __publicField(this, "settings", [
-      this._mirrorCenterSetting,
-      this._axisSetting
-    ]);
-  }
-  async applyEffect(line, pressure, style) {
-    const axis = await firstValueFrom(this._axisSetting.changes$);
-    const mirrorCenter = await firstValueFrom(this._mirrorCenterSetting.changes$);
-    let center = [400, 300];
-    if (mirrorCenter === "click") {
-      const event = await firstValueFrom(this._toolsService.lastPointerDownPosition$);
-      if (!event) center = line.from;
-      else center = [event.offsetX, event.offsetY];
-    }
-    const originalLineCenter = [(line.from[0] + line.to[0]) / 2, (line.from[1] + line.to[1]) / 2];
-    const mirroredLineCenter = this.calculateMirroredPoint(center, originalLineCenter, axis);
-    return {
-      style,
-      lines: [
-        { from: line.from, to: mirroredLineCenter },
-        { from: mirroredLineCenter, to: line.to }
-      ]
-    };
-  }
-  calculateMirroredPoint(center, point, axis) {
-    if (axis === "x") {
-      return [point[0], 2 * center[1] - point[1]];
-    } else if (axis === "y") {
-      return [2 * center[0] - point[0], point[1]];
-    } else {
-      return [2 * center[0] - point[0], 2 * center[1] - point[1]];
-    }
-  }
-};
-__name(_SculptMod, "SculptMod");
-let SculptMod = _SculptMod;
-__decorateClass$q([
-  inject(ToolsService)
-], SculptMod.prototype, "_toolsService");
-const _TiltMod = class _TiltMod extends ConstantDrawMod {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "description", "Tilt the line into a direction.");
-    __publicField(this, "icon", "var(--file-img-line-tilt-gif)");
-    __publicField(this, "name", "Tilt");
-    __publicField(this, "_distanceSetting", new NumericExtensionSetting("brushlab.tilt.size", 20).withName("Tilt Size").withDescription("The size of the tilted line").withSlider(1).withBounds(1, 100));
-    __publicField(this, "_distanceDependencySetting", new BooleanExtensionSetting("brushlab.tilt.dependency", false).withName("Size Dependency").withDescription("Make tilt size proportionally dependent on brush size"));
-    __publicField(this, "_angleSetting", new NumericExtensionSetting("brushlab.tilt.angle", 180).withName("Tilt Angle").withDescription("The clockwise angle where the tilt lines created").withSlider(1).withBounds(1, 360));
-    __publicField(this, "settings", [
-      this._distanceSetting,
-      this._distanceDependencySetting,
-      this._angleSetting
-    ]);
-  }
-  async applyConstantEffect(line, pressure, style) {
-    const distance = await firstValueFrom(this._distanceSetting.changes$);
-    const angle = await firstValueFrom(this._angleSetting.changes$);
-    const dependency = await firstValueFrom(this._distanceDependencySetting.changes$);
-    const offset = this.getOffset(distance, angle - 90);
-    if (dependency) {
-      offset[0] *= style.size / 40;
-      offset[1] *= style.size / 40;
-    }
-    const offsetLine = {
-      from: line.from,
-      to: [line.to[0] + offset[0], line.to[1] + offset[1]]
-    };
-    return {
-      style,
-      line: offsetLine
-    };
-  }
-  getOffset(distance, angle) {
-    const angleRad = angle * Math.PI / 180;
-    const x = Math.cos(angleRad) * distance;
-    const y = Math.sin(angleRad) * distance;
-    return [x, y];
-  }
-};
-__name(_TiltMod, "TiltMod");
-let TiltMod = _TiltMod;
-const _DashTool = class _DashTool extends TypoDrawTool {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "name", "Dashed Lines");
-    __publicField(this, "description", "Draw dashed lines with a customizable interval and blank size");
-    __publicField(this, "icon", "var(--file-img-line-dash-gif)");
-    __publicField(this, "_intervalSetting", new NumericExtensionSetting("brushlab.dash.interval", 10).withName("Dash Interval").withDescription("The time interval between making line blanks in milliseconds").withSlider(1).withBounds(1, 300));
-    __publicField(this, "_blankSizeSetting", new NumericExtensionSetting("brushlab.dash.blank", 20).withName("Blank Size").withDescription("The size of the blanks between dashes, depending on brush size").withSlider(1).withBounds(1, 100));
-    __publicField(this, "settings", [
-      this._intervalSetting,
-      this._blankSizeSetting
-    ]);
-    __publicField(this, "dashStart");
-    __publicField(this, "lineStart");
-    __publicField(this, "applyConstantEffect", this.noConstantEffect);
-  }
-  createCursor(style) {
-    return this.createSkribblLikeCursor(style);
-  }
-  async createCommands(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
-    const interval2 = await firstValueFrom(this._intervalSetting.changes$);
-    const blankSize = await firstValueFrom(this._blankSizeSetting.changes$);
-    const now = Date.now();
-    if (this.dashStart !== void 0) {
-      if (this.getDistance(this.dashStart.position, line.from) > style.size / 10 * blankSize) {
-        this.dashStart = void 0;
-      }
-      return [];
-    }
-    if (this.lineStart !== void 0 && now - this.lineStart.time > interval2) {
-      this.lineStart = void 0;
-      this.dashStart = { eventId, position: line.to };
-      return [];
-    }
-    if (this.lineStart === void 0) {
-      this.lineStart = { eventId, time: now };
-    }
-    const color = this.getSelectedColor(line.styleOverride, style, secondaryActive);
-    return [[0, color, style.size, ...line.from, ...line.to]];
-  }
-  getDistance(from2, to) {
-    return Math.sqrt(Math.pow(to[0] - from2[0], 2) + Math.pow(to[1] - from2[1], 2));
-  }
-};
-__name(_DashTool, "DashTool");
-let DashTool = _DashTool;
-const _DotTool = class _DotTool extends TypoDrawTool {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "name", "Dotted Lines");
-    __publicField(this, "description", "Draw dotted lines with a customizable interval");
-    __publicField(this, "icon", "var(--file-img-line-dot-gif)");
-    __publicField(this, "_intervalSetting", new NumericExtensionSetting("brushlab.dot.interval", 10).withName("Dot Interval").withDescription("The time interval between making dots in milliseconds").withSlider(1).withBounds(1, 1e3));
-    __publicField(this, "settings", [this._intervalSetting]);
-    __publicField(this, "lastDown", { eventId: 0, time: Date.now() });
-    __publicField(this, "applyConstantEffect", this.noConstantEffect);
-  }
-  createCursor(style) {
-    return this.createSkribblLikeCursor(style);
-  }
-  async createCommands(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
-    const interval2 = await firstValueFrom(this._intervalSetting.changes$);
-    const now = Date.now();
-    const color = this.getSelectedColor(line.styleOverride, style, secondaryActive);
-    if (this.lastDown.eventId === eventId) {
-      return [[0, color, style.size, ...line.to, ...line.to]];
-    } else if (now - this.lastDown.time > interval2) {
-      this.lastDown.time = now;
-      this.lastDown.eventId = eventId;
-      return [[0, color, style.size, ...line.to, ...line.to]];
-    }
-    return [];
-  }
-};
-__name(_DotTool, "DotTool");
-let DotTool = _DotTool;
-var __defProp$p = Object.defineProperty;
-var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$p(target, key2, result);
-  return result;
-}, "__decorateClass$p");
-const _GridTool = class _GridTool extends TypoDrawTool {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_toolsService");
-    __publicField(this, "name", "Grid Generator");
-    __publicField(this, "description", "Click anywhere on the canvas to create a grid");
-    __publicField(this, "icon", "var(--file-img-line-grid-gif)");
-    __publicField(this, "_rowsSetting", new NumericExtensionSetting("brushlab.grid.rows", 6).withName("Row Count").withDescription("The amount of rows in the grid").withSlider(1).withBounds(1, 30));
-    __publicField(this, "_columnsSetting", new NumericExtensionSetting("brushlab.grid.columns", 8).withName("Column Count").withDescription("The amount of columns in the grid").withSlider(1).withBounds(1, 30));
-    __publicField(this, "settings", [
-      this._rowsSetting,
-      this._columnsSetting
-    ]);
-    __publicField(this, "_lastDownEvent", null);
-    __publicField(this, "applyConstantEffect", this.noConstantEffect);
-  }
-  createCursor() {
-    return { source: "var(--file-img-grid_cur-png)", x: 7, y: 37 };
-  }
-  async createCommands(line, pressure, style) {
-    const lastPointerDown = await firstValueFrom(this._toolsService.lastPointerDownPosition$);
-    if (lastPointerDown === null || this._lastDownEvent === lastPointerDown) {
-      return [];
-    }
-    this._lastDownEvent = lastPointerDown;
-    const canvasWidth = 800;
-    const canvasHeight = 600;
-    const rows = await firstValueFrom(this._rowsSetting.changes$);
-    const columns = await firstValueFrom(this._columnsSetting.changes$);
-    const rowHeight = Math.ceil(canvasHeight / rows);
-    const columnWidth = Math.ceil(canvasWidth / columns);
-    const commands = [];
-    for (let i = 1; i < rows; i++) {
-      commands.push([0, style.color, style.size, 0, i * rowHeight, canvasWidth, i * rowHeight]);
-    }
-    for (let i = 1; i < columns; i++) {
-      commands.push([0, style.color, style.size, i * columnWidth, 0, i * columnWidth, canvasHeight]);
-    }
-    return commands;
-  }
-};
-__name(_GridTool, "GridTool");
-let GridTool = _GridTool;
-__decorateClass$p([
-  inject(ToolsService)
-], GridTool.prototype, "_toolsService");
-function create_fragment$m(ctx) {
-  let div;
-  return {
-    c() {
-      div = element$1("div");
-      div.innerHTML = ``;
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-    },
-    p: noop$1,
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-    }
-  };
-}
-__name(create_fragment$m, "create_fragment$m");
-function instance$l($$self, $$props, $$invalidate) {
-  let { feature } = $$props;
-  $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-  };
-  return [feature];
-}
-__name(instance$l, "instance$l");
-const _Drawing_brush_lab_info = class _Drawing_brush_lab_info extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$l, create_fragment$m, safe_not_equal, { feature: 0 });
-  }
-};
-__name(_Drawing_brush_lab_info, "Drawing_brush_lab_info");
-let Drawing_brush_lab_info = _Drawing_brush_lab_info;
-function create_fragment$l(ctx) {
-  let div1;
-  let mounted;
-  let dispose;
-  return {
-    c() {
-      div1 = element$1("div");
-      div1.innerHTML = `<div class="icon" style="background-image: var(--file-img-wand-gif)"></div>`;
-      attr(div1, "class", "typo-brush-lab-switch tool clickable");
-      toggle_class(
-        div1,
-        "expanded",
-        /*expanded*/
-        ctx[1]
-      );
-    },
-    m(target, anchor) {
-      insert(target, div1, anchor);
-      if (!mounted) {
-        dispose = [
-          listen(
-            div1,
-            "click",
-            /*click_handler*/
-            ctx[3]
-          ),
-          action_destroyer(
-            /*feature*/
-            ctx[0].createTooltip(div1, { title: "Toggle Brush Lab", lock: "Y" })
-          )
-        ];
-        mounted = true;
-      }
-    },
-    p(ctx2, [dirty]) {
-      if (dirty & /*expanded*/
-      2) {
-        toggle_class(
-          div1,
-          "expanded",
-          /*expanded*/
-          ctx2[1]
-        );
-      }
-    },
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-__name(create_fragment$l, "create_fragment$l");
-function instance$k($$self, $$props, $$invalidate) {
-  const toggle = /* @__PURE__ */ __name(() => {
-    $$invalidate(1, expanded = !expanded);
-  }, "toggle");
-  let { feature } = $$props;
-  let expanded = false;
-  const click_handler2 = /* @__PURE__ */ __name(() => $$invalidate(1, expanded = !expanded), "click_handler");
-  $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-  };
-  return [feature, expanded, toggle, click_handler2];
-}
-__name(instance$k, "instance$k");
-const _Drawing_brush_lab_switch = class _Drawing_brush_lab_switch extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$k, create_fragment$l, safe_not_equal, { toggle: 2, feature: 0 });
-  }
-  get toggle() {
-    return this.$$.ctx[2];
-  }
-};
-__name(_Drawing_brush_lab_switch, "Drawing_brush_lab_switch");
-let Drawing_brush_lab_switch = _Drawing_brush_lab_switch;
-function get_each_context$d(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[8] = list[i];
-  return child_ctx;
-}
-__name(get_each_context$d, "get_each_context$d");
-function get_each_context_1$3(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[11] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_1$3, "get_each_context_1$3");
-function create_each_block_1$3(ctx) {
-  let div1;
-  let div0;
-  let t;
-  let feature_createTooltip_action;
-  let mounted;
-  let dispose;
-  function click_handler_1() {
-    return (
-      /*click_handler_1*/
-      ctx[4](
-        /*mod*/
-        ctx[11]
-      )
-    );
-  }
-  __name(click_handler_1, "click_handler_1");
-  function contextmenu_handler2(...args) {
-    return (
-      /*contextmenu_handler*/
-      ctx[5](
-        /*mod*/
-        ctx[11],
-        ...args
-      )
-    );
-  }
-  __name(contextmenu_handler2, "contextmenu_handler");
-  return {
-    c() {
-      div1 = element$1("div");
-      div0 = element$1("div");
-      t = space();
-      attr(div0, "class", "icon");
-      set_style(
-        div0,
-        "background-image",
-        /*mod*/
-        ctx[11].item.icon
-      );
-      attr(div1, "class", "tool clickable");
-      toggle_class(
-        div1,
-        "selected",
-        /*mod*/
-        ctx[11].active
-      );
-    },
-    m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, div0);
-      append(div1, t);
-      if (!mounted) {
-        dispose = [
-          action_destroyer(feature_createTooltip_action = /*feature*/
-          ctx[0].createTooltip(div1, {
-            title: (
-              /*mod*/
-              ctx[11].item.name
-            ),
-            lock: "Y"
-          })),
-          listen(div1, "click", click_handler_1),
-          listen(div1, "contextmenu", contextmenu_handler2)
-        ];
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if (dirty & /*$tools*/
-      2) {
-        set_style(
-          div0,
-          "background-image",
-          /*mod*/
-          ctx[11].item.icon
-        );
-      }
-      if (feature_createTooltip_action && is_function(feature_createTooltip_action.update) && dirty & /*$tools*/
-      2) feature_createTooltip_action.update.call(null, {
-        title: (
-          /*mod*/
-          ctx[11].item.name
-        ),
-        lock: "Y"
-      });
-      if (dirty & /*$tools*/
-      2) {
-        toggle_class(
-          div1,
-          "selected",
-          /*mod*/
-          ctx[11].active
-        );
-      }
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-__name(create_each_block_1$3, "create_each_block_1$3");
-function create_each_block$d(ctx) {
-  let div1;
-  let div0;
-  let t;
-  let feature_createTooltip_action;
-  let mounted;
-  let dispose;
-  function click_handler_2() {
-    return (
-      /*click_handler_2*/
-      ctx[6](
-        /*tool*/
-        ctx[8]
-      )
-    );
-  }
-  __name(click_handler_2, "click_handler_2");
-  function contextmenu_handler_1(...args) {
-    return (
-      /*contextmenu_handler_1*/
-      ctx[7](
-        /*tool*/
-        ctx[8],
-        ...args
-      )
-    );
-  }
-  __name(contextmenu_handler_1, "contextmenu_handler_1");
-  return {
-    c() {
-      div1 = element$1("div");
-      div0 = element$1("div");
-      t = space();
-      attr(div0, "class", "icon");
-      set_style(
-        div0,
-        "background-image",
-        /*tool*/
-        ctx[8].item.icon
-      );
-      attr(div1, "class", "tool clickable");
-      toggle_class(
-        div1,
-        "selected",
-        /*tool*/
-        ctx[8].active
-      );
-    },
-    m(target, anchor) {
-      insert(target, div1, anchor);
-      append(div1, div0);
-      append(div1, t);
-      if (!mounted) {
-        dispose = [
-          action_destroyer(feature_createTooltip_action = /*feature*/
-          ctx[0].createTooltip(div1, {
-            title: (
-              /*tool*/
-              ctx[8].item.name
-            ),
-            lock: "Y"
-          })),
-          listen(div1, "click", click_handler_2),
-          listen(div1, "contextmenu", contextmenu_handler_1)
-        ];
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if (dirty & /*$tools*/
-      2) {
-        set_style(
-          div0,
-          "background-image",
-          /*tool*/
-          ctx[8].item.icon
-        );
-      }
-      if (feature_createTooltip_action && is_function(feature_createTooltip_action.update) && dirty & /*$tools*/
-      2) feature_createTooltip_action.update.call(null, {
-        title: (
-          /*tool*/
-          ctx[8].item.name
-        ),
-        lock: "Y"
-      });
-      if (dirty & /*$tools*/
-      2) {
-        toggle_class(
-          div1,
-          "selected",
-          /*tool*/
-          ctx[8].active
-        );
-      }
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div1);
-      }
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-__name(create_each_block$d, "create_each_block$d");
-function create_fragment$k(ctx) {
-  let div5;
-  let div2;
-  let div1;
-  let t0;
-  let div3;
-  let t1;
-  let div4;
-  let mounted;
-  let dispose;
-  let each_value_1 = ensure_array_like(
-    /*$tools*/
-    ctx[1].mods
-  );
-  let each_blocks_1 = [];
-  for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks_1[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
-  }
-  let each_value = ensure_array_like(
-    /*$tools*/
-    ctx[1].tools
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$d(get_each_context$d(ctx, each_value, i));
-  }
-  return {
-    c() {
-      div5 = element$1("div");
-      div2 = element$1("div");
-      div1 = element$1("div");
-      div1.innerHTML = `<div class="icon" style="background-image: var(--file-img-wrench-gif)"></div>`;
-      t0 = space();
-      div3 = element$1("div");
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        each_blocks_1[i].c();
-      }
-      t1 = space();
-      div4 = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      attr(div1, "class", "tool clickable");
-      attr(div2, "class", "typo-brush-lab-settings");
-      attr(div3, "class", "typo-brush-lab-mods svelte-p5jc91");
-      attr(div4, "class", "typo-brush-lab-tools svelte-p5jc91");
-      attr(div5, "class", "typo-brush-lab-group svelte-p5jc91");
-    },
-    m(target, anchor) {
-      insert(target, div5, anchor);
-      append(div5, div2);
-      append(div2, div1);
-      append(div5, t0);
-      append(div5, div3);
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        if (each_blocks_1[i]) {
-          each_blocks_1[i].m(div3, null);
-        }
-      }
-      append(div5, t1);
-      append(div5, div4);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div4, null);
-        }
-      }
-      if (!mounted) {
-        dispose = [
-          action_destroyer(
-            /*feature*/
-            ctx[0].createTooltip(div1, { title: "Brush Lab Settings", lock: "Y" })
-          ),
-          listen(
-            div1,
-            "click",
-            /*click_handler*/
-            ctx[3]
-          )
-        ];
-        mounted = true;
-      }
-    },
-    p(ctx2, [dirty]) {
-      if (dirty & /*$tools, feature*/
-      3) {
-        each_value_1 = ensure_array_like(
-          /*$tools*/
-          ctx2[1].mods
-        );
-        let i;
-        for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$3(ctx2, each_value_1, i);
-          if (each_blocks_1[i]) {
-            each_blocks_1[i].p(child_ctx, dirty);
-          } else {
-            each_blocks_1[i] = create_each_block_1$3(child_ctx);
-            each_blocks_1[i].c();
-            each_blocks_1[i].m(div3, null);
-          }
-        }
-        for (; i < each_blocks_1.length; i += 1) {
-          each_blocks_1[i].d(1);
-        }
-        each_blocks_1.length = each_value_1.length;
-      }
-      if (dirty & /*$tools, feature*/
-      3) {
-        each_value = ensure_array_like(
-          /*$tools*/
-          ctx2[1].tools
-        );
-        let i;
-        for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$d(ctx2, each_value, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-          } else {
-            each_blocks[i] = create_each_block$d(child_ctx);
-            each_blocks[i].c();
-            each_blocks[i].m(div4, null);
-          }
-        }
-        for (; i < each_blocks.length; i += 1) {
-          each_blocks[i].d(1);
-        }
-        each_blocks.length = each_value.length;
-      }
-    },
-    i: noop$1,
-    o: noop$1,
-    d(detaching) {
-      if (detaching) {
-        detach(div5);
-      }
-      destroy_each(each_blocks_1, detaching);
-      destroy_each(each_blocks, detaching);
-      mounted = false;
-      run_all(dispose);
-    }
-  };
-}
-__name(create_fragment$k, "create_fragment$k");
-function instance$j($$self, $$props, $$invalidate) {
-  let $tools;
-  let { feature } = $$props;
-  const tools = feature.toolbarItemsStore;
-  component_subscribe($$self, tools, (value) => $$invalidate(1, $tools = value));
-  const click_handler2 = /* @__PURE__ */ __name(() => feature.openBrushLabSettings(), "click_handler");
-  const click_handler_1 = /* @__PURE__ */ __name((mod) => {
-    if (!mod.active) {
-      feature.activateMod(mod.item);
-    } else {
-      feature.removeMod(mod.item);
-    }
-  }, "click_handler_1");
-  const contextmenu_handler2 = /* @__PURE__ */ __name((mod, e) => {
-    e.preventDefault();
-    feature.openBrushLabSettings(mod.item);
-  }, "contextmenu_handler");
-  const click_handler_2 = /* @__PURE__ */ __name((tool) => {
-    if (!tool.active) {
-      feature.activateTool(tool.item);
-    } else {
-      feature.activateTool(skribblTool.brush);
-    }
-  }, "click_handler_2");
-  const contextmenu_handler_1 = /* @__PURE__ */ __name((tool, e) => {
-    e.preventDefault();
-    feature.openBrushLabSettings(tool.item);
-  }, "contextmenu_handler_1");
-  $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
-  };
-  return [
-    feature,
-    $tools,
-    tools,
-    click_handler2,
-    click_handler_1,
-    contextmenu_handler2,
-    click_handler_2,
-    contextmenu_handler_1
-  ];
-}
-__name(instance$j, "instance$j");
-const _Drawing_brush_lab_group = class _Drawing_brush_lab_group extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$j, create_fragment$k, safe_not_equal, { feature: 0 });
-  }
-};
-__name(_Drawing_brush_lab_group, "Drawing_brush_lab_group");
-let Drawing_brush_lab_group = _Drawing_brush_lab_group;
-function get_each_context$c(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[10] = list[i];
-  return child_ctx;
-}
-__name(get_each_context$c, "get_each_context$c");
-function get_each_context_1$2(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[13] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_1$2, "get_each_context_1$2");
-function get_each_context_2$1(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[13] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_2$1, "get_each_context_2$1");
-function get_each_context_3$1(ctx, list, i) {
-  const child_ctx = ctx.slice();
-  child_ctx[18] = list[i];
-  return child_ctx;
-}
-__name(get_each_context_3$1, "get_each_context_3$1");
-function create_each_block_3$1(ctx) {
-  let div;
-  let img;
-  let img_src_value;
-  let t0;
-  let b;
-  let t1_value = (
-    /*tool*/
-    ctx[18].item.name + ""
-  );
-  let t1;
-  let mounted;
-  let dispose;
-  function click_handler2() {
-    return (
-      /*click_handler*/
-      ctx[5](
-        /*tool*/
-        ctx[18]
-      )
-    );
-  }
-  __name(click_handler2, "click_handler");
-  return {
-    c() {
-      div = element$1("div");
-      img = element$1("img");
-      t0 = space();
-      b = element$1("b");
-      t1 = text(t1_value);
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      set_style(
-        img,
-        "content",
-        /*tool*/
-        ctx[18].item.icon
-      );
-      attr(img, "alt", "icon");
-      attr(img, "class", "svelte-15vhuqn");
-      attr(b, "class", "svelte-15vhuqn");
-      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      append(div, img);
-      append(div, t0);
-      append(div, b);
-      append(b, t1);
-      if (!mounted) {
-        dispose = listen(div, "click", click_handler2);
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if (dirty & /*$items*/
-      1) {
-        set_style(
-          img,
-          "content",
-          /*tool*/
-          ctx[18].item.icon
-        );
-      }
-      if (dirty & /*$items*/
-      1 && t1_value !== (t1_value = /*tool*/
-      ctx[18].item.name + "")) set_data(t1, t1_value);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_each_block_3$1, "create_each_block_3$1");
-function create_each_block_2$1(ctx) {
-  let div;
-  let img;
-  let img_src_value;
-  let t0;
-  let b;
-  let t1_value = (
-    /*mod*/
-    ctx[13].item.name + ""
-  );
-  let t1;
-  let mounted;
-  let dispose;
-  function click_handler_1() {
-    return (
-      /*click_handler_1*/
-      ctx[7](
-        /*mod*/
-        ctx[13]
-      )
-    );
-  }
-  __name(click_handler_1, "click_handler_1");
-  return {
-    c() {
-      div = element$1("div");
-      img = element$1("img");
-      t0 = space();
-      b = element$1("b");
-      t1 = text(t1_value);
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      set_style(
-        img,
-        "content",
-        /*mod*/
-        ctx[13].item.icon
-      );
-      attr(img, "alt", "icon");
-      attr(img, "class", "svelte-15vhuqn");
-      attr(b, "class", "svelte-15vhuqn");
-      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      append(div, img);
-      append(div, t0);
-      append(div, b);
-      append(b, t1);
-      if (!mounted) {
-        dispose = listen(div, "click", click_handler_1);
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if (dirty & /*$items*/
-      1) {
-        set_style(
-          img,
-          "content",
-          /*mod*/
-          ctx[13].item.icon
-        );
-      }
-      if (dirty & /*$items*/
-      1 && t1_value !== (t1_value = /*mod*/
-      ctx[13].item.name + "")) set_data(t1, t1_value);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_each_block_2$1, "create_each_block_2$1");
-function create_each_block_1$2(ctx) {
-  let div;
-  let img;
-  let img_src_value;
-  let t0;
-  let b;
-  let t1_value = (
-    /*mod*/
-    ctx[13].item.name + ""
-  );
-  let t1;
-  let t2;
-  let mounted;
-  let dispose;
-  function click_handler_2() {
-    return (
-      /*click_handler_2*/
-      ctx[9](
-        /*mod*/
-        ctx[13]
-      )
-    );
-  }
-  __name(click_handler_2, "click_handler_2");
-  return {
-    c() {
-      div = element$1("div");
-      img = element$1("img");
-      t0 = space();
-      b = element$1("b");
-      t1 = text(t1_value);
-      t2 = space();
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      set_style(
-        img,
-        "content",
-        /*mod*/
-        ctx[13].item.icon
-      );
-      attr(img, "alt", "icon");
-      attr(img, "class", "svelte-15vhuqn");
-      attr(b, "class", "svelte-15vhuqn");
-      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      append(div, img);
-      append(div, t0);
-      append(div, b);
-      append(b, t1);
-      append(div, t2);
-      if (!mounted) {
-        dispose = listen(div, "click", click_handler_2);
-        mounted = true;
-      }
-    },
-    p(new_ctx, dirty) {
-      ctx = new_ctx;
-      if (dirty & /*$items*/
-      1) {
-        set_style(
-          img,
-          "content",
-          /*mod*/
-          ctx[13].item.icon
-        );
-      }
-      if (dirty & /*$items*/
-      1 && t1_value !== (t1_value = /*mod*/
-      ctx[13].item.name + "")) set_data(t1, t1_value);
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      mounted = false;
-      dispose();
-    }
-  };
-}
-__name(create_each_block_1$2, "create_each_block_1$2");
-function create_if_block$9(ctx) {
-  let div;
-  let current;
-  let each_value = ensure_array_like(
-    /*selectedItem*/
-    ctx[1].settings
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$c(get_each_context$c(ctx, each_value, i));
-  }
-  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
-    each_blocks[i] = null;
-  }), "out");
-  return {
-    c() {
-      div = element$1("div");
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      attr(div, "class", "item-details-settings-list svelte-15vhuqn");
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div, null);
-        }
-      }
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*selectedItem*/
-      2) {
-        each_value = ensure_array_like(
-          /*selectedItem*/
-          ctx2[1].settings
-        );
-        let i;
-        for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$c(ctx2, each_value, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-            transition_in(each_blocks[i], 1);
-          } else {
-            each_blocks[i] = create_each_block$c(child_ctx);
-            each_blocks[i].c();
-            transition_in(each_blocks[i], 1);
-            each_blocks[i].m(div, null);
-          }
-        }
-        group_outros();
-        for (i = each_value.length; i < each_blocks.length; i += 1) {
-          out(i);
-        }
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current) return;
-      for (let i = 0; i < each_value.length; i += 1) {
-        transition_in(each_blocks[i]);
-      }
-      current = true;
-    },
-    o(local) {
-      each_blocks = each_blocks.filter(Boolean);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        transition_out(each_blocks[i]);
-      }
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      destroy_each(each_blocks, detaching);
-    }
-  };
-}
-__name(create_if_block$9, "create_if_block$9");
-function create_each_block$c(ctx) {
-  let div;
-  let switch_instance;
-  let t;
-  let current;
-  const switch_instance_spread_levels = [
-    /*setting*/
-    ctx[10].componentData.props
-  ];
-  var switch_value = (
-    /*setting*/
-    ctx[10].componentData.componentType
-  );
-  function switch_props(ctx2, dirty) {
-    let switch_instance_props = {};
-    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
-      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
-    }
-    if (dirty !== void 0 && dirty & /*selectedItem*/
-    2) {
-      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
-        /*setting*/
-        ctx2[10].componentData.props
-      )]));
-    }
-    return { props: switch_instance_props };
-  }
-  __name(switch_props, "switch_props");
-  if (switch_value) {
-    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
-  }
-  return {
-    c() {
-      div = element$1("div");
-      if (switch_instance) create_component(switch_instance.$$.fragment);
-      t = space();
-      attr(div, "class", "item-details-settings-item svelte-15vhuqn");
-    },
-    m(target, anchor) {
-      insert(target, div, anchor);
-      if (switch_instance) mount_component(switch_instance, div, null);
-      append(div, t);
-      current = true;
-    },
-    p(ctx2, dirty) {
-      if (dirty & /*selectedItem*/
-      2 && switch_value !== (switch_value = /*setting*/
-      ctx2[10].componentData.componentType)) {
-        if (switch_instance) {
-          group_outros();
-          const old_component = switch_instance;
-          transition_out(old_component.$$.fragment, 1, 0, () => {
-            destroy_component(old_component, 1);
-          });
-          check_outros();
-        }
-        if (switch_value) {
-          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
-          create_component(switch_instance.$$.fragment);
-          transition_in(switch_instance.$$.fragment, 1);
-          mount_component(switch_instance, div, t);
-        } else {
-          switch_instance = null;
-        }
-      } else if (switch_value) {
-        const switch_instance_changes = dirty & /*selectedItem*/
-        2 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
-          /*setting*/
-          ctx2[10].componentData.props
-        )]) : {};
-        switch_instance.$set(switch_instance_changes);
-      }
-    },
-    i(local) {
-      if (current) return;
-      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
-      current = true;
-    },
-    o(local) {
-      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(div);
-      }
-      if (switch_instance) destroy_component(switch_instance);
-    }
-  };
-}
-__name(create_each_block$c, "create_each_block$c");
-function create_fragment$j(ctx) {
-  var _a2, _b2;
-  let p0;
-  let t3;
-  let div3;
-  let div0;
-  let h30;
-  let t5;
-  let t6;
-  let h31;
-  let t8;
-  let t9;
-  let h32;
-  let t11;
-  let t12;
-  let div2;
-  let div1;
-  let img;
-  let img_src_value;
-  let t13;
-  let h2;
-  let t14_value = (
-    /*selectedItem*/
-    ((_a2 = ctx[1]) == null ? void 0 : _a2.name) + ""
-  );
-  let t14;
-  let t15;
-  let b;
-  let t16;
-  let t17_value = (
-    /*selectedItem*/
-    ctx[1] instanceof ConstantDrawMod ? (
-      /*selectedItem*/
-      ctx[1] instanceof TypoDrawTool ? "TOOL" : "COMBO MOD"
-    ) : "MOD"
-  );
-  let t17;
-  let t18;
-  let t19;
-  let p1;
-  let t20_value = (
-    /*selectedItem*/
-    ((_b2 = ctx[1]) == null ? void 0 : _b2.description) + ""
-  );
-  let t20;
-  let t21;
-  let current;
-  let each_value_3 = ensure_array_like(
-    /*$items*/
-    ctx[0].tools
-  );
-  let each_blocks_2 = [];
-  for (let i = 0; i < each_value_3.length; i += 1) {
-    each_blocks_2[i] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i));
-  }
-  let each_value_2 = ensure_array_like(
-    /*$items*/
-    ctx[0].mods.filter(
-      /*func*/
-      ctx[6]
-    )
-  );
-  let each_blocks_1 = [];
-  for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks_1[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
-  }
-  let each_value_1 = ensure_array_like(
-    /*$items*/
-    ctx[0].mods.filter(
-      /*func_1*/
-      ctx[8]
-    )
-  );
-  let each_blocks = [];
-  for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
-  }
-  let if_block = (
-    /*selectedItem*/
-    ctx[1] !== void 0 && /*selectedItem*/
-    ctx[1].settings.length > 0 && create_if_block$9(ctx)
-  );
-  return {
-    c() {
-      var _a3;
-      p0 = element$1("p");
-      p0.innerHTML = `The Brush Laboratory has many mods and tools to create unique masterpices.<br/>
-  Below, you can find all available tools and mods and their settings.<br/>
-  Additionally to a tool, you can select one mod and multiple combo mods.`;
-      t3 = space();
-      div3 = element$1("div");
-      div0 = element$1("div");
-      h30 = element$1("h3");
-      h30.textContent = "Tools";
-      t5 = space();
-      for (let i = 0; i < each_blocks_2.length; i += 1) {
-        each_blocks_2[i].c();
-      }
-      t6 = space();
-      h31 = element$1("h3");
-      h31.textContent = "Mods";
-      t8 = space();
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        each_blocks_1[i].c();
-      }
-      t9 = space();
-      h32 = element$1("h3");
-      h32.textContent = "Combo Mods";
-      t11 = space();
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].c();
-      }
-      t12 = space();
-      div2 = element$1("div");
-      div1 = element$1("div");
-      img = element$1("img");
-      t13 = space();
-      h2 = element$1("h2");
-      t14 = text(t14_value);
-      t15 = space();
-      b = element$1("b");
-      t16 = text("(");
-      t17 = text(t17_value);
-      t18 = text(")");
-      t19 = space();
-      p1 = element$1("p");
-      t20 = text(t20_value);
-      t21 = space();
-      if (if_block) if_block.c();
-      attr(h30, "class", "svelte-15vhuqn");
-      attr(h31, "class", "svelte-15vhuqn");
-      attr(h32, "class", "svelte-15vhuqn");
-      attr(div0, "class", "item-sidebar svelte-15vhuqn");
-      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
-      set_style(
-        img,
-        "content",
-        /*selectedItem*/
-        (_a3 = ctx[1]) == null ? void 0 : _a3.icon
-      );
-      attr(img, "alt", "icon");
-      attr(img, "class", "svelte-15vhuqn");
-      attr(b, "class", "svelte-15vhuqn");
-      attr(div1, "class", "item-title svelte-15vhuqn");
-      attr(div2, "class", "item-details svelte-15vhuqn");
-      attr(div3, "class", "item-selection svelte-15vhuqn");
-    },
-    m(target, anchor) {
-      insert(target, p0, anchor);
-      insert(target, t3, anchor);
-      insert(target, div3, anchor);
-      append(div3, div0);
-      append(div0, h30);
-      append(div0, t5);
-      for (let i = 0; i < each_blocks_2.length; i += 1) {
-        if (each_blocks_2[i]) {
-          each_blocks_2[i].m(div0, null);
-        }
-      }
-      append(div0, t6);
-      append(div0, h31);
-      append(div0, t8);
-      for (let i = 0; i < each_blocks_1.length; i += 1) {
-        if (each_blocks_1[i]) {
-          each_blocks_1[i].m(div0, null);
-        }
-      }
-      append(div0, t9);
-      append(div0, h32);
-      append(div0, t11);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        if (each_blocks[i]) {
-          each_blocks[i].m(div0, null);
-        }
-      }
-      append(div3, t12);
-      append(div3, div2);
-      append(div2, div1);
-      append(div1, img);
-      append(div1, t13);
-      append(div1, h2);
-      append(h2, t14);
-      append(div1, t15);
-      append(div1, b);
-      append(b, t16);
-      append(b, t17);
-      append(b, t18);
-      append(div2, t19);
-      append(div2, p1);
-      append(p1, t20);
-      append(div2, t21);
-      if (if_block) if_block.m(div2, null);
-      current = true;
-    },
-    p(ctx2, [dirty]) {
-      var _a3, _b3, _c2;
-      if (dirty & /*selectedItem, $items*/
-      3) {
-        each_value_3 = ensure_array_like(
-          /*$items*/
-          ctx2[0].tools
-        );
-        let i;
-        for (i = 0; i < each_value_3.length; i += 1) {
-          const child_ctx = get_each_context_3$1(ctx2, each_value_3, i);
-          if (each_blocks_2[i]) {
-            each_blocks_2[i].p(child_ctx, dirty);
-          } else {
-            each_blocks_2[i] = create_each_block_3$1(child_ctx);
-            each_blocks_2[i].c();
-            each_blocks_2[i].m(div0, t6);
-          }
-        }
-        for (; i < each_blocks_2.length; i += 1) {
-          each_blocks_2[i].d(1);
-        }
-        each_blocks_2.length = each_value_3.length;
-      }
-      if (dirty & /*selectedItem, $items*/
-      3) {
-        each_value_2 = ensure_array_like(
-          /*$items*/
-          ctx2[0].mods.filter(
-            /*func*/
-            ctx2[6]
-          )
-        );
-        let i;
-        for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2$1(ctx2, each_value_2, i);
-          if (each_blocks_1[i]) {
-            each_blocks_1[i].p(child_ctx, dirty);
-          } else {
-            each_blocks_1[i] = create_each_block_2$1(child_ctx);
-            each_blocks_1[i].c();
-            each_blocks_1[i].m(div0, t9);
-          }
-        }
-        for (; i < each_blocks_1.length; i += 1) {
-          each_blocks_1[i].d(1);
-        }
-        each_blocks_1.length = each_value_2.length;
-      }
-      if (dirty & /*selectedItem, $items*/
-      3) {
-        each_value_1 = ensure_array_like(
-          /*$items*/
-          ctx2[0].mods.filter(
-            /*func_1*/
-            ctx2[8]
-          )
-        );
-        let i;
-        for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$2(ctx2, each_value_1, i);
-          if (each_blocks[i]) {
-            each_blocks[i].p(child_ctx, dirty);
-          } else {
-            each_blocks[i] = create_each_block_1$2(child_ctx);
-            each_blocks[i].c();
-            each_blocks[i].m(div0, null);
-          }
-        }
-        for (; i < each_blocks.length; i += 1) {
-          each_blocks[i].d(1);
-        }
-        each_blocks.length = each_value_1.length;
-      }
-      if (!current || dirty & /*selectedItem*/
-      2) {
-        set_style(
-          img,
-          "content",
-          /*selectedItem*/
-          (_a3 = ctx2[1]) == null ? void 0 : _a3.icon
-        );
-      }
-      if ((!current || dirty & /*selectedItem*/
-      2) && t14_value !== (t14_value = /*selectedItem*/
-      ((_b3 = ctx2[1]) == null ? void 0 : _b3.name) + "")) set_data(t14, t14_value);
-      if ((!current || dirty & /*selectedItem*/
-      2) && t17_value !== (t17_value = /*selectedItem*/
-      ctx2[1] instanceof ConstantDrawMod ? (
-        /*selectedItem*/
-        ctx2[1] instanceof TypoDrawTool ? "TOOL" : "COMBO MOD"
-      ) : "MOD")) set_data(t17, t17_value);
-      if ((!current || dirty & /*selectedItem*/
-      2) && t20_value !== (t20_value = /*selectedItem*/
-      ((_c2 = ctx2[1]) == null ? void 0 : _c2.description) + "")) set_data(t20, t20_value);
-      if (
-        /*selectedItem*/
-        ctx2[1] !== void 0 && /*selectedItem*/
-        ctx2[1].settings.length > 0
-      ) {
-        if (if_block) {
-          if_block.p(ctx2, dirty);
-          if (dirty & /*selectedItem*/
-          2) {
-            transition_in(if_block, 1);
-          }
-        } else {
-          if_block = create_if_block$9(ctx2);
-          if_block.c();
-          transition_in(if_block, 1);
-          if_block.m(div2, null);
-        }
-      } else if (if_block) {
-        group_outros();
-        transition_out(if_block, 1, 1, () => {
-          if_block = null;
-        });
-        check_outros();
-      }
-    },
-    i(local) {
-      if (current) return;
-      transition_in(if_block);
-      current = true;
-    },
-    o(local) {
-      transition_out(if_block);
-      current = false;
-    },
-    d(detaching) {
-      if (detaching) {
-        detach(p0);
-        detach(t3);
-        detach(div3);
-      }
-      destroy_each(each_blocks_2, detaching);
-      destroy_each(each_blocks_1, detaching);
-      destroy_each(each_blocks, detaching);
-      if (if_block) if_block.d();
-    }
-  };
-}
-__name(create_fragment$j, "create_fragment$j");
-function instance$i($$self, $$props, $$invalidate) {
-  let $items;
-  let { feature } = $$props;
-  let { initTool = void 0 } = $$props;
-  const items = feature.toolbarItemsStore;
-  component_subscribe($$self, items, (value) => $$invalidate(0, $items = value));
-  let selectedItem = initTool;
-  const click_handler2 = /* @__PURE__ */ __name((tool) => $$invalidate(1, selectedItem = tool.item), "click_handler");
-  const func2 = /* @__PURE__ */ __name((mod) => !(mod.item instanceof ConstantDrawMod), "func");
-  const click_handler_1 = /* @__PURE__ */ __name((mod) => $$invalidate(1, selectedItem = mod.item), "click_handler_1");
-  const func_12 = /* @__PURE__ */ __name((mod) => mod.item instanceof ConstantDrawMod, "func_1");
-  const click_handler_2 = /* @__PURE__ */ __name((mod) => $$invalidate(1, selectedItem = mod.item), "click_handler_2");
-  $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(3, feature = $$props2.feature);
-    if ("initTool" in $$props2) $$invalidate(4, initTool = $$props2.initTool);
-  };
-  $$self.$$.update = () => {
-    var _a2;
-    if ($$self.$$.dirty & /*initTool, $items*/
-    17) {
-      {
-        $$invalidate(1, selectedItem = initTool ?? ((_a2 = $items.tools.find((tool) => tool.active) ?? $items.mods.find((mod) => mod.active) ?? $items.tools[0]) == null ? void 0 : _a2.item));
-      }
-    }
-  };
-  return [
-    $items,
-    selectedItem,
-    items,
-    feature,
-    initTool,
-    click_handler2,
-    func2,
-    click_handler_1,
-    func_12,
-    click_handler_2
-  ];
-}
-__name(instance$i, "instance$i");
-const _Drawing_brush_lab_manage = class _Drawing_brush_lab_manage extends SvelteComponent {
-  constructor(options) {
-    super();
-    init(this, options, instance$i, create_fragment$j, safe_not_equal, { feature: 3, initTool: 4 });
-  }
-};
-__name(_Drawing_brush_lab_manage, "Drawing_brush_lab_manage");
-let Drawing_brush_lab_manage = _Drawing_brush_lab_manage;
-var __defProp$o = Object.defineProperty;
-var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$o(target, key2, result);
-  return result;
-}, "__decorateClass$o");
-const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeature {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_toolsService");
-    __publicField(this, "_elementsSetup");
-    __publicField(this, "_modalService");
-    __publicField(this, "name", "Brush Laboratory");
-    __publicField(this, "description", "Add custom drawing tools for special effects to the toolbar");
-    __publicField(this, "tags", [
-      FeatureTag.DRAWING
-    ]);
-    __publicField(this, "featureId", 39);
-    __publicField(this, "_labSwitchComponent");
-    __publicField(this, "_labGroupComponent");
-    __publicField(this, "_toolbarItems$", new BehaviorSubject({ tools: [], mods: [] }));
-    __publicField(this, "_items", [
-      ParallelLineMod,
-      MandalaMod,
-      SculptMod,
-      DotTool,
-      DashTool,
-      RainbowMod,
-      RandomColorMod,
-      GridTool,
-      NoiseMod,
-      TiltMod
-    ]);
-    __publicField(this, "_brushLabToggleHotkey", this.useHotkey(
-      new HotkeyAction(
-        "toggle_lab",
-        "Toggle Brush Lab",
-        "Toggle the visibility of the brush lab below skribbl tools",
-        this,
-        () => {
-          var _a2;
-          return (_a2 = this._labSwitchComponent) == null ? void 0 : _a2.toggle();
-        },
-        true,
-        ["ShiftLeft", "KeyL"]
-      )
-    ));
-  }
-  get featureInfoComponent() {
-    return { componentType: Drawing_brush_lab_info, props: { feature: this } };
-  }
-  /*public override get featureManagementComponent(): componentData<BrushLabManage> {
-    return { componentType: BrushLabManage, props: { feature: this } };
-  }*/
-  async onActivate() {
-    const elements2 = await this._elementsSetup.complete();
-    this._labGroupComponent = new Drawing_brush_lab_group({
-      target: elements2.skribblToolbar,
-      props: { feature: this }
-    });
-    this._labSwitchComponent = new Drawing_brush_lab_switch({
-      target: elements2.skribblActions,
-      props: { feature: this }
-    });
-    this.createItems();
-  }
-  async onDestroy() {
-    if (this._labSwitchComponent) {
-      this._labSwitchComponent.$destroy();
-      this._labSwitchComponent = void 0;
-    }
-    if (this._labGroupComponent) {
-      this._labGroupComponent.$destroy();
-      this._labGroupComponent = void 0;
-    }
-    const items = await firstValueFrom(this._toolbarItems$);
-    items.mods.forEach(({ item }) => this._toolsService.removeMod(item));
-    this._toolsService.activateTool(skribblTool.brush);
-  }
-  get toolbarItemsStore() {
-    return fromObservable(this._toolbarItems$.pipe(
-      combineLatestWith(this._toolsService.activeTool$, this._toolsService.activeMods$),
-      map(([items, activeTool, activeMods]) => {
-        return {
-          mods: items.mods.map((item) => ({ item: item.item, active: activeMods.includes(item.item) })),
-          tools: items.tools.map((item) => ({ item: item.item, active: activeTool === item.item }))
-        };
-      })
-    ), this._toolbarItems$.value);
-  }
-  createItems() {
-    const items = this._items.map((item) => this._toolsService.resolveModOrTool(item));
-    const tools = items.filter((item) => item instanceof TypoDrawTool).map((item) => ({ item, active: false }));
-    const mods = items.filter((item) => !(item instanceof TypoDrawTool)).map((item) => ({ item, active: false }));
-    this._toolbarItems$.next({ tools, mods });
-  }
-  activateTool(tool) {
-    this._toolsService.activateTool(tool);
-  }
-  activateMod(mod) {
-    this._toolsService.activateMod(mod);
-  }
-  removeMod(mod) {
-    this._toolsService.removeMod(mod);
-  }
-  openBrushLabSettings(initTool) {
-    const componentData = {
-      componentType: Drawing_brush_lab_manage,
-      props: { feature: this, initTool }
-    };
-    this._modalService.showModal(componentData.componentType, componentData.props, "Brush Laboratory");
-  }
-};
-__name(_DrawingBrushLabFeature, "DrawingBrushLabFeature");
-let DrawingBrushLabFeature = _DrawingBrushLabFeature;
-__decorateClass$o([
-  inject(ToolsService)
-], DrawingBrushLabFeature.prototype, "_toolsService");
-__decorateClass$o([
-  inject(ElementsSetup)
-], DrawingBrushLabFeature.prototype, "_elementsSetup");
-__decorateClass$o([
-  inject(ModalService)
-], DrawingBrushLabFeature.prototype, "_modalService");
 const _DomEventSubscription = class _DomEventSubscription {
   constructor(_element, _eventType) {
     __publicField(this, "_events$", new Subject$1());
@@ -59549,15 +52594,15 @@ const _DomEventSubscription = class _DomEventSubscription {
 };
 __name(_DomEventSubscription, "DomEventSubscription");
 let DomEventSubscription = _DomEventSubscription;
-var __defProp$n = Object.defineProperty;
-var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$v = Object.defineProperty;
+var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$n(target, key2, result);
+  if (result) __defProp$v(target, key2, result);
   return result;
-}, "__decorateClass$n");
+}, "__decorateClass$v");
 const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -59571,6 +52616,7 @@ const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeat
       FeatureTag.DRAWING
     ]);
     __publicField(this, "featureId", 53);
+    __publicField(this, "featureEnabledDefault", false);
     __publicField(this, "_onlyPracticeLobbies", this.useSetting(
       new BooleanExtensionSetting("ping_suggestions", true, this).withName("Lock only for practice lobbies").withDescription("Clearing in public/private lobbies will be enabled.")
     ));
@@ -59614,53 +52660,18 @@ const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeat
 };
 __name(_DrawingClearLockFeature, "DrawingClearLockFeature");
 let DrawingClearLockFeature = _DrawingClearLockFeature;
-__decorateClass$n([
+__decorateClass$v([
   inject(ToastService)
 ], DrawingClearLockFeature.prototype, "_toastService");
-__decorateClass$n([
+__decorateClass$v([
   inject(ElementsSetup)
 ], DrawingClearLockFeature.prototype, "_elementsSetup");
-__decorateClass$n([
+__decorateClass$v([
   inject(DrawingService)
 ], DrawingClearLockFeature.prototype, "_drawingService");
-__decorateClass$n([
+__decorateClass$v([
   inject(LobbyService)
 ], DrawingClearLockFeature.prototype, "_lobbyService");
-var __defProp$m = Object.defineProperty;
-var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-  var result = void 0;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = decorator(target, key2, result) || result;
-  if (result) __defProp$m(target, key2, result);
-  return result;
-}, "__decorateClass$m");
-const _DrawingSizeHotkeysFeature = class _DrawingSizeHotkeysFeature extends TypoFeature {
-  constructor() {
-    super(...arguments);
-    __publicField(this, "_drawingService");
-    __publicField(this, "name", "Brush Size Hotkeys");
-    __publicField(this, "description", "Adds hotkeys to change the brush size");
-    __publicField(this, "tags", [
-      FeatureTag.DRAWING
-    ]);
-    __publicField(this, "featureId", 51);
-    __publicField(this, "_sizeHotkeys", [1, 2, 3, 4, 5].map((level) => this.useHotkey(new HotkeyAction(
-      `size_${level}`,
-      `Brush size ${level}`,
-      `Set the brush size to level ${level}`,
-      this,
-      () => this._drawingService.setSize([4, 10, 20, 32, 40][level - 1]),
-      true,
-      [`Digit${level}`]
-    ))));
-  }
-};
-__name(_DrawingSizeHotkeysFeature, "DrawingSizeHotkeysFeature");
-let DrawingSizeHotkeysFeature = _DrawingSizeHotkeysFeature;
-__decorateClass$m([
-  inject(DrawingService)
-], DrawingSizeHotkeysFeature.prototype, "_drawingService");
 const avatarColors = [
   "#ed2b34",
   "#ff7b00",
@@ -59990,18 +53001,18 @@ const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
     (event) => event.dislikes
   ).withYLabels(yLabelIncrements(1)).withAggregation("ranking").withOrdering("maxValue")
 }), "createMetricViews");
-var __defProp$l = Object.defineProperty;
+var __defProp$u = Object.defineProperty;
 var __getOwnPropDesc$2 = Object.getOwnPropertyDescriptor;
-var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc$2(target, key2) : target;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = (kind ? decorator(target, key2, result) : decorator(result)) || result;
-  if (kind && result) __defProp$l(target, key2, result);
+  if (kind && result) __defProp$u(target, key2, result);
   return result;
-}, "__decorateClass$l");
+}, "__decorateClass$u");
 var __decorateParam$1 = /* @__PURE__ */ __name((index, decorator) => (target, key2) => decorator(target, key2, index), "__decorateParam$1");
-let LobbyStatsService = (_Ga = class {
+let LobbyStatsService = (_Fa = class {
   constructor(loggerFactory2) {
     __publicField(this, "_lobbyService");
     __publicField(this, "_lobbyInteractedEventListener");
@@ -60439,36 +53450,35 @@ let LobbyStatsService = (_Ga = class {
       /* guess times for guessers */
       mergeWith(this._guessTimeStats$.pipe(
         map((event) => ({ ...event, completionTimeMs: event.guessTimeMs }))
-      )),
-      tap((e) => console.log("completion time", e.playerId, e.completionTimeMs))
+      ))
     ).subscribe((event) => this._completionTimeStats$.next(event));
   }
-}, __name(_Ga, "LobbyStatsService"), _Ga);
-__decorateClass$l([
+}, __name(_Fa, "LobbyStatsService"), _Fa);
+__decorateClass$u([
   inject(LobbyService)
 ], LobbyStatsService.prototype, "_lobbyService", 2);
-__decorateClass$l([
+__decorateClass$u([
   inject(LobbyInteractedEventListener)
 ], LobbyStatsService.prototype, "_lobbyInteractedEventListener", 2);
-__decorateClass$l([
+__decorateClass$u([
   inject(LobbyStateChangedEventListener)
 ], LobbyStatsService.prototype, "_lobbyStateChangedEventListener", 2);
-__decorateClass$l([
+__decorateClass$u([
   inject(WordGuessedEventListener)
 ], LobbyStatsService.prototype, "_wordGuessedEventListener", 2);
-__decorateClass$l([
+__decorateClass$u([
   inject(ChatService)
 ], LobbyStatsService.prototype, "_chatService", 2);
-__decorateClass$l([
+__decorateClass$u([
   inject(DrawingService)
 ], LobbyStatsService.prototype, "_drawingService", 2);
-__decorateClass$l([
+__decorateClass$u([
   inject(LobbyJoinedEventListener)
 ], LobbyStatsService.prototype, "_lobbyJoinedEventListener", 2);
-__decorateClass$l([
+__decorateClass$u([
   postConstruct()
 ], LobbyStatsService.prototype, "postConstruct", 1);
-LobbyStatsService = __decorateClass$l([
+LobbyStatsService = __decorateClass$u([
   injectable(),
   __decorateParam$1(0, inject(loggerFactory))
 ], LobbyStatsService);
@@ -60783,32 +53793,32 @@ const _Chart = class _Chart {
 };
 __name(_Chart, "Chart");
 let Chart = _Chart;
-function get_each_context$b(ctx, list, i) {
+function get_each_context$h(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[26] = list[i];
   return child_ctx;
 }
-__name(get_each_context$b, "get_each_context$b");
-function get_each_context_1$1(ctx, list, i) {
+__name(get_each_context$h, "get_each_context$h");
+function get_each_context_1$6(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[29] = list[i];
   return child_ctx;
 }
-__name(get_each_context_1$1, "get_each_context_1$1");
-function get_each_context_2(ctx, list, i) {
+__name(get_each_context_1$6, "get_each_context_1$6");
+function get_each_context_2$3(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[32] = list[i];
   return child_ctx;
 }
-__name(get_each_context_2, "get_each_context_2");
-function get_each_context_3(ctx, list, i) {
+__name(get_each_context_2$3, "get_each_context_2$3");
+function get_each_context_3$1(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[35] = list[i];
   child_ctx[36] = list;
   child_ctx[37] = i;
   return child_ctx;
 }
-__name(get_each_context_3, "get_each_context_3");
+__name(get_each_context_3$1, "get_each_context_3$1");
 function get_each_context_4(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[38] = list[i];
@@ -60922,7 +53932,7 @@ function create_each_block_4(ctx) {
   };
 }
 __name(create_each_block_4, "create_each_block_4");
-function create_each_block_3(ctx) {
+function create_each_block_3$1(ctx) {
   let checkbox;
   let updating_checked;
   let current;
@@ -61002,8 +54012,8 @@ function create_each_block_3(ctx) {
     }
   };
 }
-__name(create_each_block_3, "create_each_block_3");
-function create_else_block$4(ctx) {
+__name(create_each_block_3$1, "create_each_block_3$1");
+function create_else_block$6(ctx) {
   let p;
   return {
     c() {
@@ -61023,8 +54033,8 @@ function create_else_block$4(ctx) {
     }
   };
 }
-__name(create_else_block$4, "create_else_block$4");
-function create_if_block$8(ctx) {
+__name(create_else_block$6, "create_else_block$6");
+function create_if_block$e(ctx) {
   let h3;
   let t1;
   let div;
@@ -61066,7 +54076,7 @@ function create_if_block$8(ctx) {
   );
   let each_blocks_1 = [];
   for (let i = 0; i < each_value_2.length; i += 1) {
-    each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+    each_blocks_1[i] = create_each_block_2$3(get_each_context_2$3(ctx, each_value_2, i));
   }
   let each_value = ensure_array_like(
     /*selectedTableData*/
@@ -61074,7 +54084,7 @@ function create_if_block$8(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
-    each_blocks[i] = create_each_block$b(get_each_context$b(ctx, each_value, i));
+    each_blocks[i] = create_each_block$h(get_each_context$h(ctx, each_value, i));
   }
   return {
     c() {
@@ -61135,11 +54145,11 @@ function create_if_block$8(ctx) {
         );
         let i;
         for (i = 0; i < each_value_2.length; i += 1) {
-          const child_ctx = get_each_context_2(ctx2, each_value_2, i);
+          const child_ctx = get_each_context_2$3(ctx2, each_value_2, i);
           if (each_blocks_1[i]) {
             each_blocks_1[i].p(child_ctx, dirty);
           } else {
-            each_blocks_1[i] = create_each_block_2(child_ctx);
+            each_blocks_1[i] = create_each_block_2$3(child_ctx);
             each_blocks_1[i].c();
             each_blocks_1[i].m(tr, null);
           }
@@ -61157,11 +54167,11 @@ function create_if_block$8(ctx) {
         );
         let i;
         for (i = 0; i < each_value.length; i += 1) {
-          const child_ctx = get_each_context$b(ctx2, each_value, i);
+          const child_ctx = get_each_context$h(ctx2, each_value, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block$b(child_ctx);
+            each_blocks[i] = create_each_block$h(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(tbody, null);
           }
@@ -61198,8 +54208,8 @@ function create_if_block$8(ctx) {
     }
   };
 }
-__name(create_if_block$8, "create_if_block$8");
-function create_each_block_2(ctx) {
+__name(create_if_block$e, "create_if_block$e");
+function create_each_block_2$3(ctx) {
   let th;
   let t_value = (
     /*header*/
@@ -61228,8 +54238,8 @@ function create_each_block_2(ctx) {
     }
   };
 }
-__name(create_each_block_2, "create_each_block_2");
-function create_each_block_1$1(ctx) {
+__name(create_each_block_2$3, "create_each_block_2$3");
+function create_each_block_1$6(ctx) {
   let td;
   let t_value = (
     /*cell*/
@@ -61258,8 +54268,8 @@ function create_each_block_1$1(ctx) {
     }
   };
 }
-__name(create_each_block_1$1, "create_each_block_1$1");
-function create_each_block$b(ctx) {
+__name(create_each_block_1$6, "create_each_block_1$6");
+function create_each_block$h(ctx) {
   let tr;
   let t;
   let each_value_1 = ensure_array_like(
@@ -61268,7 +54278,7 @@ function create_each_block$b(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
-    each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    each_blocks[i] = create_each_block_1$6(get_each_context_1$6(ctx, each_value_1, i));
   }
   return {
     c() {
@@ -61297,11 +54307,11 @@ function create_each_block$b(ctx) {
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
-          const child_ctx = get_each_context_1$1(ctx2, each_value_1, i);
+          const child_ctx = get_each_context_1$6(ctx2, each_value_1, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
           } else {
-            each_blocks[i] = create_each_block_1$1(child_ctx);
+            each_blocks[i] = create_each_block_1$6(child_ctx);
             each_blocks[i].c();
             each_blocks[i].m(tr, t);
           }
@@ -61320,8 +54330,8 @@ function create_each_block$b(ctx) {
     }
   };
 }
-__name(create_each_block$b, "create_each_block$b");
-function create_fragment$i(ctx) {
+__name(create_each_block$h, "create_each_block$h");
+function create_fragment$w(ctx) {
   let div3;
   let span;
   let t1;
@@ -61369,12 +54379,12 @@ function create_fragment$i(ctx) {
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_3.length; i += 1) {
-    each_blocks[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
+    each_blocks[i] = create_each_block_3$1(get_each_context_3$1(ctx, each_value_3, i));
   }
   const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
     each_blocks[i] = null;
   }), "out");
-  const if_block_creators = [create_if_block$8, create_else_block$4];
+  const if_block_creators = [create_if_block$e, create_else_block$6];
   const if_blocks = [];
   function select_block_type(ctx2, dirty) {
     if (
@@ -61620,12 +54630,12 @@ function create_fragment$i(ctx) {
         );
         let i;
         for (i = 0; i < each_value_3.length; i += 1) {
-          const child_ctx = get_each_context_3(ctx2, each_value_3, i);
+          const child_ctx = get_each_context_3$1(ctx2, each_value_3, i);
           if (each_blocks[i]) {
             each_blocks[i].p(child_ctx, dirty);
             transition_in(each_blocks[i], 1);
           } else {
-            each_blocks[i] = create_each_block_3(child_ctx);
+            each_blocks[i] = create_each_block_3$1(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
             each_blocks[i].m(div1, null);
@@ -61688,8 +54698,8 @@ function create_fragment$i(ctx) {
     }
   };
 }
-__name(create_fragment$i, "create_fragment$i");
-function instance$h($$self, $$props, $$invalidate) {
+__name(create_fragment$w, "create_fragment$w");
+function instance$t($$self, $$props, $$invalidate) {
   let $archive;
   let $lobby;
   let $seenPlayers;
@@ -61834,24 +54844,24 @@ function instance$h($$self, $$props, $$invalidate) {
     click_handler_1
   ];
 }
-__name(instance$h, "instance$h");
+__name(instance$t, "instance$t");
 const _Charts = class _Charts extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$h, create_fragment$i, safe_not_equal, { feature: 0 }, null, [-1, -1]);
+    init(this, options, instance$t, create_fragment$w, safe_not_equal, { feature: 0 }, null, [-1, -1]);
   }
 };
 __name(_Charts, "Charts");
 let Charts = _Charts;
-var __defProp$k = Object.defineProperty;
-var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+var __defProp$t = Object.defineProperty;
+var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
   var result = void 0;
   for (var i = decorators.length - 1, decorator; i >= 0; i--)
     if (decorator = decorators[i])
       result = decorator(target, key2, result) || result;
-  if (result) __defProp$k(target, key2, result);
+  if (result) __defProp$t(target, key2, result);
   return result;
-}, "__decorateClass$k");
+}, "__decorateClass$t");
 const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeature {
   constructor() {
     super(...arguments);
@@ -61869,6 +54879,7 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
       FeatureTag.SOCIAL
     ]);
     __publicField(this, "featureId", 55);
+    __publicField(this, "featureEnabledDefault", false);
     __publicField(this, "_metricViews", createMetricViews());
     __publicField(this, "_statArchive$", new BehaviorSubject(/* @__PURE__ */ new Map()));
     __publicField(this, "_seenLobbyPlayers$", new BehaviorSubject(/* @__PURE__ */ new Map()));
@@ -62051,27 +55062,7020 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
 };
 __name(_LobbyStatisticsFeature, "LobbyStatisticsFeature");
 let LobbyStatisticsFeature = _LobbyStatisticsFeature;
-__decorateClass$k([
+__decorateClass$t([
   inject(LobbyStatsService)
 ], LobbyStatisticsFeature.prototype, "_lobbyStatsService");
-__decorateClass$k([
+__decorateClass$t([
   inject(LobbyService)
 ], LobbyStatisticsFeature.prototype, "_lobbyService");
-__decorateClass$k([
+__decorateClass$t([
   inject(LobbyLeftEventListener)
 ], LobbyStatisticsFeature.prototype, "_lobbyLeftEventListener");
-__decorateClass$k([
+__decorateClass$t([
   inject(RoundStartedEventListener)
 ], LobbyStatisticsFeature.prototype, "_roundStartedEventListener");
-__decorateClass$k([
+__decorateClass$t([
   inject(LobbyStateChangedEventListener)
 ], LobbyStatisticsFeature.prototype, "_lobbyStateChangedEventListener");
-__decorateClass$k([
+__decorateClass$t([
   inject(ElementsSetup)
 ], LobbyStatisticsFeature.prototype, "_elementsSetup");
-__decorateClass$k([
+__decorateClass$t([
   inject(ModalService)
 ], LobbyStatisticsFeature.prototype, "_modalService");
+function create_fragment$v(ctx) {
+  let img;
+  let img_src_value;
+  return {
+    c() {
+      img = element$1("img");
+      attr(img, "class", "typo-onboarding-emote svelte-1593rkb");
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      set_style(
+        img,
+        "top",
+        /*y*/
+        ctx[1] + "px"
+      );
+      set_style(
+        img,
+        "left",
+        /*x*/
+        ctx[0] + "px"
+      );
+      set_style(img, "content", "var(--" + /*src*/
+      ctx[2] + ")");
+    },
+    m(target, anchor) {
+      insert(target, img, anchor);
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*y*/
+      2) {
+        set_style(
+          img,
+          "top",
+          /*y*/
+          ctx2[1] + "px"
+        );
+      }
+      if (dirty & /*x*/
+      1) {
+        set_style(
+          img,
+          "left",
+          /*x*/
+          ctx2[0] + "px"
+        );
+      }
+      if (dirty & /*src*/
+      4) {
+        set_style(img, "content", "var(--" + /*src*/
+        ctx2[2] + ")");
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(img);
+      }
+    }
+  };
+}
+__name(create_fragment$v, "create_fragment$v");
+function instance$s($$self, $$props, $$invalidate) {
+  let { x } = $$props;
+  let { y } = $$props;
+  let { src } = $$props;
+  const hasEnoughDistance = /* @__PURE__ */ __name((x1, y1) => {
+    const center = [x + 15, y + 15];
+    const center1 = [x1 + 15, y1 + 15];
+    const distance = Math.sqrt((center[0] - center1[0]) ** 2 + (center[1] - center1[1]) ** 2);
+    return distance > 60;
+  }, "hasEnoughDistance");
+  $$self.$$set = ($$props2) => {
+    if ("x" in $$props2) $$invalidate(0, x = $$props2.x);
+    if ("y" in $$props2) $$invalidate(1, y = $$props2.y);
+    if ("src" in $$props2) $$invalidate(2, src = $$props2.src);
+  };
+  return [x, y, src, hasEnoughDistance];
+}
+__name(instance$s, "instance$s");
+const _Controls_onboarding_emoji = class _Controls_onboarding_emoji extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$s, create_fragment$v, safe_not_equal, { x: 0, y: 1, src: 2, hasEnoughDistance: 3 });
+  }
+  get hasEnoughDistance() {
+    return this.$$.ctx[3];
+  }
+};
+__name(_Controls_onboarding_emoji, "Controls_onboarding_emoji");
+let Controls_onboarding_emoji = _Controls_onboarding_emoji;
+function create_fragment$u(ctx) {
+  let h3;
+  let t1;
+  let div;
+  return {
+    c() {
+      h3 = element$1("h3");
+      h3.textContent = "Introducing the new Typo";
+      t1 = space();
+      div = element$1("div");
+      div.innerHTML = `<p class="svelte-115f3km">Starting in April 2025, Typo is receiving its biggest update so far.<br class="svelte-115f3km"/>
+    Typo still has the same features, but makes them much more user-friendly, accessible and customizable.<br class="svelte-115f3km"/>
+    So far, Typo provided the tools, but now it&#39;s the whole workshop!</p> <h4 class="svelte-115f3km">A quick-start guide</h4> <p class="svelte-115f3km">All Typo features can now be customized, so you don&#39;t have anything that messes with your optimal skribbl experience.<br class="svelte-115f3km"/>
+    To set up Typo to your preferences, click the wrench icon at the top left (unless customized to somewhere else ;).<br class="svelte-115f3km"/>
+    There, you can:</p> <ul class="svelte-115f3km"><li class="svelte-115f3km">Enable or disable every feature</li> <li class="svelte-115f3km">Adjust feature settings to your likes</li> <li class="svelte-115f3km">Change and toggle hotkeys and chat commands of features</li> <li class="svelte-115f3km">View some extra info &amp; hints about features</li></ul> <p class="svelte-115f3km">To get started, you can browse through the list of features and view their details.<br class="svelte-115f3km"/>
+    Features are also categorized by tags so you can easily find what you are looking for.<br class="svelte-115f3km"/>
+    While you might see many features that you already know of, you could discover some that were newly added or features that you didn&#39;t notice yet!<br class="svelte-115f3km"/>
+    To change general Typo settings, choose the &quot;Typo Settings&quot; feature in the Typo Features view.<br class="svelte-115f3km"/>
+    You can reset all data or switch between profiles in the &quot;Typo Profiles&quot; feature.<br class="svelte-115f3km"/>
+    If you have any questions or feedback, join the community on <a href="https://discord.com/invite/pAapmUmWAM" class="svelte-115f3km">Discord</a>!</p> <br/> <h4 class="svelte-115f3km">The most important changes</h4> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Typo Settings</b><br class="svelte-115f3km"/>
+    Typo settings are now located directly on skribbl (read the quick-start-guide ;) instead of the extension popup menu.<br class="svelte-115f3km"/>
+    You can customize everything that you&#39;re used to from the popup menu, now found in the respective feature dialog.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Typo Pen Pressure</b><br class="svelte-115f3km"/>
+    Typo pressure has now an improved adjustment system which allows more precise control.<br class="svelte-115f3km"/>
+    You will notice that your previous setting has been reset.<br class="svelte-115f3km"/>
+    To adjust the sensitivity, go to the &quot;Typo Settings&quot;, choose the &quot;Pressure&quot; feature, and adjust the sliders to your liking.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Lobby Privacy</b><br class="svelte-115f3km"/>
+    Instead of the lock icon at the very left side, a connection icon is displayed at the top-right corner of the chat.<br class="svelte-115f3km"/>
+    An icon with a checkmark means that the lobby has privacy settings active (not visible to everyone).<br class="svelte-115f3km"/>
+    If you&#39;re the lobby owner (first Typo player to join), you can change lobby settings there.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Filter Search</b><br class="svelte-115f3km"/>
+    To start a lobby search with filters, you need to use the &quot;Start Search&quot; button in the &quot;Filters&quot; tab on the home screen.<br class="svelte-115f3km"/>
+    Clicking &quot;Play&quot; will always just join the next public/private lobby.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Chat Commands</b><br class="svelte-115f3km"/>
+    Chat commands received a massive facelift!<br class="svelte-115f3km"/>
+    To start using commands, type a &quot;/&quot; in the chat box. <br class="svelte-115f3km"/>
+    A popout with available commands will open; you can continue typing the command and arguments and submit the command with &quot;Enter&quot;.<br class="svelte-115f3km"/>
+    You can also customize the &quot;/&quot; prefix to another character in the settings of the &quot;Chat Commands&quot; feature.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ QuickReact and Hotkeys</b><br class="svelte-115f3km"/>
+    Hotkeys are now individually customizable for every feature and have changed here and there.<br class="svelte-115f3km"/>
+    As an example, QuickReact now uses the right-hand side Ctrl key, exclusively.<br class="svelte-115f3km"/>
+    To change hotkeys for any feature or check the current configuration, open its feature settings.<br class="svelte-115f3km"/>
+    Hotkeys can also consist of combinations.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Zoom Drawing</b><br class="svelte-115f3km"/>
+    Zooming still uses the Ctrl hotkey, but now starts immediately at the last cursor position without clicking on the canvas.<br class="svelte-115f3km"/>
+    To exit zoom, click Ctrl again.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Custom Colors</b><br class="svelte-115f3km"/>
+    When you use custom colors in public lobbies, Typo will now show the closest skribbl color for non-Typo users.<br class="svelte-115f3km"/>
+    It is still recommended that you use custom colors only in lobbies with Typo players, because fill behavior might appear differently for non-Typo-users.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Practice Lobby</b><br class="svelte-115f3km"/>
+    Instead of clicking your avatar on the home screen, you can enter the offline free draw mode using the palette icon next to your avatar.<br class="svelte-115f3km"/></p> <p class="svelte-115f3km"><b class="svelte-115f3km">➜ Drop Catch Reports</b><br class="svelte-115f3km"/>
+    When someone catches drops suspiciously fast, you could report the catch by revealing the drop ID in the drop message.<br class="svelte-115f3km"/>
+    To report drops in the new Typo, open the &quot;Drops&quot; feature in the Typo setting, where you will find a log of all drop catches.<br class="svelte-115f3km"/>
+    To report a drop, you can copy its ID and the catch time and send it on the Typo discord server.<br class="svelte-115f3km"/></p>`;
+      attr(h3, "class", "svelte-115f3km");
+    },
+    m(target, anchor) {
+      insert(target, h3, anchor);
+      insert(target, t1, anchor);
+      insert(target, div, anchor);
+    },
+    p: noop$1,
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(h3);
+        detach(t1);
+        detach(div);
+      }
+    }
+  };
+}
+__name(create_fragment$u, "create_fragment$u");
+const _Old_typo_onboarding = class _Old_typo_onboarding extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, null, create_fragment$u, safe_not_equal, {});
+  }
+};
+__name(_Old_typo_onboarding, "Old_typo_onboarding");
+let Old_typo_onboarding = _Old_typo_onboarding;
+function create_fragment$t(ctx) {
+  let h3;
+  let t1;
+  let div;
+  return {
+    c() {
+      h3 = element$1("h3");
+      h3.textContent = "Credits & Imprint";
+      t1 = space();
+      div = element$1("div");
+      div.innerHTML = `<p class="svelte-1d2n9p6">Glad to see you using Typo!<br/><br/>
+    This extension grew with me and my coding skills over the years from a small script to a complex project.<br/>
+    The awesome skribbl.io community (&amp; game ;) was my main drive to keep improving adding more and more features.<br/>
+    Thanks so much to every user, beta tester and developer for making this passion of mine more than a hobby.<br/></p> <h4 class="svelte-1d2n9p6">Helpful links</h4> <ul class="svelte-1d2n9p6"><li><a href="https://typo.rip" class="svelte-1d2n9p6">typo.rip</a> - The official website with a bunch of tools and infos</li> <li><a href="https://discord.com/invite/pAapmUmWAM" class="svelte-1d2n9p6">Discord</a> - Join the community, talk about Typo &amp; skribbl or ask for feature support</li> <li><a href="https://www.patreon.com/skribbltypo" class="svelte-1d2n9p6">Patreon</a> - Feed the developer 💖</li> <li><a href="https://github.com/toobeeh/skribbltypo" class="svelte-1d2n9p6">GitHub</a> - Contribute to the project, view the sourcecode or report issues &amp; improvements</li></ul> <h4 class="svelte-1d2n9p6">Legal stuff &amp; rules</h4> <ul class="svelte-1d2n9p6"><li><a href="https://typo.rip/privacy" class="svelte-1d2n9p6">Privacy Policy</a> - How Typo handles your data</li> <li><a href="https://typo.rip/help/rules" class="svelte-1d2n9p6">Rules &amp; Fair Play</a> - How to behave using Typo</li> <li>I prefer to stay anonymous though :] - enjoy, tobeh</li></ul>`;
+      attr(h3, "class", "svelte-1d2n9p6");
+    },
+    m(target, anchor) {
+      insert(target, h3, anchor);
+      insert(target, t1, anchor);
+      insert(target, div, anchor);
+    },
+    p: noop$1,
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(h3);
+        detach(t1);
+        detach(div);
+      }
+    }
+  };
+}
+__name(create_fragment$t, "create_fragment$t");
+const _Typo_credits_onboarding = class _Typo_credits_onboarding extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, null, create_fragment$t, safe_not_equal, {});
+  }
+};
+__name(_Typo_credits_onboarding, "Typo_credits_onboarding");
+let Typo_credits_onboarding = _Typo_credits_onboarding;
+function get_each_context$g(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[30] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$g, "get_each_context$g");
+function get_each_context_1$5(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[34] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_1$5, "get_each_context_1$5");
+function get_each_context_2$2(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[34] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_2$2, "get_each_context_2$2");
+function create_if_block_4$1(ctx) {
+  let p;
+  let t2;
+  let br1;
+  let t3;
+  let div10;
+  let div1;
+  let t7;
+  let div3;
+  let t11;
+  let div5;
+  let t15;
+  let div7;
+  let t19;
+  let div9;
+  let mounted;
+  let dispose;
+  return {
+    c() {
+      p = element$1("p");
+      p.innerHTML = `To customize your experience, you can select from a variety of feature presets below.<br/>
+      You can always activate, deactivate, or customize features in the settings (the wrench icon), or come back to this page (magic wand icon).`;
+      t2 = space();
+      br1 = element$1("br");
+      t3 = space();
+      div10 = element$1("div");
+      div1 = element$1("div");
+      div1.innerHTML = `<h3>Recommended</h3> <div>A set of the most popular typo features that will enhance your skribbl.io experience.</div>`;
+      t7 = space();
+      div3 = element$1("div");
+      div3.innerHTML = `<h3>Phone</h3> <div>Activates only features that will - probably - work on mobile devices. Limited support!</div>`;
+      t11 = space();
+      div5 = element$1("div");
+      div5.innerHTML = `<h3>Minimal</h3> <div>Skribbl looks as close to original as possible, but essential features are still present.</div>`;
+      t15 = space();
+      div7 = element$1("div");
+      div7.innerHTML = `<h3>Everything</h3> <div>The full package; all nifty tools that Typo has to offer!</div>`;
+      t19 = space();
+      div9 = element$1("div");
+      div9.innerHTML = `<h3>Nothing</h3> <div>Vanilla skribbl.io experience. You will only notice the settings button.</div>`;
+      set_style(p, "text-align", "center");
+      attr(div1, "class", "typo-onboarding-preset svelte-bu1e3");
+      attr(div3, "class", "typo-onboarding-preset svelte-bu1e3");
+      attr(div5, "class", "typo-onboarding-preset svelte-bu1e3");
+      attr(div7, "class", "typo-onboarding-preset svelte-bu1e3");
+      attr(div9, "class", "typo-onboarding-preset svelte-bu1e3");
+      attr(div10, "class", "typo-onboarding-presets svelte-bu1e3");
+    },
+    m(target, anchor) {
+      insert(target, p, anchor);
+      insert(target, t2, anchor);
+      insert(target, br1, anchor);
+      insert(target, t3, anchor);
+      insert(target, div10, anchor);
+      append(div10, div1);
+      append(div10, t7);
+      append(div10, div3);
+      append(div10, t11);
+      append(div10, div5);
+      append(div10, t15);
+      append(div10, div7);
+      append(div10, t19);
+      append(div10, div9);
+      if (!mounted) {
+        dispose = [
+          listen(
+            div1,
+            "click",
+            /*click_handler_4*/
+            ctx[16]
+          ),
+          listen(
+            div3,
+            "click",
+            /*click_handler_5*/
+            ctx[17]
+          ),
+          listen(
+            div5,
+            "click",
+            /*click_handler_6*/
+            ctx[18]
+          ),
+          listen(
+            div7,
+            "click",
+            /*click_handler_7*/
+            ctx[19]
+          ),
+          listen(
+            div9,
+            "click",
+            /*click_handler_8*/
+            ctx[20]
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(p);
+        detach(t2);
+        detach(br1);
+        detach(t3);
+        detach(div10);
+      }
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+__name(create_if_block_4$1, "create_if_block_4$1");
+function create_if_block_1$4(ctx) {
+  let await_block_anchor;
+  let promise;
+  let current;
+  let info = {
+    ctx,
+    current: null,
+    token: null,
+    hasCatch: false,
+    pending: create_pending_block$1,
+    then: create_then_block$1,
+    catch: create_catch_block$1,
+    value: 33,
+    blocks: [, , ,]
+  };
+  handle_promise(promise = /*feature*/
+  ctx[0].getChecklist(), info);
+  return {
+    c() {
+      await_block_anchor = empty();
+      info.block.c();
+    },
+    m(target, anchor) {
+      insert(target, await_block_anchor, anchor);
+      info.block.m(target, info.anchor = anchor);
+      info.mount = () => await_block_anchor.parentNode;
+      info.anchor = await_block_anchor;
+      current = true;
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      info.ctx = ctx;
+      if (dirty[0] & /*feature*/
+      1 && promise !== (promise = /*feature*/
+      ctx[0].getChecklist()) && handle_promise(promise, info)) ;
+      else {
+        update_await_block_branch(info, ctx, dirty);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(info.block);
+      current = true;
+    },
+    o(local) {
+      for (let i = 0; i < 3; i += 1) {
+        const block2 = info.blocks[i];
+        transition_out(block2);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(await_block_anchor);
+      }
+      info.block.d(detaching);
+      info.token = null;
+      info = null;
+    }
+  };
+}
+__name(create_if_block_1$4, "create_if_block_1$4");
+function create_catch_block$1(ctx) {
+  return {
+    c: noop$1,
+    m: noop$1,
+    p: noop$1,
+    i: noop$1,
+    o: noop$1,
+    d: noop$1
+  };
+}
+__name(create_catch_block$1, "create_catch_block$1");
+function create_then_block$1(ctx) {
+  let show_if;
+  let t0;
+  let div2;
+  let div0;
+  let t1;
+  let div1;
+  function select_block_type(ctx2, dirty) {
+    if (dirty[0] & /*feature*/
+    1) show_if = null;
+    if (show_if == null) show_if = !!/*checklist*/
+    ctx2[33].every(func$2);
+    if (show_if) return create_if_block_3$1;
+    return create_else_block_1;
+  }
+  __name(select_block_type, "select_block_type");
+  let current_block_type = select_block_type(ctx, [-1, -1]);
+  let if_block = current_block_type(ctx);
+  let each_value_2 = ensure_array_like(
+    /*checklist*/
+    ctx[33].filter(func_1)
+  );
+  let each_blocks_1 = [];
+  for (let i = 0; i < each_value_2.length; i += 1) {
+    each_blocks_1[i] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i));
+  }
+  let each_value_1 = ensure_array_like(
+    /*checklist*/
+    ctx[33].filter(func_2$1)
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_1.length; i += 1) {
+    each_blocks[i] = create_each_block_1$5(get_each_context_1$5(ctx, each_value_1, i));
+  }
+  return {
+    c() {
+      if_block.c();
+      t0 = space();
+      div2 = element$1("div");
+      div0 = element$1("div");
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        each_blocks_1[i].c();
+      }
+      t1 = space();
+      div1 = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(div0, "class", "typo-onboarding-checklist svelte-bu1e3");
+      attr(div1, "class", "typo-onboarding-checklist svelte-bu1e3");
+      attr(div2, "class", "typo-onboarding-checklist-wrapper svelte-bu1e3");
+    },
+    m(target, anchor) {
+      if_block.m(target, anchor);
+      insert(target, t0, anchor);
+      insert(target, div2, anchor);
+      append(div2, div0);
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        if (each_blocks_1[i]) {
+          each_blocks_1[i].m(div0, null);
+        }
+      }
+      append(div2, t1);
+      append(div2, div1);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div1, null);
+        }
+      }
+    },
+    p(ctx2, dirty) {
+      if (current_block_type !== (current_block_type = select_block_type(ctx2, dirty))) {
+        if_block.d(1);
+        if_block = current_block_type(ctx2);
+        if (if_block) {
+          if_block.c();
+          if_block.m(t0.parentNode, t0);
+        }
+      }
+      if (dirty[0] & /*feature*/
+      1) {
+        each_value_2 = ensure_array_like(
+          /*checklist*/
+          ctx2[33].filter(func_1)
+        );
+        let i;
+        for (i = 0; i < each_value_2.length; i += 1) {
+          const child_ctx = get_each_context_2$2(ctx2, each_value_2, i);
+          if (each_blocks_1[i]) {
+            each_blocks_1[i].p(child_ctx, dirty);
+          } else {
+            each_blocks_1[i] = create_each_block_2$2(child_ctx);
+            each_blocks_1[i].c();
+            each_blocks_1[i].m(div0, null);
+          }
+        }
+        for (; i < each_blocks_1.length; i += 1) {
+          each_blocks_1[i].d(1);
+        }
+        each_blocks_1.length = each_value_2.length;
+      }
+      if (dirty[0] & /*feature*/
+      1) {
+        each_value_1 = ensure_array_like(
+          /*checklist*/
+          ctx2[33].filter(func_2$1)
+        );
+        let i;
+        for (i = 0; i < each_value_1.length; i += 1) {
+          const child_ctx = get_each_context_1$5(ctx2, each_value_1, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+          } else {
+            each_blocks[i] = create_each_block_1$5(child_ctx);
+            each_blocks[i].c();
+            each_blocks[i].m(div1, null);
+          }
+        }
+        for (; i < each_blocks.length; i += 1) {
+          each_blocks[i].d(1);
+        }
+        each_blocks.length = each_value_1.length;
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(t0);
+        detach(div2);
+      }
+      if_block.d(detaching);
+      destroy_each(each_blocks_1, detaching);
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_then_block$1, "create_then_block$1");
+function create_else_block_1(ctx) {
+  let span;
+  return {
+    c() {
+      span = element$1("span");
+      span.textContent = "You can complete following tasks to familiarize yourself with Typo:";
+    },
+    m(target, anchor) {
+      insert(target, span, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+      }
+    }
+  };
+}
+__name(create_else_block_1, "create_else_block_1");
+function create_if_block_3$1(ctx) {
+  let span;
+  return {
+    c() {
+      span = element$1("span");
+      span.textContent = "Congrats, you have completed all tasks!";
+    },
+    m(target, anchor) {
+      insert(target, span, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+      }
+    }
+  };
+}
+__name(create_if_block_3$1, "create_if_block_3$1");
+function create_each_block_2$2(ctx) {
+  let div2;
+  let h4;
+  let t0_value = (
+    /*task*/
+    ctx[34].name + ""
+  );
+  let t0;
+  let t1;
+  let div1;
+  let img;
+  let img_src_value;
+  let t2;
+  let div0;
+  let t3_value = (
+    /*task*/
+    ctx[34].description + ""
+  );
+  let t3;
+  let t4;
+  let mounted;
+  let dispose;
+  function click_handler_9() {
+    return (
+      /*click_handler_9*/
+      ctx[21](
+        /*task*/
+        ctx[34]
+      )
+    );
+  }
+  __name(click_handler_9, "click_handler_9");
+  return {
+    c() {
+      div2 = element$1("div");
+      h4 = element$1("h4");
+      t0 = text(t0_value);
+      t1 = space();
+      div1 = element$1("div");
+      img = element$1("img");
+      t2 = space();
+      div0 = element$1("div");
+      t3 = text(t3_value);
+      t4 = space();
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      set_style(img, "content", "var(--file-img-arrow-right-gif)");
+      set_style(img, "height", "1.5rem");
+      attr(div0, "class", "description svelte-bu1e3");
+      attr(div1, "class", "details svelte-bu1e3");
+      attr(div2, "class", "typo-onboarding-task svelte-bu1e3");
+      set_style(
+        div2,
+        "order",
+        /*task*/
+        ctx[34].priority
+      );
+    },
+    m(target, anchor) {
+      insert(target, div2, anchor);
+      append(div2, h4);
+      append(h4, t0);
+      append(div2, t1);
+      append(div2, div1);
+      append(div1, img);
+      append(div1, t2);
+      append(div1, div0);
+      append(div0, t3);
+      append(div2, t4);
+      if (!mounted) {
+        dispose = listen(div2, "click", click_handler_9);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty[0] & /*feature*/
+      1 && t0_value !== (t0_value = /*task*/
+      ctx[34].name + "")) set_data(t0, t0_value);
+      if (dirty[0] & /*feature*/
+      1 && t3_value !== (t3_value = /*task*/
+      ctx[34].description + "")) set_data(t3, t3_value);
+      if (dirty[0] & /*feature*/
+      1) {
+        set_style(
+          div2,
+          "order",
+          /*task*/
+          ctx[34].priority
+        );
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div2);
+      }
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block_2$2, "create_each_block_2$2");
+function create_else_block$5(ctx) {
+  let img;
+  let img_src_value;
+  return {
+    c() {
+      img = element$1("img");
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      set_style(img, "content", "var(--file-img-arrow-right-gif)");
+      set_style(img, "height", "1.5rem");
+    },
+    m(target, anchor) {
+      insert(target, img, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(img);
+      }
+    }
+  };
+}
+__name(create_else_block$5, "create_else_block$5");
+function create_if_block_2$2(ctx) {
+  let img;
+  let img_src_value;
+  let t0;
+  let b;
+  return {
+    c() {
+      img = element$1("img");
+      t0 = space();
+      b = element$1("b");
+      b.textContent = "Done";
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      set_style(img, "content", "var(--file-img-enabled-gif)");
+      set_style(img, "height", "1.5rem");
+    },
+    m(target, anchor) {
+      insert(target, img, anchor);
+      insert(target, t0, anchor);
+      insert(target, b, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(img);
+        detach(t0);
+        detach(b);
+      }
+    }
+  };
+}
+__name(create_if_block_2$2, "create_if_block_2$2");
+function create_each_block_1$5(ctx) {
+  let div2;
+  let h4;
+  let t0_value = (
+    /*task*/
+    ctx[34].name + ""
+  );
+  let t0;
+  let t1;
+  let div1;
+  let t2;
+  let div0;
+  let t3_value = (
+    /*task*/
+    ctx[34].description + ""
+  );
+  let t3;
+  let t4;
+  function select_block_type_1(ctx2, dirty) {
+    if (
+      /*task*/
+      ctx2[34].completed
+    ) return create_if_block_2$2;
+    return create_else_block$5;
+  }
+  __name(select_block_type_1, "select_block_type_1");
+  let current_block_type = select_block_type_1(ctx);
+  let if_block = current_block_type(ctx);
+  return {
+    c() {
+      div2 = element$1("div");
+      h4 = element$1("h4");
+      t0 = text(t0_value);
+      t1 = space();
+      div1 = element$1("div");
+      if_block.c();
+      t2 = space();
+      div0 = element$1("div");
+      t3 = text(t3_value);
+      t4 = space();
+      attr(div0, "class", "description svelte-bu1e3");
+      attr(div1, "class", "details svelte-bu1e3");
+      attr(div2, "class", "typo-onboarding-task done svelte-bu1e3");
+      set_style(
+        div2,
+        "order",
+        /*task*/
+        ctx[34].priority
+      );
+    },
+    m(target, anchor) {
+      insert(target, div2, anchor);
+      append(div2, h4);
+      append(h4, t0);
+      append(div2, t1);
+      append(div2, div1);
+      if_block.m(div1, null);
+      append(div1, t2);
+      append(div1, div0);
+      append(div0, t3);
+      append(div2, t4);
+    },
+    p(ctx2, dirty) {
+      if (dirty[0] & /*feature*/
+      1 && t0_value !== (t0_value = /*task*/
+      ctx2[34].name + "")) set_data(t0, t0_value);
+      if (current_block_type !== (current_block_type = select_block_type_1(ctx2))) {
+        if_block.d(1);
+        if_block = current_block_type(ctx2);
+        if (if_block) {
+          if_block.c();
+          if_block.m(div1, t2);
+        }
+      }
+      if (dirty[0] & /*feature*/
+      1 && t3_value !== (t3_value = /*task*/
+      ctx2[34].description + "")) set_data(t3, t3_value);
+      if (dirty[0] & /*feature*/
+      1) {
+        set_style(
+          div2,
+          "order",
+          /*task*/
+          ctx2[34].priority
+        );
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div2);
+      }
+      if_block.d();
+    }
+  };
+}
+__name(create_each_block_1$5, "create_each_block_1$5");
+function create_pending_block$1(ctx) {
+  let bounceload;
+  let current;
+  bounceload = new Bounceload({
+    props: { content: "Loading checklist.." }
+  });
+  return {
+    c() {
+      create_component(bounceload.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(bounceload, target, anchor);
+      current = true;
+    },
+    p: noop$1,
+    i(local) {
+      if (current) return;
+      transition_in(bounceload.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(bounceload.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(bounceload, detaching);
+    }
+  };
+}
+__name(create_pending_block$1, "create_pending_block$1");
+function create_if_block$d(ctx) {
+  let div2;
+  let div0;
+  let t;
+  let div1;
+  let switch_instance;
+  let current;
+  let each_value = ensure_array_like(
+    /*extraSections*/
+    ctx[9]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$g(get_each_context$g(ctx, each_value, i));
+  }
+  var switch_value = (
+    /*activeSection*/
+    ctx[6].component
+  );
+  function switch_props(ctx2, dirty) {
+    return {};
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props());
+  }
+  return {
+    c() {
+      div2 = element$1("div");
+      div0 = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      t = space();
+      div1 = element$1("div");
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      attr(div0, "class", "typo-onboarding-extras-sections svelte-bu1e3");
+      attr(div1, "class", "typo-onboarding-extras-content svelte-bu1e3");
+      attr(div2, "class", "typo-onboarding-extras svelte-bu1e3");
+    },
+    m(target, anchor) {
+      insert(target, div2, anchor);
+      append(div2, div0);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div0, null);
+        }
+      }
+      append(div2, t);
+      append(div2, div1);
+      if (switch_instance) mount_component(switch_instance, div1, null);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty[0] & /*activeSection, extraSections*/
+      576) {
+        each_value = ensure_array_like(
+          /*extraSections*/
+          ctx2[9]
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$g(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+          } else {
+            each_blocks[i] = create_each_block$g(child_ctx);
+            each_blocks[i].c();
+            each_blocks[i].m(div0, null);
+          }
+        }
+        for (; i < each_blocks.length; i += 1) {
+          each_blocks[i].d(1);
+        }
+        each_blocks.length = each_value.length;
+      }
+      if (dirty[0] & /*activeSection*/
+      64 && switch_value !== (switch_value = /*activeSection*/
+      ctx2[6].component)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props());
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, div1, null);
+        } else {
+          switch_instance = null;
+        }
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div2);
+      }
+      destroy_each(each_blocks, detaching);
+      if (switch_instance) destroy_component(switch_instance);
+    }
+  };
+}
+__name(create_if_block$d, "create_if_block$d");
+function create_each_block$g(ctx) {
+  let b;
+  let mounted;
+  let dispose;
+  function click_handler_10() {
+    return (
+      /*click_handler_10*/
+      ctx[22](
+        /*section*/
+        ctx[30]
+      )
+    );
+  }
+  __name(click_handler_10, "click_handler_10");
+  return {
+    c() {
+      b = element$1("b");
+      b.textContent = `${/*section*/
+      ctx[30].name}`;
+      attr(b, "class", "svelte-bu1e3");
+      toggle_class(
+        b,
+        "active",
+        /*activeSection*/
+        ctx[6] === /*section*/
+        ctx[30]
+      );
+    },
+    m(target, anchor) {
+      insert(target, b, anchor);
+      if (!mounted) {
+        dispose = listen(b, "click", click_handler_10);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty[0] & /*activeSection, extraSections*/
+      576) {
+        toggle_class(
+          b,
+          "active",
+          /*activeSection*/
+          ctx[6] === /*section*/
+          ctx[30]
+        );
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(b);
+      }
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block$g, "create_each_block$g");
+function create_fragment$s(ctx) {
+  let div4;
+  let div2;
+  let div0;
+  let h2;
+  let t0_value = (
+    /*firstLoad*/
+    ctx[1] ? "Welcome to" : "Thanks for using"
+  );
+  let t0;
+  let t1;
+  let t2;
+  let b;
+  let t4;
+  let div1;
+  let div2_class_value;
+  let t7;
+  let div3;
+  let h40;
+  let t9;
+  let h41;
+  let t11;
+  let h42;
+  let t13;
+  let br1;
+  let t14;
+  let t15;
+  let t16;
+  let current;
+  let mounted;
+  let dispose;
+  let if_block0 = (
+    /*activeTab*/
+    ctx[4] === "presets" && create_if_block_4$1(ctx)
+  );
+  let if_block1 = (
+    /*activeTab*/
+    ctx[4] === "tasks" && create_if_block_1$4(ctx)
+  );
+  let if_block2 = (
+    /*activeTab*/
+    ctx[4] === "extras" && create_if_block$d(ctx)
+  );
+  return {
+    c() {
+      div4 = element$1("div");
+      div2 = element$1("div");
+      div0 = element$1("div");
+      h2 = element$1("h2");
+      t0 = text(t0_value);
+      t1 = text(" typo ✨");
+      t2 = space();
+      b = element$1("b");
+      b.textContent = "Typo is the toolbox for everything you need on skribbl.io";
+      t4 = space();
+      div1 = element$1("div");
+      div1.innerHTML = `XOXO to all beta testers &lt;3<br/>Alpha, Foley, Hex, hunt3r, ibot, Max, Oivoo, shawty, Tuc, ShortM, XVIdevilIVX`;
+      t7 = space();
+      div3 = element$1("div");
+      h40 = element$1("h4");
+      h40.textContent = "Feature Presets";
+      t9 = space();
+      h41 = element$1("h4");
+      h41.textContent = "Onboarding Tasks";
+      t11 = space();
+      h42 = element$1("h4");
+      h42.textContent = "More Info";
+      t13 = space();
+      br1 = element$1("br");
+      t14 = space();
+      if (if_block0) if_block0.c();
+      t15 = space();
+      if (if_block1) if_block1.c();
+      t16 = space();
+      if (if_block2) if_block2.c();
+      attr(div0, "class", "svelte-bu1e3");
+      attr(div1, "class", "beta-credits svelte-bu1e3");
+      attr(div2, "class", div2_class_value = "typo-onboarding-hero " + /*hideHero*/
+      (ctx[5] ? "hidden" : "") + " svelte-bu1e3");
+      attr(h40, "class", "svelte-bu1e3");
+      toggle_class(
+        h40,
+        "active",
+        /*activeTab*/
+        ctx[4] === "presets"
+      );
+      attr(h41, "class", "svelte-bu1e3");
+      toggle_class(
+        h41,
+        "active",
+        /*activeTab*/
+        ctx[4] === "tasks"
+      );
+      attr(h42, "class", "svelte-bu1e3");
+      toggle_class(
+        h42,
+        "active",
+        /*activeTab*/
+        ctx[4] === "extras"
+      );
+      attr(div3, "class", "onboarding-tabs svelte-bu1e3");
+      attr(div4, "class", "typo-onboarding-wrapper color-scrollbar svelte-bu1e3");
+    },
+    m(target, anchor) {
+      insert(target, div4, anchor);
+      append(div4, div2);
+      append(div2, div0);
+      append(div0, h2);
+      append(h2, t0);
+      append(h2, t1);
+      append(div0, t2);
+      append(div0, b);
+      ctx[10](div0);
+      append(div2, t4);
+      append(div2, div1);
+      ctx[11](div2);
+      append(div4, t7);
+      append(div4, div3);
+      append(div3, h40);
+      append(div3, t9);
+      append(div3, h41);
+      append(div3, t11);
+      append(div3, h42);
+      append(div4, t13);
+      append(div4, br1);
+      append(div4, t14);
+      if (if_block0) if_block0.m(div4, null);
+      append(div4, t15);
+      if (if_block1) if_block1.m(div4, null);
+      append(div4, t16);
+      if (if_block2) if_block2.m(div4, null);
+      current = true;
+      if (!mounted) {
+        dispose = [
+          listen(
+            div2,
+            "click",
+            /*click_handler*/
+            ctx[12]
+          ),
+          listen(
+            h40,
+            "click",
+            /*click_handler_1*/
+            ctx[13]
+          ),
+          listen(
+            h41,
+            "click",
+            /*click_handler_2*/
+            ctx[14]
+          ),
+          listen(
+            h42,
+            "click",
+            /*click_handler_3*/
+            ctx[15]
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p(ctx2, dirty) {
+      if ((!current || dirty[0] & /*firstLoad*/
+      2) && t0_value !== (t0_value = /*firstLoad*/
+      ctx2[1] ? "Welcome to" : "Thanks for using")) set_data(t0, t0_value);
+      if (!current || dirty[0] & /*hideHero*/
+      32 && div2_class_value !== (div2_class_value = "typo-onboarding-hero " + /*hideHero*/
+      (ctx2[5] ? "hidden" : "") + " svelte-bu1e3")) {
+        attr(div2, "class", div2_class_value);
+      }
+      if (!current || dirty[0] & /*activeTab*/
+      16) {
+        toggle_class(
+          h40,
+          "active",
+          /*activeTab*/
+          ctx2[4] === "presets"
+        );
+      }
+      if (!current || dirty[0] & /*activeTab*/
+      16) {
+        toggle_class(
+          h41,
+          "active",
+          /*activeTab*/
+          ctx2[4] === "tasks"
+        );
+      }
+      if (!current || dirty[0] & /*activeTab*/
+      16) {
+        toggle_class(
+          h42,
+          "active",
+          /*activeTab*/
+          ctx2[4] === "extras"
+        );
+      }
+      if (
+        /*activeTab*/
+        ctx2[4] === "presets"
+      ) {
+        if (if_block0) {
+          if_block0.p(ctx2, dirty);
+        } else {
+          if_block0 = create_if_block_4$1(ctx2);
+          if_block0.c();
+          if_block0.m(div4, t15);
+        }
+      } else if (if_block0) {
+        if_block0.d(1);
+        if_block0 = null;
+      }
+      if (
+        /*activeTab*/
+        ctx2[4] === "tasks"
+      ) {
+        if (if_block1) {
+          if_block1.p(ctx2, dirty);
+          if (dirty[0] & /*activeTab*/
+          16) {
+            transition_in(if_block1, 1);
+          }
+        } else {
+          if_block1 = create_if_block_1$4(ctx2);
+          if_block1.c();
+          transition_in(if_block1, 1);
+          if_block1.m(div4, t16);
+        }
+      } else if (if_block1) {
+        group_outros();
+        transition_out(if_block1, 1, 1, () => {
+          if_block1 = null;
+        });
+        check_outros();
+      }
+      if (
+        /*activeTab*/
+        ctx2[4] === "extras"
+      ) {
+        if (if_block2) {
+          if_block2.p(ctx2, dirty);
+          if (dirty[0] & /*activeTab*/
+          16) {
+            transition_in(if_block2, 1);
+          }
+        } else {
+          if_block2 = create_if_block$d(ctx2);
+          if_block2.c();
+          transition_in(if_block2, 1);
+          if_block2.m(div4, null);
+        }
+      } else if (if_block2) {
+        group_outros();
+        transition_out(if_block2, 1, 1, () => {
+          if_block2 = null;
+        });
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block1);
+      transition_in(if_block2);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block1);
+      transition_out(if_block2);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div4);
+      }
+      ctx[10](null);
+      ctx[11](null);
+      if (if_block0) if_block0.d();
+      if (if_block1) if_block1.d();
+      if (if_block2) if_block2.d();
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+__name(create_fragment$s, "create_fragment$s");
+const func$2 = /* @__PURE__ */ __name((task) => task.completed, "func$2");
+const func_1 = /* @__PURE__ */ __name((task) => !task.completed, "func_1");
+const func_2$1 = /* @__PURE__ */ __name((task) => task.completed, "func_2$1");
+function instance$r($$self, $$props, $$invalidate) {
+  let { feature } = $$props;
+  let { firstLoad } = $$props;
+  let hero;
+  let heading;
+  const icons = [
+    "file-img-challenge-gif",
+    "file-img-light-gif",
+    "file-img-letter-gif",
+    "file-img-line-rainbow-gif",
+    "file-img-cloud-gif",
+    "file-img-award-gif",
+    "file-img-wand-gif",
+    "file-img-wrench-gif",
+    "file-img-floppy-drive-gif",
+    "file-img-palantir-gif",
+    "file-img-mask-gif",
+    "file-img-palette-gif",
+    "file-img-typo-gif",
+    "file-img-trash-gif",
+    "file-img-line-random-color-gif",
+    "file-img-discord-gif",
+    "file-img-connection-gif",
+    "file-img-tasks-gif",
+    "file-img-coin-gif"
+  ];
+  let shuffledArray = icons.sort(() => Math.random() - 0.5);
+  let currentIndex = 0;
+  let currentIcons = [];
+  let interval2;
+  const addIcon = /* @__PURE__ */ __name(() => {
+    const randomIcon = shuffledArray[currentIndex];
+    currentIndex = (currentIndex + 1) % shuffledArray.length;
+    const heroRect = hero.getBoundingClientRect();
+    const headingRect = heading.getBoundingClientRect();
+    const noSpawnX = headingRect.width + 50;
+    const noSpawnY = headingRect.height + 50;
+    let x = heroRect.width / 2;
+    let y = heroRect.height / 2;
+    let tries = 0;
+    while (x > (heroRect.width - noSpawnX) / 2 && x < heroRect.width / 2 + noSpawnX && y > (heroRect.height - noSpawnY) / 2 && y < heroRect.height / 2 + noSpawnY || currentIcons.some((icon2) => !icon2.hasEnoughDistance(x, y))) {
+      if (tries++ > 20) return;
+      x = Math.random() * heroRect.width;
+      y = Math.random() * heroRect.height;
+    }
+    const icon = new Controls_onboarding_emoji({
+      target: hero,
+      props: { x, y, src: randomIcon }
+    });
+    currentIcons.push(icon);
+    setTimeout(
+      () => {
+        icon.$destroy();
+        currentIcons = currentIcons.filter((i) => i !== icon);
+      },
+      3e3
+    );
+  }, "addIcon");
+  const activateFeaturePreset = /* @__PURE__ */ __name((preset) => {
+    feature.activateFeaturePreset(preset);
+    if (firstLoad) useTab("tasks");
+    else feature.closeOnboardingIfOpen();
+  }, "activateFeaturePreset");
+  let activeTab = firstLoad ? "presets" : "tasks";
+  const activeTabFocus = feature.tabFocusRequestsStore;
+  activeTabFocus.subscribe((v) => {
+    if (v !== void 0) {
+      useTab(v);
+    }
+  });
+  let hideHero = false;
+  const useTab = /* @__PURE__ */ __name((tab) => {
+    $$invalidate(5, hideHero = true);
+    $$invalidate(4, activeTab = tab);
+    currentIcons.forEach((icon) => icon.$destroy());
+    if (tab === "extras") feature.completeInfoTask();
+  }, "useTab");
+  let extraSections = [
+    {
+      name: "Introducing the new Typo",
+      component: Old_typo_onboarding
+    },
+    {
+      name: "Credits & Imprint",
+      component: Typo_credits_onboarding
+    }
+  ];
+  let activeSection = extraSections[0];
+  onMount(() => {
+    interval2 = setInterval(
+      () => {
+        addIcon();
+      },
+      250
+    );
+    for (let i = 0; i < 5; i++) {
+      addIcon();
+    }
+  });
+  onDestroy(() => {
+    clearInterval(interval2);
+  });
+  function div0_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      heading = $$value;
+      $$invalidate(3, heading);
+    });
+  }
+  __name(div0_binding, "div0_binding");
+  function div2_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      hero = $$value;
+      $$invalidate(2, hero);
+    });
+  }
+  __name(div2_binding, "div2_binding");
+  const click_handler2 = /* @__PURE__ */ __name(() => useTab(activeTab), "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name(() => useTab("presets"), "click_handler_1");
+  const click_handler_2 = /* @__PURE__ */ __name(() => useTab("tasks"), "click_handler_2");
+  const click_handler_3 = /* @__PURE__ */ __name(() => useTab("extras"), "click_handler_3");
+  const click_handler_4 = /* @__PURE__ */ __name(() => activateFeaturePreset("recommended"), "click_handler_4");
+  const click_handler_52 = /* @__PURE__ */ __name(() => activateFeaturePreset("mobile"), "click_handler_5");
+  const click_handler_6 = /* @__PURE__ */ __name(() => activateFeaturePreset("minimal"), "click_handler_6");
+  const click_handler_7 = /* @__PURE__ */ __name(() => activateFeaturePreset("all"), "click_handler_7");
+  const click_handler_8 = /* @__PURE__ */ __name(() => activateFeaturePreset("none"), "click_handler_8");
+  const click_handler_9 = /* @__PURE__ */ __name(async (task) => {
+    const close = await task.start();
+    if (close !== false) feature.closeOnboardingIfOpen();
+  }, "click_handler_9");
+  const click_handler_10 = /* @__PURE__ */ __name((section) => $$invalidate(6, activeSection = section), "click_handler_10");
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    if ("firstLoad" in $$props2) $$invalidate(1, firstLoad = $$props2.firstLoad);
+  };
+  return [
+    feature,
+    firstLoad,
+    hero,
+    heading,
+    activeTab,
+    hideHero,
+    activeSection,
+    activateFeaturePreset,
+    useTab,
+    extraSections,
+    div0_binding,
+    div2_binding,
+    click_handler2,
+    click_handler_1,
+    click_handler_2,
+    click_handler_3,
+    click_handler_4,
+    click_handler_52,
+    click_handler_6,
+    click_handler_7,
+    click_handler_8,
+    click_handler_9,
+    click_handler_10
+  ];
+}
+__name(instance$r, "instance$r");
+const _Controls_onboarding = class _Controls_onboarding extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$r, create_fragment$s, safe_not_equal, { feature: 0, firstLoad: 1 }, null, [-1, -1]);
+  }
+};
+__name(_Controls_onboarding, "Controls_onboarding");
+let Controls_onboarding = _Controls_onboarding;
+var __defProp$s = Object.defineProperty;
+var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$s(target, key2, result);
+  return result;
+}, "__decorateClass$s");
+const _ControlsOnboardingFeature = (_Ga = class extends TypoFeature {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_elementsSetup");
+    __publicField(this, "_modalService");
+    __publicField(this, "_featuresService");
+    __publicField(this, "_toastService");
+    __publicField(this, "name", "Get Started");
+    __publicField(this, "description", "Quickly set up typo to your likes");
+    __publicField(this, "tags", [
+      FeatureTag.INTERFACE,
+      FeatureTag.INFORMATION
+    ]);
+    __publicField(this, "featureId", 47);
+    __publicField(this, "_firstLoadSetting", new BooleanExtensionSetting("first_load", true, this));
+    __publicField(this, "_finishOnboardingTask", this.useOnboardingTask({
+      key: "finalize_onboarding",
+      name: "Finish Onboarding",
+      description: "Choose whether to disable 'Get Started'. This should be your last task! ;)",
+      start: /* @__PURE__ */ __name(() => this.finalizeOnboarding(), "start"),
+      priority: Number.MAX_SAFE_INTEGER
+    }));
+    __publicField(this, "_viewInfoTask", this.useOnboardingTask({
+      key: "info_opened",
+      name: "Read about the new typo",
+      description: "Open the 'more info' tab to read an intro and changes of the new typo.",
+      start: /* @__PURE__ */ __name(async () => {
+        this._tabFocusRequests$.next("extras");
+        return false;
+      }, "start"),
+      priority: 1
+    }));
+    __publicField(this, "_featurePresets", {
+      recommended: {
+        mode: "blacklist",
+        features: [
+          PlayerIdsFeature,
+          DrawingColorPalettesFeature,
+          ImageAgentFeature,
+          LobbyStatisticsFeature,
+          DrawingClearLockFeature,
+          ChatPingFeature
+        ]
+      },
+      minimal: {
+        mode: "whitelist",
+        features: [
+          ChatRecallFeature,
+          GuessCheckFeature,
+          LobbyStatusFeature,
+          ControlsCloudFeature,
+          ChatEmojisFeature,
+          ChatProfileLinkFeature,
+          HotkeysFeature,
+          CanvasZoomFeature,
+          LineToolFeature,
+          ChatFocusFeature,
+          PlayerIdsFeature,
+          LobbyTimeVisualizerFeature,
+          DrawingColorPalettesFeature,
+          ChatQuickReactFeature,
+          ChatCopyFormattedFeature,
+          DrawingPressureFeature,
+          ChatCommandsFeature,
+          DropsFeature,
+          ChatClearFeature,
+          ChatMessageSplitsFeature,
+          CustomizerPracticeJoinFeature,
+          CustomizerOutfitToggleFeature,
+          _Ga,
+          TooltipsFeature
+        ]
+      },
+      none: {
+        mode: "whitelist",
+        features: []
+      },
+      all: {
+        mode: "blacklist",
+        features: []
+      },
+      mobile: {
+        mode: "whitelist",
+        features: [
+          LobbyStatusFeature,
+          ChatEmojisFeature,
+          ChatProfileLinkFeature,
+          LobbyTimeVisualizerFeature,
+          DrawingPressureFeature,
+          ChatClearFeature,
+          CustomizerPracticeJoinFeature,
+          CustomizerOutfitToggleFeature,
+          _Ga,
+          TooltipsFeature,
+          ControlsThemesFeature,
+          UserInfoFeature,
+          PanelLobbiesFeature,
+          PanelCabinFeature,
+          PanelNewsFeature,
+          PanelChangelogFeature,
+          DrawingColorToolsFeature,
+          CanvasRateIconsFeature
+        ]
+      }
+    });
+    __publicField(this, "_iconComponent");
+    __publicField(this, "_iconClickSubscription");
+    __publicField(this, "_currentModal");
+    __publicField(this, "_taskCompletedSubscription");
+    __publicField(this, "_tabFocusRequests$", new Subject$1());
+  }
+  async onActivate() {
+    const elements2 = await this._elementsSetup.complete();
+    this._iconComponent = new Icon_button({
+      target: elements2.controls,
+      props: {
+        hoverMove: false,
+        size: "48px",
+        icon: "file-img-tasks-gif",
+        name: "Get Started",
+        order: 4,
+        tooltipAction: this.createTooltip
+      }
+    });
+    this._iconClickSubscription = this._iconComponent.click$.subscribe(() => {
+      this.showOnboarding();
+    });
+    const firstLoad = await this._firstLoadSetting.getValue();
+    if (firstLoad) {
+      this.showOnboarding(true);
+      await this._firstLoadSetting.setValue(false);
+    }
+    this._taskCompletedSubscription = this._onboardingService.taskCompleted$.subscribe((task) => {
+      this._toastService.showToast("🎉 Congrats!", `You have completed the onboarding task "${task.name}"!`);
+    });
+  }
+  async onDestroy() {
+    var _a2, _b2, _c2;
+    (_a2 = this._iconComponent) == null ? void 0 : _a2.$destroy();
+    (_b2 = this._iconClickSubscription) == null ? void 0 : _b2.unsubscribe();
+    this._iconClickSubscription = void 0;
+    (_c2 = this._taskCompletedSubscription) == null ? void 0 : _c2.unsubscribe();
+    this._taskCompletedSubscription = void 0;
+  }
+  get tabFocusRequestsStore() {
+    return fromObservable(this._tabFocusRequests$, void 0);
+  }
+  showOnboarding(firstLoad = false) {
+    var _a2;
+    (_a2 = this._currentModal) == null ? void 0 : _a2.close();
+    const onboardingComponent = {
+      componentType: Controls_onboarding,
+      props: {
+        feature: this,
+        firstLoad
+      }
+    };
+    this._currentModal = this._modalService.showModal(onboardingComponent.componentType, onboardingComponent.props, firstLoad ? "" : "Get Started");
+  }
+  async activateFeaturePreset(preset) {
+    this._logger.debug("Activating preset", preset);
+    const toast = await this._toastService.showLoadingToast("Activating preset...");
+    const presetData = this._featurePresets[preset];
+    const availableFeatures = this._featuresService.features;
+    const presetFeatures = presetData.mode === "blacklist" ? availableFeatures.filter((f) => !f.toggleEnabled || !presetData.features.some((disabled) => f instanceof disabled)) : availableFeatures.filter((f) => !f.toggleEnabled || presetData.features.some((disabled) => f instanceof disabled));
+    const toggles = availableFeatures.map(async (feature) => {
+      const enabled = await firstValueFrom(feature.activated$);
+      const presetEnabled = presetFeatures.includes(feature);
+      if (enabled && !presetEnabled) {
+        await feature.destroy();
+      }
+      if (!enabled && presetEnabled) {
+        await feature.activate();
+      }
+    });
+    try {
+      await Promise.all(toggles);
+      toast.resolve("Preset activated");
+    } catch (e) {
+      this._logger.error("Failed to activate preset", e);
+      toast.reject("Failed to activate preset");
+      return;
+    }
+  }
+  async getChecklist() {
+    return this._onboardingService.getOnboardingTasks();
+  }
+  closeOnboardingIfOpen() {
+    var _a2;
+    (_a2 = this._currentModal) == null ? void 0 : _a2.close();
+  }
+  async finalizeOnboarding() {
+    const task = await this._finishOnboardingTask;
+    const tasks = await this._onboardingService.getOnboardingTasks();
+    const allOtherCompleted = tasks.every((t) => t.completed || t.key === task.task.key);
+    const title = allOtherCompleted ? "✨ You have completed all onboarding tasks!" : "Not all tasks completed yet!";
+    const description = allOtherCompleted ? "Do you want to remove the onboarding icon?\nYou can always enable it again in the settings to read guides or select presets." : "You have not completed all onboarding tasks yet.\nDo you still want to disable onboarding?\nYou can always enable it again in the settings to read guides or select presets.";
+    const confirm = await this._toastService.showConfirmToast(title, description, 3e4, { confirm: "Disable onboarding", cancel: "Keep enabled" });
+    const result = await confirm.result;
+    if (allOtherCompleted) {
+      task.complete();
+    }
+    if (result) {
+      this.destroy();
+    }
+    return false;
+  }
+  async completeInfoTask() {
+    (await this._viewInfoTask).complete();
+  }
+}, __name(_Ga, "_ControlsOnboardingFeature"), _Ga);
+__decorateClass$s([
+  inject(ElementsSetup)
+], _ControlsOnboardingFeature.prototype, "_elementsSetup");
+__decorateClass$s([
+  inject(ModalService)
+], _ControlsOnboardingFeature.prototype, "_modalService");
+__decorateClass$s([
+  inject(FeaturesService)
+], _ControlsOnboardingFeature.prototype, "_featuresService");
+__decorateClass$s([
+  inject(ToastService)
+], _ControlsOnboardingFeature.prototype, "_toastService");
+let ControlsOnboardingFeature = _ControlsOnboardingFeature;
+function get_each_context$f(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[6] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$f, "get_each_context$f");
+function create_catch_block(ctx) {
+  return {
+    c: noop$1,
+    m: noop$1,
+    p: noop$1,
+    i: noop$1,
+    o: noop$1,
+    d: noop$1
+  };
+}
+__name(create_catch_block, "create_catch_block");
+function create_then_block(ctx) {
+  let h3;
+  let t1;
+  let p;
+  let t4;
+  let br1;
+  let t5;
+  let div;
+  let current;
+  let each_value = ensure_array_like(
+    /*profiles*/
+    ctx[5]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$f(get_each_context$f(ctx, each_value, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      h3 = element$1("h3");
+      h3.textContent = "Saved Profiles";
+      t1 = space();
+      p = element$1("p");
+      p.innerHTML = `Typo profiles let you save and switch the entire data of typo.<br/>
+    Switching to a profile or deleting a profile will reload the page.`;
+      t4 = space();
+      br1 = element$1("br");
+      t5 = space();
+      div = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(div, "class", "typo-profiles svelte-16buojm");
+    },
+    m(target, anchor) {
+      insert(target, h3, anchor);
+      insert(target, t1, anchor);
+      insert(target, p, anchor);
+      insert(target, t4, anchor);
+      insert(target, br1, anchor);
+      insert(target, t5, anchor);
+      insert(target, div, anchor);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div, null);
+        }
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*feature*/
+      1) {
+        each_value = ensure_array_like(
+          /*profiles*/
+          ctx2[5]
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$f(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block$f(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(div, null);
+          }
+        }
+        group_outros();
+        for (i = each_value.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(h3);
+        detach(t1);
+        detach(p);
+        detach(t4);
+        detach(br1);
+        detach(t5);
+        detach(div);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_then_block, "create_then_block");
+function create_each_block$f(ctx) {
+  let div;
+  let span;
+  let t0_value = (
+    /*profile*/
+    ctx[6].name + ""
+  );
+  let t0;
+  let t1;
+  let iconbutton;
+  let t2;
+  let current;
+  let mounted;
+  let dispose;
+  function click_handler2(...args) {
+    return (
+      /*click_handler*/
+      ctx[1](
+        /*profile*/
+        ctx[6],
+        ...args
+      )
+    );
+  }
+  __name(click_handler2, "click_handler");
+  iconbutton = new Icon_button({
+    props: {
+      size: "1.5rem",
+      icon: (
+        /*profile*/
+        ctx[6].active ? "file-img-enabled-gif" : "file-img-trash-gif"
+      ),
+      name: "Delete",
+      hoverMove: false,
+      greyscaleInactive: true
+    }
+  });
+  iconbutton.$on("click", click_handler2);
+  function click_handler_1() {
+    return (
+      /*click_handler_1*/
+      ctx[2](
+        /*profile*/
+        ctx[6]
+      )
+    );
+  }
+  __name(click_handler_1, "click_handler_1");
+  return {
+    c() {
+      div = element$1("div");
+      span = element$1("span");
+      t0 = text(t0_value);
+      t1 = space();
+      create_component(iconbutton.$$.fragment);
+      t2 = space();
+      attr(div, "class", "typo-profile svelte-16buojm");
+      toggle_class(
+        div,
+        "active",
+        /*profile*/
+        ctx[6].active
+      );
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      append(div, span);
+      append(span, t0);
+      append(div, t1);
+      mount_component(iconbutton, div, null);
+      append(div, t2);
+      current = true;
+      if (!mounted) {
+        dispose = listen(div, "click", click_handler_1);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if ((!current || dirty & /*feature*/
+      1) && t0_value !== (t0_value = /*profile*/
+      ctx[6].name + "")) set_data(t0, t0_value);
+      const iconbutton_changes = {};
+      if (dirty & /*feature*/
+      1) iconbutton_changes.icon = /*profile*/
+      ctx[6].active ? "file-img-enabled-gif" : "file-img-trash-gif";
+      iconbutton.$set(iconbutton_changes);
+      if (!current || dirty & /*feature*/
+      1) {
+        toggle_class(
+          div,
+          "active",
+          /*profile*/
+          ctx[6].active
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(iconbutton.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(iconbutton.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      destroy_component(iconbutton);
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block$f, "create_each_block$f");
+function create_pending_block(ctx) {
+  let bounceload;
+  let current;
+  bounceload = new Bounceload({ props: { content: "Loading Profiles" } });
+  return {
+    c() {
+      create_component(bounceload.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(bounceload, target, anchor);
+      current = true;
+    },
+    p: noop$1,
+    i(local) {
+      if (current) return;
+      transition_in(bounceload.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(bounceload.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(bounceload, detaching);
+    }
+  };
+}
+__name(create_pending_block, "create_pending_block");
+function create_fragment$r(ctx) {
+  let promise;
+  let t0;
+  let br0;
+  let t1;
+  let h30;
+  let t3;
+  let p0;
+  let t6;
+  let br2;
+  let t7;
+  let flatbutton0;
+  let t8;
+  let br3;
+  let t9;
+  let br4;
+  let t10;
+  let h31;
+  let t12;
+  let p1;
+  let t15;
+  let br6;
+  let t16;
+  let flatbutton1;
+  let current;
+  let info = {
+    ctx,
+    current: null,
+    token: null,
+    hasCatch: false,
+    pending: create_pending_block,
+    then: create_then_block,
+    catch: create_catch_block,
+    value: 5,
+    blocks: [, , ,]
+  };
+  handle_promise(promise = /*feature*/
+  ctx[0].getProfiles(), info);
+  flatbutton0 = new Flat_button({
+    props: {
+      content: "Create profile",
+      color: "green"
+    }
+  });
+  flatbutton0.$on(
+    "click",
+    /*click_handler_2*/
+    ctx[3]
+  );
+  flatbutton1 = new Flat_button({
+    props: { content: "Reset typo", color: "orange" }
+  });
+  flatbutton1.$on(
+    "click",
+    /*click_handler_3*/
+    ctx[4]
+  );
+  return {
+    c() {
+      info.block.c();
+      t0 = space();
+      br0 = element$1("br");
+      t1 = space();
+      h30 = element$1("h3");
+      h30.textContent = "Create new profile";
+      t3 = space();
+      p0 = element$1("p");
+      p0.innerHTML = `A new empty profile will be added.<br/>
+  This will reload the page.`;
+      t6 = space();
+      br2 = element$1("br");
+      t7 = space();
+      create_component(flatbutton0.$$.fragment);
+      t8 = space();
+      br3 = element$1("br");
+      t9 = space();
+      br4 = element$1("br");
+      t10 = space();
+      h31 = element$1("h3");
+      h31.textContent = "Reset typo";
+      t12 = space();
+      p1 = element$1("p");
+      p1.innerHTML = `Resetting typo will erase all data. Typo will behave like after a fresh installation.<br/>
+  This is irreversible and will reload the page.`;
+      t15 = space();
+      br6 = element$1("br");
+      t16 = space();
+      create_component(flatbutton1.$$.fragment);
+    },
+    m(target, anchor) {
+      info.block.m(target, info.anchor = anchor);
+      info.mount = () => t0.parentNode;
+      info.anchor = t0;
+      insert(target, t0, anchor);
+      insert(target, br0, anchor);
+      insert(target, t1, anchor);
+      insert(target, h30, anchor);
+      insert(target, t3, anchor);
+      insert(target, p0, anchor);
+      insert(target, t6, anchor);
+      insert(target, br2, anchor);
+      insert(target, t7, anchor);
+      mount_component(flatbutton0, target, anchor);
+      insert(target, t8, anchor);
+      insert(target, br3, anchor);
+      insert(target, t9, anchor);
+      insert(target, br4, anchor);
+      insert(target, t10, anchor);
+      insert(target, h31, anchor);
+      insert(target, t12, anchor);
+      insert(target, p1, anchor);
+      insert(target, t15, anchor);
+      insert(target, br6, anchor);
+      insert(target, t16, anchor);
+      mount_component(flatbutton1, target, anchor);
+      current = true;
+    },
+    p(new_ctx, [dirty]) {
+      ctx = new_ctx;
+      info.ctx = ctx;
+      if (dirty & /*feature*/
+      1 && promise !== (promise = /*feature*/
+      ctx[0].getProfiles()) && handle_promise(promise, info)) ;
+      else {
+        update_await_block_branch(info, ctx, dirty);
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(info.block);
+      transition_in(flatbutton0.$$.fragment, local);
+      transition_in(flatbutton1.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      for (let i = 0; i < 3; i += 1) {
+        const block2 = info.blocks[i];
+        transition_out(block2);
+      }
+      transition_out(flatbutton0.$$.fragment, local);
+      transition_out(flatbutton1.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(t0);
+        detach(br0);
+        detach(t1);
+        detach(h30);
+        detach(t3);
+        detach(p0);
+        detach(t6);
+        detach(br2);
+        detach(t7);
+        detach(t8);
+        detach(br3);
+        detach(t9);
+        detach(br4);
+        detach(t10);
+        detach(h31);
+        detach(t12);
+        detach(p1);
+        detach(t15);
+        detach(br6);
+        detach(t16);
+      }
+      info.block.d(detaching);
+      info.token = null;
+      info = null;
+      destroy_component(flatbutton0, detaching);
+      destroy_component(flatbutton1, detaching);
+    }
+  };
+}
+__name(create_fragment$r, "create_fragment$r");
+function instance$q($$self, $$props, $$invalidate) {
+  let { feature } = $$props;
+  const click_handler2 = /* @__PURE__ */ __name((profile, e) => {
+    e.stopImmediatePropagation();
+    if (!profile.active) feature.deleteProfile(profile.name);
+  }, "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name((profile) => {
+    if (!profile.active) feature.switchToProfile(profile.name);
+  }, "click_handler_1");
+  const click_handler_2 = /* @__PURE__ */ __name(() => feature.createProfile(), "click_handler_2");
+  const click_handler_3 = /* @__PURE__ */ __name(() => feature.resetTypo(), "click_handler_3");
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+  };
+  return [feature, click_handler2, click_handler_1, click_handler_2, click_handler_3];
+}
+__name(instance$q, "instance$q");
+const _Controls_profiles = class _Controls_profiles extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$q, create_fragment$r, safe_not_equal, { feature: 0 });
+  }
+};
+__name(_Controls_profiles, "Controls_profiles");
+let Controls_profiles = _Controls_profiles;
+var __defProp$r = Object.defineProperty;
+var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$r(target, key2, result);
+  return result;
+}, "__decorateClass$r");
+const _ControlsProfilesFeature = class _ControlsProfilesFeature extends TypoFeature {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_elementsSetup");
+    __publicField(this, "_toastService");
+    __publicField(this, "name", "Typo Profiles");
+    __publicField(this, "description", "Switch between different typo profiles.");
+    __publicField(this, "tags", [
+      FeatureTag.DEVELOPMENT
+    ]);
+    __publicField(this, "featureId", 48);
+    __publicField(this, "toggleEnabled", false);
+  }
+  get featureManagementComponent() {
+    return { componentType: Controls_profiles, props: { feature: this } };
+  }
+  async getProfiles() {
+    const currentProfile = await typoRuntime.currentProfile();
+    return (await typoRuntime.getProfiles()).map((profile) => ({ name: profile, active: profile === currentProfile }));
+  }
+  async deleteProfile(profile) {
+    const currentProfile = await typoRuntime.currentProfile();
+    if (profile === currentProfile) {
+      this._logger.error("Cannot delete the current profile.");
+      await this._toastService.showToast("Cannot delete the current profile " + profile);
+      return;
+    }
+    const toast = await this._toastService.showConfirmToast(
+      `Delete profile ${profile}?`,
+      "Deleting a profile will reload the page.",
+      1e4,
+      { confirm: "Delete profile", cancel: "Cancel deletion" }
+    );
+    const result = await toast.result;
+    if (!result) return;
+    await typoRuntime.deleteProfile(profile);
+    window.location.reload();
+  }
+  async switchToProfile(profile) {
+    const toast = await this._toastService.showConfirmToast(
+      `Switch to profile ${profile}?`,
+      "Switching a profile will reload the page.",
+      1e4,
+      { confirm: "Switch now", cancel: "Cancel switch" }
+    );
+    const result = await toast.result;
+    if (!result) return;
+    await typoRuntime.switchToProfile(profile);
+    window.location.reload();
+  }
+  async createProfile() {
+    const toast = await this._toastService.showPromptToast("Create and activate profile", "Enter a name for the new profile");
+    const result = await toast.result;
+    if (result === null || result.length === 0) return;
+    const profiles = await typoRuntime.getProfiles();
+    if (profiles.includes(result)) {
+      this._logger.error("Profile already exists");
+      await this._toastService.showToast("Profile already exists", "A profile with the name " + result + " already exists.\nPlease choose a different name.");
+      return;
+    }
+    await typoRuntime.createAndSwitchToProfile(result);
+    window.location.reload();
+  }
+  async resetTypo() {
+    const toast = await this._toastService.showConfirmToast(
+      "Reset Typo?",
+      "This will delete ALL saved data (themes, palettes, login, profiles, filters..) and reload the page.",
+      1e4,
+      { confirm: "Reset typo (think twice)", cancel: "Cancel reset (panic!)" }
+    );
+    const result = await toast.result;
+    if (!result) return;
+    await typoRuntime.resetTypo();
+    window.location.reload();
+  }
+};
+__name(_ControlsProfilesFeature, "ControlsProfilesFeature");
+let ControlsProfilesFeature = _ControlsProfilesFeature;
+__decorateClass$r([
+  inject(ElementsSetup)
+], ControlsProfilesFeature.prototype, "_elementsSetup");
+__decorateClass$r([
+  inject(ToastService)
+], ControlsProfilesFeature.prototype, "_toastService");
+function create_if_block$c(ctx) {
+  let br;
+  let span;
+  return {
+    c() {
+      br = element$1("br");
+      span = element$1("span");
+      span.textContent = "Disabled in text inputs";
+      attr(span, "class", "inputs-disabled-hint svelte-10zlzgr");
+    },
+    m(target, anchor) {
+      insert(target, br, anchor);
+      insert(target, span, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(br);
+        detach(span);
+      }
+    }
+  };
+}
+__name(create_if_block$c, "create_if_block$c");
+function create_fragment$q(ctx) {
+  let div5;
+  let h3;
+  let t0_value = (
+    /*hotkey*/
+    ctx[0].name + ""
+  );
+  let t0;
+  let t1;
+  let div0;
+  let t2_value = (
+    /*hotkey*/
+    ctx[0].description + ""
+  );
+  let t2;
+  let t3;
+  let t4;
+  let div1;
+  let flatbutton0;
+  let t5;
+  let div2;
+  let flatbutton1;
+  let t6;
+  let div3;
+  let checkbox;
+  let updating_checked;
+  let t7;
+  let div4;
+  let input;
+  let input_value_value;
+  let current;
+  let mounted;
+  let dispose;
+  let if_block = (
+    /*hotkey*/
+    ctx[0].disabledOnInputs && create_if_block$c()
+  );
+  flatbutton0 = new Flat_button({
+    props: {
+      content: "Reset to default",
+      color: "orange"
+    }
+  });
+  flatbutton0.$on(
+    "click",
+    /*click_handler*/
+    ctx[9]
+  );
+  flatbutton1 = new Flat_button({
+    props: { content: "Save combo", color: "green" }
+  });
+  flatbutton1.$on(
+    "click",
+    /*click_handler_1*/
+    ctx[10]
+  );
+  function checkbox_checked_binding(value) {
+    ctx[11](value);
+  }
+  __name(checkbox_checked_binding, "checkbox_checked_binding");
+  let checkbox_props = {
+    disabled: (
+      /*$comboStore*/
+      ctx[2].length === 0
+    ),
+    description: (
+      /*$enabledStore*/
+      ctx[5] ? "Enabled" : "Disabled"
+    )
+  };
+  if (
+    /*$enabledStore*/
+    ctx[5] !== void 0
+  ) {
+    checkbox_props.checked = /*$enabledStore*/
+    ctx[5];
+  }
+  checkbox = new Checkbox({ props: checkbox_props });
+  binding_callbacks.push(() => bind$1(checkbox, "checked", checkbox_checked_binding));
+  return {
+    c() {
+      div5 = element$1("div");
+      h3 = element$1("h3");
+      t0 = text(t0_value);
+      t1 = space();
+      div0 = element$1("div");
+      t2 = text(t2_value);
+      t3 = space();
+      if (if_block) if_block.c();
+      t4 = space();
+      div1 = element$1("div");
+      create_component(flatbutton0.$$.fragment);
+      t5 = space();
+      div2 = element$1("div");
+      create_component(flatbutton1.$$.fragment);
+      t6 = space();
+      div3 = element$1("div");
+      create_component(checkbox.$$.fragment);
+      t7 = space();
+      div4 = element$1("div");
+      input = element$1("input");
+      attr(div1, "class", "button-container svelte-10zlzgr");
+      attr(div2, "class", "button-container svelte-10zlzgr");
+      input.value = input_value_value = /*recordedKeys*/
+      ctx[4].join(" + ");
+      attr(input, "type", "text");
+      attr(input, "placeholder", "Press Keys");
+      set_style(div4, "grid-column", "2 / span 3");
+      attr(div5, "class", "typo-feature-settings-hotkey svelte-10zlzgr");
+    },
+    m(target, anchor) {
+      insert(target, div5, anchor);
+      append(div5, h3);
+      append(h3, t0);
+      append(div5, t1);
+      append(div5, div0);
+      append(div0, t2);
+      append(div0, t3);
+      if (if_block) if_block.m(div0, null);
+      append(div5, t4);
+      append(div5, div1);
+      mount_component(flatbutton0, div1, null);
+      append(div5, t5);
+      append(div5, div2);
+      mount_component(flatbutton1, div2, null);
+      append(div5, t6);
+      append(div5, div3);
+      mount_component(checkbox, div3, null);
+      append(div5, t7);
+      append(div5, div4);
+      append(div4, input);
+      ctx[12](input);
+      current = true;
+      if (!mounted) {
+        dispose = [
+          listen(
+            input,
+            "click",
+            /*click_handler_2*/
+            ctx[13]
+          ),
+          listen(
+            input,
+            "keydown",
+            /*keydown_handler*/
+            ctx[14]
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if ((!current || dirty & /*hotkey*/
+      1) && t0_value !== (t0_value = /*hotkey*/
+      ctx2[0].name + "")) set_data(t0, t0_value);
+      if ((!current || dirty & /*hotkey*/
+      1) && t2_value !== (t2_value = /*hotkey*/
+      ctx2[0].description + "")) set_data(t2, t2_value);
+      if (
+        /*hotkey*/
+        ctx2[0].disabledOnInputs
+      ) {
+        if (if_block) ;
+        else {
+          if_block = create_if_block$c();
+          if_block.c();
+          if_block.m(div0, null);
+        }
+      } else if (if_block) {
+        if_block.d(1);
+        if_block = null;
+      }
+      const checkbox_changes = {};
+      if (dirty & /*$comboStore*/
+      4) checkbox_changes.disabled = /*$comboStore*/
+      ctx2[2].length === 0;
+      if (dirty & /*$enabledStore*/
+      32) checkbox_changes.description = /*$enabledStore*/
+      ctx2[5] ? "Enabled" : "Disabled";
+      if (!updating_checked && dirty & /*$enabledStore*/
+      32) {
+        updating_checked = true;
+        checkbox_changes.checked = /*$enabledStore*/
+        ctx2[5];
+        add_flush_callback(() => updating_checked = false);
+      }
+      checkbox.$set(checkbox_changes);
+      if (!current || dirty & /*recordedKeys*/
+      16 && input_value_value !== (input_value_value = /*recordedKeys*/
+      ctx2[4].join(" + ")) && input.value !== input_value_value) {
+        input.value = input_value_value;
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(flatbutton0.$$.fragment, local);
+      transition_in(flatbutton1.$$.fragment, local);
+      transition_in(checkbox.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(flatbutton0.$$.fragment, local);
+      transition_out(flatbutton1.$$.fragment, local);
+      transition_out(checkbox.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div5);
+      }
+      if (if_block) if_block.d();
+      destroy_component(flatbutton0);
+      destroy_component(flatbutton1);
+      destroy_component(checkbox);
+      ctx[12](null);
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+__name(create_fragment$q, "create_fragment$q");
+function instance$p($$self, $$props, $$invalidate) {
+  let $comboStore;
+  let $enabledStore;
+  let { hotkey } = $$props;
+  let { feature } = $$props;
+  const enabledStore = hotkey.enabledSetting.store;
+  component_subscribe($$self, enabledStore, (value) => $$invalidate(5, $enabledStore = value));
+  const comboStore = hotkey.comboSetting.store;
+  component_subscribe($$self, comboStore, (value) => $$invalidate(2, $comboStore = value));
+  let recordingElement;
+  let recordedKeys;
+  const getHotkeyComboHumanReadable = /* @__PURE__ */ __name(async (combo) => {
+    var _a2;
+    if ((_a2 = navigator == null ? void 0 : navigator.keyboard) == null ? void 0 : _a2.getLayoutMap) {
+      const layoutMap = await navigator.keyboard.getLayoutMap();
+      return combo.map((key2) => layoutMap.get(key2) || key2).join(" + ");
+    } else {
+      return combo.join(" + ");
+    }
+  }, "getHotkeyComboHumanReadable");
+  const click_handler2 = /* @__PURE__ */ __name(async () => {
+    const update = await feature.resetHotkeyCombo(hotkey);
+    if (update) {
+      $$invalidate(4, recordedKeys = update);
+      $$invalidate(3, recordingElement.value = await getHotkeyComboHumanReadable(recordedKeys), recordingElement);
+    }
+  }, "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name(() => {
+    feature.setHotkeyCombo(hotkey, recordedKeys);
+    if (recordedKeys.length > 0) {
+      set_store_value(enabledStore, $enabledStore = true, $enabledStore);
+    }
+  }, "click_handler_1");
+  function checkbox_checked_binding(value) {
+    $enabledStore = value;
+    enabledStore.set($enabledStore);
+  }
+  __name(checkbox_checked_binding, "checkbox_checked_binding");
+  function input_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      recordingElement = $$value;
+      $$invalidate(3, recordingElement);
+    });
+  }
+  __name(input_binding, "input_binding");
+  const click_handler_2 = /* @__PURE__ */ __name(() => {
+    $$invalidate(4, recordedKeys = []);
+    $$invalidate(3, recordingElement.value = "", recordingElement);
+  }, "click_handler_2");
+  const keydown_handler2 = /* @__PURE__ */ __name(async (event) => {
+    event.preventDefault();
+    if (!recordedKeys.includes(event.code)) {
+      recordedKeys.push(event.code);
+      $$invalidate(3, recordingElement.value = await getHotkeyComboHumanReadable(recordedKeys), recordingElement);
+    } else {
+      $$invalidate(4, recordedKeys = recordedKeys.filter((key2) => key2 !== event.code));
+      $$invalidate(3, recordingElement.value = await getHotkeyComboHumanReadable(recordedKeys), recordingElement);
+    }
+  }, "keydown_handler");
+  $$self.$$set = ($$props2) => {
+    if ("hotkey" in $$props2) $$invalidate(0, hotkey = $$props2.hotkey);
+    if ("feature" in $$props2) $$invalidate(1, feature = $$props2.feature);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & /*$comboStore*/
+    4) {
+      {
+        $$invalidate(4, recordedKeys = [...$comboStore]);
+      }
+    }
+  };
+  return [
+    hotkey,
+    feature,
+    $comboStore,
+    recordingElement,
+    recordedKeys,
+    $enabledStore,
+    enabledStore,
+    comboStore,
+    getHotkeyComboHumanReadable,
+    click_handler2,
+    click_handler_1,
+    checkbox_checked_binding,
+    input_binding,
+    click_handler_2,
+    keydown_handler2
+  ];
+}
+__name(instance$p, "instance$p");
+const _Controls_settings_hotkey = class _Controls_settings_hotkey extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$p, create_fragment$q, safe_not_equal, { hotkey: 0, feature: 1 });
+  }
+};
+__name(_Controls_settings_hotkey, "Controls_settings_hotkey");
+let Controls_settings_hotkey = _Controls_settings_hotkey;
+function create_fragment$p(ctx) {
+  let div5;
+  let h3;
+  let t0_value = (
+    /*command*/
+    ctx[0].name + ""
+  );
+  let t0;
+  let t1;
+  let div0;
+  let t2_value = (
+    /*command*/
+    ctx[0].description + ""
+  );
+  let t2;
+  let t3;
+  let div1;
+  let flatbutton0;
+  let t4;
+  let div2;
+  let flatbutton1;
+  let t5;
+  let div3;
+  let checkbox;
+  let updating_checked;
+  let t6;
+  let div4;
+  let input;
+  let current;
+  let mounted;
+  let dispose;
+  flatbutton0 = new Flat_button({
+    props: { content: "Reset name", color: "orange" }
+  });
+  flatbutton0.$on(
+    "click",
+    /*click_handler*/
+    ctx[7]
+  );
+  flatbutton1 = new Flat_button({
+    props: { content: "Save name", color: "green" }
+  });
+  flatbutton1.$on(
+    "click",
+    /*click_handler_1*/
+    ctx[8]
+  );
+  function checkbox_checked_binding(value) {
+    ctx[9](value);
+  }
+  __name(checkbox_checked_binding, "checkbox_checked_binding");
+  let checkbox_props = {
+    description: (
+      /*$enabledStore*/
+      ctx[3] ? "Enabled" : "Disabled"
+    )
+  };
+  if (
+    /*$enabledStore*/
+    ctx[3] !== void 0
+  ) {
+    checkbox_props.checked = /*$enabledStore*/
+    ctx[3];
+  }
+  checkbox = new Checkbox({ props: checkbox_props });
+  binding_callbacks.push(() => bind$1(checkbox, "checked", checkbox_checked_binding));
+  return {
+    c() {
+      div5 = element$1("div");
+      h3 = element$1("h3");
+      t0 = text(t0_value);
+      t1 = space();
+      div0 = element$1("div");
+      t2 = text(t2_value);
+      t3 = space();
+      div1 = element$1("div");
+      create_component(flatbutton0.$$.fragment);
+      t4 = space();
+      div2 = element$1("div");
+      create_component(flatbutton1.$$.fragment);
+      t5 = space();
+      div3 = element$1("div");
+      create_component(checkbox.$$.fragment);
+      t6 = space();
+      div4 = element$1("div");
+      input = element$1("input");
+      attr(div1, "class", "button-container svelte-lvvgs4");
+      attr(div2, "class", "button-container svelte-lvvgs4");
+      attr(input, "type", "text");
+      attr(input, "placeholder", "Enter command name");
+      set_style(div4, "grid-column", "2 / span 3");
+      attr(div5, "class", "typo-feature-settings-command svelte-lvvgs4");
+    },
+    m(target, anchor) {
+      insert(target, div5, anchor);
+      append(div5, h3);
+      append(h3, t0);
+      append(div5, t1);
+      append(div5, div0);
+      append(div0, t2);
+      append(div5, t3);
+      append(div5, div1);
+      mount_component(flatbutton0, div1, null);
+      append(div5, t4);
+      append(div5, div2);
+      mount_component(flatbutton1, div2, null);
+      append(div5, t5);
+      append(div5, div3);
+      mount_component(checkbox, div3, null);
+      append(div5, t6);
+      append(div5, div4);
+      append(div4, input);
+      set_input_value(
+        input,
+        /*idInput*/
+        ctx[2]
+      );
+      current = true;
+      if (!mounted) {
+        dispose = listen(
+          input,
+          "input",
+          /*input_input_handler*/
+          ctx[10]
+        );
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if ((!current || dirty & /*command*/
+      1) && t0_value !== (t0_value = /*command*/
+      ctx2[0].name + "")) set_data(t0, t0_value);
+      if ((!current || dirty & /*command*/
+      1) && t2_value !== (t2_value = /*command*/
+      ctx2[0].description + "")) set_data(t2, t2_value);
+      const checkbox_changes = {};
+      if (dirty & /*$enabledStore*/
+      8) checkbox_changes.description = /*$enabledStore*/
+      ctx2[3] ? "Enabled" : "Disabled";
+      if (!updating_checked && dirty & /*$enabledStore*/
+      8) {
+        updating_checked = true;
+        checkbox_changes.checked = /*$enabledStore*/
+        ctx2[3];
+        add_flush_callback(() => updating_checked = false);
+      }
+      checkbox.$set(checkbox_changes);
+      if (dirty & /*idInput*/
+      4 && input.value !== /*idInput*/
+      ctx2[2]) {
+        set_input_value(
+          input,
+          /*idInput*/
+          ctx2[2]
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(flatbutton0.$$.fragment, local);
+      transition_in(flatbutton1.$$.fragment, local);
+      transition_in(checkbox.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(flatbutton0.$$.fragment, local);
+      transition_out(flatbutton1.$$.fragment, local);
+      transition_out(checkbox.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div5);
+      }
+      destroy_component(flatbutton0);
+      destroy_component(flatbutton1);
+      destroy_component(checkbox);
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_fragment$p, "create_fragment$p");
+function instance$o($$self, $$props, $$invalidate) {
+  let $idStore;
+  let $enabledStore;
+  let { command } = $$props;
+  let { feature } = $$props;
+  const enabledStore = command.enabledSetting.store;
+  component_subscribe($$self, enabledStore, (value) => $$invalidate(3, $enabledStore = value));
+  const idStore = command.idSetting.store;
+  component_subscribe($$self, idStore, (value) => $$invalidate(1, $idStore = value));
+  let idInput = "";
+  const click_handler2 = /* @__PURE__ */ __name(() => {
+    set_store_value(idStore, $idStore = command.defaultId, $idStore);
+  }, "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name(() => {
+    set_store_value(idStore, $idStore = idInput.length === 0 ? command.defaultId : idInput, $idStore);
+  }, "click_handler_1");
+  function checkbox_checked_binding(value) {
+    $enabledStore = value;
+    enabledStore.set($enabledStore);
+  }
+  __name(checkbox_checked_binding, "checkbox_checked_binding");
+  function input_input_handler() {
+    idInput = this.value;
+    $$invalidate(2, idInput), $$invalidate(1, $idStore);
+  }
+  __name(input_input_handler, "input_input_handler");
+  $$self.$$set = ($$props2) => {
+    if ("command" in $$props2) $$invalidate(0, command = $$props2.command);
+    if ("feature" in $$props2) $$invalidate(6, feature = $$props2.feature);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & /*$idStore*/
+    2) {
+      {
+        $$invalidate(2, idInput = $idStore);
+      }
+    }
+  };
+  return [
+    command,
+    $idStore,
+    idInput,
+    $enabledStore,
+    enabledStore,
+    idStore,
+    feature,
+    click_handler2,
+    click_handler_1,
+    checkbox_checked_binding,
+    input_input_handler
+  ];
+}
+__name(instance$o, "instance$o");
+const _Controls_settings_command = class _Controls_settings_command extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$o, create_fragment$p, safe_not_equal, { command: 0, feature: 6 });
+  }
+};
+__name(_Controls_settings_command, "Controls_settings_command");
+let Controls_settings_command = _Controls_settings_command;
+function get_each_context$e(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[9] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$e, "get_each_context$e");
+function get_each_context_1$4(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[12] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_1$4, "get_each_context_1$4");
+function get_each_context_2$1(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[15] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_2$1, "get_each_context_2$1");
+function create_if_block_5(ctx) {
+  let div1;
+  let h2;
+  let t1;
+  let div0;
+  let switch_instance;
+  let current;
+  const switch_instance_spread_levels = [
+    /*infoComponent*/
+    ctx[4].props
+  ];
+  var switch_value = (
+    /*infoComponent*/
+    ctx[4].componentType
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {};
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*infoComponent*/
+    16) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
+        /*infoComponent*/
+        ctx2[4].props
+      )]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      div1 = element$1("div");
+      h2 = element$1("h2");
+      h2.textContent = "Feature Information";
+      t1 = space();
+      div0 = element$1("div");
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      attr(h2, "class", "svelte-1njssi3");
+      attr(div1, "class", "typo-feature-settings-info svelte-1njssi3");
+    },
+    m(target, anchor) {
+      insert(target, div1, anchor);
+      append(div1, h2);
+      append(div1, t1);
+      append(div1, div0);
+      if (switch_instance) mount_component(switch_instance, div0, null);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*infoComponent*/
+      16 && switch_value !== (switch_value = /*infoComponent*/
+      ctx2[4].componentType)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, div0, null);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*infoComponent*/
+        16 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
+          /*infoComponent*/
+          ctx2[4].props
+        )]) : {};
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div1);
+      }
+      if (switch_instance) destroy_component(switch_instance);
+    }
+  };
+}
+__name(create_if_block_5, "create_if_block_5");
+function create_if_block_4(ctx) {
+  let div1;
+  let h2;
+  let t1;
+  let div0;
+  let current;
+  let each_value_2 = ensure_array_like(
+    /*feature*/
+    ctx[1].settings
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_2.length; i += 1) {
+    each_blocks[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      div1 = element$1("div");
+      h2 = element$1("h2");
+      h2.textContent = "Feature Settings";
+      t1 = space();
+      div0 = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(h2, "class", "svelte-1njssi3");
+      attr(div0, "class", "typo-feature-settings-default-list svelte-1njssi3");
+      attr(div1, "class", "typo-feature-settings-default svelte-1njssi3");
+    },
+    m(target, anchor) {
+      insert(target, div1, anchor);
+      append(div1, h2);
+      append(div1, t1);
+      append(div1, div0);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div0, null);
+        }
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*feature*/
+      2) {
+        each_value_2 = ensure_array_like(
+          /*feature*/
+          ctx2[1].settings
+        );
+        let i;
+        for (i = 0; i < each_value_2.length; i += 1) {
+          const child_ctx = get_each_context_2$1(ctx2, each_value_2, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block_2$1(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(div0, null);
+          }
+        }
+        group_outros();
+        for (i = each_value_2.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value_2.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div1);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_if_block_4, "create_if_block_4");
+function create_each_block_2$1(ctx) {
+  let div;
+  let switch_instance;
+  let t;
+  let current;
+  const switch_instance_spread_levels = [
+    /*setting*/
+    ctx[15].componentData.props
+  ];
+  var switch_value = (
+    /*setting*/
+    ctx[15].componentData.componentType
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {};
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*feature*/
+    2) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
+        /*setting*/
+        ctx2[15].componentData.props
+      )]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      div = element$1("div");
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      t = space();
+      attr(div, "class", "typo-feature-settings-default-item svelte-1njssi3");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      if (switch_instance) mount_component(switch_instance, div, null);
+      append(div, t);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*feature*/
+      2 && switch_value !== (switch_value = /*setting*/
+      ctx2[15].componentData.componentType)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, div, t);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*feature*/
+        2 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
+          /*setting*/
+          ctx2[15].componentData.props
+        )]) : {};
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      if (switch_instance) destroy_component(switch_instance);
+    }
+  };
+}
+__name(create_each_block_2$1, "create_each_block_2$1");
+function create_if_block_3(ctx) {
+  let div1;
+  let h2;
+  let t1;
+  let div0;
+  let switch_instance;
+  let current;
+  const switch_instance_spread_levels = [
+    /*settingsComponent*/
+    ctx[3].props
+  ];
+  var switch_value = (
+    /*settingsComponent*/
+    ctx[3].componentType
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {};
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*settingsComponent*/
+    8) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
+        /*settingsComponent*/
+        ctx2[3].props
+      )]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      div1 = element$1("div");
+      h2 = element$1("h2");
+      h2.textContent = "Feature Management";
+      t1 = space();
+      div0 = element$1("div");
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      attr(h2, "class", "svelte-1njssi3");
+      attr(div1, "class", "typo-feature-settings-management svelte-1njssi3");
+    },
+    m(target, anchor) {
+      insert(target, div1, anchor);
+      append(div1, h2);
+      append(div1, t1);
+      append(div1, div0);
+      if (switch_instance) mount_component(switch_instance, div0, null);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*settingsComponent*/
+      8 && switch_value !== (switch_value = /*settingsComponent*/
+      ctx2[3].componentType)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, div0, null);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*settingsComponent*/
+        8 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
+          /*settingsComponent*/
+          ctx2[3].props
+        )]) : {};
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div1);
+      }
+      if (switch_instance) destroy_component(switch_instance);
+    }
+  };
+}
+__name(create_if_block_3, "create_if_block_3");
+function create_if_block_1$3(ctx) {
+  let div1;
+  let h2;
+  let t1;
+  let p;
+  let t5;
+  let t6;
+  let br2;
+  let t7;
+  let div0;
+  let current;
+  let if_block = !/*supportskeyboardLayout*/
+  ctx[7] && create_if_block_2$1();
+  let each_value_1 = ensure_array_like(
+    /*featureHotkeys*/
+    ctx[5]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_1.length; i += 1) {
+    each_blocks[i] = create_each_block_1$4(get_each_context_1$4(ctx, each_value_1, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      div1 = element$1("div");
+      h2 = element$1("h2");
+      h2.textContent = "Feature Hotkeys";
+      t1 = space();
+      p = element$1("p");
+      p.innerHTML = `Hotkeys are key combinations to quickly access feature functions. You can disable hotkeys that you don&#39;t need.<br/>
+      To change a hotkey, click in the input field and press the desired key combination. To remove a key from the combination, press it again.<br/>
+      Empty combinations will be disabled automatically.`;
+      t5 = space();
+      if (if_block) if_block.c();
+      t6 = space();
+      br2 = element$1("br");
+      t7 = space();
+      div0 = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(h2, "class", "svelte-1njssi3");
+      attr(div0, "class", "typo-feature-settings-hotkeys-list svelte-1njssi3");
+      attr(div1, "class", "typo-feature-settings-hotkeys svelte-1njssi3");
+    },
+    m(target, anchor) {
+      insert(target, div1, anchor);
+      append(div1, h2);
+      append(div1, t1);
+      append(div1, p);
+      append(div1, t5);
+      if (if_block) if_block.m(div1, null);
+      append(div1, t6);
+      append(div1, br2);
+      append(div1, t7);
+      append(div1, div0);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div0, null);
+        }
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*featureHotkeys, settingsFeature*/
+      36) {
+        each_value_1 = ensure_array_like(
+          /*featureHotkeys*/
+          ctx2[5]
+        );
+        let i;
+        for (i = 0; i < each_value_1.length; i += 1) {
+          const child_ctx = get_each_context_1$4(ctx2, each_value_1, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block_1$4(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(div0, null);
+          }
+        }
+        group_outros();
+        for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value_1.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div1);
+      }
+      if (if_block) if_block.d();
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_if_block_1$3, "create_if_block_1$3");
+function create_if_block_2$1(ctx) {
+  let p;
+  return {
+    c() {
+      p = element$1("p");
+      p.innerHTML = `Your browser does not support localized key names. Hotkeys will use US keyboard layout names.<br/>
+        Switch to any Chrome-based browser to see the real key names.`;
+    },
+    m(target, anchor) {
+      insert(target, p, anchor);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(p);
+      }
+    }
+  };
+}
+__name(create_if_block_2$1, "create_if_block_2$1");
+function create_each_block_1$4(ctx) {
+  let controlssettingshotkey;
+  let current;
+  controlssettingshotkey = new Controls_settings_hotkey({
+    props: {
+      hotkey: (
+        /*hotkey*/
+        ctx[12]
+      ),
+      feature: (
+        /*settingsFeature*/
+        ctx[2]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(controlssettingshotkey.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(controlssettingshotkey, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const controlssettingshotkey_changes = {};
+      if (dirty & /*featureHotkeys*/
+      32) controlssettingshotkey_changes.hotkey = /*hotkey*/
+      ctx2[12];
+      if (dirty & /*settingsFeature*/
+      4) controlssettingshotkey_changes.feature = /*settingsFeature*/
+      ctx2[2];
+      controlssettingshotkey.$set(controlssettingshotkey_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(controlssettingshotkey.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(controlssettingshotkey.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(controlssettingshotkey, detaching);
+    }
+  };
+}
+__name(create_each_block_1$4, "create_each_block_1$4");
+function create_if_block$b(ctx) {
+  let div1;
+  let h2;
+  let t1;
+  let p;
+  let t5;
+  let br2;
+  let t6;
+  let div0;
+  let current;
+  let each_value = ensure_array_like(
+    /*featureCommands*/
+    ctx[6]
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$e(get_each_context$e(ctx, each_value, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      div1 = element$1("div");
+      h2 = element$1("h2");
+      h2.textContent = "Feature Commands";
+      t1 = space();
+      p = element$1("p");
+      p.innerHTML = `Commands are a quick way to execute actions of a feature from the chat.<br/>
+      Here, you can toggle commands on or off and customize the command name.<br/>
+      To use a command, type &quot;/&quot; and continue with the command name.`;
+      t5 = space();
+      br2 = element$1("br");
+      t6 = space();
+      div0 = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(h2, "class", "svelte-1njssi3");
+      attr(div0, "class", "typo-feature-settings-commands-list svelte-1njssi3");
+      attr(div1, "class", "typo-feature-settings-hotkeys svelte-1njssi3");
+    },
+    m(target, anchor) {
+      insert(target, div1, anchor);
+      append(div1, h2);
+      append(div1, t1);
+      append(div1, p);
+      append(div1, t5);
+      append(div1, br2);
+      append(div1, t6);
+      append(div1, div0);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div0, null);
+        }
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*featureCommands, settingsFeature*/
+      68) {
+        each_value = ensure_array_like(
+          /*featureCommands*/
+          ctx2[6]
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$e(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block$e(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(div0, null);
+          }
+        }
+        group_outros();
+        for (i = each_value.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div1);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_if_block$b, "create_if_block$b");
+function create_each_block$e(ctx) {
+  let controlssettingscommand;
+  let current;
+  controlssettingscommand = new Controls_settings_command({
+    props: {
+      command: (
+        /*command*/
+        ctx[9]
+      ),
+      feature: (
+        /*settingsFeature*/
+        ctx[2]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(controlssettingscommand.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(controlssettingscommand, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const controlssettingscommand_changes = {};
+      if (dirty & /*featureCommands*/
+      64) controlssettingscommand_changes.command = /*command*/
+      ctx2[9];
+      if (dirty & /*settingsFeature*/
+      4) controlssettingscommand_changes.feature = /*settingsFeature*/
+      ctx2[2];
+      controlssettingscommand.$set(controlssettingscommand_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(controlssettingscommand.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(controlssettingscommand.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(controlssettingscommand, detaching);
+    }
+  };
+}
+__name(create_each_block$e, "create_each_block$e");
+function create_fragment$o(ctx) {
+  let div2;
+  let div0;
+  let t1;
+  let h1;
+  let t2_value = (
+    /*feature*/
+    ctx[1].name + ""
+  );
+  let t2;
+  let t3;
+  let div1;
+  let t5;
+  let div3;
+  let t6_value = (
+    /*feature*/
+    ctx[1].description + ""
+  );
+  let t6;
+  let t7;
+  let t8;
+  let t9;
+  let t10;
+  let t11;
+  let if_block4_anchor;
+  let current;
+  let mounted;
+  let dispose;
+  let if_block0 = (
+    /*infoComponent*/
+    ctx[4] && create_if_block_5(ctx)
+  );
+  let if_block1 = (
+    /*feature*/
+    ctx[1].settings.length > 0 && create_if_block_4(ctx)
+  );
+  let if_block2 = (
+    /*settingsComponent*/
+    ctx[3] && create_if_block_3(ctx)
+  );
+  let if_block3 = (
+    /*featureHotkeys*/
+    ctx[5].length > 0 && create_if_block_1$3(ctx)
+  );
+  let if_block4 = (
+    /*featureCommands*/
+    ctx[6].length > 0 && create_if_block$b(ctx)
+  );
+  return {
+    c() {
+      div2 = element$1("div");
+      div0 = element$1("div");
+      div0.textContent = "Feature Details";
+      t1 = space();
+      h1 = element$1("h1");
+      t2 = text(t2_value);
+      t3 = space();
+      div1 = element$1("div");
+      div1.textContent = "Back to Features ➜";
+      t5 = space();
+      div3 = element$1("div");
+      t6 = text(t6_value);
+      t7 = space();
+      if (if_block0) if_block0.c();
+      t8 = space();
+      if (if_block1) if_block1.c();
+      t9 = space();
+      if (if_block2) if_block2.c();
+      t10 = space();
+      if (if_block3) if_block3.c();
+      t11 = space();
+      if (if_block4) if_block4.c();
+      if_block4_anchor = empty();
+      attr(div0, "class", "typo-feature-settings-hero svelte-1njssi3");
+      attr(h1, "class", "svelte-1njssi3");
+      attr(div1, "class", "typo-feature-settings-back svelte-1njssi3");
+      attr(div2, "class", "typo-feature-settings-title svelte-1njssi3");
+      attr(div3, "class", "typo-feature-settings-summary svelte-1njssi3");
+    },
+    m(target, anchor) {
+      insert(target, div2, anchor);
+      append(div2, div0);
+      append(div2, t1);
+      append(div2, h1);
+      append(h1, t2);
+      append(div2, t3);
+      append(div2, div1);
+      insert(target, t5, anchor);
+      insert(target, div3, anchor);
+      append(div3, t6);
+      insert(target, t7, anchor);
+      if (if_block0) if_block0.m(target, anchor);
+      insert(target, t8, anchor);
+      if (if_block1) if_block1.m(target, anchor);
+      insert(target, t9, anchor);
+      if (if_block2) if_block2.m(target, anchor);
+      insert(target, t10, anchor);
+      if (if_block3) if_block3.m(target, anchor);
+      insert(target, t11, anchor);
+      if (if_block4) if_block4.m(target, anchor);
+      insert(target, if_block4_anchor, anchor);
+      current = true;
+      if (!mounted) {
+        dispose = listen(
+          div1,
+          "click",
+          /*click_handler*/
+          ctx[8]
+        );
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if ((!current || dirty & /*feature*/
+      2) && t2_value !== (t2_value = /*feature*/
+      ctx2[1].name + "")) set_data(t2, t2_value);
+      if ((!current || dirty & /*feature*/
+      2) && t6_value !== (t6_value = /*feature*/
+      ctx2[1].description + "")) set_data(t6, t6_value);
+      if (
+        /*infoComponent*/
+        ctx2[4]
+      ) {
+        if (if_block0) {
+          if_block0.p(ctx2, dirty);
+          if (dirty & /*infoComponent*/
+          16) {
+            transition_in(if_block0, 1);
+          }
+        } else {
+          if_block0 = create_if_block_5(ctx2);
+          if_block0.c();
+          transition_in(if_block0, 1);
+          if_block0.m(t8.parentNode, t8);
+        }
+      } else if (if_block0) {
+        group_outros();
+        transition_out(if_block0, 1, 1, () => {
+          if_block0 = null;
+        });
+        check_outros();
+      }
+      if (
+        /*feature*/
+        ctx2[1].settings.length > 0
+      ) {
+        if (if_block1) {
+          if_block1.p(ctx2, dirty);
+          if (dirty & /*feature*/
+          2) {
+            transition_in(if_block1, 1);
+          }
+        } else {
+          if_block1 = create_if_block_4(ctx2);
+          if_block1.c();
+          transition_in(if_block1, 1);
+          if_block1.m(t9.parentNode, t9);
+        }
+      } else if (if_block1) {
+        group_outros();
+        transition_out(if_block1, 1, 1, () => {
+          if_block1 = null;
+        });
+        check_outros();
+      }
+      if (
+        /*settingsComponent*/
+        ctx2[3]
+      ) {
+        if (if_block2) {
+          if_block2.p(ctx2, dirty);
+          if (dirty & /*settingsComponent*/
+          8) {
+            transition_in(if_block2, 1);
+          }
+        } else {
+          if_block2 = create_if_block_3(ctx2);
+          if_block2.c();
+          transition_in(if_block2, 1);
+          if_block2.m(t10.parentNode, t10);
+        }
+      } else if (if_block2) {
+        group_outros();
+        transition_out(if_block2, 1, 1, () => {
+          if_block2 = null;
+        });
+        check_outros();
+      }
+      if (
+        /*featureHotkeys*/
+        ctx2[5].length > 0
+      ) {
+        if (if_block3) {
+          if_block3.p(ctx2, dirty);
+          if (dirty & /*featureHotkeys*/
+          32) {
+            transition_in(if_block3, 1);
+          }
+        } else {
+          if_block3 = create_if_block_1$3(ctx2);
+          if_block3.c();
+          transition_in(if_block3, 1);
+          if_block3.m(t11.parentNode, t11);
+        }
+      } else if (if_block3) {
+        group_outros();
+        transition_out(if_block3, 1, 1, () => {
+          if_block3 = null;
+        });
+        check_outros();
+      }
+      if (
+        /*featureCommands*/
+        ctx2[6].length > 0
+      ) {
+        if (if_block4) {
+          if_block4.p(ctx2, dirty);
+          if (dirty & /*featureCommands*/
+          64) {
+            transition_in(if_block4, 1);
+          }
+        } else {
+          if_block4 = create_if_block$b(ctx2);
+          if_block4.c();
+          transition_in(if_block4, 1);
+          if_block4.m(if_block4_anchor.parentNode, if_block4_anchor);
+        }
+      } else if (if_block4) {
+        group_outros();
+        transition_out(if_block4, 1, 1, () => {
+          if_block4 = null;
+        });
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block0);
+      transition_in(if_block1);
+      transition_in(if_block2);
+      transition_in(if_block3);
+      transition_in(if_block4);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block0);
+      transition_out(if_block1);
+      transition_out(if_block2);
+      transition_out(if_block3);
+      transition_out(if_block4);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div2);
+        detach(t5);
+        detach(div3);
+        detach(t7);
+        detach(t8);
+        detach(t9);
+        detach(t10);
+        detach(t11);
+        detach(if_block4_anchor);
+      }
+      if (if_block0) if_block0.d(detaching);
+      if (if_block1) if_block1.d(detaching);
+      if (if_block2) if_block2.d(detaching);
+      if (if_block3) if_block3.d(detaching);
+      if (if_block4) if_block4.d(detaching);
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_fragment$o, "create_fragment$o");
+function instance$n($$self, $$props, $$invalidate) {
+  var _a2;
+  let { detailsClosed } = $$props;
+  let { feature } = $$props;
+  let { settingsFeature } = $$props;
+  settingsFeature.completeOnboardingTask();
+  let settingsComponent;
+  let infoComponent;
+  let featureHotkeys = [];
+  let featureCommands = [];
+  const supportskeyboardLayout = ((_a2 = navigator == null ? void 0 : navigator.keyboard) == null ? void 0 : _a2.getLayoutMap) !== void 0;
+  const click_handler2 = /* @__PURE__ */ __name(() => detailsClosed(), "click_handler");
+  $$self.$$set = ($$props2) => {
+    if ("detailsClosed" in $$props2) $$invalidate(0, detailsClosed = $$props2.detailsClosed);
+    if ("feature" in $$props2) $$invalidate(1, feature = $$props2.feature);
+    if ("settingsFeature" in $$props2) $$invalidate(2, settingsFeature = $$props2.settingsFeature);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & /*feature*/
+    2) {
+      {
+        $$invalidate(5, featureHotkeys = [...feature.hotkeys]);
+        $$invalidate(6, featureCommands = [...feature.commands]);
+        $$invalidate(3, settingsComponent = feature.featureManagementComponent);
+        $$invalidate(4, infoComponent = feature.featureInfoComponent);
+      }
+    }
+  };
+  return [
+    detailsClosed,
+    feature,
+    settingsFeature,
+    settingsComponent,
+    infoComponent,
+    featureHotkeys,
+    featureCommands,
+    supportskeyboardLayout,
+    click_handler2
+  ];
+}
+__name(instance$n, "instance$n");
+const _Controls_settings_details = class _Controls_settings_details extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$n, create_fragment$o, safe_not_equal, {
+      detailsClosed: 0,
+      feature: 1,
+      settingsFeature: 2
+    });
+  }
+};
+__name(_Controls_settings_details, "Controls_settings_details");
+let Controls_settings_details = _Controls_settings_details;
+function create_else_block$4(ctx) {
+  let div;
+  let t_value = (
+    /*feature*/
+    ctx[0].description + ""
+  );
+  let t;
+  return {
+    c() {
+      div = element$1("div");
+      t = text(t_value);
+      attr(div, "class", "description svelte-xje42n");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      append(div, t);
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*feature*/
+      1 && t_value !== (t_value = /*feature*/
+      ctx2[0].description + "")) set_data(t, t_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+    }
+  };
+}
+__name(create_else_block$4, "create_else_block$4");
+function create_if_block$a(ctx) {
+  let div;
+  let img;
+  let img_src_value;
+  let img_alt_value;
+  let t0;
+  let span;
+  let t1_value = (
+    /*feature*/
+    ctx[0].description + ""
+  );
+  let t1;
+  let mounted;
+  let dispose;
+  return {
+    c() {
+      div = element$1("div");
+      img = element$1("img");
+      t0 = space();
+      span = element$1("span");
+      t1 = text(t1_value);
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      attr(img, "alt", img_alt_value = /*$featureState*/
+      ctx[4] ? "enabled" : "disabled");
+      set_style(img, "content", "var(--file-img-wrench-gif)");
+      attr(img, "class", "svelte-xje42n");
+      attr(span, "class", "svelte-xje42n");
+      attr(div, "class", "description svelte-xje42n");
+      attr(div, "role", "button");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      append(div, img);
+      append(div, t0);
+      append(div, span);
+      append(span, t1);
+      if (!mounted) {
+        dispose = listen(
+          div,
+          "click",
+          /*click_handler_1*/
+          ctx[8]
+        );
+        mounted = true;
+      }
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*$featureState*/
+      16 && img_alt_value !== (img_alt_value = /*$featureState*/
+      ctx2[4] ? "enabled" : "disabled")) {
+        attr(img, "alt", img_alt_value);
+      }
+      if (dirty & /*feature*/
+      1 && t1_value !== (t1_value = /*feature*/
+      ctx2[0].description + "")) set_data(t1, t1_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_if_block$a, "create_if_block$a");
+function create_fragment$n(ctx) {
+  let div3;
+  let div0;
+  let img;
+  let img_src_value;
+  let img_alt_value;
+  let t0;
+  let span0;
+  let t1_value = (
+    /*feature*/
+    ctx[0].name + ""
+  );
+  let t1;
+  let t2;
+  let span1;
+  let t3_value = (
+    /*$featureState*/
+    ctx[4] ? "enabled" : "disabled"
+  );
+  let t3;
+  let t4;
+  let t5;
+  let div1;
+  let t6_value = (
+    /*feature*/
+    ctx[0].tags.map(func$1).join(" ") + ""
+  );
+  let t6;
+  let t7;
+  let div2;
+  let t8;
+  let t9_value = (
+    /*feature*/
+    ctx[0].featureId + ""
+  );
+  let t9;
+  let mounted;
+  let dispose;
+  function select_block_type(ctx2, dirty) {
+    if (
+      /*feature*/
+      ctx2[0].hasDetailComponents
+    ) return create_if_block$a;
+    return create_else_block$4;
+  }
+  __name(select_block_type, "select_block_type");
+  let current_block_type = select_block_type(ctx);
+  let if_block = current_block_type(ctx);
+  return {
+    c() {
+      div3 = element$1("div");
+      div0 = element$1("div");
+      img = element$1("img");
+      t0 = space();
+      span0 = element$1("span");
+      t1 = text(t1_value);
+      t2 = space();
+      span1 = element$1("span");
+      t3 = text(t3_value);
+      t4 = space();
+      if_block.c();
+      t5 = space();
+      div1 = element$1("div");
+      t6 = text(t6_value);
+      t7 = space();
+      div2 = element$1("div");
+      t8 = text("#");
+      t9 = text(t9_value);
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      attr(img, "alt", img_alt_value = /*$featureState*/
+      ctx[4] ? "enabled" : "disabled");
+      set_style(img, "content", "var(--" + /*$featureState*/
+      (ctx[4] ? "file-img-enabled-gif" : "file-img-disabled-gif") + ")");
+      attr(img, "class", "svelte-xje42n");
+      attr(span0, "class", "svelte-xje42n");
+      attr(span1, "class", "svelte-xje42n");
+      attr(div0, "class", "name-toggle svelte-xje42n");
+      attr(div0, "role", "button");
+      attr(div0, "tabindex", "0");
+      toggle_class(div0, "locked", !/*feature*/
+      ctx[0].toggleEnabled);
+      attr(div1, "class", "feature-tags svelte-xje42n");
+      attr(div2, "class", "feature-id svelte-xje42n");
+      attr(div3, "class", "typo-feature-item svelte-xje42n");
+      toggle_class(
+        div3,
+        "devMode",
+        /*devmodeEnabled*/
+        ctx[1]
+      );
+      toggle_class(
+        div3,
+        "hidden",
+        /*feature*/
+        ctx[0].developerFeature && !/*devmodeEnabled*/
+        ctx[1]
+      );
+    },
+    m(target, anchor) {
+      insert(target, div3, anchor);
+      append(div3, div0);
+      append(div0, img);
+      append(div0, t0);
+      append(div0, span0);
+      append(span0, t1);
+      append(div0, t2);
+      append(div0, span1);
+      append(span1, t3);
+      append(div3, t4);
+      if_block.m(div3, null);
+      append(div3, t5);
+      append(div3, div1);
+      append(div1, t6);
+      append(div3, t7);
+      append(div3, div2);
+      append(div2, t8);
+      append(div2, t9);
+      if (!mounted) {
+        dispose = [
+          listen(
+            div0,
+            "click",
+            /*click_handler*/
+            ctx[6]
+          ),
+          listen(
+            div0,
+            "keypress",
+            /*keypress_handler*/
+            ctx[7]
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*$featureState*/
+      16 && img_alt_value !== (img_alt_value = /*$featureState*/
+      ctx2[4] ? "enabled" : "disabled")) {
+        attr(img, "alt", img_alt_value);
+      }
+      if (dirty & /*$featureState*/
+      16) {
+        set_style(img, "content", "var(--" + /*$featureState*/
+        (ctx2[4] ? "file-img-enabled-gif" : "file-img-disabled-gif") + ")");
+      }
+      if (dirty & /*feature*/
+      1 && t1_value !== (t1_value = /*feature*/
+      ctx2[0].name + "")) set_data(t1, t1_value);
+      if (dirty & /*$featureState*/
+      16 && t3_value !== (t3_value = /*$featureState*/
+      ctx2[4] ? "enabled" : "disabled")) set_data(t3, t3_value);
+      if (dirty & /*feature*/
+      1) {
+        toggle_class(div0, "locked", !/*feature*/
+        ctx2[0].toggleEnabled);
+      }
+      if (current_block_type === (current_block_type = select_block_type(ctx2)) && if_block) {
+        if_block.p(ctx2, dirty);
+      } else {
+        if_block.d(1);
+        if_block = current_block_type(ctx2);
+        if (if_block) {
+          if_block.c();
+          if_block.m(div3, t5);
+        }
+      }
+      if (dirty & /*feature*/
+      1 && t6_value !== (t6_value = /*feature*/
+      ctx2[0].tags.map(func$1).join(" ") + "")) set_data(t6, t6_value);
+      if (dirty & /*feature*/
+      1 && t9_value !== (t9_value = /*feature*/
+      ctx2[0].featureId + "")) set_data(t9, t9_value);
+      if (dirty & /*devmodeEnabled*/
+      2) {
+        toggle_class(
+          div3,
+          "devMode",
+          /*devmodeEnabled*/
+          ctx2[1]
+        );
+      }
+      if (dirty & /*feature, devmodeEnabled*/
+      3) {
+        toggle_class(
+          div3,
+          "hidden",
+          /*feature*/
+          ctx2[0].developerFeature && !/*devmodeEnabled*/
+          ctx2[1]
+        );
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(div3);
+      }
+      if_block.d();
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+__name(create_fragment$n, "create_fragment$n");
+const func$1 = /* @__PURE__ */ __name((t) => "#" + t, "func$1");
+function instance$m($$self, $$props, $$invalidate) {
+  let $featureState, $$unsubscribe_featureState = noop$1, $$subscribe_featureState = /* @__PURE__ */ __name(() => ($$unsubscribe_featureState(), $$unsubscribe_featureState = subscribe(featureState, ($$value) => $$invalidate(4, $featureState = $$value)), featureState), "$$subscribe_featureState");
+  $$self.$$.on_destroy.push(() => $$unsubscribe_featureState());
+  let { devmodeEnabled } = $$props;
+  let { feature } = $$props;
+  let { featureSettingsClicked } = $$props;
+  const toggleFeature = /* @__PURE__ */ __name(async (feature2) => {
+    if (feature2.toggleEnabled === false) return feature2;
+    const state = await firstValueFrom(feature2.activated$);
+    if (!state) {
+      await feature2.activate();
+    } else {
+      await feature2.destroy();
+    }
+    return feature2;
+  }, "toggleFeature");
+  let featureState;
+  const click_handler2 = /* @__PURE__ */ __name(async () => $$invalidate(0, feature = await toggleFeature(feature)), "click_handler");
+  const keypress_handler = /* @__PURE__ */ __name(async (key2) => {
+    if (key2.key === "Enter") $$invalidate(0, feature = await toggleFeature(feature));
+  }, "keypress_handler");
+  const click_handler_1 = /* @__PURE__ */ __name(() => featureSettingsClicked(), "click_handler_1");
+  $$self.$$set = ($$props2) => {
+    if ("devmodeEnabled" in $$props2) $$invalidate(1, devmodeEnabled = $$props2.devmodeEnabled);
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    if ("featureSettingsClicked" in $$props2) $$invalidate(2, featureSettingsClicked = $$props2.featureSettingsClicked);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & /*feature*/
+    1) {
+      {
+        $$subscribe_featureState($$invalidate(3, featureState = fromObservable(feature.activated$, false)));
+      }
+    }
+  };
+  return [
+    feature,
+    devmodeEnabled,
+    featureSettingsClicked,
+    featureState,
+    $featureState,
+    toggleFeature,
+    click_handler2,
+    keypress_handler,
+    click_handler_1
+  ];
+}
+__name(instance$m, "instance$m");
+const _Controls_settings_feature = class _Controls_settings_feature extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$m, create_fragment$n, safe_not_equal, {
+      devmodeEnabled: 1,
+      feature: 0,
+      featureSettingsClicked: 2
+    });
+  }
+};
+__name(_Controls_settings_feature, "Controls_settings_feature");
+let Controls_settings_feature = _Controls_settings_feature;
+function get_each_context$d(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[11] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$d, "get_each_context$d");
+function get_each_context_1$3(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[14] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_1$3, "get_each_context_1$3");
+function create_each_block_1$3(ctx) {
+  let span;
+  let mounted;
+  let dispose;
+  function click_handler2() {
+    return (
+      /*click_handler*/
+      ctx[6](
+        /*tag*/
+        ctx[14]
+      )
+    );
+  }
+  __name(click_handler2, "click_handler");
+  return {
+    c() {
+      span = element$1("span");
+      span.textContent = `#${/*tag*/
+      ctx[14]}`;
+      attr(span, "class", "filter svelte-1ly2c3r");
+      toggle_class(
+        span,
+        "selected",
+        /*filterTags*/
+        ctx[2].includes(
+          /*tag*/
+          ctx[14]
+        )
+      );
+    },
+    m(target, anchor) {
+      insert(target, span, anchor);
+      if (!mounted) {
+        dispose = listen(span, "click", click_handler2);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty & /*filterTags*/
+      4) {
+        toggle_class(
+          span,
+          "selected",
+          /*filterTags*/
+          ctx[2].includes(
+            /*tag*/
+            ctx[14]
+          )
+        );
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(span);
+      }
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block_1$3, "create_each_block_1$3");
+function create_each_block$d(ctx) {
+  let controlssettingsfeatureitem;
+  let current;
+  function func2() {
+    return (
+      /*func*/
+      ctx[8](
+        /*feat*/
+        ctx[11]
+      )
+    );
+  }
+  __name(func2, "func");
+  controlssettingsfeatureitem = new Controls_settings_feature({
+    props: {
+      feature: (
+        /*feat*/
+        ctx[11]
+      ),
+      devmodeEnabled: (
+        /*$devMode*/
+        ctx[4]
+      ),
+      featureSettingsClicked: func2
+    }
+  });
+  return {
+    c() {
+      create_component(controlssettingsfeatureitem.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(controlssettingsfeatureitem, target, anchor);
+      current = true;
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      const controlssettingsfeatureitem_changes = {};
+      if (dirty & /*feature, filterTags, filterContent*/
+      13) controlssettingsfeatureitem_changes.feature = /*feat*/
+      ctx[11];
+      if (dirty & /*$devMode*/
+      16) controlssettingsfeatureitem_changes.devmodeEnabled = /*$devMode*/
+      ctx[4];
+      if (dirty & /*selectedDetailsFeature, feature, filterTags, filterContent*/
+      15) controlssettingsfeatureitem_changes.featureSettingsClicked = func2;
+      controlssettingsfeatureitem.$set(controlssettingsfeatureitem_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(controlssettingsfeatureitem.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(controlssettingsfeatureitem.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(controlssettingsfeatureitem, detaching);
+    }
+  };
+}
+__name(create_each_block$d, "create_each_block$d");
+function create_if_block$9(ctx) {
+  let controlssettingsdetails;
+  let current;
+  controlssettingsdetails = new Controls_settings_details({
+    props: {
+      feature: (
+        /*selectedDetailsFeature*/
+        ctx[1]
+      ),
+      detailsClosed: (
+        /*func_1*/
+        ctx[9]
+      ),
+      settingsFeature: (
+        /*feature*/
+        ctx[0]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(controlssettingsdetails.$$.fragment);
+    },
+    m(target, anchor) {
+      mount_component(controlssettingsdetails, target, anchor);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      const controlssettingsdetails_changes = {};
+      if (dirty & /*selectedDetailsFeature*/
+      2) controlssettingsdetails_changes.feature = /*selectedDetailsFeature*/
+      ctx2[1];
+      if (dirty & /*selectedDetailsFeature*/
+      2) controlssettingsdetails_changes.detailsClosed = /*func_1*/
+      ctx2[9];
+      if (dirty & /*feature*/
+      1) controlssettingsdetails_changes.settingsFeature = /*feature*/
+      ctx2[0];
+      controlssettingsdetails.$set(controlssettingsdetails_changes);
+    },
+    i(local) {
+      if (current) return;
+      transition_in(controlssettingsdetails.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(controlssettingsdetails.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(controlssettingsdetails, detaching);
+    }
+  };
+}
+__name(create_if_block$9, "create_if_block$9");
+function create_fragment$m(ctx) {
+  let div6;
+  let div4;
+  let div0;
+  let t3;
+  let div2;
+  let h30;
+  let t5;
+  let div1;
+  let t6;
+  let h31;
+  let t8;
+  let input;
+  let t9;
+  let div3;
+  let t10;
+  let div5;
+  let current;
+  let mounted;
+  let dispose;
+  let each_value_1 = ensure_array_like(featureTags);
+  let each_blocks_1 = [];
+  for (let i = 0; i < each_value_1.length; i += 1) {
+    each_blocks_1[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
+  }
+  let each_value = ensure_array_like(
+    /*feature*/
+    ctx[0].searchFeatures(
+      /*feature*/
+      ctx[0].features,
+      /*filterTags*/
+      ctx[2],
+      /*filterContent*/
+      ctx[3]
+    )
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$d(get_each_context$d(ctx, each_value, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  let if_block = (
+    /*selectedDetailsFeature*/
+    ctx[1] && create_if_block$9(ctx)
+  );
+  return {
+    c() {
+      div6 = element$1("div");
+      div4 = element$1("div");
+      div0 = element$1("div");
+      div0.innerHTML = `All features of skribbltypo can be managed here.<br/>
+      You can click on a feature name to toggle it. To open feature settings, click the settings icon.<br/>
+      If you are unsure how a feature works, you can have a look at the typo website or join the typo discord server and get help there!`;
+      t3 = space();
+      div2 = element$1("div");
+      h30 = element$1("h3");
+      h30.textContent = "Filter by tags:";
+      t5 = space();
+      div1 = element$1("div");
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        each_blocks_1[i].c();
+      }
+      t6 = space();
+      h31 = element$1("h3");
+      h31.textContent = "Filter by text:";
+      t8 = space();
+      input = element$1("input");
+      t9 = space();
+      div3 = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      t10 = space();
+      div5 = element$1("div");
+      if (if_block) if_block.c();
+      attr(div0, "class", "typo-features-info svelte-1ly2c3r");
+      attr(div1, "class", "filters svelte-1ly2c3r");
+      attr(input, "type", "text");
+      attr(input, "placeholder", "Search for feature/hotkey/command/setting name or description");
+      attr(div2, "class", "typo-features-filter svelte-1ly2c3r");
+      attr(div3, "class", "typo-features-list color-scrollbar svelte-1ly2c3r");
+      attr(div4, "class", "typo-features svelte-1ly2c3r");
+      toggle_class(
+        div4,
+        "settingsVisible",
+        /*selectedDetailsFeature*/
+        ctx[1] !== void 0
+      );
+      attr(div5, "class", "typo-feature-settings color-scrollbar svelte-1ly2c3r");
+      toggle_class(
+        div5,
+        "settingsVisible",
+        /*selectedDetailsFeature*/
+        ctx[1] !== void 0
+      );
+      attr(div6, "class", "typo-features-container svelte-1ly2c3r");
+    },
+    m(target, anchor) {
+      insert(target, div6, anchor);
+      append(div6, div4);
+      append(div4, div0);
+      append(div4, t3);
+      append(div4, div2);
+      append(div2, h30);
+      append(div2, t5);
+      append(div2, div1);
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        if (each_blocks_1[i]) {
+          each_blocks_1[i].m(div1, null);
+        }
+      }
+      append(div2, t6);
+      append(div2, h31);
+      append(div2, t8);
+      append(div2, input);
+      set_input_value(
+        input,
+        /*filterContent*/
+        ctx[3]
+      );
+      append(div4, t9);
+      append(div4, div3);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div3, null);
+        }
+      }
+      append(div6, t10);
+      append(div6, div5);
+      if (if_block) if_block.m(div5, null);
+      current = true;
+      if (!mounted) {
+        dispose = listen(
+          input,
+          "input",
+          /*input_input_handler*/
+          ctx[7]
+        );
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*filterTags*/
+      4) {
+        each_value_1 = ensure_array_like(featureTags);
+        let i;
+        for (i = 0; i < each_value_1.length; i += 1) {
+          const child_ctx = get_each_context_1$3(ctx2, each_value_1, i);
+          if (each_blocks_1[i]) {
+            each_blocks_1[i].p(child_ctx, dirty);
+          } else {
+            each_blocks_1[i] = create_each_block_1$3(child_ctx);
+            each_blocks_1[i].c();
+            each_blocks_1[i].m(div1, null);
+          }
+        }
+        for (; i < each_blocks_1.length; i += 1) {
+          each_blocks_1[i].d(1);
+        }
+        each_blocks_1.length = each_value_1.length;
+      }
+      if (dirty & /*filterContent*/
+      8 && input.value !== /*filterContent*/
+      ctx2[3]) {
+        set_input_value(
+          input,
+          /*filterContent*/
+          ctx2[3]
+        );
+      }
+      if (dirty & /*feature, filterTags, filterContent, $devMode, selectedDetailsFeature*/
+      31) {
+        each_value = ensure_array_like(
+          /*feature*/
+          ctx2[0].searchFeatures(
+            /*feature*/
+            ctx2[0].features,
+            /*filterTags*/
+            ctx2[2],
+            /*filterContent*/
+            ctx2[3]
+          )
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$d(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block$d(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(div3, null);
+          }
+        }
+        group_outros();
+        for (i = each_value.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+      if (!current || dirty & /*selectedDetailsFeature, undefined*/
+      2) {
+        toggle_class(
+          div4,
+          "settingsVisible",
+          /*selectedDetailsFeature*/
+          ctx2[1] !== void 0
+        );
+      }
+      if (
+        /*selectedDetailsFeature*/
+        ctx2[1]
+      ) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+          if (dirty & /*selectedDetailsFeature*/
+          2) {
+            transition_in(if_block, 1);
+          }
+        } else {
+          if_block = create_if_block$9(ctx2);
+          if_block.c();
+          transition_in(if_block, 1);
+          if_block.m(div5, null);
+        }
+      } else if (if_block) {
+        group_outros();
+        transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        check_outros();
+      }
+      if (!current || dirty & /*selectedDetailsFeature, undefined*/
+      2) {
+        toggle_class(
+          div5,
+          "settingsVisible",
+          /*selectedDetailsFeature*/
+          ctx2[1] !== void 0
+        );
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div6);
+      }
+      destroy_each(each_blocks_1, detaching);
+      destroy_each(each_blocks, detaching);
+      if (if_block) if_block.d();
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_fragment$m, "create_fragment$m");
+function instance$l($$self, $$props, $$invalidate) {
+  let $devMode;
+  let { feature } = $$props;
+  const devMode = feature.devModeStore;
+  component_subscribe($$self, devMode, (value) => $$invalidate(4, $devMode = value));
+  let selectedDetailsFeature;
+  let filterTags = [];
+  let filterContent = "";
+  const click_handler2 = /* @__PURE__ */ __name((tag) => {
+    if (filterTags.includes(tag)) {
+      $$invalidate(2, filterTags = filterTags.filter((t) => t !== tag));
+    } else {
+      $$invalidate(2, filterTags = [...filterTags, tag]);
+    }
+  }, "click_handler");
+  function input_input_handler() {
+    filterContent = this.value;
+    $$invalidate(3, filterContent);
+  }
+  __name(input_input_handler, "input_input_handler");
+  const func2 = /* @__PURE__ */ __name((feat) => $$invalidate(1, selectedDetailsFeature = feat), "func");
+  const func_12 = /* @__PURE__ */ __name(() => $$invalidate(1, selectedDetailsFeature = void 0), "func_1");
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+  };
+  return [
+    feature,
+    selectedDetailsFeature,
+    filterTags,
+    filterContent,
+    $devMode,
+    devMode,
+    click_handler2,
+    input_input_handler,
+    func2,
+    func_12
+  ];
+}
+__name(instance$l, "instance$l");
+const _Controls_settings = class _Controls_settings extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$l, create_fragment$m, safe_not_equal, { feature: 0 });
+  }
+};
+__name(_Controls_settings, "Controls_settings");
+let Controls_settings = _Controls_settings;
+var __defProp$q = Object.defineProperty;
+var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$q(target, key2, result);
+  return result;
+}, "__decorateClass$q");
+const _ControlsSettingsFeature = class _ControlsSettingsFeature extends TypoFeature {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_elementsSetup");
+    __publicField(this, "_modalService");
+    __publicField(this, "_toastService");
+    __publicField(this, "_featuresService");
+    __publicField(this, "_settingsService");
+    __publicField(this, "name", "Typo Settings");
+    __publicField(this, "description", "Customize Typo to your liking");
+    __publicField(this, "tags", [
+      FeatureTag.INFORMATION,
+      FeatureTag.DEVELOPMENT
+    ]);
+    __publicField(this, "toggleEnabled", false);
+    __publicField(this, "featureId", 1);
+    __publicField(this, "_onboardingTask", this.useOnboardingTask({
+      key: "feature_opened",
+      name: "Open settings of a feature",
+      description: "Click the wrench icon and open the settings of a typo feature to adjust it to your liking.",
+      start: /* @__PURE__ */ __name(() => this.openSettingsPopup(), "start"),
+      priority: 2
+    }));
+    __publicField(this, "_iconComponent");
+    __publicField(this, "_iconClickSubscription");
+  }
+  async onActivate() {
+    const elements2 = await this._elementsSetup.complete();
+    this._iconComponent = new Icon_button({
+      target: elements2.controls,
+      props: {
+        hoverMove: false,
+        size: "48px",
+        icon: "file-img-wrench-gif",
+        name: "Typo Features",
+        order: 1,
+        tooltipAction: this.createTooltip
+      }
+    });
+    this._iconClickSubscription = this._iconComponent.click$.subscribe(() => {
+      this.openSettingsPopup();
+    });
+  }
+  openSettingsPopup() {
+    const settingsComponent = {
+      componentType: Controls_settings,
+      props: {
+        feature: this
+      }
+    };
+    this._modalService.showModal(
+      settingsComponent.componentType,
+      settingsComponent.props,
+      "Typo Features"
+    );
+  }
+  postConstruct() {
+    this._settingsService.globalHotkeysList.forEach((hotkey) => this.useHotkey(hotkey));
+    this.useSetting(this._settingsService.settings.devMode);
+    this.useSetting(this._settingsService.settings.controlsPosition);
+    this.useSetting(this._settingsService.settings.controlsDirection);
+    this.useSetting(this._settingsService.settings.showLandingOutfit);
+  }
+  onDestroy() {
+    var _a2, _b2;
+    (_a2 = this._iconClickSubscription) == null ? void 0 : _a2.unsubscribe();
+    (_b2 = this._iconComponent) == null ? void 0 : _b2.$destroy();
+  }
+  get hotkeys() {
+    return this._settingsService.globalHotkeysList;
+  }
+  get features() {
+    return this._featuresService.features;
+  }
+  get devModeStore() {
+    return fromObservable(this._settingsService.settings.devMode.changes$, false);
+  }
+  /**
+   * Set the hotkey combo for a hotkey action
+   * @param hotkey
+   * @param value
+   */
+  async setHotkeyCombo(hotkey, value) {
+    const toast = await this._toastService.showLoadingToast(
+      `Updating hotkey ${hotkey.name} to ${value.join(" + ")}`
+    );
+    try {
+      await this._hotkeysService.setHotkeyCombo(hotkey, value);
+    } catch {
+      toast.reject();
+      return;
+    }
+    toast.resolve();
+  }
+  /**
+   * Resets the hotkey combo to the default value
+   * @param hotkey
+   */
+  async resetHotkeyCombo(hotkey) {
+    var _a2;
+    const toast = await this._toastService.showLoadingToast(
+      `Resetting hotkey ${hotkey.name} to default ${((_a2 = hotkey.defaultCombo) == null ? void 0 : _a2.join(" + ")) ?? "(disabled)"}`
+    );
+    let newCombo;
+    try {
+      newCombo = await this._hotkeysService.resetHotkeyCombo(hotkey);
+    } catch {
+      toast.reject();
+      return;
+    }
+    toast.resolve();
+    return newCombo;
+  }
+  featureImportance(tags) {
+    if (tags.includes(FeatureTag.DRAWING)) return 7;
+    if (tags.includes(FeatureTag.GAMEPLAY)) return 6;
+    if (tags.includes(FeatureTag.INTERFACE)) return 6;
+    if (tags.includes(FeatureTag.SOCIAL)) return 4;
+    if (tags.includes(FeatureTag.PALANTIR)) return 3;
+    if (tags.includes(FeatureTag.INFORMATION)) return 2;
+    if (tags.includes(FeatureTag.DEVELOPMENT)) return 1;
+    return 0;
+  }
+  featureContainsText(feature, content) {
+    const search = content.toLowerCase();
+    return feature.name.toLowerCase().includes(search) || feature.description.toLowerCase().includes(search) || feature.settings.some((s) => {
+      var _a2, _b2;
+      return ((_a2 = s.name) == null ? void 0 : _a2.toLowerCase().includes(search)) || ((_b2 = s.description) == null ? void 0 : _b2.toLowerCase().includes(search));
+    }) || feature.commands.some((c) => {
+      var _a2, _b2;
+      return ((_a2 = c.name) == null ? void 0 : _a2.toLowerCase().includes(search)) || ((_b2 = c.description) == null ? void 0 : _b2.toLowerCase().includes(search));
+    }) || feature.hotkeys.some((h) => {
+      var _a2, _b2;
+      return ((_a2 = h.name) == null ? void 0 : _a2.toLowerCase().includes(search)) || ((_b2 = h.description) == null ? void 0 : _b2.toLowerCase().includes(search));
+    });
+  }
+  searchFeatures(features, filterTags, content) {
+    return features.filter((f) => filterTags.length === 0 || f.tags.some((t) => filterTags.includes(t))).filter((f) => content.length === 0 || this.featureContainsText(f, content)).sort((a, b) => this.featureImportance(b.tags) - this.featureImportance(a.tags));
+  }
+  async completeOnboardingTask() {
+    (await this._onboardingTask).complete();
+  }
+};
+__name(_ControlsSettingsFeature, "ControlsSettingsFeature");
+let ControlsSettingsFeature = _ControlsSettingsFeature;
+__decorateClass$q([
+  inject(ElementsSetup)
+], ControlsSettingsFeature.prototype, "_elementsSetup");
+__decorateClass$q([
+  inject(ModalService)
+], ControlsSettingsFeature.prototype, "_modalService");
+__decorateClass$q([
+  inject(ToastService)
+], ControlsSettingsFeature.prototype, "_toastService");
+__decorateClass$q([
+  inject(FeaturesService)
+], ControlsSettingsFeature.prototype, "_featuresService");
+__decorateClass$q([
+  inject(GlobalSettingsService)
+], ControlsSettingsFeature.prototype, "_settingsService");
+var __defProp$p = Object.defineProperty;
+var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$p(target, key2, result);
+  return result;
+}, "__decorateClass$p");
+const _MandalaMod = class _MandalaMod extends TypoDrawMod {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_toolsService");
+    __publicField(this, "description", "Draws an additional mirrored line to create a mandala effect.");
+    __publicField(this, "icon", "var(--file-img-line-mandala-gif)");
+    __publicField(this, "name", "Mandala");
+    __publicField(this, "_mirrorCenterSetting", new ChoiceExtensionSetting("brushlab.mandala.center", "center").withName("Mandala Mirror Center").withDescription("The center of the mandala mirroring effect").withChoices([{ choice: "click", name: "At last click" }, { choice: "center", name: "At canvas center" }]));
+    __publicField(this, "_axisSetting", new ChoiceExtensionSetting("brushlab.mandala.axis", "xy").withName("Mandala Mirror Axis").withDescription("The axis where the mandala line will be mirrored on").withChoices([{ choice: "x", name: "Horizontal" }, { choice: "y", name: "Vertical" }, { choice: "xy", name: "Both" }]));
+    __publicField(this, "settings", [
+      this._mirrorCenterSetting,
+      this._axisSetting
+    ]);
+  }
+  /**
+   * Set the brush size depending on the pressure
+   * @param line
+   * @param pressure
+   * @param style
+   */
+  async applyEffect(line, pressure, style) {
+    const axis = await firstValueFrom(this._axisSetting.changes$);
+    const mirrorCenter = await firstValueFrom(this._mirrorCenterSetting.changes$);
+    let center = [400, 300];
+    if (mirrorCenter === "click") {
+      const event = await firstValueFrom(this._toolsService.lastPointerDownPosition$);
+      if (!event) center = line.from;
+      else center = [event.offsetX, event.offsetY];
+    }
+    const mirrored = this.calculateMirroredLine(axis, center, line.from, line.to);
+    return {
+      style,
+      lines: [line, mirrored]
+    };
+  }
+  calculateMirroredLine(axis, center, from2, to) {
+    if (axis === "y") {
+      return {
+        from: [center[0] - (from2[0] - center[0]), from2[1]],
+        to: [center[0] - (to[0] - center[0]), to[1]]
+      };
+    } else if (axis === "x") {
+      return {
+        from: [from2[0], center[1] - (from2[1] - center[1])],
+        to: [to[0], center[1] - (to[1] - center[1])]
+      };
+    } else {
+      return {
+        from: [center[0] - (from2[0] - center[0]), center[1] - (from2[1] - center[1])],
+        to: [center[0] - (to[0] - center[0]), center[1] - (to[1] - center[1])]
+      };
+    }
+  }
+};
+__name(_MandalaMod, "MandalaMod");
+let MandalaMod = _MandalaMod;
+__decorateClass$p([
+  inject(ToolsService)
+], MandalaMod.prototype, "_toolsService");
+const _NoiseMod = class _NoiseMod extends ConstantDrawMod {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "description", "Randomly adds noise to drawn lines.");
+    __publicField(this, "icon", "var(--file-img-line-noise-gif)");
+    __publicField(this, "name", "Noise");
+    __publicField(this, "_scaleSetting", new NumericExtensionSetting("brushlab.noise.scale", 5).withName("Noise Scale").withDescription("Select how much noise is added to the line").withSlider(1).withBounds(1, 100));
+    __publicField(this, "settings", [
+      this._scaleSetting
+    ]);
+  }
+  async applyConstantEffect(line, pressure, style) {
+    const scale = await firstValueFrom(this._scaleSetting.changes$);
+    const randomRotate = (Math.random() - 0.5) * Math.PI;
+    const randomScale = 1 + (Math.random() - 0.5) * scale * style.size / 40;
+    const centerX = (line.from[0] + line.to[0]) / 2;
+    const centerY = (line.from[1] + line.to[1]) / 2;
+    const rotatePoint = /* @__PURE__ */ __name((x, y, angle) => {
+      const cos = Math.cos(angle);
+      const sin = Math.sin(angle);
+      return [
+        cos * (x - centerX) - sin * (y - centerY) + centerX,
+        sin * (x - centerX) + cos * (y - centerY) + centerY
+      ];
+    }, "rotatePoint");
+    const from2 = rotatePoint(line.from[0], line.from[1], randomRotate);
+    const to = rotatePoint(line.to[0], line.to[1], randomRotate);
+    from2[0] = centerX + (from2[0] - centerX) * randomScale;
+    from2[1] = centerY + (from2[1] - centerY) * randomScale;
+    to[0] = centerX + (to[0] - centerX) * randomScale;
+    to[1] = centerY + (to[1] - centerY) * randomScale;
+    return {
+      style,
+      line: { from: from2, to }
+    };
+  }
+};
+__name(_NoiseMod, "NoiseMod");
+let NoiseMod = _NoiseMod;
+const _ParallelLineMod = class _ParallelLineMod extends TypoDrawMod {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "description", "Draws additional parallel lines in a angle and distance. In public lobbies, a max of 1 parallel line should be used.");
+    __publicField(this, "icon", "var(--file-img-line-parallel-gif)");
+    __publicField(this, "name", "Parallel");
+    __publicField(this, "_distanceSetting", new NumericExtensionSetting("brushlab.parallel.distance", 20).withName("Line Distance").withDescription("The distance between the lines").withSlider(1).withBounds(1, 100));
+    __publicField(this, "_distanceDependencySetting", new BooleanExtensionSetting("brushlab.parallel.dependency", false).withName("Size Dependency").withDescription("Make line distance proportionally dependent on brush size"));
+    __publicField(this, "_angleSetting", new NumericExtensionSetting("brushlab.parallel.angle", 180).withName("Line Angle").withDescription("The clockwise angle where the parallel lines are drawn with the distance offset").withSlider(1).withBounds(1, 360));
+    __publicField(this, "_lineCountSetting", new NumericExtensionSetting("brushlab.parallel.count", 1).withName("Line Count").withDescription("The amount of parallel lines drawn").withSlider(1).withBounds(1, 4));
+    __publicField(this, "settings", [
+      this._distanceSetting,
+      this._distanceDependencySetting,
+      this._angleSetting,
+      this._lineCountSetting
+    ]);
+  }
+  /**
+   * Set the brush size depending on the pressure
+   * @param line
+   * @param pressure
+   * @param style
+   */
+  async applyEffect(line, pressure, style) {
+    const distance = await firstValueFrom(this._distanceSetting.changes$);
+    const angle = await firstValueFrom(this._angleSetting.changes$);
+    const count2 = await firstValueFrom(this._lineCountSetting.changes$);
+    const dependency = await firstValueFrom(this._distanceDependencySetting.changes$);
+    const lines = [];
+    const offset = this.getOffset(distance, angle);
+    if (dependency) {
+      offset[0] *= style.size / 40;
+      offset[1] *= style.size / 40;
+    }
+    for (let i = 0; i < count2; i++) {
+      const offsetLine = {
+        from: [line.from[0] + offset[0] * (i + 1), line.from[1] + offset[1] * (i + 1)],
+        to: [line.to[0] + offset[0] * (i + 1), line.to[1] + offset[1] * (i + 1)]
+      };
+      lines.push(offsetLine);
+    }
+    return {
+      style,
+      lines: [line, ...lines]
+    };
+  }
+  getOffset(distance, angle) {
+    const angleRad = angle * Math.PI / 180;
+    const x = Math.cos(angleRad) * distance;
+    const y = Math.sin(angleRad) * distance;
+    return [x, y];
+  }
+};
+__name(_ParallelLineMod, "ParallelLineMod");
+let ParallelLineMod = _ParallelLineMod;
+const _RainbowMod = class _RainbowMod extends ConstantDrawMod {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "description", "Switches colors while drawing to create a rainbow effect.");
+    __publicField(this, "icon", "var(--file-img-line-rainbow-gif)");
+    __publicField(this, "name", "Rainbow");
+    __publicField(this, "_rainbowModeSetting", new ChoiceExtensionSetting("brushlab.rainbow.mode", "light").withName("Rainbow Colors").withDescription("Choose between the rainbow color shades").withChoices([{ choice: "light", name: "Light Colors" }, { choice: "dark", name: "Dark Colors" }]));
+    __publicField(this, "_strokeModeSetting", new BooleanExtensionSetting("brushlab.rainbow.strokeMode", false).withName("Change Per Stroke").withDescription("If enabled, the color will change per stroke instead of continuously."));
+    __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.rainbow.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
+    __publicField(this, "lastSwitch");
+    __publicField(this, "settings", [
+      this._rainbowModeSetting,
+      this._colorSwitchSetting,
+      this._strokeModeSetting
+    ]);
+  }
+  async applyConstantEffect(line, pressure, style, eventId, strokeId) {
+    var _a2;
+    const mode = await firstValueFrom(this._rainbowModeSetting.changes$);
+    const strokeMode = await firstValueFrom(this._strokeModeSetting.changes$);
+    const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
+    const colors = Color.skribblColors.filter((color, index) => index % 2 === 0 ? mode === "light" : mode === "dark");
+    if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || strokeMode == false && this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style.size / 10 * distance) {
+      let index = ((((_a2 = this.lastSwitch) == null ? void 0 : _a2.index) ?? -1) + 1) % (colors.length - 1);
+      if (index < 2) index = 2;
+      style.color = index * 2 + (mode === "light" ? 0 : 1);
+      this.lastSwitch = {
+        eventId,
+        position: line.from,
+        index,
+        strokeId
+      };
+    }
+    return {
+      style,
+      line
+    };
+  }
+  getDistance(from2, to) {
+    return Math.sqrt(Math.pow(to[0] - from2[0], 2) + Math.pow(to[1] - from2[1], 2));
+  }
+};
+__name(_RainbowMod, "RainbowMod");
+let RainbowMod = _RainbowMod;
+var __defProp$o = Object.defineProperty;
+var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$o(target, key2, result);
+  return result;
+}, "__decorateClass$o");
+const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_colorsService");
+    __publicField(this, "description", "Switches colors of the current palette randomly while drawing.");
+    __publicField(this, "icon", "var(--file-img-line-random-color-gif)");
+    __publicField(this, "name", "Random Colors");
+    __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.randomcolor.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
+    __publicField(this, "_strokeModeSetting", new BooleanExtensionSetting("brushlab.randomcolor.strokeMode", false).withName("Change Per Stroke").withDescription("If enabled, the color will change per stroke instead of continuously."));
+    __publicField(this, "lastSwitch");
+    __publicField(this, "settings", [
+      this._colorSwitchSetting,
+      this._strokeModeSetting
+    ]);
+  }
+  async applyConstantEffect(line, pressure, style, eventId, strokeId) {
+    const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
+    const strokeMode = await firstValueFrom(this._strokeModeSetting.changes$);
+    const colors = await firstValueFrom(this._colorsService.pickerColors$) ?? defaultPalettes.skribblPalette;
+    if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || strokeMode === false && this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style.size / 10 * distance) {
+      const index = Math.floor(Math.random() * colors.colorHexCodes.length);
+      const color = Color.fromHex(colors.colorHexCodes[index]);
+      style.color = color.typoCode;
+      this.lastSwitch = {
+        eventId,
+        position: line.from,
+        strokeId
+      };
+    }
+    return {
+      style,
+      line
+    };
+  }
+  getDistance(from2, to) {
+    return Math.sqrt(Math.pow(to[0] - from2[0], 2) + Math.pow(to[1] - from2[1], 2));
+  }
+};
+__name(_RandomColorMod, "RandomColorMod");
+let RandomColorMod = _RandomColorMod;
+__decorateClass$o([
+  inject(ColorsService)
+], RandomColorMod.prototype, "_colorsService");
+var __defProp$n = Object.defineProperty;
+var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$n(target, key2, result);
+  return result;
+}, "__decorateClass$n");
+const _SculptMod = class _SculptMod extends TypoDrawMod {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_toolsService");
+    __publicField(this, "description", "Creates a figure by mirroring and connecting the line on a axis.");
+    __publicField(this, "icon", "var(--file-img-line-sculpt-gif)");
+    __publicField(this, "name", "Sculpt");
+    __publicField(this, "_mirrorCenterSetting", new ChoiceExtensionSetting("brushlab.sculpt.center", "center").withName("Sculpt Mirror Center").withDescription("The center of the sculpt figure mirroring effect").withChoices([{ choice: "click", name: "At last click" }, { choice: "center", name: "At canvas center" }]));
+    __publicField(this, "_axisSetting", new ChoiceExtensionSetting("brushlab.sculpt.axis", "xy").withName("Sculpt Mirror Axis").withDescription("The axis where the sculpt figure will be mirrored on").withChoices([{ choice: "x", name: "Horizontal" }, { choice: "y", name: "Vertical" }, { choice: "xy", name: "Both" }]));
+    __publicField(this, "settings", [
+      this._mirrorCenterSetting,
+      this._axisSetting
+    ]);
+  }
+  async applyEffect(line, pressure, style) {
+    const axis = await firstValueFrom(this._axisSetting.changes$);
+    const mirrorCenter = await firstValueFrom(this._mirrorCenterSetting.changes$);
+    let center = [400, 300];
+    if (mirrorCenter === "click") {
+      const event = await firstValueFrom(this._toolsService.lastPointerDownPosition$);
+      if (!event) center = line.from;
+      else center = [event.offsetX, event.offsetY];
+    }
+    const originalLineCenter = [(line.from[0] + line.to[0]) / 2, (line.from[1] + line.to[1]) / 2];
+    const mirroredLineCenter = this.calculateMirroredPoint(center, originalLineCenter, axis);
+    return {
+      style,
+      lines: [
+        { from: line.from, to: mirroredLineCenter },
+        { from: mirroredLineCenter, to: line.to }
+      ]
+    };
+  }
+  calculateMirroredPoint(center, point, axis) {
+    if (axis === "x") {
+      return [point[0], 2 * center[1] - point[1]];
+    } else if (axis === "y") {
+      return [2 * center[0] - point[0], point[1]];
+    } else {
+      return [2 * center[0] - point[0], 2 * center[1] - point[1]];
+    }
+  }
+};
+__name(_SculptMod, "SculptMod");
+let SculptMod = _SculptMod;
+__decorateClass$n([
+  inject(ToolsService)
+], SculptMod.prototype, "_toolsService");
+const _TiltMod = class _TiltMod extends ConstantDrawMod {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "description", "Tilt the line into a direction.");
+    __publicField(this, "icon", "var(--file-img-line-tilt-gif)");
+    __publicField(this, "name", "Tilt");
+    __publicField(this, "_distanceSetting", new NumericExtensionSetting("brushlab.tilt.size", 20).withName("Tilt Size").withDescription("The size of the tilted line").withSlider(1).withBounds(1, 100));
+    __publicField(this, "_distanceDependencySetting", new BooleanExtensionSetting("brushlab.tilt.dependency", false).withName("Size Dependency").withDescription("Make tilt size proportionally dependent on brush size"));
+    __publicField(this, "_angleSetting", new NumericExtensionSetting("brushlab.tilt.angle", 180).withName("Tilt Angle").withDescription("The clockwise angle where the tilt lines created").withSlider(1).withBounds(1, 360));
+    __publicField(this, "settings", [
+      this._distanceSetting,
+      this._distanceDependencySetting,
+      this._angleSetting
+    ]);
+  }
+  async applyConstantEffect(line, pressure, style) {
+    const distance = await firstValueFrom(this._distanceSetting.changes$);
+    const angle = await firstValueFrom(this._angleSetting.changes$);
+    const dependency = await firstValueFrom(this._distanceDependencySetting.changes$);
+    const offset = this.getOffset(distance, angle - 90);
+    if (dependency) {
+      offset[0] *= style.size / 40;
+      offset[1] *= style.size / 40;
+    }
+    const offsetLine = {
+      from: line.from,
+      to: [line.to[0] + offset[0], line.to[1] + offset[1]]
+    };
+    return {
+      style,
+      line: offsetLine
+    };
+  }
+  getOffset(distance, angle) {
+    const angleRad = angle * Math.PI / 180;
+    const x = Math.cos(angleRad) * distance;
+    const y = Math.sin(angleRad) * distance;
+    return [x, y];
+  }
+};
+__name(_TiltMod, "TiltMod");
+let TiltMod = _TiltMod;
+const _DashTool = class _DashTool extends TypoDrawTool {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "name", "Dashed Lines");
+    __publicField(this, "description", "Draw dashed lines with a customizable interval and blank size");
+    __publicField(this, "icon", "var(--file-img-line-dash-gif)");
+    __publicField(this, "_intervalSetting", new NumericExtensionSetting("brushlab.dash.interval", 10).withName("Dash Interval").withDescription("The time interval between making line blanks in milliseconds").withSlider(1).withBounds(1, 300));
+    __publicField(this, "_blankSizeSetting", new NumericExtensionSetting("brushlab.dash.blank", 20).withName("Blank Size").withDescription("The size of the blanks between dashes, depending on brush size").withSlider(1).withBounds(1, 100));
+    __publicField(this, "settings", [
+      this._intervalSetting,
+      this._blankSizeSetting
+    ]);
+    __publicField(this, "dashStart");
+    __publicField(this, "lineStart");
+    __publicField(this, "applyConstantEffect", this.noConstantEffect);
+  }
+  createCursor(style) {
+    return this.createSkribblLikeCursor(style);
+  }
+  async createCommands(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
+    const interval2 = await firstValueFrom(this._intervalSetting.changes$);
+    const blankSize = await firstValueFrom(this._blankSizeSetting.changes$);
+    const now = Date.now();
+    if (this.dashStart !== void 0) {
+      if (this.getDistance(this.dashStart.position, line.from) > style.size / 10 * blankSize) {
+        this.dashStart = void 0;
+      }
+      return [];
+    }
+    if (this.lineStart !== void 0 && now - this.lineStart.time > interval2) {
+      this.lineStart = void 0;
+      this.dashStart = { eventId, position: line.to };
+      return [];
+    }
+    if (this.lineStart === void 0) {
+      this.lineStart = { eventId, time: now };
+    }
+    const color = this.getSelectedColor(line.styleOverride, style, secondaryActive);
+    return [[0, color, style.size, ...line.from, ...line.to]];
+  }
+  getDistance(from2, to) {
+    return Math.sqrt(Math.pow(to[0] - from2[0], 2) + Math.pow(to[1] - from2[1], 2));
+  }
+};
+__name(_DashTool, "DashTool");
+let DashTool = _DashTool;
+const _DotTool = class _DotTool extends TypoDrawTool {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "name", "Dotted Lines");
+    __publicField(this, "description", "Draw dotted lines with a customizable interval");
+    __publicField(this, "icon", "var(--file-img-line-dot-gif)");
+    __publicField(this, "_intervalSetting", new NumericExtensionSetting("brushlab.dot.interval", 10).withName("Dot Interval").withDescription("The time interval between making dots in milliseconds").withSlider(1).withBounds(1, 1e3));
+    __publicField(this, "settings", [this._intervalSetting]);
+    __publicField(this, "lastDown", { eventId: 0, time: Date.now() });
+    __publicField(this, "applyConstantEffect", this.noConstantEffect);
+  }
+  createCursor(style) {
+    return this.createSkribblLikeCursor(style);
+  }
+  async createCommands(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
+    const interval2 = await firstValueFrom(this._intervalSetting.changes$);
+    const now = Date.now();
+    const color = this.getSelectedColor(line.styleOverride, style, secondaryActive);
+    if (this.lastDown.eventId === eventId) {
+      return [[0, color, style.size, ...line.to, ...line.to]];
+    } else if (now - this.lastDown.time > interval2) {
+      this.lastDown.time = now;
+      this.lastDown.eventId = eventId;
+      return [[0, color, style.size, ...line.to, ...line.to]];
+    }
+    return [];
+  }
+};
+__name(_DotTool, "DotTool");
+let DotTool = _DotTool;
+var __defProp$m = Object.defineProperty;
+var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$m(target, key2, result);
+  return result;
+}, "__decorateClass$m");
+const _GridTool = class _GridTool extends TypoDrawTool {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_toolsService");
+    __publicField(this, "name", "Grid Generator");
+    __publicField(this, "description", "Click anywhere on the canvas to create a grid");
+    __publicField(this, "icon", "var(--file-img-line-grid-gif)");
+    __publicField(this, "_rowsSetting", new NumericExtensionSetting("brushlab.grid.rows", 6).withName("Row Count").withDescription("The amount of rows in the grid").withSlider(1).withBounds(1, 30));
+    __publicField(this, "_columnsSetting", new NumericExtensionSetting("brushlab.grid.columns", 8).withName("Column Count").withDescription("The amount of columns in the grid").withSlider(1).withBounds(1, 30));
+    __publicField(this, "settings", [
+      this._rowsSetting,
+      this._columnsSetting
+    ]);
+    __publicField(this, "_lastDownEvent", null);
+    __publicField(this, "applyConstantEffect", this.noConstantEffect);
+  }
+  createCursor() {
+    return { source: "var(--file-img-grid_cur-png)", x: 7, y: 37 };
+  }
+  async createCommands(line, pressure, style) {
+    const lastPointerDown = await firstValueFrom(this._toolsService.lastPointerDownPosition$);
+    if (lastPointerDown === null || this._lastDownEvent === lastPointerDown) {
+      return [];
+    }
+    this._lastDownEvent = lastPointerDown;
+    const canvasWidth = 800;
+    const canvasHeight = 600;
+    const rows = await firstValueFrom(this._rowsSetting.changes$);
+    const columns = await firstValueFrom(this._columnsSetting.changes$);
+    const rowHeight = Math.ceil(canvasHeight / rows);
+    const columnWidth = Math.ceil(canvasWidth / columns);
+    const commands = [];
+    for (let i = 1; i < rows; i++) {
+      commands.push([0, style.color, style.size, 0, i * rowHeight, canvasWidth, i * rowHeight]);
+    }
+    for (let i = 1; i < columns; i++) {
+      commands.push([0, style.color, style.size, i * columnWidth, 0, i * columnWidth, canvasHeight]);
+    }
+    return commands;
+  }
+};
+__name(_GridTool, "GridTool");
+let GridTool = _GridTool;
+__decorateClass$m([
+  inject(ToolsService)
+], GridTool.prototype, "_toolsService");
+function create_fragment$l(ctx) {
+  let div;
+  return {
+    c() {
+      div = element$1("div");
+      div.innerHTML = ``;
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+    },
+    p: noop$1,
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+    }
+  };
+}
+__name(create_fragment$l, "create_fragment$l");
+function instance$k($$self, $$props, $$invalidate) {
+  let { feature } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+  };
+  return [feature];
+}
+__name(instance$k, "instance$k");
+const _Drawing_brush_lab_info = class _Drawing_brush_lab_info extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$k, create_fragment$l, safe_not_equal, { feature: 0 });
+  }
+};
+__name(_Drawing_brush_lab_info, "Drawing_brush_lab_info");
+let Drawing_brush_lab_info = _Drawing_brush_lab_info;
+function create_fragment$k(ctx) {
+  let div1;
+  let mounted;
+  let dispose;
+  return {
+    c() {
+      div1 = element$1("div");
+      div1.innerHTML = `<div class="icon" style="background-image: var(--file-img-wand-gif)"></div>`;
+      attr(div1, "class", "typo-brush-lab-switch tool clickable");
+      toggle_class(
+        div1,
+        "expanded",
+        /*expanded*/
+        ctx[1]
+      );
+    },
+    m(target, anchor) {
+      insert(target, div1, anchor);
+      if (!mounted) {
+        dispose = [
+          listen(
+            div1,
+            "click",
+            /*click_handler*/
+            ctx[3]
+          ),
+          action_destroyer(
+            /*feature*/
+            ctx[0].createTooltip(div1, { title: "Toggle Brush Lab", lock: "Y" })
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*expanded*/
+      2) {
+        toggle_class(
+          div1,
+          "expanded",
+          /*expanded*/
+          ctx2[1]
+        );
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(div1);
+      }
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+__name(create_fragment$k, "create_fragment$k");
+function instance$j($$self, $$props, $$invalidate) {
+  const toggle = /* @__PURE__ */ __name(() => {
+    $$invalidate(1, expanded = !expanded);
+  }, "toggle");
+  let { feature } = $$props;
+  let expanded = false;
+  const click_handler2 = /* @__PURE__ */ __name(() => $$invalidate(1, expanded = !expanded), "click_handler");
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+  };
+  return [feature, expanded, toggle, click_handler2];
+}
+__name(instance$j, "instance$j");
+const _Drawing_brush_lab_switch = class _Drawing_brush_lab_switch extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$j, create_fragment$k, safe_not_equal, { toggle: 2, feature: 0 });
+  }
+  get toggle() {
+    return this.$$.ctx[2];
+  }
+};
+__name(_Drawing_brush_lab_switch, "Drawing_brush_lab_switch");
+let Drawing_brush_lab_switch = _Drawing_brush_lab_switch;
+function get_each_context$c(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[8] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$c, "get_each_context$c");
+function get_each_context_1$2(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[11] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_1$2, "get_each_context_1$2");
+function create_each_block_1$2(ctx) {
+  let div1;
+  let div0;
+  let t;
+  let feature_createTooltip_action;
+  let mounted;
+  let dispose;
+  function click_handler_1() {
+    return (
+      /*click_handler_1*/
+      ctx[4](
+        /*mod*/
+        ctx[11]
+      )
+    );
+  }
+  __name(click_handler_1, "click_handler_1");
+  function contextmenu_handler2(...args) {
+    return (
+      /*contextmenu_handler*/
+      ctx[5](
+        /*mod*/
+        ctx[11],
+        ...args
+      )
+    );
+  }
+  __name(contextmenu_handler2, "contextmenu_handler");
+  return {
+    c() {
+      div1 = element$1("div");
+      div0 = element$1("div");
+      t = space();
+      attr(div0, "class", "icon");
+      set_style(
+        div0,
+        "background-image",
+        /*mod*/
+        ctx[11].item.icon
+      );
+      attr(div1, "class", "tool clickable");
+      toggle_class(
+        div1,
+        "selected",
+        /*mod*/
+        ctx[11].active
+      );
+    },
+    m(target, anchor) {
+      insert(target, div1, anchor);
+      append(div1, div0);
+      append(div1, t);
+      if (!mounted) {
+        dispose = [
+          action_destroyer(feature_createTooltip_action = /*feature*/
+          ctx[0].createTooltip(div1, {
+            title: (
+              /*mod*/
+              ctx[11].item.name
+            ),
+            lock: "Y"
+          })),
+          listen(div1, "click", click_handler_1),
+          listen(div1, "contextmenu", contextmenu_handler2)
+        ];
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty & /*$tools*/
+      2) {
+        set_style(
+          div0,
+          "background-image",
+          /*mod*/
+          ctx[11].item.icon
+        );
+      }
+      if (feature_createTooltip_action && is_function(feature_createTooltip_action.update) && dirty & /*$tools*/
+      2) feature_createTooltip_action.update.call(null, {
+        title: (
+          /*mod*/
+          ctx[11].item.name
+        ),
+        lock: "Y"
+      });
+      if (dirty & /*$tools*/
+      2) {
+        toggle_class(
+          div1,
+          "selected",
+          /*mod*/
+          ctx[11].active
+        );
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div1);
+      }
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+__name(create_each_block_1$2, "create_each_block_1$2");
+function create_each_block$c(ctx) {
+  let div1;
+  let div0;
+  let t;
+  let feature_createTooltip_action;
+  let mounted;
+  let dispose;
+  function click_handler_2() {
+    return (
+      /*click_handler_2*/
+      ctx[6](
+        /*tool*/
+        ctx[8]
+      )
+    );
+  }
+  __name(click_handler_2, "click_handler_2");
+  function contextmenu_handler_1(...args) {
+    return (
+      /*contextmenu_handler_1*/
+      ctx[7](
+        /*tool*/
+        ctx[8],
+        ...args
+      )
+    );
+  }
+  __name(contextmenu_handler_1, "contextmenu_handler_1");
+  return {
+    c() {
+      div1 = element$1("div");
+      div0 = element$1("div");
+      t = space();
+      attr(div0, "class", "icon");
+      set_style(
+        div0,
+        "background-image",
+        /*tool*/
+        ctx[8].item.icon
+      );
+      attr(div1, "class", "tool clickable");
+      toggle_class(
+        div1,
+        "selected",
+        /*tool*/
+        ctx[8].active
+      );
+    },
+    m(target, anchor) {
+      insert(target, div1, anchor);
+      append(div1, div0);
+      append(div1, t);
+      if (!mounted) {
+        dispose = [
+          action_destroyer(feature_createTooltip_action = /*feature*/
+          ctx[0].createTooltip(div1, {
+            title: (
+              /*tool*/
+              ctx[8].item.name
+            ),
+            lock: "Y"
+          })),
+          listen(div1, "click", click_handler_2),
+          listen(div1, "contextmenu", contextmenu_handler_1)
+        ];
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty & /*$tools*/
+      2) {
+        set_style(
+          div0,
+          "background-image",
+          /*tool*/
+          ctx[8].item.icon
+        );
+      }
+      if (feature_createTooltip_action && is_function(feature_createTooltip_action.update) && dirty & /*$tools*/
+      2) feature_createTooltip_action.update.call(null, {
+        title: (
+          /*tool*/
+          ctx[8].item.name
+        ),
+        lock: "Y"
+      });
+      if (dirty & /*$tools*/
+      2) {
+        toggle_class(
+          div1,
+          "selected",
+          /*tool*/
+          ctx[8].active
+        );
+      }
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div1);
+      }
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+__name(create_each_block$c, "create_each_block$c");
+function create_fragment$j(ctx) {
+  let div5;
+  let div2;
+  let div1;
+  let t0;
+  let div3;
+  let t1;
+  let div4;
+  let mounted;
+  let dispose;
+  let each_value_1 = ensure_array_like(
+    /*$tools*/
+    ctx[1].mods
+  );
+  let each_blocks_1 = [];
+  for (let i = 0; i < each_value_1.length; i += 1) {
+    each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
+  }
+  let each_value = ensure_array_like(
+    /*$tools*/
+    ctx[1].tools
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$c(get_each_context$c(ctx, each_value, i));
+  }
+  return {
+    c() {
+      div5 = element$1("div");
+      div2 = element$1("div");
+      div1 = element$1("div");
+      div1.innerHTML = `<div class="icon" style="background-image: var(--file-img-wrench-gif)"></div>`;
+      t0 = space();
+      div3 = element$1("div");
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        each_blocks_1[i].c();
+      }
+      t1 = space();
+      div4 = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(div1, "class", "tool clickable");
+      attr(div2, "class", "typo-brush-lab-settings");
+      attr(div3, "class", "typo-brush-lab-mods svelte-p5jc91");
+      attr(div4, "class", "typo-brush-lab-tools svelte-p5jc91");
+      attr(div5, "class", "typo-brush-lab-group svelte-p5jc91");
+    },
+    m(target, anchor) {
+      insert(target, div5, anchor);
+      append(div5, div2);
+      append(div2, div1);
+      append(div5, t0);
+      append(div5, div3);
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        if (each_blocks_1[i]) {
+          each_blocks_1[i].m(div3, null);
+        }
+      }
+      append(div5, t1);
+      append(div5, div4);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div4, null);
+        }
+      }
+      if (!mounted) {
+        dispose = [
+          action_destroyer(
+            /*feature*/
+            ctx[0].createTooltip(div1, { title: "Brush Lab Settings", lock: "Y" })
+          ),
+          listen(
+            div1,
+            "click",
+            /*click_handler*/
+            ctx[3]
+          )
+        ];
+        mounted = true;
+      }
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*$tools, feature*/
+      3) {
+        each_value_1 = ensure_array_like(
+          /*$tools*/
+          ctx2[1].mods
+        );
+        let i;
+        for (i = 0; i < each_value_1.length; i += 1) {
+          const child_ctx = get_each_context_1$2(ctx2, each_value_1, i);
+          if (each_blocks_1[i]) {
+            each_blocks_1[i].p(child_ctx, dirty);
+          } else {
+            each_blocks_1[i] = create_each_block_1$2(child_ctx);
+            each_blocks_1[i].c();
+            each_blocks_1[i].m(div3, null);
+          }
+        }
+        for (; i < each_blocks_1.length; i += 1) {
+          each_blocks_1[i].d(1);
+        }
+        each_blocks_1.length = each_value_1.length;
+      }
+      if (dirty & /*$tools, feature*/
+      3) {
+        each_value = ensure_array_like(
+          /*$tools*/
+          ctx2[1].tools
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$c(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+          } else {
+            each_blocks[i] = create_each_block$c(child_ctx);
+            each_blocks[i].c();
+            each_blocks[i].m(div4, null);
+          }
+        }
+        for (; i < each_blocks.length; i += 1) {
+          each_blocks[i].d(1);
+        }
+        each_blocks.length = each_value.length;
+      }
+    },
+    i: noop$1,
+    o: noop$1,
+    d(detaching) {
+      if (detaching) {
+        detach(div5);
+      }
+      destroy_each(each_blocks_1, detaching);
+      destroy_each(each_blocks, detaching);
+      mounted = false;
+      run_all(dispose);
+    }
+  };
+}
+__name(create_fragment$j, "create_fragment$j");
+function instance$i($$self, $$props, $$invalidate) {
+  let $tools;
+  let { feature } = $$props;
+  const tools = feature.toolbarItemsStore;
+  component_subscribe($$self, tools, (value) => $$invalidate(1, $tools = value));
+  const click_handler2 = /* @__PURE__ */ __name(() => feature.openBrushLabSettings(), "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name((mod) => {
+    if (!mod.active) {
+      feature.activateMod(mod.item);
+    } else {
+      feature.removeMod(mod.item);
+    }
+  }, "click_handler_1");
+  const contextmenu_handler2 = /* @__PURE__ */ __name((mod, e) => {
+    e.preventDefault();
+    feature.openBrushLabSettings(mod.item);
+  }, "contextmenu_handler");
+  const click_handler_2 = /* @__PURE__ */ __name((tool) => {
+    if (!tool.active) {
+      feature.activateTool(tool.item);
+    } else {
+      feature.activateTool(skribblTool.brush);
+    }
+  }, "click_handler_2");
+  const contextmenu_handler_1 = /* @__PURE__ */ __name((tool, e) => {
+    e.preventDefault();
+    feature.openBrushLabSettings(tool.item);
+  }, "contextmenu_handler_1");
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+  };
+  return [
+    feature,
+    $tools,
+    tools,
+    click_handler2,
+    click_handler_1,
+    contextmenu_handler2,
+    click_handler_2,
+    contextmenu_handler_1
+  ];
+}
+__name(instance$i, "instance$i");
+const _Drawing_brush_lab_group = class _Drawing_brush_lab_group extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$i, create_fragment$j, safe_not_equal, { feature: 0 });
+  }
+};
+__name(_Drawing_brush_lab_group, "Drawing_brush_lab_group");
+let Drawing_brush_lab_group = _Drawing_brush_lab_group;
+function get_each_context$b(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[10] = list[i];
+  return child_ctx;
+}
+__name(get_each_context$b, "get_each_context$b");
+function get_each_context_1$1(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[13] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_1$1, "get_each_context_1$1");
+function get_each_context_2(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[13] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_2, "get_each_context_2");
+function get_each_context_3(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[18] = list[i];
+  return child_ctx;
+}
+__name(get_each_context_3, "get_each_context_3");
+function create_each_block_3(ctx) {
+  let div;
+  let img;
+  let img_src_value;
+  let t0;
+  let b;
+  let t1_value = (
+    /*tool*/
+    ctx[18].item.name + ""
+  );
+  let t1;
+  let mounted;
+  let dispose;
+  function click_handler2() {
+    return (
+      /*click_handler*/
+      ctx[5](
+        /*tool*/
+        ctx[18]
+      )
+    );
+  }
+  __name(click_handler2, "click_handler");
+  return {
+    c() {
+      div = element$1("div");
+      img = element$1("img");
+      t0 = space();
+      b = element$1("b");
+      t1 = text(t1_value);
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      set_style(
+        img,
+        "content",
+        /*tool*/
+        ctx[18].item.icon
+      );
+      attr(img, "alt", "icon");
+      attr(img, "class", "svelte-15vhuqn");
+      attr(b, "class", "svelte-15vhuqn");
+      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      append(div, img);
+      append(div, t0);
+      append(div, b);
+      append(b, t1);
+      if (!mounted) {
+        dispose = listen(div, "click", click_handler2);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty & /*$items*/
+      1) {
+        set_style(
+          img,
+          "content",
+          /*tool*/
+          ctx[18].item.icon
+        );
+      }
+      if (dirty & /*$items*/
+      1 && t1_value !== (t1_value = /*tool*/
+      ctx[18].item.name + "")) set_data(t1, t1_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block_3, "create_each_block_3");
+function create_each_block_2(ctx) {
+  let div;
+  let img;
+  let img_src_value;
+  let t0;
+  let b;
+  let t1_value = (
+    /*mod*/
+    ctx[13].item.name + ""
+  );
+  let t1;
+  let mounted;
+  let dispose;
+  function click_handler_1() {
+    return (
+      /*click_handler_1*/
+      ctx[7](
+        /*mod*/
+        ctx[13]
+      )
+    );
+  }
+  __name(click_handler_1, "click_handler_1");
+  return {
+    c() {
+      div = element$1("div");
+      img = element$1("img");
+      t0 = space();
+      b = element$1("b");
+      t1 = text(t1_value);
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      set_style(
+        img,
+        "content",
+        /*mod*/
+        ctx[13].item.icon
+      );
+      attr(img, "alt", "icon");
+      attr(img, "class", "svelte-15vhuqn");
+      attr(b, "class", "svelte-15vhuqn");
+      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      append(div, img);
+      append(div, t0);
+      append(div, b);
+      append(b, t1);
+      if (!mounted) {
+        dispose = listen(div, "click", click_handler_1);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty & /*$items*/
+      1) {
+        set_style(
+          img,
+          "content",
+          /*mod*/
+          ctx[13].item.icon
+        );
+      }
+      if (dirty & /*$items*/
+      1 && t1_value !== (t1_value = /*mod*/
+      ctx[13].item.name + "")) set_data(t1, t1_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block_2, "create_each_block_2");
+function create_each_block_1$1(ctx) {
+  let div;
+  let img;
+  let img_src_value;
+  let t0;
+  let b;
+  let t1_value = (
+    /*mod*/
+    ctx[13].item.name + ""
+  );
+  let t1;
+  let t2;
+  let mounted;
+  let dispose;
+  function click_handler_2() {
+    return (
+      /*click_handler_2*/
+      ctx[9](
+        /*mod*/
+        ctx[13]
+      )
+    );
+  }
+  __name(click_handler_2, "click_handler_2");
+  return {
+    c() {
+      div = element$1("div");
+      img = element$1("img");
+      t0 = space();
+      b = element$1("b");
+      t1 = text(t1_value);
+      t2 = space();
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      set_style(
+        img,
+        "content",
+        /*mod*/
+        ctx[13].item.icon
+      );
+      attr(img, "alt", "icon");
+      attr(img, "class", "svelte-15vhuqn");
+      attr(b, "class", "svelte-15vhuqn");
+      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      append(div, img);
+      append(div, t0);
+      append(div, b);
+      append(b, t1);
+      append(div, t2);
+      if (!mounted) {
+        dispose = listen(div, "click", click_handler_2);
+        mounted = true;
+      }
+    },
+    p(new_ctx, dirty) {
+      ctx = new_ctx;
+      if (dirty & /*$items*/
+      1) {
+        set_style(
+          img,
+          "content",
+          /*mod*/
+          ctx[13].item.icon
+        );
+      }
+      if (dirty & /*$items*/
+      1 && t1_value !== (t1_value = /*mod*/
+      ctx[13].item.name + "")) set_data(t1, t1_value);
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      mounted = false;
+      dispose();
+    }
+  };
+}
+__name(create_each_block_1$1, "create_each_block_1$1");
+function create_if_block$8(ctx) {
+  let div;
+  let current;
+  let each_value = ensure_array_like(
+    /*selectedItem*/
+    ctx[1].settings
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block$b(get_each_context$b(ctx, each_value, i));
+  }
+  const out = /* @__PURE__ */ __name((i) => transition_out(each_blocks[i], 1, 1, () => {
+    each_blocks[i] = null;
+  }), "out");
+  return {
+    c() {
+      div = element$1("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      attr(div, "class", "item-details-settings-list svelte-15vhuqn");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div, null);
+        }
+      }
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*selectedItem*/
+      2) {
+        each_value = ensure_array_like(
+          /*selectedItem*/
+          ctx2[1].settings
+        );
+        let i;
+        for (i = 0; i < each_value.length; i += 1) {
+          const child_ctx = get_each_context$b(ctx2, each_value, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+            transition_in(each_blocks[i], 1);
+          } else {
+            each_blocks[i] = create_each_block$b(child_ctx);
+            each_blocks[i].c();
+            transition_in(each_blocks[i], 1);
+            each_blocks[i].m(div, null);
+          }
+        }
+        group_outros();
+        for (i = each_value.length; i < each_blocks.length; i += 1) {
+          out(i);
+        }
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      for (let i = 0; i < each_value.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
+      current = true;
+    },
+    o(local) {
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      destroy_each(each_blocks, detaching);
+    }
+  };
+}
+__name(create_if_block$8, "create_if_block$8");
+function create_each_block$b(ctx) {
+  let div;
+  let switch_instance;
+  let t;
+  let current;
+  const switch_instance_spread_levels = [
+    /*setting*/
+    ctx[10].componentData.props
+  ];
+  var switch_value = (
+    /*setting*/
+    ctx[10].componentData.componentType
+  );
+  function switch_props(ctx2, dirty) {
+    let switch_instance_props = {};
+    for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+      switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    }
+    if (dirty !== void 0 && dirty & /*selectedItem*/
+    2) {
+      switch_instance_props = assign(switch_instance_props, get_spread_update(switch_instance_spread_levels, [get_spread_object(
+        /*setting*/
+        ctx2[10].componentData.props
+      )]));
+    }
+    return { props: switch_instance_props };
+  }
+  __name(switch_props, "switch_props");
+  if (switch_value) {
+    switch_instance = construct_svelte_component(switch_value, switch_props(ctx));
+  }
+  return {
+    c() {
+      div = element$1("div");
+      if (switch_instance) create_component(switch_instance.$$.fragment);
+      t = space();
+      attr(div, "class", "item-details-settings-item svelte-15vhuqn");
+    },
+    m(target, anchor) {
+      insert(target, div, anchor);
+      if (switch_instance) mount_component(switch_instance, div, null);
+      append(div, t);
+      current = true;
+    },
+    p(ctx2, dirty) {
+      if (dirty & /*selectedItem*/
+      2 && switch_value !== (switch_value = /*setting*/
+      ctx2[10].componentData.componentType)) {
+        if (switch_instance) {
+          group_outros();
+          const old_component = switch_instance;
+          transition_out(old_component.$$.fragment, 1, 0, () => {
+            destroy_component(old_component, 1);
+          });
+          check_outros();
+        }
+        if (switch_value) {
+          switch_instance = construct_svelte_component(switch_value, switch_props(ctx2, dirty));
+          create_component(switch_instance.$$.fragment);
+          transition_in(switch_instance.$$.fragment, 1);
+          mount_component(switch_instance, div, t);
+        } else {
+          switch_instance = null;
+        }
+      } else if (switch_value) {
+        const switch_instance_changes = dirty & /*selectedItem*/
+        2 ? get_spread_update(switch_instance_spread_levels, [get_spread_object(
+          /*setting*/
+          ctx2[10].componentData.props
+        )]) : {};
+        switch_instance.$set(switch_instance_changes);
+      }
+    },
+    i(local) {
+      if (current) return;
+      if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(div);
+      }
+      if (switch_instance) destroy_component(switch_instance);
+    }
+  };
+}
+__name(create_each_block$b, "create_each_block$b");
+function create_fragment$i(ctx) {
+  var _a2, _b2;
+  let p0;
+  let t3;
+  let div3;
+  let div0;
+  let h30;
+  let t5;
+  let t6;
+  let h31;
+  let t8;
+  let t9;
+  let h32;
+  let t11;
+  let t12;
+  let div2;
+  let div1;
+  let img;
+  let img_src_value;
+  let t13;
+  let h2;
+  let t14_value = (
+    /*selectedItem*/
+    ((_a2 = ctx[1]) == null ? void 0 : _a2.name) + ""
+  );
+  let t14;
+  let t15;
+  let b;
+  let t16;
+  let t17_value = (
+    /*selectedItem*/
+    ctx[1] instanceof ConstantDrawMod ? (
+      /*selectedItem*/
+      ctx[1] instanceof TypoDrawTool ? "TOOL" : "COMBO MOD"
+    ) : "MOD"
+  );
+  let t17;
+  let t18;
+  let t19;
+  let p1;
+  let t20_value = (
+    /*selectedItem*/
+    ((_b2 = ctx[1]) == null ? void 0 : _b2.description) + ""
+  );
+  let t20;
+  let t21;
+  let current;
+  let each_value_3 = ensure_array_like(
+    /*$items*/
+    ctx[0].tools
+  );
+  let each_blocks_2 = [];
+  for (let i = 0; i < each_value_3.length; i += 1) {
+    each_blocks_2[i] = create_each_block_3(get_each_context_3(ctx, each_value_3, i));
+  }
+  let each_value_2 = ensure_array_like(
+    /*$items*/
+    ctx[0].mods.filter(
+      /*func*/
+      ctx[6]
+    )
+  );
+  let each_blocks_1 = [];
+  for (let i = 0; i < each_value_2.length; i += 1) {
+    each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+  }
+  let each_value_1 = ensure_array_like(
+    /*$items*/
+    ctx[0].mods.filter(
+      /*func_1*/
+      ctx[8]
+    )
+  );
+  let each_blocks = [];
+  for (let i = 0; i < each_value_1.length; i += 1) {
+    each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+  }
+  let if_block = (
+    /*selectedItem*/
+    ctx[1] !== void 0 && /*selectedItem*/
+    ctx[1].settings.length > 0 && create_if_block$8(ctx)
+  );
+  return {
+    c() {
+      var _a3;
+      p0 = element$1("p");
+      p0.innerHTML = `The Brush Laboratory has many mods and tools to create unique masterpices.<br/>
+  Below, you can find all available tools and mods and their settings.<br/>
+  Additionally to a tool, you can select one mod and multiple combo mods.`;
+      t3 = space();
+      div3 = element$1("div");
+      div0 = element$1("div");
+      h30 = element$1("h3");
+      h30.textContent = "Tools";
+      t5 = space();
+      for (let i = 0; i < each_blocks_2.length; i += 1) {
+        each_blocks_2[i].c();
+      }
+      t6 = space();
+      h31 = element$1("h3");
+      h31.textContent = "Mods";
+      t8 = space();
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        each_blocks_1[i].c();
+      }
+      t9 = space();
+      h32 = element$1("h3");
+      h32.textContent = "Combo Mods";
+      t11 = space();
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
+      t12 = space();
+      div2 = element$1("div");
+      div1 = element$1("div");
+      img = element$1("img");
+      t13 = space();
+      h2 = element$1("h2");
+      t14 = text(t14_value);
+      t15 = space();
+      b = element$1("b");
+      t16 = text("(");
+      t17 = text(t17_value);
+      t18 = text(")");
+      t19 = space();
+      p1 = element$1("p");
+      t20 = text(t20_value);
+      t21 = space();
+      if (if_block) if_block.c();
+      attr(h30, "class", "svelte-15vhuqn");
+      attr(h31, "class", "svelte-15vhuqn");
+      attr(h32, "class", "svelte-15vhuqn");
+      attr(div0, "class", "item-sidebar svelte-15vhuqn");
+      if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
+      set_style(
+        img,
+        "content",
+        /*selectedItem*/
+        (_a3 = ctx[1]) == null ? void 0 : _a3.icon
+      );
+      attr(img, "alt", "icon");
+      attr(img, "class", "svelte-15vhuqn");
+      attr(b, "class", "svelte-15vhuqn");
+      attr(div1, "class", "item-title svelte-15vhuqn");
+      attr(div2, "class", "item-details svelte-15vhuqn");
+      attr(div3, "class", "item-selection svelte-15vhuqn");
+    },
+    m(target, anchor) {
+      insert(target, p0, anchor);
+      insert(target, t3, anchor);
+      insert(target, div3, anchor);
+      append(div3, div0);
+      append(div0, h30);
+      append(div0, t5);
+      for (let i = 0; i < each_blocks_2.length; i += 1) {
+        if (each_blocks_2[i]) {
+          each_blocks_2[i].m(div0, null);
+        }
+      }
+      append(div0, t6);
+      append(div0, h31);
+      append(div0, t8);
+      for (let i = 0; i < each_blocks_1.length; i += 1) {
+        if (each_blocks_1[i]) {
+          each_blocks_1[i].m(div0, null);
+        }
+      }
+      append(div0, t9);
+      append(div0, h32);
+      append(div0, t11);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        if (each_blocks[i]) {
+          each_blocks[i].m(div0, null);
+        }
+      }
+      append(div3, t12);
+      append(div3, div2);
+      append(div2, div1);
+      append(div1, img);
+      append(div1, t13);
+      append(div1, h2);
+      append(h2, t14);
+      append(div1, t15);
+      append(div1, b);
+      append(b, t16);
+      append(b, t17);
+      append(b, t18);
+      append(div2, t19);
+      append(div2, p1);
+      append(p1, t20);
+      append(div2, t21);
+      if (if_block) if_block.m(div2, null);
+      current = true;
+    },
+    p(ctx2, [dirty]) {
+      var _a3, _b3, _c2;
+      if (dirty & /*selectedItem, $items*/
+      3) {
+        each_value_3 = ensure_array_like(
+          /*$items*/
+          ctx2[0].tools
+        );
+        let i;
+        for (i = 0; i < each_value_3.length; i += 1) {
+          const child_ctx = get_each_context_3(ctx2, each_value_3, i);
+          if (each_blocks_2[i]) {
+            each_blocks_2[i].p(child_ctx, dirty);
+          } else {
+            each_blocks_2[i] = create_each_block_3(child_ctx);
+            each_blocks_2[i].c();
+            each_blocks_2[i].m(div0, t6);
+          }
+        }
+        for (; i < each_blocks_2.length; i += 1) {
+          each_blocks_2[i].d(1);
+        }
+        each_blocks_2.length = each_value_3.length;
+      }
+      if (dirty & /*selectedItem, $items*/
+      3) {
+        each_value_2 = ensure_array_like(
+          /*$items*/
+          ctx2[0].mods.filter(
+            /*func*/
+            ctx2[6]
+          )
+        );
+        let i;
+        for (i = 0; i < each_value_2.length; i += 1) {
+          const child_ctx = get_each_context_2(ctx2, each_value_2, i);
+          if (each_blocks_1[i]) {
+            each_blocks_1[i].p(child_ctx, dirty);
+          } else {
+            each_blocks_1[i] = create_each_block_2(child_ctx);
+            each_blocks_1[i].c();
+            each_blocks_1[i].m(div0, t9);
+          }
+        }
+        for (; i < each_blocks_1.length; i += 1) {
+          each_blocks_1[i].d(1);
+        }
+        each_blocks_1.length = each_value_2.length;
+      }
+      if (dirty & /*selectedItem, $items*/
+      3) {
+        each_value_1 = ensure_array_like(
+          /*$items*/
+          ctx2[0].mods.filter(
+            /*func_1*/
+            ctx2[8]
+          )
+        );
+        let i;
+        for (i = 0; i < each_value_1.length; i += 1) {
+          const child_ctx = get_each_context_1$1(ctx2, each_value_1, i);
+          if (each_blocks[i]) {
+            each_blocks[i].p(child_ctx, dirty);
+          } else {
+            each_blocks[i] = create_each_block_1$1(child_ctx);
+            each_blocks[i].c();
+            each_blocks[i].m(div0, null);
+          }
+        }
+        for (; i < each_blocks.length; i += 1) {
+          each_blocks[i].d(1);
+        }
+        each_blocks.length = each_value_1.length;
+      }
+      if (!current || dirty & /*selectedItem*/
+      2) {
+        set_style(
+          img,
+          "content",
+          /*selectedItem*/
+          (_a3 = ctx2[1]) == null ? void 0 : _a3.icon
+        );
+      }
+      if ((!current || dirty & /*selectedItem*/
+      2) && t14_value !== (t14_value = /*selectedItem*/
+      ((_b3 = ctx2[1]) == null ? void 0 : _b3.name) + "")) set_data(t14, t14_value);
+      if ((!current || dirty & /*selectedItem*/
+      2) && t17_value !== (t17_value = /*selectedItem*/
+      ctx2[1] instanceof ConstantDrawMod ? (
+        /*selectedItem*/
+        ctx2[1] instanceof TypoDrawTool ? "TOOL" : "COMBO MOD"
+      ) : "MOD")) set_data(t17, t17_value);
+      if ((!current || dirty & /*selectedItem*/
+      2) && t20_value !== (t20_value = /*selectedItem*/
+      ((_c2 = ctx2[1]) == null ? void 0 : _c2.description) + "")) set_data(t20, t20_value);
+      if (
+        /*selectedItem*/
+        ctx2[1] !== void 0 && /*selectedItem*/
+        ctx2[1].settings.length > 0
+      ) {
+        if (if_block) {
+          if_block.p(ctx2, dirty);
+          if (dirty & /*selectedItem*/
+          2) {
+            transition_in(if_block, 1);
+          }
+        } else {
+          if_block = create_if_block$8(ctx2);
+          if_block.c();
+          transition_in(if_block, 1);
+          if_block.m(div2, null);
+        }
+      } else if (if_block) {
+        group_outros();
+        transition_out(if_block, 1, 1, () => {
+          if_block = null;
+        });
+        check_outros();
+      }
+    },
+    i(local) {
+      if (current) return;
+      transition_in(if_block);
+      current = true;
+    },
+    o(local) {
+      transition_out(if_block);
+      current = false;
+    },
+    d(detaching) {
+      if (detaching) {
+        detach(p0);
+        detach(t3);
+        detach(div3);
+      }
+      destroy_each(each_blocks_2, detaching);
+      destroy_each(each_blocks_1, detaching);
+      destroy_each(each_blocks, detaching);
+      if (if_block) if_block.d();
+    }
+  };
+}
+__name(create_fragment$i, "create_fragment$i");
+function instance$h($$self, $$props, $$invalidate) {
+  let $items;
+  let { feature } = $$props;
+  let { initTool = void 0 } = $$props;
+  const items = feature.toolbarItemsStore;
+  component_subscribe($$self, items, (value) => $$invalidate(0, $items = value));
+  let selectedItem = initTool;
+  const click_handler2 = /* @__PURE__ */ __name((tool) => $$invalidate(1, selectedItem = tool.item), "click_handler");
+  const func2 = /* @__PURE__ */ __name((mod) => !(mod.item instanceof ConstantDrawMod), "func");
+  const click_handler_1 = /* @__PURE__ */ __name((mod) => $$invalidate(1, selectedItem = mod.item), "click_handler_1");
+  const func_12 = /* @__PURE__ */ __name((mod) => mod.item instanceof ConstantDrawMod, "func_1");
+  const click_handler_2 = /* @__PURE__ */ __name((mod) => $$invalidate(1, selectedItem = mod.item), "click_handler_2");
+  $$self.$$set = ($$props2) => {
+    if ("feature" in $$props2) $$invalidate(3, feature = $$props2.feature);
+    if ("initTool" in $$props2) $$invalidate(4, initTool = $$props2.initTool);
+  };
+  $$self.$$.update = () => {
+    var _a2;
+    if ($$self.$$.dirty & /*initTool, $items*/
+    17) {
+      {
+        $$invalidate(1, selectedItem = initTool ?? ((_a2 = $items.tools.find((tool) => tool.active) ?? $items.mods.find((mod) => mod.active) ?? $items.tools[0]) == null ? void 0 : _a2.item));
+      }
+    }
+  };
+  return [
+    $items,
+    selectedItem,
+    items,
+    feature,
+    initTool,
+    click_handler2,
+    func2,
+    click_handler_1,
+    func_12,
+    click_handler_2
+  ];
+}
+__name(instance$h, "instance$h");
+const _Drawing_brush_lab_manage = class _Drawing_brush_lab_manage extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$h, create_fragment$i, safe_not_equal, { feature: 3, initTool: 4 });
+  }
+};
+__name(_Drawing_brush_lab_manage, "Drawing_brush_lab_manage");
+let Drawing_brush_lab_manage = _Drawing_brush_lab_manage;
+var __defProp$l = Object.defineProperty;
+var __decorateClass$l = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$l(target, key2, result);
+  return result;
+}, "__decorateClass$l");
+const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeature {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_toolsService");
+    __publicField(this, "_elementsSetup");
+    __publicField(this, "_modalService");
+    __publicField(this, "name", "Brush Laboratory");
+    __publicField(this, "description", "Add custom drawing tools for special effects to the toolbar");
+    __publicField(this, "tags", [
+      FeatureTag.DRAWING
+    ]);
+    __publicField(this, "featureId", 39);
+    __publicField(this, "_labSwitchComponent");
+    __publicField(this, "_labGroupComponent");
+    __publicField(this, "_toolbarItems$", new BehaviorSubject({ tools: [], mods: [] }));
+    __publicField(this, "_items", [
+      ParallelLineMod,
+      MandalaMod,
+      SculptMod,
+      DotTool,
+      DashTool,
+      RainbowMod,
+      RandomColorMod,
+      GridTool,
+      NoiseMod,
+      TiltMod
+    ]);
+    __publicField(this, "_brushLabToggleHotkey", this.useHotkey(
+      new HotkeyAction(
+        "toggle_lab",
+        "Toggle Brush Lab",
+        "Toggle the visibility of the brush lab below skribbl tools",
+        this,
+        () => {
+          var _a2;
+          return (_a2 = this._labSwitchComponent) == null ? void 0 : _a2.toggle();
+        },
+        true,
+        ["ShiftLeft", "KeyL"]
+      )
+    ));
+  }
+  get featureInfoComponent() {
+    return { componentType: Drawing_brush_lab_info, props: { feature: this } };
+  }
+  /*public override get featureManagementComponent(): componentData<BrushLabManage> {
+    return { componentType: BrushLabManage, props: { feature: this } };
+  }*/
+  async onActivate() {
+    const elements2 = await this._elementsSetup.complete();
+    this._labGroupComponent = new Drawing_brush_lab_group({
+      target: elements2.skribblToolbar,
+      props: { feature: this }
+    });
+    this._labSwitchComponent = new Drawing_brush_lab_switch({
+      target: elements2.skribblActions,
+      props: { feature: this }
+    });
+    this.createItems();
+  }
+  async onDestroy() {
+    if (this._labSwitchComponent) {
+      this._labSwitchComponent.$destroy();
+      this._labSwitchComponent = void 0;
+    }
+    if (this._labGroupComponent) {
+      this._labGroupComponent.$destroy();
+      this._labGroupComponent = void 0;
+    }
+    const items = await firstValueFrom(this._toolbarItems$);
+    items.mods.forEach(({ item }) => this._toolsService.removeMod(item));
+    this._toolsService.activateTool(skribblTool.brush);
+  }
+  get toolbarItemsStore() {
+    return fromObservable(this._toolbarItems$.pipe(
+      combineLatestWith(this._toolsService.activeTool$, this._toolsService.activeMods$),
+      map(([items, activeTool, activeMods]) => {
+        return {
+          mods: items.mods.map((item) => ({ item: item.item, active: activeMods.includes(item.item) })),
+          tools: items.tools.map((item) => ({ item: item.item, active: activeTool === item.item }))
+        };
+      })
+    ), this._toolbarItems$.value);
+  }
+  createItems() {
+    const items = this._items.map((item) => this._toolsService.resolveModOrTool(item));
+    const tools = items.filter((item) => item instanceof TypoDrawTool).map((item) => ({ item, active: false }));
+    const mods = items.filter((item) => !(item instanceof TypoDrawTool)).map((item) => ({ item, active: false }));
+    this._toolbarItems$.next({ tools, mods });
+  }
+  activateTool(tool) {
+    this._toolsService.activateTool(tool);
+  }
+  activateMod(mod) {
+    this._toolsService.activateMod(mod);
+  }
+  removeMod(mod) {
+    this._toolsService.removeMod(mod);
+  }
+  openBrushLabSettings(initTool) {
+    const componentData = {
+      componentType: Drawing_brush_lab_manage,
+      props: { feature: this, initTool }
+    };
+    this._modalService.showModal(componentData.componentType, componentData.props, "Brush Laboratory");
+  }
+};
+__name(_DrawingBrushLabFeature, "DrawingBrushLabFeature");
+let DrawingBrushLabFeature = _DrawingBrushLabFeature;
+__decorateClass$l([
+  inject(ToolsService)
+], DrawingBrushLabFeature.prototype, "_toolsService");
+__decorateClass$l([
+  inject(ElementsSetup)
+], DrawingBrushLabFeature.prototype, "_elementsSetup");
+__decorateClass$l([
+  inject(ModalService)
+], DrawingBrushLabFeature.prototype, "_modalService");
+var __defProp$k = Object.defineProperty;
+var __decorateClass$k = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var result = void 0;
+  for (var i = decorators.length - 1, decorator; i >= 0; i--)
+    if (decorator = decorators[i])
+      result = decorator(target, key2, result) || result;
+  if (result) __defProp$k(target, key2, result);
+  return result;
+}, "__decorateClass$k");
+const _DrawingSizeHotkeysFeature = class _DrawingSizeHotkeysFeature extends TypoFeature {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "_drawingService");
+    __publicField(this, "name", "Brush Size Hotkeys");
+    __publicField(this, "description", "Adds hotkeys to change the brush size");
+    __publicField(this, "tags", [
+      FeatureTag.DRAWING
+    ]);
+    __publicField(this, "featureId", 51);
+    __publicField(this, "_sizeHotkeys", [1, 2, 3, 4, 5].map((level) => this.useHotkey(new HotkeyAction(
+      `size_${level}`,
+      `Brush size ${level}`,
+      `Set the brush size to level ${level}`,
+      this,
+      () => this._drawingService.setSize([4, 10, 20, 32, 40][level - 1]),
+      true,
+      [`Digit${level}`]
+    ))));
+  }
+};
+__name(_DrawingSizeHotkeysFeature, "DrawingSizeHotkeysFeature");
+let DrawingSizeHotkeysFeature = _DrawingSizeHotkeysFeature;
+__decorateClass$k([
+  inject(DrawingService)
+], DrawingSizeHotkeysFeature.prototype, "_drawingService");
 function get_each_context$a(ctx, list, i) {
   const child_ctx = ctx.slice();
   child_ctx[10] = list[i];
@@ -65050,7 +65054,7 @@ const _ChatMessageHighlightingFeature = class _ChatMessageHighlightingFeature ex
       new BooleanExtensionSetting("highlight_my_messages", false, this).withName("Highlight My Messages").withDescription("Highlights your own messages.")
     ));
     __publicField(this, "_enableReplyButton", this.useSetting(
-      new BooleanExtensionSetting("enable_reply_button", true, this).withName("Reply Button").withDescription("Add a reply button to ping people from their messages.")
+      new BooleanExtensionSetting("enable_reply_button", false, this).withName("Reply Button").withDescription("Add a reply button to ping people from their messages.")
     ));
     __publicField(this, "chatSubscription");
     __publicField(this, "_flyoutComponent");
