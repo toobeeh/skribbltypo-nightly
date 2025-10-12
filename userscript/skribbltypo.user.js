@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 3f3f282
+// @version      27.1.3 beta-usc 443f127
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 3f3f282", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 443f127", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -36219,14 +36219,13 @@
       return { lines: [line], style: brushStyle };
     }
     /**
-     * Get the selected color, considering whether secondary mode is active and any style override
-     * @param styleOverride
+     * Get the selected color, considering whether secondary mode is active
      * @param brushStyle
      * @param secondaryActive
      * @private
      */
-    getSelectedColor(styleOverride, brushStyle, secondaryActive) {
-      return secondaryActive ? (styleOverride == null ? void 0 : styleOverride.secondaryColor) ?? brushStyle.secondaryColor : (styleOverride == null ? void 0 : styleOverride.color) ?? brushStyle.color;
+    getSelectedColor(brushStyle, secondaryActive) {
+      return secondaryActive ? brushStyle.secondaryColor : brushStyle.color;
     }
   }, __name(_ya, "TypoDrawMod"), _ya);
   TypoDrawMod = __decorateClass$O([
@@ -36619,43 +36618,58 @@
       });
     }
     async processDrawCoordinates(start, end, cause, tool, mods, style2, strokeId, secondaryActive) {
-      var _a2, _b2, _c2, _d2;
       this._logger.debug("Activating tool and applying mods", start, end, mods, tool);
       const eventId = Date.now();
-      let lines = [{ from: [start[0], start[1]], to: [end[0], end[1]] }];
-      let modStyle = structuredClone(style2);
+      let lines = [{
+        effect: {
+          line: {
+            from: [start[0], start[1]],
+            to: [end[0], end[1]]
+          },
+          style: structuredClone(style2)
+        },
+        strokeId
+      }];
       const pressure = end[2];
-      let disableColorUpdate = false;
-      let disableSizeUpdate = false;
+      let currentStrokeId = strokeId;
       for (const mod of mods) {
         const modLines = [];
         for (const line of lines) {
-          const effect = await mod.applyEffect(line, pressure, modStyle, eventId, strokeId, cause, secondaryActive);
-          modLines.push(...effect.lines);
-          modStyle = effect.style;
-          if (effect.disableColorUpdate !== void 0) disableColorUpdate = effect.disableColorUpdate === true;
-          if (effect.disableSizeUpdate !== void 0) disableSizeUpdate = effect.disableSizeUpdate === true;
+          const effect = await mod.applyEffect(line.effect.line, pressure, line.effect.style, eventId, line.strokeId, cause, secondaryActive);
+          const constantEffects = effect.lines.map((l) => ({
+            line: structuredClone(l),
+            style: structuredClone(effect.style),
+            disableColorUpdate: effect.disableColorUpdate,
+            disableSizeUpdate: effect.disableSizeUpdate
+          })).map((effect2, i) => ({
+            effect: effect2,
+            strokeId: i === 0 ? line.strokeId : ++currentStrokeId
+          }));
+          modLines.push(...constantEffects);
           this._logger.debug("Mod applied", mod);
         }
         lines = modLines;
       }
-      if (!disableSizeUpdate && modStyle.size !== style2.size) {
-        this._logger.debug("Brush size changed by mods", modStyle.size);
-        this._drawingService.setSize(modStyle.size);
+      const lastEffect = lines[lines.length - 1].effect;
+      const disableSizeUpdate = lastEffect.disableSizeUpdate ?? false;
+      const disableColorUpdate = lastEffect.disableColorUpdate ?? false;
+      if (!disableSizeUpdate && lastEffect.style.size !== style2.size) {
+        this._logger.debug("Brush size changed by mods", lastEffect.style.size);
+        this._drawingService.setSize(lastEffect.style.size);
       }
-      if (!disableColorUpdate && modStyle.color !== style2.color) {
-        this._logger.debug("Brush color changed by mods", modStyle.color);
-        this._drawingService.setColor(modStyle.color);
+      if (!disableColorUpdate && lastEffect.style.color !== style2.color) {
+        this._logger.debug("Brush color changed by mods", lastEffect.style.color);
+        this._drawingService.setColor(lastEffect.style.color);
       }
-      if (!disableColorUpdate && modStyle.secondaryColor !== style2.secondaryColor) {
-        this._logger.debug("Brush secondary color changed by mods", modStyle.secondaryColor);
-        this._drawingService.setColor(modStyle.secondaryColor, true);
+      if (!disableColorUpdate && lastEffect.style.secondaryColor !== style2.secondaryColor) {
+        this._logger.debug("Brush secondary color changed by mods", lastEffect.style.secondaryColor);
+        this._drawingService.setColor(lastEffect.style.secondaryColor, true);
       }
       const commands = [];
       if (tool instanceof TypoDrawTool) {
-        for (let line of lines) {
-          line = { from: [Math.floor(line.from[0]), Math.floor(line.from[1])], to: [Math.floor(line.to[0]), Math.floor(line.to[1])] };
-          const lineCommands = await tool.createCommands(line, pressure, line.styleOverride ?? modStyle, eventId, strokeId, cause, secondaryActive);
+        for (const line of lines) {
+          const lineCoords = { from: [Math.floor(line.effect.line.from[0]), Math.floor(line.effect.line.from[1])], to: [Math.floor(line.effect.line.to[0]), Math.floor(line.effect.line.to[1])] };
+          const lineCommands = await tool.createCommands(lineCoords, pressure, line.effect.style, eventId, line.strokeId, cause, secondaryActive);
           if (lineCommands.length > 0) {
             commands.push(...lineCommands);
             this._logger.debug("Adding commands created by tool", tool, commands);
@@ -36665,11 +36679,11 @@
         }
       } else if (tool === skribblTool.brush) {
         for (const line of lines) {
-          const color = secondaryActive ? ((_a2 = line.styleOverride) == null ? void 0 : _a2.secondaryColor) ?? modStyle.secondaryColor : ((_b2 = line.styleOverride) == null ? void 0 : _b2.color) ?? modStyle.color;
+          const color = secondaryActive ? line.effect.style.secondaryColor : line.effect.style.color;
           const lineCommand = this._drawingService.createLineCommand(
-            [...line.from, ...line.to],
+            [...line.effect.line.from, ...line.effect.line.to],
             color,
-            ((_c2 = line.styleOverride) == null ? void 0 : _c2.size) ?? modStyle.size,
+            line.effect.style.size,
             false
           );
           if (lineCommand !== void 0) commands.push(lineCommand);
@@ -36678,8 +36692,8 @@
         if (cause === "down") {
           for (const line of lines) {
             const pointCommand = this._drawingService.createFillCommand(
-              [...line.from],
-              ((_d2 = line.styleOverride) == null ? void 0 : _d2.color) ?? modStyle.color
+              [...line.effect.line.from],
+              line.effect.style.color
             );
             commands.push(pointCommand);
           }
@@ -61407,7 +61421,7 @@ ${content2}</tr>
           line
         };
       }
-      const colorCode = this.getSelectedColor(line.styleOverride, style2, secondaryActive);
+      const colorCode = this.getSelectedColor(style2, secondaryActive);
       const colorBase = Color.fromSkribblCode(colorCode).hsl;
       if (brightnessEnabled) {
         const brightnessSensitivity = await firstValueFrom(this._brightnessSensitivitySetting.changes$);
@@ -61455,32 +61469,34 @@ ${content2}</tr>
       __publicField(this, "name", "Rainbow");
       __publicField(this, "_rainbowModeSetting", new ChoiceExtensionSetting("brushlab.rainbow.mode", "light").withName("Rainbow Colors").withDescription("Choose between the rainbow color shades").withChoices([{ choice: "light", name: "Light Colors" }, { choice: "dark", name: "Dark Colors" }]));
       __publicField(this, "_strokeModeSetting", new BooleanExtensionSetting("brushlab.rainbow.strokeMode", false).withName("Change Per Stroke").withDescription("If enabled, the color will change per stroke instead of continuously."));
-      __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.rainbow.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
-      __publicField(this, "lastSwitch");
+      __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.rainbow.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(0, 100));
+      __publicField(this, "strokeSwitches", /* @__PURE__ */ new Map());
+      __publicField(this, "initIndex", -1);
       __publicField(this, "settings", [
         this._rainbowModeSetting,
         this._colorSwitchSetting,
         this._strokeModeSetting
       ]);
     }
-    async applyConstantEffect(line, pressure, style2, eventId, strokeId) {
-      var _a2;
+    async applyConstantEffect(line, pressure, style2, eventId, strokeId, cause) {
       const mode = await firstValueFrom(this._rainbowModeSetting.changes$);
       const strokeMode = await firstValueFrom(this._strokeModeSetting.changes$);
       const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
       const colors = Color.skribblColors.filter((color, index) => index % 2 === 0 ? mode === "light" : mode === "dark");
-      if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || strokeMode == false && this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style2.size / 10 * distance) {
-        let index = ((((_a2 = this.lastSwitch) == null ? void 0 : _a2.index) ?? -1) + 1) % (colors.length - 1);
-        if (index < 2) index = 2;
-        style2.color = index * 2 + (mode === "light" ? 0 : 1);
-        this.lastSwitch = {
+      const lastStrokeSwitch = this.strokeSwitches.get(strokeId);
+      if (lastStrokeSwitch !== void 0 && cause === "up") this.strokeSwitches.delete(strokeId);
+      if (lastStrokeSwitch === void 0 || strokeMode == false && (distance <= 0 || this.getDistance(lastStrokeSwitch.position, line.from) > style2.size / 10 * distance)) {
+        const index = ((lastStrokeSwitch == null ? void 0 : lastStrokeSwitch.index) ?? this.initIndex++ % (colors.length - 2) + 1) % (colors.length - 2);
+        const actualIndex = index + 2;
+        style2.color = actualIndex * 2 + (mode === "light" ? 0 : 1);
+        const newStrokeSwitch = {
           eventId,
           position: line.from,
-          index,
-          strokeId
+          index
         };
+        this.strokeSwitches.set(strokeId, newStrokeSwitch);
       } else {
-        style2.color = this.lastSwitch.index * 2 + (mode === "light" ? 0 : 1);
+        style2.color = (lastStrokeSwitch.index + 2) * 2 + (mode === "light" ? 0 : 1);
       }
       return {
         style: style2,
@@ -61510,30 +61526,32 @@ ${content2}</tr>
       __publicField(this, "description", "Switches colors of the current palette randomly while drawing.");
       __publicField(this, "icon", "var(--file-img-line-random-color-gif)");
       __publicField(this, "name", "Random Colors");
-      __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.randomcolor.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(1, 100));
+      __publicField(this, "_colorSwitchSetting", new NumericExtensionSetting("brushlab.randomcolor.distance", 20).withName("Color Switch Distance").withDescription("The distance between the color switches").withSlider(1).withBounds(0, 100));
       __publicField(this, "_strokeModeSetting", new BooleanExtensionSetting("brushlab.randomcolor.strokeMode", false).withName("Change Per Stroke").withDescription("If enabled, the color will change per stroke instead of continuously."));
-      __publicField(this, "lastSwitch");
+      __publicField(this, "strokeSwitches", /* @__PURE__ */ new Map());
       __publicField(this, "settings", [
         this._colorSwitchSetting,
         this._strokeModeSetting
       ]);
     }
-    async applyConstantEffect(line, pressure, style2, eventId, strokeId) {
+    async applyConstantEffect(line, pressure, style2, eventId, strokeId, cause) {
       const distance = await firstValueFrom(this._colorSwitchSetting.changes$);
       const strokeMode = await firstValueFrom(this._strokeModeSetting.changes$);
       const colors = await firstValueFrom(this._colorsService.pickerColors$) ?? defaultPalettes.skribblPalette;
-      if (this.lastSwitch === void 0 || this.lastSwitch.strokeId !== strokeId || strokeMode === false && this.lastSwitch.eventId !== eventId && this.getDistance(this.lastSwitch.position, line.from) > style2.size / 10 * distance) {
+      const lastStrokeSwitch = this.strokeSwitches.get(strokeId);
+      if (lastStrokeSwitch !== void 0 && cause === "up") this.strokeSwitches.delete(strokeId);
+      if (lastStrokeSwitch === void 0 || strokeMode === false && (distance <= 0 || this.getDistance(lastStrokeSwitch.position, line.from) > style2.size / 10 * distance)) {
         const index = Math.floor(Math.random() * colors.colorHexCodes.length);
         const color = Color.fromHex(colors.colorHexCodes[index]);
         style2.color = color.typoCode;
-        this.lastSwitch = {
+        const newStrokeSwitch = {
           eventId,
           position: line.from,
-          strokeId,
           color: style2.color
         };
+        this.strokeSwitches.set(strokeId, newStrokeSwitch);
       } else {
-        style2.color = this.lastSwitch.color;
+        style2.color = lastStrokeSwitch.color;
       }
       return {
         style: style2,
@@ -61686,7 +61704,7 @@ ${content2}</tr>
       if (this.lineStart === void 0) {
         this.lineStart = { eventId, time: now };
       }
-      const color = this.getSelectedColor(line.styleOverride, style2, secondaryActive);
+      const color = this.getSelectedColor(style2, secondaryActive);
       return [[0, color, style2.size, ...line.from, ...line.to]];
     }
     getDistance(from2, to) {
@@ -61712,7 +61730,7 @@ ${content2}</tr>
     async createCommands(line, pressure, style2, eventId, strokeId, strokeCause, secondaryActive) {
       const interval2 = await firstValueFrom(this._intervalSetting.changes$);
       const now = Date.now();
-      const color = this.getSelectedColor(line.styleOverride, style2, secondaryActive);
+      const color = this.getSelectedColor(style2, secondaryActive);
       if (this.lastDown.eventId === eventId) {
         return [[0, color, style2.size, ...line.to, ...line.to]];
       } else if (now - this.lastDown.time > interval2) {
