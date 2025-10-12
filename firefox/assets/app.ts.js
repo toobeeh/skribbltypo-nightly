@@ -57941,10 +57941,13 @@ const _RainbowMod = class _RainbowMod extends ConstantDrawMod {
         index,
         strokeId
       };
+    } else {
+      style.color = this.lastSwitch.index * 2 + (mode === "light" ? 0 : 1);
     }
     return {
       style,
-      line
+      line,
+      disableColorUpdate: false
     };
   }
   getDistance(from2, to) {
@@ -57988,12 +57991,16 @@ const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
       this.lastSwitch = {
         eventId,
         position: line.from,
-        strokeId
+        strokeId,
+        color: style.color
       };
+    } else {
+      style.color = this.lastSwitch.color;
     }
     return {
       style,
-      line
+      line,
+      disableColorUpdate: false
     };
   }
   getDistance(from2, to) {

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 0be6fb9
+// @version      27.1.3 beta-usc 36a0a6a
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 0be6fb9", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 36a0a6a", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -61552,10 +61552,13 @@ ${content2}</tr>
           index,
           strokeId
         };
+      } else {
+        style2.color = this.lastSwitch.index * 2 + (mode === "light" ? 0 : 1);
       }
       return {
         style: style2,
-        line
+        line,
+        disableColorUpdate: false
       };
     }
     getDistance(from2, to) {
@@ -61599,12 +61602,16 @@ ${content2}</tr>
         this.lastSwitch = {
           eventId,
           position: line.from,
-          strokeId
+          strokeId,
+          color: style2.color
         };
+      } else {
+        style2.color = this.lastSwitch.color;
       }
       return {
         style: style2,
-        line
+        line,
+        disableColorUpdate: false
       };
     }
     getDistance(from2, to) {
