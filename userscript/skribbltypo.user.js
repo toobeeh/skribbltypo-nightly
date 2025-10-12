@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 36a0a6a
+// @version      27.1.3 beta-usc a4fe41f
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 36a0a6a", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc a4fe41f", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -56211,109 +56211,6 @@ ${content2}</tr>
   __decorateClass$w([
     inject(ToastService)
   ], UserInfoFeature.prototype, "_toastService");
-  const _DomEventSubscription = class _DomEventSubscription {
-    constructor(_element, _eventType) {
-      __publicField(this, "_events$", new Subject$1());
-      __publicField(this, "_eventListener", this.onEvent.bind(this));
-      this._element = _element;
-      this._eventType = _eventType;
-      _element.addEventListener(_eventType, this._eventListener);
-    }
-    onEvent(arg) {
-      this._events$.next(arg);
-    }
-    get events$() {
-      return this._events$.asObservable();
-    }
-    /**
-     * Unsubscribe from the event and complete the observable.
-     * All subscribers will receive a complete notification.
-     */
-    unsubscribe() {
-      this._element.removeEventListener(this._eventType, this._eventListener);
-      this._events$.complete();
-    }
-  };
-  __name(_DomEventSubscription, "DomEventSubscription");
-  let DomEventSubscription = _DomEventSubscription;
-  var __defProp$v = Object.defineProperty;
-  var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
-    var result = void 0;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
-        result = decorator(target, key2, result) || result;
-    if (result) __defProp$v(target, key2, result);
-    return result;
-  }, "__decorateClass$v");
-  const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeature {
-    constructor() {
-      super(...arguments);
-      __publicField(this, "_toastService");
-      __publicField(this, "_elementsSetup");
-      __publicField(this, "_drawingService");
-      __publicField(this, "_lobbyService");
-      __publicField(this, "name", "Lock Clear");
-      __publicField(this, "description", "Asks for confirmation before clearing the canvas in practice mode, and optionally in lobbies.");
-      __publicField(this, "tags", [
-        FeatureTag.DRAWING
-      ]);
-      __publicField(this, "featureId", 53);
-      __publicField(this, "featureEnabledDefault", false);
-      __publicField(this, "_onlyPracticeLobbies", this.useSetting(
-        new BooleanExtensionSetting("ping_suggestions", true, this).withName("Lock only for practice lobbies").withDescription("Clearing in public/private lobbies will be enabled.")
-      ));
-      __publicField(this, "_clearButtonSubscription");
-      __publicField(this, "_clearLockedSubscription");
-    }
-    async onActivate() {
-      const elements2 = await this._elementsSetup.complete();
-      this._clearButtonSubscription = new DomEventSubscription(elements2.clearButton, "click");
-      this._clearLockedSubscription = this._onlyPracticeLobbies.changes$.pipe(
-        combineLatestWith(this._lobbyService.lobby$)
-      ).subscribe(([onlyPractice, lobby]) => {
-        if (lobby === null) {
-          this._drawingService.lockManualClear(false);
-          return;
-        }
-        if (onlyPractice) {
-          this._drawingService.lockManualClear(lobby.id === null);
-        } else {
-          this._drawingService.lockManualClear(true);
-        }
-      });
-      this._clearButtonSubscription.events$.pipe(
-        withLatestFrom(this._drawingService.manualClearLocked$),
-        filter(([, locked]) => locked === true),
-        switchMap(async () => {
-          const toast = this._toastService.showConfirmToast("Clear drawing?", "Clearing the drawing cannot be undone.", 1e4);
-          return (await toast).result;
-        }),
-        filter((result) => result === true)
-      ).subscribe(() => this._drawingService.clearImage());
-    }
-    async onDestroy() {
-      var _a2, _b2;
-      this._drawingService.lockManualClear(false);
-      (_a2 = this._clearButtonSubscription) == null ? void 0 : _a2.unsubscribe();
-      this._clearButtonSubscription = void 0;
-      (_b2 = this._clearLockedSubscription) == null ? void 0 : _b2.unsubscribe();
-      this._clearLockedSubscription = void 0;
-    }
-  };
-  __name(_DrawingClearLockFeature, "DrawingClearLockFeature");
-  let DrawingClearLockFeature = _DrawingClearLockFeature;
-  __decorateClass$v([
-    inject(ToastService)
-  ], DrawingClearLockFeature.prototype, "_toastService");
-  __decorateClass$v([
-    inject(ElementsSetup)
-  ], DrawingClearLockFeature.prototype, "_elementsSetup");
-  __decorateClass$v([
-    inject(DrawingService)
-  ], DrawingClearLockFeature.prototype, "_drawingService");
-  __decorateClass$v([
-    inject(LobbyService)
-  ], DrawingClearLockFeature.prototype, "_lobbyService");
   function create_fragment$y(ctx) {
     let img;
     let img_src_value;
@@ -57809,15 +57706,15 @@ ${content2}</tr>
   };
   __name(_Controls_onboarding, "Controls_onboarding");
   let Controls_onboarding = _Controls_onboarding;
-  var __defProp$u = Object.defineProperty;
-  var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$v = Object.defineProperty;
+  var __decorateClass$v = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$u(target, key2, result);
+    if (result) __defProp$v(target, key2, result);
     return result;
-  }, "__decorateClass$u");
+  }, "__decorateClass$v");
   const _ControlsOnboardingFeature = (_Fa = class extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -57857,7 +57754,6 @@ ${content2}</tr>
             PlayerIdsFeature,
             DrawingColorPalettesFeature,
             ImageAgentFeature,
-            DrawingClearLockFeature,
             ChatPingFeature
           ]
         },
@@ -58028,16 +57924,16 @@ ${content2}</tr>
       (await this._viewInfoTask).complete();
     }
   }, __name(_Fa, "_ControlsOnboardingFeature"), _Fa);
-  __decorateClass$u([
+  __decorateClass$v([
     inject(ElementsSetup)
   ], _ControlsOnboardingFeature.prototype, "_elementsSetup");
-  __decorateClass$u([
+  __decorateClass$v([
     inject(ModalService)
   ], _ControlsOnboardingFeature.prototype, "_modalService");
-  __decorateClass$u([
+  __decorateClass$v([
     inject(FeaturesService)
   ], _ControlsOnboardingFeature.prototype, "_featuresService");
-  __decorateClass$u([
+  __decorateClass$v([
     inject(ToastService)
   ], _ControlsOnboardingFeature.prototype, "_toastService");
   let ControlsOnboardingFeature = _ControlsOnboardingFeature;
@@ -58511,15 +58407,15 @@ ${content2}</tr>
   };
   __name(_Controls_profiles, "Controls_profiles");
   let Controls_profiles = _Controls_profiles;
-  var __defProp$t = Object.defineProperty;
-  var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$u = Object.defineProperty;
+  var __decorateClass$u = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$t(target, key2, result);
+    if (result) __defProp$u(target, key2, result);
     return result;
-  }, "__decorateClass$t");
+  }, "__decorateClass$u");
   const _ControlsProfilesFeature = class _ControlsProfilesFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -58598,10 +58494,10 @@ ${content2}</tr>
   };
   __name(_ControlsProfilesFeature, "ControlsProfilesFeature");
   let ControlsProfilesFeature = _ControlsProfilesFeature;
-  __decorateClass$t([
+  __decorateClass$u([
     inject(ElementsSetup)
   ], ControlsProfilesFeature.prototype, "_elementsSetup");
-  __decorateClass$t([
+  __decorateClass$u([
     inject(ToastService)
   ], ControlsProfilesFeature.prototype, "_toastService");
   function create_if_block$e(ctx) {
@@ -61133,15 +61029,15 @@ ${content2}</tr>
   };
   __name(_Controls_settings, "Controls_settings");
   let Controls_settings = _Controls_settings;
-  var __defProp$s = Object.defineProperty;
-  var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$t = Object.defineProperty;
+  var __decorateClass$t = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$s(target, key2, result);
+    if (result) __defProp$t(target, key2, result);
     return result;
-  }, "__decorateClass$s");
+  }, "__decorateClass$t");
   const _ControlsSettingsFeature = class _ControlsSettingsFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -61287,30 +61183,30 @@ ${content2}</tr>
   };
   __name(_ControlsSettingsFeature, "ControlsSettingsFeature");
   let ControlsSettingsFeature = _ControlsSettingsFeature;
-  __decorateClass$s([
+  __decorateClass$t([
     inject(ElementsSetup)
   ], ControlsSettingsFeature.prototype, "_elementsSetup");
-  __decorateClass$s([
+  __decorateClass$t([
     inject(ModalService)
   ], ControlsSettingsFeature.prototype, "_modalService");
-  __decorateClass$s([
+  __decorateClass$t([
     inject(ToastService)
   ], ControlsSettingsFeature.prototype, "_toastService");
-  __decorateClass$s([
+  __decorateClass$t([
     inject(FeaturesService)
   ], ControlsSettingsFeature.prototype, "_featuresService");
-  __decorateClass$s([
+  __decorateClass$t([
     inject(GlobalSettingsService)
   ], ControlsSettingsFeature.prototype, "_settingsService");
-  var __defProp$r = Object.defineProperty;
-  var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$s = Object.defineProperty;
+  var __decorateClass$s = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$r(target, key2, result);
+    if (result) __defProp$s(target, key2, result);
     return result;
-  }, "__decorateClass$r");
+  }, "__decorateClass$s");
   const _MandalaMod = class _MandalaMod extends TypoDrawMod {
     constructor() {
       super(...arguments);
@@ -61367,7 +61263,7 @@ ${content2}</tr>
   };
   __name(_MandalaMod, "MandalaMod");
   let MandalaMod = _MandalaMod;
-  __decorateClass$r([
+  __decorateClass$s([
     inject(ToolsService)
   ], MandalaMod.prototype, "_toolsService");
   const _NoiseMod = class _NoiseMod extends ConstantDrawMod {
@@ -61567,15 +61463,15 @@ ${content2}</tr>
   };
   __name(_RainbowMod, "RainbowMod");
   let RainbowMod = _RainbowMod;
-  var __defProp$q = Object.defineProperty;
-  var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$r = Object.defineProperty;
+  var __decorateClass$r = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$q(target, key2, result);
+    if (result) __defProp$r(target, key2, result);
     return result;
-  }, "__decorateClass$q");
+  }, "__decorateClass$r");
   const _RandomColorMod = class _RandomColorMod extends ConstantDrawMod {
     constructor() {
       super(...arguments);
@@ -61620,18 +61516,18 @@ ${content2}</tr>
   };
   __name(_RandomColorMod, "RandomColorMod");
   let RandomColorMod = _RandomColorMod;
-  __decorateClass$q([
+  __decorateClass$r([
     inject(ColorsService)
   ], RandomColorMod.prototype, "_colorsService");
-  var __defProp$p = Object.defineProperty;
-  var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$q = Object.defineProperty;
+  var __decorateClass$q = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$p(target, key2, result);
+    if (result) __defProp$q(target, key2, result);
     return result;
-  }, "__decorateClass$p");
+  }, "__decorateClass$q");
   const _SculptMod = class _SculptMod extends TypoDrawMod {
     constructor() {
       super(...arguments);
@@ -61677,7 +61573,7 @@ ${content2}</tr>
   };
   __name(_SculptMod, "SculptMod");
   let SculptMod = _SculptMod;
-  __decorateClass$p([
+  __decorateClass$q([
     inject(ToolsService)
   ], SculptMod.prototype, "_toolsService");
   const _TiltMod = class _TiltMod extends ConstantDrawMod {
@@ -61798,15 +61694,15 @@ ${content2}</tr>
   };
   __name(_DotTool, "DotTool");
   let DotTool = _DotTool;
-  var __defProp$o = Object.defineProperty;
-  var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$p = Object.defineProperty;
+  var __decorateClass$p = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$o(target, key2, result);
+    if (result) __defProp$p(target, key2, result);
     return result;
-  }, "__decorateClass$o");
+  }, "__decorateClass$p");
   const _GridTool = class _GridTool extends TypoDrawTool {
     constructor() {
       super(...arguments);
@@ -61850,7 +61746,7 @@ ${content2}</tr>
   };
   __name(_GridTool, "GridTool");
   let GridTool = _GridTool;
-  __decorateClass$o([
+  __decorateClass$p([
     inject(ToolsService)
   ], GridTool.prototype, "_toolsService");
   function create_fragment$o(ctx) {
@@ -63207,15 +63103,15 @@ ${content2}</tr>
   };
   __name(_Drawing_brush_lab_manage, "Drawing_brush_lab_manage");
   let Drawing_brush_lab_manage = _Drawing_brush_lab_manage;
-  var __defProp$n = Object.defineProperty;
-  var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+  var __defProp$o = Object.defineProperty;
+  var __decorateClass$o = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
     for (var i = decorators.length - 1, decorator; i >= 0; i--)
       if (decorator = decorators[i])
         result = decorator(target, key2, result) || result;
-    if (result) __defProp$n(target, key2, result);
+    if (result) __defProp$o(target, key2, result);
     return result;
-  }, "__decorateClass$n");
+  }, "__decorateClass$o");
   const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeature {
     constructor() {
       super(...arguments);
@@ -63326,15 +63222,117 @@ ${content2}</tr>
   };
   __name(_DrawingBrushLabFeature, "DrawingBrushLabFeature");
   let DrawingBrushLabFeature = _DrawingBrushLabFeature;
-  __decorateClass$n([
+  __decorateClass$o([
     inject(ToolsService)
   ], DrawingBrushLabFeature.prototype, "_toolsService");
-  __decorateClass$n([
+  __decorateClass$o([
     inject(ElementsSetup)
   ], DrawingBrushLabFeature.prototype, "_elementsSetup");
-  __decorateClass$n([
+  __decorateClass$o([
     inject(ModalService)
   ], DrawingBrushLabFeature.prototype, "_modalService");
+  const _DomEventSubscription = class _DomEventSubscription {
+    constructor(_element, _eventType) {
+      __publicField(this, "_events$", new Subject$1());
+      __publicField(this, "_eventListener", this.onEvent.bind(this));
+      this._element = _element;
+      this._eventType = _eventType;
+      _element.addEventListener(_eventType, this._eventListener);
+    }
+    onEvent(arg) {
+      this._events$.next(arg);
+    }
+    get events$() {
+      return this._events$.asObservable();
+    }
+    /**
+     * Unsubscribe from the event and complete the observable.
+     * All subscribers will receive a complete notification.
+     */
+    unsubscribe() {
+      this._element.removeEventListener(this._eventType, this._eventListener);
+      this._events$.complete();
+    }
+  };
+  __name(_DomEventSubscription, "DomEventSubscription");
+  let DomEventSubscription = _DomEventSubscription;
+  var __defProp$n = Object.defineProperty;
+  var __decorateClass$n = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
+    var result = void 0;
+    for (var i = decorators.length - 1, decorator; i >= 0; i--)
+      if (decorator = decorators[i])
+        result = decorator(target, key2, result) || result;
+    if (result) __defProp$n(target, key2, result);
+    return result;
+  }, "__decorateClass$n");
+  const _DrawingClearLockFeature = class _DrawingClearLockFeature extends TypoFeature {
+    constructor() {
+      super(...arguments);
+      __publicField(this, "_toastService");
+      __publicField(this, "_elementsSetup");
+      __publicField(this, "_drawingService");
+      __publicField(this, "_lobbyService");
+      __publicField(this, "name", "Lock Clear");
+      __publicField(this, "description", "Asks for confirmation before clearing the canvas in practice mode, and optionally in lobbies.");
+      __publicField(this, "tags", [
+        FeatureTag.DRAWING
+      ]);
+      __publicField(this, "featureId", 53);
+      __publicField(this, "_onlyPracticeLobbies", this.useSetting(
+        new BooleanExtensionSetting("only_private", true, this).withName("Lock only for practice lobbies").withDescription("Clearing in public/private lobbies will be enabled.")
+      ));
+      __publicField(this, "_clearButtonSubscription");
+      __publicField(this, "_clearLockedSubscription");
+    }
+    async onActivate() {
+      const elements2 = await this._elementsSetup.complete();
+      this._clearButtonSubscription = new DomEventSubscription(elements2.clearButton, "click");
+      this._clearLockedSubscription = this._onlyPracticeLobbies.changes$.pipe(
+        combineLatestWith(this._lobbyService.lobby$)
+      ).subscribe(([onlyPractice, lobby]) => {
+        if (lobby === null) {
+          this._drawingService.lockManualClear(false);
+          return;
+        }
+        if (onlyPractice) {
+          this._drawingService.lockManualClear(lobby.id === null);
+        } else {
+          this._drawingService.lockManualClear(true);
+        }
+      });
+      this._clearButtonSubscription.events$.pipe(
+        withLatestFrom(this._drawingService.manualClearLocked$),
+        filter(([, locked]) => locked === true),
+        switchMap(async () => {
+          const toast = this._toastService.showConfirmToast("Clear drawing?", "Clearing the drawing cannot be undone.", 1e4);
+          return (await toast).result;
+        }),
+        filter((result) => result === true)
+      ).subscribe(() => this._drawingService.clearImage());
+    }
+    async onDestroy() {
+      var _a2, _b2;
+      this._drawingService.lockManualClear(false);
+      (_a2 = this._clearButtonSubscription) == null ? void 0 : _a2.unsubscribe();
+      this._clearButtonSubscription = void 0;
+      (_b2 = this._clearLockedSubscription) == null ? void 0 : _b2.unsubscribe();
+      this._clearLockedSubscription = void 0;
+    }
+  };
+  __name(_DrawingClearLockFeature, "DrawingClearLockFeature");
+  let DrawingClearLockFeature = _DrawingClearLockFeature;
+  __decorateClass$n([
+    inject(ToastService)
+  ], DrawingClearLockFeature.prototype, "_toastService");
+  __decorateClass$n([
+    inject(ElementsSetup)
+  ], DrawingClearLockFeature.prototype, "_elementsSetup");
+  __decorateClass$n([
+    inject(DrawingService)
+  ], DrawingClearLockFeature.prototype, "_drawingService");
+  __decorateClass$n([
+    inject(LobbyService)
+  ], DrawingClearLockFeature.prototype, "_lobbyService");
   var __defProp$m = Object.defineProperty;
   var __decorateClass$m = /* @__PURE__ */ __name((decorators, target, key2, kind) => {
     var result = void 0;
