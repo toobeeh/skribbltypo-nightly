@@ -57756,16 +57756,24 @@ const _PressureInkMod = class _PressureInkMod extends ConstantDrawMod {
     __publicField(this, "icon", "var(--file-img-line-pressure-ink-gif)");
     __publicField(this, "name", "Pressure Ink");
     __publicField(this, "_brightnessEnabledSetting", new BooleanExtensionSetting("brushlab.pressureink.brightness", true).withName("Brightness").withDescription("Changes the luminance of the selected color depending on pressure."));
-    __publicField(this, "_brightnessAbsoluteSetting", new BooleanExtensionSetting("brushlab.pressureink.brightnessAbsolute", false).withName("Absolute Brightness").withDescription("When enabled, acts on the full brightness range, regardless of current color brightness."));
+    __publicField(this, "_brightnessAbsoluteSetting", new BooleanExtensionSetting("brushlab.pressureink.brightnessAbsolute", true).withName("Absolute Brightness").withDescription("When enabled, acts on the full brightness range, regardless of current color brightness."));
+    __publicField(this, "_brightnessInvertSetting", new BooleanExtensionSetting("brushlab.pressureink.brightnessInvert", false).withName("Invert Brightness Modification").withDescription("When enabled, the color will get darker the more pressure is applied."));
     __publicField(this, "_brightnessSensitivitySetting", new NumericExtensionSetting("brushlab.pressureink.brightnessSensitivity", 50).withName("Brightness Sensitivity").withDescription("Select how much the brightness changes with pressure.").withSlider(1).withBounds(0, 100));
+    __publicField(this, "_brightnessRangeSetting", new NumericExtensionSetting("brushlab.pressureink.brightnessRange", 80).withName("Brightness Pressure range").withDescription("A lower range will cut off low and high pressure, making it easier to use the full brightness range.").withSlider(1).withBounds(0, 100));
     __publicField(this, "_degreeEnabledSetting", new BooleanExtensionSetting("brushlab.pressureink.degree", false).withName("Color").withDescription("Changes the HUE of the selected color depending on pressure."));
     __publicField(this, "_degreeSensitivitySetting", new NumericExtensionSetting("brushlab.pressureink.degreeSensitivity", 50).withName("Color Sensitivity").withDescription("Select how much the color changes with pressure.").withSlider(1).withBounds(0, 100));
+    __publicField(this, "_degreeInvertSetting", new BooleanExtensionSetting("brushlab.pressureink.degreeInvert", false).withName("Invert Color Modification").withDescription("When enabled, the color will shift in the opposite direction when pressure is enabled."));
+    __publicField(this, "_degreeRangeSetting", new NumericExtensionSetting("brushlab.pressureink.degreeRange", 80).withName("Color Pressure range").withDescription("A lower range will cut off low and high pressure, making it easier to use the full color range.").withSlider(1).withBounds(0, 100));
     __publicField(this, "settings", [
       this._brightnessEnabledSetting,
-      this._brightnessSensitivitySetting,
-      this._brightnessAbsoluteSetting,
       this._degreeEnabledSetting,
-      this._degreeSensitivitySetting
+      this._brightnessAbsoluteSetting,
+      this._brightnessSensitivitySetting,
+      this._degreeSensitivitySetting,
+      this._brightnessRangeSetting,
+      this._degreeRangeSetting,
+      this._brightnessInvertSetting,
+      this._degreeInvertSetting
     ]);
   }
   async applyConstantEffect(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
@@ -57782,13 +57790,17 @@ const _PressureInkMod = class _PressureInkMod extends ConstantDrawMod {
     if (brightnessEnabled) {
       const brightnessSensitivity = await firstValueFrom(this._brightnessSensitivitySetting.changes$);
       const absoluteBrightness = await firstValueFrom(this._brightnessAbsoluteSetting.changes$);
-      const factor = (50 + brightnessSensitivity) / 100;
-      colorBase[2] = Math.round(absoluteBrightness ? Math.min(100, 100 * pressure * factor) : Math.min(colorBase[2] + 100 * pressure * factor, 100));
+      const brightnessInvert = await firstValueFrom(this._brightnessInvertSetting.changes$);
+      const brightnessRange = await firstValueFrom(this._brightnessRangeSetting.changes$);
+      const startValue = absoluteBrightness ? brightnessInvert ? 100 : 0 : colorBase[2];
+      const value = this.calculateAdjustedOffset(pressure, (50 + brightnessSensitivity) / 100, brightnessRange, brightnessInvert, 100, startValue);
+      colorBase[2] = Math.round(Math.max(0, Math.min(100, value)));
     }
     if (degreeEnabled) {
       const degreeSensitivity = await firstValueFrom(this._degreeSensitivitySetting.changes$);
-      const factor = (50 + degreeSensitivity) / 100;
-      colorBase[0] = Math.round((colorBase[0] + pressure * 360 * factor) % 360);
+      const degreeInvert = await firstValueFrom(this._degreeInvertSetting.changes$);
+      const degreeRange = await firstValueFrom(this._degreeRangeSetting.changes$);
+      colorBase[0] = Math.round(this.calculateAdjustedOffset(pressure, (50 + degreeSensitivity) / 100, degreeRange, degreeInvert, 360, colorBase[0]) % 360);
     }
     const color = Color.fromHsl(colorBase[0], colorBase[1], colorBase[2], colorBase[3]);
     style = {
@@ -57801,6 +57813,13 @@ const _PressureInkMod = class _PressureInkMod extends ConstantDrawMod {
       line,
       disableColorUpdate: true
     };
+  }
+  calculateAdjustedOffset(pressure, sensitivity, rangePercent, invert, base, startValue) {
+    const adjustedPressure = (pressure - (1 - rangePercent / 100) / 2) / (rangePercent / 100);
+    const pressureClamped = Math.max(0, Math.min(1, adjustedPressure));
+    const offset = pressureClamped * sensitivity * base;
+    const value = startValue + (invert ? -offset : offset);
+    return value;
   }
 };
 __name(_PressureInkMod, "PressureInkMod");
