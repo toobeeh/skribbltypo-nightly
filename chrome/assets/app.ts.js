@@ -20998,7 +20998,7 @@ function create_if_block$E(ctx) {
         ctx[0]
       );
       t1 = text("ms");
-      attr(div, "class", "typo-ping-info svelte-wetrhq");
+      attr(div, "class", "typo-ping-info svelte-1bj7vfk");
     },
     m(target, anchor) {
       insert(target, div, anchor);
