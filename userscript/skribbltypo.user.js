@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 43939b2
+// @version      27.1.3 beta-usc 47c42b8
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 43939b2", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 47c42b8", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -65521,6 +65521,16 @@ ${content2}</tr>
       );
     }
     __name(checkbox_checked_binding, "checkbox_checked_binding");
+    function change_handler() {
+      return (
+        /*change_handler*/
+        ctx[10](
+          /*key*/
+          ctx[12]
+        )
+      );
+    }
+    __name(change_handler, "change_handler");
     let checkbox_props = {
       description: (
         /*view*/
@@ -65550,11 +65560,7 @@ ${content2}</tr>
     }
     checkbox = new Checkbox({ props: checkbox_props });
     binding_callbacks.push(() => bind(checkbox, "checked", checkbox_checked_binding));
-    checkbox.$on(
-      "change",
-      /*change_handler*/
-      ctx[10]
-    );
+    checkbox.$on("change", change_handler);
     return {
       c() {
         create_component(checkbox.$$.fragment);
@@ -65780,11 +65786,10 @@ ${content2}</tr>
     component_subscribe($$self, rankingsStore, (value) => $$invalidate(2, $rankingsStore = value));
     const views = feature.getViewsWithKeys();
     const enabledViews = {};
-    const updateCategories = /* @__PURE__ */ __name(() => {
+    const updateCategories = /* @__PURE__ */ __name((key2) => {
       const enabledCategories = [];
-      for (const view of views) {
-        const enabled = enabledViews[view.key] === true;
-        if (enabled) enabledCategories.push(view.key);
+      for (const category of [...$categoriesStore, key2]) {
+        if (enabledViews[category] === true && views.some((view) => view.key === category) && !enabledCategories.includes(category)) enabledCategories.push(category);
       }
       set_store_value(categoriesStore, $categoriesStore = enabledCategories, $categoriesStore);
     }, "updateCategories");
@@ -65800,7 +65805,7 @@ ${content2}</tr>
       }
     }
     __name(checkbox_checked_binding, "checkbox_checked_binding");
-    const change_handler = /* @__PURE__ */ __name(() => updateCategories(), "change_handler");
+    const change_handler = /* @__PURE__ */ __name((key2) => updateCategories(key2), "change_handler");
     $$self.$$set = ($$props2) => {
       if ("feature" in $$props2) $$invalidate(7, feature = $$props2.feature);
     };

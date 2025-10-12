@@ -61910,6 +61910,16 @@ function create_each_block$c(ctx) {
     );
   }
   __name(checkbox_checked_binding, "checkbox_checked_binding");
+  function change_handler() {
+    return (
+      /*change_handler*/
+      ctx[10](
+        /*key*/
+        ctx[12]
+      )
+    );
+  }
+  __name(change_handler, "change_handler");
   let checkbox_props = {
     description: (
       /*view*/
@@ -61939,11 +61949,7 @@ function create_each_block$c(ctx) {
   }
   checkbox = new Checkbox({ props: checkbox_props });
   binding_callbacks.push(() => bind$1(checkbox, "checked", checkbox_checked_binding));
-  checkbox.$on(
-    "change",
-    /*change_handler*/
-    ctx[10]
-  );
+  checkbox.$on("change", change_handler);
   return {
     c() {
       create_component(checkbox.$$.fragment);
@@ -62169,11 +62175,10 @@ function instance$i($$self, $$props, $$invalidate) {
   component_subscribe($$self, rankingsStore, (value) => $$invalidate(2, $rankingsStore = value));
   const views = feature.getViewsWithKeys();
   const enabledViews = {};
-  const updateCategories = /* @__PURE__ */ __name(() => {
+  const updateCategories = /* @__PURE__ */ __name((key2) => {
     const enabledCategories = [];
-    for (const view of views) {
-      const enabled = enabledViews[view.key] === true;
-      if (enabled) enabledCategories.push(view.key);
+    for (const category of [...$categoriesStore, key2]) {
+      if (enabledViews[category] === true && views.some((view) => view.key === category) && !enabledCategories.includes(category)) enabledCategories.push(category);
     }
     set_store_value(categoriesStore, $categoriesStore = enabledCategories, $categoriesStore);
   }, "updateCategories");
@@ -62189,7 +62194,7 @@ function instance$i($$self, $$props, $$invalidate) {
     }
   }
   __name(checkbox_checked_binding, "checkbox_checked_binding");
-  const change_handler = /* @__PURE__ */ __name(() => updateCategories(), "change_handler");
+  const change_handler = /* @__PURE__ */ __name((key2) => updateCategories(key2), "change_handler");
   $$self.$$set = ($$props2) => {
     if ("feature" in $$props2) $$invalidate(7, feature = $$props2.feature);
   };
