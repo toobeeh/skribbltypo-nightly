@@ -59947,7 +59947,7 @@ const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
     "Score Ranking",
     "The total ranking, progressing over time",
     (event) => event.score
-  ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts"),
+  ).withYLabels(yLabelIncrements(500, "pts")).withMetricUnit("pts").withOrdering("maxValue"),
   finalStandings: new MetricView(
     "Final Score Ranking",
     "The final ranking of the lobby leaderboard",
@@ -59962,7 +59962,7 @@ const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
     "Completion Time",
     "The time a player needed to guess the word, or until everyone guessed the drawing, progressing over time",
     (event) => millisAsSeconds(event.completionTimeMs)
-  ).withYLabels(yLabelIncrements(10, "s")).withMetricUnit("s").withAggregation("single"),
+  ).withYLabels(yLabelIncrements(10, "s")).withMetricUnit("s").withOrdering("minValue").withAggregation("single"),
   averageGuessTime: new MetricView(
     "Average Guess Time",
     "The average time a player needed to guess a word",
@@ -59977,7 +59977,7 @@ const createMetricViews = /* @__PURE__ */ __name(() => Object.freeze({
     "Average Guess Speed",
     "The average time between guesses a player sent",
     (event) => millisAsSeconds(event.gapTimeMs)
-  ).withYLabels(yLabelIncrements(5, "s")).withMetricUnit("s").withAggregation("average"),
+  ).withYLabels(yLabelIncrements(5, "s")).withMetricUnit("s").withAggregation("average").withOrdering("minValue"),
   averageNeededGuesses: new MetricView(
     "Average Guesses Needed",
     "The average number of guesses a player needed to guess a word",
@@ -60828,40 +60828,40 @@ __name(_Chart, "Chart");
 let Chart = _Chart;
 function get_each_context$d(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[26] = list[i];
+  child_ctx[27] = list[i];
   return child_ctx;
 }
 __name(get_each_context$d, "get_each_context$d");
 function get_each_context_1$1(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[29] = list[i];
+  child_ctx[30] = list[i];
   return child_ctx;
 }
 __name(get_each_context_1$1, "get_each_context_1$1");
 function get_each_context_2(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[32] = list[i];
+  child_ctx[33] = list[i];
   return child_ctx;
 }
 __name(get_each_context_2, "get_each_context_2");
 function get_each_context_3(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[35] = list[i];
-  child_ctx[36] = list;
-  child_ctx[37] = i;
+  child_ctx[36] = list[i];
+  child_ctx[37] = list;
+  child_ctx[38] = i;
   return child_ctx;
 }
 __name(get_each_context_3, "get_each_context_3");
 function get_each_context_4(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[38] = list[i];
-  child_ctx[40] = i;
+  child_ctx[39] = list[i];
+  child_ctx[41] = i;
   return child_ctx;
 }
 __name(get_each_context_4, "get_each_context_4");
 function get_each_context_5(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[41] = list[i];
+  child_ctx[42] = list[i];
   return child_ctx;
 }
 __name(get_each_context_5, "get_each_context_5");
@@ -60869,7 +60869,7 @@ function create_each_block_5(ctx) {
   let option;
   let t0_value = (
     /*key*/
-    ctx[41][1].name + ""
+    ctx[42][1].name + ""
   );
   let t0;
   let t1;
@@ -60881,10 +60881,10 @@ function create_each_block_5(ctx) {
       t0 = text(t0_value);
       t1 = space();
       option.__value = option_value_value = /*key*/
-      ctx[41][0];
+      ctx[42][0];
       set_input_value(option, option.__value);
       option.selected = option_selected_value = /*key*/
-      ctx[41][0] === /*selectedArchiveKey*/
+      ctx[42][0] === /*selectedArchiveKey*/
       ctx[3];
     },
     m(target, anchor) {
@@ -60895,16 +60895,16 @@ function create_each_block_5(ctx) {
     p(ctx2, dirty) {
       if (dirty[0] & /*$archive*/
       128 && t0_value !== (t0_value = /*key*/
-      ctx2[41][1].name + "")) set_data(t0, t0_value);
+      ctx2[42][1].name + "")) set_data(t0, t0_value);
       if (dirty[0] & /*$archive*/
       128 && option_value_value !== (option_value_value = /*key*/
-      ctx2[41][0])) {
+      ctx2[42][0])) {
         option.__value = option_value_value;
         set_input_value(option, option.__value);
       }
       if (dirty[0] & /*$archive, selectedArchiveKey*/
       136 && option_selected_value !== (option_selected_value = /*key*/
-      ctx2[41][0] === /*selectedArchiveKey*/
+      ctx2[42][0] === /*selectedArchiveKey*/
       ctx2[3])) {
         option.selected = option_selected_value;
       }
@@ -60921,7 +60921,7 @@ function create_each_block_4(ctx) {
   let option;
   let t0_value = (
     /*view*/
-    ctx[38].name + ""
+    ctx[39].name + ""
   );
   let t0;
   let t1;
@@ -60932,10 +60932,10 @@ function create_each_block_4(ctx) {
       t0 = text(t0_value);
       t1 = space();
       option.__value = /*index*/
-      ctx[40];
+      ctx[41];
       set_input_value(option, option.__value);
       option.selected = option_selected_value = /*view*/
-      ctx[38] === /*views*/
+      ctx[39] === /*views*/
       ctx[8][
         /*selectedViewIndex*/
         ctx[2]
@@ -60949,7 +60949,7 @@ function create_each_block_4(ctx) {
     p(ctx2, dirty) {
       if (dirty[0] & /*selectedViewIndex*/
       4 && option_selected_value !== (option_selected_value = /*view*/
-      ctx2[38] === /*views*/
+      ctx2[39] === /*views*/
       ctx2[8][
         /*selectedViewIndex*/
         ctx2[2]
@@ -60970,31 +60970,31 @@ function create_each_block_3(ctx) {
   let updating_checked;
   let current;
   function checkbox_checked_binding(value) {
-    ctx[19](
+    ctx[20](
       value,
       /*player*/
-      ctx[35]
+      ctx[36]
     );
   }
   __name(checkbox_checked_binding, "checkbox_checked_binding");
   let checkbox_props = {
     description: (
       /*player*/
-      ctx[35].name + " (#" + /*player*/
-      ctx[35].id + ")"
+      ctx[36].name + " (#" + /*player*/
+      ctx[36].id + ")"
     )
   };
   if (
     /*selectedPlayers*/
     ctx[5][
       /*player*/
-      ctx[35].id
+      ctx[36].id
     ] !== void 0
   ) {
     checkbox_props.checked = /*selectedPlayers*/
     ctx[5][
       /*player*/
-      ctx[35].id
+      ctx[36].id
     ];
   }
   checkbox = new Checkbox({ props: checkbox_props });
@@ -61002,7 +61002,7 @@ function create_each_block_3(ctx) {
   checkbox.$on(
     "change",
     /*change_handler_2*/
-    ctx[20]
+    ctx[21]
   );
   return {
     c() {
@@ -61017,15 +61017,15 @@ function create_each_block_3(ctx) {
       const checkbox_changes = {};
       if (dirty[0] & /*availablePlayers*/
       16) checkbox_changes.description = /*player*/
-      ctx[35].name + " (#" + /*player*/
-      ctx[35].id + ")";
+      ctx[36].name + " (#" + /*player*/
+      ctx[36].id + ")";
       if (!updating_checked && dirty[0] & /*selectedPlayers, availablePlayers*/
       48) {
         updating_checked = true;
         checkbox_changes.checked = /*selectedPlayers*/
         ctx[5][
           /*player*/
-          ctx[35].id
+          ctx[36].id
         ];
         add_flush_callback(() => updating_checked = false);
       }
@@ -61090,7 +61090,7 @@ function create_if_block$9(ctx) {
   flatbutton0.$on(
     "click",
     /*click_handler*/
-    ctx[21]
+    ctx[22]
   );
   flatbutton1 = new Flat_button({
     props: {
@@ -61101,7 +61101,7 @@ function create_if_block$9(ctx) {
   flatbutton1.$on(
     "click",
     /*click_handler_1*/
-    ctx[22]
+    ctx[23]
   );
   let each_value_2 = ensure_array_like(
     /*selectedTableData*/
@@ -61246,7 +61246,7 @@ function create_each_block_2(ctx) {
   let th;
   let t_value = (
     /*header*/
-    ctx[32] + ""
+    ctx[33] + ""
   );
   let t;
   return {
@@ -61262,7 +61262,7 @@ function create_each_block_2(ctx) {
     p(ctx2, dirty) {
       if (dirty[0] & /*selectedTableData*/
       64 && t_value !== (t_value = /*header*/
-      ctx2[32] + "")) set_data(t, t_value);
+      ctx2[33] + "")) set_data(t, t_value);
     },
     d(detaching) {
       if (detaching) {
@@ -61276,7 +61276,7 @@ function create_each_block_1$1(ctx) {
   let td;
   let t_value = (
     /*cell*/
-    ctx[29] + ""
+    ctx[30] + ""
   );
   let t;
   return {
@@ -61292,7 +61292,7 @@ function create_each_block_1$1(ctx) {
     p(ctx2, dirty) {
       if (dirty[0] & /*selectedTableData*/
       64 && t_value !== (t_value = /*cell*/
-      ctx2[29] + "")) set_data(t, t_value);
+      ctx2[30] + "")) set_data(t, t_value);
     },
     d(detaching) {
       if (detaching) {
@@ -61307,7 +61307,7 @@ function create_each_block$d(ctx) {
   let t;
   let each_value_1 = ensure_array_like(
     /*row*/
-    ctx[26]
+    ctx[27]
   );
   let each_blocks = [];
   for (let i = 0; i < each_value_1.length; i += 1) {
@@ -61336,7 +61336,7 @@ function create_each_block$d(ctx) {
       64) {
         each_value_1 = ensure_array_like(
           /*row*/
-          ctx2[26]
+          ctx2[27]
         );
         let i;
         for (i = 0; i < each_value_1.length; i += 1) {
@@ -61476,7 +61476,7 @@ function create_fragment$k(ctx) {
         ctx[3] === void 0
       ) add_render_callback(() => (
         /*select0_change_handler*/
-        ctx[14].call(select0)
+        ctx[15].call(select0)
       ));
       attr(label1, "for", "typo-stats-view");
       attr(label1, "class", "svelte-10kahpp");
@@ -61486,7 +61486,7 @@ function create_fragment$k(ctx) {
         ctx[2] === void 0
       ) add_render_callback(() => (
         /*select1_change_handler*/
-        ctx[16].call(select1)
+        ctx[17].call(select1)
       ));
       attr(div0, "class", "typo-stats-chart-selection svelte-10kahpp");
       attr(canvas_1, "class", "svelte-10kahpp");
@@ -61538,7 +61538,7 @@ function create_fragment$k(ctx) {
       );
       append(div3, t8);
       append(div3, canvas_1);
-      ctx[18](canvas_1);
+      ctx[19](canvas_1);
       append(div3, t9);
       append(div3, div1);
       for (let i = 0; i < each_blocks.length; i += 1) {
@@ -61556,25 +61556,25 @@ function create_fragment$k(ctx) {
             select0,
             "change",
             /*select0_change_handler*/
-            ctx[14]
+            ctx[15]
           ),
           listen(
             select0,
             "change",
             /*change_handler*/
-            ctx[15]
-          ),
-          listen(
-            select1,
-            "change",
-            /*select1_change_handler*/
             ctx[16]
           ),
           listen(
             select1,
             "change",
-            /*change_handler_1*/
+            /*select1_change_handler*/
             ctx[17]
+          ),
+          listen(
+            select1,
+            "change",
+            /*change_handler_1*/
+            ctx[18]
           )
         ];
         mounted = true;
@@ -61723,7 +61723,7 @@ function create_fragment$k(ctx) {
       }
       destroy_each(each_blocks_2, detaching);
       destroy_each(each_blocks_1, detaching);
-      ctx[18](null);
+      ctx[19](null);
       destroy_each(each_blocks, detaching);
       if_blocks[current_block_type_index].d();
       mounted = false;
@@ -61737,17 +61737,18 @@ function instance$j($$self, $$props, $$invalidate) {
   let $lobby;
   let $seenPlayers;
   let { feature } = $$props;
+  let { defaultArchiveKey = "" } = $$props;
   let canvas;
   let chart;
   const views = feature.getViews();
   const lobby = feature.lobbyStore;
-  component_subscribe($$self, lobby, (value) => $$invalidate(24, $lobby = value));
+  component_subscribe($$self, lobby, (value) => $$invalidate(25, $lobby = value));
   const archive = feature.archiveStore;
   component_subscribe($$self, archive, (value) => $$invalidate(7, $archive = value));
   const seenPlayers = feature.seenPlayersStore;
-  component_subscribe($$self, seenPlayers, (value) => $$invalidate(25, $seenPlayers = value));
+  component_subscribe($$self, seenPlayers, (value) => $$invalidate(26, $seenPlayers = value));
   let selectedViewIndex = 0;
-  let selectedArchiveKey = "";
+  let selectedArchiveKey = defaultArchiveKey;
   let availablePlayers = [];
   let selectedPlayers = {};
   let selectedTableData = [];
@@ -61850,6 +61851,7 @@ function instance$j($$self, $$props, $$invalidate) {
   }, "click_handler_1");
   $$self.$$set = ($$props2) => {
     if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    if ("defaultArchiveKey" in $$props2) $$invalidate(14, defaultArchiveKey = $$props2.defaultArchiveKey);
   };
   return [
     feature,
@@ -61866,6 +61868,7 @@ function instance$j($$self, $$props, $$invalidate) {
     seenPlayers,
     updatePlayerSelection,
     updateChart,
+    defaultArchiveKey,
     select0_change_handler,
     change_handler,
     select1_change_handler,
@@ -61881,7 +61884,7 @@ __name(instance$j, "instance$j");
 const _Charts = class _Charts extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$j, create_fragment$k, safe_not_equal, { feature: 0 }, null, [-1, -1]);
+    init(this, options, instance$j, create_fragment$k, safe_not_equal, { feature: 0, defaultArchiveKey: 14 }, null, [-1, -1]);
   }
 };
 __name(_Charts, "Charts");
@@ -62232,7 +62235,7 @@ __name(_Lobby_stats_manage, "Lobby_stats_manage");
 let Lobby_stats_manage = _Lobby_stats_manage;
 function get_each_context$b(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[5] = list[i];
+  child_ctx[7] = list[i];
   return child_ctx;
 }
 __name(get_each_context$b, "get_each_context$b");
@@ -62241,9 +62244,9 @@ function create_if_block$8(ctx) {
   let b;
   let t0_value = (
     /*summaries*/
-    ctx[0][
+    ctx[1][
       /*summaryIndex*/
-      ctx[1]
+      ctx[3]
     ].name + ""
   );
   let t0;
@@ -62254,9 +62257,9 @@ function create_if_block$8(ctx) {
   function select_block_type(ctx2, dirty) {
     if (
       /*summaries*/
-      ctx2[0][
+      ctx2[1][
         /*summaryIndex*/
-        ctx2[1]
+        ctx2[3]
       ].summary.length > 0
     ) return create_if_block_2$1;
     return create_else_block$4;
@@ -62266,7 +62269,7 @@ function create_if_block$8(ctx) {
   let if_block0 = current_block_type(ctx);
   let if_block1 = (
     /*summaries*/
-    ctx[0].length > 1 && create_if_block_1$3(ctx)
+    ctx[1].length > 1 && create_if_block_1$3(ctx)
   );
   return {
     c() {
@@ -62293,10 +62296,10 @@ function create_if_block$8(ctx) {
     },
     p(ctx2, dirty) {
       if ((!current || dirty & /*summaries, summaryIndex*/
-      3) && t0_value !== (t0_value = /*summaries*/
-      ctx2[0][
+      10) && t0_value !== (t0_value = /*summaries*/
+      ctx2[1][
         /*summaryIndex*/
-        ctx2[1]
+        ctx2[3]
       ].name + "")) set_data(t0, t0_value);
       if (current_block_type === (current_block_type = select_block_type(ctx2)) && if_block0) {
         if_block0.p(ctx2, dirty);
@@ -62310,12 +62313,12 @@ function create_if_block$8(ctx) {
       }
       if (
         /*summaries*/
-        ctx2[0].length > 1
+        ctx2[1].length > 1
       ) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
           if (dirty & /*summaries*/
-          1) {
+          2) {
             transition_in(if_block1, 1);
           }
         } else {
@@ -62376,9 +62379,9 @@ function create_if_block_2$1(ctx) {
   let ol;
   let each_value = ensure_array_like(
     /*summaries*/
-    ctx[0][
+    ctx[1][
       /*summaryIndex*/
-      ctx[1]
+      ctx[3]
     ].summary
   );
   let each_blocks = [];
@@ -62391,7 +62394,7 @@ function create_if_block_2$1(ctx) {
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
       }
-      attr(ol, "class", "svelte-1l9nygl");
+      attr(ol, "class", "svelte-13zbhcg");
     },
     m(target, anchor) {
       insert(target, ol, anchor);
@@ -62403,12 +62406,12 @@ function create_if_block_2$1(ctx) {
     },
     p(ctx2, dirty) {
       if (dirty & /*summaries, summaryIndex*/
-      3) {
+      10) {
         each_value = ensure_array_like(
           /*summaries*/
-          ctx2[0][
+          ctx2[1][
             /*summaryIndex*/
-            ctx2[1]
+            ctx2[3]
           ].summary
         );
         let i;
@@ -62441,21 +62444,21 @@ function create_each_block$b(ctx) {
   let li;
   let t0_value = (
     /*entry*/
-    ctx[5].player + ""
+    ctx[7].player + ""
   );
   let t0;
   let t1;
   let t2_value = (
     /*entry*/
-    ctx[5].result.toFixed(
+    ctx[7].result.toFixed(
       /*entry*/
-      ctx[5].result < 100 ? 1 : 0
+      ctx[7].result < 100 ? 1 : 0
     ) + ""
   );
   let t2;
   let t3_value = (
     /*entry*/
-    (ctx[5].unit ?? "") + ""
+    (ctx[7].unit ?? "") + ""
   );
   let t3;
   return {
@@ -62465,7 +62468,7 @@ function create_each_block$b(ctx) {
       t1 = text(": ");
       t2 = text(t2_value);
       t3 = text(t3_value);
-      attr(li, "class", "svelte-1l9nygl");
+      attr(li, "class", "svelte-13zbhcg");
     },
     m(target, anchor) {
       insert(target, li, anchor);
@@ -62476,17 +62479,17 @@ function create_each_block$b(ctx) {
     },
     p(ctx2, dirty) {
       if (dirty & /*summaries, summaryIndex*/
-      3 && t0_value !== (t0_value = /*entry*/
-      ctx2[5].player + "")) set_data(t0, t0_value);
+      10 && t0_value !== (t0_value = /*entry*/
+      ctx2[7].player + "")) set_data(t0, t0_value);
       if (dirty & /*summaries, summaryIndex*/
-      3 && t2_value !== (t2_value = /*entry*/
-      ctx2[5].result.toFixed(
+      10 && t2_value !== (t2_value = /*entry*/
+      ctx2[7].result.toFixed(
         /*entry*/
-        ctx2[5].result < 100 ? 1 : 0
+        ctx2[7].result < 100 ? 1 : 0
       ) + "")) set_data(t2, t2_value);
       if (dirty & /*summaries, summaryIndex*/
-      3 && t3_value !== (t3_value = /*entry*/
-      (ctx2[5].unit ?? "") + "")) set_data(t3, t3_value);
+      10 && t3_value !== (t3_value = /*entry*/
+      (ctx2[7].unit ?? "") + "")) set_data(t3, t3_value);
     },
     d(detaching) {
       if (detaching) {
@@ -62497,23 +62500,28 @@ function create_each_block$b(ctx) {
 }
 __name(create_each_block$b, "create_each_block$b");
 function create_if_block_1$3(ctx) {
-  let div;
+  let div3;
+  let div0;
   let iconbutton0;
   let t0;
-  let span;
-  let t1_value = (
-    /*summaryIndex*/
-    ctx[1] + 1 + ""
-  );
-  let t1;
-  let t2;
-  let t3_value = (
-    /*summaries*/
-    ctx[0].length + ""
-  );
-  let t3;
-  let t4;
+  let div1;
   let iconbutton1;
+  let t1;
+  let span;
+  let t2_value = (
+    /*summaryIndex*/
+    ctx[3] + 1 + ""
+  );
+  let t2;
+  let t3;
+  let t4_value = (
+    /*summaries*/
+    ctx[1].length + ""
+  );
+  let t4;
+  let t5;
+  let div2;
+  let iconbutton2;
   let current;
   iconbutton0 = new Icon_button({
     props: {
@@ -62523,14 +62531,14 @@ function create_if_block_1$3(ctx) {
       hoverMove: false,
       disabled: (
         /*summaryIndex*/
-        ctx[1] <= 0
+        ctx[3] <= 0
       )
     }
   });
   iconbutton0.$on(
     "click",
     /*click_handler*/
-    ctx[3]
+    ctx[4]
   );
   iconbutton1 = new Icon_button({
     props: {
@@ -62540,77 +62548,106 @@ function create_if_block_1$3(ctx) {
       hoverMove: false,
       disabled: (
         /*summaryIndex*/
-        ctx[1] >= /*summaries*/
-        ctx[0].length - 1
+        ctx[3] >= /*summaries*/
+        ctx[1].length - 1
       )
     }
   });
   iconbutton1.$on(
     "click",
     /*click_handler_1*/
-    ctx[4]
+    ctx[5]
+  );
+  iconbutton2 = new Icon_button({
+    props: {
+      icon: "file-img-chart-gif",
+      name: "View All Stats",
+      size: "1.5rem",
+      hoverMove: false
+    }
+  });
+  iconbutton2.$on(
+    "click",
+    /*click_handler_2*/
+    ctx[6]
   );
   return {
     c() {
-      div = element$1("div");
+      div3 = element$1("div");
+      div0 = element$1("div");
       create_component(iconbutton0.$$.fragment);
       t0 = space();
-      span = element$1("span");
-      t1 = text(t1_value);
-      t2 = text(" / ");
-      t3 = text(t3_value);
-      t4 = space();
+      div1 = element$1("div");
       create_component(iconbutton1.$$.fragment);
-      attr(div, "class", "chat-summary-stats-nav svelte-1l9nygl");
+      t1 = space();
+      span = element$1("span");
+      t2 = text(t2_value);
+      t3 = text(" / ");
+      t4 = text(t4_value);
+      t5 = space();
+      div2 = element$1("div");
+      create_component(iconbutton2.$$.fragment);
+      attr(div0, "class", "chat-summary-stats-nav-arrow svelte-13zbhcg");
+      attr(div1, "class", "chat-summary-stats-nav-arrow svelte-13zbhcg");
+      attr(div2, "class", "svelte-13zbhcg");
+      attr(div3, "class", "chat-summary-stats-nav svelte-13zbhcg");
     },
     m(target, anchor) {
-      insert(target, div, anchor);
-      mount_component(iconbutton0, div, null);
-      append(div, t0);
-      append(div, span);
-      append(span, t1);
+      insert(target, div3, anchor);
+      append(div3, div0);
+      mount_component(iconbutton0, div0, null);
+      append(div3, t0);
+      append(div3, div1);
+      mount_component(iconbutton1, div1, null);
+      append(div3, t1);
+      append(div3, span);
       append(span, t2);
       append(span, t3);
-      append(div, t4);
-      mount_component(iconbutton1, div, null);
+      append(span, t4);
+      append(div3, t5);
+      append(div3, div2);
+      mount_component(iconbutton2, div2, null);
       current = true;
     },
     p(ctx2, dirty) {
       const iconbutton0_changes = {};
       if (dirty & /*summaryIndex*/
-      2) iconbutton0_changes.disabled = /*summaryIndex*/
-      ctx2[1] <= 0;
+      8) iconbutton0_changes.disabled = /*summaryIndex*/
+      ctx2[3] <= 0;
       iconbutton0.$set(iconbutton0_changes);
-      if ((!current || dirty & /*summaryIndex*/
-      2) && t1_value !== (t1_value = /*summaryIndex*/
-      ctx2[1] + 1 + "")) set_data(t1, t1_value);
-      if ((!current || dirty & /*summaries*/
-      1) && t3_value !== (t3_value = /*summaries*/
-      ctx2[0].length + "")) set_data(t3, t3_value);
       const iconbutton1_changes = {};
       if (dirty & /*summaryIndex, summaries*/
-      3) iconbutton1_changes.disabled = /*summaryIndex*/
-      ctx2[1] >= /*summaries*/
-      ctx2[0].length - 1;
+      10) iconbutton1_changes.disabled = /*summaryIndex*/
+      ctx2[3] >= /*summaries*/
+      ctx2[1].length - 1;
       iconbutton1.$set(iconbutton1_changes);
+      if ((!current || dirty & /*summaryIndex*/
+      8) && t2_value !== (t2_value = /*summaryIndex*/
+      ctx2[3] + 1 + "")) set_data(t2, t2_value);
+      if ((!current || dirty & /*summaries*/
+      2) && t4_value !== (t4_value = /*summaries*/
+      ctx2[1].length + "")) set_data(t4, t4_value);
     },
     i(local) {
       if (current) return;
       transition_in(iconbutton0.$$.fragment, local);
       transition_in(iconbutton1.$$.fragment, local);
+      transition_in(iconbutton2.$$.fragment, local);
       current = true;
     },
     o(local) {
       transition_out(iconbutton0.$$.fragment, local);
       transition_out(iconbutton1.$$.fragment, local);
+      transition_out(iconbutton2.$$.fragment, local);
       current = false;
     },
     d(detaching) {
       if (detaching) {
-        detach(div);
+        detach(div3);
       }
       destroy_component(iconbutton0);
       destroy_component(iconbutton1);
+      destroy_component(iconbutton2);
     }
   };
 }
@@ -62622,7 +62659,7 @@ function create_fragment$i(ctx) {
   let current;
   let if_block = (
     /*summaries*/
-    ctx[0].length > 0 && create_if_block$8(ctx)
+    ctx[1].length > 0 && create_if_block$8(ctx)
   );
   return {
     c() {
@@ -62631,8 +62668,8 @@ function create_fragment$i(ctx) {
       b.textContent = "Lobby Stats Summary";
       t1 = space();
       if (if_block) if_block.c();
-      attr(b, "class", "svelte-1l9nygl");
-      attr(div, "class", "typo-chat-summary-stats svelte-1l9nygl");
+      attr(b, "class", "svelte-13zbhcg");
+      attr(div, "class", "typo-chat-summary-stats svelte-13zbhcg");
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -62644,12 +62681,12 @@ function create_fragment$i(ctx) {
     p(ctx2, [dirty]) {
       if (
         /*summaries*/
-        ctx2[0].length > 0
+        ctx2[1].length > 0
       ) {
         if (if_block) {
           if_block.p(ctx2, dirty);
           if (dirty & /*summaries*/
-          1) {
+          2) {
             transition_in(if_block, 1);
           }
         } else {
@@ -62687,20 +62724,35 @@ __name(create_fragment$i, "create_fragment$i");
 function instance$h($$self, $$props, $$invalidate) {
   let { feature } = $$props;
   let { summaries } = $$props;
+  let { summaryArchiveKey } = $$props;
   let summaryIndex = 0;
-  const click_handler2 = /* @__PURE__ */ __name(() => $$invalidate(1, summaryIndex--, summaryIndex), "click_handler");
-  const click_handler_1 = /* @__PURE__ */ __name(() => $$invalidate(1, summaryIndex++, summaryIndex), "click_handler_1");
+  const click_handler2 = /* @__PURE__ */ __name(() => $$invalidate(3, summaryIndex--, summaryIndex), "click_handler");
+  const click_handler_1 = /* @__PURE__ */ __name(() => $$invalidate(3, summaryIndex++, summaryIndex), "click_handler_1");
+  const click_handler_2 = /* @__PURE__ */ __name(() => feature.openStatsPopup(summaryArchiveKey), "click_handler_2");
   $$self.$$set = ($$props2) => {
-    if ("feature" in $$props2) $$invalidate(2, feature = $$props2.feature);
-    if ("summaries" in $$props2) $$invalidate(0, summaries = $$props2.summaries);
+    if ("feature" in $$props2) $$invalidate(0, feature = $$props2.feature);
+    if ("summaries" in $$props2) $$invalidate(1, summaries = $$props2.summaries);
+    if ("summaryArchiveKey" in $$props2) $$invalidate(2, summaryArchiveKey = $$props2.summaryArchiveKey);
   };
-  return [summaries, summaryIndex, feature, click_handler2, click_handler_1];
+  return [
+    feature,
+    summaries,
+    summaryArchiveKey,
+    summaryIndex,
+    click_handler2,
+    click_handler_1,
+    click_handler_2
+  ];
 }
 __name(instance$h, "instance$h");
 const _Chat_summary_stats = class _Chat_summary_stats extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$h, create_fragment$i, safe_not_equal, { feature: 2, summaries: 0 });
+    init(this, options, instance$h, create_fragment$i, safe_not_equal, {
+      feature: 0,
+      summaries: 1,
+      summaryArchiveKey: 2
+    });
   }
 };
 __name(_Chat_summary_stats, "Chat_summary_stats");
@@ -62852,6 +62904,16 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
     this._quickAccessSettingSubscription = void 0;
     this.removeQuickAccessIcon();
   }
+  openStatsPopup(defaultArchiveKey) {
+    const popupComponent = {
+      componentType: Charts,
+      props: {
+        feature: this,
+        defaultArchiveKey
+      }
+    };
+    this._modalService.showModal(popupComponent.componentType, popupComponent.props, "Lobby Statistics", "card");
+  }
   async summarizeGameInChat(archiveEntry) {
     this._logger.debug("summarizeGameInChat", archiveEntry);
     const categories = await this._chatSummarizeMetricCategories.getValue();
@@ -62875,7 +62937,8 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
       target: messageElements.wrapperElement,
       props: {
         feature: this,
-        summaries: selectedViews
+        summaries: selectedViews,
+        summaryArchiveKey: archiveEntry.key
       }
     });
     if (isScrolledDown) await this._chatService.scrollToBottom();
@@ -62894,15 +62957,7 @@ const _LobbyStatisticsFeature = class _LobbyStatisticsFeature extends TypoFeatur
         tooltipAction: this.createTooltip
       }
     });
-    this._iconClickSubscription = this._iconComponent.click$.subscribe(async () => {
-      const popupComponent = {
-        componentType: Charts,
-        props: {
-          feature: this
-        }
-      };
-      this._modalService.showModal(popupComponent.componentType, popupComponent.props, "Lobby Statistics", "card");
-    });
+    this._iconClickSubscription = this._iconComponent.click$.subscribe(() => this.openStatsPopup());
   }
   removeQuickAccessIcon() {
     var _a2, _b2;
