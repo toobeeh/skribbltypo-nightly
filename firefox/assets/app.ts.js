@@ -32595,15 +32595,6 @@ var __decorateClass$O = /* @__PURE__ */ __name((decorators, target, key2, kind) 
   return result;
 }, "__decorateClass$O");
 let TypoDrawMod = (_ya = class {
-  constructor() {
-    /**
-     * Indicator if this mod requires the skribbl sampling throttle to be disabled
-     * Needs to be set true if the mod produces many draw commands in a short time
-     * TODO remove? seems unused
-     * @deprecated
-     */
-    __publicField(this, "disableSkribblSamplingRate", false);
-  }
   noLineEffect(line, pressure, brushStyle) {
     return { lines: [line], style: brushStyle };
   }
@@ -33009,7 +33000,7 @@ let ToolsService = (_za = class {
   async processDrawCoordinates(start, end, cause, tool, mods, style, strokeId, secondaryActive) {
     this._logger.debug("Activating tool and applying mods", start, end, mods, tool);
     const eventId = Date.now();
-    let lines = [{
+    let effects = [{
       effect: {
         line: {
           from: [start[0], start[1]],
@@ -33022,24 +33013,25 @@ let ToolsService = (_za = class {
     const pressure = end[2];
     let currentStrokeId = strokeId;
     for (const mod of mods) {
-      const modLines = [];
-      for (const line of lines) {
-        const effect = await mod.applyEffect(line.effect.line, pressure, line.effect.style, eventId, line.strokeId, cause, secondaryActive);
-        const constantEffects = effect.lines.map((l) => ({
+      const modeEffects = [];
+      for (const effect of effects) {
+        const newEffect = await mod.applyEffect(effect.effect.line, pressure, effect.effect.style, eventId, effect.strokeId, cause, secondaryActive);
+        const constantEffects = newEffect.lines.map((l) => ({
           line: structuredClone(l),
-          style: structuredClone(effect.style),
-          disableColorUpdate: effect.disableColorUpdate,
-          disableSizeUpdate: effect.disableSizeUpdate
-        })).map((effect2, i) => ({
-          effect: effect2,
-          strokeId: i === 0 ? line.strokeId : ++currentStrokeId
+          style: structuredClone(newEffect.style),
+          disableColorUpdate: newEffect.disableColorUpdate ?? effect.effect.disableColorUpdate,
+          /* inherit if not changed */
+          disableSizeUpdate: newEffect.disableSizeUpdate ?? effect.effect.disableSizeUpdate
+        })).map((e, i) => ({
+          effect: e,
+          strokeId: i === 0 ? effect.strokeId : ++currentStrokeId
         }));
-        modLines.push(...constantEffects);
+        modeEffects.push(...constantEffects);
         this._logger.debug("Mod applied", mod);
       }
-      lines = modLines;
+      effects = modeEffects;
     }
-    const lastEffect = lines[lines.length - 1].effect;
+    const lastEffect = effects[effects.length - 1].effect;
     const disableSizeUpdate = lastEffect.disableSizeUpdate ?? false;
     const disableColorUpdate = lastEffect.disableColorUpdate ?? false;
     if (!disableSizeUpdate && lastEffect.style.size !== style.size) {
@@ -33056,9 +33048,9 @@ let ToolsService = (_za = class {
     }
     const commands = [];
     if (tool instanceof TypoDrawTool) {
-      for (const line of lines) {
-        const lineCoords = { from: [Math.floor(line.effect.line.from[0]), Math.floor(line.effect.line.from[1])], to: [Math.floor(line.effect.line.to[0]), Math.floor(line.effect.line.to[1])] };
-        const lineCommands = await tool.createCommands(lineCoords, pressure, line.effect.style, eventId, line.strokeId, cause, secondaryActive);
+      for (const effect of effects) {
+        const lineCoords = { from: [Math.floor(effect.effect.line.from[0]), Math.floor(effect.effect.line.from[1])], to: [Math.floor(effect.effect.line.to[0]), Math.floor(effect.effect.line.to[1])] };
+        const lineCommands = await tool.createCommands(lineCoords, pressure, effect.effect.style, eventId, effect.strokeId, cause, secondaryActive);
         if (lineCommands.length > 0) {
           commands.push(...lineCommands);
           this._logger.debug("Adding commands created by tool", tool, commands);
@@ -33067,22 +33059,22 @@ let ToolsService = (_za = class {
         }
       }
     } else if (tool === skribblTool.brush) {
-      for (const line of lines) {
-        const color = secondaryActive ? line.effect.style.secondaryColor : line.effect.style.color;
+      for (const effect of effects) {
+        const color = secondaryActive ? effect.effect.style.secondaryColor : effect.effect.style.color;
         const lineCommand = this._drawingService.createLineCommand(
-          [...line.effect.line.from, ...line.effect.line.to],
+          [...effect.effect.line.from, ...effect.effect.line.to],
           color,
-          line.effect.style.size,
+          effect.effect.style.size,
           false
         );
         if (lineCommand !== void 0) commands.push(lineCommand);
       }
     } else if (tool === skribblTool.fill) {
       if (cause === "down") {
-        for (const line of lines) {
+        for (const effect of effects) {
           const pointCommand = this._drawingService.createFillCommand(
-            [...line.effect.line.from],
-            line.effect.style.color
+            [...effect.effect.line.from],
+            effect.effect.style.color
           );
           commands.push(pointCommand);
         }
@@ -58786,9 +58778,9 @@ function create_each_block_3$1(ctx) {
         ctx[18].item.icon
       );
       attr(img, "alt", "icon");
-      attr(img, "class", "svelte-15vhuqn");
-      attr(b, "class", "svelte-15vhuqn");
-      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
+      attr(img, "class", "svelte-fdmon8");
+      attr(b, "class", "svelte-fdmon8");
+      attr(div, "class", "item-sidebar-entry svelte-fdmon8");
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -58864,9 +58856,9 @@ function create_each_block_2$1(ctx) {
         ctx[13].item.icon
       );
       attr(img, "alt", "icon");
-      attr(img, "class", "svelte-15vhuqn");
-      attr(b, "class", "svelte-15vhuqn");
-      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
+      attr(img, "class", "svelte-fdmon8");
+      attr(b, "class", "svelte-fdmon8");
+      attr(div, "class", "item-sidebar-entry svelte-fdmon8");
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -58944,9 +58936,9 @@ function create_each_block_1$2(ctx) {
         ctx[13].item.icon
       );
       attr(img, "alt", "icon");
-      attr(img, "class", "svelte-15vhuqn");
-      attr(b, "class", "svelte-15vhuqn");
-      attr(div, "class", "item-sidebar-entry svelte-15vhuqn");
+      attr(img, "class", "svelte-fdmon8");
+      attr(b, "class", "svelte-fdmon8");
+      attr(div, "class", "item-sidebar-entry svelte-fdmon8");
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -59005,7 +58997,7 @@ function create_if_block$a(ctx) {
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
       }
-      attr(div, "class", "item-details-settings-list svelte-15vhuqn");
+      attr(div, "class", "item-details-settings-list svelte-fdmon8");
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -59102,7 +59094,7 @@ function create_each_block$e(ctx) {
       div = element$1("div");
       if (switch_instance) create_component(switch_instance.$$.fragment);
       t = space();
-      attr(div, "class", "item-details-settings-item svelte-15vhuqn");
+      attr(div, "class", "item-details-settings-item svelte-fdmon8");
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -59245,7 +59237,7 @@ function create_fragment$l(ctx) {
       p0 = element$1("p");
       p0.innerHTML = `The Brush Laboratory has many mods and tools to create unique masterpices.<br/>
   Below, you can find all available tools and mods and their settings.<br/>
-  Additionally to a tool, you can select one mod and multiple combo mods.`;
+  Additionally to a tool, you can select one mod and multiple combo mods. Activation order matters!`;
       t3 = space();
       div3 = element$1("div");
       div0 = element$1("div");
@@ -59286,10 +59278,11 @@ function create_fragment$l(ctx) {
       t20 = text(t20_value);
       t21 = space();
       if (if_block) if_block.c();
-      attr(h30, "class", "svelte-15vhuqn");
-      attr(h31, "class", "svelte-15vhuqn");
-      attr(h32, "class", "svelte-15vhuqn");
-      attr(div0, "class", "item-sidebar svelte-15vhuqn");
+      attr(p0, "class", "description svelte-fdmon8");
+      attr(h30, "class", "svelte-fdmon8");
+      attr(h31, "class", "svelte-fdmon8");
+      attr(h32, "class", "svelte-fdmon8");
+      attr(div0, "class", "item-sidebar svelte-fdmon8");
       if (!src_url_equal(img.src, img_src_value = "")) attr(img, "src", img_src_value);
       set_style(
         img,
@@ -59298,11 +59291,11 @@ function create_fragment$l(ctx) {
         (_a3 = ctx[1]) == null ? void 0 : _a3.icon
       );
       attr(img, "alt", "icon");
-      attr(img, "class", "svelte-15vhuqn");
-      attr(b, "class", "svelte-15vhuqn");
-      attr(div1, "class", "item-title svelte-15vhuqn");
-      attr(div2, "class", "item-details svelte-15vhuqn");
-      attr(div3, "class", "item-selection svelte-15vhuqn");
+      attr(img, "class", "svelte-fdmon8");
+      attr(b, "class", "svelte-fdmon8");
+      attr(div1, "class", "item-title svelte-fdmon8");
+      attr(div2, "class", "item-details svelte-fdmon8");
+      attr(div3, "class", "item-selection svelte-fdmon8");
     },
     m(target, anchor) {
       insert(target, p0, anchor);
@@ -59572,8 +59565,8 @@ const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeatur
       DotTool,
       DashTool,
       RainbowMod,
-      PressureInkMod,
       RandomColorMod,
+      PressureInkMod,
       GridTool,
       NoiseMod,
       TiltMod
