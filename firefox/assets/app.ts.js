@@ -32600,6 +32600,7 @@ let TypoDrawMod = (_ya = class {
      * Indicator if this mod requires the skribbl sampling throttle to be disabled
      * Needs to be set true if the mod produces many draw commands in a short time
      * TODO remove? seems unused
+     * @deprecated
      */
     __publicField(this, "disableSkribblSamplingRate", false);
   }
@@ -32635,7 +32636,9 @@ const _ConstantDrawMod = class _ConstantDrawMod extends TypoDrawMod {
     const awaited = effect instanceof Promise ? await effect : effect;
     return {
       lines: [awaited.line],
-      style: awaited.style
+      style: awaited.style,
+      disableSizeUpdate: awaited.disableSizeUpdate,
+      disableColorUpdate: awaited.disableSizeUpdate
     };
   }
   noConstantEffect(line, pressure, brushStyle) {
@@ -32976,7 +32979,8 @@ let ToolsService = (_za = class {
       map(([tool, mods, style]) => {
         const typoMods = tool instanceof TypoDrawTool ? [tool, ...mods] : mods;
         return [style, tool, typoMods];
-      })
+      }),
+      tap((meta) => this._logger.info("Drawing meta updated", meta))
     );
     this._activeMods$.pipe(
       combineLatestWith(this._activeTool$),
@@ -33005,26 +33009,34 @@ let ToolsService = (_za = class {
   }
   async processDrawCoordinates(start, end, cause, tool, mods, style, strokeId, secondaryActive) {
     var _a2, _b2, _c2, _d2;
-    this._logger.debug("Activating tool and applying mods", start, end);
+    this._logger.debug("Activating tool and applying mods", start, end, mods, tool);
     const eventId = Date.now();
     let lines = [{ from: [start[0], start[1]], to: [end[0], end[1]] }];
     let modStyle = structuredClone(style);
     const pressure = end[2];
+    let disableColorUpdate = false;
+    let disableSizeUpdate = false;
     for (const mod of mods) {
       const modLines = [];
       for (const line of lines) {
-        const effect = await mod.applyEffect(line, pressure, line.styleOverride ?? modStyle, eventId, strokeId, cause, secondaryActive);
+        const effect = await mod.applyEffect(line, pressure, modStyle, eventId, strokeId, cause, secondaryActive);
         modLines.push(...effect.lines);
         modStyle = effect.style;
+        if (effect.disableColorUpdate !== void 0) disableColorUpdate = effect.disableColorUpdate === true;
+        if (effect.disableSizeUpdate !== void 0) disableSizeUpdate = effect.disableSizeUpdate === true;
         this._logger.debug("Mod applied", mod);
       }
       lines = modLines;
     }
-    if (modStyle.color !== style.color) {
+    if (!disableSizeUpdate && modStyle.size !== style.size) {
+      this._logger.debug("Brush size changed by mods", modStyle.size);
+      this._drawingService.setSize(modStyle.size);
+    }
+    if (!disableColorUpdate && modStyle.color !== style.color) {
       this._logger.debug("Brush color changed by mods", modStyle.color);
       this._drawingService.setColor(modStyle.color);
     }
-    if (modStyle.secondaryColor !== style.secondaryColor) {
+    if (!disableColorUpdate && modStyle.secondaryColor !== style.secondaryColor) {
       this._logger.debug("Brush secondary color changed by mods", modStyle.secondaryColor);
       this._drawingService.setColor(modStyle.secondaryColor, true);
     }
@@ -33074,9 +33086,10 @@ let ToolsService = (_za = class {
     this._logger.debug("Setting skribbl tool", tool);
     document.dispatchEvent(new CustomEvent("selectSkribblTool", { detail: tool }));
   }
-  activateTool(tool) {
+  async activateTool(tool) {
     this._logger.debug("Activating tool", tool);
-    if (tool === this._activeTool$.value) {
+    const activeTool = await firstValueFrom(this._activeTool$);
+    if (tool === activeTool) {
       this._logger.debug("Tool already active", tool);
       return;
     }
@@ -33089,19 +33102,25 @@ let ToolsService = (_za = class {
     if (tool instanceof TypoDrawMod) tool.applyEffect({ from: [0, 0], to: [0, 0] }, void 0, { color: Color.fromHex("#000000").skribblCode, secondaryColor: Color.fromHex("#000000").skribblCode, size: 1 }, 0, 0, "down", false);
     if (tool instanceof TypoDrawTool) tool.createCommands({ from: [0, 0], to: [0, 0] }, void 0, { color: Color.fromHex("#000000").skribblCode, secondaryColor: Color.fromHex("#000000").skribblCode, size: 1 }, 0, 0, "down", false);
   }
-  activateMod(mod) {
+  // async because of rxjs issue when .next called in subscriber that itself emitted a next value
+  async activateMod(mod) {
     this._logger.debug("Activating mod", mod);
-    let mods = this._activeMods$.value;
+    let mods = await firstValueFrom(this._activeMods$);
+    this._logger.debug("Current mods", mods);
     if (!(mod instanceof ConstantDrawMod)) {
       mods = mods.filter((m) => m instanceof ConstantDrawMod);
     }
-    this._activeMods$.next([...mods, mod]);
+    mods = [...mods, mod];
+    this._logger.info("Activated mod", mods);
+    this._activeMods$.next(mods);
   }
-  removeMod(mod) {
+  async removeMod(mod) {
     this._logger.debug("Removing mod", mod);
-    const lengthBefore = this._activeMods$.value.length;
-    const mods = this._activeMods$.value.filter((m) => m !== mod);
+    let mods = await firstValueFrom(this._activeMods$);
+    const lengthBefore = mods.length;
+    mods = mods.filter((m) => m !== mod);
     if (lengthBefore != mods.length) {
+      this._logger.info("Disabled mod", mods);
       this._activeMods$.next(mods);
     }
   }
@@ -33396,13 +33415,13 @@ const _DrawingColorToolsFeature = class _DrawingColorToolsFeature extends TypoFe
     this._colorChangeSubscription = void 0;
     this._pipetteTool = void 0;
   }
-  selectPipetteTool() {
+  async selectPipetteTool() {
     if (!this._pipetteTool) {
       this._logger.error("Pipette tool not initialized");
       throw new Error("Pipette tool not initialized yet");
     }
     this._logger.info("Pipette tool selected");
-    this._toolsService.activateTool(this._pipetteTool);
+    await this._toolsService.activateTool(this._pipetteTool);
   }
   get selectedToolStore() {
     return fromObservable(this._toolsService.activeTool$, skribblTool.brush);
@@ -33451,7 +33470,7 @@ const _PressureMod = class _PressureMod extends ConstantDrawMod {
    * @param eventId
    * @param strokeId
    */
-  async applyConstantEffect(line, pressure, style) {
+  applyConstantEffect(line, pressure, style) {
     if (pressure === void 0) {
       return {
         style,
@@ -33463,7 +33482,8 @@ const _PressureMod = class _PressureMod extends ConstantDrawMod {
     style.size = size;
     return {
       style,
-      line
+      line,
+      disableSizeUpdate: true
     };
   }
   /**
@@ -33679,14 +33699,14 @@ const _DrawingPressureFeature = class _DrawingPressureFeature extends TypoFeatur
     ).subscribe(async ([performanceMode, sensitivity, balance, overridePerformance]) => {
       if (performanceMode && !overridePerformance) {
         if (this._pressureMod) {
-          this._toolsService.removeMod(this._pressureMod);
+          await this._toolsService.removeMod(this._pressureMod);
           this._pressureMod = void 0;
         }
         document.documentElement.dataset["typo_pressure_performance"] = this.getPerformanceFunctionEval(sensitivity, balance);
       } else {
         if (!this._pressureMod) {
           this._pressureMod = this._toolsService.resolveModOrTool(PressureMod);
-          this._toolsService.activateMod(this._pressureMod);
+          await this._toolsService.activateMod(this._pressureMod);
         }
         this._pressureMod.setParams(sensitivity, balance);
         document.documentElement.dataset["typo_pressure_performance"] = "";
@@ -57833,6 +57853,62 @@ const _ParallelLineMod = class _ParallelLineMod extends TypoDrawMod {
 };
 __name(_ParallelLineMod, "ParallelLineMod");
 let ParallelLineMod = _ParallelLineMod;
+const _PressureInkMod = class _PressureInkMod extends ConstantDrawMod {
+  constructor() {
+    super(...arguments);
+    __publicField(this, "description", "Changes color brightness or hue channel depending on pen pressure.");
+    __publicField(this, "icon", "var(--file-img-line-pressure-ink-gif)");
+    __publicField(this, "name", "Pressure Ink");
+    __publicField(this, "_brightnessEnabledSetting", new BooleanExtensionSetting("brushlab.pressureink.brightness", true).withName("Brightness").withDescription("Changes the luminance of the selected color depending on pressure."));
+    __publicField(this, "_brightnessAbsoluteSetting", new BooleanExtensionSetting("brushlab.pressureink.brightnessAbsolute", false).withName("Absolute Brightness").withDescription("When enabled, acts on the full brightness range, regardless of current color brightness."));
+    __publicField(this, "_brightnessSensitivitySetting", new NumericExtensionSetting("brushlab.pressureink.brightnessSensitivity", 50).withName("Brightness Sensitivity").withDescription("Select how much the brightness changes with pressure.").withSlider(1).withBounds(0, 100));
+    __publicField(this, "_degreeEnabledSetting", new BooleanExtensionSetting("brushlab.pressureink.degree", true).withName("Color").withDescription("Changes the HUE of the selected color depending on pressure."));
+    __publicField(this, "_degreeSensitivitySetting", new NumericExtensionSetting("brushlab.pressureink.degreeSensitivity", 50).withName("Color Sensitivity").withDescription("Select how much the color changes with pressure.").withSlider(1).withBounds(0, 100));
+    __publicField(this, "settings", [
+      this._brightnessEnabledSetting,
+      this._brightnessSensitivitySetting,
+      this._brightnessAbsoluteSetting,
+      this._degreeEnabledSetting,
+      this._degreeSensitivitySetting
+    ]);
+  }
+  async applyConstantEffect(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
+    const brightnessEnabled = await firstValueFrom(this._brightnessEnabledSetting.changes$);
+    const degreeEnabled = await firstValueFrom(this._degreeEnabledSetting.changes$);
+    if (pressure === void 0 || !brightnessEnabled && !degreeEnabled) {
+      return {
+        style,
+        line
+      };
+    }
+    const colorCode = this.getSelectedColor(line.styleOverride, style, secondaryActive);
+    const colorBase = Color.fromSkribblCode(colorCode).hsl;
+    if (brightnessEnabled) {
+      const brightnessSensitivity = await firstValueFrom(this._brightnessSensitivitySetting.changes$);
+      const absoluteBrightness = await firstValueFrom(this._brightnessAbsoluteSetting.changes$);
+      const factor = (50 + brightnessSensitivity) / 100;
+      colorBase[2] = absoluteBrightness ? Math.min(100, 100 * pressure * factor) : Math.min(colorBase[2] + colorBase[2] * pressure * factor, 100);
+    }
+    if (degreeEnabled) {
+      const degreeSensitivity = await firstValueFrom(this._degreeSensitivitySetting.changes$);
+      const factor = (50 + degreeSensitivity) / 100;
+      colorBase[0] = (colorBase[0] + pressure * 360 * factor) % 360;
+    }
+    const color = Color.fromHsl(colorBase[0], colorBase[1], colorBase[2], colorBase[3]);
+    style = {
+      size: style.size,
+      color: secondaryActive ? style.color : color.typoCode,
+      secondaryColor: !secondaryActive ? style.color : color.typoCode
+    };
+    return {
+      style,
+      line,
+      disableColorUpdate: true
+    };
+  }
+};
+__name(_PressureInkMod, "PressureInkMod");
+let PressureInkMod = _PressureInkMod;
 const _RainbowMod = class _RainbowMod extends ConstantDrawMod {
   constructor() {
     super(...arguments);
@@ -59544,6 +59620,7 @@ const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeatur
       DotTool,
       DashTool,
       RainbowMod,
+      PressureInkMod,
       RandomColorMod,
       GridTool,
       NoiseMod,
@@ -59593,7 +59670,7 @@ const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeatur
     }
     const items = await firstValueFrom(this._toolbarItems$);
     items.mods.forEach(({ item }) => this._toolsService.removeMod(item));
-    this._toolsService.activateTool(skribblTool.brush);
+    await this._toolsService.activateTool(skribblTool.brush);
   }
   get toolbarItemsStore() {
     return fromObservable(this._toolbarItems$.pipe(
@@ -59612,14 +59689,14 @@ const _DrawingBrushLabFeature = class _DrawingBrushLabFeature extends TypoFeatur
     const mods = items.filter((item) => !(item instanceof TypoDrawTool)).map((item) => ({ item, active: false }));
     this._toolbarItems$.next({ tools, mods });
   }
-  activateTool(tool) {
-    this._toolsService.activateTool(tool);
+  async activateTool(tool) {
+    await this._toolsService.activateTool(tool);
   }
-  activateMod(mod) {
-    this._toolsService.activateMod(mod);
+  async activateMod(mod) {
+    await this._toolsService.activateMod(mod);
   }
-  removeMod(mod) {
-    this._toolsService.removeMod(mod);
+  async removeMod(mod) {
+    await this._toolsService.removeMod(mod);
   }
   openBrushLabSettings(initTool) {
     const componentData = {
