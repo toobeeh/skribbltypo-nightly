@@ -61910,16 +61910,6 @@ function create_each_block$c(ctx) {
     );
   }
   __name(checkbox_checked_binding, "checkbox_checked_binding");
-  function change_handler() {
-    return (
-      /*change_handler*/
-      ctx[10](
-        /*key*/
-        ctx[12]
-      )
-    );
-  }
-  __name(change_handler, "change_handler");
   let checkbox_props = {
     description: (
       /*view*/
@@ -61949,7 +61939,11 @@ function create_each_block$c(ctx) {
   }
   checkbox = new Checkbox({ props: checkbox_props });
   binding_callbacks.push(() => bind$1(checkbox, "checked", checkbox_checked_binding));
-  checkbox.$on("change", change_handler);
+  checkbox.$on(
+    "change",
+    /*change_handler*/
+    ctx[10]
+  );
   return {
     c() {
       create_component(checkbox.$$.fragment);
@@ -62101,7 +62095,7 @@ function create_fragment$j(ctx) {
           ctx2[2]
         );
       }
-      if (dirty & /*views, $categoriesStore, enabledViews, updateCategory*/
+      if (dirty & /*views, $categoriesStore, enabledViews, updateCategories*/
       99) {
         each_value = ensure_array_like(
           /*views*/
@@ -62175,15 +62169,14 @@ function instance$i($$self, $$props, $$invalidate) {
   component_subscribe($$self, rankingsStore, (value) => $$invalidate(2, $rankingsStore = value));
   const views = feature.getViewsWithKeys();
   const enabledViews = {};
-  const updateCategory = /* @__PURE__ */ __name((key2) => {
-    const state = enabledViews[key2];
-    const contains = $categoriesStore.includes(key2);
-    if (state && !contains) {
-      set_store_value(categoriesStore, $categoriesStore = [...$categoriesStore, key2], $categoriesStore);
-    } else if (!state && contains) {
-      set_store_value(categoriesStore, $categoriesStore = $categoriesStore.filter((k) => k !== key2), $categoriesStore);
+  const updateCategories = /* @__PURE__ */ __name(() => {
+    const enabledCategories = [];
+    for (const view of views) {
+      const enabled = enabledViews[view.key] === true;
+      if (enabled) enabledCategories.push(view.key);
     }
-  }, "updateCategory");
+    set_store_value(categoriesStore, $categoriesStore = enabledCategories, $categoriesStore);
+  }, "updateCategories");
   function input_input_handler() {
     $rankingsStore = to_number(this.value);
     rankingsStore.set($rankingsStore);
@@ -62196,7 +62189,7 @@ function instance$i($$self, $$props, $$invalidate) {
     }
   }
   __name(checkbox_checked_binding, "checkbox_checked_binding");
-  const change_handler = /* @__PURE__ */ __name((key2) => updateCategory(key2), "change_handler");
+  const change_handler = /* @__PURE__ */ __name(() => updateCategories(), "change_handler");
   $$self.$$set = ($$props2) => {
     if ("feature" in $$props2) $$invalidate(7, feature = $$props2.feature);
   };
@@ -62217,7 +62210,7 @@ function instance$i($$self, $$props, $$invalidate) {
     categoriesStore,
     rankingsStore,
     views,
-    updateCategory,
+    updateCategories,
     feature,
     input_input_handler,
     checkbox_checked_binding,
