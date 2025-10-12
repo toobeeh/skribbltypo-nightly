@@ -32638,7 +32638,7 @@ const _ConstantDrawMod = class _ConstantDrawMod extends TypoDrawMod {
       lines: [awaited.line],
       style: awaited.style,
       disableSizeUpdate: awaited.disableSizeUpdate,
-      disableColorUpdate: awaited.disableSizeUpdate
+      disableColorUpdate: awaited.disableColorUpdate
     };
   }
   noConstantEffect(line, pressure, brushStyle) {
@@ -57862,7 +57862,7 @@ const _PressureInkMod = class _PressureInkMod extends ConstantDrawMod {
     __publicField(this, "_brightnessEnabledSetting", new BooleanExtensionSetting("brushlab.pressureink.brightness", true).withName("Brightness").withDescription("Changes the luminance of the selected color depending on pressure."));
     __publicField(this, "_brightnessAbsoluteSetting", new BooleanExtensionSetting("brushlab.pressureink.brightnessAbsolute", false).withName("Absolute Brightness").withDescription("When enabled, acts on the full brightness range, regardless of current color brightness."));
     __publicField(this, "_brightnessSensitivitySetting", new NumericExtensionSetting("brushlab.pressureink.brightnessSensitivity", 50).withName("Brightness Sensitivity").withDescription("Select how much the brightness changes with pressure.").withSlider(1).withBounds(0, 100));
-    __publicField(this, "_degreeEnabledSetting", new BooleanExtensionSetting("brushlab.pressureink.degree", true).withName("Color").withDescription("Changes the HUE of the selected color depending on pressure."));
+    __publicField(this, "_degreeEnabledSetting", new BooleanExtensionSetting("brushlab.pressureink.degree", false).withName("Color").withDescription("Changes the HUE of the selected color depending on pressure."));
     __publicField(this, "_degreeSensitivitySetting", new NumericExtensionSetting("brushlab.pressureink.degreeSensitivity", 50).withName("Color Sensitivity").withDescription("Select how much the color changes with pressure.").withSlider(1).withBounds(0, 100));
     __publicField(this, "settings", [
       this._brightnessEnabledSetting,
@@ -57887,12 +57887,12 @@ const _PressureInkMod = class _PressureInkMod extends ConstantDrawMod {
       const brightnessSensitivity = await firstValueFrom(this._brightnessSensitivitySetting.changes$);
       const absoluteBrightness = await firstValueFrom(this._brightnessAbsoluteSetting.changes$);
       const factor = (50 + brightnessSensitivity) / 100;
-      colorBase[2] = absoluteBrightness ? Math.min(100, 100 * pressure * factor) : Math.min(colorBase[2] + colorBase[2] * pressure * factor, 100);
+      colorBase[2] = Math.round(absoluteBrightness ? Math.min(100, 100 * pressure * factor) : Math.min(colorBase[2] + 100 * pressure * factor, 100));
     }
     if (degreeEnabled) {
       const degreeSensitivity = await firstValueFrom(this._degreeSensitivitySetting.changes$);
       const factor = (50 + degreeSensitivity) / 100;
-      colorBase[0] = (colorBase[0] + pressure * 360 * factor) % 360;
+      colorBase[0] = Math.round((colorBase[0] + pressure * 360 * factor) % 360);
     }
     const color = Color.fromHsl(colorBase[0], colorBase[1], colorBase[2], colorBase[3]);
     style = {
