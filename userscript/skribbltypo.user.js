@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      27.1.3 beta-usc 319e950
+// @version      27.1.3 beta-usc 3f3f282
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 319e950", runtime: "userscript" };
+  const pageReleaseDetails = { version: "27.1.3", versionName: "27.1.3 beta-usc 3f3f282", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -61386,10 +61386,21 @@ ${content2}</tr>
         this._brightnessInvertSetting,
         this._degreeInvertSetting
       ]);
+      __publicField(this, "_lastColorCode");
     }
     async applyConstantEffect(line, pressure, style2, eventId, strokeId, strokeCause, secondaryActive) {
       const brightnessEnabled = await firstValueFrom(this._brightnessEnabledSetting.changes$);
       const degreeEnabled = await firstValueFrom(this._degreeEnabledSetting.changes$);
+      if (strokeCause === "up" && this._lastColorCode !== void 0) {
+        if (!secondaryActive) style2.color = this._lastColorCode;
+        else style2.secondaryColor = this._lastColorCode;
+        this._lastColorCode = void 0;
+        return {
+          style: style2,
+          line,
+          disableColorUpdate: true
+        };
+      }
       if (pressure === void 0 || !brightnessEnabled && !degreeEnabled) {
         return {
           style: style2,
@@ -61414,6 +61425,7 @@ ${content2}</tr>
         colorBase[0] = Math.round(this.calculateAdjustedOffset(pressure, (50 + degreeSensitivity) / 100, degreeRange, degreeInvert, 360, colorBase[0]) % 360);
       }
       const color = Color.fromHsl(colorBase[0], colorBase[1], colorBase[2], colorBase[3]);
+      this._lastColorCode = color.skribblCode;
       style2 = {
         size: style2.size,
         color: secondaryActive ? style2.color : color.typoCode,

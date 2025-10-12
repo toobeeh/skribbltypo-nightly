@@ -57775,10 +57775,21 @@ const _PressureInkMod = class _PressureInkMod extends ConstantDrawMod {
       this._brightnessInvertSetting,
       this._degreeInvertSetting
     ]);
+    __publicField(this, "_lastColorCode");
   }
   async applyConstantEffect(line, pressure, style, eventId, strokeId, strokeCause, secondaryActive) {
     const brightnessEnabled = await firstValueFrom(this._brightnessEnabledSetting.changes$);
     const degreeEnabled = await firstValueFrom(this._degreeEnabledSetting.changes$);
+    if (strokeCause === "up" && this._lastColorCode !== void 0) {
+      if (!secondaryActive) style.color = this._lastColorCode;
+      else style.secondaryColor = this._lastColorCode;
+      this._lastColorCode = void 0;
+      return {
+        style,
+        line,
+        disableColorUpdate: true
+      };
+    }
     if (pressure === void 0 || !brightnessEnabled && !degreeEnabled) {
       return {
         style,
@@ -57803,6 +57814,7 @@ const _PressureInkMod = class _PressureInkMod extends ConstantDrawMod {
       colorBase[0] = Math.round(this.calculateAdjustedOffset(pressure, (50 + degreeSensitivity) / 100, degreeRange, degreeInvert, 360, colorBase[0]) % 360);
     }
     const color = Color.fromHsl(colorBase[0], colorBase[1], colorBase[2], colorBase[3]);
+    this._lastColorCode = color.skribblCode;
     style = {
       size: style.size,
       color: secondaryActive ? style.color : color.typoCode,
