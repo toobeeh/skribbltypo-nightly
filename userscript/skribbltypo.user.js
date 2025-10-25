@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      28.0.2 beta-usc 1601721
+// @version      28.0.2 beta-usc a282540
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "28.0.2", versionName: "28.0.2 beta-usc 1601721", runtime: "userscript" };
+  const pageReleaseDetails = { version: "28.0.2", versionName: "28.0.2 beta-usc a282540", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -33421,6 +33421,13 @@
       this._themeElements.forEach((e) => e.remove());
       this._themeElements = theme ? await this.createThemeElements(theme) : [];
       this._themeElements.forEach((e) => document.body.appendChild(e));
+      if (document.documentElement.hasAttribute("data-halloween") && theme !== void 0) {
+        document.documentElement.setAttribute("data-halloween-disabled", "true");
+        document.documentElement.removeAttribute("data-halloween");
+      } else if (document.documentElement.hasAttribute("data-halloween-disabled") && theme === void 0) {
+        document.documentElement.setAttribute("data-halloween", "");
+        document.documentElement.removeAttribute("data-halloween-disabled");
+      }
     }
     /**
      * Create html elements to display a theme

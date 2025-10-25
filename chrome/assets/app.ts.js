@@ -29801,6 +29801,13 @@ const _ControlsThemesFeature = class _ControlsThemesFeature extends TypoFeature 
     this._themeElements.forEach((e) => e.remove());
     this._themeElements = theme ? await this.createThemeElements(theme) : [];
     this._themeElements.forEach((e) => document.body.appendChild(e));
+    if (document.documentElement.hasAttribute("data-halloween") && theme !== void 0) {
+      document.documentElement.setAttribute("data-halloween-disabled", "true");
+      document.documentElement.removeAttribute("data-halloween");
+    } else if (document.documentElement.hasAttribute("data-halloween-disabled") && theme === void 0) {
+      document.documentElement.setAttribute("data-halloween", "");
+      document.documentElement.removeAttribute("data-halloween-disabled");
+    }
   }
   /**
    * Create html elements to display a theme
