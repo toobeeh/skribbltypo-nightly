@@ -12346,7 +12346,12 @@ function create_fragment$1D(ctx) {
         /*name*/
         ctx[2]
       );
-      attr(div, "tabindex", "0");
+      attr(
+        div,
+        "tabindex",
+        /*tabIndex*/
+        ctx[9]
+      );
       toggle_class(
         div,
         "greyscale",
@@ -12380,19 +12385,19 @@ function create_fragment$1D(ctx) {
             div,
             "click",
             /*click_handler*/
-            ctx[11]
+            ctx[12]
           ),
           listen(
             div,
             "click",
             /*click_handler_1*/
-            ctx[12]
+            ctx[13]
           ),
           listen(
             div,
             "keypress",
             /*keypress_handler*/
-            ctx[13]
+            ctx[14]
           )
         ];
         mounted = true;
@@ -12449,6 +12454,15 @@ function create_fragment$1D(ctx) {
           ctx2[2]
         );
       }
+      if (dirty & /*tabIndex*/
+      512) {
+        attr(
+          div,
+          "tabindex",
+          /*tabIndex*/
+          ctx2[9]
+        );
+      }
       if (tooltipAction_action && is_function(tooltipAction_action.update) && dirty & /*name, lockTooltip*/
       260) tooltipAction_action.update.call(null, {
         title: (
@@ -12502,6 +12516,7 @@ function instance$1t($$self, $$props, $$invalidate) {
   let { tooltipAction = /* @__PURE__ */ __name(() => {
   }, "tooltipAction") } = $$props;
   let { lockTooltip = void 0 } = $$props;
+  let { tabIndex = 0 } = $$props;
   const click = new Subject$1();
   const click$ = click.asObservable();
   function click_handler2(event) {
@@ -12520,6 +12535,7 @@ function instance$1t($$self, $$props, $$invalidate) {
     if ("order" in $$props2) $$invalidate(6, order = $$props2.order);
     if ("tooltipAction" in $$props2) $$invalidate(7, tooltipAction = $$props2.tooltipAction);
     if ("lockTooltip" in $$props2) $$invalidate(8, lockTooltip = $$props2.lockTooltip);
+    if ("tabIndex" in $$props2) $$invalidate(9, tabIndex = $$props2.tabIndex);
   };
   return [
     disabled,
@@ -12531,6 +12547,7 @@ function instance$1t($$self, $$props, $$invalidate) {
     order,
     tooltipAction,
     lockTooltip,
+    tabIndex,
     click,
     click$,
     click_handler2,
@@ -12552,11 +12569,12 @@ const _Icon_button = class _Icon_button extends SvelteComponent {
       order: 6,
       tooltipAction: 7,
       lockTooltip: 8,
-      click$: 10
+      tabIndex: 9,
+      click$: 11
     });
   }
   get click$() {
-    return this.$$.ctx[10];
+    return this.$$.ctx[11];
   }
 };
 __name(_Icon_button, "Icon_button");
@@ -62668,6 +62686,7 @@ function create_if_block_1$3(ctx) {
   let current;
   iconbutton0 = new Icon_button({
     props: {
+      tabIndex: -1,
       icon: "file-img-arrow-left-gif",
       name: "Next",
       size: "1.5rem",
@@ -62685,6 +62704,7 @@ function create_if_block_1$3(ctx) {
   );
   iconbutton1 = new Icon_button({
     props: {
+      tabIndex: -1,
       icon: "file-img-arrow-right-gif",
       name: "Next",
       size: "1.5rem",
@@ -62703,6 +62723,7 @@ function create_if_block_1$3(ctx) {
   );
   iconbutton2 = new Icon_button({
     props: {
+      tabIndex: -1,
       icon: "file-img-chart-gif",
       name: "View All Stats",
       size: "1.5rem",
