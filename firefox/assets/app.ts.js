@@ -57887,7 +57887,7 @@ const _RainbowMod = class _RainbowMod extends ConstantDrawMod {
     const lastStrokeSwitch = this.strokeSwitches.get(strokeId);
     if (lastStrokeSwitch !== void 0 && cause === "up") this.strokeSwitches.delete(strokeId);
     if (lastStrokeSwitch === void 0 || strokeMode == false && (distance <= 0 || this.getDistance(lastStrokeSwitch.position, line.from) > style.size / 10 * distance)) {
-      const index = (((lastStrokeSwitch == null ? void 0 : lastStrokeSwitch.index) ?? this.initIndex++ % (colors.length - 2)) + 1) % (colors.length - 2);
+      const index = (((lastStrokeSwitch == null ? void 0 : lastStrokeSwitch.index) ?? this.initIndex++ % (colors.length - 4)) + 1) % (colors.length - 4);
       const actualIndex = index + 2;
       style.color = actualIndex * 2 + (mode === "light" ? 0 : 1);
       const newStrokeSwitch = {

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      28.0.2 beta-usc efbb372
+// @version      28.0.2 beta-usc 60b6fc2
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "28.0.2", versionName: "28.0.2 beta-usc efbb372", runtime: "userscript" };
+  const pageReleaseDetails = { version: "28.0.2", versionName: "28.0.2 beta-usc 60b6fc2", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -61507,7 +61507,7 @@ ${content2}</tr>
       const lastStrokeSwitch = this.strokeSwitches.get(strokeId);
       if (lastStrokeSwitch !== void 0 && cause === "up") this.strokeSwitches.delete(strokeId);
       if (lastStrokeSwitch === void 0 || strokeMode == false && (distance <= 0 || this.getDistance(lastStrokeSwitch.position, line.from) > style2.size / 10 * distance)) {
-        const index = (((lastStrokeSwitch == null ? void 0 : lastStrokeSwitch.index) ?? this.initIndex++ % (colors.length - 2)) + 1) % (colors.length - 2);
+        const index = (((lastStrokeSwitch == null ? void 0 : lastStrokeSwitch.index) ?? this.initIndex++ % (colors.length - 4)) + 1) % (colors.length - 4);
         const actualIndex = index + 2;
         style2.color = actualIndex * 2 + (mode === "light" ? 0 : 1);
         const newStrokeSwitch = {
