@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      28.0.2 beta-usc 04989f9
+// @version      28.0.2 beta-usc 1601721
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "28.0.2", versionName: "28.0.2 beta-usc 04989f9", runtime: "userscript" };
+  const pageReleaseDetails = { version: "28.0.2", versionName: "28.0.2 beta-usc 1601721", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -25619,6 +25619,7 @@
       __publicField(this, "_flyoutSubscription");
       __publicField(this, "_rateInteractionsStyle", createElement("<style>.typo-hide-rate-interactions { display: none !important }</style>"));
       __publicField(this, "_interactionUpdateSubscription");
+      __publicField(this, "_autoLikeSubscription");
       __publicField(this, "_guessedSubscription");
     }
     async onActivate() {
@@ -25627,7 +25628,7 @@
       this._interactionUpdateSubscription = this._lobbyInteractionsService.availableInteractions$.subscribe((interactions) => {
         elements2.gameRate.classList.toggle("typo-hide-rate-interactions", (interactions == null ? void 0 : interactions.rateAvailable) !== true);
       });
-      this._wordGuessedListener.events$.pipe(
+      this._autoLikeSubscription = this._wordGuessedListener.events$.pipe(
         filter((event) => event.data.word !== void 0),
         /* word is only set if own guess */
         withLatestFrom(this._likeAfterGuessSetting.changes$),
@@ -25636,10 +25637,11 @@
         filter(([[,], interactions]) => (interactions == null ? void 0 : interactions.rateAvailable) === true)
       ).subscribe(() => {
         this._lobbyInteractionsService.likePlayer();
+        this.hideGameRate();
       });
     }
     async onDestroy() {
-      var _a2, _b2, _c2, _d2, _e2;
+      var _a2, _b2, _c2, _d2, _e2, _f2;
       (_a2 = this._subscription) == null ? void 0 : _a2.unsubscribe();
       this._subscription = void 0;
       (_b2 = this._flyoutSubscription) == null ? void 0 : _b2.unsubscribe();
@@ -25651,6 +25653,8 @@
       this._rateInteractionsStyle.remove();
       (_e2 = this._guessedSubscription) == null ? void 0 : _e2.unsubscribe();
       this._guessedSubscription = void 0;
+      (_f2 = this._autoLikeSubscription) == null ? void 0 : _f2.unsubscribe();
+      this._autoLikeSubscription = void 0;
     }
     async hideGameRate() {
       const elements2 = await this._elements.complete();

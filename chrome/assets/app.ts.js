@@ -21999,6 +21999,7 @@ const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature 
     __publicField(this, "_flyoutSubscription");
     __publicField(this, "_rateInteractionsStyle", createElement("<style>.typo-hide-rate-interactions { display: none !important }</style>"));
     __publicField(this, "_interactionUpdateSubscription");
+    __publicField(this, "_autoLikeSubscription");
     __publicField(this, "_guessedSubscription");
   }
   async onActivate() {
@@ -22007,7 +22008,7 @@ const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature 
     this._interactionUpdateSubscription = this._lobbyInteractionsService.availableInteractions$.subscribe((interactions) => {
       elements2.gameRate.classList.toggle("typo-hide-rate-interactions", (interactions == null ? void 0 : interactions.rateAvailable) !== true);
     });
-    this._wordGuessedListener.events$.pipe(
+    this._autoLikeSubscription = this._wordGuessedListener.events$.pipe(
       filter((event) => event.data.word !== void 0),
       /* word is only set if own guess */
       withLatestFrom(this._likeAfterGuessSetting.changes$),
@@ -22016,10 +22017,11 @@ const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature 
       filter(([[,], interactions]) => (interactions == null ? void 0 : interactions.rateAvailable) === true)
     ).subscribe(() => {
       this._lobbyInteractionsService.likePlayer();
+      this.hideGameRate();
     });
   }
   async onDestroy() {
-    var _a2, _b2, _c2, _d2, _e2;
+    var _a2, _b2, _c2, _d2, _e2, _f2;
     (_a2 = this._subscription) == null ? void 0 : _a2.unsubscribe();
     this._subscription = void 0;
     (_b2 = this._flyoutSubscription) == null ? void 0 : _b2.unsubscribe();
@@ -22031,6 +22033,8 @@ const _ChatQuickReactFeature = class _ChatQuickReactFeature extends TypoFeature 
     this._rateInteractionsStyle.remove();
     (_e2 = this._guessedSubscription) == null ? void 0 : _e2.unsubscribe();
     this._guessedSubscription = void 0;
+    (_f2 = this._autoLikeSubscription) == null ? void 0 : _f2.unsubscribe();
+    this._autoLikeSubscription = void 0;
   }
   async hideGameRate() {
     const elements2 = await this._elements.complete();
