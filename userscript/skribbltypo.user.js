@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skribbltypo
 // @namespace    vite-plugin-monkey
-// @version      28.0.2 beta-usc 60b6fc2
+// @version      28.0.2 beta-usc c569353
 // @author       tobeh
 // @description  The toolbox for everything you need on skribbl.io
 // @updateURL    https://get.typo.rip/userscript/skribbltypo.user.js
@@ -446,7 +446,7 @@
       return isIteratorProp(target, prop) || oldTraps.has(target, prop);
     }
   }));
-  const pageReleaseDetails = { version: "28.0.2", versionName: "28.0.2 beta-usc 60b6fc2", runtime: "userscript" };
+  const pageReleaseDetails = { version: "28.0.2", versionName: "28.0.2 beta-usc c569353", runtime: "userscript" };
   const gamePatch = `((h, c, d, O) => {
   let P = 28,
     Y = 57,
@@ -36712,9 +36712,10 @@
       } else if (tool === skribblTool.fill) {
         if (cause === "down") {
           for (const effect of effects) {
+            const color = secondaryActive ? effect.effect.style.secondaryColor : effect.effect.style.color;
             const pointCommand = this._drawingService.createFillCommand(
               [...effect.effect.line.from],
-              effect.effect.style.color
+              color
             );
             commands.push(pointCommand);
           }

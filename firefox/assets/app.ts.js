@@ -33092,9 +33092,10 @@ let ToolsService = (_za = class {
     } else if (tool === skribblTool.fill) {
       if (cause === "down") {
         for (const effect of effects) {
+          const color = secondaryActive ? effect.effect.style.secondaryColor : effect.effect.style.color;
           const pointCommand = this._drawingService.createFillCommand(
             [...effect.effect.line.from],
-            effect.effect.style.color
+            color
           );
           commands.push(pointCommand);
         }
